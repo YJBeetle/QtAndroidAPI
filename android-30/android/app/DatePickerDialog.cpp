@@ -47,14 +47,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::widget::DatePicker DatePickerDialog::getDatePicker()
+	android::widget::DatePicker DatePickerDialog::getDatePicker() const
 	{
 		return callObjectMethod(
 			"getDatePicker",
 			"()Landroid/widget/DatePicker;"
 		);
 	}
-	void DatePickerDialog::onClick(JObject arg0, jint arg1)
+	void DatePickerDialog::onClick(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onClick",
@@ -63,7 +63,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void DatePickerDialog::onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3)
+	void DatePickerDialog::onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onDateChanged",
@@ -74,7 +74,7 @@ namespace android::app
 			arg3
 		);
 	}
-	void DatePickerDialog::onRestoreInstanceState(android::os::Bundle arg0)
+	void DatePickerDialog::onRestoreInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -82,14 +82,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::os::Bundle DatePickerDialog::onSaveInstanceState()
+	android::os::Bundle DatePickerDialog::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void DatePickerDialog::setOnDateSetListener(JObject arg0)
+	void DatePickerDialog::setOnDateSetListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDateSetListener",
@@ -97,7 +97,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DatePickerDialog::updateDate(jint arg0, jint arg1, jint arg2)
+	void DatePickerDialog::updateDate(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"updateDate",

@@ -46,18 +46,18 @@ namespace android::content::res
 		AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, android::os::Bundle arg3);
 		
 		// Methods
-		void close();
-		java::io::FileInputStream createInputStream();
-		java::io::FileOutputStream createOutputStream();
-		jint describeContents();
-		jlong getDeclaredLength();
-		android::os::Bundle getExtras();
-		java::io::FileDescriptor getFileDescriptor();
-		jlong getLength();
-		android::os::ParcelFileDescriptor getParcelFileDescriptor();
-		jlong getStartOffset();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void close() const;
+		java::io::FileInputStream createInputStream() const;
+		java::io::FileOutputStream createOutputStream() const;
+		jint describeContents() const;
+		jlong getDeclaredLength() const;
+		android::os::Bundle getExtras() const;
+		java::io::FileDescriptor getFileDescriptor() const;
+		jlong getLength() const;
+		android::os::ParcelFileDescriptor getParcelFileDescriptor() const;
+		jlong getStartOffset() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::res
 

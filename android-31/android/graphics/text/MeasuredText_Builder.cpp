@@ -25,7 +25,7 @@ namespace android::graphics::text
 		) {}
 	
 	// Methods
-	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::appendReplacementRun(android::graphics::Paint arg0, jint arg1, jfloat arg2)
+	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::appendReplacementRun(android::graphics::Paint arg0, jint arg1, jfloat arg2) const
 	{
 		return callObjectMethod(
 			"appendReplacementRun",
@@ -35,7 +35,7 @@ namespace android::graphics::text
 			arg2
 		);
 	}
-	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::appendStyleRun(android::graphics::Paint arg0, jint arg1, jboolean arg2)
+	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::appendStyleRun(android::graphics::Paint arg0, jint arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"appendStyleRun",
@@ -45,14 +45,14 @@ namespace android::graphics::text
 			arg2
 		);
 	}
-	android::graphics::text::MeasuredText MeasuredText_Builder::build()
+	android::graphics::text::MeasuredText MeasuredText_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/graphics/text/MeasuredText;"
 		);
 	}
-	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::setComputeHyphenation(jboolean arg0)
+	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::setComputeHyphenation(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setComputeHyphenation",
@@ -60,7 +60,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::setComputeLayout(jboolean arg0)
+	android::graphics::text::MeasuredText_Builder MeasuredText_Builder::setComputeLayout(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setComputeLayout",

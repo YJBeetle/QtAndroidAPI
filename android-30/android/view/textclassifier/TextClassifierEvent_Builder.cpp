@@ -18,7 +18,7 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setActionIndices(JIntArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setActionIndices(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setActionIndices",
@@ -26,7 +26,7 @@ namespace android::view::textclassifier
 			arg0.object<jintArray>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEntityTypes(JArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEntityTypes(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setEntityTypes",
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 			arg0.object<jarray>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventContext(android::view::textclassifier::TextClassificationContext arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventContext(android::view::textclassifier::TextClassificationContext arg0) const
 	{
 		return callObjectMethod(
 			"setEventContext",
@@ -42,7 +42,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventIndex(jint arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setEventIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"setEventIndex",
@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -58,7 +58,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setLocale(android::icu::util::ULocale arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setLocale(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -66,7 +66,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setModelName(JString arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setModelName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setModelName",
@@ -74,7 +74,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setResultId(JString arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setResultId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setResultId",
@@ -82,7 +82,7 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setScores(JFloatArray arg0)
+	android::view::textclassifier::TextClassifierEvent_Builder TextClassifierEvent_Builder::setScores(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"setScores",

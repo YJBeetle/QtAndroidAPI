@@ -61,20 +61,20 @@ namespace android::app
 		FragmentHostCallback(android::content::Context arg0, android::os::Handler arg1, jint arg2);
 		
 		// Methods
-		void onAttachFragment(android::app::Fragment arg0);
-		void onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		android::view::View onFindViewById(jint arg0);
-		JObject onGetHost();
-		android::view::LayoutInflater onGetLayoutInflater();
-		jint onGetWindowAnimations();
-		jboolean onHasView();
-		jboolean onHasWindowAnimations();
-		void onInvalidateOptionsMenu();
-		void onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2);
-		jboolean onShouldSaveFragmentState(android::app::Fragment arg0);
-		void onStartActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3);
-		void onStartIntentSenderFromFragment(android::app::Fragment arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7);
-		jboolean onUseFragmentManagerInflaterFactory();
+		void onAttachFragment(android::app::Fragment arg0) const;
+		void onDump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		android::view::View onFindViewById(jint arg0) const;
+		JObject onGetHost() const;
+		android::view::LayoutInflater onGetLayoutInflater() const;
+		jint onGetWindowAnimations() const;
+		jboolean onHasView() const;
+		jboolean onHasWindowAnimations() const;
+		void onInvalidateOptionsMenu() const;
+		void onRequestPermissionsFromFragment(android::app::Fragment arg0, JArray arg1, jint arg2) const;
+		jboolean onShouldSaveFragmentState(android::app::Fragment arg0) const;
+		void onStartActivityFromFragment(android::app::Fragment arg0, android::content::Intent arg1, jint arg2, android::os::Bundle arg3) const;
+		void onStartIntentSenderFromFragment(android::app::Fragment arg0, android::content::IntentSender arg1, jint arg2, android::content::Intent arg3, jint arg4, jint arg5, jint arg6, android::os::Bundle arg7) const;
+		jboolean onUseFragmentManagerInflaterFactory() const;
 	};
 } // namespace android::app
 

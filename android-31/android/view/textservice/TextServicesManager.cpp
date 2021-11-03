@@ -15,28 +15,28 @@ namespace android::view::textservice
 	// Constructors
 	
 	// Methods
-	android::view::textservice::SpellCheckerInfo TextServicesManager::getCurrentSpellCheckerInfo()
+	android::view::textservice::SpellCheckerInfo TextServicesManager::getCurrentSpellCheckerInfo() const
 	{
 		return callObjectMethod(
 			"getCurrentSpellCheckerInfo",
 			"()Landroid/view/textservice/SpellCheckerInfo;"
 		);
 	}
-	JObject TextServicesManager::getEnabledSpellCheckerInfos()
+	JObject TextServicesManager::getEnabledSpellCheckerInfos() const
 	{
 		return callObjectMethod(
 			"getEnabledSpellCheckerInfos",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean TextServicesManager::isSpellCheckerEnabled()
+	jboolean TextServicesManager::isSpellCheckerEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSpellCheckerEnabled",
 			"()Z"
 		);
 	}
-	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2)
+	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"newSpellCheckerSession",
@@ -46,7 +46,7 @@ namespace android::view::textservice
 			arg2.object()
 		);
 	}
-	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3)
+	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"newSpellCheckerSession",

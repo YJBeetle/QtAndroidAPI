@@ -26,7 +26,7 @@ namespace android::graphics
 		RegionIterator(android::graphics::Region arg0);
 		
 		// Methods
-		jboolean next(android::graphics::Rect arg0);
+		jboolean next(android::graphics::Rect arg0) const;
 	};
 } // namespace android::graphics
 

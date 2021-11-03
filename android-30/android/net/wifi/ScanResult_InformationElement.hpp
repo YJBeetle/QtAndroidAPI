@@ -22,9 +22,9 @@ namespace android::net::wifi
 		ScanResult_InformationElement(android::net::wifi::ScanResult_InformationElement &arg0);
 		
 		// Methods
-		java::nio::ByteBuffer getBytes();
-		jint getId();
-		jint getIdExt();
+		java::nio::ByteBuffer getBytes() const;
+		jint getId() const;
+		jint getIdExt() const;
 	};
 } // namespace android::net::wifi
 

@@ -181,7 +181,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	void MbmsDownloadSession::addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2)
+	void MbmsDownloadSession::addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2) const
 	{
 		callMethod<void>(
 			"addProgressListener",
@@ -191,7 +191,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void MbmsDownloadSession::addServiceAnnouncement(JByteArray arg0)
+	void MbmsDownloadSession::addServiceAnnouncement(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"addServiceAnnouncement",
@@ -199,7 +199,7 @@ namespace android::telephony
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MbmsDownloadSession::addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2)
+	void MbmsDownloadSession::addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2) const
 	{
 		callMethod<void>(
 			"addStatusListener",
@@ -209,7 +209,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void MbmsDownloadSession::cancelDownload(android::telephony::mbms::DownloadRequest arg0)
+	void MbmsDownloadSession::cancelDownload(android::telephony::mbms::DownloadRequest arg0) const
 	{
 		callMethod<void>(
 			"cancelDownload",
@@ -217,14 +217,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void MbmsDownloadSession::close()
+	void MbmsDownloadSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MbmsDownloadSession::download(android::telephony::mbms::DownloadRequest arg0)
+	void MbmsDownloadSession::download(android::telephony::mbms::DownloadRequest arg0) const
 	{
 		callMethod<void>(
 			"download",
@@ -232,21 +232,21 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	java::io::File MbmsDownloadSession::getTempFileRootDirectory()
+	java::io::File MbmsDownloadSession::getTempFileRootDirectory() const
 	{
 		return callObjectMethod(
 			"getTempFileRootDirectory",
 			"()Ljava/io/File;"
 		);
 	}
-	JObject MbmsDownloadSession::listPendingDownloads()
+	JObject MbmsDownloadSession::listPendingDownloads() const
 	{
 		return callObjectMethod(
 			"listPendingDownloads",
 			"()Ljava/util/List;"
 		);
 	}
-	void MbmsDownloadSession::removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1)
+	void MbmsDownloadSession::removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1) const
 	{
 		callMethod<void>(
 			"removeProgressListener",
@@ -255,7 +255,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void MbmsDownloadSession::removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1)
+	void MbmsDownloadSession::removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1) const
 	{
 		callMethod<void>(
 			"removeStatusListener",
@@ -264,7 +264,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void MbmsDownloadSession::requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1)
+	void MbmsDownloadSession::requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1) const
 	{
 		callMethod<void>(
 			"requestDownloadState",
@@ -273,7 +273,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void MbmsDownloadSession::requestUpdateFileServices(JObject arg0)
+	void MbmsDownloadSession::requestUpdateFileServices(JObject arg0) const
 	{
 		callMethod<void>(
 			"requestUpdateFileServices",
@@ -281,7 +281,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void MbmsDownloadSession::resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0)
+	void MbmsDownloadSession::resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0) const
 	{
 		callMethod<void>(
 			"resetDownloadKnowledge",
@@ -289,7 +289,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void MbmsDownloadSession::setTempFileRootDirectory(java::io::File arg0)
+	void MbmsDownloadSession::setTempFileRootDirectory(java::io::File arg0) const
 	{
 		callMethod<void>(
 			"setTempFileRootDirectory",

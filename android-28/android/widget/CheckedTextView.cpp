@@ -47,7 +47,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CheckedTextView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void CheckedTextView::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -56,49 +56,49 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString CheckedTextView::getAccessibilityClassName()
+	JString CheckedTextView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Drawable CheckedTextView::getCheckMarkDrawable()
+	android::graphics::drawable::Drawable CheckedTextView::getCheckMarkDrawable() const
 	{
 		return callObjectMethod(
 			"getCheckMarkDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::content::res::ColorStateList CheckedTextView::getCheckMarkTintList()
+	android::content::res::ColorStateList CheckedTextView::getCheckMarkTintList() const
 	{
 		return callObjectMethod(
 			"getCheckMarkTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode CheckedTextView::getCheckMarkTintMode()
+	android::graphics::PorterDuff_Mode CheckedTextView::getCheckMarkTintMode() const
 	{
 		return callObjectMethod(
 			"getCheckMarkTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	jboolean CheckedTextView::isChecked()
+	jboolean CheckedTextView::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	void CheckedTextView::jumpDrawablesToCurrentState()
+	void CheckedTextView::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void CheckedTextView::onRestoreInstanceState(JObject arg0)
+	void CheckedTextView::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -106,7 +106,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CheckedTextView::onRtlPropertiesChanged(jint arg0)
+	void CheckedTextView::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -114,14 +114,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject CheckedTextView::onSaveInstanceState()
+	JObject CheckedTextView::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	void CheckedTextView::setCheckMarkDrawable(android::graphics::drawable::Drawable arg0)
+	void CheckedTextView::setCheckMarkDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setCheckMarkDrawable",
@@ -129,7 +129,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CheckedTextView::setCheckMarkDrawable(jint arg0)
+	void CheckedTextView::setCheckMarkDrawable(jint arg0) const
 	{
 		callMethod<void>(
 			"setCheckMarkDrawable",
@@ -137,7 +137,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CheckedTextView::setCheckMarkTintList(android::content::res::ColorStateList arg0)
+	void CheckedTextView::setCheckMarkTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setCheckMarkTintList",
@@ -145,7 +145,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CheckedTextView::setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0)
+	void CheckedTextView::setCheckMarkTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setCheckMarkTintMode",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CheckedTextView::setChecked(jboolean arg0)
+	void CheckedTextView::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -161,7 +161,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CheckedTextView::setVisibility(jint arg0)
+	void CheckedTextView::setVisibility(jint arg0) const
 	{
 		callMethod<void>(
 			"setVisibility",
@@ -169,7 +169,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CheckedTextView::toggle()
+	void CheckedTextView::toggle() const
 	{
 		callMethod<void>(
 			"toggle",

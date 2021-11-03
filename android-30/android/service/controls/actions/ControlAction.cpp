@@ -105,21 +105,21 @@ namespace android::service::controls::actions
 			arg0
 		);
 	}
-	jint ControlAction::getActionType()
+	jint ControlAction::getActionType() const
 	{
 		return callMethod<jint>(
 			"getActionType",
 			"()I"
 		);
 	}
-	JString ControlAction::getChallengeValue()
+	JString ControlAction::getChallengeValue() const
 	{
 		return callObjectMethod(
 			"getChallengeValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ControlAction::getTemplateId()
+	JString ControlAction::getTemplateId() const
 	{
 		return callObjectMethod(
 			"getTemplateId",

@@ -83,16 +83,16 @@ namespace android::appwidget
 		AppWidgetProviderInfo(android::os::Parcel arg0);
 		
 		// Methods
-		android::appwidget::AppWidgetProviderInfo clone();
-		jint describeContents();
-		android::content::pm::ActivityInfo getActivityInfo();
-		android::os::UserHandle getProfile();
-		JString loadDescription(android::content::Context arg0);
-		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0, jint arg1);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadPreviewImage(android::content::Context arg0, jint arg1);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::appwidget::AppWidgetProviderInfo clone() const;
+		jint describeContents() const;
+		android::content::pm::ActivityInfo getActivityInfo() const;
+		android::os::UserHandle getProfile() const;
+		JString loadDescription(android::content::Context arg0) const;
+		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0, jint arg1) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadPreviewImage(android::content::Context arg0, jint arg1) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::appwidget
 

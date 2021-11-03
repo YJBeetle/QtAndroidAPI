@@ -28,7 +28,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(JString arg0)
+	android::app::VoiceInteractor_PickOptionRequest_Option VoiceInteractor_PickOptionRequest_Option::addSynonym(JString arg0) const
 	{
 		return callObjectMethod(
 			"addSynonym",
@@ -36,42 +36,42 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	jint VoiceInteractor_PickOptionRequest_Option::countSynonyms()
+	jint VoiceInteractor_PickOptionRequest_Option::countSynonyms() const
 	{
 		return callMethod<jint>(
 			"countSynonyms",
 			"()I"
 		);
 	}
-	jint VoiceInteractor_PickOptionRequest_Option::describeContents()
+	jint VoiceInteractor_PickOptionRequest_Option::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::Bundle VoiceInteractor_PickOptionRequest_Option::getExtras()
+	android::os::Bundle VoiceInteractor_PickOptionRequest_Option::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint VoiceInteractor_PickOptionRequest_Option::getIndex()
+	jint VoiceInteractor_PickOptionRequest_Option::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JString VoiceInteractor_PickOptionRequest_Option::getLabel()
+	JString VoiceInteractor_PickOptionRequest_Option::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0)
+	JString VoiceInteractor_PickOptionRequest_Option::getSynonymAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSynonymAt",
@@ -79,7 +79,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void VoiceInteractor_PickOptionRequest_Option::setExtras(android::os::Bundle arg0)
+	void VoiceInteractor_PickOptionRequest_Option::setExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -87,7 +87,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void VoiceInteractor_PickOptionRequest_Option::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VoiceInteractor_PickOptionRequest_Option::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

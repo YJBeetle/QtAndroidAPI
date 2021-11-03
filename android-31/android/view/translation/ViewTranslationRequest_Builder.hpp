@@ -32,8 +32,8 @@ namespace android::view::translation
 		ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0, jlong arg1);
 		
 		// Methods
-		android::view::translation::ViewTranslationRequest build();
-		android::view::translation::ViewTranslationRequest_Builder setValue(JString arg0, android::view::translation::TranslationRequestValue arg1);
+		android::view::translation::ViewTranslationRequest build() const;
+		android::view::translation::ViewTranslationRequest_Builder setValue(JString arg0, android::view::translation::TranslationRequestValue arg1) const;
 	};
 } // namespace android::view::translation
 

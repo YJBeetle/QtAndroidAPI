@@ -28,7 +28,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void AccessControlContext::checkPermission(java::security::Permission arg0)
+	void AccessControlContext::checkPermission(java::security::Permission arg0) const
 	{
 		callMethod<void>(
 			"checkPermission",
@@ -36,7 +36,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jboolean AccessControlContext::equals(JObject arg0)
+	jboolean AccessControlContext::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,14 +44,14 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JObject AccessControlContext::getDomainCombiner()
+	JObject AccessControlContext::getDomainCombiner() const
 	{
 		return callObjectMethod(
 			"getDomainCombiner",
 			"()Ljava/security/DomainCombiner;"
 		);
 	}
-	jint AccessControlContext::hashCode()
+	jint AccessControlContext::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

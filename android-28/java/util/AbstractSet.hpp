@@ -18,9 +18,9 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jboolean removeAll(JObject arg0);
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jboolean removeAll(JObject arg0) const;
 	};
 } // namespace java::util
 

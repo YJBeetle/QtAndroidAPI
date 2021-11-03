@@ -23,11 +23,11 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getAsuLevel();
-		jint getDbm();
-		jint getLevel();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getAsuLevel() const;
+		jint getDbm() const;
+		jint getLevel() const;
+		jint hashCode() const;
 	};
 } // namespace android::telephony
 

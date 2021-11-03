@@ -57,12 +57,12 @@ namespace android::service::notification
 		static android::net::Uri_Builder newId(android::content::Context arg0);
 		static JString relevanceToString(jint arg0);
 		static JString stateToString(jint arg0);
-		android::service::notification::Condition copy();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::service::notification::Condition copy() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::notification
 

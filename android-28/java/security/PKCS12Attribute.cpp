@@ -28,7 +28,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jboolean PKCS12Attribute::equals(JObject arg0)
+	jboolean PKCS12Attribute::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,35 +36,35 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray PKCS12Attribute::getEncoded()
+	JByteArray PKCS12Attribute::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString PKCS12Attribute::getName()
+	JString PKCS12Attribute::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PKCS12Attribute::getValue()
+	JString PKCS12Attribute::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PKCS12Attribute::hashCode()
+	jint PKCS12Attribute::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PKCS12Attribute::toString()
+	JString PKCS12Attribute::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -26,7 +26,7 @@ namespace android::media
 		MediaSync_Callback();
 		
 		// Methods
-		void onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2);
+		void onAudioBufferConsumed(android::media::MediaSync arg0, java::nio::ByteBuffer arg1, jint arg2) const;
 	};
 } // namespace android::media
 

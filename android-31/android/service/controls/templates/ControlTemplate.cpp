@@ -83,14 +83,14 @@ namespace android::service::controls::templates
 			"()Landroid/service/controls/templates/ControlTemplate;"
 		);
 	}
-	JString ControlTemplate::getTemplateId()
+	JString ControlTemplate::getTemplateId() const
 	{
 		return callObjectMethod(
 			"getTemplateId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ControlTemplate::getTemplateType()
+	jint ControlTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",

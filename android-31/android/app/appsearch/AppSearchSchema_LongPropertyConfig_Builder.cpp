@@ -18,14 +18,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchSchema_LongPropertyConfig AppSearchSchema_LongPropertyConfig_Builder::build()
+	android::app::appsearch::AppSearchSchema_LongPropertyConfig AppSearchSchema_LongPropertyConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/AppSearchSchema$LongPropertyConfig;"
 		);
 	}
-	android::app::appsearch::AppSearchSchema_LongPropertyConfig_Builder AppSearchSchema_LongPropertyConfig_Builder::setCardinality(jint arg0)
+	android::app::appsearch::AppSearchSchema_LongPropertyConfig_Builder AppSearchSchema_LongPropertyConfig_Builder::setCardinality(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCardinality",

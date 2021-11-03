@@ -74,7 +74,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	void PreferenceActivity::addPreferencesFromIntent(android::content::Intent arg0)
+	void PreferenceActivity::addPreferencesFromIntent(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"addPreferencesFromIntent",
@@ -82,7 +82,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::addPreferencesFromResource(jint arg0)
+	void PreferenceActivity::addPreferencesFromResource(jint arg0) const
 	{
 		callMethod<void>(
 			"addPreferencesFromResource",
@@ -90,7 +90,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	android::preference::Preference PreferenceActivity::findPreference(JString arg0)
+	android::preference::Preference PreferenceActivity::findPreference(JString arg0) const
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -98,7 +98,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void PreferenceActivity::finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2)
+	void PreferenceActivity::finishPreferencePanel(android::app::Fragment arg0, jint arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"finishPreferencePanel",
@@ -108,42 +108,42 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	android::preference::PreferenceManager PreferenceActivity::getPreferenceManager()
+	android::preference::PreferenceManager PreferenceActivity::getPreferenceManager() const
 	{
 		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	android::preference::PreferenceScreen PreferenceActivity::getPreferenceScreen()
+	android::preference::PreferenceScreen PreferenceActivity::getPreferenceScreen() const
 	{
 		return callObjectMethod(
 			"getPreferenceScreen",
 			"()Landroid/preference/PreferenceScreen;"
 		);
 	}
-	jboolean PreferenceActivity::hasHeaders()
+	jboolean PreferenceActivity::hasHeaders() const
 	{
 		return callMethod<jboolean>(
 			"hasHeaders",
 			"()Z"
 		);
 	}
-	void PreferenceActivity::invalidateHeaders()
+	void PreferenceActivity::invalidateHeaders() const
 	{
 		callMethod<void>(
 			"invalidateHeaders",
 			"()V"
 		);
 	}
-	jboolean PreferenceActivity::isMultiPane()
+	jboolean PreferenceActivity::isMultiPane() const
 	{
 		return callMethod<jboolean>(
 			"isMultiPane",
 			"()Z"
 		);
 	}
-	void PreferenceActivity::loadHeadersFromResource(jint arg0, JObject arg1)
+	void PreferenceActivity::loadHeadersFromResource(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"loadHeadersFromResource",
@@ -152,14 +152,14 @@ namespace android::preference
 			arg1.object()
 		);
 	}
-	void PreferenceActivity::onBackPressed()
+	void PreferenceActivity::onBackPressed() const
 	{
 		callMethod<void>(
 			"onBackPressed",
 			"()V"
 		);
 	}
-	void PreferenceActivity::onBuildHeaders(JObject arg0)
+	void PreferenceActivity::onBuildHeaders(JObject arg0) const
 	{
 		callMethod<void>(
 			"onBuildHeaders",
@@ -167,7 +167,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::content::Intent PreferenceActivity::onBuildStartFragmentIntent(JString arg0, android::os::Bundle arg1, jint arg2, jint arg3)
+	android::content::Intent PreferenceActivity::onBuildStartFragmentIntent(JString arg0, android::os::Bundle arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"onBuildStartFragmentIntent",
@@ -178,28 +178,28 @@ namespace android::preference
 			arg3
 		);
 	}
-	void PreferenceActivity::onContentChanged()
+	void PreferenceActivity::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	android::preference::PreferenceActivity_Header PreferenceActivity::onGetInitialHeader()
+	android::preference::PreferenceActivity_Header PreferenceActivity::onGetInitialHeader() const
 	{
 		return callObjectMethod(
 			"onGetInitialHeader",
 			"()Landroid/preference/PreferenceActivity$Header;"
 		);
 	}
-	android::preference::PreferenceActivity_Header PreferenceActivity::onGetNewHeader()
+	android::preference::PreferenceActivity_Header PreferenceActivity::onGetNewHeader() const
 	{
 		return callObjectMethod(
 			"onGetNewHeader",
 			"()Landroid/preference/PreferenceActivity$Header;"
 		);
 	}
-	void PreferenceActivity::onHeaderClick(android::preference::PreferenceActivity_Header arg0, jint arg1)
+	void PreferenceActivity::onHeaderClick(android::preference::PreferenceActivity_Header arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onHeaderClick",
@@ -208,21 +208,21 @@ namespace android::preference
 			arg1
 		);
 	}
-	jboolean PreferenceActivity::onIsHidingHeaders()
+	jboolean PreferenceActivity::onIsHidingHeaders() const
 	{
 		return callMethod<jboolean>(
 			"onIsHidingHeaders",
 			"()Z"
 		);
 	}
-	jboolean PreferenceActivity::onIsMultiPane()
+	jboolean PreferenceActivity::onIsMultiPane() const
 	{
 		return callMethod<jboolean>(
 			"onIsMultiPane",
 			"()Z"
 		);
 	}
-	jboolean PreferenceActivity::onOptionsItemSelected(JObject arg0)
+	jboolean PreferenceActivity::onOptionsItemSelected(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -230,7 +230,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	jboolean PreferenceActivity::onPreferenceStartFragment(android::preference::PreferenceFragment arg0, android::preference::Preference arg1)
+	jboolean PreferenceActivity::onPreferenceStartFragment(android::preference::PreferenceFragment arg0, android::preference::Preference arg1) const
 	{
 		return callMethod<jboolean>(
 			"onPreferenceStartFragment",
@@ -239,7 +239,7 @@ namespace android::preference
 			arg1.object()
 		);
 	}
-	jboolean PreferenceActivity::onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1)
+	jboolean PreferenceActivity::onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1) const
 	{
 		return callMethod<jboolean>(
 			"onPreferenceTreeClick",
@@ -248,7 +248,7 @@ namespace android::preference
 			arg1.object()
 		);
 	}
-	void PreferenceActivity::setListFooter(android::view::View arg0)
+	void PreferenceActivity::setListFooter(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setListFooter",
@@ -256,7 +256,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::setParentTitle(JString arg0, JString arg1, JObject arg2)
+	void PreferenceActivity::setParentTitle(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setParentTitle",
@@ -266,7 +266,7 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	void PreferenceActivity::setPreferenceScreen(android::preference::PreferenceScreen arg0)
+	void PreferenceActivity::setPreferenceScreen(android::preference::PreferenceScreen arg0) const
 	{
 		callMethod<void>(
 			"setPreferenceScreen",
@@ -274,7 +274,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::showBreadCrumbs(JString arg0, JString arg1)
+	void PreferenceActivity::showBreadCrumbs(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"showBreadCrumbs",
@@ -283,7 +283,7 @@ namespace android::preference
 			arg1.object<jstring>()
 		);
 	}
-	void PreferenceActivity::startPreferenceFragment(android::app::Fragment arg0, jboolean arg1)
+	void PreferenceActivity::startPreferenceFragment(android::app::Fragment arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"startPreferenceFragment",
@@ -292,7 +292,7 @@ namespace android::preference
 			arg1
 		);
 	}
-	void PreferenceActivity::startPreferencePanel(JString arg0, android::os::Bundle arg1, jint arg2, JString arg3, android::app::Fragment arg4, jint arg5)
+	void PreferenceActivity::startPreferencePanel(JString arg0, android::os::Bundle arg1, jint arg2, JString arg3, android::app::Fragment arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"startPreferencePanel",
@@ -305,7 +305,7 @@ namespace android::preference
 			arg5
 		);
 	}
-	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3)
+	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"startWithFragment",
@@ -316,7 +316,7 @@ namespace android::preference
 			arg3
 		);
 	}
-	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5)
+	void PreferenceActivity::startWithFragment(JString arg0, android::os::Bundle arg1, android::app::Fragment arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"startWithFragment",
@@ -329,7 +329,7 @@ namespace android::preference
 			arg5
 		);
 	}
-	void PreferenceActivity::switchToHeader(android::preference::PreferenceActivity_Header arg0)
+	void PreferenceActivity::switchToHeader(android::preference::PreferenceActivity_Header arg0) const
 	{
 		callMethod<void>(
 			"switchToHeader",
@@ -337,7 +337,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::switchToHeader(JString arg0, android::os::Bundle arg1)
+	void PreferenceActivity::switchToHeader(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"switchToHeader",

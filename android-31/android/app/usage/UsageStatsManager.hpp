@@ -32,14 +32,14 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		jint getAppStandbyBucket();
-		jboolean isAppInactive(JString arg0);
-		JObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
-		JObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
-		JObject queryEventStats(jint arg0, jlong arg1, jlong arg2);
-		android::app::usage::UsageEvents queryEvents(jlong arg0, jlong arg1);
-		android::app::usage::UsageEvents queryEventsForSelf(jlong arg0, jlong arg1);
-		JObject queryUsageStats(jint arg0, jlong arg1, jlong arg2);
+		jint getAppStandbyBucket() const;
+		jboolean isAppInactive(JString arg0) const;
+		JObject queryAndAggregateUsageStats(jlong arg0, jlong arg1) const;
+		JObject queryConfigurations(jint arg0, jlong arg1, jlong arg2) const;
+		JObject queryEventStats(jint arg0, jlong arg1, jlong arg2) const;
+		android::app::usage::UsageEvents queryEvents(jlong arg0, jlong arg1) const;
+		android::app::usage::UsageEvents queryEventsForSelf(jlong arg0, jlong arg1) const;
+		JObject queryUsageStats(jint arg0, jlong arg1, jlong arg2) const;
 	};
 } // namespace android::app::usage
 

@@ -16,7 +16,7 @@ namespace android::hardware
 		// Constructors
 		
 		// Methods
-		jboolean supportsSensorToggle(jint arg0);
+		jboolean supportsSensorToggle(jint arg0) const;
 	};
 } // namespace android::hardware
 

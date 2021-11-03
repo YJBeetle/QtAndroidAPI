@@ -61,9 +61,9 @@ namespace android::view
 		static android::view::PointerIcon create(android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
 		static android::view::PointerIcon getSystemIcon(android::content::Context arg0, jint arg1);
 		static android::view::PointerIcon load(android::content::res::Resources arg0, jint arg1);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

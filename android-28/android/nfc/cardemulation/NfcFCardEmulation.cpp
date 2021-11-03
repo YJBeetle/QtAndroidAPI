@@ -23,7 +23,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean NfcFCardEmulation::disableService(android::app::Activity arg0)
+	jboolean NfcFCardEmulation::disableService(android::app::Activity arg0) const
 	{
 		return callMethod<jboolean>(
 			"disableService",
@@ -31,7 +31,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean NfcFCardEmulation::enableService(android::app::Activity arg0, android::content::ComponentName arg1)
+	jboolean NfcFCardEmulation::enableService(android::app::Activity arg0, android::content::ComponentName arg1) const
 	{
 		return callMethod<jboolean>(
 			"enableService",
@@ -40,7 +40,7 @@ namespace android::nfc::cardemulation
 			arg1.object()
 		);
 	}
-	JString NfcFCardEmulation::getNfcid2ForService(android::content::ComponentName arg0)
+	JString NfcFCardEmulation::getNfcid2ForService(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getNfcid2ForService",
@@ -48,7 +48,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	JString NfcFCardEmulation::getSystemCodeForService(android::content::ComponentName arg0)
+	JString NfcFCardEmulation::getSystemCodeForService(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getSystemCodeForService",
@@ -56,7 +56,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean NfcFCardEmulation::registerSystemCodeForService(android::content::ComponentName arg0, JString arg1)
+	jboolean NfcFCardEmulation::registerSystemCodeForService(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerSystemCodeForService",
@@ -65,7 +65,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean NfcFCardEmulation::setNfcid2ForService(android::content::ComponentName arg0, JString arg1)
+	jboolean NfcFCardEmulation::setNfcid2ForService(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"setNfcid2ForService",
@@ -74,7 +74,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean NfcFCardEmulation::unregisterSystemCodeForService(android::content::ComponentName arg0)
+	jboolean NfcFCardEmulation::unregisterSystemCodeForService(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"unregisterSystemCodeForService",

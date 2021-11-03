@@ -19,7 +19,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void RemoteConference_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1)
+	void RemoteConference_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConference arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onConferenceableConnectionsChanged",
@@ -28,7 +28,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference_Callback::onConnectionAdded(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1)
+	void RemoteConference_Callback::onConnectionAdded(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const
 	{
 		callMethod<void>(
 			"onConnectionAdded",
@@ -37,7 +37,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference_Callback::onConnectionCapabilitiesChanged(android::telecom::RemoteConference arg0, jint arg1)
+	void RemoteConference_Callback::onConnectionCapabilitiesChanged(android::telecom::RemoteConference arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onConnectionCapabilitiesChanged",
@@ -46,7 +46,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConference_Callback::onConnectionPropertiesChanged(android::telecom::RemoteConference arg0, jint arg1)
+	void RemoteConference_Callback::onConnectionPropertiesChanged(android::telecom::RemoteConference arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onConnectionPropertiesChanged",
@@ -55,7 +55,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConference_Callback::onConnectionRemoved(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1)
+	void RemoteConference_Callback::onConnectionRemoved(android::telecom::RemoteConference arg0, android::telecom::RemoteConnection arg1) const
 	{
 		callMethod<void>(
 			"onConnectionRemoved",
@@ -64,7 +64,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference_Callback::onDestroyed(android::telecom::RemoteConference arg0)
+	void RemoteConference_Callback::onDestroyed(android::telecom::RemoteConference arg0) const
 	{
 		callMethod<void>(
 			"onDestroyed",
@@ -72,7 +72,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConference_Callback::onDisconnected(android::telecom::RemoteConference arg0, android::telecom::DisconnectCause arg1)
+	void RemoteConference_Callback::onDisconnected(android::telecom::RemoteConference arg0, android::telecom::DisconnectCause arg1) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -81,7 +81,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference_Callback::onExtrasChanged(android::telecom::RemoteConference arg0, android::os::Bundle arg1)
+	void RemoteConference_Callback::onExtrasChanged(android::telecom::RemoteConference arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onExtrasChanged",
@@ -90,7 +90,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConference_Callback::onStateChanged(android::telecom::RemoteConference arg0, jint arg1, jint arg2)
+	void RemoteConference_Callback::onStateChanged(android::telecom::RemoteConference arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onStateChanged",

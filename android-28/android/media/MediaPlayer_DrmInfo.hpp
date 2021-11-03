@@ -22,8 +22,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JObject getPssh();
-		JArray getSupportedSchemes();
+		JObject getPssh() const;
+		JArray getSupportedSchemes() const;
 	};
 } // namespace android::media
 

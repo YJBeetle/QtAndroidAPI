@@ -25,18 +25,18 @@ namespace android::icu::text
 		ConstrainedFieldPosition();
 		
 		// Methods
-		void constrainClass(JClass arg0);
-		void constrainField(java::text::Format_Field arg0);
-		java::text::Format_Field getField();
-		JObject getFieldValue();
-		jlong getInt64IterationContext();
-		jint getLimit();
-		jint getStart();
-		jboolean matchesField(java::text::Format_Field arg0, JObject arg1);
-		void reset();
-		void setInt64IterationContext(jlong arg0);
-		void setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3);
-		JString toString();
+		void constrainClass(JClass arg0) const;
+		void constrainField(java::text::Format_Field arg0) const;
+		java::text::Format_Field getField() const;
+		JObject getFieldValue() const;
+		jlong getInt64IterationContext() const;
+		jint getLimit() const;
+		jint getStart() const;
+		jboolean matchesField(java::text::Format_Field arg0, JObject arg1) const;
+		void reset() const;
+		void setInt64IterationContext(jlong arg0) const;
+		void setState(java::text::Format_Field arg0, JObject arg1, jint arg2, jint arg3) const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

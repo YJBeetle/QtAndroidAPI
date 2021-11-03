@@ -23,7 +23,7 @@ namespace org::xml::sax::ext
 		) {}
 	
 	// Methods
-	void Attributes2Impl::addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+	void Attributes2Impl::addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"addAttribute",
@@ -35,7 +35,7 @@ namespace org::xml::sax::ext
 			arg4.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(jint arg0)
+	jboolean Attributes2Impl::isDeclared(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDeclared",
@@ -43,7 +43,7 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(JString arg0)
+	jboolean Attributes2Impl::isDeclared(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDeclared",
@@ -51,7 +51,7 @@ namespace org::xml::sax::ext
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isDeclared(JString arg0, JString arg1)
+	jboolean Attributes2Impl::isDeclared(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isDeclared",
@@ -60,7 +60,7 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(jint arg0)
+	jboolean Attributes2Impl::isSpecified(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSpecified",
@@ -68,7 +68,7 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(JString arg0)
+	jboolean Attributes2Impl::isSpecified(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSpecified",
@@ -76,7 +76,7 @@ namespace org::xml::sax::ext
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Attributes2Impl::isSpecified(JString arg0, JString arg1)
+	jboolean Attributes2Impl::isSpecified(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isSpecified",
@@ -85,7 +85,7 @@ namespace org::xml::sax::ext
 			arg1.object<jstring>()
 		);
 	}
-	void Attributes2Impl::removeAttribute(jint arg0)
+	void Attributes2Impl::removeAttribute(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAttribute",
@@ -93,7 +93,7 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	void Attributes2Impl::setAttributes(JObject arg0)
+	void Attributes2Impl::setAttributes(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAttributes",
@@ -101,7 +101,7 @@ namespace org::xml::sax::ext
 			arg0.object()
 		);
 	}
-	void Attributes2Impl::setDeclared(jint arg0, jboolean arg1)
+	void Attributes2Impl::setDeclared(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setDeclared",
@@ -110,7 +110,7 @@ namespace org::xml::sax::ext
 			arg1
 		);
 	}
-	void Attributes2Impl::setSpecified(jint arg0, jboolean arg1)
+	void Attributes2Impl::setSpecified(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setSpecified",

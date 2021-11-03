@@ -20,7 +20,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jboolean DateIntervalInfo_PatternInfo::equals(JObject arg0)
+	jboolean DateIntervalInfo_PatternInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,35 +28,35 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate()
+	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate() const
 	{
 		return callMethod<jboolean>(
 			"firstDateInPtnIsLaterDate",
 			"()Z"
 		);
 	}
-	JString DateIntervalInfo_PatternInfo::getFirstPart()
+	JString DateIntervalInfo_PatternInfo::getFirstPart() const
 	{
 		return callObjectMethod(
 			"getFirstPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DateIntervalInfo_PatternInfo::getSecondPart()
+	JString DateIntervalInfo_PatternInfo::getSecondPart() const
 	{
 		return callObjectMethod(
 			"getSecondPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DateIntervalInfo_PatternInfo::hashCode()
+	jint DateIntervalInfo_PatternInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DateIntervalInfo_PatternInfo::toString()
+	JString DateIntervalInfo_PatternInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

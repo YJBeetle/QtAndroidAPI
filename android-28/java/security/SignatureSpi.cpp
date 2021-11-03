@@ -21,7 +21,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject SignatureSpi::clone()
+	JObject SignatureSpi::clone() const
 	{
 		return callObjectMethod(
 			"clone",

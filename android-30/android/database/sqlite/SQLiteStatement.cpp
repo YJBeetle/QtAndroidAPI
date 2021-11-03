@@ -12,49 +12,49 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	void SQLiteStatement::execute()
+	void SQLiteStatement::execute() const
 	{
 		callMethod<void>(
 			"execute",
 			"()V"
 		);
 	}
-	jlong SQLiteStatement::executeInsert()
+	jlong SQLiteStatement::executeInsert() const
 	{
 		return callMethod<jlong>(
 			"executeInsert",
 			"()J"
 		);
 	}
-	jint SQLiteStatement::executeUpdateDelete()
+	jint SQLiteStatement::executeUpdateDelete() const
 	{
 		return callMethod<jint>(
 			"executeUpdateDelete",
 			"()I"
 		);
 	}
-	android::os::ParcelFileDescriptor SQLiteStatement::simpleQueryForBlobFileDescriptor()
+	android::os::ParcelFileDescriptor SQLiteStatement::simpleQueryForBlobFileDescriptor() const
 	{
 		return callObjectMethod(
 			"simpleQueryForBlobFileDescriptor",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	jlong SQLiteStatement::simpleQueryForLong()
+	jlong SQLiteStatement::simpleQueryForLong() const
 	{
 		return callMethod<jlong>(
 			"simpleQueryForLong",
 			"()J"
 		);
 	}
-	JString SQLiteStatement::simpleQueryForString()
+	JString SQLiteStatement::simpleQueryForString() const
 	{
 		return callObjectMethod(
 			"simpleQueryForString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SQLiteStatement::toString()
+	JString SQLiteStatement::toString() const
 	{
 		return callObjectMethod(
 			"toString",

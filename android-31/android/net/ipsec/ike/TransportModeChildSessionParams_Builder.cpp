@@ -24,7 +24,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0)
+	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addChildSaProposal(android::net::ipsec::ike::ChildSaProposal arg0) const
 	{
 		return callObjectMethod(
 			"addChildSaProposal",
@@ -32,7 +32,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0)
+	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addInboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const
 	{
 		return callObjectMethod(
 			"addInboundTrafficSelectors",
@@ -40,7 +40,7 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0)
+	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::addOutboundTrafficSelectors(android::net::ipsec::ike::IkeTrafficSelector arg0) const
 	{
 		return callObjectMethod(
 			"addOutboundTrafficSelectors",
@@ -48,14 +48,14 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	android::net::ipsec::ike::TransportModeChildSessionParams TransportModeChildSessionParams_Builder::build()
+	android::net::ipsec::ike::TransportModeChildSessionParams TransportModeChildSessionParams_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/ipsec/ike/TransportModeChildSessionParams;"
 		);
 	}
-	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1)
+	android::net::ipsec::ike::TransportModeChildSessionParams_Builder TransportModeChildSessionParams_Builder::setLifetimeSeconds(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setLifetimeSeconds",

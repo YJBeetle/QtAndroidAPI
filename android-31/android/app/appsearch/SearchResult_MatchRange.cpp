@@ -19,7 +19,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	jboolean SearchResult_MatchRange::equals(JObject arg0)
+	jboolean SearchResult_MatchRange::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,28 +27,28 @@ namespace android::app::appsearch
 			arg0.object<jobject>()
 		);
 	}
-	jint SearchResult_MatchRange::getEnd()
+	jint SearchResult_MatchRange::getEnd() const
 	{
 		return callMethod<jint>(
 			"getEnd",
 			"()I"
 		);
 	}
-	jint SearchResult_MatchRange::getStart()
+	jint SearchResult_MatchRange::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	jint SearchResult_MatchRange::hashCode()
+	jint SearchResult_MatchRange::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SearchResult_MatchRange::toString()
+	JString SearchResult_MatchRange::toString() const
 	{
 		return callObjectMethod(
 			"toString",

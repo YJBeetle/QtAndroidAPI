@@ -18,14 +18,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::AudioPresentation AudioPresentation_Builder::build()
+	android::media::AudioPresentation AudioPresentation_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioPresentation;"
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasAudioDescription(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasAudioDescription(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasAudioDescription",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasDialogueEnhancement",
@@ -41,7 +41,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasSpokenSubtitles(jboolean arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setHasSpokenSubtitles(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasSpokenSubtitles",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLabels(JObject arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLabels(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setLabels",
@@ -57,7 +57,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLocale(android::icu::util::ULocale arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLocale(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"setLocale",
@@ -65,7 +65,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setMasteringIndication(jint arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setMasteringIndication(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMasteringIndication",
@@ -73,7 +73,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setProgramId(jint arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setProgramId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setProgramId",

@@ -29,7 +29,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	JObject Range::clamp(JObject arg0)
+	JObject Range::clamp(JObject arg0) const
 	{
 		return callObjectMethod(
 			"clamp",
@@ -37,7 +37,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean Range::contains(android::util::Range arg0)
+	jboolean Range::contains(android::util::Range arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -45,7 +45,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean Range::contains(JObject arg0)
+	jboolean Range::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -53,7 +53,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean Range::equals(JObject arg0)
+	jboolean Range::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -61,7 +61,7 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	android::util::Range Range::extend(android::util::Range arg0)
+	android::util::Range Range::extend(android::util::Range arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -69,7 +69,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::extend(JObject arg0)
+	android::util::Range Range::extend(JObject arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -77,7 +77,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::extend(JObject arg0, JObject arg1)
+	android::util::Range Range::extend(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -86,28 +86,28 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	JObject Range::getLower()
+	JObject Range::getLower() const
 	{
 		return callObjectMethod(
 			"getLower",
 			"()Ljava/lang/Comparable;"
 		);
 	}
-	JObject Range::getUpper()
+	JObject Range::getUpper() const
 	{
 		return callObjectMethod(
 			"getUpper",
 			"()Ljava/lang/Comparable;"
 		);
 	}
-	jint Range::hashCode()
+	jint Range::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::util::Range Range::intersect(android::util::Range arg0)
+	android::util::Range Range::intersect(android::util::Range arg0) const
 	{
 		return callObjectMethod(
 			"intersect",
@@ -115,7 +115,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::intersect(JObject arg0, JObject arg1)
+	android::util::Range Range::intersect(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"intersect",
@@ -124,7 +124,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	JString Range::toString()
+	JString Range::toString() const
 	{
 		return callObjectMethod(
 			"toString",

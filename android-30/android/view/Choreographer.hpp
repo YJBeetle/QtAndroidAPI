@@ -17,9 +17,9 @@ namespace android::view
 		
 		// Methods
 		static android::view::Choreographer getInstance();
-		void postFrameCallback(JObject arg0);
-		void postFrameCallbackDelayed(JObject arg0, jlong arg1);
-		void removeFrameCallback(JObject arg0);
+		void postFrameCallback(JObject arg0) const;
+		void postFrameCallbackDelayed(JObject arg0, jlong arg1) const;
+		void removeFrameCallback(JObject arg0) const;
 	};
 } // namespace android::view
 

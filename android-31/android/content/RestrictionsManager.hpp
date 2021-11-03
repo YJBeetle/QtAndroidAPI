@@ -61,12 +61,12 @@ namespace android::content
 		
 		// Methods
 		static android::os::Bundle convertRestrictionsToBundle(JObject arg0);
-		android::content::Intent createLocalApprovalIntent();
-		android::os::Bundle getApplicationRestrictions();
-		JObject getManifestRestrictions(JString arg0);
-		jboolean hasRestrictionsProvider();
-		void notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1);
-		void requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2);
+		android::content::Intent createLocalApprovalIntent() const;
+		android::os::Bundle getApplicationRestrictions() const;
+		JObject getManifestRestrictions(JString arg0) const;
+		jboolean hasRestrictionsProvider() const;
+		void notifyPermissionResponse(JString arg0, android::os::PersistableBundle arg1) const;
+		void requestPermission(JString arg0, JString arg1, android::os::PersistableBundle arg2) const;
 	};
 } // namespace android::content
 

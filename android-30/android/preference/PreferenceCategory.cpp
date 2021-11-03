@@ -42,14 +42,14 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jboolean PreferenceCategory::isEnabled()
+	jboolean PreferenceCategory::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean PreferenceCategory::shouldDisableDependents()
+	jboolean PreferenceCategory::shouldDisableDependents() const
 	{
 		return callMethod<jboolean>(
 			"shouldDisableDependents",

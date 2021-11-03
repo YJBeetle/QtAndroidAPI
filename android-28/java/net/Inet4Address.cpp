@@ -13,7 +13,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	jboolean Inet4Address::equals(JObject arg0)
+	jboolean Inet4Address::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -21,91 +21,91 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray Inet4Address::getAddress()
+	JByteArray Inet4Address::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		);
 	}
-	JString Inet4Address::getHostAddress()
+	JString Inet4Address::getHostAddress() const
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Inet4Address::hashCode()
+	jint Inet4Address::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Inet4Address::isAnyLocalAddress()
+	jboolean Inet4Address::isAnyLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isLinkLocalAddress()
+	jboolean Inet4Address::isLinkLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isLoopbackAddress()
+	jboolean Inet4Address::isLoopbackAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCGlobal()
+	jboolean Inet4Address::isMCGlobal() const
 	{
 		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCLinkLocal()
+	jboolean Inet4Address::isMCLinkLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCNodeLocal()
+	jboolean Inet4Address::isMCNodeLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCOrgLocal()
+	jboolean Inet4Address::isMCOrgLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCSiteLocal()
+	jboolean Inet4Address::isMCSiteLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMulticastAddress()
+	jboolean Inet4Address::isMulticastAddress() const
 	{
 		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isSiteLocalAddress()
+	jboolean Inet4Address::isSiteLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isSiteLocalAddress",

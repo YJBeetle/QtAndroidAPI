@@ -19,9 +19,9 @@ namespace java::util
 		FormatFlagsConversionMismatchException(JString arg0, jchar arg1);
 		
 		// Methods
-		jchar getConversion();
-		JString getFlags();
-		JString getMessage();
+		jchar getConversion() const;
+		JString getFlags() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

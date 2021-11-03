@@ -35,9 +35,9 @@ namespace android::transition
 		static void endTransitions(android::view::ViewGroup arg0);
 		static void go(android::transition::Scene arg0);
 		static void go(android::transition::Scene arg0, android::transition::Transition arg1);
-		void setTransition(android::transition::Scene arg0, android::transition::Transition arg1);
-		void setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2);
-		void transitionTo(android::transition::Scene arg0);
+		void setTransition(android::transition::Scene arg0, android::transition::Transition arg1) const;
+		void setTransition(android::transition::Scene arg0, android::transition::Scene arg1, android::transition::Transition arg2) const;
+		void transitionTo(android::transition::Scene arg0) const;
 	};
 } // namespace android::transition
 

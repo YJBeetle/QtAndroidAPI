@@ -68,7 +68,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::FragmentTransaction FragmentTransaction::add(android::app::Fragment arg0, JString arg1)
+	android::app::FragmentTransaction FragmentTransaction::add(android::app::Fragment arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"add",
@@ -77,7 +77,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1)
+	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1) const
 	{
 		return callObjectMethod(
 			"add",
@@ -86,7 +86,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1, JString arg2)
+	android::app::FragmentTransaction FragmentTransaction::add(jint arg0, android::app::Fragment arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"add",
@@ -96,7 +96,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::addSharedElement(android::view::View arg0, JString arg1)
+	android::app::FragmentTransaction FragmentTransaction::addSharedElement(android::view::View arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"addSharedElement",
@@ -105,7 +105,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::addToBackStack(JString arg0)
+	android::app::FragmentTransaction FragmentTransaction::addToBackStack(JString arg0) const
 	{
 		return callObjectMethod(
 			"addToBackStack",
@@ -113,7 +113,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::attach(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::attach(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"attach",
@@ -121,35 +121,35 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jint FragmentTransaction::commit()
+	jint FragmentTransaction::commit() const
 	{
 		return callMethod<jint>(
 			"commit",
 			"()I"
 		);
 	}
-	jint FragmentTransaction::commitAllowingStateLoss()
+	jint FragmentTransaction::commitAllowingStateLoss() const
 	{
 		return callMethod<jint>(
 			"commitAllowingStateLoss",
 			"()I"
 		);
 	}
-	void FragmentTransaction::commitNow()
+	void FragmentTransaction::commitNow() const
 	{
 		callMethod<void>(
 			"commitNow",
 			"()V"
 		);
 	}
-	void FragmentTransaction::commitNowAllowingStateLoss()
+	void FragmentTransaction::commitNowAllowingStateLoss() const
 	{
 		callMethod<void>(
 			"commitNowAllowingStateLoss",
 			"()V"
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::detach(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::detach(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"detach",
@@ -157,14 +157,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::disallowAddToBackStack()
+	android::app::FragmentTransaction FragmentTransaction::disallowAddToBackStack() const
 	{
 		return callObjectMethod(
 			"disallowAddToBackStack",
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::hide(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::hide(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"hide",
@@ -172,21 +172,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean FragmentTransaction::isAddToBackStackAllowed()
+	jboolean FragmentTransaction::isAddToBackStackAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isAddToBackStackAllowed",
 			"()Z"
 		);
 	}
-	jboolean FragmentTransaction::isEmpty()
+	jboolean FragmentTransaction::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::remove(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::remove(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -194,7 +194,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1)
+	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -203,7 +203,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, JString arg2)
+	android::app::FragmentTransaction FragmentTransaction::replace(jint arg0, android::app::Fragment arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"replace",
@@ -213,7 +213,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::runOnCommit(JObject arg0)
+	android::app::FragmentTransaction FragmentTransaction::runOnCommit(JObject arg0) const
 	{
 		return callObjectMethod(
 			"runOnCommit",
@@ -221,7 +221,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBreadCrumbShortTitle",
@@ -229,7 +229,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(JString arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbShortTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBreadCrumbShortTitle",
@@ -237,7 +237,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBreadCrumbTitle",
@@ -245,7 +245,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(JString arg0)
+	android::app::FragmentTransaction FragmentTransaction::setBreadCrumbTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBreadCrumbTitle",
@@ -253,7 +253,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1)
+	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setCustomAnimations",
@@ -262,7 +262,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::app::FragmentTransaction FragmentTransaction::setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"setCustomAnimations",
@@ -273,7 +273,7 @@ namespace android::app
 			arg3
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setPrimaryNavigationFragment(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::setPrimaryNavigationFragment(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"setPrimaryNavigationFragment",
@@ -281,7 +281,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setReorderingAllowed(jboolean arg0)
+	android::app::FragmentTransaction FragmentTransaction::setReorderingAllowed(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setReorderingAllowed",
@@ -289,7 +289,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setTransition(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setTransition(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTransition",
@@ -297,7 +297,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::setTransitionStyle(jint arg0)
+	android::app::FragmentTransaction FragmentTransaction::setTransitionStyle(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTransitionStyle",
@@ -305,7 +305,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::show(android::app::Fragment arg0)
+	android::app::FragmentTransaction FragmentTransaction::show(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"show",

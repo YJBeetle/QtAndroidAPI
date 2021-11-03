@@ -56,14 +56,14 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	android::view::animation::Animation LayoutAnimationController::getAnimation()
+	android::view::animation::Animation LayoutAnimationController::getAnimation() const
 	{
 		return callObjectMethod(
 			"getAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	android::view::animation::Animation LayoutAnimationController::getAnimationForView(android::view::View arg0)
+	android::view::animation::Animation LayoutAnimationController::getAnimationForView(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"getAnimationForView",
@@ -71,35 +71,35 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	jfloat LayoutAnimationController::getDelay()
+	jfloat LayoutAnimationController::getDelay() const
 	{
 		return callMethod<jfloat>(
 			"getDelay",
 			"()F"
 		);
 	}
-	JObject LayoutAnimationController::getInterpolator()
+	JObject LayoutAnimationController::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/view/animation/Interpolator;"
 		);
 	}
-	jint LayoutAnimationController::getOrder()
+	jint LayoutAnimationController::getOrder() const
 	{
 		return callMethod<jint>(
 			"getOrder",
 			"()I"
 		);
 	}
-	jboolean LayoutAnimationController::isDone()
+	jboolean LayoutAnimationController::isDone() const
 	{
 		return callMethod<jboolean>(
 			"isDone",
 			"()Z"
 		);
 	}
-	void LayoutAnimationController::setAnimation(android::view::animation::Animation arg0)
+	void LayoutAnimationController::setAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"setAnimation",
@@ -107,7 +107,7 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	void LayoutAnimationController::setAnimation(android::content::Context arg0, jint arg1)
+	void LayoutAnimationController::setAnimation(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setAnimation",
@@ -116,7 +116,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	void LayoutAnimationController::setDelay(jfloat arg0)
+	void LayoutAnimationController::setDelay(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setDelay",
@@ -124,7 +124,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void LayoutAnimationController::setInterpolator(JObject arg0)
+	void LayoutAnimationController::setInterpolator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -132,7 +132,7 @@ namespace android::view::animation
 			arg0.object()
 		);
 	}
-	void LayoutAnimationController::setInterpolator(android::content::Context arg0, jint arg1)
+	void LayoutAnimationController::setInterpolator(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -141,7 +141,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	void LayoutAnimationController::setOrder(jint arg0)
+	void LayoutAnimationController::setOrder(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrder",
@@ -149,14 +149,14 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void LayoutAnimationController::start()
+	void LayoutAnimationController::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	jboolean LayoutAnimationController::willOverlap()
+	jboolean LayoutAnimationController::willOverlap() const
 	{
 		return callMethod<jboolean>(
 			"willOverlap",

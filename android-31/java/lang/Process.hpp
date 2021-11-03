@@ -34,22 +34,22 @@ namespace java::lang
 		Process();
 		
 		// Methods
-		JObject children();
-		JObject descendants();
-		void destroy();
-		java::lang::Process destroyForcibly();
-		jint exitValue();
-		java::io::InputStream getErrorStream();
-		java::io::InputStream getInputStream();
-		java::io::OutputStream getOutputStream();
-		JObject info();
-		jboolean isAlive();
-		java::util::concurrent::CompletableFuture onExit();
-		jlong pid();
-		jboolean supportsNormalTermination();
-		JObject toHandle();
-		jboolean waitFor(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jint waitFor();
+		JObject children() const;
+		JObject descendants() const;
+		void destroy() const;
+		java::lang::Process destroyForcibly() const;
+		jint exitValue() const;
+		java::io::InputStream getErrorStream() const;
+		java::io::InputStream getInputStream() const;
+		java::io::OutputStream getOutputStream() const;
+		JObject info() const;
+		jboolean isAlive() const;
+		java::util::concurrent::CompletableFuture onExit() const;
+		jlong pid() const;
+		jboolean supportsNormalTermination() const;
+		JObject toHandle() const;
+		jboolean waitFor(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		jint waitFor() const;
 	};
 } // namespace java::lang
 

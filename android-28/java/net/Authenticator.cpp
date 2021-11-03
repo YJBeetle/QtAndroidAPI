@@ -97,7 +97,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::PasswordAuthentication Authenticator::requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7)
+	java::net::PasswordAuthentication Authenticator::requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7) const
 	{
 		return callObjectMethod(
 			"requestPasswordAuthenticationInstance",

@@ -13,28 +13,28 @@ namespace android::hardware::display
 	// Constructors
 	
 	// Methods
-	android::view::Display VirtualDisplay::getDisplay()
+	android::view::Display VirtualDisplay::getDisplay() const
 	{
 		return callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
 		);
 	}
-	android::view::Surface VirtualDisplay::getSurface()
+	android::view::Surface VirtualDisplay::getSurface() const
 	{
 		return callObjectMethod(
 			"getSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	void VirtualDisplay::release()
+	void VirtualDisplay::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void VirtualDisplay::resize(jint arg0, jint arg1, jint arg2)
+	void VirtualDisplay::resize(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"resize",
@@ -44,7 +44,7 @@ namespace android::hardware::display
 			arg2
 		);
 	}
-	void VirtualDisplay::setSurface(android::view::Surface arg0)
+	void VirtualDisplay::setSurface(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"setSurface",
@@ -52,7 +52,7 @@ namespace android::hardware::display
 			arg0.object()
 		);
 	}
-	JString VirtualDisplay::toString()
+	JString VirtualDisplay::toString() const
 	{
 		return callObjectMethod(
 			"toString",

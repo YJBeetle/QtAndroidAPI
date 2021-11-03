@@ -27,21 +27,21 @@ namespace javax::xml::transform::sax
 	// Constructors
 	
 	// Methods
-	JObject SAXTransformerFactory::newTemplatesHandler()
+	JObject SAXTransformerFactory::newTemplatesHandler() const
 	{
 		return callObjectMethod(
 			"newTemplatesHandler",
 			"()Ljavax/xml/transform/sax/TemplatesHandler;"
 		);
 	}
-	JObject SAXTransformerFactory::newTransformerHandler()
+	JObject SAXTransformerFactory::newTransformerHandler() const
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
 			"()Ljavax/xml/transform/sax/TransformerHandler;"
 		);
 	}
-	JObject SAXTransformerFactory::newTransformerHandler(JObject arg0)
+	JObject SAXTransformerFactory::newTransformerHandler(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newTransformerHandler",
@@ -49,7 +49,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	JObject SAXTransformerFactory::newXMLFilter(JObject arg0)
+	JObject SAXTransformerFactory::newXMLFilter(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newXMLFilter",

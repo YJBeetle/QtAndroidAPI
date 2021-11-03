@@ -11,7 +11,7 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JString AppSearchManager_SearchContext::getDatabaseName()
+	JString AppSearchManager_SearchContext::getDatabaseName() const
 	{
 		return callObjectMethod(
 			"getDatabaseName",

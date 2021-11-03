@@ -22,10 +22,10 @@ namespace android::media::midi
 		MidiSender();
 		
 		// Methods
-		void connect(android::media::midi::MidiReceiver arg0);
-		void disconnect(android::media::midi::MidiReceiver arg0);
-		void onConnect(android::media::midi::MidiReceiver arg0);
-		void onDisconnect(android::media::midi::MidiReceiver arg0);
+		void connect(android::media::midi::MidiReceiver arg0) const;
+		void disconnect(android::media::midi::MidiReceiver arg0) const;
+		void onConnect(android::media::midi::MidiReceiver arg0) const;
+		void onDisconnect(android::media::midi::MidiReceiver arg0) const;
 	};
 } // namespace android::media::midi
 

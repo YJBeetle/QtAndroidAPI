@@ -168,7 +168,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	void HebrewCalendar::add(jint arg0, jint arg1)
+	void HebrewCalendar::add(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -177,14 +177,14 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	JString HebrewCalendar::getType()
+	JString HebrewCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void HebrewCalendar::roll(jint arg0, jint arg1)
+	void HebrewCalendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",

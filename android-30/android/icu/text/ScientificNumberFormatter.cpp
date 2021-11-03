@@ -54,7 +54,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString ScientificNumberFormatter::format(JObject arg0)
+	JString ScientificNumberFormatter::format(JObject arg0) const
 	{
 		return callObjectMethod(
 			"format",

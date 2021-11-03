@@ -22,8 +22,8 @@ namespace android::graphics
 		Shader();
 		
 		// Methods
-		jboolean getLocalMatrix(android::graphics::Matrix arg0);
-		void setLocalMatrix(android::graphics::Matrix arg0);
+		jboolean getLocalMatrix(android::graphics::Matrix arg0) const;
+		void setLocalMatrix(android::graphics::Matrix arg0) const;
 	};
 } // namespace android::graphics
 

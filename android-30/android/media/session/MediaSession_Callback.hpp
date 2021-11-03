@@ -39,27 +39,27 @@ namespace android::media::session
 		MediaSession_Callback();
 		
 		// Methods
-		void onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2);
-		void onCustomAction(JString arg0, android::os::Bundle arg1);
-		void onFastForward();
-		jboolean onMediaButtonEvent(android::content::Intent arg0);
-		void onPause();
-		void onPlay();
-		void onPlayFromMediaId(JString arg0, android::os::Bundle arg1);
-		void onPlayFromSearch(JString arg0, android::os::Bundle arg1);
-		void onPlayFromUri(android::net::Uri arg0, android::os::Bundle arg1);
-		void onPrepare();
-		void onPrepareFromMediaId(JString arg0, android::os::Bundle arg1);
-		void onPrepareFromSearch(JString arg0, android::os::Bundle arg1);
-		void onPrepareFromUri(android::net::Uri arg0, android::os::Bundle arg1);
-		void onRewind();
-		void onSeekTo(jlong arg0);
-		void onSetPlaybackSpeed(jfloat arg0);
-		void onSetRating(android::media::Rating arg0);
-		void onSkipToNext();
-		void onSkipToPrevious();
-		void onSkipToQueueItem(jlong arg0);
-		void onStop();
+		void onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2) const;
+		void onCustomAction(JString arg0, android::os::Bundle arg1) const;
+		void onFastForward() const;
+		jboolean onMediaButtonEvent(android::content::Intent arg0) const;
+		void onPause() const;
+		void onPlay() const;
+		void onPlayFromMediaId(JString arg0, android::os::Bundle arg1) const;
+		void onPlayFromSearch(JString arg0, android::os::Bundle arg1) const;
+		void onPlayFromUri(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void onPrepare() const;
+		void onPrepareFromMediaId(JString arg0, android::os::Bundle arg1) const;
+		void onPrepareFromSearch(JString arg0, android::os::Bundle arg1) const;
+		void onPrepareFromUri(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void onRewind() const;
+		void onSeekTo(jlong arg0) const;
+		void onSetPlaybackSpeed(jfloat arg0) const;
+		void onSetRating(android::media::Rating arg0) const;
+		void onSkipToNext() const;
+		void onSkipToPrevious() const;
+		void onSkipToQueueItem(jlong arg0) const;
+		void onStop() const;
 	};
 } // namespace android::media::session
 

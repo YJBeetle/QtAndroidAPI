@@ -35,13 +35,13 @@ namespace java::nio::channels::spi
 		// Constructors
 		
 		// Methods
-		JObject blockingLock();
-		java::nio::channels::SelectableChannel configureBlocking(jboolean arg0);
-		jboolean isBlocking();
-		jboolean isRegistered();
-		java::nio::channels::SelectionKey keyFor(java::nio::channels::Selector arg0);
-		java::nio::channels::spi::SelectorProvider provider();
-		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1, JObject arg2);
+		JObject blockingLock() const;
+		java::nio::channels::SelectableChannel configureBlocking(jboolean arg0) const;
+		jboolean isBlocking() const;
+		jboolean isRegistered() const;
+		java::nio::channels::SelectionKey keyFor(java::nio::channels::Selector arg0) const;
+		java::nio::channels::spi::SelectorProvider provider() const;
+		java::nio::channels::SelectionKey _register(java::nio::channels::Selector arg0, jint arg1, JObject arg2) const;
 	};
 } // namespace java::nio::channels::spi
 

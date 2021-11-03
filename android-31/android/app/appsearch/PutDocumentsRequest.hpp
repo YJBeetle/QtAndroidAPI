@@ -16,7 +16,7 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getGenericDocuments();
+		JObject getGenericDocuments() const;
 	};
 } // namespace android::app::appsearch
 

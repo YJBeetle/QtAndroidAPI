@@ -309,14 +309,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject NumberFormat::clone()
+	JObject NumberFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean NumberFormat::equals(JObject arg0)
+	jboolean NumberFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -324,7 +324,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JString NumberFormat::format(android::icu::math::BigDecimal arg0)
+	JString NumberFormat::format(android::icu::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -332,7 +332,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString NumberFormat::format(android::icu::util::CurrencyAmount arg0)
+	JString NumberFormat::format(android::icu::util::CurrencyAmount arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -340,7 +340,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString NumberFormat::format(jdouble arg0)
+	JString NumberFormat::format(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -348,7 +348,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString NumberFormat::format(java::math::BigDecimal arg0)
+	JString NumberFormat::format(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -356,7 +356,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString NumberFormat::format(java::math::BigInteger arg0)
+	JString NumberFormat::format(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -364,7 +364,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString NumberFormat::format(jlong arg0)
+	JString NumberFormat::format(jlong arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -372,7 +372,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -382,7 +382,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -392,7 +392,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -402,7 +402,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -412,7 +412,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -422,7 +422,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -432,7 +432,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -442,7 +442,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	android::icu::text::DisplayContext NumberFormat::getContext(android::icu::text::DisplayContext_Type arg0)
+	android::icu::text::DisplayContext NumberFormat::getContext(android::icu::text::DisplayContext_Type arg0) const
 	{
 		return callObjectMethod(
 			"getContext",
@@ -450,77 +450,77 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::util::Currency NumberFormat::getCurrency()
+	android::icu::util::Currency NumberFormat::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Landroid/icu/util/Currency;"
 		);
 	}
-	jint NumberFormat::getMaximumFractionDigits()
+	jint NumberFormat::getMaximumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumFractionDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMaximumIntegerDigits()
+	jint NumberFormat::getMaximumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumIntegerDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMinimumFractionDigits()
+	jint NumberFormat::getMinimumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumFractionDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMinimumIntegerDigits()
+	jint NumberFormat::getMinimumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumIntegerDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getRoundingMode()
+	jint NumberFormat::getRoundingMode() const
 	{
 		return callMethod<jint>(
 			"getRoundingMode",
 			"()I"
 		);
 	}
-	jint NumberFormat::hashCode()
+	jint NumberFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean NumberFormat::isGroupingUsed()
+	jboolean NumberFormat::isGroupingUsed() const
 	{
 		return callMethod<jboolean>(
 			"isGroupingUsed",
 			"()Z"
 		);
 	}
-	jboolean NumberFormat::isParseIntegerOnly()
+	jboolean NumberFormat::isParseIntegerOnly() const
 	{
 		return callMethod<jboolean>(
 			"isParseIntegerOnly",
 			"()Z"
 		);
 	}
-	jboolean NumberFormat::isParseStrict()
+	jboolean NumberFormat::isParseStrict() const
 	{
 		return callMethod<jboolean>(
 			"isParseStrict",
 			"()Z"
 		);
 	}
-	java::lang::Number NumberFormat::parse(JString arg0)
+	java::lang::Number NumberFormat::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -528,7 +528,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -537,7 +537,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::util::CurrencyAmount NumberFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount NumberFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseCurrency",
@@ -546,7 +546,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -555,7 +555,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void NumberFormat::setContext(android::icu::text::DisplayContext arg0)
+	void NumberFormat::setContext(android::icu::text::DisplayContext arg0) const
 	{
 		callMethod<void>(
 			"setContext",
@@ -563,7 +563,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void NumberFormat::setCurrency(android::icu::util::Currency arg0)
+	void NumberFormat::setCurrency(android::icu::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -571,7 +571,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void NumberFormat::setGroupingUsed(jboolean arg0)
+	void NumberFormat::setGroupingUsed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setGroupingUsed",
@@ -579,7 +579,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setMaximumFractionDigits(jint arg0)
+	void NumberFormat::setMaximumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumFractionDigits",
@@ -587,7 +587,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setMaximumIntegerDigits(jint arg0)
+	void NumberFormat::setMaximumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumIntegerDigits",
@@ -595,7 +595,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setMinimumFractionDigits(jint arg0)
+	void NumberFormat::setMinimumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumFractionDigits",
@@ -603,7 +603,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setMinimumIntegerDigits(jint arg0)
+	void NumberFormat::setMinimumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumIntegerDigits",
@@ -611,7 +611,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setParseIntegerOnly(jboolean arg0)
+	void NumberFormat::setParseIntegerOnly(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseIntegerOnly",
@@ -619,7 +619,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setParseStrict(jboolean arg0)
+	void NumberFormat::setParseStrict(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseStrict",
@@ -627,7 +627,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void NumberFormat::setRoundingMode(jint arg0)
+	void NumberFormat::setRoundingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRoundingMode",

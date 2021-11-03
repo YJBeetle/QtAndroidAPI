@@ -41,15 +41,15 @@ namespace java::io
 		// Constructors
 		
 		// Methods
-		void flush();
-		java::io::Console format(JString arg0, JObjectArray arg1);
-		java::io::Console printf(JString arg0, JObjectArray arg1);
-		JString readLine();
-		JString readLine(JString arg0, JObjectArray arg1);
-		JCharArray readPassword();
-		JCharArray readPassword(JString arg0, JObjectArray arg1);
-		java::io::Reader reader();
-		java::io::PrintWriter writer();
+		void flush() const;
+		java::io::Console format(JString arg0, JObjectArray arg1) const;
+		java::io::Console printf(JString arg0, JObjectArray arg1) const;
+		JString readLine() const;
+		JString readLine(JString arg0, JObjectArray arg1) const;
+		JCharArray readPassword() const;
+		JCharArray readPassword(JString arg0, JObjectArray arg1) const;
+		java::io::Reader reader() const;
+		java::io::PrintWriter writer() const;
 	};
 } // namespace java::io
 

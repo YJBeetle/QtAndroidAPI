@@ -34,14 +34,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void CursorLoader::cancelLoadInBackground()
+	void CursorLoader::cancelLoadInBackground() const
 	{
 		callMethod<void>(
 			"cancelLoadInBackground",
 			"()V"
 		);
 	}
-	void CursorLoader::deliverResult(JObject arg0)
+	void CursorLoader::deliverResult(JObject arg0) const
 	{
 		callMethod<void>(
 			"deliverResult",
@@ -49,7 +49,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void CursorLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void CursorLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -60,49 +60,49 @@ namespace android::content
 			arg3.object<jarray>()
 		);
 	}
-	JArray CursorLoader::getProjection()
+	JArray CursorLoader::getProjection() const
 	{
 		return callObjectMethod(
 			"getProjection",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString CursorLoader::getSelection()
+	JString CursorLoader::getSelection() const
 	{
 		return callObjectMethod(
 			"getSelection",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray CursorLoader::getSelectionArgs()
+	JArray CursorLoader::getSelectionArgs() const
 	{
 		return callObjectMethod(
 			"getSelectionArgs",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString CursorLoader::getSortOrder()
+	JString CursorLoader::getSortOrder() const
 	{
 		return callObjectMethod(
 			"getSortOrder",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri CursorLoader::getUri()
+	android::net::Uri CursorLoader::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JObject CursorLoader::loadInBackground()
+	JObject CursorLoader::loadInBackground() const
 	{
 		return callObjectMethod(
 			"loadInBackground",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	void CursorLoader::onCanceled(JObject arg0)
+	void CursorLoader::onCanceled(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCanceled",
@@ -110,7 +110,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void CursorLoader::setProjection(JArray arg0)
+	void CursorLoader::setProjection(JArray arg0) const
 	{
 		callMethod<void>(
 			"setProjection",
@@ -118,7 +118,7 @@ namespace android::content
 			arg0.object<jarray>()
 		);
 	}
-	void CursorLoader::setSelection(JString arg0)
+	void CursorLoader::setSelection(JString arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -126,7 +126,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void CursorLoader::setSelectionArgs(JArray arg0)
+	void CursorLoader::setSelectionArgs(JArray arg0) const
 	{
 		callMethod<void>(
 			"setSelectionArgs",
@@ -134,7 +134,7 @@ namespace android::content
 			arg0.object<jarray>()
 		);
 	}
-	void CursorLoader::setSortOrder(JString arg0)
+	void CursorLoader::setSortOrder(JString arg0) const
 	{
 		callMethod<void>(
 			"setSortOrder",
@@ -142,7 +142,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void CursorLoader::setUri(android::net::Uri arg0)
+	void CursorLoader::setUri(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setUri",

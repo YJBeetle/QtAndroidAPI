@@ -130,77 +130,77 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_Action Notification_Action::clone()
+	android::app::Notification_Action Notification_Action::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification$Action;"
 		);
 	}
-	jint Notification_Action::describeContents()
+	jint Notification_Action::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Notification_Action::getAllowGeneratedReplies()
+	jboolean Notification_Action::getAllowGeneratedReplies() const
 	{
 		return callMethod<jboolean>(
 			"getAllowGeneratedReplies",
 			"()Z"
 		);
 	}
-	JArray Notification_Action::getDataOnlyRemoteInputs()
+	JArray Notification_Action::getDataOnlyRemoteInputs() const
 	{
 		return callObjectMethod(
 			"getDataOnlyRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
 		);
 	}
-	android::os::Bundle Notification_Action::getExtras()
+	android::os::Bundle Notification_Action::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::graphics::drawable::Icon Notification_Action::getIcon()
+	android::graphics::drawable::Icon Notification_Action::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JArray Notification_Action::getRemoteInputs()
+	JArray Notification_Action::getRemoteInputs() const
 	{
 		return callObjectMethod(
 			"getRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
 		);
 	}
-	jint Notification_Action::getSemanticAction()
+	jint Notification_Action::getSemanticAction() const
 	{
 		return callMethod<jint>(
 			"getSemanticAction",
 			"()I"
 		);
 	}
-	jboolean Notification_Action::isAuthenticationRequired()
+	jboolean Notification_Action::isAuthenticationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isAuthenticationRequired",
 			"()Z"
 		);
 	}
-	jboolean Notification_Action::isContextual()
+	jboolean Notification_Action::isContextual() const
 	{
 		return callMethod<jboolean>(
 			"isContextual",
 			"()Z"
 		);
 	}
-	void Notification_Action::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Notification_Action::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

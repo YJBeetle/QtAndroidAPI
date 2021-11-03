@@ -32,63 +32,63 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pGroup::describeContents()
+	jint WifiP2pGroup::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject WifiP2pGroup::getClientList()
+	JObject WifiP2pGroup::getClientList() const
 	{
 		return callObjectMethod(
 			"getClientList",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JString WifiP2pGroup::getInterface()
+	JString WifiP2pGroup::getInterface() const
 	{
 		return callObjectMethod(
 			"getInterface",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WifiP2pGroup::getNetworkName()
+	JString WifiP2pGroup::getNetworkName() const
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::wifi::p2p::WifiP2pDevice WifiP2pGroup::getOwner()
+	android::net::wifi::p2p::WifiP2pDevice WifiP2pGroup::getOwner() const
 	{
 		return callObjectMethod(
 			"getOwner",
 			"()Landroid/net/wifi/p2p/WifiP2pDevice;"
 		);
 	}
-	JString WifiP2pGroup::getPassphrase()
+	JString WifiP2pGroup::getPassphrase() const
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean WifiP2pGroup::isGroupOwner()
+	jboolean WifiP2pGroup::isGroupOwner() const
 	{
 		return callMethod<jboolean>(
 			"isGroupOwner",
 			"()Z"
 		);
 	}
-	JString WifiP2pGroup::toString()
+	JString WifiP2pGroup::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiP2pGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pGroup::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -29,7 +29,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean OptionalInt::equals(JObject arg0)
+	jboolean OptionalInt::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,21 +37,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint OptionalInt::getAsInt()
+	jint OptionalInt::getAsInt() const
 	{
 		return callMethod<jint>(
 			"getAsInt",
 			"()I"
 		);
 	}
-	jint OptionalInt::hashCode()
+	jint OptionalInt::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void OptionalInt::ifPresent(JObject arg0)
+	void OptionalInt::ifPresent(JObject arg0) const
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -59,7 +59,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void OptionalInt::ifPresentOrElse(JObject arg0, JObject arg1)
+	void OptionalInt::ifPresentOrElse(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -68,21 +68,21 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean OptionalInt::isEmpty()
+	jboolean OptionalInt::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	jboolean OptionalInt::isPresent()
+	jboolean OptionalInt::isPresent() const
 	{
 		return callMethod<jboolean>(
 			"isPresent",
 			"()Z"
 		);
 	}
-	jint OptionalInt::orElse(jint arg0)
+	jint OptionalInt::orElse(jint arg0) const
 	{
 		return callMethod<jint>(
 			"orElse",
@@ -90,7 +90,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint OptionalInt::orElseGet(JObject arg0)
+	jint OptionalInt::orElseGet(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"orElseGet",
@@ -98,14 +98,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint OptionalInt::orElseThrow()
+	jint OptionalInt::orElseThrow() const
 	{
 		return callMethod<jint>(
 			"orElseThrow",
 			"()I"
 		);
 	}
-	jint OptionalInt::orElseThrow(JObject arg0)
+	jint OptionalInt::orElseThrow(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"orElseThrow",
@@ -113,14 +113,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject OptionalInt::stream()
+	JObject OptionalInt::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	JString OptionalInt::toString()
+	JString OptionalInt::toString() const
 	{
 		return callObjectMethod(
 			"toString",

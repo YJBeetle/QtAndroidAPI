@@ -21,14 +21,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	JObject LauncherActivity::makeListItems()
+	JObject LauncherActivity::makeListItems() const
 	{
 		return callObjectMethod(
 			"makeListItems",
 			"()Ljava/util/List;"
 		);
 	}
-	void LauncherActivity::setTitle(jint arg0)
+	void LauncherActivity::setTitle(jint arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -36,7 +36,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void LauncherActivity::setTitle(JString arg0)
+	void LauncherActivity::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",

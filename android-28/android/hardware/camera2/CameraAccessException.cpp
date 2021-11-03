@@ -75,7 +75,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	jint CameraAccessException::getReason()
+	jint CameraAccessException::getReason() const
 	{
 		return callMethod<jint>(
 			"getReason",

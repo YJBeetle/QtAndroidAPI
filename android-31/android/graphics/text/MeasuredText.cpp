@@ -11,7 +11,7 @@ namespace android::graphics::text
 	// Constructors
 	
 	// Methods
-	void MeasuredText::getBounds(jint arg0, jint arg1, android::graphics::Rect arg2)
+	void MeasuredText::getBounds(jint arg0, jint arg1, android::graphics::Rect arg2) const
 	{
 		callMethod<void>(
 			"getBounds",
@@ -21,7 +21,7 @@ namespace android::graphics::text
 			arg2.object()
 		);
 	}
-	jfloat MeasuredText::getCharWidthAt(jint arg0)
+	jfloat MeasuredText::getCharWidthAt(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getCharWidthAt",
@@ -29,7 +29,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat MeasuredText::getWidth(jint arg0, jint arg1)
+	jfloat MeasuredText::getWidth(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getWidth",

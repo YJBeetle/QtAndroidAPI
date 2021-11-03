@@ -43,26 +43,26 @@ namespace android::graphics::drawable
 		AnimatedImageDrawable();
 		
 		// Methods
-		void clearAnimationCallbacks();
-		void draw(android::graphics::Canvas arg0);
-		jint getAlpha();
-		android::graphics::ColorFilter getColorFilter();
-		jint getIntrinsicHeight();
-		jint getIntrinsicWidth();
-		jint getOpacity();
-		jint getRepeatCount();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		jboolean isAutoMirrored();
-		jboolean isRunning();
-		jboolean onLayoutDirectionChanged(jint arg0);
-		void registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0);
-		void setAlpha(jint arg0);
-		void setAutoMirrored(jboolean arg0);
-		void setColorFilter(android::graphics::ColorFilter arg0);
-		void setRepeatCount(jint arg0);
-		void start();
-		void stop();
-		jboolean unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0);
+		void clearAnimationCallbacks() const;
+		void draw(android::graphics::Canvas arg0) const;
+		jint getAlpha() const;
+		android::graphics::ColorFilter getColorFilter() const;
+		jint getIntrinsicHeight() const;
+		jint getIntrinsicWidth() const;
+		jint getOpacity() const;
+		jint getRepeatCount() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		jboolean isAutoMirrored() const;
+		jboolean isRunning() const;
+		jboolean onLayoutDirectionChanged(jint arg0) const;
+		void registerAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const;
+		void setAlpha(jint arg0) const;
+		void setAutoMirrored(jboolean arg0) const;
+		void setColorFilter(android::graphics::ColorFilter arg0) const;
+		void setRepeatCount(jint arg0) const;
+		void start() const;
+		void stop() const;
+		jboolean unregisterAnimationCallback(android::graphics::drawable::Animatable2_AnimationCallback arg0) const;
 	};
 } // namespace android::graphics::drawable
 

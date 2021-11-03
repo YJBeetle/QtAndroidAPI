@@ -16,8 +16,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JObject getSession2Tokens();
-		jint getVersion();
+		JObject getSession2Tokens() const;
+		jint getVersion() const;
 	};
 } // namespace android::media
 

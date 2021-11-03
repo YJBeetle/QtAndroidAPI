@@ -69,14 +69,14 @@ namespace android::net
 			arg1
 		);
 	}
-	jint ProxyInfo::describeContents()
+	jint ProxyInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ProxyInfo::equals(JObject arg0)
+	jboolean ProxyInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -84,56 +84,56 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	JArray ProxyInfo::getExclusionList()
+	JArray ProxyInfo::getExclusionList() const
 	{
 		return callObjectMethod(
 			"getExclusionList",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString ProxyInfo::getHost()
+	JString ProxyInfo::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri ProxyInfo::getPacFileUrl()
+	android::net::Uri ProxyInfo::getPacFileUrl() const
 	{
 		return callObjectMethod(
 			"getPacFileUrl",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint ProxyInfo::getPort()
+	jint ProxyInfo::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint ProxyInfo::hashCode()
+	jint ProxyInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ProxyInfo::isValid()
+	jboolean ProxyInfo::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	JString ProxyInfo::toString()
+	JString ProxyInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ProxyInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ProxyInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

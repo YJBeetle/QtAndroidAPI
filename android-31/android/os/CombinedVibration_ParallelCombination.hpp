@@ -25,8 +25,8 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		android::os::CombinedVibration_ParallelCombination addVibrator(jint arg0, android::os::VibrationEffect arg1);
-		android::os::CombinedVibration combine();
+		android::os::CombinedVibration_ParallelCombination addVibrator(jint arg0, android::os::VibrationEffect arg1) const;
+		android::os::CombinedVibration combine() const;
 	};
 } // namespace android::os
 

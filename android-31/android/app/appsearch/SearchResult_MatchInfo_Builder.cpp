@@ -19,14 +19,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SearchResult_MatchInfo SearchResult_MatchInfo_Builder::build()
+	android::app::appsearch::SearchResult_MatchInfo SearchResult_MatchInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/SearchResult$MatchInfo;"
 		);
 	}
-	android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0)
+	android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0) const
 	{
 		return callObjectMethod(
 			"setExactMatchRange",
@@ -34,7 +34,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0)
+	android::app::appsearch::SearchResult_MatchInfo_Builder SearchResult_MatchInfo_Builder::setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0) const
 	{
 		return callObjectMethod(
 			"setSnippetRange",

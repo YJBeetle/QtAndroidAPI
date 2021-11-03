@@ -51,28 +51,28 @@ namespace android::net::rtp
 		) {}
 	
 	// Methods
-	void AudioGroup::clear()
+	void AudioGroup::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jint AudioGroup::getMode()
+	jint AudioGroup::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	JArray AudioGroup::getStreams()
+	JArray AudioGroup::getStreams() const
 	{
 		return callObjectMethod(
 			"getStreams",
 			"()[Landroid/net/rtp/AudioStream;"
 		);
 	}
-	void AudioGroup::sendDtmf(jint arg0)
+	void AudioGroup::sendDtmf(jint arg0) const
 	{
 		callMethod<void>(
 			"sendDtmf",
@@ -80,7 +80,7 @@ namespace android::net::rtp
 			arg0
 		);
 	}
-	void AudioGroup::setMode(jint arg0)
+	void AudioGroup::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",

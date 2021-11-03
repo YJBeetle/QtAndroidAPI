@@ -27,14 +27,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::ContentInfo ContentInfo_Builder::build()
+	android::view::ContentInfo ContentInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/ContentInfo;"
 		);
 	}
-	android::view::ContentInfo_Builder ContentInfo_Builder::setClip(android::content::ClipData arg0)
+	android::view::ContentInfo_Builder ContentInfo_Builder::setClip(android::content::ClipData arg0) const
 	{
 		return callObjectMethod(
 			"setClip",
@@ -42,7 +42,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ContentInfo_Builder ContentInfo_Builder::setExtras(android::os::Bundle arg0)
+	android::view::ContentInfo_Builder ContentInfo_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -50,7 +50,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ContentInfo_Builder ContentInfo_Builder::setFlags(jint arg0)
+	android::view::ContentInfo_Builder ContentInfo_Builder::setFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -58,7 +58,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ContentInfo_Builder ContentInfo_Builder::setLinkUri(android::net::Uri arg0)
+	android::view::ContentInfo_Builder ContentInfo_Builder::setLinkUri(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setLinkUri",
@@ -66,7 +66,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ContentInfo_Builder ContentInfo_Builder::setSource(jint arg0)
+	android::view::ContentInfo_Builder ContentInfo_Builder::setSource(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSource",

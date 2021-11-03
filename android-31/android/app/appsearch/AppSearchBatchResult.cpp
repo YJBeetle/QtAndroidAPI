@@ -11,35 +11,35 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject AppSearchBatchResult::getAll()
+	JObject AppSearchBatchResult::getAll() const
 	{
 		return callObjectMethod(
 			"getAll",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject AppSearchBatchResult::getFailures()
+	JObject AppSearchBatchResult::getFailures() const
 	{
 		return callObjectMethod(
 			"getFailures",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject AppSearchBatchResult::getSuccesses()
+	JObject AppSearchBatchResult::getSuccesses() const
 	{
 		return callObjectMethod(
 			"getSuccesses",
 			"()Ljava/util/Map;"
 		);
 	}
-	jboolean AppSearchBatchResult::isSuccess()
+	jboolean AppSearchBatchResult::isSuccess() const
 	{
 		return callMethod<jboolean>(
 			"isSuccess",
 			"()Z"
 		);
 	}
-	JString AppSearchBatchResult::toString()
+	JString AppSearchBatchResult::toString() const
 	{
 		return callObjectMethod(
 			"toString",

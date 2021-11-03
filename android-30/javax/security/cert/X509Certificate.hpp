@@ -35,17 +35,17 @@ namespace javax::security::cert
 		// Methods
 		static javax::security::cert::X509Certificate getInstance(JByteArray arg0);
 		static javax::security::cert::X509Certificate getInstance(java::io::InputStream arg0);
-		void checkValidity();
-		void checkValidity(java::util::Date arg0);
-		JObject getIssuerDN();
-		java::util::Date getNotAfter();
-		java::util::Date getNotBefore();
-		java::math::BigInteger getSerialNumber();
-		JString getSigAlgName();
-		JString getSigAlgOID();
-		JByteArray getSigAlgParams();
-		JObject getSubjectDN();
-		jint getVersion();
+		void checkValidity() const;
+		void checkValidity(java::util::Date arg0) const;
+		JObject getIssuerDN() const;
+		java::util::Date getNotAfter() const;
+		java::util::Date getNotBefore() const;
+		java::math::BigInteger getSerialNumber() const;
+		JString getSigAlgName() const;
+		JString getSigAlgOID() const;
+		JByteArray getSigAlgParams() const;
+		JObject getSubjectDN() const;
+		jint getVersion() const;
 	};
 } // namespace javax::security::cert
 

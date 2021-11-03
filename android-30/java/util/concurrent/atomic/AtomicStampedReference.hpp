@@ -20,13 +20,13 @@ namespace java::util::concurrent::atomic
 		AtomicStampedReference(JObject arg0, jint arg1);
 		
 		// Methods
-		jboolean attemptStamp(JObject arg0, jint arg1);
-		jboolean compareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3);
-		JObject get(JIntArray arg0);
-		JObject getReference();
-		jint getStamp();
-		void set(JObject arg0, jint arg1);
-		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3);
+		jboolean attemptStamp(JObject arg0, jint arg1) const;
+		jboolean compareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
+		JObject get(JIntArray arg0) const;
+		JObject getReference() const;
+		jint getStamp() const;
+		void set(JObject arg0, jint arg1) const;
+		jboolean weakCompareAndSet(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
 	};
 } // namespace java::util::concurrent::atomic
 

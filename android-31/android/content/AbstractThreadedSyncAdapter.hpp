@@ -45,13 +45,13 @@ namespace android::content
 		AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2);
 		
 		// Methods
-		android::content::Context getContext();
-		JObject getSyncAdapterBinder();
-		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4);
-		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3);
-		void onSyncCanceled();
-		void onSyncCanceled(java::lang::Thread arg0);
-		jboolean onUnsyncableAccount();
+		android::content::Context getContext() const;
+		JObject getSyncAdapterBinder() const;
+		void onPerformSync(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::ContentProviderClient arg3, android::content::SyncResult arg4) const;
+		void onSecurityException(android::accounts::Account arg0, android::os::Bundle arg1, JString arg2, android::content::SyncResult arg3) const;
+		void onSyncCanceled() const;
+		void onSyncCanceled(java::lang::Thread arg0) const;
+		jboolean onUnsyncableAccount() const;
 	};
 } // namespace android::content
 

@@ -13,14 +13,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void WebMessagePort::close()
+	void WebMessagePort::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void WebMessagePort::postMessage(android::webkit::WebMessage arg0)
+	void WebMessagePort::postMessage(android::webkit::WebMessage arg0) const
 	{
 		callMethod<void>(
 			"postMessage",
@@ -28,7 +28,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebMessagePort::setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0)
+	void WebMessagePort::setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0) const
 	{
 		callMethod<void>(
 			"setWebMessageCallback",
@@ -36,7 +36,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebMessagePort::setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0, android::os::Handler arg1)
+	void WebMessagePort::setWebMessageCallback(android::webkit::WebMessagePort_WebMessageCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setWebMessageCallback",

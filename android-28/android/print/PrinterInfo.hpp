@@ -35,16 +35,16 @@ namespace android::print
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::print::PrinterCapabilitiesInfo getCapabilities();
-		JString getDescription();
-		android::print::PrinterId getId();
-		JString getName();
-		jint getStatus();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::print::PrinterCapabilitiesInfo getCapabilities() const;
+		JString getDescription() const;
+		android::print::PrinterId getId() const;
+		JString getName() const;
+		jint getStatus() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::print
 

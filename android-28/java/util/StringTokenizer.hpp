@@ -23,12 +23,12 @@ namespace java::util
 		StringTokenizer(JString arg0, JString arg1, jboolean arg2);
 		
 		// Methods
-		jint countTokens();
-		jboolean hasMoreElements();
-		jboolean hasMoreTokens();
-		JObject nextElement();
-		JString nextToken();
-		JString nextToken(JString arg0);
+		jint countTokens() const;
+		jboolean hasMoreElements() const;
+		jboolean hasMoreTokens() const;
+		JObject nextElement() const;
+		JString nextToken() const;
+		JString nextToken(JString arg0) const;
 	};
 } // namespace java::util
 

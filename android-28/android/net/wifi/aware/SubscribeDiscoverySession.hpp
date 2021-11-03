@@ -25,7 +25,7 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		void updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0);
+		void updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

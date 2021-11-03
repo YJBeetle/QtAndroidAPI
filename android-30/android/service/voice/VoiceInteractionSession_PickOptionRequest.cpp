@@ -14,28 +14,28 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	JArray VoiceInteractionSession_PickOptionRequest::getOptions()
+	JArray VoiceInteractionSession_PickOptionRequest::getOptions() const
 	{
 		return callObjectMethod(
 			"getOptions",
 			"()[Landroid/app/VoiceInteractor$PickOptionRequest$Option;"
 		);
 	}
-	JString VoiceInteractionSession_PickOptionRequest::getPrompt()
+	JString VoiceInteractionSession_PickOptionRequest::getPrompt() const
 	{
 		return callObjectMethod(
 			"getPrompt",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::VoiceInteractor_Prompt VoiceInteractionSession_PickOptionRequest::getVoicePrompt()
+	android::app::VoiceInteractor_Prompt VoiceInteractionSession_PickOptionRequest::getVoicePrompt() const
 	{
 		return callObjectMethod(
 			"getVoicePrompt",
 			"()Landroid/app/VoiceInteractor$Prompt;"
 		);
 	}
-	void VoiceInteractionSession_PickOptionRequest::sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1)
+	void VoiceInteractionSession_PickOptionRequest::sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendIntermediatePickOptionResult",
@@ -44,7 +44,7 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	void VoiceInteractionSession_PickOptionRequest::sendPickOptionResult(JArray arg0, android::os::Bundle arg1)
+	void VoiceInteractionSession_PickOptionRequest::sendPickOptionResult(JArray arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"sendPickOptionResult",

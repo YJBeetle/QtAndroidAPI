@@ -47,21 +47,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray MediaDrm_KeyRequest::getData()
+	JByteArray MediaDrm_KeyRequest::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	JString MediaDrm_KeyRequest::getDefaultUrl()
+	JString MediaDrm_KeyRequest::getDefaultUrl() const
 	{
 		return callObjectMethod(
 			"getDefaultUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaDrm_KeyRequest::getRequestType()
+	jint MediaDrm_KeyRequest::getRequestType() const
 	{
 		return callMethod<jint>(
 			"getRequestType",

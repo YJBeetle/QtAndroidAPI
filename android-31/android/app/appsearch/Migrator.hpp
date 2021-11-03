@@ -22,9 +22,9 @@ namespace android::app::appsearch
 		Migrator();
 		
 		// Methods
-		android::app::appsearch::GenericDocument onDowngrade(jint arg0, jint arg1, android::app::appsearch::GenericDocument arg2);
-		android::app::appsearch::GenericDocument onUpgrade(jint arg0, jint arg1, android::app::appsearch::GenericDocument arg2);
-		jboolean shouldMigrate(jint arg0, jint arg1);
+		android::app::appsearch::GenericDocument onDowngrade(jint arg0, jint arg1, android::app::appsearch::GenericDocument arg2) const;
+		android::app::appsearch::GenericDocument onUpgrade(jint arg0, jint arg1, android::app::appsearch::GenericDocument arg2) const;
+		jboolean shouldMigrate(jint arg0, jint arg1) const;
 	};
 } // namespace android::app::appsearch
 

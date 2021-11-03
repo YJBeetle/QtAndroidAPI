@@ -43,14 +43,14 @@ namespace android::content::pm::verify::domain
 	// Constructors
 	
 	// Methods
-	jint DomainVerificationUserState::describeContents()
+	jint DomainVerificationUserState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DomainVerificationUserState::equals(JObject arg0)
+	jboolean DomainVerificationUserState::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -58,49 +58,49 @@ namespace android::content::pm::verify::domain
 			arg0.object<jobject>()
 		);
 	}
-	JObject DomainVerificationUserState::getHostToStateMap()
+	JObject DomainVerificationUserState::getHostToStateMap() const
 	{
 		return callObjectMethod(
 			"getHostToStateMap",
 			"()Ljava/util/Map;"
 		);
 	}
-	JString DomainVerificationUserState::getPackageName()
+	JString DomainVerificationUserState::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::UserHandle DomainVerificationUserState::getUser()
+	android::os::UserHandle DomainVerificationUserState::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jint DomainVerificationUserState::hashCode()
+	jint DomainVerificationUserState::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean DomainVerificationUserState::isLinkHandlingAllowed()
+	jboolean DomainVerificationUserState::isLinkHandlingAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isLinkHandlingAllowed",
 			"()Z"
 		);
 	}
-	JString DomainVerificationUserState::toString()
+	JString DomainVerificationUserState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DomainVerificationUserState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DomainVerificationUserState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -19,7 +19,7 @@ namespace java::util::concurrent::locks
 		) {}
 	
 	// Methods
-	jboolean AbstractQueuedSynchronizer_ConditionObject::await(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jboolean AbstractQueuedSynchronizer_ConditionObject::await(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jboolean>(
 			"await",
@@ -28,14 +28,14 @@ namespace java::util::concurrent::locks
 			arg1.object()
 		);
 	}
-	void AbstractQueuedSynchronizer_ConditionObject::await()
+	void AbstractQueuedSynchronizer_ConditionObject::await() const
 	{
 		callMethod<void>(
 			"await",
 			"()V"
 		);
 	}
-	jlong AbstractQueuedSynchronizer_ConditionObject::awaitNanos(jlong arg0)
+	jlong AbstractQueuedSynchronizer_ConditionObject::awaitNanos(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"awaitNanos",
@@ -43,14 +43,14 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedSynchronizer_ConditionObject::awaitUninterruptibly()
+	void AbstractQueuedSynchronizer_ConditionObject::awaitUninterruptibly() const
 	{
 		callMethod<void>(
 			"awaitUninterruptibly",
 			"()V"
 		);
 	}
-	jboolean AbstractQueuedSynchronizer_ConditionObject::awaitUntil(java::util::Date arg0)
+	jboolean AbstractQueuedSynchronizer_ConditionObject::awaitUntil(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"awaitUntil",
@@ -58,14 +58,14 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	void AbstractQueuedSynchronizer_ConditionObject::signal()
+	void AbstractQueuedSynchronizer_ConditionObject::signal() const
 	{
 		callMethod<void>(
 			"signal",
 			"()V"
 		);
 	}
-	void AbstractQueuedSynchronizer_ConditionObject::signalAll()
+	void AbstractQueuedSynchronizer_ConditionObject::signalAll() const
 	{
 		callMethod<void>(
 			"signalAll",

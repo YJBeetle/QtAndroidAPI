@@ -46,7 +46,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint MultiSelectListPreference::findIndexOfValue(JString arg0)
+	jint MultiSelectListPreference::findIndexOfValue(JString arg0) const
 	{
 		return callMethod<jint>(
 			"findIndexOfValue",
@@ -54,28 +54,28 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	JArray MultiSelectListPreference::getEntries()
+	JArray MultiSelectListPreference::getEntries() const
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	JArray MultiSelectListPreference::getEntryValues()
+	JArray MultiSelectListPreference::getEntryValues() const
 	{
 		return callObjectMethod(
 			"getEntryValues",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	JObject MultiSelectListPreference::getValues()
+	JObject MultiSelectListPreference::getValues() const
 	{
 		return callObjectMethod(
 			"getValues",
 			"()Ljava/util/Set;"
 		);
 	}
-	void MultiSelectListPreference::setEntries(JArray arg0)
+	void MultiSelectListPreference::setEntries(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEntries",
@@ -83,7 +83,7 @@ namespace android::preference
 			arg0.object<jarray>()
 		);
 	}
-	void MultiSelectListPreference::setEntries(jint arg0)
+	void MultiSelectListPreference::setEntries(jint arg0) const
 	{
 		callMethod<void>(
 			"setEntries",
@@ -91,7 +91,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void MultiSelectListPreference::setEntryValues(JArray arg0)
+	void MultiSelectListPreference::setEntryValues(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEntryValues",
@@ -99,7 +99,7 @@ namespace android::preference
 			arg0.object<jarray>()
 		);
 	}
-	void MultiSelectListPreference::setEntryValues(jint arg0)
+	void MultiSelectListPreference::setEntryValues(jint arg0) const
 	{
 		callMethod<void>(
 			"setEntryValues",
@@ -107,7 +107,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void MultiSelectListPreference::setValues(JObject arg0)
+	void MultiSelectListPreference::setValues(JObject arg0) const
 	{
 		callMethod<void>(
 			"setValues",

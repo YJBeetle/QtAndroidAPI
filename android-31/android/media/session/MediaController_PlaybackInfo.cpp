@@ -35,63 +35,63 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	jint MediaController_PlaybackInfo::describeContents()
+	jint MediaController_PlaybackInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::media::AudioAttributes MediaController_PlaybackInfo::getAudioAttributes()
+	android::media::AudioAttributes MediaController_PlaybackInfo::getAudioAttributes() const
 	{
 		return callObjectMethod(
 			"getAudioAttributes",
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint MediaController_PlaybackInfo::getCurrentVolume()
+	jint MediaController_PlaybackInfo::getCurrentVolume() const
 	{
 		return callMethod<jint>(
 			"getCurrentVolume",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getMaxVolume()
+	jint MediaController_PlaybackInfo::getMaxVolume() const
 	{
 		return callMethod<jint>(
 			"getMaxVolume",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getPlaybackType()
+	jint MediaController_PlaybackInfo::getPlaybackType() const
 	{
 		return callMethod<jint>(
 			"getPlaybackType",
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getVolumeControl()
+	jint MediaController_PlaybackInfo::getVolumeControl() const
 	{
 		return callMethod<jint>(
 			"getVolumeControl",
 			"()I"
 		);
 	}
-	JString MediaController_PlaybackInfo::getVolumeControlId()
+	JString MediaController_PlaybackInfo::getVolumeControlId() const
 	{
 		return callObjectMethod(
 			"getVolumeControlId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MediaController_PlaybackInfo::toString()
+	JString MediaController_PlaybackInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaController_PlaybackInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaController_PlaybackInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

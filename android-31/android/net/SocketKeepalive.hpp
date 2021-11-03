@@ -26,9 +26,9 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		void close();
-		void start(jint arg0);
-		void stop();
+		void close() const;
+		void start(jint arg0) const;
+		void stop() const;
 	};
 } // namespace android::net
 

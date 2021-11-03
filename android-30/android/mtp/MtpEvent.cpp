@@ -136,70 +136,70 @@ namespace android::mtp
 	// Constructors
 	
 	// Methods
-	jint MtpEvent::getDevicePropCode()
+	jint MtpEvent::getDevicePropCode() const
 	{
 		return callMethod<jint>(
 			"getDevicePropCode",
 			"()I"
 		);
 	}
-	jint MtpEvent::getEventCode()
+	jint MtpEvent::getEventCode() const
 	{
 		return callMethod<jint>(
 			"getEventCode",
 			"()I"
 		);
 	}
-	jint MtpEvent::getObjectFormatCode()
+	jint MtpEvent::getObjectFormatCode() const
 	{
 		return callMethod<jint>(
 			"getObjectFormatCode",
 			"()I"
 		);
 	}
-	jint MtpEvent::getObjectHandle()
+	jint MtpEvent::getObjectHandle() const
 	{
 		return callMethod<jint>(
 			"getObjectHandle",
 			"()I"
 		);
 	}
-	jint MtpEvent::getObjectPropCode()
+	jint MtpEvent::getObjectPropCode() const
 	{
 		return callMethod<jint>(
 			"getObjectPropCode",
 			"()I"
 		);
 	}
-	jint MtpEvent::getParameter1()
+	jint MtpEvent::getParameter1() const
 	{
 		return callMethod<jint>(
 			"getParameter1",
 			"()I"
 		);
 	}
-	jint MtpEvent::getParameter2()
+	jint MtpEvent::getParameter2() const
 	{
 		return callMethod<jint>(
 			"getParameter2",
 			"()I"
 		);
 	}
-	jint MtpEvent::getParameter3()
+	jint MtpEvent::getParameter3() const
 	{
 		return callMethod<jint>(
 			"getParameter3",
 			"()I"
 		);
 	}
-	jint MtpEvent::getStorageId()
+	jint MtpEvent::getStorageId() const
 	{
 		return callMethod<jint>(
 			"getStorageId",
 			"()I"
 		);
 	}
-	jint MtpEvent::getTransactionId()
+	jint MtpEvent::getTransactionId() const
 	{
 		return callMethod<jint>(
 			"getTransactionId",

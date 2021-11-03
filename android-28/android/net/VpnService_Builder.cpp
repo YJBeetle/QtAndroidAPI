@@ -22,7 +22,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::VpnService_Builder VpnService_Builder::addAddress(JString arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addAddress(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addAddress",
@@ -31,7 +31,7 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addAddress(java::net::InetAddress arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addAddress(java::net::InetAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addAddress",
@@ -40,7 +40,7 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addAllowedApplication(JString arg0)
+	android::net::VpnService_Builder VpnService_Builder::addAllowedApplication(JString arg0) const
 	{
 		return callObjectMethod(
 			"addAllowedApplication",
@@ -48,7 +48,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addDisallowedApplication(JString arg0)
+	android::net::VpnService_Builder VpnService_Builder::addDisallowedApplication(JString arg0) const
 	{
 		return callObjectMethod(
 			"addDisallowedApplication",
@@ -56,7 +56,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addDnsServer(JString arg0)
+	android::net::VpnService_Builder VpnService_Builder::addDnsServer(JString arg0) const
 	{
 		return callObjectMethod(
 			"addDnsServer",
@@ -64,7 +64,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addDnsServer(java::net::InetAddress arg0)
+	android::net::VpnService_Builder VpnService_Builder::addDnsServer(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"addDnsServer",
@@ -72,7 +72,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addRoute(JString arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addRoute(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addRoute",
@@ -81,7 +81,7 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addRoute(java::net::InetAddress arg0, jint arg1)
+	android::net::VpnService_Builder VpnService_Builder::addRoute(java::net::InetAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addRoute",
@@ -90,7 +90,7 @@ namespace android::net
 			arg1
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::addSearchDomain(JString arg0)
+	android::net::VpnService_Builder VpnService_Builder::addSearchDomain(JString arg0) const
 	{
 		return callObjectMethod(
 			"addSearchDomain",
@@ -98,14 +98,14 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::allowBypass()
+	android::net::VpnService_Builder VpnService_Builder::allowBypass() const
 	{
 		return callObjectMethod(
 			"allowBypass",
 			"()Landroid/net/VpnService$Builder;"
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::allowFamily(jint arg0)
+	android::net::VpnService_Builder VpnService_Builder::allowFamily(jint arg0) const
 	{
 		return callObjectMethod(
 			"allowFamily",
@@ -113,14 +113,14 @@ namespace android::net
 			arg0
 		);
 	}
-	android::os::ParcelFileDescriptor VpnService_Builder::establish()
+	android::os::ParcelFileDescriptor VpnService_Builder::establish() const
 	{
 		return callObjectMethod(
 			"establish",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setBlocking(jboolean arg0)
+	android::net::VpnService_Builder VpnService_Builder::setBlocking(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setBlocking",
@@ -128,7 +128,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setConfigureIntent(android::app::PendingIntent arg0)
+	android::net::VpnService_Builder VpnService_Builder::setConfigureIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setConfigureIntent",
@@ -136,7 +136,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setMtu(jint arg0)
+	android::net::VpnService_Builder VpnService_Builder::setMtu(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMtu",
@@ -144,7 +144,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setSession(JString arg0)
+	android::net::VpnService_Builder VpnService_Builder::setSession(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSession",
@@ -152,7 +152,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::VpnService_Builder VpnService_Builder::setUnderlyingNetworks(JArray arg0)
+	android::net::VpnService_Builder VpnService_Builder::setUnderlyingNetworks(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setUnderlyingNetworks",

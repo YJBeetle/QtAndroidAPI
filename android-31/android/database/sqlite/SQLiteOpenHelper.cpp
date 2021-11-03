@@ -42,35 +42,35 @@ namespace android::database::sqlite
 		) {}
 	
 	// Methods
-	void SQLiteOpenHelper::close()
+	void SQLiteOpenHelper::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString SQLiteOpenHelper::getDatabaseName()
+	JString SQLiteOpenHelper::getDatabaseName() const
 	{
 		return callObjectMethod(
 			"getDatabaseName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getReadableDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getReadableDatabase() const
 	{
 		return callObjectMethod(
 			"getReadableDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;"
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getWritableDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteOpenHelper::getWritableDatabase() const
 	{
 		return callObjectMethod(
 			"getWritableDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;"
 		);
 	}
-	void SQLiteOpenHelper::onConfigure(android::database::sqlite::SQLiteDatabase arg0)
+	void SQLiteOpenHelper::onConfigure(android::database::sqlite::SQLiteDatabase arg0) const
 	{
 		callMethod<void>(
 			"onConfigure",
@@ -78,7 +78,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteOpenHelper::onCreate(android::database::sqlite::SQLiteDatabase arg0)
+	void SQLiteOpenHelper::onCreate(android::database::sqlite::SQLiteDatabase arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -86,7 +86,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteOpenHelper::onDowngrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2)
+	void SQLiteOpenHelper::onDowngrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onDowngrade",
@@ -96,7 +96,7 @@ namespace android::database::sqlite
 			arg2
 		);
 	}
-	void SQLiteOpenHelper::onOpen(android::database::sqlite::SQLiteDatabase arg0)
+	void SQLiteOpenHelper::onOpen(android::database::sqlite::SQLiteDatabase arg0) const
 	{
 		callMethod<void>(
 			"onOpen",
@@ -104,7 +104,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteOpenHelper::onUpgrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2)
+	void SQLiteOpenHelper::onUpgrade(android::database::sqlite::SQLiteDatabase arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onUpgrade",
@@ -114,7 +114,7 @@ namespace android::database::sqlite
 			arg2
 		);
 	}
-	void SQLiteOpenHelper::setIdleConnectionTimeout(jlong arg0)
+	void SQLiteOpenHelper::setIdleConnectionTimeout(jlong arg0) const
 	{
 		callMethod<void>(
 			"setIdleConnectionTimeout",
@@ -122,7 +122,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteOpenHelper::setLookasideConfig(jint arg0, jint arg1)
+	void SQLiteOpenHelper::setLookasideConfig(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLookasideConfig",
@@ -131,7 +131,7 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	void SQLiteOpenHelper::setOpenParams(android::database::sqlite::SQLiteDatabase_OpenParams arg0)
+	void SQLiteOpenHelper::setOpenParams(android::database::sqlite::SQLiteDatabase_OpenParams arg0) const
 	{
 		callMethod<void>(
 			"setOpenParams",
@@ -139,7 +139,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteOpenHelper::setWriteAheadLoggingEnabled(jboolean arg0)
+	void SQLiteOpenHelper::setWriteAheadLoggingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setWriteAheadLoggingEnabled",

@@ -242,14 +242,14 @@ namespace java::math
 			arg1
 		);
 	}
-	java::math::BigDecimal BigDecimal::abs()
+	java::math::BigDecimal BigDecimal::abs() const
 	{
 		return callObjectMethod(
 			"abs",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigDecimal BigDecimal::abs(java::math::MathContext arg0)
+	java::math::BigDecimal BigDecimal::abs(java::math::MathContext arg0) const
 	{
 		return callObjectMethod(
 			"abs",
@@ -257,7 +257,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::add(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::add(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"add",
@@ -265,7 +265,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::add(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::add(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"add",
@@ -274,14 +274,14 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	jbyte BigDecimal::byteValueExact()
+	jbyte BigDecimal::byteValueExact() const
 	{
 		return callMethod<jbyte>(
 			"byteValueExact",
 			"()B"
 		);
 	}
-	jint BigDecimal::compareTo(JObject arg0)
+	jint BigDecimal::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -289,7 +289,7 @@ namespace java::math
 			arg0.object<jobject>()
 		);
 	}
-	jint BigDecimal::compareTo(java::math::BigDecimal arg0)
+	jint BigDecimal::compareTo(java::math::BigDecimal arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -297,7 +297,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -305,7 +305,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -314,7 +314,7 @@ namespace java::math
 			arg1
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -323,7 +323,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, java::math::RoundingMode arg1)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, java::math::RoundingMode arg1) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -332,7 +332,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1, jint arg2)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -342,7 +342,7 @@ namespace java::math
 			arg2
 		);
 	}
-	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1, java::math::RoundingMode arg2)
+	java::math::BigDecimal BigDecimal::divide(java::math::BigDecimal arg0, jint arg1, java::math::RoundingMode arg2) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -352,7 +352,7 @@ namespace java::math
 			arg2.object()
 		);
 	}
-	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0)
+	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
@@ -360,7 +360,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	JArray BigDecimal::divideAndRemainder(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
@@ -369,7 +369,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divideToIntegralValue(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::divideToIntegralValue(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"divideToIntegralValue",
@@ -377,7 +377,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::divideToIntegralValue(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::divideToIntegralValue(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"divideToIntegralValue",
@@ -386,14 +386,14 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	jdouble BigDecimal::doubleValue()
+	jdouble BigDecimal::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean BigDecimal::equals(JObject arg0)
+	jboolean BigDecimal::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -401,49 +401,49 @@ namespace java::math
 			arg0.object<jobject>()
 		);
 	}
-	jfloat BigDecimal::floatValue()
+	jfloat BigDecimal::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint BigDecimal::hashCode()
+	jint BigDecimal::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint BigDecimal::intValue()
+	jint BigDecimal::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jint BigDecimal::intValueExact()
+	jint BigDecimal::intValueExact() const
 	{
 		return callMethod<jint>(
 			"intValueExact",
 			"()I"
 		);
 	}
-	jlong BigDecimal::longValue()
+	jlong BigDecimal::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jlong BigDecimal::longValueExact()
+	jlong BigDecimal::longValueExact() const
 	{
 		return callMethod<jlong>(
 			"longValueExact",
 			"()J"
 		);
 	}
-	java::math::BigDecimal BigDecimal::max(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::max(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"max",
@@ -451,7 +451,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::min(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::min(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"min",
@@ -459,7 +459,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::movePointLeft(jint arg0)
+	java::math::BigDecimal BigDecimal::movePointLeft(jint arg0) const
 	{
 		return callObjectMethod(
 			"movePointLeft",
@@ -467,7 +467,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigDecimal BigDecimal::movePointRight(jint arg0)
+	java::math::BigDecimal BigDecimal::movePointRight(jint arg0) const
 	{
 		return callObjectMethod(
 			"movePointRight",
@@ -475,7 +475,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigDecimal BigDecimal::multiply(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::multiply(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"multiply",
@@ -483,7 +483,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::multiply(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::multiply(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"multiply",
@@ -492,14 +492,14 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::negate()
+	java::math::BigDecimal BigDecimal::negate() const
 	{
 		return callObjectMethod(
 			"negate",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigDecimal BigDecimal::negate(java::math::MathContext arg0)
+	java::math::BigDecimal BigDecimal::negate(java::math::MathContext arg0) const
 	{
 		return callObjectMethod(
 			"negate",
@@ -507,14 +507,14 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::plus()
+	java::math::BigDecimal BigDecimal::plus() const
 	{
 		return callObjectMethod(
 			"plus",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigDecimal BigDecimal::plus(java::math::MathContext arg0)
+	java::math::BigDecimal BigDecimal::plus(java::math::MathContext arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -522,7 +522,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::pow(jint arg0)
+	java::math::BigDecimal BigDecimal::pow(jint arg0) const
 	{
 		return callObjectMethod(
 			"pow",
@@ -530,7 +530,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigDecimal BigDecimal::pow(jint arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::pow(jint arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"pow",
@@ -539,14 +539,14 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	jint BigDecimal::precision()
+	jint BigDecimal::precision() const
 	{
 		return callMethod<jint>(
 			"precision",
 			"()I"
 		);
 	}
-	java::math::BigDecimal BigDecimal::remainder(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::remainder(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"remainder",
@@ -554,7 +554,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::remainder(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::remainder(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"remainder",
@@ -563,7 +563,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::round(java::math::MathContext arg0)
+	java::math::BigDecimal BigDecimal::round(java::math::MathContext arg0) const
 	{
 		return callObjectMethod(
 			"round",
@@ -571,14 +571,14 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jint BigDecimal::scale()
+	jint BigDecimal::scale() const
 	{
 		return callMethod<jint>(
 			"scale",
 			"()I"
 		);
 	}
-	java::math::BigDecimal BigDecimal::scaleByPowerOfTen(jint arg0)
+	java::math::BigDecimal BigDecimal::scaleByPowerOfTen(jint arg0) const
 	{
 		return callObjectMethod(
 			"scaleByPowerOfTen",
@@ -586,7 +586,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigDecimal BigDecimal::setScale(jint arg0)
+	java::math::BigDecimal BigDecimal::setScale(jint arg0) const
 	{
 		return callObjectMethod(
 			"setScale",
@@ -594,7 +594,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigDecimal BigDecimal::setScale(jint arg0, jint arg1)
+	java::math::BigDecimal BigDecimal::setScale(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setScale",
@@ -603,7 +603,7 @@ namespace java::math
 			arg1
 		);
 	}
-	java::math::BigDecimal BigDecimal::setScale(jint arg0, java::math::RoundingMode arg1)
+	java::math::BigDecimal BigDecimal::setScale(jint arg0, java::math::RoundingMode arg1) const
 	{
 		return callObjectMethod(
 			"setScale",
@@ -612,21 +612,21 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	jshort BigDecimal::shortValueExact()
+	jshort BigDecimal::shortValueExact() const
 	{
 		return callMethod<jshort>(
 			"shortValueExact",
 			"()S"
 		);
 	}
-	jint BigDecimal::signum()
+	jint BigDecimal::signum() const
 	{
 		return callMethod<jint>(
 			"signum",
 			"()I"
 		);
 	}
-	java::math::BigDecimal BigDecimal::sqrt(java::math::MathContext arg0)
+	java::math::BigDecimal BigDecimal::sqrt(java::math::MathContext arg0) const
 	{
 		return callObjectMethod(
 			"sqrt",
@@ -634,14 +634,14 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::stripTrailingZeros()
+	java::math::BigDecimal BigDecimal::stripTrailingZeros() const
 	{
 		return callObjectMethod(
 			"stripTrailingZeros",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigDecimal BigDecimal::subtract(java::math::BigDecimal arg0)
+	java::math::BigDecimal BigDecimal::subtract(java::math::BigDecimal arg0) const
 	{
 		return callObjectMethod(
 			"subtract",
@@ -649,7 +649,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigDecimal BigDecimal::subtract(java::math::BigDecimal arg0, java::math::MathContext arg1)
+	java::math::BigDecimal BigDecimal::subtract(java::math::BigDecimal arg0, java::math::MathContext arg1) const
 	{
 		return callObjectMethod(
 			"subtract",
@@ -658,49 +658,49 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigInteger BigDecimal::toBigInteger()
+	java::math::BigInteger BigDecimal::toBigInteger() const
 	{
 		return callObjectMethod(
 			"toBigInteger",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigDecimal::toBigIntegerExact()
+	java::math::BigInteger BigDecimal::toBigIntegerExact() const
 	{
 		return callObjectMethod(
 			"toBigIntegerExact",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JString BigDecimal::toEngineeringString()
+	JString BigDecimal::toEngineeringString() const
 	{
 		return callObjectMethod(
 			"toEngineeringString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString BigDecimal::toPlainString()
+	JString BigDecimal::toPlainString() const
 	{
 		return callObjectMethod(
 			"toPlainString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString BigDecimal::toString()
+	JString BigDecimal::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::math::BigDecimal BigDecimal::ulp()
+	java::math::BigDecimal BigDecimal::ulp() const
 	{
 		return callObjectMethod(
 			"ulp",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	java::math::BigInteger BigDecimal::unscaledValue()
+	java::math::BigInteger BigDecimal::unscaledValue() const
 	{
 		return callObjectMethod(
 			"unscaledValue",

@@ -31,28 +31,28 @@ namespace android::media
 			"()I"
 		);
 	}
-	jboolean JetPlayer::clearQueue()
+	jboolean JetPlayer::clearQueue() const
 	{
 		return callMethod<jboolean>(
 			"clearQueue",
 			"()Z"
 		);
 	}
-	JObject JetPlayer::clone()
+	JObject JetPlayer::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean JetPlayer::closeJetFile()
+	jboolean JetPlayer::closeJetFile() const
 	{
 		return callMethod<jboolean>(
 			"closeJetFile",
 			"()Z"
 		);
 	}
-	jboolean JetPlayer::loadJetFile(android::content::res::AssetFileDescriptor arg0)
+	jboolean JetPlayer::loadJetFile(android::content::res::AssetFileDescriptor arg0) const
 	{
 		return callMethod<jboolean>(
 			"loadJetFile",
@@ -60,7 +60,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean JetPlayer::loadJetFile(JString arg0)
+	jboolean JetPlayer::loadJetFile(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"loadJetFile",
@@ -68,21 +68,21 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	jboolean JetPlayer::pause()
+	jboolean JetPlayer::pause() const
 	{
 		return callMethod<jboolean>(
 			"pause",
 			"()Z"
 		);
 	}
-	jboolean JetPlayer::play()
+	jboolean JetPlayer::play() const
 	{
 		return callMethod<jboolean>(
 			"play",
 			"()Z"
 		);
 	}
-	jboolean JetPlayer::queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5)
+	jboolean JetPlayer::queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5) const
 	{
 		return callMethod<jboolean>(
 			"queueJetSegment",
@@ -95,7 +95,7 @@ namespace android::media
 			arg5
 		);
 	}
-	jboolean JetPlayer::queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, JBooleanArray arg4, jbyte arg5)
+	jboolean JetPlayer::queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, JBooleanArray arg4, jbyte arg5) const
 	{
 		return callMethod<jboolean>(
 			"queueJetSegmentMuteArray",
@@ -108,14 +108,14 @@ namespace android::media
 			arg5
 		);
 	}
-	void JetPlayer::release()
+	void JetPlayer::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void JetPlayer::setEventListener(JObject arg0)
+	void JetPlayer::setEventListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEventListener",
@@ -123,7 +123,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void JetPlayer::setEventListener(JObject arg0, android::os::Handler arg1)
+	void JetPlayer::setEventListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setEventListener",
@@ -132,7 +132,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jboolean JetPlayer::setMuteArray(JBooleanArray arg0, jboolean arg1)
+	jboolean JetPlayer::setMuteArray(JBooleanArray arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setMuteArray",
@@ -141,7 +141,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jboolean JetPlayer::setMuteFlag(jint arg0, jboolean arg1, jboolean arg2)
+	jboolean JetPlayer::setMuteFlag(jint arg0, jboolean arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"setMuteFlag",
@@ -151,7 +151,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jboolean JetPlayer::setMuteFlags(jint arg0, jboolean arg1)
+	jboolean JetPlayer::setMuteFlags(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setMuteFlags",
@@ -160,7 +160,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jboolean JetPlayer::triggerClip(jint arg0)
+	jboolean JetPlayer::triggerClip(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"triggerClip",

@@ -31,35 +31,35 @@ namespace android::view::contentcapture
 			arg0.object<jstring>()
 		);
 	}
-	jint ContentCaptureContext::describeContents()
+	jint ContentCaptureContext::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::Bundle ContentCaptureContext::getExtras()
+	android::os::Bundle ContentCaptureContext::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::content::LocusId ContentCaptureContext::getLocusId()
+	android::content::LocusId ContentCaptureContext::getLocusId() const
 	{
 		return callObjectMethod(
 			"getLocusId",
 			"()Landroid/content/LocusId;"
 		);
 	}
-	JString ContentCaptureContext::toString()
+	JString ContentCaptureContext::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ContentCaptureContext::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ContentCaptureContext::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

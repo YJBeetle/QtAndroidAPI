@@ -45,7 +45,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean ZoomButton::dispatchUnhandledMove(android::view::View arg0, jint arg1)
+	jboolean ZoomButton::dispatchUnhandledMove(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"dispatchUnhandledMove",
@@ -54,14 +54,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString ZoomButton::getAccessibilityClassName()
+	JString ZoomButton::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ZoomButton::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean ZoomButton::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean ZoomButton::onLongClick(android::view::View arg0)
+	jboolean ZoomButton::onLongClick(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLongClick",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ZoomButton::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean ZoomButton::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -86,7 +86,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomButton::setEnabled(jboolean arg0)
+	void ZoomButton::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -94,7 +94,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButton::setZoomSpeed(jlong arg0)
+	void ZoomButton::setZoomSpeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setZoomSpeed",

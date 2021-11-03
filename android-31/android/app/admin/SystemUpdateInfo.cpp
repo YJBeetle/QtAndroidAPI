@@ -42,14 +42,14 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint SystemUpdateInfo::describeContents()
+	jint SystemUpdateInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SystemUpdateInfo::equals(JObject arg0)
+	jboolean SystemUpdateInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -57,35 +57,35 @@ namespace android::app::admin
 			arg0.object<jobject>()
 		);
 	}
-	jlong SystemUpdateInfo::getReceivedTime()
+	jlong SystemUpdateInfo::getReceivedTime() const
 	{
 		return callMethod<jlong>(
 			"getReceivedTime",
 			"()J"
 		);
 	}
-	jint SystemUpdateInfo::getSecurityPatchState()
+	jint SystemUpdateInfo::getSecurityPatchState() const
 	{
 		return callMethod<jint>(
 			"getSecurityPatchState",
 			"()I"
 		);
 	}
-	jint SystemUpdateInfo::hashCode()
+	jint SystemUpdateInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SystemUpdateInfo::toString()
+	JString SystemUpdateInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SystemUpdateInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SystemUpdateInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

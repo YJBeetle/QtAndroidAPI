@@ -20,49 +20,49 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void BroadcastReceiver::abortBroadcast()
+	void BroadcastReceiver::abortBroadcast() const
 	{
 		callMethod<void>(
 			"abortBroadcast",
 			"()V"
 		);
 	}
-	void BroadcastReceiver::clearAbortBroadcast()
+	void BroadcastReceiver::clearAbortBroadcast() const
 	{
 		callMethod<void>(
 			"clearAbortBroadcast",
 			"()V"
 		);
 	}
-	jboolean BroadcastReceiver::getAbortBroadcast()
+	jboolean BroadcastReceiver::getAbortBroadcast() const
 	{
 		return callMethod<jboolean>(
 			"getAbortBroadcast",
 			"()Z"
 		);
 	}
-	jboolean BroadcastReceiver::getDebugUnregister()
+	jboolean BroadcastReceiver::getDebugUnregister() const
 	{
 		return callMethod<jboolean>(
 			"getDebugUnregister",
 			"()Z"
 		);
 	}
-	jint BroadcastReceiver::getResultCode()
+	jint BroadcastReceiver::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	JString BroadcastReceiver::getResultData()
+	JString BroadcastReceiver::getResultData() const
 	{
 		return callObjectMethod(
 			"getResultData",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle BroadcastReceiver::getResultExtras(jboolean arg0)
+	android::os::Bundle BroadcastReceiver::getResultExtras(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getResultExtras",
@@ -70,28 +70,28 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::BroadcastReceiver_PendingResult BroadcastReceiver::goAsync()
+	android::content::BroadcastReceiver_PendingResult BroadcastReceiver::goAsync() const
 	{
 		return callObjectMethod(
 			"goAsync",
 			"()Landroid/content/BroadcastReceiver$PendingResult;"
 		);
 	}
-	jboolean BroadcastReceiver::isInitialStickyBroadcast()
+	jboolean BroadcastReceiver::isInitialStickyBroadcast() const
 	{
 		return callMethod<jboolean>(
 			"isInitialStickyBroadcast",
 			"()Z"
 		);
 	}
-	jboolean BroadcastReceiver::isOrderedBroadcast()
+	jboolean BroadcastReceiver::isOrderedBroadcast() const
 	{
 		return callMethod<jboolean>(
 			"isOrderedBroadcast",
 			"()Z"
 		);
 	}
-	void BroadcastReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1)
+	void BroadcastReceiver::onReceive(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		callMethod<void>(
 			"onReceive",
@@ -100,7 +100,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	JObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1)
+	JObject BroadcastReceiver::peekService(android::content::Context arg0, android::content::Intent arg1) const
 	{
 		return callObjectMethod(
 			"peekService",
@@ -109,7 +109,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void BroadcastReceiver::setDebugUnregister(jboolean arg0)
+	void BroadcastReceiver::setDebugUnregister(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDebugUnregister",
@@ -117,7 +117,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver::setOrderedHint(jboolean arg0)
+	void BroadcastReceiver::setOrderedHint(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOrderedHint",
@@ -125,7 +125,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver::setResult(jint arg0, JString arg1, android::os::Bundle arg2)
+	void BroadcastReceiver::setResult(jint arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"setResult",
@@ -135,7 +135,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void BroadcastReceiver::setResultCode(jint arg0)
+	void BroadcastReceiver::setResultCode(jint arg0) const
 	{
 		callMethod<void>(
 			"setResultCode",
@@ -143,7 +143,7 @@ namespace android::content
 			arg0
 		);
 	}
-	void BroadcastReceiver::setResultData(JString arg0)
+	void BroadcastReceiver::setResultData(JString arg0) const
 	{
 		callMethod<void>(
 			"setResultData",
@@ -151,7 +151,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void BroadcastReceiver::setResultExtras(android::os::Bundle arg0)
+	void BroadcastReceiver::setResultExtras(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setResultExtras",

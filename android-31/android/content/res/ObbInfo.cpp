@@ -53,21 +53,21 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	jint ObbInfo::describeContents()
+	jint ObbInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString ObbInfo::toString()
+	JString ObbInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ObbInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ObbInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

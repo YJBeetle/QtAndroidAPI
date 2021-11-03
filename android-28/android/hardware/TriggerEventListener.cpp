@@ -16,7 +16,7 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	void TriggerEventListener::onTrigger(android::hardware::TriggerEvent arg0)
+	void TriggerEventListener::onTrigger(android::hardware::TriggerEvent arg0) const
 	{
 		callMethod<void>(
 			"onTrigger",

@@ -33,10 +33,10 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		android::renderscript::Allocation getAllocation();
-		android::renderscript::Element getElement();
-		android::renderscript::Type getType();
-		void updateAllocation();
+		android::renderscript::Allocation getAllocation() const;
+		android::renderscript::Element getElement() const;
+		android::renderscript::Type getType() const;
+		void updateAllocation() const;
 	};
 } // namespace android::renderscript
 

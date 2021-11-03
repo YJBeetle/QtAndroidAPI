@@ -98,7 +98,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void Matrix::dump(java::io::PrintWriter arg0)
+	void Matrix::dump(java::io::PrintWriter arg0) const
 	{
 		callMethod<void>(
 			"dump",
@@ -106,7 +106,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::equals(JObject arg0)
+	jboolean Matrix::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -114,7 +114,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	void Matrix::getValues(JFloatArray arg0)
+	void Matrix::getValues(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"getValues",
@@ -122,14 +122,14 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	jint Matrix::hashCode()
+	jint Matrix::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Matrix::invert(android::graphics::Matrix arg0)
+	jboolean Matrix::invert(android::graphics::Matrix arg0) const
 	{
 		return callMethod<jboolean>(
 			"invert",
@@ -137,21 +137,21 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::isAffine()
+	jboolean Matrix::isAffine() const
 	{
 		return callMethod<jboolean>(
 			"isAffine",
 			"()Z"
 		);
 	}
-	jboolean Matrix::isIdentity()
+	jboolean Matrix::isIdentity() const
 	{
 		return callMethod<jboolean>(
 			"isIdentity",
 			"()Z"
 		);
 	}
-	void Matrix::mapPoints(JFloatArray arg0)
+	void Matrix::mapPoints(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"mapPoints",
@@ -159,7 +159,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapPoints(JFloatArray arg0, JFloatArray arg1)
+	void Matrix::mapPoints(JFloatArray arg0, JFloatArray arg1) const
 	{
 		callMethod<void>(
 			"mapPoints",
@@ -168,7 +168,7 @@ namespace android::graphics
 			arg1.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapPoints(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
+	void Matrix::mapPoints(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"mapPoints",
@@ -180,7 +180,7 @@ namespace android::graphics
 			arg4
 		);
 	}
-	jfloat Matrix::mapRadius(jfloat arg0)
+	jfloat Matrix::mapRadius(jfloat arg0) const
 	{
 		return callMethod<jfloat>(
 			"mapRadius",
@@ -188,7 +188,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Matrix::mapRect(android::graphics::RectF arg0)
+	jboolean Matrix::mapRect(android::graphics::RectF arg0) const
 	{
 		return callMethod<jboolean>(
 			"mapRect",
@@ -196,7 +196,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::mapRect(android::graphics::RectF arg0, android::graphics::RectF arg1)
+	jboolean Matrix::mapRect(android::graphics::RectF arg0, android::graphics::RectF arg1) const
 	{
 		return callMethod<jboolean>(
 			"mapRect",
@@ -205,7 +205,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void Matrix::mapVectors(JFloatArray arg0)
+	void Matrix::mapVectors(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"mapVectors",
@@ -213,7 +213,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapVectors(JFloatArray arg0, JFloatArray arg1)
+	void Matrix::mapVectors(JFloatArray arg0, JFloatArray arg1) const
 	{
 		callMethod<void>(
 			"mapVectors",
@@ -222,7 +222,7 @@ namespace android::graphics
 			arg1.object<jfloatArray>()
 		);
 	}
-	void Matrix::mapVectors(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
+	void Matrix::mapVectors(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"mapVectors",
@@ -234,7 +234,7 @@ namespace android::graphics
 			arg4
 		);
 	}
-	jboolean Matrix::postConcat(android::graphics::Matrix arg0)
+	jboolean Matrix::postConcat(android::graphics::Matrix arg0) const
 	{
 		return callMethod<jboolean>(
 			"postConcat",
@@ -242,7 +242,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::postRotate(jfloat arg0)
+	jboolean Matrix::postRotate(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"postRotate",
@@ -250,7 +250,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Matrix::postRotate(jfloat arg0, jfloat arg1, jfloat arg2)
+	jboolean Matrix::postRotate(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"postRotate",
@@ -260,7 +260,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jboolean Matrix::postScale(jfloat arg0, jfloat arg1)
+	jboolean Matrix::postScale(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"postScale",
@@ -269,7 +269,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::postScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean Matrix::postScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"postScale",
@@ -280,7 +280,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1)
+	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"postSkew",
@@ -289,7 +289,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean Matrix::postSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"postSkew",
@@ -300,7 +300,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Matrix::postTranslate(jfloat arg0, jfloat arg1)
+	jboolean Matrix::postTranslate(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"postTranslate",
@@ -309,7 +309,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::preConcat(android::graphics::Matrix arg0)
+	jboolean Matrix::preConcat(android::graphics::Matrix arg0) const
 	{
 		return callMethod<jboolean>(
 			"preConcat",
@@ -317,7 +317,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::preRotate(jfloat arg0)
+	jboolean Matrix::preRotate(jfloat arg0) const
 	{
 		return callMethod<jboolean>(
 			"preRotate",
@@ -325,7 +325,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jboolean Matrix::preRotate(jfloat arg0, jfloat arg1, jfloat arg2)
+	jboolean Matrix::preRotate(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callMethod<jboolean>(
 			"preRotate",
@@ -335,7 +335,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jboolean Matrix::preScale(jfloat arg0, jfloat arg1)
+	jboolean Matrix::preScale(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"preScale",
@@ -344,7 +344,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::preScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean Matrix::preScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"preScale",
@@ -355,7 +355,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1)
+	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"preSkew",
@@ -364,7 +364,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	jboolean Matrix::preSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"preSkew",
@@ -375,7 +375,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	jboolean Matrix::preTranslate(jfloat arg0, jfloat arg1)
+	jboolean Matrix::preTranslate(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jboolean>(
 			"preTranslate",
@@ -384,21 +384,21 @@ namespace android::graphics
 			arg1
 		);
 	}
-	jboolean Matrix::rectStaysRect()
+	jboolean Matrix::rectStaysRect() const
 	{
 		return callMethod<jboolean>(
 			"rectStaysRect",
 			"()Z"
 		);
 	}
-	void Matrix::reset()
+	void Matrix::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Matrix::set(android::graphics::Matrix arg0)
+	void Matrix::set(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -406,7 +406,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jboolean Matrix::setConcat(android::graphics::Matrix arg0, android::graphics::Matrix arg1)
+	jboolean Matrix::setConcat(android::graphics::Matrix arg0, android::graphics::Matrix arg1) const
 	{
 		return callMethod<jboolean>(
 			"setConcat",
@@ -415,7 +415,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean Matrix::setPolyToPoly(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4)
+	jboolean Matrix::setPolyToPoly(JFloatArray arg0, jint arg1, JFloatArray arg2, jint arg3, jint arg4) const
 	{
 		return callMethod<jboolean>(
 			"setPolyToPoly",
@@ -427,7 +427,7 @@ namespace android::graphics
 			arg4
 		);
 	}
-	jboolean Matrix::setRectToRect(android::graphics::RectF arg0, android::graphics::RectF arg1, android::graphics::Matrix_ScaleToFit arg2)
+	jboolean Matrix::setRectToRect(android::graphics::RectF arg0, android::graphics::RectF arg1, android::graphics::Matrix_ScaleToFit arg2) const
 	{
 		return callMethod<jboolean>(
 			"setRectToRect",
@@ -437,7 +437,7 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	void Matrix::setRotate(jfloat arg0)
+	void Matrix::setRotate(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRotate",
@@ -445,7 +445,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void Matrix::setRotate(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Matrix::setRotate(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setRotate",
@@ -455,7 +455,7 @@ namespace android::graphics
 			arg2
 		);
 	}
-	void Matrix::setScale(jfloat arg0, jfloat arg1)
+	void Matrix::setScale(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setScale",
@@ -464,7 +464,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Matrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Matrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setScale",
@@ -475,7 +475,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Matrix::setSinCos(jfloat arg0, jfloat arg1)
+	void Matrix::setSinCos(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setSinCos",
@@ -484,7 +484,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Matrix::setSinCos(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Matrix::setSinCos(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setSinCos",
@@ -495,7 +495,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Matrix::setSkew(jfloat arg0, jfloat arg1)
+	void Matrix::setSkew(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setSkew",
@@ -504,7 +504,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Matrix::setSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Matrix::setSkew(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setSkew",
@@ -515,7 +515,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void Matrix::setTranslate(jfloat arg0, jfloat arg1)
+	void Matrix::setTranslate(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setTranslate",
@@ -524,7 +524,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void Matrix::setValues(JFloatArray arg0)
+	void Matrix::setValues(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setValues",
@@ -532,14 +532,14 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	JString Matrix::toShortString()
+	JString Matrix::toShortString() const
 	{
 		return callObjectMethod(
 			"toShortString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Matrix::toString()
+	JString Matrix::toString() const
 	{
 		return callObjectMethod(
 			"toString",

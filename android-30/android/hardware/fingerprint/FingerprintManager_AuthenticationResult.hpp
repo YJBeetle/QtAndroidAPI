@@ -21,7 +21,7 @@ namespace android::hardware::fingerprint
 		// Constructors
 		
 		// Methods
-		android::hardware::fingerprint::FingerprintManager_CryptoObject getCryptoObject();
+		android::hardware::fingerprint::FingerprintManager_CryptoObject getCryptoObject() const;
 	};
 } // namespace android::hardware::fingerprint
 

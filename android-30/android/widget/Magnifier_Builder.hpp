@@ -30,15 +30,15 @@ namespace android::widget
 		Magnifier_Builder(android::view::View arg0);
 		
 		// Methods
-		android::widget::Magnifier build();
-		android::widget::Magnifier_Builder setClippingEnabled(jboolean arg0);
-		android::widget::Magnifier_Builder setCornerRadius(jfloat arg0);
-		android::widget::Magnifier_Builder setDefaultSourceToMagnifierOffset(jint arg0, jint arg1);
-		android::widget::Magnifier_Builder setElevation(jfloat arg0);
-		android::widget::Magnifier_Builder setInitialZoom(jfloat arg0);
-		android::widget::Magnifier_Builder setOverlay(android::graphics::drawable::Drawable arg0);
-		android::widget::Magnifier_Builder setSize(jint arg0, jint arg1);
-		android::widget::Magnifier_Builder setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3);
+		android::widget::Magnifier build() const;
+		android::widget::Magnifier_Builder setClippingEnabled(jboolean arg0) const;
+		android::widget::Magnifier_Builder setCornerRadius(jfloat arg0) const;
+		android::widget::Magnifier_Builder setDefaultSourceToMagnifierOffset(jint arg0, jint arg1) const;
+		android::widget::Magnifier_Builder setElevation(jfloat arg0) const;
+		android::widget::Magnifier_Builder setInitialZoom(jfloat arg0) const;
+		android::widget::Magnifier_Builder setOverlay(android::graphics::drawable::Drawable arg0) const;
+		android::widget::Magnifier_Builder setSize(jint arg0, jint arg1) const;
+		android::widget::Magnifier_Builder setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::widget
 

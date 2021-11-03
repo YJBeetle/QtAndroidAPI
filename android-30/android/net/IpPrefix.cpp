@@ -23,7 +23,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jboolean IpPrefix::contains(java::net::InetAddress arg0)
+	jboolean IpPrefix::contains(java::net::InetAddress arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -31,14 +31,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jint IpPrefix::describeContents()
+	jint IpPrefix::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean IpPrefix::equals(JObject arg0)
+	jboolean IpPrefix::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,42 +46,42 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	java::net::InetAddress IpPrefix::getAddress()
+	java::net::InetAddress IpPrefix::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint IpPrefix::getPrefixLength()
+	jint IpPrefix::getPrefixLength() const
 	{
 		return callMethod<jint>(
 			"getPrefixLength",
 			"()I"
 		);
 	}
-	JByteArray IpPrefix::getRawAddress()
+	JByteArray IpPrefix::getRawAddress() const
 	{
 		return callObjectMethod(
 			"getRawAddress",
 			"()[B"
 		);
 	}
-	jint IpPrefix::hashCode()
+	jint IpPrefix::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString IpPrefix::toString()
+	JString IpPrefix::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void IpPrefix::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void IpPrefix::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

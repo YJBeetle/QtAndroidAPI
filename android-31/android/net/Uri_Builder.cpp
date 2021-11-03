@@ -17,7 +17,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::Uri_Builder Uri_Builder::appendEncodedPath(JString arg0)
+	android::net::Uri_Builder Uri_Builder::appendEncodedPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"appendEncodedPath",
@@ -25,7 +25,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::appendPath(JString arg0)
+	android::net::Uri_Builder Uri_Builder::appendPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"appendPath",
@@ -33,7 +33,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::appendQueryParameter(JString arg0, JString arg1)
+	android::net::Uri_Builder Uri_Builder::appendQueryParameter(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"appendQueryParameter",
@@ -42,7 +42,7 @@ namespace android::net
 			arg1.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::authority(JString arg0)
+	android::net::Uri_Builder Uri_Builder::authority(JString arg0) const
 	{
 		return callObjectMethod(
 			"authority",
@@ -50,21 +50,21 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri Uri_Builder::build()
+	android::net::Uri Uri_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::clearQuery()
+	android::net::Uri_Builder Uri_Builder::clearQuery() const
 	{
 		return callObjectMethod(
 			"clearQuery",
 			"()Landroid/net/Uri$Builder;"
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::encodedAuthority(JString arg0)
+	android::net::Uri_Builder Uri_Builder::encodedAuthority(JString arg0) const
 	{
 		return callObjectMethod(
 			"encodedAuthority",
@@ -72,7 +72,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::encodedFragment(JString arg0)
+	android::net::Uri_Builder Uri_Builder::encodedFragment(JString arg0) const
 	{
 		return callObjectMethod(
 			"encodedFragment",
@@ -80,7 +80,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::encodedOpaquePart(JString arg0)
+	android::net::Uri_Builder Uri_Builder::encodedOpaquePart(JString arg0) const
 	{
 		return callObjectMethod(
 			"encodedOpaquePart",
@@ -88,7 +88,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::encodedPath(JString arg0)
+	android::net::Uri_Builder Uri_Builder::encodedPath(JString arg0) const
 	{
 		return callObjectMethod(
 			"encodedPath",
@@ -96,7 +96,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::encodedQuery(JString arg0)
+	android::net::Uri_Builder Uri_Builder::encodedQuery(JString arg0) const
 	{
 		return callObjectMethod(
 			"encodedQuery",
@@ -104,7 +104,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::fragment(JString arg0)
+	android::net::Uri_Builder Uri_Builder::fragment(JString arg0) const
 	{
 		return callObjectMethod(
 			"fragment",
@@ -112,7 +112,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::opaquePart(JString arg0)
+	android::net::Uri_Builder Uri_Builder::opaquePart(JString arg0) const
 	{
 		return callObjectMethod(
 			"opaquePart",
@@ -120,7 +120,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::path(JString arg0)
+	android::net::Uri_Builder Uri_Builder::path(JString arg0) const
 	{
 		return callObjectMethod(
 			"path",
@@ -128,7 +128,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::query(JString arg0)
+	android::net::Uri_Builder Uri_Builder::query(JString arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -136,7 +136,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	android::net::Uri_Builder Uri_Builder::scheme(JString arg0)
+	android::net::Uri_Builder Uri_Builder::scheme(JString arg0) const
 	{
 		return callObjectMethod(
 			"scheme",
@@ -144,7 +144,7 @@ namespace android::net
 			arg0.object<jstring>()
 		);
 	}
-	JString Uri_Builder::toString()
+	JString Uri_Builder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

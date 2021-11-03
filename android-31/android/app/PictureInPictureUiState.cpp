@@ -20,14 +20,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint PictureInPictureUiState::describeContents()
+	jint PictureInPictureUiState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PictureInPictureUiState::equals(JObject arg0)
+	jboolean PictureInPictureUiState::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,21 +35,21 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	jint PictureInPictureUiState::hashCode()
+	jint PictureInPictureUiState::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PictureInPictureUiState::isStashed()
+	jboolean PictureInPictureUiState::isStashed() const
 	{
 		return callMethod<jboolean>(
 			"isStashed",
 			"()Z"
 		);
 	}
-	void PictureInPictureUiState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PictureInPictureUiState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

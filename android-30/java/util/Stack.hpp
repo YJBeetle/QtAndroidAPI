@@ -19,11 +19,11 @@ namespace java::util
 		Stack();
 		
 		// Methods
-		jboolean empty();
-		JObject peek();
-		JObject pop();
-		JObject push(JObject arg0);
-		jint search(JObject arg0);
+		jboolean empty() const;
+		JObject peek() const;
+		JObject pop() const;
+		JObject push(JObject arg0) const;
+		jint search(JObject arg0) const;
 	};
 } // namespace java::util
 

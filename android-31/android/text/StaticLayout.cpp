@@ -57,14 +57,14 @@ namespace android::text
 		) {}
 	
 	// Methods
-	jint StaticLayout::getBottomPadding()
+	jint StaticLayout::getBottomPadding() const
 	{
 		return callMethod<jint>(
 			"getBottomPadding",
 			"()I"
 		);
 	}
-	jint StaticLayout::getEllipsisCount(jint arg0)
+	jint StaticLayout::getEllipsisCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisCount",
@@ -72,7 +72,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getEllipsisStart(jint arg0)
+	jint StaticLayout::getEllipsisStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisStart",
@@ -80,14 +80,14 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getEllipsizedWidth()
+	jint StaticLayout::getEllipsizedWidth() const
 	{
 		return callMethod<jint>(
 			"getEllipsizedWidth",
 			"()I"
 		);
 	}
-	jboolean StaticLayout::getLineContainsTab(jint arg0)
+	jboolean StaticLayout::getLineContainsTab(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLineContainsTab",
@@ -95,14 +95,14 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getLineCount()
+	jint StaticLayout::getLineCount() const
 	{
 		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
-	jint StaticLayout::getLineDescent(jint arg0)
+	jint StaticLayout::getLineDescent(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineDescent",
@@ -110,7 +110,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::Layout_Directions StaticLayout::getLineDirections(jint arg0)
+	android::text::Layout_Directions StaticLayout::getLineDirections(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLineDirections",
@@ -118,7 +118,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getLineForVertical(jint arg0)
+	jint StaticLayout::getLineForVertical(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineForVertical",
@@ -126,7 +126,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getLineStart(jint arg0)
+	jint StaticLayout::getLineStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineStart",
@@ -134,7 +134,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getLineTop(jint arg0)
+	jint StaticLayout::getLineTop(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineTop",
@@ -142,7 +142,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getParagraphDirection(jint arg0)
+	jint StaticLayout::getParagraphDirection(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParagraphDirection",
@@ -150,7 +150,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint StaticLayout::getTopPadding()
+	jint StaticLayout::getTopPadding() const
 	{
 		return callMethod<jint>(
 			"getTopPadding",

@@ -68,12 +68,12 @@ namespace android::media
 		static android::media::MediaParser create(JObject arg0, JArray arg1);
 		static android::media::MediaParser createByName(JString arg0, JObject arg1);
 		static JObject getParserNames(android::media::MediaFormat arg0);
-		jboolean advance(JObject arg0);
-		JString getParserName();
-		void release();
-		void seek(android::media::MediaParser_SeekPoint arg0);
-		android::media::MediaParser setParameter(JString arg0, JObject arg1);
-		jboolean supportsParameter(JString arg0);
+		jboolean advance(JObject arg0) const;
+		JString getParserName() const;
+		void release() const;
+		void seek(android::media::MediaParser_SeekPoint arg0) const;
+		android::media::MediaParser setParameter(JString arg0, JObject arg1) const;
+		jboolean supportsParameter(JString arg0) const;
 	};
 } // namespace android::media
 

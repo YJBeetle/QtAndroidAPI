@@ -18,14 +18,14 @@ namespace java::text
 		) {}
 	
 	// Methods
-	JObject Annotation::getValue()
+	JObject Annotation::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString Annotation::toString()
+	JString Annotation::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -47,24 +47,24 @@ namespace android::telecom
 		RemoteConnection_Callback();
 		
 		// Methods
-		void onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2);
-		void onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, JString arg1, jint arg2);
-		void onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1);
-		void onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1);
-		void onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1);
-		void onConnectionEvent(android::telecom::RemoteConnection arg0, JString arg1, android::os::Bundle arg2);
-		void onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1);
-		void onDestroyed(android::telecom::RemoteConnection arg0);
-		void onDisconnected(android::telecom::RemoteConnection arg0, android::telecom::DisconnectCause arg1);
-		void onExtrasChanged(android::telecom::RemoteConnection arg0, android::os::Bundle arg1);
-		void onPostDialChar(android::telecom::RemoteConnection arg0, jchar arg1);
-		void onPostDialWait(android::telecom::RemoteConnection arg0, JString arg1);
-		void onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1);
-		void onStateChanged(android::telecom::RemoteConnection arg0, jint arg1);
-		void onStatusHintsChanged(android::telecom::RemoteConnection arg0, android::telecom::StatusHints arg1);
-		void onVideoProviderChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection_VideoProvider arg1);
-		void onVideoStateChanged(android::telecom::RemoteConnection arg0, jint arg1);
-		void onVoipAudioChanged(android::telecom::RemoteConnection arg0, jboolean arg1);
+		void onAddressChanged(android::telecom::RemoteConnection arg0, android::net::Uri arg1, jint arg2) const;
+		void onCallerDisplayNameChanged(android::telecom::RemoteConnection arg0, JString arg1, jint arg2) const;
+		void onConferenceChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConference arg1) const;
+		void onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1) const;
+		void onConnectionCapabilitiesChanged(android::telecom::RemoteConnection arg0, jint arg1) const;
+		void onConnectionEvent(android::telecom::RemoteConnection arg0, JString arg1, android::os::Bundle arg2) const;
+		void onConnectionPropertiesChanged(android::telecom::RemoteConnection arg0, jint arg1) const;
+		void onDestroyed(android::telecom::RemoteConnection arg0) const;
+		void onDisconnected(android::telecom::RemoteConnection arg0, android::telecom::DisconnectCause arg1) const;
+		void onExtrasChanged(android::telecom::RemoteConnection arg0, android::os::Bundle arg1) const;
+		void onPostDialChar(android::telecom::RemoteConnection arg0, jchar arg1) const;
+		void onPostDialWait(android::telecom::RemoteConnection arg0, JString arg1) const;
+		void onRingbackRequested(android::telecom::RemoteConnection arg0, jboolean arg1) const;
+		void onStateChanged(android::telecom::RemoteConnection arg0, jint arg1) const;
+		void onStatusHintsChanged(android::telecom::RemoteConnection arg0, android::telecom::StatusHints arg1) const;
+		void onVideoProviderChanged(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection_VideoProvider arg1) const;
+		void onVideoStateChanged(android::telecom::RemoteConnection arg0, jint arg1) const;
+		void onVoipAudioChanged(android::telecom::RemoteConnection arg0, jboolean arg1) const;
 	};
 } // namespace android::telecom
 

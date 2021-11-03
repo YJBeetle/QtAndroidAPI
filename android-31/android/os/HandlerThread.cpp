@@ -25,35 +25,35 @@ namespace android::os
 		) {}
 	
 	// Methods
-	android::os::Looper HandlerThread::getLooper()
+	android::os::Looper HandlerThread::getLooper() const
 	{
 		return callObjectMethod(
 			"getLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	jint HandlerThread::getThreadId()
+	jint HandlerThread::getThreadId() const
 	{
 		return callMethod<jint>(
 			"getThreadId",
 			"()I"
 		);
 	}
-	jboolean HandlerThread::quit()
+	jboolean HandlerThread::quit() const
 	{
 		return callMethod<jboolean>(
 			"quit",
 			"()Z"
 		);
 	}
-	jboolean HandlerThread::quitSafely()
+	jboolean HandlerThread::quitSafely() const
 	{
 		return callMethod<jboolean>(
 			"quitSafely",
 			"()Z"
 		);
 	}
-	void HandlerThread::run()
+	void HandlerThread::run() const
 	{
 		callMethod<void>(
 			"run",

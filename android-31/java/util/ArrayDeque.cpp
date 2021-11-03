@@ -33,7 +33,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean ArrayDeque::add(JObject arg0)
+	jboolean ArrayDeque::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -41,7 +41,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::addAll(JObject arg0)
+	jboolean ArrayDeque::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -49,7 +49,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void ArrayDeque::addFirst(JObject arg0)
+	void ArrayDeque::addFirst(JObject arg0) const
 	{
 		callMethod<void>(
 			"addFirst",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayDeque::addLast(JObject arg0)
+	void ArrayDeque::addLast(JObject arg0) const
 	{
 		callMethod<void>(
 			"addLast",
@@ -65,21 +65,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayDeque::clear()
+	void ArrayDeque::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	java::util::ArrayDeque ArrayDeque::clone()
+	java::util::ArrayDeque ArrayDeque::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/util/ArrayDeque;"
 		);
 	}
-	jboolean ArrayDeque::contains(JObject arg0)
+	jboolean ArrayDeque::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -87,21 +87,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject ArrayDeque::descendingIterator()
+	JObject ArrayDeque::descendingIterator() const
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject ArrayDeque::element()
+	JObject ArrayDeque::element() const
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ArrayDeque::forEach(JObject arg0)
+	void ArrayDeque::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -109,35 +109,35 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayDeque::getFirst()
+	JObject ArrayDeque::getFirst() const
 	{
 		return callObjectMethod(
 			"getFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::getLast()
+	JObject ArrayDeque::getLast() const
 	{
 		return callObjectMethod(
 			"getLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ArrayDeque::isEmpty()
+	jboolean ArrayDeque::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ArrayDeque::iterator()
+	JObject ArrayDeque::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ArrayDeque::offer(JObject arg0)
+	jboolean ArrayDeque::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -145,7 +145,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::offerFirst(JObject arg0)
+	jboolean ArrayDeque::offerFirst(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offerFirst",
@@ -153,7 +153,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::offerLast(JObject arg0)
+	jboolean ArrayDeque::offerLast(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offerLast",
@@ -161,56 +161,56 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject ArrayDeque::peek()
+	JObject ArrayDeque::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::peekFirst()
+	JObject ArrayDeque::peekFirst() const
 	{
 		return callObjectMethod(
 			"peekFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::peekLast()
+	JObject ArrayDeque::peekLast() const
 	{
 		return callObjectMethod(
 			"peekLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::poll()
+	JObject ArrayDeque::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::pollFirst()
+	JObject ArrayDeque::pollFirst() const
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::pollLast()
+	JObject ArrayDeque::pollLast() const
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ArrayDeque::pop()
+	JObject ArrayDeque::pop() const
 	{
 		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ArrayDeque::push(JObject arg0)
+	void ArrayDeque::push(JObject arg0) const
 	{
 		callMethod<void>(
 			"push",
@@ -218,7 +218,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::remove(JObject arg0)
+	jboolean ArrayDeque::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -226,14 +226,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject ArrayDeque::remove()
+	JObject ArrayDeque::remove() const
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ArrayDeque::removeAll(JObject arg0)
+	jboolean ArrayDeque::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -241,14 +241,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayDeque::removeFirst()
+	JObject ArrayDeque::removeFirst() const
 	{
 		return callObjectMethod(
 			"removeFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ArrayDeque::removeFirstOccurrence(JObject arg0)
+	jboolean ArrayDeque::removeFirstOccurrence(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeFirstOccurrence",
@@ -256,7 +256,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::removeIf(JObject arg0)
+	jboolean ArrayDeque::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -264,14 +264,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject ArrayDeque::removeLast()
+	JObject ArrayDeque::removeLast() const
 	{
 		return callObjectMethod(
 			"removeLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ArrayDeque::removeLastOccurrence(JObject arg0)
+	jboolean ArrayDeque::removeLastOccurrence(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeLastOccurrence",
@@ -279,7 +279,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ArrayDeque::retainAll(JObject arg0)
+	jboolean ArrayDeque::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -287,28 +287,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint ArrayDeque::size()
+	jint ArrayDeque::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ArrayDeque::spliterator()
+	JObject ArrayDeque::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObjectArray ArrayDeque::toArray()
+	JObjectArray ArrayDeque::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray ArrayDeque::toArray(JObjectArray arg0)
+	JObjectArray ArrayDeque::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",

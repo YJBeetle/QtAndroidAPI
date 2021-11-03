@@ -34,8 +34,8 @@ namespace android::transition
 		
 		// Methods
 		static android::transition::TransitionInflater from(android::content::Context arg0);
-		android::transition::Transition inflateTransition(jint arg0);
-		android::transition::TransitionManager inflateTransitionManager(jint arg0, android::view::ViewGroup arg1);
+		android::transition::Transition inflateTransition(jint arg0) const;
+		android::transition::TransitionManager inflateTransitionManager(jint arg0, android::view::ViewGroup arg1) const;
 	};
 } // namespace android::transition
 

@@ -19,112 +19,112 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void JsonReader::beginArray()
+	void JsonReader::beginArray() const
 	{
 		callMethod<void>(
 			"beginArray",
 			"()V"
 		);
 	}
-	void JsonReader::beginObject()
+	void JsonReader::beginObject() const
 	{
 		callMethod<void>(
 			"beginObject",
 			"()V"
 		);
 	}
-	void JsonReader::close()
+	void JsonReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void JsonReader::endArray()
+	void JsonReader::endArray() const
 	{
 		callMethod<void>(
 			"endArray",
 			"()V"
 		);
 	}
-	void JsonReader::endObject()
+	void JsonReader::endObject() const
 	{
 		callMethod<void>(
 			"endObject",
 			"()V"
 		);
 	}
-	jboolean JsonReader::hasNext()
+	jboolean JsonReader::hasNext() const
 	{
 		return callMethod<jboolean>(
 			"hasNext",
 			"()Z"
 		);
 	}
-	jboolean JsonReader::isLenient()
+	jboolean JsonReader::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	jboolean JsonReader::nextBoolean()
+	jboolean JsonReader::nextBoolean() const
 	{
 		return callMethod<jboolean>(
 			"nextBoolean",
 			"()Z"
 		);
 	}
-	jdouble JsonReader::nextDouble()
+	jdouble JsonReader::nextDouble() const
 	{
 		return callMethod<jdouble>(
 			"nextDouble",
 			"()D"
 		);
 	}
-	jint JsonReader::nextInt()
+	jint JsonReader::nextInt() const
 	{
 		return callMethod<jint>(
 			"nextInt",
 			"()I"
 		);
 	}
-	jlong JsonReader::nextLong()
+	jlong JsonReader::nextLong() const
 	{
 		return callMethod<jlong>(
 			"nextLong",
 			"()J"
 		);
 	}
-	JString JsonReader::nextName()
+	JString JsonReader::nextName() const
 	{
 		return callObjectMethod(
 			"nextName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void JsonReader::nextNull()
+	void JsonReader::nextNull() const
 	{
 		callMethod<void>(
 			"nextNull",
 			"()V"
 		);
 	}
-	JString JsonReader::nextString()
+	JString JsonReader::nextString() const
 	{
 		return callObjectMethod(
 			"nextString",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::util::JsonToken JsonReader::peek()
+	android::util::JsonToken JsonReader::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Landroid/util/JsonToken;"
 		);
 	}
-	void JsonReader::setLenient(jboolean arg0)
+	void JsonReader::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -132,14 +132,14 @@ namespace android::util
 			arg0
 		);
 	}
-	void JsonReader::skipValue()
+	void JsonReader::skipValue() const
 	{
 		callMethod<void>(
 			"skipValue",
 			"()V"
 		);
 	}
-	JString JsonReader::toString()
+	JString JsonReader::toString() const
 	{
 		return callObjectMethod(
 			"toString",

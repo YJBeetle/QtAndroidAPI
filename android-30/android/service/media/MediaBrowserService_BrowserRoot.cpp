@@ -43,14 +43,14 @@ namespace android::service::media
 		) {}
 	
 	// Methods
-	android::os::Bundle MediaBrowserService_BrowserRoot::getExtras()
+	android::os::Bundle MediaBrowserService_BrowserRoot::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString MediaBrowserService_BrowserRoot::getRootId()
+	JString MediaBrowserService_BrowserRoot::getRootId() const
 	{
 		return callObjectMethod(
 			"getRootId",

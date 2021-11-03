@@ -18,21 +18,21 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void ParcelFileDescriptor_AutoCloseInputStream::close()
+	void ParcelFileDescriptor_AutoCloseInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read()
+	jint ParcelFileDescriptor_AutoCloseInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0)
+	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -40,7 +40,7 @@ namespace android::os
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint ParcelFileDescriptor_AutoCloseInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",

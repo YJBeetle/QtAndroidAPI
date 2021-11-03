@@ -16,7 +16,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void DefaultDatabaseErrorHandler::onCorruption(android::database::sqlite::SQLiteDatabase arg0)
+	void DefaultDatabaseErrorHandler::onCorruption(android::database::sqlite::SQLiteDatabase arg0) const
 	{
 		callMethod<void>(
 			"onCorruption",

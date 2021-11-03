@@ -19,11 +19,11 @@ namespace android::media::audiofx
 		DynamicsProcessing_BandBase(jboolean arg0, jfloat arg1);
 		
 		// Methods
-		jfloat getCutoffFrequency();
-		jboolean isEnabled();
-		void setCutoffFrequency(jfloat arg0);
-		void setEnabled(jboolean arg0);
-		JString toString();
+		jfloat getCutoffFrequency() const;
+		jboolean isEnabled() const;
+		void setCutoffFrequency(jfloat arg0) const;
+		void setEnabled(jboolean arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

@@ -15,7 +15,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void TimeAnimator::setCurrentPlayTime(jlong arg0)
+	void TimeAnimator::setCurrentPlayTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setCurrentPlayTime",
@@ -23,7 +23,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void TimeAnimator::setTimeListener(JObject arg0)
+	void TimeAnimator::setTimeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTimeListener",
@@ -31,7 +31,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void TimeAnimator::start()
+	void TimeAnimator::start() const
 	{
 		callMethod<void>(
 			"start",

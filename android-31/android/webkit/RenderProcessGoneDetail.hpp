@@ -17,8 +17,8 @@ namespace android::webkit
 		RenderProcessGoneDetail();
 		
 		// Methods
-		jboolean didCrash();
-		jint rendererPriorityAtExit();
+		jboolean didCrash() const;
+		jint rendererPriorityAtExit() const;
 	};
 } // namespace android::webkit
 

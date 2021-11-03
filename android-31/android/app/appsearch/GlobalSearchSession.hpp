@@ -30,9 +30,9 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		void close();
-		void reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2);
-		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1);
+		void close() const;
+		void reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2) const;
+		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1) const;
 	};
 } // namespace android::app::appsearch
 

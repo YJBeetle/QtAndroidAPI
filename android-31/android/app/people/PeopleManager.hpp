@@ -22,10 +22,10 @@ namespace android::app::people
 		// Constructors
 		
 		// Methods
-		void addOrUpdateStatus(JString arg0, android::app::people::ConversationStatus arg1);
-		void clearStatus(JString arg0, JString arg1);
-		void clearStatuses(JString arg0);
-		JObject getStatuses(JString arg0);
+		void addOrUpdateStatus(JString arg0, android::app::people::ConversationStatus arg1) const;
+		void clearStatus(JString arg0, JString arg1) const;
+		void clearStatuses(JString arg0) const;
+		JObject getStatuses(JString arg0) const;
 	};
 } // namespace android::app::people
 

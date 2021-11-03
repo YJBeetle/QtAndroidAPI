@@ -58,14 +58,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject CurrencyPluralInfo::clone()
+	JObject CurrencyPluralInfo::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean CurrencyPluralInfo::equals(JObject arg0)
+	jboolean CurrencyPluralInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -73,7 +73,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	JString CurrencyPluralInfo::getCurrencyPluralPattern(JString arg0)
+	JString CurrencyPluralInfo::getCurrencyPluralPattern(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCurrencyPluralPattern",
@@ -81,28 +81,28 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	android::icu::util::ULocale CurrencyPluralInfo::getLocale()
+	android::icu::util::ULocale CurrencyPluralInfo::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	android::icu::text::PluralRules CurrencyPluralInfo::getPluralRules()
+	android::icu::text::PluralRules CurrencyPluralInfo::getPluralRules() const
 	{
 		return callObjectMethod(
 			"getPluralRules",
 			"()Landroid/icu/text/PluralRules;"
 		);
 	}
-	jint CurrencyPluralInfo::hashCode()
+	jint CurrencyPluralInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void CurrencyPluralInfo::setCurrencyPluralPattern(JString arg0, JString arg1)
+	void CurrencyPluralInfo::setCurrencyPluralPattern(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setCurrencyPluralPattern",
@@ -111,7 +111,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	void CurrencyPluralInfo::setLocale(android::icu::util::ULocale arg0)
+	void CurrencyPluralInfo::setLocale(android::icu::util::ULocale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -119,7 +119,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void CurrencyPluralInfo::setPluralRules(JString arg0)
+	void CurrencyPluralInfo::setPluralRules(JString arg0) const
 	{
 		callMethod<void>(
 			"setPluralRules",

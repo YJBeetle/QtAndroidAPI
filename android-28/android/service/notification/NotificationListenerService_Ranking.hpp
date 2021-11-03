@@ -27,18 +27,18 @@ namespace android::service::notification
 		NotificationListenerService_Ranking();
 		
 		// Methods
-		jboolean canShowBadge();
-		android::app::NotificationChannel getChannel();
-		jint getImportance();
-		JString getImportanceExplanation();
-		JString getKey();
-		JString getOverrideGroupKey();
-		jint getRank();
-		jint getSuppressedVisualEffects();
-		jint getUserSentiment();
-		jboolean isAmbient();
-		jboolean isSuspended();
-		jboolean matchesInterruptionFilter();
+		jboolean canShowBadge() const;
+		android::app::NotificationChannel getChannel() const;
+		jint getImportance() const;
+		JString getImportanceExplanation() const;
+		JString getKey() const;
+		JString getOverrideGroupKey() const;
+		jint getRank() const;
+		jint getSuppressedVisualEffects() const;
+		jint getUserSentiment() const;
+		jboolean isAmbient() const;
+		jboolean isSuspended() const;
+		jboolean matchesInterruptionFilter() const;
 	};
 } // namespace android::service::notification
 

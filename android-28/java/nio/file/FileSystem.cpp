@@ -14,21 +14,21 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	void FileSystem::close()
+	void FileSystem::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject FileSystem::getFileStores()
+	JObject FileSystem::getFileStores() const
 	{
 		return callObjectMethod(
 			"getFileStores",
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	JObject FileSystem::getPath(JString arg0, JArray arg1)
+	JObject FileSystem::getPath(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"getPath",
@@ -37,7 +37,7 @@ namespace java::nio::file
 			arg1.object<jarray>()
 		);
 	}
-	JObject FileSystem::getPathMatcher(JString arg0)
+	JObject FileSystem::getPathMatcher(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPathMatcher",
@@ -45,56 +45,56 @@ namespace java::nio::file
 			arg0.object<jstring>()
 		);
 	}
-	JObject FileSystem::getRootDirectories()
+	JObject FileSystem::getRootDirectories() const
 	{
 		return callObjectMethod(
 			"getRootDirectories",
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	JString FileSystem::getSeparator()
+	JString FileSystem::getSeparator() const
 	{
 		return callObjectMethod(
 			"getSeparator",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::nio::file::attribute::UserPrincipalLookupService FileSystem::getUserPrincipalLookupService()
+	java::nio::file::attribute::UserPrincipalLookupService FileSystem::getUserPrincipalLookupService() const
 	{
 		return callObjectMethod(
 			"getUserPrincipalLookupService",
 			"()Ljava/nio/file/attribute/UserPrincipalLookupService;"
 		);
 	}
-	jboolean FileSystem::isOpen()
+	jboolean FileSystem::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
-	jboolean FileSystem::isReadOnly()
+	jboolean FileSystem::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	JObject FileSystem::newWatchService()
+	JObject FileSystem::newWatchService() const
 	{
 		return callObjectMethod(
 			"newWatchService",
 			"()Ljava/nio/file/WatchService;"
 		);
 	}
-	java::nio::file::spi::FileSystemProvider FileSystem::provider()
+	java::nio::file::spi::FileSystemProvider FileSystem::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/file/spi/FileSystemProvider;"
 		);
 	}
-	JObject FileSystem::supportedFileAttributeViews()
+	JObject FileSystem::supportedFileAttributeViews() const
 	{
 		return callObjectMethod(
 			"supportedFileAttributeViews",

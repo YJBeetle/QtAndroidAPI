@@ -18,21 +18,21 @@ namespace java::lang::invoke
 		) {}
 	
 	// Methods
-	java::lang::invoke::MethodHandle ConstantCallSite::dynamicInvoker()
+	java::lang::invoke::MethodHandle ConstantCallSite::dynamicInvoker() const
 	{
 		return callObjectMethod(
 			"dynamicInvoker",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	java::lang::invoke::MethodHandle ConstantCallSite::getTarget()
+	java::lang::invoke::MethodHandle ConstantCallSite::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Ljava/lang/invoke/MethodHandle;"
 		);
 	}
-	void ConstantCallSite::setTarget(java::lang::invoke::MethodHandle arg0)
+	void ConstantCallSite::setTarget(java::lang::invoke::MethodHandle arg0) const
 	{
 		callMethod<void>(
 			"setTarget",

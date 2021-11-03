@@ -30,20 +30,20 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void deselectRoute(android::media::MediaRoute2Info arg0);
-		android::os::Bundle getControlHints();
-		JObject getDeselectableRoutes();
-		JString getId();
-		JObject getSelectableRoutes();
-		JObject getSelectedRoutes();
-		jint getVolume();
-		jint getVolumeHandling();
-		jint getVolumeMax();
-		jboolean isReleased();
-		void release();
-		void selectRoute(android::media::MediaRoute2Info arg0);
-		void setVolume(jint arg0);
-		JString toString();
+		void deselectRoute(android::media::MediaRoute2Info arg0) const;
+		android::os::Bundle getControlHints() const;
+		JObject getDeselectableRoutes() const;
+		JString getId() const;
+		JObject getSelectableRoutes() const;
+		JObject getSelectedRoutes() const;
+		jint getVolume() const;
+		jint getVolumeHandling() const;
+		jint getVolumeMax() const;
+		jboolean isReleased() const;
+		void release() const;
+		void selectRoute(android::media::MediaRoute2Info arg0) const;
+		void setVolume(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media
 

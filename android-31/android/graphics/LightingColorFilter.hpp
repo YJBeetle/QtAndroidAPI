@@ -17,8 +17,8 @@ namespace android::graphics
 		LightingColorFilter(jint arg0, jint arg1);
 		
 		// Methods
-		jint getColorAdd();
-		jint getColorMultiply();
+		jint getColorAdd() const;
+		jint getColorMultiply() const;
 	};
 } // namespace android::graphics
 

@@ -20,8 +20,8 @@ namespace java::lang
 		EnumConstantNotPresentException(JClass arg0, JString arg1);
 		
 		// Methods
-		JString constantName();
-		JClass enumType();
+		JString constantName() const;
+		JClass enumType() const;
 	};
 } // namespace java::lang
 

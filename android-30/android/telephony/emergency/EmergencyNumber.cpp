@@ -133,7 +133,7 @@ namespace android::telephony::emergency
 	// Constructors
 	
 	// Methods
-	jint EmergencyNumber::compareTo(android::telephony::emergency::EmergencyNumber arg0)
+	jint EmergencyNumber::compareTo(android::telephony::emergency::EmergencyNumber arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -141,7 +141,7 @@ namespace android::telephony::emergency
 			arg0.object()
 		);
 	}
-	jint EmergencyNumber::compareTo(JObject arg0)
+	jint EmergencyNumber::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -149,14 +149,14 @@ namespace android::telephony::emergency
 			arg0.object<jobject>()
 		);
 	}
-	jint EmergencyNumber::describeContents()
+	jint EmergencyNumber::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean EmergencyNumber::equals(JObject arg0)
+	jboolean EmergencyNumber::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -164,63 +164,63 @@ namespace android::telephony::emergency
 			arg0.object<jobject>()
 		);
 	}
-	JString EmergencyNumber::getCountryIso()
+	JString EmergencyNumber::getCountryIso() const
 	{
 		return callObjectMethod(
 			"getCountryIso",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint EmergencyNumber::getEmergencyCallRouting()
+	jint EmergencyNumber::getEmergencyCallRouting() const
 	{
 		return callMethod<jint>(
 			"getEmergencyCallRouting",
 			"()I"
 		);
 	}
-	JObject EmergencyNumber::getEmergencyNumberSources()
+	JObject EmergencyNumber::getEmergencyNumberSources() const
 	{
 		return callObjectMethod(
 			"getEmergencyNumberSources",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject EmergencyNumber::getEmergencyServiceCategories()
+	JObject EmergencyNumber::getEmergencyServiceCategories() const
 	{
 		return callObjectMethod(
 			"getEmergencyServiceCategories",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject EmergencyNumber::getEmergencyUrns()
+	JObject EmergencyNumber::getEmergencyUrns() const
 	{
 		return callObjectMethod(
 			"getEmergencyUrns",
 			"()Ljava/util/List;"
 		);
 	}
-	JString EmergencyNumber::getMnc()
+	JString EmergencyNumber::getMnc() const
 	{
 		return callObjectMethod(
 			"getMnc",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString EmergencyNumber::getNumber()
+	JString EmergencyNumber::getNumber() const
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint EmergencyNumber::hashCode()
+	jint EmergencyNumber::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean EmergencyNumber::isFromSources(jint arg0)
+	jboolean EmergencyNumber::isFromSources(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFromSources",
@@ -228,7 +228,7 @@ namespace android::telephony::emergency
 			arg0
 		);
 	}
-	jboolean EmergencyNumber::isInEmergencyServiceCategories(jint arg0)
+	jboolean EmergencyNumber::isInEmergencyServiceCategories(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isInEmergencyServiceCategories",
@@ -236,14 +236,14 @@ namespace android::telephony::emergency
 			arg0
 		);
 	}
-	JString EmergencyNumber::toString()
+	JString EmergencyNumber::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void EmergencyNumber::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void EmergencyNumber::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -17,14 +17,14 @@ namespace android::webkit
 		ServiceWorkerWebSettings();
 		
 		// Methods
-		jboolean getAllowContentAccess();
-		jboolean getAllowFileAccess();
-		jboolean getBlockNetworkLoads();
-		jint getCacheMode();
-		void setAllowContentAccess(jboolean arg0);
-		void setAllowFileAccess(jboolean arg0);
-		void setBlockNetworkLoads(jboolean arg0);
-		void setCacheMode(jint arg0);
+		jboolean getAllowContentAccess() const;
+		jboolean getAllowFileAccess() const;
+		jboolean getBlockNetworkLoads() const;
+		jint getCacheMode() const;
+		void setAllowContentAccess(jboolean arg0) const;
+		void setAllowFileAccess(jboolean arg0) const;
+		void setBlockNetworkLoads(jboolean arg0) const;
+		void setCacheMode(jint arg0) const;
 	};
 } // namespace android::webkit
 

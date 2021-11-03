@@ -26,14 +26,14 @@ namespace android::text::method
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
-	jboolean LinkMovementMethod::canSelectArbitrarily()
+	jboolean LinkMovementMethod::canSelectArbitrarily() const
 	{
 		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
-	void LinkMovementMethod::initialize(android::widget::TextView arg0, JObject arg1)
+	void LinkMovementMethod::initialize(android::widget::TextView arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -42,7 +42,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	void LinkMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
+	void LinkMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -52,7 +52,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean LinkMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean LinkMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

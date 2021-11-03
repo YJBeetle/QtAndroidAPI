@@ -37,13 +37,13 @@ namespace java::security
 		static java::security::AlgorithmParameterGenerator getInstance(JString arg0);
 		static java::security::AlgorithmParameterGenerator getInstance(JString arg0, JString arg1);
 		static java::security::AlgorithmParameterGenerator getInstance(JString arg0, java::security::Provider arg1);
-		java::security::AlgorithmParameters generateParameters();
-		JString getAlgorithm();
-		java::security::Provider getProvider();
-		void init(jint arg0);
-		void init(JObject arg0);
-		void init(jint arg0, java::security::SecureRandom arg1);
-		void init(JObject arg0, java::security::SecureRandom arg1);
+		java::security::AlgorithmParameters generateParameters() const;
+		JString getAlgorithm() const;
+		java::security::Provider getProvider() const;
+		void init(jint arg0) const;
+		void init(JObject arg0) const;
+		void init(jint arg0, java::security::SecureRandom arg1) const;
+		void init(JObject arg0, java::security::SecureRandom arg1) const;
 	};
 } // namespace java::security
 

@@ -17,21 +17,21 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	android::content::pm::ActivityInfo LauncherActivityInfo::getActivityInfo()
+	android::content::pm::ActivityInfo LauncherActivityInfo::getActivityInfo() const
 	{
 		return callObjectMethod(
 			"getActivityInfo",
 			"()Landroid/content/pm/ActivityInfo;"
 		);
 	}
-	android::content::pm::ApplicationInfo LauncherActivityInfo::getApplicationInfo()
+	android::content::pm::ApplicationInfo LauncherActivityInfo::getApplicationInfo() const
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
 			"()Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	android::graphics::drawable::Drawable LauncherActivityInfo::getBadgedIcon(jint arg0)
+	android::graphics::drawable::Drawable LauncherActivityInfo::getBadgedIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBadgedIcon",
@@ -39,21 +39,21 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::ComponentName LauncherActivityInfo::getComponentName()
+	android::content::ComponentName LauncherActivityInfo::getComponentName() const
 	{
 		return callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jlong LauncherActivityInfo::getFirstInstallTime()
+	jlong LauncherActivityInfo::getFirstInstallTime() const
 	{
 		return callMethod<jlong>(
 			"getFirstInstallTime",
 			"()J"
 		);
 	}
-	android::graphics::drawable::Drawable LauncherActivityInfo::getIcon(jint arg0)
+	android::graphics::drawable::Drawable LauncherActivityInfo::getIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"getIcon",
@@ -61,28 +61,28 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JString LauncherActivityInfo::getLabel()
+	JString LauncherActivityInfo::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jfloat LauncherActivityInfo::getLoadingProgress()
+	jfloat LauncherActivityInfo::getLoadingProgress() const
 	{
 		return callMethod<jfloat>(
 			"getLoadingProgress",
 			"()F"
 		);
 	}
-	JString LauncherActivityInfo::getName()
+	JString LauncherActivityInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::UserHandle LauncherActivityInfo::getUser()
+	android::os::UserHandle LauncherActivityInfo::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",

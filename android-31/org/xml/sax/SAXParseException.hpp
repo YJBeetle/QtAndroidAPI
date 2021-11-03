@@ -26,11 +26,11 @@ namespace org::xml::sax
 		SAXParseException(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4, java::lang::Exception arg5);
 		
 		// Methods
-		jint getColumnNumber();
-		jint getLineNumber();
-		JString getPublicId();
-		JString getSystemId();
-		JString toString();
+		jint getColumnNumber() const;
+		jint getLineNumber() const;
+		JString getPublicId() const;
+		JString getSystemId() const;
+		JString toString() const;
 	};
 } // namespace org::xml::sax
 

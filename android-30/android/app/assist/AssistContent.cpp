@@ -29,63 +29,63 @@ namespace android::app::assist
 		) {}
 	
 	// Methods
-	jint AssistContent::describeContents()
+	jint AssistContent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::ClipData AssistContent::getClipData()
+	android::content::ClipData AssistContent::getClipData() const
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	android::os::Bundle AssistContent::getExtras()
+	android::os::Bundle AssistContent::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::content::Intent AssistContent::getIntent()
+	android::content::Intent AssistContent::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	JString AssistContent::getStructuredData()
+	JString AssistContent::getStructuredData() const
 	{
 		return callObjectMethod(
 			"getStructuredData",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri AssistContent::getWebUri()
+	android::net::Uri AssistContent::getWebUri() const
 	{
 		return callObjectMethod(
 			"getWebUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jboolean AssistContent::isAppProvidedIntent()
+	jboolean AssistContent::isAppProvidedIntent() const
 	{
 		return callMethod<jboolean>(
 			"isAppProvidedIntent",
 			"()Z"
 		);
 	}
-	jboolean AssistContent::isAppProvidedWebUri()
+	jboolean AssistContent::isAppProvidedWebUri() const
 	{
 		return callMethod<jboolean>(
 			"isAppProvidedWebUri",
 			"()Z"
 		);
 	}
-	void AssistContent::setClipData(android::content::ClipData arg0)
+	void AssistContent::setClipData(android::content::ClipData arg0) const
 	{
 		callMethod<void>(
 			"setClipData",
@@ -93,7 +93,7 @@ namespace android::app::assist
 			arg0.object()
 		);
 	}
-	void AssistContent::setIntent(android::content::Intent arg0)
+	void AssistContent::setIntent(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setIntent",
@@ -101,7 +101,7 @@ namespace android::app::assist
 			arg0.object()
 		);
 	}
-	void AssistContent::setStructuredData(JString arg0)
+	void AssistContent::setStructuredData(JString arg0) const
 	{
 		callMethod<void>(
 			"setStructuredData",
@@ -109,7 +109,7 @@ namespace android::app::assist
 			arg0.object<jstring>()
 		);
 	}
-	void AssistContent::setWebUri(android::net::Uri arg0)
+	void AssistContent::setWebUri(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setWebUri",
@@ -117,7 +117,7 @@ namespace android::app::assist
 			arg0.object()
 		);
 	}
-	void AssistContent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AssistContent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

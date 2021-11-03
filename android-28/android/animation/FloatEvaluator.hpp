@@ -27,8 +27,8 @@ namespace android::animation
 		FloatEvaluator();
 		
 		// Methods
-		java::lang::Float evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2);
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		java::lang::Float evaluate(jfloat arg0, java::lang::Number arg1, java::lang::Number arg2) const;
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

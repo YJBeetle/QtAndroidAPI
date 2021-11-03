@@ -1380,7 +1380,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	void PackageManager::addPackageToPreferred(JString arg0)
+	void PackageManager::addPackageToPreferred(JString arg0) const
 	{
 		callMethod<void>(
 			"addPackageToPreferred",
@@ -1388,7 +1388,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::addPermission(android::content::pm::PermissionInfo arg0)
+	jboolean PackageManager::addPermission(android::content::pm::PermissionInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"addPermission",
@@ -1396,7 +1396,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jboolean PackageManager::addPermissionAsync(android::content::pm::PermissionInfo arg0)
+	jboolean PackageManager::addPermissionAsync(android::content::pm::PermissionInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"addPermissionAsync",
@@ -1404,7 +1404,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageManager::addPreferredActivity(android::content::IntentFilter arg0, jint arg1, JArray arg2, android::content::ComponentName arg3)
+	void PackageManager::addPreferredActivity(android::content::IntentFilter arg0, jint arg1, JArray arg2, android::content::ComponentName arg3) const
 	{
 		callMethod<void>(
 			"addPreferredActivity",
@@ -1415,7 +1415,7 @@ namespace android::content::pm
 			arg3.object()
 		);
 	}
-	jboolean PackageManager::addWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2)
+	jboolean PackageManager::addWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"addWhitelistedRestrictedPermission",
@@ -1425,14 +1425,14 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::canRequestPackageInstalls()
+	jboolean PackageManager::canRequestPackageInstalls() const
 	{
 		return callMethod<jboolean>(
 			"canRequestPackageInstalls",
 			"()Z"
 		);
 	}
-	JArray PackageManager::canonicalToCurrentPackageNames(JArray arg0)
+	JArray PackageManager::canonicalToCurrentPackageNames(JArray arg0) const
 	{
 		return callObjectMethod(
 			"canonicalToCurrentPackageNames",
@@ -1440,7 +1440,7 @@ namespace android::content::pm
 			arg0.object<jarray>()
 		);
 	}
-	jint PackageManager::checkPermission(JString arg0, JString arg1)
+	jint PackageManager::checkPermission(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"checkPermission",
@@ -1449,7 +1449,7 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jint PackageManager::checkSignatures(jint arg0, jint arg1)
+	jint PackageManager::checkSignatures(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"checkSignatures",
@@ -1458,7 +1458,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::checkSignatures(JString arg0, JString arg1)
+	jint PackageManager::checkSignatures(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"checkSignatures",
@@ -1467,14 +1467,14 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	void PackageManager::clearInstantAppCookie()
+	void PackageManager::clearInstantAppCookie() const
 	{
 		callMethod<void>(
 			"clearInstantAppCookie",
 			"()V"
 		);
 	}
-	void PackageManager::clearPackagePreferredActivities(JString arg0)
+	void PackageManager::clearPackagePreferredActivities(JString arg0) const
 	{
 		callMethod<void>(
 			"clearPackagePreferredActivities",
@@ -1482,7 +1482,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JArray PackageManager::currentToCanonicalPackageNames(JArray arg0)
+	JArray PackageManager::currentToCanonicalPackageNames(JArray arg0) const
 	{
 		return callObjectMethod(
 			"currentToCanonicalPackageNames",
@@ -1490,7 +1490,7 @@ namespace android::content::pm
 			arg0.object<jarray>()
 		);
 	}
-	void PackageManager::extendVerificationTimeout(jint arg0, jint arg1, jlong arg2)
+	void PackageManager::extendVerificationTimeout(jint arg0, jint arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"extendVerificationTimeout",
@@ -1500,7 +1500,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getActivityBanner",
@@ -1508,7 +1508,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityBanner(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"getActivityBanner",
@@ -1516,7 +1516,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getActivityIcon",
@@ -1524,7 +1524,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityIcon(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"getActivityIcon",
@@ -1532,7 +1532,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ActivityInfo PackageManager::getActivityInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ActivityInfo PackageManager::getActivityInfo(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getActivityInfo",
@@ -1541,7 +1541,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::ComponentName arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getActivityLogo",
@@ -1549,7 +1549,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::Intent arg0)
+	android::graphics::drawable::Drawable PackageManager::getActivityLogo(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"getActivityLogo",
@@ -1557,7 +1557,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject PackageManager::getAllPermissionGroups(jint arg0)
+	JObject PackageManager::getAllPermissionGroups(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAllPermissionGroups",
@@ -1565,7 +1565,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(android::content::pm::ApplicationInfo arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationBanner",
@@ -1573,7 +1573,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(JString arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationBanner(JString arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationBanner",
@@ -1581,7 +1581,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jint PackageManager::getApplicationEnabledSetting(JString arg0)
+	jint PackageManager::getApplicationEnabledSetting(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getApplicationEnabledSetting",
@@ -1589,7 +1589,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(android::content::pm::ApplicationInfo arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationIcon",
@@ -1597,7 +1597,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(JString arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationIcon(JString arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationIcon",
@@ -1605,7 +1605,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ApplicationInfo PackageManager::getApplicationInfo(JString arg0, jint arg1)
+	android::content::pm::ApplicationInfo PackageManager::getApplicationInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getApplicationInfo",
@@ -1614,7 +1614,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JString PackageManager::getApplicationLabel(android::content::pm::ApplicationInfo arg0)
+	JString PackageManager::getApplicationLabel(android::content::pm::ApplicationInfo arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationLabel",
@@ -1622,7 +1622,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(android::content::pm::ApplicationInfo arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(android::content::pm::ApplicationInfo arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationLogo",
@@ -1630,7 +1630,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(JString arg0)
+	android::graphics::drawable::Drawable PackageManager::getApplicationLogo(JString arg0) const
 	{
 		return callObjectMethod(
 			"getApplicationLogo",
@@ -1638,14 +1638,14 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JString PackageManager::getBackgroundPermissionOptionLabel()
+	JString PackageManager::getBackgroundPermissionOptionLabel() const
 	{
 		return callObjectMethod(
 			"getBackgroundPermissionOptionLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::content::pm::ChangedPackages PackageManager::getChangedPackages(jint arg0)
+	android::content::pm::ChangedPackages PackageManager::getChangedPackages(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChangedPackages",
@@ -1653,7 +1653,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jint PackageManager::getComponentEnabledSetting(android::content::ComponentName arg0)
+	jint PackageManager::getComponentEnabledSetting(android::content::ComponentName arg0) const
 	{
 		return callMethod<jint>(
 			"getComponentEnabledSetting",
@@ -1661,14 +1661,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getDefaultActivityIcon()
+	android::graphics::drawable::Drawable PackageManager::getDefaultActivityIcon() const
 	{
 		return callObjectMethod(
 			"getDefaultActivityIcon",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getDrawable(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	android::graphics::drawable::Drawable PackageManager::getDrawable(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -1678,7 +1678,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	android::content::pm::InstallSourceInfo PackageManager::getInstallSourceInfo(JString arg0)
+	android::content::pm::InstallSourceInfo PackageManager::getInstallSourceInfo(JString arg0) const
 	{
 		return callObjectMethod(
 			"getInstallSourceInfo",
@@ -1686,7 +1686,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JObject PackageManager::getInstalledApplications(jint arg0)
+	JObject PackageManager::getInstalledApplications(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInstalledApplications",
@@ -1694,7 +1694,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JObject PackageManager::getInstalledModules(jint arg0)
+	JObject PackageManager::getInstalledModules(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInstalledModules",
@@ -1702,7 +1702,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JObject PackageManager::getInstalledPackages(jint arg0)
+	JObject PackageManager::getInstalledPackages(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInstalledPackages",
@@ -1710,7 +1710,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JString PackageManager::getInstallerPackageName(JString arg0)
+	JString PackageManager::getInstallerPackageName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getInstallerPackageName",
@@ -1718,21 +1718,21 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray PackageManager::getInstantAppCookie()
+	JByteArray PackageManager::getInstantAppCookie() const
 	{
 		return callObjectMethod(
 			"getInstantAppCookie",
 			"()[B"
 		);
 	}
-	jint PackageManager::getInstantAppCookieMaxBytes()
+	jint PackageManager::getInstantAppCookieMaxBytes() const
 	{
 		return callMethod<jint>(
 			"getInstantAppCookieMaxBytes",
 			"()I"
 		);
 	}
-	android::content::pm::InstrumentationInfo PackageManager::getInstrumentationInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::InstrumentationInfo PackageManager::getInstrumentationInfo(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getInstrumentationInfo",
@@ -1741,7 +1741,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::Intent PackageManager::getLaunchIntentForPackage(JString arg0)
+	android::content::Intent PackageManager::getLaunchIntentForPackage(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLaunchIntentForPackage",
@@ -1749,7 +1749,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent PackageManager::getLeanbackLaunchIntentForPackage(JString arg0)
+	android::content::Intent PackageManager::getLeanbackLaunchIntentForPackage(JString arg0) const
 	{
 		return callObjectMethod(
 			"getLeanbackLaunchIntentForPackage",
@@ -1757,7 +1757,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JObject PackageManager::getMimeGroup(JString arg0)
+	JObject PackageManager::getMimeGroup(JString arg0) const
 	{
 		return callObjectMethod(
 			"getMimeGroup",
@@ -1765,7 +1765,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ModuleInfo PackageManager::getModuleInfo(JString arg0, jint arg1)
+	android::content::pm::ModuleInfo PackageManager::getModuleInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getModuleInfo",
@@ -1774,7 +1774,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JString PackageManager::getNameForUid(jint arg0)
+	JString PackageManager::getNameForUid(jint arg0) const
 	{
 		return callObjectMethod(
 			"getNameForUid",
@@ -1782,7 +1782,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::PackageInfo PackageManager::getPackageArchiveInfo(JString arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageArchiveInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPackageArchiveInfo",
@@ -1791,7 +1791,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JIntArray PackageManager::getPackageGids(JString arg0)
+	JIntArray PackageManager::getPackageGids(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPackageGids",
@@ -1799,7 +1799,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JIntArray PackageManager::getPackageGids(JString arg0, jint arg1)
+	JIntArray PackageManager::getPackageGids(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPackageGids",
@@ -1808,7 +1808,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PackageInfo PackageManager::getPackageInfo(android::content::pm::VersionedPackage arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageInfo(android::content::pm::VersionedPackage arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPackageInfo",
@@ -1817,7 +1817,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PackageInfo PackageManager::getPackageInfo(JString arg0, jint arg1)
+	android::content::pm::PackageInfo PackageManager::getPackageInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPackageInfo",
@@ -1826,14 +1826,14 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PackageInstaller PackageManager::getPackageInstaller()
+	android::content::pm::PackageInstaller PackageManager::getPackageInstaller() const
 	{
 		return callObjectMethod(
 			"getPackageInstaller",
 			"()Landroid/content/pm/PackageInstaller;"
 		);
 	}
-	jint PackageManager::getPackageUid(JString arg0, jint arg1)
+	jint PackageManager::getPackageUid(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getPackageUid",
@@ -1842,7 +1842,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JArray PackageManager::getPackagesForUid(jint arg0)
+	JArray PackageManager::getPackagesForUid(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPackagesForUid",
@@ -1850,7 +1850,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	JObject PackageManager::getPackagesHoldingPermissions(JArray arg0, jint arg1)
+	JObject PackageManager::getPackagesHoldingPermissions(JArray arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPackagesHoldingPermissions",
@@ -1859,7 +1859,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PermissionGroupInfo PackageManager::getPermissionGroupInfo(JString arg0, jint arg1)
+	android::content::pm::PermissionGroupInfo PackageManager::getPermissionGroupInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPermissionGroupInfo",
@@ -1868,7 +1868,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::PermissionInfo PackageManager::getPermissionInfo(JString arg0, jint arg1)
+	android::content::pm::PermissionInfo PackageManager::getPermissionInfo(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getPermissionInfo",
@@ -1877,7 +1877,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::getPreferredActivities(JObject arg0, JObject arg1, JString arg2)
+	jint PackageManager::getPreferredActivities(JObject arg0, JObject arg1, JString arg2) const
 	{
 		return callMethod<jint>(
 			"getPreferredActivities",
@@ -1887,7 +1887,7 @@ namespace android::content::pm
 			arg2.object<jstring>()
 		);
 	}
-	JObject PackageManager::getPreferredPackages(jint arg0)
+	JObject PackageManager::getPreferredPackages(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPreferredPackages",
@@ -1895,7 +1895,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::ProviderInfo PackageManager::getProviderInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ProviderInfo PackageManager::getProviderInfo(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getProviderInfo",
@@ -1904,7 +1904,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::ActivityInfo PackageManager::getReceiverInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ActivityInfo PackageManager::getReceiverInfo(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getReceiverInfo",
@@ -1913,7 +1913,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::res::Resources PackageManager::getResourcesForActivity(android::content::ComponentName arg0)
+	android::content::res::Resources PackageManager::getResourcesForActivity(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getResourcesForActivity",
@@ -1921,7 +1921,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::res::Resources PackageManager::getResourcesForApplication(android::content::pm::ApplicationInfo arg0)
+	android::content::res::Resources PackageManager::getResourcesForApplication(android::content::pm::ApplicationInfo arg0) const
 	{
 		return callObjectMethod(
 			"getResourcesForApplication",
@@ -1929,7 +1929,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::res::Resources PackageManager::getResourcesForApplication(JString arg0)
+	android::content::res::Resources PackageManager::getResourcesForApplication(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResourcesForApplication",
@@ -1937,7 +1937,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ServiceInfo PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1)
+	android::content::pm::ServiceInfo PackageManager::getServiceInfo(android::content::ComponentName arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
@@ -1946,7 +1946,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::getSharedLibraries(jint arg0)
+	JObject PackageManager::getSharedLibraries(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSharedLibraries",
@@ -1954,14 +1954,14 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::os::Bundle PackageManager::getSuspendedPackageAppExtras()
+	android::os::Bundle PackageManager::getSuspendedPackageAppExtras() const
 	{
 		return callObjectMethod(
 			"getSuspendedPackageAppExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean PackageManager::getSyntheticAppDetailsActivityEnabled(JString arg0)
+	jboolean PackageManager::getSyntheticAppDetailsActivityEnabled(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getSyntheticAppDetailsActivityEnabled",
@@ -1969,21 +1969,21 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	JArray PackageManager::getSystemAvailableFeatures()
+	JArray PackageManager::getSystemAvailableFeatures() const
 	{
 		return callObjectMethod(
 			"getSystemAvailableFeatures",
 			"()[Landroid/content/pm/FeatureInfo;"
 		);
 	}
-	JArray PackageManager::getSystemSharedLibraryNames()
+	JArray PackageManager::getSystemSharedLibraryNames() const
 	{
 		return callObjectMethod(
 			"getSystemSharedLibraryNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString PackageManager::getText(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	JString PackageManager::getText(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -1993,7 +1993,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3)
+	android::graphics::drawable::Drawable PackageManager::getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"getUserBadgedDrawableForDensity",
@@ -2004,7 +2004,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	android::graphics::drawable::Drawable PackageManager::getUserBadgedIcon(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1)
+	android::graphics::drawable::Drawable PackageManager::getUserBadgedIcon(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getUserBadgedIcon",
@@ -2013,7 +2013,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	JString PackageManager::getUserBadgedLabel(JString arg0, android::os::UserHandle arg1)
+	JString PackageManager::getUserBadgedLabel(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getUserBadgedLabel",
@@ -2022,7 +2022,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	JObject PackageManager::getWhitelistedRestrictedPermissions(JString arg0, jint arg1)
+	JObject PackageManager::getWhitelistedRestrictedPermissions(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getWhitelistedRestrictedPermissions",
@@ -2031,7 +2031,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::getXml(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	JObject PackageManager::getXml(JString arg0, jint arg1, android::content::pm::ApplicationInfo arg2) const
 	{
 		return callObjectMethod(
 			"getXml",
@@ -2041,7 +2041,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	jboolean PackageManager::hasSigningCertificate(jint arg0, JByteArray arg1, jint arg2)
+	jboolean PackageManager::hasSigningCertificate(jint arg0, JByteArray arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"hasSigningCertificate",
@@ -2051,7 +2051,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::hasSigningCertificate(JString arg0, JByteArray arg1, jint arg2)
+	jboolean PackageManager::hasSigningCertificate(JString arg0, JByteArray arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"hasSigningCertificate",
@@ -2061,7 +2061,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::hasSystemFeature(JString arg0)
+	jboolean PackageManager::hasSystemFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasSystemFeature",
@@ -2069,7 +2069,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::hasSystemFeature(JString arg0, jint arg1)
+	jboolean PackageManager::hasSystemFeature(JString arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"hasSystemFeature",
@@ -2078,14 +2078,14 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jboolean PackageManager::isAutoRevokeWhitelisted()
+	jboolean PackageManager::isAutoRevokeWhitelisted() const
 	{
 		return callMethod<jboolean>(
 			"isAutoRevokeWhitelisted",
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isAutoRevokeWhitelisted(JString arg0)
+	jboolean PackageManager::isAutoRevokeWhitelisted(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAutoRevokeWhitelisted",
@@ -2093,7 +2093,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::isDefaultApplicationIcon(android::graphics::drawable::Drawable arg0)
+	jboolean PackageManager::isDefaultApplicationIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDefaultApplicationIcon",
@@ -2101,21 +2101,21 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jboolean PackageManager::isDeviceUpgrading()
+	jboolean PackageManager::isDeviceUpgrading() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceUpgrading",
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isInstantApp()
+	jboolean PackageManager::isInstantApp() const
 	{
 		return callMethod<jboolean>(
 			"isInstantApp",
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isInstantApp(JString arg0)
+	jboolean PackageManager::isInstantApp(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isInstantApp",
@@ -2123,14 +2123,14 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::isPackageSuspended()
+	jboolean PackageManager::isPackageSuspended() const
 	{
 		return callMethod<jboolean>(
 			"isPackageSuspended",
 			"()Z"
 		);
 	}
-	jboolean PackageManager::isPackageSuspended(JString arg0)
+	jboolean PackageManager::isPackageSuspended(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isPackageSuspended",
@@ -2138,7 +2138,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::isPermissionRevokedByPolicy(JString arg0, JString arg1)
+	jboolean PackageManager::isPermissionRevokedByPolicy(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isPermissionRevokedByPolicy",
@@ -2147,14 +2147,14 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jboolean PackageManager::isSafeMode()
+	jboolean PackageManager::isSafeMode() const
 	{
 		return callMethod<jboolean>(
 			"isSafeMode",
 			"()Z"
 		);
 	}
-	JObject PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryBroadcastReceivers",
@@ -2163,7 +2163,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryContentProviders(JString arg0, jint arg1, jint arg2)
+	JObject PackageManager::queryContentProviders(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"queryContentProviders",
@@ -2173,7 +2173,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	JObject PackageManager::queryInstrumentation(JString arg0, jint arg1)
+	JObject PackageManager::queryInstrumentation(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryInstrumentation",
@@ -2182,7 +2182,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryIntentActivities",
@@ -2191,7 +2191,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, JArray arg1, android::content::Intent arg2, jint arg3)
+	JObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, JArray arg1, android::content::Intent arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"queryIntentActivityOptions",
@@ -2202,7 +2202,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	JObject PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryIntentContentProviders",
@@ -2211,7 +2211,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryIntentServices",
@@ -2220,7 +2220,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	JObject PackageManager::queryPermissionsByGroup(JString arg0, jint arg1)
+	JObject PackageManager::queryPermissionsByGroup(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"queryPermissionsByGroup",
@@ -2229,7 +2229,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::removePackageFromPreferred(JString arg0)
+	void PackageManager::removePackageFromPreferred(JString arg0) const
 	{
 		callMethod<void>(
 			"removePackageFromPreferred",
@@ -2237,7 +2237,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	void PackageManager::removePermission(JString arg0)
+	void PackageManager::removePermission(JString arg0) const
 	{
 		callMethod<void>(
 			"removePermission",
@@ -2245,7 +2245,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PackageManager::removeWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2)
+	jboolean PackageManager::removeWhitelistedRestrictedPermission(JString arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"removeWhitelistedRestrictedPermission",
@@ -2255,7 +2255,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	android::content::pm::ResolveInfo PackageManager::resolveActivity(android::content::Intent arg0, jint arg1)
+	android::content::pm::ResolveInfo PackageManager::resolveActivity(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveActivity",
@@ -2264,7 +2264,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::ProviderInfo PackageManager::resolveContentProvider(JString arg0, jint arg1)
+	android::content::pm::ProviderInfo PackageManager::resolveContentProvider(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveContentProvider",
@@ -2273,7 +2273,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	android::content::pm::ResolveInfo PackageManager::resolveService(android::content::Intent arg0, jint arg1)
+	android::content::pm::ResolveInfo PackageManager::resolveService(android::content::Intent arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"resolveService",
@@ -2282,7 +2282,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setApplicationCategoryHint(JString arg0, jint arg1)
+	void PackageManager::setApplicationCategoryHint(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setApplicationCategoryHint",
@@ -2291,7 +2291,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setApplicationEnabledSetting(JString arg0, jint arg1, jint arg2)
+	void PackageManager::setApplicationEnabledSetting(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setApplicationEnabledSetting",
@@ -2301,7 +2301,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	jboolean PackageManager::setAutoRevokeWhitelisted(JString arg0, jboolean arg1)
+	jboolean PackageManager::setAutoRevokeWhitelisted(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setAutoRevokeWhitelisted",
@@ -2310,7 +2310,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setComponentEnabledSetting(android::content::ComponentName arg0, jint arg1, jint arg2)
+	void PackageManager::setComponentEnabledSetting(android::content::ComponentName arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setComponentEnabledSetting",
@@ -2320,7 +2320,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void PackageManager::setInstallerPackageName(JString arg0, JString arg1)
+	void PackageManager::setInstallerPackageName(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setInstallerPackageName",
@@ -2329,7 +2329,7 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	void PackageManager::setMimeGroup(JString arg0, JObject arg1)
+	void PackageManager::setMimeGroup(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setMimeGroup",
@@ -2338,7 +2338,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void PackageManager::updateInstantAppCookie(JByteArray arg0)
+	void PackageManager::updateInstantAppCookie(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"updateInstantAppCookie",
@@ -2346,7 +2346,7 @@ namespace android::content::pm
 			arg0.object<jbyteArray>()
 		);
 	}
-	void PackageManager::verifyPendingInstall(jint arg0, jint arg1)
+	void PackageManager::verifyPendingInstall(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"verifyPendingInstall",

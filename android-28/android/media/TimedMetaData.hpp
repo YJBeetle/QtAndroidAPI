@@ -22,8 +22,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getMetaData();
-		jlong getTimestamp();
+		JByteArray getMetaData() const;
+		jlong getTimestamp() const;
 	};
 } // namespace android::media
 

@@ -30,12 +30,12 @@ namespace android::media
 		AudioRecord_Builder();
 		
 		// Methods
-		android::media::AudioRecord build();
-		android::media::AudioRecord_Builder setAudioFormat(android::media::AudioFormat arg0);
-		android::media::AudioRecord_Builder setAudioPlaybackCaptureConfig(android::media::AudioPlaybackCaptureConfiguration arg0);
-		android::media::AudioRecord_Builder setAudioSource(jint arg0);
-		android::media::AudioRecord_Builder setBufferSizeInBytes(jint arg0);
-		android::media::AudioRecord_Builder setPrivacySensitive(jboolean arg0);
+		android::media::AudioRecord build() const;
+		android::media::AudioRecord_Builder setAudioFormat(android::media::AudioFormat arg0) const;
+		android::media::AudioRecord_Builder setAudioPlaybackCaptureConfig(android::media::AudioPlaybackCaptureConfiguration arg0) const;
+		android::media::AudioRecord_Builder setAudioSource(jint arg0) const;
+		android::media::AudioRecord_Builder setBufferSizeInBytes(jint arg0) const;
+		android::media::AudioRecord_Builder setPrivacySensitive(jboolean arg0) const;
 	};
 } // namespace android::media
 

@@ -22,9 +22,9 @@ namespace android::inputmethodservice
 		AbstractInputMethodService_AbstractInputMethodImpl(android::inputmethodservice::AbstractInputMethodService arg0);
 		
 		// Methods
-		void createSession(JObject arg0);
-		void revokeSession(JObject arg0);
-		void setSessionEnabled(JObject arg0, jboolean arg1);
+		void createSession(JObject arg0) const;
+		void revokeSession(JObject arg0) const;
+		void setSessionEnabled(JObject arg0, jboolean arg1) const;
 	};
 } // namespace android::inputmethodservice
 

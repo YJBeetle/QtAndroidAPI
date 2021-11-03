@@ -20,11 +20,11 @@ namespace android::provider
 		FontRequest(JString arg0, JString arg1, JString arg2, JObject arg3);
 		
 		// Methods
-		JObject getCertificates();
-		JString getProviderAuthority();
-		JString getProviderPackage();
-		JString getQuery();
-		JString toString();
+		JObject getCertificates() const;
+		JString getProviderAuthority() const;
+		JString getProviderPackage() const;
+		JString getQuery() const;
+		JString toString() const;
 	};
 } // namespace android::provider
 

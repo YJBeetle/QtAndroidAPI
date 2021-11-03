@@ -47,11 +47,11 @@ namespace android::app
 		AppComponentFactory();
 		
 		// Methods
-		android::app::Activity instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2);
-		android::app::Application instantiateApplication(java::lang::ClassLoader arg0, JString arg1);
-		android::content::ContentProvider instantiateProvider(java::lang::ClassLoader arg0, JString arg1);
-		android::content::BroadcastReceiver instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2);
-		android::app::Service instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2);
+		android::app::Activity instantiateActivity(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
+		android::app::Application instantiateApplication(java::lang::ClassLoader arg0, JString arg1) const;
+		android::content::ContentProvider instantiateProvider(java::lang::ClassLoader arg0, JString arg1) const;
+		android::content::BroadcastReceiver instantiateReceiver(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
+		android::app::Service instantiateService(java::lang::ClassLoader arg0, JString arg1, android::content::Intent arg2) const;
 	};
 } // namespace android::app
 

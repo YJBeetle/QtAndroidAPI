@@ -24,12 +24,12 @@ namespace javax::xml::transform::dom
 		DOMResult(JObject arg0, JObject arg1, JString arg2);
 		
 		// Methods
-		JObject getNextSibling();
-		JObject getNode();
-		JString getSystemId();
-		void setNextSibling(JObject arg0);
-		void setNode(JObject arg0);
-		void setSystemId(JString arg0);
+		JObject getNextSibling() const;
+		JObject getNode() const;
+		JString getSystemId() const;
+		void setNextSibling(JObject arg0) const;
+		void setNode(JObject arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace javax::xml::transform::dom
 

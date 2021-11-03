@@ -52,11 +52,11 @@ namespace java::util
 		static java::util::ServiceLoader load(JClass arg0, java::lang::ClassLoader arg1);
 		static java::util::ServiceLoader load(JObject arg0, JClass arg1);
 		static java::util::ServiceLoader loadInstalled(JClass arg0);
-		java::util::Optional findFirst();
-		JObject iterator();
-		void reload();
-		JObject stream();
-		JString toString();
+		java::util::Optional findFirst() const;
+		JObject iterator() const;
+		void reload() const;
+		JObject stream() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

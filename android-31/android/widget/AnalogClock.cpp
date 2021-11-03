@@ -46,70 +46,70 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::graphics::BlendMode AnalogClock::getDialTintBlendMode()
+	android::graphics::BlendMode AnalogClock::getDialTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getDialTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList AnalogClock::getDialTintList()
+	android::content::res::ColorStateList AnalogClock::getDialTintList() const
 	{
 		return callObjectMethod(
 			"getDialTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::BlendMode AnalogClock::getHourHandTintBlendMode()
+	android::graphics::BlendMode AnalogClock::getHourHandTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getHourHandTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList AnalogClock::getHourHandTintList()
+	android::content::res::ColorStateList AnalogClock::getHourHandTintList() const
 	{
 		return callObjectMethod(
 			"getHourHandTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::BlendMode AnalogClock::getMinuteHandTintBlendMode()
+	android::graphics::BlendMode AnalogClock::getMinuteHandTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getMinuteHandTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList AnalogClock::getMinuteHandTintList()
+	android::content::res::ColorStateList AnalogClock::getMinuteHandTintList() const
 	{
 		return callObjectMethod(
 			"getMinuteHandTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::BlendMode AnalogClock::getSecondHandTintBlendMode()
+	android::graphics::BlendMode AnalogClock::getSecondHandTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getSecondHandTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList AnalogClock::getSecondHandTintList()
+	android::content::res::ColorStateList AnalogClock::getSecondHandTintList() const
 	{
 		return callObjectMethod(
 			"getSecondHandTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	JString AnalogClock::getTimeZone()
+	JString AnalogClock::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AnalogClock::onVisibilityAggregated(jboolean arg0)
+	void AnalogClock::onVisibilityAggregated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onVisibilityAggregated",
@@ -117,7 +117,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AnalogClock::setDial(android::graphics::drawable::Icon arg0)
+	void AnalogClock::setDial(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setDial",
@@ -125,7 +125,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setDialTintBlendMode(android::graphics::BlendMode arg0)
+	void AnalogClock::setDialTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setDialTintBlendMode",
@@ -133,7 +133,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setDialTintList(android::content::res::ColorStateList arg0)
+	void AnalogClock::setDialTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setDialTintList",
@@ -141,7 +141,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setHourHand(android::graphics::drawable::Icon arg0)
+	void AnalogClock::setHourHand(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setHourHand",
@@ -149,7 +149,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setHourHandTintBlendMode(android::graphics::BlendMode arg0)
+	void AnalogClock::setHourHandTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setHourHandTintBlendMode",
@@ -157,7 +157,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setHourHandTintList(android::content::res::ColorStateList arg0)
+	void AnalogClock::setHourHandTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setHourHandTintList",
@@ -165,7 +165,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setMinuteHand(android::graphics::drawable::Icon arg0)
+	void AnalogClock::setMinuteHand(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setMinuteHand",
@@ -173,7 +173,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setMinuteHandTintBlendMode(android::graphics::BlendMode arg0)
+	void AnalogClock::setMinuteHandTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setMinuteHandTintBlendMode",
@@ -181,7 +181,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setMinuteHandTintList(android::content::res::ColorStateList arg0)
+	void AnalogClock::setMinuteHandTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setMinuteHandTintList",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setSecondHand(android::graphics::drawable::Icon arg0)
+	void AnalogClock::setSecondHand(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setSecondHand",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setSecondHandTintBlendMode(android::graphics::BlendMode arg0)
+	void AnalogClock::setSecondHandTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setSecondHandTintBlendMode",
@@ -205,7 +205,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setSecondHandTintList(android::content::res::ColorStateList arg0)
+	void AnalogClock::setSecondHandTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setSecondHandTintList",
@@ -213,7 +213,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AnalogClock::setTimeZone(JString arg0)
+	void AnalogClock::setTimeZone(JString arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",

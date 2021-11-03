@@ -13,14 +13,14 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	void ScriptGroup_Closure::destroy()
+	void ScriptGroup_Closure::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0)
+	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getGlobal(android::renderscript::Script_FieldID arg0) const
 	{
 		return callObjectMethod(
 			"getGlobal",
@@ -28,7 +28,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getReturn()
+	android::renderscript::ScriptGroup_Future ScriptGroup_Closure::getReturn() const
 	{
 		return callObjectMethod(
 			"getReturn",

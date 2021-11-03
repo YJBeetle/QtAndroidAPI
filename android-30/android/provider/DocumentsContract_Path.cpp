@@ -28,14 +28,14 @@ namespace android::provider
 		) {}
 	
 	// Methods
-	jint DocumentsContract_Path::describeContents()
+	jint DocumentsContract_Path::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DocumentsContract_Path::equals(JObject arg0)
+	jboolean DocumentsContract_Path::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -43,35 +43,35 @@ namespace android::provider
 			arg0.object<jobject>()
 		);
 	}
-	JObject DocumentsContract_Path::getPath()
+	JObject DocumentsContract_Path::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/util/List;"
 		);
 	}
-	JString DocumentsContract_Path::getRootId()
+	JString DocumentsContract_Path::getRootId() const
 	{
 		return callObjectMethod(
 			"getRootId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DocumentsContract_Path::hashCode()
+	jint DocumentsContract_Path::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DocumentsContract_Path::toString()
+	JString DocumentsContract_Path::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DocumentsContract_Path::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DocumentsContract_Path::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

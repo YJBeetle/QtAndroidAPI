@@ -24,7 +24,7 @@ namespace android::sax
 		) {}
 	
 	// Methods
-	JObject RootElement::getContentHandler()
+	JObject RootElement::getContentHandler() const
 	{
 		return callObjectMethod(
 			"getContentHandler",

@@ -44,15 +44,15 @@ namespace android::app
 		static android::os::Bundle getResultsFromIntent(android::content::Intent arg0);
 		static jint getResultsSource(android::content::Intent arg0);
 		static void setResultsSource(android::content::Intent arg0, jint arg1);
-		jint describeContents();
-		jboolean getAllowFreeFormInput();
-		JObject getAllowedDataTypes();
-		JArray getChoices();
-		android::os::Bundle getExtras();
-		JString getLabel();
-		JString getResultKey();
-		jboolean isDataOnly();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean getAllowFreeFormInput() const;
+		JObject getAllowedDataTypes() const;
+		JArray getChoices() const;
+		android::os::Bundle getExtras() const;
+		JString getLabel() const;
+		JString getResultKey() const;
+		jboolean isDataOnly() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

@@ -38,7 +38,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	jint ImsException::getCode()
+	jint ImsException::getCode() const
 	{
 		return callMethod<jint>(
 			"getCode",

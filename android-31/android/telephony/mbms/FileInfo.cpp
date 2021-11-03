@@ -22,14 +22,14 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	jint FileInfo::describeContents()
+	jint FileInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean FileInfo::equals(JObject arg0)
+	jboolean FileInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,28 +37,28 @@ namespace android::telephony::mbms
 			arg0.object<jobject>()
 		);
 	}
-	JString FileInfo::getMimeType()
+	JString FileInfo::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri FileInfo::getUri()
+	android::net::Uri FileInfo::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint FileInfo::hashCode()
+	jint FileInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void FileInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void FileInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

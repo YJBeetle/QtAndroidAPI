@@ -69,19 +69,19 @@ namespace android::util
 		static android::util::Half valueOf(jfloat arg0);
 		static android::util::Half valueOf(JString arg0);
 		static android::util::Half valueOf(jshort arg0);
-		jbyte byteValue();
-		jint compareTo(android::util::Half arg0);
-		jint compareTo(JObject arg0);
-		jdouble doubleValue();
-		jboolean equals(JObject arg0);
-		jfloat floatValue();
-		jshort halfValue();
-		jint hashCode();
-		jint intValue();
-		jboolean isNaN();
-		jlong longValue();
-		jshort shortValue();
-		JString toString();
+		jbyte byteValue() const;
+		jint compareTo(android::util::Half arg0) const;
+		jint compareTo(JObject arg0) const;
+		jdouble doubleValue() const;
+		jboolean equals(JObject arg0) const;
+		jfloat floatValue() const;
+		jshort halfValue() const;
+		jint hashCode() const;
+		jint intValue() const;
+		jboolean isNaN() const;
+		jlong longValue() const;
+		jshort shortValue() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

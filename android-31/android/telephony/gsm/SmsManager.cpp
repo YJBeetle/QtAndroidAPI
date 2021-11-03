@@ -85,7 +85,7 @@ namespace android::telephony::gsm
 			"()Landroid/telephony/gsm/SmsManager;"
 		);
 	}
-	java::util::ArrayList SmsManager::divideMessage(JString arg0)
+	java::util::ArrayList SmsManager::divideMessage(JString arg0) const
 	{
 		return callObjectMethod(
 			"divideMessage",
@@ -93,7 +93,7 @@ namespace android::telephony::gsm
 			arg0.object<jstring>()
 		);
 	}
-	void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5)
+	void SmsManager::sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5) const
 	{
 		callMethod<void>(
 			"sendDataMessage",
@@ -106,7 +106,7 @@ namespace android::telephony::gsm
 			arg5.object()
 		);
 	}
-	void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4)
+	void SmsManager::sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4) const
 	{
 		callMethod<void>(
 			"sendMultipartTextMessage",
@@ -118,7 +118,7 @@ namespace android::telephony::gsm
 			arg4.object()
 		);
 	}
-	void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4)
+	void SmsManager::sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const
 	{
 		callMethod<void>(
 			"sendTextMessage",

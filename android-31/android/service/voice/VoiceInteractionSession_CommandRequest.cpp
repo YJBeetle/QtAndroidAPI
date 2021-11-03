@@ -12,14 +12,14 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	JString VoiceInteractionSession_CommandRequest::getCommand()
+	JString VoiceInteractionSession_CommandRequest::getCommand() const
 	{
 		return callObjectMethod(
 			"getCommand",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VoiceInteractionSession_CommandRequest::sendIntermediateResult(android::os::Bundle arg0)
+	void VoiceInteractionSession_CommandRequest::sendIntermediateResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"sendIntermediateResult",
@@ -27,7 +27,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSession_CommandRequest::sendResult(android::os::Bundle arg0)
+	void VoiceInteractionSession_CommandRequest::sendResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"sendResult",

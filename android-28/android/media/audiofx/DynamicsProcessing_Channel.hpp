@@ -40,23 +40,23 @@ namespace android::media::audiofx
 		DynamicsProcessing_Channel(jfloat arg0, jboolean arg1, jint arg2, jboolean arg3, jint arg4, jboolean arg5, jint arg6, jboolean arg7);
 		
 		// Methods
-		jfloat getInputGain();
-		android::media::audiofx::DynamicsProcessing_Limiter getLimiter();
-		android::media::audiofx::DynamicsProcessing_Mbc getMbc();
-		android::media::audiofx::DynamicsProcessing_MbcBand getMbcBand(jint arg0);
-		android::media::audiofx::DynamicsProcessing_Eq getPostEq();
-		android::media::audiofx::DynamicsProcessing_EqBand getPostEqBand(jint arg0);
-		android::media::audiofx::DynamicsProcessing_Eq getPreEq();
-		android::media::audiofx::DynamicsProcessing_EqBand getPreEqBand(jint arg0);
-		void setInputGain(jfloat arg0);
-		void setLimiter(android::media::audiofx::DynamicsProcessing_Limiter arg0);
-		void setMbc(android::media::audiofx::DynamicsProcessing_Mbc arg0);
-		void setMbcBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1);
-		void setPostEq(android::media::audiofx::DynamicsProcessing_Eq arg0);
-		void setPostEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1);
-		void setPreEq(android::media::audiofx::DynamicsProcessing_Eq arg0);
-		void setPreEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1);
-		JString toString();
+		jfloat getInputGain() const;
+		android::media::audiofx::DynamicsProcessing_Limiter getLimiter() const;
+		android::media::audiofx::DynamicsProcessing_Mbc getMbc() const;
+		android::media::audiofx::DynamicsProcessing_MbcBand getMbcBand(jint arg0) const;
+		android::media::audiofx::DynamicsProcessing_Eq getPostEq() const;
+		android::media::audiofx::DynamicsProcessing_EqBand getPostEqBand(jint arg0) const;
+		android::media::audiofx::DynamicsProcessing_Eq getPreEq() const;
+		android::media::audiofx::DynamicsProcessing_EqBand getPreEqBand(jint arg0) const;
+		void setInputGain(jfloat arg0) const;
+		void setLimiter(android::media::audiofx::DynamicsProcessing_Limiter arg0) const;
+		void setMbc(android::media::audiofx::DynamicsProcessing_Mbc arg0) const;
+		void setMbcBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1) const;
+		void setPostEq(android::media::audiofx::DynamicsProcessing_Eq arg0) const;
+		void setPostEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1) const;
+		void setPreEq(android::media::audiofx::DynamicsProcessing_Eq arg0) const;
+		void setPreEqBand(jint arg0, android::media::audiofx::DynamicsProcessing_EqBand arg1) const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

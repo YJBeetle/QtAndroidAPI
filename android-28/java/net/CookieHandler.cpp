@@ -33,7 +33,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	JObject CookieHandler::get(java::net::URI arg0, JObject arg1)
+	JObject CookieHandler::get(java::net::URI arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -42,7 +42,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void CookieHandler::put(java::net::URI arg0, JObject arg1)
+	void CookieHandler::put(java::net::URI arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"put",

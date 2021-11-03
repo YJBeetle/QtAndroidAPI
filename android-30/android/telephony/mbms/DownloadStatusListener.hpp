@@ -26,7 +26,7 @@ namespace android::telephony::mbms
 		DownloadStatusListener();
 		
 		// Methods
-		void onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2);
+		void onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2) const;
 	};
 } // namespace android::telephony::mbms
 

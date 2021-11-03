@@ -18,9 +18,9 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		JString read();
-		JString readImmediately();
-		void write(JString arg0);
+		JString read() const;
+		JString readImmediately() const;
+		void write(JString arg0) const;
 	};
 } // namespace android::telecom
 

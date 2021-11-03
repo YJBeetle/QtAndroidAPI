@@ -30,9 +30,9 @@ namespace android::icu::text
 		static android::icu::text::ListFormatter getInstance();
 		static android::icu::text::ListFormatter getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::ListFormatter getInstance(java::util::Locale arg0);
-		JString format(JObjectArray arg0);
-		JString format(JObject arg0);
-		JString getPatternForNumItems(jint arg0);
+		JString format(JObjectArray arg0) const;
+		JString format(JObject arg0) const;
+		JString getPatternForNumItems(jint arg0) const;
 	};
 } // namespace android::icu::text
 

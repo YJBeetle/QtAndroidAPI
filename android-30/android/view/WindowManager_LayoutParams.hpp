@@ -161,21 +161,21 @@ namespace android::view
 		
 		// Methods
 		static jboolean mayUseInputMethod(jint arg0);
-		jint copyFrom(android::view::WindowManager_LayoutParams arg0);
-		JString debug(JString arg0);
-		jint describeContents();
-		jint getColorMode();
-		jint getFitInsetsSides();
-		jint getFitInsetsTypes();
-		JString getTitle();
-		jboolean isFitInsetsIgnoringVisibility();
-		void setColorMode(jint arg0);
-		void setFitInsetsIgnoringVisibility(jboolean arg0);
-		void setFitInsetsSides(jint arg0);
-		void setFitInsetsTypes(jint arg0);
-		void setTitle(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint copyFrom(android::view::WindowManager_LayoutParams arg0) const;
+		JString debug(JString arg0) const;
+		jint describeContents() const;
+		jint getColorMode() const;
+		jint getFitInsetsSides() const;
+		jint getFitInsetsTypes() const;
+		JString getTitle() const;
+		jboolean isFitInsetsIgnoringVisibility() const;
+		void setColorMode(jint arg0) const;
+		void setFitInsetsIgnoringVisibility(jboolean arg0) const;
+		void setFitInsetsSides(jint arg0) const;
+		void setFitInsetsTypes(jint arg0) const;
+		void setTitle(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

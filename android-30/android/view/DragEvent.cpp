@@ -65,70 +65,70 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint DragEvent::describeContents()
+	jint DragEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint DragEvent::getAction()
+	jint DragEvent::getAction() const
 	{
 		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
-	android::content::ClipData DragEvent::getClipData()
+	android::content::ClipData DragEvent::getClipData() const
 	{
 		return callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
 		);
 	}
-	android::content::ClipDescription DragEvent::getClipDescription()
+	android::content::ClipDescription DragEvent::getClipDescription() const
 	{
 		return callObjectMethod(
 			"getClipDescription",
 			"()Landroid/content/ClipDescription;"
 		);
 	}
-	JObject DragEvent::getLocalState()
+	JObject DragEvent::getLocalState() const
 	{
 		return callObjectMethod(
 			"getLocalState",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DragEvent::getResult()
+	jboolean DragEvent::getResult() const
 	{
 		return callMethod<jboolean>(
 			"getResult",
 			"()Z"
 		);
 	}
-	jfloat DragEvent::getX()
+	jfloat DragEvent::getX() const
 	{
 		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
-	jfloat DragEvent::getY()
+	jfloat DragEvent::getY() const
 	{
 		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
-	JString DragEvent::toString()
+	JString DragEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DragEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DragEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -23,7 +23,7 @@ namespace android::util
 		StringBuilderPrinter(java::lang::StringBuilder arg0);
 		
 		// Methods
-		void println(JString arg0);
+		void println(JString arg0) const;
 	};
 } // namespace android::util
 

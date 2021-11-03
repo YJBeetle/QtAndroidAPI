@@ -17,42 +17,42 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JString SecureCacheResponse::getCipherSuite()
+	JString SecureCacheResponse::getCipherSuite() const
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SecureCacheResponse::getLocalCertificateChain()
+	JObject SecureCacheResponse::getLocalCertificateChain() const
 	{
 		return callObjectMethod(
 			"getLocalCertificateChain",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SecureCacheResponse::getLocalPrincipal()
+	JObject SecureCacheResponse::getLocalPrincipal() const
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	JObject SecureCacheResponse::getPeerPrincipal()
+	JObject SecureCacheResponse::getPeerPrincipal() const
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	java::util::Optional SecureCacheResponse::getSSLSession()
+	java::util::Optional SecureCacheResponse::getSSLSession() const
 	{
 		return callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
 		);
 	}
-	JObject SecureCacheResponse::getServerCertificateChain()
+	JObject SecureCacheResponse::getServerCertificateChain() const
 	{
 		return callObjectMethod(
 			"getServerCertificateChain",

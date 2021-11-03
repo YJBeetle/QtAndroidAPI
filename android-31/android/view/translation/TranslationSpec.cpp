@@ -36,14 +36,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	jint TranslationSpec::describeContents()
+	jint TranslationSpec::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TranslationSpec::equals(JObject arg0)
+	jboolean TranslationSpec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,35 +51,35 @@ namespace android::view::translation
 			arg0.object<jobject>()
 		);
 	}
-	jint TranslationSpec::getDataFormat()
+	jint TranslationSpec::getDataFormat() const
 	{
 		return callMethod<jint>(
 			"getDataFormat",
 			"()I"
 		);
 	}
-	android::icu::util::ULocale TranslationSpec::getLocale()
+	android::icu::util::ULocale TranslationSpec::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	jint TranslationSpec::hashCode()
+	jint TranslationSpec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TranslationSpec::toString()
+	JString TranslationSpec::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationSpec::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationSpec::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

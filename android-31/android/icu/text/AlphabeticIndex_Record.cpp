@@ -13,21 +13,21 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	JObject AlphabeticIndex_Record::getData()
+	JObject AlphabeticIndex_Record::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JString AlphabeticIndex_Record::getName()
+	JString AlphabeticIndex_Record::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString AlphabeticIndex_Record::toString()
+	JString AlphabeticIndex_Record::toString() const
 	{
 		return callObjectMethod(
 			"toString",

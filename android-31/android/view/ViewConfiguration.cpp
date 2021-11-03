@@ -209,133 +209,133 @@ namespace android::view
 			"()J"
 		);
 	}
-	jfloat ViewConfiguration::getScaledAmbiguousGestureMultiplier()
+	jfloat ViewConfiguration::getScaledAmbiguousGestureMultiplier() const
 	{
 		return callMethod<jfloat>(
 			"getScaledAmbiguousGestureMultiplier",
 			"()F"
 		);
 	}
-	jint ViewConfiguration::getScaledDoubleTapSlop()
+	jint ViewConfiguration::getScaledDoubleTapSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledDoubleTapSlop",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledEdgeSlop()
+	jint ViewConfiguration::getScaledEdgeSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledEdgeSlop",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledFadingEdgeLength()
+	jint ViewConfiguration::getScaledFadingEdgeLength() const
 	{
 		return callMethod<jint>(
 			"getScaledFadingEdgeLength",
 			"()I"
 		);
 	}
-	jfloat ViewConfiguration::getScaledHorizontalScrollFactor()
+	jfloat ViewConfiguration::getScaledHorizontalScrollFactor() const
 	{
 		return callMethod<jfloat>(
 			"getScaledHorizontalScrollFactor",
 			"()F"
 		);
 	}
-	jint ViewConfiguration::getScaledHoverSlop()
+	jint ViewConfiguration::getScaledHoverSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledHoverSlop",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMaximumDrawingCacheSize()
+	jint ViewConfiguration::getScaledMaximumDrawingCacheSize() const
 	{
 		return callMethod<jint>(
 			"getScaledMaximumDrawingCacheSize",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMaximumFlingVelocity()
+	jint ViewConfiguration::getScaledMaximumFlingVelocity() const
 	{
 		return callMethod<jint>(
 			"getScaledMaximumFlingVelocity",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMinimumFlingVelocity()
+	jint ViewConfiguration::getScaledMinimumFlingVelocity() const
 	{
 		return callMethod<jint>(
 			"getScaledMinimumFlingVelocity",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMinimumScalingSpan()
+	jint ViewConfiguration::getScaledMinimumScalingSpan() const
 	{
 		return callMethod<jint>(
 			"getScaledMinimumScalingSpan",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledOverflingDistance()
+	jint ViewConfiguration::getScaledOverflingDistance() const
 	{
 		return callMethod<jint>(
 			"getScaledOverflingDistance",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledOverscrollDistance()
+	jint ViewConfiguration::getScaledOverscrollDistance() const
 	{
 		return callMethod<jint>(
 			"getScaledOverscrollDistance",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledPagingTouchSlop()
+	jint ViewConfiguration::getScaledPagingTouchSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledPagingTouchSlop",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledScrollBarSize()
+	jint ViewConfiguration::getScaledScrollBarSize() const
 	{
 		return callMethod<jint>(
 			"getScaledScrollBarSize",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledTouchSlop()
+	jint ViewConfiguration::getScaledTouchSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledTouchSlop",
 			"()I"
 		);
 	}
-	jfloat ViewConfiguration::getScaledVerticalScrollFactor()
+	jfloat ViewConfiguration::getScaledVerticalScrollFactor() const
 	{
 		return callMethod<jfloat>(
 			"getScaledVerticalScrollFactor",
 			"()F"
 		);
 	}
-	jint ViewConfiguration::getScaledWindowTouchSlop()
+	jint ViewConfiguration::getScaledWindowTouchSlop() const
 	{
 		return callMethod<jint>(
 			"getScaledWindowTouchSlop",
 			"()I"
 		);
 	}
-	jboolean ViewConfiguration::hasPermanentMenuKey()
+	jboolean ViewConfiguration::hasPermanentMenuKey() const
 	{
 		return callMethod<jboolean>(
 			"hasPermanentMenuKey",
 			"()Z"
 		);
 	}
-	jboolean ViewConfiguration::shouldShowMenuShortcutsWhenKeyboardPresent()
+	jboolean ViewConfiguration::shouldShowMenuShortcutsWhenKeyboardPresent() const
 	{
 		return callMethod<jboolean>(
 			"shouldShowMenuShortcutsWhenKeyboardPresent",

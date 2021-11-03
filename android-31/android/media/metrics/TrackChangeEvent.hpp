@@ -38,27 +38,27 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAudioSampleRate();
-		jint getBitrate();
-		jint getChannelCount();
-		JString getCodecName();
-		JString getContainerMimeType();
-		jint getHeight();
-		JString getLanguage();
-		JString getLanguageRegion();
-		android::os::Bundle getMetricsBundle();
-		JString getSampleMimeType();
-		jlong getTimeSinceCreatedMillis();
-		jint getTrackChangeReason();
-		jint getTrackState();
-		jint getTrackType();
-		jfloat getVideoFrameRate();
-		jint getWidth();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAudioSampleRate() const;
+		jint getBitrate() const;
+		jint getChannelCount() const;
+		JString getCodecName() const;
+		JString getContainerMimeType() const;
+		jint getHeight() const;
+		JString getLanguage() const;
+		JString getLanguageRegion() const;
+		android::os::Bundle getMetricsBundle() const;
+		JString getSampleMimeType() const;
+		jlong getTimeSinceCreatedMillis() const;
+		jint getTrackChangeReason() const;
+		jint getTrackState() const;
+		jint getTrackType() const;
+		jfloat getVideoFrameRate() const;
+		jint getWidth() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::metrics
 

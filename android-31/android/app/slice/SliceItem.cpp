@@ -90,91 +90,91 @@ namespace android::app::slice
 	// Constructors
 	
 	// Methods
-	jint SliceItem::describeContents()
+	jint SliceItem::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::PendingIntent SliceItem::getAction()
+	android::app::PendingIntent SliceItem::getAction() const
 	{
 		return callObjectMethod(
 			"getAction",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	android::os::Bundle SliceItem::getBundle()
+	android::os::Bundle SliceItem::getBundle() const
 	{
 		return callObjectMethod(
 			"getBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString SliceItem::getFormat()
+	JString SliceItem::getFormat() const
 	{
 		return callObjectMethod(
 			"getFormat",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SliceItem::getHints()
+	JObject SliceItem::getHints() const
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	android::graphics::drawable::Icon SliceItem::getIcon()
+	android::graphics::drawable::Icon SliceItem::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jint SliceItem::getInt()
+	jint SliceItem::getInt() const
 	{
 		return callMethod<jint>(
 			"getInt",
 			"()I"
 		);
 	}
-	jlong SliceItem::getLong()
+	jlong SliceItem::getLong() const
 	{
 		return callMethod<jlong>(
 			"getLong",
 			"()J"
 		);
 	}
-	android::app::RemoteInput SliceItem::getRemoteInput()
+	android::app::RemoteInput SliceItem::getRemoteInput() const
 	{
 		return callObjectMethod(
 			"getRemoteInput",
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	android::app::slice::Slice SliceItem::getSlice()
+	android::app::slice::Slice SliceItem::getSlice() const
 	{
 		return callObjectMethod(
 			"getSlice",
 			"()Landroid/app/slice/Slice;"
 		);
 	}
-	JString SliceItem::getSubType()
+	JString SliceItem::getSubType() const
 	{
 		return callObjectMethod(
 			"getSubType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SliceItem::getText()
+	JString SliceItem::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean SliceItem::hasHint(JString arg0)
+	jboolean SliceItem::hasHint(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasHint",
@@ -182,7 +182,7 @@ namespace android::app::slice
 			arg0.object<jstring>()
 		);
 	}
-	void SliceItem::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SliceItem::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

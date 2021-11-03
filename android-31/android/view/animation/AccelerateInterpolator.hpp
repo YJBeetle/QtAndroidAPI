@@ -24,7 +24,7 @@ namespace android::view::animation
 		AccelerateInterpolator(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jfloat getInterpolation(jfloat arg0);
+		jfloat getInterpolation(jfloat arg0) const;
 	};
 } // namespace android::view::animation
 

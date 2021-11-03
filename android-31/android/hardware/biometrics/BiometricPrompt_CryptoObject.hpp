@@ -37,10 +37,10 @@ namespace android::hardware::biometrics
 		BiometricPrompt_CryptoObject(javax::crypto::Mac arg0);
 		
 		// Methods
-		javax::crypto::Cipher getCipher();
-		android::security::identity::IdentityCredential getIdentityCredential();
-		javax::crypto::Mac getMac();
-		java::security::Signature getSignature();
+		javax::crypto::Cipher getCipher() const;
+		android::security::identity::IdentityCredential getIdentityCredential() const;
+		javax::crypto::Mac getMac() const;
+		java::security::Signature getSignature() const;
 	};
 } // namespace android::hardware::biometrics
 

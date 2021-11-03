@@ -82,28 +82,28 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ConfigurationInfo::describeContents()
+	jint ConfigurationInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString ConfigurationInfo::getGlEsVersion()
+	JString ConfigurationInfo::getGlEsVersion() const
 	{
 		return callObjectMethod(
 			"getGlEsVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ConfigurationInfo::toString()
+	JString ConfigurationInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ConfigurationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConfigurationInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -21,7 +21,7 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
+		jboolean equals(JObject arg0) const;
 	};
 } // namespace android::media
 

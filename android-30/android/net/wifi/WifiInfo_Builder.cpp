@@ -18,14 +18,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	android::net::wifi::WifiInfo WifiInfo_Builder::build()
+	android::net::wifi::WifiInfo WifiInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/WifiInfo;"
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setBssid(JString arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setBssid(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBssid",
@@ -33,7 +33,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setNetworkId(jint arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setNetworkId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkId",
@@ -41,7 +41,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setRssi(jint arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setRssi(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRssi",
@@ -49,7 +49,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setSsid(JByteArray arg0)
+	android::net::wifi::WifiInfo_Builder WifiInfo_Builder::setSsid(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setSsid",

@@ -60,7 +60,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint MediaCodec_CryptoException::getErrorCode()
+	jint MediaCodec_CryptoException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",

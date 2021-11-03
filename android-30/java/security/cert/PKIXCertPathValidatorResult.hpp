@@ -24,11 +24,11 @@ namespace java::security::cert
 		PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, JObject arg1, JObject arg2);
 		
 		// Methods
-		JObject clone();
-		JObject getPolicyTree();
-		JObject getPublicKey();
-		java::security::cert::TrustAnchor getTrustAnchor();
-		JString toString();
+		JObject clone() const;
+		JObject getPolicyTree() const;
+		JObject getPublicKey() const;
+		java::security::cert::TrustAnchor getTrustAnchor() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

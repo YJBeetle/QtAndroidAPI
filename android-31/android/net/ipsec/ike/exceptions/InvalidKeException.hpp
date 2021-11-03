@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike::exceptions
 		InvalidKeException(jint arg0);
 		
 		// Methods
-		jint getDhGroup();
+		jint getDhGroup() const;
 	};
 } // namespace android::net::ipsec::ike::exceptions
 

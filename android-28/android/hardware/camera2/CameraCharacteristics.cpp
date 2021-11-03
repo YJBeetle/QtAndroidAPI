@@ -700,7 +700,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	JObject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0)
+	JObject CameraCharacteristics::get(android::hardware::camera2::CameraCharacteristics_Key arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -708,42 +708,42 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	JObject CameraCharacteristics::getAvailableCaptureRequestKeys()
+	JObject CameraCharacteristics::getAvailableCaptureRequestKeys() const
 	{
 		return callObjectMethod(
 			"getAvailableCaptureRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CameraCharacteristics::getAvailableCaptureResultKeys()
+	JObject CameraCharacteristics::getAvailableCaptureResultKeys() const
 	{
 		return callObjectMethod(
 			"getAvailableCaptureResultKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
+	JObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys() const
 	{
 		return callObjectMethod(
 			"getAvailablePhysicalCameraRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CameraCharacteristics::getAvailableSessionKeys()
+	JObject CameraCharacteristics::getAvailableSessionKeys() const
 	{
 		return callObjectMethod(
 			"getAvailableSessionKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CameraCharacteristics::getKeys()
+	JObject CameraCharacteristics::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CameraCharacteristics::getPhysicalCameraIds()
+	JObject CameraCharacteristics::getPhysicalCameraIds() const
 	{
 		return callObjectMethod(
 			"getPhysicalCameraIds",

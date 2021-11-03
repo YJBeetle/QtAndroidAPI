@@ -28,18 +28,18 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jlong getDurationMillis();
-		jlong getIntervalMillis();
-		jlong getMaxUpdateDelayMillis();
-		jint getMaxUpdates();
-		jfloat getMinUpdateDistanceMeters();
-		jlong getMinUpdateIntervalMillis();
-		jint getQuality();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jlong getDurationMillis() const;
+		jlong getIntervalMillis() const;
+		jlong getMaxUpdateDelayMillis() const;
+		jint getMaxUpdates() const;
+		jfloat getMinUpdateDistanceMeters() const;
+		jlong getMinUpdateIntervalMillis() const;
+		jint getQuality() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

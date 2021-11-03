@@ -14,14 +14,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	void GlobalSearchSession::close()
+	void GlobalSearchSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void GlobalSearchSession::reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2)
+	void GlobalSearchSession::reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"reportSystemUsage",
@@ -31,7 +31,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	android::app::appsearch::SearchResults GlobalSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1)
+	android::app::appsearch::SearchResults GlobalSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1) const
 	{
 		return callObjectMethod(
 			"search",

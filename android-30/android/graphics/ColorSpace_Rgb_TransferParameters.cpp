@@ -75,7 +75,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean ColorSpace_Rgb_TransferParameters::equals(JObject arg0)
+	jboolean ColorSpace_Rgb_TransferParameters::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -83,7 +83,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint ColorSpace_Rgb_TransferParameters::hashCode()
+	jint ColorSpace_Rgb_TransferParameters::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

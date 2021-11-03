@@ -27,8 +27,8 @@ namespace android::view::animation
 		AlphaAnimation(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		jboolean willChangeBounds();
-		jboolean willChangeTransformationMatrix();
+		jboolean willChangeBounds() const;
+		jboolean willChangeTransformationMatrix() const;
 	};
 } // namespace android::view::animation
 

@@ -61,7 +61,7 @@ namespace android::graphics
 			"()[Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	jint ColorSpace_Model::getComponentCount()
+	jint ColorSpace_Model::getComponentCount() const
 	{
 		return callMethod<jint>(
 			"getComponentCount",

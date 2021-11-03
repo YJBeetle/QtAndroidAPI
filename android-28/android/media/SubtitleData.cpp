@@ -12,28 +12,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray SubtitleData::getData()
+	JByteArray SubtitleData::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	jlong SubtitleData::getDurationUs()
+	jlong SubtitleData::getDurationUs() const
 	{
 		return callMethod<jlong>(
 			"getDurationUs",
 			"()J"
 		);
 	}
-	jlong SubtitleData::getStartTimeUs()
+	jlong SubtitleData::getStartTimeUs() const
 	{
 		return callMethod<jlong>(
 			"getStartTimeUs",
 			"()J"
 		);
 	}
-	jint SubtitleData::getTrackIndex()
+	jint SubtitleData::getTrackIndex() const
 	{
 		return callMethod<jint>(
 			"getTrackIndex",

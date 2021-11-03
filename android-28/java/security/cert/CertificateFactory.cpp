@@ -46,7 +46,7 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	java::security::cert::CRL CertificateFactory::generateCRL(java::io::InputStream arg0)
+	java::security::cert::CRL CertificateFactory::generateCRL(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"generateCRL",
@@ -54,7 +54,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactory::generateCRLs(java::io::InputStream arg0)
+	JObject CertificateFactory::generateCRLs(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"generateCRLs",
@@ -62,7 +62,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0)
+	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"generateCertPath",
@@ -70,7 +70,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactory::generateCertPath(JObject arg0)
+	java::security::cert::CertPath CertificateFactory::generateCertPath(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateCertPath",
@@ -78,7 +78,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0, JString arg1)
+	java::security::cert::CertPath CertificateFactory::generateCertPath(java::io::InputStream arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"generateCertPath",
@@ -87,7 +87,7 @@ namespace java::security::cert
 			arg1.object<jstring>()
 		);
 	}
-	java::security::cert::Certificate CertificateFactory::generateCertificate(java::io::InputStream arg0)
+	java::security::cert::Certificate CertificateFactory::generateCertificate(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"generateCertificate",
@@ -95,7 +95,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactory::generateCertificates(java::io::InputStream arg0)
+	JObject CertificateFactory::generateCertificates(java::io::InputStream arg0) const
 	{
 		return callObjectMethod(
 			"generateCertificates",
@@ -103,21 +103,21 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject CertificateFactory::getCertPathEncodings()
+	JObject CertificateFactory::getCertPathEncodings() const
 	{
 		return callObjectMethod(
 			"getCertPathEncodings",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	java::security::Provider CertificateFactory::getProvider()
+	java::security::Provider CertificateFactory::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JString CertificateFactory::getType()
+	JString CertificateFactory::getType() const
 	{
 		return callObjectMethod(
 			"getType",

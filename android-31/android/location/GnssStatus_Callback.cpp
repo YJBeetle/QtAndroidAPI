@@ -16,7 +16,7 @@ namespace android::location
 		) {}
 	
 	// Methods
-	void GnssStatus_Callback::onFirstFix(jint arg0)
+	void GnssStatus_Callback::onFirstFix(jint arg0) const
 	{
 		callMethod<void>(
 			"onFirstFix",
@@ -24,7 +24,7 @@ namespace android::location
 			arg0
 		);
 	}
-	void GnssStatus_Callback::onSatelliteStatusChanged(android::location::GnssStatus arg0)
+	void GnssStatus_Callback::onSatelliteStatusChanged(android::location::GnssStatus arg0) const
 	{
 		callMethod<void>(
 			"onSatelliteStatusChanged",
@@ -32,14 +32,14 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void GnssStatus_Callback::onStarted()
+	void GnssStatus_Callback::onStarted() const
 	{
 		callMethod<void>(
 			"onStarted",
 			"()V"
 		);
 	}
-	void GnssStatus_Callback::onStopped()
+	void GnssStatus_Callback::onStopped() const
 	{
 		callMethod<void>(
 			"onStopped",

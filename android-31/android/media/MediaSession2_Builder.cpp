@@ -22,14 +22,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::MediaSession2 MediaSession2_Builder::build()
+	android::media::MediaSession2 MediaSession2_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/MediaSession2;"
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setExtras(android::os::Bundle arg0)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -37,7 +37,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setId(JString arg0)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setId",
@@ -45,7 +45,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionActivity(android::app::PendingIntent arg0)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionActivity(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setSessionActivity",
@@ -53,7 +53,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionCallback(JObject arg0, android::media::MediaSession2_SessionCallback arg1)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionCallback(JObject arg0, android::media::MediaSession2_SessionCallback arg1) const
 	{
 		return callObjectMethod(
 			"setSessionCallback",

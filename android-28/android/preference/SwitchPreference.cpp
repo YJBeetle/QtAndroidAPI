@@ -43,21 +43,21 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	JString SwitchPreference::getSwitchTextOff()
+	JString SwitchPreference::getSwitchTextOff() const
 	{
 		return callObjectMethod(
 			"getSwitchTextOff",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SwitchPreference::getSwitchTextOn()
+	JString SwitchPreference::getSwitchTextOn() const
 	{
 		return callObjectMethod(
 			"getSwitchTextOn",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void SwitchPreference::setSwitchTextOff(jint arg0)
+	void SwitchPreference::setSwitchTextOff(jint arg0) const
 	{
 		callMethod<void>(
 			"setSwitchTextOff",
@@ -65,7 +65,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void SwitchPreference::setSwitchTextOff(JString arg0)
+	void SwitchPreference::setSwitchTextOff(JString arg0) const
 	{
 		callMethod<void>(
 			"setSwitchTextOff",
@@ -73,7 +73,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void SwitchPreference::setSwitchTextOn(jint arg0)
+	void SwitchPreference::setSwitchTextOn(jint arg0) const
 	{
 		callMethod<void>(
 			"setSwitchTextOn",
@@ -81,7 +81,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void SwitchPreference::setSwitchTextOn(JString arg0)
+	void SwitchPreference::setSwitchTextOn(JString arg0) const
 	{
 		callMethod<void>(
 			"setSwitchTextOn",

@@ -31,14 +31,14 @@ namespace android::print
 		) {}
 	
 	// Methods
-	void PrintDocumentAdapter::onFinish()
+	void PrintDocumentAdapter::onFinish() const
 	{
 		callMethod<void>(
 			"onFinish",
 			"()V"
 		);
 	}
-	void PrintDocumentAdapter::onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4)
+	void PrintDocumentAdapter::onLayout(android::print::PrintAttributes arg0, android::print::PrintAttributes arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_LayoutResultCallback arg3, android::os::Bundle arg4) const
 	{
 		callMethod<void>(
 			"onLayout",
@@ -50,14 +50,14 @@ namespace android::print
 			arg4.object()
 		);
 	}
-	void PrintDocumentAdapter::onStart()
+	void PrintDocumentAdapter::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void PrintDocumentAdapter::onWrite(JArray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3)
+	void PrintDocumentAdapter::onWrite(JArray arg0, android::os::ParcelFileDescriptor arg1, android::os::CancellationSignal arg2, android::print::PrintDocumentAdapter_WriteResultCallback arg3) const
 	{
 		callMethod<void>(
 			"onWrite",

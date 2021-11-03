@@ -25,16 +25,16 @@ namespace android::net::sip
 		SipProfile_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::net::sip::SipProfile build();
-		android::net::sip::SipProfile_Builder setAuthUserName(JString arg0);
-		android::net::sip::SipProfile_Builder setAutoRegistration(jboolean arg0);
-		android::net::sip::SipProfile_Builder setDisplayName(JString arg0);
-		android::net::sip::SipProfile_Builder setOutboundProxy(JString arg0);
-		android::net::sip::SipProfile_Builder setPassword(JString arg0);
-		android::net::sip::SipProfile_Builder setPort(jint arg0);
-		android::net::sip::SipProfile_Builder setProfileName(JString arg0);
-		android::net::sip::SipProfile_Builder setProtocol(JString arg0);
-		android::net::sip::SipProfile_Builder setSendKeepAlive(jboolean arg0);
+		android::net::sip::SipProfile build() const;
+		android::net::sip::SipProfile_Builder setAuthUserName(JString arg0) const;
+		android::net::sip::SipProfile_Builder setAutoRegistration(jboolean arg0) const;
+		android::net::sip::SipProfile_Builder setDisplayName(JString arg0) const;
+		android::net::sip::SipProfile_Builder setOutboundProxy(JString arg0) const;
+		android::net::sip::SipProfile_Builder setPassword(JString arg0) const;
+		android::net::sip::SipProfile_Builder setPort(jint arg0) const;
+		android::net::sip::SipProfile_Builder setProfileName(JString arg0) const;
+		android::net::sip::SipProfile_Builder setProtocol(JString arg0) const;
+		android::net::sip::SipProfile_Builder setSendKeepAlive(jboolean arg0) const;
 	};
 } // namespace android::net::sip
 

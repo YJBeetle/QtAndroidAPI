@@ -12,14 +12,14 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	JString ContextParams::getAttributionTag()
+	JString ContextParams::getAttributionTag() const
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::AttributionSource ContextParams::getNextAttributionSource()
+	android::content::AttributionSource ContextParams::getNextAttributionSource() const
 	{
 		return callObjectMethod(
 			"getNextAttributionSource",

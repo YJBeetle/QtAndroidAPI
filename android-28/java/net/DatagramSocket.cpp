@@ -53,7 +53,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramSocket::bind(java::net::SocketAddress arg0)
+	void DatagramSocket::bind(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"bind",
@@ -61,14 +61,14 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramSocket::close()
+	void DatagramSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void DatagramSocket::connect(java::net::SocketAddress arg0)
+	void DatagramSocket::connect(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"connect",
@@ -76,7 +76,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramSocket::connect(java::net::InetAddress arg0, jint arg1)
+	void DatagramSocket::connect(java::net::InetAddress arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"connect",
@@ -85,56 +85,56 @@ namespace java::net
 			arg1
 		);
 	}
-	void DatagramSocket::disconnect()
+	void DatagramSocket::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	jboolean DatagramSocket::getBroadcast()
+	jboolean DatagramSocket::getBroadcast() const
 	{
 		return callMethod<jboolean>(
 			"getBroadcast",
 			"()Z"
 		);
 	}
-	java::nio::channels::DatagramChannel DatagramSocket::getChannel()
+	java::nio::channels::DatagramChannel DatagramSocket::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	java::net::InetAddress DatagramSocket::getInetAddress()
+	java::net::InetAddress DatagramSocket::getInetAddress() const
 	{
 		return callObjectMethod(
 			"getInetAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	java::net::InetAddress DatagramSocket::getLocalAddress()
+	java::net::InetAddress DatagramSocket::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint DatagramSocket::getLocalPort()
+	jint DatagramSocket::getLocalPort() const
 	{
 		return callMethod<jint>(
 			"getLocalPort",
 			"()I"
 		);
 	}
-	java::net::SocketAddress DatagramSocket::getLocalSocketAddress()
+	java::net::SocketAddress DatagramSocket::getLocalSocketAddress() const
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	JObject DatagramSocket::getOption(JObject arg0)
+	JObject DatagramSocket::getOption(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getOption",
@@ -142,77 +142,77 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jint DatagramSocket::getPort()
+	jint DatagramSocket::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	jint DatagramSocket::getReceiveBufferSize()
+	jint DatagramSocket::getReceiveBufferSize() const
 	{
 		return callMethod<jint>(
 			"getReceiveBufferSize",
 			"()I"
 		);
 	}
-	java::net::SocketAddress DatagramSocket::getRemoteSocketAddress()
+	java::net::SocketAddress DatagramSocket::getRemoteSocketAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jboolean DatagramSocket::getReuseAddress()
+	jboolean DatagramSocket::getReuseAddress() const
 	{
 		return callMethod<jboolean>(
 			"getReuseAddress",
 			"()Z"
 		);
 	}
-	jint DatagramSocket::getSendBufferSize()
+	jint DatagramSocket::getSendBufferSize() const
 	{
 		return callMethod<jint>(
 			"getSendBufferSize",
 			"()I"
 		);
 	}
-	jint DatagramSocket::getSoTimeout()
+	jint DatagramSocket::getSoTimeout() const
 	{
 		return callMethod<jint>(
 			"getSoTimeout",
 			"()I"
 		);
 	}
-	jint DatagramSocket::getTrafficClass()
+	jint DatagramSocket::getTrafficClass() const
 	{
 		return callMethod<jint>(
 			"getTrafficClass",
 			"()I"
 		);
 	}
-	jboolean DatagramSocket::isBound()
+	jboolean DatagramSocket::isBound() const
 	{
 		return callMethod<jboolean>(
 			"isBound",
 			"()Z"
 		);
 	}
-	jboolean DatagramSocket::isClosed()
+	jboolean DatagramSocket::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	jboolean DatagramSocket::isConnected()
+	jboolean DatagramSocket::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	void DatagramSocket::receive(java::net::DatagramPacket arg0)
+	void DatagramSocket::receive(java::net::DatagramPacket arg0) const
 	{
 		callMethod<void>(
 			"receive",
@@ -220,7 +220,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramSocket::send(java::net::DatagramPacket arg0)
+	void DatagramSocket::send(java::net::DatagramPacket arg0) const
 	{
 		callMethod<void>(
 			"send",
@@ -228,7 +228,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void DatagramSocket::setBroadcast(jboolean arg0)
+	void DatagramSocket::setBroadcast(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBroadcast",
@@ -236,7 +236,7 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::DatagramSocket DatagramSocket::setOption(JObject arg0, JObject arg1)
+	java::net::DatagramSocket DatagramSocket::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -245,7 +245,7 @@ namespace java::net
 			arg1.object<jobject>()
 		);
 	}
-	void DatagramSocket::setReceiveBufferSize(jint arg0)
+	void DatagramSocket::setReceiveBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setReceiveBufferSize",
@@ -253,7 +253,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramSocket::setReuseAddress(jboolean arg0)
+	void DatagramSocket::setReuseAddress(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setReuseAddress",
@@ -261,7 +261,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramSocket::setSendBufferSize(jint arg0)
+	void DatagramSocket::setSendBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setSendBufferSize",
@@ -269,7 +269,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramSocket::setSoTimeout(jint arg0)
+	void DatagramSocket::setSoTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoTimeout",
@@ -277,7 +277,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void DatagramSocket::setTrafficClass(jint arg0)
+	void DatagramSocket::setTrafficClass(jint arg0) const
 	{
 		callMethod<void>(
 			"setTrafficClass",
@@ -285,7 +285,7 @@ namespace java::net
 			arg0
 		);
 	}
-	JObject DatagramSocket::supportedOptions()
+	JObject DatagramSocket::supportedOptions() const
 	{
 		return callObjectMethod(
 			"supportedOptions",

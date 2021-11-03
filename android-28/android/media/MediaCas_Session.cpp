@@ -13,14 +13,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaCas_Session::close()
+	void MediaCas_Session::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MediaCas_Session::processEcm(JByteArray arg0)
+	void MediaCas_Session::processEcm(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"processEcm",
@@ -28,7 +28,7 @@ namespace android::media
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaCas_Session::processEcm(JByteArray arg0, jint arg1, jint arg2)
+	void MediaCas_Session::processEcm(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"processEcm",
@@ -38,7 +38,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaCas_Session::setPrivateData(JByteArray arg0)
+	void MediaCas_Session::setPrivateData(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setPrivateData",

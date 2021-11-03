@@ -43,14 +43,14 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		java::util::jar::Attributes getAttributes();
-		JArray getCertificates();
-		JString getEntryName();
-		java::util::jar::JarEntry getJarEntry();
-		java::util::jar::JarFile getJarFile();
-		java::net::URL getJarFileURL();
-		java::util::jar::Attributes getMainAttributes();
-		java::util::jar::Manifest getManifest();
+		java::util::jar::Attributes getAttributes() const;
+		JArray getCertificates() const;
+		JString getEntryName() const;
+		java::util::jar::JarEntry getJarEntry() const;
+		java::util::jar::JarFile getJarFile() const;
+		java::net::URL getJarFileURL() const;
+		java::util::jar::Attributes getMainAttributes() const;
+		java::util::jar::Manifest getManifest() const;
 	};
 } // namespace java::net
 

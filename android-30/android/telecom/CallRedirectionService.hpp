@@ -32,12 +32,12 @@ namespace android::telecom
 		CallRedirectionService();
 		
 		// Methods
-		void cancelCall();
-		JObject onBind(android::content::Intent arg0);
-		void onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2);
-		jboolean onUnbind(android::content::Intent arg0);
-		void placeCallUnmodified();
-		void redirectCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2);
+		void cancelCall() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onPlaceCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2) const;
+		jboolean onUnbind(android::content::Intent arg0) const;
+		void placeCallUnmodified() const;
+		void redirectCall(android::net::Uri arg0, android::telecom::PhoneAccountHandle arg1, jboolean arg2) const;
 	};
 } // namespace android::telecom
 

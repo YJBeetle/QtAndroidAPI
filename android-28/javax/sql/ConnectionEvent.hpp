@@ -23,7 +23,7 @@ namespace javax::sql
 		ConnectionEvent(JObject arg0, java::sql::SQLException arg1);
 		
 		// Methods
-		java::sql::SQLException getSQLException();
+		java::sql::SQLException getSQLException() const;
 	};
 } // namespace javax::sql
 

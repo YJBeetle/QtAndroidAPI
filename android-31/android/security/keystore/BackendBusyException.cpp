@@ -33,7 +33,7 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	jlong BackendBusyException::getBackOffHintMillis()
+	jlong BackendBusyException::getBackOffHintMillis() const
 	{
 		return callMethod<jlong>(
 			"getBackOffHintMillis",

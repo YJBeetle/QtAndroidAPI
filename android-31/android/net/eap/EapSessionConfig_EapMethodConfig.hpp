@@ -23,9 +23,9 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getMethodType();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getMethodType() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

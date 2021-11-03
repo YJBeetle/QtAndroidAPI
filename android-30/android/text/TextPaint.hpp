@@ -32,8 +32,8 @@ namespace android::text
 		TextPaint(jint arg0);
 		
 		// Methods
-		jfloat getUnderlineThickness();
-		void set(android::text::TextPaint arg0);
+		jfloat getUnderlineThickness() const;
+		void set(android::text::TextPaint arg0) const;
 	};
 } // namespace android::text
 

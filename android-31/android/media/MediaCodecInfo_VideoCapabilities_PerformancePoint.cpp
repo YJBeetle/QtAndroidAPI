@@ -285,7 +285,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0) const
 	{
 		return callMethod<jboolean>(
 			"covers",
@@ -293,7 +293,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaFormat arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(android::media::MediaFormat arg0) const
 	{
 		return callMethod<jboolean>(
 			"covers",
@@ -301,7 +301,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(JObject arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -309,14 +309,14 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode()
+	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
+	JString MediaCodecInfo_VideoCapabilities_PerformancePoint::toString() const
 	{
 		return callObjectMethod(
 			"toString",

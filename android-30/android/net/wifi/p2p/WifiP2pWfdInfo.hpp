@@ -29,21 +29,21 @@ namespace android::net::wifi::p2p
 		WifiP2pWfdInfo(android::net::wifi::p2p::WifiP2pWfdInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getControlPort();
-		jint getDeviceType();
-		jint getMaxThroughput();
-		jboolean isContentProtectionSupported();
-		jboolean isEnabled();
-		jboolean isSessionAvailable();
-		void setContentProtectionSupported(jboolean arg0);
-		void setControlPort(jint arg0);
-		jboolean setDeviceType(jint arg0);
-		void setEnabled(jboolean arg0);
-		void setMaxThroughput(jint arg0);
-		void setSessionAvailable(jboolean arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getControlPort() const;
+		jint getDeviceType() const;
+		jint getMaxThroughput() const;
+		jboolean isContentProtectionSupported() const;
+		jboolean isEnabled() const;
+		jboolean isSessionAvailable() const;
+		void setContentProtectionSupported(jboolean arg0) const;
+		void setControlPort(jint arg0) const;
+		jboolean setDeviceType(jint arg0) const;
+		void setEnabled(jboolean arg0) const;
+		void setMaxThroughput(jint arg0) const;
+		void setSessionAvailable(jboolean arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::p2p
 

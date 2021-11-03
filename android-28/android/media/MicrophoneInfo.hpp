@@ -40,21 +40,21 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getAddress();
-		JObject getChannelMapping();
-		JString getDescription();
-		jint getDirectionality();
-		JObject getFrequencyResponse();
-		jint getGroup();
-		jint getId();
-		jint getIndexInTheGroup();
-		jint getLocation();
-		jfloat getMaxSpl();
-		jfloat getMinSpl();
-		android::media::MicrophoneInfo_Coordinate3F getOrientation();
-		android::media::MicrophoneInfo_Coordinate3F getPosition();
-		jfloat getSensitivity();
-		jint getType();
+		JString getAddress() const;
+		JObject getChannelMapping() const;
+		JString getDescription() const;
+		jint getDirectionality() const;
+		JObject getFrequencyResponse() const;
+		jint getGroup() const;
+		jint getId() const;
+		jint getIndexInTheGroup() const;
+		jint getLocation() const;
+		jfloat getMaxSpl() const;
+		jfloat getMinSpl() const;
+		android::media::MicrophoneInfo_Coordinate3F getOrientation() const;
+		android::media::MicrophoneInfo_Coordinate3F getPosition() const;
+		jfloat getSensitivity() const;
+		jint getType() const;
 	};
 } // namespace android::media
 

@@ -40,7 +40,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentManager::addOnBackStackChangedListener(JObject arg0)
+	void FragmentManager::addOnBackStackChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnBackStackChangedListener",
@@ -48,14 +48,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::FragmentTransaction FragmentManager::beginTransaction()
+	android::app::FragmentTransaction FragmentManager::beginTransaction() const
 	{
 		return callObjectMethod(
 			"beginTransaction",
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
-	void FragmentManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void FragmentManager::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -66,14 +66,14 @@ namespace android::app
 			arg3.object<jarray>()
 		);
 	}
-	jboolean FragmentManager::executePendingTransactions()
+	jboolean FragmentManager::executePendingTransactions() const
 	{
 		return callMethod<jboolean>(
 			"executePendingTransactions",
 			"()Z"
 		);
 	}
-	android::app::Fragment FragmentManager::findFragmentById(jint arg0)
+	android::app::Fragment FragmentManager::findFragmentById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findFragmentById",
@@ -81,7 +81,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Fragment FragmentManager::findFragmentByTag(JString arg0)
+	android::app::Fragment FragmentManager::findFragmentByTag(JString arg0) const
 	{
 		return callObjectMethod(
 			"findFragmentByTag",
@@ -89,7 +89,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	JObject FragmentManager::getBackStackEntryAt(jint arg0)
+	JObject FragmentManager::getBackStackEntryAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBackStackEntryAt",
@@ -97,14 +97,14 @@ namespace android::app
 			arg0
 		);
 	}
-	jint FragmentManager::getBackStackEntryCount()
+	jint FragmentManager::getBackStackEntryCount() const
 	{
 		return callMethod<jint>(
 			"getBackStackEntryCount",
 			"()I"
 		);
 	}
-	android::app::Fragment FragmentManager::getFragment(android::os::Bundle arg0, JString arg1)
+	android::app::Fragment FragmentManager::getFragment(android::os::Bundle arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getFragment",
@@ -113,49 +113,49 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	JObject FragmentManager::getFragments()
+	JObject FragmentManager::getFragments() const
 	{
 		return callObjectMethod(
 			"getFragments",
 			"()Ljava/util/List;"
 		);
 	}
-	android::app::Fragment FragmentManager::getPrimaryNavigationFragment()
+	android::app::Fragment FragmentManager::getPrimaryNavigationFragment() const
 	{
 		return callObjectMethod(
 			"getPrimaryNavigationFragment",
 			"()Landroid/app/Fragment;"
 		);
 	}
-	void FragmentManager::invalidateOptionsMenu()
+	void FragmentManager::invalidateOptionsMenu() const
 	{
 		callMethod<void>(
 			"invalidateOptionsMenu",
 			"()V"
 		);
 	}
-	jboolean FragmentManager::isDestroyed()
+	jboolean FragmentManager::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	jboolean FragmentManager::isStateSaved()
+	jboolean FragmentManager::isStateSaved() const
 	{
 		return callMethod<jboolean>(
 			"isStateSaved",
 			"()Z"
 		);
 	}
-	void FragmentManager::popBackStack()
+	void FragmentManager::popBackStack() const
 	{
 		callMethod<void>(
 			"popBackStack",
 			"()V"
 		);
 	}
-	void FragmentManager::popBackStack(jint arg0, jint arg1)
+	void FragmentManager::popBackStack(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"popBackStack",
@@ -164,7 +164,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void FragmentManager::popBackStack(JString arg0, jint arg1)
+	void FragmentManager::popBackStack(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"popBackStack",
@@ -173,14 +173,14 @@ namespace android::app
 			arg1
 		);
 	}
-	jboolean FragmentManager::popBackStackImmediate()
+	jboolean FragmentManager::popBackStackImmediate() const
 	{
 		return callMethod<jboolean>(
 			"popBackStackImmediate",
 			"()Z"
 		);
 	}
-	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1)
+	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"popBackStackImmediate",
@@ -189,7 +189,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jboolean FragmentManager::popBackStackImmediate(JString arg0, jint arg1)
+	jboolean FragmentManager::popBackStackImmediate(JString arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"popBackStackImmediate",
@@ -198,7 +198,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void FragmentManager::putFragment(android::os::Bundle arg0, JString arg1, android::app::Fragment arg2)
+	void FragmentManager::putFragment(android::os::Bundle arg0, JString arg1, android::app::Fragment arg2) const
 	{
 		callMethod<void>(
 			"putFragment",
@@ -208,7 +208,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager::registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1)
+	void FragmentManager::registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"registerFragmentLifecycleCallbacks",
@@ -217,7 +217,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void FragmentManager::removeOnBackStackChangedListener(JObject arg0)
+	void FragmentManager::removeOnBackStackChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnBackStackChangedListener",
@@ -225,7 +225,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Fragment_SavedState FragmentManager::saveFragmentInstanceState(android::app::Fragment arg0)
+	android::app::Fragment_SavedState FragmentManager::saveFragmentInstanceState(android::app::Fragment arg0) const
 	{
 		return callObjectMethod(
 			"saveFragmentInstanceState",
@@ -233,7 +233,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentManager::unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0)
+	void FragmentManager::unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0) const
 	{
 		callMethod<void>(
 			"unregisterFragmentLifecycleCallbacks",

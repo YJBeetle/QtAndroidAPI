@@ -37,23 +37,23 @@ namespace android::view::inputmethod
 		CursorAnchorInfo(android::os::Parcel arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::graphics::RectF getCharacterBounds(jint arg0);
-		jint getCharacterBoundsFlags(jint arg0);
-		JString getComposingText();
-		jint getComposingTextStart();
-		jfloat getInsertionMarkerBaseline();
-		jfloat getInsertionMarkerBottom();
-		jint getInsertionMarkerFlags();
-		jfloat getInsertionMarkerHorizontal();
-		jfloat getInsertionMarkerTop();
-		android::graphics::Matrix getMatrix();
-		jint getSelectionEnd();
-		jint getSelectionStart();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::graphics::RectF getCharacterBounds(jint arg0) const;
+		jint getCharacterBoundsFlags(jint arg0) const;
+		JString getComposingText() const;
+		jint getComposingTextStart() const;
+		jfloat getInsertionMarkerBaseline() const;
+		jfloat getInsertionMarkerBottom() const;
+		jint getInsertionMarkerFlags() const;
+		jfloat getInsertionMarkerHorizontal() const;
+		jfloat getInsertionMarkerTop() const;
+		android::graphics::Matrix getMatrix() const;
+		jint getSelectionEnd() const;
+		jint getSelectionStart() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

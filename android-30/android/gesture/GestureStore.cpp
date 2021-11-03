@@ -48,7 +48,7 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void GestureStore::addGesture(JString arg0, android::gesture::Gesture arg1)
+	void GestureStore::addGesture(JString arg0, android::gesture::Gesture arg1) const
 	{
 		callMethod<void>(
 			"addGesture",
@@ -57,14 +57,14 @@ namespace android::gesture
 			arg1.object()
 		);
 	}
-	JObject GestureStore::getGestureEntries()
+	JObject GestureStore::getGestureEntries() const
 	{
 		return callObjectMethod(
 			"getGestureEntries",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::util::ArrayList GestureStore::getGestures(JString arg0)
+	java::util::ArrayList GestureStore::getGestures(JString arg0) const
 	{
 		return callObjectMethod(
 			"getGestures",
@@ -72,28 +72,28 @@ namespace android::gesture
 			arg0.object<jstring>()
 		);
 	}
-	jint GestureStore::getOrientationStyle()
+	jint GestureStore::getOrientationStyle() const
 	{
 		return callMethod<jint>(
 			"getOrientationStyle",
 			"()I"
 		);
 	}
-	jint GestureStore::getSequenceType()
+	jint GestureStore::getSequenceType() const
 	{
 		return callMethod<jint>(
 			"getSequenceType",
 			"()I"
 		);
 	}
-	jboolean GestureStore::hasChanged()
+	jboolean GestureStore::hasChanged() const
 	{
 		return callMethod<jboolean>(
 			"hasChanged",
 			"()Z"
 		);
 	}
-	void GestureStore::load(java::io::InputStream arg0)
+	void GestureStore::load(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -101,7 +101,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureStore::load(java::io::InputStream arg0, jboolean arg1)
+	void GestureStore::load(java::io::InputStream arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"load",
@@ -110,7 +110,7 @@ namespace android::gesture
 			arg1
 		);
 	}
-	java::util::ArrayList GestureStore::recognize(android::gesture::Gesture arg0)
+	java::util::ArrayList GestureStore::recognize(android::gesture::Gesture arg0) const
 	{
 		return callObjectMethod(
 			"recognize",
@@ -118,7 +118,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureStore::removeEntry(JString arg0)
+	void GestureStore::removeEntry(JString arg0) const
 	{
 		callMethod<void>(
 			"removeEntry",
@@ -126,7 +126,7 @@ namespace android::gesture
 			arg0.object<jstring>()
 		);
 	}
-	void GestureStore::removeGesture(JString arg0, android::gesture::Gesture arg1)
+	void GestureStore::removeGesture(JString arg0, android::gesture::Gesture arg1) const
 	{
 		callMethod<void>(
 			"removeGesture",
@@ -135,7 +135,7 @@ namespace android::gesture
 			arg1.object()
 		);
 	}
-	void GestureStore::save(java::io::OutputStream arg0)
+	void GestureStore::save(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"save",
@@ -143,7 +143,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureStore::save(java::io::OutputStream arg0, jboolean arg1)
+	void GestureStore::save(java::io::OutputStream arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"save",
@@ -152,7 +152,7 @@ namespace android::gesture
 			arg1
 		);
 	}
-	void GestureStore::setOrientationStyle(jint arg0)
+	void GestureStore::setOrientationStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientationStyle",
@@ -160,7 +160,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureStore::setSequenceType(jint arg0)
+	void GestureStore::setSequenceType(jint arg0) const
 	{
 		callMethod<void>(
 			"setSequenceType",

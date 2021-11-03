@@ -33,7 +33,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::LocalDate IsoChronology::date(JObject arg0)
+	java::time::LocalDate IsoChronology::date(JObject arg0) const
 	{
 		return callObjectMethod(
 			"date",
@@ -41,7 +41,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::LocalDate IsoChronology::date(jint arg0, jint arg1, jint arg2)
+	java::time::LocalDate IsoChronology::date(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"date",
@@ -51,7 +51,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::LocalDate IsoChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
+	java::time::LocalDate IsoChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"date",
@@ -62,7 +62,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	java::time::LocalDate IsoChronology::dateEpochDay(jlong arg0)
+	java::time::LocalDate IsoChronology::dateEpochDay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"dateEpochDay",
@@ -70,14 +70,14 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::LocalDate IsoChronology::dateNow()
+	java::time::LocalDate IsoChronology::dateNow() const
 	{
 		return callObjectMethod(
 			"dateNow",
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	java::time::LocalDate IsoChronology::dateNow(java::time::Clock arg0)
+	java::time::LocalDate IsoChronology::dateNow(java::time::Clock arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -85,7 +85,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::LocalDate IsoChronology::dateNow(java::time::ZoneId arg0)
+	java::time::LocalDate IsoChronology::dateNow(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"dateNow",
@@ -93,7 +93,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::LocalDate IsoChronology::dateYearDay(jint arg0, jint arg1)
+	java::time::LocalDate IsoChronology::dateYearDay(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -102,7 +102,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::LocalDate IsoChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
+	java::time::LocalDate IsoChronology::dateYearDay(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -112,7 +112,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	jlong IsoChronology::epochSecond(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::time::ZoneOffset arg6)
+	jlong IsoChronology::epochSecond(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::time::ZoneOffset arg6) const
 	{
 		return callMethod<jlong>(
 			"epochSecond",
@@ -126,7 +126,7 @@ namespace java::time::chrono
 			arg6.object()
 		);
 	}
-	java::time::chrono::IsoEra IsoChronology::eraOf(jint arg0)
+	java::time::chrono::IsoEra IsoChronology::eraOf(jint arg0) const
 	{
 		return callObjectMethod(
 			"eraOf",
@@ -134,28 +134,28 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	JObject IsoChronology::eras()
+	JObject IsoChronology::eras() const
 	{
 		return callObjectMethod(
 			"eras",
 			"()Ljava/util/List;"
 		);
 	}
-	JString IsoChronology::getCalendarType()
+	JString IsoChronology::getCalendarType() const
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString IsoChronology::getId()
+	JString IsoChronology::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean IsoChronology::isLeapYear(jlong arg0)
+	jboolean IsoChronology::isLeapYear(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
@@ -163,7 +163,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::LocalDateTime IsoChronology::localDateTime(JObject arg0)
+	java::time::LocalDateTime IsoChronology::localDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -171,7 +171,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::Period IsoChronology::period(jint arg0, jint arg1, jint arg2)
+	java::time::Period IsoChronology::period(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"period",
@@ -181,7 +181,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	jint IsoChronology::prolepticYear(JObject arg0, jint arg1)
+	jint IsoChronology::prolepticYear(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -190,7 +190,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::temporal::ValueRange IsoChronology::range(java::time::temporal::ChronoField arg0)
+	java::time::temporal::ValueRange IsoChronology::range(java::time::temporal::ChronoField arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -198,7 +198,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::LocalDate IsoChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
+	java::time::LocalDate IsoChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1) const
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -207,7 +207,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime IsoChronology::zonedDateTime(JObject arg0)
+	java::time::ZonedDateTime IsoChronology::zonedDateTime(JObject arg0) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -215,7 +215,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime IsoChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	java::time::ZonedDateTime IsoChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1) const
 	{
 		return callObjectMethod(
 			"zonedDateTime",

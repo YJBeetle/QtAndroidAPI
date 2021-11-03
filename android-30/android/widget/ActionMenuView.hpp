@@ -43,19 +43,19 @@ namespace android::widget
 		ActionMenuView(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void dismissPopupMenus();
-		android::widget::ActionMenuView_LayoutParams generateLayoutParams(JObject arg0);
-		JObject getMenu();
-		android::graphics::drawable::Drawable getOverflowIcon();
-		jint getPopupTheme();
-		jboolean hideOverflowMenu();
-		jboolean isOverflowMenuShowing();
-		void onConfigurationChanged(android::content::res::Configuration arg0);
-		void onDetachedFromWindow();
-		void setOnMenuItemClickListener(JObject arg0);
-		void setOverflowIcon(android::graphics::drawable::Drawable arg0);
-		void setPopupTheme(jint arg0);
-		jboolean showOverflowMenu();
+		void dismissPopupMenus() const;
+		android::widget::ActionMenuView_LayoutParams generateLayoutParams(JObject arg0) const;
+		JObject getMenu() const;
+		android::graphics::drawable::Drawable getOverflowIcon() const;
+		jint getPopupTheme() const;
+		jboolean hideOverflowMenu() const;
+		jboolean isOverflowMenuShowing() const;
+		void onConfigurationChanged(android::content::res::Configuration arg0) const;
+		void onDetachedFromWindow() const;
+		void setOnMenuItemClickListener(JObject arg0) const;
+		void setOverflowIcon(android::graphics::drawable::Drawable arg0) const;
+		void setPopupTheme(jint arg0) const;
+		jboolean showOverflowMenu() const;
 	};
 } // namespace android::widget
 

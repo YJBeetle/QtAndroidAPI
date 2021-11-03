@@ -26,9 +26,9 @@ namespace android::app::slice
 		SliceMetrics(android::content::Context arg0, android::net::Uri arg1);
 		
 		// Methods
-		void logHidden();
-		void logTouch(jint arg0, android::net::Uri arg1);
-		void logVisible();
+		void logHidden() const;
+		void logTouch(jint arg0, android::net::Uri arg1) const;
+		void logVisible() const;
 	};
 } // namespace android::app::slice
 

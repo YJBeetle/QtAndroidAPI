@@ -24,8 +24,8 @@ namespace android::net::ipsec::ike
 		IkeDerAsn1DnIdentification(javax::security::auth::x500::X500Principal arg0);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

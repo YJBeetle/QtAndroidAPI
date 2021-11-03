@@ -24,9 +24,9 @@ namespace android::service::controls::templates
 		ToggleTemplate(JString arg0, android::service::controls::templates::ControlButton arg1);
 		
 		// Methods
-		JString getContentDescription();
-		jint getTemplateType();
-		jboolean isChecked();
+		JString getContentDescription() const;
+		jint getTemplateType() const;
+		jboolean isChecked() const;
 	};
 } // namespace android::service::controls::templates
 

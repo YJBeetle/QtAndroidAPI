@@ -46,7 +46,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setAnswerButtonColorHint(jint arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setAnswerButtonColorHint(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAnswerButtonColorHint",
@@ -54,7 +54,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setDeclineButtonColorHint(jint arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setDeclineButtonColorHint(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDeclineButtonColorHint",
@@ -62,7 +62,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setIsVideo(jboolean arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setIsVideo(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsVideo",
@@ -70,7 +70,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setVerificationIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setVerificationIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setVerificationIcon",
@@ -78,7 +78,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_CallStyle Notification_CallStyle::setVerificationText(JString arg0)
+	android::app::Notification_CallStyle Notification_CallStyle::setVerificationText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setVerificationText",

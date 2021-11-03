@@ -129,29 +129,29 @@ namespace android::content::res
 		
 		// Methods
 		static jboolean needNewResources(jint arg0, jint arg1);
-		jint compareTo(android::content::res::Configuration arg0);
-		jint compareTo(JObject arg0);
-		jint describeContents();
-		jint diff(android::content::res::Configuration arg0);
-		jboolean equals(android::content::res::Configuration arg0);
-		jboolean equals(JObject arg0);
-		jint getLayoutDirection();
-		android::os::LocaleList getLocales();
-		jint hashCode();
-		jboolean isLayoutSizeAtLeast(jint arg0);
-		jboolean isNightModeActive();
-		jboolean isScreenHdr();
-		jboolean isScreenRound();
-		jboolean isScreenWideColorGamut();
-		void readFromParcel(android::os::Parcel arg0);
-		void setLayoutDirection(java::util::Locale arg0);
-		void setLocale(java::util::Locale arg0);
-		void setLocales(android::os::LocaleList arg0);
-		void setTo(android::content::res::Configuration arg0);
-		void setToDefaults();
-		JString toString();
-		jint updateFrom(android::content::res::Configuration arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint compareTo(android::content::res::Configuration arg0) const;
+		jint compareTo(JObject arg0) const;
+		jint describeContents() const;
+		jint diff(android::content::res::Configuration arg0) const;
+		jboolean equals(android::content::res::Configuration arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint getLayoutDirection() const;
+		android::os::LocaleList getLocales() const;
+		jint hashCode() const;
+		jboolean isLayoutSizeAtLeast(jint arg0) const;
+		jboolean isNightModeActive() const;
+		jboolean isScreenHdr() const;
+		jboolean isScreenRound() const;
+		jboolean isScreenWideColorGamut() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void setLayoutDirection(java::util::Locale arg0) const;
+		void setLocale(java::util::Locale arg0) const;
+		void setLocales(android::os::LocaleList arg0) const;
+		void setTo(android::content::res::Configuration arg0) const;
+		void setToDefaults() const;
+		JString toString() const;
+		jint updateFrom(android::content::res::Configuration arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::res
 

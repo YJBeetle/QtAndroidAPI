@@ -27,10 +27,10 @@ namespace android::media::tv
 		TvInputService_HardwareSession(android::content::Context arg0);
 		
 		// Methods
-		JString getHardwareInputId();
-		void onHardwareVideoAvailable();
-		void onHardwareVideoUnavailable(jint arg0);
-		jboolean onSetSurface(android::view::Surface arg0);
+		JString getHardwareInputId() const;
+		void onHardwareVideoAvailable() const;
+		void onHardwareVideoUnavailable(jint arg0) const;
+		jboolean onSetSurface(android::view::Surface arg0) const;
 	};
 } // namespace android::media::tv
 

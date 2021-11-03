@@ -17,7 +17,7 @@ namespace android::media
 		AudioManager_AudioRecordingCallback();
 		
 		// Methods
-		void onRecordingConfigChanged(JObject arg0);
+		void onRecordingConfigChanged(JObject arg0) const;
 	};
 } // namespace android::media
 

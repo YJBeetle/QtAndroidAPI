@@ -27,35 +27,35 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	jint AwareResources::describeContents()
+	jint AwareResources::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint AwareResources::getAvailableDataPathsCount()
+	jint AwareResources::getAvailableDataPathsCount() const
 	{
 		return callMethod<jint>(
 			"getAvailableDataPathsCount",
 			"()I"
 		);
 	}
-	jint AwareResources::getAvailablePublishSessionsCount()
+	jint AwareResources::getAvailablePublishSessionsCount() const
 	{
 		return callMethod<jint>(
 			"getAvailablePublishSessionsCount",
 			"()I"
 		);
 	}
-	jint AwareResources::getAvailableSubscribeSessionsCount()
+	jint AwareResources::getAvailableSubscribeSessionsCount() const
 	{
 		return callMethod<jint>(
 			"getAvailableSubscribeSessionsCount",
 			"()I"
 		);
 	}
-	void AwareResources::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AwareResources::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

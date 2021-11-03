@@ -28,16 +28,16 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		jchar charAt(jint arg0);
-		jboolean equals(JObject arg0);
-		java::math::BigDecimal getFirstBigDecimal();
-		android::icu::number::NumberRangeFormatter_RangeIdentityResult getIdentityResult();
-		java::math::BigDecimal getSecondBigDecimal();
-		jint hashCode();
-		jint length();
-		JString subSequence(jint arg0, jint arg1);
-		JObject toCharacterIterator();
-		JString toString();
+		jchar charAt(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		java::math::BigDecimal getFirstBigDecimal() const;
+		android::icu::number::NumberRangeFormatter_RangeIdentityResult getIdentityResult() const;
+		java::math::BigDecimal getSecondBigDecimal() const;
+		jint hashCode() const;
+		jint length() const;
+		JString subSequence(jint arg0, jint arg1) const;
+		JObject toCharacterIterator() const;
+		JString toString() const;
 	};
 } // namespace android::icu::number
 

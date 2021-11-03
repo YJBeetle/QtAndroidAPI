@@ -42,28 +42,28 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void InputStreamReader::close()
+	void InputStreamReader::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JString InputStreamReader::getEncoding()
+	JString InputStreamReader::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InputStreamReader::read()
+	jint InputStreamReader::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint InputStreamReader::read(JCharArray arg0, jint arg1, jint arg2)
+	jint InputStreamReader::read(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -73,7 +73,7 @@ namespace java::io
 			arg2
 		);
 	}
-	jboolean InputStreamReader::ready()
+	jboolean InputStreamReader::ready() const
 	{
 		return callMethod<jboolean>(
 			"ready",

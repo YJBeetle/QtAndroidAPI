@@ -44,18 +44,18 @@ namespace android::app
 		
 		// Methods
 		static android::app::TaskStackBuilder create(android::content::Context arg0);
-		android::app::TaskStackBuilder addNextIntent(android::content::Intent arg0);
-		android::app::TaskStackBuilder addNextIntentWithParentStack(android::content::Intent arg0);
-		android::app::TaskStackBuilder addParentStack(android::app::Activity arg0);
-		android::app::TaskStackBuilder addParentStack(android::content::ComponentName arg0);
-		android::app::TaskStackBuilder addParentStack(JClass arg0);
-		android::content::Intent editIntentAt(jint arg0);
-		jint getIntentCount();
-		JArray getIntents();
-		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1);
-		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2);
-		void startActivities();
-		void startActivities(android::os::Bundle arg0);
+		android::app::TaskStackBuilder addNextIntent(android::content::Intent arg0) const;
+		android::app::TaskStackBuilder addNextIntentWithParentStack(android::content::Intent arg0) const;
+		android::app::TaskStackBuilder addParentStack(android::app::Activity arg0) const;
+		android::app::TaskStackBuilder addParentStack(android::content::ComponentName arg0) const;
+		android::app::TaskStackBuilder addParentStack(JClass arg0) const;
+		android::content::Intent editIntentAt(jint arg0) const;
+		jint getIntentCount() const;
+		JArray getIntents() const;
+		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1) const;
+		android::app::PendingIntent getPendingIntent(jint arg0, jint arg1, android::os::Bundle arg2) const;
+		void startActivities() const;
+		void startActivities(android::os::Bundle arg0) const;
 	};
 } // namespace android::app
 

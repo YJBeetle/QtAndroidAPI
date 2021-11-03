@@ -32,9 +32,9 @@ namespace android::service::quickaccesswallet
 		WalletCard_Builder(JString arg0, android::graphics::drawable::Icon arg1, JString arg2, android::app::PendingIntent arg3);
 		
 		// Methods
-		android::service::quickaccesswallet::WalletCard build();
-		android::service::quickaccesswallet::WalletCard_Builder setCardIcon(android::graphics::drawable::Icon arg0);
-		android::service::quickaccesswallet::WalletCard_Builder setCardLabel(JString arg0);
+		android::service::quickaccesswallet::WalletCard build() const;
+		android::service::quickaccesswallet::WalletCard_Builder setCardIcon(android::graphics::drawable::Icon arg0) const;
+		android::service::quickaccesswallet::WalletCard_Builder setCardLabel(JString arg0) const;
 	};
 } // namespace android::service::quickaccesswallet
 

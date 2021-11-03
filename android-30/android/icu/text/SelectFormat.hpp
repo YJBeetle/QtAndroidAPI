@@ -32,14 +32,14 @@ namespace android::icu::text
 		SelectFormat(JString arg0);
 		
 		// Methods
-		void applyPattern(JString arg0);
-		jboolean equals(JObject arg0);
-		JString format(JString arg0);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		jint hashCode();
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
-		JString toPattern();
-		JString toString();
+		void applyPattern(JString arg0) const;
+		jboolean equals(JObject arg0) const;
+		JString format(JString arg0) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		jint hashCode() const;
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
+		JString toPattern() const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

@@ -22,9 +22,9 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		void login(javax::security::auth::Subject arg0, JObject arg1);
-		void logout();
-		void setCallbackHandler(JObject arg0);
+		void login(javax::security::auth::Subject arg0, JObject arg1) const;
+		void logout() const;
+		void setCallbackHandler(JObject arg0) const;
 	};
 } // namespace java::security
 

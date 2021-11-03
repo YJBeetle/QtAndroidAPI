@@ -20,14 +20,14 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	void RemoteConnection::abort()
+	void RemoteConnection::abort() const
 	{
 		callMethod<void>(
 			"abort",
 			"()V"
 		);
 	}
-	void RemoteConnection::addConferenceParticipants(JObject arg0)
+	void RemoteConnection::addConferenceParticipants(JObject arg0) const
 	{
 		callMethod<void>(
 			"addConferenceParticipants",
@@ -35,140 +35,140 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection::answer()
+	void RemoteConnection::answer() const
 	{
 		callMethod<void>(
 			"answer",
 			"()V"
 		);
 	}
-	void RemoteConnection::disconnect()
+	void RemoteConnection::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	android::net::Uri RemoteConnection::getAddress()
+	android::net::Uri RemoteConnection::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint RemoteConnection::getAddressPresentation()
+	jint RemoteConnection::getAddressPresentation() const
 	{
 		return callMethod<jint>(
 			"getAddressPresentation",
 			"()I"
 		);
 	}
-	JString RemoteConnection::getCallerDisplayName()
+	JString RemoteConnection::getCallerDisplayName() const
 	{
 		return callObjectMethod(
 			"getCallerDisplayName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint RemoteConnection::getCallerDisplayNamePresentation()
+	jint RemoteConnection::getCallerDisplayNamePresentation() const
 	{
 		return callMethod<jint>(
 			"getCallerDisplayNamePresentation",
 			"()I"
 		);
 	}
-	android::telecom::RemoteConference RemoteConnection::getConference()
+	android::telecom::RemoteConference RemoteConnection::getConference() const
 	{
 		return callObjectMethod(
 			"getConference",
 			"()Landroid/telecom/RemoteConference;"
 		);
 	}
-	JObject RemoteConnection::getConferenceableConnections()
+	JObject RemoteConnection::getConferenceableConnections() const
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
 			"()Ljava/util/List;"
 		);
 	}
-	jint RemoteConnection::getConnectionCapabilities()
+	jint RemoteConnection::getConnectionCapabilities() const
 	{
 		return callMethod<jint>(
 			"getConnectionCapabilities",
 			"()I"
 		);
 	}
-	jint RemoteConnection::getConnectionProperties()
+	jint RemoteConnection::getConnectionProperties() const
 	{
 		return callMethod<jint>(
 			"getConnectionProperties",
 			"()I"
 		);
 	}
-	android::telecom::DisconnectCause RemoteConnection::getDisconnectCause()
+	android::telecom::DisconnectCause RemoteConnection::getDisconnectCause() const
 	{
 		return callObjectMethod(
 			"getDisconnectCause",
 			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	android::os::Bundle RemoteConnection::getExtras()
+	android::os::Bundle RemoteConnection::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint RemoteConnection::getState()
+	jint RemoteConnection::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	android::telecom::StatusHints RemoteConnection::getStatusHints()
+	android::telecom::StatusHints RemoteConnection::getStatusHints() const
 	{
 		return callObjectMethod(
 			"getStatusHints",
 			"()Landroid/telecom/StatusHints;"
 		);
 	}
-	android::telecom::RemoteConnection_VideoProvider RemoteConnection::getVideoProvider()
+	android::telecom::RemoteConnection_VideoProvider RemoteConnection::getVideoProvider() const
 	{
 		return callObjectMethod(
 			"getVideoProvider",
 			"()Landroid/telecom/RemoteConnection$VideoProvider;"
 		);
 	}
-	jint RemoteConnection::getVideoState()
+	jint RemoteConnection::getVideoState() const
 	{
 		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
-	void RemoteConnection::hold()
+	void RemoteConnection::hold() const
 	{
 		callMethod<void>(
 			"hold",
 			"()V"
 		);
 	}
-	jboolean RemoteConnection::isRingbackRequested()
+	jboolean RemoteConnection::isRingbackRequested() const
 	{
 		return callMethod<jboolean>(
 			"isRingbackRequested",
 			"()Z"
 		);
 	}
-	jboolean RemoteConnection::isVoipAudioMode()
+	jboolean RemoteConnection::isVoipAudioMode() const
 	{
 		return callMethod<jboolean>(
 			"isVoipAudioMode",
 			"()Z"
 		);
 	}
-	void RemoteConnection::playDtmfTone(jchar arg0)
+	void RemoteConnection::playDtmfTone(jchar arg0) const
 	{
 		callMethod<void>(
 			"playDtmfTone",
@@ -176,7 +176,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConnection::postDialContinue(jboolean arg0)
+	void RemoteConnection::postDialContinue(jboolean arg0) const
 	{
 		callMethod<void>(
 			"postDialContinue",
@@ -184,14 +184,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void RemoteConnection::pullExternalCall()
+	void RemoteConnection::pullExternalCall() const
 	{
 		callMethod<void>(
 			"pullExternalCall",
 			"()V"
 		);
 	}
-	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0)
+	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -199,7 +199,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0, android::os::Handler arg1)
+	void RemoteConnection::registerCallback(android::telecom::RemoteConnection_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -208,14 +208,14 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection::reject()
+	void RemoteConnection::reject() const
 	{
 		callMethod<void>(
 			"reject",
 			"()V"
 		);
 	}
-	void RemoteConnection::setCallAudioState(android::telecom::CallAudioState arg0)
+	void RemoteConnection::setCallAudioState(android::telecom::CallAudioState arg0) const
 	{
 		callMethod<void>(
 			"setCallAudioState",
@@ -223,21 +223,21 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void RemoteConnection::stopDtmfTone()
+	void RemoteConnection::stopDtmfTone() const
 	{
 		callMethod<void>(
 			"stopDtmfTone",
 			"()V"
 		);
 	}
-	void RemoteConnection::unhold()
+	void RemoteConnection::unhold() const
 	{
 		callMethod<void>(
 			"unhold",
 			"()V"
 		);
 	}
-	void RemoteConnection::unregisterCallback(android::telecom::RemoteConnection_Callback arg0)
+	void RemoteConnection::unregisterCallback(android::telecom::RemoteConnection_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

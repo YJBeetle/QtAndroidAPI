@@ -51,14 +51,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint AvailableNetworkInfo::describeContents()
+	jint AvailableNetworkInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AvailableNetworkInfo::equals(JObject arg0)
+	jboolean AvailableNetworkInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -66,49 +66,49 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JObject AvailableNetworkInfo::getBands()
+	JObject AvailableNetworkInfo::getBands() const
 	{
 		return callObjectMethod(
 			"getBands",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AvailableNetworkInfo::getMccMncs()
+	JObject AvailableNetworkInfo::getMccMncs() const
 	{
 		return callObjectMethod(
 			"getMccMncs",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AvailableNetworkInfo::getPriority()
+	jint AvailableNetworkInfo::getPriority() const
 	{
 		return callMethod<jint>(
 			"getPriority",
 			"()I"
 		);
 	}
-	jint AvailableNetworkInfo::getSubId()
+	jint AvailableNetworkInfo::getSubId() const
 	{
 		return callMethod<jint>(
 			"getSubId",
 			"()I"
 		);
 	}
-	jint AvailableNetworkInfo::hashCode()
+	jint AvailableNetworkInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AvailableNetworkInfo::toString()
+	JString AvailableNetworkInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AvailableNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AvailableNetworkInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

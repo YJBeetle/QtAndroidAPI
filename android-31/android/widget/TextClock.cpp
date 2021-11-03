@@ -59,35 +59,35 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString TextClock::getFormat12Hour()
+	JString TextClock::getFormat12Hour() const
 	{
 		return callObjectMethod(
 			"getFormat12Hour",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TextClock::getFormat24Hour()
+	JString TextClock::getFormat24Hour() const
 	{
 		return callObjectMethod(
 			"getFormat24Hour",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TextClock::getTimeZone()
+	JString TextClock::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean TextClock::is24HourModeEnabled()
+	jboolean TextClock::is24HourModeEnabled() const
 	{
 		return callMethod<jboolean>(
 			"is24HourModeEnabled",
 			"()Z"
 		);
 	}
-	void TextClock::onVisibilityAggregated(jboolean arg0)
+	void TextClock::onVisibilityAggregated(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onVisibilityAggregated",
@@ -95,14 +95,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TextClock::refreshTime()
+	void TextClock::refreshTime() const
 	{
 		callMethod<void>(
 			"refreshTime",
 			"()V"
 		);
 	}
-	void TextClock::setFormat12Hour(JString arg0)
+	void TextClock::setFormat12Hour(JString arg0) const
 	{
 		callMethod<void>(
 			"setFormat12Hour",
@@ -110,7 +110,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextClock::setFormat24Hour(JString arg0)
+	void TextClock::setFormat24Hour(JString arg0) const
 	{
 		callMethod<void>(
 			"setFormat24Hour",
@@ -118,7 +118,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextClock::setTimeZone(JString arg0)
+	void TextClock::setTimeZone(JString arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",

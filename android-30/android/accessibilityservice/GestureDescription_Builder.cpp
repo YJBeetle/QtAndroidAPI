@@ -17,7 +17,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	android::accessibilityservice::GestureDescription_Builder GestureDescription_Builder::addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0)
+	android::accessibilityservice::GestureDescription_Builder GestureDescription_Builder::addStroke(android::accessibilityservice::GestureDescription_StrokeDescription arg0) const
 	{
 		return callObjectMethod(
 			"addStroke",
@@ -25,14 +25,14 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	android::accessibilityservice::GestureDescription GestureDescription_Builder::build()
+	android::accessibilityservice::GestureDescription GestureDescription_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/accessibilityservice/GestureDescription;"
 		);
 	}
-	android::accessibilityservice::GestureDescription_Builder GestureDescription_Builder::setDisplayId(jint arg0)
+	android::accessibilityservice::GestureDescription_Builder GestureDescription_Builder::setDisplayId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDisplayId",

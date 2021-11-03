@@ -35,11 +35,11 @@ namespace java::io
 		InputStreamReader(java::io::InputStream arg0, java::nio::charset::CharsetDecoder arg1);
 		
 		// Methods
-		void close();
-		JString getEncoding();
-		jint read();
-		jint read(JCharArray arg0, jint arg1, jint arg2);
-		jboolean ready();
+		void close() const;
+		JString getEncoding() const;
+		jint read() const;
+		jint read(JCharArray arg0, jint arg1, jint arg2) const;
+		jboolean ready() const;
 	};
 } // namespace java::io
 

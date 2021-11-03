@@ -33,17 +33,17 @@ namespace android::icu::text
 		DateIntervalInfo(java::util::Locale arg0);
 		
 		// Methods
-		JObject clone();
-		android::icu::text::DateIntervalInfo cloneAsThawed();
-		jboolean equals(JObject arg0);
-		android::icu::text::DateIntervalInfo freeze();
-		jboolean getDefaultOrder();
-		JString getFallbackIntervalPattern();
-		android::icu::text::DateIntervalInfo_PatternInfo getIntervalPattern(JString arg0, jint arg1);
-		jint hashCode();
-		jboolean isFrozen();
-		void setFallbackIntervalPattern(JString arg0);
-		void setIntervalPattern(JString arg0, jint arg1, JString arg2);
+		JObject clone() const;
+		android::icu::text::DateIntervalInfo cloneAsThawed() const;
+		jboolean equals(JObject arg0) const;
+		android::icu::text::DateIntervalInfo freeze() const;
+		jboolean getDefaultOrder() const;
+		JString getFallbackIntervalPattern() const;
+		android::icu::text::DateIntervalInfo_PatternInfo getIntervalPattern(JString arg0, jint arg1) const;
+		jint hashCode() const;
+		jboolean isFrozen() const;
+		void setFallbackIntervalPattern(JString arg0) const;
+		void setIntervalPattern(JString arg0, jint arg1, JString arg2) const;
 	};
 } // namespace android::icu::text
 

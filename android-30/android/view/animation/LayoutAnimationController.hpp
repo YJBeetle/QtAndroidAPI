@@ -43,20 +43,20 @@ namespace android::view::animation
 		LayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1);
 		
 		// Methods
-		android::view::animation::Animation getAnimation();
-		android::view::animation::Animation getAnimationForView(android::view::View arg0);
-		jfloat getDelay();
-		JObject getInterpolator();
-		jint getOrder();
-		jboolean isDone();
-		void setAnimation(android::view::animation::Animation arg0);
-		void setAnimation(android::content::Context arg0, jint arg1);
-		void setDelay(jfloat arg0);
-		void setInterpolator(JObject arg0);
-		void setInterpolator(android::content::Context arg0, jint arg1);
-		void setOrder(jint arg0);
-		void start();
-		jboolean willOverlap();
+		android::view::animation::Animation getAnimation() const;
+		android::view::animation::Animation getAnimationForView(android::view::View arg0) const;
+		jfloat getDelay() const;
+		JObject getInterpolator() const;
+		jint getOrder() const;
+		jboolean isDone() const;
+		void setAnimation(android::view::animation::Animation arg0) const;
+		void setAnimation(android::content::Context arg0, jint arg1) const;
+		void setDelay(jfloat arg0) const;
+		void setInterpolator(JObject arg0) const;
+		void setInterpolator(android::content::Context arg0, jint arg1) const;
+		void setOrder(jint arg0) const;
+		void start() const;
+		jboolean willOverlap() const;
 	};
 } // namespace android::view::animation
 

@@ -12,7 +12,7 @@ namespace java::security
 	// Constructors
 	
 	// Methods
-	void AuthProvider::login(javax::security::auth::Subject arg0, JObject arg1)
+	void AuthProvider::login(javax::security::auth::Subject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"login",
@@ -21,14 +21,14 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void AuthProvider::logout()
+	void AuthProvider::logout() const
 	{
 		callMethod<void>(
 			"logout",
 			"()V"
 		);
 	}
-	void AuthProvider::setCallbackHandler(JObject arg0)
+	void AuthProvider::setCallbackHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCallbackHandler",

@@ -26,7 +26,7 @@ namespace android::text::method
 			"()Landroid/text/method/PasswordTransformationMethod;"
 		);
 	}
-	void PasswordTransformationMethod::afterTextChanged(JObject arg0)
+	void PasswordTransformationMethod::afterTextChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"afterTextChanged",
@@ -34,7 +34,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	void PasswordTransformationMethod::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void PasswordTransformationMethod::beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"beforeTextChanged",
@@ -45,7 +45,7 @@ namespace android::text::method
 			arg3
 		);
 	}
-	JString PasswordTransformationMethod::getTransformation(JString arg0, android::view::View arg1)
+	JString PasswordTransformationMethod::getTransformation(JString arg0, android::view::View arg1) const
 	{
 		return callObjectMethod(
 			"getTransformation",
@@ -54,7 +54,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	void PasswordTransformationMethod::onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4)
+	void PasswordTransformationMethod::onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4) const
 	{
 		callMethod<void>(
 			"onFocusChanged",
@@ -66,7 +66,7 @@ namespace android::text::method
 			arg4.object()
 		);
 	}
-	void PasswordTransformationMethod::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3)
+	void PasswordTransformationMethod::onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onTextChanged",

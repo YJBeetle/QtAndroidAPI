@@ -35,14 +35,14 @@ namespace java::security
 		Provider_Service(java::security::Provider arg0, JString arg1, JString arg2, JString arg3, JObject arg4, JObject arg5);
 		
 		// Methods
-		JString getAlgorithm();
-		JString getAttribute(JString arg0);
-		JString getClassName();
-		java::security::Provider getProvider();
-		JString getType();
-		JObject newInstance(JObject arg0);
-		jboolean supportsParameter(JObject arg0);
-		JString toString();
+		JString getAlgorithm() const;
+		JString getAttribute(JString arg0) const;
+		JString getClassName() const;
+		java::security::Provider getProvider() const;
+		JString getType() const;
+		JObject newInstance(JObject arg0) const;
+		jboolean supportsParameter(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security
 

@@ -45,28 +45,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Currency::getCurrencyCode()
+	JString Currency::getCurrencyCode() const
 	{
 		return callObjectMethod(
 			"getCurrencyCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Currency::getDefaultFractionDigits()
+	jint Currency::getDefaultFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getDefaultFractionDigits",
 			"()I"
 		);
 	}
-	JString Currency::getDisplayName()
+	JString Currency::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Currency::getDisplayName(java::util::Locale arg0)
+	JString Currency::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -74,28 +74,28 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint Currency::getNumericCode()
+	jint Currency::getNumericCode() const
 	{
 		return callMethod<jint>(
 			"getNumericCode",
 			"()I"
 		);
 	}
-	JString Currency::getNumericCodeAsString()
+	JString Currency::getNumericCodeAsString() const
 	{
 		return callObjectMethod(
 			"getNumericCodeAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Currency::getSymbol()
+	JString Currency::getSymbol() const
 	{
 		return callObjectMethod(
 			"getSymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Currency::getSymbol(java::util::Locale arg0)
+	JString Currency::getSymbol(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getSymbol",
@@ -103,7 +103,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JString Currency::toString()
+	JString Currency::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -25,7 +25,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void LongSummaryStatistics::accept(jint arg0)
+	void LongSummaryStatistics::accept(jint arg0) const
 	{
 		callMethod<void>(
 			"accept",
@@ -33,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void LongSummaryStatistics::accept(jlong arg0)
+	void LongSummaryStatistics::accept(jlong arg0) const
 	{
 		callMethod<void>(
 			"accept",
@@ -41,7 +41,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void LongSummaryStatistics::combine(java::util::LongSummaryStatistics arg0)
+	void LongSummaryStatistics::combine(java::util::LongSummaryStatistics arg0) const
 	{
 		callMethod<void>(
 			"combine",
@@ -49,42 +49,42 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jdouble LongSummaryStatistics::getAverage()
+	jdouble LongSummaryStatistics::getAverage() const
 	{
 		return callMethod<jdouble>(
 			"getAverage",
 			"()D"
 		);
 	}
-	jlong LongSummaryStatistics::getCount()
+	jlong LongSummaryStatistics::getCount() const
 	{
 		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
-	jlong LongSummaryStatistics::getMax()
+	jlong LongSummaryStatistics::getMax() const
 	{
 		return callMethod<jlong>(
 			"getMax",
 			"()J"
 		);
 	}
-	jlong LongSummaryStatistics::getMin()
+	jlong LongSummaryStatistics::getMin() const
 	{
 		return callMethod<jlong>(
 			"getMin",
 			"()J"
 		);
 	}
-	jlong LongSummaryStatistics::getSum()
+	jlong LongSummaryStatistics::getSum() const
 	{
 		return callMethod<jlong>(
 			"getSum",
 			"()J"
 		);
 	}
-	JString LongSummaryStatistics::toString()
+	JString LongSummaryStatistics::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -67,7 +67,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	JString TaskInfo::toString()
+	JString TaskInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

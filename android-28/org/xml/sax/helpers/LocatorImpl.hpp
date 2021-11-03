@@ -20,14 +20,14 @@ namespace org::xml::sax::helpers
 		LocatorImpl(JObject arg0);
 		
 		// Methods
-		jint getColumnNumber();
-		jint getLineNumber();
-		JString getPublicId();
-		JString getSystemId();
-		void setColumnNumber(jint arg0);
-		void setLineNumber(jint arg0);
-		void setPublicId(JString arg0);
-		void setSystemId(JString arg0);
+		jint getColumnNumber() const;
+		jint getLineNumber() const;
+		JString getPublicId() const;
+		JString getSystemId() const;
+		void setColumnNumber(jint arg0) const;
+		void setLineNumber(jint arg0) const;
+		void setPublicId(JString arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace org::xml::sax::helpers
 

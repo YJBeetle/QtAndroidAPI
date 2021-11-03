@@ -19,14 +19,14 @@ namespace android::media::effect
 			"()Landroid/media/effect/EffectContext;"
 		);
 	}
-	android::media::effect::EffectFactory EffectContext::getFactory()
+	android::media::effect::EffectFactory EffectContext::getFactory() const
 	{
 		return callObjectMethod(
 			"getFactory",
 			"()Landroid/media/effect/EffectFactory;"
 		);
 	}
-	void EffectContext::release()
+	void EffectContext::release() const
 	{
 		callMethod<void>(
 			"release",

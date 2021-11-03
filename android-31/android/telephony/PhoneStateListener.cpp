@@ -170,7 +170,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void PhoneStateListener::onActiveDataSubscriptionIdChanged(jint arg0)
+	void PhoneStateListener::onActiveDataSubscriptionIdChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onActiveDataSubscriptionIdChanged",
@@ -178,7 +178,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onBarringInfoChanged(android::telephony::BarringInfo arg0)
+	void PhoneStateListener::onBarringInfoChanged(android::telephony::BarringInfo arg0) const
 	{
 		callMethod<void>(
 			"onBarringInfoChanged",
@@ -186,7 +186,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onCallDisconnectCauseChanged(jint arg0, jint arg1)
+	void PhoneStateListener::onCallDisconnectCauseChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onCallDisconnectCauseChanged",
@@ -195,7 +195,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0)
+	void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onCallForwardingIndicatorChanged",
@@ -203,7 +203,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1)
+	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onCallStateChanged",
@@ -212,7 +212,7 @@ namespace android::telephony
 			arg1.object<jstring>()
 		);
 	}
-	void PhoneStateListener::onCellInfoChanged(JObject arg0)
+	void PhoneStateListener::onCellInfoChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCellInfoChanged",
@@ -220,7 +220,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0)
+	void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0) const
 	{
 		callMethod<void>(
 			"onCellLocationChanged",
@@ -228,7 +228,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onDataActivity(jint arg0)
+	void PhoneStateListener::onDataActivity(jint arg0) const
 	{
 		callMethod<void>(
 			"onDataActivity",
@@ -236,7 +236,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onDataConnectionStateChanged(jint arg0)
+	void PhoneStateListener::onDataConnectionStateChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onDataConnectionStateChanged",
@@ -244,7 +244,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1)
+	void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onDataConnectionStateChanged",
@@ -253,7 +253,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void PhoneStateListener::onDisplayInfoChanged(android::telephony::TelephonyDisplayInfo arg0)
+	void PhoneStateListener::onDisplayInfoChanged(android::telephony::TelephonyDisplayInfo arg0) const
 	{
 		callMethod<void>(
 			"onDisplayInfoChanged",
@@ -261,7 +261,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onEmergencyNumberListChanged(JObject arg0)
+	void PhoneStateListener::onEmergencyNumberListChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onEmergencyNumberListChanged",
@@ -269,7 +269,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onImsCallDisconnectCauseChanged(android::telephony::ims::ImsReasonInfo arg0)
+	void PhoneStateListener::onImsCallDisconnectCauseChanged(android::telephony::ims::ImsReasonInfo arg0) const
 	{
 		callMethod<void>(
 			"onImsCallDisconnectCauseChanged",
@@ -277,7 +277,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0)
+	void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onMessageWaitingIndicatorChanged",
@@ -285,7 +285,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onPreciseDataConnectionStateChanged(android::telephony::PreciseDataConnectionState arg0)
+	void PhoneStateListener::onPreciseDataConnectionStateChanged(android::telephony::PreciseDataConnectionState arg0) const
 	{
 		callMethod<void>(
 			"onPreciseDataConnectionStateChanged",
@@ -293,7 +293,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onRegistrationFailed(android::telephony::CellIdentity arg0, JString arg1, jint arg2, jint arg3, jint arg4)
+	void PhoneStateListener::onRegistrationFailed(android::telephony::CellIdentity arg0, JString arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onRegistrationFailed",
@@ -305,7 +305,7 @@ namespace android::telephony
 			arg4
 		);
 	}
-	void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0)
+	void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0) const
 	{
 		callMethod<void>(
 			"onServiceStateChanged",
@@ -313,7 +313,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onSignalStrengthChanged(jint arg0)
+	void PhoneStateListener::onSignalStrengthChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onSignalStrengthChanged",
@@ -321,7 +321,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0)
+	void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0) const
 	{
 		callMethod<void>(
 			"onSignalStrengthsChanged",
@@ -329,7 +329,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0)
+	void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onUserMobileDataStateChanged",

@@ -35,7 +35,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	JArray ContentProvider::applyBatch(java::util::ArrayList arg0)
+	JArray ContentProvider::applyBatch(java::util::ArrayList arg0) const
 	{
 		return callObjectMethod(
 			"applyBatch",
@@ -43,7 +43,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JArray ContentProvider::applyBatch(JString arg0, java::util::ArrayList arg1)
+	JArray ContentProvider::applyBatch(JString arg0, java::util::ArrayList arg1) const
 	{
 		return callObjectMethod(
 			"applyBatch",
@@ -52,7 +52,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void ContentProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1)
+	void ContentProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1) const
 	{
 		callMethod<void>(
 			"attachInfo",
@@ -61,7 +61,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ContentProvider::bulkInsert(android::net::Uri arg0, JArray arg1)
+	jint ContentProvider::bulkInsert(android::net::Uri arg0, JArray arg1) const
 	{
 		return callMethod<jint>(
 			"bulkInsert",
@@ -70,7 +70,7 @@ namespace android::content
 			arg1.object<jarray>()
 		);
 	}
-	android::os::Bundle ContentProvider::call(JString arg0, JString arg1, android::os::Bundle arg2)
+	android::os::Bundle ContentProvider::call(JString arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"call",
@@ -80,7 +80,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::Bundle ContentProvider::call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3)
+	android::os::Bundle ContentProvider::call(JString arg0, JString arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		return callObjectMethod(
 			"call",
@@ -91,7 +91,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	android::net::Uri ContentProvider::canonicalize(android::net::Uri arg0)
+	android::net::Uri ContentProvider::canonicalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"canonicalize",
@@ -99,14 +99,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::ContentProvider_CallingIdentity ContentProvider::clearCallingIdentity()
+	android::content::ContentProvider_CallingIdentity ContentProvider::clearCallingIdentity() const
 	{
 		return callObjectMethod(
 			"clearCallingIdentity",
 			"()Landroid/content/ContentProvider$CallingIdentity;"
 		);
 	}
-	jint ContentProvider::_delete(android::net::Uri arg0, android::os::Bundle arg1)
+	jint ContentProvider::_delete(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -115,7 +115,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	jint ContentProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
+	jint ContentProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -125,7 +125,7 @@ namespace android::content
 			arg2.object<jarray>()
 		);
 	}
-	void ContentProvider::dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2)
+	void ContentProvider::dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"dump",
@@ -135,56 +135,56 @@ namespace android::content
 			arg2.object<jarray>()
 		);
 	}
-	android::content::AttributionSource ContentProvider::getCallingAttributionSource()
+	android::content::AttributionSource ContentProvider::getCallingAttributionSource() const
 	{
 		return callObjectMethod(
 			"getCallingAttributionSource",
 			"()Landroid/content/AttributionSource;"
 		);
 	}
-	JString ContentProvider::getCallingAttributionTag()
+	JString ContentProvider::getCallingAttributionTag() const
 	{
 		return callObjectMethod(
 			"getCallingAttributionTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ContentProvider::getCallingPackage()
+	JString ContentProvider::getCallingPackage() const
 	{
 		return callObjectMethod(
 			"getCallingPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ContentProvider::getCallingPackageUnchecked()
+	JString ContentProvider::getCallingPackageUnchecked() const
 	{
 		return callObjectMethod(
 			"getCallingPackageUnchecked",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::Context ContentProvider::getContext()
+	android::content::Context ContentProvider::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JArray ContentProvider::getPathPermissions()
+	JArray ContentProvider::getPathPermissions() const
 	{
 		return callObjectMethod(
 			"getPathPermissions",
 			"()[Landroid/content/pm/PathPermission;"
 		);
 	}
-	JString ContentProvider::getReadPermission()
+	JString ContentProvider::getReadPermission() const
 	{
 		return callObjectMethod(
 			"getReadPermission",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray ContentProvider::getStreamTypes(android::net::Uri arg0, JString arg1)
+	JArray ContentProvider::getStreamTypes(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getStreamTypes",
@@ -193,7 +193,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	JString ContentProvider::getType(android::net::Uri arg0)
+	JString ContentProvider::getType(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -201,14 +201,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString ContentProvider::getWritePermission()
+	JString ContentProvider::getWritePermission() const
 	{
 		return callObjectMethod(
 			"getWritePermission",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri ContentProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri ContentProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -217,7 +217,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::net::Uri ContentProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1, android::os::Bundle arg2)
+	android::net::Uri ContentProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -227,14 +227,14 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	void ContentProvider::onCallingPackageChanged()
+	void ContentProvider::onCallingPackageChanged() const
 	{
 		callMethod<void>(
 			"onCallingPackageChanged",
 			"()V"
 		);
 	}
-	void ContentProvider::onConfigurationChanged(android::content::res::Configuration arg0)
+	void ContentProvider::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -242,21 +242,21 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean ContentProvider::onCreate()
+	jboolean ContentProvider::onCreate() const
 	{
 		return callMethod<jboolean>(
 			"onCreate",
 			"()Z"
 		);
 	}
-	void ContentProvider::onLowMemory()
+	void ContentProvider::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	void ContentProvider::onTrimMemory(jint arg0)
+	void ContentProvider::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",
@@ -264,7 +264,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProvider::openAssetFile(android::net::Uri arg0, JString arg1)
+	android::content::res::AssetFileDescriptor ContentProvider::openAssetFile(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -273,7 +273,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProvider::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::content::res::AssetFileDescriptor ContentProvider::openAssetFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openAssetFile",
@@ -283,7 +283,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProvider::openFile(android::net::Uri arg0, JString arg1)
+	android::os::ParcelFileDescriptor ContentProvider::openFile(android::net::Uri arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"openFile",
@@ -292,7 +292,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProvider::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2)
+	android::os::ParcelFileDescriptor ContentProvider::openFile(android::net::Uri arg0, JString arg1, android::os::CancellationSignal arg2) const
 	{
 		return callObjectMethod(
 			"openFile",
@@ -302,7 +302,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProvider::openPipeHelper(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, JObject arg3, JObject arg4)
+	android::os::ParcelFileDescriptor ContentProvider::openPipeHelper(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, JObject arg3, JObject arg4) const
 	{
 		return callObjectMethod(
 			"openPipeHelper",
@@ -314,7 +314,7 @@ namespace android::content
 			arg4.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2)
+	android::content::res::AssetFileDescriptor ContentProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -324,7 +324,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::content::res::AssetFileDescriptor ContentProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	android::content::res::AssetFileDescriptor ContentProvider::openTypedAssetFile(android::net::Uri arg0, JString arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"openTypedAssetFile",
@@ -335,7 +335,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"query",
@@ -346,7 +346,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"query",
@@ -358,7 +358,7 @@ namespace android::content
 			arg4.object<jstring>()
 		);
 	}
-	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
+	JObject ContentProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const
 	{
 		return callObjectMethod(
 			"query",
@@ -371,7 +371,7 @@ namespace android::content
 			arg5.object()
 		);
 	}
-	jboolean ContentProvider::refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2)
+	jboolean ContentProvider::refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2) const
 	{
 		return callMethod<jboolean>(
 			"refresh",
@@ -381,14 +381,14 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::content::Context ContentProvider::requireContext()
+	android::content::Context ContentProvider::requireContext() const
 	{
 		return callObjectMethod(
 			"requireContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	void ContentProvider::restoreCallingIdentity(android::content::ContentProvider_CallingIdentity arg0)
+	void ContentProvider::restoreCallingIdentity(android::content::ContentProvider_CallingIdentity arg0) const
 	{
 		callMethod<void>(
 			"restoreCallingIdentity",
@@ -396,14 +396,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void ContentProvider::shutdown()
+	void ContentProvider::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	android::net::Uri ContentProvider::uncanonicalize(android::net::Uri arg0)
+	android::net::Uri ContentProvider::uncanonicalize(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"uncanonicalize",
@@ -411,7 +411,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint ContentProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, android::os::Bundle arg2)
+	jint ContentProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jint>(
 			"update",
@@ -421,7 +421,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	jint ContentProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint ContentProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",

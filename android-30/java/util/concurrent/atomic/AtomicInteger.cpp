@@ -22,7 +22,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jint AtomicInteger::accumulateAndGet(jint arg0, JObject arg1)
+	jint AtomicInteger::accumulateAndGet(jint arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"accumulateAndGet",
@@ -31,7 +31,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jint AtomicInteger::addAndGet(jint arg0)
+	jint AtomicInteger::addAndGet(jint arg0) const
 	{
 		return callMethod<jint>(
 			"addAndGet",
@@ -39,7 +39,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicInteger::compareAndExchange(jint arg0, jint arg1)
+	jint AtomicInteger::compareAndExchange(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"compareAndExchange",
@@ -48,7 +48,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicInteger::compareAndExchangeAcquire(jint arg0, jint arg1)
+	jint AtomicInteger::compareAndExchangeAcquire(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"compareAndExchangeAcquire",
@@ -57,7 +57,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicInteger::compareAndExchangeRelease(jint arg0, jint arg1)
+	jint AtomicInteger::compareAndExchangeRelease(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"compareAndExchangeRelease",
@@ -66,7 +66,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicInteger::compareAndSet(jint arg0, jint arg1)
+	jboolean AtomicInteger::compareAndSet(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -75,42 +75,42 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicInteger::decrementAndGet()
+	jint AtomicInteger::decrementAndGet() const
 	{
 		return callMethod<jint>(
 			"decrementAndGet",
 			"()I"
 		);
 	}
-	jdouble AtomicInteger::doubleValue()
+	jdouble AtomicInteger::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat AtomicInteger::floatValue()
+	jfloat AtomicInteger::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint AtomicInteger::get()
+	jint AtomicInteger::get() const
 	{
 		return callMethod<jint>(
 			"get",
 			"()I"
 		);
 	}
-	jint AtomicInteger::getAcquire()
+	jint AtomicInteger::getAcquire() const
 	{
 		return callMethod<jint>(
 			"getAcquire",
 			"()I"
 		);
 	}
-	jint AtomicInteger::getAndAccumulate(jint arg0, JObject arg1)
+	jint AtomicInteger::getAndAccumulate(jint arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"getAndAccumulate",
@@ -119,7 +119,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	jint AtomicInteger::getAndAdd(jint arg0)
+	jint AtomicInteger::getAndAdd(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getAndAdd",
@@ -127,21 +127,21 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicInteger::getAndDecrement()
+	jint AtomicInteger::getAndDecrement() const
 	{
 		return callMethod<jint>(
 			"getAndDecrement",
 			"()I"
 		);
 	}
-	jint AtomicInteger::getAndIncrement()
+	jint AtomicInteger::getAndIncrement() const
 	{
 		return callMethod<jint>(
 			"getAndIncrement",
 			"()I"
 		);
 	}
-	jint AtomicInteger::getAndSet(jint arg0)
+	jint AtomicInteger::getAndSet(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getAndSet",
@@ -149,7 +149,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicInteger::getAndUpdate(JObject arg0)
+	jint AtomicInteger::getAndUpdate(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getAndUpdate",
@@ -157,35 +157,35 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	jint AtomicInteger::getOpaque()
+	jint AtomicInteger::getOpaque() const
 	{
 		return callMethod<jint>(
 			"getOpaque",
 			"()I"
 		);
 	}
-	jint AtomicInteger::getPlain()
+	jint AtomicInteger::getPlain() const
 	{
 		return callMethod<jint>(
 			"getPlain",
 			"()I"
 		);
 	}
-	jint AtomicInteger::incrementAndGet()
+	jint AtomicInteger::incrementAndGet() const
 	{
 		return callMethod<jint>(
 			"incrementAndGet",
 			"()I"
 		);
 	}
-	jint AtomicInteger::intValue()
+	jint AtomicInteger::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	void AtomicInteger::lazySet(jint arg0)
+	void AtomicInteger::lazySet(jint arg0) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -193,14 +193,14 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicInteger::longValue()
+	jlong AtomicInteger::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	void AtomicInteger::set(jint arg0)
+	void AtomicInteger::set(jint arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -208,7 +208,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicInteger::setOpaque(jint arg0)
+	void AtomicInteger::setOpaque(jint arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -216,7 +216,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicInteger::setPlain(jint arg0)
+	void AtomicInteger::setPlain(jint arg0) const
 	{
 		callMethod<void>(
 			"setPlain",
@@ -224,7 +224,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicInteger::setRelease(jint arg0)
+	void AtomicInteger::setRelease(jint arg0) const
 	{
 		callMethod<void>(
 			"setRelease",
@@ -232,14 +232,14 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	JString AtomicInteger::toString()
+	JString AtomicInteger::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint AtomicInteger::updateAndGet(JObject arg0)
+	jint AtomicInteger::updateAndGet(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"updateAndGet",
@@ -247,7 +247,7 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	jboolean AtomicInteger::weakCompareAndSet(jint arg0, jint arg1)
+	jboolean AtomicInteger::weakCompareAndSet(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",
@@ -256,7 +256,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicInteger::weakCompareAndSetAcquire(jint arg0, jint arg1)
+	jboolean AtomicInteger::weakCompareAndSetAcquire(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
@@ -265,7 +265,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicInteger::weakCompareAndSetPlain(jint arg0, jint arg1)
+	jboolean AtomicInteger::weakCompareAndSetPlain(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
@@ -274,7 +274,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicInteger::weakCompareAndSetRelease(jint arg0, jint arg1)
+	jboolean AtomicInteger::weakCompareAndSetRelease(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
@@ -283,7 +283,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicInteger::weakCompareAndSetVolatile(jint arg0, jint arg1)
+	jboolean AtomicInteger::weakCompareAndSetVolatile(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",

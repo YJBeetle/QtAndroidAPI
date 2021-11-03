@@ -25,7 +25,7 @@ namespace dalvik::system
 		) {}
 	
 	// Methods
-	JString BaseDexClassLoader::findLibrary(JString arg0)
+	JString BaseDexClassLoader::findLibrary(JString arg0) const
 	{
 		return callObjectMethod(
 			"findLibrary",
@@ -33,7 +33,7 @@ namespace dalvik::system
 			arg0.object<jstring>()
 		);
 	}
-	JString BaseDexClassLoader::toString()
+	JString BaseDexClassLoader::toString() const
 	{
 		return callObjectMethod(
 			"toString",

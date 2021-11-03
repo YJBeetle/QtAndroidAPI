@@ -26,8 +26,8 @@ namespace java::security::spec
 		ECPublicKeySpec(java::security::spec::ECPoint arg0, java::security::spec::ECParameterSpec arg1);
 		
 		// Methods
-		java::security::spec::ECParameterSpec getParams();
-		java::security::spec::ECPoint getW();
+		java::security::spec::ECParameterSpec getParams() const;
+		java::security::spec::ECPoint getW() const;
 	};
 } // namespace java::security::spec
 

@@ -23,8 +23,8 @@ namespace android::media::browse
 		MediaBrowser_ItemCallback();
 		
 		// Methods
-		void onError(JString arg0);
-		void onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0);
+		void onError(JString arg0) const;
+		void onItemLoaded(android::media::browse::MediaBrowser_MediaItem arg0) const;
 	};
 } // namespace android::media::browse
 

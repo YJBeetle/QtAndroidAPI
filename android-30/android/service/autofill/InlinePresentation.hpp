@@ -33,14 +33,14 @@ namespace android::service::autofill
 		InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec();
-		android::app::slice::Slice getSlice();
-		jint hashCode();
-		jboolean isPinned();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::widget::inline::InlinePresentationSpec getInlinePresentationSpec() const;
+		android::app::slice::Slice getSlice() const;
+		jint hashCode() const;
+		jboolean isPinned() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::autofill
 

@@ -21,21 +21,21 @@ namespace android::media::midi
 	// Constructors
 	
 	// Methods
-	jint MidiDeviceStatus::describeContents()
+	jint MidiDeviceStatus::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::media::midi::MidiDeviceInfo MidiDeviceStatus::getDeviceInfo()
+	android::media::midi::MidiDeviceInfo MidiDeviceStatus::getDeviceInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceInfo",
 			"()Landroid/media/midi/MidiDeviceInfo;"
 		);
 	}
-	jint MidiDeviceStatus::getOutputPortOpenCount(jint arg0)
+	jint MidiDeviceStatus::getOutputPortOpenCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOutputPortOpenCount",
@@ -43,7 +43,7 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	jboolean MidiDeviceStatus::isInputPortOpen(jint arg0)
+	jboolean MidiDeviceStatus::isInputPortOpen(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isInputPortOpen",
@@ -51,14 +51,14 @@ namespace android::media::midi
 			arg0
 		);
 	}
-	JString MidiDeviceStatus::toString()
+	JString MidiDeviceStatus::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MidiDeviceStatus::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MidiDeviceStatus::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

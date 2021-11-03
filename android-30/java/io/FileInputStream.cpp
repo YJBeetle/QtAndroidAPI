@@ -34,42 +34,42 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint FileInputStream::available()
+	jint FileInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void FileInputStream::close()
+	void FileInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::nio::channels::FileChannel FileInputStream::getChannel()
+	java::nio::channels::FileChannel FileInputStream::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
-	java::io::FileDescriptor FileInputStream::getFD()
+	java::io::FileDescriptor FileInputStream::getFD() const
 	{
 		return callObjectMethod(
 			"getFD",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	jint FileInputStream::read()
+	jint FileInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint FileInputStream::read(JByteArray arg0)
+	jint FileInputStream::read(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -77,7 +77,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint FileInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint FileInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -87,7 +87,7 @@ namespace java::io
 			arg2
 		);
 	}
-	jlong FileInputStream::skip(jlong arg0)
+	jlong FileInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

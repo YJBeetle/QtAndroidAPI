@@ -44,21 +44,21 @@ namespace android::gesture
 		Gesture();
 		
 		// Methods
-		void addStroke(android::gesture::GestureStroke arg0);
-		JObject clone();
-		jint describeContents();
-		android::graphics::RectF getBoundingBox();
-		jlong getID();
-		jfloat getLength();
-		java::util::ArrayList getStrokes();
-		jint getStrokesCount();
-		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3);
-		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		android::graphics::Path toPath();
-		android::graphics::Path toPath(android::graphics::Path arg0);
-		android::graphics::Path toPath(jint arg0, jint arg1, jint arg2, jint arg3);
-		android::graphics::Path toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void addStroke(android::gesture::GestureStroke arg0) const;
+		JObject clone() const;
+		jint describeContents() const;
+		android::graphics::RectF getBoundingBox() const;
+		jlong getID() const;
+		jfloat getLength() const;
+		java::util::ArrayList getStrokes() const;
+		jint getStrokesCount() const;
+		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		android::graphics::Bitmap toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
+		android::graphics::Path toPath() const;
+		android::graphics::Path toPath(android::graphics::Path arg0) const;
+		android::graphics::Path toPath(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		android::graphics::Path toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::gesture
 

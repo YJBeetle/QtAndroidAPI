@@ -28,11 +28,11 @@ namespace android::text::style
 		URLSpan(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getSpanTypeId();
-		JString getURL();
-		void onClick(android::view::View arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getSpanTypeId() const;
+		JString getURL() const;
+		void onClick(android::view::View arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

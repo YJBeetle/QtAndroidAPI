@@ -238,7 +238,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	android::widget::GridLayout_LayoutParams GridLayout::generateLayoutParams(JObject arg0)
+	android::widget::GridLayout_LayoutParams GridLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -246,63 +246,63 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString GridLayout::getAccessibilityClassName()
+	JString GridLayout::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint GridLayout::getAlignmentMode()
+	jint GridLayout::getAlignmentMode() const
 	{
 		return callMethod<jint>(
 			"getAlignmentMode",
 			"()I"
 		);
 	}
-	jint GridLayout::getColumnCount()
+	jint GridLayout::getColumnCount() const
 	{
 		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
-	jint GridLayout::getOrientation()
+	jint GridLayout::getOrientation() const
 	{
 		return callMethod<jint>(
 			"getOrientation",
 			"()I"
 		);
 	}
-	jint GridLayout::getRowCount()
+	jint GridLayout::getRowCount() const
 	{
 		return callMethod<jint>(
 			"getRowCount",
 			"()I"
 		);
 	}
-	jboolean GridLayout::getUseDefaultMargins()
+	jboolean GridLayout::getUseDefaultMargins() const
 	{
 		return callMethod<jboolean>(
 			"getUseDefaultMargins",
 			"()Z"
 		);
 	}
-	jboolean GridLayout::isColumnOrderPreserved()
+	jboolean GridLayout::isColumnOrderPreserved() const
 	{
 		return callMethod<jboolean>(
 			"isColumnOrderPreserved",
 			"()Z"
 		);
 	}
-	jboolean GridLayout::isRowOrderPreserved()
+	jboolean GridLayout::isRowOrderPreserved() const
 	{
 		return callMethod<jboolean>(
 			"isRowOrderPreserved",
 			"()Z"
 		);
 	}
-	void GridLayout::onViewAdded(android::view::View arg0)
+	void GridLayout::onViewAdded(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onViewAdded",
@@ -310,7 +310,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void GridLayout::onViewRemoved(android::view::View arg0)
+	void GridLayout::onViewRemoved(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"onViewRemoved",
@@ -318,14 +318,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void GridLayout::requestLayout()
+	void GridLayout::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void GridLayout::setAlignmentMode(jint arg0)
+	void GridLayout::setAlignmentMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlignmentMode",
@@ -333,7 +333,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setColumnCount(jint arg0)
+	void GridLayout::setColumnCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setColumnCount",
@@ -341,7 +341,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setColumnOrderPreserved(jboolean arg0)
+	void GridLayout::setColumnOrderPreserved(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setColumnOrderPreserved",
@@ -349,7 +349,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setOrientation(jint arg0)
+	void GridLayout::setOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientation",
@@ -357,7 +357,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setRowCount(jint arg0)
+	void GridLayout::setRowCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setRowCount",
@@ -365,7 +365,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setRowOrderPreserved(jboolean arg0)
+	void GridLayout::setRowOrderPreserved(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRowOrderPreserved",
@@ -373,7 +373,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridLayout::setUseDefaultMargins(jboolean arg0)
+	void GridLayout::setUseDefaultMargins(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseDefaultMargins",

@@ -16,14 +16,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	android::view::translation::TranslationRequest TranslationRequest_Builder::build()
+	android::view::translation::TranslationRequest TranslationRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/translation/TranslationRequest;"
 		);
 	}
-	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setFlags(jint arg0)
+	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -31,7 +31,7 @@ namespace android::view::translation
 			arg0
 		);
 	}
-	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setTranslationRequestValues(JObject arg0)
+	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setTranslationRequestValues(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTranslationRequestValues",
@@ -39,7 +39,7 @@ namespace android::view::translation
 			arg0.object()
 		);
 	}
-	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setViewTranslationRequests(JObject arg0)
+	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setViewTranslationRequests(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setViewTranslationRequests",

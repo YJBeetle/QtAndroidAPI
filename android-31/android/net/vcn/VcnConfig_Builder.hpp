@@ -30,8 +30,8 @@ namespace android::net::vcn
 		VcnConfig_Builder(android::content::Context arg0);
 		
 		// Methods
-		android::net::vcn::VcnConfig_Builder addGatewayConnectionConfig(android::net::vcn::VcnGatewayConnectionConfig arg0);
-		android::net::vcn::VcnConfig build();
+		android::net::vcn::VcnConfig_Builder addGatewayConnectionConfig(android::net::vcn::VcnGatewayConnectionConfig arg0) const;
+		android::net::vcn::VcnConfig build() const;
 	};
 } // namespace android::net::vcn
 

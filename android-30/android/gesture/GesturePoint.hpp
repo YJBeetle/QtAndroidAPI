@@ -22,7 +22,7 @@ namespace android::gesture
 		GesturePoint(jfloat arg0, jfloat arg1, jlong arg2);
 		
 		// Methods
-		JObject clone();
+		JObject clone() const;
 	};
 } // namespace android::gesture
 

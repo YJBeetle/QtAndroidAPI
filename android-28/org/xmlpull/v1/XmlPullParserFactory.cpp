@@ -40,7 +40,7 @@ namespace org::xmlpull::v1
 			arg1.object<jclass>()
 		);
 	}
-	jboolean XmlPullParserFactory::getFeature(JString arg0)
+	jboolean XmlPullParserFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -48,35 +48,35 @@ namespace org::xmlpull::v1
 			arg0.object<jstring>()
 		);
 	}
-	jboolean XmlPullParserFactory::isNamespaceAware()
+	jboolean XmlPullParserFactory::isNamespaceAware() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceAware",
 			"()Z"
 		);
 	}
-	jboolean XmlPullParserFactory::isValidating()
+	jboolean XmlPullParserFactory::isValidating() const
 	{
 		return callMethod<jboolean>(
 			"isValidating",
 			"()Z"
 		);
 	}
-	JObject XmlPullParserFactory::newPullParser()
+	JObject XmlPullParserFactory::newPullParser() const
 	{
 		return callObjectMethod(
 			"newPullParser",
 			"()Lorg/xmlpull/v1/XmlPullParser;"
 		);
 	}
-	JObject XmlPullParserFactory::newSerializer()
+	JObject XmlPullParserFactory::newSerializer() const
 	{
 		return callObjectMethod(
 			"newSerializer",
 			"()Lorg/xmlpull/v1/XmlSerializer;"
 		);
 	}
-	void XmlPullParserFactory::setFeature(JString arg0, jboolean arg1)
+	void XmlPullParserFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -85,7 +85,7 @@ namespace org::xmlpull::v1
 			arg1
 		);
 	}
-	void XmlPullParserFactory::setNamespaceAware(jboolean arg0)
+	void XmlPullParserFactory::setNamespaceAware(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNamespaceAware",
@@ -93,7 +93,7 @@ namespace org::xmlpull::v1
 			arg0
 		);
 	}
-	void XmlPullParserFactory::setValidating(jboolean arg0)
+	void XmlPullParserFactory::setValidating(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setValidating",

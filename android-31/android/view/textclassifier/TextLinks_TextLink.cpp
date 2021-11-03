@@ -21,14 +21,14 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint TextLinks_TextLink::describeContents()
+	jint TextLinks_TextLink::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(JString arg0)
+	jfloat TextLinks_TextLink::getConfidenceScore(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
@@ -36,14 +36,14 @@ namespace android::view::textclassifier
 			arg0.object<jstring>()
 		);
 	}
-	jint TextLinks_TextLink::getEnd()
+	jint TextLinks_TextLink::getEnd() const
 	{
 		return callMethod<jint>(
 			"getEnd",
 			"()I"
 		);
 	}
-	JString TextLinks_TextLink::getEntity(jint arg0)
+	JString TextLinks_TextLink::getEntity(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEntity",
@@ -51,35 +51,35 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jint TextLinks_TextLink::getEntityCount()
+	jint TextLinks_TextLink::getEntityCount() const
 	{
 		return callMethod<jint>(
 			"getEntityCount",
 			"()I"
 		);
 	}
-	android::os::Bundle TextLinks_TextLink::getExtras()
+	android::os::Bundle TextLinks_TextLink::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TextLinks_TextLink::getStart()
+	jint TextLinks_TextLink::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	JString TextLinks_TextLink::toString()
+	JString TextLinks_TextLink::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextLinks_TextLink::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextLinks_TextLink::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

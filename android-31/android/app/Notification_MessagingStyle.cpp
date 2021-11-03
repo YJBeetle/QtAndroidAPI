@@ -32,7 +32,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addHistoricMessage(android::app::Notification_MessagingStyle_Message arg0) const
 	{
 		return callObjectMethod(
 			"addHistoricMessage",
@@ -40,7 +40,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(android::app::Notification_MessagingStyle_Message arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(android::app::Notification_MessagingStyle_Message arg0) const
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -48,7 +48,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(JString arg0, jlong arg1, android::app::Person arg2)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(JString arg0, jlong arg1, android::app::Person arg2) const
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -58,7 +58,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(JString arg0, jlong arg1, JString arg2)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::addMessage(JString arg0, jlong arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"addMessage",
@@ -68,49 +68,49 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	JString Notification_MessagingStyle::getConversationTitle()
+	JString Notification_MessagingStyle::getConversationTitle() const
 	{
 		return callObjectMethod(
 			"getConversationTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject Notification_MessagingStyle::getHistoricMessages()
+	JObject Notification_MessagingStyle::getHistoricMessages() const
 	{
 		return callObjectMethod(
 			"getHistoricMessages",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Notification_MessagingStyle::getMessages()
+	JObject Notification_MessagingStyle::getMessages() const
 	{
 		return callObjectMethod(
 			"getMessages",
 			"()Ljava/util/List;"
 		);
 	}
-	android::app::Person Notification_MessagingStyle::getUser()
+	android::app::Person Notification_MessagingStyle::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Landroid/app/Person;"
 		);
 	}
-	JString Notification_MessagingStyle::getUserDisplayName()
+	JString Notification_MessagingStyle::getUserDisplayName() const
 	{
 		return callObjectMethod(
 			"getUserDisplayName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean Notification_MessagingStyle::isGroupConversation()
+	jboolean Notification_MessagingStyle::isGroupConversation() const
 	{
 		return callMethod<jboolean>(
 			"isGroupConversation",
 			"()Z"
 		);
 	}
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::setConversationTitle(JString arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::setConversationTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setConversationTitle",
@@ -118,7 +118,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_MessagingStyle Notification_MessagingStyle::setGroupConversation(jboolean arg0)
+	android::app::Notification_MessagingStyle Notification_MessagingStyle::setGroupConversation(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setGroupConversation",

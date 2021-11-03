@@ -19,28 +19,28 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	JString SslCertificate_DName::getCName()
+	JString SslCertificate_DName::getCName() const
 	{
 		return callObjectMethod(
 			"getCName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SslCertificate_DName::getDName()
+	JString SslCertificate_DName::getDName() const
 	{
 		return callObjectMethod(
 			"getDName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SslCertificate_DName::getOName()
+	JString SslCertificate_DName::getOName() const
 	{
 		return callObjectMethod(
 			"getOName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SslCertificate_DName::getUName()
+	JString SslCertificate_DName::getUName() const
 	{
 		return callObjectMethod(
 			"getUName",

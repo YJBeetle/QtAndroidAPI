@@ -43,21 +43,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString TwoLineListItem::getAccessibilityClassName()
+	JString TwoLineListItem::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::widget::TextView TwoLineListItem::getText1()
+	android::widget::TextView TwoLineListItem::getText1() const
 	{
 		return callObjectMethod(
 			"getText1",
 			"()Landroid/widget/TextView;"
 		);
 	}
-	android::widget::TextView TwoLineListItem::getText2()
+	android::widget::TextView TwoLineListItem::getText2() const
 	{
 		return callObjectMethod(
 			"getText2",

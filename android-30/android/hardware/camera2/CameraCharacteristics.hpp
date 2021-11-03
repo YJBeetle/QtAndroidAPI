@@ -116,15 +116,15 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0);
-		JObject getAvailableCaptureRequestKeys();
-		JObject getAvailableCaptureResultKeys();
-		JObject getAvailablePhysicalCameraRequestKeys();
-		JObject getAvailableSessionKeys();
-		JObject getKeys();
-		JObject getKeysNeedingPermission();
-		JObject getPhysicalCameraIds();
-		android::hardware::camera2::params::RecommendedStreamConfigurationMap getRecommendedStreamConfigurationMap(jint arg0);
+		JObject get(android::hardware::camera2::CameraCharacteristics_Key arg0) const;
+		JObject getAvailableCaptureRequestKeys() const;
+		JObject getAvailableCaptureResultKeys() const;
+		JObject getAvailablePhysicalCameraRequestKeys() const;
+		JObject getAvailableSessionKeys() const;
+		JObject getKeys() const;
+		JObject getKeysNeedingPermission() const;
+		JObject getPhysicalCameraIds() const;
+		android::hardware::camera2::params::RecommendedStreamConfigurationMap getRecommendedStreamConfigurationMap(jint arg0) const;
 	};
 } // namespace android::hardware::camera2
 

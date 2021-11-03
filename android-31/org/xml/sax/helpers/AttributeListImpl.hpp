@@ -20,16 +20,16 @@ namespace org::xml::sax::helpers
 		AttributeListImpl(JObject arg0);
 		
 		// Methods
-		void addAttribute(JString arg0, JString arg1, JString arg2);
-		void clear();
-		jint getLength();
-		JString getName(jint arg0);
-		JString getType(jint arg0);
-		JString getType(JString arg0);
-		JString getValue(jint arg0);
-		JString getValue(JString arg0);
-		void removeAttribute(JString arg0);
-		void setAttributeList(JObject arg0);
+		void addAttribute(JString arg0, JString arg1, JString arg2) const;
+		void clear() const;
+		jint getLength() const;
+		JString getName(jint arg0) const;
+		JString getType(jint arg0) const;
+		JString getType(JString arg0) const;
+		JString getValue(jint arg0) const;
+		JString getValue(JString arg0) const;
+		void removeAttribute(JString arg0) const;
+		void setAttributeList(JObject arg0) const;
 	};
 } // namespace org::xml::sax::helpers
 

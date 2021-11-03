@@ -123,168 +123,168 @@ namespace android::telephony::gsm
 			arg0.object<jstring>()
 		);
 	}
-	JString SmsMessage::getDisplayMessageBody()
+	JString SmsMessage::getDisplayMessageBody() const
 	{
 		return callObjectMethod(
 			"getDisplayMessageBody",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SmsMessage::getDisplayOriginatingAddress()
+	JString SmsMessage::getDisplayOriginatingAddress() const
 	{
 		return callObjectMethod(
 			"getDisplayOriginatingAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SmsMessage::getEmailBody()
+	JString SmsMessage::getEmailBody() const
 	{
 		return callObjectMethod(
 			"getEmailBody",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SmsMessage::getEmailFrom()
+	JString SmsMessage::getEmailFrom() const
 	{
 		return callObjectMethod(
 			"getEmailFrom",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SmsMessage::getIndexOnSim()
+	jint SmsMessage::getIndexOnSim() const
 	{
 		return callMethod<jint>(
 			"getIndexOnSim",
 			"()I"
 		);
 	}
-	JString SmsMessage::getMessageBody()
+	JString SmsMessage::getMessageBody() const
 	{
 		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telephony::gsm::SmsMessage_MessageClass SmsMessage::getMessageClass()
+	android::telephony::gsm::SmsMessage_MessageClass SmsMessage::getMessageClass() const
 	{
 		return callObjectMethod(
 			"getMessageClass",
 			"()Landroid/telephony/gsm/SmsMessage$MessageClass;"
 		);
 	}
-	JString SmsMessage::getOriginatingAddress()
+	JString SmsMessage::getOriginatingAddress() const
 	{
 		return callObjectMethod(
 			"getOriginatingAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray SmsMessage::getPdu()
+	JByteArray SmsMessage::getPdu() const
 	{
 		return callObjectMethod(
 			"getPdu",
 			"()[B"
 		);
 	}
-	jint SmsMessage::getProtocolIdentifier()
+	jint SmsMessage::getProtocolIdentifier() const
 	{
 		return callMethod<jint>(
 			"getProtocolIdentifier",
 			"()I"
 		);
 	}
-	JString SmsMessage::getPseudoSubject()
+	JString SmsMessage::getPseudoSubject() const
 	{
 		return callObjectMethod(
 			"getPseudoSubject",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SmsMessage::getServiceCenterAddress()
+	JString SmsMessage::getServiceCenterAddress() const
 	{
 		return callObjectMethod(
 			"getServiceCenterAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SmsMessage::getStatus()
+	jint SmsMessage::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jint SmsMessage::getStatusOnSim()
+	jint SmsMessage::getStatusOnSim() const
 	{
 		return callMethod<jint>(
 			"getStatusOnSim",
 			"()I"
 		);
 	}
-	jlong SmsMessage::getTimestampMillis()
+	jlong SmsMessage::getTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimestampMillis",
 			"()J"
 		);
 	}
-	JByteArray SmsMessage::getUserData()
+	JByteArray SmsMessage::getUserData() const
 	{
 		return callObjectMethod(
 			"getUserData",
 			"()[B"
 		);
 	}
-	jboolean SmsMessage::isCphsMwiMessage()
+	jboolean SmsMessage::isCphsMwiMessage() const
 	{
 		return callMethod<jboolean>(
 			"isCphsMwiMessage",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isEmail()
+	jboolean SmsMessage::isEmail() const
 	{
 		return callMethod<jboolean>(
 			"isEmail",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isMWIClearMessage()
+	jboolean SmsMessage::isMWIClearMessage() const
 	{
 		return callMethod<jboolean>(
 			"isMWIClearMessage",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isMWISetMessage()
+	jboolean SmsMessage::isMWISetMessage() const
 	{
 		return callMethod<jboolean>(
 			"isMWISetMessage",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isMwiDontStore()
+	jboolean SmsMessage::isMwiDontStore() const
 	{
 		return callMethod<jboolean>(
 			"isMwiDontStore",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isReplace()
+	jboolean SmsMessage::isReplace() const
 	{
 		return callMethod<jboolean>(
 			"isReplace",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isReplyPathPresent()
+	jboolean SmsMessage::isReplyPathPresent() const
 	{
 		return callMethod<jboolean>(
 			"isReplyPathPresent",
 			"()Z"
 		);
 	}
-	jboolean SmsMessage::isStatusReportMessage()
+	jboolean SmsMessage::isStatusReportMessage() const
 	{
 		return callMethod<jboolean>(
 			"isStatusReportMessage",

@@ -27,29 +27,29 @@ namespace android::app::appsearch
 		
 		// Methods
 		static jint getMaxIndexedProperties();
-		jboolean equals(JObject arg0);
-		jlong getCreationTimestampMillis();
-		JString getId();
-		JString getNamespace();
-		JObject getProperty(JString arg0);
-		jboolean getPropertyBoolean(JString arg0);
-		JBooleanArray getPropertyBooleanArray(JString arg0);
-		JByteArray getPropertyBytes(JString arg0);
-		JArray getPropertyBytesArray(JString arg0);
-		android::app::appsearch::GenericDocument getPropertyDocument(JString arg0);
-		JArray getPropertyDocumentArray(JString arg0);
-		jdouble getPropertyDouble(JString arg0);
-		JDoubleArray getPropertyDoubleArray(JString arg0);
-		jlong getPropertyLong(JString arg0);
-		JLongArray getPropertyLongArray(JString arg0);
-		JObject getPropertyNames();
-		JString getPropertyString(JString arg0);
-		JArray getPropertyStringArray(JString arg0);
-		JString getSchemaType();
-		jint getScore();
-		jlong getTtlMillis();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getCreationTimestampMillis() const;
+		JString getId() const;
+		JString getNamespace() const;
+		JObject getProperty(JString arg0) const;
+		jboolean getPropertyBoolean(JString arg0) const;
+		JBooleanArray getPropertyBooleanArray(JString arg0) const;
+		JByteArray getPropertyBytes(JString arg0) const;
+		JArray getPropertyBytesArray(JString arg0) const;
+		android::app::appsearch::GenericDocument getPropertyDocument(JString arg0) const;
+		JArray getPropertyDocumentArray(JString arg0) const;
+		jdouble getPropertyDouble(JString arg0) const;
+		JDoubleArray getPropertyDoubleArray(JString arg0) const;
+		jlong getPropertyLong(JString arg0) const;
+		JLongArray getPropertyLongArray(JString arg0) const;
+		JObject getPropertyNames() const;
+		JString getPropertyString(JString arg0) const;
+		JArray getPropertyStringArray(JString arg0) const;
+		JString getSchemaType() const;
+		jint getScore() const;
+		jlong getTtlMillis() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

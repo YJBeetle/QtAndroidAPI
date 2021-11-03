@@ -39,14 +39,14 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	void X509Certificate::checkValidity()
+	void X509Certificate::checkValidity() const
 	{
 		callMethod<void>(
 			"checkValidity",
 			"()V"
 		);
 	}
-	void X509Certificate::checkValidity(java::util::Date arg0)
+	void X509Certificate::checkValidity(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"checkValidity",
@@ -54,63 +54,63 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	JObject X509Certificate::getIssuerDN()
+	JObject X509Certificate::getIssuerDN() const
 	{
 		return callObjectMethod(
 			"getIssuerDN",
 			"()Ljava/security/Principal;"
 		);
 	}
-	java::util::Date X509Certificate::getNotAfter()
+	java::util::Date X509Certificate::getNotAfter() const
 	{
 		return callObjectMethod(
 			"getNotAfter",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date X509Certificate::getNotBefore()
+	java::util::Date X509Certificate::getNotBefore() const
 	{
 		return callObjectMethod(
 			"getNotBefore",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::math::BigInteger X509Certificate::getSerialNumber()
+	java::math::BigInteger X509Certificate::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JString X509Certificate::getSigAlgName()
+	JString X509Certificate::getSigAlgName() const
 	{
 		return callObjectMethod(
 			"getSigAlgName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString X509Certificate::getSigAlgOID()
+	JString X509Certificate::getSigAlgOID() const
 	{
 		return callObjectMethod(
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray X509Certificate::getSigAlgParams()
+	JByteArray X509Certificate::getSigAlgParams() const
 	{
 		return callObjectMethod(
 			"getSigAlgParams",
 			"()[B"
 		);
 	}
-	JObject X509Certificate::getSubjectDN()
+	JObject X509Certificate::getSubjectDN() const
 	{
 		return callObjectMethod(
 			"getSubjectDN",
 			"()Ljava/security/Principal;"
 		);
 	}
-	jint X509Certificate::getVersion()
+	jint X509Certificate::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",

@@ -43,14 +43,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PackageInstaller_SessionParams::describeContents()
+	jint PackageInstaller_SessionParams::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void PackageInstaller_SessionParams::setAppIcon(android::graphics::Bitmap arg0)
+	void PackageInstaller_SessionParams::setAppIcon(android::graphics::Bitmap arg0) const
 	{
 		callMethod<void>(
 			"setAppIcon",
@@ -58,7 +58,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller_SessionParams::setAppLabel(JString arg0)
+	void PackageInstaller_SessionParams::setAppLabel(JString arg0) const
 	{
 		callMethod<void>(
 			"setAppLabel",
@@ -66,7 +66,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	void PackageInstaller_SessionParams::setAppPackageName(JString arg0)
+	void PackageInstaller_SessionParams::setAppPackageName(JString arg0) const
 	{
 		callMethod<void>(
 			"setAppPackageName",
@@ -74,7 +74,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	void PackageInstaller_SessionParams::setInstallLocation(jint arg0)
+	void PackageInstaller_SessionParams::setInstallLocation(jint arg0) const
 	{
 		callMethod<void>(
 			"setInstallLocation",
@@ -82,7 +82,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setInstallReason(jint arg0)
+	void PackageInstaller_SessionParams::setInstallReason(jint arg0) const
 	{
 		callMethod<void>(
 			"setInstallReason",
@@ -90,7 +90,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setOriginatingUid(jint arg0)
+	void PackageInstaller_SessionParams::setOriginatingUid(jint arg0) const
 	{
 		callMethod<void>(
 			"setOriginatingUid",
@@ -98,7 +98,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setOriginatingUri(android::net::Uri arg0)
+	void PackageInstaller_SessionParams::setOriginatingUri(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setOriginatingUri",
@@ -106,7 +106,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller_SessionParams::setReferrerUri(android::net::Uri arg0)
+	void PackageInstaller_SessionParams::setReferrerUri(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setReferrerUri",
@@ -114,7 +114,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void PackageInstaller_SessionParams::setSize(jlong arg0)
+	void PackageInstaller_SessionParams::setSize(jlong arg0) const
 	{
 		callMethod<void>(
 			"setSize",
@@ -122,7 +122,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PackageInstaller_SessionParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

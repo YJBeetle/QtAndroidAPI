@@ -51,30 +51,30 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		void abortReliableWrite();
-		void abortReliableWrite(android::bluetooth::BluetoothDevice arg0);
-		jboolean beginReliableWrite();
-		void close();
-		jboolean connect();
-		void disconnect();
-		jboolean discoverServices();
-		jboolean executeReliableWrite();
-		JObject getConnectedDevices();
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		android::bluetooth::BluetoothDevice getDevice();
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
-		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0);
-		JObject getServices();
-		jboolean readCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);
-		jboolean readDescriptor(android::bluetooth::BluetoothGattDescriptor arg0);
-		void readPhy();
-		jboolean readRemoteRssi();
-		jboolean requestConnectionPriority(jint arg0);
-		jboolean requestMtu(jint arg0);
-		jboolean setCharacteristicNotification(android::bluetooth::BluetoothGattCharacteristic arg0, jboolean arg1);
-		void setPreferredPhy(jint arg0, jint arg1, jint arg2);
-		jboolean writeCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0);
-		jboolean writeDescriptor(android::bluetooth::BluetoothGattDescriptor arg0);
+		void abortReliableWrite() const;
+		void abortReliableWrite(android::bluetooth::BluetoothDevice arg0) const;
+		jboolean beginReliableWrite() const;
+		void close() const;
+		jboolean connect() const;
+		void disconnect() const;
+		jboolean discoverServices() const;
+		jboolean executeReliableWrite() const;
+		JObject getConnectedDevices() const;
+		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
+		android::bluetooth::BluetoothDevice getDevice() const;
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
+		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0) const;
+		JObject getServices() const;
+		jboolean readCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const;
+		jboolean readDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const;
+		void readPhy() const;
+		jboolean readRemoteRssi() const;
+		jboolean requestConnectionPriority(jint arg0) const;
+		jboolean requestMtu(jint arg0) const;
+		jboolean setCharacteristicNotification(android::bluetooth::BluetoothGattCharacteristic arg0, jboolean arg1) const;
+		void setPreferredPhy(jint arg0, jint arg1, jint arg2) const;
+		jboolean writeCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const;
+		jboolean writeDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const;
 	};
 } // namespace android::bluetooth
 

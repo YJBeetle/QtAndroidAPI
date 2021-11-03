@@ -59,14 +59,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::MediaCodec_CryptoInfo_Pattern MediaCodec_CryptoInfo::getPattern()
+	android::media::MediaCodec_CryptoInfo_Pattern MediaCodec_CryptoInfo::getPattern() const
 	{
 		return callObjectMethod(
 			"getPattern",
 			"()Landroid/media/MediaCodec$CryptoInfo$Pattern;"
 		);
 	}
-	void MediaCodec_CryptoInfo::set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5)
+	void MediaCodec_CryptoInfo::set(jint arg0, JIntArray arg1, JIntArray arg2, JByteArray arg3, JByteArray arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"set",
@@ -79,7 +79,7 @@ namespace android::media
 			arg5
 		);
 	}
-	void MediaCodec_CryptoInfo::setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0)
+	void MediaCodec_CryptoInfo::setPattern(android::media::MediaCodec_CryptoInfo_Pattern arg0) const
 	{
 		callMethod<void>(
 			"setPattern",
@@ -87,7 +87,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JString MediaCodec_CryptoInfo::toString()
+	JString MediaCodec_CryptoInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",

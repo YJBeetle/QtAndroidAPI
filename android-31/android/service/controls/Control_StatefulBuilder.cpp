@@ -30,14 +30,14 @@ namespace android::service::controls
 		) {}
 	
 	// Methods
-	android::service::controls::Control Control_StatefulBuilder::build()
+	android::service::controls::Control Control_StatefulBuilder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/controls/Control;"
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setAppIntent(android::app::PendingIntent arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setAppIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setAppIntent",
@@ -45,7 +45,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlId(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setControlId",
@@ -53,7 +53,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlTemplate(android::service::controls::templates::ControlTemplate arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setControlTemplate(android::service::controls::templates::ControlTemplate arg0) const
 	{
 		return callObjectMethod(
 			"setControlTemplate",
@@ -61,7 +61,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setCustomColor(android::content::res::ColorStateList arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setCustomColor(android::content::res::ColorStateList arg0) const
 	{
 		return callObjectMethod(
 			"setCustomColor",
@@ -69,7 +69,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setCustomIcon(android::graphics::drawable::Icon arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setCustomIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setCustomIcon",
@@ -77,7 +77,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setDeviceType(jint arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setDeviceType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceType",
@@ -85,7 +85,7 @@ namespace android::service::controls
 			arg0
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatus(jint arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatus(jint arg0) const
 	{
 		return callObjectMethod(
 			"setStatus",
@@ -93,7 +93,7 @@ namespace android::service::controls
 			arg0
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatusText(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStatusText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setStatusText",
@@ -101,7 +101,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStructure(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setStructure(JString arg0) const
 	{
 		return callObjectMethod(
 			"setStructure",
@@ -109,7 +109,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setSubtitle(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setSubtitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -117,7 +117,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setTitle(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -125,7 +125,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setZone(JString arg0)
+	android::service::controls::Control_StatefulBuilder Control_StatefulBuilder::setZone(JString arg0) const
 	{
 		return callObjectMethod(
 			"setZone",

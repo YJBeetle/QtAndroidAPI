@@ -25,8 +25,8 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		jint getError();
-		android::graphics::ImageDecoder_Source getSource();
+		jint getError() const;
+		android::graphics::ImageDecoder_Source getSource() const;
 	};
 } // namespace android::graphics
 

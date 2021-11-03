@@ -27,8 +27,8 @@ namespace android::net::wifi::rtt
 		// Constructors
 		
 		// Methods
-		jboolean isAvailable();
-		void startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2);
+		jboolean isAvailable() const;
+		void startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2) const;
 	};
 } // namespace android::net::wifi::rtt
 

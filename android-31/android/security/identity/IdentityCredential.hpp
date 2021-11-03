@@ -39,22 +39,22 @@ namespace android::security::identity
 		// Constructors
 		
 		// Methods
-		java::security::KeyPair createEphemeralKeyPair();
-		JByteArray decryptMessageFromReader(JByteArray arg0);
-		JByteArray _delete(JByteArray arg0);
-		JByteArray encryptMessageToReader(JByteArray arg0);
-		JObject getAuthKeysNeedingCertification();
-		JIntArray getAuthenticationDataUsageCount();
-		JObject getCredentialKeyCertificateChain();
-		android::security::identity::ResultData getEntries(JByteArray arg0, JObject arg1, JByteArray arg2, JByteArray arg3);
-		JByteArray proveOwnership(JByteArray arg0);
-		void setAllowUsingExhaustedKeys(jboolean arg0);
-		void setAllowUsingExpiredKeys(jboolean arg0);
-		void setAvailableAuthenticationKeys(jint arg0, jint arg1);
-		void setReaderEphemeralPublicKey(JObject arg0);
-		void storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, JByteArray arg1);
-		void storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, java::time::Instant arg1, JByteArray arg2);
-		JByteArray update(android::security::identity::PersonalizationData arg0);
+		java::security::KeyPair createEphemeralKeyPair() const;
+		JByteArray decryptMessageFromReader(JByteArray arg0) const;
+		JByteArray _delete(JByteArray arg0) const;
+		JByteArray encryptMessageToReader(JByteArray arg0) const;
+		JObject getAuthKeysNeedingCertification() const;
+		JIntArray getAuthenticationDataUsageCount() const;
+		JObject getCredentialKeyCertificateChain() const;
+		android::security::identity::ResultData getEntries(JByteArray arg0, JObject arg1, JByteArray arg2, JByteArray arg3) const;
+		JByteArray proveOwnership(JByteArray arg0) const;
+		void setAllowUsingExhaustedKeys(jboolean arg0) const;
+		void setAllowUsingExpiredKeys(jboolean arg0) const;
+		void setAvailableAuthenticationKeys(jint arg0, jint arg1) const;
+		void setReaderEphemeralPublicKey(JObject arg0) const;
+		void storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, JByteArray arg1) const;
+		void storeStaticAuthenticationData(java::security::cert::X509Certificate arg0, java::time::Instant arg1, JByteArray arg2) const;
+		JByteArray update(android::security::identity::PersonalizationData arg0) const;
 	};
 } // namespace android::security::identity
 

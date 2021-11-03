@@ -11,7 +11,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::Precision FractionPrecision::withMaxDigits(jint arg0)
+	android::icu::number::Precision FractionPrecision::withMaxDigits(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMaxDigits",
@@ -19,7 +19,7 @@ namespace android::icu::number
 			arg0
 		);
 	}
-	android::icu::number::Precision FractionPrecision::withMinDigits(jint arg0)
+	android::icu::number::Precision FractionPrecision::withMinDigits(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinDigits",

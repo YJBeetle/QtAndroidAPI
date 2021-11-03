@@ -17,7 +17,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void Observable::registerObserver(JObject arg0)
+	void Observable::registerObserver(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerObserver",
@@ -25,14 +25,14 @@ namespace android::database
 			arg0.object<jobject>()
 		);
 	}
-	void Observable::unregisterAll()
+	void Observable::unregisterAll() const
 	{
 		callMethod<void>(
 			"unregisterAll",
 			"()V"
 		);
 	}
-	void Observable::unregisterObserver(JObject arg0)
+	void Observable::unregisterObserver(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterObserver",

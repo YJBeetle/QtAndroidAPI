@@ -29,7 +29,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean ColorMatrix::equals(JObject arg0)
+	jboolean ColorMatrix::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,14 +37,14 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	JFloatArray ColorMatrix::getArray()
+	JFloatArray ColorMatrix::getArray() const
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
 		);
 	}
-	void ColorMatrix::postConcat(android::graphics::ColorMatrix arg0)
+	void ColorMatrix::postConcat(android::graphics::ColorMatrix arg0) const
 	{
 		callMethod<void>(
 			"postConcat",
@@ -52,7 +52,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ColorMatrix::preConcat(android::graphics::ColorMatrix arg0)
+	void ColorMatrix::preConcat(android::graphics::ColorMatrix arg0) const
 	{
 		callMethod<void>(
 			"preConcat",
@@ -60,14 +60,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ColorMatrix::reset()
+	void ColorMatrix::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void ColorMatrix::set(JFloatArray arg0)
+	void ColorMatrix::set(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -75,7 +75,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	void ColorMatrix::set(android::graphics::ColorMatrix arg0)
+	void ColorMatrix::set(android::graphics::ColorMatrix arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -83,7 +83,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ColorMatrix::setConcat(android::graphics::ColorMatrix arg0, android::graphics::ColorMatrix arg1)
+	void ColorMatrix::setConcat(android::graphics::ColorMatrix arg0, android::graphics::ColorMatrix arg1) const
 	{
 		callMethod<void>(
 			"setConcat",
@@ -92,14 +92,14 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void ColorMatrix::setRGB2YUV()
+	void ColorMatrix::setRGB2YUV() const
 	{
 		callMethod<void>(
 			"setRGB2YUV",
 			"()V"
 		);
 	}
-	void ColorMatrix::setRotate(jint arg0, jfloat arg1)
+	void ColorMatrix::setRotate(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setRotate",
@@ -108,7 +108,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void ColorMatrix::setSaturation(jfloat arg0)
+	void ColorMatrix::setSaturation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setSaturation",
@@ -116,7 +116,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ColorMatrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void ColorMatrix::setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"setScale",
@@ -127,7 +127,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	void ColorMatrix::setYUV2RGB()
+	void ColorMatrix::setYUV2RGB() const
 	{
 		callMethod<void>(
 			"setYUV2RGB",

@@ -11,7 +11,7 @@ namespace javax::crypto::spec
 	// Constructors
 	
 	// Methods
-	JString PSource::getAlgorithm()
+	JString PSource::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",

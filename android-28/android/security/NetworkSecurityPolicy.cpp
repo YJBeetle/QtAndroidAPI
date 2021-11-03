@@ -19,14 +19,14 @@ namespace android::security
 			"()Landroid/security/NetworkSecurityPolicy;"
 		);
 	}
-	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted()
+	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted() const
 	{
 		return callMethod<jboolean>(
 			"isCleartextTrafficPermitted",
 			"()Z"
 		);
 	}
-	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(JString arg0)
+	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCleartextTrafficPermitted",

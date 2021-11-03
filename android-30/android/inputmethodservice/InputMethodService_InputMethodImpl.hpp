@@ -38,14 +38,14 @@ namespace android::inputmethodservice
 		InputMethodService_InputMethodImpl(android::inputmethodservice::InputMethodService arg0);
 		
 		// Methods
-		void attachToken(JObject arg0);
-		void bindInput(android::view::inputmethod::InputBinding arg0);
-		void changeInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0);
-		void hideSoftInput(jint arg0, android::os::ResultReceiver arg1);
-		void restartInput(JObject arg0, android::view::inputmethod::EditorInfo arg1);
-		void showSoftInput(jint arg0, android::os::ResultReceiver arg1);
-		void startInput(JObject arg0, android::view::inputmethod::EditorInfo arg1);
-		void unbindInput();
+		void attachToken(JObject arg0) const;
+		void bindInput(android::view::inputmethod::InputBinding arg0) const;
+		void changeInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0) const;
+		void hideSoftInput(jint arg0, android::os::ResultReceiver arg1) const;
+		void restartInput(JObject arg0, android::view::inputmethod::EditorInfo arg1) const;
+		void showSoftInput(jint arg0, android::os::ResultReceiver arg1) const;
+		void startInput(JObject arg0, android::view::inputmethod::EditorInfo arg1) const;
+		void unbindInput() const;
 	};
 } // namespace android::inputmethodservice
 

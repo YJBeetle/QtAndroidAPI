@@ -18,49 +18,49 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jfloat WindowInsetsAnimation::getAlpha()
+	jfloat WindowInsetsAnimation::getAlpha() const
 	{
 		return callMethod<jfloat>(
 			"getAlpha",
 			"()F"
 		);
 	}
-	jlong WindowInsetsAnimation::getDurationMillis()
+	jlong WindowInsetsAnimation::getDurationMillis() const
 	{
 		return callMethod<jlong>(
 			"getDurationMillis",
 			"()J"
 		);
 	}
-	jfloat WindowInsetsAnimation::getFraction()
+	jfloat WindowInsetsAnimation::getFraction() const
 	{
 		return callMethod<jfloat>(
 			"getFraction",
 			"()F"
 		);
 	}
-	jfloat WindowInsetsAnimation::getInterpolatedFraction()
+	jfloat WindowInsetsAnimation::getInterpolatedFraction() const
 	{
 		return callMethod<jfloat>(
 			"getInterpolatedFraction",
 			"()F"
 		);
 	}
-	JObject WindowInsetsAnimation::getInterpolator()
+	JObject WindowInsetsAnimation::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/view/animation/Interpolator;"
 		);
 	}
-	jint WindowInsetsAnimation::getTypeMask()
+	jint WindowInsetsAnimation::getTypeMask() const
 	{
 		return callMethod<jint>(
 			"getTypeMask",
 			"()I"
 		);
 	}
-	void WindowInsetsAnimation::setAlpha(jfloat arg0)
+	void WindowInsetsAnimation::setAlpha(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -68,7 +68,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void WindowInsetsAnimation::setFraction(jfloat arg0)
+	void WindowInsetsAnimation::setFraction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFraction",

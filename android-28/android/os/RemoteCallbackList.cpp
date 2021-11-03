@@ -16,21 +16,21 @@ namespace android::os
 		) {}
 	
 	// Methods
-	jint RemoteCallbackList::beginBroadcast()
+	jint RemoteCallbackList::beginBroadcast() const
 	{
 		return callMethod<jint>(
 			"beginBroadcast",
 			"()I"
 		);
 	}
-	void RemoteCallbackList::finishBroadcast()
+	void RemoteCallbackList::finishBroadcast() const
 	{
 		callMethod<void>(
 			"finishBroadcast",
 			"()V"
 		);
 	}
-	JObject RemoteCallbackList::getBroadcastCookie(jint arg0)
+	JObject RemoteCallbackList::getBroadcastCookie(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBroadcastCookie",
@@ -38,7 +38,7 @@ namespace android::os
 			arg0
 		);
 	}
-	JObject RemoteCallbackList::getBroadcastItem(jint arg0)
+	JObject RemoteCallbackList::getBroadcastItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBroadcastItem",
@@ -46,7 +46,7 @@ namespace android::os
 			arg0
 		);
 	}
-	JObject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0)
+	JObject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRegisteredCallbackCookie",
@@ -54,14 +54,14 @@ namespace android::os
 			arg0
 		);
 	}
-	jint RemoteCallbackList::getRegisteredCallbackCount()
+	jint RemoteCallbackList::getRegisteredCallbackCount() const
 	{
 		return callMethod<jint>(
 			"getRegisteredCallbackCount",
 			"()I"
 		);
 	}
-	JObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
+	JObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRegisteredCallbackItem",
@@ -69,14 +69,14 @@ namespace android::os
 			arg0
 		);
 	}
-	void RemoteCallbackList::kill()
+	void RemoteCallbackList::kill() const
 	{
 		callMethod<void>(
 			"kill",
 			"()V"
 		);
 	}
-	void RemoteCallbackList::onCallbackDied(JObject arg0)
+	void RemoteCallbackList::onCallbackDied(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCallbackDied",
@@ -84,7 +84,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void RemoteCallbackList::onCallbackDied(JObject arg0, JObject arg1)
+	void RemoteCallbackList::onCallbackDied(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onCallbackDied",
@@ -93,7 +93,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	jboolean RemoteCallbackList::_register(JObject arg0)
+	jboolean RemoteCallbackList::_register(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"register",
@@ -101,7 +101,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean RemoteCallbackList::_register(JObject arg0, JObject arg1)
+	jboolean RemoteCallbackList::_register(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"register",
@@ -110,7 +110,7 @@ namespace android::os
 			arg1.object<jobject>()
 		);
 	}
-	jboolean RemoteCallbackList::unregister(JObject arg0)
+	jboolean RemoteCallbackList::unregister(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"unregister",

@@ -17,7 +17,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void VisibilityPropagation::captureValues(android::transition::TransitionValues arg0)
+	void VisibilityPropagation::captureValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureValues",
@@ -25,14 +25,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	JArray VisibilityPropagation::getPropagationProperties()
+	JArray VisibilityPropagation::getPropagationProperties() const
 	{
 		return callObjectMethod(
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint VisibilityPropagation::getViewVisibility(android::transition::TransitionValues arg0)
+	jint VisibilityPropagation::getViewVisibility(android::transition::TransitionValues arg0) const
 	{
 		return callMethod<jint>(
 			"getViewVisibility",
@@ -40,7 +40,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	jint VisibilityPropagation::getViewX(android::transition::TransitionValues arg0)
+	jint VisibilityPropagation::getViewX(android::transition::TransitionValues arg0) const
 	{
 		return callMethod<jint>(
 			"getViewX",
@@ -48,7 +48,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	jint VisibilityPropagation::getViewY(android::transition::TransitionValues arg0)
+	jint VisibilityPropagation::getViewY(android::transition::TransitionValues arg0) const
 	{
 		return callMethod<jint>(
 			"getViewY",

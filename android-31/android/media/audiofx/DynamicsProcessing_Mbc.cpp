@@ -26,7 +26,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing_Mbc::getBand(jint arg0)
+	android::media::audiofx::DynamicsProcessing_MbcBand DynamicsProcessing_Mbc::getBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBand",
@@ -34,7 +34,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_Mbc::setBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1)
+	void DynamicsProcessing_Mbc::setBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1) const
 	{
 		callMethod<void>(
 			"setBand",
@@ -43,7 +43,7 @@ namespace android::media::audiofx
 			arg1.object()
 		);
 	}
-	JString DynamicsProcessing_Mbc::toString()
+	JString DynamicsProcessing_Mbc::toString() const
 	{
 		return callObjectMethod(
 			"toString",

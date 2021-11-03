@@ -23,12 +23,12 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JString getExactMatch();
-		android::app::appsearch::SearchResult_MatchRange getExactMatchRange();
-		JString getFullText();
-		JString getPropertyPath();
-		JString getSnippet();
-		android::app::appsearch::SearchResult_MatchRange getSnippetRange();
+		JString getExactMatch() const;
+		android::app::appsearch::SearchResult_MatchRange getExactMatchRange() const;
+		JString getFullText() const;
+		JString getPropertyPath() const;
+		JString getSnippet() const;
+		android::app::appsearch::SearchResult_MatchRange getSnippetRange() const;
 	};
 } // namespace android::app::appsearch
 

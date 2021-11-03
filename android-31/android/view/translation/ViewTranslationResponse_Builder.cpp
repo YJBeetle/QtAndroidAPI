@@ -20,14 +20,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	android::view::translation::ViewTranslationResponse ViewTranslationResponse_Builder::build()
+	android::view::translation::ViewTranslationResponse ViewTranslationResponse_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/translation/ViewTranslationResponse;"
 		);
 	}
-	android::view::translation::ViewTranslationResponse_Builder ViewTranslationResponse_Builder::setValue(JString arg0, android::view::translation::TranslationResponseValue arg1)
+	android::view::translation::ViewTranslationResponse_Builder ViewTranslationResponse_Builder::setValue(JString arg0, android::view::translation::TranslationResponseValue arg1) const
 	{
 		return callObjectMethod(
 			"setValue",

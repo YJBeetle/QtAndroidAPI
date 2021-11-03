@@ -82,16 +82,16 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		android::content::ComponentName getGlobalSearchActivity();
-		android::app::SearchableInfo getSearchableInfo(android::content::ComponentName arg0);
-		JObject getSearchablesInGlobalSearch();
-		void onCancel(JObject arg0);
-		void onDismiss(JObject arg0);
-		void setOnCancelListener(JObject arg0);
-		void setOnDismissListener(JObject arg0);
-		void startSearch(JString arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4);
-		void stopSearch();
-		void triggerSearch(JString arg0, android::content::ComponentName arg1, android::os::Bundle arg2);
+		android::content::ComponentName getGlobalSearchActivity() const;
+		android::app::SearchableInfo getSearchableInfo(android::content::ComponentName arg0) const;
+		JObject getSearchablesInGlobalSearch() const;
+		void onCancel(JObject arg0) const;
+		void onDismiss(JObject arg0) const;
+		void setOnCancelListener(JObject arg0) const;
+		void setOnDismissListener(JObject arg0) const;
+		void startSearch(JString arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4) const;
+		void stopSearch() const;
+		void triggerSearch(JString arg0, android::content::ComponentName arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::app
 

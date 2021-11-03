@@ -19,7 +19,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"add",
@@ -28,7 +28,7 @@ namespace android::renderscript
 			arg1.object<jstring>()
 		);
 	}
-	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1, jint arg2)
+	android::renderscript::Element_Builder Element_Builder::add(android::renderscript::Element arg0, JString arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"add",
@@ -38,7 +38,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	android::renderscript::Element Element_Builder::create()
+	android::renderscript::Element Element_Builder::create() const
 	{
 		return callObjectMethod(
 			"create",

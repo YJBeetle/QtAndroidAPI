@@ -11,7 +11,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean ChildSessionParams::equals(JObject arg0)
+	jboolean ChildSessionParams::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,42 +19,42 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	JObject ChildSessionParams::getChildSaProposals()
+	JObject ChildSessionParams::getChildSaProposals() const
 	{
 		return callObjectMethod(
 			"getChildSaProposals",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ChildSessionParams::getHardLifetimeSeconds()
+	jint ChildSessionParams::getHardLifetimeSeconds() const
 	{
 		return callMethod<jint>(
 			"getHardLifetimeSeconds",
 			"()I"
 		);
 	}
-	JObject ChildSessionParams::getInboundTrafficSelectors()
+	JObject ChildSessionParams::getInboundTrafficSelectors() const
 	{
 		return callObjectMethod(
 			"getInboundTrafficSelectors",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ChildSessionParams::getOutboundTrafficSelectors()
+	JObject ChildSessionParams::getOutboundTrafficSelectors() const
 	{
 		return callObjectMethod(
 			"getOutboundTrafficSelectors",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ChildSessionParams::getSoftLifetimeSeconds()
+	jint ChildSessionParams::getSoftLifetimeSeconds() const
 	{
 		return callMethod<jint>(
 			"getSoftLifetimeSeconds",
 			"()I"
 		);
 	}
-	jint ChildSessionParams::hashCode()
+	jint ChildSessionParams::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

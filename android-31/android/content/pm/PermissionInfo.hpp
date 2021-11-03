@@ -58,12 +58,12 @@ namespace android::content::pm
 		PermissionInfo(android::content::pm::PermissionInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getProtection();
-		jint getProtectionFlags();
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getProtection() const;
+		jint getProtectionFlags() const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

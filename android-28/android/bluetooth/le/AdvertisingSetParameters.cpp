@@ -97,84 +97,84 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint AdvertisingSetParameters::describeContents()
+	jint AdvertisingSetParameters::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::getInterval()
+	jint AdvertisingSetParameters::getInterval() const
 	{
 		return callMethod<jint>(
 			"getInterval",
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::getPrimaryPhy()
+	jint AdvertisingSetParameters::getPrimaryPhy() const
 	{
 		return callMethod<jint>(
 			"getPrimaryPhy",
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::getSecondaryPhy()
+	jint AdvertisingSetParameters::getSecondaryPhy() const
 	{
 		return callMethod<jint>(
 			"getSecondaryPhy",
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::getTxPowerLevel()
+	jint AdvertisingSetParameters::getTxPowerLevel() const
 	{
 		return callMethod<jint>(
 			"getTxPowerLevel",
 			"()I"
 		);
 	}
-	jboolean AdvertisingSetParameters::includeTxPower()
+	jboolean AdvertisingSetParameters::includeTxPower() const
 	{
 		return callMethod<jboolean>(
 			"includeTxPower",
 			"()Z"
 		);
 	}
-	jboolean AdvertisingSetParameters::isAnonymous()
+	jboolean AdvertisingSetParameters::isAnonymous() const
 	{
 		return callMethod<jboolean>(
 			"isAnonymous",
 			"()Z"
 		);
 	}
-	jboolean AdvertisingSetParameters::isConnectable()
+	jboolean AdvertisingSetParameters::isConnectable() const
 	{
 		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
-	jboolean AdvertisingSetParameters::isLegacy()
+	jboolean AdvertisingSetParameters::isLegacy() const
 	{
 		return callMethod<jboolean>(
 			"isLegacy",
 			"()Z"
 		);
 	}
-	jboolean AdvertisingSetParameters::isScannable()
+	jboolean AdvertisingSetParameters::isScannable() const
 	{
 		return callMethod<jboolean>(
 			"isScannable",
 			"()Z"
 		);
 	}
-	JString AdvertisingSetParameters::toString()
+	JString AdvertisingSetParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AdvertisingSetParameters::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AdvertisingSetParameters::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

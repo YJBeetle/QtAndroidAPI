@@ -22,7 +22,7 @@ namespace android::content
 		MutableContextWrapper(android::content::Context arg0);
 		
 		// Methods
-		void setBaseContext(android::content::Context arg0);
+		void setBaseContext(android::content::Context arg0) const;
 	};
 } // namespace android::content
 

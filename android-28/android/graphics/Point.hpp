@@ -29,16 +29,16 @@ namespace android::graphics
 		Point(jint arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean equals(jint arg0, jint arg1);
-		jint hashCode();
-		void negate();
-		void offset(jint arg0, jint arg1);
-		void readFromParcel(android::os::Parcel arg0);
-		void set(jint arg0, jint arg1);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean equals(jint arg0, jint arg1) const;
+		jint hashCode() const;
+		void negate() const;
+		void offset(jint arg0, jint arg1) const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void set(jint arg0, jint arg1) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::graphics
 

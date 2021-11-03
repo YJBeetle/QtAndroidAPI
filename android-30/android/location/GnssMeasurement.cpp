@@ -209,280 +209,280 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssMeasurement::describeContents()
+	jint GnssMeasurement::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jdouble GnssMeasurement::getAccumulatedDeltaRangeMeters()
+	jdouble GnssMeasurement::getAccumulatedDeltaRangeMeters() const
 	{
 		return callMethod<jdouble>(
 			"getAccumulatedDeltaRangeMeters",
 			"()D"
 		);
 	}
-	jint GnssMeasurement::getAccumulatedDeltaRangeState()
+	jint GnssMeasurement::getAccumulatedDeltaRangeState() const
 	{
 		return callMethod<jint>(
 			"getAccumulatedDeltaRangeState",
 			"()I"
 		);
 	}
-	jdouble GnssMeasurement::getAccumulatedDeltaRangeUncertaintyMeters()
+	jdouble GnssMeasurement::getAccumulatedDeltaRangeUncertaintyMeters() const
 	{
 		return callMethod<jdouble>(
 			"getAccumulatedDeltaRangeUncertaintyMeters",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getAutomaticGainControlLevelDb()
+	jdouble GnssMeasurement::getAutomaticGainControlLevelDb() const
 	{
 		return callMethod<jdouble>(
 			"getAutomaticGainControlLevelDb",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getBasebandCn0DbHz()
+	jdouble GnssMeasurement::getBasebandCn0DbHz() const
 	{
 		return callMethod<jdouble>(
 			"getBasebandCn0DbHz",
 			"()D"
 		);
 	}
-	jlong GnssMeasurement::getCarrierCycles()
+	jlong GnssMeasurement::getCarrierCycles() const
 	{
 		return callMethod<jlong>(
 			"getCarrierCycles",
 			"()J"
 		);
 	}
-	jfloat GnssMeasurement::getCarrierFrequencyHz()
+	jfloat GnssMeasurement::getCarrierFrequencyHz() const
 	{
 		return callMethod<jfloat>(
 			"getCarrierFrequencyHz",
 			"()F"
 		);
 	}
-	jdouble GnssMeasurement::getCarrierPhase()
+	jdouble GnssMeasurement::getCarrierPhase() const
 	{
 		return callMethod<jdouble>(
 			"getCarrierPhase",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getCarrierPhaseUncertainty()
+	jdouble GnssMeasurement::getCarrierPhaseUncertainty() const
 	{
 		return callMethod<jdouble>(
 			"getCarrierPhaseUncertainty",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getCn0DbHz()
+	jdouble GnssMeasurement::getCn0DbHz() const
 	{
 		return callMethod<jdouble>(
 			"getCn0DbHz",
 			"()D"
 		);
 	}
-	JString GnssMeasurement::getCodeType()
+	JString GnssMeasurement::getCodeType() const
 	{
 		return callObjectMethod(
 			"getCodeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint GnssMeasurement::getConstellationType()
+	jint GnssMeasurement::getConstellationType() const
 	{
 		return callMethod<jint>(
 			"getConstellationType",
 			"()I"
 		);
 	}
-	jdouble GnssMeasurement::getFullInterSignalBiasNanos()
+	jdouble GnssMeasurement::getFullInterSignalBiasNanos() const
 	{
 		return callMethod<jdouble>(
 			"getFullInterSignalBiasNanos",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getFullInterSignalBiasUncertaintyNanos()
+	jdouble GnssMeasurement::getFullInterSignalBiasUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getFullInterSignalBiasUncertaintyNanos",
 			"()D"
 		);
 	}
-	jint GnssMeasurement::getMultipathIndicator()
+	jint GnssMeasurement::getMultipathIndicator() const
 	{
 		return callMethod<jint>(
 			"getMultipathIndicator",
 			"()I"
 		);
 	}
-	jdouble GnssMeasurement::getPseudorangeRateMetersPerSecond()
+	jdouble GnssMeasurement::getPseudorangeRateMetersPerSecond() const
 	{
 		return callMethod<jdouble>(
 			"getPseudorangeRateMetersPerSecond",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getPseudorangeRateUncertaintyMetersPerSecond()
+	jdouble GnssMeasurement::getPseudorangeRateUncertaintyMetersPerSecond() const
 	{
 		return callMethod<jdouble>(
 			"getPseudorangeRateUncertaintyMetersPerSecond",
 			"()D"
 		);
 	}
-	jlong GnssMeasurement::getReceivedSvTimeNanos()
+	jlong GnssMeasurement::getReceivedSvTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getReceivedSvTimeNanos",
 			"()J"
 		);
 	}
-	jlong GnssMeasurement::getReceivedSvTimeUncertaintyNanos()
+	jlong GnssMeasurement::getReceivedSvTimeUncertaintyNanos() const
 	{
 		return callMethod<jlong>(
 			"getReceivedSvTimeUncertaintyNanos",
 			"()J"
 		);
 	}
-	jdouble GnssMeasurement::getSatelliteInterSignalBiasNanos()
+	jdouble GnssMeasurement::getSatelliteInterSignalBiasNanos() const
 	{
 		return callMethod<jdouble>(
 			"getSatelliteInterSignalBiasNanos",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getSatelliteInterSignalBiasUncertaintyNanos()
+	jdouble GnssMeasurement::getSatelliteInterSignalBiasUncertaintyNanos() const
 	{
 		return callMethod<jdouble>(
 			"getSatelliteInterSignalBiasUncertaintyNanos",
 			"()D"
 		);
 	}
-	jdouble GnssMeasurement::getSnrInDb()
+	jdouble GnssMeasurement::getSnrInDb() const
 	{
 		return callMethod<jdouble>(
 			"getSnrInDb",
 			"()D"
 		);
 	}
-	jint GnssMeasurement::getState()
+	jint GnssMeasurement::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint GnssMeasurement::getSvid()
+	jint GnssMeasurement::getSvid() const
 	{
 		return callMethod<jint>(
 			"getSvid",
 			"()I"
 		);
 	}
-	jdouble GnssMeasurement::getTimeOffsetNanos()
+	jdouble GnssMeasurement::getTimeOffsetNanos() const
 	{
 		return callMethod<jdouble>(
 			"getTimeOffsetNanos",
 			"()D"
 		);
 	}
-	jboolean GnssMeasurement::hasAutomaticGainControlLevelDb()
+	jboolean GnssMeasurement::hasAutomaticGainControlLevelDb() const
 	{
 		return callMethod<jboolean>(
 			"hasAutomaticGainControlLevelDb",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasBasebandCn0DbHz()
+	jboolean GnssMeasurement::hasBasebandCn0DbHz() const
 	{
 		return callMethod<jboolean>(
 			"hasBasebandCn0DbHz",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasCarrierCycles()
+	jboolean GnssMeasurement::hasCarrierCycles() const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierCycles",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasCarrierFrequencyHz()
+	jboolean GnssMeasurement::hasCarrierFrequencyHz() const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierFrequencyHz",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasCarrierPhase()
+	jboolean GnssMeasurement::hasCarrierPhase() const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierPhase",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasCarrierPhaseUncertainty()
+	jboolean GnssMeasurement::hasCarrierPhaseUncertainty() const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierPhaseUncertainty",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasCodeType()
+	jboolean GnssMeasurement::hasCodeType() const
 	{
 		return callMethod<jboolean>(
 			"hasCodeType",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasFullInterSignalBiasNanos()
+	jboolean GnssMeasurement::hasFullInterSignalBiasNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasFullInterSignalBiasNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasFullInterSignalBiasUncertaintyNanos()
+	jboolean GnssMeasurement::hasFullInterSignalBiasUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasFullInterSignalBiasUncertaintyNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasSatelliteInterSignalBiasNanos()
+	jboolean GnssMeasurement::hasSatelliteInterSignalBiasNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasSatelliteInterSignalBiasNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasSatelliteInterSignalBiasUncertaintyNanos()
+	jboolean GnssMeasurement::hasSatelliteInterSignalBiasUncertaintyNanos() const
 	{
 		return callMethod<jboolean>(
 			"hasSatelliteInterSignalBiasUncertaintyNanos",
 			"()Z"
 		);
 	}
-	jboolean GnssMeasurement::hasSnrInDb()
+	jboolean GnssMeasurement::hasSnrInDb() const
 	{
 		return callMethod<jboolean>(
 			"hasSnrInDb",
 			"()Z"
 		);
 	}
-	JString GnssMeasurement::toString()
+	JString GnssMeasurement::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssMeasurement::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssMeasurement::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

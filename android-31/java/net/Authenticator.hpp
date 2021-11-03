@@ -41,7 +41,7 @@ namespace java::net
 		static java::net::PasswordAuthentication requestPasswordAuthentication(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7);
 		static java::net::PasswordAuthentication requestPasswordAuthentication(java::net::Authenticator arg0, JString arg1, java::net::InetAddress arg2, jint arg3, JString arg4, JString arg5, JString arg6, java::net::URL arg7, java::net::Authenticator_RequestorType arg8);
 		static void setDefault(java::net::Authenticator arg0);
-		java::net::PasswordAuthentication requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7);
+		java::net::PasswordAuthentication requestPasswordAuthenticationInstance(JString arg0, java::net::InetAddress arg1, jint arg2, JString arg3, JString arg4, JString arg5, java::net::URL arg6, java::net::Authenticator_RequestorType arg7) const;
 	};
 } // namespace java::net
 

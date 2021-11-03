@@ -93,28 +93,28 @@ namespace android::app
 			arg5.object()
 		);
 	}
-	jint ProgressDialog::getMax()
+	jint ProgressDialog::getMax() const
 	{
 		return callMethod<jint>(
 			"getMax",
 			"()I"
 		);
 	}
-	jint ProgressDialog::getProgress()
+	jint ProgressDialog::getProgress() const
 	{
 		return callMethod<jint>(
 			"getProgress",
 			"()I"
 		);
 	}
-	jint ProgressDialog::getSecondaryProgress()
+	jint ProgressDialog::getSecondaryProgress() const
 	{
 		return callMethod<jint>(
 			"getSecondaryProgress",
 			"()I"
 		);
 	}
-	void ProgressDialog::incrementProgressBy(jint arg0)
+	void ProgressDialog::incrementProgressBy(jint arg0) const
 	{
 		callMethod<void>(
 			"incrementProgressBy",
@@ -122,7 +122,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::incrementSecondaryProgressBy(jint arg0)
+	void ProgressDialog::incrementSecondaryProgressBy(jint arg0) const
 	{
 		callMethod<void>(
 			"incrementSecondaryProgressBy",
@@ -130,21 +130,21 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean ProgressDialog::isIndeterminate()
+	jboolean ProgressDialog::isIndeterminate() const
 	{
 		return callMethod<jboolean>(
 			"isIndeterminate",
 			"()Z"
 		);
 	}
-	void ProgressDialog::onStart()
+	void ProgressDialog::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void ProgressDialog::setIndeterminate(jboolean arg0)
+	void ProgressDialog::setIndeterminate(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIndeterminate",
@@ -152,7 +152,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setIndeterminateDrawable(android::graphics::drawable::Drawable arg0)
+	void ProgressDialog::setIndeterminateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setIndeterminateDrawable",
@@ -160,7 +160,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ProgressDialog::setMax(jint arg0)
+	void ProgressDialog::setMax(jint arg0) const
 	{
 		callMethod<void>(
 			"setMax",
@@ -168,7 +168,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setMessage(JString arg0)
+	void ProgressDialog::setMessage(JString arg0) const
 	{
 		callMethod<void>(
 			"setMessage",
@@ -176,7 +176,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ProgressDialog::setProgress(jint arg0)
+	void ProgressDialog::setProgress(jint arg0) const
 	{
 		callMethod<void>(
 			"setProgress",
@@ -184,7 +184,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setProgressDrawable(android::graphics::drawable::Drawable arg0)
+	void ProgressDialog::setProgressDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setProgressDrawable",
@@ -192,7 +192,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ProgressDialog::setProgressNumberFormat(JString arg0)
+	void ProgressDialog::setProgressNumberFormat(JString arg0) const
 	{
 		callMethod<void>(
 			"setProgressNumberFormat",
@@ -200,7 +200,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ProgressDialog::setProgressPercentFormat(java::text::NumberFormat arg0)
+	void ProgressDialog::setProgressPercentFormat(java::text::NumberFormat arg0) const
 	{
 		callMethod<void>(
 			"setProgressPercentFormat",
@@ -208,7 +208,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void ProgressDialog::setProgressStyle(jint arg0)
+	void ProgressDialog::setProgressStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setProgressStyle",
@@ -216,7 +216,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setSecondaryProgress(jint arg0)
+	void ProgressDialog::setSecondaryProgress(jint arg0) const
 	{
 		callMethod<void>(
 			"setSecondaryProgress",

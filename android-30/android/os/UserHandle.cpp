@@ -55,14 +55,14 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jint UserHandle::describeContents()
+	jint UserHandle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UserHandle::equals(JObject arg0)
+	jboolean UserHandle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -70,21 +70,21 @@ namespace android::os
 			arg0.object<jobject>()
 		);
 	}
-	jint UserHandle::hashCode()
+	jint UserHandle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString UserHandle::toString()
+	JString UserHandle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UserHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UserHandle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

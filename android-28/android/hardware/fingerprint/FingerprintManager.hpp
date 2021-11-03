@@ -50,9 +50,9 @@ namespace android::hardware::fingerprint
 		// Constructors
 		
 		// Methods
-		void authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4);
-		jboolean hasEnrolledFingerprints();
-		jboolean isHardwareDetected();
+		void authenticate(android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, android::os::CancellationSignal arg1, jint arg2, android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, android::os::Handler arg4) const;
+		jboolean hasEnrolledFingerprints() const;
+		jboolean isHardwareDetected() const;
 	};
 } // namespace android::hardware::fingerprint
 

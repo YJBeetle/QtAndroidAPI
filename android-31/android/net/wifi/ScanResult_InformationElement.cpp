@@ -27,14 +27,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	jint ScanResult_InformationElement::describeContents()
+	jint ScanResult_InformationElement::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ScanResult_InformationElement::equals(JObject arg0)
+	jboolean ScanResult_InformationElement::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -42,35 +42,35 @@ namespace android::net::wifi
 			arg0.object<jobject>()
 		);
 	}
-	java::nio::ByteBuffer ScanResult_InformationElement::getBytes()
+	java::nio::ByteBuffer ScanResult_InformationElement::getBytes() const
 	{
 		return callObjectMethod(
 			"getBytes",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint ScanResult_InformationElement::getId()
+	jint ScanResult_InformationElement::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint ScanResult_InformationElement::getIdExt()
+	jint ScanResult_InformationElement::getIdExt() const
 	{
 		return callMethod<jint>(
 			"getIdExt",
 			"()I"
 		);
 	}
-	jint ScanResult_InformationElement::hashCode()
+	jint ScanResult_InformationElement::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ScanResult_InformationElement::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScanResult_InformationElement::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

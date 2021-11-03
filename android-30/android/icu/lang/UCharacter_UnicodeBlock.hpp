@@ -644,7 +644,7 @@ namespace android::icu::lang
 		static android::icu::lang::UCharacter_UnicodeBlock forName(JString arg0);
 		static android::icu::lang::UCharacter_UnicodeBlock getInstance(jint arg0);
 		static android::icu::lang::UCharacter_UnicodeBlock of(jint arg0);
-		jint getID();
+		jint getID() const;
 	};
 } // namespace android::icu::lang
 

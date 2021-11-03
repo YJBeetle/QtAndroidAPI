@@ -427,14 +427,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::content::ComponentName SearchManager::getGlobalSearchActivity()
+	android::content::ComponentName SearchManager::getGlobalSearchActivity() const
 	{
 		return callObjectMethod(
 			"getGlobalSearchActivity",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	android::app::SearchableInfo SearchManager::getSearchableInfo(android::content::ComponentName arg0)
+	android::app::SearchableInfo SearchManager::getSearchableInfo(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getSearchableInfo",
@@ -442,14 +442,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JObject SearchManager::getSearchablesInGlobalSearch()
+	JObject SearchManager::getSearchablesInGlobalSearch() const
 	{
 		return callObjectMethod(
 			"getSearchablesInGlobalSearch",
 			"()Ljava/util/List;"
 		);
 	}
-	void SearchManager::onCancel(JObject arg0)
+	void SearchManager::onCancel(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCancel",
@@ -457,7 +457,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::onDismiss(JObject arg0)
+	void SearchManager::onDismiss(JObject arg0) const
 	{
 		callMethod<void>(
 			"onDismiss",
@@ -465,7 +465,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::setOnCancelListener(JObject arg0)
+	void SearchManager::setOnCancelListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCancelListener",
@@ -473,7 +473,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::setOnDismissListener(JObject arg0)
+	void SearchManager::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -481,7 +481,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SearchManager::startSearch(JString arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4)
+	void SearchManager::startSearch(JString arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4) const
 	{
 		callMethod<void>(
 			"startSearch",
@@ -493,14 +493,14 @@ namespace android::app
 			arg4
 		);
 	}
-	void SearchManager::stopSearch()
+	void SearchManager::stopSearch() const
 	{
 		callMethod<void>(
 			"stopSearch",
 			"()V"
 		);
 	}
-	void SearchManager::triggerSearch(JString arg0, android::content::ComponentName arg1, android::os::Bundle arg2)
+	void SearchManager::triggerSearch(JString arg0, android::content::ComponentName arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"triggerSearch",

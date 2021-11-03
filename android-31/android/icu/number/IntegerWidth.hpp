@@ -17,7 +17,7 @@ namespace android::icu::number
 		
 		// Methods
 		static android::icu::number::IntegerWidth zeroFillTo(jint arg0);
-		android::icu::number::IntegerWidth truncateAt(jint arg0);
+		android::icu::number::IntegerWidth truncateAt(jint arg0) const;
 	};
 } // namespace android::icu::number
 

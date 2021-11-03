@@ -27,11 +27,11 @@ namespace android::telephony::ims
 		// Constructors
 		
 		// Methods
-		void getRegistrationState(JObject arg0, JObject arg1);
-		void getRegistrationTransportType(JObject arg0, JObject arg1);
-		android::telephony::ims::RcsUceAdapter getUceAdapter();
-		void registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1);
-		void unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0);
+		void getRegistrationState(JObject arg0, JObject arg1) const;
+		void getRegistrationTransportType(JObject arg0, JObject arg1) const;
+		android::telephony::ims::RcsUceAdapter getUceAdapter() const;
+		void registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1) const;
+		void unregisterImsRegistrationCallback(android::telephony::ims::RegistrationManager_RegistrationCallback arg0) const;
 	};
 } // namespace android::telephony::ims
 

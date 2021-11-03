@@ -70,14 +70,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	JObject MediaRoute2ProviderService::getAllSessionInfo()
+	JObject MediaRoute2ProviderService::getAllSessionInfo() const
 	{
 		return callObjectMethod(
 			"getAllSessionInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	android::media::RoutingSessionInfo MediaRoute2ProviderService::getSessionInfo(JString arg0)
+	android::media::RoutingSessionInfo MediaRoute2ProviderService::getSessionInfo(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSessionInfo",
@@ -85,7 +85,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRoute2ProviderService::notifyRequestFailed(jlong arg0, jint arg1)
+	void MediaRoute2ProviderService::notifyRequestFailed(jlong arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"notifyRequestFailed",
@@ -94,7 +94,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRoute2ProviderService::notifyRoutes(JObject arg0)
+	void MediaRoute2ProviderService::notifyRoutes(JObject arg0) const
 	{
 		callMethod<void>(
 			"notifyRoutes",
@@ -102,7 +102,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRoute2ProviderService::notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1)
+	void MediaRoute2ProviderService::notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1) const
 	{
 		callMethod<void>(
 			"notifySessionCreated",
@@ -111,7 +111,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRoute2ProviderService::notifySessionReleased(JString arg0)
+	void MediaRoute2ProviderService::notifySessionReleased(JString arg0) const
 	{
 		callMethod<void>(
 			"notifySessionReleased",
@@ -119,7 +119,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRoute2ProviderService::notifySessionUpdated(android::media::RoutingSessionInfo arg0)
+	void MediaRoute2ProviderService::notifySessionUpdated(android::media::RoutingSessionInfo arg0) const
 	{
 		callMethod<void>(
 			"notifySessionUpdated",
@@ -127,7 +127,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JObject MediaRoute2ProviderService::onBind(android::content::Intent arg0)
+	JObject MediaRoute2ProviderService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -135,7 +135,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRoute2ProviderService::onCreateSession(jlong arg0, JString arg1, JString arg2, android::os::Bundle arg3)
+	void MediaRoute2ProviderService::onCreateSession(jlong arg0, JString arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"onCreateSession",
@@ -146,7 +146,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	void MediaRoute2ProviderService::onDeselectRoute(jlong arg0, JString arg1, JString arg2)
+	void MediaRoute2ProviderService::onDeselectRoute(jlong arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onDeselectRoute",
@@ -156,7 +156,7 @@ namespace android::media
 			arg2.object<jstring>()
 		);
 	}
-	void MediaRoute2ProviderService::onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0)
+	void MediaRoute2ProviderService::onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0) const
 	{
 		callMethod<void>(
 			"onDiscoveryPreferenceChanged",
@@ -164,7 +164,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRoute2ProviderService::onReleaseSession(jlong arg0, JString arg1)
+	void MediaRoute2ProviderService::onReleaseSession(jlong arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onReleaseSession",
@@ -173,7 +173,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	void MediaRoute2ProviderService::onSelectRoute(jlong arg0, JString arg1, JString arg2)
+	void MediaRoute2ProviderService::onSelectRoute(jlong arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onSelectRoute",
@@ -183,7 +183,7 @@ namespace android::media
 			arg2.object<jstring>()
 		);
 	}
-	void MediaRoute2ProviderService::onSetRouteVolume(jlong arg0, JString arg1, jint arg2)
+	void MediaRoute2ProviderService::onSetRouteVolume(jlong arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onSetRouteVolume",
@@ -193,7 +193,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaRoute2ProviderService::onSetSessionVolume(jlong arg0, JString arg1, jint arg2)
+	void MediaRoute2ProviderService::onSetSessionVolume(jlong arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onSetSessionVolume",
@@ -203,7 +203,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaRoute2ProviderService::onTransferToRoute(jlong arg0, JString arg1, JString arg2)
+	void MediaRoute2ProviderService::onTransferToRoute(jlong arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onTransferToRoute",

@@ -183,21 +183,21 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	android::service::notification::Condition Condition::copy()
+	android::service::notification::Condition Condition::copy() const
 	{
 		return callObjectMethod(
 			"copy",
 			"()Landroid/service/notification/Condition;"
 		);
 	}
-	jint Condition::describeContents()
+	jint Condition::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Condition::equals(JObject arg0)
+	jboolean Condition::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -205,21 +205,21 @@ namespace android::service::notification
 			arg0.object<jobject>()
 		);
 	}
-	jint Condition::hashCode()
+	jint Condition::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Condition::toString()
+	JString Condition::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Condition::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Condition::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

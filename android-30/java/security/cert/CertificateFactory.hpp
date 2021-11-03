@@ -45,16 +45,16 @@ namespace java::security::cert
 		static java::security::cert::CertificateFactory getInstance(JString arg0);
 		static java::security::cert::CertificateFactory getInstance(JString arg0, JString arg1);
 		static java::security::cert::CertificateFactory getInstance(JString arg0, java::security::Provider arg1);
-		java::security::cert::CRL generateCRL(java::io::InputStream arg0);
-		JObject generateCRLs(java::io::InputStream arg0);
-		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0);
-		java::security::cert::CertPath generateCertPath(JObject arg0);
-		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0, JString arg1);
-		java::security::cert::Certificate generateCertificate(java::io::InputStream arg0);
-		JObject generateCertificates(java::io::InputStream arg0);
-		JObject getCertPathEncodings();
-		java::security::Provider getProvider();
-		JString getType();
+		java::security::cert::CRL generateCRL(java::io::InputStream arg0) const;
+		JObject generateCRLs(java::io::InputStream arg0) const;
+		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0) const;
+		java::security::cert::CertPath generateCertPath(JObject arg0) const;
+		java::security::cert::CertPath generateCertPath(java::io::InputStream arg0, JString arg1) const;
+		java::security::cert::Certificate generateCertificate(java::io::InputStream arg0) const;
+		JObject generateCertificates(java::io::InputStream arg0) const;
+		JObject getCertPathEncodings() const;
+		java::security::Provider getProvider() const;
+		JString getType() const;
 	};
 } // namespace java::security::cert
 

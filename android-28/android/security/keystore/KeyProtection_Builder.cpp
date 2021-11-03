@@ -19,14 +19,14 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	android::security::keystore::KeyProtection KeyProtection_Builder::build()
+	android::security::keystore::KeyProtection KeyProtection_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/keystore/KeyProtection;"
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setBlockModes(JArray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setBlockModes(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setBlockModes",
@@ -34,7 +34,7 @@ namespace android::security::keystore
 			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setDigests(JArray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setDigests(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setDigests",
@@ -42,7 +42,7 @@ namespace android::security::keystore
 			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setEncryptionPaddings(JArray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setEncryptionPaddings(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setEncryptionPaddings",
@@ -50,7 +50,7 @@ namespace android::security::keystore
 			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setInvalidatedByBiometricEnrollment",
@@ -58,7 +58,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityEnd(java::util::Date arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityEnd(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setKeyValidityEnd",
@@ -66,7 +66,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityForConsumptionEnd(java::util::Date arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityForConsumptionEnd(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setKeyValidityForConsumptionEnd",
@@ -74,7 +74,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityForOriginationEnd(java::util::Date arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityForOriginationEnd(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setKeyValidityForOriginationEnd",
@@ -82,7 +82,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityStart(java::util::Date arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setKeyValidityStart(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"setKeyValidityStart",
@@ -90,7 +90,7 @@ namespace android::security::keystore
 			arg0.object()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setRandomizedEncryptionRequired(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setRandomizedEncryptionRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRandomizedEncryptionRequired",
@@ -98,7 +98,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setSignaturePaddings(JArray arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setSignaturePaddings(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setSignaturePaddings",
@@ -106,7 +106,7 @@ namespace android::security::keystore
 			arg0.object<jarray>()
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUnlockedDeviceRequired(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUnlockedDeviceRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUnlockedDeviceRequired",
@@ -114,7 +114,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationRequired(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUserAuthenticationRequired",
@@ -122,7 +122,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUserAuthenticationValidWhileOnBody",
@@ -130,7 +130,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationValidityDurationSeconds(jint arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserAuthenticationValidityDurationSeconds(jint arg0) const
 	{
 		return callObjectMethod(
 			"setUserAuthenticationValidityDurationSeconds",
@@ -138,7 +138,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserConfirmationRequired(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserConfirmationRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUserConfirmationRequired",
@@ -146,7 +146,7 @@ namespace android::security::keystore
 			arg0
 		);
 	}
-	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserPresenceRequired(jboolean arg0)
+	android::security::keystore::KeyProtection_Builder KeyProtection_Builder::setUserPresenceRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUserPresenceRequired",

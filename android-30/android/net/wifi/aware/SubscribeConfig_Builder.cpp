@@ -18,14 +18,14 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	android::net::wifi::aware::SubscribeConfig SubscribeConfig_Builder::build()
+	android::net::wifi::aware::SubscribeConfig SubscribeConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/aware/SubscribeConfig;"
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMatchFilter(JObject arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMatchFilter(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setMatchFilter",
@@ -33,7 +33,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMaxDistanceMm(jint arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMaxDistanceMm(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxDistanceMm",
@@ -41,7 +41,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMinDistanceMm(jint arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMinDistanceMm(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMinDistanceMm",
@@ -49,7 +49,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceName(JString arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setServiceName",
@@ -57,7 +57,7 @@ namespace android::net::wifi::aware
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceSpecificInfo(JByteArray arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setServiceSpecificInfo(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setServiceSpecificInfo",
@@ -65,7 +65,7 @@ namespace android::net::wifi::aware
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setSubscribeType(jint arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setSubscribeType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSubscribeType",
@@ -73,7 +73,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setTerminateNotificationEnabled(jboolean arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setTerminateNotificationEnabled(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setTerminateNotificationEnabled",
@@ -81,7 +81,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setTtlSec(jint arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setTtlSec(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTtlSec",

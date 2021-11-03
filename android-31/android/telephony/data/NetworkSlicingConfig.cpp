@@ -26,14 +26,14 @@ namespace android::telephony::data
 		) {}
 	
 	// Methods
-	jint NetworkSlicingConfig::describeContents()
+	jint NetworkSlicingConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkSlicingConfig::equals(JObject arg0)
+	jboolean NetworkSlicingConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,35 +41,35 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	JObject NetworkSlicingConfig::getSliceInfo()
+	JObject NetworkSlicingConfig::getSliceInfo() const
 	{
 		return callObjectMethod(
 			"getSliceInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject NetworkSlicingConfig::getUrspRules()
+	JObject NetworkSlicingConfig::getUrspRules() const
 	{
 		return callObjectMethod(
 			"getUrspRules",
 			"()Ljava/util/List;"
 		);
 	}
-	jint NetworkSlicingConfig::hashCode()
+	jint NetworkSlicingConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NetworkSlicingConfig::toString()
+	JString NetworkSlicingConfig::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkSlicingConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkSlicingConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

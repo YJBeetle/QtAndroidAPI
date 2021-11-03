@@ -266,28 +266,28 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject BreakIterator::clone()
+	JObject BreakIterator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint BreakIterator::current()
+	jint BreakIterator::current() const
 	{
 		return callMethod<jint>(
 			"current",
 			"()I"
 		);
 	}
-	jint BreakIterator::first()
+	jint BreakIterator::first() const
 	{
 		return callMethod<jint>(
 			"first",
 			"()I"
 		);
 	}
-	jint BreakIterator::following(jint arg0)
+	jint BreakIterator::following(jint arg0) const
 	{
 		return callMethod<jint>(
 			"following",
@@ -295,14 +295,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint BreakIterator::getRuleStatus()
+	jint BreakIterator::getRuleStatus() const
 	{
 		return callMethod<jint>(
 			"getRuleStatus",
 			"()I"
 		);
 	}
-	jint BreakIterator::getRuleStatusVec(JIntArray arg0)
+	jint BreakIterator::getRuleStatusVec(JIntArray arg0) const
 	{
 		return callMethod<jint>(
 			"getRuleStatusVec",
@@ -310,14 +310,14 @@ namespace android::icu::text
 			arg0.object<jintArray>()
 		);
 	}
-	JObject BreakIterator::getText()
+	JObject BreakIterator::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/text/CharacterIterator;"
 		);
 	}
-	jboolean BreakIterator::isBoundary(jint arg0)
+	jboolean BreakIterator::isBoundary(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBoundary",
@@ -325,21 +325,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint BreakIterator::last()
+	jint BreakIterator::last() const
 	{
 		return callMethod<jint>(
 			"last",
 			"()I"
 		);
 	}
-	jint BreakIterator::next()
+	jint BreakIterator::next() const
 	{
 		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
-	jint BreakIterator::next(jint arg0)
+	jint BreakIterator::next(jint arg0) const
 	{
 		return callMethod<jint>(
 			"next",
@@ -347,7 +347,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint BreakIterator::preceding(jint arg0)
+	jint BreakIterator::preceding(jint arg0) const
 	{
 		return callMethod<jint>(
 			"preceding",
@@ -355,14 +355,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint BreakIterator::previous()
+	jint BreakIterator::previous() const
 	{
 		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
-	void BreakIterator::setText(JString arg0)
+	void BreakIterator::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -370,7 +370,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void BreakIterator::setText(JObject arg0)
+	void BreakIterator::setText(JObject arg0) const
 	{
 		callMethod<void>(
 			"setText",

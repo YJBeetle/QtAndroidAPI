@@ -18,8 +18,8 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		JString getDescription();
-		jint getErrorCode();
+		JString getDescription() const;
+		jint getErrorCode() const;
 	};
 } // namespace android::webkit
 

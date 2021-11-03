@@ -55,14 +55,14 @@ namespace android::view::inputmethod
 	// Constructors
 	
 	// Methods
-	jint InlineSuggestionInfo::describeContents()
+	jint InlineSuggestionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionInfo::equals(JObject arg0)
+	jboolean InlineSuggestionInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -70,56 +70,56 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	JArray InlineSuggestionInfo::getAutofillHints()
+	JArray InlineSuggestionInfo::getAutofillHints() const
 	{
 		return callObjectMethod(
 			"getAutofillHints",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec()
+	android::widget::inline::InlinePresentationSpec InlineSuggestionInfo::getInlinePresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlinePresentationSpec",
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	JString InlineSuggestionInfo::getSource()
+	JString InlineSuggestionInfo::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InlineSuggestionInfo::getType()
+	JString InlineSuggestionInfo::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InlineSuggestionInfo::hashCode()
+	jint InlineSuggestionInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionInfo::isPinned()
+	jboolean InlineSuggestionInfo::isPinned() const
 	{
 		return callMethod<jboolean>(
 			"isPinned",
 			"()Z"
 		);
 	}
-	JString InlineSuggestionInfo::toString()
+	JString InlineSuggestionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlineSuggestionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlineSuggestionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

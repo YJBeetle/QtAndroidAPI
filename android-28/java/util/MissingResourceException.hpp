@@ -20,8 +20,8 @@ namespace java::util
 		MissingResourceException(JString arg0, JString arg1, JString arg2);
 		
 		// Methods
-		JString getClassName();
-		JString getKey();
+		JString getClassName() const;
+		JString getKey() const;
 	};
 } // namespace java::util
 

@@ -37,13 +37,13 @@ namespace android::widget
 		RelativeLayout_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods
-		void addRule(jint arg0);
-		void addRule(jint arg0, jint arg1);
-		JString debug(JString arg0);
-		jint getRule(jint arg0);
-		JIntArray getRules();
-		void removeRule(jint arg0);
-		void resolveLayoutDirection(jint arg0);
+		void addRule(jint arg0) const;
+		void addRule(jint arg0, jint arg1) const;
+		JString debug(JString arg0) const;
+		jint getRule(jint arg0) const;
+		JIntArray getRules() const;
+		void removeRule(jint arg0) const;
+		void resolveLayoutDirection(jint arg0) const;
 	};
 } // namespace android::widget
 

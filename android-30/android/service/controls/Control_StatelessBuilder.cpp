@@ -29,14 +29,14 @@ namespace android::service::controls
 		) {}
 	
 	// Methods
-	android::service::controls::Control Control_StatelessBuilder::build()
+	android::service::controls::Control Control_StatelessBuilder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/controls/Control;"
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setAppIntent(android::app::PendingIntent arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setAppIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setAppIntent",
@@ -44,7 +44,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setControlId(JString arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setControlId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setControlId",
@@ -52,7 +52,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setCustomColor(android::content::res::ColorStateList arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setCustomColor(android::content::res::ColorStateList arg0) const
 	{
 		return callObjectMethod(
 			"setCustomColor",
@@ -60,7 +60,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setCustomIcon(android::graphics::drawable::Icon arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setCustomIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setCustomIcon",
@@ -68,7 +68,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setDeviceType(jint arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setDeviceType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceType",
@@ -76,7 +76,7 @@ namespace android::service::controls
 			arg0
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setStructure(JString arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setStructure(JString arg0) const
 	{
 		return callObjectMethod(
 			"setStructure",
@@ -84,7 +84,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setSubtitle(JString arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setSubtitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -92,7 +92,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setTitle(JString arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -100,7 +100,7 @@ namespace android::service::controls
 			arg0.object<jstring>()
 		);
 	}
-	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setZone(JString arg0)
+	android::service::controls::Control_StatelessBuilder Control_StatelessBuilder::setZone(JString arg0) const
 	{
 		return callObjectMethod(
 			"setZone",

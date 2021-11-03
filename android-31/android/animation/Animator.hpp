@@ -24,31 +24,31 @@ namespace android::animation
 		Animator();
 		
 		// Methods
-		void addListener(JObject arg0);
-		void addPauseListener(JObject arg0);
-		void cancel();
-		android::animation::Animator clone();
-		void end();
-		jlong getDuration();
-		JObject getInterpolator();
-		java::util::ArrayList getListeners();
-		jlong getStartDelay();
-		jlong getTotalDuration();
-		jboolean isPaused();
-		jboolean isRunning();
-		jboolean isStarted();
-		void pause();
-		void removeAllListeners();
-		void removeListener(JObject arg0);
-		void removePauseListener(JObject arg0);
-		void resume();
-		android::animation::Animator setDuration(jlong arg0);
-		void setInterpolator(JObject arg0);
-		void setStartDelay(jlong arg0);
-		void setTarget(JObject arg0);
-		void setupEndValues();
-		void setupStartValues();
-		void start();
+		void addListener(JObject arg0) const;
+		void addPauseListener(JObject arg0) const;
+		void cancel() const;
+		android::animation::Animator clone() const;
+		void end() const;
+		jlong getDuration() const;
+		JObject getInterpolator() const;
+		java::util::ArrayList getListeners() const;
+		jlong getStartDelay() const;
+		jlong getTotalDuration() const;
+		jboolean isPaused() const;
+		jboolean isRunning() const;
+		jboolean isStarted() const;
+		void pause() const;
+		void removeAllListeners() const;
+		void removeListener(JObject arg0) const;
+		void removePauseListener(JObject arg0) const;
+		void resume() const;
+		android::animation::Animator setDuration(jlong arg0) const;
+		void setInterpolator(JObject arg0) const;
+		void setStartDelay(jlong arg0) const;
+		void setTarget(JObject arg0) const;
+		void setupEndValues() const;
+		void setupStartValues() const;
+		void start() const;
 	};
 } // namespace android::animation
 

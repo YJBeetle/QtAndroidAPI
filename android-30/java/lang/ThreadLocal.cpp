@@ -27,21 +27,21 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	JObject ThreadLocal::get()
+	JObject ThreadLocal::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void ThreadLocal::remove()
+	void ThreadLocal::remove() const
 	{
 		callMethod<void>(
 			"remove",
 			"()V"
 		);
 	}
-	void ThreadLocal::set(JObject arg0)
+	void ThreadLocal::set(JObject arg0) const
 	{
 		callMethod<void>(
 			"set",

@@ -22,7 +22,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	jboolean X509CRLEntry::equals(JObject arg0)
+	jboolean X509CRLEntry::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -30,56 +30,56 @@ namespace java::security::cert
 			arg0.object<jobject>()
 		);
 	}
-	javax::security::auth::x500::X500Principal X509CRLEntry::getCertificateIssuer()
+	javax::security::auth::x500::X500Principal X509CRLEntry::getCertificateIssuer() const
 	{
 		return callObjectMethod(
 			"getCertificateIssuer",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JByteArray X509CRLEntry::getEncoded()
+	JByteArray X509CRLEntry::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	java::util::Date X509CRLEntry::getRevocationDate()
+	java::util::Date X509CRLEntry::getRevocationDate() const
 	{
 		return callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::security::cert::CRLReason X509CRLEntry::getRevocationReason()
+	java::security::cert::CRLReason X509CRLEntry::getRevocationReason() const
 	{
 		return callObjectMethod(
 			"getRevocationReason",
 			"()Ljava/security/cert/CRLReason;"
 		);
 	}
-	java::math::BigInteger X509CRLEntry::getSerialNumber()
+	java::math::BigInteger X509CRLEntry::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jboolean X509CRLEntry::hasExtensions()
+	jboolean X509CRLEntry::hasExtensions() const
 	{
 		return callMethod<jboolean>(
 			"hasExtensions",
 			"()Z"
 		);
 	}
-	jint X509CRLEntry::hashCode()
+	jint X509CRLEntry::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString X509CRLEntry::toString()
+	JString X509CRLEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",

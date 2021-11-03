@@ -21,27 +21,27 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		void addOnDrawListener(JObject arg0);
-		void addOnGlobalFocusChangeListener(JObject arg0);
-		void addOnGlobalLayoutListener(JObject arg0);
-		void addOnPreDrawListener(JObject arg0);
-		void addOnScrollChangedListener(JObject arg0);
-		void addOnTouchModeChangeListener(JObject arg0);
-		void addOnWindowAttachListener(JObject arg0);
-		void addOnWindowFocusChangeListener(JObject arg0);
-		void dispatchOnDraw();
-		void dispatchOnGlobalLayout();
-		jboolean dispatchOnPreDraw();
-		jboolean isAlive();
-		void removeGlobalOnLayoutListener(JObject arg0);
-		void removeOnDrawListener(JObject arg0);
-		void removeOnGlobalFocusChangeListener(JObject arg0);
-		void removeOnGlobalLayoutListener(JObject arg0);
-		void removeOnPreDrawListener(JObject arg0);
-		void removeOnScrollChangedListener(JObject arg0);
-		void removeOnTouchModeChangeListener(JObject arg0);
-		void removeOnWindowAttachListener(JObject arg0);
-		void removeOnWindowFocusChangeListener(JObject arg0);
+		void addOnDrawListener(JObject arg0) const;
+		void addOnGlobalFocusChangeListener(JObject arg0) const;
+		void addOnGlobalLayoutListener(JObject arg0) const;
+		void addOnPreDrawListener(JObject arg0) const;
+		void addOnScrollChangedListener(JObject arg0) const;
+		void addOnTouchModeChangeListener(JObject arg0) const;
+		void addOnWindowAttachListener(JObject arg0) const;
+		void addOnWindowFocusChangeListener(JObject arg0) const;
+		void dispatchOnDraw() const;
+		void dispatchOnGlobalLayout() const;
+		jboolean dispatchOnPreDraw() const;
+		jboolean isAlive() const;
+		void removeGlobalOnLayoutListener(JObject arg0) const;
+		void removeOnDrawListener(JObject arg0) const;
+		void removeOnGlobalFocusChangeListener(JObject arg0) const;
+		void removeOnGlobalLayoutListener(JObject arg0) const;
+		void removeOnPreDrawListener(JObject arg0) const;
+		void removeOnScrollChangedListener(JObject arg0) const;
+		void removeOnTouchModeChangeListener(JObject arg0) const;
+		void removeOnWindowAttachListener(JObject arg0) const;
+		void removeOnWindowFocusChangeListener(JObject arg0) const;
 	};
 } // namespace android::view
 

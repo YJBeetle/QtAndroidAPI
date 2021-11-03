@@ -28,12 +28,12 @@ namespace android::telecom
 		GatewayInfo(JString arg0, android::net::Uri arg1, android::net::Uri arg2);
 		
 		// Methods
-		jint describeContents();
-		android::net::Uri getGatewayAddress();
-		JString getGatewayProviderPackageName();
-		android::net::Uri getOriginalAddress();
-		jboolean isEmpty();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::net::Uri getGatewayAddress() const;
+		JString getGatewayProviderPackageName() const;
+		android::net::Uri getOriginalAddress() const;
+		jboolean isEmpty() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

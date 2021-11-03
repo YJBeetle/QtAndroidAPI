@@ -42,12 +42,12 @@ namespace android::service::controls
 		
 		// Methods
 		static void requestAddControl(android::content::Context arg0, android::content::ComponentName arg1, android::service::controls::Control arg2);
-		JObject createPublisherFor(JObject arg0);
-		JObject createPublisherForAllAvailable();
-		JObject createPublisherForSuggested();
-		JObject onBind(android::content::Intent arg0);
-		jboolean onUnbind(android::content::Intent arg0);
-		void performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2);
+		JObject createPublisherFor(JObject arg0) const;
+		JObject createPublisherForAllAvailable() const;
+		JObject createPublisherForSuggested() const;
+		JObject onBind(android::content::Intent arg0) const;
+		jboolean onUnbind(android::content::Intent arg0) const;
+		void performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2) const;
 	};
 } // namespace android::service::controls
 

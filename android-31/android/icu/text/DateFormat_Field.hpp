@@ -46,7 +46,7 @@ namespace android::icu::text
 		
 		// Methods
 		static android::icu::text::DateFormat_Field ofCalendarField(jint arg0);
-		jint getCalendarField();
+		jint getCalendarField() const;
 	};
 } // namespace android::icu::text
 

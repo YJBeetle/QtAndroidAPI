@@ -17,9 +17,9 @@ namespace android::icu::text
 		IDNA_Info();
 		
 		// Methods
-		JObject getErrors();
-		jboolean hasErrors();
-		jboolean isTransitionalDifferent();
+		JObject getErrors() const;
+		jboolean hasErrors() const;
+		jboolean isTransitionalDifferent() const;
 	};
 } // namespace android::icu::text
 

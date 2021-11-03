@@ -20,7 +20,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	jint CollationKey::compareTo(android::icu::text::CollationKey arg0)
+	jint CollationKey::compareTo(android::icu::text::CollationKey arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -28,7 +28,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jint CollationKey::compareTo(JObject arg0)
+	jint CollationKey::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -36,7 +36,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jboolean CollationKey::equals(android::icu::text::CollationKey arg0)
+	jboolean CollationKey::equals(android::icu::text::CollationKey arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,7 +44,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean CollationKey::equals(JObject arg0)
+	jboolean CollationKey::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -52,7 +52,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::text::CollationKey CollationKey::getBound(jint arg0, jint arg1)
+	android::icu::text::CollationKey CollationKey::getBound(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getBound",
@@ -61,21 +61,21 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JString CollationKey::getSourceString()
+	JString CollationKey::getSourceString() const
 	{
 		return callObjectMethod(
 			"getSourceString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CollationKey::hashCode()
+	jint CollationKey::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::icu::text::CollationKey CollationKey::merge(android::icu::text::CollationKey arg0)
+	android::icu::text::CollationKey CollationKey::merge(android::icu::text::CollationKey arg0) const
 	{
 		return callObjectMethod(
 			"merge",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JByteArray CollationKey::toByteArray()
+	JByteArray CollationKey::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",

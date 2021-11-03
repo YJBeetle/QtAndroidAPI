@@ -22,7 +22,7 @@ namespace android::renderscript
 	// Constructors
 	
 	// Methods
-	void Script::bindAllocation(android::renderscript::Allocation arg0, jint arg1)
+	void Script::bindAllocation(android::renderscript::Allocation arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"bindAllocation",
@@ -31,7 +31,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	jboolean Script::getVarB(jint arg0)
+	jboolean Script::getVarB(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"getVarB",
@@ -39,7 +39,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jdouble Script::getVarD(jint arg0)
+	jdouble Script::getVarD(jint arg0) const
 	{
 		return callMethod<jdouble>(
 			"getVarD",
@@ -47,7 +47,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jfloat Script::getVarF(jint arg0)
+	jfloat Script::getVarF(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getVarF",
@@ -55,7 +55,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jint Script::getVarI(jint arg0)
+	jint Script::getVarI(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getVarI",
@@ -63,7 +63,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	jlong Script::getVarJ(jint arg0)
+	jlong Script::getVarJ(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getVarJ",
@@ -71,7 +71,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Script::getVarV(jint arg0, android::renderscript::FieldPacker arg1)
+	void Script::getVarV(jint arg0, android::renderscript::FieldPacker arg1) const
 	{
 		callMethod<void>(
 			"getVarV",
@@ -80,7 +80,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Script::setTimeZone(JString arg0)
+	void Script::setTimeZone(JString arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",
@@ -88,7 +88,7 @@ namespace android::renderscript
 			arg0.object<jstring>()
 		);
 	}
-	void Script::setVar(jint arg0, android::renderscript::BaseObj arg1)
+	void Script::setVar(jint arg0, android::renderscript::BaseObj arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -97,7 +97,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1)
+	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -106,7 +106,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Script::setVar(jint arg0, jboolean arg1)
+	void Script::setVar(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -115,7 +115,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, jdouble arg1)
+	void Script::setVar(jint arg0, jdouble arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -124,7 +124,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, jfloat arg1)
+	void Script::setVar(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -133,7 +133,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, jint arg1)
+	void Script::setVar(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -142,7 +142,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, jlong arg1)
+	void Script::setVar(jint arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setVar",
@@ -151,7 +151,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, JIntArray arg3)
+	void Script::setVar(jint arg0, android::renderscript::FieldPacker arg1, android::renderscript::Element arg2, JIntArray arg3) const
 	{
 		callMethod<void>(
 			"setVar",

@@ -23,7 +23,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JObject KeyStoreBuilderParameters::getParameters()
+	JObject KeyStoreBuilderParameters::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",

@@ -28,8 +28,8 @@ namespace android::service::controls::templates
 		// Methods
 		static android::service::controls::templates::ControlTemplate getErrorTemplate();
 		static android::service::controls::templates::ControlTemplate getNoTemplateObject();
-		JString getTemplateId();
-		jint getTemplateType();
+		JString getTemplateId() const;
+		jint getTemplateType() const;
 	};
 } // namespace android::service::controls::templates
 

@@ -18,11 +18,11 @@ namespace android::view
 		FrameStats();
 		
 		// Methods
-		jlong getEndTimeNano();
-		jint getFrameCount();
-		jlong getFramePresentedTimeNano(jint arg0);
-		jlong getRefreshPeriodNano();
-		jlong getStartTimeNano();
+		jlong getEndTimeNano() const;
+		jint getFrameCount() const;
+		jlong getFramePresentedTimeNano(jint arg0) const;
+		jlong getRefreshPeriodNano() const;
+		jlong getStartTimeNano() const;
 	};
 } // namespace android::view
 

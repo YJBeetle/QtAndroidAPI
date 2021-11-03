@@ -17,7 +17,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(JString arg0, JString arg1)
+	android::view::ViewStructure_HtmlInfo_Builder ViewStructure_HtmlInfo_Builder::addAttribute(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"addAttribute",
@@ -26,7 +26,7 @@ namespace android::view
 			arg1.object<jstring>()
 		);
 	}
-	android::view::ViewStructure_HtmlInfo ViewStructure_HtmlInfo_Builder::build()
+	android::view::ViewStructure_HtmlInfo ViewStructure_HtmlInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

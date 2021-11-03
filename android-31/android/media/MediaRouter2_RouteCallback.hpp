@@ -17,9 +17,9 @@ namespace android::media
 		MediaRouter2_RouteCallback();
 		
 		// Methods
-		void onRoutesAdded(JObject arg0);
-		void onRoutesChanged(JObject arg0);
-		void onRoutesRemoved(JObject arg0);
+		void onRoutesAdded(JObject arg0) const;
+		void onRoutesChanged(JObject arg0) const;
+		void onRoutesRemoved(JObject arg0) const;
 	};
 } // namespace android::media
 

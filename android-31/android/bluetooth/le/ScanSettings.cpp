@@ -110,56 +110,56 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint ScanSettings::describeContents()
+	jint ScanSettings::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ScanSettings::getCallbackType()
+	jint ScanSettings::getCallbackType() const
 	{
 		return callMethod<jint>(
 			"getCallbackType",
 			"()I"
 		);
 	}
-	jboolean ScanSettings::getLegacy()
+	jboolean ScanSettings::getLegacy() const
 	{
 		return callMethod<jboolean>(
 			"getLegacy",
 			"()Z"
 		);
 	}
-	jint ScanSettings::getPhy()
+	jint ScanSettings::getPhy() const
 	{
 		return callMethod<jint>(
 			"getPhy",
 			"()I"
 		);
 	}
-	jlong ScanSettings::getReportDelayMillis()
+	jlong ScanSettings::getReportDelayMillis() const
 	{
 		return callMethod<jlong>(
 			"getReportDelayMillis",
 			"()J"
 		);
 	}
-	jint ScanSettings::getScanMode()
+	jint ScanSettings::getScanMode() const
 	{
 		return callMethod<jint>(
 			"getScanMode",
 			"()I"
 		);
 	}
-	jint ScanSettings::getScanResultType()
+	jint ScanSettings::getScanResultType() const
 	{
 		return callMethod<jint>(
 			"getScanResultType",
 			"()I"
 		);
 	}
-	void ScanSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScanSettings::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

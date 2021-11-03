@@ -30,10 +30,10 @@ namespace android::app
 		PictureInPictureParams_Builder();
 		
 		// Methods
-		android::app::PictureInPictureParams build();
-		android::app::PictureInPictureParams_Builder setActions(JObject arg0);
-		android::app::PictureInPictureParams_Builder setAspectRatio(android::util::Rational arg0);
-		android::app::PictureInPictureParams_Builder setSourceRectHint(android::graphics::Rect arg0);
+		android::app::PictureInPictureParams build() const;
+		android::app::PictureInPictureParams_Builder setActions(JObject arg0) const;
+		android::app::PictureInPictureParams_Builder setAspectRatio(android::util::Rational arg0) const;
+		android::app::PictureInPictureParams_Builder setSourceRectHint(android::graphics::Rect arg0) const;
 	};
 } // namespace android::app
 

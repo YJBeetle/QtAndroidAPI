@@ -82,7 +82,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	JString EnvironmentalReverb_Settings::toString()
+	JString EnvironmentalReverb_Settings::toString() const
 	{
 		return callObjectMethod(
 			"toString",

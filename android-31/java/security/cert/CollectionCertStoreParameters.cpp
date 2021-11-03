@@ -23,21 +23,21 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	JObject CollectionCertStoreParameters::clone()
+	JObject CollectionCertStoreParameters::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject CollectionCertStoreParameters::getCollection()
+	JObject CollectionCertStoreParameters::getCollection() const
 	{
 		return callObjectMethod(
 			"getCollection",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JString CollectionCertStoreParameters::toString()
+	JString CollectionCertStoreParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -31,10 +31,10 @@ namespace android::content::pm
 		Checksum(jint arg0, JByteArray arg1);
 		
 		// Methods
-		jint describeContents();
-		jint getType();
-		JByteArray getValue();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getType() const;
+		JByteArray getValue() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

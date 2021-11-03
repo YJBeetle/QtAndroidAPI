@@ -41,22 +41,22 @@ namespace android::os::storage
 		// Constructors
 		
 		// Methods
-		android::content::Intent createAccessIntent(JString arg0);
-		android::content::Intent createOpenDocumentTreeIntent();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getDescription(android::content::Context arg0);
-		java::io::File getDirectory();
-		JString getMediaStoreVolumeName();
-		JString getState();
-		java::util::UUID getStorageUuid();
-		JString getUuid();
-		jint hashCode();
-		jboolean isEmulated();
-		jboolean isPrimary();
-		jboolean isRemovable();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::content::Intent createAccessIntent(JString arg0) const;
+		android::content::Intent createOpenDocumentTreeIntent() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getDescription(android::content::Context arg0) const;
+		java::io::File getDirectory() const;
+		JString getMediaStoreVolumeName() const;
+		JString getState() const;
+		java::util::UUID getStorageUuid() const;
+		JString getUuid() const;
+		jint hashCode() const;
+		jboolean isEmulated() const;
+		jboolean isPrimary() const;
+		jboolean isRemovable() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os::storage
 

@@ -19,21 +19,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JClass IllegalFormatConversionException::getArgumentClass()
+	JClass IllegalFormatConversionException::getArgumentClass() const
 	{
 		return callObjectMethod(
 			"getArgumentClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jchar IllegalFormatConversionException::getConversion()
+	jchar IllegalFormatConversionException::getConversion() const
 	{
 		return callMethod<jchar>(
 			"getConversion",
 			"()C"
 		);
 	}
-	JString IllegalFormatConversionException::getMessage()
+	JString IllegalFormatConversionException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

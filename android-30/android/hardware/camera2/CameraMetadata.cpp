@@ -1543,7 +1543,7 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	JObject CameraMetadata::getKeys()
+	JObject CameraMetadata::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",

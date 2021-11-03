@@ -43,7 +43,7 @@ namespace android::service::chooser
 		) {}
 	
 	// Methods
-	JObject ChooserTargetService::onBind(android::content::Intent arg0)
+	JObject ChooserTargetService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -51,7 +51,7 @@ namespace android::service::chooser
 			arg0.object()
 		);
 	}
-	JObject ChooserTargetService::onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1)
+	JObject ChooserTargetService::onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1) const
 	{
 		return callObjectMethod(
 			"onGetChooserTargets",

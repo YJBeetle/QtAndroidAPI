@@ -29,13 +29,13 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		void enableAdvertising(jboolean arg0, jint arg1, jint arg2);
-		void setAdvertisingData(android::bluetooth::le::AdvertiseData arg0);
-		void setAdvertisingParameters(android::bluetooth::le::AdvertisingSetParameters arg0);
-		void setPeriodicAdvertisingData(android::bluetooth::le::AdvertiseData arg0);
-		void setPeriodicAdvertisingEnabled(jboolean arg0);
-		void setPeriodicAdvertisingParameters(android::bluetooth::le::PeriodicAdvertisingParameters arg0);
-		void setScanResponseData(android::bluetooth::le::AdvertiseData arg0);
+		void enableAdvertising(jboolean arg0, jint arg1, jint arg2) const;
+		void setAdvertisingData(android::bluetooth::le::AdvertiseData arg0) const;
+		void setAdvertisingParameters(android::bluetooth::le::AdvertisingSetParameters arg0) const;
+		void setPeriodicAdvertisingData(android::bluetooth::le::AdvertiseData arg0) const;
+		void setPeriodicAdvertisingEnabled(jboolean arg0) const;
+		void setPeriodicAdvertisingParameters(android::bluetooth::le::PeriodicAdvertisingParameters arg0) const;
+		void setScanResponseData(android::bluetooth::le::AdvertiseData arg0) const;
 	};
 } // namespace android::bluetooth::le
 

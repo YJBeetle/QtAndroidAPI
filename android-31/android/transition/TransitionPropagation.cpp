@@ -19,7 +19,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void TransitionPropagation::captureValues(android::transition::TransitionValues arg0)
+	void TransitionPropagation::captureValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureValues",
@@ -27,14 +27,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	JArray TransitionPropagation::getPropagationProperties()
+	JArray TransitionPropagation::getPropagationProperties() const
 	{
 		return callObjectMethod(
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jlong TransitionPropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	jlong TransitionPropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",

@@ -28,20 +28,20 @@ namespace android::net::nsd
 		NsdServiceInfo();
 		
 		// Methods
-		jint describeContents();
-		JObject getAttributes();
-		java::net::InetAddress getHost();
-		jint getPort();
-		JString getServiceName();
-		JString getServiceType();
-		void removeAttribute(JString arg0);
-		void setAttribute(JString arg0, JString arg1);
-		void setHost(java::net::InetAddress arg0);
-		void setPort(jint arg0);
-		void setServiceName(JString arg0);
-		void setServiceType(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getAttributes() const;
+		java::net::InetAddress getHost() const;
+		jint getPort() const;
+		JString getServiceName() const;
+		JString getServiceType() const;
+		void removeAttribute(JString arg0) const;
+		void setAttribute(JString arg0, JString arg1) const;
+		void setHost(java::net::InetAddress arg0) const;
+		void setPort(jint arg0) const;
+		void setServiceName(JString arg0) const;
+		void setServiceType(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::nsd
 

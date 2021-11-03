@@ -11,7 +11,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams_IkeAuthConfig::equals(JObject arg0)
+	jboolean IkeSessionParams_IkeAuthConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,7 +19,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint IkeSessionParams_IkeAuthConfig::hashCode()
+	jint IkeSessionParams_IkeAuthConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -51,20 +51,20 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		void close();
-		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0);
-		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0, JObject arg1);
-		void createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0);
-		void createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2);
-		void createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2);
-		void createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2);
-		android::hardware::camera2::CaptureRequest_Builder createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0);
-		void createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3);
-		void createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3);
-		jint getCameraAudioRestriction();
-		JString getId();
-		jboolean isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0);
-		void setCameraAudioRestriction(jint arg0);
+		void close() const;
+		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0) const;
+		android::hardware::camera2::CaptureRequest_Builder createCaptureRequest(jint arg0, JObject arg1) const;
+		void createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0) const;
+		void createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
+		void createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
+		void createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const;
+		android::hardware::camera2::CaptureRequest_Builder createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0) const;
+		void createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const;
+		void createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const;
+		jint getCameraAudioRestriction() const;
+		JString getId() const;
+		jboolean isSessionConfigurationSupported(android::hardware::camera2::params::SessionConfiguration arg0) const;
+		void setCameraAudioRestriction(jint arg0) const;
 	};
 } // namespace android::hardware::camera2
 

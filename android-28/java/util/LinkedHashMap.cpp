@@ -45,14 +45,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void LinkedHashMap::clear()
+	void LinkedHashMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean LinkedHashMap::containsValue(JObject arg0)
+	jboolean LinkedHashMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -60,14 +60,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject LinkedHashMap::entrySet()
+	JObject LinkedHashMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void LinkedHashMap::forEach(JObject arg0)
+	void LinkedHashMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -75,7 +75,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject LinkedHashMap::get(JObject arg0)
+	JObject LinkedHashMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -83,7 +83,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject LinkedHashMap::getOrDefault(JObject arg0, JObject arg1)
+	JObject LinkedHashMap::getOrDefault(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getOrDefault",
@@ -92,14 +92,14 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject LinkedHashMap::keySet()
+	JObject LinkedHashMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void LinkedHashMap::replaceAll(JObject arg0)
+	void LinkedHashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -107,7 +107,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject LinkedHashMap::values()
+	JObject LinkedHashMap::values() const
 	{
 		return callObjectMethod(
 			"values",

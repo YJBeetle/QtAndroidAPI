@@ -173,20 +173,20 @@ namespace android::app
 		Notification(jint arg0, JString arg1, jlong arg2);
 		
 		// Methods
-		android::app::Notification clone();
-		jint describeContents();
-		jint getBadgeIconType();
-		JString getChannelId();
-		JString getGroup();
-		jint getGroupAlertBehavior();
-		android::graphics::drawable::Icon getLargeIcon();
-		JString getSettingsText();
-		JString getShortcutId();
-		android::graphics::drawable::Icon getSmallIcon();
-		JString getSortKey();
-		jlong getTimeoutAfter();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::app::Notification clone() const;
+		jint describeContents() const;
+		jint getBadgeIconType() const;
+		JString getChannelId() const;
+		JString getGroup() const;
+		jint getGroupAlertBehavior() const;
+		android::graphics::drawable::Icon getLargeIcon() const;
+		JString getSettingsText() const;
+		JString getShortcutId() const;
+		android::graphics::drawable::Icon getSmallIcon() const;
+		JString getSortKey() const;
+		jlong getTimeoutAfter() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

@@ -724,21 +724,21 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint ToneGenerator::getAudioSessionId()
+	jint ToneGenerator::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	void ToneGenerator::release()
+	void ToneGenerator::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jboolean ToneGenerator::startTone(jint arg0)
+	jboolean ToneGenerator::startTone(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"startTone",
@@ -746,7 +746,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean ToneGenerator::startTone(jint arg0, jint arg1)
+	jboolean ToneGenerator::startTone(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"startTone",
@@ -755,7 +755,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void ToneGenerator::stopTone()
+	void ToneGenerator::stopTone() const
 	{
 		callMethod<void>(
 			"stopTone",

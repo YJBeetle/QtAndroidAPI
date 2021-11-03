@@ -21,35 +21,35 @@ namespace java::lang::ref
 			arg0.object<jobject>()
 		);
 	}
-	void Reference::clear()
+	void Reference::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean Reference::enqueue()
+	jboolean Reference::enqueue() const
 	{
 		return callMethod<jboolean>(
 			"enqueue",
 			"()Z"
 		);
 	}
-	JObject Reference::get()
+	JObject Reference::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Reference::isEnqueued()
+	jboolean Reference::isEnqueued() const
 	{
 		return callMethod<jboolean>(
 			"isEnqueued",
 			"()Z"
 		);
 	}
-	jboolean Reference::refersTo(JObject arg0)
+	jboolean Reference::refersTo(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"refersTo",

@@ -30,13 +30,13 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::util::SparseArray getTranslationResponseValues();
-		jint getTranslationStatus();
-		android::util::SparseArray getViewTranslationResponses();
-		jboolean isFinalResponse();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::util::SparseArray getTranslationResponseValues() const;
+		jint getTranslationStatus() const;
+		android::util::SparseArray getViewTranslationResponses() const;
+		jboolean isFinalResponse() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::translation
 

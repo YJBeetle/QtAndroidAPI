@@ -23,8 +23,8 @@ namespace java::lang::annotation
 		AnnotationTypeMismatchException(java::lang::reflect::Method arg0, JString arg1);
 		
 		// Methods
-		java::lang::reflect::Method element();
-		JString foundType();
+		java::lang::reflect::Method element() const;
+		JString foundType() const;
 	};
 } // namespace java::lang::annotation
 

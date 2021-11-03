@@ -34,7 +34,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void RippleDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void RippleDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -42,14 +42,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean RippleDrawable::canApplyTheme()
+	jboolean RippleDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void RippleDrawable::draw(android::graphics::Canvas arg0)
+	void RippleDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -57,28 +57,28 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState RippleDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState RippleDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::Rect RippleDrawable::getDirtyBounds()
+	android::graphics::Rect RippleDrawable::getDirtyBounds() const
 	{
 		return callObjectMethod(
 			"getDirtyBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::content::res::ColorStateList RippleDrawable::getEffectColor()
+	android::content::res::ColorStateList RippleDrawable::getEffectColor() const
 	{
 		return callObjectMethod(
 			"getEffectColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	void RippleDrawable::getHotspotBounds(android::graphics::Rect arg0)
+	void RippleDrawable::getHotspotBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHotspotBounds",
@@ -86,14 +86,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint RippleDrawable::getOpacity()
+	jint RippleDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void RippleDrawable::getOutline(android::graphics::Outline arg0)
+	void RippleDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -101,21 +101,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint RippleDrawable::getRadius()
+	jint RippleDrawable::getRadius() const
 	{
 		return callMethod<jint>(
 			"getRadius",
 			"()I"
 		);
 	}
-	jboolean RippleDrawable::hasFocusStateSpecified()
+	jboolean RippleDrawable::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	void RippleDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void RippleDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -126,42 +126,42 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	void RippleDrawable::invalidateSelf()
+	void RippleDrawable::invalidateSelf() const
 	{
 		callMethod<void>(
 			"invalidateSelf",
 			"()V"
 		);
 	}
-	jboolean RippleDrawable::isProjected()
+	jboolean RippleDrawable::isProjected() const
 	{
 		return callMethod<jboolean>(
 			"isProjected",
 			"()Z"
 		);
 	}
-	jboolean RippleDrawable::isStateful()
+	jboolean RippleDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void RippleDrawable::jumpToCurrentState()
+	void RippleDrawable::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable RippleDrawable::mutate()
+	android::graphics::drawable::Drawable RippleDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void RippleDrawable::setColor(android::content::res::ColorStateList arg0)
+	void RippleDrawable::setColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setColor",
@@ -169,7 +169,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean RippleDrawable::setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1)
+	jboolean RippleDrawable::setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1) const
 	{
 		return callMethod<jboolean>(
 			"setDrawableByLayerId",
@@ -178,7 +178,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	void RippleDrawable::setEffectColor(android::content::res::ColorStateList arg0)
+	void RippleDrawable::setEffectColor(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setEffectColor",
@@ -186,7 +186,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void RippleDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	void RippleDrawable::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -195,7 +195,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void RippleDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void RippleDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -206,7 +206,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void RippleDrawable::setPaddingMode(jint arg0)
+	void RippleDrawable::setPaddingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setPaddingMode",
@@ -214,7 +214,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RippleDrawable::setRadius(jint arg0)
+	void RippleDrawable::setRadius(jint arg0) const
 	{
 		callMethod<void>(
 			"setRadius",
@@ -222,7 +222,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	jboolean RippleDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean RippleDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",

@@ -20,7 +20,7 @@ namespace javax::crypto::spec
 		PSource_PSpecified(JByteArray arg0);
 		
 		// Methods
-		JByteArray getValue();
+		JByteArray getValue() const;
 	};
 } // namespace javax::crypto::spec
 

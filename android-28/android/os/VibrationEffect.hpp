@@ -24,7 +24,7 @@ namespace android::os
 		static android::os::VibrationEffect createOneShot(jlong arg0, jint arg1);
 		static android::os::VibrationEffect createWaveform(JLongArray arg0, jint arg1);
 		static android::os::VibrationEffect createWaveform(JLongArray arg0, JIntArray arg1, jint arg2);
-		jint describeContents();
+		jint describeContents() const;
 	};
 } // namespace android::os
 

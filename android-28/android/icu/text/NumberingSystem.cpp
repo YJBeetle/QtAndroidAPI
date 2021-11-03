@@ -82,28 +82,28 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString NumberingSystem::getDescription()
+	JString NumberingSystem::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NumberingSystem::getName()
+	JString NumberingSystem::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint NumberingSystem::getRadix()
+	jint NumberingSystem::getRadix() const
 	{
 		return callMethod<jint>(
 			"getRadix",
 			"()I"
 		);
 	}
-	jboolean NumberingSystem::isAlgorithmic()
+	jboolean NumberingSystem::isAlgorithmic() const
 	{
 		return callMethod<jboolean>(
 			"isAlgorithmic",

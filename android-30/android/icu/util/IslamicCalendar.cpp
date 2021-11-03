@@ -162,21 +162,21 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar::getCalculationType()
+	android::icu::util::IslamicCalendar_CalculationType IslamicCalendar::getCalculationType() const
 	{
 		return callObjectMethod(
 			"getCalculationType",
 			"()Landroid/icu/util/IslamicCalendar$CalculationType;"
 		);
 	}
-	JString IslamicCalendar::getType()
+	JString IslamicCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void IslamicCalendar::setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0)
+	void IslamicCalendar::setCalculationType(android::icu::util::IslamicCalendar_CalculationType arg0) const
 	{
 		callMethod<void>(
 			"setCalculationType",

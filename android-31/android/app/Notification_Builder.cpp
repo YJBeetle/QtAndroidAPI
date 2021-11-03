@@ -52,7 +52,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addAction(android::app::Notification_Action arg0)
+	android::app::Notification_Builder Notification_Builder::addAction(android::app::Notification_Action arg0) const
 	{
 		return callObjectMethod(
 			"addAction",
@@ -60,7 +60,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addAction(jint arg0, JString arg1, android::app::PendingIntent arg2)
+	android::app::Notification_Builder Notification_Builder::addAction(jint arg0, JString arg1, android::app::PendingIntent arg2) const
 	{
 		return callObjectMethod(
 			"addAction",
@@ -70,7 +70,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addExtras(android::os::Bundle arg0)
+	android::app::Notification_Builder Notification_Builder::addExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -78,7 +78,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addPerson(android::app::Person arg0)
+	android::app::Notification_Builder Notification_Builder::addPerson(android::app::Person arg0) const
 	{
 		return callObjectMethod(
 			"addPerson",
@@ -86,7 +86,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::addPerson(JString arg0)
+	android::app::Notification_Builder Notification_Builder::addPerson(JString arg0) const
 	{
 		return callObjectMethod(
 			"addPerson",
@@ -94,35 +94,35 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification Notification_Builder::build()
+	android::app::Notification Notification_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification;"
 		);
 	}
-	android::widget::RemoteViews Notification_Builder::createBigContentView()
+	android::widget::RemoteViews Notification_Builder::createBigContentView() const
 	{
 		return callObjectMethod(
 			"createBigContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	android::widget::RemoteViews Notification_Builder::createContentView()
+	android::widget::RemoteViews Notification_Builder::createContentView() const
 	{
 		return callObjectMethod(
 			"createContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	android::widget::RemoteViews Notification_Builder::createHeadsUpContentView()
+	android::widget::RemoteViews Notification_Builder::createHeadsUpContentView() const
 	{
 		return callObjectMethod(
 			"createHeadsUpContentView",
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::extend(JObject arg0)
+	android::app::Notification_Builder Notification_Builder::extend(JObject arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -130,28 +130,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::os::Bundle Notification_Builder::getExtras()
+	android::os::Bundle Notification_Builder::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::app::Notification Notification_Builder::getNotification()
+	android::app::Notification Notification_Builder::getNotification() const
 	{
 		return callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
 		);
 	}
-	android::app::Notification_Style Notification_Builder::getStyle()
+	android::app::Notification_Style Notification_Builder::getStyle() const
 	{
 		return callObjectMethod(
 			"getStyle",
 			"()Landroid/app/Notification$Style;"
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setActions(JArray arg0)
+	android::app::Notification_Builder Notification_Builder::setActions(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setActions",
@@ -159,7 +159,7 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setAllowSystemGeneratedContextualActions(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setAllowSystemGeneratedContextualActions(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAllowSystemGeneratedContextualActions",
@@ -167,7 +167,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setAutoCancel(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setAutoCancel(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAutoCancel",
@@ -175,7 +175,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setBadgeIconType(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setBadgeIconType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBadgeIconType",
@@ -183,7 +183,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setBubbleMetadata(android::app::Notification_BubbleMetadata arg0)
+	android::app::Notification_Builder Notification_Builder::setBubbleMetadata(android::app::Notification_BubbleMetadata arg0) const
 	{
 		return callObjectMethod(
 			"setBubbleMetadata",
@@ -191,7 +191,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setCategory(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setCategory(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCategory",
@@ -199,7 +199,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setChannelId(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setChannelId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setChannelId",
@@ -207,7 +207,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setChronometerCountDown(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setChronometerCountDown(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setChronometerCountDown",
@@ -215,7 +215,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setColor(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setColor(jint arg0) const
 	{
 		return callObjectMethod(
 			"setColor",
@@ -223,7 +223,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setColorized(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setColorized(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setColorized",
@@ -231,7 +231,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContent(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setContent(android::widget::RemoteViews arg0) const
 	{
 		return callObjectMethod(
 			"setContent",
@@ -239,7 +239,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentInfo(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setContentInfo(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContentInfo",
@@ -247,7 +247,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentIntent(android::app::PendingIntent arg0)
+	android::app::Notification_Builder Notification_Builder::setContentIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setContentIntent",
@@ -255,7 +255,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentText(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setContentText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContentText",
@@ -263,7 +263,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setContentTitle(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setContentTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContentTitle",
@@ -271,7 +271,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomBigContentView(android::widget::RemoteViews arg0) const
 	{
 		return callObjectMethod(
 			"setCustomBigContentView",
@@ -279,7 +279,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setCustomContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomContentView(android::widget::RemoteViews arg0) const
 	{
 		return callObjectMethod(
 			"setCustomContentView",
@@ -287,7 +287,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setCustomHeadsUpContentView(android::widget::RemoteViews arg0)
+	android::app::Notification_Builder Notification_Builder::setCustomHeadsUpContentView(android::widget::RemoteViews arg0) const
 	{
 		return callObjectMethod(
 			"setCustomHeadsUpContentView",
@@ -295,7 +295,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setDefaults(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setDefaults(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDefaults",
@@ -303,7 +303,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setDeleteIntent(android::app::PendingIntent arg0)
+	android::app::Notification_Builder Notification_Builder::setDeleteIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setDeleteIntent",
@@ -311,7 +311,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setExtras(android::os::Bundle arg0)
+	android::app::Notification_Builder Notification_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -319,7 +319,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setFlag(jint arg0, jboolean arg1)
+	android::app::Notification_Builder Notification_Builder::setFlag(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setFlag",
@@ -328,7 +328,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setForegroundServiceBehavior(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setForegroundServiceBehavior(jint arg0) const
 	{
 		return callObjectMethod(
 			"setForegroundServiceBehavior",
@@ -336,7 +336,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1)
+	android::app::Notification_Builder Notification_Builder::setFullScreenIntent(android::app::PendingIntent arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setFullScreenIntent",
@@ -345,7 +345,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setGroup(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setGroup(JString arg0) const
 	{
 		return callObjectMethod(
 			"setGroup",
@@ -353,7 +353,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setGroupAlertBehavior(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setGroupAlertBehavior(jint arg0) const
 	{
 		return callObjectMethod(
 			"setGroupAlertBehavior",
@@ -361,7 +361,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setGroupSummary(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setGroupSummary(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setGroupSummary",
@@ -369,7 +369,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::Bitmap arg0)
+	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"setLargeIcon",
@@ -377,7 +377,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_Builder Notification_Builder::setLargeIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setLargeIcon",
@@ -385,7 +385,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setLights(jint arg0, jint arg1, jint arg2)
+	android::app::Notification_Builder Notification_Builder::setLights(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"setLights",
@@ -395,7 +395,7 @@ namespace android::app
 			arg2
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setLocalOnly(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setLocalOnly(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setLocalOnly",
@@ -403,7 +403,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setLocusId(android::content::LocusId arg0)
+	android::app::Notification_Builder Notification_Builder::setLocusId(android::content::LocusId arg0) const
 	{
 		return callObjectMethod(
 			"setLocusId",
@@ -411,7 +411,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setNumber(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setNumber(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNumber",
@@ -419,7 +419,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setOngoing(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setOngoing(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setOngoing",
@@ -427,7 +427,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setOnlyAlertOnce(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setOnlyAlertOnce(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setOnlyAlertOnce",
@@ -435,7 +435,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setPriority(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setPriority(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPriority",
@@ -443,7 +443,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2)
+	android::app::Notification_Builder Notification_Builder::setProgress(jint arg0, jint arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"setProgress",
@@ -453,7 +453,7 @@ namespace android::app
 			arg2
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setPublicVersion(android::app::Notification arg0)
+	android::app::Notification_Builder Notification_Builder::setPublicVersion(android::app::Notification arg0) const
 	{
 		return callObjectMethod(
 			"setPublicVersion",
@@ -461,7 +461,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setRemoteInputHistory(JArray arg0)
+	android::app::Notification_Builder Notification_Builder::setRemoteInputHistory(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setRemoteInputHistory",
@@ -469,7 +469,7 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSettingsText(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setSettingsText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSettingsText",
@@ -477,7 +477,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setShortcutId(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setShortcutId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setShortcutId",
@@ -485,7 +485,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setShowWhen(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setShowWhen(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setShowWhen",
@@ -493,7 +493,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSmallIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -501,7 +501,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -509,7 +509,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0, jint arg1)
+	android::app::Notification_Builder Notification_Builder::setSmallIcon(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setSmallIcon",
@@ -518,7 +518,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSortKey(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setSortKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSortKey",
@@ -526,7 +526,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setSound",
@@ -534,7 +534,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, android::media::AudioAttributes arg1) const
 	{
 		return callObjectMethod(
 			"setSound",
@@ -543,7 +543,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, jint arg1)
+	android::app::Notification_Builder Notification_Builder::setSound(android::net::Uri arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setSound",
@@ -552,7 +552,7 @@ namespace android::app
 			arg1
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setStyle(android::app::Notification_Style arg0)
+	android::app::Notification_Builder Notification_Builder::setStyle(android::app::Notification_Style arg0) const
 	{
 		return callObjectMethod(
 			"setStyle",
@@ -560,7 +560,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setSubText(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setSubText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSubText",
@@ -568,7 +568,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0)
+	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTicker",
@@ -576,7 +576,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0, android::widget::RemoteViews arg1)
+	android::app::Notification_Builder Notification_Builder::setTicker(JString arg0, android::widget::RemoteViews arg1) const
 	{
 		return callObjectMethod(
 			"setTicker",
@@ -585,7 +585,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setTimeoutAfter(jlong arg0)
+	android::app::Notification_Builder Notification_Builder::setTimeoutAfter(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTimeoutAfter",
@@ -593,7 +593,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setUsesChronometer(jboolean arg0)
+	android::app::Notification_Builder Notification_Builder::setUsesChronometer(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUsesChronometer",
@@ -601,7 +601,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setVibrate(JLongArray arg0)
+	android::app::Notification_Builder Notification_Builder::setVibrate(JLongArray arg0) const
 	{
 		return callObjectMethod(
 			"setVibrate",
@@ -609,7 +609,7 @@ namespace android::app
 			arg0.object<jlongArray>()
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setVisibility(jint arg0)
+	android::app::Notification_Builder Notification_Builder::setVisibility(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVisibility",
@@ -617,7 +617,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::setWhen(jlong arg0)
+	android::app::Notification_Builder Notification_Builder::setWhen(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setWhen",

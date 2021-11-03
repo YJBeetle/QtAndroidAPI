@@ -22,11 +22,11 @@ namespace javax::xml::transform::dom
 		DOMSource(JObject arg0, JString arg1);
 		
 		// Methods
-		JObject getNode();
-		JString getSystemId();
-		jboolean isEmpty();
-		void setNode(JObject arg0);
-		void setSystemId(JString arg0);
+		JObject getNode() const;
+		JString getSystemId() const;
+		jboolean isEmpty() const;
+		void setNode(JObject arg0) const;
+		void setSystemId(JString arg0) const;
 	};
 } // namespace javax::xml::transform::dom
 

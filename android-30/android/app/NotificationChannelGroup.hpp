@@ -26,18 +26,18 @@ namespace android::app
 		NotificationChannelGroup(JString arg0, JString arg1);
 		
 		// Methods
-		android::app::NotificationChannelGroup clone();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getChannels();
-		JString getDescription();
-		JString getId();
-		JString getName();
-		jint hashCode();
-		jboolean isBlocked();
-		void setDescription(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::app::NotificationChannelGroup clone() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getChannels() const;
+		JString getDescription() const;
+		JString getId() const;
+		JString getName() const;
+		jint hashCode() const;
+		jboolean isBlocked() const;
+		void setDescription(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

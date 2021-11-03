@@ -20,7 +20,7 @@ namespace android::telephony::ims
 		// Constructors
 		
 		// Methods
-		jint getCode();
+		jint getCode() const;
 	};
 } // namespace android::telephony::ims
 

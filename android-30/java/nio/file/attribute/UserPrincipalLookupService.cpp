@@ -11,7 +11,7 @@ namespace java::nio::file::attribute
 	// Constructors
 	
 	// Methods
-	JObject UserPrincipalLookupService::lookupPrincipalByGroupName(JString arg0)
+	JObject UserPrincipalLookupService::lookupPrincipalByGroupName(JString arg0) const
 	{
 		return callObjectMethod(
 			"lookupPrincipalByGroupName",
@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 			arg0.object<jstring>()
 		);
 	}
-	JObject UserPrincipalLookupService::lookupPrincipalByName(JString arg0)
+	JObject UserPrincipalLookupService::lookupPrincipalByName(JString arg0) const
 	{
 		return callObjectMethod(
 			"lookupPrincipalByName",

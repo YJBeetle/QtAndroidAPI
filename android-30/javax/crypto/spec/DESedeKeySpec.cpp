@@ -41,7 +41,7 @@ namespace javax::crypto::spec
 			arg1
 		);
 	}
-	JByteArray DESedeKeySpec::getKey()
+	JByteArray DESedeKeySpec::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",

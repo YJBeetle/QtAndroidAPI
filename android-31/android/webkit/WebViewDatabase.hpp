@@ -25,14 +25,14 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::WebViewDatabase getInstance(android::content::Context arg0);
-		void clearFormData();
-		void clearHttpAuthUsernamePassword();
-		void clearUsernamePassword();
-		JArray getHttpAuthUsernamePassword(JString arg0, JString arg1);
-		jboolean hasFormData();
-		jboolean hasHttpAuthUsernamePassword();
-		jboolean hasUsernamePassword();
-		void setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3);
+		void clearFormData() const;
+		void clearHttpAuthUsernamePassword() const;
+		void clearUsernamePassword() const;
+		JArray getHttpAuthUsernamePassword(JString arg0, JString arg1) const;
+		jboolean hasFormData() const;
+		jboolean hasHttpAuthUsernamePassword() const;
+		jboolean hasUsernamePassword() const;
+		void setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3) const;
 	};
 } // namespace android::webkit
 

@@ -22,9 +22,9 @@ namespace android::graphics::fonts
 		// Methods
 		static JArray fromFontVariationSettings(JString arg0);
 		static JString toFontVariationSettings(JArray arg0);
-		jfloat getStyleValue();
-		JString getTag();
-		JString toString();
+		jfloat getStyleValue() const;
+		JString getTag() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::fonts
 

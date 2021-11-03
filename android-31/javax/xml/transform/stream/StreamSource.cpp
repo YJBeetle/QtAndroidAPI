@@ -65,42 +65,42 @@ namespace javax::xml::transform::stream
 		) {}
 	
 	// Methods
-	java::io::InputStream StreamSource::getInputStream()
+	java::io::InputStream StreamSource::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	JString StreamSource::getPublicId()
+	JString StreamSource::getPublicId() const
 	{
 		return callObjectMethod(
 			"getPublicId",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::io::Reader StreamSource::getReader()
+	java::io::Reader StreamSource::getReader() const
 	{
 		return callObjectMethod(
 			"getReader",
 			"()Ljava/io/Reader;"
 		);
 	}
-	JString StreamSource::getSystemId()
+	JString StreamSource::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean StreamSource::isEmpty()
+	jboolean StreamSource::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void StreamSource::setInputStream(java::io::InputStream arg0)
+	void StreamSource::setInputStream(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"setInputStream",
@@ -108,7 +108,7 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamSource::setPublicId(JString arg0)
+	void StreamSource::setPublicId(JString arg0) const
 	{
 		callMethod<void>(
 			"setPublicId",
@@ -116,7 +116,7 @@ namespace javax::xml::transform::stream
 			arg0.object<jstring>()
 		);
 	}
-	void StreamSource::setReader(java::io::Reader arg0)
+	void StreamSource::setReader(java::io::Reader arg0) const
 	{
 		callMethod<void>(
 			"setReader",
@@ -124,7 +124,7 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamSource::setSystemId(java::io::File arg0)
+	void StreamSource::setSystemId(java::io::File arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",
@@ -132,7 +132,7 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamSource::setSystemId(JString arg0)
+	void StreamSource::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

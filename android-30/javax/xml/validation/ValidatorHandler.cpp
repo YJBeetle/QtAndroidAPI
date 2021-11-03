@@ -13,21 +13,21 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	JObject ValidatorHandler::getContentHandler()
+	JObject ValidatorHandler::getContentHandler() const
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	JObject ValidatorHandler::getErrorHandler()
+	JObject ValidatorHandler::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean ValidatorHandler::getFeature(JString arg0)
+	jboolean ValidatorHandler::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -35,7 +35,7 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject ValidatorHandler::getProperty(JString arg0)
+	JObject ValidatorHandler::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -43,21 +43,21 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject ValidatorHandler::getResourceResolver()
+	JObject ValidatorHandler::getResourceResolver() const
 	{
 		return callObjectMethod(
 			"getResourceResolver",
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
-	javax::xml::validation::TypeInfoProvider ValidatorHandler::getTypeInfoProvider()
+	javax::xml::validation::TypeInfoProvider ValidatorHandler::getTypeInfoProvider() const
 	{
 		return callObjectMethod(
 			"getTypeInfoProvider",
 			"()Ljavax/xml/validation/TypeInfoProvider;"
 		);
 	}
-	void ValidatorHandler::setContentHandler(JObject arg0)
+	void ValidatorHandler::setContentHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -65,7 +65,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void ValidatorHandler::setErrorHandler(JObject arg0)
+	void ValidatorHandler::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -73,7 +73,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void ValidatorHandler::setFeature(JString arg0, jboolean arg1)
+	void ValidatorHandler::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -82,7 +82,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void ValidatorHandler::setProperty(JString arg0, JObject arg1)
+	void ValidatorHandler::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -91,7 +91,7 @@ namespace javax::xml::validation
 			arg1.object<jobject>()
 		);
 	}
-	void ValidatorHandler::setResourceResolver(JObject arg0)
+	void ValidatorHandler::setResourceResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setResourceResolver",

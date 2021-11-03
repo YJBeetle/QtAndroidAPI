@@ -39,11 +39,11 @@ namespace android::graphics::drawable::shapes
 		RectShape();
 		
 		// Methods
-		android::graphics::drawable::shapes::RectShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		jboolean equals(JObject arg0);
-		void getOutline(android::graphics::Outline arg0);
-		jint hashCode();
+		android::graphics::drawable::shapes::RectShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		jboolean equals(JObject arg0) const;
+		void getOutline(android::graphics::Outline arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::graphics::drawable::shapes
 

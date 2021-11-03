@@ -24,17 +24,17 @@ namespace android::app
 		
 		// Methods
 		static JString getProcessName();
-		void onConfigurationChanged(android::content::res::Configuration arg0);
-		void onCreate();
-		void onLowMemory();
-		void onTerminate();
-		void onTrimMemory(jint arg0);
-		void registerActivityLifecycleCallbacks(JObject arg0);
-		void registerComponentCallbacks(JObject arg0);
-		void registerOnProvideAssistDataListener(JObject arg0);
-		void unregisterActivityLifecycleCallbacks(JObject arg0);
-		void unregisterComponentCallbacks(JObject arg0);
-		void unregisterOnProvideAssistDataListener(JObject arg0);
+		void onConfigurationChanged(android::content::res::Configuration arg0) const;
+		void onCreate() const;
+		void onLowMemory() const;
+		void onTerminate() const;
+		void onTrimMemory(jint arg0) const;
+		void registerActivityLifecycleCallbacks(JObject arg0) const;
+		void registerComponentCallbacks(JObject arg0) const;
+		void registerOnProvideAssistDataListener(JObject arg0) const;
+		void unregisterActivityLifecycleCallbacks(JObject arg0) const;
+		void unregisterComponentCallbacks(JObject arg0) const;
+		void unregisterOnProvideAssistDataListener(JObject arg0) const;
 	};
 } // namespace android::app
 

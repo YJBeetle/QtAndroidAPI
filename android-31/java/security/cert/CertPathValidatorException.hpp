@@ -33,9 +33,9 @@ namespace java::security::cert
 		CertPathValidatorException(JString arg0, JThrowable arg1, java::security::cert::CertPath arg2, jint arg3, JObject arg4);
 		
 		// Methods
-		java::security::cert::CertPath getCertPath();
-		jint getIndex();
-		JObject getReason();
+		java::security::cert::CertPath getCertPath() const;
+		jint getIndex() const;
+		JObject getReason() const;
 	};
 } // namespace java::security::cert
 

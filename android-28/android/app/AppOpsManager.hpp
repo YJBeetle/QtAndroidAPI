@@ -57,18 +57,18 @@ namespace android::app
 		
 		// Methods
 		static JString permissionToOp(JString arg0);
-		jint checkOp(JString arg0, jint arg1, JString arg2);
-		jint checkOpNoThrow(JString arg0, jint arg1, JString arg2);
-		void checkPackage(jint arg0, JString arg1);
-		void finishOp(JString arg0, jint arg1, JString arg2);
-		jint noteOp(JString arg0, jint arg1, JString arg2);
-		jint noteOpNoThrow(JString arg0, jint arg1, JString arg2);
-		jint noteProxyOp(JString arg0, JString arg1);
-		jint noteProxyOpNoThrow(JString arg0, JString arg1);
-		jint startOp(JString arg0, jint arg1, JString arg2);
-		jint startOpNoThrow(JString arg0, jint arg1, JString arg2);
-		void startWatchingMode(JString arg0, JString arg1, JObject arg2);
-		void stopWatchingMode(JObject arg0);
+		jint checkOp(JString arg0, jint arg1, JString arg2) const;
+		jint checkOpNoThrow(JString arg0, jint arg1, JString arg2) const;
+		void checkPackage(jint arg0, JString arg1) const;
+		void finishOp(JString arg0, jint arg1, JString arg2) const;
+		jint noteOp(JString arg0, jint arg1, JString arg2) const;
+		jint noteOpNoThrow(JString arg0, jint arg1, JString arg2) const;
+		jint noteProxyOp(JString arg0, JString arg1) const;
+		jint noteProxyOpNoThrow(JString arg0, JString arg1) const;
+		jint startOp(JString arg0, jint arg1, JString arg2) const;
+		jint startOpNoThrow(JString arg0, jint arg1, JString arg2) const;
+		void startWatchingMode(JString arg0, JString arg1, JObject arg2) const;
+		void stopWatchingMode(JObject arg0) const;
 	};
 } // namespace android::app
 

@@ -440,14 +440,14 @@ namespace java::lang
 			arg1
 		);
 	}
-	jbyte Integer::byteValue()
+	jbyte Integer::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Integer::compareTo(java::lang::Integer arg0)
+	jint Integer::compareTo(java::lang::Integer arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -455,7 +455,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Integer::compareTo(JObject arg0)
+	jint Integer::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -463,21 +463,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Integer::describeConstable()
+	java::util::Optional Integer::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Integer::doubleValue()
+	jdouble Integer::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Integer::equals(JObject arg0)
+	jboolean Integer::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -485,35 +485,35 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Integer::floatValue()
+	jfloat Integer::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Integer::hashCode()
+	jint Integer::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Integer::intValue()
+	jint Integer::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong Integer::longValue()
+	jlong Integer::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	java::lang::Integer Integer::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Integer Integer::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0) const
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",
@@ -521,14 +521,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jshort Integer::shortValue()
+	jshort Integer::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Integer::toString()
+	JString Integer::toString() const
 	{
 		return callObjectMethod(
 			"toString",

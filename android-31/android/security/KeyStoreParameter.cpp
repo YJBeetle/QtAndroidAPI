@@ -10,7 +10,7 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	jboolean KeyStoreParameter::isEncryptionRequired()
+	jboolean KeyStoreParameter::isEncryptionRequired() const
 	{
 		return callMethod<jboolean>(
 			"isEncryptionRequired",

@@ -85,7 +85,7 @@ namespace java::util::logging
 			arg1.object<jstring>()
 		);
 	}
-	void Logger::addHandler(java::util::logging::Handler arg0)
+	void Logger::addHandler(java::util::logging::Handler arg0) const
 	{
 		callMethod<void>(
 			"addHandler",
@@ -93,7 +93,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::config(JString arg0)
+	void Logger::config(JString arg0) const
 	{
 		callMethod<void>(
 			"config",
@@ -101,7 +101,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::config(JObject arg0)
+	void Logger::config(JObject arg0) const
 	{
 		callMethod<void>(
 			"config",
@@ -109,7 +109,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::entering(JString arg0, JString arg1)
+	void Logger::entering(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"entering",
@@ -118,7 +118,7 @@ namespace java::util::logging
 			arg1.object<jstring>()
 		);
 	}
-	void Logger::entering(JString arg0, JString arg1, JObjectArray arg2)
+	void Logger::entering(JString arg0, JString arg1, JObjectArray arg2) const
 	{
 		callMethod<void>(
 			"entering",
@@ -128,7 +128,7 @@ namespace java::util::logging
 			arg2.object<jobjectArray>()
 		);
 	}
-	void Logger::entering(JString arg0, JString arg1, JObject arg2)
+	void Logger::entering(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"entering",
@@ -138,7 +138,7 @@ namespace java::util::logging
 			arg2.object<jobject>()
 		);
 	}
-	void Logger::exiting(JString arg0, JString arg1)
+	void Logger::exiting(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"exiting",
@@ -147,7 +147,7 @@ namespace java::util::logging
 			arg1.object<jstring>()
 		);
 	}
-	void Logger::exiting(JString arg0, JString arg1, JObject arg2)
+	void Logger::exiting(JString arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"exiting",
@@ -157,7 +157,7 @@ namespace java::util::logging
 			arg2.object<jobject>()
 		);
 	}
-	void Logger::fine(JString arg0)
+	void Logger::fine(JString arg0) const
 	{
 		callMethod<void>(
 			"fine",
@@ -165,7 +165,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::fine(JObject arg0)
+	void Logger::fine(JObject arg0) const
 	{
 		callMethod<void>(
 			"fine",
@@ -173,7 +173,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::finer(JString arg0)
+	void Logger::finer(JString arg0) const
 	{
 		callMethod<void>(
 			"finer",
@@ -181,7 +181,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::finer(JObject arg0)
+	void Logger::finer(JObject arg0) const
 	{
 		callMethod<void>(
 			"finer",
@@ -189,7 +189,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::finest(JString arg0)
+	void Logger::finest(JString arg0) const
 	{
 		callMethod<void>(
 			"finest",
@@ -197,7 +197,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::finest(JObject arg0)
+	void Logger::finest(JObject arg0) const
 	{
 		callMethod<void>(
 			"finest",
@@ -205,63 +205,63 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JObject Logger::getFilter()
+	JObject Logger::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Ljava/util/logging/Filter;"
 		);
 	}
-	JArray Logger::getHandlers()
+	JArray Logger::getHandlers() const
 	{
 		return callObjectMethod(
 			"getHandlers",
 			"()[Ljava/util/logging/Handler;"
 		);
 	}
-	java::util::logging::Level Logger::getLevel()
+	java::util::logging::Level Logger::getLevel() const
 	{
 		return callObjectMethod(
 			"getLevel",
 			"()Ljava/util/logging/Level;"
 		);
 	}
-	JString Logger::getName()
+	JString Logger::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::logging::Logger Logger::getParent()
+	java::util::logging::Logger Logger::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Ljava/util/logging/Logger;"
 		);
 	}
-	java::util::ResourceBundle Logger::getResourceBundle()
+	java::util::ResourceBundle Logger::getResourceBundle() const
 	{
 		return callObjectMethod(
 			"getResourceBundle",
 			"()Ljava/util/ResourceBundle;"
 		);
 	}
-	JString Logger::getResourceBundleName()
+	JString Logger::getResourceBundleName() const
 	{
 		return callObjectMethod(
 			"getResourceBundleName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Logger::getUseParentHandlers()
+	jboolean Logger::getUseParentHandlers() const
 	{
 		return callMethod<jboolean>(
 			"getUseParentHandlers",
 			"()Z"
 		);
 	}
-	void Logger::info(JString arg0)
+	void Logger::info(JString arg0) const
 	{
 		callMethod<void>(
 			"info",
@@ -269,7 +269,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::info(JObject arg0)
+	void Logger::info(JObject arg0) const
 	{
 		callMethod<void>(
 			"info",
@@ -277,7 +277,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	jboolean Logger::isLoggable(java::util::logging::Level arg0)
+	jboolean Logger::isLoggable(java::util::logging::Level arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLoggable",
@@ -285,7 +285,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::log(java::util::logging::LogRecord arg0)
+	void Logger::log(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"log",
@@ -293,7 +293,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JString arg1)
+	void Logger::log(java::util::logging::Level arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"log",
@@ -302,7 +302,7 @@ namespace java::util::logging
 			arg1.object<jstring>()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JObject arg1)
+	void Logger::log(java::util::logging::Level arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"log",
@@ -311,7 +311,7 @@ namespace java::util::logging
 			arg1.object()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JString arg1, JObjectArray arg2)
+	void Logger::log(java::util::logging::Level arg0, JString arg1, JObjectArray arg2) const
 	{
 		callMethod<void>(
 			"log",
@@ -321,7 +321,7 @@ namespace java::util::logging
 			arg2.object<jobjectArray>()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JString arg1, JObject arg2)
+	void Logger::log(java::util::logging::Level arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"log",
@@ -331,7 +331,7 @@ namespace java::util::logging
 			arg2.object<jobject>()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JString arg1, JThrowable arg2)
+	void Logger::log(java::util::logging::Level arg0, JString arg1, JThrowable arg2) const
 	{
 		callMethod<void>(
 			"log",
@@ -341,7 +341,7 @@ namespace java::util::logging
 			arg2.object<jthrowable>()
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, JThrowable arg1, JObject arg2)
+	void Logger::log(java::util::logging::Level arg0, JThrowable arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"log",
@@ -351,7 +351,7 @@ namespace java::util::logging
 			arg2.object()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"logp",
@@ -362,7 +362,7 @@ namespace java::util::logging
 			arg3.object<jstring>()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JObject arg3)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"logp",
@@ -373,7 +373,7 @@ namespace java::util::logging
 			arg3.object()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JObjectArray arg4)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JObjectArray arg4) const
 	{
 		callMethod<void>(
 			"logp",
@@ -385,7 +385,7 @@ namespace java::util::logging
 			arg4.object<jobjectArray>()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JObject arg4)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"logp",
@@ -397,7 +397,7 @@ namespace java::util::logging
 			arg4.object<jobject>()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JThrowable arg4)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JThrowable arg4) const
 	{
 		callMethod<void>(
 			"logp",
@@ -409,7 +409,7 @@ namespace java::util::logging
 			arg4.object<jthrowable>()
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JThrowable arg3, JObject arg4)
+	void Logger::logp(java::util::logging::Level arg0, JString arg1, JString arg2, JThrowable arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"logp",
@@ -421,7 +421,7 @@ namespace java::util::logging
 			arg4.object()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, JString arg2, JObjectArray arg3)
+	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, JString arg2, JObjectArray arg3) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -432,7 +432,7 @@ namespace java::util::logging
 			arg3.object<jobjectArray>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, JString arg2, JThrowable arg3)
+	void Logger::logrb(java::util::logging::Level arg0, java::util::ResourceBundle arg1, JString arg2, JThrowable arg3) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -443,7 +443,7 @@ namespace java::util::logging
 			arg3.object<jthrowable>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -455,7 +455,7 @@ namespace java::util::logging
 			arg4.object<jstring>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JObjectArray arg5)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JObjectArray arg5) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -468,7 +468,7 @@ namespace java::util::logging
 			arg5.object<jobjectArray>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JObject arg5)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JObject arg5) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -481,7 +481,7 @@ namespace java::util::logging
 			arg5.object<jobject>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JThrowable arg5)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, JString arg3, JString arg4, JThrowable arg5) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -494,7 +494,7 @@ namespace java::util::logging
 			arg5.object<jthrowable>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, java::util::ResourceBundle arg3, JString arg4, JObjectArray arg5)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, java::util::ResourceBundle arg3, JString arg4, JObjectArray arg5) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -507,7 +507,7 @@ namespace java::util::logging
 			arg5.object<jobjectArray>()
 		);
 	}
-	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, java::util::ResourceBundle arg3, JString arg4, JThrowable arg5)
+	void Logger::logrb(java::util::logging::Level arg0, JString arg1, JString arg2, java::util::ResourceBundle arg3, JString arg4, JThrowable arg5) const
 	{
 		callMethod<void>(
 			"logrb",
@@ -520,7 +520,7 @@ namespace java::util::logging
 			arg5.object<jthrowable>()
 		);
 	}
-	void Logger::removeHandler(java::util::logging::Handler arg0)
+	void Logger::removeHandler(java::util::logging::Handler arg0) const
 	{
 		callMethod<void>(
 			"removeHandler",
@@ -528,7 +528,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setFilter(JObject arg0)
+	void Logger::setFilter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFilter",
@@ -536,7 +536,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setLevel(java::util::logging::Level arg0)
+	void Logger::setLevel(java::util::logging::Level arg0) const
 	{
 		callMethod<void>(
 			"setLevel",
@@ -544,7 +544,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setParent(java::util::logging::Logger arg0)
+	void Logger::setParent(java::util::logging::Logger arg0) const
 	{
 		callMethod<void>(
 			"setParent",
@@ -552,7 +552,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setResourceBundle(java::util::ResourceBundle arg0)
+	void Logger::setResourceBundle(java::util::ResourceBundle arg0) const
 	{
 		callMethod<void>(
 			"setResourceBundle",
@@ -560,7 +560,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setUseParentHandlers(jboolean arg0)
+	void Logger::setUseParentHandlers(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUseParentHandlers",
@@ -568,7 +568,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::severe(JString arg0)
+	void Logger::severe(JString arg0) const
 	{
 		callMethod<void>(
 			"severe",
@@ -576,7 +576,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::severe(JObject arg0)
+	void Logger::severe(JObject arg0) const
 	{
 		callMethod<void>(
 			"severe",
@@ -584,7 +584,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::throwing(JString arg0, JString arg1, JThrowable arg2)
+	void Logger::throwing(JString arg0, JString arg1, JThrowable arg2) const
 	{
 		callMethod<void>(
 			"throwing",
@@ -594,7 +594,7 @@ namespace java::util::logging
 			arg2.object<jthrowable>()
 		);
 	}
-	void Logger::warning(JString arg0)
+	void Logger::warning(JString arg0) const
 	{
 		callMethod<void>(
 			"warning",
@@ -602,7 +602,7 @@ namespace java::util::logging
 			arg0.object<jstring>()
 		);
 	}
-	void Logger::warning(JObject arg0)
+	void Logger::warning(JObject arg0) const
 	{
 		callMethod<void>(
 			"warning",

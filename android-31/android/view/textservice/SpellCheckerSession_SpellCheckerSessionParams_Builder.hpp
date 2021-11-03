@@ -30,11 +30,11 @@ namespace android::view::textservice
 		SpellCheckerSession_SpellCheckerSessionParams_Builder();
 		
 		// Methods
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams build();
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setExtras(android::os::Bundle arg0);
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setLocale(java::util::Locale arg0);
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setShouldReferToSpellCheckerLanguageSettings(jboolean arg0);
-		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setSupportedAttributes(jint arg0);
+		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams build() const;
+		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setLocale(java::util::Locale arg0) const;
+		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setShouldReferToSpellCheckerLanguageSettings(jboolean arg0) const;
+		android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams_Builder setSupportedAttributes(jint arg0) const;
 	};
 } // namespace android::view::textservice
 

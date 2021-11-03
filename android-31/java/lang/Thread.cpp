@@ -218,112 +218,112 @@ namespace java::lang
 			"()V"
 		);
 	}
-	void Thread::checkAccess()
+	void Thread::checkAccess() const
 	{
 		callMethod<void>(
 			"checkAccess",
 			"()V"
 		);
 	}
-	jint Thread::countStackFrames()
+	jint Thread::countStackFrames() const
 	{
 		return callMethod<jint>(
 			"countStackFrames",
 			"()I"
 		);
 	}
-	java::lang::ClassLoader Thread::getContextClassLoader()
+	java::lang::ClassLoader Thread::getContextClassLoader() const
 	{
 		return callObjectMethod(
 			"getContextClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	jlong Thread::getId()
+	jlong Thread::getId() const
 	{
 		return callMethod<jlong>(
 			"getId",
 			"()J"
 		);
 	}
-	JString Thread::getName()
+	JString Thread::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Thread::getPriority()
+	jint Thread::getPriority() const
 	{
 		return callMethod<jint>(
 			"getPriority",
 			"()I"
 		);
 	}
-	JArray Thread::getStackTrace()
+	JArray Thread::getStackTrace() const
 	{
 		return callObjectMethod(
 			"getStackTrace",
 			"()[Ljava/lang/StackTraceElement;"
 		);
 	}
-	java::lang::Thread_State Thread::getState()
+	java::lang::Thread_State Thread::getState() const
 	{
 		return callObjectMethod(
 			"getState",
 			"()Ljava/lang/Thread$State;"
 		);
 	}
-	java::lang::ThreadGroup Thread::getThreadGroup()
+	java::lang::ThreadGroup Thread::getThreadGroup() const
 	{
 		return callObjectMethod(
 			"getThreadGroup",
 			"()Ljava/lang/ThreadGroup;"
 		);
 	}
-	JObject Thread::getUncaughtExceptionHandler()
+	JObject Thread::getUncaughtExceptionHandler() const
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",
 			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
 		);
 	}
-	void Thread::interrupt()
+	void Thread::interrupt() const
 	{
 		callMethod<void>(
 			"interrupt",
 			"()V"
 		);
 	}
-	jboolean Thread::isAlive()
+	jboolean Thread::isAlive() const
 	{
 		return callMethod<jboolean>(
 			"isAlive",
 			"()Z"
 		);
 	}
-	jboolean Thread::isDaemon()
+	jboolean Thread::isDaemon() const
 	{
 		return callMethod<jboolean>(
 			"isDaemon",
 			"()Z"
 		);
 	}
-	jboolean Thread::isInterrupted()
+	jboolean Thread::isInterrupted() const
 	{
 		return callMethod<jboolean>(
 			"isInterrupted",
 			"()Z"
 		);
 	}
-	void Thread::join()
+	void Thread::join() const
 	{
 		callMethod<void>(
 			"join",
 			"()V"
 		);
 	}
-	void Thread::join(jlong arg0)
+	void Thread::join(jlong arg0) const
 	{
 		callMethod<void>(
 			"join",
@@ -331,7 +331,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Thread::join(jlong arg0, jint arg1)
+	void Thread::join(jlong arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"join",
@@ -340,21 +340,21 @@ namespace java::lang
 			arg1
 		);
 	}
-	void Thread::resume()
+	void Thread::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void Thread::run()
+	void Thread::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
-	void Thread::setContextClassLoader(java::lang::ClassLoader arg0)
+	void Thread::setContextClassLoader(java::lang::ClassLoader arg0) const
 	{
 		callMethod<void>(
 			"setContextClassLoader",
@@ -362,7 +362,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void Thread::setDaemon(jboolean arg0)
+	void Thread::setDaemon(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDaemon",
@@ -370,7 +370,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Thread::setName(JString arg0)
+	void Thread::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -378,7 +378,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void Thread::setPriority(jint arg0)
+	void Thread::setPriority(jint arg0) const
 	{
 		callMethod<void>(
 			"setPriority",
@@ -386,7 +386,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Thread::setUncaughtExceptionHandler(JObject arg0)
+	void Thread::setUncaughtExceptionHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setUncaughtExceptionHandler",
@@ -394,28 +394,28 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void Thread::start()
+	void Thread::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void Thread::stop()
+	void Thread::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void Thread::suspend()
+	void Thread::suspend() const
 	{
 		callMethod<void>(
 			"suspend",
 			"()V"
 		);
 	}
-	JString Thread::toString()
+	JString Thread::toString() const
 	{
 		return callObjectMethod(
 			"toString",

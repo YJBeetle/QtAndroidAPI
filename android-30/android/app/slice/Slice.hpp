@@ -61,14 +61,14 @@ namespace android::app::slice
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JObject getHints();
-		JObject getItems();
-		android::app::slice::SliceSpec getSpec();
-		android::net::Uri getUri();
-		jboolean isCallerNeeded();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getHints() const;
+		JObject getItems() const;
+		android::app::slice::SliceSpec getSpec() const;
+		android::net::Uri getUri() const;
+		jboolean isCallerNeeded() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::slice
 

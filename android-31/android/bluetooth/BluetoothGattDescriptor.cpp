@@ -109,42 +109,42 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	jint BluetoothGattDescriptor::describeContents()
+	jint BluetoothGattDescriptor::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::bluetooth::BluetoothGattCharacteristic BluetoothGattDescriptor::getCharacteristic()
+	android::bluetooth::BluetoothGattCharacteristic BluetoothGattDescriptor::getCharacteristic() const
 	{
 		return callObjectMethod(
 			"getCharacteristic",
 			"()Landroid/bluetooth/BluetoothGattCharacteristic;"
 		);
 	}
-	jint BluetoothGattDescriptor::getPermissions()
+	jint BluetoothGattDescriptor::getPermissions() const
 	{
 		return callMethod<jint>(
 			"getPermissions",
 			"()I"
 		);
 	}
-	java::util::UUID BluetoothGattDescriptor::getUuid()
+	java::util::UUID BluetoothGattDescriptor::getUuid() const
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
-	JByteArray BluetoothGattDescriptor::getValue()
+	JByteArray BluetoothGattDescriptor::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()[B"
 		);
 	}
-	jboolean BluetoothGattDescriptor::setValue(JByteArray arg0)
+	jboolean BluetoothGattDescriptor::setValue(JByteArray arg0) const
 	{
 		return callMethod<jboolean>(
 			"setValue",
@@ -152,7 +152,7 @@ namespace android::bluetooth
 			arg0.object<jbyteArray>()
 		);
 	}
-	void BluetoothGattDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothGattDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

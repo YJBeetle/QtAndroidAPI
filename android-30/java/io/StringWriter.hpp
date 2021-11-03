@@ -30,17 +30,17 @@ namespace java::io
 		StringWriter(jint arg0);
 		
 		// Methods
-		java::io::StringWriter append(jchar arg0);
-		java::io::StringWriter append(JString arg0);
-		java::io::StringWriter append(JString arg0, jint arg1, jint arg2);
-		void close();
-		void flush();
-		java::lang::StringBuffer getBuffer();
-		JString toString();
-		void write(jint arg0);
-		void write(JString arg0);
-		void write(JCharArray arg0, jint arg1, jint arg2);
-		void write(JString arg0, jint arg1, jint arg2);
+		java::io::StringWriter append(jchar arg0) const;
+		java::io::StringWriter append(JString arg0) const;
+		java::io::StringWriter append(JString arg0, jint arg1, jint arg2) const;
+		void close() const;
+		void flush() const;
+		java::lang::StringBuffer getBuffer() const;
+		JString toString() const;
+		void write(jint arg0) const;
+		void write(JString arg0) const;
+		void write(JCharArray arg0, jint arg1, jint arg2) const;
+		void write(JString arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

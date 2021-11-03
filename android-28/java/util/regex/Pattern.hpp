@@ -51,15 +51,15 @@ namespace java::util::regex
 		static java::util::regex::Pattern compile(JString arg0, jint arg1);
 		static jboolean matches(JString arg0, JString arg1);
 		static JString quote(JString arg0);
-		JObject asMatchPredicate();
-		JObject asPredicate();
-		jint flags();
-		java::util::regex::Matcher matcher(JString arg0);
-		JString pattern();
-		JArray split(JString arg0);
-		JArray split(JString arg0, jint arg1);
-		JObject splitAsStream(JString arg0);
-		JString toString();
+		JObject asMatchPredicate() const;
+		JObject asPredicate() const;
+		jint flags() const;
+		java::util::regex::Matcher matcher(JString arg0) const;
+		JString pattern() const;
+		JArray split(JString arg0) const;
+		JArray split(JString arg0, jint arg1) const;
+		JObject splitAsStream(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util::regex
 

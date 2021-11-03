@@ -20,35 +20,35 @@ namespace android::hardware::lights
 	// Constructors
 	
 	// Methods
-	jint LightState::describeContents()
+	jint LightState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint LightState::getColor()
+	jint LightState::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	jint LightState::getPlayerId()
+	jint LightState::getPlayerId() const
 	{
 		return callMethod<jint>(
 			"getPlayerId",
 			"()I"
 		);
 	}
-	JString LightState::toString()
+	JString LightState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LightState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LightState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

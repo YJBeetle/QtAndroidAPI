@@ -19,14 +19,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::ConversationActions_Request ConversationActions_Request_Builder::build()
+	android::view::textclassifier::ConversationActions_Request ConversationActions_Request_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/ConversationActions$Request;"
 		);
 	}
-	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setHints(JObject arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setHints(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setHints",
@@ -42,7 +42,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setMaxSuggestions(jint arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setMaxSuggestions(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxSuggestions",
@@ -50,7 +50,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setTypeConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0) const
 	{
 		return callObjectMethod(
 			"setTypeConfig",

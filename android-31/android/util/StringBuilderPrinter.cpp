@@ -18,7 +18,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void StringBuilderPrinter::println(JString arg0)
+	void StringBuilderPrinter::println(JString arg0) const
 	{
 		callMethod<void>(
 			"println",

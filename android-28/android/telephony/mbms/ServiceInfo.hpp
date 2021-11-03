@@ -32,15 +32,15 @@ namespace android::telephony::mbms
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getLocales();
-		JString getNameForLocale(java::util::Locale arg0);
-		JObject getNamedContentLocales();
-		JString getServiceClassName();
-		JString getServiceId();
-		java::util::Date getSessionEndTime();
-		java::util::Date getSessionStartTime();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JObject getLocales() const;
+		JString getNameForLocale(java::util::Locale arg0) const;
+		JObject getNamedContentLocales() const;
+		JString getServiceClassName() const;
+		JString getServiceId() const;
+		java::util::Date getSessionEndTime() const;
+		java::util::Date getSessionStartTime() const;
+		jint hashCode() const;
 	};
 } // namespace android::telephony::mbms
 

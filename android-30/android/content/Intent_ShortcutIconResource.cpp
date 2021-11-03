@@ -50,21 +50,21 @@ namespace android::content
 			arg1
 		);
 	}
-	jint Intent_ShortcutIconResource::describeContents()
+	jint Intent_ShortcutIconResource::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString Intent_ShortcutIconResource::toString()
+	JString Intent_ShortcutIconResource::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Intent_ShortcutIconResource::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Intent_ShortcutIconResource::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

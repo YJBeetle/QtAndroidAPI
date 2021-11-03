@@ -208,7 +208,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	jlong MetaKeyKeyListener::clearMetaKeyState(jlong arg0, jint arg1)
+	jlong MetaKeyKeyListener::clearMetaKeyState(jlong arg0, jint arg1) const
 	{
 		return callMethod<jlong>(
 			"clearMetaKeyState",
@@ -217,7 +217,7 @@ namespace android::text::method
 			arg1
 		);
 	}
-	void MetaKeyKeyListener::clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2)
+	void MetaKeyKeyListener::clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"clearMetaKeyState",
@@ -227,7 +227,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean MetaKeyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean MetaKeyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -238,7 +238,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean MetaKeyKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean MetaKeyKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",

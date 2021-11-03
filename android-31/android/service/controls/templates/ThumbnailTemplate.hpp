@@ -24,10 +24,10 @@ namespace android::service::controls::templates
 		ThumbnailTemplate(JString arg0, jboolean arg1, android::graphics::drawable::Icon arg2, JString arg3);
 		
 		// Methods
-		JString getContentDescription();
-		jint getTemplateType();
-		android::graphics::drawable::Icon getThumbnail();
-		jboolean isActive();
+		JString getContentDescription() const;
+		jint getTemplateType() const;
+		android::graphics::drawable::Icon getThumbnail() const;
+		jboolean isActive() const;
 	};
 } // namespace android::service::controls::templates
 

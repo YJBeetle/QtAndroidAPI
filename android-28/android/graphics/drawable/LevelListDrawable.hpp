@@ -34,9 +34,9 @@ namespace android::graphics::drawable
 		LevelListDrawable();
 		
 		// Methods
-		void addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2);
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		android::graphics::drawable::Drawable mutate();
+		void addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2) const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		android::graphics::drawable::Drawable mutate() const;
 	};
 } // namespace android::graphics::drawable
 

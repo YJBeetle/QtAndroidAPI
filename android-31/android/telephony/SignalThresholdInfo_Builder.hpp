@@ -23,10 +23,10 @@ namespace android::telephony
 		SignalThresholdInfo_Builder();
 		
 		// Methods
-		android::telephony::SignalThresholdInfo build();
-		android::telephony::SignalThresholdInfo_Builder setRadioAccessNetworkType(jint arg0);
-		android::telephony::SignalThresholdInfo_Builder setSignalMeasurementType(jint arg0);
-		android::telephony::SignalThresholdInfo_Builder setThresholds(JIntArray arg0);
+		android::telephony::SignalThresholdInfo build() const;
+		android::telephony::SignalThresholdInfo_Builder setRadioAccessNetworkType(jint arg0) const;
+		android::telephony::SignalThresholdInfo_Builder setSignalMeasurementType(jint arg0) const;
+		android::telephony::SignalThresholdInfo_Builder setThresholds(JIntArray arg0) const;
 	};
 } // namespace android::telephony
 

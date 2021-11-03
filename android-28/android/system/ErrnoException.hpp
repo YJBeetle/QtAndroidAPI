@@ -22,7 +22,7 @@ namespace android::system
 		ErrnoException(JString arg0, jint arg1, JThrowable arg2);
 		
 		// Methods
-		JString getMessage();
+		JString getMessage() const;
 	};
 } // namespace android::system
 

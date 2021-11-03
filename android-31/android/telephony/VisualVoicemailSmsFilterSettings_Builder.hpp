@@ -23,10 +23,10 @@ namespace android::telephony
 		VisualVoicemailSmsFilterSettings_Builder();
 		
 		// Methods
-		android::telephony::VisualVoicemailSmsFilterSettings build();
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(JString arg0);
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setDestinationPort(jint arg0);
-		android::telephony::VisualVoicemailSmsFilterSettings_Builder setOriginatingNumbers(JObject arg0);
+		android::telephony::VisualVoicemailSmsFilterSettings build() const;
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setClientPrefix(JString arg0) const;
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setDestinationPort(jint arg0) const;
+		android::telephony::VisualVoicemailSmsFilterSettings_Builder setOriginatingNumbers(JObject arg0) const;
 	};
 } // namespace android::telephony
 

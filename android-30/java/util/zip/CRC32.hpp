@@ -23,11 +23,11 @@ namespace java::util::zip
 		CRC32();
 		
 		// Methods
-		jlong getValue();
-		void reset();
-		void update(jint arg0);
-		void update(java::nio::ByteBuffer arg0);
-		void update(JByteArray arg0, jint arg1, jint arg2);
+		jlong getValue() const;
+		void reset() const;
+		void update(jint arg0) const;
+		void update(java::nio::ByteBuffer arg0) const;
+		void update(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::util::zip
 

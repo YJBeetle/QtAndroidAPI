@@ -31,15 +31,15 @@ namespace android::telephony::mbms
 		// Methods
 		static jint getMaxAppIntentSize();
 		static jint getMaxDestinationUriSize();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::Uri getDestinationUri();
-		JString getFileServiceId();
-		android::net::Uri getSourceUri();
-		jint getSubscriptionId();
-		jint hashCode();
-		JByteArray toByteArray();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::Uri getDestinationUri() const;
+		JString getFileServiceId() const;
+		android::net::Uri getSourceUri() const;
+		jint getSubscriptionId() const;
+		jint hashCode() const;
+		JByteArray toByteArray() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::mbms
 

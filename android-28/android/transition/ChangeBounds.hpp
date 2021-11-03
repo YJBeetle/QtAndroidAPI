@@ -36,13 +36,13 @@ namespace android::transition
 		ChangeBounds(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void captureEndValues(android::transition::TransitionValues arg0);
-		void captureStartValues(android::transition::TransitionValues arg0);
-		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
-		jboolean getResizeClip();
-		JArray getTransitionProperties();
-		void setReparent(jboolean arg0);
-		void setResizeClip(jboolean arg0);
+		void captureEndValues(android::transition::TransitionValues arg0) const;
+		void captureStartValues(android::transition::TransitionValues arg0) const;
+		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const;
+		jboolean getResizeClip() const;
+		JArray getTransitionProperties() const;
+		void setReparent(jboolean arg0) const;
+		void setResizeClip(jboolean arg0) const;
 	};
 } // namespace android::transition
 

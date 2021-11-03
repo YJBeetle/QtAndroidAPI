@@ -31,9 +31,9 @@ namespace android::service::controls::actions
 		// Methods
 		static android::service::controls::actions::ControlAction getErrorAction();
 		static jboolean isValidResponse(jint arg0);
-		jint getActionType();
-		JString getChallengeValue();
-		JString getTemplateId();
+		jint getActionType() const;
+		JString getChallengeValue() const;
+		JString getTemplateId() const;
 	};
 } // namespace android::service::controls::actions
 

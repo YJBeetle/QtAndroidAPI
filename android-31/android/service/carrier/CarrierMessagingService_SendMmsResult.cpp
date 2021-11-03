@@ -18,14 +18,14 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	JByteArray CarrierMessagingService_SendMmsResult::getSendConfPdu()
+	JByteArray CarrierMessagingService_SendMmsResult::getSendConfPdu() const
 	{
 		return callObjectMethod(
 			"getSendConfPdu",
 			"()[B"
 		);
 	}
-	jint CarrierMessagingService_SendMmsResult::getSendStatus()
+	jint CarrierMessagingService_SendMmsResult::getSendStatus() const
 	{
 		return callMethod<jint>(
 			"getSendStatus",

@@ -43,18 +43,18 @@ namespace java::lang
 		static java::lang::Byte valueOf(jbyte arg0);
 		static java::lang::Byte valueOf(JString arg0);
 		static java::lang::Byte valueOf(JString arg0, jint arg1);
-		jbyte byteValue();
-		jint compareTo(java::lang::Byte arg0);
-		jint compareTo(JObject arg0);
-		java::util::Optional describeConstable();
-		jdouble doubleValue();
-		jboolean equals(JObject arg0);
-		jfloat floatValue();
-		jint hashCode();
-		jint intValue();
-		jlong longValue();
-		jshort shortValue();
-		JString toString();
+		jbyte byteValue() const;
+		jint compareTo(java::lang::Byte arg0) const;
+		jint compareTo(JObject arg0) const;
+		java::util::Optional describeConstable() const;
+		jdouble doubleValue() const;
+		jboolean equals(JObject arg0) const;
+		jfloat floatValue() const;
+		jint hashCode() const;
+		jint intValue() const;
+		jlong longValue() const;
+		jshort shortValue() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

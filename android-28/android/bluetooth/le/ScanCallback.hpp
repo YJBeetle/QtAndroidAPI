@@ -26,9 +26,9 @@ namespace android::bluetooth::le
 		ScanCallback();
 		
 		// Methods
-		void onBatchScanResults(JObject arg0);
-		void onScanFailed(jint arg0);
-		void onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1);
+		void onBatchScanResults(JObject arg0) const;
+		void onScanFailed(jint arg0) const;
+		void onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1) const;
 	};
 } // namespace android::bluetooth::le
 

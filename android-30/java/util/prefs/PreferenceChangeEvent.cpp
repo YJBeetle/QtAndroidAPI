@@ -22,21 +22,21 @@ namespace java::util::prefs
 		) {}
 	
 	// Methods
-	JString PreferenceChangeEvent::getKey()
+	JString PreferenceChangeEvent::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PreferenceChangeEvent::getNewValue()
+	JString PreferenceChangeEvent::getNewValue() const
 	{
 		return callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::prefs::Preferences PreferenceChangeEvent::getNode()
+	java::util::prefs::Preferences PreferenceChangeEvent::getNode() const
 	{
 		return callObjectMethod(
 			"getNode",

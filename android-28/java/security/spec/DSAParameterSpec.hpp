@@ -22,9 +22,9 @@ namespace java::security::spec
 		DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		
 		// Methods
-		java::math::BigInteger getG();
-		java::math::BigInteger getP();
-		java::math::BigInteger getQ();
+		java::math::BigInteger getG() const;
+		java::math::BigInteger getP() const;
+		java::math::BigInteger getQ() const;
 	};
 } // namespace java::security::spec
 

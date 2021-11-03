@@ -21,14 +21,14 @@ namespace javax::net
 			"()Ljavax/net/SocketFactory;"
 		);
 	}
-	java::net::Socket SocketFactory::createSocket()
+	java::net::Socket SocketFactory::createSocket() const
 	{
 		return callObjectMethod(
 			"createSocket",
 			"()Ljava/net/Socket;"
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1)
+	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -37,7 +37,7 @@ namespace javax::net
 			arg1
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1)
+	java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -46,7 +46,7 @@ namespace javax::net
 			arg1
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SocketFactory::createSocket(JString arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -57,7 +57,7 @@ namespace javax::net
 			arg3
 		);
 	}
-	java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
+	java::net::Socket SocketFactory::createSocket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",

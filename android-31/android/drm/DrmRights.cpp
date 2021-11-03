@@ -52,28 +52,28 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	JString DrmRights::getAccountId()
+	JString DrmRights::getAccountId() const
 	{
 		return callObjectMethod(
 			"getAccountId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray DrmRights::getData()
+	JByteArray DrmRights::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	JString DrmRights::getMimeType()
+	JString DrmRights::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DrmRights::getSubscriptionId()
+	JString DrmRights::getSubscriptionId() const
 	{
 		return callObjectMethod(
 			"getSubscriptionId",

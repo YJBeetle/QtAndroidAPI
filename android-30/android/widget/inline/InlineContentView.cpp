@@ -11,21 +11,21 @@ namespace android::widget::inline
 	// Constructors
 	
 	// Methods
-	android::view::SurfaceControl InlineContentView::getSurfaceControl()
+	android::view::SurfaceControl InlineContentView::getSurfaceControl() const
 	{
 		return callObjectMethod(
 			"getSurfaceControl",
 			"()Landroid/view/SurfaceControl;"
 		);
 	}
-	jboolean InlineContentView::isZOrderedOnTop()
+	jboolean InlineContentView::isZOrderedOnTop() const
 	{
 		return callMethod<jboolean>(
 			"isZOrderedOnTop",
 			"()Z"
 		);
 	}
-	void InlineContentView::onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void InlineContentView::onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"onLayout",
@@ -37,7 +37,7 @@ namespace android::widget::inline
 			arg4
 		);
 	}
-	void InlineContentView::setSurfaceControlCallback(JObject arg0)
+	void InlineContentView::setSurfaceControlCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSurfaceControlCallback",
@@ -45,7 +45,7 @@ namespace android::widget::inline
 			arg0.object()
 		);
 	}
-	jboolean InlineContentView::setZOrderedOnTop(jboolean arg0)
+	jboolean InlineContentView::setZOrderedOnTop(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setZOrderedOnTop",

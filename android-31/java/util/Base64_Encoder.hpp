@@ -28,12 +28,12 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		JByteArray encode(JByteArray arg0);
-		jint encode(JByteArray arg0, JByteArray arg1);
-		java::nio::ByteBuffer encode(java::nio::ByteBuffer arg0);
-		JString encodeToString(JByteArray arg0);
-		java::util::Base64_Encoder withoutPadding();
-		java::io::OutputStream wrap(java::io::OutputStream arg0);
+		JByteArray encode(JByteArray arg0) const;
+		jint encode(JByteArray arg0, JByteArray arg1) const;
+		java::nio::ByteBuffer encode(java::nio::ByteBuffer arg0) const;
+		JString encodeToString(JByteArray arg0) const;
+		java::util::Base64_Encoder withoutPadding() const;
+		java::io::OutputStream wrap(java::io::OutputStream arg0) const;
 	};
 } // namespace java::util
 

@@ -53,14 +53,14 @@ namespace android::view::translation
 			"()Landroid/view/translation/TranslationResponseValue;"
 		);
 	}
-	jint TranslationResponseValue::describeContents()
+	jint TranslationResponseValue::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TranslationResponseValue::equals(JObject arg0)
+	jboolean TranslationResponseValue::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -68,49 +68,49 @@ namespace android::view::translation
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle TranslationResponseValue::getExtras()
+	android::os::Bundle TranslationResponseValue::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TranslationResponseValue::getStatusCode()
+	jint TranslationResponseValue::getStatusCode() const
 	{
 		return callMethod<jint>(
 			"getStatusCode",
 			"()I"
 		);
 	}
-	JString TranslationResponseValue::getText()
+	JString TranslationResponseValue::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TranslationResponseValue::getTransliteration()
+	JString TranslationResponseValue::getTransliteration() const
 	{
 		return callObjectMethod(
 			"getTransliteration",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TranslationResponseValue::hashCode()
+	jint TranslationResponseValue::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TranslationResponseValue::toString()
+	JString TranslationResponseValue::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationResponseValue::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationResponseValue::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

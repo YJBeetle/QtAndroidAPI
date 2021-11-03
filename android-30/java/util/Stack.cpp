@@ -16,28 +16,28 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean Stack::empty()
+	jboolean Stack::empty() const
 	{
 		return callMethod<jboolean>(
 			"empty",
 			"()Z"
 		);
 	}
-	JObject Stack::peek()
+	JObject Stack::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject Stack::pop()
+	JObject Stack::pop() const
 	{
 		return callObjectMethod(
 			"pop",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject Stack::push(JObject arg0)
+	JObject Stack::push(JObject arg0) const
 	{
 		return callObjectMethod(
 			"push",
@@ -45,7 +45,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Stack::search(JObject arg0)
+	jint Stack::search(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"search",

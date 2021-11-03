@@ -42,14 +42,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint Session2Command::describeContents()
+	jint Session2Command::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Session2Command::equals(JObject arg0)
+	jboolean Session2Command::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -57,35 +57,35 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint Session2Command::getCommandCode()
+	jint Session2Command::getCommandCode() const
 	{
 		return callMethod<jint>(
 			"getCommandCode",
 			"()I"
 		);
 	}
-	JString Session2Command::getCustomAction()
+	JString Session2Command::getCustomAction() const
 	{
 		return callObjectMethod(
 			"getCustomAction",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle Session2Command::getCustomExtras()
+	android::os::Bundle Session2Command::getCustomExtras() const
 	{
 		return callObjectMethod(
 			"getCustomExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint Session2Command::hashCode()
+	jint Session2Command::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Session2Command::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Session2Command::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

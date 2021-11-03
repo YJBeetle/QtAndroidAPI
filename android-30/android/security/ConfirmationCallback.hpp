@@ -20,10 +20,10 @@ namespace android::security
 		ConfirmationCallback();
 		
 		// Methods
-		void onCanceled();
-		void onConfirmed(JByteArray arg0);
-		void onDismissed();
-		void onError(JThrowable arg0);
+		void onCanceled() const;
+		void onConfirmed(JByteArray arg0) const;
+		void onDismissed() const;
+		void onError(JThrowable arg0) const;
 	};
 } // namespace android::security
 

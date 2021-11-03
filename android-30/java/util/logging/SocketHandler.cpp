@@ -25,14 +25,14 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void SocketHandler::close()
+	void SocketHandler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SocketHandler::publish(java::util::logging::LogRecord arg0)
+	void SocketHandler::publish(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"publish",

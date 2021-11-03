@@ -114,14 +114,14 @@ namespace android::app::people
 	// Constructors
 	
 	// Methods
-	jint ConversationStatus::describeContents()
+	jint ConversationStatus::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ConversationStatus::equals(JObject arg0)
+	jboolean ConversationStatus::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -129,70 +129,70 @@ namespace android::app::people
 			arg0.object<jobject>()
 		);
 	}
-	jint ConversationStatus::getActivity()
+	jint ConversationStatus::getActivity() const
 	{
 		return callMethod<jint>(
 			"getActivity",
 			"()I"
 		);
 	}
-	jint ConversationStatus::getAvailability()
+	jint ConversationStatus::getAvailability() const
 	{
 		return callMethod<jint>(
 			"getAvailability",
 			"()I"
 		);
 	}
-	JString ConversationStatus::getDescription()
+	JString ConversationStatus::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jlong ConversationStatus::getEndTimeMillis()
+	jlong ConversationStatus::getEndTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getEndTimeMillis",
 			"()J"
 		);
 	}
-	android::graphics::drawable::Icon ConversationStatus::getIcon()
+	android::graphics::drawable::Icon ConversationStatus::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString ConversationStatus::getId()
+	JString ConversationStatus::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong ConversationStatus::getStartTimeMillis()
+	jlong ConversationStatus::getStartTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getStartTimeMillis",
 			"()J"
 		);
 	}
-	jint ConversationStatus::hashCode()
+	jint ConversationStatus::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ConversationStatus::toString()
+	JString ConversationStatus::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ConversationStatus::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConversationStatus::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

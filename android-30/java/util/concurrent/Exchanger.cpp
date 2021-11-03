@@ -18,7 +18,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	JObject Exchanger::exchange(JObject arg0)
+	JObject Exchanger::exchange(JObject arg0) const
 	{
 		return callObjectMethod(
 			"exchange",
@@ -26,7 +26,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject Exchanger::exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject Exchanger::exchange(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callObjectMethod(
 			"exchange",

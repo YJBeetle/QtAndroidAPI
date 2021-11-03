@@ -22,7 +22,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JString SocketImpl::toString()
+	JString SocketImpl::toString() const
 	{
 		return callObjectMethod(
 			"toString",

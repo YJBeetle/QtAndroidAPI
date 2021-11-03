@@ -31,17 +31,17 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jfloat getConfidenceScore(JString arg0);
-		JString getEntity(jint arg0);
-		jint getEntityCount();
-		android::os::Bundle getExtras();
-		JString getId();
-		jint getSelectionEndIndex();
-		jint getSelectionStartIndex();
-		android::view::textclassifier::TextClassification getTextClassification();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jfloat getConfidenceScore(JString arg0) const;
+		JString getEntity(jint arg0) const;
+		jint getEntityCount() const;
+		android::os::Bundle getExtras() const;
+		JString getId() const;
+		jint getSelectionEndIndex() const;
+		jint getSelectionStartIndex() const;
+		android::view::textclassifier::TextClassification getTextClassification() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

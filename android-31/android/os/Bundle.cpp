@@ -72,35 +72,35 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void Bundle::clear()
+	void Bundle::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Bundle::clone()
+	JObject Bundle::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::os::Bundle Bundle::deepCopy()
+	android::os::Bundle Bundle::deepCopy() const
 	{
 		return callObjectMethod(
 			"deepCopy",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint Bundle::describeContents()
+	jint Bundle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject Bundle::getBinder(JString arg0)
+	JObject Bundle::getBinder(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBinder",
@@ -108,7 +108,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	android::os::Bundle Bundle::getBundle(JString arg0)
+	android::os::Bundle Bundle::getBundle(JString arg0) const
 	{
 		return callObjectMethod(
 			"getBundle",
@@ -116,7 +116,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jbyte Bundle::getByte(JString arg0)
+	jbyte Bundle::getByte(JString arg0) const
 	{
 		return callMethod<jbyte>(
 			"getByte",
@@ -124,7 +124,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Byte Bundle::getByte(JString arg0, jbyte arg1)
+	java::lang::Byte Bundle::getByte(JString arg0, jbyte arg1) const
 	{
 		return callObjectMethod(
 			"getByte",
@@ -133,7 +133,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JByteArray Bundle::getByteArray(JString arg0)
+	JByteArray Bundle::getByteArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getByteArray",
@@ -141,7 +141,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jchar Bundle::getChar(JString arg0)
+	jchar Bundle::getChar(JString arg0) const
 	{
 		return callMethod<jchar>(
 			"getChar",
@@ -149,7 +149,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jchar Bundle::getChar(JString arg0, jchar arg1)
+	jchar Bundle::getChar(JString arg0, jchar arg1) const
 	{
 		return callMethod<jchar>(
 			"getChar",
@@ -158,7 +158,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JCharArray Bundle::getCharArray(JString arg0)
+	JCharArray Bundle::getCharArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharArray",
@@ -166,7 +166,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JString Bundle::getCharSequence(JString arg0)
+	JString Bundle::getCharSequence(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequence",
@@ -174,7 +174,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JString Bundle::getCharSequence(JString arg0, JString arg1)
+	JString Bundle::getCharSequence(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getCharSequence",
@@ -183,7 +183,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	JArray Bundle::getCharSequenceArray(JString arg0)
+	JArray Bundle::getCharSequenceArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequenceArray",
@@ -191,7 +191,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Bundle::getCharSequenceArrayList(JString arg0)
+	java::util::ArrayList Bundle::getCharSequenceArrayList(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCharSequenceArrayList",
@@ -199,14 +199,14 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::ClassLoader Bundle::getClassLoader()
+	java::lang::ClassLoader Bundle::getClassLoader() const
 	{
 		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	jfloat Bundle::getFloat(JString arg0)
+	jfloat Bundle::getFloat(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -214,7 +214,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jfloat Bundle::getFloat(JString arg0, jfloat arg1)
+	jfloat Bundle::getFloat(JString arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -223,7 +223,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JFloatArray Bundle::getFloatArray(JString arg0)
+	JFloatArray Bundle::getFloatArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFloatArray",
@@ -231,7 +231,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Bundle::getIntegerArrayList(JString arg0)
+	java::util::ArrayList Bundle::getIntegerArrayList(JString arg0) const
 	{
 		return callObjectMethod(
 			"getIntegerArrayList",
@@ -239,7 +239,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JObject Bundle::getParcelable(JString arg0)
+	JObject Bundle::getParcelable(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelable",
@@ -247,7 +247,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JArray Bundle::getParcelableArray(JString arg0)
+	JArray Bundle::getParcelableArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelableArray",
@@ -255,7 +255,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Bundle::getParcelableArrayList(JString arg0)
+	java::util::ArrayList Bundle::getParcelableArrayList(JString arg0) const
 	{
 		return callObjectMethod(
 			"getParcelableArrayList",
@@ -263,7 +263,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	JObject Bundle::getSerializable(JString arg0)
+	JObject Bundle::getSerializable(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSerializable",
@@ -271,7 +271,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jshort Bundle::getShort(JString arg0)
+	jshort Bundle::getShort(JString arg0) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -279,7 +279,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jshort Bundle::getShort(JString arg0, jshort arg1)
+	jshort Bundle::getShort(JString arg0, jshort arg1) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -288,7 +288,7 @@ namespace android::os
 			arg1
 		);
 	}
-	JShortArray Bundle::getShortArray(JString arg0)
+	JShortArray Bundle::getShortArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getShortArray",
@@ -296,7 +296,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	android::util::Size Bundle::getSize(JString arg0)
+	android::util::Size Bundle::getSize(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSize",
@@ -304,7 +304,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	android::util::SizeF Bundle::getSizeF(JString arg0)
+	android::util::SizeF Bundle::getSizeF(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSizeF",
@@ -312,7 +312,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	android::util::SparseArray Bundle::getSparseParcelableArray(JString arg0)
+	android::util::SparseArray Bundle::getSparseParcelableArray(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSparseParcelableArray",
@@ -320,7 +320,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	java::util::ArrayList Bundle::getStringArrayList(JString arg0)
+	java::util::ArrayList Bundle::getStringArrayList(JString arg0) const
 	{
 		return callObjectMethod(
 			"getStringArrayList",
@@ -328,14 +328,14 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Bundle::hasFileDescriptors()
+	jboolean Bundle::hasFileDescriptors() const
 	{
 		return callMethod<jboolean>(
 			"hasFileDescriptors",
 			"()Z"
 		);
 	}
-	void Bundle::putAll(android::os::Bundle arg0)
+	void Bundle::putAll(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -343,7 +343,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Bundle::putBinder(JString arg0, JObject arg1)
+	void Bundle::putBinder(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"putBinder",
@@ -352,7 +352,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putBundle(JString arg0, android::os::Bundle arg1)
+	void Bundle::putBundle(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"putBundle",
@@ -361,7 +361,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putByte(JString arg0, jbyte arg1)
+	void Bundle::putByte(JString arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"putByte",
@@ -370,7 +370,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Bundle::putByteArray(JString arg0, JByteArray arg1)
+	void Bundle::putByteArray(JString arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"putByteArray",
@@ -379,7 +379,7 @@ namespace android::os
 			arg1.object<jbyteArray>()
 		);
 	}
-	void Bundle::putChar(JString arg0, jchar arg1)
+	void Bundle::putChar(JString arg0, jchar arg1) const
 	{
 		callMethod<void>(
 			"putChar",
@@ -388,7 +388,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Bundle::putCharArray(JString arg0, JCharArray arg1)
+	void Bundle::putCharArray(JString arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"putCharArray",
@@ -397,7 +397,7 @@ namespace android::os
 			arg1.object<jcharArray>()
 		);
 	}
-	void Bundle::putCharSequence(JString arg0, JString arg1)
+	void Bundle::putCharSequence(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"putCharSequence",
@@ -406,7 +406,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void Bundle::putCharSequenceArray(JString arg0, JArray arg1)
+	void Bundle::putCharSequenceArray(JString arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"putCharSequenceArray",
@@ -415,7 +415,7 @@ namespace android::os
 			arg1.object<jarray>()
 		);
 	}
-	void Bundle::putCharSequenceArrayList(JString arg0, java::util::ArrayList arg1)
+	void Bundle::putCharSequenceArrayList(JString arg0, java::util::ArrayList arg1) const
 	{
 		callMethod<void>(
 			"putCharSequenceArrayList",
@@ -424,7 +424,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putFloat(JString arg0, jfloat arg1)
+	void Bundle::putFloat(JString arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"putFloat",
@@ -433,7 +433,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Bundle::putFloatArray(JString arg0, JFloatArray arg1)
+	void Bundle::putFloatArray(JString arg0, JFloatArray arg1) const
 	{
 		callMethod<void>(
 			"putFloatArray",
@@ -442,7 +442,7 @@ namespace android::os
 			arg1.object<jfloatArray>()
 		);
 	}
-	void Bundle::putIntegerArrayList(JString arg0, java::util::ArrayList arg1)
+	void Bundle::putIntegerArrayList(JString arg0, java::util::ArrayList arg1) const
 	{
 		callMethod<void>(
 			"putIntegerArrayList",
@@ -451,7 +451,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putParcelable(JString arg0, JObject arg1)
+	void Bundle::putParcelable(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"putParcelable",
@@ -460,7 +460,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putParcelableArray(JString arg0, JArray arg1)
+	void Bundle::putParcelableArray(JString arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"putParcelableArray",
@@ -469,7 +469,7 @@ namespace android::os
 			arg1.object<jarray>()
 		);
 	}
-	void Bundle::putParcelableArrayList(JString arg0, java::util::ArrayList arg1)
+	void Bundle::putParcelableArrayList(JString arg0, java::util::ArrayList arg1) const
 	{
 		callMethod<void>(
 			"putParcelableArrayList",
@@ -478,7 +478,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putSerializable(JString arg0, JObject arg1)
+	void Bundle::putSerializable(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"putSerializable",
@@ -487,7 +487,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putShort(JString arg0, jshort arg1)
+	void Bundle::putShort(JString arg0, jshort arg1) const
 	{
 		callMethod<void>(
 			"putShort",
@@ -496,7 +496,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Bundle::putShortArray(JString arg0, JShortArray arg1)
+	void Bundle::putShortArray(JString arg0, JShortArray arg1) const
 	{
 		callMethod<void>(
 			"putShortArray",
@@ -505,7 +505,7 @@ namespace android::os
 			arg1.object<jshortArray>()
 		);
 	}
-	void Bundle::putSize(JString arg0, android::util::Size arg1)
+	void Bundle::putSize(JString arg0, android::util::Size arg1) const
 	{
 		callMethod<void>(
 			"putSize",
@@ -514,7 +514,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putSizeF(JString arg0, android::util::SizeF arg1)
+	void Bundle::putSizeF(JString arg0, android::util::SizeF arg1) const
 	{
 		callMethod<void>(
 			"putSizeF",
@@ -523,7 +523,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putSparseParcelableArray(JString arg0, android::util::SparseArray arg1)
+	void Bundle::putSparseParcelableArray(JString arg0, android::util::SparseArray arg1) const
 	{
 		callMethod<void>(
 			"putSparseParcelableArray",
@@ -532,7 +532,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putStringArrayList(JString arg0, java::util::ArrayList arg1)
+	void Bundle::putStringArrayList(JString arg0, java::util::ArrayList arg1) const
 	{
 		callMethod<void>(
 			"putStringArrayList",
@@ -541,7 +541,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::readFromParcel(android::os::Parcel arg0)
+	void Bundle::readFromParcel(android::os::Parcel arg0) const
 	{
 		callMethod<void>(
 			"readFromParcel",
@@ -549,7 +549,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Bundle::remove(JString arg0)
+	void Bundle::remove(JString arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -557,7 +557,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	void Bundle::setClassLoader(java::lang::ClassLoader arg0)
+	void Bundle::setClassLoader(java::lang::ClassLoader arg0) const
 	{
 		callMethod<void>(
 			"setClassLoader",
@@ -565,14 +565,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JString Bundle::toString()
+	JString Bundle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Bundle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Bundle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

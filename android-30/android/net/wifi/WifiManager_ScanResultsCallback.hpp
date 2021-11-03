@@ -17,7 +17,7 @@ namespace android::net::wifi
 		WifiManager_ScanResultsCallback();
 		
 		// Methods
-		void onScanResultsAvailable();
+		void onScanResultsAvailable() const;
 	};
 } // namespace android::net::wifi
 

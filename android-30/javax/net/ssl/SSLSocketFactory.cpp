@@ -28,7 +28,7 @@ namespace javax::net::ssl
 			"()Ljavax/net/SocketFactory;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, java::io::InputStream arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -38,7 +38,7 @@ namespace javax::net::ssl
 			arg2
 		);
 	}
-	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3)
+	java::net::Socket SSLSocketFactory::createSocket(java::net::Socket arg0, JString arg1, jint arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"createSocket",
@@ -49,14 +49,14 @@ namespace javax::net::ssl
 			arg3
 		);
 	}
-	JArray SSLSocketFactory::getDefaultCipherSuites()
+	JArray SSLSocketFactory::getDefaultCipherSuites() const
 	{
 		return callObjectMethod(
 			"getDefaultCipherSuites",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray SSLSocketFactory::getSupportedCipherSuites()
+	JArray SSLSocketFactory::getSupportedCipherSuites() const
 	{
 		return callObjectMethod(
 			"getSupportedCipherSuites",

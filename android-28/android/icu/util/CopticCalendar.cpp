@@ -168,7 +168,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString CopticCalendar::getType()
+	JString CopticCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",

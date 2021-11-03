@@ -2535,7 +2535,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean KeyEvent::dispatch(JObject arg0)
+	jboolean KeyEvent::dispatch(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatch",
@@ -2543,7 +2543,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean KeyEvent::dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, JObject arg2)
+	jboolean KeyEvent::dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"dispatch",
@@ -2553,70 +2553,70 @@ namespace android::view
 			arg2.object<jobject>()
 		);
 	}
-	jint KeyEvent::getAction()
+	jint KeyEvent::getAction() const
 	{
 		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
-	JString KeyEvent::getCharacters()
+	JString KeyEvent::getCharacters() const
 	{
 		return callObjectMethod(
 			"getCharacters",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint KeyEvent::getDeviceId()
+	jint KeyEvent::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	jchar KeyEvent::getDisplayLabel()
+	jchar KeyEvent::getDisplayLabel() const
 	{
 		return callMethod<jchar>(
 			"getDisplayLabel",
 			"()C"
 		);
 	}
-	jlong KeyEvent::getDownTime()
+	jlong KeyEvent::getDownTime() const
 	{
 		return callMethod<jlong>(
 			"getDownTime",
 			"()J"
 		);
 	}
-	jlong KeyEvent::getEventTime()
+	jlong KeyEvent::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jint KeyEvent::getFlags()
+	jint KeyEvent::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::view::KeyCharacterMap KeyEvent::getKeyCharacterMap()
+	android::view::KeyCharacterMap KeyEvent::getKeyCharacterMap() const
 	{
 		return callObjectMethod(
 			"getKeyCharacterMap",
 			"()Landroid/view/KeyCharacterMap;"
 		);
 	}
-	jint KeyEvent::getKeyCode()
+	jint KeyEvent::getKeyCode() const
 	{
 		return callMethod<jint>(
 			"getKeyCode",
 			"()I"
 		);
 	}
-	jboolean KeyEvent::getKeyData(android::view::KeyCharacterMap_KeyData arg0)
+	jboolean KeyEvent::getKeyData(android::view::KeyCharacterMap_KeyData arg0) const
 	{
 		return callMethod<jboolean>(
 			"getKeyData",
@@ -2624,7 +2624,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jchar KeyEvent::getMatch(JCharArray arg0)
+	jchar KeyEvent::getMatch(JCharArray arg0) const
 	{
 		return callMethod<jchar>(
 			"getMatch",
@@ -2632,7 +2632,7 @@ namespace android::view
 			arg0.object<jcharArray>()
 		);
 	}
-	jchar KeyEvent::getMatch(JCharArray arg0, jint arg1)
+	jchar KeyEvent::getMatch(JCharArray arg0, jint arg1) const
 	{
 		return callMethod<jchar>(
 			"getMatch",
@@ -2641,56 +2641,56 @@ namespace android::view
 			arg1
 		);
 	}
-	jint KeyEvent::getMetaState()
+	jint KeyEvent::getMetaState() const
 	{
 		return callMethod<jint>(
 			"getMetaState",
 			"()I"
 		);
 	}
-	jint KeyEvent::getModifiers()
+	jint KeyEvent::getModifiers() const
 	{
 		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
-	jchar KeyEvent::getNumber()
+	jchar KeyEvent::getNumber() const
 	{
 		return callMethod<jchar>(
 			"getNumber",
 			"()C"
 		);
 	}
-	jint KeyEvent::getRepeatCount()
+	jint KeyEvent::getRepeatCount() const
 	{
 		return callMethod<jint>(
 			"getRepeatCount",
 			"()I"
 		);
 	}
-	jint KeyEvent::getScanCode()
+	jint KeyEvent::getScanCode() const
 	{
 		return callMethod<jint>(
 			"getScanCode",
 			"()I"
 		);
 	}
-	jint KeyEvent::getSource()
+	jint KeyEvent::getSource() const
 	{
 		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
-	jint KeyEvent::getUnicodeChar()
+	jint KeyEvent::getUnicodeChar() const
 	{
 		return callMethod<jint>(
 			"getUnicodeChar",
 			"()I"
 		);
 	}
-	jint KeyEvent::getUnicodeChar(jint arg0)
+	jint KeyEvent::getUnicodeChar(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getUnicodeChar",
@@ -2698,7 +2698,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean KeyEvent::hasModifiers(jint arg0)
+	jboolean KeyEvent::hasModifiers(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasModifiers",
@@ -2706,112 +2706,112 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean KeyEvent::hasNoModifiers()
+	jboolean KeyEvent::hasNoModifiers() const
 	{
 		return callMethod<jboolean>(
 			"hasNoModifiers",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isAltPressed()
+	jboolean KeyEvent::isAltPressed() const
 	{
 		return callMethod<jboolean>(
 			"isAltPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isCanceled()
+	jboolean KeyEvent::isCanceled() const
 	{
 		return callMethod<jboolean>(
 			"isCanceled",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isCapsLockOn()
+	jboolean KeyEvent::isCapsLockOn() const
 	{
 		return callMethod<jboolean>(
 			"isCapsLockOn",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isCtrlPressed()
+	jboolean KeyEvent::isCtrlPressed() const
 	{
 		return callMethod<jboolean>(
 			"isCtrlPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isFunctionPressed()
+	jboolean KeyEvent::isFunctionPressed() const
 	{
 		return callMethod<jboolean>(
 			"isFunctionPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isLongPress()
+	jboolean KeyEvent::isLongPress() const
 	{
 		return callMethod<jboolean>(
 			"isLongPress",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isMetaPressed()
+	jboolean KeyEvent::isMetaPressed() const
 	{
 		return callMethod<jboolean>(
 			"isMetaPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isNumLockOn()
+	jboolean KeyEvent::isNumLockOn() const
 	{
 		return callMethod<jboolean>(
 			"isNumLockOn",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isPrintingKey()
+	jboolean KeyEvent::isPrintingKey() const
 	{
 		return callMethod<jboolean>(
 			"isPrintingKey",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isScrollLockOn()
+	jboolean KeyEvent::isScrollLockOn() const
 	{
 		return callMethod<jboolean>(
 			"isScrollLockOn",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isShiftPressed()
+	jboolean KeyEvent::isShiftPressed() const
 	{
 		return callMethod<jboolean>(
 			"isShiftPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isSymPressed()
+	jboolean KeyEvent::isSymPressed() const
 	{
 		return callMethod<jboolean>(
 			"isSymPressed",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isSystem()
+	jboolean KeyEvent::isSystem() const
 	{
 		return callMethod<jboolean>(
 			"isSystem",
 			"()Z"
 		);
 	}
-	jboolean KeyEvent::isTracking()
+	jboolean KeyEvent::isTracking() const
 	{
 		return callMethod<jboolean>(
 			"isTracking",
 			"()Z"
 		);
 	}
-	void KeyEvent::setSource(jint arg0)
+	void KeyEvent::setSource(jint arg0) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -2819,21 +2819,21 @@ namespace android::view
 			arg0
 		);
 	}
-	void KeyEvent::startTracking()
+	void KeyEvent::startTracking() const
 	{
 		callMethod<void>(
 			"startTracking",
 			"()V"
 		);
 	}
-	JString KeyEvent::toString()
+	JString KeyEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void KeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void KeyEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

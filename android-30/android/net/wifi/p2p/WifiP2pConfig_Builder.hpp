@@ -27,13 +27,13 @@ namespace android::net::wifi::p2p
 		WifiP2pConfig_Builder();
 		
 		// Methods
-		android::net::wifi::p2p::WifiP2pConfig build();
-		android::net::wifi::p2p::WifiP2pConfig_Builder enablePersistentMode(jboolean arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setDeviceAddress(android::net::MacAddress arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingBand(jint arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingFrequency(jint arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setNetworkName(JString arg0);
-		android::net::wifi::p2p::WifiP2pConfig_Builder setPassphrase(JString arg0);
+		android::net::wifi::p2p::WifiP2pConfig build() const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder enablePersistentMode(jboolean arg0) const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder setDeviceAddress(android::net::MacAddress arg0) const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingBand(jint arg0) const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder setGroupOperatingFrequency(jint arg0) const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder setNetworkName(JString arg0) const;
+		android::net::wifi::p2p::WifiP2pConfig_Builder setPassphrase(JString arg0) const;
 	};
 } // namespace android::net::wifi::p2p
 

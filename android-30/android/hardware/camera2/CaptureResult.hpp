@@ -110,11 +110,11 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		JObject get(android::hardware::camera2::CaptureResult_Key arg0);
-		jlong getFrameNumber();
-		JObject getKeys();
-		android::hardware::camera2::CaptureRequest getRequest();
-		jint getSequenceId();
+		JObject get(android::hardware::camera2::CaptureResult_Key arg0) const;
+		jlong getFrameNumber() const;
+		JObject getKeys() const;
+		android::hardware::camera2::CaptureRequest getRequest() const;
+		jint getSequenceId() const;
 	};
 } // namespace android::hardware::camera2
 

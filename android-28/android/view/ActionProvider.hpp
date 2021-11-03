@@ -26,15 +26,15 @@ namespace android::view
 		ActionProvider(android::content::Context arg0);
 		
 		// Methods
-		jboolean hasSubMenu();
-		jboolean isVisible();
-		android::view::View onCreateActionView();
-		android::view::View onCreateActionView(JObject arg0);
-		jboolean onPerformDefaultAction();
-		void onPrepareSubMenu(JObject arg0);
-		jboolean overridesItemVisibility();
-		void refreshVisibility();
-		void setVisibilityListener(JObject arg0);
+		jboolean hasSubMenu() const;
+		jboolean isVisible() const;
+		android::view::View onCreateActionView() const;
+		android::view::View onCreateActionView(JObject arg0) const;
+		jboolean onPerformDefaultAction() const;
+		void onPrepareSubMenu(JObject arg0) const;
+		jboolean overridesItemVisibility() const;
+		void refreshVisibility() const;
+		void setVisibilityListener(JObject arg0) const;
 	};
 } // namespace android::view
 

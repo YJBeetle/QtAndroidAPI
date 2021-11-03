@@ -99,35 +99,35 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	jint TemperatureControlTemplate::getCurrentActiveMode()
+	jint TemperatureControlTemplate::getCurrentActiveMode() const
 	{
 		return callMethod<jint>(
 			"getCurrentActiveMode",
 			"()I"
 		);
 	}
-	jint TemperatureControlTemplate::getCurrentMode()
+	jint TemperatureControlTemplate::getCurrentMode() const
 	{
 		return callMethod<jint>(
 			"getCurrentMode",
 			"()I"
 		);
 	}
-	jint TemperatureControlTemplate::getModes()
+	jint TemperatureControlTemplate::getModes() const
 	{
 		return callMethod<jint>(
 			"getModes",
 			"()I"
 		);
 	}
-	android::service::controls::templates::ControlTemplate TemperatureControlTemplate::getTemplate()
+	android::service::controls::templates::ControlTemplate TemperatureControlTemplate::getTemplate() const
 	{
 		return callObjectMethod(
 			"getTemplate",
 			"()Landroid/service/controls/templates/ControlTemplate;"
 		);
 	}
-	jint TemperatureControlTemplate::getTemplateType()
+	jint TemperatureControlTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",

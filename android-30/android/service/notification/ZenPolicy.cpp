@@ -105,14 +105,14 @@ namespace android::service::notification
 	// Constructors
 	
 	// Methods
-	jint ZenPolicy::describeContents()
+	jint ZenPolicy::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ZenPolicy::equals(JObject arg0)
+	jboolean ZenPolicy::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -120,154 +120,154 @@ namespace android::service::notification
 			arg0.object<jobject>()
 		);
 	}
-	jint ZenPolicy::getPriorityCallSenders()
+	jint ZenPolicy::getPriorityCallSenders() const
 	{
 		return callMethod<jint>(
 			"getPriorityCallSenders",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryAlarms()
+	jint ZenPolicy::getPriorityCategoryAlarms() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryAlarms",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryCalls()
+	jint ZenPolicy::getPriorityCategoryCalls() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryCalls",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryConversations()
+	jint ZenPolicy::getPriorityCategoryConversations() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryConversations",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryEvents()
+	jint ZenPolicy::getPriorityCategoryEvents() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryEvents",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryMedia()
+	jint ZenPolicy::getPriorityCategoryMedia() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryMedia",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryMessages()
+	jint ZenPolicy::getPriorityCategoryMessages() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryMessages",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryReminders()
+	jint ZenPolicy::getPriorityCategoryReminders() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryReminders",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategoryRepeatCallers()
+	jint ZenPolicy::getPriorityCategoryRepeatCallers() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategoryRepeatCallers",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityCategorySystem()
+	jint ZenPolicy::getPriorityCategorySystem() const
 	{
 		return callMethod<jint>(
 			"getPriorityCategorySystem",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityConversationSenders()
+	jint ZenPolicy::getPriorityConversationSenders() const
 	{
 		return callMethod<jint>(
 			"getPriorityConversationSenders",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getPriorityMessageSenders()
+	jint ZenPolicy::getPriorityMessageSenders() const
 	{
 		return callMethod<jint>(
 			"getPriorityMessageSenders",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectAmbient()
+	jint ZenPolicy::getVisualEffectAmbient() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectAmbient",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectBadge()
+	jint ZenPolicy::getVisualEffectBadge() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectBadge",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectFullScreenIntent()
+	jint ZenPolicy::getVisualEffectFullScreenIntent() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectFullScreenIntent",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectLights()
+	jint ZenPolicy::getVisualEffectLights() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectLights",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectNotificationList()
+	jint ZenPolicy::getVisualEffectNotificationList() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectNotificationList",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectPeek()
+	jint ZenPolicy::getVisualEffectPeek() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectPeek",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectStatusBar()
+	jint ZenPolicy::getVisualEffectStatusBar() const
 	{
 		return callMethod<jint>(
 			"getVisualEffectStatusBar",
 			"()I"
 		);
 	}
-	jint ZenPolicy::hashCode()
+	jint ZenPolicy::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ZenPolicy::toString()
+	JString ZenPolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ZenPolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ZenPolicy::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

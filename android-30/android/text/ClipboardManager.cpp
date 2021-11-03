@@ -16,21 +16,21 @@ namespace android::text
 		) {}
 	
 	// Methods
-	JString ClipboardManager::getText()
+	JString ClipboardManager::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ClipboardManager::hasText()
+	jboolean ClipboardManager::hasText() const
 	{
 		return callMethod<jboolean>(
 			"hasText",
 			"()Z"
 		);
 	}
-	void ClipboardManager::setText(JString arg0)
+	void ClipboardManager::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",

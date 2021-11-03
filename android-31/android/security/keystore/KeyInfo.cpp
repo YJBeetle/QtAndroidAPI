@@ -13,154 +13,154 @@ namespace android::security::keystore
 	// Constructors
 	
 	// Methods
-	JArray KeyInfo::getBlockModes()
+	JArray KeyInfo::getBlockModes() const
 	{
 		return callObjectMethod(
 			"getBlockModes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray KeyInfo::getDigests()
+	JArray KeyInfo::getDigests() const
 	{
 		return callObjectMethod(
 			"getDigests",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JArray KeyInfo::getEncryptionPaddings()
+	JArray KeyInfo::getEncryptionPaddings() const
 	{
 		return callObjectMethod(
 			"getEncryptionPaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint KeyInfo::getKeySize()
+	jint KeyInfo::getKeySize() const
 	{
 		return callMethod<jint>(
 			"getKeySize",
 			"()I"
 		);
 	}
-	java::util::Date KeyInfo::getKeyValidityForConsumptionEnd()
+	java::util::Date KeyInfo::getKeyValidityForConsumptionEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForConsumptionEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyInfo::getKeyValidityForOriginationEnd()
+	java::util::Date KeyInfo::getKeyValidityForOriginationEnd() const
 	{
 		return callObjectMethod(
 			"getKeyValidityForOriginationEnd",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::util::Date KeyInfo::getKeyValidityStart()
+	java::util::Date KeyInfo::getKeyValidityStart() const
 	{
 		return callObjectMethod(
 			"getKeyValidityStart",
 			"()Ljava/util/Date;"
 		);
 	}
-	JString KeyInfo::getKeystoreAlias()
+	JString KeyInfo::getKeystoreAlias() const
 	{
 		return callObjectMethod(
 			"getKeystoreAlias",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint KeyInfo::getOrigin()
+	jint KeyInfo::getOrigin() const
 	{
 		return callMethod<jint>(
 			"getOrigin",
 			"()I"
 		);
 	}
-	jint KeyInfo::getPurposes()
+	jint KeyInfo::getPurposes() const
 	{
 		return callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
 	}
-	jint KeyInfo::getRemainingUsageCount()
+	jint KeyInfo::getRemainingUsageCount() const
 	{
 		return callMethod<jint>(
 			"getRemainingUsageCount",
 			"()I"
 		);
 	}
-	jint KeyInfo::getSecurityLevel()
+	jint KeyInfo::getSecurityLevel() const
 	{
 		return callMethod<jint>(
 			"getSecurityLevel",
 			"()I"
 		);
 	}
-	JArray KeyInfo::getSignaturePaddings()
+	JArray KeyInfo::getSignaturePaddings() const
 	{
 		return callObjectMethod(
 			"getSignaturePaddings",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint KeyInfo::getUserAuthenticationType()
+	jint KeyInfo::getUserAuthenticationType() const
 	{
 		return callMethod<jint>(
 			"getUserAuthenticationType",
 			"()I"
 		);
 	}
-	jint KeyInfo::getUserAuthenticationValidityDurationSeconds()
+	jint KeyInfo::getUserAuthenticationValidityDurationSeconds() const
 	{
 		return callMethod<jint>(
 			"getUserAuthenticationValidityDurationSeconds",
 			"()I"
 		);
 	}
-	jboolean KeyInfo::isInsideSecureHardware()
+	jboolean KeyInfo::isInsideSecureHardware() const
 	{
 		return callMethod<jboolean>(
 			"isInsideSecureHardware",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isInvalidatedByBiometricEnrollment()
+	jboolean KeyInfo::isInvalidatedByBiometricEnrollment() const
 	{
 		return callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isTrustedUserPresenceRequired()
+	jboolean KeyInfo::isTrustedUserPresenceRequired() const
 	{
 		return callMethod<jboolean>(
 			"isTrustedUserPresenceRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isUserAuthenticationRequired()
+	jboolean KeyInfo::isUserAuthenticationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationRequired",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
+	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationRequirementEnforcedBySecureHardware",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody()
+	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody() const
 	{
 		return callMethod<jboolean>(
 			"isUserAuthenticationValidWhileOnBody",
 			"()Z"
 		);
 	}
-	jboolean KeyInfo::isUserConfirmationRequired()
+	jboolean KeyInfo::isUserConfirmationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isUserConfirmationRequired",

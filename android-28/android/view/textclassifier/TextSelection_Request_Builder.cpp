@@ -21,14 +21,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextSelection_Request TextSelection_Request_Builder::build()
+	android::view::textclassifier::TextSelection_Request TextSelection_Request_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextSelection$Request;"
 		);
 	}
-	android::view::textclassifier::TextSelection_Request_Builder TextSelection_Request_Builder::setDefaultLocales(android::os::LocaleList arg0)
+	android::view::textclassifier::TextSelection_Request_Builder TextSelection_Request_Builder::setDefaultLocales(android::os::LocaleList arg0) const
 	{
 		return callObjectMethod(
 			"setDefaultLocales",

@@ -87,7 +87,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	JString DigitsKeyListener::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
+	JString DigitsKeyListener::filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const
 	{
 		return callObjectMethod(
 			"filter",
@@ -100,7 +100,7 @@ namespace android::text::method
 			arg5
 		);
 	}
-	jint DigitsKeyListener::getInputType()
+	jint DigitsKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",

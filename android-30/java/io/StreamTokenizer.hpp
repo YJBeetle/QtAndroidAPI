@@ -37,22 +37,22 @@ namespace java::io
 		StreamTokenizer(java::io::Reader arg0);
 		
 		// Methods
-		void commentChar(jint arg0);
-		void eolIsSignificant(jboolean arg0);
-		jint lineno();
-		void lowerCaseMode(jboolean arg0);
-		jint nextToken();
-		void ordinaryChar(jint arg0);
-		void ordinaryChars(jint arg0, jint arg1);
-		void parseNumbers();
-		void pushBack();
-		void quoteChar(jint arg0);
-		void resetSyntax();
-		void slashSlashComments(jboolean arg0);
-		void slashStarComments(jboolean arg0);
-		JString toString();
-		void whitespaceChars(jint arg0, jint arg1);
-		void wordChars(jint arg0, jint arg1);
+		void commentChar(jint arg0) const;
+		void eolIsSignificant(jboolean arg0) const;
+		jint lineno() const;
+		void lowerCaseMode(jboolean arg0) const;
+		jint nextToken() const;
+		void ordinaryChar(jint arg0) const;
+		void ordinaryChars(jint arg0, jint arg1) const;
+		void parseNumbers() const;
+		void pushBack() const;
+		void quoteChar(jint arg0) const;
+		void resetSyntax() const;
+		void slashSlashComments(jboolean arg0) const;
+		void slashStarComments(jboolean arg0) const;
+		JString toString() const;
+		void whitespaceChars(jint arg0, jint arg1) const;
+		void wordChars(jint arg0, jint arg1) const;
 	};
 } // namespace java::io
 

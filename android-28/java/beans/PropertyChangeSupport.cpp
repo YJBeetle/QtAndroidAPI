@@ -23,7 +23,7 @@ namespace java::beans
 		) {}
 	
 	// Methods
-	void PropertyChangeSupport::addPropertyChangeListener(JObject arg0)
+	void PropertyChangeSupport::addPropertyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addPropertyChangeListener",
@@ -31,7 +31,7 @@ namespace java::beans
 			arg0.object()
 		);
 	}
-	void PropertyChangeSupport::addPropertyChangeListener(JString arg0, JObject arg1)
+	void PropertyChangeSupport::addPropertyChangeListener(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"addPropertyChangeListener",
@@ -40,7 +40,7 @@ namespace java::beans
 			arg1.object()
 		);
 	}
-	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, jboolean arg2, jboolean arg3)
+	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, jboolean arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"fireIndexedPropertyChange",
@@ -51,7 +51,7 @@ namespace java::beans
 			arg3
 		);
 	}
-	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, jint arg2, jint arg3)
+	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"fireIndexedPropertyChange",
@@ -62,7 +62,7 @@ namespace java::beans
 			arg3
 		);
 	}
-	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, JObject arg2, JObject arg3)
+	void PropertyChangeSupport::fireIndexedPropertyChange(JString arg0, jint arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"fireIndexedPropertyChange",
@@ -73,7 +73,7 @@ namespace java::beans
 			arg3.object<jobject>()
 		);
 	}
-	void PropertyChangeSupport::firePropertyChange(java::beans::PropertyChangeEvent arg0)
+	void PropertyChangeSupport::firePropertyChange(java::beans::PropertyChangeEvent arg0) const
 	{
 		callMethod<void>(
 			"firePropertyChange",
@@ -81,7 +81,7 @@ namespace java::beans
 			arg0.object()
 		);
 	}
-	void PropertyChangeSupport::firePropertyChange(JString arg0, jboolean arg1, jboolean arg2)
+	void PropertyChangeSupport::firePropertyChange(JString arg0, jboolean arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"firePropertyChange",
@@ -91,7 +91,7 @@ namespace java::beans
 			arg2
 		);
 	}
-	void PropertyChangeSupport::firePropertyChange(JString arg0, jint arg1, jint arg2)
+	void PropertyChangeSupport::firePropertyChange(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"firePropertyChange",
@@ -101,7 +101,7 @@ namespace java::beans
 			arg2
 		);
 	}
-	void PropertyChangeSupport::firePropertyChange(JString arg0, JObject arg1, JObject arg2)
+	void PropertyChangeSupport::firePropertyChange(JString arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"firePropertyChange",
@@ -111,14 +111,14 @@ namespace java::beans
 			arg2.object<jobject>()
 		);
 	}
-	JArray PropertyChangeSupport::getPropertyChangeListeners()
+	JArray PropertyChangeSupport::getPropertyChangeListeners() const
 	{
 		return callObjectMethod(
 			"getPropertyChangeListeners",
 			"()[Ljava/beans/PropertyChangeListener;"
 		);
 	}
-	JArray PropertyChangeSupport::getPropertyChangeListeners(JString arg0)
+	JArray PropertyChangeSupport::getPropertyChangeListeners(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPropertyChangeListeners",
@@ -126,7 +126,7 @@ namespace java::beans
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PropertyChangeSupport::hasListeners(JString arg0)
+	jboolean PropertyChangeSupport::hasListeners(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasListeners",
@@ -134,7 +134,7 @@ namespace java::beans
 			arg0.object<jstring>()
 		);
 	}
-	void PropertyChangeSupport::removePropertyChangeListener(JObject arg0)
+	void PropertyChangeSupport::removePropertyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removePropertyChangeListener",
@@ -142,7 +142,7 @@ namespace java::beans
 			arg0.object()
 		);
 	}
-	void PropertyChangeSupport::removePropertyChangeListener(JString arg0, JObject arg1)
+	void PropertyChangeSupport::removePropertyChangeListener(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"removePropertyChangeListener",

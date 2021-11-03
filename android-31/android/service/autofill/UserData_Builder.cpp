@@ -21,7 +21,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::UserData_Builder UserData_Builder::add(JString arg0, JString arg1)
+	android::service::autofill::UserData_Builder UserData_Builder::add(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"add",
@@ -30,14 +30,14 @@ namespace android::service::autofill
 			arg1.object<jstring>()
 		);
 	}
-	android::service::autofill::UserData UserData_Builder::build()
+	android::service::autofill::UserData UserData_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/UserData;"
 		);
 	}
-	android::service::autofill::UserData_Builder UserData_Builder::setFieldClassificationAlgorithm(JString arg0, android::os::Bundle arg1)
+	android::service::autofill::UserData_Builder UserData_Builder::setFieldClassificationAlgorithm(JString arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"setFieldClassificationAlgorithm",
@@ -46,7 +46,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::UserData_Builder UserData_Builder::setFieldClassificationAlgorithmForCategory(JString arg0, JString arg1, android::os::Bundle arg2)
+	android::service::autofill::UserData_Builder UserData_Builder::setFieldClassificationAlgorithmForCategory(JString arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"setFieldClassificationAlgorithmForCategory",

@@ -26,7 +26,7 @@ namespace android::telephony::mbms
 		MbmsDownloadReceiver();
 		
 		// Methods
-		void onReceive(android::content::Context arg0, android::content::Intent arg1);
+		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
 	};
 } // namespace android::telephony::mbms
 

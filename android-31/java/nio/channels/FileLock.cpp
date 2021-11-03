@@ -13,42 +13,42 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	JObject FileLock::acquiredBy()
+	JObject FileLock::acquiredBy() const
 	{
 		return callObjectMethod(
 			"acquiredBy",
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
-	java::nio::channels::FileChannel FileLock::channel()
+	java::nio::channels::FileChannel FileLock::channel() const
 	{
 		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/FileChannel;"
 		);
 	}
-	void FileLock::close()
+	void FileLock::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jboolean FileLock::isShared()
+	jboolean FileLock::isShared() const
 	{
 		return callMethod<jboolean>(
 			"isShared",
 			"()Z"
 		);
 	}
-	jboolean FileLock::isValid()
+	jboolean FileLock::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	jboolean FileLock::overlaps(jlong arg0, jlong arg1)
+	jboolean FileLock::overlaps(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"overlaps",
@@ -57,28 +57,28 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	jlong FileLock::position()
+	jlong FileLock::position() const
 	{
 		return callMethod<jlong>(
 			"position",
 			"()J"
 		);
 	}
-	void FileLock::release()
+	void FileLock::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jlong FileLock::size()
+	jlong FileLock::size() const
 	{
 		return callMethod<jlong>(
 			"size",
 			"()J"
 		);
 	}
-	JString FileLock::toString()
+	JString FileLock::toString() const
 	{
 		return callObjectMethod(
 			"toString",

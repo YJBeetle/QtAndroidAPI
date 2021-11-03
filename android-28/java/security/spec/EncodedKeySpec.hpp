@@ -20,9 +20,9 @@ namespace java::security::spec
 		EncodedKeySpec(JByteArray arg0);
 		
 		// Methods
-		JString getAlgorithm();
-		JByteArray getEncoded();
-		JString getFormat();
+		JString getAlgorithm() const;
+		JByteArray getEncoded() const;
+		JString getFormat() const;
 	};
 } // namespace java::security::spec
 

@@ -34,7 +34,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean CopyOnWriteArrayList::add(JObject arg0)
+	jboolean CopyOnWriteArrayList::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void CopyOnWriteArrayList::add(jint arg0, JObject arg1)
+	void CopyOnWriteArrayList::add(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -51,7 +51,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	jboolean CopyOnWriteArrayList::addAll(JObject arg0)
+	jboolean CopyOnWriteArrayList::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -59,7 +59,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::addAll(jint arg0, JObject arg1)
+	jboolean CopyOnWriteArrayList::addAll(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -68,7 +68,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jint CopyOnWriteArrayList::addAllAbsent(JObject arg0)
+	jint CopyOnWriteArrayList::addAllAbsent(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"addAllAbsent",
@@ -76,7 +76,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::addIfAbsent(JObject arg0)
+	jboolean CopyOnWriteArrayList::addIfAbsent(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addIfAbsent",
@@ -84,21 +84,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void CopyOnWriteArrayList::clear()
+	void CopyOnWriteArrayList::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject CopyOnWriteArrayList::clone()
+	JObject CopyOnWriteArrayList::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean CopyOnWriteArrayList::contains(JObject arg0)
+	jboolean CopyOnWriteArrayList::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -106,7 +106,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean CopyOnWriteArrayList::containsAll(JObject arg0)
+	jboolean CopyOnWriteArrayList::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -114,7 +114,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::equals(JObject arg0)
+	jboolean CopyOnWriteArrayList::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -122,7 +122,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void CopyOnWriteArrayList::forEach(JObject arg0)
+	void CopyOnWriteArrayList::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -130,7 +130,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject CopyOnWriteArrayList::get(jint arg0)
+	JObject CopyOnWriteArrayList::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -138,14 +138,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint CopyOnWriteArrayList::hashCode()
+	jint CopyOnWriteArrayList::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint CopyOnWriteArrayList::indexOf(JObject arg0)
+	jint CopyOnWriteArrayList::indexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -153,7 +153,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint CopyOnWriteArrayList::indexOf(JObject arg0, jint arg1)
+	jint CopyOnWriteArrayList::indexOf(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -162,21 +162,21 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jboolean CopyOnWriteArrayList::isEmpty()
+	jboolean CopyOnWriteArrayList::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject CopyOnWriteArrayList::iterator()
+	JObject CopyOnWriteArrayList::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0)
+	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -184,7 +184,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0, jint arg1)
+	jint CopyOnWriteArrayList::lastIndexOf(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -193,14 +193,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject CopyOnWriteArrayList::listIterator()
+	JObject CopyOnWriteArrayList::listIterator() const
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	JObject CopyOnWriteArrayList::listIterator(jint arg0)
+	JObject CopyOnWriteArrayList::listIterator(jint arg0) const
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -208,7 +208,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArrayList::remove(JObject arg0)
+	jboolean CopyOnWriteArrayList::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -216,7 +216,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject CopyOnWriteArrayList::remove(jint arg0)
+	JObject CopyOnWriteArrayList::remove(jint arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -224,7 +224,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArrayList::removeAll(JObject arg0)
+	jboolean CopyOnWriteArrayList::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -232,7 +232,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::removeIf(JObject arg0)
+	jboolean CopyOnWriteArrayList::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -240,7 +240,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void CopyOnWriteArrayList::replaceAll(JObject arg0)
+	void CopyOnWriteArrayList::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -248,7 +248,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::retainAll(JObject arg0)
+	jboolean CopyOnWriteArrayList::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -256,7 +256,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject CopyOnWriteArrayList::set(jint arg0, JObject arg1)
+	JObject CopyOnWriteArrayList::set(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"set",
@@ -265,14 +265,14 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	jint CopyOnWriteArrayList::size()
+	jint CopyOnWriteArrayList::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void CopyOnWriteArrayList::sort(JObject arg0)
+	void CopyOnWriteArrayList::sort(JObject arg0) const
 	{
 		callMethod<void>(
 			"sort",
@@ -280,14 +280,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject CopyOnWriteArrayList::spliterator()
+	JObject CopyOnWriteArrayList::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject CopyOnWriteArrayList::subList(jint arg0, jint arg1)
+	JObject CopyOnWriteArrayList::subList(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subList",
@@ -296,14 +296,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObjectArray CopyOnWriteArrayList::toArray()
+	JObjectArray CopyOnWriteArrayList::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray CopyOnWriteArrayList::toArray(JObjectArray arg0)
+	JObjectArray CopyOnWriteArrayList::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -311,7 +311,7 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString CopyOnWriteArrayList::toString()
+	JString CopyOnWriteArrayList::toString() const
 	{
 		return callObjectMethod(
 			"toString",

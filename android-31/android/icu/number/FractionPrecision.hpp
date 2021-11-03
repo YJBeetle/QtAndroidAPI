@@ -21,8 +21,8 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::Precision withMaxDigits(jint arg0);
-		android::icu::number::Precision withMinDigits(jint arg0);
+		android::icu::number::Precision withMaxDigits(jint arg0) const;
+		android::icu::number::Precision withMinDigits(jint arg0) const;
 	};
 } // namespace android::icu::number
 

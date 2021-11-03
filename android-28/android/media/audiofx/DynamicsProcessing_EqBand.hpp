@@ -20,9 +20,9 @@ namespace android::media::audiofx
 		DynamicsProcessing_EqBand(jboolean arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jfloat getGain();
-		void setGain(jfloat arg0);
-		JString toString();
+		jfloat getGain() const;
+		void setGain(jfloat arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

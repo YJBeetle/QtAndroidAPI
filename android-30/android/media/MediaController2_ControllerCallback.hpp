@@ -39,11 +39,11 @@ namespace android::media
 		MediaController2_ControllerCallback();
 		
 		// Methods
-		void onCommandResult(android::media::MediaController2 arg0, JObject arg1, android::media::Session2Command arg2, android::media::Session2Command_Result arg3);
-		void onConnected(android::media::MediaController2 arg0, android::media::Session2CommandGroup arg1);
-		void onDisconnected(android::media::MediaController2 arg0);
-		void onPlaybackActiveChanged(android::media::MediaController2 arg0, jboolean arg1);
-		android::media::Session2Command_Result onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2);
+		void onCommandResult(android::media::MediaController2 arg0, JObject arg1, android::media::Session2Command arg2, android::media::Session2Command_Result arg3) const;
+		void onConnected(android::media::MediaController2 arg0, android::media::Session2CommandGroup arg1) const;
+		void onDisconnected(android::media::MediaController2 arg0) const;
+		void onPlaybackActiveChanged(android::media::MediaController2 arg0, jboolean arg1) const;
+		android::media::Session2Command_Result onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::media
 

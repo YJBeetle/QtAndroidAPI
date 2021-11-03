@@ -21,22 +21,22 @@ namespace android::util
 		SparseBooleanArray(jint arg0);
 		
 		// Methods
-		void append(jint arg0, jboolean arg1);
-		void clear();
-		android::util::SparseBooleanArray clone();
-		void _delete(jint arg0);
-		jboolean equals(JObject arg0);
-		jboolean get(jint arg0);
-		jboolean get(jint arg0, jboolean arg1);
-		jint hashCode();
-		jint indexOfKey(jint arg0);
-		jint indexOfValue(jboolean arg0);
-		jint keyAt(jint arg0);
-		void put(jint arg0, jboolean arg1);
-		void removeAt(jint arg0);
-		jint size();
-		JString toString();
-		jboolean valueAt(jint arg0);
+		void append(jint arg0, jboolean arg1) const;
+		void clear() const;
+		android::util::SparseBooleanArray clone() const;
+		void _delete(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		jboolean get(jint arg0) const;
+		jboolean get(jint arg0, jboolean arg1) const;
+		jint hashCode() const;
+		jint indexOfKey(jint arg0) const;
+		jint indexOfValue(jboolean arg0) const;
+		jint keyAt(jint arg0) const;
+		void put(jint arg0, jboolean arg1) const;
+		void removeAt(jint arg0) const;
+		jint size() const;
+		JString toString() const;
+		jboolean valueAt(jint arg0) const;
 	};
 } // namespace android::util
 

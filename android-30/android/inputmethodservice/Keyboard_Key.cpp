@@ -145,14 +145,14 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	JIntArray Keyboard_Key::getCurrentDrawableState()
+	JIntArray Keyboard_Key::getCurrentDrawableState() const
 	{
 		return callObjectMethod(
 			"getCurrentDrawableState",
 			"()[I"
 		);
 	}
-	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
+	jboolean Keyboard_Key::isInside(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isInside",
@@ -161,14 +161,14 @@ namespace android::inputmethodservice
 			arg1
 		);
 	}
-	void Keyboard_Key::onPressed()
+	void Keyboard_Key::onPressed() const
 	{
 		callMethod<void>(
 			"onPressed",
 			"()V"
 		);
 	}
-	void Keyboard_Key::onReleased(jboolean arg0)
+	void Keyboard_Key::onReleased(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onReleased",
@@ -176,7 +176,7 @@ namespace android::inputmethodservice
 			arg0
 		);
 	}
-	jint Keyboard_Key::squaredDistanceFrom(jint arg0, jint arg1)
+	jint Keyboard_Key::squaredDistanceFrom(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"squaredDistanceFrom",

@@ -19,7 +19,7 @@ namespace android::net::vcn
 		) {}
 	
 	// Methods
-	android::net::vcn::VcnConfig_Builder VcnConfig_Builder::addGatewayConnectionConfig(android::net::vcn::VcnGatewayConnectionConfig arg0)
+	android::net::vcn::VcnConfig_Builder VcnConfig_Builder::addGatewayConnectionConfig(android::net::vcn::VcnGatewayConnectionConfig arg0) const
 	{
 		return callObjectMethod(
 			"addGatewayConnectionConfig",
@@ -27,7 +27,7 @@ namespace android::net::vcn
 			arg0.object()
 		);
 	}
-	android::net::vcn::VcnConfig VcnConfig_Builder::build()
+	android::net::vcn::VcnConfig VcnConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

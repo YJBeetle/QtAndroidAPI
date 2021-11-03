@@ -24,21 +24,21 @@ namespace java::io
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	void OutputStream::close()
+	void OutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void OutputStream::flush()
+	void OutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void OutputStream::write(JByteArray arg0)
+	void OutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -46,7 +46,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void OutputStream::write(jint arg0)
+	void OutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -54,7 +54,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void OutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void OutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

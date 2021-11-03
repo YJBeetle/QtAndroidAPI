@@ -51,18 +51,18 @@ namespace android::text::style
 		SuggestionSpan(android::content::Context arg0, java::util::Locale arg1, JArray arg2, jint arg3, JClass arg4);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getFlags();
-		JString getLocale();
-		java::util::Locale getLocaleObject();
-		jint getSpanTypeId();
-		JArray getSuggestions();
-		jint getUnderlineColor();
-		jint hashCode();
-		void setFlags(jint arg0);
-		void updateDrawState(android::text::TextPaint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getFlags() const;
+		JString getLocale() const;
+		java::util::Locale getLocaleObject() const;
+		jint getSpanTypeId() const;
+		JArray getSuggestions() const;
+		jint getUnderlineColor() const;
+		jint hashCode() const;
+		void setFlags(jint arg0) const;
+		void updateDrawState(android::text::TextPaint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

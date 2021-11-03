@@ -24,14 +24,14 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		jchar charAt(jint arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jint length();
-		JString subSequence(jint arg0, jint arg1);
-		java::math::BigDecimal toBigDecimal();
-		JObject toCharacterIterator();
-		JString toString();
+		jchar charAt(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jint length() const;
+		JString subSequence(jint arg0, jint arg1) const;
+		java::math::BigDecimal toBigDecimal() const;
+		JObject toCharacterIterator() const;
+		JString toString() const;
 	};
 } // namespace android::icu::number
 

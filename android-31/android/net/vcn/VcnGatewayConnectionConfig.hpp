@@ -21,12 +21,12 @@ namespace android::net::vcn
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JIntArray getExposedCapabilities();
-		JString getGatewayConnectionName();
-		jint getMaxMtu();
-		JLongArray getRetryIntervalsMillis();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JIntArray getExposedCapabilities() const;
+		JString getGatewayConnectionName() const;
+		jint getMaxMtu() const;
+		JLongArray getRetryIntervalsMillis() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::vcn
 

@@ -23,17 +23,17 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::IsoDep get(android::nfc::Tag arg0);
-		void close();
-		void connect();
-		JByteArray getHiLayerResponse();
-		JByteArray getHistoricalBytes();
-		jint getMaxTransceiveLength();
-		android::nfc::Tag getTag();
-		jint getTimeout();
-		jboolean isConnected();
-		jboolean isExtendedLengthApduSupported();
-		void setTimeout(jint arg0);
-		JByteArray transceive(JByteArray arg0);
+		void close() const;
+		void connect() const;
+		JByteArray getHiLayerResponse() const;
+		JByteArray getHistoricalBytes() const;
+		jint getMaxTransceiveLength() const;
+		android::nfc::Tag getTag() const;
+		jint getTimeout() const;
+		jboolean isConnected() const;
+		jboolean isExtendedLengthApduSupported() const;
+		void setTimeout(jint arg0) const;
+		JByteArray transceive(JByteArray arg0) const;
 	};
 } // namespace android::nfc::tech
 

@@ -14,7 +14,7 @@ namespace android::media::session
 	// Constructors
 	
 	// Methods
-	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1) const
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -23,7 +23,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1, android::os::Handler arg2)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -33,7 +33,7 @@ namespace android::media::session
 			arg2.object()
 		);
 	}
-	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0)
+	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnSession2TokensChangedListener",
@@ -41,7 +41,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0, android::os::Handler arg1)
+	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"addOnSession2TokensChangedListener",
@@ -50,7 +50,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	JObject MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
+	JObject MediaSessionManager::getActiveSessions(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getActiveSessions",
@@ -58,14 +58,14 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	JObject MediaSessionManager::getSession2Tokens()
+	JObject MediaSessionManager::getSession2Tokens() const
 	{
 		return callObjectMethod(
 			"getSession2Tokens",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean MediaSessionManager::isTrustedForMediaControl(android::media::session::MediaSessionManager_RemoteUserInfo arg0)
+	jboolean MediaSessionManager::isTrustedForMediaControl(android::media::session::MediaSessionManager_RemoteUserInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"isTrustedForMediaControl",
@@ -73,7 +73,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::notifySession2Created(android::media::Session2Token arg0)
+	void MediaSessionManager::notifySession2Created(android::media::Session2Token arg0) const
 	{
 		callMethod<void>(
 			"notifySession2Created",
@@ -81,7 +81,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::removeOnActiveSessionsChangedListener(JObject arg0)
+	void MediaSessionManager::removeOnActiveSessionsChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnActiveSessionsChangedListener",
@@ -89,7 +89,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::removeOnSession2TokensChangedListener(JObject arg0)
+	void MediaSessionManager::removeOnSession2TokensChangedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnSession2TokensChangedListener",

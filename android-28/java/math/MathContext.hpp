@@ -34,11 +34,11 @@ namespace java::math
 		MathContext(jint arg0, java::math::RoundingMode arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getPrecision();
-		java::math::RoundingMode getRoundingMode();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getPrecision() const;
+		java::math::RoundingMode getRoundingMode() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::math
 

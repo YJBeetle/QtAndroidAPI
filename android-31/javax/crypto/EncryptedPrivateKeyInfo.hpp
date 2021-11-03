@@ -38,14 +38,14 @@ namespace javax::crypto
 		EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, JByteArray arg1);
 		
 		// Methods
-		JString getAlgName();
-		java::security::AlgorithmParameters getAlgParameters();
-		JByteArray getEncoded();
-		JByteArray getEncryptedData();
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(javax::crypto::Cipher arg0);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, JString arg1);
-		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, java::security::Provider arg1);
+		JString getAlgName() const;
+		java::security::AlgorithmParameters getAlgParameters() const;
+		JByteArray getEncoded() const;
+		JByteArray getEncryptedData() const;
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0) const;
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(javax::crypto::Cipher arg0) const;
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, JString arg1) const;
+		java::security::spec::PKCS8EncodedKeySpec getKeySpec(JObject arg0, java::security::Provider arg1) const;
 	};
 } // namespace javax::crypto
 

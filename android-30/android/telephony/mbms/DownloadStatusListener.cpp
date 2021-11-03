@@ -17,7 +17,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void DownloadStatusListener::onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2)
+	void DownloadStatusListener::onStatusUpdated(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onStatusUpdated",

@@ -25,12 +25,12 @@ namespace android::widget::inline
 		// Constructors
 		
 		// Methods
-		android::view::SurfaceControl getSurfaceControl();
-		jboolean isZOrderedOnTop();
-		void onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		void setClipBounds(android::graphics::Rect arg0);
-		void setSurfaceControlCallback(JObject arg0);
-		jboolean setZOrderedOnTop(jboolean arg0);
+		android::view::SurfaceControl getSurfaceControl() const;
+		jboolean isZOrderedOnTop() const;
+		void onLayout(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
+		void setClipBounds(android::graphics::Rect arg0) const;
+		void setSurfaceControlCallback(JObject arg0) const;
+		jboolean setZOrderedOnTop(jboolean arg0) const;
 	};
 } // namespace android::widget::inline
 

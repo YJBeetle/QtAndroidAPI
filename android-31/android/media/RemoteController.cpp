@@ -43,28 +43,28 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean RemoteController::clearArtworkConfiguration()
+	jboolean RemoteController::clearArtworkConfiguration() const
 	{
 		return callMethod<jboolean>(
 			"clearArtworkConfiguration",
 			"()Z"
 		);
 	}
-	android::media::RemoteController_MetadataEditor RemoteController::editMetadata()
+	android::media::RemoteController_MetadataEditor RemoteController::editMetadata() const
 	{
 		return callObjectMethod(
 			"editMetadata",
 			"()Landroid/media/RemoteController$MetadataEditor;"
 		);
 	}
-	jlong RemoteController::getEstimatedMediaPosition()
+	jlong RemoteController::getEstimatedMediaPosition() const
 	{
 		return callMethod<jlong>(
 			"getEstimatedMediaPosition",
 			"()J"
 		);
 	}
-	jboolean RemoteController::seekTo(jlong arg0)
+	jboolean RemoteController::seekTo(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"seekTo",
@@ -72,7 +72,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean RemoteController::sendMediaKeyEvent(android::view::KeyEvent arg0)
+	jboolean RemoteController::sendMediaKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"sendMediaKeyEvent",
@@ -80,7 +80,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean RemoteController::setArtworkConfiguration(jint arg0, jint arg1)
+	jboolean RemoteController::setArtworkConfiguration(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"setArtworkConfiguration",
@@ -89,7 +89,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jboolean RemoteController::setSynchronizationMode(jint arg0)
+	jboolean RemoteController::setSynchronizationMode(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setSynchronizationMode",

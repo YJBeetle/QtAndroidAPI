@@ -23,14 +23,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint LinkAddress::describeContents()
+	jint LinkAddress::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LinkAddress::equals(JObject arg0)
+	jboolean LinkAddress::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,49 +38,49 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	java::net::InetAddress LinkAddress::getAddress()
+	java::net::InetAddress LinkAddress::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint LinkAddress::getFlags()
+	jint LinkAddress::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	jint LinkAddress::getPrefixLength()
+	jint LinkAddress::getPrefixLength() const
 	{
 		return callMethod<jint>(
 			"getPrefixLength",
 			"()I"
 		);
 	}
-	jint LinkAddress::getScope()
+	jint LinkAddress::getScope() const
 	{
 		return callMethod<jint>(
 			"getScope",
 			"()I"
 		);
 	}
-	jint LinkAddress::hashCode()
+	jint LinkAddress::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LinkAddress::toString()
+	JString LinkAddress::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LinkAddress::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LinkAddress::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

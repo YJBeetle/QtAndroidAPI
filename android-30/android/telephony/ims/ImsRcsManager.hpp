@@ -23,7 +23,7 @@ namespace android::telephony::ims
 		// Constructors
 		
 		// Methods
-		android::telephony::ims::RcsUceAdapter getUceAdapter();
+		android::telephony::ims::RcsUceAdapter getUceAdapter() const;
 	};
 } // namespace android::telephony::ims
 

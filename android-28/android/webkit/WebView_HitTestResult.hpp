@@ -28,8 +28,8 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		JString getExtra();
-		jint getType();
+		JString getExtra() const;
+		jint getType() const;
 	};
 } // namespace android::webkit
 

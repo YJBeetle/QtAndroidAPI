@@ -29,7 +29,7 @@ namespace android::print
 		) {}
 	
 	// Methods
-	jboolean PrintAttributes_Margins::equals(JObject arg0)
+	jboolean PrintAttributes_Margins::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,42 +37,42 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintAttributes_Margins::getBottomMils()
+	jint PrintAttributes_Margins::getBottomMils() const
 	{
 		return callMethod<jint>(
 			"getBottomMils",
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::getLeftMils()
+	jint PrintAttributes_Margins::getLeftMils() const
 	{
 		return callMethod<jint>(
 			"getLeftMils",
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::getRightMils()
+	jint PrintAttributes_Margins::getRightMils() const
 	{
 		return callMethod<jint>(
 			"getRightMils",
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::getTopMils()
+	jint PrintAttributes_Margins::getTopMils() const
 	{
 		return callMethod<jint>(
 			"getTopMils",
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::hashCode()
+	jint PrintAttributes_Margins::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrintAttributes_Margins::toString()
+	JString PrintAttributes_Margins::toString() const
 	{
 		return callObjectMethod(
 			"toString",

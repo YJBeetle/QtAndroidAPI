@@ -35,14 +35,14 @@ namespace android::app
 		ActivityManager_TaskDescription(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::graphics::Bitmap getIcon();
-		JString getLabel();
-		jint getPrimaryColor();
-		void readFromParcel(android::os::Parcel arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::graphics::Bitmap getIcon() const;
+		JString getLabel() const;
+		jint getPrimaryColor() const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

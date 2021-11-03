@@ -36,15 +36,15 @@ namespace android::media
 		MediaDescription_Builder();
 		
 		// Methods
-		android::media::MediaDescription build();
-		android::media::MediaDescription_Builder setDescription(JString arg0);
-		android::media::MediaDescription_Builder setExtras(android::os::Bundle arg0);
-		android::media::MediaDescription_Builder setIconBitmap(android::graphics::Bitmap arg0);
-		android::media::MediaDescription_Builder setIconUri(android::net::Uri arg0);
-		android::media::MediaDescription_Builder setMediaId(JString arg0);
-		android::media::MediaDescription_Builder setMediaUri(android::net::Uri arg0);
-		android::media::MediaDescription_Builder setSubtitle(JString arg0);
-		android::media::MediaDescription_Builder setTitle(JString arg0);
+		android::media::MediaDescription build() const;
+		android::media::MediaDescription_Builder setDescription(JString arg0) const;
+		android::media::MediaDescription_Builder setExtras(android::os::Bundle arg0) const;
+		android::media::MediaDescription_Builder setIconBitmap(android::graphics::Bitmap arg0) const;
+		android::media::MediaDescription_Builder setIconUri(android::net::Uri arg0) const;
+		android::media::MediaDescription_Builder setMediaId(JString arg0) const;
+		android::media::MediaDescription_Builder setMediaUri(android::net::Uri arg0) const;
+		android::media::MediaDescription_Builder setSubtitle(JString arg0) const;
+		android::media::MediaDescription_Builder setTitle(JString arg0) const;
 	};
 } // namespace android::media
 

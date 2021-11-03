@@ -20,7 +20,7 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	jboolean MediaSessionManager_RemoteUserInfo::equals(JObject arg0)
+	jboolean MediaSessionManager_RemoteUserInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,28 +28,28 @@ namespace android::media::session
 			arg0.object<jobject>()
 		);
 	}
-	JString MediaSessionManager_RemoteUserInfo::getPackageName()
+	JString MediaSessionManager_RemoteUserInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaSessionManager_RemoteUserInfo::getPid()
+	jint MediaSessionManager_RemoteUserInfo::getPid() const
 	{
 		return callMethod<jint>(
 			"getPid",
 			"()I"
 		);
 	}
-	jint MediaSessionManager_RemoteUserInfo::getUid()
+	jint MediaSessionManager_RemoteUserInfo::getUid() const
 	{
 		return callMethod<jint>(
 			"getUid",
 			"()I"
 		);
 	}
-	jint MediaSessionManager_RemoteUserInfo::hashCode()
+	jint MediaSessionManager_RemoteUserInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

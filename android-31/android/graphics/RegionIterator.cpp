@@ -18,7 +18,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean RegionIterator::next(android::graphics::Rect arg0)
+	jboolean RegionIterator::next(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"next",

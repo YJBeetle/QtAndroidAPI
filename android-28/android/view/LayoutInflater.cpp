@@ -23,7 +23,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::LayoutInflater LayoutInflater::cloneInContext(android::content::Context arg0)
+	android::view::LayoutInflater LayoutInflater::cloneInContext(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"cloneInContext",
@@ -31,7 +31,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::View LayoutInflater::createView(JString arg0, JString arg1, JObject arg2)
+	android::view::View LayoutInflater::createView(JString arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"createView",
@@ -41,35 +41,35 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	android::content::Context LayoutInflater::getContext()
+	android::content::Context LayoutInflater::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	JObject LayoutInflater::getFactory()
+	JObject LayoutInflater::getFactory() const
 	{
 		return callObjectMethod(
 			"getFactory",
 			"()Landroid/view/LayoutInflater$Factory;"
 		);
 	}
-	JObject LayoutInflater::getFactory2()
+	JObject LayoutInflater::getFactory2() const
 	{
 		return callObjectMethod(
 			"getFactory2",
 			"()Landroid/view/LayoutInflater$Factory2;"
 		);
 	}
-	JObject LayoutInflater::getFilter()
+	JObject LayoutInflater::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/view/LayoutInflater$Filter;"
 		);
 	}
-	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1)
+	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"inflate",
@@ -78,7 +78,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1)
+	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1) const
 	{
 		return callObjectMethod(
 			"inflate",
@@ -87,7 +87,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2)
+	android::view::View LayoutInflater::inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"inflate",
@@ -97,7 +97,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2)
+	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"inflate",
@@ -107,7 +107,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void LayoutInflater::setFactory(JObject arg0)
+	void LayoutInflater::setFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFactory",
@@ -115,7 +115,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void LayoutInflater::setFactory2(JObject arg0)
+	void LayoutInflater::setFactory2(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFactory2",
@@ -123,7 +123,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void LayoutInflater::setFilter(JObject arg0)
+	void LayoutInflater::setFilter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFilter",

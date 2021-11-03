@@ -25,7 +25,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean AbstractMap_SimpleImmutableEntry::equals(JObject arg0)
+	jboolean AbstractMap_SimpleImmutableEntry::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -33,28 +33,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractMap_SimpleImmutableEntry::getKey()
+	JObject AbstractMap_SimpleImmutableEntry::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AbstractMap_SimpleImmutableEntry::getValue()
+	JObject AbstractMap_SimpleImmutableEntry::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint AbstractMap_SimpleImmutableEntry::hashCode()
+	jint AbstractMap_SimpleImmutableEntry::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject AbstractMap_SimpleImmutableEntry::setValue(JObject arg0)
+	JObject AbstractMap_SimpleImmutableEntry::setValue(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setValue",
@@ -62,7 +62,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JString AbstractMap_SimpleImmutableEntry::toString()
+	JString AbstractMap_SimpleImmutableEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",

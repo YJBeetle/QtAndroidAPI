@@ -143,14 +143,14 @@ namespace android::net::wifi
 			"()[Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	jint SupplicantState::describeContents()
+	jint SupplicantState::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void SupplicantState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SupplicantState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

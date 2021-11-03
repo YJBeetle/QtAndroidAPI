@@ -35,7 +35,7 @@ namespace java::nio
 			"()Ljava/nio/ByteOrder;"
 		);
 	}
-	JString ByteOrder::toString()
+	JString ByteOrder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

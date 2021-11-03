@@ -57,7 +57,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	void RggbChannelVector::copyTo(JFloatArray arg0, jint arg1)
+	void RggbChannelVector::copyTo(JFloatArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"copyTo",
@@ -66,7 +66,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jboolean RggbChannelVector::equals(JObject arg0)
+	jboolean RggbChannelVector::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,14 +74,14 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jfloat RggbChannelVector::getBlue()
+	jfloat RggbChannelVector::getBlue() const
 	{
 		return callMethod<jfloat>(
 			"getBlue",
 			"()F"
 		);
 	}
-	jfloat RggbChannelVector::getComponent(jint arg0)
+	jfloat RggbChannelVector::getComponent(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getComponent",
@@ -89,35 +89,35 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jfloat RggbChannelVector::getGreenEven()
+	jfloat RggbChannelVector::getGreenEven() const
 	{
 		return callMethod<jfloat>(
 			"getGreenEven",
 			"()F"
 		);
 	}
-	jfloat RggbChannelVector::getGreenOdd()
+	jfloat RggbChannelVector::getGreenOdd() const
 	{
 		return callMethod<jfloat>(
 			"getGreenOdd",
 			"()F"
 		);
 	}
-	jfloat RggbChannelVector::getRed()
+	jfloat RggbChannelVector::getRed() const
 	{
 		return callMethod<jfloat>(
 			"getRed",
 			"()F"
 		);
 	}
-	jint RggbChannelVector::hashCode()
+	jint RggbChannelVector::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString RggbChannelVector::toString()
+	JString RggbChannelVector::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -37,12 +37,12 @@ namespace android::hardware::input
 		// Constructors
 		
 		// Methods
-		android::view::InputDevice getInputDevice(jint arg0);
-		JIntArray getInputDeviceIds();
-		jfloat getMaximumObscuringOpacityForTouch();
-		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1);
-		void unregisterInputDeviceListener(JObject arg0);
-		android::view::VerifiedInputEvent verifyInputEvent(android::view::InputEvent arg0);
+		android::view::InputDevice getInputDevice(jint arg0) const;
+		JIntArray getInputDeviceIds() const;
+		jfloat getMaximumObscuringOpacityForTouch() const;
+		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1) const;
+		void unregisterInputDeviceListener(JObject arg0) const;
+		android::view::VerifiedInputEvent verifyInputEvent(android::view::InputEvent arg0) const;
 	};
 } // namespace android::hardware::input
 

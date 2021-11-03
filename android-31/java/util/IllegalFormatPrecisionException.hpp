@@ -19,8 +19,8 @@ namespace java::util
 		IllegalFormatPrecisionException(jint arg0);
 		
 		// Methods
-		JString getMessage();
-		jint getPrecision();
+		JString getMessage() const;
+		jint getPrecision() const;
 	};
 } // namespace java::util
 

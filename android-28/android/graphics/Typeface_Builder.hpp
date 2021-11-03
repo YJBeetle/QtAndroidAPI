@@ -39,13 +39,13 @@ namespace android::graphics
 		Typeface_Builder(android::content::res::AssetManager arg0, JString arg1);
 		
 		// Methods
-		android::graphics::Typeface build();
-		android::graphics::Typeface_Builder setFallback(JString arg0);
-		android::graphics::Typeface_Builder setFontVariationSettings(JArray arg0);
-		android::graphics::Typeface_Builder setFontVariationSettings(JString arg0);
-		android::graphics::Typeface_Builder setItalic(jboolean arg0);
-		android::graphics::Typeface_Builder setTtcIndex(jint arg0);
-		android::graphics::Typeface_Builder setWeight(jint arg0);
+		android::graphics::Typeface build() const;
+		android::graphics::Typeface_Builder setFallback(JString arg0) const;
+		android::graphics::Typeface_Builder setFontVariationSettings(JArray arg0) const;
+		android::graphics::Typeface_Builder setFontVariationSettings(JString arg0) const;
+		android::graphics::Typeface_Builder setItalic(jboolean arg0) const;
+		android::graphics::Typeface_Builder setTtcIndex(jint arg0) const;
+		android::graphics::Typeface_Builder setWeight(jint arg0) const;
 	};
 } // namespace android::graphics
 

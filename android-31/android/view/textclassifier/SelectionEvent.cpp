@@ -231,14 +231,14 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	jint SelectionEvent::describeContents()
+	jint SelectionEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SelectionEvent::equals(JObject arg0)
+	jboolean SelectionEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -246,133 +246,133 @@ namespace android::view::textclassifier
 			arg0.object<jobject>()
 		);
 	}
-	jlong SelectionEvent::getDurationSincePreviousEvent()
+	jlong SelectionEvent::getDurationSincePreviousEvent() const
 	{
 		return callMethod<jlong>(
 			"getDurationSincePreviousEvent",
 			"()J"
 		);
 	}
-	jlong SelectionEvent::getDurationSinceSessionStart()
+	jlong SelectionEvent::getDurationSinceSessionStart() const
 	{
 		return callMethod<jlong>(
 			"getDurationSinceSessionStart",
 			"()J"
 		);
 	}
-	jint SelectionEvent::getEnd()
+	jint SelectionEvent::getEnd() const
 	{
 		return callMethod<jint>(
 			"getEnd",
 			"()I"
 		);
 	}
-	JString SelectionEvent::getEntityType()
+	JString SelectionEvent::getEntityType() const
 	{
 		return callObjectMethod(
 			"getEntityType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SelectionEvent::getEventIndex()
+	jint SelectionEvent::getEventIndex() const
 	{
 		return callMethod<jint>(
 			"getEventIndex",
 			"()I"
 		);
 	}
-	jlong SelectionEvent::getEventTime()
+	jlong SelectionEvent::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jint SelectionEvent::getEventType()
+	jint SelectionEvent::getEventType() const
 	{
 		return callMethod<jint>(
 			"getEventType",
 			"()I"
 		);
 	}
-	jint SelectionEvent::getInvocationMethod()
+	jint SelectionEvent::getInvocationMethod() const
 	{
 		return callMethod<jint>(
 			"getInvocationMethod",
 			"()I"
 		);
 	}
-	JString SelectionEvent::getPackageName()
+	JString SelectionEvent::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SelectionEvent::getResultId()
+	JString SelectionEvent::getResultId() const
 	{
 		return callObjectMethod(
 			"getResultId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::view::textclassifier::TextClassificationSessionId SelectionEvent::getSessionId()
+	android::view::textclassifier::TextClassificationSessionId SelectionEvent::getSessionId() const
 	{
 		return callObjectMethod(
 			"getSessionId",
 			"()Landroid/view/textclassifier/TextClassificationSessionId;"
 		);
 	}
-	jint SelectionEvent::getSmartEnd()
+	jint SelectionEvent::getSmartEnd() const
 	{
 		return callMethod<jint>(
 			"getSmartEnd",
 			"()I"
 		);
 	}
-	jint SelectionEvent::getSmartStart()
+	jint SelectionEvent::getSmartStart() const
 	{
 		return callMethod<jint>(
 			"getSmartStart",
 			"()I"
 		);
 	}
-	jint SelectionEvent::getStart()
+	jint SelectionEvent::getStart() const
 	{
 		return callMethod<jint>(
 			"getStart",
 			"()I"
 		);
 	}
-	JString SelectionEvent::getWidgetType()
+	JString SelectionEvent::getWidgetType() const
 	{
 		return callObjectMethod(
 			"getWidgetType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SelectionEvent::getWidgetVersion()
+	JString SelectionEvent::getWidgetVersion() const
 	{
 		return callObjectMethod(
 			"getWidgetVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SelectionEvent::hashCode()
+	jint SelectionEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SelectionEvent::toString()
+	JString SelectionEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SelectionEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

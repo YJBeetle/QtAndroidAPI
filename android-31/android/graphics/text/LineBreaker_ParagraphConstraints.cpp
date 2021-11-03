@@ -16,42 +16,42 @@ namespace android::graphics::text
 		) {}
 	
 	// Methods
-	jfloat LineBreaker_ParagraphConstraints::getDefaultTabStop()
+	jfloat LineBreaker_ParagraphConstraints::getDefaultTabStop() const
 	{
 		return callMethod<jfloat>(
 			"getDefaultTabStop",
 			"()F"
 		);
 	}
-	jfloat LineBreaker_ParagraphConstraints::getFirstWidth()
+	jfloat LineBreaker_ParagraphConstraints::getFirstWidth() const
 	{
 		return callMethod<jfloat>(
 			"getFirstWidth",
 			"()F"
 		);
 	}
-	jint LineBreaker_ParagraphConstraints::getFirstWidthLineCount()
+	jint LineBreaker_ParagraphConstraints::getFirstWidthLineCount() const
 	{
 		return callMethod<jint>(
 			"getFirstWidthLineCount",
 			"()I"
 		);
 	}
-	JFloatArray LineBreaker_ParagraphConstraints::getTabStops()
+	JFloatArray LineBreaker_ParagraphConstraints::getTabStops() const
 	{
 		return callObjectMethod(
 			"getTabStops",
 			"()[F"
 		);
 	}
-	jfloat LineBreaker_ParagraphConstraints::getWidth()
+	jfloat LineBreaker_ParagraphConstraints::getWidth() const
 	{
 		return callMethod<jfloat>(
 			"getWidth",
 			"()F"
 		);
 	}
-	void LineBreaker_ParagraphConstraints::setIndent(jfloat arg0, jint arg1)
+	void LineBreaker_ParagraphConstraints::setIndent(jfloat arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setIndent",
@@ -60,7 +60,7 @@ namespace android::graphics::text
 			arg1
 		);
 	}
-	void LineBreaker_ParagraphConstraints::setTabStops(JFloatArray arg0, jfloat arg1)
+	void LineBreaker_ParagraphConstraints::setTabStops(JFloatArray arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setTabStops",
@@ -69,7 +69,7 @@ namespace android::graphics::text
 			arg1
 		);
 	}
-	void LineBreaker_ParagraphConstraints::setWidth(jfloat arg0)
+	void LineBreaker_ParagraphConstraints::setWidth(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setWidth",

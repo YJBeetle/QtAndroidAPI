@@ -39,22 +39,22 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void addCallback(jint arg0, android::media::MediaRouter_Callback arg1);
-		void addCallback(jint arg0, android::media::MediaRouter_Callback arg1, jint arg2);
-		void addUserRoute(android::media::MediaRouter_UserRouteInfo arg0);
-		void clearUserRoutes();
-		android::media::MediaRouter_RouteCategory createRouteCategory(jint arg0, jboolean arg1);
-		android::media::MediaRouter_RouteCategory createRouteCategory(JString arg0, jboolean arg1);
-		android::media::MediaRouter_UserRouteInfo createUserRoute(android::media::MediaRouter_RouteCategory arg0);
-		android::media::MediaRouter_RouteCategory getCategoryAt(jint arg0);
-		jint getCategoryCount();
-		android::media::MediaRouter_RouteInfo getDefaultRoute();
-		android::media::MediaRouter_RouteInfo getRouteAt(jint arg0);
-		jint getRouteCount();
-		android::media::MediaRouter_RouteInfo getSelectedRoute(jint arg0);
-		void removeCallback(android::media::MediaRouter_Callback arg0);
-		void removeUserRoute(android::media::MediaRouter_UserRouteInfo arg0);
-		void selectRoute(jint arg0, android::media::MediaRouter_RouteInfo arg1);
+		void addCallback(jint arg0, android::media::MediaRouter_Callback arg1) const;
+		void addCallback(jint arg0, android::media::MediaRouter_Callback arg1, jint arg2) const;
+		void addUserRoute(android::media::MediaRouter_UserRouteInfo arg0) const;
+		void clearUserRoutes() const;
+		android::media::MediaRouter_RouteCategory createRouteCategory(jint arg0, jboolean arg1) const;
+		android::media::MediaRouter_RouteCategory createRouteCategory(JString arg0, jboolean arg1) const;
+		android::media::MediaRouter_UserRouteInfo createUserRoute(android::media::MediaRouter_RouteCategory arg0) const;
+		android::media::MediaRouter_RouteCategory getCategoryAt(jint arg0) const;
+		jint getCategoryCount() const;
+		android::media::MediaRouter_RouteInfo getDefaultRoute() const;
+		android::media::MediaRouter_RouteInfo getRouteAt(jint arg0) const;
+		jint getRouteCount() const;
+		android::media::MediaRouter_RouteInfo getSelectedRoute(jint arg0) const;
+		void removeCallback(android::media::MediaRouter_Callback arg0) const;
+		void removeUserRoute(android::media::MediaRouter_UserRouteInfo arg0) const;
+		void selectRoute(jint arg0, android::media::MediaRouter_RouteInfo arg1) const;
 	};
 } // namespace android::media
 

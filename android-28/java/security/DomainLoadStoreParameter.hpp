@@ -22,9 +22,9 @@ namespace java::security
 		DomainLoadStoreParameter(java::net::URI arg0, JObject arg1);
 		
 		// Methods
-		java::net::URI getConfiguration();
-		JObject getProtectionParameter();
-		JObject getProtectionParams();
+		java::net::URI getConfiguration() const;
+		JObject getProtectionParameter() const;
+		JObject getProtectionParams() const;
 	};
 } // namespace java::security
 

@@ -20,21 +20,21 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint WindowAnimationFrameStats::describeContents()
+	jint WindowAnimationFrameStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString WindowAnimationFrameStats::toString()
+	JString WindowAnimationFrameStats::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WindowAnimationFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WindowAnimationFrameStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

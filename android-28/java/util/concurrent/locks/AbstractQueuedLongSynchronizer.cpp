@@ -18,7 +18,7 @@ namespace java::util::concurrent::locks
 		) {}
 	
 	// Methods
-	void AbstractQueuedLongSynchronizer::acquire(jlong arg0)
+	void AbstractQueuedLongSynchronizer::acquire(jlong arg0) const
 	{
 		callMethod<void>(
 			"acquire",
@@ -26,7 +26,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedLongSynchronizer::acquireInterruptibly(jlong arg0)
+	void AbstractQueuedLongSynchronizer::acquireInterruptibly(jlong arg0) const
 	{
 		callMethod<void>(
 			"acquireInterruptibly",
@@ -34,7 +34,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedLongSynchronizer::acquireShared(jlong arg0)
+	void AbstractQueuedLongSynchronizer::acquireShared(jlong arg0) const
 	{
 		callMethod<void>(
 			"acquireShared",
@@ -42,7 +42,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	void AbstractQueuedLongSynchronizer::acquireSharedInterruptibly(jlong arg0)
+	void AbstractQueuedLongSynchronizer::acquireSharedInterruptibly(jlong arg0) const
 	{
 		callMethod<void>(
 			"acquireSharedInterruptibly",
@@ -50,42 +50,42 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	JObject AbstractQueuedLongSynchronizer::getExclusiveQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getExclusiveQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getExclusiveQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	java::lang::Thread AbstractQueuedLongSynchronizer::getFirstQueuedThread()
+	java::lang::Thread AbstractQueuedLongSynchronizer::getFirstQueuedThread() const
 	{
 		return callObjectMethod(
 			"getFirstQueuedThread",
 			"()Ljava/lang/Thread;"
 		);
 	}
-	jint AbstractQueuedLongSynchronizer::getQueueLength()
+	jint AbstractQueuedLongSynchronizer::getQueueLength() const
 	{
 		return callMethod<jint>(
 			"getQueueLength",
 			"()I"
 		);
 	}
-	JObject AbstractQueuedLongSynchronizer::getQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject AbstractQueuedLongSynchronizer::getSharedQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getSharedQueuedThreads() const
 	{
 		return callObjectMethod(
 			"getSharedQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	jint AbstractQueuedLongSynchronizer::getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
+	jint AbstractQueuedLongSynchronizer::getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jint>(
 			"getWaitQueueLength",
@@ -93,7 +93,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	JObject AbstractQueuedLongSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
+	JObject AbstractQueuedLongSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const
 	{
 		return callObjectMethod(
 			"getWaitingThreads",
@@ -101,28 +101,28 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::hasContended()
+	jboolean AbstractQueuedLongSynchronizer::hasContended() const
 	{
 		return callMethod<jboolean>(
 			"hasContended",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::hasQueuedPredecessors()
+	jboolean AbstractQueuedLongSynchronizer::hasQueuedPredecessors() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedPredecessors",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::hasQueuedThreads()
+	jboolean AbstractQueuedLongSynchronizer::hasQueuedThreads() const
 	{
 		return callMethod<jboolean>(
 			"hasQueuedThreads",
 			"()Z"
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::hasWaiters(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
+	jboolean AbstractQueuedLongSynchronizer::hasWaiters(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasWaiters",
@@ -130,7 +130,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::isQueued(java::lang::Thread arg0)
+	jboolean AbstractQueuedLongSynchronizer::isQueued(java::lang::Thread arg0) const
 	{
 		return callMethod<jboolean>(
 			"isQueued",
@@ -138,7 +138,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::owns(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
+	jboolean AbstractQueuedLongSynchronizer::owns(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"owns",
@@ -146,7 +146,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::release(jlong arg0)
+	jboolean AbstractQueuedLongSynchronizer::release(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"release",
@@ -154,7 +154,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::releaseShared(jlong arg0)
+	jboolean AbstractQueuedLongSynchronizer::releaseShared(jlong arg0) const
 	{
 		return callMethod<jboolean>(
 			"releaseShared",
@@ -162,14 +162,14 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	JString AbstractQueuedLongSynchronizer::toString()
+	JString AbstractQueuedLongSynchronizer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::tryAcquireNanos(jlong arg0, jlong arg1)
+	jboolean AbstractQueuedLongSynchronizer::tryAcquireNanos(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquireNanos",
@@ -178,7 +178,7 @@ namespace java::util::concurrent::locks
 			arg1
 		);
 	}
-	jboolean AbstractQueuedLongSynchronizer::tryAcquireSharedNanos(jlong arg0, jlong arg1)
+	jboolean AbstractQueuedLongSynchronizer::tryAcquireSharedNanos(jlong arg0, jlong arg1) const
 	{
 		return callMethod<jboolean>(
 			"tryAcquireSharedNanos",

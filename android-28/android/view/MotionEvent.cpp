@@ -778,7 +778,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void MotionEvent::addBatch(jlong arg0, JArray arg1, jint arg2)
+	void MotionEvent::addBatch(jlong arg0, JArray arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addBatch",
@@ -788,7 +788,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void MotionEvent::addBatch(jlong arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
+	void MotionEvent::addBatch(jlong arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"addBatch",
@@ -801,7 +801,7 @@ namespace android::view
 			arg5
 		);
 	}
-	jint MotionEvent::findPointerIndex(jint arg0)
+	jint MotionEvent::findPointerIndex(jint arg0) const
 	{
 		return callMethod<jint>(
 			"findPointerIndex",
@@ -809,35 +809,35 @@ namespace android::view
 			arg0
 		);
 	}
-	jint MotionEvent::getAction()
+	jint MotionEvent::getAction() const
 	{
 		return callMethod<jint>(
 			"getAction",
 			"()I"
 		);
 	}
-	jint MotionEvent::getActionButton()
+	jint MotionEvent::getActionButton() const
 	{
 		return callMethod<jint>(
 			"getActionButton",
 			"()I"
 		);
 	}
-	jint MotionEvent::getActionIndex()
+	jint MotionEvent::getActionIndex() const
 	{
 		return callMethod<jint>(
 			"getActionIndex",
 			"()I"
 		);
 	}
-	jint MotionEvent::getActionMasked()
+	jint MotionEvent::getActionMasked() const
 	{
 		return callMethod<jint>(
 			"getActionMasked",
 			"()I"
 		);
 	}
-	jfloat MotionEvent::getAxisValue(jint arg0)
+	jfloat MotionEvent::getAxisValue(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getAxisValue",
@@ -845,7 +845,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getAxisValue(jint arg0, jint arg1)
+	jfloat MotionEvent::getAxisValue(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getAxisValue",
@@ -854,49 +854,49 @@ namespace android::view
 			arg1
 		);
 	}
-	jint MotionEvent::getButtonState()
+	jint MotionEvent::getButtonState() const
 	{
 		return callMethod<jint>(
 			"getButtonState",
 			"()I"
 		);
 	}
-	jint MotionEvent::getDeviceId()
+	jint MotionEvent::getDeviceId() const
 	{
 		return callMethod<jint>(
 			"getDeviceId",
 			"()I"
 		);
 	}
-	jlong MotionEvent::getDownTime()
+	jlong MotionEvent::getDownTime() const
 	{
 		return callMethod<jlong>(
 			"getDownTime",
 			"()J"
 		);
 	}
-	jint MotionEvent::getEdgeFlags()
+	jint MotionEvent::getEdgeFlags() const
 	{
 		return callMethod<jint>(
 			"getEdgeFlags",
 			"()I"
 		);
 	}
-	jlong MotionEvent::getEventTime()
+	jlong MotionEvent::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jint MotionEvent::getFlags()
+	jint MotionEvent::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalAxisValue",
@@ -905,7 +905,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1, jint arg2)
+	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalAxisValue",
@@ -915,7 +915,7 @@ namespace android::view
 			arg2
 		);
 	}
-	jlong MotionEvent::getHistoricalEventTime(jint arg0)
+	jlong MotionEvent::getHistoricalEventTime(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getHistoricalEventTime",
@@ -923,7 +923,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalOrientation(jint arg0)
+	jfloat MotionEvent::getHistoricalOrientation(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalOrientation",
@@ -931,7 +931,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalOrientation(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalOrientation(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalOrientation",
@@ -940,7 +940,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void MotionEvent::getHistoricalPointerCoords(jint arg0, jint arg1, android::view::MotionEvent_PointerCoords arg2)
+	void MotionEvent::getHistoricalPointerCoords(jint arg0, jint arg1, android::view::MotionEvent_PointerCoords arg2) const
 	{
 		callMethod<void>(
 			"getHistoricalPointerCoords",
@@ -950,7 +950,7 @@ namespace android::view
 			arg2.object()
 		);
 	}
-	jfloat MotionEvent::getHistoricalPressure(jint arg0)
+	jfloat MotionEvent::getHistoricalPressure(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalPressure",
@@ -958,7 +958,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalPressure(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalPressure(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalPressure",
@@ -967,7 +967,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalSize(jint arg0)
+	jfloat MotionEvent::getHistoricalSize(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalSize",
@@ -975,7 +975,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalSize(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalSize(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalSize",
@@ -984,7 +984,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalToolMajor(jint arg0)
+	jfloat MotionEvent::getHistoricalToolMajor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalToolMajor",
@@ -992,7 +992,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalToolMajor(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalToolMajor(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalToolMajor",
@@ -1001,7 +1001,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalToolMinor(jint arg0)
+	jfloat MotionEvent::getHistoricalToolMinor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalToolMinor",
@@ -1009,7 +1009,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalToolMinor(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalToolMinor(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalToolMinor",
@@ -1018,7 +1018,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0)
+	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalTouchMajor",
@@ -1026,7 +1026,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalTouchMajor(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalTouchMajor",
@@ -1035,7 +1035,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0)
+	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalTouchMinor",
@@ -1043,7 +1043,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalTouchMinor",
@@ -1052,7 +1052,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalX(jint arg0)
+	jfloat MotionEvent::getHistoricalX(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalX",
@@ -1060,7 +1060,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalX(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalX(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalX",
@@ -1069,7 +1069,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalY(jint arg0)
+	jfloat MotionEvent::getHistoricalY(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalY",
@@ -1077,7 +1077,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getHistoricalY(jint arg0, jint arg1)
+	jfloat MotionEvent::getHistoricalY(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getHistoricalY",
@@ -1086,28 +1086,28 @@ namespace android::view
 			arg1
 		);
 	}
-	jint MotionEvent::getHistorySize()
+	jint MotionEvent::getHistorySize() const
 	{
 		return callMethod<jint>(
 			"getHistorySize",
 			"()I"
 		);
 	}
-	jint MotionEvent::getMetaState()
+	jint MotionEvent::getMetaState() const
 	{
 		return callMethod<jint>(
 			"getMetaState",
 			"()I"
 		);
 	}
-	jfloat MotionEvent::getOrientation()
+	jfloat MotionEvent::getOrientation() const
 	{
 		return callMethod<jfloat>(
 			"getOrientation",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getOrientation(jint arg0)
+	jfloat MotionEvent::getOrientation(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getOrientation",
@@ -1115,7 +1115,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent::getPointerCoords(jint arg0, android::view::MotionEvent_PointerCoords arg1)
+	void MotionEvent::getPointerCoords(jint arg0, android::view::MotionEvent_PointerCoords arg1) const
 	{
 		callMethod<void>(
 			"getPointerCoords",
@@ -1124,14 +1124,14 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jint MotionEvent::getPointerCount()
+	jint MotionEvent::getPointerCount() const
 	{
 		return callMethod<jint>(
 			"getPointerCount",
 			"()I"
 		);
 	}
-	jint MotionEvent::getPointerId(jint arg0)
+	jint MotionEvent::getPointerId(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getPointerId",
@@ -1139,7 +1139,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent::getPointerProperties(jint arg0, android::view::MotionEvent_PointerProperties arg1)
+	void MotionEvent::getPointerProperties(jint arg0, android::view::MotionEvent_PointerProperties arg1) const
 	{
 		callMethod<void>(
 			"getPointerProperties",
@@ -1148,14 +1148,14 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jfloat MotionEvent::getPressure()
+	jfloat MotionEvent::getPressure() const
 	{
 		return callMethod<jfloat>(
 			"getPressure",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getPressure(jint arg0)
+	jfloat MotionEvent::getPressure(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getPressure",
@@ -1163,28 +1163,28 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getRawX()
+	jfloat MotionEvent::getRawX() const
 	{
 		return callMethod<jfloat>(
 			"getRawX",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getRawY()
+	jfloat MotionEvent::getRawY() const
 	{
 		return callMethod<jfloat>(
 			"getRawY",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getSize()
+	jfloat MotionEvent::getSize() const
 	{
 		return callMethod<jfloat>(
 			"getSize",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getSize(jint arg0)
+	jfloat MotionEvent::getSize(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getSize",
@@ -1192,21 +1192,21 @@ namespace android::view
 			arg0
 		);
 	}
-	jint MotionEvent::getSource()
+	jint MotionEvent::getSource() const
 	{
 		return callMethod<jint>(
 			"getSource",
 			"()I"
 		);
 	}
-	jfloat MotionEvent::getToolMajor()
+	jfloat MotionEvent::getToolMajor() const
 	{
 		return callMethod<jfloat>(
 			"getToolMajor",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getToolMajor(jint arg0)
+	jfloat MotionEvent::getToolMajor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getToolMajor",
@@ -1214,14 +1214,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getToolMinor()
+	jfloat MotionEvent::getToolMinor() const
 	{
 		return callMethod<jfloat>(
 			"getToolMinor",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getToolMinor(jint arg0)
+	jfloat MotionEvent::getToolMinor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getToolMinor",
@@ -1229,7 +1229,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jint MotionEvent::getToolType(jint arg0)
+	jint MotionEvent::getToolType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getToolType",
@@ -1237,14 +1237,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getTouchMajor()
+	jfloat MotionEvent::getTouchMajor() const
 	{
 		return callMethod<jfloat>(
 			"getTouchMajor",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getTouchMajor(jint arg0)
+	jfloat MotionEvent::getTouchMajor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getTouchMajor",
@@ -1252,14 +1252,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getTouchMinor()
+	jfloat MotionEvent::getTouchMinor() const
 	{
 		return callMethod<jfloat>(
 			"getTouchMinor",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getTouchMinor(jint arg0)
+	jfloat MotionEvent::getTouchMinor(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getTouchMinor",
@@ -1267,14 +1267,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getX()
+	jfloat MotionEvent::getX() const
 	{
 		return callMethod<jfloat>(
 			"getX",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getX(jint arg0)
+	jfloat MotionEvent::getX(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getX",
@@ -1282,21 +1282,21 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getXPrecision()
+	jfloat MotionEvent::getXPrecision() const
 	{
 		return callMethod<jfloat>(
 			"getXPrecision",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getY()
+	jfloat MotionEvent::getY() const
 	{
 		return callMethod<jfloat>(
 			"getY",
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getY(jint arg0)
+	jfloat MotionEvent::getY(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getY",
@@ -1304,14 +1304,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getYPrecision()
+	jfloat MotionEvent::getYPrecision() const
 	{
 		return callMethod<jfloat>(
 			"getYPrecision",
 			"()F"
 		);
 	}
-	jboolean MotionEvent::isButtonPressed(jint arg0)
+	jboolean MotionEvent::isButtonPressed(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isButtonPressed",
@@ -1319,7 +1319,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent::offsetLocation(jfloat arg0, jfloat arg1)
+	void MotionEvent::offsetLocation(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"offsetLocation",
@@ -1328,14 +1328,14 @@ namespace android::view
 			arg1
 		);
 	}
-	void MotionEvent::recycle()
+	void MotionEvent::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	void MotionEvent::setAction(jint arg0)
+	void MotionEvent::setAction(jint arg0) const
 	{
 		callMethod<void>(
 			"setAction",
@@ -1343,7 +1343,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent::setEdgeFlags(jint arg0)
+	void MotionEvent::setEdgeFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setEdgeFlags",
@@ -1351,7 +1351,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void MotionEvent::setLocation(jfloat arg0, jfloat arg1)
+	void MotionEvent::setLocation(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setLocation",
@@ -1360,7 +1360,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void MotionEvent::setSource(jint arg0)
+	void MotionEvent::setSource(jint arg0) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -1368,14 +1368,14 @@ namespace android::view
 			arg0
 		);
 	}
-	JString MotionEvent::toString()
+	JString MotionEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MotionEvent::transform(android::graphics::Matrix arg0)
+	void MotionEvent::transform(android::graphics::Matrix arg0) const
 	{
 		callMethod<void>(
 			"transform",
@@ -1383,7 +1383,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void MotionEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MotionEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -37,15 +37,15 @@ namespace android::content::res
 		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, JObject arg1);
 		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2);
 		static android::content::res::ColorStateList valueOf(jint arg0);
-		jint describeContents();
-		jint getChangingConfigurations();
-		jint getColorForState(JIntArray arg0, jint arg1);
-		jint getDefaultColor();
-		jboolean isOpaque();
-		jboolean isStateful();
-		JString toString();
-		android::content::res::ColorStateList withAlpha(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getChangingConfigurations() const;
+		jint getColorForState(JIntArray arg0, jint arg1) const;
+		jint getDefaultColor() const;
+		jboolean isOpaque() const;
+		jboolean isStateful() const;
+		JString toString() const;
+		android::content::res::ColorStateList withAlpha(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::res
 

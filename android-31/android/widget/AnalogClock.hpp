@@ -42,29 +42,29 @@ namespace android::widget
 		AnalogClock(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::graphics::BlendMode getDialTintBlendMode();
-		android::content::res::ColorStateList getDialTintList();
-		android::graphics::BlendMode getHourHandTintBlendMode();
-		android::content::res::ColorStateList getHourHandTintList();
-		android::graphics::BlendMode getMinuteHandTintBlendMode();
-		android::content::res::ColorStateList getMinuteHandTintList();
-		android::graphics::BlendMode getSecondHandTintBlendMode();
-		android::content::res::ColorStateList getSecondHandTintList();
-		JString getTimeZone();
-		void onVisibilityAggregated(jboolean arg0);
-		void setDial(android::graphics::drawable::Icon arg0);
-		void setDialTintBlendMode(android::graphics::BlendMode arg0);
-		void setDialTintList(android::content::res::ColorStateList arg0);
-		void setHourHand(android::graphics::drawable::Icon arg0);
-		void setHourHandTintBlendMode(android::graphics::BlendMode arg0);
-		void setHourHandTintList(android::content::res::ColorStateList arg0);
-		void setMinuteHand(android::graphics::drawable::Icon arg0);
-		void setMinuteHandTintBlendMode(android::graphics::BlendMode arg0);
-		void setMinuteHandTintList(android::content::res::ColorStateList arg0);
-		void setSecondHand(android::graphics::drawable::Icon arg0);
-		void setSecondHandTintBlendMode(android::graphics::BlendMode arg0);
-		void setSecondHandTintList(android::content::res::ColorStateList arg0);
-		void setTimeZone(JString arg0);
+		android::graphics::BlendMode getDialTintBlendMode() const;
+		android::content::res::ColorStateList getDialTintList() const;
+		android::graphics::BlendMode getHourHandTintBlendMode() const;
+		android::content::res::ColorStateList getHourHandTintList() const;
+		android::graphics::BlendMode getMinuteHandTintBlendMode() const;
+		android::content::res::ColorStateList getMinuteHandTintList() const;
+		android::graphics::BlendMode getSecondHandTintBlendMode() const;
+		android::content::res::ColorStateList getSecondHandTintList() const;
+		JString getTimeZone() const;
+		void onVisibilityAggregated(jboolean arg0) const;
+		void setDial(android::graphics::drawable::Icon arg0) const;
+		void setDialTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setDialTintList(android::content::res::ColorStateList arg0) const;
+		void setHourHand(android::graphics::drawable::Icon arg0) const;
+		void setHourHandTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setHourHandTintList(android::content::res::ColorStateList arg0) const;
+		void setMinuteHand(android::graphics::drawable::Icon arg0) const;
+		void setMinuteHandTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setMinuteHandTintList(android::content::res::ColorStateList arg0) const;
+		void setSecondHand(android::graphics::drawable::Icon arg0) const;
+		void setSecondHandTintBlendMode(android::graphics::BlendMode arg0) const;
+		void setSecondHandTintList(android::content::res::ColorStateList arg0) const;
+		void setTimeZone(JString arg0) const;
 	};
 } // namespace android::widget
 

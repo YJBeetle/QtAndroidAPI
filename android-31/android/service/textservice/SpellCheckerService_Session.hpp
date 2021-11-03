@@ -34,15 +34,15 @@ namespace android::service::textservice
 		SpellCheckerService_Session();
 		
 		// Methods
-		android::os::Bundle getBundle();
-		JString getLocale();
-		jint getSupportedAttributes();
-		void onCancel();
-		void onClose();
-		void onCreate();
-		JArray onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1);
-		android::view::textservice::SuggestionsInfo onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
-		JArray onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2);
+		android::os::Bundle getBundle() const;
+		JString getLocale() const;
+		jint getSupportedAttributes() const;
+		void onCancel() const;
+		void onClose() const;
+		void onCreate() const;
+		JArray onGetSentenceSuggestionsMultiple(JArray arg0, jint arg1) const;
+		android::view::textservice::SuggestionsInfo onGetSuggestions(android::view::textservice::TextInfo arg0, jint arg1) const;
+		JArray onGetSuggestionsMultiple(JArray arg0, jint arg1, jboolean arg2) const;
 	};
 } // namespace android::service::textservice
 

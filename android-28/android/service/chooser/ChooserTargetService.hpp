@@ -34,8 +34,8 @@ namespace android::service::chooser
 		ChooserTargetService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		JObject onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
+		JObject onBind(android::content::Intent arg0) const;
+		JObject onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1) const;
 	};
 } // namespace android::service::chooser
 

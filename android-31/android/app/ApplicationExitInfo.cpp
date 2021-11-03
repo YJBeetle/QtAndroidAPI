@@ -122,14 +122,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint ApplicationExitInfo::describeContents()
+	jint ApplicationExitInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ApplicationExitInfo::equals(JObject arg0)
+	jboolean ApplicationExitInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -137,126 +137,126 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	jint ApplicationExitInfo::getDefiningUid()
+	jint ApplicationExitInfo::getDefiningUid() const
 	{
 		return callMethod<jint>(
 			"getDefiningUid",
 			"()I"
 		);
 	}
-	JString ApplicationExitInfo::getDescription()
+	JString ApplicationExitInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ApplicationExitInfo::getImportance()
+	jint ApplicationExitInfo::getImportance() const
 	{
 		return callMethod<jint>(
 			"getImportance",
 			"()I"
 		);
 	}
-	jint ApplicationExitInfo::getPackageUid()
+	jint ApplicationExitInfo::getPackageUid() const
 	{
 		return callMethod<jint>(
 			"getPackageUid",
 			"()I"
 		);
 	}
-	jint ApplicationExitInfo::getPid()
+	jint ApplicationExitInfo::getPid() const
 	{
 		return callMethod<jint>(
 			"getPid",
 			"()I"
 		);
 	}
-	JString ApplicationExitInfo::getProcessName()
+	JString ApplicationExitInfo::getProcessName() const
 	{
 		return callObjectMethod(
 			"getProcessName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray ApplicationExitInfo::getProcessStateSummary()
+	JByteArray ApplicationExitInfo::getProcessStateSummary() const
 	{
 		return callObjectMethod(
 			"getProcessStateSummary",
 			"()[B"
 		);
 	}
-	jlong ApplicationExitInfo::getPss()
+	jlong ApplicationExitInfo::getPss() const
 	{
 		return callMethod<jlong>(
 			"getPss",
 			"()J"
 		);
 	}
-	jint ApplicationExitInfo::getRealUid()
+	jint ApplicationExitInfo::getRealUid() const
 	{
 		return callMethod<jint>(
 			"getRealUid",
 			"()I"
 		);
 	}
-	jint ApplicationExitInfo::getReason()
+	jint ApplicationExitInfo::getReason() const
 	{
 		return callMethod<jint>(
 			"getReason",
 			"()I"
 		);
 	}
-	jlong ApplicationExitInfo::getRss()
+	jlong ApplicationExitInfo::getRss() const
 	{
 		return callMethod<jlong>(
 			"getRss",
 			"()J"
 		);
 	}
-	jint ApplicationExitInfo::getStatus()
+	jint ApplicationExitInfo::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jlong ApplicationExitInfo::getTimestamp()
+	jlong ApplicationExitInfo::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	java::io::InputStream ApplicationExitInfo::getTraceInputStream()
+	java::io::InputStream ApplicationExitInfo::getTraceInputStream() const
 	{
 		return callObjectMethod(
 			"getTraceInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	android::os::UserHandle ApplicationExitInfo::getUserHandle()
+	android::os::UserHandle ApplicationExitInfo::getUserHandle() const
 	{
 		return callObjectMethod(
 			"getUserHandle",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jint ApplicationExitInfo::hashCode()
+	jint ApplicationExitInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString ApplicationExitInfo::toString()
+	JString ApplicationExitInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ApplicationExitInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ApplicationExitInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

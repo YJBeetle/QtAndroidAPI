@@ -107,14 +107,14 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	jint ClipDescription::describeContents()
+	jint ClipDescription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JArray ClipDescription::filterMimeTypes(JString arg0)
+	JArray ClipDescription::filterMimeTypes(JString arg0) const
 	{
 		return callObjectMethod(
 			"filterMimeTypes",
@@ -122,14 +122,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint ClipDescription::getClassificationStatus()
+	jint ClipDescription::getClassificationStatus() const
 	{
 		return callMethod<jint>(
 			"getClassificationStatus",
 			"()I"
 		);
 	}
-	jfloat ClipDescription::getConfidenceScore(JString arg0)
+	jfloat ClipDescription::getConfidenceScore(JString arg0) const
 	{
 		return callMethod<jfloat>(
 			"getConfidenceScore",
@@ -137,21 +137,21 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::os::PersistableBundle ClipDescription::getExtras()
+	android::os::PersistableBundle ClipDescription::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	JString ClipDescription::getLabel()
+	JString ClipDescription::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ClipDescription::getMimeType(jint arg0)
+	JString ClipDescription::getMimeType(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMimeType",
@@ -159,21 +159,21 @@ namespace android::content
 			arg0
 		);
 	}
-	jint ClipDescription::getMimeTypeCount()
+	jint ClipDescription::getMimeTypeCount() const
 	{
 		return callMethod<jint>(
 			"getMimeTypeCount",
 			"()I"
 		);
 	}
-	jlong ClipDescription::getTimestamp()
+	jlong ClipDescription::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	jboolean ClipDescription::hasMimeType(JString arg0)
+	jboolean ClipDescription::hasMimeType(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasMimeType",
@@ -181,14 +181,14 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ClipDescription::isStyledText()
+	jboolean ClipDescription::isStyledText() const
 	{
 		return callMethod<jboolean>(
 			"isStyledText",
 			"()Z"
 		);
 	}
-	void ClipDescription::setExtras(android::os::PersistableBundle arg0)
+	void ClipDescription::setExtras(android::os::PersistableBundle arg0) const
 	{
 		callMethod<void>(
 			"setExtras",
@@ -196,14 +196,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JString ClipDescription::toString()
+	JString ClipDescription::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ClipDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ClipDescription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

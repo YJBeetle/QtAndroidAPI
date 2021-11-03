@@ -27,7 +27,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void ChangeScroll::captureEndValues(android::transition::TransitionValues arg0)
+	void ChangeScroll::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -35,7 +35,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void ChangeScroll::captureStartValues(android::transition::TransitionValues arg0)
+	void ChangeScroll::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -43,7 +43,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::animation::Animator ChangeScroll::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator ChangeScroll::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -53,7 +53,7 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	JArray ChangeScroll::getTransitionProperties()
+	JArray ChangeScroll::getTransitionProperties() const
 	{
 		return callObjectMethod(
 			"getTransitionProperties",

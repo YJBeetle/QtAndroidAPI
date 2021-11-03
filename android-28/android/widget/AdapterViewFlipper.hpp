@@ -26,18 +26,18 @@ namespace android::widget
 		AdapterViewFlipper(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void fyiWillBeAdvancedByHostKThx();
-		JString getAccessibilityClassName();
-		jint getFlipInterval();
-		jboolean isAutoStart();
-		jboolean isFlipping();
-		void setAdapter(JObject arg0);
-		void setAutoStart(jboolean arg0);
-		void setFlipInterval(jint arg0);
-		void showNext();
-		void showPrevious();
-		void startFlipping();
-		void stopFlipping();
+		void fyiWillBeAdvancedByHostKThx() const;
+		JString getAccessibilityClassName() const;
+		jint getFlipInterval() const;
+		jboolean isAutoStart() const;
+		jboolean isFlipping() const;
+		void setAdapter(JObject arg0) const;
+		void setAutoStart(jboolean arg0) const;
+		void setFlipInterval(jint arg0) const;
+		void showNext() const;
+		void showPrevious() const;
+		void startFlipping() const;
+		void stopFlipping() const;
 	};
 } // namespace android::widget
 

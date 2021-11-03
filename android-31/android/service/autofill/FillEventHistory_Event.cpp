@@ -103,70 +103,70 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	JObject FillEventHistory_Event::getChangedFields()
+	JObject FillEventHistory_Event::getChangedFields() const
 	{
 		return callObjectMethod(
 			"getChangedFields",
 			"()Ljava/util/Map;"
 		);
 	}
-	android::os::Bundle FillEventHistory_Event::getClientState()
+	android::os::Bundle FillEventHistory_Event::getClientState() const
 	{
 		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString FillEventHistory_Event::getDatasetId()
+	JString FillEventHistory_Event::getDatasetId() const
 	{
 		return callObjectMethod(
 			"getDatasetId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject FillEventHistory_Event::getFieldsClassification()
+	JObject FillEventHistory_Event::getFieldsClassification() const
 	{
 		return callObjectMethod(
 			"getFieldsClassification",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject FillEventHistory_Event::getIgnoredDatasetIds()
+	JObject FillEventHistory_Event::getIgnoredDatasetIds() const
 	{
 		return callObjectMethod(
 			"getIgnoredDatasetIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject FillEventHistory_Event::getManuallyEnteredField()
+	JObject FillEventHistory_Event::getManuallyEnteredField() const
 	{
 		return callObjectMethod(
 			"getManuallyEnteredField",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint FillEventHistory_Event::getNoSaveUiReason()
+	jint FillEventHistory_Event::getNoSaveUiReason() const
 	{
 		return callMethod<jint>(
 			"getNoSaveUiReason",
 			"()I"
 		);
 	}
-	JObject FillEventHistory_Event::getSelectedDatasetIds()
+	JObject FillEventHistory_Event::getSelectedDatasetIds() const
 	{
 		return callObjectMethod(
 			"getSelectedDatasetIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint FillEventHistory_Event::getType()
+	jint FillEventHistory_Event::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString FillEventHistory_Event::toString()
+	JString FillEventHistory_Event::toString() const
 	{
 		return callObjectMethod(
 			"toString",

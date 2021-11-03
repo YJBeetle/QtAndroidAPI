@@ -19,28 +19,28 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jint CpuUsageInfo::describeContents()
+	jint CpuUsageInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong CpuUsageInfo::getActive()
+	jlong CpuUsageInfo::getActive() const
 	{
 		return callMethod<jlong>(
 			"getActive",
 			"()J"
 		);
 	}
-	jlong CpuUsageInfo::getTotal()
+	jlong CpuUsageInfo::getTotal() const
 	{
 		return callMethod<jlong>(
 			"getTotal",
 			"()J"
 		);
 	}
-	void CpuUsageInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CpuUsageInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

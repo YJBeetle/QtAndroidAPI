@@ -35,11 +35,11 @@ namespace android::graphics::pdf
 		// Constructors
 		
 		// Methods
-		void close();
-		jint getHeight();
-		jint getIndex();
-		jint getWidth();
-		void render(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Matrix arg2, jint arg3);
+		void close() const;
+		jint getHeight() const;
+		jint getIndex() const;
+		jint getWidth() const;
+		void render(android::graphics::Bitmap arg0, android::graphics::Rect arg1, android::graphics::Matrix arg2, jint arg3) const;
 	};
 } // namespace android::graphics::pdf
 

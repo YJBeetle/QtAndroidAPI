@@ -19,14 +19,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint PictureInPictureParams::describeContents()
+	jint PictureInPictureParams::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void PictureInPictureParams::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PictureInPictureParams::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

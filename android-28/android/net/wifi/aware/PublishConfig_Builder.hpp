@@ -24,14 +24,14 @@ namespace android::net::wifi::aware
 		PublishConfig_Builder();
 		
 		// Methods
-		android::net::wifi::aware::PublishConfig build();
-		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(JObject arg0);
-		android::net::wifi::aware::PublishConfig_Builder setPublishType(jint arg0);
-		android::net::wifi::aware::PublishConfig_Builder setRangingEnabled(jboolean arg0);
-		android::net::wifi::aware::PublishConfig_Builder setServiceName(JString arg0);
-		android::net::wifi::aware::PublishConfig_Builder setServiceSpecificInfo(JByteArray arg0);
-		android::net::wifi::aware::PublishConfig_Builder setTerminateNotificationEnabled(jboolean arg0);
-		android::net::wifi::aware::PublishConfig_Builder setTtlSec(jint arg0);
+		android::net::wifi::aware::PublishConfig build() const;
+		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(JObject arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setPublishType(jint arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setRangingEnabled(jboolean arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setServiceName(JString arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setServiceSpecificInfo(JByteArray arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setTerminateNotificationEnabled(jboolean arg0) const;
+		android::net::wifi::aware::PublishConfig_Builder setTtlSec(jint arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

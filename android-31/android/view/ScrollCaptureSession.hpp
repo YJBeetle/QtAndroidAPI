@@ -30,9 +30,9 @@ namespace android::view
 		ScrollCaptureSession(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Point arg2);
 		
 		// Methods
-		android::graphics::Point getPositionInWindow();
-		android::graphics::Rect getScrollBounds();
-		android::view::Surface getSurface();
+		android::graphics::Point getPositionInWindow() const;
+		android::graphics::Rect getScrollBounds() const;
+		android::view::Surface getSurface() const;
 	};
 } // namespace android::view
 

@@ -27,8 +27,8 @@ namespace android::telephony
 		// Methods
 		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, JObject arg1, JObject arg2);
 		static android::telephony::MbmsGroupCallSession create(android::content::Context arg0, jint arg1, JObject arg2, JObject arg3);
-		void close();
-		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4);
+		void close() const;
+		android::telephony::mbms::GroupCall startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4) const;
 	};
 } // namespace android::telephony
 

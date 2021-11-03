@@ -36,25 +36,25 @@ namespace android::net::wifi
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::MacAddress getBssid();
-		android::net::wifi::WifiEnterpriseConfig getEnterpriseConfig();
-		JString getPassphrase();
-		android::net::wifi::hotspot2::PasspointConfiguration getPasspointConfig();
-		jint getPriority();
-		JString getSsid();
-		jint hashCode();
-		jboolean isAppInteractionRequired();
-		jboolean isCredentialSharedWithUser();
-		jboolean isEnhancedOpen();
-		jboolean isHiddenSsid();
-		jboolean isInitialAutojoinEnabled();
-		jboolean isMetered();
-		jboolean isUntrusted();
-		jboolean isUserInteractionRequired();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::MacAddress getBssid() const;
+		android::net::wifi::WifiEnterpriseConfig getEnterpriseConfig() const;
+		JString getPassphrase() const;
+		android::net::wifi::hotspot2::PasspointConfiguration getPasspointConfig() const;
+		jint getPriority() const;
+		JString getSsid() const;
+		jint hashCode() const;
+		jboolean isAppInteractionRequired() const;
+		jboolean isCredentialSharedWithUser() const;
+		jboolean isEnhancedOpen() const;
+		jboolean isHiddenSsid() const;
+		jboolean isInitialAutojoinEnabled() const;
+		jboolean isMetered() const;
+		jboolean isUntrusted() const;
+		jboolean isUserInteractionRequired() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

@@ -11,28 +11,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaDrm_LogMessage::getMessage()
+	JString MediaDrm_LogMessage::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaDrm_LogMessage::getPriority()
+	jint MediaDrm_LogMessage::getPriority() const
 	{
 		return callMethod<jint>(
 			"getPriority",
 			"()I"
 		);
 	}
-	jlong MediaDrm_LogMessage::getTimestampMillis()
+	jlong MediaDrm_LogMessage::getTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimestampMillis",
 			"()J"
 		);
 	}
-	JString MediaDrm_LogMessage::toString()
+	JString MediaDrm_LogMessage::toString() const
 	{
 		return callObjectMethod(
 			"toString",

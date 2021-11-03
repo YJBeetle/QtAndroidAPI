@@ -52,7 +52,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setActivity(android::content::ComponentName arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setActivity(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"setActivity",
@@ -60,7 +60,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setChangedSince(jlong arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setChangedSince(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setChangedSince",
@@ -68,7 +68,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setPackage(JString arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setPackage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPackage",
@@ -76,7 +76,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setQueryFlags(jint arg0) const
 	{
 		return callObjectMethod(
 			"setQueryFlags",
@@ -84,7 +84,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setShortcutIds(JObject arg0)
+	android::content::pm::LauncherApps_ShortcutQuery LauncherApps_ShortcutQuery::setShortcutIds(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setShortcutIds",

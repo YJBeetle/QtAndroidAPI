@@ -26,9 +26,9 @@ namespace android::icu::util
 		Calendar_WeekData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::icu::util
 

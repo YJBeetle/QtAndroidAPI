@@ -78,7 +78,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ArrayAdapter::add(JObject arg0)
+	void ArrayAdapter::add(JObject arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -86,7 +86,7 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayAdapter::addAll(JObjectArray arg0)
+	void ArrayAdapter::addAll(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"addAll",
@@ -94,7 +94,7 @@ namespace android::widget
 			arg0.object<jobjectArray>()
 		);
 	}
-	void ArrayAdapter::addAll(JObject arg0)
+	void ArrayAdapter::addAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"addAll",
@@ -102,35 +102,35 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ArrayAdapter::clear()
+	void ArrayAdapter::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JArray ArrayAdapter::getAutofillOptions()
+	JArray ArrayAdapter::getAutofillOptions() const
 	{
 		return callObjectMethod(
 			"getAutofillOptions",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	android::content::Context ArrayAdapter::getContext()
+	android::content::Context ArrayAdapter::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	jint ArrayAdapter::getCount()
+	jint ArrayAdapter::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::view::View ArrayAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View ArrayAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -140,21 +140,21 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::content::res::Resources_Theme ArrayAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme ArrayAdapter::getDropDownViewTheme() const
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::widget::Filter ArrayAdapter::getFilter()
+	android::widget::Filter ArrayAdapter::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	JObject ArrayAdapter::getItem(jint arg0)
+	JObject ArrayAdapter::getItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItem",
@@ -162,7 +162,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong ArrayAdapter::getItemId(jint arg0)
+	jlong ArrayAdapter::getItemId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemId",
@@ -170,7 +170,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint ArrayAdapter::getPosition(JObject arg0)
+	jint ArrayAdapter::getPosition(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getPosition",
@@ -178,7 +178,7 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	android::view::View ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View ArrayAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getView",
@@ -188,7 +188,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void ArrayAdapter::insert(JObject arg0, jint arg1)
+	void ArrayAdapter::insert(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"insert",
@@ -197,14 +197,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ArrayAdapter::notifyDataSetChanged()
+	void ArrayAdapter::notifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
-	void ArrayAdapter::remove(JObject arg0)
+	void ArrayAdapter::remove(JObject arg0) const
 	{
 		callMethod<void>(
 			"remove",
@@ -212,7 +212,7 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	void ArrayAdapter::setDropDownViewResource(jint arg0)
+	void ArrayAdapter::setDropDownViewResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewResource",
@@ -220,7 +220,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ArrayAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)
+	void ArrayAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewTheme",
@@ -228,7 +228,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ArrayAdapter::setNotifyOnChange(jboolean arg0)
+	void ArrayAdapter::setNotifyOnChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNotifyOnChange",
@@ -236,7 +236,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ArrayAdapter::sort(JObject arg0)
+	void ArrayAdapter::sort(JObject arg0) const
 	{
 		callMethod<void>(
 			"sort",

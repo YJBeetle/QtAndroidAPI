@@ -105,7 +105,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipManager::close(JString arg0)
+	void SipManager::close(JString arg0) const
 	{
 		callMethod<void>(
 			"close",
@@ -113,7 +113,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipSession SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1)
+	android::net::sip::SipSession SipManager::createSipSession(android::net::sip::SipProfile arg0, android::net::sip::SipSession_Listener arg1) const
 	{
 		return callObjectMethod(
 			"createSipSession",
@@ -122,7 +122,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	android::net::sip::SipSession SipManager::getSessionFor(android::content::Intent arg0)
+	android::net::sip::SipSession SipManager::getSessionFor(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"getSessionFor",
@@ -130,7 +130,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	jboolean SipManager::isOpened(JString arg0)
+	jboolean SipManager::isOpened(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOpened",
@@ -138,7 +138,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	jboolean SipManager::isRegistered(JString arg0)
+	jboolean SipManager::isRegistered(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
@@ -146,7 +146,7 @@ namespace android::net::sip
 			arg0.object<jstring>()
 		);
 	}
-	android::net::sip::SipAudioCall SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	android::net::sip::SipAudioCall SipManager::makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"makeAudioCall",
@@ -157,7 +157,7 @@ namespace android::net::sip
 			arg3
 		);
 	}
-	android::net::sip::SipAudioCall SipManager::makeAudioCall(JString arg0, JString arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	android::net::sip::SipAudioCall SipManager::makeAudioCall(JString arg0, JString arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"makeAudioCall",
@@ -168,7 +168,7 @@ namespace android::net::sip
 			arg3
 		);
 	}
-	void SipManager::open(android::net::sip::SipProfile arg0)
+	void SipManager::open(android::net::sip::SipProfile arg0) const
 	{
 		callMethod<void>(
 			"open",
@@ -176,7 +176,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipManager::open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2)
+	void SipManager::open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"open",
@@ -186,7 +186,7 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::_register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2)
+	void SipManager::_register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"register",
@@ -196,7 +196,7 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::setRegistrationListener(JString arg0, JObject arg1)
+	void SipManager::setRegistrationListener(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setRegistrationListener",
@@ -205,7 +205,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	android::net::sip::SipAudioCall SipManager::takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1)
+	android::net::sip::SipAudioCall SipManager::takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1) const
 	{
 		return callObjectMethod(
 			"takeAudioCall",
@@ -214,7 +214,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	void SipManager::unregister(android::net::sip::SipProfile arg0, JObject arg1)
+	void SipManager::unregister(android::net::sip::SipProfile arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unregister",

@@ -23,7 +23,7 @@ namespace android::telephony::mbms
 		) {}
 	
 	// Methods
-	void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0)
+	void StreamingServiceCallback::onBroadcastSignalStrengthUpdated(jint arg0) const
 	{
 		callMethod<void>(
 			"onBroadcastSignalStrengthUpdated",
@@ -31,7 +31,7 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	void StreamingServiceCallback::onError(jint arg0, JString arg1)
+	void StreamingServiceCallback::onError(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -40,14 +40,14 @@ namespace android::telephony::mbms
 			arg1.object<jstring>()
 		);
 	}
-	void StreamingServiceCallback::onMediaDescriptionUpdated()
+	void StreamingServiceCallback::onMediaDescriptionUpdated() const
 	{
 		callMethod<void>(
 			"onMediaDescriptionUpdated",
 			"()V"
 		);
 	}
-	void StreamingServiceCallback::onStreamMethodUpdated(jint arg0)
+	void StreamingServiceCallback::onStreamMethodUpdated(jint arg0) const
 	{
 		callMethod<void>(
 			"onStreamMethodUpdated",
@@ -55,7 +55,7 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	void StreamingServiceCallback::onStreamStateUpdated(jint arg0, jint arg1)
+	void StreamingServiceCallback::onStreamStateUpdated(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStreamStateUpdated",

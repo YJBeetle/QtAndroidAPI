@@ -21,14 +21,14 @@ namespace android::telephony::data
 	// Constructors
 	
 	// Methods
-	jint UrspRule::describeContents()
+	jint UrspRule::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UrspRule::equals(JObject arg0)
+	jboolean UrspRule::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,42 +36,42 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	jint UrspRule::getPrecedence()
+	jint UrspRule::getPrecedence() const
 	{
 		return callMethod<jint>(
 			"getPrecedence",
 			"()I"
 		);
 	}
-	JObject UrspRule::getRouteSelectionDescriptor()
+	JObject UrspRule::getRouteSelectionDescriptor() const
 	{
 		return callObjectMethod(
 			"getRouteSelectionDescriptor",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject UrspRule::getTrafficDescriptors()
+	JObject UrspRule::getTrafficDescriptors() const
 	{
 		return callObjectMethod(
 			"getTrafficDescriptors",
 			"()Ljava/util/List;"
 		);
 	}
-	jint UrspRule::hashCode()
+	jint UrspRule::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString UrspRule::toString()
+	JString UrspRule::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UrspRule::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UrspRule::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -85,14 +85,14 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject get(android::hardware::camera2::CaptureRequest_Key arg0);
-		JObject getKeys();
-		JObject getTag();
-		jint hashCode();
-		jboolean isReprocess();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject get(android::hardware::camera2::CaptureRequest_Key arg0) const;
+		JObject getKeys() const;
+		JObject getTag() const;
+		jint hashCode() const;
+		jboolean isReprocess() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::camera2
 

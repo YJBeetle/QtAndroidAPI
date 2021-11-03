@@ -52,21 +52,21 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pConfig::describeContents()
+	jint WifiP2pConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString WifiP2pConfig::toString()
+	JString WifiP2pConfig::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiP2pConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

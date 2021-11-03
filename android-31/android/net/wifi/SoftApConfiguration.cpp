@@ -50,14 +50,14 @@ namespace android::net::wifi
 	// Constructors
 	
 	// Methods
-	jint SoftApConfiguration::describeContents()
+	jint SoftApConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SoftApConfiguration::equals(JObject arg0)
+	jboolean SoftApConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -65,56 +65,56 @@ namespace android::net::wifi
 			arg0.object<jobject>()
 		);
 	}
-	android::net::MacAddress SoftApConfiguration::getBssid()
+	android::net::MacAddress SoftApConfiguration::getBssid() const
 	{
 		return callObjectMethod(
 			"getBssid",
 			"()Landroid/net/MacAddress;"
 		);
 	}
-	JString SoftApConfiguration::getPassphrase()
+	JString SoftApConfiguration::getPassphrase() const
 	{
 		return callObjectMethod(
 			"getPassphrase",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SoftApConfiguration::getSecurityType()
+	jint SoftApConfiguration::getSecurityType() const
 	{
 		return callMethod<jint>(
 			"getSecurityType",
 			"()I"
 		);
 	}
-	JString SoftApConfiguration::getSsid()
+	JString SoftApConfiguration::getSsid() const
 	{
 		return callObjectMethod(
 			"getSsid",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SoftApConfiguration::hashCode()
+	jint SoftApConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean SoftApConfiguration::isHiddenSsid()
+	jboolean SoftApConfiguration::isHiddenSsid() const
 	{
 		return callMethod<jboolean>(
 			"isHiddenSsid",
 			"()Z"
 		);
 	}
-	JString SoftApConfiguration::toString()
+	JString SoftApConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SoftApConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SoftApConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

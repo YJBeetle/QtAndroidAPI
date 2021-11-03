@@ -19,21 +19,21 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	JObject CheckedInputStream::getChecksum()
+	JObject CheckedInputStream::getChecksum() const
 	{
 		return callObjectMethod(
 			"getChecksum",
 			"()Ljava/util/zip/Checksum;"
 		);
 	}
-	jint CheckedInputStream::read()
+	jint CheckedInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint CheckedInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint CheckedInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -43,7 +43,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	jlong CheckedInputStream::skip(jlong arg0)
+	jlong CheckedInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

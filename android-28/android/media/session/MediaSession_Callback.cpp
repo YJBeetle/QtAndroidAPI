@@ -21,7 +21,7 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	void MediaSession_Callback::onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2)
+	void MediaSession_Callback::onCommand(JString arg0, android::os::Bundle arg1, android::os::ResultReceiver arg2) const
 	{
 		callMethod<void>(
 			"onCommand",
@@ -31,7 +31,7 @@ namespace android::media::session
 			arg2.object()
 		);
 	}
-	void MediaSession_Callback::onCustomAction(JString arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onCustomAction(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onCustomAction",
@@ -40,14 +40,14 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onFastForward()
+	void MediaSession_Callback::onFastForward() const
 	{
 		callMethod<void>(
 			"onFastForward",
 			"()V"
 		);
 	}
-	jboolean MediaSession_Callback::onMediaButtonEvent(android::content::Intent arg0)
+	jboolean MediaSession_Callback::onMediaButtonEvent(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onMediaButtonEvent",
@@ -55,21 +55,21 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession_Callback::onPause()
+	void MediaSession_Callback::onPause() const
 	{
 		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPlay()
+	void MediaSession_Callback::onPlay() const
 	{
 		callMethod<void>(
 			"onPlay",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPlayFromMediaId(JString arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPlayFromMediaId(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPlayFromMediaId",
@@ -78,7 +78,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPlayFromSearch(JString arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPlayFromSearch(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPlayFromSearch",
@@ -87,7 +87,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPlayFromUri(android::net::Uri arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPlayFromUri(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPlayFromUri",
@@ -96,14 +96,14 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPrepare()
+	void MediaSession_Callback::onPrepare() const
 	{
 		callMethod<void>(
 			"onPrepare",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPrepareFromMediaId(JString arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPrepareFromMediaId(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPrepareFromMediaId",
@@ -112,7 +112,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPrepareFromSearch(JString arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPrepareFromSearch(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPrepareFromSearch",
@@ -121,7 +121,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onPrepareFromUri(android::net::Uri arg0, android::os::Bundle arg1)
+	void MediaSession_Callback::onPrepareFromUri(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onPrepareFromUri",
@@ -130,14 +130,14 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSession_Callback::onRewind()
+	void MediaSession_Callback::onRewind() const
 	{
 		callMethod<void>(
 			"onRewind",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onSeekTo(jlong arg0)
+	void MediaSession_Callback::onSeekTo(jlong arg0) const
 	{
 		callMethod<void>(
 			"onSeekTo",
@@ -145,7 +145,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaSession_Callback::onSetRating(android::media::Rating arg0)
+	void MediaSession_Callback::onSetRating(android::media::Rating arg0) const
 	{
 		callMethod<void>(
 			"onSetRating",
@@ -153,21 +153,21 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession_Callback::onSkipToNext()
+	void MediaSession_Callback::onSkipToNext() const
 	{
 		callMethod<void>(
 			"onSkipToNext",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onSkipToPrevious()
+	void MediaSession_Callback::onSkipToPrevious() const
 	{
 		callMethod<void>(
 			"onSkipToPrevious",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onSkipToQueueItem(jlong arg0)
+	void MediaSession_Callback::onSkipToQueueItem(jlong arg0) const
 	{
 		callMethod<void>(
 			"onSkipToQueueItem",
@@ -175,7 +175,7 @@ namespace android::media::session
 			arg0
 		);
 	}
-	void MediaSession_Callback::onStop()
+	void MediaSession_Callback::onStop() const
 	{
 		callMethod<void>(
 			"onStop",

@@ -19,8 +19,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getData();
-		JString getDefaultUrl();
+		JByteArray getData() const;
+		JString getDefaultUrl() const;
 	};
 } // namespace android::media
 

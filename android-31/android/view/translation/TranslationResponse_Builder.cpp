@@ -20,14 +20,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	android::view::translation::TranslationResponse TranslationResponse_Builder::build()
+	android::view::translation::TranslationResponse TranslationResponse_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/translation/TranslationResponse;"
 		);
 	}
-	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setFinalResponse(jboolean arg0)
+	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setFinalResponse(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setFinalResponse",
@@ -35,7 +35,7 @@ namespace android::view::translation
 			arg0
 		);
 	}
-	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setTranslationResponseValue(jint arg0, android::view::translation::TranslationResponseValue arg1)
+	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setTranslationResponseValue(jint arg0, android::view::translation::TranslationResponseValue arg1) const
 	{
 		return callObjectMethod(
 			"setTranslationResponseValue",
@@ -44,7 +44,7 @@ namespace android::view::translation
 			arg1.object()
 		);
 	}
-	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setTranslationResponseValues(android::util::SparseArray arg0)
+	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setTranslationResponseValues(android::util::SparseArray arg0) const
 	{
 		return callObjectMethod(
 			"setTranslationResponseValues",
@@ -52,7 +52,7 @@ namespace android::view::translation
 			arg0.object()
 		);
 	}
-	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setViewTranslationResponse(jint arg0, android::view::translation::ViewTranslationResponse arg1)
+	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setViewTranslationResponse(jint arg0, android::view::translation::ViewTranslationResponse arg1) const
 	{
 		return callObjectMethod(
 			"setViewTranslationResponse",
@@ -61,7 +61,7 @@ namespace android::view::translation
 			arg1.object()
 		);
 	}
-	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setViewTranslationResponses(android::util::SparseArray arg0)
+	android::view::translation::TranslationResponse_Builder TranslationResponse_Builder::setViewTranslationResponses(android::util::SparseArray arg0) const
 	{
 		return callObjectMethod(
 			"setViewTranslationResponses",

@@ -26,8 +26,8 @@ namespace android::app::appsearch::exceptions
 		AppSearchException(jint arg0, JString arg1, JThrowable arg2);
 		
 		// Methods
-		jint getResultCode();
-		android::app::appsearch::AppSearchResult toAppSearchResult();
+		jint getResultCode() const;
+		android::app::appsearch::AppSearchResult toAppSearchResult() const;
 	};
 } // namespace android::app::appsearch::exceptions
 

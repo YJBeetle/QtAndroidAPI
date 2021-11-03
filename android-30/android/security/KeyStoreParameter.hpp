@@ -16,7 +16,7 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		jboolean isEncryptionRequired();
+		jboolean isEncryptionRequired() const;
 	};
 } // namespace android::security
 

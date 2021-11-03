@@ -56,7 +56,7 @@ namespace java::time::chrono
 			"()[Ljava/time/chrono/MinguoEra;"
 		);
 	}
-	JString MinguoEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString MinguoEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -65,7 +65,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	jint MinguoEra::getValue()
+	jint MinguoEra::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",

@@ -13,21 +13,21 @@ namespace android::app::backup
 	// Constructors
 	
 	// Methods
-	jlong BackupDataOutput::getQuota()
+	jlong BackupDataOutput::getQuota() const
 	{
 		return callMethod<jlong>(
 			"getQuota",
 			"()J"
 		);
 	}
-	jint BackupDataOutput::getTransportFlags()
+	jint BackupDataOutput::getTransportFlags() const
 	{
 		return callMethod<jint>(
 			"getTransportFlags",
 			"()I"
 		);
 	}
-	jint BackupDataOutput::writeEntityData(JByteArray arg0, jint arg1)
+	jint BackupDataOutput::writeEntityData(JByteArray arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"writeEntityData",
@@ -36,7 +36,7 @@ namespace android::app::backup
 			arg1
 		);
 	}
-	jint BackupDataOutput::writeEntityHeader(JString arg0, jint arg1)
+	jint BackupDataOutput::writeEntityHeader(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"writeEntityHeader",

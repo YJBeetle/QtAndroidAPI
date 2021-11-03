@@ -80,14 +80,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void SocketKeepalive::close()
+	void SocketKeepalive::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SocketKeepalive::start(jint arg0)
+	void SocketKeepalive::start(jint arg0) const
 	{
 		callMethod<void>(
 			"start",
@@ -95,7 +95,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void SocketKeepalive::stop()
+	void SocketKeepalive::stop() const
 	{
 		callMethod<void>(
 			"stop",

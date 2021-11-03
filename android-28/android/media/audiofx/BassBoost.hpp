@@ -24,12 +24,12 @@ namespace android::media::audiofx
 		BassBoost(jint arg0, jint arg1);
 		
 		// Methods
-		android::media::audiofx::BassBoost_Settings getProperties();
-		jshort getRoundedStrength();
-		jboolean getStrengthSupported();
-		void setParameterListener(JObject arg0);
-		void setProperties(android::media::audiofx::BassBoost_Settings arg0);
-		void setStrength(jshort arg0);
+		android::media::audiofx::BassBoost_Settings getProperties() const;
+		jshort getRoundedStrength() const;
+		jboolean getStrengthSupported() const;
+		void setParameterListener(JObject arg0) const;
+		void setProperties(android::media::audiofx::BassBoost_Settings arg0) const;
+		void setStrength(jshort arg0) const;
 	};
 } // namespace android::media::audiofx
 

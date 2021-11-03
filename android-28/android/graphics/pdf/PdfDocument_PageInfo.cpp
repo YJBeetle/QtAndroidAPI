@@ -11,28 +11,28 @@ namespace android::graphics::pdf
 	// Constructors
 	
 	// Methods
-	android::graphics::Rect PdfDocument_PageInfo::getContentRect()
+	android::graphics::Rect PdfDocument_PageInfo::getContentRect() const
 	{
 		return callObjectMethod(
 			"getContentRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint PdfDocument_PageInfo::getPageHeight()
+	jint PdfDocument_PageInfo::getPageHeight() const
 	{
 		return callMethod<jint>(
 			"getPageHeight",
 			"()I"
 		);
 	}
-	jint PdfDocument_PageInfo::getPageNumber()
+	jint PdfDocument_PageInfo::getPageNumber() const
 	{
 		return callMethod<jint>(
 			"getPageNumber",
 			"()I"
 		);
 	}
-	jint PdfDocument_PageInfo::getPageWidth()
+	jint PdfDocument_PageInfo::getPageWidth() const
 	{
 		return callMethod<jint>(
 			"getPageWidth",

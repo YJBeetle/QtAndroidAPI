@@ -126,14 +126,14 @@ namespace java::time
 			arg0.object<jstring>()
 		);
 	}
-	java::time::Duration Duration::abs()
+	java::time::Duration Duration::abs() const
 	{
 		return callObjectMethod(
 			"abs",
 			"()Ljava/time/Duration;"
 		);
 	}
-	JObject Duration::addTo(JObject arg0)
+	JObject Duration::addTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addTo",
@@ -141,7 +141,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Duration::compareTo(JObject arg0)
+	jint Duration::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -149,7 +149,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint Duration::compareTo(java::time::Duration arg0)
+	jint Duration::compareTo(java::time::Duration arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -157,7 +157,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::dividedBy(jlong arg0)
+	java::time::Duration Duration::dividedBy(jlong arg0) const
 	{
 		return callObjectMethod(
 			"dividedBy",
@@ -165,7 +165,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jlong Duration::dividedBy(java::time::Duration arg0)
+	jlong Duration::dividedBy(java::time::Duration arg0) const
 	{
 		return callMethod<jlong>(
 			"dividedBy",
@@ -173,7 +173,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Duration::equals(JObject arg0)
+	jboolean Duration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -181,7 +181,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jlong Duration::get(JObject arg0)
+	jlong Duration::get(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"get",
@@ -189,49 +189,49 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Duration::getNano()
+	jint Duration::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	jlong Duration::getSeconds()
+	jlong Duration::getSeconds() const
 	{
 		return callMethod<jlong>(
 			"getSeconds",
 			"()J"
 		);
 	}
-	JObject Duration::getUnits()
+	JObject Duration::getUnits() const
 	{
 		return callObjectMethod(
 			"getUnits",
 			"()Ljava/util/List;"
 		);
 	}
-	jint Duration::hashCode()
+	jint Duration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Duration::isNegative()
+	jboolean Duration::isNegative() const
 	{
 		return callMethod<jboolean>(
 			"isNegative",
 			"()Z"
 		);
 	}
-	jboolean Duration::isZero()
+	jboolean Duration::isZero() const
 	{
 		return callMethod<jboolean>(
 			"isZero",
 			"()Z"
 		);
 	}
-	java::time::Duration Duration::minus(java::time::Duration arg0)
+	java::time::Duration Duration::minus(java::time::Duration arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -239,7 +239,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::minus(jlong arg0, JObject arg1)
+	java::time::Duration Duration::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -248,7 +248,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Duration Duration::minusDays(jlong arg0)
+	java::time::Duration Duration::minusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusDays",
@@ -256,7 +256,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::minusHours(jlong arg0)
+	java::time::Duration Duration::minusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -264,7 +264,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::minusMillis(jlong arg0)
+	java::time::Duration Duration::minusMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMillis",
@@ -272,7 +272,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::minusMinutes(jlong arg0)
+	java::time::Duration Duration::minusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -280,7 +280,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::minusNanos(jlong arg0)
+	java::time::Duration Duration::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -288,7 +288,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::minusSeconds(jlong arg0)
+	java::time::Duration Duration::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -296,7 +296,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::multipliedBy(jlong arg0)
+	java::time::Duration Duration::multipliedBy(jlong arg0) const
 	{
 		return callObjectMethod(
 			"multipliedBy",
@@ -304,14 +304,14 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::negated()
+	java::time::Duration Duration::negated() const
 	{
 		return callObjectMethod(
 			"negated",
 			"()Ljava/time/Duration;"
 		);
 	}
-	java::time::Duration Duration::plus(java::time::Duration arg0)
+	java::time::Duration Duration::plus(java::time::Duration arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -319,7 +319,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::plus(jlong arg0, JObject arg1)
+	java::time::Duration Duration::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -328,7 +328,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Duration Duration::plusDays(jlong arg0)
+	java::time::Duration Duration::plusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusDays",
@@ -336,7 +336,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::plusHours(jlong arg0)
+	java::time::Duration Duration::plusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -344,7 +344,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::plusMillis(jlong arg0)
+	java::time::Duration Duration::plusMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMillis",
@@ -352,7 +352,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::plusMinutes(jlong arg0)
+	java::time::Duration Duration::plusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -360,7 +360,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::plusNanos(jlong arg0)
+	java::time::Duration Duration::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -368,7 +368,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::plusSeconds(jlong arg0)
+	java::time::Duration Duration::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -376,7 +376,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject Duration::subtractFrom(JObject arg0)
+	JObject Duration::subtractFrom(JObject arg0) const
 	{
 		return callObjectMethod(
 			"subtractFrom",
@@ -384,98 +384,98 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Duration::toDays()
+	jlong Duration::toDays() const
 	{
 		return callMethod<jlong>(
 			"toDays",
 			"()J"
 		);
 	}
-	jlong Duration::toDaysPart()
+	jlong Duration::toDaysPart() const
 	{
 		return callMethod<jlong>(
 			"toDaysPart",
 			"()J"
 		);
 	}
-	jlong Duration::toHours()
+	jlong Duration::toHours() const
 	{
 		return callMethod<jlong>(
 			"toHours",
 			"()J"
 		);
 	}
-	jint Duration::toHoursPart()
+	jint Duration::toHoursPart() const
 	{
 		return callMethod<jint>(
 			"toHoursPart",
 			"()I"
 		);
 	}
-	jlong Duration::toMillis()
+	jlong Duration::toMillis() const
 	{
 		return callMethod<jlong>(
 			"toMillis",
 			"()J"
 		);
 	}
-	jint Duration::toMillisPart()
+	jint Duration::toMillisPart() const
 	{
 		return callMethod<jint>(
 			"toMillisPart",
 			"()I"
 		);
 	}
-	jlong Duration::toMinutes()
+	jlong Duration::toMinutes() const
 	{
 		return callMethod<jlong>(
 			"toMinutes",
 			"()J"
 		);
 	}
-	jint Duration::toMinutesPart()
+	jint Duration::toMinutesPart() const
 	{
 		return callMethod<jint>(
 			"toMinutesPart",
 			"()I"
 		);
 	}
-	jlong Duration::toNanos()
+	jlong Duration::toNanos() const
 	{
 		return callMethod<jlong>(
 			"toNanos",
 			"()J"
 		);
 	}
-	jint Duration::toNanosPart()
+	jint Duration::toNanosPart() const
 	{
 		return callMethod<jint>(
 			"toNanosPart",
 			"()I"
 		);
 	}
-	jlong Duration::toSeconds()
+	jlong Duration::toSeconds() const
 	{
 		return callMethod<jlong>(
 			"toSeconds",
 			"()J"
 		);
 	}
-	jint Duration::toSecondsPart()
+	jint Duration::toSecondsPart() const
 	{
 		return callMethod<jint>(
 			"toSecondsPart",
 			"()I"
 		);
 	}
-	JString Duration::toString()
+	JString Duration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::Duration Duration::truncatedTo(JObject arg0)
+	java::time::Duration Duration::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -483,7 +483,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::withNanos(jint arg0)
+	java::time::Duration Duration::withNanos(jint arg0) const
 	{
 		return callObjectMethod(
 			"withNanos",
@@ -491,7 +491,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Duration Duration::withSeconds(jlong arg0)
+	java::time::Duration Duration::withSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"withSeconds",

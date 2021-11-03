@@ -52,21 +52,21 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint EasyEditSpan::describeContents()
+	jint EasyEditSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint EasyEditSpan::getSpanTypeId()
+	jint EasyEditSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void EasyEditSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void EasyEditSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

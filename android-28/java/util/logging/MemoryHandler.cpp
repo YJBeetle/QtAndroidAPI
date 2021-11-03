@@ -27,28 +27,28 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	void MemoryHandler::close()
+	void MemoryHandler::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MemoryHandler::flush()
+	void MemoryHandler::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::util::logging::Level MemoryHandler::getPushLevel()
+	java::util::logging::Level MemoryHandler::getPushLevel() const
 	{
 		return callObjectMethod(
 			"getPushLevel",
 			"()Ljava/util/logging/Level;"
 		);
 	}
-	jboolean MemoryHandler::isLoggable(java::util::logging::LogRecord arg0)
+	jboolean MemoryHandler::isLoggable(java::util::logging::LogRecord arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLoggable",
@@ -56,7 +56,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void MemoryHandler::publish(java::util::logging::LogRecord arg0)
+	void MemoryHandler::publish(java::util::logging::LogRecord arg0) const
 	{
 		callMethod<void>(
 			"publish",
@@ -64,14 +64,14 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void MemoryHandler::push()
+	void MemoryHandler::push() const
 	{
 		callMethod<void>(
 			"push",
 			"()V"
 		);
 	}
-	void MemoryHandler::setPushLevel(java::util::logging::Level arg0)
+	void MemoryHandler::setPushLevel(java::util::logging::Level arg0) const
 	{
 		callMethod<void>(
 			"setPushLevel",

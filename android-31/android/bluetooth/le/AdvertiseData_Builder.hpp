@@ -27,13 +27,13 @@ namespace android::bluetooth::le
 		AdvertiseData_Builder();
 		
 		// Methods
-		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, JByteArray arg1);
-		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, JByteArray arg1);
-		android::bluetooth::le::AdvertiseData_Builder addServiceSolicitationUuid(android::os::ParcelUuid arg0);
-		android::bluetooth::le::AdvertiseData_Builder addServiceUuid(android::os::ParcelUuid arg0);
-		android::bluetooth::le::AdvertiseData build();
-		android::bluetooth::le::AdvertiseData_Builder setIncludeDeviceName(jboolean arg0);
-		android::bluetooth::le::AdvertiseData_Builder setIncludeTxPowerLevel(jboolean arg0);
+		android::bluetooth::le::AdvertiseData_Builder addManufacturerData(jint arg0, JByteArray arg1) const;
+		android::bluetooth::le::AdvertiseData_Builder addServiceData(android::os::ParcelUuid arg0, JByteArray arg1) const;
+		android::bluetooth::le::AdvertiseData_Builder addServiceSolicitationUuid(android::os::ParcelUuid arg0) const;
+		android::bluetooth::le::AdvertiseData_Builder addServiceUuid(android::os::ParcelUuid arg0) const;
+		android::bluetooth::le::AdvertiseData build() const;
+		android::bluetooth::le::AdvertiseData_Builder setIncludeDeviceName(jboolean arg0) const;
+		android::bluetooth::le::AdvertiseData_Builder setIncludeTxPowerLevel(jboolean arg0) const;
 	};
 } // namespace android::bluetooth::le
 

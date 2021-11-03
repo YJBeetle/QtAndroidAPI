@@ -27,22 +27,22 @@ namespace android::graphics
 		Outline(android::graphics::Outline &arg0);
 		
 		// Methods
-		jboolean canClip();
-		jfloat getAlpha();
-		jfloat getRadius();
-		jboolean getRect(android::graphics::Rect arg0);
-		jboolean isEmpty();
-		void offset(jint arg0, jint arg1);
-		void set(android::graphics::Outline arg0);
-		void setAlpha(jfloat arg0);
-		void setConvexPath(android::graphics::Path arg0);
-		void setEmpty();
-		void setOval(android::graphics::Rect arg0);
-		void setOval(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setRect(android::graphics::Rect arg0);
-		void setRect(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setRoundRect(android::graphics::Rect arg0, jfloat arg1);
-		void setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4);
+		jboolean canClip() const;
+		jfloat getAlpha() const;
+		jfloat getRadius() const;
+		jboolean getRect(android::graphics::Rect arg0) const;
+		jboolean isEmpty() const;
+		void offset(jint arg0, jint arg1) const;
+		void set(android::graphics::Outline arg0) const;
+		void setAlpha(jfloat arg0) const;
+		void setConvexPath(android::graphics::Path arg0) const;
+		void setEmpty() const;
+		void setOval(android::graphics::Rect arg0) const;
+		void setOval(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setRect(android::graphics::Rect arg0) const;
+		void setRect(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setRoundRect(android::graphics::Rect arg0, jfloat arg1) const;
+		void setRoundRect(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4) const;
 	};
 } // namespace android::graphics
 

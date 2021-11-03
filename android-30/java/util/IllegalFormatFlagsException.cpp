@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString IllegalFormatFlagsException::getFlags()
+	JString IllegalFormatFlagsException::getFlags() const
 	{
 		return callObjectMethod(
 			"getFlags",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString IllegalFormatFlagsException::getMessage()
+	JString IllegalFormatFlagsException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

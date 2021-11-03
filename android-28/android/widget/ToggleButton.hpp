@@ -30,13 +30,13 @@ namespace android::widget
 		ToggleButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		JString getTextOff();
-		JString getTextOn();
-		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
-		void setChecked(jboolean arg0);
-		void setTextOff(JString arg0);
-		void setTextOn(JString arg0);
+		JString getAccessibilityClassName() const;
+		JString getTextOff() const;
+		JString getTextOn() const;
+		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setChecked(jboolean arg0) const;
+		void setTextOff(JString arg0) const;
+		void setTextOn(JString arg0) const;
 	};
 } // namespace android::widget
 

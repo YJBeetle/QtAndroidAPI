@@ -20,8 +20,8 @@ namespace java::io
 		FileDescriptor();
 		
 		// Methods
-		void sync();
-		jboolean valid();
+		void sync() const;
+		jboolean valid() const;
 	};
 } // namespace java::io
 

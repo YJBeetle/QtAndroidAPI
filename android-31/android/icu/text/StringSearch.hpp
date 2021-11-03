@@ -39,16 +39,16 @@ namespace android::icu::text
 		StringSearch(JString arg0, JObject arg1, android::icu::text::RuleBasedCollator arg2, android::icu::text::BreakIterator arg3);
 		
 		// Methods
-		android::icu::text::RuleBasedCollator getCollator();
-		jint getIndex();
-		JString getPattern();
-		jboolean isCanonical();
-		void reset();
-		void setCanonical(jboolean arg0);
-		void setCollator(android::icu::text::RuleBasedCollator arg0);
-		void setIndex(jint arg0);
-		void setPattern(JString arg0);
-		void setTarget(JObject arg0);
+		android::icu::text::RuleBasedCollator getCollator() const;
+		jint getIndex() const;
+		JString getPattern() const;
+		jboolean isCanonical() const;
+		void reset() const;
+		void setCanonical(jboolean arg0) const;
+		void setCollator(android::icu::text::RuleBasedCollator arg0) const;
+		void setIndex(jint arg0) const;
+		void setPattern(JString arg0) const;
+		void setTarget(JObject arg0) const;
 	};
 } // namespace android::icu::text
 

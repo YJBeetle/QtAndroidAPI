@@ -40,21 +40,21 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jfloat FaceDetector_Face::confidence()
+	jfloat FaceDetector_Face::confidence() const
 	{
 		return callMethod<jfloat>(
 			"confidence",
 			"()F"
 		);
 	}
-	jfloat FaceDetector_Face::eyesDistance()
+	jfloat FaceDetector_Face::eyesDistance() const
 	{
 		return callMethod<jfloat>(
 			"eyesDistance",
 			"()F"
 		);
 	}
-	void FaceDetector_Face::getMidPoint(android::graphics::PointF arg0)
+	void FaceDetector_Face::getMidPoint(android::graphics::PointF arg0) const
 	{
 		callMethod<void>(
 			"getMidPoint",
@@ -62,7 +62,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jfloat FaceDetector_Face::pose(jint arg0)
+	jfloat FaceDetector_Face::pose(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"pose",

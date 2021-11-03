@@ -140,21 +140,21 @@ namespace android::media::audiofx
 			"()I"
 		);
 	}
-	jint Visualizer::getCaptureSize()
+	jint Visualizer::getCaptureSize() const
 	{
 		return callMethod<jint>(
 			"getCaptureSize",
 			"()I"
 		);
 	}
-	jboolean Visualizer::getEnabled()
+	jboolean Visualizer::getEnabled() const
 	{
 		return callMethod<jboolean>(
 			"getEnabled",
 			"()Z"
 		);
 	}
-	jint Visualizer::getFft(JByteArray arg0)
+	jint Visualizer::getFft(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"getFft",
@@ -162,14 +162,14 @@ namespace android::media::audiofx
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint Visualizer::getMeasurementMode()
+	jint Visualizer::getMeasurementMode() const
 	{
 		return callMethod<jint>(
 			"getMeasurementMode",
 			"()I"
 		);
 	}
-	jint Visualizer::getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0)
+	jint Visualizer::getMeasurementPeakRms(android::media::audiofx::Visualizer_MeasurementPeakRms arg0) const
 	{
 		return callMethod<jint>(
 			"getMeasurementPeakRms",
@@ -177,21 +177,21 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	jint Visualizer::getSamplingRate()
+	jint Visualizer::getSamplingRate() const
 	{
 		return callMethod<jint>(
 			"getSamplingRate",
 			"()I"
 		);
 	}
-	jint Visualizer::getScalingMode()
+	jint Visualizer::getScalingMode() const
 	{
 		return callMethod<jint>(
 			"getScalingMode",
 			"()I"
 		);
 	}
-	jint Visualizer::getWaveForm(JByteArray arg0)
+	jint Visualizer::getWaveForm(JByteArray arg0) const
 	{
 		return callMethod<jint>(
 			"getWaveForm",
@@ -199,14 +199,14 @@ namespace android::media::audiofx
 			arg0.object<jbyteArray>()
 		);
 	}
-	void Visualizer::release()
+	void Visualizer::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	jint Visualizer::setCaptureSize(jint arg0)
+	jint Visualizer::setCaptureSize(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setCaptureSize",
@@ -214,7 +214,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jint Visualizer::setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3)
+	jint Visualizer::setDataCaptureListener(JObject arg0, jint arg1, jboolean arg2, jboolean arg3) const
 	{
 		return callMethod<jint>(
 			"setDataCaptureListener",
@@ -225,7 +225,7 @@ namespace android::media::audiofx
 			arg3
 		);
 	}
-	jint Visualizer::setEnabled(jboolean arg0)
+	jint Visualizer::setEnabled(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"setEnabled",
@@ -233,7 +233,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jint Visualizer::setMeasurementMode(jint arg0)
+	jint Visualizer::setMeasurementMode(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setMeasurementMode",
@@ -241,7 +241,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	jint Visualizer::setScalingMode(jint arg0)
+	jint Visualizer::setScalingMode(jint arg0) const
 	{
 		return callMethod<jint>(
 			"setScalingMode",

@@ -27,20 +27,20 @@ namespace android::webkit
 		static jboolean allowFileSchemeCookies();
 		static android::webkit::CookieManager getInstance();
 		static void setAcceptFileSchemeCookies(jboolean arg0);
-		jboolean acceptCookie();
-		jboolean acceptThirdPartyCookies(android::webkit::WebView arg0);
-		void flush();
-		JString getCookie(JString arg0);
-		jboolean hasCookies();
-		void removeAllCookie();
-		void removeAllCookies(JObject arg0);
-		void removeExpiredCookie();
-		void removeSessionCookie();
-		void removeSessionCookies(JObject arg0);
-		void setAcceptCookie(jboolean arg0);
-		void setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1);
-		void setCookie(JString arg0, JString arg1);
-		void setCookie(JString arg0, JString arg1, JObject arg2);
+		jboolean acceptCookie() const;
+		jboolean acceptThirdPartyCookies(android::webkit::WebView arg0) const;
+		void flush() const;
+		JString getCookie(JString arg0) const;
+		jboolean hasCookies() const;
+		void removeAllCookie() const;
+		void removeAllCookies(JObject arg0) const;
+		void removeExpiredCookie() const;
+		void removeSessionCookie() const;
+		void removeSessionCookies(JObject arg0) const;
+		void setAcceptCookie(jboolean arg0) const;
+		void setAcceptThirdPartyCookies(android::webkit::WebView arg0, jboolean arg1) const;
+		void setCookie(JString arg0, JString arg1) const;
+		void setCookie(JString arg0, JString arg1, JObject arg2) const;
 	};
 } // namespace android::webkit
 

@@ -33,13 +33,13 @@ namespace android::telephony
 		// Methods
 		static android::telephony::SubscriptionPlan_Builder createNonrecurring(java::time::ZonedDateTime arg0, java::time::ZonedDateTime arg1);
 		static android::telephony::SubscriptionPlan_Builder createRecurring(java::time::ZonedDateTime arg0, java::time::Period arg1);
-		android::telephony::SubscriptionPlan build();
-		android::telephony::SubscriptionPlan_Builder resetNetworkTypes();
-		android::telephony::SubscriptionPlan_Builder setDataLimit(jlong arg0, jint arg1);
-		android::telephony::SubscriptionPlan_Builder setDataUsage(jlong arg0, jlong arg1);
-		android::telephony::SubscriptionPlan_Builder setNetworkTypes(JIntArray arg0);
-		android::telephony::SubscriptionPlan_Builder setSummary(JString arg0);
-		android::telephony::SubscriptionPlan_Builder setTitle(JString arg0);
+		android::telephony::SubscriptionPlan build() const;
+		android::telephony::SubscriptionPlan_Builder resetNetworkTypes() const;
+		android::telephony::SubscriptionPlan_Builder setDataLimit(jlong arg0, jint arg1) const;
+		android::telephony::SubscriptionPlan_Builder setDataUsage(jlong arg0, jlong arg1) const;
+		android::telephony::SubscriptionPlan_Builder setNetworkTypes(JIntArray arg0) const;
+		android::telephony::SubscriptionPlan_Builder setSummary(JString arg0) const;
+		android::telephony::SubscriptionPlan_Builder setTitle(JString arg0) const;
 	};
 } // namespace android::telephony
 

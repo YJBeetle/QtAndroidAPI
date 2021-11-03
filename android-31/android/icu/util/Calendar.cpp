@@ -448,7 +448,7 @@ namespace android::icu::util
 			arg0.object<jstring>()
 		);
 	}
-	void Calendar::add(jint arg0, jint arg1)
+	void Calendar::add(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -457,7 +457,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	jboolean Calendar::after(JObject arg0)
+	jboolean Calendar::after(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"after",
@@ -465,7 +465,7 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::before(JObject arg0)
+	jboolean Calendar::before(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"before",
@@ -473,14 +473,14 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	void Calendar::clear()
+	void Calendar::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void Calendar::clear(jint arg0)
+	void Calendar::clear(jint arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -488,14 +488,14 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	JObject Calendar::clone()
+	JObject Calendar::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Calendar::compareTo(android::icu::util::Calendar arg0)
+	jint Calendar::compareTo(android::icu::util::Calendar arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -503,7 +503,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint Calendar::compareTo(JObject arg0)
+	jint Calendar::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -511,7 +511,7 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Calendar::equals(JObject arg0)
+	jboolean Calendar::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -519,7 +519,7 @@ namespace android::icu::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Calendar::fieldDifference(java::util::Date arg0, jint arg1)
+	jint Calendar::fieldDifference(java::util::Date arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"fieldDifference",
@@ -528,7 +528,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	jint Calendar::get(jint arg0)
+	jint Calendar::get(jint arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -536,7 +536,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getActualMaximum(jint arg0)
+	jint Calendar::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -544,7 +544,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getActualMinimum(jint arg0)
+	jint Calendar::getActualMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMinimum",
@@ -552,7 +552,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2)
+	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, android::icu::util::ULocale arg2) const
 	{
 		return callObjectMethod(
 			"getDateTimeFormat",
@@ -562,7 +562,7 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2)
+	android::icu::text::DateFormat Calendar::getDateTimeFormat(jint arg0, jint arg1, java::util::Locale arg2) const
 	{
 		return callObjectMethod(
 			"getDateTimeFormat",
@@ -572,7 +572,7 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	JString Calendar::getDisplayName(android::icu::util::ULocale arg0)
+	JString Calendar::getDisplayName(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -580,7 +580,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Calendar::getDisplayName(java::util::Locale arg0)
+	JString Calendar::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -588,21 +588,21 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jint Calendar::getFieldCount()
+	jint Calendar::getFieldCount() const
 	{
 		return callMethod<jint>(
 			"getFieldCount",
 			"()I"
 		);
 	}
-	jint Calendar::getFirstDayOfWeek()
+	jint Calendar::getFirstDayOfWeek() const
 	{
 		return callMethod<jint>(
 			"getFirstDayOfWeek",
 			"()I"
 		);
 	}
-	jint Calendar::getGreatestMinimum(jint arg0)
+	jint Calendar::getGreatestMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getGreatestMinimum",
@@ -610,7 +610,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getLeastMaximum(jint arg0)
+	jint Calendar::getLeastMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLeastMaximum",
@@ -618,7 +618,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getMaximum(jint arg0)
+	jint Calendar::getMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMaximum",
@@ -626,14 +626,14 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getMinimalDaysInFirstWeek()
+	jint Calendar::getMinimalDaysInFirstWeek() const
 	{
 		return callMethod<jint>(
 			"getMinimalDaysInFirstWeek",
 			"()I"
 		);
 	}
-	jint Calendar::getMinimum(jint arg0)
+	jint Calendar::getMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMinimum",
@@ -641,63 +641,63 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jint Calendar::getRepeatedWallTimeOption()
+	jint Calendar::getRepeatedWallTimeOption() const
 	{
 		return callMethod<jint>(
 			"getRepeatedWallTimeOption",
 			"()I"
 		);
 	}
-	jint Calendar::getSkippedWallTimeOption()
+	jint Calendar::getSkippedWallTimeOption() const
 	{
 		return callMethod<jint>(
 			"getSkippedWallTimeOption",
 			"()I"
 		);
 	}
-	java::util::Date Calendar::getTime()
+	java::util::Date Calendar::getTime() const
 	{
 		return callObjectMethod(
 			"getTime",
 			"()Ljava/util/Date;"
 		);
 	}
-	jlong Calendar::getTimeInMillis()
+	jlong Calendar::getTimeInMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeInMillis",
 			"()J"
 		);
 	}
-	android::icu::util::TimeZone Calendar::getTimeZone()
+	android::icu::util::TimeZone Calendar::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	JString Calendar::getType()
+	JString Calendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::icu::util::Calendar_WeekData Calendar::getWeekData()
+	android::icu::util::Calendar_WeekData Calendar::getWeekData() const
 	{
 		return callObjectMethod(
 			"getWeekData",
 			"()Landroid/icu/util/Calendar$WeekData;"
 		);
 	}
-	jint Calendar::hashCode()
+	jint Calendar::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Calendar::isEquivalentTo(android::icu::util::Calendar arg0)
+	jboolean Calendar::isEquivalentTo(android::icu::util::Calendar arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEquivalentTo",
@@ -705,14 +705,14 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	jboolean Calendar::isLenient()
+	jboolean Calendar::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	jboolean Calendar::isSet(jint arg0)
+	jboolean Calendar::isSet(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSet",
@@ -720,14 +720,14 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jboolean Calendar::isWeekend()
+	jboolean Calendar::isWeekend() const
 	{
 		return callMethod<jboolean>(
 			"isWeekend",
 			"()Z"
 		);
 	}
-	jboolean Calendar::isWeekend(java::util::Date arg0)
+	jboolean Calendar::isWeekend(java::util::Date arg0) const
 	{
 		return callMethod<jboolean>(
 			"isWeekend",
@@ -735,7 +735,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	void Calendar::roll(jint arg0, jboolean arg1)
+	void Calendar::roll(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -744,7 +744,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	void Calendar::roll(jint arg0, jint arg1)
+	void Calendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -753,7 +753,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1)
+	void Calendar::set(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -762,7 +762,7 @@ namespace android::icu::util
 			arg1
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2)
+	void Calendar::set(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -772,7 +772,7 @@ namespace android::icu::util
 			arg2
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"set",
@@ -784,7 +784,7 @@ namespace android::icu::util
 			arg4
 		);
 	}
-	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void Calendar::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"set",
@@ -797,7 +797,7 @@ namespace android::icu::util
 			arg5
 		);
 	}
-	void Calendar::setFirstDayOfWeek(jint arg0)
+	void Calendar::setFirstDayOfWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setFirstDayOfWeek",
@@ -805,7 +805,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setLenient(jboolean arg0)
+	void Calendar::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -813,7 +813,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setMinimalDaysInFirstWeek(jint arg0)
+	void Calendar::setMinimalDaysInFirstWeek(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimalDaysInFirstWeek",
@@ -821,7 +821,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setRepeatedWallTimeOption(jint arg0)
+	void Calendar::setRepeatedWallTimeOption(jint arg0) const
 	{
 		callMethod<void>(
 			"setRepeatedWallTimeOption",
@@ -829,7 +829,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setSkippedWallTimeOption(jint arg0)
+	void Calendar::setSkippedWallTimeOption(jint arg0) const
 	{
 		callMethod<void>(
 			"setSkippedWallTimeOption",
@@ -837,7 +837,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setTime(java::util::Date arg0)
+	void Calendar::setTime(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -845,7 +845,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	void Calendar::setTimeInMillis(jlong arg0)
+	void Calendar::setTimeInMillis(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTimeInMillis",
@@ -853,7 +853,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	void Calendar::setTimeZone(android::icu::util::TimeZone arg0)
+	void Calendar::setTimeZone(android::icu::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",
@@ -861,7 +861,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	android::icu::util::Calendar Calendar::setWeekData(android::icu::util::Calendar_WeekData arg0)
+	android::icu::util::Calendar Calendar::setWeekData(android::icu::util::Calendar_WeekData arg0) const
 	{
 		return callObjectMethod(
 			"setWeekData",
@@ -869,7 +869,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Calendar::toString()
+	JString Calendar::toString() const
 	{
 		return callObjectMethod(
 			"toString",

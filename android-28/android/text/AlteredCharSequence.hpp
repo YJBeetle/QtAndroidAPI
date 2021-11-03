@@ -21,11 +21,11 @@ namespace android::text
 		
 		// Methods
 		static android::text::AlteredCharSequence make(JString arg0, JCharArray arg1, jint arg2, jint arg3);
-		jchar charAt(jint arg0);
-		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3);
-		jint length();
-		JString subSequence(jint arg0, jint arg1);
-		JString toString();
+		jchar charAt(jint arg0) const;
+		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const;
+		jint length() const;
+		JString subSequence(jint arg0, jint arg1) const;
+		JString toString() const;
 	};
 } // namespace android::text
 

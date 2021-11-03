@@ -32,18 +32,18 @@ namespace java::net
 		DatagramPacket(JByteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4);
 		
 		// Methods
-		java::net::InetAddress getAddress();
-		JByteArray getData();
-		jint getLength();
-		jint getOffset();
-		jint getPort();
-		java::net::SocketAddress getSocketAddress();
-		void setAddress(java::net::InetAddress arg0);
-		void setData(JByteArray arg0);
-		void setData(JByteArray arg0, jint arg1, jint arg2);
-		void setLength(jint arg0);
-		void setPort(jint arg0);
-		void setSocketAddress(java::net::SocketAddress arg0);
+		java::net::InetAddress getAddress() const;
+		JByteArray getData() const;
+		jint getLength() const;
+		jint getOffset() const;
+		jint getPort() const;
+		java::net::SocketAddress getSocketAddress() const;
+		void setAddress(java::net::InetAddress arg0) const;
+		void setData(JByteArray arg0) const;
+		void setData(JByteArray arg0, jint arg1, jint arg2) const;
+		void setLength(jint arg0) const;
+		void setPort(jint arg0) const;
+		void setSocketAddress(java::net::SocketAddress arg0) const;
 	};
 } // namespace java::net
 

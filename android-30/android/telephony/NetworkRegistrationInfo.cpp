@@ -120,14 +120,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint NetworkRegistrationInfo::describeContents()
+	jint NetworkRegistrationInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkRegistrationInfo::equals(JObject arg0)
+	jboolean NetworkRegistrationInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -135,84 +135,84 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint NetworkRegistrationInfo::getAccessNetworkTechnology()
+	jint NetworkRegistrationInfo::getAccessNetworkTechnology() const
 	{
 		return callMethod<jint>(
 			"getAccessNetworkTechnology",
 			"()I"
 		);
 	}
-	JObject NetworkRegistrationInfo::getAvailableServices()
+	JObject NetworkRegistrationInfo::getAvailableServices() const
 	{
 		return callObjectMethod(
 			"getAvailableServices",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telephony::CellIdentity NetworkRegistrationInfo::getCellIdentity()
+	android::telephony::CellIdentity NetworkRegistrationInfo::getCellIdentity() const
 	{
 		return callObjectMethod(
 			"getCellIdentity",
 			"()Landroid/telephony/CellIdentity;"
 		);
 	}
-	jint NetworkRegistrationInfo::getDomain()
+	jint NetworkRegistrationInfo::getDomain() const
 	{
 		return callMethod<jint>(
 			"getDomain",
 			"()I"
 		);
 	}
-	JString NetworkRegistrationInfo::getRegisteredPlmn()
+	JString NetworkRegistrationInfo::getRegisteredPlmn() const
 	{
 		return callObjectMethod(
 			"getRegisteredPlmn",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint NetworkRegistrationInfo::getTransportType()
+	jint NetworkRegistrationInfo::getTransportType() const
 	{
 		return callMethod<jint>(
 			"getTransportType",
 			"()I"
 		);
 	}
-	jint NetworkRegistrationInfo::hashCode()
+	jint NetworkRegistrationInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean NetworkRegistrationInfo::isRegistered()
+	jboolean NetworkRegistrationInfo::isRegistered() const
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
-	jboolean NetworkRegistrationInfo::isRoaming()
+	jboolean NetworkRegistrationInfo::isRoaming() const
 	{
 		return callMethod<jboolean>(
 			"isRoaming",
 			"()Z"
 		);
 	}
-	jboolean NetworkRegistrationInfo::isSearching()
+	jboolean NetworkRegistrationInfo::isSearching() const
 	{
 		return callMethod<jboolean>(
 			"isSearching",
 			"()Z"
 		);
 	}
-	JString NetworkRegistrationInfo::toString()
+	JString NetworkRegistrationInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkRegistrationInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkRegistrationInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

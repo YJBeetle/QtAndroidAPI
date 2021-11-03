@@ -19,10 +19,10 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean allowsMismatchedNetworkNames();
-		jboolean equals(JObject arg0);
-		JString getNetworkName();
-		jint hashCode();
+		jboolean allowsMismatchedNetworkNames() const;
+		jboolean equals(JObject arg0) const;
+		JString getNetworkName() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

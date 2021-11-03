@@ -17,8 +17,8 @@ namespace java::security
 		KeyPair(JObject arg0, JObject arg1);
 		
 		// Methods
-		JObject getPrivate();
-		JObject getPublic();
+		JObject getPrivate() const;
+		JObject getPublic() const;
 	};
 } // namespace java::security
 

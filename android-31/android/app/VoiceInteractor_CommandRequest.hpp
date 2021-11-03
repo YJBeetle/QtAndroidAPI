@@ -23,7 +23,7 @@ namespace android::app
 		VoiceInteractor_CommandRequest(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
-		void onCommandResult(jboolean arg0, android::os::Bundle arg1);
+		void onCommandResult(jboolean arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::app
 

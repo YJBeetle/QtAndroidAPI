@@ -27,9 +27,9 @@ namespace java::time::format
 		// Methods
 		static java::time::format::TextStyle valueOf(JString arg0);
 		static JArray values();
-		java::time::format::TextStyle asNormal();
-		java::time::format::TextStyle asStandalone();
-		jboolean isStandalone();
+		java::time::format::TextStyle asNormal() const;
+		java::time::format::TextStyle asStandalone() const;
+		jboolean isStandalone() const;
 	};
 } // namespace java::time::format
 

@@ -32,9 +32,9 @@ namespace android::service::carrier
 		CarrierService();
 		
 		// Methods
-		void notifyCarrierNetworkChange(jboolean arg0);
-		JObject onBind(android::content::Intent arg0);
-		android::os::PersistableBundle onLoadConfig(android::service::carrier::CarrierIdentifier arg0);
+		void notifyCarrierNetworkChange(jboolean arg0) const;
+		JObject onBind(android::content::Intent arg0) const;
+		android::os::PersistableBundle onLoadConfig(android::service::carrier::CarrierIdentifier arg0) const;
 	};
 } // namespace android::service::carrier
 

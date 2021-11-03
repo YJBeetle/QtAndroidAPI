@@ -23,12 +23,12 @@ namespace android::graphics
 		Picture(android::graphics::Picture &arg0);
 		
 		// Methods
-		android::graphics::Canvas beginRecording(jint arg0, jint arg1);
-		void draw(android::graphics::Canvas arg0);
-		void endRecording();
-		jint getHeight();
-		jint getWidth();
-		jboolean requiresHardwareAcceleration();
+		android::graphics::Canvas beginRecording(jint arg0, jint arg1) const;
+		void draw(android::graphics::Canvas arg0) const;
+		void endRecording() const;
+		jint getHeight() const;
+		jint getWidth() const;
+		jboolean requiresHardwareAcceleration() const;
 	};
 } // namespace android::graphics
 

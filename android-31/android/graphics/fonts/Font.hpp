@@ -48,18 +48,18 @@ namespace android::graphics::fonts
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JArray getAxes();
-		java::nio::ByteBuffer getBuffer();
-		java::io::File getFile();
-		jfloat getGlyphBounds(jint arg0, android::graphics::Paint arg1, android::graphics::RectF arg2);
-		android::os::LocaleList getLocaleList();
-		void getMetrics(android::graphics::Paint arg0, android::graphics::Paint_FontMetrics arg1);
-		jint getSourceIdentifier();
-		android::graphics::fonts::FontStyle getStyle();
-		jint getTtcIndex();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JArray getAxes() const;
+		java::nio::ByteBuffer getBuffer() const;
+		java::io::File getFile() const;
+		jfloat getGlyphBounds(jint arg0, android::graphics::Paint arg1, android::graphics::RectF arg2) const;
+		android::os::LocaleList getLocaleList() const;
+		void getMetrics(android::graphics::Paint arg0, android::graphics::Paint_FontMetrics arg1) const;
+		jint getSourceIdentifier() const;
+		android::graphics::fonts::FontStyle getStyle() const;
+		jint getTtcIndex() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::fonts
 

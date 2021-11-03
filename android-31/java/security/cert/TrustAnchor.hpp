@@ -30,12 +30,12 @@ namespace java::security::cert
 		TrustAnchor(javax::security::auth::x500::X500Principal arg0, JObject arg1, JByteArray arg2);
 		
 		// Methods
-		javax::security::auth::x500::X500Principal getCA();
-		JString getCAName();
-		JObject getCAPublicKey();
-		JByteArray getNameConstraints();
-		java::security::cert::X509Certificate getTrustedCert();
-		JString toString();
+		javax::security::auth::x500::X500Principal getCA() const;
+		JString getCAName() const;
+		JObject getCAPublicKey() const;
+		JByteArray getNameConstraints() const;
+		java::security::cert::X509Certificate getTrustedCert() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

@@ -33,14 +33,14 @@ namespace java::security
 		static java::security::KeyPairGenerator getInstance(JString arg0);
 		static java::security::KeyPairGenerator getInstance(JString arg0, JString arg1);
 		static java::security::KeyPairGenerator getInstance(JString arg0, java::security::Provider arg1);
-		java::security::KeyPair genKeyPair();
-		java::security::KeyPair generateKeyPair();
-		JString getAlgorithm();
-		java::security::Provider getProvider();
-		void initialize(jint arg0);
-		void initialize(JObject arg0);
-		void initialize(jint arg0, java::security::SecureRandom arg1);
-		void initialize(JObject arg0, java::security::SecureRandom arg1);
+		java::security::KeyPair genKeyPair() const;
+		java::security::KeyPair generateKeyPair() const;
+		JString getAlgorithm() const;
+		java::security::Provider getProvider() const;
+		void initialize(jint arg0) const;
+		void initialize(JObject arg0) const;
+		void initialize(jint arg0, java::security::SecureRandom arg1) const;
+		void initialize(JObject arg0, java::security::SecureRandom arg1) const;
 	};
 } // namespace java::security
 

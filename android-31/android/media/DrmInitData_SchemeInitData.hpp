@@ -29,8 +29,8 @@ namespace android::media
 		DrmInitData_SchemeInitData(java::util::UUID arg0, JString arg1, JByteArray arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::media
 

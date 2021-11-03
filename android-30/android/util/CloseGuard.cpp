@@ -16,14 +16,14 @@ namespace android::util
 		) {}
 	
 	// Methods
-	void CloseGuard::close()
+	void CloseGuard::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void CloseGuard::open(JString arg0)
+	void CloseGuard::open(JString arg0) const
 	{
 		callMethod<void>(
 			"open",
@@ -31,7 +31,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	void CloseGuard::warnIfOpen()
+	void CloseGuard::warnIfOpen() const
 	{
 		callMethod<void>(
 			"warnIfOpen",

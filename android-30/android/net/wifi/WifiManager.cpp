@@ -424,7 +424,7 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	jint WifiManager::addNetwork(android::net::wifi::WifiConfiguration arg0)
+	jint WifiManager::addNetwork(android::net::wifi::WifiConfiguration arg0) const
 	{
 		return callMethod<jint>(
 			"addNetwork",
@@ -432,7 +432,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jint WifiManager::addNetworkSuggestions(JObject arg0)
+	jint WifiManager::addNetworkSuggestions(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"addNetworkSuggestions",
@@ -440,7 +440,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager::addOrUpdatePasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration arg0)
+	void WifiManager::addOrUpdatePasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration arg0) const
 	{
 		callMethod<void>(
 			"addOrUpdatePasspointConfiguration",
@@ -448,7 +448,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager::addSuggestionConnectionStatusListener(JObject arg0, JObject arg1)
+	void WifiManager::addSuggestionConnectionStatusListener(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"addSuggestionConnectionStatusListener",
@@ -457,7 +457,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	jint WifiManager::calculateSignalLevel(jint arg0)
+	jint WifiManager::calculateSignalLevel(jint arg0) const
 	{
 		return callMethod<jint>(
 			"calculateSignalLevel",
@@ -465,7 +465,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager::cancelWps(android::net::wifi::WifiManager_WpsCallback arg0)
+	void WifiManager::cancelWps(android::net::wifi::WifiManager_WpsCallback arg0) const
 	{
 		callMethod<void>(
 			"cancelWps",
@@ -473,7 +473,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiManager_MulticastLock WifiManager::createMulticastLock(JString arg0)
+	android::net::wifi::WifiManager_MulticastLock WifiManager::createMulticastLock(JString arg0) const
 	{
 		return callObjectMethod(
 			"createMulticastLock",
@@ -481,7 +481,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(JString arg0)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(JString arg0) const
 	{
 		return callObjectMethod(
 			"createWifiLock",
@@ -489,7 +489,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jint arg0, JString arg1)
+	android::net::wifi::WifiManager_WifiLock WifiManager::createWifiLock(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"createWifiLock",
@@ -498,7 +498,7 @@ namespace android::net::wifi
 			arg1.object<jstring>()
 		);
 	}
-	jboolean WifiManager::disableNetwork(jint arg0)
+	jboolean WifiManager::disableNetwork(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"disableNetwork",
@@ -506,14 +506,14 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jboolean WifiManager::disconnect()
+	jboolean WifiManager::disconnect() const
 	{
 		return callMethod<jboolean>(
 			"disconnect",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::enableNetwork(jint arg0, jboolean arg1)
+	jboolean WifiManager::enableNetwork(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"enableNetwork",
@@ -522,175 +522,175 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	JObject WifiManager::getConfiguredNetworks()
+	JObject WifiManager::getConfiguredNetworks() const
 	{
 		return callObjectMethod(
 			"getConfiguredNetworks",
 			"()Ljava/util/List;"
 		);
 	}
-	android::net::wifi::WifiInfo WifiManager::getConnectionInfo()
+	android::net::wifi::WifiInfo WifiManager::getConnectionInfo() const
 	{
 		return callObjectMethod(
 			"getConnectionInfo",
 			"()Landroid/net/wifi/WifiInfo;"
 		);
 	}
-	android::net::DhcpInfo WifiManager::getDhcpInfo()
+	android::net::DhcpInfo WifiManager::getDhcpInfo() const
 	{
 		return callObjectMethod(
 			"getDhcpInfo",
 			"()Landroid/net/DhcpInfo;"
 		);
 	}
-	jint WifiManager::getMaxNumberOfNetworkSuggestionsPerApp()
+	jint WifiManager::getMaxNumberOfNetworkSuggestionsPerApp() const
 	{
 		return callMethod<jint>(
 			"getMaxNumberOfNetworkSuggestionsPerApp",
 			"()I"
 		);
 	}
-	jint WifiManager::getMaxSignalLevel()
+	jint WifiManager::getMaxSignalLevel() const
 	{
 		return callMethod<jint>(
 			"getMaxSignalLevel",
 			"()I"
 		);
 	}
-	JObject WifiManager::getNetworkSuggestions()
+	JObject WifiManager::getNetworkSuggestions() const
 	{
 		return callObjectMethod(
 			"getNetworkSuggestions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject WifiManager::getPasspointConfigurations()
+	JObject WifiManager::getPasspointConfigurations() const
 	{
 		return callObjectMethod(
 			"getPasspointConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject WifiManager::getScanResults()
+	JObject WifiManager::getScanResults() const
 	{
 		return callObjectMethod(
 			"getScanResults",
 			"()Ljava/util/List;"
 		);
 	}
-	jint WifiManager::getWifiState()
+	jint WifiManager::getWifiState() const
 	{
 		return callMethod<jint>(
 			"getWifiState",
 			"()I"
 		);
 	}
-	jboolean WifiManager::is5GHzBandSupported()
+	jboolean WifiManager::is5GHzBandSupported() const
 	{
 		return callMethod<jboolean>(
 			"is5GHzBandSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::is6GHzBandSupported()
+	jboolean WifiManager::is6GHzBandSupported() const
 	{
 		return callMethod<jboolean>(
 			"is6GHzBandSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isAutoWakeupEnabled()
+	jboolean WifiManager::isAutoWakeupEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isAutoWakeupEnabled",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isDeviceToApRttSupported()
+	jboolean WifiManager::isDeviceToApRttSupported() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceToApRttSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isEasyConnectSupported()
+	jboolean WifiManager::isEasyConnectSupported() const
 	{
 		return callMethod<jboolean>(
 			"isEasyConnectSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isEnhancedOpenSupported()
+	jboolean WifiManager::isEnhancedOpenSupported() const
 	{
 		return callMethod<jboolean>(
 			"isEnhancedOpenSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isEnhancedPowerReportingSupported()
+	jboolean WifiManager::isEnhancedPowerReportingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isEnhancedPowerReportingSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isP2pSupported()
+	jboolean WifiManager::isP2pSupported() const
 	{
 		return callMethod<jboolean>(
 			"isP2pSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isPreferredNetworkOffloadSupported()
+	jboolean WifiManager::isPreferredNetworkOffloadSupported() const
 	{
 		return callMethod<jboolean>(
 			"isPreferredNetworkOffloadSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isScanAlwaysAvailable()
+	jboolean WifiManager::isScanAlwaysAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isScanAlwaysAvailable",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isScanThrottleEnabled()
+	jboolean WifiManager::isScanThrottleEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isScanThrottleEnabled",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isStaApConcurrencySupported()
+	jboolean WifiManager::isStaApConcurrencySupported() const
 	{
 		return callMethod<jboolean>(
 			"isStaApConcurrencySupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isTdlsSupported()
+	jboolean WifiManager::isTdlsSupported() const
 	{
 		return callMethod<jboolean>(
 			"isTdlsSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isWapiSupported()
+	jboolean WifiManager::isWapiSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWapiSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isWifiEnabled()
+	jboolean WifiManager::isWifiEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isWifiEnabled",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isWifiStandardSupported(jint arg0)
+	jboolean WifiManager::isWifiStandardSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isWifiStandardSupported",
@@ -698,42 +698,42 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jboolean WifiManager::isWpa3SaeSupported()
+	jboolean WifiManager::isWpa3SaeSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWpa3SaeSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isWpa3SuiteBSupported()
+	jboolean WifiManager::isWpa3SuiteBSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWpa3SuiteBSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::pingSupplicant()
+	jboolean WifiManager::pingSupplicant() const
 	{
 		return callMethod<jboolean>(
 			"pingSupplicant",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::reassociate()
+	jboolean WifiManager::reassociate() const
 	{
 		return callMethod<jboolean>(
 			"reassociate",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::reconnect()
+	jboolean WifiManager::reconnect() const
 	{
 		return callMethod<jboolean>(
 			"reconnect",
 			"()Z"
 		);
 	}
-	void WifiManager::registerScanResultsCallback(JObject arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1)
+	void WifiManager::registerScanResultsCallback(JObject arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1) const
 	{
 		callMethod<void>(
 			"registerScanResultsCallback",
@@ -742,7 +742,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	jboolean WifiManager::removeNetwork(jint arg0)
+	jboolean WifiManager::removeNetwork(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeNetwork",
@@ -750,7 +750,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jint WifiManager::removeNetworkSuggestions(JObject arg0)
+	jint WifiManager::removeNetworkSuggestions(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"removeNetworkSuggestions",
@@ -758,7 +758,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager::removePasspointConfiguration(JString arg0)
+	void WifiManager::removePasspointConfiguration(JString arg0) const
 	{
 		callMethod<void>(
 			"removePasspointConfiguration",
@@ -766,7 +766,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	void WifiManager::removeSuggestionConnectionStatusListener(JObject arg0)
+	void WifiManager::removeSuggestionConnectionStatusListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeSuggestionConnectionStatusListener",
@@ -774,14 +774,14 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jboolean WifiManager::saveConfiguration()
+	jboolean WifiManager::saveConfiguration() const
 	{
 		return callMethod<jboolean>(
 			"saveConfiguration",
 			"()Z"
 		);
 	}
-	void WifiManager::setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1)
+	void WifiManager::setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setTdlsEnabled",
@@ -790,7 +790,7 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	void WifiManager::setTdlsEnabledWithMacAddress(JString arg0, jboolean arg1)
+	void WifiManager::setTdlsEnabledWithMacAddress(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setTdlsEnabledWithMacAddress",
@@ -799,7 +799,7 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	jboolean WifiManager::setWifiEnabled(jboolean arg0)
+	jboolean WifiManager::setWifiEnabled(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"setWifiEnabled",
@@ -807,7 +807,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager::startLocalOnlyHotspot(android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, android::os::Handler arg1)
+	void WifiManager::startLocalOnlyHotspot(android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"startLocalOnlyHotspot",
@@ -816,14 +816,14 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	jboolean WifiManager::startScan()
+	jboolean WifiManager::startScan() const
 	{
 		return callMethod<jboolean>(
 			"startScan",
 			"()Z"
 		);
 	}
-	void WifiManager::startWps(android::net::wifi::WpsInfo arg0, android::net::wifi::WifiManager_WpsCallback arg1)
+	void WifiManager::startWps(android::net::wifi::WpsInfo arg0, android::net::wifi::WifiManager_WpsCallback arg1) const
 	{
 		callMethod<void>(
 			"startWps",
@@ -832,7 +832,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	void WifiManager::unregisterScanResultsCallback(android::net::wifi::WifiManager_ScanResultsCallback arg0)
+	void WifiManager::unregisterScanResultsCallback(android::net::wifi::WifiManager_ScanResultsCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterScanResultsCallback",
@@ -840,7 +840,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jint WifiManager::updateNetwork(android::net::wifi::WifiConfiguration arg0)
+	jint WifiManager::updateNetwork(android::net::wifi::WifiConfiguration arg0) const
 	{
 		return callMethod<jint>(
 			"updateNetwork",

@@ -30,13 +30,13 @@ namespace android::inputmethodservice
 		AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0);
 		
 		// Methods
-		void dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2);
-		void dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2);
-		void dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2);
-		jboolean isEnabled();
-		jboolean isRevoked();
-		void revokeSelf();
-		void setEnabled(jboolean arg0);
+		void dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const;
+		void dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2) const;
+		void dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const;
+		jboolean isEnabled() const;
+		jboolean isRevoked() const;
+		void revokeSelf() const;
+		void setEnabled(jboolean arg0) const;
 	};
 } // namespace android::inputmethodservice
 

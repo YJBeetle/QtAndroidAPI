@@ -29,7 +29,7 @@ namespace java::io
 		UncheckedIOException(JString arg0, java::io::IOException arg1);
 		
 		// Methods
-		java::io::IOException getCause();
+		java::io::IOException getCause() const;
 	};
 } // namespace java::io
 

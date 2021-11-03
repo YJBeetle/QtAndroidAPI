@@ -189,7 +189,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean AudioDeviceInfo::equals(JObject arg0)
+	jboolean AudioDeviceInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -197,98 +197,98 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JString AudioDeviceInfo::getAddress()
+	JString AudioDeviceInfo::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JIntArray AudioDeviceInfo::getChannelCounts()
+	JIntArray AudioDeviceInfo::getChannelCounts() const
 	{
 		return callObjectMethod(
 			"getChannelCounts",
 			"()[I"
 		);
 	}
-	JIntArray AudioDeviceInfo::getChannelIndexMasks()
+	JIntArray AudioDeviceInfo::getChannelIndexMasks() const
 	{
 		return callObjectMethod(
 			"getChannelIndexMasks",
 			"()[I"
 		);
 	}
-	JIntArray AudioDeviceInfo::getChannelMasks()
+	JIntArray AudioDeviceInfo::getChannelMasks() const
 	{
 		return callObjectMethod(
 			"getChannelMasks",
 			"()[I"
 		);
 	}
-	JIntArray AudioDeviceInfo::getEncapsulationMetadataTypes()
+	JIntArray AudioDeviceInfo::getEncapsulationMetadataTypes() const
 	{
 		return callObjectMethod(
 			"getEncapsulationMetadataTypes",
 			"()[I"
 		);
 	}
-	JIntArray AudioDeviceInfo::getEncapsulationModes()
+	JIntArray AudioDeviceInfo::getEncapsulationModes() const
 	{
 		return callObjectMethod(
 			"getEncapsulationModes",
 			"()[I"
 		);
 	}
-	JIntArray AudioDeviceInfo::getEncodings()
+	JIntArray AudioDeviceInfo::getEncodings() const
 	{
 		return callObjectMethod(
 			"getEncodings",
 			"()[I"
 		);
 	}
-	jint AudioDeviceInfo::getId()
+	jint AudioDeviceInfo::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	JString AudioDeviceInfo::getProductName()
+	JString AudioDeviceInfo::getProductName() const
 	{
 		return callObjectMethod(
 			"getProductName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JIntArray AudioDeviceInfo::getSampleRates()
+	JIntArray AudioDeviceInfo::getSampleRates() const
 	{
 		return callObjectMethod(
 			"getSampleRates",
 			"()[I"
 		);
 	}
-	jint AudioDeviceInfo::getType()
+	jint AudioDeviceInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint AudioDeviceInfo::hashCode()
+	jint AudioDeviceInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AudioDeviceInfo::isSink()
+	jboolean AudioDeviceInfo::isSink() const
 	{
 		return callMethod<jboolean>(
 			"isSink",
 			"()Z"
 		);
 	}
-	jboolean AudioDeviceInfo::isSource()
+	jboolean AudioDeviceInfo::isSource() const
 	{
 		return callMethod<jboolean>(
 			"isSource",

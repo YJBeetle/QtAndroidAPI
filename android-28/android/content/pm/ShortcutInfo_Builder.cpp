@@ -26,14 +26,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	android::content::pm::ShortcutInfo ShortcutInfo_Builder::build()
+	android::content::pm::ShortcutInfo ShortcutInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/pm/ShortcutInfo;"
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setActivity(android::content::ComponentName arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setActivity(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"setActivity",
@@ -41,7 +41,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setCategories(JObject arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setCategories(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setCategories",
@@ -49,7 +49,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setDisabledMessage(JString arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setDisabledMessage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDisabledMessage",
@@ -57,7 +57,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setExtras(android::os::PersistableBundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -65,7 +65,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIcon(android::graphics::drawable::Icon arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -73,7 +73,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntent(android::content::Intent arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntent(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"setIntent",
@@ -81,7 +81,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntents(JArray arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setIntents(JArray arg0) const
 	{
 		return callObjectMethod(
 			"setIntents",
@@ -89,7 +89,7 @@ namespace android::content::pm
 			arg0.object<jarray>()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLabel(JString arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setLongLabel(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLongLabel",
@@ -97,7 +97,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setRank(jint arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setRank(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRank",
@@ -105,7 +105,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setShortLabel(JString arg0)
+	android::content::pm::ShortcutInfo_Builder ShortcutInfo_Builder::setShortLabel(JString arg0) const
 	{
 		return callObjectMethod(
 			"setShortLabel",

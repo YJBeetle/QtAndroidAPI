@@ -31,10 +31,10 @@ namespace android::app::admin
 		DelegatedAdminReceiver();
 		
 		// Methods
-		JString onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4);
-		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3);
-		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		void onSecurityLogsAvailable(android::content::Context arg0, android::content::Intent arg1);
+		JString onChoosePrivateKeyAlias(android::content::Context arg0, android::content::Intent arg1, jint arg2, android::net::Uri arg3, JString arg4) const;
+		void onNetworkLogsAvailable(android::content::Context arg0, android::content::Intent arg1, jlong arg2, jint arg3) const;
+		void onReceive(android::content::Context arg0, android::content::Intent arg1) const;
+		void onSecurityLogsAvailable(android::content::Context arg0, android::content::Intent arg1) const;
 	};
 } // namespace android::app::admin
 

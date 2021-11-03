@@ -31,15 +31,15 @@ namespace android::view
 		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3);
 		
 		// Methods
-		JObject getCallback();
-		android::view::View getContainingView();
-		jint getHint();
-		android::graphics::Rect getLocalVisibleRect();
-		android::graphics::Point getPositionInWindow();
-		android::graphics::Rect getScrollBounds();
-		void setScrollBounds(android::graphics::Rect arg0);
-		JString toString();
-		void updatePositionInWindow();
+		JObject getCallback() const;
+		android::view::View getContainingView() const;
+		jint getHint() const;
+		android::graphics::Rect getLocalVisibleRect() const;
+		android::graphics::Point getPositionInWindow() const;
+		android::graphics::Rect getScrollBounds() const;
+		void setScrollBounds(android::graphics::Rect arg0) const;
+		JString toString() const;
+		void updatePositionInWindow() const;
 	};
 } // namespace android::view
 

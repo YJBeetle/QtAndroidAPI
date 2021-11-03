@@ -26,10 +26,10 @@ namespace android::widget
 		MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean enoughToFilter();
-		JString getAccessibilityClassName();
-		void performValidation();
-		void setTokenizer(JObject arg0);
+		jboolean enoughToFilter() const;
+		JString getAccessibilityClassName() const;
+		void performValidation() const;
+		void setTokenizer(JObject arg0) const;
 	};
 } // namespace android::widget
 

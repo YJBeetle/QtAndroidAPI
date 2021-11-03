@@ -41,14 +41,14 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void GZIPOutputStream::finish()
+	void GZIPOutputStream::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void GZIPOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void GZIPOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

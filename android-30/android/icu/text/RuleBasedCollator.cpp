@@ -25,21 +25,21 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	JObject RuleBasedCollator::clone()
+	JObject RuleBasedCollator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::icu::text::RuleBasedCollator RuleBasedCollator::cloneAsThawed()
+	android::icu::text::RuleBasedCollator RuleBasedCollator::cloneAsThawed() const
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/RuleBasedCollator;"
 		);
 	}
-	jint RuleBasedCollator::compare(JString arg0, JString arg1)
+	jint RuleBasedCollator::compare(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	jboolean RuleBasedCollator::equals(JObject arg0)
+	jboolean RuleBasedCollator::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -56,14 +56,14 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::text::Collator RuleBasedCollator::freeze()
+	android::icu::text::Collator RuleBasedCollator::freeze() const
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(android::icu::text::UCharacterIterator arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(android::icu::text::UCharacterIterator arg0) const
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -71,7 +71,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JString arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -79,7 +79,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -87,7 +87,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::CollationKey RuleBasedCollator::getCollationKey(JString arg0)
+	android::icu::text::CollationKey RuleBasedCollator::getCollationKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -95,7 +95,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void RuleBasedCollator::getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2)
+	void RuleBasedCollator::getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"getContractionsAndExpansions",
@@ -105,42 +105,42 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	jint RuleBasedCollator::getDecomposition()
+	jint RuleBasedCollator::getDecomposition() const
 	{
 		return callMethod<jint>(
 			"getDecomposition",
 			"()I"
 		);
 	}
-	jint RuleBasedCollator::getMaxVariable()
+	jint RuleBasedCollator::getMaxVariable() const
 	{
 		return callMethod<jint>(
 			"getMaxVariable",
 			"()I"
 		);
 	}
-	jboolean RuleBasedCollator::getNumericCollation()
+	jboolean RuleBasedCollator::getNumericCollation() const
 	{
 		return callMethod<jboolean>(
 			"getNumericCollation",
 			"()Z"
 		);
 	}
-	JIntArray RuleBasedCollator::getReorderCodes()
+	JIntArray RuleBasedCollator::getReorderCodes() const
 	{
 		return callObjectMethod(
 			"getReorderCodes",
 			"()[I"
 		);
 	}
-	JString RuleBasedCollator::getRules()
+	JString RuleBasedCollator::getRules() const
 	{
 		return callObjectMethod(
 			"getRules",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString RuleBasedCollator::getRules(jboolean arg0)
+	JString RuleBasedCollator::getRules(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"getRules",
@@ -148,98 +148,98 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint RuleBasedCollator::getStrength()
+	jint RuleBasedCollator::getStrength() const
 	{
 		return callMethod<jint>(
 			"getStrength",
 			"()I"
 		);
 	}
-	android::icu::text::UnicodeSet RuleBasedCollator::getTailoredSet()
+	android::icu::text::UnicodeSet RuleBasedCollator::getTailoredSet() const
 	{
 		return callObjectMethod(
 			"getTailoredSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	android::icu::util::VersionInfo RuleBasedCollator::getUCAVersion()
+	android::icu::util::VersionInfo RuleBasedCollator::getUCAVersion() const
 	{
 		return callObjectMethod(
 			"getUCAVersion",
 			"()Landroid/icu/util/VersionInfo;"
 		);
 	}
-	jint RuleBasedCollator::getVariableTop()
+	jint RuleBasedCollator::getVariableTop() const
 	{
 		return callMethod<jint>(
 			"getVariableTop",
 			"()I"
 		);
 	}
-	android::icu::util::VersionInfo RuleBasedCollator::getVersion()
+	android::icu::util::VersionInfo RuleBasedCollator::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Landroid/icu/util/VersionInfo;"
 		);
 	}
-	jint RuleBasedCollator::hashCode()
+	jint RuleBasedCollator::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean RuleBasedCollator::isAlternateHandlingShifted()
+	jboolean RuleBasedCollator::isAlternateHandlingShifted() const
 	{
 		return callMethod<jboolean>(
 			"isAlternateHandlingShifted",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isCaseLevel()
+	jboolean RuleBasedCollator::isCaseLevel() const
 	{
 		return callMethod<jboolean>(
 			"isCaseLevel",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isFrenchCollation()
+	jboolean RuleBasedCollator::isFrenchCollation() const
 	{
 		return callMethod<jboolean>(
 			"isFrenchCollation",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isFrozen()
+	jboolean RuleBasedCollator::isFrozen() const
 	{
 		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isLowerCaseFirst()
+	jboolean RuleBasedCollator::isLowerCaseFirst() const
 	{
 		return callMethod<jboolean>(
 			"isLowerCaseFirst",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isUpperCaseFirst()
+	jboolean RuleBasedCollator::isUpperCaseFirst() const
 	{
 		return callMethod<jboolean>(
 			"isUpperCaseFirst",
 			"()Z"
 		);
 	}
-	void RuleBasedCollator::setAlternateHandlingDefault()
+	void RuleBasedCollator::setAlternateHandlingDefault() const
 	{
 		callMethod<void>(
 			"setAlternateHandlingDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setAlternateHandlingShifted(jboolean arg0)
+	void RuleBasedCollator::setAlternateHandlingShifted(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAlternateHandlingShifted",
@@ -247,14 +247,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setCaseFirstDefault()
+	void RuleBasedCollator::setCaseFirstDefault() const
 	{
 		callMethod<void>(
 			"setCaseFirstDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setCaseLevel(jboolean arg0)
+	void RuleBasedCollator::setCaseLevel(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCaseLevel",
@@ -262,14 +262,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setCaseLevelDefault()
+	void RuleBasedCollator::setCaseLevelDefault() const
 	{
 		callMethod<void>(
 			"setCaseLevelDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setDecomposition(jint arg0)
+	void RuleBasedCollator::setDecomposition(jint arg0) const
 	{
 		callMethod<void>(
 			"setDecomposition",
@@ -277,14 +277,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setDecompositionDefault()
+	void RuleBasedCollator::setDecompositionDefault() const
 	{
 		callMethod<void>(
 			"setDecompositionDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setFrenchCollation(jboolean arg0)
+	void RuleBasedCollator::setFrenchCollation(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFrenchCollation",
@@ -292,14 +292,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setFrenchCollationDefault()
+	void RuleBasedCollator::setFrenchCollationDefault() const
 	{
 		callMethod<void>(
 			"setFrenchCollationDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setLowerCaseFirst(jboolean arg0)
+	void RuleBasedCollator::setLowerCaseFirst(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLowerCaseFirst",
@@ -307,7 +307,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::RuleBasedCollator RuleBasedCollator::setMaxVariable(jint arg0)
+	android::icu::text::RuleBasedCollator RuleBasedCollator::setMaxVariable(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxVariable",
@@ -315,7 +315,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setNumericCollation(jboolean arg0)
+	void RuleBasedCollator::setNumericCollation(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNumericCollation",
@@ -323,14 +323,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setNumericCollationDefault()
+	void RuleBasedCollator::setNumericCollationDefault() const
 	{
 		callMethod<void>(
 			"setNumericCollationDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setReorderCodes(JIntArray arg0)
+	void RuleBasedCollator::setReorderCodes(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setReorderCodes",
@@ -338,7 +338,7 @@ namespace android::icu::text
 			arg0.object<jintArray>()
 		);
 	}
-	void RuleBasedCollator::setStrength(jint arg0)
+	void RuleBasedCollator::setStrength(jint arg0) const
 	{
 		callMethod<void>(
 			"setStrength",
@@ -346,14 +346,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void RuleBasedCollator::setStrengthDefault()
+	void RuleBasedCollator::setStrengthDefault() const
 	{
 		callMethod<void>(
 			"setStrengthDefault",
 			"()V"
 		);
 	}
-	void RuleBasedCollator::setUpperCaseFirst(jboolean arg0)
+	void RuleBasedCollator::setUpperCaseFirst(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setUpperCaseFirst",

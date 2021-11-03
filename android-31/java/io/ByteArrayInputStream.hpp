@@ -24,17 +24,17 @@ namespace java::io
 		ByteArrayInputStream(JByteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint available();
-		void close();
-		void mark(jint arg0);
-		jboolean markSupported();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
-		JByteArray readAllBytes();
-		jint readNBytes(JByteArray arg0, jint arg1, jint arg2);
-		void reset();
-		jlong skip(jlong arg0);
-		jlong transferTo(java::io::OutputStream arg0);
+		jint available() const;
+		void close() const;
+		void mark(jint arg0) const;
+		jboolean markSupported() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
+		JByteArray readAllBytes() const;
+		jint readNBytes(JByteArray arg0, jint arg1, jint arg2) const;
+		void reset() const;
+		jlong skip(jlong arg0) const;
+		jlong transferTo(java::io::OutputStream arg0) const;
 	};
 } // namespace java::io
 

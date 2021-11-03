@@ -28,12 +28,12 @@ namespace java::nio::channels
 		static java::nio::channels::AsynchronousChannelGroup withCachedThreadPool(JObject arg0, jint arg1);
 		static java::nio::channels::AsynchronousChannelGroup withFixedThreadPool(jint arg0, JObject arg1);
 		static java::nio::channels::AsynchronousChannelGroup withThreadPool(JObject arg0);
-		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jboolean isShutdown();
-		jboolean isTerminated();
-		java::nio::channels::spi::AsynchronousChannelProvider provider();
-		void shutdown();
-		void shutdownNow();
+		jboolean awaitTermination(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		jboolean isShutdown() const;
+		jboolean isTerminated() const;
+		java::nio::channels::spi::AsynchronousChannelProvider provider() const;
+		void shutdown() const;
+		void shutdownNow() const;
 	};
 } // namespace java::nio::channels
 

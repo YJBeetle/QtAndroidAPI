@@ -26,14 +26,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint LineBackgroundSpan_Standard::describeContents()
+	jint LineBackgroundSpan_Standard::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void LineBackgroundSpan_Standard::drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10)
+	void LineBackgroundSpan_Standard::drawBackground(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jint arg10) const
 	{
 		callMethod<void>(
 			"drawBackground",
@@ -51,21 +51,21 @@ namespace android::text::style
 			arg10
 		);
 	}
-	jint LineBackgroundSpan_Standard::getColor()
+	jint LineBackgroundSpan_Standard::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	jint LineBackgroundSpan_Standard::getSpanTypeId()
+	jint LineBackgroundSpan_Standard::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void LineBackgroundSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LineBackgroundSpan_Standard::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

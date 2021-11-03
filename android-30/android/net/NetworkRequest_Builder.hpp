@@ -27,14 +27,14 @@ namespace android::net
 		NetworkRequest_Builder();
 		
 		// Methods
-		android::net::NetworkRequest_Builder addCapability(jint arg0);
-		android::net::NetworkRequest_Builder addTransportType(jint arg0);
-		android::net::NetworkRequest build();
-		android::net::NetworkRequest_Builder clearCapabilities();
-		android::net::NetworkRequest_Builder removeCapability(jint arg0);
-		android::net::NetworkRequest_Builder removeTransportType(jint arg0);
-		android::net::NetworkRequest_Builder setNetworkSpecifier(android::net::NetworkSpecifier arg0);
-		android::net::NetworkRequest_Builder setNetworkSpecifier(JString arg0);
+		android::net::NetworkRequest_Builder addCapability(jint arg0) const;
+		android::net::NetworkRequest_Builder addTransportType(jint arg0) const;
+		android::net::NetworkRequest build() const;
+		android::net::NetworkRequest_Builder clearCapabilities() const;
+		android::net::NetworkRequest_Builder removeCapability(jint arg0) const;
+		android::net::NetworkRequest_Builder removeTransportType(jint arg0) const;
+		android::net::NetworkRequest_Builder setNetworkSpecifier(android::net::NetworkSpecifier arg0) const;
+		android::net::NetworkRequest_Builder setNetworkSpecifier(JString arg0) const;
 	};
 } // namespace android::net
 

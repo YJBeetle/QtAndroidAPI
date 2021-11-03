@@ -22,7 +22,7 @@ namespace android::os::storage
 		StorageManager_StorageVolumeCallback();
 		
 		// Methods
-		void onStateChanged(android::os::storage::StorageVolume arg0);
+		void onStateChanged(android::os::storage::StorageVolume arg0) const;
 	};
 } // namespace android::os::storage
 

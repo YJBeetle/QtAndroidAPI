@@ -12,7 +12,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	jboolean IkeSessionParams_IkeAuthDigitalSignRemoteConfig::equals(JObject arg0)
+	jboolean IkeSessionParams_IkeAuthDigitalSignRemoteConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,14 +20,14 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	java::security::cert::X509Certificate IkeSessionParams_IkeAuthDigitalSignRemoteConfig::getRemoteCaCert()
+	java::security::cert::X509Certificate IkeSessionParams_IkeAuthDigitalSignRemoteConfig::getRemoteCaCert() const
 	{
 		return callObjectMethod(
 			"getRemoteCaCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	jint IkeSessionParams_IkeAuthDigitalSignRemoteConfig::hashCode()
+	jint IkeSessionParams_IkeAuthDigitalSignRemoteConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

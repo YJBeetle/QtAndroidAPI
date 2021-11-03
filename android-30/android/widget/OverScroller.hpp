@@ -25,26 +25,26 @@ namespace android::widget
 		OverScroller(android::content::Context arg0, JObject arg1, jfloat arg2, jfloat arg3, jboolean arg4);
 		
 		// Methods
-		void abortAnimation();
-		jboolean computeScrollOffset();
-		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		void forceFinished(jboolean arg0);
-		jfloat getCurrVelocity();
-		jint getCurrX();
-		jint getCurrY();
-		jint getFinalX();
-		jint getFinalY();
-		jint getStartX();
-		jint getStartY();
-		jboolean isFinished();
-		jboolean isOverScrolled();
-		void notifyHorizontalEdgeReached(jint arg0, jint arg1, jint arg2);
-		void notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2);
-		void setFriction(jfloat arg0);
-		jboolean springBack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3);
-		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void abortAnimation() const;
+		jboolean computeScrollOffset() const;
+		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7) const;
+		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9) const;
+		void forceFinished(jboolean arg0) const;
+		jfloat getCurrVelocity() const;
+		jint getCurrX() const;
+		jint getCurrY() const;
+		jint getFinalX() const;
+		jint getFinalY() const;
+		jint getStartX() const;
+		jint getStartY() const;
+		jboolean isFinished() const;
+		jboolean isOverScrolled() const;
+		void notifyHorizontalEdgeReached(jint arg0, jint arg1, jint arg2) const;
+		void notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2) const;
+		void setFriction(jfloat arg0) const;
+		jboolean springBack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const;
 	};
 } // namespace android::widget
 

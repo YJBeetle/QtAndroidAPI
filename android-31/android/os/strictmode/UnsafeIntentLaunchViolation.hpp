@@ -22,7 +22,7 @@ namespace android::os::strictmode
 		UnsafeIntentLaunchViolation(android::content::Intent arg0);
 		
 		// Methods
-		android::content::Intent getIntent();
+		android::content::Intent getIntent() const;
 	};
 } // namespace android::os::strictmode
 

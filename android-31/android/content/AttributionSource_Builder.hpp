@@ -23,10 +23,10 @@ namespace android::content
 		AttributionSource_Builder(jint arg0);
 		
 		// Methods
-		android::content::AttributionSource build();
-		android::content::AttributionSource_Builder setAttributionTag(JString arg0);
-		android::content::AttributionSource_Builder setNext(android::content::AttributionSource arg0);
-		android::content::AttributionSource_Builder setPackageName(JString arg0);
+		android::content::AttributionSource build() const;
+		android::content::AttributionSource_Builder setAttributionTag(JString arg0) const;
+		android::content::AttributionSource_Builder setNext(android::content::AttributionSource arg0) const;
+		android::content::AttributionSource_Builder setPackageName(JString arg0) const;
 	};
 } // namespace android::content
 

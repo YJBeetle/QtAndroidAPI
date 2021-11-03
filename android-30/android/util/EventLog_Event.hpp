@@ -18,13 +18,13 @@ namespace android::util
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getData();
-		jint getProcessId();
-		jint getTag();
-		jint getThreadId();
-		jlong getTimeNanos();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JObject getData() const;
+		jint getProcessId() const;
+		jint getTag() const;
+		jint getThreadId() const;
+		jlong getTimeNanos() const;
+		jint hashCode() const;
 	};
 } // namespace android::util
 

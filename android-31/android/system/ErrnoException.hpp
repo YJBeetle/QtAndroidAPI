@@ -30,9 +30,9 @@ namespace android::system
 		ErrnoException(JString arg0, jint arg1, JThrowable arg2);
 		
 		// Methods
-		JString getMessage();
-		java::io::IOException rethrowAsIOException();
-		java::net::SocketException rethrowAsSocketException();
+		JString getMessage() const;
+		java::io::IOException rethrowAsIOException() const;
+		java::net::SocketException rethrowAsSocketException() const;
 	};
 } // namespace android::system
 

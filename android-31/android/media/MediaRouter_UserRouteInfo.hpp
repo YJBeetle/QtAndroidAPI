@@ -30,22 +30,22 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::RemoteControlClient getRemoteControlClient();
-		void requestSetVolume(jint arg0);
-		void requestUpdateVolume(jint arg0);
-		void setDescription(JString arg0);
-		void setIconDrawable(android::graphics::drawable::Drawable arg0);
-		void setIconResource(jint arg0);
-		void setName(jint arg0);
-		void setName(JString arg0);
-		void setPlaybackStream(jint arg0);
-		void setPlaybackType(jint arg0);
-		void setRemoteControlClient(android::media::RemoteControlClient arg0);
-		void setStatus(JString arg0);
-		void setVolume(jint arg0);
-		void setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0);
-		void setVolumeHandling(jint arg0);
-		void setVolumeMax(jint arg0);
+		android::media::RemoteControlClient getRemoteControlClient() const;
+		void requestSetVolume(jint arg0) const;
+		void requestUpdateVolume(jint arg0) const;
+		void setDescription(JString arg0) const;
+		void setIconDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setIconResource(jint arg0) const;
+		void setName(jint arg0) const;
+		void setName(JString arg0) const;
+		void setPlaybackStream(jint arg0) const;
+		void setPlaybackType(jint arg0) const;
+		void setRemoteControlClient(android::media::RemoteControlClient arg0) const;
+		void setStatus(JString arg0) const;
+		void setVolume(jint arg0) const;
+		void setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0) const;
+		void setVolumeHandling(jint arg0) const;
+		void setVolumeMax(jint arg0) const;
 	};
 } // namespace android::media
 

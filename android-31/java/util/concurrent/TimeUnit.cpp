@@ -98,7 +98,7 @@ namespace java::util::concurrent
 			"()[Ljava/util/concurrent/TimeUnit;"
 		);
 	}
-	jlong TimeUnit::convert(java::time::Duration arg0)
+	jlong TimeUnit::convert(java::time::Duration arg0) const
 	{
 		return callMethod<jlong>(
 			"convert",
@@ -106,7 +106,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jlong TimeUnit::convert(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	jlong TimeUnit::convert(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callMethod<jlong>(
 			"convert",
@@ -115,7 +115,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void TimeUnit::sleep(jlong arg0)
+	void TimeUnit::sleep(jlong arg0) const
 	{
 		callMethod<void>(
 			"sleep",
@@ -123,7 +123,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void TimeUnit::timedJoin(java::lang::Thread arg0, jlong arg1)
+	void TimeUnit::timedJoin(java::lang::Thread arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"timedJoin",
@@ -132,7 +132,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void TimeUnit::timedWait(JObject arg0, jlong arg1)
+	void TimeUnit::timedWait(JObject arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"timedWait",
@@ -141,14 +141,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	java::time::temporal::ChronoUnit TimeUnit::toChronoUnit()
+	java::time::temporal::ChronoUnit TimeUnit::toChronoUnit() const
 	{
 		return callObjectMethod(
 			"toChronoUnit",
 			"()Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	jlong TimeUnit::toDays(jlong arg0)
+	jlong TimeUnit::toDays(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toDays",
@@ -156,7 +156,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toHours(jlong arg0)
+	jlong TimeUnit::toHours(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toHours",
@@ -164,7 +164,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toMicros(jlong arg0)
+	jlong TimeUnit::toMicros(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toMicros",
@@ -172,7 +172,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toMillis(jlong arg0)
+	jlong TimeUnit::toMillis(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toMillis",
@@ -180,7 +180,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toMinutes(jlong arg0)
+	jlong TimeUnit::toMinutes(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toMinutes",
@@ -188,7 +188,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toNanos(jlong arg0)
+	jlong TimeUnit::toNanos(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toNanos",
@@ -196,7 +196,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jlong TimeUnit::toSeconds(jlong arg0)
+	jlong TimeUnit::toSeconds(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"toSeconds",

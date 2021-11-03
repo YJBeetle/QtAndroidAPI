@@ -16,7 +16,7 @@ namespace android::telephony::ims
 		) {}
 	
 	// Methods
-	void RegistrationManager_RegistrationCallback::onRegistered(jint arg0)
+	void RegistrationManager_RegistrationCallback::onRegistered(jint arg0) const
 	{
 		callMethod<void>(
 			"onRegistered",
@@ -24,7 +24,7 @@ namespace android::telephony::ims
 			arg0
 		);
 	}
-	void RegistrationManager_RegistrationCallback::onRegistering(jint arg0)
+	void RegistrationManager_RegistrationCallback::onRegistering(jint arg0) const
 	{
 		callMethod<void>(
 			"onRegistering",
@@ -32,7 +32,7 @@ namespace android::telephony::ims
 			arg0
 		);
 	}
-	void RegistrationManager_RegistrationCallback::onTechnologyChangeFailed(jint arg0, android::telephony::ims::ImsReasonInfo arg1)
+	void RegistrationManager_RegistrationCallback::onTechnologyChangeFailed(jint arg0, android::telephony::ims::ImsReasonInfo arg1) const
 	{
 		callMethod<void>(
 			"onTechnologyChangeFailed",
@@ -41,7 +41,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void RegistrationManager_RegistrationCallback::onUnregistered(android::telephony::ims::ImsReasonInfo arg0)
+	void RegistrationManager_RegistrationCallback::onUnregistered(android::telephony::ims::ImsReasonInfo arg0) const
 	{
 		callMethod<void>(
 			"onUnregistered",

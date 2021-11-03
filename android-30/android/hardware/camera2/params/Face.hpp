@@ -29,13 +29,13 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		android::graphics::Rect getBounds();
-		jint getId();
-		android::graphics::Point getLeftEyePosition();
-		android::graphics::Point getMouthPosition();
-		android::graphics::Point getRightEyePosition();
-		jint getScore();
-		JString toString();
+		android::graphics::Rect getBounds() const;
+		jint getId() const;
+		android::graphics::Point getLeftEyePosition() const;
+		android::graphics::Point getMouthPosition() const;
+		android::graphics::Point getRightEyePosition() const;
+		jint getScore() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

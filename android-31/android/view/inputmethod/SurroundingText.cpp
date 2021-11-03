@@ -29,42 +29,42 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint SurroundingText::describeContents()
+	jint SurroundingText::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SurroundingText::getOffset()
+	jint SurroundingText::getOffset() const
 	{
 		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
-	jint SurroundingText::getSelectionEnd()
+	jint SurroundingText::getSelectionEnd() const
 	{
 		return callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
 		);
 	}
-	jint SurroundingText::getSelectionStart()
+	jint SurroundingText::getSelectionStart() const
 	{
 		return callMethod<jint>(
 			"getSelectionStart",
 			"()I"
 		);
 	}
-	JString SurroundingText::getText()
+	JString SurroundingText::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void SurroundingText::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SurroundingText::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

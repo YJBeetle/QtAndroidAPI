@@ -19,7 +19,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	JString ReplacementTransformationMethod::getTransformation(JString arg0, android::view::View arg1)
+	JString ReplacementTransformationMethod::getTransformation(JString arg0, android::view::View arg1) const
 	{
 		return callObjectMethod(
 			"getTransformation",
@@ -28,7 +28,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	void ReplacementTransformationMethod::onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4)
+	void ReplacementTransformationMethod::onFocusChanged(android::view::View arg0, JString arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4) const
 	{
 		callMethod<void>(
 			"onFocusChanged",

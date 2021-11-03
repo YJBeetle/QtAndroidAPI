@@ -26,14 +26,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::GenericDocument GenericDocument_Builder::build()
+	android::app::appsearch::GenericDocument GenericDocument_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/GenericDocument;"
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setCreationTimestampMillis(jlong arg0)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setCreationTimestampMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setCreationTimestampMillis",
@@ -41,7 +41,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBoolean(JString arg0, JBooleanArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBoolean(JString arg0, JBooleanArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyBoolean",
@@ -50,7 +50,7 @@ namespace android::app::appsearch
 			arg1.object<jbooleanArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBytes(JString arg0, JArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyBytes(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyBytes",
@@ -59,7 +59,7 @@ namespace android::app::appsearch
 			arg1.object<jarray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDocument(JString arg0, JArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDocument(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyDocument",
@@ -68,7 +68,7 @@ namespace android::app::appsearch
 			arg1.object<jarray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDouble(JString arg0, JDoubleArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyDouble(JString arg0, JDoubleArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyDouble",
@@ -77,7 +77,7 @@ namespace android::app::appsearch
 			arg1.object<jdoubleArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyLong(JString arg0, JLongArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyLong(JString arg0, JLongArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyLong",
@@ -86,7 +86,7 @@ namespace android::app::appsearch
 			arg1.object<jlongArray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyString(JString arg0, JArray arg1)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setPropertyString(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"setPropertyString",
@@ -95,7 +95,7 @@ namespace android::app::appsearch
 			arg1.object<jarray>()
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setScore(jint arg0)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setScore(jint arg0) const
 	{
 		return callObjectMethod(
 			"setScore",
@@ -103,7 +103,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setTtlMillis(jlong arg0)
+	android::app::appsearch::GenericDocument_Builder GenericDocument_Builder::setTtlMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTtlMillis",

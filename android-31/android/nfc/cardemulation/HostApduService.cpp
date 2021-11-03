@@ -49,14 +49,14 @@ namespace android::nfc::cardemulation
 		) {}
 	
 	// Methods
-	void HostApduService::notifyUnhandled()
+	void HostApduService::notifyUnhandled() const
 	{
 		callMethod<void>(
 			"notifyUnhandled",
 			"()V"
 		);
 	}
-	JObject HostApduService::onBind(android::content::Intent arg0)
+	JObject HostApduService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -64,7 +64,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	void HostApduService::onDeactivated(jint arg0)
+	void HostApduService::onDeactivated(jint arg0) const
 	{
 		callMethod<void>(
 			"onDeactivated",
@@ -72,7 +72,7 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	JByteArray HostApduService::processCommandApdu(JByteArray arg0, android::os::Bundle arg1)
+	JByteArray HostApduService::processCommandApdu(JByteArray arg0, android::os::Bundle arg1) const
 	{
 		return callObjectMethod(
 			"processCommandApdu",
@@ -81,7 +81,7 @@ namespace android::nfc::cardemulation
 			arg1.object()
 		);
 	}
-	void HostApduService::sendResponseApdu(JByteArray arg0)
+	void HostApduService::sendResponseApdu(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"sendResponseApdu",

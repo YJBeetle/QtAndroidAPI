@@ -63,11 +63,11 @@ namespace java::net
 		// Methods
 		static java::net::URLClassLoader newInstance(JArray arg0);
 		static java::net::URLClassLoader newInstance(JArray arg0, java::lang::ClassLoader arg1);
-		void close();
-		java::net::URL findResource(JString arg0);
-		JObject findResources(JString arg0);
-		java::io::InputStream getResourceAsStream(JString arg0);
-		JArray getURLs();
+		void close() const;
+		java::net::URL findResource(JString arg0) const;
+		JObject findResources(JString arg0) const;
+		java::io::InputStream getResourceAsStream(JString arg0) const;
+		JArray getURLs() const;
 	};
 } // namespace java::net
 

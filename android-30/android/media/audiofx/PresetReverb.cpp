@@ -74,21 +74,21 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jshort PresetReverb::getPreset()
+	jshort PresetReverb::getPreset() const
 	{
 		return callMethod<jshort>(
 			"getPreset",
 			"()S"
 		);
 	}
-	android::media::audiofx::PresetReverb_Settings PresetReverb::getProperties()
+	android::media::audiofx::PresetReverb_Settings PresetReverb::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/PresetReverb$Settings;"
 		);
 	}
-	void PresetReverb::setParameterListener(JObject arg0)
+	void PresetReverb::setParameterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameterListener",
@@ -96,7 +96,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void PresetReverb::setPreset(jshort arg0)
+	void PresetReverb::setPreset(jshort arg0) const
 	{
 		callMethod<void>(
 			"setPreset",
@@ -104,7 +104,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void PresetReverb::setProperties(android::media::audiofx::PresetReverb_Settings arg0)
+	void PresetReverb::setProperties(android::media::audiofx::PresetReverb_Settings arg0) const
 	{
 		callMethod<void>(
 			"setProperties",

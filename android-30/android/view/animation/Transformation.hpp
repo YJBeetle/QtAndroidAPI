@@ -27,16 +27,16 @@ namespace android::view::animation
 		Transformation();
 		
 		// Methods
-		void clear();
-		void compose(android::view::animation::Transformation arg0);
-		jfloat getAlpha();
-		android::graphics::Matrix getMatrix();
-		jint getTransformationType();
-		void set(android::view::animation::Transformation arg0);
-		void setAlpha(jfloat arg0);
-		void setTransformationType(jint arg0);
-		JString toShortString();
-		JString toString();
+		void clear() const;
+		void compose(android::view::animation::Transformation arg0) const;
+		jfloat getAlpha() const;
+		android::graphics::Matrix getMatrix() const;
+		jint getTransformationType() const;
+		void set(android::view::animation::Transformation arg0) const;
+		void setAlpha(jfloat arg0) const;
+		void setTransformationType(jint arg0) const;
+		JString toShortString() const;
+		JString toString() const;
 	};
 } // namespace android::view::animation
 

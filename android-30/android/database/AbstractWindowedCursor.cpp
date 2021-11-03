@@ -19,7 +19,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void AbstractWindowedCursor::copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1)
+	void AbstractWindowedCursor::copyStringToBuffer(jint arg0, android::database::CharArrayBuffer arg1) const
 	{
 		callMethod<void>(
 			"copyStringToBuffer",
@@ -28,7 +28,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	JByteArray AbstractWindowedCursor::getBlob(jint arg0)
+	JByteArray AbstractWindowedCursor::getBlob(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBlob",
@@ -36,7 +36,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jdouble AbstractWindowedCursor::getDouble(jint arg0)
+	jdouble AbstractWindowedCursor::getDouble(jint arg0) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -44,7 +44,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jfloat AbstractWindowedCursor::getFloat(jint arg0)
+	jfloat AbstractWindowedCursor::getFloat(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -52,7 +52,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint AbstractWindowedCursor::getInt(jint arg0)
+	jint AbstractWindowedCursor::getInt(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -60,7 +60,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jlong AbstractWindowedCursor::getLong(jint arg0)
+	jlong AbstractWindowedCursor::getLong(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -68,7 +68,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jshort AbstractWindowedCursor::getShort(jint arg0)
+	jshort AbstractWindowedCursor::getShort(jint arg0) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -76,7 +76,7 @@ namespace android::database
 			arg0
 		);
 	}
-	JString AbstractWindowedCursor::getString(jint arg0)
+	JString AbstractWindowedCursor::getString(jint arg0) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -84,7 +84,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jint AbstractWindowedCursor::getType(jint arg0)
+	jint AbstractWindowedCursor::getType(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getType",
@@ -92,21 +92,21 @@ namespace android::database
 			arg0
 		);
 	}
-	android::database::CursorWindow AbstractWindowedCursor::getWindow()
+	android::database::CursorWindow AbstractWindowedCursor::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/database/CursorWindow;"
 		);
 	}
-	jboolean AbstractWindowedCursor::hasWindow()
+	jboolean AbstractWindowedCursor::hasWindow() const
 	{
 		return callMethod<jboolean>(
 			"hasWindow",
 			"()Z"
 		);
 	}
-	jboolean AbstractWindowedCursor::isBlob(jint arg0)
+	jboolean AbstractWindowedCursor::isBlob(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBlob",
@@ -114,7 +114,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean AbstractWindowedCursor::isFloat(jint arg0)
+	jboolean AbstractWindowedCursor::isFloat(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isFloat",
@@ -122,7 +122,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean AbstractWindowedCursor::isLong(jint arg0)
+	jboolean AbstractWindowedCursor::isLong(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLong",
@@ -130,7 +130,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean AbstractWindowedCursor::isNull(jint arg0)
+	jboolean AbstractWindowedCursor::isNull(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNull",
@@ -138,7 +138,7 @@ namespace android::database
 			arg0
 		);
 	}
-	jboolean AbstractWindowedCursor::isString(jint arg0)
+	jboolean AbstractWindowedCursor::isString(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isString",
@@ -146,7 +146,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void AbstractWindowedCursor::setWindow(android::database::CursorWindow arg0)
+	void AbstractWindowedCursor::setWindow(android::database::CursorWindow arg0) const
 	{
 		callMethod<void>(
 			"setWindow",

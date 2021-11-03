@@ -19,14 +19,14 @@ namespace android::graphics::text
 		LineBreaker_ParagraphConstraints();
 		
 		// Methods
-		jfloat getDefaultTabStop();
-		jfloat getFirstWidth();
-		jint getFirstWidthLineCount();
-		JFloatArray getTabStops();
-		jfloat getWidth();
-		void setIndent(jfloat arg0, jint arg1);
-		void setTabStops(JFloatArray arg0, jfloat arg1);
-		void setWidth(jfloat arg0);
+		jfloat getDefaultTabStop() const;
+		jfloat getFirstWidth() const;
+		jint getFirstWidthLineCount() const;
+		JFloatArray getTabStops() const;
+		jfloat getWidth() const;
+		void setIndent(jfloat arg0, jint arg1) const;
+		void setTabStops(JFloatArray arg0, jfloat arg1) const;
+		void setWidth(jfloat arg0) const;
 	};
 } // namespace android::graphics::text
 

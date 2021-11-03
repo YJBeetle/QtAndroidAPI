@@ -10,7 +10,7 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jint UserManager_UserOperationException::getUserOperationResult()
+	jint UserManager_UserOperationException::getUserOperationResult() const
 	{
 		return callMethod<jint>(
 			"getUserOperationResult",

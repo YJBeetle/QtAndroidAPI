@@ -24,10 +24,10 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		android::net::ipsec::ike::IkeSessionConnectionInfo getIkeSessionConnectionInfo();
-		JString getRemoteApplicationVersion();
-		JObject getRemoteVendorIds();
-		jboolean isIkeExtensionEnabled(jint arg0);
+		android::net::ipsec::ike::IkeSessionConnectionInfo getIkeSessionConnectionInfo() const;
+		JString getRemoteApplicationVersion() const;
+		JObject getRemoteVendorIds() const;
+		jboolean isIkeExtensionEnabled(jint arg0) const;
 	};
 } // namespace android::net::ipsec::ike
 

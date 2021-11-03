@@ -16,21 +16,21 @@ namespace java::lang::ref
 		) {}
 	
 	// Methods
-	java::lang::ref::Reference ReferenceQueue::poll()
+	java::lang::ref::Reference ReferenceQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/ref/Reference;"
 		);
 	}
-	java::lang::ref::Reference ReferenceQueue::remove()
+	java::lang::ref::Reference ReferenceQueue::remove() const
 	{
 		return callObjectMethod(
 			"remove",
 			"()Ljava/lang/ref/Reference;"
 		);
 	}
-	java::lang::ref::Reference ReferenceQueue::remove(jlong arg0)
+	java::lang::ref::Reference ReferenceQueue::remove(jlong arg0) const
 	{
 		return callObjectMethod(
 			"remove",

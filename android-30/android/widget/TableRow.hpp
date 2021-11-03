@@ -40,11 +40,11 @@ namespace android::widget
 		TableRow(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		android::widget::TableRow_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		android::view::View getVirtualChildAt(jint arg0);
-		jint getVirtualChildCount();
-		void setOnHierarchyChangeListener(JObject arg0);
+		android::widget::TableRow_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		android::view::View getVirtualChildAt(jint arg0) const;
+		jint getVirtualChildCount() const;
+		void setOnHierarchyChangeListener(JObject arg0) const;
 	};
 } // namespace android::widget
 

@@ -25,10 +25,10 @@ namespace android::view::textservice
 		// Constructors
 		
 		// Methods
-		android::os::Bundle getExtras();
-		java::util::Locale getLocale();
-		jint getSupportedAttributes();
-		jboolean shouldReferToSpellCheckerLanguageSettings();
+		android::os::Bundle getExtras() const;
+		java::util::Locale getLocale() const;
+		jint getSupportedAttributes() const;
+		jboolean shouldReferToSpellCheckerLanguageSettings() const;
 	};
 } // namespace android::view::textservice
 

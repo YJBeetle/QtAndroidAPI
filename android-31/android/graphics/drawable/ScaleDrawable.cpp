@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void ScaleDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void ScaleDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -32,7 +32,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void ScaleDrawable::draw(android::graphics::Canvas arg0)
+	void ScaleDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -40,14 +40,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint ScaleDrawable::getOpacity()
+	jint ScaleDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void ScaleDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void ScaleDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",

@@ -125,7 +125,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void Transliterator::filteredTransliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2)
+	void Transliterator::filteredTransliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"filteredTransliterate",
@@ -135,7 +135,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void Transliterator::finishTransliteration(JObject arg0, android::icu::text::Transliterator_Position arg1)
+	void Transliterator::finishTransliteration(JObject arg0, android::icu::text::Transliterator_Position arg1) const
 	{
 		callMethod<void>(
 			"finishTransliteration",
@@ -144,56 +144,56 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JArray Transliterator::getElements()
+	JArray Transliterator::getElements() const
 	{
 		return callObjectMethod(
 			"getElements",
 			"()[Landroid/icu/text/Transliterator;"
 		);
 	}
-	android::icu::text::UnicodeFilter Transliterator::getFilter()
+	android::icu::text::UnicodeFilter Transliterator::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/icu/text/UnicodeFilter;"
 		);
 	}
-	JString Transliterator::getID()
+	JString Transliterator::getID() const
 	{
 		return callObjectMethod(
 			"getID",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::icu::text::Transliterator Transliterator::getInverse()
+	android::icu::text::Transliterator Transliterator::getInverse() const
 	{
 		return callObjectMethod(
 			"getInverse",
 			"()Landroid/icu/text/Transliterator;"
 		);
 	}
-	jint Transliterator::getMaximumContextLength()
+	jint Transliterator::getMaximumContextLength() const
 	{
 		return callMethod<jint>(
 			"getMaximumContextLength",
 			"()I"
 		);
 	}
-	android::icu::text::UnicodeSet Transliterator::getSourceSet()
+	android::icu::text::UnicodeSet Transliterator::getSourceSet() const
 	{
 		return callObjectMethod(
 			"getSourceSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	android::icu::text::UnicodeSet Transliterator::getTargetSet()
+	android::icu::text::UnicodeSet Transliterator::getTargetSet() const
 	{
 		return callObjectMethod(
 			"getTargetSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	void Transliterator::setFilter(android::icu::text::UnicodeFilter arg0)
+	void Transliterator::setFilter(android::icu::text::UnicodeFilter arg0) const
 	{
 		callMethod<void>(
 			"setFilter",
@@ -201,7 +201,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString Transliterator::toRules(jboolean arg0)
+	JString Transliterator::toRules(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"toRules",
@@ -209,7 +209,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint Transliterator::transliterate(JObject arg0, jint arg1, jint arg2)
+	jint Transliterator::transliterate(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"transliterate",
@@ -219,7 +219,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	JString Transliterator::transliterate(JString arg0)
+	JString Transliterator::transliterate(JString arg0) const
 	{
 		return callObjectMethod(
 			"transliterate",
@@ -227,7 +227,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void Transliterator::transliterate(JObject arg0)
+	void Transliterator::transliterate(JObject arg0) const
 	{
 		callMethod<void>(
 			"transliterate",
@@ -235,7 +235,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1) const
 	{
 		callMethod<void>(
 			"transliterate",
@@ -244,7 +244,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jint arg2)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"transliterate",
@@ -254,7 +254,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, JString arg2)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"transliterate",

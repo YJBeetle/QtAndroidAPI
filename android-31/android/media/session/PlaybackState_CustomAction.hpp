@@ -28,13 +28,13 @@ namespace android::media::session
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getAction();
-		android::os::Bundle getExtras();
-		jint getIcon();
-		JString getName();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getAction() const;
+		android::os::Bundle getExtras() const;
+		jint getIcon() const;
+		JString getName() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::session
 

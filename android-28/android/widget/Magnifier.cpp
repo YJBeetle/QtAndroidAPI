@@ -17,35 +17,35 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Magnifier::dismiss()
+	void Magnifier::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	jint Magnifier::getHeight()
+	jint Magnifier::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint Magnifier::getWidth()
+	jint Magnifier::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jfloat Magnifier::getZoom()
+	jfloat Magnifier::getZoom() const
 	{
 		return callMethod<jfloat>(
 			"getZoom",
 			"()F"
 		);
 	}
-	void Magnifier::show(jfloat arg0, jfloat arg1)
+	void Magnifier::show(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"show",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Magnifier::update()
+	void Magnifier::update() const
 	{
 		callMethod<void>(
 			"update",

@@ -67,17 +67,17 @@ namespace android::icu::text
 		static android::icu::text::MeasureFormat getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1);
 		static android::icu::text::MeasureFormat getInstance(android::icu::util::ULocale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2);
 		static android::icu::text::MeasureFormat getInstance(java::util::Locale arg0, android::icu::text::MeasureFormat_FormatWidth arg1, android::icu::text::NumberFormat arg2);
-		jboolean equals(JObject arg0);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuilder formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3);
-		JString formatMeasures(JArray arg0);
-		java::lang::StringBuilder formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, JArray arg2);
-		android::icu::util::ULocale getLocale();
-		android::icu::text::NumberFormat getNumberFormat();
-		JString getUnitDisplayName(android::icu::util::MeasureUnit arg0);
-		android::icu::text::MeasureFormat_FormatWidth getWidth();
-		jint hashCode();
-		android::icu::util::Measure parseObject(JString arg0, java::text::ParsePosition arg1);
+		jboolean equals(JObject arg0) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		java::lang::StringBuilder formatMeasurePerUnit(android::icu::util::Measure arg0, android::icu::util::MeasureUnit arg1, java::lang::StringBuilder arg2, java::text::FieldPosition arg3) const;
+		JString formatMeasures(JArray arg0) const;
+		java::lang::StringBuilder formatMeasures(java::lang::StringBuilder arg0, java::text::FieldPosition arg1, JArray arg2) const;
+		android::icu::util::ULocale getLocale() const;
+		android::icu::text::NumberFormat getNumberFormat() const;
+		JString getUnitDisplayName(android::icu::util::MeasureUnit arg0) const;
+		android::icu::text::MeasureFormat_FormatWidth getWidth() const;
+		jint hashCode() const;
+		android::icu::util::Measure parseObject(JString arg0, java::text::ParsePosition arg1) const;
 	};
 } // namespace android::icu::text
 

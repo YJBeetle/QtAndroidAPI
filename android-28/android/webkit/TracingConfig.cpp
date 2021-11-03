@@ -80,21 +80,21 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	JObject TracingConfig::getCustomIncludedCategories()
+	JObject TracingConfig::getCustomIncludedCategories() const
 	{
 		return callObjectMethod(
 			"getCustomIncludedCategories",
 			"()Ljava/util/List;"
 		);
 	}
-	jint TracingConfig::getPredefinedCategories()
+	jint TracingConfig::getPredefinedCategories() const
 	{
 		return callMethod<jint>(
 			"getPredefinedCategories",
 			"()I"
 		);
 	}
-	jint TracingConfig::getTracingMode()
+	jint TracingConfig::getTracingMode() const
 	{
 		return callMethod<jint>(
 			"getTracingMode",

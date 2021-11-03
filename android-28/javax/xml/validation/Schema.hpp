@@ -25,8 +25,8 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		javax::xml::validation::Validator newValidator();
-		javax::xml::validation::ValidatorHandler newValidatorHandler();
+		javax::xml::validation::Validator newValidator() const;
+		javax::xml::validation::ValidatorHandler newValidatorHandler() const;
 	};
 } // namespace javax::xml::validation
 

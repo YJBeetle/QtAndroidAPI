@@ -20,21 +20,21 @@ namespace javax::crypto
 		) {}
 	
 	// Methods
-	void CipherOutputStream::close()
+	void CipherOutputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void CipherOutputStream::flush()
+	void CipherOutputStream::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void CipherOutputStream::write(JByteArray arg0)
+	void CipherOutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -42,7 +42,7 @@ namespace javax::crypto
 			arg0.object<jbyteArray>()
 		);
 	}
-	void CipherOutputStream::write(jint arg0)
+	void CipherOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -50,7 +50,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	void CipherOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void CipherOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

@@ -508,7 +508,7 @@ namespace android::hardware
 			arg3.object<jfloatArray>()
 		);
 	}
-	jboolean SensorManager::cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1)
+	jboolean SensorManager::cancelTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1) const
 	{
 		return callMethod<jboolean>(
 			"cancelTriggerSensor",
@@ -517,7 +517,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::hardware::HardwareBuffer arg0)
+	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::hardware::HardwareBuffer arg0) const
 	{
 		return callObjectMethod(
 			"createDirectChannel",
@@ -525,7 +525,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::os::MemoryFile arg0)
+	android::hardware::SensorDirectChannel SensorManager::createDirectChannel(android::os::MemoryFile arg0) const
 	{
 		return callObjectMethod(
 			"createDirectChannel",
@@ -533,7 +533,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	jboolean SensorManager::flush(JObject arg0)
+	jboolean SensorManager::flush(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"flush",
@@ -541,7 +541,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0)
+	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDefaultSensor",
@@ -549,7 +549,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0, jboolean arg1)
+	android::hardware::Sensor SensorManager::getDefaultSensor(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getDefaultSensor",
@@ -558,7 +558,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	JObject SensorManager::getDynamicSensorList(jint arg0)
+	JObject SensorManager::getDynamicSensorList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDynamicSensorList",
@@ -566,7 +566,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	JObject SensorManager::getSensorList(jint arg0)
+	JObject SensorManager::getSensorList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSensorList",
@@ -574,21 +574,21 @@ namespace android::hardware
 			arg0
 		);
 	}
-	jint SensorManager::getSensors()
+	jint SensorManager::getSensors() const
 	{
 		return callMethod<jint>(
 			"getSensors",
 			"()I"
 		);
 	}
-	jboolean SensorManager::isDynamicSensorDiscoverySupported()
+	jboolean SensorManager::isDynamicSensorDiscoverySupported() const
 	{
 		return callMethod<jboolean>(
 			"isDynamicSensorDiscoverySupported",
 			"()Z"
 		);
 	}
-	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0)
+	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0) const
 	{
 		callMethod<void>(
 			"registerDynamicSensorCallback",
@@ -596,7 +596,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0, android::os::Handler arg1)
+	void SensorManager::registerDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerDynamicSensorCallback",
@@ -605,7 +605,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, jint arg1)
+	jboolean SensorManager::registerListener(JObject arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -614,7 +614,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -624,7 +624,7 @@ namespace android::hardware
 			arg2
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, jint arg1, jint arg2)
+	jboolean SensorManager::registerListener(JObject arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -634,7 +634,7 @@ namespace android::hardware
 			arg2
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -645,7 +645,7 @@ namespace android::hardware
 			arg3.object()
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -656,7 +656,7 @@ namespace android::hardware
 			arg3
 		);
 	}
-	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4) const
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -668,7 +668,7 @@ namespace android::hardware
 			arg4.object()
 		);
 	}
-	jboolean SensorManager::requestTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1)
+	jboolean SensorManager::requestTriggerSensor(android::hardware::TriggerEventListener arg0, android::hardware::Sensor arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestTriggerSensor",
@@ -677,7 +677,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	void SensorManager::unregisterDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0)
+	void SensorManager::unregisterDynamicSensorCallback(android::hardware::SensorManager_DynamicSensorCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterDynamicSensorCallback",
@@ -685,7 +685,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager::unregisterListener(JObject arg0)
+	void SensorManager::unregisterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -693,7 +693,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager::unregisterListener(JObject arg0, android::hardware::Sensor arg1)
+	void SensorManager::unregisterListener(JObject arg0, android::hardware::Sensor arg1) const
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -702,7 +702,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	void SensorManager::unregisterListener(JObject arg0, jint arg1)
+	void SensorManager::unregisterListener(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"unregisterListener",

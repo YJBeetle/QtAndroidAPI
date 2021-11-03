@@ -29,17 +29,17 @@ namespace java::nio
 		// Constructors
 		
 		// Methods
-		java::nio::MappedByteBuffer clear();
-		java::nio::MappedByteBuffer flip();
-		java::nio::MappedByteBuffer force();
-		java::nio::MappedByteBuffer force(jint arg0, jint arg1);
-		jboolean isLoaded();
-		java::nio::MappedByteBuffer limit(jint arg0);
-		java::nio::MappedByteBuffer load();
-		java::nio::MappedByteBuffer mark();
-		java::nio::MappedByteBuffer position(jint arg0);
-		java::nio::MappedByteBuffer reset();
-		java::nio::MappedByteBuffer rewind();
+		java::nio::MappedByteBuffer clear() const;
+		java::nio::MappedByteBuffer flip() const;
+		java::nio::MappedByteBuffer force() const;
+		java::nio::MappedByteBuffer force(jint arg0, jint arg1) const;
+		jboolean isLoaded() const;
+		java::nio::MappedByteBuffer limit(jint arg0) const;
+		java::nio::MappedByteBuffer load() const;
+		java::nio::MappedByteBuffer mark() const;
+		java::nio::MappedByteBuffer position(jint arg0) const;
+		java::nio::MappedByteBuffer reset() const;
+		java::nio::MappedByteBuffer rewind() const;
 	};
 } // namespace java::nio
 

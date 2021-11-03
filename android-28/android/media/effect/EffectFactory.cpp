@@ -238,7 +238,7 @@ namespace android::media::effect
 			arg0.object<jstring>()
 		);
 	}
-	android::media::effect::Effect EffectFactory::createEffect(JString arg0)
+	android::media::effect::Effect EffectFactory::createEffect(JString arg0) const
 	{
 		return callObjectMethod(
 			"createEffect",

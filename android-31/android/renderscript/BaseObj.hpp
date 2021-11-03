@@ -19,11 +19,11 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		void destroy();
-		jboolean equals(JObject arg0);
-		JString getName();
-		jint hashCode();
-		void setName(JString arg0);
+		void destroy() const;
+		jboolean equals(JObject arg0) const;
+		JString getName() const;
+		jint hashCode() const;
+		void setName(JString arg0) const;
 	};
 } // namespace android::renderscript
 

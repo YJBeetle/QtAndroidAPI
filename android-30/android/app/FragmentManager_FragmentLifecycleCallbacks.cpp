@@ -20,7 +20,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentActivityCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentActivityCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onFragmentActivityCreated",
@@ -30,7 +30,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2) const
 	{
 		callMethod<void>(
 			"onFragmentAttached",
@@ -40,7 +40,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onFragmentCreated",
@@ -50,7 +50,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentDestroyed",
@@ -59,7 +59,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDetached(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentDetached(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentDetached",
@@ -68,7 +68,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPaused(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPaused(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentPaused",
@@ -77,7 +77,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPreAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPreAttached(android::app::FragmentManager arg0, android::app::Fragment arg1, android::content::Context arg2) const
 	{
 		callMethod<void>(
 			"onFragmentPreAttached",
@@ -87,7 +87,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPreCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentPreCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onFragmentPreCreated",
@@ -97,7 +97,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentResumed(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentResumed(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentResumed",
@@ -106,7 +106,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentSaveInstanceState(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentSaveInstanceState(android::app::FragmentManager arg0, android::app::Fragment arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onFragmentSaveInstanceState",
@@ -116,7 +116,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStarted(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStarted(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentStarted",
@@ -125,7 +125,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStopped(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentStopped(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentStopped",
@@ -134,7 +134,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::view::View arg2, android::os::Bundle arg3)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewCreated(android::app::FragmentManager arg0, android::app::Fragment arg1, android::view::View arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"onFragmentViewCreated",
@@ -145,7 +145,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1)
+	void FragmentManager_FragmentLifecycleCallbacks::onFragmentViewDestroyed(android::app::FragmentManager arg0, android::app::Fragment arg1) const
 	{
 		callMethod<void>(
 			"onFragmentViewDestroyed",

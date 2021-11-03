@@ -199,21 +199,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaCas::close()
+	void MediaCas::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::media::MediaCas_Session MediaCas::openSession()
+	android::media::MediaCas_Session MediaCas::openSession() const
 	{
 		return callObjectMethod(
 			"openSession",
 			"()Landroid/media/MediaCas$Session;"
 		);
 	}
-	android::media::MediaCas_Session MediaCas::openSession(jint arg0, jint arg1)
+	android::media::MediaCas_Session MediaCas::openSession(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"openSession",
@@ -222,7 +222,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaCas::processEmm(JByteArray arg0)
+	void MediaCas::processEmm(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"processEmm",
@@ -230,7 +230,7 @@ namespace android::media
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MediaCas::processEmm(JByteArray arg0, jint arg1, jint arg2)
+	void MediaCas::processEmm(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"processEmm",
@@ -240,7 +240,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaCas::provision(JString arg0)
+	void MediaCas::provision(JString arg0) const
 	{
 		callMethod<void>(
 			"provision",
@@ -248,7 +248,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaCas::refreshEntitlements(jint arg0, JByteArray arg1)
+	void MediaCas::refreshEntitlements(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"refreshEntitlements",
@@ -257,7 +257,7 @@ namespace android::media
 			arg1.object<jbyteArray>()
 		);
 	}
-	void MediaCas::sendEvent(jint arg0, jint arg1, JByteArray arg2)
+	void MediaCas::sendEvent(jint arg0, jint arg1, JByteArray arg2) const
 	{
 		callMethod<void>(
 			"sendEvent",
@@ -267,7 +267,7 @@ namespace android::media
 			arg2.object<jbyteArray>()
 		);
 	}
-	void MediaCas::setEventListener(JObject arg0, android::os::Handler arg1)
+	void MediaCas::setEventListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setEventListener",
@@ -276,7 +276,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaCas::setPrivateData(JByteArray arg0)
+	void MediaCas::setPrivateData(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setPrivateData",

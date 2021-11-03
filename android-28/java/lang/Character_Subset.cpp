@@ -12,7 +12,7 @@ namespace java::lang
 	// Constructors
 	
 	// Methods
-	jboolean Character_Subset::equals(JObject arg0)
+	jboolean Character_Subset::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,14 +20,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint Character_Subset::hashCode()
+	jint Character_Subset::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Character_Subset::toString()
+	JString Character_Subset::toString() const
 	{
 		return callObjectMethod(
 			"toString",

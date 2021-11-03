@@ -12,14 +12,14 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	JString CRL::getType()
+	JString CRL::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean CRL::isRevoked(java::security::cert::Certificate arg0)
+	jboolean CRL::isRevoked(java::security::cert::Certificate arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRevoked",
@@ -27,7 +27,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JString CRL::toString()
+	JString CRL::toString() const
 	{
 		return callObjectMethod(
 			"toString",

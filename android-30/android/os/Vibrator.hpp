@@ -31,19 +31,19 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jint areAllEffectsSupported(JIntArray arg0);
-		jboolean areAllPrimitivesSupported(JIntArray arg0);
-		JIntArray areEffectsSupported(JIntArray arg0);
-		JBooleanArray arePrimitivesSupported(JIntArray arg0);
-		void cancel();
-		jboolean hasAmplitudeControl();
-		jboolean hasVibrator();
-		void vibrate(android::os::VibrationEffect arg0);
-		void vibrate(jlong arg0);
-		void vibrate(JLongArray arg0, jint arg1);
-		void vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1);
-		void vibrate(jlong arg0, android::media::AudioAttributes arg1);
-		void vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2);
+		jint areAllEffectsSupported(JIntArray arg0) const;
+		jboolean areAllPrimitivesSupported(JIntArray arg0) const;
+		JIntArray areEffectsSupported(JIntArray arg0) const;
+		JBooleanArray arePrimitivesSupported(JIntArray arg0) const;
+		void cancel() const;
+		jboolean hasAmplitudeControl() const;
+		jboolean hasVibrator() const;
+		void vibrate(android::os::VibrationEffect arg0) const;
+		void vibrate(jlong arg0) const;
+		void vibrate(JLongArray arg0, jint arg1) const;
+		void vibrate(android::os::VibrationEffect arg0, android::media::AudioAttributes arg1) const;
+		void vibrate(jlong arg0, android::media::AudioAttributes arg1) const;
+		void vibrate(JLongArray arg0, jint arg1, android::media::AudioAttributes arg2) const;
 	};
 } // namespace android::os
 

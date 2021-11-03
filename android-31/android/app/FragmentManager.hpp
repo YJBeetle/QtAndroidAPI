@@ -50,31 +50,31 @@ namespace android::app
 		
 		// Methods
 		static void enableDebugLogging(jboolean arg0);
-		void addOnBackStackChangedListener(JObject arg0);
-		android::app::FragmentTransaction beginTransaction();
-		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3);
-		jboolean executePendingTransactions();
-		android::app::Fragment findFragmentById(jint arg0);
-		android::app::Fragment findFragmentByTag(JString arg0);
-		JObject getBackStackEntryAt(jint arg0);
-		jint getBackStackEntryCount();
-		android::app::Fragment getFragment(android::os::Bundle arg0, JString arg1);
-		JObject getFragments();
-		android::app::Fragment getPrimaryNavigationFragment();
-		void invalidateOptionsMenu();
-		jboolean isDestroyed();
-		jboolean isStateSaved();
-		void popBackStack();
-		void popBackStack(jint arg0, jint arg1);
-		void popBackStack(JString arg0, jint arg1);
-		jboolean popBackStackImmediate();
-		jboolean popBackStackImmediate(jint arg0, jint arg1);
-		jboolean popBackStackImmediate(JString arg0, jint arg1);
-		void putFragment(android::os::Bundle arg0, JString arg1, android::app::Fragment arg2);
-		void registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1);
-		void removeOnBackStackChangedListener(JObject arg0);
-		android::app::Fragment_SavedState saveFragmentInstanceState(android::app::Fragment arg0);
-		void unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0);
+		void addOnBackStackChangedListener(JObject arg0) const;
+		android::app::FragmentTransaction beginTransaction() const;
+		void dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const;
+		jboolean executePendingTransactions() const;
+		android::app::Fragment findFragmentById(jint arg0) const;
+		android::app::Fragment findFragmentByTag(JString arg0) const;
+		JObject getBackStackEntryAt(jint arg0) const;
+		jint getBackStackEntryCount() const;
+		android::app::Fragment getFragment(android::os::Bundle arg0, JString arg1) const;
+		JObject getFragments() const;
+		android::app::Fragment getPrimaryNavigationFragment() const;
+		void invalidateOptionsMenu() const;
+		jboolean isDestroyed() const;
+		jboolean isStateSaved() const;
+		void popBackStack() const;
+		void popBackStack(jint arg0, jint arg1) const;
+		void popBackStack(JString arg0, jint arg1) const;
+		jboolean popBackStackImmediate() const;
+		jboolean popBackStackImmediate(jint arg0, jint arg1) const;
+		jboolean popBackStackImmediate(JString arg0, jint arg1) const;
+		void putFragment(android::os::Bundle arg0, JString arg1, android::app::Fragment arg2) const;
+		void registerFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1) const;
+		void removeOnBackStackChangedListener(JObject arg0) const;
+		android::app::Fragment_SavedState saveFragmentInstanceState(android::app::Fragment arg0) const;
+		void unregisterFragmentLifecycleCallbacks(android::app::FragmentManager_FragmentLifecycleCallbacks arg0) const;
 	};
 } // namespace android::app
 

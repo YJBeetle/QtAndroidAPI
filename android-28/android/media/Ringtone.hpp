@@ -26,18 +26,18 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::AudioAttributes getAudioAttributes();
-		jint getStreamType();
-		JString getTitle(android::content::Context arg0);
-		jfloat getVolume();
-		jboolean isLooping();
-		jboolean isPlaying();
-		void play();
-		void setAudioAttributes(android::media::AudioAttributes arg0);
-		void setLooping(jboolean arg0);
-		void setStreamType(jint arg0);
-		void setVolume(jfloat arg0);
-		void stop();
+		android::media::AudioAttributes getAudioAttributes() const;
+		jint getStreamType() const;
+		JString getTitle(android::content::Context arg0) const;
+		jfloat getVolume() const;
+		jboolean isLooping() const;
+		jboolean isPlaying() const;
+		void play() const;
+		void setAudioAttributes(android::media::AudioAttributes arg0) const;
+		void setLooping(jboolean arg0) const;
+		void setStreamType(jint arg0) const;
+		void setVolume(jfloat arg0) const;
+		void stop() const;
 	};
 } // namespace android::media
 

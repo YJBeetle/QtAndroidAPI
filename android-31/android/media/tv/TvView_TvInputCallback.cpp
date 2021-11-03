@@ -18,7 +18,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	void TvView_TvInputCallback::onChannelRetuned(JString arg0, android::net::Uri arg1)
+	void TvView_TvInputCallback::onChannelRetuned(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"onChannelRetuned",
@@ -27,7 +27,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView_TvInputCallback::onConnectionFailed(JString arg0)
+	void TvView_TvInputCallback::onConnectionFailed(JString arg0) const
 	{
 		callMethod<void>(
 			"onConnectionFailed",
@@ -35,7 +35,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvView_TvInputCallback::onContentAllowed(JString arg0)
+	void TvView_TvInputCallback::onContentAllowed(JString arg0) const
 	{
 		callMethod<void>(
 			"onContentAllowed",
@@ -43,7 +43,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvView_TvInputCallback::onContentBlocked(JString arg0, android::media::tv::TvContentRating arg1)
+	void TvView_TvInputCallback::onContentBlocked(JString arg0, android::media::tv::TvContentRating arg1) const
 	{
 		callMethod<void>(
 			"onContentBlocked",
@@ -52,7 +52,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView_TvInputCallback::onDisconnected(JString arg0)
+	void TvView_TvInputCallback::onDisconnected(JString arg0) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -60,7 +60,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvView_TvInputCallback::onTimeShiftStatusChanged(JString arg0, jint arg1)
+	void TvView_TvInputCallback::onTimeShiftStatusChanged(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onTimeShiftStatusChanged",
@@ -69,7 +69,7 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvView_TvInputCallback::onTrackSelected(JString arg0, jint arg1, JString arg2)
+	void TvView_TvInputCallback::onTrackSelected(JString arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onTrackSelected",
@@ -79,7 +79,7 @@ namespace android::media::tv
 			arg2.object<jstring>()
 		);
 	}
-	void TvView_TvInputCallback::onTracksChanged(JString arg0, JObject arg1)
+	void TvView_TvInputCallback::onTracksChanged(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onTracksChanged",
@@ -88,7 +88,7 @@ namespace android::media::tv
 			arg1.object()
 		);
 	}
-	void TvView_TvInputCallback::onVideoAvailable(JString arg0)
+	void TvView_TvInputCallback::onVideoAvailable(JString arg0) const
 	{
 		callMethod<void>(
 			"onVideoAvailable",
@@ -96,7 +96,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	void TvView_TvInputCallback::onVideoSizeChanged(JString arg0, jint arg1, jint arg2)
+	void TvView_TvInputCallback::onVideoSizeChanged(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onVideoSizeChanged",
@@ -106,7 +106,7 @@ namespace android::media::tv
 			arg2
 		);
 	}
-	void TvView_TvInputCallback::onVideoUnavailable(JString arg0, jint arg1)
+	void TvView_TvInputCallback::onVideoUnavailable(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onVideoUnavailable",

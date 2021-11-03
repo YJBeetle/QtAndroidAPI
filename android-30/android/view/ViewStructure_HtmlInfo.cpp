@@ -16,14 +16,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	JObject ViewStructure_HtmlInfo::getAttributes()
+	JObject ViewStructure_HtmlInfo::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/List;"
 		);
 	}
-	JString ViewStructure_HtmlInfo::getTag()
+	JString ViewStructure_HtmlInfo::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",

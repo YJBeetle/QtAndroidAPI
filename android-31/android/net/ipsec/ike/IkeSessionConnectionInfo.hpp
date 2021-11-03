@@ -26,9 +26,9 @@ namespace android::net::ipsec::ike
 		IkeSessionConnectionInfo(java::net::InetAddress arg0, java::net::InetAddress arg1, android::net::Network arg2);
 		
 		// Methods
-		java::net::InetAddress getLocalAddress();
-		android::net::Network getNetwork();
-		java::net::InetAddress getRemoteAddress();
+		java::net::InetAddress getLocalAddress() const;
+		android::net::Network getNetwork() const;
+		java::net::InetAddress getRemoteAddress() const;
 	};
 } // namespace android::net::ipsec::ike
 

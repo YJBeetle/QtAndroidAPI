@@ -36,13 +36,13 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::ServerSocketChannel open();
 		static java::nio::channels::ServerSocketChannel open(JObject arg0);
-		java::nio::channels::SocketChannel accept();
-		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0);
-		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
-		java::net::SocketAddress getLocalAddress();
-		java::nio::channels::ServerSocketChannel setOption(JObject arg0, JObject arg1);
-		java::net::ServerSocket socket();
-		jint validOps();
+		java::nio::channels::SocketChannel accept() const;
+		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0) const;
+		java::nio::channels::ServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1) const;
+		java::net::SocketAddress getLocalAddress() const;
+		java::nio::channels::ServerSocketChannel setOption(JObject arg0, JObject arg1) const;
+		java::net::ServerSocket socket() const;
+		jint validOps() const;
 	};
 } // namespace java::nio::channels
 

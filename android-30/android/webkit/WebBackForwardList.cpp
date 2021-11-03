@@ -17,21 +17,21 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jint WebBackForwardList::getCurrentIndex()
+	jint WebBackForwardList::getCurrentIndex() const
 	{
 		return callMethod<jint>(
 			"getCurrentIndex",
 			"()I"
 		);
 	}
-	android::webkit::WebHistoryItem WebBackForwardList::getCurrentItem()
+	android::webkit::WebHistoryItem WebBackForwardList::getCurrentItem() const
 	{
 		return callObjectMethod(
 			"getCurrentItem",
 			"()Landroid/webkit/WebHistoryItem;"
 		);
 	}
-	android::webkit::WebHistoryItem WebBackForwardList::getItemAtIndex(jint arg0)
+	android::webkit::WebHistoryItem WebBackForwardList::getItemAtIndex(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItemAtIndex",
@@ -39,7 +39,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jint WebBackForwardList::getSize()
+	jint WebBackForwardList::getSize() const
 	{
 		return callMethod<jint>(
 			"getSize",

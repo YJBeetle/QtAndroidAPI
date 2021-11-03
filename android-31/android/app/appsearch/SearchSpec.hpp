@@ -33,19 +33,19 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getFilterNamespaces();
-		JObject getFilterPackageNames();
-		JObject getFilterSchemas();
-		jint getMaxSnippetSize();
-		jint getOrder();
-		JObject getProjections();
-		jint getRankingStrategy();
-		jint getResultCountPerPage();
-		jint getResultGroupingLimit();
-		jint getResultGroupingTypeFlags();
-		jint getSnippetCount();
-		jint getSnippetCountPerProperty();
-		jint getTermMatch();
+		JObject getFilterNamespaces() const;
+		JObject getFilterPackageNames() const;
+		JObject getFilterSchemas() const;
+		jint getMaxSnippetSize() const;
+		jint getOrder() const;
+		JObject getProjections() const;
+		jint getRankingStrategy() const;
+		jint getResultCountPerPage() const;
+		jint getResultGroupingLimit() const;
+		jint getResultGroupingTypeFlags() const;
+		jint getSnippetCount() const;
+		jint getSnippetCountPerProperty() const;
+		jint getTermMatch() const;
 	};
 } // namespace android::app::appsearch
 

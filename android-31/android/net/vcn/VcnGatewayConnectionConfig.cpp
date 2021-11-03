@@ -14,7 +14,7 @@ namespace android::net::vcn
 	// Constructors
 	
 	// Methods
-	jboolean VcnGatewayConnectionConfig::equals(JObject arg0)
+	jboolean VcnGatewayConnectionConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -22,35 +22,35 @@ namespace android::net::vcn
 			arg0.object<jobject>()
 		);
 	}
-	JIntArray VcnGatewayConnectionConfig::getExposedCapabilities()
+	JIntArray VcnGatewayConnectionConfig::getExposedCapabilities() const
 	{
 		return callObjectMethod(
 			"getExposedCapabilities",
 			"()[I"
 		);
 	}
-	JString VcnGatewayConnectionConfig::getGatewayConnectionName()
+	JString VcnGatewayConnectionConfig::getGatewayConnectionName() const
 	{
 		return callObjectMethod(
 			"getGatewayConnectionName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint VcnGatewayConnectionConfig::getMaxMtu()
+	jint VcnGatewayConnectionConfig::getMaxMtu() const
 	{
 		return callMethod<jint>(
 			"getMaxMtu",
 			"()I"
 		);
 	}
-	JLongArray VcnGatewayConnectionConfig::getRetryIntervalsMillis()
+	JLongArray VcnGatewayConnectionConfig::getRetryIntervalsMillis() const
 	{
 		return callObjectMethod(
 			"getRetryIntervalsMillis",
 			"()[J"
 		);
 	}
-	jint VcnGatewayConnectionConfig::hashCode()
+	jint VcnGatewayConnectionConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

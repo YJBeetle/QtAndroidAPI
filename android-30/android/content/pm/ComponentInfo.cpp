@@ -69,35 +69,35 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ComponentInfo::getBannerResource()
+	jint ComponentInfo::getBannerResource() const
 	{
 		return callMethod<jint>(
 			"getBannerResource",
 			"()I"
 		);
 	}
-	jint ComponentInfo::getIconResource()
+	jint ComponentInfo::getIconResource() const
 	{
 		return callMethod<jint>(
 			"getIconResource",
 			"()I"
 		);
 	}
-	jint ComponentInfo::getLogoResource()
+	jint ComponentInfo::getLogoResource() const
 	{
 		return callMethod<jint>(
 			"getLogoResource",
 			"()I"
 		);
 	}
-	jboolean ComponentInfo::isEnabled()
+	jboolean ComponentInfo::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void ComponentInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ComponentInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

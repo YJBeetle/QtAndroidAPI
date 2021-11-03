@@ -175,7 +175,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebViewClient::doUpdateVisitedHistory(android::webkit::WebView arg0, JString arg1, jboolean arg2)
+	void WebViewClient::doUpdateVisitedHistory(android::webkit::WebView arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"doUpdateVisitedHistory",
@@ -185,7 +185,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebViewClient::onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2)
+	void WebViewClient::onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2) const
 	{
 		callMethod<void>(
 			"onFormResubmission",
@@ -195,7 +195,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onLoadResource(android::webkit::WebView arg0, JString arg1)
+	void WebViewClient::onLoadResource(android::webkit::WebView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onLoadResource",
@@ -204,7 +204,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, JString arg1)
+	void WebViewClient::onPageCommitVisible(android::webkit::WebView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPageCommitVisible",
@@ -213,7 +213,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageFinished(android::webkit::WebView arg0, JString arg1)
+	void WebViewClient::onPageFinished(android::webkit::WebView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onPageFinished",
@@ -222,7 +222,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void WebViewClient::onPageStarted(android::webkit::WebView arg0, JString arg1, android::graphics::Bitmap arg2)
+	void WebViewClient::onPageStarted(android::webkit::WebView arg0, JString arg1, android::graphics::Bitmap arg2) const
 	{
 		callMethod<void>(
 			"onPageStarted",
@@ -232,7 +232,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1)
+	void WebViewClient::onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1) const
 	{
 		callMethod<void>(
 			"onReceivedClientCertRequest",
@@ -241,7 +241,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebViewClient::onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2)
+	void WebViewClient::onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2) const
 	{
 		callMethod<void>(
 			"onReceivedError",
@@ -251,7 +251,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onReceivedError(android::webkit::WebView arg0, jint arg1, JString arg2, JString arg3)
+	void WebViewClient::onReceivedError(android::webkit::WebView arg0, jint arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"onReceivedError",
@@ -262,7 +262,7 @@ namespace android::webkit
 			arg3.object<jstring>()
 		);
 	}
-	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, JString arg2, JString arg3)
+	void WebViewClient::onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"onReceivedHttpAuthRequest",
@@ -273,7 +273,7 @@ namespace android::webkit
 			arg3.object<jstring>()
 		);
 	}
-	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2)
+	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2) const
 	{
 		callMethod<void>(
 			"onReceivedHttpError",
@@ -283,7 +283,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onReceivedLoginRequest(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3)
+	void WebViewClient::onReceivedLoginRequest(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"onReceivedLoginRequest",
@@ -294,7 +294,7 @@ namespace android::webkit
 			arg3.object<jstring>()
 		);
 	}
-	void WebViewClient::onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2)
+	void WebViewClient::onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2) const
 	{
 		callMethod<void>(
 			"onReceivedSslError",
@@ -304,7 +304,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	jboolean WebViewClient::onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1)
+	jboolean WebViewClient::onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1) const
 	{
 		return callMethod<jboolean>(
 			"onRenderProcessGone",
@@ -313,7 +313,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebViewClient::onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3)
+	void WebViewClient::onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3) const
 	{
 		callMethod<void>(
 			"onSafeBrowsingHit",
@@ -324,7 +324,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	void WebViewClient::onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2)
+	void WebViewClient::onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"onScaleChanged",
@@ -334,7 +334,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebViewClient::onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2)
+	void WebViewClient::onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2) const
 	{
 		callMethod<void>(
 			"onTooManyRedirects",
@@ -344,7 +344,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebViewClient::onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1)
+	void WebViewClient::onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1) const
 	{
 		callMethod<void>(
 			"onUnhandledKeyEvent",
@@ -353,7 +353,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",
@@ -362,7 +362,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JString arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",
@@ -371,7 +371,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	jboolean WebViewClient::shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1)
+	jboolean WebViewClient::shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"shouldOverrideKeyEvent",
@@ -380,7 +380,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1)
+	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"shouldOverrideUrlLoading",
@@ -389,7 +389,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JString arg1)
+	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"shouldOverrideUrlLoading",

@@ -27,8 +27,8 @@ namespace android::content::pm
 		PackageItemInfo_DisplayNameComparator(android::content::pm::PackageManager arg0);
 		
 		// Methods
-		jint compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1);
-		jint compare(JObject arg0, JObject arg1);
+		jint compare(android::content::pm::PackageItemInfo arg0, android::content::pm::PackageItemInfo arg1) const;
+		jint compare(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::content::pm
 

@@ -17,11 +17,11 @@ namespace android::content::pm
 		PackageInstaller_SessionCallback();
 		
 		// Methods
-		void onActiveChanged(jint arg0, jboolean arg1);
-		void onBadgingChanged(jint arg0);
-		void onCreated(jint arg0);
-		void onFinished(jint arg0, jboolean arg1);
-		void onProgressChanged(jint arg0, jfloat arg1);
+		void onActiveChanged(jint arg0, jboolean arg1) const;
+		void onBadgingChanged(jint arg0) const;
+		void onCreated(jint arg0) const;
+		void onFinished(jint arg0, jboolean arg1) const;
+		void onProgressChanged(jint arg0, jfloat arg1) const;
 	};
 } // namespace android::content::pm
 

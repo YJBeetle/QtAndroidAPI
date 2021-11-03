@@ -51,7 +51,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraDevice_StateCallback::onClosed(android::hardware::camera2::CameraDevice arg0)
+	void CameraDevice_StateCallback::onClosed(android::hardware::camera2::CameraDevice arg0) const
 	{
 		callMethod<void>(
 			"onClosed",
@@ -59,7 +59,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice_StateCallback::onDisconnected(android::hardware::camera2::CameraDevice arg0)
+	void CameraDevice_StateCallback::onDisconnected(android::hardware::camera2::CameraDevice arg0) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -67,7 +67,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice_StateCallback::onError(android::hardware::camera2::CameraDevice arg0, jint arg1)
+	void CameraDevice_StateCallback::onError(android::hardware::camera2::CameraDevice arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -76,7 +76,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraDevice_StateCallback::onOpened(android::hardware::camera2::CameraDevice arg0)
+	void CameraDevice_StateCallback::onOpened(android::hardware::camera2::CameraDevice arg0) const
 	{
 		callMethod<void>(
 			"onOpened",

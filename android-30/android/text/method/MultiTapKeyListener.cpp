@@ -31,14 +31,14 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	jint MultiTapKeyListener::getInputType()
+	jint MultiTapKeyListener::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	jboolean MultiTapKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean MultiTapKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -49,7 +49,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	void MultiTapKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	void MultiTapKeyListener::onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSpanAdded",
@@ -60,7 +60,7 @@ namespace android::text::method
 			arg3
 		);
 	}
-	void MultiTapKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void MultiTapKeyListener::onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"onSpanChanged",
@@ -73,7 +73,7 @@ namespace android::text::method
 			arg5
 		);
 	}
-	void MultiTapKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3)
+	void MultiTapKeyListener::onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onSpanRemoved",

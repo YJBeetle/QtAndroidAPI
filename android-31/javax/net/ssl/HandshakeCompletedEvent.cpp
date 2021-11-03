@@ -21,56 +21,56 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JString HandshakeCompletedEvent::getCipherSuite()
+	JString HandshakeCompletedEvent::getCipherSuite() const
 	{
 		return callObjectMethod(
 			"getCipherSuite",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray HandshakeCompletedEvent::getLocalCertificates()
+	JArray HandshakeCompletedEvent::getLocalCertificates() const
 	{
 		return callObjectMethod(
 			"getLocalCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JObject HandshakeCompletedEvent::getLocalPrincipal()
+	JObject HandshakeCompletedEvent::getLocalPrincipal() const
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	JArray HandshakeCompletedEvent::getPeerCertificateChain()
+	JArray HandshakeCompletedEvent::getPeerCertificateChain() const
 	{
 		return callObjectMethod(
 			"getPeerCertificateChain",
 			"()[Ljavax/security/cert/X509Certificate;"
 		);
 	}
-	JArray HandshakeCompletedEvent::getPeerCertificates()
+	JArray HandshakeCompletedEvent::getPeerCertificates() const
 	{
 		return callObjectMethod(
 			"getPeerCertificates",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JObject HandshakeCompletedEvent::getPeerPrincipal()
+	JObject HandshakeCompletedEvent::getPeerPrincipal() const
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	JObject HandshakeCompletedEvent::getSession()
+	JObject HandshakeCompletedEvent::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
-	javax::net::ssl::SSLSocket HandshakeCompletedEvent::getSocket()
+	javax::net::ssl::SSLSocket HandshakeCompletedEvent::getSocket() const
 	{
 		return callObjectMethod(
 			"getSocket",

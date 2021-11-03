@@ -11,7 +11,7 @@ namespace android::nfc
 	// Constructors
 	
 	// Methods
-	android::nfc::NfcAdapter NfcManager::getDefaultAdapter()
+	android::nfc::NfcAdapter NfcManager::getDefaultAdapter() const
 	{
 		return callObjectMethod(
 			"getDefaultAdapter",

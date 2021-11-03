@@ -30,10 +30,10 @@ namespace android::companion
 		WifiDeviceFilter_Builder();
 		
 		// Methods
-		android::companion::WifiDeviceFilter build();
-		android::companion::WifiDeviceFilter_Builder setBssid(android::net::MacAddress arg0);
-		android::companion::WifiDeviceFilter_Builder setBssidMask(android::net::MacAddress arg0);
-		android::companion::WifiDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
+		android::companion::WifiDeviceFilter build() const;
+		android::companion::WifiDeviceFilter_Builder setBssid(android::net::MacAddress arg0) const;
+		android::companion::WifiDeviceFilter_Builder setBssidMask(android::net::MacAddress arg0) const;
+		android::companion::WifiDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0) const;
 	};
 } // namespace android::companion
 

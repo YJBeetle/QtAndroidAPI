@@ -41,14 +41,14 @@ namespace android::os
 		DropBoxManager_Entry(JString arg0, jlong arg1, java::io::File arg2, jint arg3);
 		
 		// Methods
-		void close();
-		jint describeContents();
-		jint getFlags();
-		java::io::InputStream getInputStream();
-		JString getTag();
-		JString getText(jint arg0);
-		jlong getTimeMillis();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void close() const;
+		jint describeContents() const;
+		jint getFlags() const;
+		java::io::InputStream getInputStream() const;
+		JString getTag() const;
+		JString getText(jint arg0) const;
+		jlong getTimeMillis() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

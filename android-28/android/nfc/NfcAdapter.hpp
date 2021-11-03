@@ -75,21 +75,21 @@ namespace android::nfc
 		
 		// Methods
 		static android::nfc::NfcAdapter getDefaultAdapter(android::content::Context arg0);
-		void disableForegroundDispatch(android::app::Activity arg0);
-		void disableForegroundNdefPush(android::app::Activity arg0);
-		void disableReaderMode(android::app::Activity arg0);
-		void enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, JArray arg2, JArray arg3);
-		void enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1);
-		void enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3);
-		jboolean ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3);
-		jboolean invokeBeam(android::app::Activity arg0);
-		jboolean isEnabled();
-		jboolean isNdefPushEnabled();
-		void setBeamPushUris(JArray arg0, android::app::Activity arg1);
-		void setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1);
-		void setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, JArray arg2);
-		void setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, JArray arg2);
-		void setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, JArray arg2);
+		void disableForegroundDispatch(android::app::Activity arg0) const;
+		void disableForegroundNdefPush(android::app::Activity arg0) const;
+		void disableReaderMode(android::app::Activity arg0) const;
+		void enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, JArray arg2, JArray arg3) const;
+		void enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1) const;
+		void enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3) const;
+		jboolean ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3) const;
+		jboolean invokeBeam(android::app::Activity arg0) const;
+		jboolean isEnabled() const;
+		jboolean isNdefPushEnabled() const;
+		void setBeamPushUris(JArray arg0, android::app::Activity arg1) const;
+		void setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1) const;
+		void setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, JArray arg2) const;
+		void setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, JArray arg2) const;
+		void setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, JArray arg2) const;
 	};
 } // namespace android::nfc
 

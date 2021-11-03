@@ -52,42 +52,42 @@ namespace android::opengl
 		) {}
 	
 	// Methods
-	jint GLSurfaceView::getDebugFlags()
+	jint GLSurfaceView::getDebugFlags() const
 	{
 		return callMethod<jint>(
 			"getDebugFlags",
 			"()I"
 		);
 	}
-	jboolean GLSurfaceView::getPreserveEGLContextOnPause()
+	jboolean GLSurfaceView::getPreserveEGLContextOnPause() const
 	{
 		return callMethod<jboolean>(
 			"getPreserveEGLContextOnPause",
 			"()Z"
 		);
 	}
-	jint GLSurfaceView::getRenderMode()
+	jint GLSurfaceView::getRenderMode() const
 	{
 		return callMethod<jint>(
 			"getRenderMode",
 			"()I"
 		);
 	}
-	void GLSurfaceView::onPause()
+	void GLSurfaceView::onPause() const
 	{
 		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
-	void GLSurfaceView::onResume()
+	void GLSurfaceView::onResume() const
 	{
 		callMethod<void>(
 			"onResume",
 			"()V"
 		);
 	}
-	void GLSurfaceView::queueEvent(JObject arg0)
+	void GLSurfaceView::queueEvent(JObject arg0) const
 	{
 		callMethod<void>(
 			"queueEvent",
@@ -95,14 +95,14 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::requestRender()
+	void GLSurfaceView::requestRender() const
 	{
 		callMethod<void>(
 			"requestRender",
 			"()V"
 		);
 	}
-	void GLSurfaceView::setDebugFlags(jint arg0)
+	void GLSurfaceView::setDebugFlags(jint arg0) const
 	{
 		callMethod<void>(
 			"setDebugFlags",
@@ -110,7 +110,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setEGLConfigChooser(JObject arg0)
+	void GLSurfaceView::setEGLConfigChooser(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEGLConfigChooser",
@@ -118,7 +118,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setEGLConfigChooser(jboolean arg0)
+	void GLSurfaceView::setEGLConfigChooser(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEGLConfigChooser",
@@ -126,7 +126,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void GLSurfaceView::setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"setEGLConfigChooser",
@@ -139,7 +139,7 @@ namespace android::opengl
 			arg5
 		);
 	}
-	void GLSurfaceView::setEGLContextClientVersion(jint arg0)
+	void GLSurfaceView::setEGLContextClientVersion(jint arg0) const
 	{
 		callMethod<void>(
 			"setEGLContextClientVersion",
@@ -147,7 +147,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setEGLContextFactory(JObject arg0)
+	void GLSurfaceView::setEGLContextFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEGLContextFactory",
@@ -155,7 +155,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setEGLWindowSurfaceFactory(JObject arg0)
+	void GLSurfaceView::setEGLWindowSurfaceFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEGLWindowSurfaceFactory",
@@ -163,7 +163,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setGLWrapper(JObject arg0)
+	void GLSurfaceView::setGLWrapper(JObject arg0) const
 	{
 		callMethod<void>(
 			"setGLWrapper",
@@ -171,7 +171,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::setPreserveEGLContextOnPause(jboolean arg0)
+	void GLSurfaceView::setPreserveEGLContextOnPause(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPreserveEGLContextOnPause",
@@ -179,7 +179,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setRenderMode(jint arg0)
+	void GLSurfaceView::setRenderMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRenderMode",
@@ -187,7 +187,7 @@ namespace android::opengl
 			arg0
 		);
 	}
-	void GLSurfaceView::setRenderer(JObject arg0)
+	void GLSurfaceView::setRenderer(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRenderer",
@@ -195,7 +195,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
+	void GLSurfaceView::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"surfaceChanged",
@@ -206,7 +206,7 @@ namespace android::opengl
 			arg3
 		);
 	}
-	void GLSurfaceView::surfaceCreated(JObject arg0)
+	void GLSurfaceView::surfaceCreated(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceCreated",
@@ -214,7 +214,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceDestroyed(JObject arg0)
+	void GLSurfaceView::surfaceDestroyed(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceDestroyed",
@@ -222,7 +222,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceRedrawNeeded(JObject arg0)
+	void GLSurfaceView::surfaceRedrawNeeded(JObject arg0) const
 	{
 		callMethod<void>(
 			"surfaceRedrawNeeded",
@@ -230,7 +230,7 @@ namespace android::opengl
 			arg0.object()
 		);
 	}
-	void GLSurfaceView::surfaceRedrawNeededAsync(JObject arg0, JObject arg1)
+	void GLSurfaceView::surfaceRedrawNeededAsync(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"surfaceRedrawNeededAsync",

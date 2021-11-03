@@ -24,8 +24,8 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		JString chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2);
-		JString chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2);
+		JString chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const;
+		JString chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const;
 	};
 } // namespace javax::net::ssl
 

@@ -20,14 +20,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextSelection TextSelection_Builder::build()
+	android::view::textclassifier::TextSelection TextSelection_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextSelection;"
 		);
 	}
-	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setEntityType(JString arg0, jfloat arg1)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setEntityType(JString arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"setEntityType",
@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 			arg1
 		);
 	}
-	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -44,7 +44,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setId(JString arg0)
+	android::view::textclassifier::TextSelection_Builder TextSelection_Builder::setId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setId",

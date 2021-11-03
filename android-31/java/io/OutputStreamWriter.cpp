@@ -44,7 +44,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::Writer OutputStreamWriter::append(JString arg0)
+	java::io::Writer OutputStreamWriter::append(JString arg0) const
 	{
 		return callObjectMethod(
 			"append",
@@ -52,7 +52,7 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	java::io::Writer OutputStreamWriter::append(JString arg0, jint arg1, jint arg2)
+	java::io::Writer OutputStreamWriter::append(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"append",
@@ -62,28 +62,28 @@ namespace java::io
 			arg2
 		);
 	}
-	void OutputStreamWriter::close()
+	void OutputStreamWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void OutputStreamWriter::flush()
+	void OutputStreamWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	JString OutputStreamWriter::getEncoding()
+	JString OutputStreamWriter::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	void OutputStreamWriter::write(jint arg0)
+	void OutputStreamWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -91,7 +91,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void OutputStreamWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void OutputStreamWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -101,7 +101,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void OutputStreamWriter::write(JString arg0, jint arg1, jint arg2)
+	void OutputStreamWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

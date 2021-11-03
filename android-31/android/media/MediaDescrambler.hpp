@@ -36,10 +36,10 @@ namespace android::media
 		MediaDescrambler(jint arg0);
 		
 		// Methods
-		void close();
-		jint descramble(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_CryptoInfo arg2);
-		jboolean requiresSecureDecoderComponent(JString arg0);
-		void setMediaCasSession(android::media::MediaCas_Session arg0);
+		void close() const;
+		jint descramble(java::nio::ByteBuffer arg0, java::nio::ByteBuffer arg1, android::media::MediaCodec_CryptoInfo arg2) const;
+		jboolean requiresSecureDecoderComponent(JString arg0) const;
+		void setMediaCasSession(android::media::MediaCas_Session arg0) const;
 	};
 } // namespace android::media
 

@@ -41,49 +41,49 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getCrtCoefficient()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getCrtCoefficient() const
 	{
 		return callObjectMethod(
 			"getCrtCoefficient",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JArray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo()
+	JArray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo() const
 	{
 		return callObjectMethod(
 			"getOtherPrimeInfo",
 			"()[Ljava/security/spec/RSAOtherPrimeInfo;"
 		);
 	}
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP() const
 	{
 		return callObjectMethod(
 			"getPrimeExponentP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ() const
 	{
 		return callObjectMethod(
 			"getPrimeExponentQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeP()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeP() const
 	{
 		return callObjectMethod(
 			"getPrimeP",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeQ()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPrimeQ() const
 	{
 		return callObjectMethod(
 			"getPrimeQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPublicExponent()
+	java::math::BigInteger RSAMultiPrimePrivateCrtKeySpec::getPublicExponent() const
 	{
 		return callObjectMethod(
 			"getPublicExponent",

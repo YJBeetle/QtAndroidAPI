@@ -11,7 +11,7 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	jboolean VoiceInteractionSession_ActivityId::equals(JObject arg0)
+	jboolean VoiceInteractionSession_ActivityId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,7 +19,7 @@ namespace android::service::voice
 			arg0.object<jobject>()
 		);
 	}
-	jint VoiceInteractionSession_ActivityId::hashCode()
+	jint VoiceInteractionSession_ActivityId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

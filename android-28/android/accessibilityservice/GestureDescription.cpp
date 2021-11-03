@@ -27,7 +27,7 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription::getStroke(jint arg0)
+	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription::getStroke(jint arg0) const
 	{
 		return callObjectMethod(
 			"getStroke",
@@ -35,7 +35,7 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	jint GestureDescription::getStrokeCount()
+	jint GestureDescription::getStrokeCount() const
 	{
 		return callMethod<jint>(
 			"getStrokeCount",

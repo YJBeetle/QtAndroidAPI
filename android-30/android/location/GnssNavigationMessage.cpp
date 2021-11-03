@@ -147,63 +147,63 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssNavigationMessage::describeContents()
+	jint GnssNavigationMessage::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JByteArray GnssNavigationMessage::getData()
+	JByteArray GnssNavigationMessage::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	jint GnssNavigationMessage::getMessageId()
+	jint GnssNavigationMessage::getMessageId() const
 	{
 		return callMethod<jint>(
 			"getMessageId",
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::getStatus()
+	jint GnssNavigationMessage::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::getSubmessageId()
+	jint GnssNavigationMessage::getSubmessageId() const
 	{
 		return callMethod<jint>(
 			"getSubmessageId",
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::getSvid()
+	jint GnssNavigationMessage::getSvid() const
 	{
 		return callMethod<jint>(
 			"getSvid",
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::getType()
+	jint GnssNavigationMessage::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	JString GnssNavigationMessage::toString()
+	JString GnssNavigationMessage::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssNavigationMessage::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssNavigationMessage::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

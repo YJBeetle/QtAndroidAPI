@@ -23,10 +23,10 @@ namespace android::service::quickaccesswallet
 		GetWalletCardsResponse(JObject arg0, jint arg1);
 		
 		// Methods
-		jint describeContents();
-		jint getSelectedIndex();
-		JObject getWalletCards();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getSelectedIndex() const;
+		JObject getWalletCards() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

@@ -18,18 +18,18 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		jint destinationIndex();
-		jint destinationIndexFromSourceIndex(jint arg0);
-		jboolean findDestinationIndex(jint arg0);
-		jboolean findSourceIndex(jint arg0);
-		jboolean hasChange();
-		jint newLength();
-		jboolean next();
-		jint oldLength();
-		jint replacementIndex();
-		jint sourceIndex();
-		jint sourceIndexFromDestinationIndex(jint arg0);
-		JString toString();
+		jint destinationIndex() const;
+		jint destinationIndexFromSourceIndex(jint arg0) const;
+		jboolean findDestinationIndex(jint arg0) const;
+		jboolean findSourceIndex(jint arg0) const;
+		jboolean hasChange() const;
+		jint newLength() const;
+		jboolean next() const;
+		jint oldLength() const;
+		jint replacementIndex() const;
+		jint sourceIndex() const;
+		jint sourceIndexFromDestinationIndex(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

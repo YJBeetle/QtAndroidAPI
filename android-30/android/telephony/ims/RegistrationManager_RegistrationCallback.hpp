@@ -22,10 +22,10 @@ namespace android::telephony::ims
 		RegistrationManager_RegistrationCallback();
 		
 		// Methods
-		void onRegistered(jint arg0);
-		void onRegistering(jint arg0);
-		void onTechnologyChangeFailed(jint arg0, android::telephony::ims::ImsReasonInfo arg1);
-		void onUnregistered(android::telephony::ims::ImsReasonInfo arg0);
+		void onRegistered(jint arg0) const;
+		void onRegistering(jint arg0) const;
+		void onTechnologyChangeFailed(jint arg0, android::telephony::ims::ImsReasonInfo arg1) const;
+		void onUnregistered(android::telephony::ims::ImsReasonInfo arg0) const;
 	};
 } // namespace android::telephony::ims
 

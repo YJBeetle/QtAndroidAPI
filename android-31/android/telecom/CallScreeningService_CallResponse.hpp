@@ -22,14 +22,14 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getCallComposerAttachmentsToShow();
-		jboolean getDisallowCall();
-		jboolean getRejectCall();
-		jboolean getSilenceCall();
-		jboolean getSkipCallLog();
-		jboolean getSkipNotification();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getCallComposerAttachmentsToShow() const;
+		jboolean getDisallowCall() const;
+		jboolean getRejectCall() const;
+		jboolean getSilenceCall() const;
+		jboolean getSkipCallLog() const;
+		jboolean getSkipNotification() const;
+		jint hashCode() const;
 	};
 } // namespace android::telecom
 

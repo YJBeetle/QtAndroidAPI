@@ -28,12 +28,12 @@ namespace android::view::textservice
 		TextInfo(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jint describeContents();
-		JString getCharSequence();
-		jint getCookie();
-		jint getSequence();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getCharSequence() const;
+		jint getCookie() const;
+		jint getSequence() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textservice
 

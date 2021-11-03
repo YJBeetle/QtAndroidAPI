@@ -22,7 +22,7 @@ namespace java::util::concurrent
 		ThreadPoolExecutor_DiscardPolicy();
 		
 		// Methods
-		void rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1);
+		void rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1) const;
 	};
 } // namespace java::util::concurrent
 

@@ -31,15 +31,15 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::media::AudioDeviceInfo getAudioDevice();
-		jint getClientAudioSessionId();
-		jint getClientAudioSource();
-		android::media::AudioFormat getClientFormat();
-		android::media::AudioFormat getFormat();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::media::AudioDeviceInfo getAudioDevice() const;
+		jint getClientAudioSessionId() const;
+		jint getClientAudioSource() const;
+		android::media::AudioFormat getClientFormat() const;
+		android::media::AudioFormat getFormat() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

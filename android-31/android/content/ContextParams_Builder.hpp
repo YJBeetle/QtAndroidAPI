@@ -28,9 +28,9 @@ namespace android::content
 		ContextParams_Builder(android::content::ContextParams arg0);
 		
 		// Methods
-		android::content::ContextParams build();
-		android::content::ContextParams_Builder setAttributionTag(JString arg0);
-		android::content::ContextParams_Builder setNextAttributionSource(android::content::AttributionSource arg0);
+		android::content::ContextParams build() const;
+		android::content::ContextParams_Builder setAttributionTag(JString arg0) const;
+		android::content::ContextParams_Builder setNextAttributionSource(android::content::AttributionSource arg0) const;
 	};
 } // namespace android::content
 

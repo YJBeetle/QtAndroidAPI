@@ -205,7 +205,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jboolean ColorSpace::equals(JObject arg0)
+	jboolean ColorSpace::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -213,7 +213,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	JFloatArray ColorSpace::fromXyz(JFloatArray arg0)
+	JFloatArray ColorSpace::fromXyz(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"fromXyz",
@@ -221,7 +221,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	JFloatArray ColorSpace::fromXyz(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace::fromXyz(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callObjectMethod(
 			"fromXyz",
@@ -231,21 +231,21 @@ namespace android::graphics
 			arg2
 		);
 	}
-	jint ColorSpace::getComponentCount()
+	jint ColorSpace::getComponentCount() const
 	{
 		return callMethod<jint>(
 			"getComponentCount",
 			"()I"
 		);
 	}
-	jint ColorSpace::getId()
+	jint ColorSpace::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jfloat ColorSpace::getMaxValue(jint arg0)
+	jfloat ColorSpace::getMaxValue(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getMaxValue",
@@ -253,7 +253,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	jfloat ColorSpace::getMinValue(jint arg0)
+	jfloat ColorSpace::getMinValue(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getMinValue",
@@ -261,49 +261,49 @@ namespace android::graphics
 			arg0
 		);
 	}
-	android::graphics::ColorSpace_Model ColorSpace::getModel()
+	android::graphics::ColorSpace_Model ColorSpace::getModel() const
 	{
 		return callObjectMethod(
 			"getModel",
 			"()Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	JString ColorSpace::getName()
+	JString ColorSpace::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ColorSpace::hashCode()
+	jint ColorSpace::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ColorSpace::isSrgb()
+	jboolean ColorSpace::isSrgb() const
 	{
 		return callMethod<jboolean>(
 			"isSrgb",
 			"()Z"
 		);
 	}
-	jboolean ColorSpace::isWideGamut()
+	jboolean ColorSpace::isWideGamut() const
 	{
 		return callMethod<jboolean>(
 			"isWideGamut",
 			"()Z"
 		);
 	}
-	JString ColorSpace::toString()
+	JString ColorSpace::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JFloatArray ColorSpace::toXyz(JFloatArray arg0)
+	JFloatArray ColorSpace::toXyz(JFloatArray arg0) const
 	{
 		return callObjectMethod(
 			"toXyz",
@@ -311,7 +311,7 @@ namespace android::graphics
 			arg0.object<jfloatArray>()
 		);
 	}
-	JFloatArray ColorSpace::toXyz(jfloat arg0, jfloat arg1, jfloat arg2)
+	JFloatArray ColorSpace::toXyz(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		return callObjectMethod(
 			"toXyz",

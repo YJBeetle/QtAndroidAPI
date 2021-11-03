@@ -10,7 +10,7 @@ namespace android::graphics::text
 	// Constructors
 	
 	// Methods
-	jint LineBreaker_Result::getEndLineHyphenEdit(jint arg0)
+	jint LineBreaker_Result::getEndLineHyphenEdit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEndLineHyphenEdit",
@@ -18,7 +18,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat LineBreaker_Result::getLineAscent(jint arg0)
+	jfloat LineBreaker_Result::getLineAscent(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineAscent",
@@ -26,7 +26,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jint LineBreaker_Result::getLineBreakOffset(jint arg0)
+	jint LineBreaker_Result::getLineBreakOffset(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineBreakOffset",
@@ -34,14 +34,14 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jint LineBreaker_Result::getLineCount()
+	jint LineBreaker_Result::getLineCount() const
 	{
 		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
-	jfloat LineBreaker_Result::getLineDescent(jint arg0)
+	jfloat LineBreaker_Result::getLineDescent(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineDescent",
@@ -49,7 +49,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat LineBreaker_Result::getLineWidth(jint arg0)
+	jfloat LineBreaker_Result::getLineWidth(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineWidth",
@@ -57,7 +57,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jint LineBreaker_Result::getStartLineHyphenEdit(jint arg0)
+	jint LineBreaker_Result::getStartLineHyphenEdit(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getStartLineHyphenEdit",
@@ -65,7 +65,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jboolean LineBreaker_Result::hasLineTab(jint arg0)
+	jboolean LineBreaker_Result::hasLineTab(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasLineTab",

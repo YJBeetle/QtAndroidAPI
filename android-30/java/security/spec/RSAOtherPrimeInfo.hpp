@@ -22,9 +22,9 @@ namespace java::security::spec
 		RSAOtherPrimeInfo(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2);
 		
 		// Methods
-		java::math::BigInteger getCrtCoefficient();
-		java::math::BigInteger getExponent();
-		java::math::BigInteger getPrime();
+		java::math::BigInteger getCrtCoefficient() const;
+		java::math::BigInteger getExponent() const;
+		java::math::BigInteger getPrime() const;
 	};
 } // namespace java::security::spec
 

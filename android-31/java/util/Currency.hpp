@@ -47,15 +47,15 @@ namespace java::util
 		static JObject getAvailableCurrencies();
 		static java::util::Currency getInstance(JString arg0);
 		static java::util::Currency getInstance(java::util::Locale arg0);
-		JString getCurrencyCode();
-		jint getDefaultFractionDigits();
-		JString getDisplayName();
-		JString getDisplayName(java::util::Locale arg0);
-		jint getNumericCode();
-		JString getNumericCodeAsString();
-		JString getSymbol();
-		JString getSymbol(java::util::Locale arg0);
-		JString toString();
+		JString getCurrencyCode() const;
+		jint getDefaultFractionDigits() const;
+		JString getDisplayName() const;
+		JString getDisplayName(java::util::Locale arg0) const;
+		jint getNumericCode() const;
+		JString getNumericCodeAsString() const;
+		JString getSymbol() const;
+		JString getSymbol(java::util::Locale arg0) const;
+		JString toString() const;
 	};
 } // namespace java::util
 

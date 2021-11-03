@@ -21,14 +21,14 @@ namespace java::text
 		) {}
 	
 	// Methods
-	JObject RuleBasedCollator::clone()
+	JObject RuleBasedCollator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint RuleBasedCollator::compare(JString arg0, JString arg1)
+	jint RuleBasedCollator::compare(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -37,7 +37,7 @@ namespace java::text
 			arg1.object<jstring>()
 		);
 	}
-	jboolean RuleBasedCollator::equals(JObject arg0)
+	jboolean RuleBasedCollator::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -45,7 +45,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JString arg0)
+	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -53,7 +53,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0)
+	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",
@@ -61,7 +61,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	java::text::CollationKey RuleBasedCollator::getCollationKey(JString arg0)
+	java::text::CollationKey RuleBasedCollator::getCollationKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -69,14 +69,14 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	JString RuleBasedCollator::getRules()
+	JString RuleBasedCollator::getRules() const
 	{
 		return callObjectMethod(
 			"getRules",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint RuleBasedCollator::hashCode()
+	jint RuleBasedCollator::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -32,13 +32,13 @@ namespace android::net
 		ConnectivityManager_NetworkCallback(jint arg0);
 		
 		// Methods
-		void onAvailable(android::net::Network arg0);
-		void onBlockedStatusChanged(android::net::Network arg0, jboolean arg1);
-		void onCapabilitiesChanged(android::net::Network arg0, android::net::NetworkCapabilities arg1);
-		void onLinkPropertiesChanged(android::net::Network arg0, android::net::LinkProperties arg1);
-		void onLosing(android::net::Network arg0, jint arg1);
-		void onLost(android::net::Network arg0);
-		void onUnavailable();
+		void onAvailable(android::net::Network arg0) const;
+		void onBlockedStatusChanged(android::net::Network arg0, jboolean arg1) const;
+		void onCapabilitiesChanged(android::net::Network arg0, android::net::NetworkCapabilities arg1) const;
+		void onLinkPropertiesChanged(android::net::Network arg0, android::net::LinkProperties arg1) const;
+		void onLosing(android::net::Network arg0, jint arg1) const;
+		void onLost(android::net::Network arg0) const;
+		void onUnavailable() const;
 	};
 } // namespace android::net
 

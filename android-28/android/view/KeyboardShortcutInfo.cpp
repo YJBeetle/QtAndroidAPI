@@ -36,42 +36,42 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint KeyboardShortcutInfo::describeContents()
+	jint KeyboardShortcutInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jchar KeyboardShortcutInfo::getBaseCharacter()
+	jchar KeyboardShortcutInfo::getBaseCharacter() const
 	{
 		return callMethod<jchar>(
 			"getBaseCharacter",
 			"()C"
 		);
 	}
-	jint KeyboardShortcutInfo::getKeycode()
+	jint KeyboardShortcutInfo::getKeycode() const
 	{
 		return callMethod<jint>(
 			"getKeycode",
 			"()I"
 		);
 	}
-	JString KeyboardShortcutInfo::getLabel()
+	JString KeyboardShortcutInfo::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint KeyboardShortcutInfo::getModifiers()
+	jint KeyboardShortcutInfo::getModifiers() const
 	{
 		return callMethod<jint>(
 			"getModifiers",
 			"()I"
 		);
 	}
-	void KeyboardShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void KeyboardShortcutInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -31,9 +31,9 @@ namespace android::view::textclassifier
 		TextLinks_Request_Builder(JString arg0);
 		
 		// Methods
-		android::view::textclassifier::TextLinks_Request build();
-		android::view::textclassifier::TextLinks_Request_Builder setDefaultLocales(android::os::LocaleList arg0);
-		android::view::textclassifier::TextLinks_Request_Builder setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0);
+		android::view::textclassifier::TextLinks_Request build() const;
+		android::view::textclassifier::TextLinks_Request_Builder setDefaultLocales(android::os::LocaleList arg0) const;
+		android::view::textclassifier::TextLinks_Request_Builder setEntityConfig(android::view::textclassifier::TextClassifier_EntityConfig arg0) const;
 	};
 } // namespace android::view::textclassifier
 

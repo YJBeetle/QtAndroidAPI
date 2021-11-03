@@ -40,15 +40,15 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jboolean accept();
-		jboolean accept(android::os::Bundle arg0);
-		jint describeContents();
-		android::appwidget::AppWidgetProviderInfo getAppWidgetProviderInfo(android::content::Context arg0);
-		android::os::Bundle getExtras();
-		jint getRequestType();
-		android::content::pm::ShortcutInfo getShortcutInfo();
-		jboolean isValid();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean accept() const;
+		jboolean accept(android::os::Bundle arg0) const;
+		jint describeContents() const;
+		android::appwidget::AppWidgetProviderInfo getAppWidgetProviderInfo(android::content::Context arg0) const;
+		android::os::Bundle getExtras() const;
+		jint getRequestType() const;
+		android::content::pm::ShortcutInfo getShortcutInfo() const;
+		jboolean isValid() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

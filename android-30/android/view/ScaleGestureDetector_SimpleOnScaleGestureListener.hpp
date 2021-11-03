@@ -22,9 +22,9 @@ namespace android::view
 		ScaleGestureDetector_SimpleOnScaleGestureListener();
 		
 		// Methods
-		jboolean onScale(android::view::ScaleGestureDetector arg0);
-		jboolean onScaleBegin(android::view::ScaleGestureDetector arg0);
-		void onScaleEnd(android::view::ScaleGestureDetector arg0);
+		jboolean onScale(android::view::ScaleGestureDetector arg0) const;
+		jboolean onScaleBegin(android::view::ScaleGestureDetector arg0) const;
+		void onScaleEnd(android::view::ScaleGestureDetector arg0) const;
 	};
 } // namespace android::view
 

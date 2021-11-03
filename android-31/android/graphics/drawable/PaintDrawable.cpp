@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void PaintDrawable::setCornerRadii(JFloatArray arg0)
+	void PaintDrawable::setCornerRadii(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setCornerRadii",
@@ -32,7 +32,7 @@ namespace android::graphics::drawable
 			arg0.object<jfloatArray>()
 		);
 	}
-	void PaintDrawable::setCornerRadius(jfloat arg0)
+	void PaintDrawable::setCornerRadius(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setCornerRadius",

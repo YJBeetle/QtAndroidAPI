@@ -48,19 +48,19 @@ namespace android::view
 		static JBooleanArray deviceHasKeys(JIntArray arg0);
 		static jint getDeadChar(jint arg0, jint arg1);
 		static android::view::KeyCharacterMap load(jint arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint get(jint arg0, jint arg1);
-		jchar getDisplayLabel(jint arg0);
-		JArray getEvents(JCharArray arg0);
-		jboolean getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1);
-		jint getKeyboardType();
-		jchar getMatch(jint arg0, JCharArray arg1);
-		jchar getMatch(jint arg0, JCharArray arg1, jint arg2);
-		jint getModifierBehavior();
-		jchar getNumber(jint arg0);
-		jboolean isPrintingKey(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint get(jint arg0, jint arg1) const;
+		jchar getDisplayLabel(jint arg0) const;
+		JArray getEvents(JCharArray arg0) const;
+		jboolean getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1) const;
+		jint getKeyboardType() const;
+		jchar getMatch(jint arg0, JCharArray arg1) const;
+		jchar getMatch(jint arg0, JCharArray arg1, jint arg2) const;
+		jint getModifierBehavior() const;
+		jchar getNumber(jint arg0) const;
+		jboolean isPrintingKey(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

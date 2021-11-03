@@ -38,20 +38,20 @@ namespace android::content
 		static android::content::ComponentName readFromParcel(android::os::Parcel arg0);
 		static android::content::ComponentName unflattenFromString(JString arg0);
 		static void writeToParcel(android::content::ComponentName arg0, android::os::Parcel arg1);
-		android::content::ComponentName clone();
-		jint compareTo(android::content::ComponentName arg0);
-		jint compareTo(JObject arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString flattenToShortString();
-		JString flattenToString();
-		JString getClassName();
-		JString getPackageName();
-		JString getShortClassName();
-		jint hashCode();
-		JString toShortString();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::content::ComponentName clone() const;
+		jint compareTo(android::content::ComponentName arg0) const;
+		jint compareTo(JObject arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString flattenToShortString() const;
+		JString flattenToString() const;
+		JString getClassName() const;
+		JString getPackageName() const;
+		JString getShortClassName() const;
+		jint hashCode() const;
+		JString toShortString() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

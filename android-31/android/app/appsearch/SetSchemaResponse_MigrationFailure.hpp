@@ -23,11 +23,11 @@ namespace android::app::appsearch
 		SetSchemaResponse_MigrationFailure(JString arg0, JString arg1, JString arg2, android::app::appsearch::AppSearchResult arg3);
 		
 		// Methods
-		android::app::appsearch::AppSearchResult getAppSearchResult();
-		JString getDocumentId();
-		JString getNamespace();
-		JString getSchemaType();
-		JString toString();
+		android::app::appsearch::AppSearchResult getAppSearchResult() const;
+		JString getDocumentId() const;
+		JString getNamespace() const;
+		JString getSchemaType() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

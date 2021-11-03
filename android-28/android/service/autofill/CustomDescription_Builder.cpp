@@ -19,7 +19,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addChild(jint arg0, JObject arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::addChild(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"addChild",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::batchUpdate(JObject arg0, android::service::autofill::BatchUpdates arg1)
+	android::service::autofill::CustomDescription_Builder CustomDescription_Builder::batchUpdate(JObject arg0, android::service::autofill::BatchUpdates arg1) const
 	{
 		return callObjectMethod(
 			"batchUpdate",
@@ -37,7 +37,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	android::service::autofill::CustomDescription CustomDescription_Builder::build()
+	android::service::autofill::CustomDescription CustomDescription_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

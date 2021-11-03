@@ -27,14 +27,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString ImageSwitcher::getAccessibilityClassName()
+	JString ImageSwitcher::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void ImageSwitcher::setImageDrawable(android::graphics::drawable::Drawable arg0)
+	void ImageSwitcher::setImageDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setImageDrawable",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ImageSwitcher::setImageResource(jint arg0)
+	void ImageSwitcher::setImageResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setImageResource",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ImageSwitcher::setImageURI(android::net::Uri arg0)
+	void ImageSwitcher::setImageURI(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setImageURI",

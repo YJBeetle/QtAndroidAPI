@@ -10,14 +10,14 @@ namespace android::app::backup
 	// Constructors
 	
 	// Methods
-	jlong FullBackupDataOutput::getQuota()
+	jlong FullBackupDataOutput::getQuota() const
 	{
 		return callMethod<jlong>(
 			"getQuota",
 			"()J"
 		);
 	}
-	jint FullBackupDataOutput::getTransportFlags()
+	jint FullBackupDataOutput::getTransportFlags() const
 	{
 		return callMethod<jint>(
 			"getTransportFlags",

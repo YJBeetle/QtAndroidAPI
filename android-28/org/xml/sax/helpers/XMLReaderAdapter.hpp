@@ -29,24 +29,24 @@ namespace org::xml::sax::helpers
 		XMLReaderAdapter(JObject arg0);
 		
 		// Methods
-		void characters(JCharArray arg0, jint arg1, jint arg2);
-		void endDocument();
-		void endElement(JString arg0, JString arg1, JString arg2);
-		void endPrefixMapping(JString arg0);
-		void ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2);
-		void parse(JString arg0);
-		void parse(org::xml::sax::InputSource arg0);
-		void processingInstruction(JString arg0, JString arg1);
-		void setDTDHandler(JObject arg0);
-		void setDocumentHandler(JObject arg0);
-		void setDocumentLocator(JObject arg0);
-		void setEntityResolver(JObject arg0);
-		void setErrorHandler(JObject arg0);
-		void setLocale(java::util::Locale arg0);
-		void skippedEntity(JString arg0);
-		void startDocument();
-		void startElement(JString arg0, JString arg1, JString arg2, JObject arg3);
-		void startPrefixMapping(JString arg0, JString arg1);
+		void characters(JCharArray arg0, jint arg1, jint arg2) const;
+		void endDocument() const;
+		void endElement(JString arg0, JString arg1, JString arg2) const;
+		void endPrefixMapping(JString arg0) const;
+		void ignorableWhitespace(JCharArray arg0, jint arg1, jint arg2) const;
+		void parse(JString arg0) const;
+		void parse(org::xml::sax::InputSource arg0) const;
+		void processingInstruction(JString arg0, JString arg1) const;
+		void setDTDHandler(JObject arg0) const;
+		void setDocumentHandler(JObject arg0) const;
+		void setDocumentLocator(JObject arg0) const;
+		void setEntityResolver(JObject arg0) const;
+		void setErrorHandler(JObject arg0) const;
+		void setLocale(java::util::Locale arg0) const;
+		void skippedEntity(JString arg0) const;
+		void startDocument() const;
+		void startElement(JString arg0, JString arg1, JString arg2, JObject arg3) const;
+		void startPrefixMapping(JString arg0, JString arg1) const;
 	};
 } // namespace org::xml::sax::helpers
 

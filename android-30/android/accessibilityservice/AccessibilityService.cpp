@@ -456,7 +456,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	android::content::Context AccessibilityService::createDisplayContext(android::view::Display arg0)
+	android::content::Context AccessibilityService::createDisplayContext(android::view::Display arg0) const
 	{
 		return callObjectMethod(
 			"createDisplayContext",
@@ -464,14 +464,14 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService::disableSelf()
+	void AccessibilityService::disableSelf() const
 	{
 		callMethod<void>(
 			"disableSelf",
 			"()V"
 		);
 	}
-	jboolean AccessibilityService::dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2)
+	jboolean AccessibilityService::dispatchGesture(android::accessibilityservice::GestureDescription arg0, android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, android::os::Handler arg2) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGesture",
@@ -481,7 +481,7 @@ namespace android::accessibilityservice
 			arg2.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::findFocus(jint arg0) const
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -489,14 +489,14 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	android::accessibilityservice::AccessibilityButtonController AccessibilityService::getAccessibilityButtonController()
+	android::accessibilityservice::AccessibilityButtonController AccessibilityService::getAccessibilityButtonController() const
 	{
 		return callObjectMethod(
 			"getAccessibilityButtonController",
 			"()Landroid/accessibilityservice/AccessibilityButtonController;"
 		);
 	}
-	android::accessibilityservice::AccessibilityButtonController AccessibilityService::getAccessibilityButtonController(jint arg0)
+	android::accessibilityservice::AccessibilityButtonController AccessibilityService::getAccessibilityButtonController(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAccessibilityButtonController",
@@ -504,49 +504,49 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	android::accessibilityservice::FingerprintGestureController AccessibilityService::getFingerprintGestureController()
+	android::accessibilityservice::FingerprintGestureController AccessibilityService::getFingerprintGestureController() const
 	{
 		return callObjectMethod(
 			"getFingerprintGestureController",
 			"()Landroid/accessibilityservice/FingerprintGestureController;"
 		);
 	}
-	android::accessibilityservice::AccessibilityService_MagnificationController AccessibilityService::getMagnificationController()
+	android::accessibilityservice::AccessibilityService_MagnificationController AccessibilityService::getMagnificationController() const
 	{
 		return callObjectMethod(
 			"getMagnificationController",
 			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::getRootInActiveWindow()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityService::getRootInActiveWindow() const
 	{
 		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	android::accessibilityservice::AccessibilityServiceInfo AccessibilityService::getServiceInfo()
+	android::accessibilityservice::AccessibilityServiceInfo AccessibilityService::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
-	android::accessibilityservice::AccessibilityService_SoftKeyboardController AccessibilityService::getSoftKeyboardController()
+	android::accessibilityservice::AccessibilityService_SoftKeyboardController AccessibilityService::getSoftKeyboardController() const
 	{
 		return callObjectMethod(
 			"getSoftKeyboardController",
 			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
 		);
 	}
-	JObject AccessibilityService::getSystemActions()
+	JObject AccessibilityService::getSystemActions() const
 	{
 		return callObjectMethod(
 			"getSystemActions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AccessibilityService::getSystemService(JString arg0)
+	JObject AccessibilityService::getSystemService(JString arg0) const
 	{
 		return callObjectMethod(
 			"getSystemService",
@@ -554,21 +554,21 @@ namespace android::accessibilityservice
 			arg0.object<jstring>()
 		);
 	}
-	JObject AccessibilityService::getWindows()
+	JObject AccessibilityService::getWindows() const
 	{
 		return callObjectMethod(
 			"getWindows",
 			"()Ljava/util/List;"
 		);
 	}
-	android::util::SparseArray AccessibilityService::getWindowsOnAllDisplays()
+	android::util::SparseArray AccessibilityService::getWindowsOnAllDisplays() const
 	{
 		return callObjectMethod(
 			"getWindowsOnAllDisplays",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	void AccessibilityService::onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	void AccessibilityService::onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		callMethod<void>(
 			"onAccessibilityEvent",
@@ -576,7 +576,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	JObject AccessibilityService::onBind(android::content::Intent arg0)
+	JObject AccessibilityService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -584,7 +584,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityService::onGesture(android::accessibilityservice::AccessibilityGestureEvent arg0)
+	jboolean AccessibilityService::onGesture(android::accessibilityservice::AccessibilityGestureEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGesture",
@@ -592,21 +592,21 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService::onInterrupt()
+	void AccessibilityService::onInterrupt() const
 	{
 		callMethod<void>(
 			"onInterrupt",
 			"()V"
 		);
 	}
-	void AccessibilityService::onSystemActionsChanged()
+	void AccessibilityService::onSystemActionsChanged() const
 	{
 		callMethod<void>(
 			"onSystemActionsChanged",
 			"()V"
 		);
 	}
-	jboolean AccessibilityService::performGlobalAction(jint arg0)
+	jboolean AccessibilityService::performGlobalAction(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"performGlobalAction",
@@ -614,7 +614,7 @@ namespace android::accessibilityservice
 			arg0
 		);
 	}
-	void AccessibilityService::setGestureDetectionPassthroughRegion(jint arg0, android::graphics::Region arg1)
+	void AccessibilityService::setGestureDetectionPassthroughRegion(jint arg0, android::graphics::Region arg1) const
 	{
 		callMethod<void>(
 			"setGestureDetectionPassthroughRegion",
@@ -623,7 +623,7 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	void AccessibilityService::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0)
+	void AccessibilityService::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0) const
 	{
 		callMethod<void>(
 			"setServiceInfo",
@@ -631,7 +631,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService::setTouchExplorationPassthroughRegion(jint arg0, android::graphics::Region arg1)
+	void AccessibilityService::setTouchExplorationPassthroughRegion(jint arg0, android::graphics::Region arg1) const
 	{
 		callMethod<void>(
 			"setTouchExplorationPassthroughRegion",
@@ -640,7 +640,7 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	void AccessibilityService::takeScreenshot(jint arg0, JObject arg1, JObject arg2)
+	void AccessibilityService::takeScreenshot(jint arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"takeScreenshot",

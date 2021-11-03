@@ -95,17 +95,17 @@ namespace android::telephony
 		static android::telephony::SmsManager getDefault();
 		static jint getDefaultSmsSubscriptionId();
 		static android::telephony::SmsManager getSmsManagerForSubscriptionId(jint arg0);
-		JString createAppSpecificSmsToken(android::app::PendingIntent arg0);
-		java::util::ArrayList divideMessage(JString arg0);
-		void downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		android::os::Bundle getCarrierConfigValues();
-		jint getSubscriptionId();
-		void injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2);
-		void sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5);
-		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4);
-		void sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4);
-		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
-		void sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4);
+		JString createAppSpecificSmsToken(android::app::PendingIntent arg0) const;
+		java::util::ArrayList divideMessage(JString arg0) const;
+		void downloadMultimediaMessage(android::content::Context arg0, JString arg1, android::net::Uri arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const;
+		android::os::Bundle getCarrierConfigValues() const;
+		jint getSubscriptionId() const;
+		void injectSmsPdu(JByteArray arg0, JString arg1, android::app::PendingIntent arg2) const;
+		void sendDataMessage(JString arg0, JString arg1, jshort arg2, JByteArray arg3, android::app::PendingIntent arg4, android::app::PendingIntent arg5) const;
+		void sendMultimediaMessage(android::content::Context arg0, android::net::Uri arg1, JString arg2, android::os::Bundle arg3, android::app::PendingIntent arg4) const;
+		void sendMultipartTextMessage(JString arg0, JString arg1, java::util::ArrayList arg2, java::util::ArrayList arg3, java::util::ArrayList arg4) const;
+		void sendTextMessage(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const;
+		void sendTextMessageWithoutPersisting(JString arg0, JString arg1, JString arg2, android::app::PendingIntent arg3, android::app::PendingIntent arg4) const;
 	};
 } // namespace android::telephony
 

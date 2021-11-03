@@ -69,18 +69,18 @@ namespace android::icu::text
 		static android::icu::text::DateIntervalFormat getInstance(JString arg0, java::util::Locale arg1);
 		static android::icu::text::DateIntervalFormat getInstance(JString arg0, android::icu::util::ULocale arg1, android::icu::text::DateIntervalInfo arg2);
 		static android::icu::text::DateIntervalFormat getInstance(JString arg0, java::util::Locale arg1, android::icu::text::DateIntervalInfo arg2);
-		JObject clone();
-		java::lang::StringBuffer format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3);
-		android::icu::text::DateIntervalFormat_FormattedDateInterval formatToValue(android::icu::util::DateInterval arg0);
-		android::icu::text::DateIntervalFormat_FormattedDateInterval formatToValue(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1);
-		android::icu::text::DateFormat getDateFormat();
-		android::icu::text::DateIntervalInfo getDateIntervalInfo();
-		android::icu::util::TimeZone getTimeZone();
-		JObject parseObject(JString arg0, java::text::ParsePosition arg1);
-		void setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0);
-		void setTimeZone(android::icu::util::TimeZone arg0);
+		JObject clone() const;
+		java::lang::StringBuffer format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		java::lang::StringBuffer format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		java::lang::StringBuffer format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3) const;
+		android::icu::text::DateIntervalFormat_FormattedDateInterval formatToValue(android::icu::util::DateInterval arg0) const;
+		android::icu::text::DateIntervalFormat_FormattedDateInterval formatToValue(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1) const;
+		android::icu::text::DateFormat getDateFormat() const;
+		android::icu::text::DateIntervalInfo getDateIntervalInfo() const;
+		android::icu::util::TimeZone getTimeZone() const;
+		JObject parseObject(JString arg0, java::text::ParsePosition arg1) const;
+		void setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0) const;
+		void setTimeZone(android::icu::util::TimeZone arg0) const;
 	};
 } // namespace android::icu::text
 

@@ -32,7 +32,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CursorTreeAdapter::changeCursor(JObject arg0)
+	void CursorTreeAdapter::changeCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"changeCursor",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString CursorTreeAdapter::convertToString(JObject arg0)
+	JString CursorTreeAdapter::convertToString(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -48,7 +48,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject CursorTreeAdapter::getChild(jint arg0, jint arg1)
+	JObject CursorTreeAdapter::getChild(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -57,7 +57,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jlong CursorTreeAdapter::getChildId(jint arg0, jint arg1)
+	jlong CursorTreeAdapter::getChildId(jint arg0, jint arg1) const
 	{
 		return callMethod<jlong>(
 			"getChildId",
@@ -66,7 +66,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	android::view::View CursorTreeAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4)
+	android::view::View CursorTreeAdapter::getChildView(jint arg0, jint arg1, jboolean arg2, android::view::View arg3, android::view::ViewGroup arg4) const
 	{
 		return callObjectMethod(
 			"getChildView",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg4.object()
 		);
 	}
-	jint CursorTreeAdapter::getChildrenCount(jint arg0)
+	jint CursorTreeAdapter::getChildrenCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getChildrenCount",
@@ -86,28 +86,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject CursorTreeAdapter::getCursor()
+	JObject CursorTreeAdapter::getCursor() const
 	{
 		return callObjectMethod(
 			"getCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	android::widget::Filter CursorTreeAdapter::getFilter()
+	android::widget::Filter CursorTreeAdapter::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	JObject CursorTreeAdapter::getFilterQueryProvider()
+	JObject CursorTreeAdapter::getFilterQueryProvider() const
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
 			"()Landroid/widget/FilterQueryProvider;"
 		);
 	}
-	JObject CursorTreeAdapter::getGroup(jint arg0)
+	JObject CursorTreeAdapter::getGroup(jint arg0) const
 	{
 		return callObjectMethod(
 			"getGroup",
@@ -115,14 +115,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint CursorTreeAdapter::getGroupCount()
+	jint CursorTreeAdapter::getGroupCount() const
 	{
 		return callMethod<jint>(
 			"getGroupCount",
 			"()I"
 		);
 	}
-	jlong CursorTreeAdapter::getGroupId(jint arg0)
+	jlong CursorTreeAdapter::getGroupId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getGroupId",
@@ -130,7 +130,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::View CursorTreeAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3)
+	android::view::View CursorTreeAdapter::getGroupView(jint arg0, jboolean arg1, android::view::View arg2, android::view::ViewGroup arg3) const
 	{
 		return callObjectMethod(
 			"getGroupView",
@@ -141,14 +141,14 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	jboolean CursorTreeAdapter::hasStableIds()
+	jboolean CursorTreeAdapter::hasStableIds() const
 	{
 		return callMethod<jboolean>(
 			"hasStableIds",
 			"()Z"
 		);
 	}
-	jboolean CursorTreeAdapter::isChildSelectable(jint arg0, jint arg1)
+	jboolean CursorTreeAdapter::isChildSelectable(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isChildSelectable",
@@ -157,14 +157,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void CursorTreeAdapter::notifyDataSetChanged()
+	void CursorTreeAdapter::notifyDataSetChanged() const
 	{
 		callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
 		);
 	}
-	void CursorTreeAdapter::notifyDataSetChanged(jboolean arg0)
+	void CursorTreeAdapter::notifyDataSetChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"notifyDataSetChanged",
@@ -172,14 +172,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CursorTreeAdapter::notifyDataSetInvalidated()
+	void CursorTreeAdapter::notifyDataSetInvalidated() const
 	{
 		callMethod<void>(
 			"notifyDataSetInvalidated",
 			"()V"
 		);
 	}
-	void CursorTreeAdapter::onGroupCollapsed(jint arg0)
+	void CursorTreeAdapter::onGroupCollapsed(jint arg0) const
 	{
 		callMethod<void>(
 			"onGroupCollapsed",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject CursorTreeAdapter::runQueryOnBackgroundThread(JString arg0)
+	JObject CursorTreeAdapter::runQueryOnBackgroundThread(JString arg0) const
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
@@ -195,7 +195,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void CursorTreeAdapter::setChildrenCursor(jint arg0, JObject arg1)
+	void CursorTreeAdapter::setChildrenCursor(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setChildrenCursor",
@@ -204,7 +204,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void CursorTreeAdapter::setFilterQueryProvider(JObject arg0)
+	void CursorTreeAdapter::setFilterQueryProvider(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFilterQueryProvider",
@@ -212,7 +212,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CursorTreeAdapter::setGroupCursor(JObject arg0)
+	void CursorTreeAdapter::setGroupCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"setGroupCursor",

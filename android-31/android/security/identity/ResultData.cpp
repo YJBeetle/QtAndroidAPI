@@ -61,14 +61,14 @@ namespace android::security::identity
 	// Constructors
 	
 	// Methods
-	JByteArray ResultData::getAuthenticatedData()
+	JByteArray ResultData::getAuthenticatedData() const
 	{
 		return callObjectMethod(
 			"getAuthenticatedData",
 			"()[B"
 		);
 	}
-	JByteArray ResultData::getEntry(JString arg0, JString arg1)
+	JByteArray ResultData::getEntry(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -77,7 +77,7 @@ namespace android::security::identity
 			arg1.object<jstring>()
 		);
 	}
-	JObject ResultData::getEntryNames(JString arg0)
+	JObject ResultData::getEntryNames(JString arg0) const
 	{
 		return callObjectMethod(
 			"getEntryNames",
@@ -85,21 +85,21 @@ namespace android::security::identity
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray ResultData::getMessageAuthenticationCode()
+	JByteArray ResultData::getMessageAuthenticationCode() const
 	{
 		return callObjectMethod(
 			"getMessageAuthenticationCode",
 			"()[B"
 		);
 	}
-	JObject ResultData::getNamespaces()
+	JObject ResultData::getNamespaces() const
 	{
 		return callObjectMethod(
 			"getNamespaces",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject ResultData::getRetrievedEntryNames(JString arg0)
+	JObject ResultData::getRetrievedEntryNames(JString arg0) const
 	{
 		return callObjectMethod(
 			"getRetrievedEntryNames",
@@ -107,14 +107,14 @@ namespace android::security::identity
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray ResultData::getStaticAuthenticationData()
+	JByteArray ResultData::getStaticAuthenticationData() const
 	{
 		return callObjectMethod(
 			"getStaticAuthenticationData",
 			"()[B"
 		);
 	}
-	jint ResultData::getStatus(JString arg0, JString arg1)
+	jint ResultData::getStatus(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"getStatus",

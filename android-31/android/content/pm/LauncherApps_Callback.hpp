@@ -28,16 +28,16 @@ namespace android::content::pm
 		LauncherApps_Callback();
 		
 		// Methods
-		void onPackageAdded(JString arg0, android::os::UserHandle arg1);
-		void onPackageChanged(JString arg0, android::os::UserHandle arg1);
-		void onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2);
-		void onPackageRemoved(JString arg0, android::os::UserHandle arg1);
-		void onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2);
-		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1);
-		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2);
-		void onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2);
-		void onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1);
-		void onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2);
+		void onPackageAdded(JString arg0, android::os::UserHandle arg1) const;
+		void onPackageChanged(JString arg0, android::os::UserHandle arg1) const;
+		void onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2) const;
+		void onPackageRemoved(JString arg0, android::os::UserHandle arg1) const;
+		void onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const;
+		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1) const;
+		void onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2) const;
+		void onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const;
+		void onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1) const;
+		void onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2) const;
 	};
 } // namespace android::content::pm
 

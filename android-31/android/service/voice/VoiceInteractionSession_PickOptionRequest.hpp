@@ -27,11 +27,11 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		JArray getOptions();
-		JString getPrompt();
-		android::app::VoiceInteractor_Prompt getVoicePrompt();
-		void sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1);
-		void sendPickOptionResult(JArray arg0, android::os::Bundle arg1);
+		JArray getOptions() const;
+		JString getPrompt() const;
+		android::app::VoiceInteractor_Prompt getVoicePrompt() const;
+		void sendIntermediatePickOptionResult(JArray arg0, android::os::Bundle arg1) const;
+		void sendPickOptionResult(JArray arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::service::voice
 

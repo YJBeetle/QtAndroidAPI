@@ -27,9 +27,9 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::TracingController getInstance();
-		jboolean isTracing();
-		void start(android::webkit::TracingConfig arg0);
-		jboolean stop(java::io::OutputStream arg0, JObject arg1);
+		jboolean isTracing() const;
+		void start(android::webkit::TracingConfig arg0) const;
+		jboolean stop(java::io::OutputStream arg0, JObject arg1) const;
 	};
 } // namespace android::webkit
 

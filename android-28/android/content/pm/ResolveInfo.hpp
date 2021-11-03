@@ -64,13 +64,13 @@ namespace android::content::pm
 		ResolveInfo(android::content::pm::ResolveInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		jint getIconResource();
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		jint getIconResource() const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

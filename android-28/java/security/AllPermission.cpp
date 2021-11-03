@@ -26,7 +26,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	jboolean AllPermission::equals(JObject arg0)
+	jboolean AllPermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -34,21 +34,21 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString AllPermission::getActions()
+	JString AllPermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint AllPermission::hashCode()
+	jint AllPermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AllPermission::implies(java::security::Permission arg0)
+	jboolean AllPermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -56,7 +56,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection AllPermission::newPermissionCollection()
+	java::security::PermissionCollection AllPermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

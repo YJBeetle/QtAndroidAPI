@@ -18,14 +18,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchSchema_BooleanPropertyConfig AppSearchSchema_BooleanPropertyConfig_Builder::build()
+	android::app::appsearch::AppSearchSchema_BooleanPropertyConfig AppSearchSchema_BooleanPropertyConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/AppSearchSchema$BooleanPropertyConfig;"
 		);
 	}
-	android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder AppSearchSchema_BooleanPropertyConfig_Builder::setCardinality(jint arg0)
+	android::app::appsearch::AppSearchSchema_BooleanPropertyConfig_Builder AppSearchSchema_BooleanPropertyConfig_Builder::setCardinality(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCardinality",

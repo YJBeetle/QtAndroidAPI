@@ -29,8 +29,8 @@ namespace android::telephony::ims
 		// Constructors
 		
 		// Methods
-		android::telephony::ims::ImsMmTelManager getImsMmTelManager(jint arg0);
-		android::telephony::ims::ImsRcsManager getImsRcsManager(jint arg0);
+		android::telephony::ims::ImsMmTelManager getImsMmTelManager(jint arg0) const;
+		android::telephony::ims::ImsRcsManager getImsRcsManager(jint arg0) const;
 	};
 } // namespace android::telephony::ims
 

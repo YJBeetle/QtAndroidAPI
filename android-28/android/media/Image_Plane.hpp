@@ -21,9 +21,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		java::nio::ByteBuffer getBuffer();
-		jint getPixelStride();
-		jint getRowStride();
+		java::nio::ByteBuffer getBuffer() const;
+		jint getPixelStride() const;
+		jint getRowStride() const;
 	};
 } // namespace android::media
 

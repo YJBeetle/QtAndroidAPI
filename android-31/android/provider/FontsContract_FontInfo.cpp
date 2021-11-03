@@ -12,42 +12,42 @@ namespace android::provider
 	// Constructors
 	
 	// Methods
-	JArray FontsContract_FontInfo::getAxes()
+	JArray FontsContract_FontInfo::getAxes() const
 	{
 		return callObjectMethod(
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		);
 	}
-	jint FontsContract_FontInfo::getResultCode()
+	jint FontsContract_FontInfo::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	jint FontsContract_FontInfo::getTtcIndex()
+	jint FontsContract_FontInfo::getTtcIndex() const
 	{
 		return callMethod<jint>(
 			"getTtcIndex",
 			"()I"
 		);
 	}
-	android::net::Uri FontsContract_FontInfo::getUri()
+	android::net::Uri FontsContract_FontInfo::getUri() const
 	{
 		return callObjectMethod(
 			"getUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint FontsContract_FontInfo::getWeight()
+	jint FontsContract_FontInfo::getWeight() const
 	{
 		return callMethod<jint>(
 			"getWeight",
 			"()I"
 		);
 	}
-	jboolean FontsContract_FontInfo::isItalic()
+	jboolean FontsContract_FontInfo::isItalic() const
 	{
 		return callMethod<jboolean>(
 			"isItalic",

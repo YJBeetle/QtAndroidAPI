@@ -29,7 +29,7 @@ namespace dalvik::system
 		) {}
 	
 	// Methods
-	java::net::URL DelegateLastClassLoader::getResource(JString arg0)
+	java::net::URL DelegateLastClassLoader::getResource(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResource",
@@ -37,7 +37,7 @@ namespace dalvik::system
 			arg0.object<jstring>()
 		);
 	}
-	JObject DelegateLastClassLoader::getResources(JString arg0)
+	JObject DelegateLastClassLoader::getResources(JString arg0) const
 	{
 		return callObjectMethod(
 			"getResources",

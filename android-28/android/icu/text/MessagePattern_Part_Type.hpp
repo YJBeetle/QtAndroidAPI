@@ -35,7 +35,7 @@ namespace android::icu::text
 		// Methods
 		static android::icu::text::MessagePattern_Part_Type valueOf(JString arg0);
 		static JArray values();
-		jboolean hasNumericValue();
+		jboolean hasNumericValue() const;
 	};
 } // namespace android::icu::text
 

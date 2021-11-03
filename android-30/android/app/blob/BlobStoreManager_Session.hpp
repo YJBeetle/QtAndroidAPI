@@ -23,18 +23,18 @@ namespace android::app::blob
 		// Constructors
 		
 		// Methods
-		void abandon();
-		void allowPackageAccess(JString arg0, JByteArray arg1);
-		void allowPublicAccess();
-		void allowSameSignatureAccess();
-		void close();
-		void commit(JObject arg0, JObject arg1);
-		jlong getSize();
-		jboolean isPackageAccessAllowed(JString arg0, JByteArray arg1);
-		jboolean isPublicAccessAllowed();
-		jboolean isSameSignatureAccessAllowed();
-		android::os::ParcelFileDescriptor openRead();
-		android::os::ParcelFileDescriptor openWrite(jlong arg0, jlong arg1);
+		void abandon() const;
+		void allowPackageAccess(JString arg0, JByteArray arg1) const;
+		void allowPublicAccess() const;
+		void allowSameSignatureAccess() const;
+		void close() const;
+		void commit(JObject arg0, JObject arg1) const;
+		jlong getSize() const;
+		jboolean isPackageAccessAllowed(JString arg0, JByteArray arg1) const;
+		jboolean isPublicAccessAllowed() const;
+		jboolean isSameSignatureAccessAllowed() const;
+		android::os::ParcelFileDescriptor openRead() const;
+		android::os::ParcelFileDescriptor openWrite(jlong arg0, jlong arg1) const;
 	};
 } // namespace android::app::blob
 

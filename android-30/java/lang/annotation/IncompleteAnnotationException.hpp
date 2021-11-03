@@ -20,8 +20,8 @@ namespace java::lang::annotation
 		IncompleteAnnotationException(JClass arg0, JString arg1);
 		
 		// Methods
-		JClass annotationType();
-		JString elementName();
+		JClass annotationType() const;
+		JString elementName() const;
 	};
 } // namespace java::lang::annotation
 

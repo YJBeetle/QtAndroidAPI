@@ -28,13 +28,13 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jlong getPersistedTime();
-		android::net::Uri getUri();
-		jboolean isReadPermission();
-		jboolean isWritePermission();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getPersistedTime() const;
+		android::net::Uri getUri() const;
+		jboolean isReadPermission() const;
+		jboolean isWritePermission() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

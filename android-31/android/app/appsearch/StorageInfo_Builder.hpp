@@ -22,10 +22,10 @@ namespace android::app::appsearch
 		StorageInfo_Builder();
 		
 		// Methods
-		android::app::appsearch::StorageInfo build();
-		android::app::appsearch::StorageInfo_Builder setAliveDocumentsCount(jint arg0);
-		android::app::appsearch::StorageInfo_Builder setAliveNamespacesCount(jint arg0);
-		android::app::appsearch::StorageInfo_Builder setSizeBytes(jlong arg0);
+		android::app::appsearch::StorageInfo build() const;
+		android::app::appsearch::StorageInfo_Builder setAliveDocumentsCount(jint arg0) const;
+		android::app::appsearch::StorageInfo_Builder setAliveNamespacesCount(jint arg0) const;
+		android::app::appsearch::StorageInfo_Builder setSizeBytes(jlong arg0) const;
 	};
 } // namespace android::app::appsearch
 

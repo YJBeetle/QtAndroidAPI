@@ -22,14 +22,14 @@ namespace android::net::wifi::aware
 		) {}
 	
 	// Methods
-	android::net::wifi::aware::WifiAwareNetworkSpecifier WifiAwareNetworkSpecifier_Builder::build()
+	android::net::wifi::aware::WifiAwareNetworkSpecifier WifiAwareNetworkSpecifier_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;"
 		);
 	}
-	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPmk(JByteArray arg0)
+	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPmk(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setPmk",
@@ -37,7 +37,7 @@ namespace android::net::wifi::aware
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPort(jint arg0)
+	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPort",
@@ -45,7 +45,7 @@ namespace android::net::wifi::aware
 			arg0
 		);
 	}
-	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPskPassphrase(JString arg0)
+	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setPskPassphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPskPassphrase",
@@ -53,7 +53,7 @@ namespace android::net::wifi::aware
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0)
+	android::net::wifi::aware::WifiAwareNetworkSpecifier_Builder WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTransportProtocol",

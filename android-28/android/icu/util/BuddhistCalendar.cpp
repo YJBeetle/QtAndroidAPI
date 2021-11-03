@@ -84,7 +84,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString BuddhistCalendar::getType()
+	JString BuddhistCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",

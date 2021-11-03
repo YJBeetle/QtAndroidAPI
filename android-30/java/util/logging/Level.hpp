@@ -34,13 +34,13 @@ namespace java::util::logging
 		
 		// Methods
 		static java::util::logging::Level parse(JString arg0);
-		jboolean equals(JObject arg0);
-		JString getLocalizedName();
-		JString getName();
-		JString getResourceBundleName();
-		jint hashCode();
-		jint intValue();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getLocalizedName() const;
+		JString getName() const;
+		JString getResourceBundleName() const;
+		jint hashCode() const;
+		jint intValue() const;
+		JString toString() const;
 	};
 } // namespace java::util::logging
 

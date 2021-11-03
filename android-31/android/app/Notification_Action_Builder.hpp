@@ -41,15 +41,15 @@ namespace android::app
 		Notification_Action_Builder(jint arg0, JString arg1, android::app::PendingIntent arg2);
 		
 		// Methods
-		android::app::Notification_Action_Builder addExtras(android::os::Bundle arg0);
-		android::app::Notification_Action_Builder addRemoteInput(android::app::RemoteInput arg0);
-		android::app::Notification_Action build();
-		android::app::Notification_Action_Builder extend(JObject arg0);
-		android::os::Bundle getExtras();
-		android::app::Notification_Action_Builder setAllowGeneratedReplies(jboolean arg0);
-		android::app::Notification_Action_Builder setAuthenticationRequired(jboolean arg0);
-		android::app::Notification_Action_Builder setContextual(jboolean arg0);
-		android::app::Notification_Action_Builder setSemanticAction(jint arg0);
+		android::app::Notification_Action_Builder addExtras(android::os::Bundle arg0) const;
+		android::app::Notification_Action_Builder addRemoteInput(android::app::RemoteInput arg0) const;
+		android::app::Notification_Action build() const;
+		android::app::Notification_Action_Builder extend(JObject arg0) const;
+		android::os::Bundle getExtras() const;
+		android::app::Notification_Action_Builder setAllowGeneratedReplies(jboolean arg0) const;
+		android::app::Notification_Action_Builder setAuthenticationRequired(jboolean arg0) const;
+		android::app::Notification_Action_Builder setContextual(jboolean arg0) const;
+		android::app::Notification_Action_Builder setSemanticAction(jint arg0) const;
 	};
 } // namespace android::app
 

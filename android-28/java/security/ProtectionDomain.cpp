@@ -32,35 +32,35 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::lang::ClassLoader ProtectionDomain::getClassLoader()
+	java::lang::ClassLoader ProtectionDomain::getClassLoader() const
 	{
 		return callObjectMethod(
 			"getClassLoader",
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	java::security::CodeSource ProtectionDomain::getCodeSource()
+	java::security::CodeSource ProtectionDomain::getCodeSource() const
 	{
 		return callObjectMethod(
 			"getCodeSource",
 			"()Ljava/security/CodeSource;"
 		);
 	}
-	java::security::PermissionCollection ProtectionDomain::getPermissions()
+	java::security::PermissionCollection ProtectionDomain::getPermissions() const
 	{
 		return callObjectMethod(
 			"getPermissions",
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	JArray ProtectionDomain::getPrincipals()
+	JArray ProtectionDomain::getPrincipals() const
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()[Ljava/security/Principal;"
 		);
 	}
-	jboolean ProtectionDomain::implies(java::security::Permission arg0)
+	jboolean ProtectionDomain::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -68,14 +68,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jboolean ProtectionDomain::staticPermissionsOnly()
+	jboolean ProtectionDomain::staticPermissionsOnly() const
 	{
 		return callMethod<jboolean>(
 			"staticPermissionsOnly",
 			"()Z"
 		);
 	}
-	JString ProtectionDomain::toString()
+	JString ProtectionDomain::toString() const
 	{
 		return callObjectMethod(
 			"toString",

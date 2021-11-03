@@ -23,8 +23,8 @@ namespace javax::sql
 		StatementEvent(JObject arg0, JObject arg1, java::sql::SQLException arg2);
 		
 		// Methods
-		java::sql::SQLException getSQLException();
-		JObject getStatement();
+		java::sql::SQLException getSQLException() const;
+		JObject getStatement() const;
 	};
 } // namespace javax::sql
 

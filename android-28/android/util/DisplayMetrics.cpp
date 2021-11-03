@@ -185,7 +185,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	jboolean DisplayMetrics::equals(android::util::DisplayMetrics arg0)
+	jboolean DisplayMetrics::equals(android::util::DisplayMetrics arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -193,7 +193,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean DisplayMetrics::equals(JObject arg0)
+	jboolean DisplayMetrics::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -201,14 +201,14 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jint DisplayMetrics::hashCode()
+	jint DisplayMetrics::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void DisplayMetrics::setTo(android::util::DisplayMetrics arg0)
+	void DisplayMetrics::setTo(android::util::DisplayMetrics arg0) const
 	{
 		callMethod<void>(
 			"setTo",
@@ -216,14 +216,14 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void DisplayMetrics::setToDefaults()
+	void DisplayMetrics::setToDefaults() const
 	{
 		callMethod<void>(
 			"setToDefaults",
 			"()V"
 		);
 	}
-	JString DisplayMetrics::toString()
+	JString DisplayMetrics::toString() const
 	{
 		return callObjectMethod(
 			"toString",

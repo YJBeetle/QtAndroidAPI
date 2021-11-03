@@ -108,11 +108,11 @@ namespace android::text::style
 		TtsSpan(JString arg0, android::os::PersistableBundle arg1);
 		
 		// Methods
-		jint describeContents();
-		android::os::PersistableBundle getArgs();
-		jint getSpanTypeId();
-		JString getType();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::os::PersistableBundle getArgs() const;
+		jint getSpanTypeId() const;
+		JString getType() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text::style
 

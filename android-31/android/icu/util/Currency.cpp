@@ -150,21 +150,21 @@ namespace android::icu::util
 			arg2.object()
 		);
 	}
-	JString Currency::getCurrencyCode()
+	JString Currency::getCurrencyCode() const
 	{
 		return callObjectMethod(
 			"getCurrencyCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Currency::getDefaultFractionDigits()
+	jint Currency::getDefaultFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getDefaultFractionDigits",
 			"()I"
 		);
 	}
-	jint Currency::getDefaultFractionDigits(android::icu::util::Currency_CurrencyUsage arg0)
+	jint Currency::getDefaultFractionDigits(android::icu::util::Currency_CurrencyUsage arg0) const
 	{
 		return callMethod<jint>(
 			"getDefaultFractionDigits",
@@ -172,14 +172,14 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Currency::getDisplayName()
+	JString Currency::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Currency::getDisplayName(java::util::Locale arg0)
+	JString Currency::getDisplayName(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -187,7 +187,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Currency::getName(android::icu::util::ULocale arg0, jint arg1, JBooleanArray arg2)
+	JString Currency::getName(android::icu::util::ULocale arg0, jint arg1, JBooleanArray arg2) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -197,7 +197,7 @@ namespace android::icu::util
 			arg2.object<jbooleanArray>()
 		);
 	}
-	JString Currency::getName(java::util::Locale arg0, jint arg1, JBooleanArray arg2)
+	JString Currency::getName(java::util::Locale arg0, jint arg1, JBooleanArray arg2) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -207,7 +207,7 @@ namespace android::icu::util
 			arg2.object<jbooleanArray>()
 		);
 	}
-	JString Currency::getName(android::icu::util::ULocale arg0, jint arg1, JString arg2, JBooleanArray arg3)
+	JString Currency::getName(android::icu::util::ULocale arg0, jint arg1, JString arg2, JBooleanArray arg3) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -218,7 +218,7 @@ namespace android::icu::util
 			arg3.object<jbooleanArray>()
 		);
 	}
-	JString Currency::getName(java::util::Locale arg0, jint arg1, JString arg2, JBooleanArray arg3)
+	JString Currency::getName(java::util::Locale arg0, jint arg1, JString arg2, JBooleanArray arg3) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -229,21 +229,21 @@ namespace android::icu::util
 			arg3.object<jbooleanArray>()
 		);
 	}
-	jint Currency::getNumericCode()
+	jint Currency::getNumericCode() const
 	{
 		return callMethod<jint>(
 			"getNumericCode",
 			"()I"
 		);
 	}
-	jdouble Currency::getRoundingIncrement()
+	jdouble Currency::getRoundingIncrement() const
 	{
 		return callMethod<jdouble>(
 			"getRoundingIncrement",
 			"()D"
 		);
 	}
-	jdouble Currency::getRoundingIncrement(android::icu::util::Currency_CurrencyUsage arg0)
+	jdouble Currency::getRoundingIncrement(android::icu::util::Currency_CurrencyUsage arg0) const
 	{
 		return callMethod<jdouble>(
 			"getRoundingIncrement",
@@ -251,14 +251,14 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Currency::getSymbol()
+	JString Currency::getSymbol() const
 	{
 		return callObjectMethod(
 			"getSymbol",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Currency::getSymbol(android::icu::util::ULocale arg0)
+	JString Currency::getSymbol(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"getSymbol",
@@ -266,7 +266,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString Currency::getSymbol(java::util::Locale arg0)
+	JString Currency::getSymbol(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"getSymbol",
@@ -274,14 +274,14 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	java::util::Currency Currency::toJavaCurrency()
+	java::util::Currency Currency::toJavaCurrency() const
 	{
 		return callObjectMethod(
 			"toJavaCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
-	JString Currency::toString()
+	JString Currency::toString() const
 	{
 		return callObjectMethod(
 			"toString",

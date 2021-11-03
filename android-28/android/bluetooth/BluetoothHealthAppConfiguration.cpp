@@ -21,14 +21,14 @@ namespace android::bluetooth
 	// Constructors
 	
 	// Methods
-	jint BluetoothHealthAppConfiguration::describeContents()
+	jint BluetoothHealthAppConfiguration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BluetoothHealthAppConfiguration::equals(JObject arg0)
+	jboolean BluetoothHealthAppConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,42 +36,42 @@ namespace android::bluetooth
 			arg0.object<jobject>()
 		);
 	}
-	jint BluetoothHealthAppConfiguration::getDataType()
+	jint BluetoothHealthAppConfiguration::getDataType() const
 	{
 		return callMethod<jint>(
 			"getDataType",
 			"()I"
 		);
 	}
-	JString BluetoothHealthAppConfiguration::getName()
+	JString BluetoothHealthAppConfiguration::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint BluetoothHealthAppConfiguration::getRole()
+	jint BluetoothHealthAppConfiguration::getRole() const
 	{
 		return callMethod<jint>(
 			"getRole",
 			"()I"
 		);
 	}
-	jint BluetoothHealthAppConfiguration::hashCode()
+	jint BluetoothHealthAppConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BluetoothHealthAppConfiguration::toString()
+	JString BluetoothHealthAppConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BluetoothHealthAppConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothHealthAppConfiguration::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

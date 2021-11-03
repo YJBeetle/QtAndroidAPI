@@ -29,7 +29,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MicrophoneInfo_Coordinate3F::equals(JObject arg0)
+	jboolean MicrophoneInfo_Coordinate3F::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",

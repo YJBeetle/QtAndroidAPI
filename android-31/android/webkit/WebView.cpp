@@ -235,7 +235,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::addJavascriptInterface(JObject arg0, JString arg1)
+	void WebView::addJavascriptInterface(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addJavascriptInterface",
@@ -244,7 +244,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void WebView::autofill(android::util::SparseArray arg0)
+	void WebView::autofill(android::util::SparseArray arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -252,14 +252,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean WebView::canGoBack()
+	jboolean WebView::canGoBack() const
 	{
 		return callMethod<jboolean>(
 			"canGoBack",
 			"()Z"
 		);
 	}
-	jboolean WebView::canGoBackOrForward(jint arg0)
+	jboolean WebView::canGoBackOrForward(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"canGoBackOrForward",
@@ -267,35 +267,35 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jboolean WebView::canGoForward()
+	jboolean WebView::canGoForward() const
 	{
 		return callMethod<jboolean>(
 			"canGoForward",
 			"()Z"
 		);
 	}
-	jboolean WebView::canZoomIn()
+	jboolean WebView::canZoomIn() const
 	{
 		return callMethod<jboolean>(
 			"canZoomIn",
 			"()Z"
 		);
 	}
-	jboolean WebView::canZoomOut()
+	jboolean WebView::canZoomOut() const
 	{
 		return callMethod<jboolean>(
 			"canZoomOut",
 			"()Z"
 		);
 	}
-	android::graphics::Picture WebView::capturePicture()
+	android::graphics::Picture WebView::capturePicture() const
 	{
 		return callObjectMethod(
 			"capturePicture",
 			"()Landroid/graphics/Picture;"
 		);
 	}
-	void WebView::clearCache(jboolean arg0)
+	void WebView::clearCache(jboolean arg0) const
 	{
 		callMethod<void>(
 			"clearCache",
@@ -303,63 +303,63 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::clearFormData()
+	void WebView::clearFormData() const
 	{
 		callMethod<void>(
 			"clearFormData",
 			"()V"
 		);
 	}
-	void WebView::clearHistory()
+	void WebView::clearHistory() const
 	{
 		callMethod<void>(
 			"clearHistory",
 			"()V"
 		);
 	}
-	void WebView::clearMatches()
+	void WebView::clearMatches() const
 	{
 		callMethod<void>(
 			"clearMatches",
 			"()V"
 		);
 	}
-	void WebView::clearSslPreferences()
+	void WebView::clearSslPreferences() const
 	{
 		callMethod<void>(
 			"clearSslPreferences",
 			"()V"
 		);
 	}
-	void WebView::clearView()
+	void WebView::clearView() const
 	{
 		callMethod<void>(
 			"clearView",
 			"()V"
 		);
 	}
-	void WebView::computeScroll()
+	void WebView::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	android::webkit::WebBackForwardList WebView::copyBackForwardList()
+	android::webkit::WebBackForwardList WebView::copyBackForwardList() const
 	{
 		return callObjectMethod(
 			"copyBackForwardList",
 			"()Landroid/webkit/WebBackForwardList;"
 		);
 	}
-	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter()
+	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter() const
 	{
 		return callObjectMethod(
 			"createPrintDocumentAdapter",
 			"()Landroid/print/PrintDocumentAdapter;"
 		);
 	}
-	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter(JString arg0)
+	android::print::PrintDocumentAdapter WebView::createPrintDocumentAdapter(JString arg0) const
 	{
 		return callObjectMethod(
 			"createPrintDocumentAdapter",
@@ -367,21 +367,21 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	JArray WebView::createWebMessageChannel()
+	JArray WebView::createWebMessageChannel() const
 	{
 		return callObjectMethod(
 			"createWebMessageChannel",
 			"()[Landroid/webkit/WebMessagePort;"
 		);
 	}
-	void WebView::destroy()
+	void WebView::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	void WebView::dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3)
+	void WebView::dispatchCreateViewTranslationRequest(JObject arg0, JIntArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"dispatchCreateViewTranslationRequest",
@@ -392,7 +392,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	jboolean WebView::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean WebView::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -400,7 +400,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::documentHasImages(android::os::Message arg0)
+	void WebView::documentHasImages(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"documentHasImages",
@@ -408,7 +408,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::evaluateJavascript(JString arg0, JObject arg1)
+	void WebView::evaluateJavascript(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"evaluateJavascript",
@@ -417,7 +417,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jint WebView::findAll(JString arg0)
+	jint WebView::findAll(JString arg0) const
 	{
 		return callMethod<jint>(
 			"findAll",
@@ -425,7 +425,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebView::findAllAsync(JString arg0)
+	void WebView::findAllAsync(JString arg0) const
 	{
 		callMethod<void>(
 			"findAllAsync",
@@ -433,14 +433,14 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	android::view::View WebView::findFocus()
+	android::view::View WebView::findFocus() const
 	{
 		return callObjectMethod(
 			"findFocus",
 			"()Landroid/view/View;"
 		);
 	}
-	void WebView::findNext(jboolean arg0)
+	void WebView::findNext(jboolean arg0) const
 	{
 		callMethod<void>(
 			"findNext",
@@ -448,7 +448,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::flingScroll(jint arg0, jint arg1)
+	void WebView::flingScroll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"flingScroll",
@@ -457,63 +457,63 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::freeMemory()
+	void WebView::freeMemory() const
 	{
 		callMethod<void>(
 			"freeMemory",
 			"()V"
 		);
 	}
-	JString WebView::getAccessibilityClassName()
+	JString WebView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeProvider WebView::getAccessibilityNodeProvider()
+	android::view::accessibility::AccessibilityNodeProvider WebView::getAccessibilityNodeProvider() const
 	{
 		return callObjectMethod(
 			"getAccessibilityNodeProvider",
 			"()Landroid/view/accessibility/AccessibilityNodeProvider;"
 		);
 	}
-	android::net::http::SslCertificate WebView::getCertificate()
+	android::net::http::SslCertificate WebView::getCertificate() const
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"()Landroid/net/http/SslCertificate;"
 		);
 	}
-	jint WebView::getContentHeight()
+	jint WebView::getContentHeight() const
 	{
 		return callMethod<jint>(
 			"getContentHeight",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap WebView::getFavicon()
+	android::graphics::Bitmap WebView::getFavicon() const
 	{
 		return callObjectMethod(
 			"getFavicon",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::os::Handler WebView::getHandler()
+	android::os::Handler WebView::getHandler() const
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Landroid/os/Handler;"
 		);
 	}
-	android::webkit::WebView_HitTestResult WebView::getHitTestResult()
+	android::webkit::WebView_HitTestResult WebView::getHitTestResult() const
 	{
 		return callObjectMethod(
 			"getHitTestResult",
 			"()Landroid/webkit/WebView$HitTestResult;"
 		);
 	}
-	JArray WebView::getHttpAuthUsernamePassword(JString arg0, JString arg1)
+	JArray WebView::getHttpAuthUsernamePassword(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getHttpAuthUsernamePassword",
@@ -522,112 +522,112 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	JString WebView::getOriginalUrl()
+	JString WebView::getOriginalUrl() const
 	{
 		return callObjectMethod(
 			"getOriginalUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint WebView::getProgress()
+	jint WebView::getProgress() const
 	{
 		return callMethod<jint>(
 			"getProgress",
 			"()I"
 		);
 	}
-	jboolean WebView::getRendererPriorityWaivedWhenNotVisible()
+	jboolean WebView::getRendererPriorityWaivedWhenNotVisible() const
 	{
 		return callMethod<jboolean>(
 			"getRendererPriorityWaivedWhenNotVisible",
 			"()Z"
 		);
 	}
-	jint WebView::getRendererRequestedPriority()
+	jint WebView::getRendererRequestedPriority() const
 	{
 		return callMethod<jint>(
 			"getRendererRequestedPriority",
 			"()I"
 		);
 	}
-	jfloat WebView::getScale()
+	jfloat WebView::getScale() const
 	{
 		return callMethod<jfloat>(
 			"getScale",
 			"()F"
 		);
 	}
-	android::webkit::WebSettings WebView::getSettings()
+	android::webkit::WebSettings WebView::getSettings() const
 	{
 		return callObjectMethod(
 			"getSettings",
 			"()Landroid/webkit/WebSettings;"
 		);
 	}
-	JObject WebView::getTextClassifier()
+	JObject WebView::getTextClassifier() const
 	{
 		return callObjectMethod(
 			"getTextClassifier",
 			"()Landroid/view/textclassifier/TextClassifier;"
 		);
 	}
-	JString WebView::getTitle()
+	JString WebView::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WebView::getUrl()
+	JString WebView::getUrl() const
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::webkit::WebChromeClient WebView::getWebChromeClient()
+	android::webkit::WebChromeClient WebView::getWebChromeClient() const
 	{
 		return callObjectMethod(
 			"getWebChromeClient",
 			"()Landroid/webkit/WebChromeClient;"
 		);
 	}
-	android::webkit::WebViewClient WebView::getWebViewClient()
+	android::webkit::WebViewClient WebView::getWebViewClient() const
 	{
 		return callObjectMethod(
 			"getWebViewClient",
 			"()Landroid/webkit/WebViewClient;"
 		);
 	}
-	android::os::Looper WebView::getWebViewLooper()
+	android::os::Looper WebView::getWebViewLooper() const
 	{
 		return callObjectMethod(
 			"getWebViewLooper",
 			"()Landroid/os/Looper;"
 		);
 	}
-	android::webkit::WebViewRenderProcess WebView::getWebViewRenderProcess()
+	android::webkit::WebViewRenderProcess WebView::getWebViewRenderProcess() const
 	{
 		return callObjectMethod(
 			"getWebViewRenderProcess",
 			"()Landroid/webkit/WebViewRenderProcess;"
 		);
 	}
-	android::webkit::WebViewRenderProcessClient WebView::getWebViewRenderProcessClient()
+	android::webkit::WebViewRenderProcessClient WebView::getWebViewRenderProcessClient() const
 	{
 		return callObjectMethod(
 			"getWebViewRenderProcessClient",
 			"()Landroid/webkit/WebViewRenderProcessClient;"
 		);
 	}
-	void WebView::goBack()
+	void WebView::goBack() const
 	{
 		callMethod<void>(
 			"goBack",
 			"()V"
 		);
 	}
-	void WebView::goBackOrForward(jint arg0)
+	void WebView::goBackOrForward(jint arg0) const
 	{
 		callMethod<void>(
 			"goBackOrForward",
@@ -635,28 +635,28 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::goForward()
+	void WebView::goForward() const
 	{
 		callMethod<void>(
 			"goForward",
 			"()V"
 		);
 	}
-	void WebView::invokeZoomPicker()
+	void WebView::invokeZoomPicker() const
 	{
 		callMethod<void>(
 			"invokeZoomPicker",
 			"()V"
 		);
 	}
-	jboolean WebView::isPrivateBrowsingEnabled()
+	jboolean WebView::isPrivateBrowsingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isPrivateBrowsingEnabled",
 			"()Z"
 		);
 	}
-	jboolean WebView::isVisibleToUserForAutofill(jint arg0)
+	jboolean WebView::isVisibleToUserForAutofill(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isVisibleToUserForAutofill",
@@ -664,7 +664,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::loadData(JString arg0, JString arg1, JString arg2)
+	void WebView::loadData(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"loadData",
@@ -674,7 +674,7 @@ namespace android::webkit
 			arg2.object<jstring>()
 		);
 	}
-	void WebView::loadDataWithBaseURL(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4)
+	void WebView::loadDataWithBaseURL(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const
 	{
 		callMethod<void>(
 			"loadDataWithBaseURL",
@@ -686,7 +686,7 @@ namespace android::webkit
 			arg4.object<jstring>()
 		);
 	}
-	void WebView::loadUrl(JString arg0)
+	void WebView::loadUrl(JString arg0) const
 	{
 		callMethod<void>(
 			"loadUrl",
@@ -694,7 +694,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebView::loadUrl(JString arg0, JObject arg1)
+	void WebView::loadUrl(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"loadUrl",
@@ -703,7 +703,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::view::WindowInsets WebView::onApplyWindowInsets(android::view::WindowInsets arg0)
+	android::view::WindowInsets WebView::onApplyWindowInsets(android::view::WindowInsets arg0) const
 	{
 		return callObjectMethod(
 			"onApplyWindowInsets",
@@ -711,14 +711,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean WebView::onCheckIsTextEditor()
+	jboolean WebView::onCheckIsTextEditor() const
 	{
 		return callMethod<jboolean>(
 			"onCheckIsTextEditor",
 			"()Z"
 		);
 	}
-	void WebView::onChildViewAdded(android::view::View arg0, android::view::View arg1)
+	void WebView::onChildViewAdded(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"onChildViewAdded",
@@ -727,7 +727,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::onChildViewRemoved(android::view::View arg0, android::view::View arg1)
+	void WebView::onChildViewRemoved(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"onChildViewRemoved",
@@ -736,7 +736,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	JObject WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject WebView::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0) const
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -744,7 +744,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onCreateVirtualViewTranslationRequests(JLongArray arg0, JIntArray arg1, JObject arg2)
+	void WebView::onCreateVirtualViewTranslationRequests(JLongArray arg0, JIntArray arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onCreateVirtualViewTranslationRequests",
@@ -754,7 +754,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	jboolean WebView::onDragEvent(android::view::DragEvent arg0)
+	jboolean WebView::onDragEvent(android::view::DragEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDragEvent",
@@ -762,14 +762,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onFinishTemporaryDetach()
+	void WebView::onFinishTemporaryDetach() const
 	{
 		callMethod<void>(
 			"onFinishTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean WebView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean WebView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -777,7 +777,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onGlobalFocusChanged(android::view::View arg0, android::view::View arg1)
+	void WebView::onGlobalFocusChanged(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"onGlobalFocusChanged",
@@ -786,7 +786,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebView::onHoverEvent(android::view::MotionEvent arg0)
+	jboolean WebView::onHoverEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onHoverEvent",
@@ -794,7 +794,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean WebView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean WebView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -803,7 +803,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean WebView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -813,7 +813,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	jboolean WebView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean WebView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -822,14 +822,14 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::onPause()
+	void WebView::onPause() const
 	{
 		callMethod<void>(
 			"onPause",
 			"()V"
 		);
 	}
-	void WebView::onProvideAutofillVirtualStructure(android::view::ViewStructure arg0, jint arg1)
+	void WebView::onProvideAutofillVirtualStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideAutofillVirtualStructure",
@@ -838,7 +838,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::onProvideContentCaptureStructure(android::view::ViewStructure arg0, jint arg1)
+	void WebView::onProvideContentCaptureStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideContentCaptureStructure",
@@ -847,7 +847,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::onProvideVirtualStructure(android::view::ViewStructure arg0)
+	void WebView::onProvideVirtualStructure(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"onProvideVirtualStructure",
@@ -855,21 +855,21 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onResume()
+	void WebView::onResume() const
 	{
 		callMethod<void>(
 			"onResume",
 			"()V"
 		);
 	}
-	void WebView::onStartTemporaryDetach()
+	void WebView::onStartTemporaryDetach() const
 	{
 		callMethod<void>(
 			"onStartTemporaryDetach",
 			"()V"
 		);
 	}
-	jboolean WebView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean WebView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -877,7 +877,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean WebView::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean WebView::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -885,7 +885,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onVirtualViewTranslationResponses(android::util::LongSparseArray arg0)
+	void WebView::onVirtualViewTranslationResponses(android::util::LongSparseArray arg0) const
 	{
 		callMethod<void>(
 			"onVirtualViewTranslationResponses",
@@ -893,7 +893,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::onWindowFocusChanged(jboolean arg0)
+	void WebView::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -901,21 +901,21 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jboolean WebView::overlayHorizontalScrollbar()
+	jboolean WebView::overlayHorizontalScrollbar() const
 	{
 		return callMethod<jboolean>(
 			"overlayHorizontalScrollbar",
 			"()Z"
 		);
 	}
-	jboolean WebView::overlayVerticalScrollbar()
+	jboolean WebView::overlayVerticalScrollbar() const
 	{
 		return callMethod<jboolean>(
 			"overlayVerticalScrollbar",
 			"()Z"
 		);
 	}
-	jboolean WebView::pageDown(jboolean arg0)
+	jboolean WebView::pageDown(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"pageDown",
@@ -923,7 +923,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jboolean WebView::pageUp(jboolean arg0)
+	jboolean WebView::pageUp(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"pageUp",
@@ -931,21 +931,21 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::pauseTimers()
+	void WebView::pauseTimers() const
 	{
 		callMethod<void>(
 			"pauseTimers",
 			"()V"
 		);
 	}
-	jboolean WebView::performLongClick()
+	jboolean WebView::performLongClick() const
 	{
 		return callMethod<jboolean>(
 			"performLongClick",
 			"()Z"
 		);
 	}
-	void WebView::postUrl(JString arg0, JByteArray arg1)
+	void WebView::postUrl(JString arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"postUrl",
@@ -954,7 +954,7 @@ namespace android::webkit
 			arg1.object<jbyteArray>()
 		);
 	}
-	void WebView::postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1)
+	void WebView::postVisualStateCallback(jlong arg0, android::webkit::WebView_VisualStateCallback arg1) const
 	{
 		callMethod<void>(
 			"postVisualStateCallback",
@@ -963,7 +963,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::postWebMessage(android::webkit::WebMessage arg0, android::net::Uri arg1)
+	void WebView::postWebMessage(android::webkit::WebMessage arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"postWebMessage",
@@ -972,14 +972,14 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::reload()
+	void WebView::reload() const
 	{
 		callMethod<void>(
 			"reload",
 			"()V"
 		);
 	}
-	void WebView::removeJavascriptInterface(JString arg0)
+	void WebView::removeJavascriptInterface(JString arg0) const
 	{
 		callMethod<void>(
 			"removeJavascriptInterface",
@@ -987,7 +987,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	jboolean WebView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
+	jboolean WebView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
@@ -997,7 +997,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	jboolean WebView::requestFocus(jint arg0, android::graphics::Rect arg1)
+	jboolean WebView::requestFocus(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestFocus",
@@ -1006,7 +1006,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::requestFocusNodeHref(android::os::Message arg0)
+	void WebView::requestFocusNodeHref(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"requestFocusNodeHref",
@@ -1014,7 +1014,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::requestImageRef(android::os::Message arg0)
+	void WebView::requestImageRef(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"requestImageRef",
@@ -1022,7 +1022,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	android::webkit::WebBackForwardList WebView::restoreState(android::os::Bundle arg0)
+	android::webkit::WebBackForwardList WebView::restoreState(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"restoreState",
@@ -1030,14 +1030,14 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::resumeTimers()
+	void WebView::resumeTimers() const
 	{
 		callMethod<void>(
 			"resumeTimers",
 			"()V"
 		);
 	}
-	void WebView::savePassword(JString arg0, JString arg1, JString arg2)
+	void WebView::savePassword(JString arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"savePassword",
@@ -1047,7 +1047,7 @@ namespace android::webkit
 			arg2.object<jstring>()
 		);
 	}
-	android::webkit::WebBackForwardList WebView::saveState(android::os::Bundle arg0)
+	android::webkit::WebBackForwardList WebView::saveState(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"saveState",
@@ -1055,7 +1055,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::saveWebArchive(JString arg0)
+	void WebView::saveWebArchive(JString arg0) const
 	{
 		callMethod<void>(
 			"saveWebArchive",
@@ -1063,7 +1063,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebView::saveWebArchive(JString arg0, jboolean arg1, JObject arg2)
+	void WebView::saveWebArchive(JString arg0, jboolean arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"saveWebArchive",
@@ -1073,7 +1073,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebView::setBackgroundColor(jint arg0)
+	void WebView::setBackgroundColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundColor",
@@ -1081,7 +1081,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setCertificate(android::net::http::SslCertificate arg0)
+	void WebView::setCertificate(android::net::http::SslCertificate arg0) const
 	{
 		callMethod<void>(
 			"setCertificate",
@@ -1089,7 +1089,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setDownloadListener(JObject arg0)
+	void WebView::setDownloadListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setDownloadListener",
@@ -1097,7 +1097,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setFindListener(JObject arg0)
+	void WebView::setFindListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFindListener",
@@ -1105,7 +1105,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setHorizontalScrollbarOverlay(jboolean arg0)
+	void WebView::setHorizontalScrollbarOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalScrollbarOverlay",
@@ -1113,7 +1113,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3)
+	void WebView::setHttpAuthUsernamePassword(JString arg0, JString arg1, JString arg2, JString arg3) const
 	{
 		callMethod<void>(
 			"setHttpAuthUsernamePassword",
@@ -1124,7 +1124,7 @@ namespace android::webkit
 			arg3.object<jstring>()
 		);
 	}
-	void WebView::setInitialScale(jint arg0)
+	void WebView::setInitialScale(jint arg0) const
 	{
 		callMethod<void>(
 			"setInitialScale",
@@ -1132,7 +1132,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setLayerType(jint arg0, android::graphics::Paint arg1)
+	void WebView::setLayerType(jint arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"setLayerType",
@@ -1141,7 +1141,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebView::setLayoutParams(android::view::ViewGroup_LayoutParams arg0)
+	void WebView::setLayoutParams(android::view::ViewGroup_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"setLayoutParams",
@@ -1149,7 +1149,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setMapTrackballToArrowKeys(jboolean arg0)
+	void WebView::setMapTrackballToArrowKeys(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMapTrackballToArrowKeys",
@@ -1157,7 +1157,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setNetworkAvailable(jboolean arg0)
+	void WebView::setNetworkAvailable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNetworkAvailable",
@@ -1165,7 +1165,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setOverScrollMode(jint arg0)
+	void WebView::setOverScrollMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setOverScrollMode",
@@ -1173,7 +1173,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setPictureListener(JObject arg0)
+	void WebView::setPictureListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPictureListener",
@@ -1181,7 +1181,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setRendererPriorityPolicy(jint arg0, jboolean arg1)
+	void WebView::setRendererPriorityPolicy(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setRendererPriorityPolicy",
@@ -1190,7 +1190,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::setScrollBarStyle(jint arg0)
+	void WebView::setScrollBarStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setScrollBarStyle",
@@ -1198,7 +1198,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setTextClassifier(JObject arg0)
+	void WebView::setTextClassifier(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTextClassifier",
@@ -1206,7 +1206,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setVerticalScrollbarOverlay(jboolean arg0)
+	void WebView::setVerticalScrollbarOverlay(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVerticalScrollbarOverlay",
@@ -1214,7 +1214,7 @@ namespace android::webkit
 			arg0
 		);
 	}
-	void WebView::setWebChromeClient(android::webkit::WebChromeClient arg0)
+	void WebView::setWebChromeClient(android::webkit::WebChromeClient arg0) const
 	{
 		callMethod<void>(
 			"setWebChromeClient",
@@ -1222,7 +1222,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setWebViewClient(android::webkit::WebViewClient arg0)
+	void WebView::setWebViewClient(android::webkit::WebViewClient arg0) const
 	{
 		callMethod<void>(
 			"setWebViewClient",
@@ -1230,7 +1230,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setWebViewRenderProcessClient(android::webkit::WebViewRenderProcessClient arg0)
+	void WebView::setWebViewRenderProcessClient(android::webkit::WebViewRenderProcessClient arg0) const
 	{
 		callMethod<void>(
 			"setWebViewRenderProcessClient",
@@ -1238,7 +1238,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebView::setWebViewRenderProcessClient(JObject arg0, android::webkit::WebViewRenderProcessClient arg1)
+	void WebView::setWebViewRenderProcessClient(JObject arg0, android::webkit::WebViewRenderProcessClient arg1) const
 	{
 		callMethod<void>(
 			"setWebViewRenderProcessClient",
@@ -1247,14 +1247,14 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebView::shouldDelayChildPressedState()
+	jboolean WebView::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
-	jboolean WebView::showFindDialog(JString arg0, jboolean arg1)
+	jboolean WebView::showFindDialog(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"showFindDialog",
@@ -1263,14 +1263,14 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebView::stopLoading()
+	void WebView::stopLoading() const
 	{
 		callMethod<void>(
 			"stopLoading",
 			"()V"
 		);
 	}
-	void WebView::zoomBy(jfloat arg0)
+	void WebView::zoomBy(jfloat arg0) const
 	{
 		callMethod<void>(
 			"zoomBy",
@@ -1278,14 +1278,14 @@ namespace android::webkit
 			arg0
 		);
 	}
-	jboolean WebView::zoomIn()
+	jboolean WebView::zoomIn() const
 	{
 		return callMethod<jboolean>(
 			"zoomIn",
 			"()Z"
 		);
 	}
-	jboolean WebView::zoomOut()
+	jboolean WebView::zoomOut() const
 	{
 		return callMethod<jboolean>(
 			"zoomOut",

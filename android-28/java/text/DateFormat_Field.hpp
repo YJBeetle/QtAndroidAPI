@@ -39,7 +39,7 @@ namespace java::text
 		
 		// Methods
 		static java::text::DateFormat_Field ofCalendarField(jint arg0);
-		jint getCalendarField();
+		jint getCalendarField() const;
 	};
 } // namespace java::text
 

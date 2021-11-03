@@ -24,14 +24,14 @@ namespace android::widget
 		ViewFlipper(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		jint getFlipInterval();
-		jboolean isAutoStart();
-		jboolean isFlipping();
-		void setAutoStart(jboolean arg0);
-		void setFlipInterval(jint arg0);
-		void startFlipping();
-		void stopFlipping();
+		JString getAccessibilityClassName() const;
+		jint getFlipInterval() const;
+		jboolean isAutoStart() const;
+		jboolean isFlipping() const;
+		void setAutoStart(jboolean arg0) const;
+		void setFlipInterval(jint arg0) const;
+		void startFlipping() const;
+		void stopFlipping() const;
 	};
 } // namespace android::widget
 

@@ -287,49 +287,49 @@ namespace android::view
 			"()[I"
 		);
 	}
-	jint InputDevice::describeContents()
+	jint InputDevice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint InputDevice::getControllerNumber()
+	jint InputDevice::getControllerNumber() const
 	{
 		return callMethod<jint>(
 			"getControllerNumber",
 			"()I"
 		);
 	}
-	JString InputDevice::getDescriptor()
+	JString InputDevice::getDescriptor() const
 	{
 		return callObjectMethod(
 			"getDescriptor",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InputDevice::getId()
+	jint InputDevice::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	android::view::KeyCharacterMap InputDevice::getKeyCharacterMap()
+	android::view::KeyCharacterMap InputDevice::getKeyCharacterMap() const
 	{
 		return callObjectMethod(
 			"getKeyCharacterMap",
 			"()Landroid/view/KeyCharacterMap;"
 		);
 	}
-	jint InputDevice::getKeyboardType()
+	jint InputDevice::getKeyboardType() const
 	{
 		return callMethod<jint>(
 			"getKeyboardType",
 			"()I"
 		);
 	}
-	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0)
+	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMotionRange",
@@ -337,7 +337,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0, jint arg1)
+	android::view::InputDevice_MotionRange InputDevice::getMotionRange(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getMotionRange",
@@ -346,49 +346,49 @@ namespace android::view
 			arg1
 		);
 	}
-	JObject InputDevice::getMotionRanges()
+	JObject InputDevice::getMotionRanges() const
 	{
 		return callObjectMethod(
 			"getMotionRanges",
 			"()Ljava/util/List;"
 		);
 	}
-	JString InputDevice::getName()
+	JString InputDevice::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint InputDevice::getProductId()
+	jint InputDevice::getProductId() const
 	{
 		return callMethod<jint>(
 			"getProductId",
 			"()I"
 		);
 	}
-	jint InputDevice::getSources()
+	jint InputDevice::getSources() const
 	{
 		return callMethod<jint>(
 			"getSources",
 			"()I"
 		);
 	}
-	jint InputDevice::getVendorId()
+	jint InputDevice::getVendorId() const
 	{
 		return callMethod<jint>(
 			"getVendorId",
 			"()I"
 		);
 	}
-	android::os::Vibrator InputDevice::getVibrator()
+	android::os::Vibrator InputDevice::getVibrator() const
 	{
 		return callObjectMethod(
 			"getVibrator",
 			"()Landroid/os/Vibrator;"
 		);
 	}
-	JBooleanArray InputDevice::hasKeys(JIntArray arg0)
+	JBooleanArray InputDevice::hasKeys(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"hasKeys",
@@ -396,28 +396,28 @@ namespace android::view
 			arg0.object<jintArray>()
 		);
 	}
-	jboolean InputDevice::hasMicrophone()
+	jboolean InputDevice::hasMicrophone() const
 	{
 		return callMethod<jboolean>(
 			"hasMicrophone",
 			"()Z"
 		);
 	}
-	jboolean InputDevice::isEnabled()
+	jboolean InputDevice::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean InputDevice::isVirtual()
+	jboolean InputDevice::isVirtual() const
 	{
 		return callMethod<jboolean>(
 			"isVirtual",
 			"()Z"
 		);
 	}
-	jboolean InputDevice::supportsSource(jint arg0)
+	jboolean InputDevice::supportsSource(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsSource",
@@ -425,14 +425,14 @@ namespace android::view
 			arg0
 		);
 	}
-	JString InputDevice::toString()
+	JString InputDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InputDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InputDevice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

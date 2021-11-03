@@ -251,7 +251,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1) const
 	{
 		return callMethod<jboolean>(
 			"bindAppWidgetIdIfAllowed",
@@ -260,7 +260,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1, android::os::Bundle arg2)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::content::ComponentName arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"bindAppWidgetIdIfAllowed",
@@ -270,7 +270,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::os::UserHandle arg1, android::content::ComponentName arg2, android::os::Bundle arg3)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, android::os::UserHandle arg1, android::content::ComponentName arg2, android::os::Bundle arg3) const
 	{
 		return callMethod<jboolean>(
 			"bindAppWidgetIdIfAllowed",
@@ -281,7 +281,7 @@ namespace android::appwidget
 			arg3.object()
 		);
 	}
-	JIntArray AppWidgetManager::getAppWidgetIds(android::content::ComponentName arg0)
+	JIntArray AppWidgetManager::getAppWidgetIds(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getAppWidgetIds",
@@ -289,7 +289,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	android::appwidget::AppWidgetProviderInfo AppWidgetManager::getAppWidgetInfo(jint arg0)
+	android::appwidget::AppWidgetProviderInfo AppWidgetManager::getAppWidgetInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAppWidgetInfo",
@@ -297,7 +297,7 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	android::os::Bundle AppWidgetManager::getAppWidgetOptions(jint arg0)
+	android::os::Bundle AppWidgetManager::getAppWidgetOptions(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAppWidgetOptions",
@@ -305,14 +305,14 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	JObject AppWidgetManager::getInstalledProviders()
+	JObject AppWidgetManager::getInstalledProviders() const
 	{
 		return callObjectMethod(
 			"getInstalledProviders",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject AppWidgetManager::getInstalledProvidersForPackage(JString arg0, android::os::UserHandle arg1)
+	JObject AppWidgetManager::getInstalledProvidersForPackage(JString arg0, android::os::UserHandle arg1) const
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForPackage",
@@ -321,7 +321,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	JObject AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
+	JObject AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForProfile",
@@ -329,14 +329,14 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	jboolean AppWidgetManager::isRequestPinAppWidgetSupported()
+	jboolean AppWidgetManager::isRequestPinAppWidgetSupported() const
 	{
 		return callMethod<jboolean>(
 			"isRequestPinAppWidgetSupported",
 			"()Z"
 		);
 	}
-	void AppWidgetManager::notifyAppWidgetViewDataChanged(JIntArray arg0, jint arg1)
+	void AppWidgetManager::notifyAppWidgetViewDataChanged(JIntArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"notifyAppWidgetViewDataChanged",
@@ -345,7 +345,7 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1)
+	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"notifyAppWidgetViewDataChanged",
@@ -354,7 +354,7 @@ namespace android::appwidget
 			arg1
 		);
 	}
-	void AppWidgetManager::partiallyUpdateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::partiallyUpdateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"partiallyUpdateAppWidget",
@@ -363,7 +363,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::partiallyUpdateAppWidget(jint arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::partiallyUpdateAppWidget(jint arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"partiallyUpdateAppWidget",
@@ -372,7 +372,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	jboolean AppWidgetManager::requestPinAppWidget(android::content::ComponentName arg0, android::os::Bundle arg1, android::app::PendingIntent arg2)
+	jboolean AppWidgetManager::requestPinAppWidget(android::content::ComponentName arg0, android::os::Bundle arg1, android::app::PendingIntent arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestPinAppWidget",
@@ -382,7 +382,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::updateAppWidget(JIntArray arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidget",
@@ -391,7 +391,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(android::content::ComponentName arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::updateAppWidget(android::content::ComponentName arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidget",
@@ -400,7 +400,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(jint arg0, android::widget::RemoteViews arg1)
+	void AppWidgetManager::updateAppWidget(jint arg0, android::widget::RemoteViews arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidget",
@@ -409,7 +409,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidgetOptions(jint arg0, android::os::Bundle arg1)
+	void AppWidgetManager::updateAppWidgetOptions(jint arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidgetOptions",
@@ -418,7 +418,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetManager::updateAppWidgetProviderInfo(android::content::ComponentName arg0, JString arg1)
+	void AppWidgetManager::updateAppWidgetProviderInfo(android::content::ComponentName arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidgetProviderInfo",

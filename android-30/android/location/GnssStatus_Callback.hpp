@@ -22,10 +22,10 @@ namespace android::location
 		GnssStatus_Callback();
 		
 		// Methods
-		void onFirstFix(jint arg0);
-		void onSatelliteStatusChanged(android::location::GnssStatus arg0);
-		void onStarted();
-		void onStopped();
+		void onFirstFix(jint arg0) const;
+		void onSatelliteStatusChanged(android::location::GnssStatus arg0) const;
+		void onStarted() const;
+		void onStopped() const;
 	};
 } // namespace android::location
 

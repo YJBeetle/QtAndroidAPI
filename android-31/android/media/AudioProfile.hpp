@@ -21,12 +21,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JIntArray getChannelIndexMasks();
-		JIntArray getChannelMasks();
-		jint getEncapsulationType();
-		jint getFormat();
-		JIntArray getSampleRates();
-		JString toString();
+		JIntArray getChannelIndexMasks() const;
+		JIntArray getChannelMasks() const;
+		jint getEncapsulationType() const;
+		jint getFormat() const;
+		JIntArray getSampleRates() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

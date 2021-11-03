@@ -31,14 +31,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jint SimpleAdapter::getCount()
+	jint SimpleAdapter::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::view::View SimpleAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View SimpleAdapter::getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getDropDownView",
@@ -48,21 +48,21 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::content::res::Resources_Theme SimpleAdapter::getDropDownViewTheme()
+	android::content::res::Resources_Theme SimpleAdapter::getDropDownViewTheme() const
 	{
 		return callObjectMethod(
 			"getDropDownViewTheme",
 			"()Landroid/content/res/Resources$Theme;"
 		);
 	}
-	android::widget::Filter SimpleAdapter::getFilter()
+	android::widget::Filter SimpleAdapter::getFilter() const
 	{
 		return callObjectMethod(
 			"getFilter",
 			"()Landroid/widget/Filter;"
 		);
 	}
-	JObject SimpleAdapter::getItem(jint arg0)
+	JObject SimpleAdapter::getItem(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItem",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong SimpleAdapter::getItemId(jint arg0)
+	jlong SimpleAdapter::getItemId(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemId",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::View SimpleAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2)
+	android::view::View SimpleAdapter::getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const
 	{
 		return callObjectMethod(
 			"getView",
@@ -88,14 +88,14 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JObject SimpleAdapter::getViewBinder()
+	JObject SimpleAdapter::getViewBinder() const
 	{
 		return callObjectMethod(
 			"getViewBinder",
 			"()Landroid/widget/SimpleAdapter$ViewBinder;"
 		);
 	}
-	void SimpleAdapter::setDropDownViewResource(jint arg0)
+	void SimpleAdapter::setDropDownViewResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewResource",
@@ -103,7 +103,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SimpleAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0)
+	void SimpleAdapter::setDropDownViewTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setDropDownViewTheme",
@@ -111,7 +111,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleAdapter::setViewBinder(JObject arg0)
+	void SimpleAdapter::setViewBinder(JObject arg0) const
 	{
 		callMethod<void>(
 			"setViewBinder",
@@ -119,7 +119,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, jint arg1)
+	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setViewImage",
@@ -128,7 +128,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, JString arg1)
+	void SimpleAdapter::setViewImage(android::widget::ImageView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setViewImage",
@@ -137,7 +137,7 @@ namespace android::widget
 			arg1.object<jstring>()
 		);
 	}
-	void SimpleAdapter::setViewText(android::widget::TextView arg0, JString arg1)
+	void SimpleAdapter::setViewText(android::widget::TextView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setViewText",

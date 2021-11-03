@@ -40,7 +40,7 @@ namespace java::util
 		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3);
 		static java::util::EnumSet of(java::lang::Enum arg0, java::lang::Enum arg1, java::lang::Enum arg2, java::lang::Enum arg3, java::lang::Enum arg4);
 		static java::util::EnumSet range(java::lang::Enum arg0, java::lang::Enum arg1);
-		java::util::EnumSet clone();
+		java::util::EnumSet clone() const;
 	};
 } // namespace java::util
 

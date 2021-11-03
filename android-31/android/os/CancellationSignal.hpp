@@ -17,10 +17,10 @@ namespace android::os
 		CancellationSignal();
 		
 		// Methods
-		void cancel();
-		jboolean isCanceled();
-		void setOnCancelListener(JObject arg0);
-		void throwIfCanceled();
+		void cancel() const;
+		jboolean isCanceled() const;
+		void setOnCancelListener(JObject arg0) const;
+		void throwIfCanceled() const;
 	};
 } // namespace android::os
 

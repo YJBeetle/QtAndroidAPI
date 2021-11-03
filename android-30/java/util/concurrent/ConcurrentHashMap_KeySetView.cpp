@@ -12,7 +12,7 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	jboolean ConcurrentHashMap_KeySetView::add(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -20,7 +20,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::addAll(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -28,7 +28,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::contains(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -36,7 +36,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::equals(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,7 +44,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentHashMap_KeySetView::forEach(JObject arg0)
+	void ConcurrentHashMap_KeySetView::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -52,35 +52,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ConcurrentHashMap ConcurrentHashMap_KeySetView::getMap()
+	java::util::concurrent::ConcurrentHashMap ConcurrentHashMap_KeySetView::getMap() const
 	{
 		return callObjectMethod(
 			"getMap",
 			"()Ljava/util/concurrent/ConcurrentHashMap;"
 		);
 	}
-	JObject ConcurrentHashMap_KeySetView::getMappedValue()
+	JObject ConcurrentHashMap_KeySetView::getMappedValue() const
 	{
 		return callObjectMethod(
 			"getMappedValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint ConcurrentHashMap_KeySetView::hashCode()
+	jint ConcurrentHashMap_KeySetView::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObject ConcurrentHashMap_KeySetView::iterator()
+	JObject ConcurrentHashMap_KeySetView::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::remove(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -88,7 +88,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentHashMap_KeySetView::removeAll(JObject arg0)
+	jboolean ConcurrentHashMap_KeySetView::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -96,7 +96,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ConcurrentHashMap_KeySetView::spliterator()
+	JObject ConcurrentHashMap_KeySetView::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",

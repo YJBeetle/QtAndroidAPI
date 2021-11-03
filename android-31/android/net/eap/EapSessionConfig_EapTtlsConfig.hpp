@@ -26,10 +26,10 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::net::eap::EapSessionConfig getInnerEapSessionConfig();
-		java::security::cert::X509Certificate getServerCaCert();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		android::net::eap::EapSessionConfig getInnerEapSessionConfig() const;
+		java::security::cert::X509Certificate getServerCaCert() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

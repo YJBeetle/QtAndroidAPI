@@ -25,12 +25,12 @@ namespace android::view::inputmethod
 		CorrectionInfo(jint arg0, JString arg1, JString arg2);
 		
 		// Methods
-		jint describeContents();
-		JString getNewText();
-		jint getOffset();
-		JString getOldText();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getNewText() const;
+		jint getOffset() const;
+		JString getOldText() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

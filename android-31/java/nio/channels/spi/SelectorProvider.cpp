@@ -24,21 +24,21 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	JObject SelectorProvider::inheritedChannel()
+	JObject SelectorProvider::inheritedChannel() const
 	{
 		return callObjectMethod(
 			"inheritedChannel",
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
-	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel()
+	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel() const
 	{
 		return callObjectMethod(
 			"openDatagramChannel",
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel(JObject arg0)
+	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel(JObject arg0) const
 	{
 		return callObjectMethod(
 			"openDatagramChannel",
@@ -46,28 +46,28 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	java::nio::channels::Pipe SelectorProvider::openPipe()
+	java::nio::channels::Pipe SelectorProvider::openPipe() const
 	{
 		return callObjectMethod(
 			"openPipe",
 			"()Ljava/nio/channels/Pipe;"
 		);
 	}
-	java::nio::channels::spi::AbstractSelector SelectorProvider::openSelector()
+	java::nio::channels::spi::AbstractSelector SelectorProvider::openSelector() const
 	{
 		return callObjectMethod(
 			"openSelector",
 			"()Ljava/nio/channels/spi/AbstractSelector;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel()
+	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel() const
 	{
 		return callObjectMethod(
 			"openServerSocketChannel",
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel(JObject arg0)
+	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel(JObject arg0) const
 	{
 		return callObjectMethod(
 			"openServerSocketChannel",
@@ -75,14 +75,14 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel()
+	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel() const
 	{
 		return callObjectMethod(
 			"openSocketChannel",
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel(JObject arg0)
+	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel(JObject arg0) const
 	{
 		return callObjectMethod(
 			"openSocketChannel",

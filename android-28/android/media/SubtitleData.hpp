@@ -22,10 +22,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getData();
-		jlong getDurationUs();
-		jlong getStartTimeUs();
-		jint getTrackIndex();
+		JByteArray getData() const;
+		jlong getDurationUs() const;
+		jlong getStartTimeUs() const;
+		jint getTrackIndex() const;
 	};
 } // namespace android::media
 

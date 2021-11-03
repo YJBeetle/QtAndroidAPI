@@ -23,7 +23,7 @@ namespace java::security
 		GuardedObject(JObject arg0, JObject arg1);
 		
 		// Methods
-		JObject getObject();
+		JObject getObject() const;
 	};
 } // namespace java::security
 

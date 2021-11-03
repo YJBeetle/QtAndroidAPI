@@ -19,14 +19,14 @@ namespace java::io
 	// Constructors
 	
 	// Methods
-	void Console::flush()
+	void Console::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::io::Console Console::format(JString arg0, JObjectArray arg1)
+	java::io::Console Console::format(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"format",
@@ -35,7 +35,7 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::Console Console::printf(JString arg0, JObjectArray arg1)
+	java::io::Console Console::printf(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"printf",
@@ -44,14 +44,14 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	JString Console::readLine()
+	JString Console::readLine() const
 	{
 		return callObjectMethod(
 			"readLine",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Console::readLine(JString arg0, JObjectArray arg1)
+	JString Console::readLine(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"readLine",
@@ -60,14 +60,14 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	JCharArray Console::readPassword()
+	JCharArray Console::readPassword() const
 	{
 		return callObjectMethod(
 			"readPassword",
 			"()[C"
 		);
 	}
-	JCharArray Console::readPassword(JString arg0, JObjectArray arg1)
+	JCharArray Console::readPassword(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"readPassword",
@@ -76,14 +76,14 @@ namespace java::io
 			arg1.object<jobjectArray>()
 		);
 	}
-	java::io::Reader Console::reader()
+	java::io::Reader Console::reader() const
 	{
 		return callObjectMethod(
 			"reader",
 			"()Ljava/io/Reader;"
 		);
 	}
-	java::io::PrintWriter Console::writer()
+	java::io::PrintWriter Console::writer() const
 	{
 		return callObjectMethod(
 			"writer",

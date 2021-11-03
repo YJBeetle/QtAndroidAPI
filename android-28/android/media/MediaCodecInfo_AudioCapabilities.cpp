@@ -13,35 +13,35 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::util::Range MediaCodecInfo_AudioCapabilities::getBitrateRange()
+	android::util::Range MediaCodecInfo_AudioCapabilities::getBitrateRange() const
 	{
 		return callObjectMethod(
 			"getBitrateRange",
 			"()Landroid/util/Range;"
 		);
 	}
-	jint MediaCodecInfo_AudioCapabilities::getMaxInputChannelCount()
+	jint MediaCodecInfo_AudioCapabilities::getMaxInputChannelCount() const
 	{
 		return callMethod<jint>(
 			"getMaxInputChannelCount",
 			"()I"
 		);
 	}
-	JArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges()
+	JArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRateRanges() const
 	{
 		return callObjectMethod(
 			"getSupportedSampleRateRanges",
 			"()[Landroid/util/Range;"
 		);
 	}
-	JIntArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates()
+	JIntArray MediaCodecInfo_AudioCapabilities::getSupportedSampleRates() const
 	{
 		return callObjectMethod(
 			"getSupportedSampleRates",
 			"()[I"
 		);
 	}
-	jboolean MediaCodecInfo_AudioCapabilities::isSampleRateSupported(jint arg0)
+	jboolean MediaCodecInfo_AudioCapabilities::isSampleRateSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSampleRateSupported",

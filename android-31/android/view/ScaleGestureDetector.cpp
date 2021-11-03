@@ -28,105 +28,105 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jfloat ScaleGestureDetector::getCurrentSpan()
+	jfloat ScaleGestureDetector::getCurrentSpan() const
 	{
 		return callMethod<jfloat>(
 			"getCurrentSpan",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getCurrentSpanX()
+	jfloat ScaleGestureDetector::getCurrentSpanX() const
 	{
 		return callMethod<jfloat>(
 			"getCurrentSpanX",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getCurrentSpanY()
+	jfloat ScaleGestureDetector::getCurrentSpanY() const
 	{
 		return callMethod<jfloat>(
 			"getCurrentSpanY",
 			"()F"
 		);
 	}
-	jlong ScaleGestureDetector::getEventTime()
+	jlong ScaleGestureDetector::getEventTime() const
 	{
 		return callMethod<jlong>(
 			"getEventTime",
 			"()J"
 		);
 	}
-	jfloat ScaleGestureDetector::getFocusX()
+	jfloat ScaleGestureDetector::getFocusX() const
 	{
 		return callMethod<jfloat>(
 			"getFocusX",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getFocusY()
+	jfloat ScaleGestureDetector::getFocusY() const
 	{
 		return callMethod<jfloat>(
 			"getFocusY",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getPreviousSpan()
+	jfloat ScaleGestureDetector::getPreviousSpan() const
 	{
 		return callMethod<jfloat>(
 			"getPreviousSpan",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getPreviousSpanX()
+	jfloat ScaleGestureDetector::getPreviousSpanX() const
 	{
 		return callMethod<jfloat>(
 			"getPreviousSpanX",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getPreviousSpanY()
+	jfloat ScaleGestureDetector::getPreviousSpanY() const
 	{
 		return callMethod<jfloat>(
 			"getPreviousSpanY",
 			"()F"
 		);
 	}
-	jfloat ScaleGestureDetector::getScaleFactor()
+	jfloat ScaleGestureDetector::getScaleFactor() const
 	{
 		return callMethod<jfloat>(
 			"getScaleFactor",
 			"()F"
 		);
 	}
-	jlong ScaleGestureDetector::getTimeDelta()
+	jlong ScaleGestureDetector::getTimeDelta() const
 	{
 		return callMethod<jlong>(
 			"getTimeDelta",
 			"()J"
 		);
 	}
-	jboolean ScaleGestureDetector::isInProgress()
+	jboolean ScaleGestureDetector::isInProgress() const
 	{
 		return callMethod<jboolean>(
 			"isInProgress",
 			"()Z"
 		);
 	}
-	jboolean ScaleGestureDetector::isQuickScaleEnabled()
+	jboolean ScaleGestureDetector::isQuickScaleEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isQuickScaleEnabled",
 			"()Z"
 		);
 	}
-	jboolean ScaleGestureDetector::isStylusScaleEnabled()
+	jboolean ScaleGestureDetector::isStylusScaleEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isStylusScaleEnabled",
 			"()Z"
 		);
 	}
-	jboolean ScaleGestureDetector::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean ScaleGestureDetector::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -134,7 +134,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0)
+	void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setQuickScaleEnabled",
@@ -142,7 +142,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0)
+	void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStylusScaleEnabled",

@@ -23,14 +23,14 @@ namespace android::os
 		) {}
 	
 	// Methods
-	java::lang::RuntimeException RemoteException::rethrowAsRuntimeException()
+	java::lang::RuntimeException RemoteException::rethrowAsRuntimeException() const
 	{
 		return callObjectMethod(
 			"rethrowAsRuntimeException",
 			"()Ljava/lang/RuntimeException;"
 		);
 	}
-	java::lang::RuntimeException RemoteException::rethrowFromSystemServer()
+	java::lang::RuntimeException RemoteException::rethrowFromSystemServer() const
 	{
 		return callObjectMethod(
 			"rethrowFromSystemServer",

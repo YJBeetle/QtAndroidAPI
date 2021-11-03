@@ -19,7 +19,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jboolean AtomicMarkableReference::attemptMark(JObject arg0, jboolean arg1)
+	jboolean AtomicMarkableReference::attemptMark(JObject arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"attemptMark",
@@ -28,7 +28,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicMarkableReference::compareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3)
+	jboolean AtomicMarkableReference::compareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -39,7 +39,7 @@ namespace java::util::concurrent::atomic
 			arg3
 		);
 	}
-	JObject AtomicMarkableReference::get(JBooleanArray arg0)
+	JObject AtomicMarkableReference::get(JBooleanArray arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -47,21 +47,21 @@ namespace java::util::concurrent::atomic
 			arg0.object<jbooleanArray>()
 		);
 	}
-	JObject AtomicMarkableReference::getReference()
+	JObject AtomicMarkableReference::getReference() const
 	{
 		return callObjectMethod(
 			"getReference",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean AtomicMarkableReference::isMarked()
+	jboolean AtomicMarkableReference::isMarked() const
 	{
 		return callMethod<jboolean>(
 			"isMarked",
 			"()Z"
 		);
 	}
-	void AtomicMarkableReference::set(JObject arg0, jboolean arg1)
+	void AtomicMarkableReference::set(JObject arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"set",
@@ -70,7 +70,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicMarkableReference::weakCompareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3)
+	jboolean AtomicMarkableReference::weakCompareAndSet(JObject arg0, JObject arg1, jboolean arg2, jboolean arg3) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",

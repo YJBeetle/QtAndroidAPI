@@ -34,8 +34,8 @@ namespace android::provider
 		SearchRecentSuggestions(android::content::Context arg0, JString arg1, jint arg2);
 		
 		// Methods
-		void clearHistory();
-		void saveRecentQuery(JString arg0, JString arg1);
+		void clearHistory() const;
+		void saveRecentQuery(JString arg0, JString arg1) const;
 	};
 } // namespace android::provider
 

@@ -23,11 +23,11 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getDataType();
-		JString getName();
-		jint getRole();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getDataType() const;
+		JString getName() const;
+		jint getRole() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

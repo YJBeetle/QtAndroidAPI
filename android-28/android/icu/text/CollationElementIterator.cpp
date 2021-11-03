@@ -55,7 +55,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean CollationElementIterator::equals(JObject arg0)
+	jboolean CollationElementIterator::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,7 +63,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jint CollationElementIterator::getMaxExpansion(jint arg0)
+	jint CollationElementIterator::getMaxExpansion(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMaxExpansion",
@@ -71,42 +71,42 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint CollationElementIterator::getOffset()
+	jint CollationElementIterator::getOffset() const
 	{
 		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
-	jint CollationElementIterator::hashCode()
+	jint CollationElementIterator::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint CollationElementIterator::next()
+	jint CollationElementIterator::next() const
 	{
 		return callMethod<jint>(
 			"next",
 			"()I"
 		);
 	}
-	jint CollationElementIterator::previous()
+	jint CollationElementIterator::previous() const
 	{
 		return callMethod<jint>(
 			"previous",
 			"()I"
 		);
 	}
-	void CollationElementIterator::reset()
+	void CollationElementIterator::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void CollationElementIterator::setOffset(jint arg0)
+	void CollationElementIterator::setOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setOffset",
@@ -114,7 +114,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void CollationElementIterator::setText(android::icu::text::UCharacterIterator arg0)
+	void CollationElementIterator::setText(android::icu::text::UCharacterIterator arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -122,7 +122,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void CollationElementIterator::setText(JString arg0)
+	void CollationElementIterator::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -130,7 +130,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void CollationElementIterator::setText(JObject arg0)
+	void CollationElementIterator::setText(JObject arg0) const
 	{
 		callMethod<void>(
 			"setText",

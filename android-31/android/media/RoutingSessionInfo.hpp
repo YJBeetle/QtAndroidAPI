@@ -29,22 +29,22 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getClientPackageName();
-		android::os::Bundle getControlHints();
-		JObject getDeselectableRoutes();
-		JString getId();
-		JString getName();
-		JObject getSelectableRoutes();
-		JObject getSelectedRoutes();
-		JObject getTransferableRoutes();
-		jint getVolume();
-		jint getVolumeHandling();
-		jint getVolumeMax();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getClientPackageName() const;
+		android::os::Bundle getControlHints() const;
+		JObject getDeselectableRoutes() const;
+		JString getId() const;
+		JString getName() const;
+		JObject getSelectableRoutes() const;
+		JObject getSelectedRoutes() const;
+		JObject getTransferableRoutes() const;
+		jint getVolume() const;
+		jint getVolumeHandling() const;
+		jint getVolumeMax() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

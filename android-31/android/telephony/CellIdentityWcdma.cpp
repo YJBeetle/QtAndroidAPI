@@ -22,7 +22,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean CellIdentityWcdma::equals(JObject arg0)
+	jboolean CellIdentityWcdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -30,98 +30,98 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JObject CellIdentityWcdma::getAdditionalPlmns()
+	JObject CellIdentityWcdma::getAdditionalPlmns() const
 	{
 		return callObjectMethod(
 			"getAdditionalPlmns",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint CellIdentityWcdma::getCid()
+	jint CellIdentityWcdma::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	android::telephony::ClosedSubscriberGroupInfo CellIdentityWcdma::getClosedSubscriberGroupInfo()
+	android::telephony::ClosedSubscriberGroupInfo CellIdentityWcdma::getClosedSubscriberGroupInfo() const
 	{
 		return callObjectMethod(
 			"getClosedSubscriberGroupInfo",
 			"()Landroid/telephony/ClosedSubscriberGroupInfo;"
 		);
 	}
-	jint CellIdentityWcdma::getLac()
+	jint CellIdentityWcdma::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	jint CellIdentityWcdma::getMcc()
+	jint CellIdentityWcdma::getMcc() const
 	{
 		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
-	JString CellIdentityWcdma::getMccString()
+	JString CellIdentityWcdma::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityWcdma::getMnc()
+	jint CellIdentityWcdma::getMnc() const
 	{
 		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
-	JString CellIdentityWcdma::getMncString()
+	JString CellIdentityWcdma::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityWcdma::getMobileNetworkOperator()
+	JString CellIdentityWcdma::getMobileNetworkOperator() const
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityWcdma::getPsc()
+	jint CellIdentityWcdma::getPsc() const
 	{
 		return callMethod<jint>(
 			"getPsc",
 			"()I"
 		);
 	}
-	jint CellIdentityWcdma::getUarfcn()
+	jint CellIdentityWcdma::getUarfcn() const
 	{
 		return callMethod<jint>(
 			"getUarfcn",
 			"()I"
 		);
 	}
-	jint CellIdentityWcdma::hashCode()
+	jint CellIdentityWcdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityWcdma::toString()
+	JString CellIdentityWcdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityWcdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityWcdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

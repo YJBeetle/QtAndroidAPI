@@ -57,14 +57,14 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jint Display_HdrCapabilities::describeContents()
+	jint Display_HdrCapabilities::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Display_HdrCapabilities::equals(JObject arg0)
+	jboolean Display_HdrCapabilities::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -72,49 +72,49 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
+	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance() const
 	{
 		return callMethod<jfloat>(
 			"getDesiredMaxAverageLuminance",
 			"()F"
 		);
 	}
-	jfloat Display_HdrCapabilities::getDesiredMaxLuminance()
+	jfloat Display_HdrCapabilities::getDesiredMaxLuminance() const
 	{
 		return callMethod<jfloat>(
 			"getDesiredMaxLuminance",
 			"()F"
 		);
 	}
-	jfloat Display_HdrCapabilities::getDesiredMinLuminance()
+	jfloat Display_HdrCapabilities::getDesiredMinLuminance() const
 	{
 		return callMethod<jfloat>(
 			"getDesiredMinLuminance",
 			"()F"
 		);
 	}
-	JIntArray Display_HdrCapabilities::getSupportedHdrTypes()
+	JIntArray Display_HdrCapabilities::getSupportedHdrTypes() const
 	{
 		return callObjectMethod(
 			"getSupportedHdrTypes",
 			"()[I"
 		);
 	}
-	jint Display_HdrCapabilities::hashCode()
+	jint Display_HdrCapabilities::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Display_HdrCapabilities::toString()
+	JString Display_HdrCapabilities::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Display_HdrCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Display_HdrCapabilities::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

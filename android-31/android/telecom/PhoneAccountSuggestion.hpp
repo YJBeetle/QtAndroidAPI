@@ -33,13 +33,13 @@ namespace android::telecom
 		PhoneAccountSuggestion(android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
-		jint getReason();
-		jint hashCode();
-		jboolean shouldAutoSelect();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::telecom::PhoneAccountHandle getPhoneAccountHandle() const;
+		jint getReason() const;
+		jint hashCode() const;
+		jboolean shouldAutoSelect() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

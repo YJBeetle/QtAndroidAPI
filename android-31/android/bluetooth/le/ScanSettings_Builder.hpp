@@ -22,14 +22,14 @@ namespace android::bluetooth::le
 		ScanSettings_Builder();
 		
 		// Methods
-		android::bluetooth::le::ScanSettings build();
-		android::bluetooth::le::ScanSettings_Builder setCallbackType(jint arg0);
-		android::bluetooth::le::ScanSettings_Builder setLegacy(jboolean arg0);
-		android::bluetooth::le::ScanSettings_Builder setMatchMode(jint arg0);
-		android::bluetooth::le::ScanSettings_Builder setNumOfMatches(jint arg0);
-		android::bluetooth::le::ScanSettings_Builder setPhy(jint arg0);
-		android::bluetooth::le::ScanSettings_Builder setReportDelay(jlong arg0);
-		android::bluetooth::le::ScanSettings_Builder setScanMode(jint arg0);
+		android::bluetooth::le::ScanSettings build() const;
+		android::bluetooth::le::ScanSettings_Builder setCallbackType(jint arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setLegacy(jboolean arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setMatchMode(jint arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setNumOfMatches(jint arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setPhy(jint arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setReportDelay(jlong arg0) const;
+		android::bluetooth::le::ScanSettings_Builder setScanMode(jint arg0) const;
 	};
 } // namespace android::bluetooth::le
 

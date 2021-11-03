@@ -16,12 +16,12 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getMigrators();
-		JObject getSchemas();
-		JObject getSchemasNotDisplayedBySystem();
-		JObject getSchemasVisibleToPackages();
-		jint getVersion();
-		jboolean isForceOverride();
+		JObject getMigrators() const;
+		JObject getSchemas() const;
+		JObject getSchemasNotDisplayedBySystem() const;
+		JObject getSchemasVisibleToPackages() const;
+		jint getVersion() const;
+		jboolean isForceOverride() const;
 	};
 } // namespace android::app::appsearch
 

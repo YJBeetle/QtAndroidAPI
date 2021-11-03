@@ -28,35 +28,35 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyStore_PrivateKeyEntry::getAttributes()
+	JObject KeyStore_PrivateKeyEntry::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::security::cert::Certificate KeyStore_PrivateKeyEntry::getCertificate()
+	java::security::cert::Certificate KeyStore_PrivateKeyEntry::getCertificate() const
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"()Ljava/security/cert/Certificate;"
 		);
 	}
-	JArray KeyStore_PrivateKeyEntry::getCertificateChain()
+	JArray KeyStore_PrivateKeyEntry::getCertificateChain() const
 	{
 		return callObjectMethod(
 			"getCertificateChain",
 			"()[Ljava/security/cert/Certificate;"
 		);
 	}
-	JObject KeyStore_PrivateKeyEntry::getPrivateKey()
+	JObject KeyStore_PrivateKeyEntry::getPrivateKey() const
 	{
 		return callObjectMethod(
 			"getPrivateKey",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	JString KeyStore_PrivateKeyEntry::toString()
+	JString KeyStore_PrivateKeyEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",

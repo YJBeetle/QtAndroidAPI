@@ -26,11 +26,11 @@ namespace android::database
 		ContentObserver(android::os::Handler arg0);
 		
 		// Methods
-		jboolean deliverSelfNotifications();
-		void dispatchChange(jboolean arg0);
-		void dispatchChange(jboolean arg0, android::net::Uri arg1);
-		void onChange(jboolean arg0);
-		void onChange(jboolean arg0, android::net::Uri arg1);
+		jboolean deliverSelfNotifications() const;
+		void dispatchChange(jboolean arg0) const;
+		void dispatchChange(jboolean arg0, android::net::Uri arg1) const;
+		void onChange(jboolean arg0) const;
+		void onChange(jboolean arg0, android::net::Uri arg1) const;
 	};
 } // namespace android::database
 

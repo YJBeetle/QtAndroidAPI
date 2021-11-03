@@ -22,7 +22,7 @@ namespace android::os
 		ParcelFileDescriptor_AutoCloseOutputStream(android::os::ParcelFileDescriptor arg0);
 		
 		// Methods
-		void close();
+		void close() const;
 	};
 } // namespace android::os
 

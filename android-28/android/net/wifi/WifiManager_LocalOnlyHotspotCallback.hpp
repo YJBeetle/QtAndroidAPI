@@ -26,9 +26,9 @@ namespace android::net::wifi
 		WifiManager_LocalOnlyHotspotCallback();
 		
 		// Methods
-		void onFailed(jint arg0);
-		void onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0);
-		void onStopped();
+		void onFailed(jint arg0) const;
+		void onStarted(android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0) const;
+		void onStopped() const;
 	};
 } // namespace android::net::wifi
 

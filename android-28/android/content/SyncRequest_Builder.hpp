@@ -31,18 +31,18 @@ namespace android::content
 		SyncRequest_Builder();
 		
 		// Methods
-		android::content::SyncRequest build();
-		android::content::SyncRequest_Builder setDisallowMetered(jboolean arg0);
-		android::content::SyncRequest_Builder setExpedited(jboolean arg0);
-		android::content::SyncRequest_Builder setExtras(android::os::Bundle arg0);
-		android::content::SyncRequest_Builder setIgnoreBackoff(jboolean arg0);
-		android::content::SyncRequest_Builder setIgnoreSettings(jboolean arg0);
-		android::content::SyncRequest_Builder setManual(jboolean arg0);
-		android::content::SyncRequest_Builder setNoRetry(jboolean arg0);
-		android::content::SyncRequest_Builder setRequiresCharging(jboolean arg0);
-		android::content::SyncRequest_Builder setSyncAdapter(android::accounts::Account arg0, JString arg1);
-		android::content::SyncRequest_Builder syncOnce();
-		android::content::SyncRequest_Builder syncPeriodic(jlong arg0, jlong arg1);
+		android::content::SyncRequest build() const;
+		android::content::SyncRequest_Builder setDisallowMetered(jboolean arg0) const;
+		android::content::SyncRequest_Builder setExpedited(jboolean arg0) const;
+		android::content::SyncRequest_Builder setExtras(android::os::Bundle arg0) const;
+		android::content::SyncRequest_Builder setIgnoreBackoff(jboolean arg0) const;
+		android::content::SyncRequest_Builder setIgnoreSettings(jboolean arg0) const;
+		android::content::SyncRequest_Builder setManual(jboolean arg0) const;
+		android::content::SyncRequest_Builder setNoRetry(jboolean arg0) const;
+		android::content::SyncRequest_Builder setRequiresCharging(jboolean arg0) const;
+		android::content::SyncRequest_Builder setSyncAdapter(android::accounts::Account arg0, JString arg1) const;
+		android::content::SyncRequest_Builder syncOnce() const;
+		android::content::SyncRequest_Builder syncPeriodic(jlong arg0, jlong arg1) const;
 	};
 } // namespace android::content
 

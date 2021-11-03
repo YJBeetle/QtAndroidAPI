@@ -31,21 +31,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::AlertDialog AlertDialog_Builder::create()
+	android::app::AlertDialog AlertDialog_Builder::create() const
 	{
 		return callObjectMethod(
 			"create",
 			"()Landroid/app/AlertDialog;"
 		);
 	}
-	android::content::Context AlertDialog_Builder::getContext()
+	android::content::Context AlertDialog_Builder::getContext() const
 	{
 		return callObjectMethod(
 			"getContext",
 			"()Landroid/content/Context;"
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setAdapter(JObject arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setAdapter(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setAdapter",
@@ -54,7 +54,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setCancelable(jboolean arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCancelable(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setCancelable",
@@ -62,7 +62,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setCursor(JObject arg0, JObject arg1, JString arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCursor(JObject arg0, JObject arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"setCursor",
@@ -72,7 +72,7 @@ namespace android::app
 			arg2.object<jstring>()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setCustomTitle(android::view::View arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setCustomTitle(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"setCustomTitle",
@@ -80,7 +80,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(android::graphics::drawable::Drawable arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -88,7 +88,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"setIcon",
@@ -96,7 +96,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setIconAttribute(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setIconAttribute(jint arg0) const
 	{
 		return callObjectMethod(
 			"setIconAttribute",
@@ -104,7 +104,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setInverseBackgroundForced(jboolean arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setInverseBackgroundForced(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setInverseBackgroundForced",
@@ -112,7 +112,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(JArray arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(JArray arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setItems",
@@ -121,7 +121,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(jint arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setItems(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setItems",
@@ -130,7 +130,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMessage",
@@ -138,7 +138,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(JString arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMessage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setMessage",
@@ -146,7 +146,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JArray arg0, JBooleanArray arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JArray arg0, JBooleanArray arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -156,7 +156,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jint arg0, JBooleanArray arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(jint arg0, JBooleanArray arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -166,7 +166,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JObject arg0, JString arg1, JString arg2, JObject arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setMultiChoiceItems(JObject arg0, JString arg1, JString arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"setMultiChoiceItems",
@@ -177,7 +177,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(jint arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -186,7 +186,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(JString arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNegativeButton(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -195,7 +195,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(jint arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setNeutralButton",
@@ -204,7 +204,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(JString arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setNeutralButton(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setNeutralButton",
@@ -213,7 +213,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setOnCancelListener(JObject arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnCancelListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnCancelListener",
@@ -221,7 +221,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setOnDismissListener(JObject arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnDismissListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnDismissListener",
@@ -229,7 +229,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setOnItemSelectedListener(JObject arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnItemSelectedListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnItemSelectedListener",
@@ -237,7 +237,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setOnKeyListener(JObject arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setOnKeyListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setOnKeyListener",
@@ -245,7 +245,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(jint arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setPositiveButton",
@@ -254,7 +254,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(JString arg0, JObject arg1)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setPositiveButton(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setPositiveButton",
@@ -263,7 +263,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JArray arg0, jint arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JArray arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -273,7 +273,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -283,7 +283,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(jint arg0, jint arg1, JObject arg2)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(jint arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -293,7 +293,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, JString arg2, JObject arg3)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setSingleChoiceItems(JObject arg0, jint arg1, JString arg2, JObject arg3) const
 	{
 		return callObjectMethod(
 			"setSingleChoiceItems",
@@ -304,7 +304,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -312,7 +312,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(JString arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",
@@ -320,7 +320,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setView(android::view::View arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setView(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"setView",
@@ -328,7 +328,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlertDialog_Builder AlertDialog_Builder::setView(jint arg0)
+	android::app::AlertDialog_Builder AlertDialog_Builder::setView(jint arg0) const
 	{
 		return callObjectMethod(
 			"setView",
@@ -336,7 +336,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::AlertDialog AlertDialog_Builder::show()
+	android::app::AlertDialog AlertDialog_Builder::show() const
 	{
 		return callObjectMethod(
 			"show",

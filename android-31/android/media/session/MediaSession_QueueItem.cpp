@@ -36,14 +36,14 @@ namespace android::media::session
 		) {}
 	
 	// Methods
-	jint MediaSession_QueueItem::describeContents()
+	jint MediaSession_QueueItem::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaSession_QueueItem::equals(JObject arg0)
+	jboolean MediaSession_QueueItem::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,28 +51,28 @@ namespace android::media::session
 			arg0.object<jobject>()
 		);
 	}
-	android::media::MediaDescription MediaSession_QueueItem::getDescription()
+	android::media::MediaDescription MediaSession_QueueItem::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	jlong MediaSession_QueueItem::getQueueId()
+	jlong MediaSession_QueueItem::getQueueId() const
 	{
 		return callMethod<jlong>(
 			"getQueueId",
 			"()J"
 		);
 	}
-	JString MediaSession_QueueItem::toString()
+	JString MediaSession_QueueItem::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaSession_QueueItem::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaSession_QueueItem::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

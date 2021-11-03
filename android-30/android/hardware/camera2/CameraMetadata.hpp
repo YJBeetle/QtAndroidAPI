@@ -235,7 +235,7 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		JObject getKeys();
+		JObject getKeys() const;
 	};
 } // namespace android::hardware::camera2
 

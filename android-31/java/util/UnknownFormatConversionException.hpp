@@ -19,8 +19,8 @@ namespace java::util
 		UnknownFormatConversionException(JString arg0);
 		
 		// Methods
-		JString getConversion();
-		JString getMessage();
+		JString getConversion() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

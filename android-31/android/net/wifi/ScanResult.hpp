@@ -55,13 +55,13 @@ namespace android::net::wifi
 		// Methods
 		static jint convertChannelToFrequencyMhzIfSupported(jint arg0, jint arg1);
 		static jint convertFrequencyMhzToChannelIfSupported(jint arg0);
-		jint describeContents();
-		JObject getInformationElements();
-		jint getWifiStandard();
-		jboolean is80211mcResponder();
-		jboolean isPasspointNetwork();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getInformationElements() const;
+		jint getWifiStandard() const;
+		jboolean is80211mcResponder() const;
+		jboolean isPasspointNetwork() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

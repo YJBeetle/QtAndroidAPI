@@ -136,21 +136,21 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void Formatter::close()
+	void Formatter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Formatter::flush()
+	void Formatter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::util::Formatter Formatter::format(JString arg0, JObjectArray arg1)
+	java::util::Formatter Formatter::format(JString arg0, JObjectArray arg1) const
 	{
 		return callObjectMethod(
 			"format",
@@ -159,7 +159,7 @@ namespace java::util
 			arg1.object<jobjectArray>()
 		);
 	}
-	java::util::Formatter Formatter::format(java::util::Locale arg0, JString arg1, JObjectArray arg2)
+	java::util::Formatter Formatter::format(java::util::Locale arg0, JString arg1, JObjectArray arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -169,28 +169,28 @@ namespace java::util
 			arg2.object<jobjectArray>()
 		);
 	}
-	java::io::IOException Formatter::ioException()
+	java::io::IOException Formatter::ioException() const
 	{
 		return callObjectMethod(
 			"ioException",
 			"()Ljava/io/IOException;"
 		);
 	}
-	java::util::Locale Formatter::locale()
+	java::util::Locale Formatter::locale() const
 	{
 		return callObjectMethod(
 			"locale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JObject Formatter::out()
+	JObject Formatter::out() const
 	{
 		return callObjectMethod(
 			"out",
 			"()Ljava/lang/Appendable;"
 		);
 	}
-	JString Formatter::toString()
+	JString Formatter::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -20,8 +20,8 @@ namespace java::text
 		Annotation(JObject arg0);
 		
 		// Methods
-		JObject getValue();
-		JString toString();
+		JObject getValue() const;
+		JString toString() const;
 	};
 } // namespace java::text
 

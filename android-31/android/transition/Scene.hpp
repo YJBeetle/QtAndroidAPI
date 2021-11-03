@@ -34,11 +34,11 @@ namespace android::transition
 		// Methods
 		static android::transition::Scene getCurrentScene(android::view::ViewGroup arg0);
 		static android::transition::Scene getSceneForLayout(android::view::ViewGroup arg0, jint arg1, android::content::Context arg2);
-		void enter();
-		void exit();
-		android::view::ViewGroup getSceneRoot();
-		void setEnterAction(JObject arg0);
-		void setExitAction(JObject arg0);
+		void enter() const;
+		void exit() const;
+		android::view::ViewGroup getSceneRoot() const;
+		void setEnterAction(JObject arg0) const;
+		void setExitAction(JObject arg0) const;
 	};
 } // namespace android::transition
 

@@ -47,7 +47,7 @@ namespace android::telephony::ims::feature
 	// Constructors
 	
 	// Methods
-	jboolean MmTelFeature_MmTelCapabilities::equals(JObject arg0)
+	jboolean MmTelFeature_MmTelCapabilities::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,14 +55,14 @@ namespace android::telephony::ims::feature
 			arg0.object<jobject>()
 		);
 	}
-	jint MmTelFeature_MmTelCapabilities::hashCode()
+	jint MmTelFeature_MmTelCapabilities::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean MmTelFeature_MmTelCapabilities::isCapable(jint arg0)
+	jboolean MmTelFeature_MmTelCapabilities::isCapable(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCapable",
@@ -70,7 +70,7 @@ namespace android::telephony::ims::feature
 			arg0
 		);
 	}
-	JString MmTelFeature_MmTelCapabilities::toString()
+	JString MmTelFeature_MmTelCapabilities::toString() const
 	{
 		return callObjectMethod(
 			"toString",

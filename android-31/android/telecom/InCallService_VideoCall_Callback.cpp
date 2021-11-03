@@ -17,7 +17,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void InCallService_VideoCall_Callback::onCallDataUsageChanged(jlong arg0)
+	void InCallService_VideoCall_Callback::onCallDataUsageChanged(jlong arg0) const
 	{
 		callMethod<void>(
 			"onCallDataUsageChanged",
@@ -25,7 +25,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall_Callback::onCallSessionEvent(jint arg0)
+	void InCallService_VideoCall_Callback::onCallSessionEvent(jint arg0) const
 	{
 		callMethod<void>(
 			"onCallSessionEvent",
@@ -33,7 +33,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall_Callback::onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0)
+	void InCallService_VideoCall_Callback::onCameraCapabilitiesChanged(android::telecom::VideoProfile_CameraCapabilities arg0) const
 	{
 		callMethod<void>(
 			"onCameraCapabilitiesChanged",
@@ -41,7 +41,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall_Callback::onPeerDimensionsChanged(jint arg0, jint arg1)
+	void InCallService_VideoCall_Callback::onPeerDimensionsChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onPeerDimensionsChanged",
@@ -50,7 +50,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void InCallService_VideoCall_Callback::onSessionModifyRequestReceived(android::telecom::VideoProfile arg0)
+	void InCallService_VideoCall_Callback::onSessionModifyRequestReceived(android::telecom::VideoProfile arg0) const
 	{
 		callMethod<void>(
 			"onSessionModifyRequestReceived",
@@ -58,7 +58,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService_VideoCall_Callback::onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2)
+	void InCallService_VideoCall_Callback::onSessionModifyResponseReceived(jint arg0, android::telecom::VideoProfile arg1, android::telecom::VideoProfile arg2) const
 	{
 		callMethod<void>(
 			"onSessionModifyResponseReceived",
@@ -68,7 +68,7 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void InCallService_VideoCall_Callback::onVideoQualityChanged(jint arg0)
+	void InCallService_VideoCall_Callback::onVideoQualityChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onVideoQualityChanged",

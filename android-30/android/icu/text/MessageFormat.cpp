@@ -70,7 +70,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::applyPattern(JString arg0)
+	void MessageFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -78,7 +78,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void MessageFormat::applyPattern(JString arg0, android::icu::text::MessagePattern_ApostropheMode arg1)
+	void MessageFormat::applyPattern(JString arg0, android::icu::text::MessagePattern_ApostropheMode arg1) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -87,14 +87,14 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JObject MessageFormat::clone()
+	JObject MessageFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean MessageFormat::equals(JObject arg0)
+	jboolean MessageFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -102,7 +102,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer MessageFormat::format(JObjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(JObjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -112,7 +112,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer MessageFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer MessageFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -122,7 +122,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject MessageFormat::formatToCharacterIterator(JObject arg0)
+	JObject MessageFormat::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -130,21 +130,21 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::text::MessagePattern_ApostropheMode MessageFormat::getApostropheMode()
+	android::icu::text::MessagePattern_ApostropheMode MessageFormat::getApostropheMode() const
 	{
 		return callObjectMethod(
 			"getApostropheMode",
 			"()Landroid/icu/text/MessagePattern$ApostropheMode;"
 		);
 	}
-	JObject MessageFormat::getArgumentNames()
+	JObject MessageFormat::getArgumentNames() const
 	{
 		return callObjectMethod(
 			"getArgumentNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::text::Format MessageFormat::getFormatByArgumentName(JString arg0)
+	java::text::Format MessageFormat::getFormatByArgumentName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getFormatByArgumentName",
@@ -152,42 +152,42 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JArray MessageFormat::getFormats()
+	JArray MessageFormat::getFormats() const
 	{
 		return callObjectMethod(
 			"getFormats",
 			"()[Ljava/text/Format;"
 		);
 	}
-	JArray MessageFormat::getFormatsByArgumentIndex()
+	JArray MessageFormat::getFormatsByArgumentIndex() const
 	{
 		return callObjectMethod(
 			"getFormatsByArgumentIndex",
 			"()[Ljava/text/Format;"
 		);
 	}
-	java::util::Locale MessageFormat::getLocale()
+	java::util::Locale MessageFormat::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::icu::util::ULocale MessageFormat::getULocale()
+	android::icu::util::ULocale MessageFormat::getULocale() const
 	{
 		return callObjectMethod(
 			"getULocale",
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	jint MessageFormat::hashCode()
+	jint MessageFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JObjectArray MessageFormat::parse(JString arg0)
+	JObjectArray MessageFormat::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -195,7 +195,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObjectArray MessageFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	JObjectArray MessageFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -204,7 +204,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JObject MessageFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject MessageFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -213,7 +213,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JObject MessageFormat::parseToMap(JString arg0)
+	JObject MessageFormat::parseToMap(JString arg0) const
 	{
 		return callObjectMethod(
 			"parseToMap",
@@ -221,7 +221,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject MessageFormat::parseToMap(JString arg0, java::text::ParsePosition arg1)
+	JObject MessageFormat::parseToMap(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseToMap",
@@ -230,7 +230,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::setFormat(jint arg0, java::text::Format arg1)
+	void MessageFormat::setFormat(jint arg0, java::text::Format arg1) const
 	{
 		callMethod<void>(
 			"setFormat",
@@ -239,7 +239,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::setFormatByArgumentIndex(jint arg0, java::text::Format arg1)
+	void MessageFormat::setFormatByArgumentIndex(jint arg0, java::text::Format arg1) const
 	{
 		callMethod<void>(
 			"setFormatByArgumentIndex",
@@ -248,7 +248,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::setFormatByArgumentName(JString arg0, java::text::Format arg1)
+	void MessageFormat::setFormatByArgumentName(JString arg0, java::text::Format arg1) const
 	{
 		callMethod<void>(
 			"setFormatByArgumentName",
@@ -257,7 +257,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void MessageFormat::setFormats(JArray arg0)
+	void MessageFormat::setFormats(JArray arg0) const
 	{
 		callMethod<void>(
 			"setFormats",
@@ -265,7 +265,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void MessageFormat::setFormatsByArgumentIndex(JArray arg0)
+	void MessageFormat::setFormatsByArgumentIndex(JArray arg0) const
 	{
 		callMethod<void>(
 			"setFormatsByArgumentIndex",
@@ -273,7 +273,7 @@ namespace android::icu::text
 			arg0.object<jarray>()
 		);
 	}
-	void MessageFormat::setFormatsByArgumentName(JObject arg0)
+	void MessageFormat::setFormatsByArgumentName(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFormatsByArgumentName",
@@ -281,7 +281,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void MessageFormat::setLocale(android::icu::util::ULocale arg0)
+	void MessageFormat::setLocale(android::icu::util::ULocale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -289,7 +289,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void MessageFormat::setLocale(java::util::Locale arg0)
+	void MessageFormat::setLocale(java::util::Locale arg0) const
 	{
 		callMethod<void>(
 			"setLocale",
@@ -297,14 +297,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString MessageFormat::toPattern()
+	JString MessageFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean MessageFormat::usesNamedArguments()
+	jboolean MessageFormat::usesNamedArguments() const
 	{
 		return callMethod<jboolean>(
 			"usesNamedArguments",

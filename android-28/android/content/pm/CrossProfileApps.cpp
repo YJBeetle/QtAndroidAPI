@@ -14,7 +14,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0)
+	android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getProfileSwitchingIconDrawable",
@@ -22,7 +22,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
+	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getProfileSwitchingLabel",
@@ -30,14 +30,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject CrossProfileApps::getTargetUserProfiles()
+	JObject CrossProfileApps::getTargetUserProfiles() const
 	{
 		return callObjectMethod(
 			"getTargetUserProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	void CrossProfileApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	void CrossProfileApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"startMainActivity",

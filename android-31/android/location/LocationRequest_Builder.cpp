@@ -23,21 +23,21 @@ namespace android::location
 		) {}
 	
 	// Methods
-	android::location::LocationRequest LocationRequest_Builder::build()
+	android::location::LocationRequest LocationRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/LocationRequest;"
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::clearMinUpdateIntervalMillis()
+	android::location::LocationRequest_Builder LocationRequest_Builder::clearMinUpdateIntervalMillis() const
 	{
 		return callObjectMethod(
 			"clearMinUpdateIntervalMillis",
 			"()Landroid/location/LocationRequest$Builder;"
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setDurationMillis(jlong arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setDurationMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDurationMillis",
@@ -45,7 +45,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setIntervalMillis(jlong arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setIntervalMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setIntervalMillis",
@@ -53,7 +53,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setMaxUpdateDelayMillis(jlong arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setMaxUpdateDelayMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setMaxUpdateDelayMillis",
@@ -61,7 +61,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setMaxUpdates(jint arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setMaxUpdates(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxUpdates",
@@ -69,7 +69,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setMinUpdateDistanceMeters(jfloat arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setMinUpdateDistanceMeters(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setMinUpdateDistanceMeters",
@@ -77,7 +77,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setMinUpdateIntervalMillis(jlong arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setMinUpdateIntervalMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setMinUpdateIntervalMillis",
@@ -85,7 +85,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::LocationRequest_Builder LocationRequest_Builder::setQuality(jint arg0)
+	android::location::LocationRequest_Builder LocationRequest_Builder::setQuality(jint arg0) const
 	{
 		return callObjectMethod(
 			"setQuality",

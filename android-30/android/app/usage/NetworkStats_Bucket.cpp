@@ -127,84 +127,84 @@ namespace android::app::usage
 		) {}
 	
 	// Methods
-	jint NetworkStats_Bucket::getDefaultNetworkStatus()
+	jint NetworkStats_Bucket::getDefaultNetworkStatus() const
 	{
 		return callMethod<jint>(
 			"getDefaultNetworkStatus",
 			"()I"
 		);
 	}
-	jlong NetworkStats_Bucket::getEndTimeStamp()
+	jlong NetworkStats_Bucket::getEndTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getEndTimeStamp",
 			"()J"
 		);
 	}
-	jint NetworkStats_Bucket::getMetered()
+	jint NetworkStats_Bucket::getMetered() const
 	{
 		return callMethod<jint>(
 			"getMetered",
 			"()I"
 		);
 	}
-	jint NetworkStats_Bucket::getRoaming()
+	jint NetworkStats_Bucket::getRoaming() const
 	{
 		return callMethod<jint>(
 			"getRoaming",
 			"()I"
 		);
 	}
-	jlong NetworkStats_Bucket::getRxBytes()
+	jlong NetworkStats_Bucket::getRxBytes() const
 	{
 		return callMethod<jlong>(
 			"getRxBytes",
 			"()J"
 		);
 	}
-	jlong NetworkStats_Bucket::getRxPackets()
+	jlong NetworkStats_Bucket::getRxPackets() const
 	{
 		return callMethod<jlong>(
 			"getRxPackets",
 			"()J"
 		);
 	}
-	jlong NetworkStats_Bucket::getStartTimeStamp()
+	jlong NetworkStats_Bucket::getStartTimeStamp() const
 	{
 		return callMethod<jlong>(
 			"getStartTimeStamp",
 			"()J"
 		);
 	}
-	jint NetworkStats_Bucket::getState()
+	jint NetworkStats_Bucket::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jint NetworkStats_Bucket::getTag()
+	jint NetworkStats_Bucket::getTag() const
 	{
 		return callMethod<jint>(
 			"getTag",
 			"()I"
 		);
 	}
-	jlong NetworkStats_Bucket::getTxBytes()
+	jlong NetworkStats_Bucket::getTxBytes() const
 	{
 		return callMethod<jlong>(
 			"getTxBytes",
 			"()J"
 		);
 	}
-	jlong NetworkStats_Bucket::getTxPackets()
+	jlong NetworkStats_Bucket::getTxPackets() const
 	{
 		return callMethod<jlong>(
 			"getTxPackets",
 			"()J"
 		);
 	}
-	jint NetworkStats_Bucket::getUid()
+	jint NetworkStats_Bucket::getUid() const
 	{
 		return callMethod<jint>(
 			"getUid",

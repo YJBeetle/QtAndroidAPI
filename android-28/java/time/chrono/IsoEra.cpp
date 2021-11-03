@@ -54,7 +54,7 @@ namespace java::time::chrono
 			"()[Ljava/time/chrono/IsoEra;"
 		);
 	}
-	jint IsoEra::getValue()
+	jint IsoEra::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",

@@ -16,7 +16,7 @@ namespace android::media::projection
 	// Constructors
 	
 	// Methods
-	android::hardware::display::VirtualDisplay MediaProjection::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7)
+	android::hardware::display::VirtualDisplay MediaProjection::createVirtualDisplay(JString arg0, jint arg1, jint arg2, jint arg3, jint arg4, android::view::Surface arg5, android::hardware::display::VirtualDisplay_Callback arg6, android::os::Handler arg7) const
 	{
 		return callObjectMethod(
 			"createVirtualDisplay",
@@ -31,7 +31,7 @@ namespace android::media::projection
 			arg7.object()
 		);
 	}
-	void MediaProjection::registerCallback(android::media::projection::MediaProjection_Callback arg0, android::os::Handler arg1)
+	void MediaProjection::registerCallback(android::media::projection::MediaProjection_Callback arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"registerCallback",
@@ -40,14 +40,14 @@ namespace android::media::projection
 			arg1.object()
 		);
 	}
-	void MediaProjection::stop()
+	void MediaProjection::stop() const
 	{
 		callMethod<void>(
 			"stop",
 			"()V"
 		);
 	}
-	void MediaProjection::unregisterCallback(android::media::projection::MediaProjection_Callback arg0)
+	void MediaProjection::unregisterCallback(android::media::projection::MediaProjection_Callback arg0) const
 	{
 		callMethod<void>(
 			"unregisterCallback",

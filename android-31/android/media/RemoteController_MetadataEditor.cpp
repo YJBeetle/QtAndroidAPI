@@ -11,7 +11,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void RemoteController_MetadataEditor::apply()
+	void RemoteController_MetadataEditor::apply() const
 	{
 		callMethod<void>(
 			"apply",

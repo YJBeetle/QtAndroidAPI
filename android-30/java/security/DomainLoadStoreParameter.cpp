@@ -18,21 +18,21 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::net::URI DomainLoadStoreParameter::getConfiguration()
+	java::net::URI DomainLoadStoreParameter::getConfiguration() const
 	{
 		return callObjectMethod(
 			"getConfiguration",
 			"()Ljava/net/URI;"
 		);
 	}
-	JObject DomainLoadStoreParameter::getProtectionParameter()
+	JObject DomainLoadStoreParameter::getProtectionParameter() const
 	{
 		return callObjectMethod(
 			"getProtectionParameter",
 			"()Ljava/security/KeyStore$ProtectionParameter;"
 		);
 	}
-	JObject DomainLoadStoreParameter::getProtectionParams()
+	JObject DomainLoadStoreParameter::getProtectionParams() const
 	{
 		return callObjectMethod(
 			"getProtectionParams",

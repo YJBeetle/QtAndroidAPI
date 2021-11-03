@@ -44,19 +44,19 @@ namespace android::service::quicksettings
 		
 		// Methods
 		static void requestListeningState(android::content::Context arg0, android::content::ComponentName arg1);
-		android::service::quicksettings::Tile getQsTile();
-		jboolean isLocked();
-		jboolean isSecure();
-		JObject onBind(android::content::Intent arg0);
-		void onClick();
-		void onDestroy();
-		void onStartListening();
-		void onStopListening();
-		void onTileAdded();
-		void onTileRemoved();
-		void showDialog(android::app::Dialog arg0);
-		void startActivityAndCollapse(android::content::Intent arg0);
-		void unlockAndRun(JObject arg0);
+		android::service::quicksettings::Tile getQsTile() const;
+		jboolean isLocked() const;
+		jboolean isSecure() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onClick() const;
+		void onDestroy() const;
+		void onStartListening() const;
+		void onStopListening() const;
+		void onTileAdded() const;
+		void onTileRemoved() const;
+		void showDialog(android::app::Dialog arg0) const;
+		void startActivityAndCollapse(android::content::Intent arg0) const;
+		void unlockAndRun(JObject arg0) const;
 	};
 } // namespace android::service::quicksettings
 

@@ -25,21 +25,21 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint PushbackInputStream::available()
+	jint PushbackInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void PushbackInputStream::close()
+	void PushbackInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void PushbackInputStream::mark(jint arg0)
+	void PushbackInputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -47,21 +47,21 @@ namespace java::io
 			arg0
 		);
 	}
-	jboolean PushbackInputStream::markSupported()
+	jboolean PushbackInputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint PushbackInputStream::read()
+	jint PushbackInputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint PushbackInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint PushbackInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -71,14 +71,14 @@ namespace java::io
 			arg2
 		);
 	}
-	void PushbackInputStream::reset()
+	void PushbackInputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong PushbackInputStream::skip(jlong arg0)
+	jlong PushbackInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",
@@ -86,7 +86,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackInputStream::unread(JByteArray arg0)
+	void PushbackInputStream::unread(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"unread",
@@ -94,7 +94,7 @@ namespace java::io
 			arg0.object<jbyteArray>()
 		);
 	}
-	void PushbackInputStream::unread(jint arg0)
+	void PushbackInputStream::unread(jint arg0) const
 	{
 		callMethod<void>(
 			"unread",
@@ -102,7 +102,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void PushbackInputStream::unread(JByteArray arg0, jint arg1, jint arg2)
+	void PushbackInputStream::unread(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"unread",

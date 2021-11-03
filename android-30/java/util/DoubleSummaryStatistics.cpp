@@ -25,7 +25,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void DoubleSummaryStatistics::accept(jdouble arg0)
+	void DoubleSummaryStatistics::accept(jdouble arg0) const
 	{
 		callMethod<void>(
 			"accept",
@@ -33,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void DoubleSummaryStatistics::combine(java::util::DoubleSummaryStatistics arg0)
+	void DoubleSummaryStatistics::combine(java::util::DoubleSummaryStatistics arg0) const
 	{
 		callMethod<void>(
 			"combine",
@@ -41,42 +41,42 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jdouble DoubleSummaryStatistics::getAverage()
+	jdouble DoubleSummaryStatistics::getAverage() const
 	{
 		return callMethod<jdouble>(
 			"getAverage",
 			"()D"
 		);
 	}
-	jlong DoubleSummaryStatistics::getCount()
+	jlong DoubleSummaryStatistics::getCount() const
 	{
 		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
-	jdouble DoubleSummaryStatistics::getMax()
+	jdouble DoubleSummaryStatistics::getMax() const
 	{
 		return callMethod<jdouble>(
 			"getMax",
 			"()D"
 		);
 	}
-	jdouble DoubleSummaryStatistics::getMin()
+	jdouble DoubleSummaryStatistics::getMin() const
 	{
 		return callMethod<jdouble>(
 			"getMin",
 			"()D"
 		);
 	}
-	jdouble DoubleSummaryStatistics::getSum()
+	jdouble DoubleSummaryStatistics::getSum() const
 	{
 		return callMethod<jdouble>(
 			"getSum",
 			"()D"
 		);
 	}
-	JString DoubleSummaryStatistics::toString()
+	JString DoubleSummaryStatistics::toString() const
 	{
 		return callObjectMethod(
 			"toString",

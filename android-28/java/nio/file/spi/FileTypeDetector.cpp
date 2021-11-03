@@ -12,7 +12,7 @@ namespace java::nio::file::spi
 	// Constructors
 	
 	// Methods
-	JString FileTypeDetector::probeContentType(JObject arg0)
+	JString FileTypeDetector::probeContentType(JObject arg0) const
 	{
 		return callObjectMethod(
 			"probeContentType",

@@ -30,25 +30,25 @@ namespace java::lang
 		// Methods
 		static java::lang::Package getPackage(JString arg0);
 		static JArray getPackages();
-		JObject getAnnotation(JClass arg0);
-		JArray getAnnotations();
-		JArray getAnnotationsByType(JClass arg0);
-		JObject getDeclaredAnnotation(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JArray getDeclaredAnnotationsByType(JClass arg0);
-		JString getImplementationTitle();
-		JString getImplementationVendor();
-		JString getImplementationVersion();
-		JString getName();
-		JString getSpecificationTitle();
-		JString getSpecificationVendor();
-		JString getSpecificationVersion();
-		jint hashCode();
-		jboolean isAnnotationPresent(JClass arg0);
-		jboolean isCompatibleWith(JString arg0);
-		jboolean isSealed();
-		jboolean isSealed(java::net::URL arg0);
-		JString toString();
+		JObject getAnnotation(JClass arg0) const;
+		JArray getAnnotations() const;
+		JArray getAnnotationsByType(JClass arg0) const;
+		JObject getDeclaredAnnotation(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JArray getDeclaredAnnotationsByType(JClass arg0) const;
+		JString getImplementationTitle() const;
+		JString getImplementationVendor() const;
+		JString getImplementationVersion() const;
+		JString getName() const;
+		JString getSpecificationTitle() const;
+		JString getSpecificationVendor() const;
+		JString getSpecificationVersion() const;
+		jint hashCode() const;
+		jboolean isAnnotationPresent(JClass arg0) const;
+		jboolean isCompatibleWith(JString arg0) const;
+		jboolean isSealed() const;
+		jboolean isSealed(java::net::URL arg0) const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

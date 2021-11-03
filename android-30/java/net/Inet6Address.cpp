@@ -39,7 +39,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	jboolean Inet6Address::equals(JObject arg0)
+	jboolean Inet6Address::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,112 +47,112 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray Inet6Address::getAddress()
+	JByteArray Inet6Address::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()[B"
 		);
 	}
-	JString Inet6Address::getHostAddress()
+	JString Inet6Address::getHostAddress() const
 	{
 		return callObjectMethod(
 			"getHostAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Inet6Address::getScopeId()
+	jint Inet6Address::getScopeId() const
 	{
 		return callMethod<jint>(
 			"getScopeId",
 			"()I"
 		);
 	}
-	java::net::NetworkInterface Inet6Address::getScopedInterface()
+	java::net::NetworkInterface Inet6Address::getScopedInterface() const
 	{
 		return callObjectMethod(
 			"getScopedInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	jint Inet6Address::hashCode()
+	jint Inet6Address::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Inet6Address::isAnyLocalAddress()
+	jboolean Inet6Address::isAnyLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isAnyLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isIPv4CompatibleAddress()
+	jboolean Inet6Address::isIPv4CompatibleAddress() const
 	{
 		return callMethod<jboolean>(
 			"isIPv4CompatibleAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isLinkLocalAddress()
+	jboolean Inet6Address::isLinkLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isLoopbackAddress()
+	jboolean Inet6Address::isLoopbackAddress() const
 	{
 		return callMethod<jboolean>(
 			"isLoopbackAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMCGlobal()
+	jboolean Inet6Address::isMCGlobal() const
 	{
 		return callMethod<jboolean>(
 			"isMCGlobal",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMCLinkLocal()
+	jboolean Inet6Address::isMCLinkLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCLinkLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMCNodeLocal()
+	jboolean Inet6Address::isMCNodeLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCNodeLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMCOrgLocal()
+	jboolean Inet6Address::isMCOrgLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCOrgLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMCSiteLocal()
+	jboolean Inet6Address::isMCSiteLocal() const
 	{
 		return callMethod<jboolean>(
 			"isMCSiteLocal",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isMulticastAddress()
+	jboolean Inet6Address::isMulticastAddress() const
 	{
 		return callMethod<jboolean>(
 			"isMulticastAddress",
 			"()Z"
 		);
 	}
-	jboolean Inet6Address::isSiteLocalAddress()
+	jboolean Inet6Address::isSiteLocalAddress() const
 	{
 		return callMethod<jboolean>(
 			"isSiteLocalAddress",

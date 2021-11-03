@@ -31,11 +31,11 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		void finalize();
-		JObject getConnectedDevices();
-		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		JObject getDevicesMatchingConnectionStates(JIntArray arg0);
-		jboolean isA2dpPlaying(android::bluetooth::BluetoothDevice arg0);
+		void finalize() const;
+		JObject getConnectedDevices() const;
+		jint getConnectionState(android::bluetooth::BluetoothDevice arg0) const;
+		JObject getDevicesMatchingConnectionStates(JIntArray arg0) const;
+		jboolean isA2dpPlaying(android::bluetooth::BluetoothDevice arg0) const;
 	};
 } // namespace android::bluetooth
 

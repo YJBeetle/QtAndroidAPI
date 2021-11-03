@@ -16,14 +16,14 @@ namespace android::telephony::data
 		) {}
 	
 	// Methods
-	android::telephony::data::NetworkSliceInfo NetworkSliceInfo_Builder::build()
+	android::telephony::data::NetworkSliceInfo NetworkSliceInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/data/NetworkSliceInfo;"
 		);
 	}
-	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceDifferentiator(jint arg0)
+	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceDifferentiator(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMappedHplmnSliceDifferentiator",
@@ -31,7 +31,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceServiceType(jint arg0)
+	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setMappedHplmnSliceServiceType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMappedHplmnSliceServiceType",
@@ -39,7 +39,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceDifferentiator(jint arg0)
+	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceDifferentiator(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSliceDifferentiator",
@@ -47,7 +47,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceServiceType(jint arg0)
+	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setSliceServiceType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSliceServiceType",
@@ -55,7 +55,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setStatus(jint arg0)
+	android::telephony::data::NetworkSliceInfo_Builder NetworkSliceInfo_Builder::setStatus(jint arg0) const
 	{
 		return callObjectMethod(
 			"setStatus",

@@ -120,14 +120,14 @@ namespace android::view
 	// Constructors
 	
 	// Methods
-	jlong Display::getAppVsyncOffsetNanos()
+	jlong Display::getAppVsyncOffsetNanos() const
 	{
 		return callMethod<jlong>(
 			"getAppVsyncOffsetNanos",
 			"()J"
 		);
 	}
-	void Display::getCurrentSizeRange(android::graphics::Point arg0, android::graphics::Point arg1)
+	void Display::getCurrentSizeRange(android::graphics::Point arg0, android::graphics::Point arg1) const
 	{
 		callMethod<void>(
 			"getCurrentSizeRange",
@@ -136,49 +136,49 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::DisplayCutout Display::getCutout()
+	android::view::DisplayCutout Display::getCutout() const
 	{
 		return callObjectMethod(
 			"getCutout",
 			"()Landroid/view/DisplayCutout;"
 		);
 	}
-	android::hardware::display::DeviceProductInfo Display::getDeviceProductInfo()
+	android::hardware::display::DeviceProductInfo Display::getDeviceProductInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceProductInfo",
 			"()Landroid/hardware/display/DeviceProductInfo;"
 		);
 	}
-	jint Display::getDisplayId()
+	jint Display::getDisplayId() const
 	{
 		return callMethod<jint>(
 			"getDisplayId",
 			"()I"
 		);
 	}
-	jint Display::getFlags()
+	jint Display::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	android::view::Display_HdrCapabilities Display::getHdrCapabilities()
+	android::view::Display_HdrCapabilities Display::getHdrCapabilities() const
 	{
 		return callObjectMethod(
 			"getHdrCapabilities",
 			"()Landroid/view/Display$HdrCapabilities;"
 		);
 	}
-	jint Display::getHeight()
+	jint Display::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	void Display::getMetrics(android::util::DisplayMetrics arg0)
+	void Display::getMetrics(android::util::DisplayMetrics arg0) const
 	{
 		callMethod<void>(
 			"getMetrics",
@@ -186,49 +186,49 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::Display_Mode Display::getMode()
+	android::view::Display_Mode Display::getMode() const
 	{
 		return callObjectMethod(
 			"getMode",
 			"()Landroid/view/Display$Mode;"
 		);
 	}
-	JString Display::getName()
+	JString Display::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Display::getOrientation()
+	jint Display::getOrientation() const
 	{
 		return callMethod<jint>(
 			"getOrientation",
 			"()I"
 		);
 	}
-	jint Display::getPixelFormat()
+	jint Display::getPixelFormat() const
 	{
 		return callMethod<jint>(
 			"getPixelFormat",
 			"()I"
 		);
 	}
-	android::graphics::ColorSpace Display::getPreferredWideGamutColorSpace()
+	android::graphics::ColorSpace Display::getPreferredWideGamutColorSpace() const
 	{
 		return callObjectMethod(
 			"getPreferredWideGamutColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jlong Display::getPresentationDeadlineNanos()
+	jlong Display::getPresentationDeadlineNanos() const
 	{
 		return callMethod<jlong>(
 			"getPresentationDeadlineNanos",
 			"()J"
 		);
 	}
-	void Display::getRealMetrics(android::util::DisplayMetrics arg0)
+	void Display::getRealMetrics(android::util::DisplayMetrics arg0) const
 	{
 		callMethod<void>(
 			"getRealMetrics",
@@ -236,7 +236,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Display::getRealSize(android::graphics::Point arg0)
+	void Display::getRealSize(android::graphics::Point arg0) const
 	{
 		callMethod<void>(
 			"getRealSize",
@@ -244,7 +244,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Display::getRectSize(android::graphics::Rect arg0)
+	void Display::getRectSize(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getRectSize",
@@ -252,21 +252,21 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jfloat Display::getRefreshRate()
+	jfloat Display::getRefreshRate() const
 	{
 		return callMethod<jfloat>(
 			"getRefreshRate",
 			"()F"
 		);
 	}
-	jint Display::getRotation()
+	jint Display::getRotation() const
 	{
 		return callMethod<jint>(
 			"getRotation",
 			"()I"
 		);
 	}
-	android::view::RoundedCorner Display::getRoundedCorner(jint arg0)
+	android::view::RoundedCorner Display::getRoundedCorner(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRoundedCorner",
@@ -274,7 +274,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Display::getSize(android::graphics::Point arg0)
+	void Display::getSize(android::graphics::Point arg0) const
 	{
 		callMethod<void>(
 			"getSize",
@@ -282,63 +282,63 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jint Display::getState()
+	jint Display::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	JArray Display::getSupportedModes()
+	JArray Display::getSupportedModes() const
 	{
 		return callObjectMethod(
 			"getSupportedModes",
 			"()[Landroid/view/Display$Mode;"
 		);
 	}
-	JFloatArray Display::getSupportedRefreshRates()
+	JFloatArray Display::getSupportedRefreshRates() const
 	{
 		return callObjectMethod(
 			"getSupportedRefreshRates",
 			"()[F"
 		);
 	}
-	jint Display::getWidth()
+	jint Display::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean Display::isHdr()
+	jboolean Display::isHdr() const
 	{
 		return callMethod<jboolean>(
 			"isHdr",
 			"()Z"
 		);
 	}
-	jboolean Display::isMinimalPostProcessingSupported()
+	jboolean Display::isMinimalPostProcessingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isMinimalPostProcessingSupported",
 			"()Z"
 		);
 	}
-	jboolean Display::isValid()
+	jboolean Display::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	jboolean Display::isWideColorGamut()
+	jboolean Display::isWideColorGamut() const
 	{
 		return callMethod<jboolean>(
 			"isWideColorGamut",
 			"()Z"
 		);
 	}
-	JString Display::toString()
+	JString Display::toString() const
 	{
 		return callObjectMethod(
 			"toString",

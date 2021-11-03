@@ -33,14 +33,14 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	void GZIPInputStream::close()
+	void GZIPInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint GZIPInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint GZIPInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",

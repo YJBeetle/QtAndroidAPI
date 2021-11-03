@@ -20,8 +20,8 @@ namespace android::animation
 		BidirectionalTypeConverter(JClass arg0, JClass arg1);
 		
 		// Methods
-		JObject convertBack(JObject arg0);
-		android::animation::BidirectionalTypeConverter invert();
+		JObject convertBack(JObject arg0) const;
+		android::animation::BidirectionalTypeConverter invert() const;
 	};
 } // namespace android::animation
 

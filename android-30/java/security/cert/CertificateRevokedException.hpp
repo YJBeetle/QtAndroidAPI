@@ -39,12 +39,12 @@ namespace java::security::cert
 		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3);
 		
 		// Methods
-		javax::security::auth::x500::X500Principal getAuthorityName();
-		JObject getExtensions();
-		java::util::Date getInvalidityDate();
-		JString getMessage();
-		java::util::Date getRevocationDate();
-		java::security::cert::CRLReason getRevocationReason();
+		javax::security::auth::x500::X500Principal getAuthorityName() const;
+		JObject getExtensions() const;
+		java::util::Date getInvalidityDate() const;
+		JString getMessage() const;
+		java::util::Date getRevocationDate() const;
+		java::security::cert::CRLReason getRevocationReason() const;
 	};
 } // namespace java::security::cert
 

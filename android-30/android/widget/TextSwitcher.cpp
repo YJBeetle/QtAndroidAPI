@@ -27,7 +27,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void TextSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void TextSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -37,14 +37,14 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JString TextSwitcher::getAccessibilityClassName()
+	JString TextSwitcher::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void TextSwitcher::setCurrentText(JString arg0)
+	void TextSwitcher::setCurrentText(JString arg0) const
 	{
 		callMethod<void>(
 			"setCurrentText",
@@ -52,7 +52,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void TextSwitcher::setText(JString arg0)
+	void TextSwitcher::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",

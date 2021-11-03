@@ -23,13 +23,13 @@ namespace android::bluetooth
 		BluetoothHidDevice_Callback();
 		
 		// Methods
-		void onAppStatusChanged(android::bluetooth::BluetoothDevice arg0, jboolean arg1);
-		void onConnectionStateChanged(android::bluetooth::BluetoothDevice arg0, jint arg1);
-		void onGetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3);
-		void onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, JByteArray arg2);
-		void onSetProtocol(android::bluetooth::BluetoothDevice arg0, jbyte arg1);
-		void onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3);
-		void onVirtualCableUnplug(android::bluetooth::BluetoothDevice arg0);
+		void onAppStatusChanged(android::bluetooth::BluetoothDevice arg0, jboolean arg1) const;
+		void onConnectionStateChanged(android::bluetooth::BluetoothDevice arg0, jint arg1) const;
+		void onGetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3) const;
+		void onInterruptData(android::bluetooth::BluetoothDevice arg0, jbyte arg1, JByteArray arg2) const;
+		void onSetProtocol(android::bluetooth::BluetoothDevice arg0, jbyte arg1) const;
+		void onSetReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, JByteArray arg3) const;
+		void onVirtualCableUnplug(android::bluetooth::BluetoothDevice arg0) const;
 	};
 } // namespace android::bluetooth
 

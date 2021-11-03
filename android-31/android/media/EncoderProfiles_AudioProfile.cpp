@@ -11,42 +11,42 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint EncoderProfiles_AudioProfile::getBitrate()
+	jint EncoderProfiles_AudioProfile::getBitrate() const
 	{
 		return callMethod<jint>(
 			"getBitrate",
 			"()I"
 		);
 	}
-	jint EncoderProfiles_AudioProfile::getChannels()
+	jint EncoderProfiles_AudioProfile::getChannels() const
 	{
 		return callMethod<jint>(
 			"getChannels",
 			"()I"
 		);
 	}
-	jint EncoderProfiles_AudioProfile::getCodec()
+	jint EncoderProfiles_AudioProfile::getCodec() const
 	{
 		return callMethod<jint>(
 			"getCodec",
 			"()I"
 		);
 	}
-	JString EncoderProfiles_AudioProfile::getMediaType()
+	JString EncoderProfiles_AudioProfile::getMediaType() const
 	{
 		return callObjectMethod(
 			"getMediaType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint EncoderProfiles_AudioProfile::getProfile()
+	jint EncoderProfiles_AudioProfile::getProfile() const
 	{
 		return callMethod<jint>(
 			"getProfile",
 			"()I"
 		);
 	}
-	jint EncoderProfiles_AudioProfile::getSampleRate()
+	jint EncoderProfiles_AudioProfile::getSampleRate() const
 	{
 		return callMethod<jint>(
 			"getSampleRate",

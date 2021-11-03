@@ -43,10 +43,10 @@ namespace android::preference
 		EditTextPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::EditText getEditText();
-		JString getText();
-		void setText(JString arg0);
-		jboolean shouldDisableDependents();
+		android::widget::EditText getEditText() const;
+		JString getText() const;
+		void setText(JString arg0) const;
+		jboolean shouldDisableDependents() const;
 	};
 } // namespace android::preference
 

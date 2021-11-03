@@ -17,14 +17,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::SoundPool SoundPool_Builder::build()
+	android::media::SoundPool SoundPool_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/SoundPool;"
 		);
 	}
-	android::media::SoundPool_Builder SoundPool_Builder::setAudioAttributes(android::media::AudioAttributes arg0)
+	android::media::SoundPool_Builder SoundPool_Builder::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		return callObjectMethod(
 			"setAudioAttributes",
@@ -32,7 +32,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::SoundPool_Builder SoundPool_Builder::setMaxStreams(jint arg0)
+	android::media::SoundPool_Builder SoundPool_Builder::setMaxStreams(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxStreams",

@@ -13,7 +13,7 @@ namespace java::nio::file
 	// Constructors
 	
 	// Methods
-	JObject FileStore::getAttribute(JString arg0)
+	JObject FileStore::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -21,14 +21,14 @@ namespace java::nio::file
 			arg0.object<jstring>()
 		);
 	}
-	jlong FileStore::getBlockSize()
+	jlong FileStore::getBlockSize() const
 	{
 		return callMethod<jlong>(
 			"getBlockSize",
 			"()J"
 		);
 	}
-	JObject FileStore::getFileStoreAttributeView(JClass arg0)
+	JObject FileStore::getFileStoreAttributeView(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getFileStoreAttributeView",
@@ -36,42 +36,42 @@ namespace java::nio::file
 			arg0.object<jclass>()
 		);
 	}
-	jlong FileStore::getTotalSpace()
+	jlong FileStore::getTotalSpace() const
 	{
 		return callMethod<jlong>(
 			"getTotalSpace",
 			"()J"
 		);
 	}
-	jlong FileStore::getUnallocatedSpace()
+	jlong FileStore::getUnallocatedSpace() const
 	{
 		return callMethod<jlong>(
 			"getUnallocatedSpace",
 			"()J"
 		);
 	}
-	jlong FileStore::getUsableSpace()
+	jlong FileStore::getUsableSpace() const
 	{
 		return callMethod<jlong>(
 			"getUsableSpace",
 			"()J"
 		);
 	}
-	jboolean FileStore::isReadOnly()
+	jboolean FileStore::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	JString FileStore::name()
+	JString FileStore::name() const
 	{
 		return callObjectMethod(
 			"name",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean FileStore::supportsFileAttributeView(JClass arg0)
+	jboolean FileStore::supportsFileAttributeView(JClass arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsFileAttributeView",
@@ -79,7 +79,7 @@ namespace java::nio::file
 			arg0.object<jclass>()
 		);
 	}
-	jboolean FileStore::supportsFileAttributeView(JString arg0)
+	jboolean FileStore::supportsFileAttributeView(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsFileAttributeView",
@@ -87,7 +87,7 @@ namespace java::nio::file
 			arg0.object<jstring>()
 		);
 	}
-	JString FileStore::type()
+	JString FileStore::type() const
 	{
 		return callObjectMethod(
 			"type",

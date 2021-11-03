@@ -21,7 +21,7 @@ namespace android::media
 		MediaDrm_SessionException(jint arg0, JString arg1);
 		
 		// Methods
-		jint getErrorCode();
+		jint getErrorCode() const;
 	};
 } // namespace android::media
 

@@ -22,8 +22,8 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void disableKeyguard();
-		void reenableKeyguard();
+		void disableKeyguard() const;
+		void reenableKeyguard() const;
 	};
 } // namespace android::app
 

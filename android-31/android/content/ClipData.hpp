@@ -53,14 +53,14 @@ namespace android::content
 		static android::content::ClipData newPlainText(JString arg0, JString arg1);
 		static android::content::ClipData newRawUri(JString arg0, android::net::Uri arg1);
 		static android::content::ClipData newUri(android::content::ContentResolver arg0, JString arg1, android::net::Uri arg2);
-		void addItem(android::content::ClipData_Item arg0);
-		void addItem(android::content::ContentResolver arg0, android::content::ClipData_Item arg1);
-		jint describeContents();
-		android::content::ClipDescription getDescription();
-		android::content::ClipData_Item getItemAt(jint arg0);
-		jint getItemCount();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void addItem(android::content::ClipData_Item arg0) const;
+		void addItem(android::content::ContentResolver arg0, android::content::ClipData_Item arg1) const;
+		jint describeContents() const;
+		android::content::ClipDescription getDescription() const;
+		android::content::ClipData_Item getItemAt(jint arg0) const;
+		jint getItemCount() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

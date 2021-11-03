@@ -462,14 +462,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint AudioFormat::describeContents()
+	jint AudioFormat::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AudioFormat::equals(JObject arg0)
+	jboolean AudioFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -477,63 +477,63 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint AudioFormat::getChannelCount()
+	jint AudioFormat::getChannelCount() const
 	{
 		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
-	jint AudioFormat::getChannelIndexMask()
+	jint AudioFormat::getChannelIndexMask() const
 	{
 		return callMethod<jint>(
 			"getChannelIndexMask",
 			"()I"
 		);
 	}
-	jint AudioFormat::getChannelMask()
+	jint AudioFormat::getChannelMask() const
 	{
 		return callMethod<jint>(
 			"getChannelMask",
 			"()I"
 		);
 	}
-	jint AudioFormat::getEncoding()
+	jint AudioFormat::getEncoding() const
 	{
 		return callMethod<jint>(
 			"getEncoding",
 			"()I"
 		);
 	}
-	jint AudioFormat::getFrameSizeInBytes()
+	jint AudioFormat::getFrameSizeInBytes() const
 	{
 		return callMethod<jint>(
 			"getFrameSizeInBytes",
 			"()I"
 		);
 	}
-	jint AudioFormat::getSampleRate()
+	jint AudioFormat::getSampleRate() const
 	{
 		return callMethod<jint>(
 			"getSampleRate",
 			"()I"
 		);
 	}
-	jint AudioFormat::hashCode()
+	jint AudioFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AudioFormat::toString()
+	JString AudioFormat::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AudioFormat::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AudioFormat::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

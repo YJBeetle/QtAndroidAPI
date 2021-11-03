@@ -18,7 +18,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void RemoteConnection_VideoProvider_Callback::onCallDataUsageChanged(android::telecom::RemoteConnection_VideoProvider arg0, jlong arg1)
+	void RemoteConnection_VideoProvider_Callback::onCallDataUsageChanged(android::telecom::RemoteConnection_VideoProvider arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"onCallDataUsageChanged",
@@ -27,7 +27,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onCallSessionEvent(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
+	void RemoteConnection_VideoProvider_Callback::onCallSessionEvent(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onCallSessionEvent",
@@ -36,7 +36,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onCameraCapabilitiesChanged(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile_CameraCapabilities arg1)
+	void RemoteConnection_VideoProvider_Callback::onCameraCapabilitiesChanged(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile_CameraCapabilities arg1) const
 	{
 		callMethod<void>(
 			"onCameraCapabilitiesChanged",
@@ -45,7 +45,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onPeerDimensionsChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, jint arg2)
+	void RemoteConnection_VideoProvider_Callback::onPeerDimensionsChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onPeerDimensionsChanged",
@@ -55,7 +55,7 @@ namespace android::telecom
 			arg2
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onSessionModifyRequestReceived(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile arg1)
+	void RemoteConnection_VideoProvider_Callback::onSessionModifyRequestReceived(android::telecom::RemoteConnection_VideoProvider arg0, android::telecom::VideoProfile arg1) const
 	{
 		callMethod<void>(
 			"onSessionModifyRequestReceived",
@@ -64,7 +64,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onSessionModifyResponseReceived(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, android::telecom::VideoProfile arg2, android::telecom::VideoProfile arg3)
+	void RemoteConnection_VideoProvider_Callback::onSessionModifyResponseReceived(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1, android::telecom::VideoProfile arg2, android::telecom::VideoProfile arg3) const
 	{
 		callMethod<void>(
 			"onSessionModifyResponseReceived",
@@ -75,7 +75,7 @@ namespace android::telecom
 			arg3.object()
 		);
 	}
-	void RemoteConnection_VideoProvider_Callback::onVideoQualityChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1)
+	void RemoteConnection_VideoProvider_Callback::onVideoQualityChanged(android::telecom::RemoteConnection_VideoProvider arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onVideoQualityChanged",

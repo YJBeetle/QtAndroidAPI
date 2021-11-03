@@ -29,14 +29,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JString Provider_Service::getAlgorithm()
+	JString Provider_Service::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Provider_Service::getAttribute(JString arg0)
+	JString Provider_Service::getAttribute(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAttribute",
@@ -44,28 +44,28 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JString Provider_Service::getClassName()
+	JString Provider_Service::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider Provider_Service::getProvider()
+	java::security::Provider Provider_Service::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JString Provider_Service::getType()
+	JString Provider_Service::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Provider_Service::newInstance(JObject arg0)
+	JObject Provider_Service::newInstance(JObject arg0) const
 	{
 		return callObjectMethod(
 			"newInstance",
@@ -73,7 +73,7 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Provider_Service::supportsParameter(JObject arg0)
+	jboolean Provider_Service::supportsParameter(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsParameter",
@@ -81,7 +81,7 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString Provider_Service::toString()
+	JString Provider_Service::toString() const
 	{
 		return callObjectMethod(
 			"toString",

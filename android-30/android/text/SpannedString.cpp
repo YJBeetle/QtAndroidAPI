@@ -31,7 +31,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	jchar SpannedString::charAt(jint arg0)
+	jchar SpannedString::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -39,7 +39,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean SpannedString::equals(JObject arg0)
+	jboolean SpannedString::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,7 +47,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	void SpannedString::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void SpannedString::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -58,7 +58,7 @@ namespace android::text
 			arg3
 		);
 	}
-	jint SpannedString::getSpanEnd(JObject arg0)
+	jint SpannedString::getSpanEnd(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanEnd",
@@ -66,7 +66,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannedString::getSpanFlags(JObject arg0)
+	jint SpannedString::getSpanFlags(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanFlags",
@@ -74,7 +74,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannedString::getSpanStart(JObject arg0)
+	jint SpannedString::getSpanStart(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanStart",
@@ -82,7 +82,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	JObjectArray SpannedString::getSpans(jint arg0, jint arg1, JClass arg2)
+	JObjectArray SpannedString::getSpans(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"getSpans",
@@ -92,21 +92,21 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	jint SpannedString::hashCode()
+	jint SpannedString::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint SpannedString::length()
+	jint SpannedString::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint SpannedString::nextSpanTransition(jint arg0, jint arg1, JClass arg2)
+	jint SpannedString::nextSpanTransition(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callMethod<jint>(
 			"nextSpanTransition",
@@ -116,7 +116,7 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	JString SpannedString::subSequence(jint arg0, jint arg1)
+	JString SpannedString::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -125,7 +125,7 @@ namespace android::text
 			arg1
 		);
 	}
-	JString SpannedString::toString()
+	JString SpannedString::toString() const
 	{
 		return callObjectMethod(
 			"toString",

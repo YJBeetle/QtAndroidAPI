@@ -21,35 +21,35 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssMeasurementsEvent::describeContents()
+	jint GnssMeasurementsEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::location::GnssClock GnssMeasurementsEvent::getClock()
+	android::location::GnssClock GnssMeasurementsEvent::getClock() const
 	{
 		return callObjectMethod(
 			"getClock",
 			"()Landroid/location/GnssClock;"
 		);
 	}
-	JObject GnssMeasurementsEvent::getMeasurements()
+	JObject GnssMeasurementsEvent::getMeasurements() const
 	{
 		return callObjectMethod(
 			"getMeasurements",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JString GnssMeasurementsEvent::toString()
+	JString GnssMeasurementsEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssMeasurementsEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssMeasurementsEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

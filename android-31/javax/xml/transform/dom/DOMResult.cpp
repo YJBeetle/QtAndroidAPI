@@ -52,28 +52,28 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	JObject DOMResult::getNextSibling()
+	JObject DOMResult::getNextSibling() const
 	{
 		return callObjectMethod(
 			"getNextSibling",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	JObject DOMResult::getNode()
+	JObject DOMResult::getNode() const
 	{
 		return callObjectMethod(
 			"getNode",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	JString DOMResult::getSystemId()
+	JString DOMResult::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DOMResult::setNextSibling(JObject arg0)
+	void DOMResult::setNextSibling(JObject arg0) const
 	{
 		callMethod<void>(
 			"setNextSibling",
@@ -81,7 +81,7 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMResult::setNode(JObject arg0)
+	void DOMResult::setNode(JObject arg0) const
 	{
 		callMethod<void>(
 			"setNode",
@@ -89,7 +89,7 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMResult::setSystemId(JString arg0)
+	void DOMResult::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",

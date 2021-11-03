@@ -19,10 +19,10 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getPassword();
-		JString getUsername();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JString getPassword() const;
+		JString getUsername() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

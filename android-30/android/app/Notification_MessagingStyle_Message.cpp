@@ -41,56 +41,56 @@ namespace android::app
 			arg0.object<jarray>()
 		);
 	}
-	JString Notification_MessagingStyle_Message::getDataMimeType()
+	JString Notification_MessagingStyle_Message::getDataMimeType() const
 	{
 		return callObjectMethod(
 			"getDataMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri Notification_MessagingStyle_Message::getDataUri()
+	android::net::Uri Notification_MessagingStyle_Message::getDataUri() const
 	{
 		return callObjectMethod(
 			"getDataUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::os::Bundle Notification_MessagingStyle_Message::getExtras()
+	android::os::Bundle Notification_MessagingStyle_Message::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString Notification_MessagingStyle_Message::getSender()
+	JString Notification_MessagingStyle_Message::getSender() const
 	{
 		return callObjectMethod(
 			"getSender",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::Person Notification_MessagingStyle_Message::getSenderPerson()
+	android::app::Person Notification_MessagingStyle_Message::getSenderPerson() const
 	{
 		return callObjectMethod(
 			"getSenderPerson",
 			"()Landroid/app/Person;"
 		);
 	}
-	JString Notification_MessagingStyle_Message::getText()
+	JString Notification_MessagingStyle_Message::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jlong Notification_MessagingStyle_Message::getTimestamp()
+	jlong Notification_MessagingStyle_Message::getTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getTimestamp",
 			"()J"
 		);
 	}
-	android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(JString arg0, android::net::Uri arg1)
+	android::app::Notification_MessagingStyle_Message Notification_MessagingStyle_Message::setData(JString arg0, android::net::Uri arg1) const
 	{
 		return callObjectMethod(
 			"setData",

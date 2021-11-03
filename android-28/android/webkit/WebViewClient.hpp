@@ -87,29 +87,29 @@ namespace android::webkit
 		WebViewClient();
 		
 		// Methods
-		void doUpdateVisitedHistory(android::webkit::WebView arg0, JString arg1, jboolean arg2);
-		void onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2);
-		void onLoadResource(android::webkit::WebView arg0, JString arg1);
-		void onPageCommitVisible(android::webkit::WebView arg0, JString arg1);
-		void onPageFinished(android::webkit::WebView arg0, JString arg1);
-		void onPageStarted(android::webkit::WebView arg0, JString arg1, android::graphics::Bitmap arg2);
-		void onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1);
-		void onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2);
-		void onReceivedError(android::webkit::WebView arg0, jint arg1, JString arg2, JString arg3);
-		void onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, JString arg2, JString arg3);
-		void onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2);
-		void onReceivedLoginRequest(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3);
-		void onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2);
-		jboolean onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1);
-		void onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3);
-		void onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2);
-		void onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2);
-		void onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
-		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1);
-		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, JString arg1);
-		jboolean shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
-		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1);
-		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, JString arg1);
+		void doUpdateVisitedHistory(android::webkit::WebView arg0, JString arg1, jboolean arg2) const;
+		void onFormResubmission(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2) const;
+		void onLoadResource(android::webkit::WebView arg0, JString arg1) const;
+		void onPageCommitVisible(android::webkit::WebView arg0, JString arg1) const;
+		void onPageFinished(android::webkit::WebView arg0, JString arg1) const;
+		void onPageStarted(android::webkit::WebView arg0, JString arg1, android::graphics::Bitmap arg2) const;
+		void onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1) const;
+		void onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2) const;
+		void onReceivedError(android::webkit::WebView arg0, jint arg1, JString arg2, JString arg3) const;
+		void onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, JString arg2, JString arg3) const;
+		void onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2) const;
+		void onReceivedLoginRequest(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3) const;
+		void onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2) const;
+		jboolean onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1) const;
+		void onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3) const;
+		void onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2) const;
+		void onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2) const;
+		void onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1) const;
+		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1) const;
+		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, JString arg1) const;
+		jboolean shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1) const;
+		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1) const;
+		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, JString arg1) const;
 	};
 } // namespace android::webkit
 

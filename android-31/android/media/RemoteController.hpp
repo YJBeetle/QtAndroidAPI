@@ -37,13 +37,13 @@ namespace android::media
 		RemoteController(android::content::Context arg0, JObject arg1, android::os::Looper arg2);
 		
 		// Methods
-		jboolean clearArtworkConfiguration();
-		android::media::RemoteController_MetadataEditor editMetadata();
-		jlong getEstimatedMediaPosition();
-		jboolean seekTo(jlong arg0);
-		jboolean sendMediaKeyEvent(android::view::KeyEvent arg0);
-		jboolean setArtworkConfiguration(jint arg0, jint arg1);
-		jboolean setSynchronizationMode(jint arg0);
+		jboolean clearArtworkConfiguration() const;
+		android::media::RemoteController_MetadataEditor editMetadata() const;
+		jlong getEstimatedMediaPosition() const;
+		jboolean seekTo(jlong arg0) const;
+		jboolean sendMediaKeyEvent(android::view::KeyEvent arg0) const;
+		jboolean setArtworkConfiguration(jint arg0, jint arg1) const;
+		jboolean setSynchronizationMode(jint arg0) const;
 	};
 } // namespace android::media
 

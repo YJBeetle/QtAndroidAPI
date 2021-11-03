@@ -26,28 +26,28 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::LocalSocket LocalServerSocket::accept()
+	android::net::LocalSocket LocalServerSocket::accept() const
 	{
 		return callObjectMethod(
 			"accept",
 			"()Landroid/net/LocalSocket;"
 		);
 	}
-	void LocalServerSocket::close()
+	void LocalServerSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::io::FileDescriptor LocalServerSocket::getFileDescriptor()
+	java::io::FileDescriptor LocalServerSocket::getFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	android::net::LocalSocketAddress LocalServerSocket::getLocalSocketAddress()
+	android::net::LocalSocketAddress LocalServerSocket::getLocalSocketAddress() const
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",

@@ -78,7 +78,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	JObject JapaneseDate::atTime(java::time::LocalTime arg0)
+	JObject JapaneseDate::atTime(java::time::LocalTime arg0) const
 	{
 		return callObjectMethod(
 			"atTime",
@@ -86,7 +86,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean JapaneseDate::equals(JObject arg0)
+	jboolean JapaneseDate::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -94,21 +94,21 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	java::time::chrono::JapaneseChronology JapaneseDate::getChronology()
+	java::time::chrono::JapaneseChronology JapaneseDate::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/JapaneseChronology;"
 		);
 	}
-	java::time::chrono::JapaneseEra JapaneseDate::getEra()
+	java::time::chrono::JapaneseEra JapaneseDate::getEra() const
 	{
 		return callObjectMethod(
 			"getEra",
 			"()Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	jlong JapaneseDate::getLong(JObject arg0)
+	jlong JapaneseDate::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -116,14 +116,14 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint JapaneseDate::hashCode()
+	jint JapaneseDate::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean JapaneseDate::isSupported(JObject arg0)
+	jboolean JapaneseDate::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -131,21 +131,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint JapaneseDate::lengthOfMonth()
+	jint JapaneseDate::lengthOfMonth() const
 	{
 		return callMethod<jint>(
 			"lengthOfMonth",
 			"()I"
 		);
 	}
-	jint JapaneseDate::lengthOfYear()
+	jint JapaneseDate::lengthOfYear() const
 	{
 		return callMethod<jint>(
 			"lengthOfYear",
 			"()I"
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::minus(JObject arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -153,7 +153,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::minus(jlong arg0, JObject arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -162,7 +162,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::plus(JObject arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -170,7 +170,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::plus(jlong arg0, JObject arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -179,7 +179,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange JapaneseDate::range(JObject arg0)
+	java::time::temporal::ValueRange JapaneseDate::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -187,21 +187,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong JapaneseDate::toEpochDay()
+	jlong JapaneseDate::toEpochDay() const
 	{
 		return callMethod<jlong>(
 			"toEpochDay",
 			"()J"
 		);
 	}
-	JString JapaneseDate::toString()
+	JString JapaneseDate::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject JapaneseDate::until(JObject arg0)
+	JObject JapaneseDate::until(JObject arg0) const
 	{
 		return callObjectMethod(
 			"until",
@@ -209,7 +209,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong JapaneseDate::until(JObject arg0, JObject arg1)
+	jlong JapaneseDate::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -218,7 +218,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -226,7 +226,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0, jlong arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",

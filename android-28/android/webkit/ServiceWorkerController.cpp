@@ -25,14 +25,14 @@ namespace android::webkit
 			"()Landroid/webkit/ServiceWorkerController;"
 		);
 	}
-	android::webkit::ServiceWorkerWebSettings ServiceWorkerController::getServiceWorkerWebSettings()
+	android::webkit::ServiceWorkerWebSettings ServiceWorkerController::getServiceWorkerWebSettings() const
 	{
 		return callObjectMethod(
 			"getServiceWorkerWebSettings",
 			"()Landroid/webkit/ServiceWorkerWebSettings;"
 		);
 	}
-	void ServiceWorkerController::setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0)
+	void ServiceWorkerController::setServiceWorkerClient(android::webkit::ServiceWorkerClient arg0) const
 	{
 		callMethod<void>(
 			"setServiceWorkerClient",

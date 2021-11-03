@@ -31,10 +31,10 @@ namespace android::view::textclassifier
 		TextSelection_Request_Builder(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
-		android::view::textclassifier::TextSelection_Request build();
-		android::view::textclassifier::TextSelection_Request_Builder setDefaultLocales(android::os::LocaleList arg0);
-		android::view::textclassifier::TextSelection_Request_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::TextSelection_Request_Builder setIncludeTextClassification(jboolean arg0);
+		android::view::textclassifier::TextSelection_Request build() const;
+		android::view::textclassifier::TextSelection_Request_Builder setDefaultLocales(android::os::LocaleList arg0) const;
+		android::view::textclassifier::TextSelection_Request_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textclassifier::TextSelection_Request_Builder setIncludeTextClassification(jboolean arg0) const;
 	};
 } // namespace android::view::textclassifier
 

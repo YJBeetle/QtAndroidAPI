@@ -22,7 +22,7 @@ namespace android::app::admin
 		DeviceAdminService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0) const;
 	};
 } // namespace android::app::admin
 

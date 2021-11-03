@@ -31,21 +31,21 @@ namespace android::media
 			arg1.object<jarray>()
 		);
 	}
-	jboolean MediaCodec_LinearBlock::isMappable()
+	jboolean MediaCodec_LinearBlock::isMappable() const
 	{
 		return callMethod<jboolean>(
 			"isMappable",
 			"()Z"
 		);
 	}
-	java::nio::ByteBuffer MediaCodec_LinearBlock::map()
+	java::nio::ByteBuffer MediaCodec_LinearBlock::map() const
 	{
 		return callObjectMethod(
 			"map",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	void MediaCodec_LinearBlock::recycle()
+	void MediaCodec_LinearBlock::recycle() const
 	{
 		callMethod<void>(
 			"recycle",

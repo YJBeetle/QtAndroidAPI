@@ -31,13 +31,13 @@ namespace android::os
 		
 		// Methods
 		static void execute(JObject arg0);
-		jboolean cancel(jboolean arg0);
-		android::os::AsyncTask execute(JObjectArray arg0);
-		android::os::AsyncTask executeOnExecutor(JObject arg0, JObjectArray arg1);
-		JObject get();
-		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		android::os::AsyncTask_Status getStatus();
-		jboolean isCancelled();
+		jboolean cancel(jboolean arg0) const;
+		android::os::AsyncTask execute(JObjectArray arg0) const;
+		android::os::AsyncTask executeOnExecutor(JObject arg0, JObjectArray arg1) const;
+		JObject get() const;
+		JObject get(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		android::os::AsyncTask_Status getStatus() const;
+		jboolean isCancelled() const;
 	};
 } // namespace android::os
 

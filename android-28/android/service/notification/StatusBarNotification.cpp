@@ -44,112 +44,112 @@ namespace android::service::notification
 		) {}
 	
 	// Methods
-	android::service::notification::StatusBarNotification StatusBarNotification::clone()
+	android::service::notification::StatusBarNotification StatusBarNotification::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/service/notification/StatusBarNotification;"
 		);
 	}
-	jint StatusBarNotification::describeContents()
+	jint StatusBarNotification::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString StatusBarNotification::getGroupKey()
+	JString StatusBarNotification::getGroupKey() const
 	{
 		return callObjectMethod(
 			"getGroupKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint StatusBarNotification::getId()
+	jint StatusBarNotification::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	JString StatusBarNotification::getKey()
+	JString StatusBarNotification::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::app::Notification StatusBarNotification::getNotification()
+	android::app::Notification StatusBarNotification::getNotification() const
 	{
 		return callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
 		);
 	}
-	JString StatusBarNotification::getOverrideGroupKey()
+	JString StatusBarNotification::getOverrideGroupKey() const
 	{
 		return callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StatusBarNotification::getPackageName()
+	JString StatusBarNotification::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong StatusBarNotification::getPostTime()
+	jlong StatusBarNotification::getPostTime() const
 	{
 		return callMethod<jlong>(
 			"getPostTime",
 			"()J"
 		);
 	}
-	JString StatusBarNotification::getTag()
+	JString StatusBarNotification::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::UserHandle StatusBarNotification::getUser()
+	android::os::UserHandle StatusBarNotification::getUser() const
 	{
 		return callObjectMethod(
 			"getUser",
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jint StatusBarNotification::getUserId()
+	jint StatusBarNotification::getUserId() const
 	{
 		return callMethod<jint>(
 			"getUserId",
 			"()I"
 		);
 	}
-	jboolean StatusBarNotification::isClearable()
+	jboolean StatusBarNotification::isClearable() const
 	{
 		return callMethod<jboolean>(
 			"isClearable",
 			"()Z"
 		);
 	}
-	jboolean StatusBarNotification::isGroup()
+	jboolean StatusBarNotification::isGroup() const
 	{
 		return callMethod<jboolean>(
 			"isGroup",
 			"()Z"
 		);
 	}
-	jboolean StatusBarNotification::isOngoing()
+	jboolean StatusBarNotification::isOngoing() const
 	{
 		return callMethod<jboolean>(
 			"isOngoing",
 			"()Z"
 		);
 	}
-	void StatusBarNotification::setOverrideGroupKey(JString arg0)
+	void StatusBarNotification::setOverrideGroupKey(JString arg0) const
 	{
 		callMethod<void>(
 			"setOverrideGroupKey",
@@ -157,14 +157,14 @@ namespace android::service::notification
 			arg0.object<jstring>()
 		);
 	}
-	JString StatusBarNotification::toString()
+	JString StatusBarNotification::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StatusBarNotification::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StatusBarNotification::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -19,9 +19,9 @@ namespace android::icu::text
 		BidiClassifier(JObject arg0);
 		
 		// Methods
-		jint classify(jint arg0);
-		JObject getContext();
-		void setContext(JObject arg0);
+		jint classify(jint arg0) const;
+		JObject getContext() const;
+		void setContext(JObject arg0) const;
 	};
 } // namespace android::icu::text
 

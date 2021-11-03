@@ -56,7 +56,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void Toast::addCallback(android::widget::Toast_Callback arg0)
+	void Toast::addCallback(android::widget::Toast_Callback arg0) const
 	{
 		callMethod<void>(
 			"addCallback",
@@ -64,63 +64,63 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toast::cancel()
+	void Toast::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	jint Toast::getDuration()
+	jint Toast::getDuration() const
 	{
 		return callMethod<jint>(
 			"getDuration",
 			"()I"
 		);
 	}
-	jint Toast::getGravity()
+	jint Toast::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jfloat Toast::getHorizontalMargin()
+	jfloat Toast::getHorizontalMargin() const
 	{
 		return callMethod<jfloat>(
 			"getHorizontalMargin",
 			"()F"
 		);
 	}
-	jfloat Toast::getVerticalMargin()
+	jfloat Toast::getVerticalMargin() const
 	{
 		return callMethod<jfloat>(
 			"getVerticalMargin",
 			"()F"
 		);
 	}
-	android::view::View Toast::getView()
+	android::view::View Toast::getView() const
 	{
 		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint Toast::getXOffset()
+	jint Toast::getXOffset() const
 	{
 		return callMethod<jint>(
 			"getXOffset",
 			"()I"
 		);
 	}
-	jint Toast::getYOffset()
+	jint Toast::getYOffset() const
 	{
 		return callMethod<jint>(
 			"getYOffset",
 			"()I"
 		);
 	}
-	void Toast::removeCallback(android::widget::Toast_Callback arg0)
+	void Toast::removeCallback(android::widget::Toast_Callback arg0) const
 	{
 		callMethod<void>(
 			"removeCallback",
@@ -128,7 +128,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toast::setDuration(jint arg0)
+	void Toast::setDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setDuration",
@@ -136,7 +136,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toast::setGravity(jint arg0, jint arg1, jint arg2)
+	void Toast::setGravity(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -146,7 +146,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void Toast::setMargin(jfloat arg0, jfloat arg1)
+	void Toast::setMargin(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setMargin",
@@ -155,7 +155,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Toast::setText(jint arg0)
+	void Toast::setText(jint arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -163,7 +163,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Toast::setText(JString arg0)
+	void Toast::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -171,7 +171,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Toast::setView(android::view::View arg0)
+	void Toast::setView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setView",
@@ -179,7 +179,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Toast::show()
+	void Toast::show() const
 	{
 		callMethod<void>(
 			"show",

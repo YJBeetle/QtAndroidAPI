@@ -21,9 +21,9 @@ namespace android::telephony
 		PhoneNumberFormattingTextWatcher(JString arg0);
 		
 		// Methods
-		void afterTextChanged(JObject arg0);
-		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
-		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3);
+		void afterTextChanged(JObject arg0) const;
+		void beforeTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const;
+		void onTextChanged(JString arg0, jint arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::telephony
 

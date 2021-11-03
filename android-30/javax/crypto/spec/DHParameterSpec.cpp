@@ -26,21 +26,21 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger DHParameterSpec::getG()
+	java::math::BigInteger DHParameterSpec::getG() const
 	{
 		return callObjectMethod(
 			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jint DHParameterSpec::getL()
+	jint DHParameterSpec::getL() const
 	{
 		return callMethod<jint>(
 			"getL",
 			"()I"
 		);
 	}
-	java::math::BigInteger DHParameterSpec::getP()
+	java::math::BigInteger DHParameterSpec::getP() const
 	{
 		return callObjectMethod(
 			"getP",

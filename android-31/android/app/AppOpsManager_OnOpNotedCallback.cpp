@@ -17,7 +17,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void AppOpsManager_OnOpNotedCallback::onAsyncNoted(android::app::AsyncNotedAppOp arg0)
+	void AppOpsManager_OnOpNotedCallback::onAsyncNoted(android::app::AsyncNotedAppOp arg0) const
 	{
 		callMethod<void>(
 			"onAsyncNoted",
@@ -25,7 +25,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AppOpsManager_OnOpNotedCallback::onNoted(android::app::SyncNotedAppOp arg0)
+	void AppOpsManager_OnOpNotedCallback::onNoted(android::app::SyncNotedAppOp arg0) const
 	{
 		callMethod<void>(
 			"onNoted",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AppOpsManager_OnOpNotedCallback::onSelfNoted(android::app::SyncNotedAppOp arg0)
+	void AppOpsManager_OnOpNotedCallback::onSelfNoted(android::app::SyncNotedAppOp arg0) const
 	{
 		callMethod<void>(
 			"onSelfNoted",

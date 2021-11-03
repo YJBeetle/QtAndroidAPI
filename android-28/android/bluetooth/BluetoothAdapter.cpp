@@ -248,14 +248,14 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/BluetoothAdapter;"
 		);
 	}
-	jboolean BluetoothAdapter::cancelDiscovery()
+	jboolean BluetoothAdapter::cancelDiscovery() const
 	{
 		return callMethod<jboolean>(
 			"cancelDiscovery",
 			"()Z"
 		);
 	}
-	void BluetoothAdapter::closeProfileProxy(jint arg0, JObject arg1)
+	void BluetoothAdapter::closeProfileProxy(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"closeProfileProxy",
@@ -264,63 +264,63 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	jboolean BluetoothAdapter::disable()
+	jboolean BluetoothAdapter::disable() const
 	{
 		return callMethod<jboolean>(
 			"disable",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::enable()
+	jboolean BluetoothAdapter::enable() const
 	{
 		return callMethod<jboolean>(
 			"enable",
 			"()Z"
 		);
 	}
-	JString BluetoothAdapter::getAddress()
+	JString BluetoothAdapter::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::bluetooth::le::BluetoothLeAdvertiser BluetoothAdapter::getBluetoothLeAdvertiser()
+	android::bluetooth::le::BluetoothLeAdvertiser BluetoothAdapter::getBluetoothLeAdvertiser() const
 	{
 		return callObjectMethod(
 			"getBluetoothLeAdvertiser",
 			"()Landroid/bluetooth/le/BluetoothLeAdvertiser;"
 		);
 	}
-	android::bluetooth::le::BluetoothLeScanner BluetoothAdapter::getBluetoothLeScanner()
+	android::bluetooth::le::BluetoothLeScanner BluetoothAdapter::getBluetoothLeScanner() const
 	{
 		return callObjectMethod(
 			"getBluetoothLeScanner",
 			"()Landroid/bluetooth/le/BluetoothLeScanner;"
 		);
 	}
-	JObject BluetoothAdapter::getBondedDevices()
+	JObject BluetoothAdapter::getBondedDevices() const
 	{
 		return callObjectMethod(
 			"getBondedDevices",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint BluetoothAdapter::getLeMaximumAdvertisingDataLength()
+	jint BluetoothAdapter::getLeMaximumAdvertisingDataLength() const
 	{
 		return callMethod<jint>(
 			"getLeMaximumAdvertisingDataLength",
 			"()I"
 		);
 	}
-	JString BluetoothAdapter::getName()
+	JString BluetoothAdapter::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint BluetoothAdapter::getProfileConnectionState(jint arg0)
+	jint BluetoothAdapter::getProfileConnectionState(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getProfileConnectionState",
@@ -328,7 +328,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothAdapter::getProfileProxy(android::content::Context arg0, JObject arg1, jint arg2)
+	jboolean BluetoothAdapter::getProfileProxy(android::content::Context arg0, JObject arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"getProfileProxy",
@@ -338,7 +338,7 @@ namespace android::bluetooth
 			arg2
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JByteArray arg0)
+	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"getRemoteDevice",
@@ -346,7 +346,7 @@ namespace android::bluetooth
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JString arg0)
+	android::bluetooth::BluetoothDevice BluetoothAdapter::getRemoteDevice(JString arg0) const
 	{
 		return callObjectMethod(
 			"getRemoteDevice",
@@ -354,84 +354,84 @@ namespace android::bluetooth
 			arg0.object<jstring>()
 		);
 	}
-	jint BluetoothAdapter::getScanMode()
+	jint BluetoothAdapter::getScanMode() const
 	{
 		return callMethod<jint>(
 			"getScanMode",
 			"()I"
 		);
 	}
-	jint BluetoothAdapter::getState()
+	jint BluetoothAdapter::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jboolean BluetoothAdapter::isDiscovering()
+	jboolean BluetoothAdapter::isDiscovering() const
 	{
 		return callMethod<jboolean>(
 			"isDiscovering",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isEnabled()
+	jboolean BluetoothAdapter::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isLe2MPhySupported()
+	jboolean BluetoothAdapter::isLe2MPhySupported() const
 	{
 		return callMethod<jboolean>(
 			"isLe2MPhySupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isLeCodedPhySupported()
+	jboolean BluetoothAdapter::isLeCodedPhySupported() const
 	{
 		return callMethod<jboolean>(
 			"isLeCodedPhySupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isLeExtendedAdvertisingSupported()
+	jboolean BluetoothAdapter::isLeExtendedAdvertisingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isLeExtendedAdvertisingSupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isLePeriodicAdvertisingSupported()
+	jboolean BluetoothAdapter::isLePeriodicAdvertisingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isLePeriodicAdvertisingSupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isMultipleAdvertisementSupported()
+	jboolean BluetoothAdapter::isMultipleAdvertisementSupported() const
 	{
 		return callMethod<jboolean>(
 			"isMultipleAdvertisementSupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isOffloadedFilteringSupported()
+	jboolean BluetoothAdapter::isOffloadedFilteringSupported() const
 	{
 		return callMethod<jboolean>(
 			"isOffloadedFilteringSupported",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::isOffloadedScanBatchingSupported()
+	jboolean BluetoothAdapter::isOffloadedScanBatchingSupported() const
 	{
 		return callMethod<jboolean>(
 			"isOffloadedScanBatchingSupported",
 			"()Z"
 		);
 	}
-	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(JString arg0, java::util::UUID arg1)
+	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(JString arg0, java::util::UUID arg1) const
 	{
 		return callObjectMethod(
 			"listenUsingInsecureRfcommWithServiceRecord",
@@ -440,7 +440,7 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingRfcommWithServiceRecord(JString arg0, java::util::UUID arg1)
+	android::bluetooth::BluetoothServerSocket BluetoothAdapter::listenUsingRfcommWithServiceRecord(JString arg0, java::util::UUID arg1) const
 	{
 		return callObjectMethod(
 			"listenUsingRfcommWithServiceRecord",
@@ -449,7 +449,7 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	jboolean BluetoothAdapter::setName(JString arg0)
+	jboolean BluetoothAdapter::setName(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setName",
@@ -457,14 +457,14 @@ namespace android::bluetooth
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BluetoothAdapter::startDiscovery()
+	jboolean BluetoothAdapter::startDiscovery() const
 	{
 		return callMethod<jboolean>(
 			"startDiscovery",
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(JObject arg0)
+	jboolean BluetoothAdapter::startLeScan(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"startLeScan",
@@ -472,7 +472,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(JArray arg0, JObject arg1)
+	jboolean BluetoothAdapter::startLeScan(JArray arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"startLeScan",
@@ -481,7 +481,7 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	void BluetoothAdapter::stopLeScan(JObject arg0)
+	void BluetoothAdapter::stopLeScan(JObject arg0) const
 	{
 		callMethod<void>(
 			"stopLeScan",

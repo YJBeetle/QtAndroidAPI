@@ -67,42 +67,42 @@ namespace android::app::admin
 			arg1
 		);
 	}
-	jint SystemUpdatePolicy::describeContents()
+	jint SystemUpdatePolicy::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject SystemUpdatePolicy::getFreezePeriods()
+	JObject SystemUpdatePolicy::getFreezePeriods() const
 	{
 		return callObjectMethod(
 			"getFreezePeriods",
 			"()Ljava/util/List;"
 		);
 	}
-	jint SystemUpdatePolicy::getInstallWindowEnd()
+	jint SystemUpdatePolicy::getInstallWindowEnd() const
 	{
 		return callMethod<jint>(
 			"getInstallWindowEnd",
 			"()I"
 		);
 	}
-	jint SystemUpdatePolicy::getInstallWindowStart()
+	jint SystemUpdatePolicy::getInstallWindowStart() const
 	{
 		return callMethod<jint>(
 			"getInstallWindowStart",
 			"()I"
 		);
 	}
-	jint SystemUpdatePolicy::getPolicyType()
+	jint SystemUpdatePolicy::getPolicyType() const
 	{
 		return callMethod<jint>(
 			"getPolicyType",
 			"()I"
 		);
 	}
-	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::setFreezePeriods(JObject arg0)
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::setFreezePeriods(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setFreezePeriods",
@@ -110,14 +110,14 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString SystemUpdatePolicy::toString()
+	JString SystemUpdatePolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SystemUpdatePolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SystemUpdatePolicy::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

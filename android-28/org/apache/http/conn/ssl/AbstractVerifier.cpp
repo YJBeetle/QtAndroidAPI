@@ -55,7 +55,7 @@ namespace org::apache::http::conn::ssl
 			arg0.object()
 		);
 	}
-	jboolean AbstractVerifier::verify(JString arg0, JObject arg1)
+	jboolean AbstractVerifier::verify(JString arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"verify",
@@ -64,7 +64,7 @@ namespace org::apache::http::conn::ssl
 			arg1.object()
 		);
 	}
-	void AbstractVerifier::verify(JString arg0, java::security::cert::X509Certificate arg1)
+	void AbstractVerifier::verify(JString arg0, java::security::cert::X509Certificate arg1) const
 	{
 		callMethod<void>(
 			"verify",
@@ -73,7 +73,7 @@ namespace org::apache::http::conn::ssl
 			arg1.object()
 		);
 	}
-	void AbstractVerifier::verify(JString arg0, javax::net::ssl::SSLSocket arg1)
+	void AbstractVerifier::verify(JString arg0, javax::net::ssl::SSLSocket arg1) const
 	{
 		callMethod<void>(
 			"verify",
@@ -82,7 +82,7 @@ namespace org::apache::http::conn::ssl
 			arg1.object()
 		);
 	}
-	void AbstractVerifier::verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3)
+	void AbstractVerifier::verify(JString arg0, JArray arg1, JArray arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"verify",

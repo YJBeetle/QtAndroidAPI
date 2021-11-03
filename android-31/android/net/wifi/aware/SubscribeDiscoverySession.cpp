@@ -11,7 +11,7 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	void SubscribeDiscoverySession::updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0)
+	void SubscribeDiscoverySession::updateSubscribe(android::net::wifi::aware::SubscribeConfig arg0) const
 	{
 		callMethod<void>(
 			"updateSubscribe",

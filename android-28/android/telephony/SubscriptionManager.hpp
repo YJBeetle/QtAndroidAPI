@@ -43,20 +43,20 @@ namespace android::telephony
 		static jint getDefaultSmsSubscriptionId();
 		static jint getDefaultSubscriptionId();
 		static jint getDefaultVoiceSubscriptionId();
-		void addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
-		jboolean canManageSubscription(android::telephony::SubscriptionInfo arg0);
-		JObject getAccessibleSubscriptionInfoList();
-		android::telephony::SubscriptionInfo getActiveSubscriptionInfo(jint arg0);
-		jint getActiveSubscriptionInfoCount();
-		jint getActiveSubscriptionInfoCountMax();
-		android::telephony::SubscriptionInfo getActiveSubscriptionInfoForSimSlotIndex(jint arg0);
-		JObject getActiveSubscriptionInfoList();
-		JObject getSubscriptionPlans(jint arg0);
-		jboolean isNetworkRoaming(jint arg0);
-		void removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
-		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2);
-		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2);
-		void setSubscriptionPlans(jint arg0, JObject arg1);
+		void addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0) const;
+		jboolean canManageSubscription(android::telephony::SubscriptionInfo arg0) const;
+		JObject getAccessibleSubscriptionInfoList() const;
+		android::telephony::SubscriptionInfo getActiveSubscriptionInfo(jint arg0) const;
+		jint getActiveSubscriptionInfoCount() const;
+		jint getActiveSubscriptionInfoCountMax() const;
+		android::telephony::SubscriptionInfo getActiveSubscriptionInfoForSimSlotIndex(jint arg0) const;
+		JObject getActiveSubscriptionInfoList() const;
+		JObject getSubscriptionPlans(jint arg0) const;
+		jboolean isNetworkRoaming(jint arg0) const;
+		void removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0) const;
+		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2) const;
+		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2) const;
+		void setSubscriptionPlans(jint arg0, JObject arg1) const;
 	};
 } // namespace android::telephony
 

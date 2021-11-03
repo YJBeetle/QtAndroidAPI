@@ -29,28 +29,28 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jboolean InCallService::canAddCall()
+	jboolean InCallService::canAddCall() const
 	{
 		return callMethod<jboolean>(
 			"canAddCall",
 			"()Z"
 		);
 	}
-	android::telecom::CallAudioState InCallService::getCallAudioState()
+	android::telecom::CallAudioState InCallService::getCallAudioState() const
 	{
 		return callObjectMethod(
 			"getCallAudioState",
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	JObject InCallService::getCalls()
+	JObject InCallService::getCalls() const
 	{
 		return callObjectMethod(
 			"getCalls",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject InCallService::onBind(android::content::Intent arg0)
+	JObject InCallService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -58,7 +58,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::onBringToForeground(jboolean arg0)
+	void InCallService::onBringToForeground(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onBringToForeground",
@@ -66,7 +66,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService::onCallAdded(android::telecom::Call arg0)
+	void InCallService::onCallAdded(android::telecom::Call arg0) const
 	{
 		callMethod<void>(
 			"onCallAdded",
@@ -74,7 +74,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::onCallAudioStateChanged(android::telecom::CallAudioState arg0)
+	void InCallService::onCallAudioStateChanged(android::telecom::CallAudioState arg0) const
 	{
 		callMethod<void>(
 			"onCallAudioStateChanged",
@@ -82,7 +82,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::onCallRemoved(android::telecom::Call arg0)
+	void InCallService::onCallRemoved(android::telecom::Call arg0) const
 	{
 		callMethod<void>(
 			"onCallRemoved",
@@ -90,7 +90,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::onCanAddCallChanged(jboolean arg0)
+	void InCallService::onCanAddCallChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onCanAddCallChanged",
@@ -98,7 +98,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2)
+	void InCallService::onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onConnectionEvent",
@@ -108,14 +108,14 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void InCallService::onSilenceRinger()
+	void InCallService::onSilenceRinger() const
 	{
 		callMethod<void>(
 			"onSilenceRinger",
 			"()V"
 		);
 	}
-	jboolean InCallService::onUnbind(android::content::Intent arg0)
+	jboolean InCallService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",
@@ -123,7 +123,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0)
+	void InCallService::requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0) const
 	{
 		callMethod<void>(
 			"requestBluetoothAudio",
@@ -131,7 +131,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void InCallService::setAudioRoute(jint arg0)
+	void InCallService::setAudioRoute(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioRoute",
@@ -139,7 +139,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void InCallService::setMuted(jboolean arg0)
+	void InCallService::setMuted(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMuted",

@@ -118,14 +118,14 @@ namespace android::icu::text
 			"()[Landroid/icu/text/DisplayContext;"
 		);
 	}
-	android::icu::text::DisplayContext_Type DisplayContext::type()
+	android::icu::text::DisplayContext_Type DisplayContext::type() const
 	{
 		return callObjectMethod(
 			"type",
 			"()Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
-	jint DisplayContext::value()
+	jint DisplayContext::value() const
 	{
 		return callMethod<jint>(
 			"value",

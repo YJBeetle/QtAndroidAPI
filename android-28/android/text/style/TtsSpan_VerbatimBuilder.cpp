@@ -22,7 +22,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_VerbatimBuilder TtsSpan_VerbatimBuilder::setVerbatim(JString arg0)
+	android::text::style::TtsSpan_VerbatimBuilder TtsSpan_VerbatimBuilder::setVerbatim(JString arg0) const
 	{
 		return callObjectMethod(
 			"setVerbatim",

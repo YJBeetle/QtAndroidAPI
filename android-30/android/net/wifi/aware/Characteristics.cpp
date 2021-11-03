@@ -33,42 +33,42 @@ namespace android::net::wifi::aware
 	// Constructors
 	
 	// Methods
-	jint Characteristics::describeContents()
+	jint Characteristics::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint Characteristics::getMaxMatchFilterLength()
+	jint Characteristics::getMaxMatchFilterLength() const
 	{
 		return callMethod<jint>(
 			"getMaxMatchFilterLength",
 			"()I"
 		);
 	}
-	jint Characteristics::getMaxServiceNameLength()
+	jint Characteristics::getMaxServiceNameLength() const
 	{
 		return callMethod<jint>(
 			"getMaxServiceNameLength",
 			"()I"
 		);
 	}
-	jint Characteristics::getMaxServiceSpecificInfoLength()
+	jint Characteristics::getMaxServiceSpecificInfoLength() const
 	{
 		return callMethod<jint>(
 			"getMaxServiceSpecificInfoLength",
 			"()I"
 		);
 	}
-	jint Characteristics::getSupportedCipherSuites()
+	jint Characteristics::getSupportedCipherSuites() const
 	{
 		return callMethod<jint>(
 			"getSupportedCipherSuites",
 			"()I"
 		);
 	}
-	void Characteristics::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Characteristics::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

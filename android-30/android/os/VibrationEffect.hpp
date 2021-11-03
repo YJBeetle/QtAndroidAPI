@@ -34,7 +34,7 @@ namespace android::os
 		static android::os::VibrationEffect createWaveform(JLongArray arg0, jint arg1);
 		static android::os::VibrationEffect createWaveform(JLongArray arg0, JIntArray arg1, jint arg2);
 		static android::os::VibrationEffect_Composition startComposition();
-		jint describeContents();
+		jint describeContents() const;
 	};
 } // namespace android::os
 

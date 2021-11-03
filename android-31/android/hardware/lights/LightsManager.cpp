@@ -13,7 +13,7 @@ namespace android::hardware::lights
 	// Constructors
 	
 	// Methods
-	android::hardware::lights::LightState LightsManager::getLightState(android::hardware::lights::Light arg0)
+	android::hardware::lights::LightState LightsManager::getLightState(android::hardware::lights::Light arg0) const
 	{
 		return callObjectMethod(
 			"getLightState",
@@ -21,14 +21,14 @@ namespace android::hardware::lights
 			arg0.object()
 		);
 	}
-	JObject LightsManager::getLights()
+	JObject LightsManager::getLights() const
 	{
 		return callObjectMethod(
 			"getLights",
 			"()Ljava/util/List;"
 		);
 	}
-	android::hardware::lights::LightsManager_LightsSession LightsManager::openSession()
+	android::hardware::lights::LightsManager_LightsSession LightsManager::openSession() const
 	{
 		return callObjectMethod(
 			"openSession",

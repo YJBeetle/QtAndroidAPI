@@ -16,7 +16,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void Animatable2_AnimationCallback::onAnimationEnd(android::graphics::drawable::Drawable arg0)
+	void Animatable2_AnimationCallback::onAnimationEnd(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"onAnimationEnd",
@@ -24,7 +24,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void Animatable2_AnimationCallback::onAnimationStart(android::graphics::drawable::Drawable arg0)
+	void Animatable2_AnimationCallback::onAnimationStart(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"onAnimationStart",

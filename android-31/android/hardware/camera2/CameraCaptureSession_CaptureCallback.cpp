@@ -21,7 +21,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraCaptureSession_CaptureCallback::onCaptureBufferLost(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::view::Surface arg2, jlong arg3)
+	void CameraCaptureSession_CaptureCallback::onCaptureBufferLost(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::view::Surface arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onCaptureBufferLost",
@@ -32,7 +32,7 @@ namespace android::hardware::camera2
 			arg3
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureCompleted(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::TotalCaptureResult arg2)
+	void CameraCaptureSession_CaptureCallback::onCaptureCompleted(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::TotalCaptureResult arg2) const
 	{
 		callMethod<void>(
 			"onCaptureCompleted",
@@ -42,7 +42,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureFailed(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::CaptureFailure arg2)
+	void CameraCaptureSession_CaptureCallback::onCaptureFailed(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::CaptureFailure arg2) const
 	{
 		callMethod<void>(
 			"onCaptureFailed",
@@ -52,7 +52,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureProgressed(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::CaptureResult arg2)
+	void CameraCaptureSession_CaptureCallback::onCaptureProgressed(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, android::hardware::camera2::CaptureResult arg2) const
 	{
 		callMethod<void>(
 			"onCaptureProgressed",
@@ -62,7 +62,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureSequenceAborted(android::hardware::camera2::CameraCaptureSession arg0, jint arg1)
+	void CameraCaptureSession_CaptureCallback::onCaptureSequenceAborted(android::hardware::camera2::CameraCaptureSession arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onCaptureSequenceAborted",
@@ -71,7 +71,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureSequenceCompleted(android::hardware::camera2::CameraCaptureSession arg0, jint arg1, jlong arg2)
+	void CameraCaptureSession_CaptureCallback::onCaptureSequenceCompleted(android::hardware::camera2::CameraCaptureSession arg0, jint arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"onCaptureSequenceCompleted",
@@ -81,7 +81,7 @@ namespace android::hardware::camera2
 			arg2
 		);
 	}
-	void CameraCaptureSession_CaptureCallback::onCaptureStarted(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, jlong arg2, jlong arg3)
+	void CameraCaptureSession_CaptureCallback::onCaptureStarted(android::hardware::camera2::CameraCaptureSession arg0, android::hardware::camera2::CaptureRequest arg1, jlong arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onCaptureStarted",

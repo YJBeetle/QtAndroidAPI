@@ -22,8 +22,8 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		JString getAttributionTag();
-		android::content::AttributionSource getNextAttributionSource();
+		JString getAttributionTag() const;
+		android::content::AttributionSource getNextAttributionSource() const;
 	};
 } // namespace android::content
 

@@ -20,9 +20,9 @@ namespace java::net
 		HttpRetryException(JString arg0, jint arg1, JString arg2);
 		
 		// Methods
-		JString getLocation();
-		JString getReason();
-		jint responseCode();
+		JString getLocation() const;
+		JString getReason() const;
+		jint responseCode() const;
 	};
 } // namespace java::net
 

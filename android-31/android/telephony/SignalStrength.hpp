@@ -27,23 +27,23 @@ namespace android::telephony
 		SignalStrength(android::telephony::SignalStrength &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCdmaDbm();
-		jint getCdmaEcio();
-		JObject getCellSignalStrengths();
-		JObject getCellSignalStrengths(JClass arg0);
-		jint getEvdoDbm();
-		jint getEvdoEcio();
-		jint getEvdoSnr();
-		jint getGsmBitErrorRate();
-		jint getGsmSignalStrength();
-		jint getLevel();
-		jlong getTimestampMillis();
-		jint hashCode();
-		jboolean isGsm();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCdmaDbm() const;
+		jint getCdmaEcio() const;
+		JObject getCellSignalStrengths() const;
+		JObject getCellSignalStrengths(JClass arg0) const;
+		jint getEvdoDbm() const;
+		jint getEvdoEcio() const;
+		jint getEvdoSnr() const;
+		jint getGsmBitErrorRate() const;
+		jint getGsmSignalStrength() const;
+		jint getLevel() const;
+		jlong getTimestampMillis() const;
+		jint hashCode() const;
+		jboolean isGsm() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

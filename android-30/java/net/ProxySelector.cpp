@@ -45,7 +45,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void ProxySelector::connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2)
+	void ProxySelector::connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2) const
 	{
 		callMethod<void>(
 			"connectFailed",
@@ -55,7 +55,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	JObject ProxySelector::select(java::net::URI arg0)
+	JObject ProxySelector::select(java::net::URI arg0) const
 	{
 		return callObjectMethod(
 			"select",

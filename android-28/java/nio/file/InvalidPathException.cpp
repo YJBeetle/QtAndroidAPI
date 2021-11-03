@@ -26,28 +26,28 @@ namespace java::nio::file
 		) {}
 	
 	// Methods
-	jint InvalidPathException::getIndex()
+	jint InvalidPathException::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JString InvalidPathException::getInput()
+	JString InvalidPathException::getInput() const
 	{
 		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InvalidPathException::getMessage()
+	JString InvalidPathException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString InvalidPathException::getReason()
+	JString InvalidPathException::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",

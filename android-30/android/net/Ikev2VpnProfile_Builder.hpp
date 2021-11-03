@@ -32,15 +32,15 @@ namespace android::net
 		Ikev2VpnProfile_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::net::Ikev2VpnProfile build();
-		android::net::Ikev2VpnProfile_Builder setAllowedAlgorithms(JObject arg0);
-		android::net::Ikev2VpnProfile_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, JObject arg1, java::security::cert::X509Certificate arg2);
-		android::net::Ikev2VpnProfile_Builder setAuthPsk(JByteArray arg0);
-		android::net::Ikev2VpnProfile_Builder setAuthUsernamePassword(JString arg0, JString arg1, java::security::cert::X509Certificate arg2);
-		android::net::Ikev2VpnProfile_Builder setBypassable(jboolean arg0);
-		android::net::Ikev2VpnProfile_Builder setMaxMtu(jint arg0);
-		android::net::Ikev2VpnProfile_Builder setMetered(jboolean arg0);
-		android::net::Ikev2VpnProfile_Builder setProxy(android::net::ProxyInfo arg0);
+		android::net::Ikev2VpnProfile build() const;
+		android::net::Ikev2VpnProfile_Builder setAllowedAlgorithms(JObject arg0) const;
+		android::net::Ikev2VpnProfile_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, JObject arg1, java::security::cert::X509Certificate arg2) const;
+		android::net::Ikev2VpnProfile_Builder setAuthPsk(JByteArray arg0) const;
+		android::net::Ikev2VpnProfile_Builder setAuthUsernamePassword(JString arg0, JString arg1, java::security::cert::X509Certificate arg2) const;
+		android::net::Ikev2VpnProfile_Builder setBypassable(jboolean arg0) const;
+		android::net::Ikev2VpnProfile_Builder setMaxMtu(jint arg0) const;
+		android::net::Ikev2VpnProfile_Builder setMetered(jboolean arg0) const;
+		android::net::Ikev2VpnProfile_Builder setProxy(android::net::ProxyInfo arg0) const;
 	};
 } // namespace android::net
 

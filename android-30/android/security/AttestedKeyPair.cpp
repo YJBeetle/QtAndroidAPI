@@ -18,14 +18,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	JObject AttestedKeyPair::getAttestationRecord()
+	JObject AttestedKeyPair::getAttestationRecord() const
 	{
 		return callObjectMethod(
 			"getAttestationRecord",
 			"()Ljava/util/List;"
 		);
 	}
-	java::security::KeyPair AttestedKeyPair::getKeyPair()
+	java::security::KeyPair AttestedKeyPair::getKeyPair() const
 	{
 		return callObjectMethod(
 			"getKeyPair",

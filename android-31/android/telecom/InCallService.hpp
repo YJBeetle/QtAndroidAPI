@@ -40,21 +40,21 @@ namespace android::telecom
 		InCallService();
 		
 		// Methods
-		jboolean canAddCall();
-		android::telecom::CallAudioState getCallAudioState();
-		JObject getCalls();
-		JObject onBind(android::content::Intent arg0);
-		void onBringToForeground(jboolean arg0);
-		void onCallAdded(android::telecom::Call arg0);
-		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);
-		void onCallRemoved(android::telecom::Call arg0);
-		void onCanAddCallChanged(jboolean arg0);
-		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2);
-		void onSilenceRinger();
-		jboolean onUnbind(android::content::Intent arg0);
-		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);
-		void setAudioRoute(jint arg0);
-		void setMuted(jboolean arg0);
+		jboolean canAddCall() const;
+		android::telecom::CallAudioState getCallAudioState() const;
+		JObject getCalls() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onBringToForeground(jboolean arg0) const;
+		void onCallAdded(android::telecom::Call arg0) const;
+		void onCallAudioStateChanged(android::telecom::CallAudioState arg0) const;
+		void onCallRemoved(android::telecom::Call arg0) const;
+		void onCanAddCallChanged(jboolean arg0) const;
+		void onConnectionEvent(android::telecom::Call arg0, JString arg1, android::os::Bundle arg2) const;
+		void onSilenceRinger() const;
+		jboolean onUnbind(android::content::Intent arg0) const;
+		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0) const;
+		void setAudioRoute(jint arg0) const;
+		void setMuted(jboolean arg0) const;
 	};
 } // namespace android::telecom
 

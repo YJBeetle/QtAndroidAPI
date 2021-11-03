@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	jboolean InputConfiguration::equals(JObject arg0)
+	jboolean InputConfiguration::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,35 +28,35 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint InputConfiguration::getFormat()
+	jint InputConfiguration::getFormat() const
 	{
 		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
-	jint InputConfiguration::getHeight()
+	jint InputConfiguration::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint InputConfiguration::getWidth()
+	jint InputConfiguration::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint InputConfiguration::hashCode()
+	jint InputConfiguration::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString InputConfiguration::toString()
+	JString InputConfiguration::toString() const
 	{
 		return callObjectMethod(
 			"toString",

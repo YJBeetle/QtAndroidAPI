@@ -34,27 +34,27 @@ namespace android::service::notification
 		StatusBarNotification(JString arg0, JString arg1, jint arg2, JString arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9);
 		
 		// Methods
-		android::service::notification::StatusBarNotification clone();
-		jint describeContents();
-		JString getGroupKey();
-		jint getId();
-		JString getKey();
-		android::app::Notification getNotification();
-		JString getOpPkg();
-		JString getOverrideGroupKey();
-		JString getPackageName();
-		jlong getPostTime();
-		JString getTag();
-		jint getUid();
-		android::os::UserHandle getUser();
-		jint getUserId();
-		jboolean isAppGroup();
-		jboolean isClearable();
-		jboolean isGroup();
-		jboolean isOngoing();
-		void setOverrideGroupKey(JString arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::service::notification::StatusBarNotification clone() const;
+		jint describeContents() const;
+		JString getGroupKey() const;
+		jint getId() const;
+		JString getKey() const;
+		android::app::Notification getNotification() const;
+		JString getOpPkg() const;
+		JString getOverrideGroupKey() const;
+		JString getPackageName() const;
+		jlong getPostTime() const;
+		JString getTag() const;
+		jint getUid() const;
+		android::os::UserHandle getUser() const;
+		jint getUserId() const;
+		jboolean isAppGroup() const;
+		jboolean isClearable() const;
+		jboolean isGroup() const;
+		jboolean isOngoing() const;
+		void setOverrideGroupKey(JString arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::notification
 

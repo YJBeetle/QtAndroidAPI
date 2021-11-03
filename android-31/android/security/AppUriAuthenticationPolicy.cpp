@@ -21,14 +21,14 @@ namespace android::security
 	// Constructors
 	
 	// Methods
-	jint AppUriAuthenticationPolicy::describeContents()
+	jint AppUriAuthenticationPolicy::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AppUriAuthenticationPolicy::equals(JObject arg0)
+	jboolean AppUriAuthenticationPolicy::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::security
 			arg0.object<jobject>()
 		);
 	}
-	JObject AppUriAuthenticationPolicy::getAppAndUriMappings()
+	JObject AppUriAuthenticationPolicy::getAppAndUriMappings() const
 	{
 		return callObjectMethod(
 			"getAppAndUriMappings",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint AppUriAuthenticationPolicy::hashCode()
+	jint AppUriAuthenticationPolicy::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AppUriAuthenticationPolicy::toString()
+	JString AppUriAuthenticationPolicy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AppUriAuthenticationPolicy::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AppUriAuthenticationPolicy::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

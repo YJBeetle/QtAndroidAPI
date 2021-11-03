@@ -43,7 +43,7 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jboolean ShortcutManager::addDynamicShortcuts(JObject arg0)
+	jboolean ShortcutManager::addDynamicShortcuts(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addDynamicShortcuts",
@@ -51,7 +51,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::content::Intent ShortcutManager::createShortcutResultIntent(android::content::pm::ShortcutInfo arg0)
+	android::content::Intent ShortcutManager::createShortcutResultIntent(android::content::pm::ShortcutInfo arg0) const
 	{
 		return callObjectMethod(
 			"createShortcutResultIntent",
@@ -59,7 +59,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::disableShortcuts(JObject arg0)
+	void ShortcutManager::disableShortcuts(JObject arg0) const
 	{
 		callMethod<void>(
 			"disableShortcuts",
@@ -67,7 +67,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::disableShortcuts(JObject arg0, JString arg1)
+	void ShortcutManager::disableShortcuts(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"disableShortcuts",
@@ -76,7 +76,7 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	void ShortcutManager::enableShortcuts(JObject arg0)
+	void ShortcutManager::enableShortcuts(JObject arg0) const
 	{
 		callMethod<void>(
 			"enableShortcuts",
@@ -84,49 +84,49 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject ShortcutManager::getDynamicShortcuts()
+	JObject ShortcutManager::getDynamicShortcuts() const
 	{
 		return callObjectMethod(
 			"getDynamicShortcuts",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ShortcutManager::getIconMaxHeight()
+	jint ShortcutManager::getIconMaxHeight() const
 	{
 		return callMethod<jint>(
 			"getIconMaxHeight",
 			"()I"
 		);
 	}
-	jint ShortcutManager::getIconMaxWidth()
+	jint ShortcutManager::getIconMaxWidth() const
 	{
 		return callMethod<jint>(
 			"getIconMaxWidth",
 			"()I"
 		);
 	}
-	JObject ShortcutManager::getManifestShortcuts()
+	JObject ShortcutManager::getManifestShortcuts() const
 	{
 		return callObjectMethod(
 			"getManifestShortcuts",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ShortcutManager::getMaxShortcutCountPerActivity()
+	jint ShortcutManager::getMaxShortcutCountPerActivity() const
 	{
 		return callMethod<jint>(
 			"getMaxShortcutCountPerActivity",
 			"()I"
 		);
 	}
-	JObject ShortcutManager::getPinnedShortcuts()
+	JObject ShortcutManager::getPinnedShortcuts() const
 	{
 		return callObjectMethod(
 			"getPinnedShortcuts",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ShortcutManager::getShortcuts(jint arg0)
+	JObject ShortcutManager::getShortcuts(jint arg0) const
 	{
 		return callObjectMethod(
 			"getShortcuts",
@@ -134,21 +134,21 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	jboolean ShortcutManager::isRateLimitingActive()
+	jboolean ShortcutManager::isRateLimitingActive() const
 	{
 		return callMethod<jboolean>(
 			"isRateLimitingActive",
 			"()Z"
 		);
 	}
-	jboolean ShortcutManager::isRequestPinShortcutSupported()
+	jboolean ShortcutManager::isRequestPinShortcutSupported() const
 	{
 		return callMethod<jboolean>(
 			"isRequestPinShortcutSupported",
 			"()Z"
 		);
 	}
-	void ShortcutManager::pushDynamicShortcut(android::content::pm::ShortcutInfo arg0)
+	void ShortcutManager::pushDynamicShortcut(android::content::pm::ShortcutInfo arg0) const
 	{
 		callMethod<void>(
 			"pushDynamicShortcut",
@@ -156,14 +156,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::removeAllDynamicShortcuts()
+	void ShortcutManager::removeAllDynamicShortcuts() const
 	{
 		callMethod<void>(
 			"removeAllDynamicShortcuts",
 			"()V"
 		);
 	}
-	void ShortcutManager::removeDynamicShortcuts(JObject arg0)
+	void ShortcutManager::removeDynamicShortcuts(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeDynamicShortcuts",
@@ -171,7 +171,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::removeLongLivedShortcuts(JObject arg0)
+	void ShortcutManager::removeLongLivedShortcuts(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeLongLivedShortcuts",
@@ -179,7 +179,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::reportShortcutUsed(JString arg0)
+	void ShortcutManager::reportShortcutUsed(JString arg0) const
 	{
 		callMethod<void>(
 			"reportShortcutUsed",
@@ -187,7 +187,7 @@ namespace android::content::pm
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ShortcutManager::requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1)
+	jboolean ShortcutManager::requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1) const
 	{
 		return callMethod<jboolean>(
 			"requestPinShortcut",
@@ -196,7 +196,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jboolean ShortcutManager::setDynamicShortcuts(JObject arg0)
+	jboolean ShortcutManager::setDynamicShortcuts(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"setDynamicShortcuts",
@@ -204,7 +204,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jboolean ShortcutManager::updateShortcuts(JObject arg0)
+	jboolean ShortcutManager::updateShortcuts(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"updateShortcuts",

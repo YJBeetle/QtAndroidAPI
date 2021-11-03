@@ -15,7 +15,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AudioManager_AudioRecordingCallback::onRecordingConfigChanged(JObject arg0)
+	void AudioManager_AudioRecordingCallback::onRecordingConfigChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRecordingConfigChanged",

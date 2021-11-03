@@ -30,12 +30,12 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void cancel();
-		android::os::Vibrator getDefaultVibrator();
-		android::os::Vibrator getVibrator(jint arg0);
-		JIntArray getVibratorIds();
-		void vibrate(android::os::CombinedVibration arg0);
-		void vibrate(android::os::CombinedVibration arg0, android::os::VibrationAttributes arg1);
+		void cancel() const;
+		android::os::Vibrator getDefaultVibrator() const;
+		android::os::Vibrator getVibrator(jint arg0) const;
+		JIntArray getVibratorIds() const;
+		void vibrate(android::os::CombinedVibration arg0) const;
+		void vibrate(android::os::CombinedVibration arg0, android::os::VibrationAttributes arg1) const;
 	};
 } // namespace android::os
 

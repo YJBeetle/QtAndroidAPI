@@ -14,28 +14,28 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint ScanRecord::getAdvertiseFlags()
+	jint ScanRecord::getAdvertiseFlags() const
 	{
 		return callMethod<jint>(
 			"getAdvertiseFlags",
 			"()I"
 		);
 	}
-	JByteArray ScanRecord::getBytes()
+	JByteArray ScanRecord::getBytes() const
 	{
 		return callObjectMethod(
 			"getBytes",
 			"()[B"
 		);
 	}
-	JString ScanRecord::getDeviceName()
+	JString ScanRecord::getDeviceName() const
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray ScanRecord::getManufacturerSpecificData(jint arg0)
+	JByteArray ScanRecord::getManufacturerSpecificData(jint arg0) const
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
@@ -43,14 +43,14 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	android::util::SparseArray ScanRecord::getManufacturerSpecificData()
+	android::util::SparseArray ScanRecord::getManufacturerSpecificData() const
 	{
 		return callObjectMethod(
 			"getManufacturerSpecificData",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	JByteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0)
+	JByteArray ScanRecord::getServiceData(android::os::ParcelUuid arg0) const
 	{
 		return callObjectMethod(
 			"getServiceData",
@@ -58,28 +58,28 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	JObject ScanRecord::getServiceData()
+	JObject ScanRecord::getServiceData() const
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject ScanRecord::getServiceUuids()
+	JObject ScanRecord::getServiceUuids() const
 	{
 		return callObjectMethod(
 			"getServiceUuids",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ScanRecord::getTxPowerLevel()
+	jint ScanRecord::getTxPowerLevel() const
 	{
 		return callMethod<jint>(
 			"getTxPowerLevel",
 			"()I"
 		);
 	}
-	JString ScanRecord::toString()
+	JString ScanRecord::toString() const
 	{
 		return callObjectMethod(
 			"toString",

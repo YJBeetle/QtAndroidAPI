@@ -91,21 +91,21 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint SaveInfo::describeContents()
+	jint SaveInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString SaveInfo::toString()
+	JString SaveInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SaveInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SaveInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

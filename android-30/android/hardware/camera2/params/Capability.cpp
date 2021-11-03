@@ -14,7 +14,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	jboolean Capability::equals(JObject arg0)
+	jboolean Capability::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -22,35 +22,35 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	android::util::Size Capability::getMaxStreamingSize()
+	android::util::Size Capability::getMaxStreamingSize() const
 	{
 		return callObjectMethod(
 			"getMaxStreamingSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	jint Capability::getMode()
+	jint Capability::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	android::util::Range Capability::getZoomRatioRange()
+	android::util::Range Capability::getZoomRatioRange() const
 	{
 		return callObjectMethod(
 			"getZoomRatioRange",
 			"()Landroid/util/Range;"
 		);
 	}
-	jint Capability::hashCode()
+	jint Capability::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Capability::toString()
+	JString Capability::toString() const
 	{
 		return callObjectMethod(
 			"toString",

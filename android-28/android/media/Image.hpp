@@ -26,16 +26,16 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void close();
-		android::graphics::Rect getCropRect();
-		jint getFormat();
-		android::hardware::HardwareBuffer getHardwareBuffer();
-		jint getHeight();
-		JArray getPlanes();
-		jlong getTimestamp();
-		jint getWidth();
-		void setCropRect(android::graphics::Rect arg0);
-		void setTimestamp(jlong arg0);
+		void close() const;
+		android::graphics::Rect getCropRect() const;
+		jint getFormat() const;
+		android::hardware::HardwareBuffer getHardwareBuffer() const;
+		jint getHeight() const;
+		JArray getPlanes() const;
+		jlong getTimestamp() const;
+		jint getWidth() const;
+		void setCropRect(android::graphics::Rect arg0) const;
+		void setTimestamp(jlong arg0) const;
 	};
 } // namespace android::media
 

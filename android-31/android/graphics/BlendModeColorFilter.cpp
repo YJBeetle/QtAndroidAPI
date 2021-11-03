@@ -19,7 +19,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean BlendModeColorFilter::equals(JObject arg0)
+	jboolean BlendModeColorFilter::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,21 +27,21 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint BlendModeColorFilter::getColor()
+	jint BlendModeColorFilter::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	android::graphics::BlendMode BlendModeColorFilter::getMode()
+	android::graphics::BlendMode BlendModeColorFilter::getMode() const
 	{
 		return callObjectMethod(
 			"getMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	jint BlendModeColorFilter::hashCode()
+	jint BlendModeColorFilter::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

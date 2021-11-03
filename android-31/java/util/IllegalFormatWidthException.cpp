@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString IllegalFormatWidthException::getMessage()
+	JString IllegalFormatWidthException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint IllegalFormatWidthException::getWidth()
+	jint IllegalFormatWidthException::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",

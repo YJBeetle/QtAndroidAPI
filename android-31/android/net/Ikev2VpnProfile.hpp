@@ -28,21 +28,21 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAllowedAlgorithms();
-		jint getMaxMtu();
-		JString getPassword();
-		JByteArray getPresharedKey();
-		android::net::ProxyInfo getProxyInfo();
-		JObject getRsaPrivateKey();
-		JString getServerAddr();
-		java::security::cert::X509Certificate getServerRootCaCert();
-		java::security::cert::X509Certificate getUserCert();
-		JString getUserIdentity();
-		JString getUsername();
-		jint hashCode();
-		jboolean isBypassable();
-		jboolean isMetered();
+		jboolean equals(JObject arg0) const;
+		JObject getAllowedAlgorithms() const;
+		jint getMaxMtu() const;
+		JString getPassword() const;
+		JByteArray getPresharedKey() const;
+		android::net::ProxyInfo getProxyInfo() const;
+		JObject getRsaPrivateKey() const;
+		JString getServerAddr() const;
+		java::security::cert::X509Certificate getServerRootCaCert() const;
+		java::security::cert::X509Certificate getUserCert() const;
+		JString getUserIdentity() const;
+		JString getUsername() const;
+		jint hashCode() const;
+		jboolean isBypassable() const;
+		jboolean isMetered() const;
 	};
 } // namespace android::net
 

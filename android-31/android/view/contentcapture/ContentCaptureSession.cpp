@@ -19,14 +19,14 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	void ContentCaptureSession::close()
+	void ContentCaptureSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::view::contentcapture::ContentCaptureSession ContentCaptureSession::createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0)
+	android::view::contentcapture::ContentCaptureSession ContentCaptureSession::createContentCaptureSession(android::view::contentcapture::ContentCaptureContext arg0) const
 	{
 		return callObjectMethod(
 			"createContentCaptureSession",
@@ -34,28 +34,28 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureSession::destroy()
+	void ContentCaptureSession::destroy() const
 	{
 		callMethod<void>(
 			"destroy",
 			"()V"
 		);
 	}
-	android::view::contentcapture::ContentCaptureContext ContentCaptureSession::getContentCaptureContext()
+	android::view::contentcapture::ContentCaptureContext ContentCaptureSession::getContentCaptureContext() const
 	{
 		return callObjectMethod(
 			"getContentCaptureContext",
 			"()Landroid/view/contentcapture/ContentCaptureContext;"
 		);
 	}
-	android::view::contentcapture::ContentCaptureSessionId ContentCaptureSession::getContentCaptureSessionId()
+	android::view::contentcapture::ContentCaptureSessionId ContentCaptureSession::getContentCaptureSessionId() const
 	{
 		return callObjectMethod(
 			"getContentCaptureSessionId",
 			"()Landroid/view/contentcapture/ContentCaptureSessionId;"
 		);
 	}
-	android::view::autofill::AutofillId ContentCaptureSession::newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1)
+	android::view::autofill::AutofillId ContentCaptureSession::newAutofillId(android::view::autofill::AutofillId arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"newAutofillId",
@@ -64,7 +64,7 @@ namespace android::view::contentcapture
 			arg1
 		);
 	}
-	android::view::ViewStructure ContentCaptureSession::newViewStructure(android::view::View arg0)
+	android::view::ViewStructure ContentCaptureSession::newViewStructure(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"newViewStructure",
@@ -72,7 +72,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	android::view::ViewStructure ContentCaptureSession::newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1)
+	android::view::ViewStructure ContentCaptureSession::newVirtualViewStructure(android::view::autofill::AutofillId arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"newVirtualViewStructure",
@@ -81,21 +81,21 @@ namespace android::view::contentcapture
 			arg1
 		);
 	}
-	void ContentCaptureSession::notifySessionPaused()
+	void ContentCaptureSession::notifySessionPaused() const
 	{
 		callMethod<void>(
 			"notifySessionPaused",
 			"()V"
 		);
 	}
-	void ContentCaptureSession::notifySessionResumed()
+	void ContentCaptureSession::notifySessionResumed() const
 	{
 		callMethod<void>(
 			"notifySessionResumed",
 			"()V"
 		);
 	}
-	void ContentCaptureSession::notifyViewAppeared(android::view::ViewStructure arg0)
+	void ContentCaptureSession::notifyViewAppeared(android::view::ViewStructure arg0) const
 	{
 		callMethod<void>(
 			"notifyViewAppeared",
@@ -103,7 +103,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureSession::notifyViewDisappeared(android::view::autofill::AutofillId arg0)
+	void ContentCaptureSession::notifyViewDisappeared(android::view::autofill::AutofillId arg0) const
 	{
 		callMethod<void>(
 			"notifyViewDisappeared",
@@ -111,7 +111,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureSession::notifyViewInsetsChanged(android::graphics::Insets arg0)
+	void ContentCaptureSession::notifyViewInsetsChanged(android::graphics::Insets arg0) const
 	{
 		callMethod<void>(
 			"notifyViewInsetsChanged",
@@ -119,7 +119,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureSession::notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1)
+	void ContentCaptureSession::notifyViewTextChanged(android::view::autofill::AutofillId arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"notifyViewTextChanged",
@@ -128,7 +128,7 @@ namespace android::view::contentcapture
 			arg1.object<jstring>()
 		);
 	}
-	void ContentCaptureSession::notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1)
+	void ContentCaptureSession::notifyViewsDisappeared(android::view::autofill::AutofillId arg0, JLongArray arg1) const
 	{
 		callMethod<void>(
 			"notifyViewsDisappeared",
@@ -137,7 +137,7 @@ namespace android::view::contentcapture
 			arg1.object<jlongArray>()
 		);
 	}
-	void ContentCaptureSession::setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0)
+	void ContentCaptureSession::setContentCaptureContext(android::view::contentcapture::ContentCaptureContext arg0) const
 	{
 		callMethod<void>(
 			"setContentCaptureContext",
@@ -145,7 +145,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	JString ContentCaptureSession::toString()
+	JString ContentCaptureSession::toString() const
 	{
 		return callObjectMethod(
 			"toString",

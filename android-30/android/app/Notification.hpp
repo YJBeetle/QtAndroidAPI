@@ -186,25 +186,25 @@ namespace android::app
 		Notification(jint arg0, JString arg1, jlong arg2);
 		
 		// Methods
-		android::app::Notification clone();
-		jint describeContents();
-		android::util::Pair findRemoteInputActionPair(jboolean arg0);
-		jboolean getAllowSystemGeneratedContextualActions();
-		jint getBadgeIconType();
-		android::app::Notification_BubbleMetadata getBubbleMetadata();
-		JString getChannelId();
-		JObject getContextualActions();
-		JString getGroup();
-		jint getGroupAlertBehavior();
-		android::graphics::drawable::Icon getLargeIcon();
-		android::content::LocusId getLocusId();
-		JString getSettingsText();
-		JString getShortcutId();
-		android::graphics::drawable::Icon getSmallIcon();
-		JString getSortKey();
-		jlong getTimeoutAfter();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::app::Notification clone() const;
+		jint describeContents() const;
+		android::util::Pair findRemoteInputActionPair(jboolean arg0) const;
+		jboolean getAllowSystemGeneratedContextualActions() const;
+		jint getBadgeIconType() const;
+		android::app::Notification_BubbleMetadata getBubbleMetadata() const;
+		JString getChannelId() const;
+		JObject getContextualActions() const;
+		JString getGroup() const;
+		jint getGroupAlertBehavior() const;
+		android::graphics::drawable::Icon getLargeIcon() const;
+		android::content::LocusId getLocusId() const;
+		JString getSettingsText() const;
+		JString getShortcutId() const;
+		android::graphics::drawable::Icon getSmallIcon() const;
+		JString getSortKey() const;
+		jlong getTimeoutAfter() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

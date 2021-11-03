@@ -22,10 +22,10 @@ namespace android::os
 		BugreportManager_BugreportCallback();
 		
 		// Methods
-		void onEarlyReportFinished();
-		void onError(jint arg0);
-		void onFinished();
-		void onProgress(jfloat arg0);
+		void onEarlyReportFinished() const;
+		void onError(jint arg0) const;
+		void onFinished() const;
+		void onProgress(jfloat arg0) const;
 	};
 } // namespace android::os
 

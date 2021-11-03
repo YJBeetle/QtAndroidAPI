@@ -54,36 +54,36 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		void abort();
-		void answer();
-		void disconnect();
-		android::net::Uri getAddress();
-		jint getAddressPresentation();
-		JString getCallerDisplayName();
-		jint getCallerDisplayNamePresentation();
-		android::telecom::RemoteConference getConference();
-		JObject getConferenceableConnections();
-		jint getConnectionCapabilities();
-		jint getConnectionProperties();
-		android::telecom::DisconnectCause getDisconnectCause();
-		android::os::Bundle getExtras();
-		jint getState();
-		android::telecom::StatusHints getStatusHints();
-		android::telecom::RemoteConnection_VideoProvider getVideoProvider();
-		jint getVideoState();
-		void hold();
-		jboolean isRingbackRequested();
-		jboolean isVoipAudioMode();
-		void playDtmfTone(jchar arg0);
-		void postDialContinue(jboolean arg0);
-		void pullExternalCall();
-		void registerCallback(android::telecom::RemoteConnection_Callback arg0);
-		void registerCallback(android::telecom::RemoteConnection_Callback arg0, android::os::Handler arg1);
-		void reject();
-		void setCallAudioState(android::telecom::CallAudioState arg0);
-		void stopDtmfTone();
-		void unhold();
-		void unregisterCallback(android::telecom::RemoteConnection_Callback arg0);
+		void abort() const;
+		void answer() const;
+		void disconnect() const;
+		android::net::Uri getAddress() const;
+		jint getAddressPresentation() const;
+		JString getCallerDisplayName() const;
+		jint getCallerDisplayNamePresentation() const;
+		android::telecom::RemoteConference getConference() const;
+		JObject getConferenceableConnections() const;
+		jint getConnectionCapabilities() const;
+		jint getConnectionProperties() const;
+		android::telecom::DisconnectCause getDisconnectCause() const;
+		android::os::Bundle getExtras() const;
+		jint getState() const;
+		android::telecom::StatusHints getStatusHints() const;
+		android::telecom::RemoteConnection_VideoProvider getVideoProvider() const;
+		jint getVideoState() const;
+		void hold() const;
+		jboolean isRingbackRequested() const;
+		jboolean isVoipAudioMode() const;
+		void playDtmfTone(jchar arg0) const;
+		void postDialContinue(jboolean arg0) const;
+		void pullExternalCall() const;
+		void registerCallback(android::telecom::RemoteConnection_Callback arg0) const;
+		void registerCallback(android::telecom::RemoteConnection_Callback arg0, android::os::Handler arg1) const;
+		void reject() const;
+		void setCallAudioState(android::telecom::CallAudioState arg0) const;
+		void stopDtmfTone() const;
+		void unhold() const;
+		void unregisterCallback(android::telecom::RemoteConnection_Callback arg0) const;
 	};
 } // namespace android::telecom
 

@@ -24,11 +24,11 @@ namespace android::net::wifi
 		WifiInfo_Builder();
 		
 		// Methods
-		android::net::wifi::WifiInfo build();
-		android::net::wifi::WifiInfo_Builder setBssid(JString arg0);
-		android::net::wifi::WifiInfo_Builder setNetworkId(jint arg0);
-		android::net::wifi::WifiInfo_Builder setRssi(jint arg0);
-		android::net::wifi::WifiInfo_Builder setSsid(JByteArray arg0);
+		android::net::wifi::WifiInfo build() const;
+		android::net::wifi::WifiInfo_Builder setBssid(JString arg0) const;
+		android::net::wifi::WifiInfo_Builder setNetworkId(jint arg0) const;
+		android::net::wifi::WifiInfo_Builder setRssi(jint arg0) const;
+		android::net::wifi::WifiInfo_Builder setSsid(JByteArray arg0) const;
 	};
 } // namespace android::net::wifi
 

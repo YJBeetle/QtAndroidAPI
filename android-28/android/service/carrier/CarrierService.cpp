@@ -27,7 +27,7 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	void CarrierService::notifyCarrierNetworkChange(jboolean arg0)
+	void CarrierService::notifyCarrierNetworkChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"notifyCarrierNetworkChange",
@@ -35,7 +35,7 @@ namespace android::service::carrier
 			arg0
 		);
 	}
-	JObject CarrierService::onBind(android::content::Intent arg0)
+	JObject CarrierService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -43,7 +43,7 @@ namespace android::service::carrier
 			arg0.object()
 		);
 	}
-	android::os::PersistableBundle CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0)
+	android::os::PersistableBundle CarrierService::onLoadConfig(android::service::carrier::CarrierIdentifier arg0) const
 	{
 		return callObjectMethod(
 			"onLoadConfig",

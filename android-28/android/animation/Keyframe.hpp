@@ -26,15 +26,15 @@ namespace android::animation
 		static android::animation::Keyframe ofInt(jfloat arg0, jint arg1);
 		static android::animation::Keyframe ofObject(jfloat arg0);
 		static android::animation::Keyframe ofObject(jfloat arg0, JObject arg1);
-		android::animation::Keyframe clone();
-		jfloat getFraction();
-		JObject getInterpolator();
-		JClass getType();
-		JObject getValue();
-		jboolean hasValue();
-		void setFraction(jfloat arg0);
-		void setInterpolator(JObject arg0);
-		void setValue(JObject arg0);
+		android::animation::Keyframe clone() const;
+		jfloat getFraction() const;
+		JObject getInterpolator() const;
+		JClass getType() const;
+		JObject getValue() const;
+		jboolean hasValue() const;
+		void setFraction(jfloat arg0) const;
+		void setInterpolator(JObject arg0) const;
+		void setValue(JObject arg0) const;
 	};
 } // namespace android::animation
 

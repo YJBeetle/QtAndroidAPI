@@ -12,7 +12,7 @@ namespace android::content::pm::verify::domain
 	// Constructors
 	
 	// Methods
-	android::content::pm::verify::domain::DomainVerificationUserState DomainVerificationManager::getDomainVerificationUserState(JString arg0)
+	android::content::pm::verify::domain::DomainVerificationUserState DomainVerificationManager::getDomainVerificationUserState(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDomainVerificationUserState",

@@ -32,22 +32,22 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		android::graphics::Bitmap createIconBitmap(android::content::Context arg0);
-		jint describeContents();
-		JString getCarrierName();
-		JString getCountryIso();
-		jint getDataRoaming();
-		JString getDisplayName();
-		JString getIccId();
-		jint getIconTint();
-		jint getMcc();
-		jint getMnc();
-		JString getNumber();
-		jint getSimSlotIndex();
-		jint getSubscriptionId();
-		jboolean isEmbedded();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		android::graphics::Bitmap createIconBitmap(android::content::Context arg0) const;
+		jint describeContents() const;
+		JString getCarrierName() const;
+		JString getCountryIso() const;
+		jint getDataRoaming() const;
+		JString getDisplayName() const;
+		JString getIccId() const;
+		jint getIconTint() const;
+		jint getMcc() const;
+		jint getMnc() const;
+		JString getNumber() const;
+		jint getSimSlotIndex() const;
+		jint getSubscriptionId() const;
+		jboolean isEmbedded() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

@@ -25,12 +25,12 @@ namespace java::io
 		BufferedWriter(java::io::Writer arg0, jint arg1);
 		
 		// Methods
-		void close();
-		void flush();
-		void newLine();
-		void write(jint arg0);
-		void write(JCharArray arg0, jint arg1, jint arg2);
-		void write(JString arg0, jint arg1, jint arg2);
+		void close() const;
+		void flush() const;
+		void newLine() const;
+		void write(jint arg0) const;
+		void write(JCharArray arg0, jint arg1, jint arg2) const;
+		void write(JString arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

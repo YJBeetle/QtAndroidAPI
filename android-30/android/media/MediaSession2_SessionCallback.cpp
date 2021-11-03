@@ -22,7 +22,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaSession2_SessionCallback::onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, JObject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4)
+	void MediaSession2_SessionCallback::onCommandResult(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, JObject arg2, android::media::Session2Command arg3, android::media::Session2Command_Result arg4) const
 	{
 		callMethod<void>(
 			"onCommandResult",
@@ -34,7 +34,7 @@ namespace android::media
 			arg4.object()
 		);
 	}
-	android::media::Session2CommandGroup MediaSession2_SessionCallback::onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1)
+	android::media::Session2CommandGroup MediaSession2_SessionCallback::onConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const
 	{
 		return callObjectMethod(
 			"onConnect",
@@ -43,7 +43,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSession2_SessionCallback::onDisconnected(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1)
+	void MediaSession2_SessionCallback::onDisconnected(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -52,7 +52,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSession2_SessionCallback::onPostConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1)
+	void MediaSession2_SessionCallback::onPostConnect(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1) const
 	{
 		callMethod<void>(
 			"onPostConnect",
@@ -61,7 +61,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::media::Session2Command_Result MediaSession2_SessionCallback::onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3)
+	android::media::Session2Command_Result MediaSession2_SessionCallback::onSessionCommand(android::media::MediaSession2 arg0, android::media::MediaSession2_ControllerInfo arg1, android::media::Session2Command arg2, android::os::Bundle arg3) const
 	{
 		return callObjectMethod(
 			"onSessionCommand",

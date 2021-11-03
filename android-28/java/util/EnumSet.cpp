@@ -135,7 +135,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	java::util::EnumSet EnumSet::clone()
+	java::util::EnumSet EnumSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",

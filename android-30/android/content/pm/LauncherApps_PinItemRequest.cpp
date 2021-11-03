@@ -37,14 +37,14 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jboolean LauncherApps_PinItemRequest::accept()
+	jboolean LauncherApps_PinItemRequest::accept() const
 	{
 		return callMethod<jboolean>(
 			"accept",
 			"()Z"
 		);
 	}
-	jboolean LauncherApps_PinItemRequest::accept(android::os::Bundle arg0)
+	jboolean LauncherApps_PinItemRequest::accept(android::os::Bundle arg0) const
 	{
 		return callMethod<jboolean>(
 			"accept",
@@ -52,14 +52,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jint LauncherApps_PinItemRequest::describeContents()
+	jint LauncherApps_PinItemRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::appwidget::AppWidgetProviderInfo LauncherApps_PinItemRequest::getAppWidgetProviderInfo(android::content::Context arg0)
+	android::appwidget::AppWidgetProviderInfo LauncherApps_PinItemRequest::getAppWidgetProviderInfo(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getAppWidgetProviderInfo",
@@ -67,35 +67,35 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	android::os::Bundle LauncherApps_PinItemRequest::getExtras()
+	android::os::Bundle LauncherApps_PinItemRequest::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint LauncherApps_PinItemRequest::getRequestType()
+	jint LauncherApps_PinItemRequest::getRequestType() const
 	{
 		return callMethod<jint>(
 			"getRequestType",
 			"()I"
 		);
 	}
-	android::content::pm::ShortcutInfo LauncherApps_PinItemRequest::getShortcutInfo()
+	android::content::pm::ShortcutInfo LauncherApps_PinItemRequest::getShortcutInfo() const
 	{
 		return callObjectMethod(
 			"getShortcutInfo",
 			"()Landroid/content/pm/ShortcutInfo;"
 		);
 	}
-	jboolean LauncherApps_PinItemRequest::isValid()
+	jboolean LauncherApps_PinItemRequest::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	void LauncherApps_PinItemRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LauncherApps_PinItemRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

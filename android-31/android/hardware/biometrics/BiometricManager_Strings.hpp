@@ -18,9 +18,9 @@ namespace android::hardware::biometrics
 		// Constructors
 		
 		// Methods
-		JString getButtonLabel();
-		JString getPromptMessage();
-		JString getSettingName();
+		JString getButtonLabel() const;
+		JString getPromptMessage() const;
+		JString getSettingName() const;
 	};
 } // namespace android::hardware::biometrics
 

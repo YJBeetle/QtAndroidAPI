@@ -79,14 +79,14 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject KeyStore::aliases()
+	JObject KeyStore::aliases() const
 	{
 		return callObjectMethod(
 			"aliases",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jboolean KeyStore::containsAlias(JString arg0)
+	jboolean KeyStore::containsAlias(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAlias",
@@ -94,7 +94,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	void KeyStore::deleteEntry(JString arg0)
+	void KeyStore::deleteEntry(JString arg0) const
 	{
 		callMethod<void>(
 			"deleteEntry",
@@ -102,7 +102,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStore::entryInstanceOf(JString arg0, JClass arg1)
+	jboolean KeyStore::entryInstanceOf(JString arg0, JClass arg1) const
 	{
 		return callMethod<jboolean>(
 			"entryInstanceOf",
@@ -111,7 +111,7 @@ namespace java::security
 			arg1.object<jclass>()
 		);
 	}
-	java::security::cert::Certificate KeyStore::getCertificate(JString arg0)
+	java::security::cert::Certificate KeyStore::getCertificate(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCertificate",
@@ -119,7 +119,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JString KeyStore::getCertificateAlias(java::security::cert::Certificate arg0)
+	JString KeyStore::getCertificateAlias(java::security::cert::Certificate arg0) const
 	{
 		return callObjectMethod(
 			"getCertificateAlias",
@@ -127,7 +127,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JArray KeyStore::getCertificateChain(JString arg0)
+	JArray KeyStore::getCertificateChain(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCertificateChain",
@@ -135,7 +135,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Date KeyStore::getCreationDate(JString arg0)
+	java::util::Date KeyStore::getCreationDate(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCreationDate",
@@ -143,7 +143,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	JObject KeyStore::getEntry(JString arg0, JObject arg1)
+	JObject KeyStore::getEntry(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -152,7 +152,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	JObject KeyStore::getKey(JString arg0, JCharArray arg1)
+	JObject KeyStore::getKey(JString arg0, JCharArray arg1) const
 	{
 		return callObjectMethod(
 			"getKey",
@@ -161,21 +161,21 @@ namespace java::security
 			arg1.object<jcharArray>()
 		);
 	}
-	java::security::Provider KeyStore::getProvider()
+	java::security::Provider KeyStore::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JString KeyStore::getType()
+	JString KeyStore::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean KeyStore::isCertificateEntry(JString arg0)
+	jboolean KeyStore::isCertificateEntry(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isCertificateEntry",
@@ -183,7 +183,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	jboolean KeyStore::isKeyEntry(JString arg0)
+	jboolean KeyStore::isKeyEntry(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isKeyEntry",
@@ -191,7 +191,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	void KeyStore::load(JObject arg0)
+	void KeyStore::load(JObject arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -199,7 +199,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStore::load(java::io::InputStream arg0, JCharArray arg1)
+	void KeyStore::load(java::io::InputStream arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"load",
@@ -208,7 +208,7 @@ namespace java::security
 			arg1.object<jcharArray>()
 		);
 	}
-	void KeyStore::setCertificateEntry(JString arg0, java::security::cert::Certificate arg1)
+	void KeyStore::setCertificateEntry(JString arg0, java::security::cert::Certificate arg1) const
 	{
 		callMethod<void>(
 			"setCertificateEntry",
@@ -217,7 +217,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyStore::setEntry(JString arg0, JObject arg1, JObject arg2)
+	void KeyStore::setEntry(JString arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setEntry",
@@ -227,7 +227,7 @@ namespace java::security
 			arg2.object()
 		);
 	}
-	void KeyStore::setKeyEntry(JString arg0, JByteArray arg1, JArray arg2)
+	void KeyStore::setKeyEntry(JString arg0, JByteArray arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"setKeyEntry",
@@ -237,7 +237,7 @@ namespace java::security
 			arg2.object<jarray>()
 		);
 	}
-	void KeyStore::setKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3)
+	void KeyStore::setKeyEntry(JString arg0, JObject arg1, JCharArray arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"setKeyEntry",
@@ -248,14 +248,14 @@ namespace java::security
 			arg3.object<jarray>()
 		);
 	}
-	jint KeyStore::size()
+	jint KeyStore::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void KeyStore::store(JObject arg0)
+	void KeyStore::store(JObject arg0) const
 	{
 		callMethod<void>(
 			"store",
@@ -263,7 +263,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void KeyStore::store(java::io::OutputStream arg0, JCharArray arg1)
+	void KeyStore::store(java::io::OutputStream arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"store",

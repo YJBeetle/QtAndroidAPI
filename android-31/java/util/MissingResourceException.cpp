@@ -20,14 +20,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString MissingResourceException::getClassName()
+	JString MissingResourceException::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MissingResourceException::getKey()
+	JString MissingResourceException::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",

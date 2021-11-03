@@ -153,14 +153,14 @@ namespace android::view
 			arg0
 		);
 	}
-	jint KeyCharacterMap::describeContents()
+	jint KeyCharacterMap::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean KeyCharacterMap::equals(JObject arg0)
+	jboolean KeyCharacterMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -168,7 +168,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	jint KeyCharacterMap::get(jint arg0, jint arg1)
+	jint KeyCharacterMap::get(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -177,7 +177,7 @@ namespace android::view
 			arg1
 		);
 	}
-	jchar KeyCharacterMap::getDisplayLabel(jint arg0)
+	jchar KeyCharacterMap::getDisplayLabel(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"getDisplayLabel",
@@ -185,7 +185,7 @@ namespace android::view
 			arg0
 		);
 	}
-	JArray KeyCharacterMap::getEvents(JCharArray arg0)
+	JArray KeyCharacterMap::getEvents(JCharArray arg0) const
 	{
 		return callObjectMethod(
 			"getEvents",
@@ -193,7 +193,7 @@ namespace android::view
 			arg0.object<jcharArray>()
 		);
 	}
-	jboolean KeyCharacterMap::getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1)
+	jboolean KeyCharacterMap::getKeyData(jint arg0, android::view::KeyCharacterMap_KeyData arg1) const
 	{
 		return callMethod<jboolean>(
 			"getKeyData",
@@ -202,14 +202,14 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	jint KeyCharacterMap::getKeyboardType()
+	jint KeyCharacterMap::getKeyboardType() const
 	{
 		return callMethod<jint>(
 			"getKeyboardType",
 			"()I"
 		);
 	}
-	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1)
+	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1) const
 	{
 		return callMethod<jchar>(
 			"getMatch",
@@ -218,7 +218,7 @@ namespace android::view
 			arg1.object<jcharArray>()
 		);
 	}
-	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1, jint arg2)
+	jchar KeyCharacterMap::getMatch(jint arg0, JCharArray arg1, jint arg2) const
 	{
 		return callMethod<jchar>(
 			"getMatch",
@@ -228,14 +228,14 @@ namespace android::view
 			arg2
 		);
 	}
-	jint KeyCharacterMap::getModifierBehavior()
+	jint KeyCharacterMap::getModifierBehavior() const
 	{
 		return callMethod<jint>(
 			"getModifierBehavior",
 			"()I"
 		);
 	}
-	jchar KeyCharacterMap::getNumber(jint arg0)
+	jchar KeyCharacterMap::getNumber(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"getNumber",
@@ -243,7 +243,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean KeyCharacterMap::isPrintingKey(jint arg0)
+	jboolean KeyCharacterMap::isPrintingKey(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isPrintingKey",
@@ -251,7 +251,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void KeyCharacterMap::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void KeyCharacterMap::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

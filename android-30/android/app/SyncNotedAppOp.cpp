@@ -28,14 +28,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint SyncNotedAppOp::describeContents()
+	jint SyncNotedAppOp::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SyncNotedAppOp::equals(JObject arg0)
+	jboolean SyncNotedAppOp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -43,28 +43,28 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	JString SyncNotedAppOp::getAttributionTag()
+	JString SyncNotedAppOp::getAttributionTag() const
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SyncNotedAppOp::getOp()
+	JString SyncNotedAppOp::getOp() const
 	{
 		return callObjectMethod(
 			"getOp",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SyncNotedAppOp::hashCode()
+	jint SyncNotedAppOp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void SyncNotedAppOp::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SyncNotedAppOp::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

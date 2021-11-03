@@ -26,7 +26,7 @@ namespace android::app
 		VoiceInteractor_AbortVoiceRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
 		
 		// Methods
-		void onAbortResult(android::os::Bundle arg0);
+		void onAbortResult(android::os::Bundle arg0) const;
 	};
 } // namespace android::app
 

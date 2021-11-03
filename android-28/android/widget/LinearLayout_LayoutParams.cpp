@@ -66,7 +66,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString LinearLayout_LayoutParams::debug(JString arg0)
+	JString LinearLayout_LayoutParams::debug(JString arg0) const
 	{
 		return callObjectMethod(
 			"debug",

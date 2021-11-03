@@ -21,14 +21,14 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	android::media::tv::TvTrackInfo TvTrackInfo_Builder::build()
+	android::media::tv::TvTrackInfo TvTrackInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/tv/TvTrackInfo;"
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioChannelCount(jint arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioChannelCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioChannelCount",
@@ -36,7 +36,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioDescription(jboolean arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioDescription(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAudioDescription",
@@ -44,7 +44,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioSampleRate(jint arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setAudioSampleRate(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioSampleRate",
@@ -52,7 +52,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setDescription(JString arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -60,7 +60,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncoding(JString arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncoding(JString arg0) const
 	{
 		return callObjectMethod(
 			"setEncoding",
@@ -68,7 +68,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncrypted(jboolean arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setEncrypted(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setEncrypted",
@@ -76,7 +76,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setExtra(android::os::Bundle arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setExtra(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtra",
@@ -84,7 +84,7 @@ namespace android::media::tv
 			arg0.object()
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setHardOfHearing(jboolean arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setHardOfHearing(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHardOfHearing",
@@ -92,7 +92,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setLanguage(JString arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setLanguage(JString arg0) const
 	{
 		return callObjectMethod(
 			"setLanguage",
@@ -100,7 +100,7 @@ namespace android::media::tv
 			arg0.object<jstring>()
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setSpokenSubtitle(jboolean arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setSpokenSubtitle(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setSpokenSubtitle",
@@ -108,7 +108,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoActiveFormatDescription(jbyte arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoActiveFormatDescription(jbyte arg0) const
 	{
 		return callObjectMethod(
 			"setVideoActiveFormatDescription",
@@ -116,7 +116,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoFrameRate(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setVideoFrameRate",
@@ -124,7 +124,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoHeight(jint arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoHeight(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVideoHeight",
@@ -132,7 +132,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoPixelAspectRatio(jfloat arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoPixelAspectRatio(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"setVideoPixelAspectRatio",
@@ -140,7 +140,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoWidth(jint arg0)
+	android::media::tv::TvTrackInfo_Builder TvTrackInfo_Builder::setVideoWidth(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVideoWidth",

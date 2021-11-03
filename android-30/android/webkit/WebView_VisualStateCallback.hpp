@@ -17,7 +17,7 @@ namespace android::webkit
 		WebView_VisualStateCallback();
 		
 		// Methods
-		void onComplete(jlong arg0);
+		void onComplete(jlong arg0) const;
 	};
 } // namespace android::webkit
 

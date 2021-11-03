@@ -22,11 +22,11 @@ namespace android::content::res::loader
 		ResourcesLoader();
 		
 		// Methods
-		void addProvider(android::content::res::loader::ResourcesProvider arg0);
-		void clearProviders();
-		JObject getProviders();
-		void removeProvider(android::content::res::loader::ResourcesProvider arg0);
-		void setProviders(JObject arg0);
+		void addProvider(android::content::res::loader::ResourcesProvider arg0) const;
+		void clearProviders() const;
+		JObject getProviders() const;
+		void removeProvider(android::content::res::loader::ResourcesProvider arg0) const;
+		void setProviders(JObject arg0) const;
 	};
 } // namespace android::content::res::loader
 

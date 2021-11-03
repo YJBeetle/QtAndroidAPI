@@ -63,14 +63,14 @@ namespace android::telephony::data
 	// Constructors
 	
 	// Methods
-	jint RouteSelectionDescriptor::describeContents()
+	jint RouteSelectionDescriptor::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RouteSelectionDescriptor::equals(JObject arg0)
+	jboolean RouteSelectionDescriptor::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -78,56 +78,56 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	JObject RouteSelectionDescriptor::getDataNetworkName()
+	JObject RouteSelectionDescriptor::getDataNetworkName() const
 	{
 		return callObjectMethod(
 			"getDataNetworkName",
 			"()Ljava/util/List;"
 		);
 	}
-	jint RouteSelectionDescriptor::getPrecedence()
+	jint RouteSelectionDescriptor::getPrecedence() const
 	{
 		return callMethod<jint>(
 			"getPrecedence",
 			"()I"
 		);
 	}
-	jint RouteSelectionDescriptor::getSessionType()
+	jint RouteSelectionDescriptor::getSessionType() const
 	{
 		return callMethod<jint>(
 			"getSessionType",
 			"()I"
 		);
 	}
-	JObject RouteSelectionDescriptor::getSliceInfo()
+	JObject RouteSelectionDescriptor::getSliceInfo() const
 	{
 		return callObjectMethod(
 			"getSliceInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	jint RouteSelectionDescriptor::getSscMode()
+	jint RouteSelectionDescriptor::getSscMode() const
 	{
 		return callMethod<jint>(
 			"getSscMode",
 			"()I"
 		);
 	}
-	jint RouteSelectionDescriptor::hashCode()
+	jint RouteSelectionDescriptor::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString RouteSelectionDescriptor::toString()
+	JString RouteSelectionDescriptor::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RouteSelectionDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RouteSelectionDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

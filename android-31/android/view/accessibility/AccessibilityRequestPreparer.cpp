@@ -28,14 +28,14 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	android::view::View AccessibilityRequestPreparer::getView()
+	android::view::View AccessibilityRequestPreparer::getView() const
 	{
 		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
-	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3)
+	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, JString arg1, android::os::Bundle arg2, android::os::Message arg3) const
 	{
 		callMethod<void>(
 			"onPrepareExtraData",

@@ -20,8 +20,8 @@ namespace android::service::controls::actions
 		FloatAction(JString arg0, jfloat arg1, JString arg2);
 		
 		// Methods
-		jint getActionType();
-		jfloat getNewValue();
+		jint getActionType() const;
+		jfloat getNewValue() const;
 	};
 } // namespace android::service::controls::actions
 

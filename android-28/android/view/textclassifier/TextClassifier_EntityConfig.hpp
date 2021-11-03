@@ -25,10 +25,10 @@ namespace android::view::textclassifier
 		static android::view::textclassifier::TextClassifier_EntityConfig create(JObject arg0, JObject arg1, JObject arg2);
 		static android::view::textclassifier::TextClassifier_EntityConfig createWithExplicitEntityList(JObject arg0);
 		static android::view::textclassifier::TextClassifier_EntityConfig createWithHints(JObject arg0);
-		jint describeContents();
-		JObject getHints();
-		JObject resolveEntityListModifications(JObject arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getHints() const;
+		JObject resolveEntityListModifications(JObject arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

@@ -40,22 +40,22 @@ namespace android::telephony::emergency
 		// Constructors
 		
 		// Methods
-		jint compareTo(android::telephony::emergency::EmergencyNumber arg0);
-		jint compareTo(JObject arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getCountryIso();
-		jint getEmergencyCallRouting();
-		JObject getEmergencyNumberSources();
-		JObject getEmergencyServiceCategories();
-		JObject getEmergencyUrns();
-		JString getMnc();
-		JString getNumber();
-		jint hashCode();
-		jboolean isFromSources(jint arg0);
-		jboolean isInEmergencyServiceCategories(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint compareTo(android::telephony::emergency::EmergencyNumber arg0) const;
+		jint compareTo(JObject arg0) const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getCountryIso() const;
+		jint getEmergencyCallRouting() const;
+		JObject getEmergencyNumberSources() const;
+		JObject getEmergencyServiceCategories() const;
+		JObject getEmergencyUrns() const;
+		JString getMnc() const;
+		JString getNumber() const;
+		jint hashCode() const;
+		jboolean isFromSources(jint arg0) const;
+		jboolean isInEmergencyServiceCategories(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::emergency
 

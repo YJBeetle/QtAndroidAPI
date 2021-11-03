@@ -22,21 +22,21 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void SoundPool::autoPause()
+	void SoundPool::autoPause() const
 	{
 		callMethod<void>(
 			"autoPause",
 			"()V"
 		);
 	}
-	void SoundPool::autoResume()
+	void SoundPool::autoResume() const
 	{
 		callMethod<void>(
 			"autoResume",
 			"()V"
 		);
 	}
-	jint SoundPool::load(android::content::res::AssetFileDescriptor arg0, jint arg1)
+	jint SoundPool::load(android::content::res::AssetFileDescriptor arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"load",
@@ -45,7 +45,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint SoundPool::load(JString arg0, jint arg1)
+	jint SoundPool::load(JString arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"load",
@@ -54,7 +54,7 @@ namespace android::media
 			arg1
 		);
 	}
-	jint SoundPool::load(android::content::Context arg0, jint arg1, jint arg2)
+	jint SoundPool::load(android::content::Context arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"load",
@@ -64,7 +64,7 @@ namespace android::media
 			arg2
 		);
 	}
-	jint SoundPool::load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3)
+	jint SoundPool::load(java::io::FileDescriptor arg0, jlong arg1, jlong arg2, jint arg3) const
 	{
 		return callMethod<jint>(
 			"load",
@@ -75,7 +75,7 @@ namespace android::media
 			arg3
 		);
 	}
-	void SoundPool::pause(jint arg0)
+	void SoundPool::pause(jint arg0) const
 	{
 		callMethod<void>(
 			"pause",
@@ -83,7 +83,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint SoundPool::play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5)
+	jint SoundPool::play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5) const
 	{
 		return callMethod<jint>(
 			"play",
@@ -96,14 +96,14 @@ namespace android::media
 			arg5
 		);
 	}
-	void SoundPool::release()
+	void SoundPool::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void SoundPool::resume(jint arg0)
+	void SoundPool::resume(jint arg0) const
 	{
 		callMethod<void>(
 			"resume",
@@ -111,7 +111,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void SoundPool::setLoop(jint arg0, jint arg1)
+	void SoundPool::setLoop(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLoop",
@@ -120,7 +120,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void SoundPool::setOnLoadCompleteListener(JObject arg0)
+	void SoundPool::setOnLoadCompleteListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnLoadCompleteListener",
@@ -128,7 +128,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void SoundPool::setPriority(jint arg0, jint arg1)
+	void SoundPool::setPriority(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setPriority",
@@ -137,7 +137,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void SoundPool::setRate(jint arg0, jfloat arg1)
+	void SoundPool::setRate(jint arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setRate",
@@ -146,7 +146,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void SoundPool::setVolume(jint arg0, jfloat arg1, jfloat arg2)
+	void SoundPool::setVolume(jint arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"setVolume",
@@ -156,7 +156,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void SoundPool::stop(jint arg0)
+	void SoundPool::stop(jint arg0) const
 	{
 		callMethod<void>(
 			"stop",
@@ -164,7 +164,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean SoundPool::unload(jint arg0)
+	jboolean SoundPool::unload(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"unload",

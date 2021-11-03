@@ -10,14 +10,14 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void SslErrorHandler::cancel()
+	void SslErrorHandler::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	void SslErrorHandler::proceed()
+	void SslErrorHandler::proceed() const
 	{
 		callMethod<void>(
 			"proceed",

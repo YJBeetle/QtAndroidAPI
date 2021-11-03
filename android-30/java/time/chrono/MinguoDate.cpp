@@ -66,7 +66,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	JObject MinguoDate::atTime(java::time::LocalTime arg0)
+	JObject MinguoDate::atTime(java::time::LocalTime arg0) const
 	{
 		return callObjectMethod(
 			"atTime",
@@ -74,7 +74,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jboolean MinguoDate::equals(JObject arg0)
+	jboolean MinguoDate::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -82,21 +82,21 @@ namespace java::time::chrono
 			arg0.object<jobject>()
 		);
 	}
-	java::time::chrono::MinguoChronology MinguoDate::getChronology()
+	java::time::chrono::MinguoChronology MinguoDate::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/MinguoChronology;"
 		);
 	}
-	java::time::chrono::MinguoEra MinguoDate::getEra()
+	java::time::chrono::MinguoEra MinguoDate::getEra() const
 	{
 		return callObjectMethod(
 			"getEra",
 			"()Ljava/time/chrono/MinguoEra;"
 		);
 	}
-	jlong MinguoDate::getLong(JObject arg0)
+	jlong MinguoDate::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -104,21 +104,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint MinguoDate::hashCode()
+	jint MinguoDate::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint MinguoDate::lengthOfMonth()
+	jint MinguoDate::lengthOfMonth() const
 	{
 		return callMethod<jint>(
 			"lengthOfMonth",
 			"()I"
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::minus(JObject arg0)
+	java::time::chrono::MinguoDate MinguoDate::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -126,7 +126,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::minus(jlong arg0, JObject arg1)
+	java::time::chrono::MinguoDate MinguoDate::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -135,7 +135,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::plus(JObject arg0)
+	java::time::chrono::MinguoDate MinguoDate::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -143,7 +143,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::plus(jlong arg0, JObject arg1)
+	java::time::chrono::MinguoDate MinguoDate::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -152,7 +152,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange MinguoDate::range(JObject arg0)
+	java::time::temporal::ValueRange MinguoDate::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -160,21 +160,21 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong MinguoDate::toEpochDay()
+	jlong MinguoDate::toEpochDay() const
 	{
 		return callMethod<jlong>(
 			"toEpochDay",
 			"()J"
 		);
 	}
-	JString MinguoDate::toString()
+	JString MinguoDate::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject MinguoDate::until(JObject arg0)
+	JObject MinguoDate::until(JObject arg0) const
 	{
 		return callObjectMethod(
 			"until",
@@ -182,7 +182,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong MinguoDate::until(JObject arg0, JObject arg1)
+	jlong MinguoDate::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -191,7 +191,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0)
+	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -199,7 +199,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0, jlong arg1)
+	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",

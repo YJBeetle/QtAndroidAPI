@@ -35,10 +35,10 @@ namespace android::content::pm
 		PermissionGroupInfo(android::content::pm::PermissionGroupInfo &arg0);
 		
 		// Methods
-		jint describeContents();
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

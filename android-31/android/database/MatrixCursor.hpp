@@ -27,20 +27,20 @@ namespace android::database
 		MatrixCursor(JArray arg0, jint arg1);
 		
 		// Methods
-		void addRow(JObjectArray arg0);
-		void addRow(JObject arg0);
-		JByteArray getBlob(jint arg0);
-		JArray getColumnNames();
-		jint getCount();
-		jdouble getDouble(jint arg0);
-		jfloat getFloat(jint arg0);
-		jint getInt(jint arg0);
-		jlong getLong(jint arg0);
-		jshort getShort(jint arg0);
-		JString getString(jint arg0);
-		jint getType(jint arg0);
-		jboolean isNull(jint arg0);
-		android::database::MatrixCursor_RowBuilder newRow();
+		void addRow(JObjectArray arg0) const;
+		void addRow(JObject arg0) const;
+		JByteArray getBlob(jint arg0) const;
+		JArray getColumnNames() const;
+		jint getCount() const;
+		jdouble getDouble(jint arg0) const;
+		jfloat getFloat(jint arg0) const;
+		jint getInt(jint arg0) const;
+		jlong getLong(jint arg0) const;
+		jshort getShort(jint arg0) const;
+		JString getString(jint arg0) const;
+		jint getType(jint arg0) const;
+		jboolean isNull(jint arg0) const;
+		android::database::MatrixCursor_RowBuilder newRow() const;
 	};
 } // namespace android::database
 

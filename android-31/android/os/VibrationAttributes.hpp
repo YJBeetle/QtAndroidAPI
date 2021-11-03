@@ -37,15 +37,15 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getFlags();
-		jint getUsage();
-		jint getUsageClass();
-		jint hashCode();
-		jboolean isFlagSet(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getFlags() const;
+		jint getUsage() const;
+		jint getUsageClass() const;
+		jint hashCode() const;
+		jboolean isFlagSet(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os
 

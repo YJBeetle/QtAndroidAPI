@@ -21,19 +21,19 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);
-		android::util::Range getAchievableFrameRatesFor(jint arg0, jint arg1);
-		android::util::Range getBitrateRange();
-		jint getHeightAlignment();
-		android::util::Range getSupportedFrameRates();
-		android::util::Range getSupportedFrameRatesFor(jint arg0, jint arg1);
-		android::util::Range getSupportedHeights();
-		android::util::Range getSupportedHeightsFor(jint arg0);
-		JObject getSupportedPerformancePoints();
-		android::util::Range getSupportedWidths();
-		android::util::Range getSupportedWidthsFor(jint arg0);
-		jint getWidthAlignment();
-		jboolean isSizeSupported(jint arg0, jint arg1);
+		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2) const;
+		android::util::Range getAchievableFrameRatesFor(jint arg0, jint arg1) const;
+		android::util::Range getBitrateRange() const;
+		jint getHeightAlignment() const;
+		android::util::Range getSupportedFrameRates() const;
+		android::util::Range getSupportedFrameRatesFor(jint arg0, jint arg1) const;
+		android::util::Range getSupportedHeights() const;
+		android::util::Range getSupportedHeightsFor(jint arg0) const;
+		JObject getSupportedPerformancePoints() const;
+		android::util::Range getSupportedWidths() const;
+		android::util::Range getSupportedWidthsFor(jint arg0) const;
+		jint getWidthAlignment() const;
+		jboolean isSizeSupported(jint arg0, jint arg1) const;
 	};
 } // namespace android::media
 

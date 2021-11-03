@@ -18,13 +18,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint getBitrate();
-		jint getCodec();
-		jint getFrameRate();
-		jint getHeight();
-		JString getMediaType();
-		jint getProfile();
-		jint getWidth();
+		jint getBitrate() const;
+		jint getCodec() const;
+		jint getFrameRate() const;
+		jint getHeight() const;
+		JString getMediaType() const;
+		jint getProfile() const;
+		jint getWidth() const;
 	};
 } // namespace android::media
 

@@ -22,9 +22,9 @@ namespace android::telephony::mbms
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JObject getFiles();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getFiles() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::mbms
 

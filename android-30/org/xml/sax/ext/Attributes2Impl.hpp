@@ -21,17 +21,17 @@ namespace org::xml::sax::ext
 		Attributes2Impl(JObject arg0);
 		
 		// Methods
-		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
-		jboolean isDeclared(jint arg0);
-		jboolean isDeclared(JString arg0);
-		jboolean isDeclared(JString arg0, JString arg1);
-		jboolean isSpecified(jint arg0);
-		jboolean isSpecified(JString arg0);
-		jboolean isSpecified(JString arg0, JString arg1);
-		void removeAttribute(jint arg0);
-		void setAttributes(JObject arg0);
-		void setDeclared(jint arg0, jboolean arg1);
-		void setSpecified(jint arg0, jboolean arg1);
+		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const;
+		jboolean isDeclared(jint arg0) const;
+		jboolean isDeclared(JString arg0) const;
+		jboolean isDeclared(JString arg0, JString arg1) const;
+		jboolean isSpecified(jint arg0) const;
+		jboolean isSpecified(JString arg0) const;
+		jboolean isSpecified(JString arg0, JString arg1) const;
+		void removeAttribute(jint arg0) const;
+		void setAttributes(JObject arg0) const;
+		void setDeclared(jint arg0, jboolean arg1) const;
+		void setSpecified(jint arg0, jboolean arg1) const;
 	};
 } // namespace org::xml::sax::ext
 

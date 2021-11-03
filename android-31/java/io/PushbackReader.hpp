@@ -24,17 +24,17 @@ namespace java::io
 		PushbackReader(java::io::Reader arg0, jint arg1);
 		
 		// Methods
-		void close();
-		void mark(jint arg0);
-		jboolean markSupported();
-		jint read();
-		jint read(JCharArray arg0, jint arg1, jint arg2);
-		jboolean ready();
-		void reset();
-		jlong skip(jlong arg0);
-		void unread(JCharArray arg0);
-		void unread(jint arg0);
-		void unread(JCharArray arg0, jint arg1, jint arg2);
+		void close() const;
+		void mark(jint arg0) const;
+		jboolean markSupported() const;
+		jint read() const;
+		jint read(JCharArray arg0, jint arg1, jint arg2) const;
+		jboolean ready() const;
+		void reset() const;
+		jlong skip(jlong arg0) const;
+		void unread(JCharArray arg0) const;
+		void unread(jint arg0) const;
+		void unread(JCharArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

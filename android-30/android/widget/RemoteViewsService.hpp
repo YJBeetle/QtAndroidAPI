@@ -22,8 +22,8 @@ namespace android::widget
 		RemoteViewsService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		JObject onGetViewFactory(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		JObject onGetViewFactory(android::content::Intent arg0) const;
 	};
 } // namespace android::widget
 

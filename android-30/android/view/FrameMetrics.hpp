@@ -29,7 +29,7 @@ namespace android::view
 		FrameMetrics(android::view::FrameMetrics &arg0);
 		
 		// Methods
-		jlong getMetric(jint arg0);
+		jlong getMetric(jint arg0) const;
 	};
 } // namespace android::view
 

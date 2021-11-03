@@ -215,14 +215,14 @@ namespace android::view
 			arg1
 		);
 	}
-	jint PointerIcon::describeContents()
+	jint PointerIcon::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PointerIcon::equals(JObject arg0)
+	jboolean PointerIcon::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -230,7 +230,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	void PointerIcon::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PointerIcon::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -11,14 +11,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JObject MediaPlayer_DrmInfo::getPssh()
+	JObject MediaPlayer_DrmInfo::getPssh() const
 	{
 		return callObjectMethod(
 			"getPssh",
 			"()Ljava/util/Map;"
 		);
 	}
-	JArray MediaPlayer_DrmInfo::getSupportedSchemes()
+	JArray MediaPlayer_DrmInfo::getSupportedSchemes() const
 	{
 		return callObjectMethod(
 			"getSupportedSchemes",

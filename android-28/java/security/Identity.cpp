@@ -28,7 +28,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void Identity::addCertificate(JObject arg0)
+	void Identity::addCertificate(JObject arg0) const
 	{
 		callMethod<void>(
 			"addCertificate",
@@ -36,14 +36,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JArray Identity::certificates()
+	JArray Identity::certificates() const
 	{
 		return callObjectMethod(
 			"certificates",
 			"()[Ljava/security/Certificate;"
 		);
 	}
-	jboolean Identity::equals(JObject arg0)
+	jboolean Identity::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,42 +51,42 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString Identity::getInfo()
+	JString Identity::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Identity::getName()
+	JString Identity::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject Identity::getPublicKey()
+	JObject Identity::getPublicKey() const
 	{
 		return callObjectMethod(
 			"getPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	java::security::IdentityScope Identity::getScope()
+	java::security::IdentityScope Identity::getScope() const
 	{
 		return callObjectMethod(
 			"getScope",
 			"()Ljava/security/IdentityScope;"
 		);
 	}
-	jint Identity::hashCode()
+	jint Identity::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Identity::removeCertificate(JObject arg0)
+	void Identity::removeCertificate(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeCertificate",
@@ -94,7 +94,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Identity::setInfo(JString arg0)
+	void Identity::setInfo(JString arg0) const
 	{
 		callMethod<void>(
 			"setInfo",
@@ -102,7 +102,7 @@ namespace java::security
 			arg0.object<jstring>()
 		);
 	}
-	void Identity::setPublicKey(JObject arg0)
+	void Identity::setPublicKey(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPublicKey",
@@ -110,14 +110,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JString Identity::toString()
+	JString Identity::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Identity::toString(jboolean arg0)
+	JString Identity::toString(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"toString",

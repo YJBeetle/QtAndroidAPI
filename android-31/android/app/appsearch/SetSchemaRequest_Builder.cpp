@@ -20,7 +20,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(JArray arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addSchemas",
@@ -28,7 +28,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(JObject arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addSchemas",
@@ -36,14 +36,14 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest SetSchemaRequest_Builder::build()
+	android::app::appsearch::SetSchemaRequest SetSchemaRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/SetSchemaRequest;"
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setForceOverride(jboolean arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setForceOverride(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setForceOverride",
@@ -51,7 +51,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrator(JString arg0, android::app::appsearch::Migrator arg1)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrator(JString arg0, android::app::appsearch::Migrator arg1) const
 	{
 		return callObjectMethod(
 			"setMigrator",
@@ -60,7 +60,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrators(JObject arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrators(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setMigrators",
@@ -68,7 +68,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setSchemaTypeDisplayedBySystem(JString arg0, jboolean arg1)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setSchemaTypeDisplayedBySystem(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setSchemaTypeDisplayedBySystem",
@@ -77,7 +77,7 @@ namespace android::app::appsearch
 			arg1
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setSchemaTypeVisibilityForPackage(JString arg0, jboolean arg1, android::app::appsearch::PackageIdentifier arg2)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setSchemaTypeVisibilityForPackage(JString arg0, jboolean arg1, android::app::appsearch::PackageIdentifier arg2) const
 	{
 		return callObjectMethod(
 			"setSchemaTypeVisibilityForPackage",
@@ -87,7 +87,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setVersion(jint arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setVersion(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVersion",

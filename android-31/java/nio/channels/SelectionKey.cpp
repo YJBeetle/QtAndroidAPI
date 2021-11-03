@@ -41,7 +41,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	JObject SelectionKey::attach(JObject arg0)
+	JObject SelectionKey::attach(JObject arg0) const
 	{
 		return callObjectMethod(
 			"attach",
@@ -49,35 +49,35 @@ namespace java::nio::channels
 			arg0.object<jobject>()
 		);
 	}
-	JObject SelectionKey::attachment()
+	JObject SelectionKey::attachment() const
 	{
 		return callObjectMethod(
 			"attachment",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void SelectionKey::cancel()
+	void SelectionKey::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	java::nio::channels::SelectableChannel SelectionKey::channel()
+	java::nio::channels::SelectableChannel SelectionKey::channel() const
 	{
 		return callObjectMethod(
 			"channel",
 			"()Ljava/nio/channels/SelectableChannel;"
 		);
 	}
-	jint SelectionKey::interestOps()
+	jint SelectionKey::interestOps() const
 	{
 		return callMethod<jint>(
 			"interestOps",
 			"()I"
 		);
 	}
-	java::nio::channels::SelectionKey SelectionKey::interestOps(jint arg0)
+	java::nio::channels::SelectionKey SelectionKey::interestOps(jint arg0) const
 	{
 		return callObjectMethod(
 			"interestOps",
@@ -85,7 +85,7 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jint SelectionKey::interestOpsAnd(jint arg0)
+	jint SelectionKey::interestOpsAnd(jint arg0) const
 	{
 		return callMethod<jint>(
 			"interestOpsAnd",
@@ -93,7 +93,7 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jint SelectionKey::interestOpsOr(jint arg0)
+	jint SelectionKey::interestOpsOr(jint arg0) const
 	{
 		return callMethod<jint>(
 			"interestOpsOr",
@@ -101,49 +101,49 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jboolean SelectionKey::isAcceptable()
+	jboolean SelectionKey::isAcceptable() const
 	{
 		return callMethod<jboolean>(
 			"isAcceptable",
 			"()Z"
 		);
 	}
-	jboolean SelectionKey::isConnectable()
+	jboolean SelectionKey::isConnectable() const
 	{
 		return callMethod<jboolean>(
 			"isConnectable",
 			"()Z"
 		);
 	}
-	jboolean SelectionKey::isReadable()
+	jboolean SelectionKey::isReadable() const
 	{
 		return callMethod<jboolean>(
 			"isReadable",
 			"()Z"
 		);
 	}
-	jboolean SelectionKey::isValid()
+	jboolean SelectionKey::isValid() const
 	{
 		return callMethod<jboolean>(
 			"isValid",
 			"()Z"
 		);
 	}
-	jboolean SelectionKey::isWritable()
+	jboolean SelectionKey::isWritable() const
 	{
 		return callMethod<jboolean>(
 			"isWritable",
 			"()Z"
 		);
 	}
-	jint SelectionKey::readyOps()
+	jint SelectionKey::readyOps() const
 	{
 		return callMethod<jint>(
 			"readyOps",
 			"()I"
 		);
 	}
-	java::nio::channels::Selector SelectionKey::selector()
+	java::nio::channels::Selector SelectionKey::selector() const
 	{
 		return callObjectMethod(
 			"selector",

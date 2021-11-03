@@ -50,21 +50,21 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jfloat BatteryState::getCapacity()
+	jfloat BatteryState::getCapacity() const
 	{
 		return callMethod<jfloat>(
 			"getCapacity",
 			"()F"
 		);
 	}
-	jint BatteryState::getStatus()
+	jint BatteryState::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jboolean BatteryState::isPresent()
+	jboolean BatteryState::isPresent() const
 	{
 		return callMethod<jboolean>(
 			"isPresent",

@@ -33,7 +33,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString ErrnoException::getMessage()
+	JString ErrnoException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

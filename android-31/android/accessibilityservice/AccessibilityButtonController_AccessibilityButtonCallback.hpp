@@ -22,8 +22,8 @@ namespace android::accessibilityservice
 		AccessibilityButtonController_AccessibilityButtonCallback();
 		
 		// Methods
-		void onAvailabilityChanged(android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1);
-		void onClicked(android::accessibilityservice::AccessibilityButtonController arg0);
+		void onAvailabilityChanged(android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1) const;
+		void onClicked(android::accessibilityservice::AccessibilityButtonController arg0) const;
 	};
 } // namespace android::accessibilityservice
 

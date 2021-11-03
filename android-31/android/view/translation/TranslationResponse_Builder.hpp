@@ -34,12 +34,12 @@ namespace android::view::translation
 		TranslationResponse_Builder(jint arg0);
 		
 		// Methods
-		android::view::translation::TranslationResponse build();
-		android::view::translation::TranslationResponse_Builder setFinalResponse(jboolean arg0);
-		android::view::translation::TranslationResponse_Builder setTranslationResponseValue(jint arg0, android::view::translation::TranslationResponseValue arg1);
-		android::view::translation::TranslationResponse_Builder setTranslationResponseValues(android::util::SparseArray arg0);
-		android::view::translation::TranslationResponse_Builder setViewTranslationResponse(jint arg0, android::view::translation::ViewTranslationResponse arg1);
-		android::view::translation::TranslationResponse_Builder setViewTranslationResponses(android::util::SparseArray arg0);
+		android::view::translation::TranslationResponse build() const;
+		android::view::translation::TranslationResponse_Builder setFinalResponse(jboolean arg0) const;
+		android::view::translation::TranslationResponse_Builder setTranslationResponseValue(jint arg0, android::view::translation::TranslationResponseValue arg1) const;
+		android::view::translation::TranslationResponse_Builder setTranslationResponseValues(android::util::SparseArray arg0) const;
+		android::view::translation::TranslationResponse_Builder setViewTranslationResponse(jint arg0, android::view::translation::ViewTranslationResponse arg1) const;
+		android::view::translation::TranslationResponse_Builder setViewTranslationResponses(android::util::SparseArray arg0) const;
 	};
 } // namespace android::view::translation
 

@@ -476,7 +476,7 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	void TelecomManager::acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2)
+	void TelecomManager::acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2) const
 	{
 		callMethod<void>(
 			"acceptHandover",
@@ -486,14 +486,14 @@ namespace android::telecom
 			arg2.object()
 		);
 	}
-	void TelecomManager::acceptRingingCall()
+	void TelecomManager::acceptRingingCall() const
 	{
 		callMethod<void>(
 			"acceptRingingCall",
 			"()V"
 		);
 	}
-	void TelecomManager::acceptRingingCall(jint arg0)
+	void TelecomManager::acceptRingingCall(jint arg0) const
 	{
 		callMethod<void>(
 			"acceptRingingCall",
@@ -501,7 +501,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void TelecomManager::addNewIncomingCall(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1)
+	void TelecomManager::addNewIncomingCall(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"addNewIncomingCall",
@@ -510,7 +510,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void TelecomManager::addNewIncomingConference(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1)
+	void TelecomManager::addNewIncomingConference(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"addNewIncomingConference",
@@ -519,28 +519,28 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void TelecomManager::cancelMissedCallsNotification()
+	void TelecomManager::cancelMissedCallsNotification() const
 	{
 		callMethod<void>(
 			"cancelMissedCallsNotification",
 			"()V"
 		);
 	}
-	android::content::Intent TelecomManager::createManageBlockedNumbersIntent()
+	android::content::Intent TelecomManager::createManageBlockedNumbersIntent() const
 	{
 		return callObjectMethod(
 			"createManageBlockedNumbersIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jboolean TelecomManager::endCall()
+	jboolean TelecomManager::endCall() const
 	{
 		return callMethod<jboolean>(
 			"endCall",
 			"()Z"
 		);
 	}
-	android::net::Uri TelecomManager::getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0)
+	android::net::Uri TelecomManager::getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"getAdnUriForPhoneAccount",
@@ -548,21 +548,21 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	JObject TelecomManager::getCallCapablePhoneAccounts()
+	JObject TelecomManager::getCallCapablePhoneAccounts() const
 	{
 		return callObjectMethod(
 			"getCallCapablePhoneAccounts",
 			"()Ljava/util/List;"
 		);
 	}
-	JString TelecomManager::getDefaultDialerPackage()
+	JString TelecomManager::getDefaultDialerPackage() const
 	{
 		return callObjectMethod(
 			"getDefaultDialerPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telecom::PhoneAccountHandle TelecomManager::getDefaultOutgoingPhoneAccount(JString arg0)
+	android::telecom::PhoneAccountHandle TelecomManager::getDefaultOutgoingPhoneAccount(JString arg0) const
 	{
 		return callObjectMethod(
 			"getDefaultOutgoingPhoneAccount",
@@ -570,7 +570,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	JString TelecomManager::getLine1Number(android::telecom::PhoneAccountHandle arg0)
+	JString TelecomManager::getLine1Number(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"getLine1Number",
@@ -578,7 +578,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount TelecomManager::getPhoneAccount(android::telecom::PhoneAccountHandle arg0)
+	android::telecom::PhoneAccount TelecomManager::getPhoneAccount(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"getPhoneAccount",
@@ -586,21 +586,21 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	JObject TelecomManager::getSelfManagedPhoneAccounts()
+	JObject TelecomManager::getSelfManagedPhoneAccounts() const
 	{
 		return callObjectMethod(
 			"getSelfManagedPhoneAccounts",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telecom::PhoneAccountHandle TelecomManager::getSimCallManager()
+	android::telecom::PhoneAccountHandle TelecomManager::getSimCallManager() const
 	{
 		return callObjectMethod(
 			"getSimCallManager",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	android::telecom::PhoneAccountHandle TelecomManager::getSimCallManagerForSubscription(jint arg0)
+	android::telecom::PhoneAccountHandle TelecomManager::getSimCallManagerForSubscription(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSimCallManagerForSubscription",
@@ -608,21 +608,21 @@ namespace android::telecom
 			arg0
 		);
 	}
-	JString TelecomManager::getSystemDialerPackage()
+	JString TelecomManager::getSystemDialerPackage() const
 	{
 		return callObjectMethod(
 			"getSystemDialerPackage",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telecom::PhoneAccountHandle TelecomManager::getUserSelectedOutgoingPhoneAccount()
+	android::telecom::PhoneAccountHandle TelecomManager::getUserSelectedOutgoingPhoneAccount() const
 	{
 		return callObjectMethod(
 			"getUserSelectedOutgoingPhoneAccount",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	JString TelecomManager::getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0)
+	JString TelecomManager::getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"getVoiceMailNumber",
@@ -630,7 +630,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jboolean TelecomManager::handleMmi(JString arg0)
+	jboolean TelecomManager::handleMmi(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"handleMmi",
@@ -638,7 +638,7 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TelecomManager::handleMmi(JString arg0, android::telecom::PhoneAccountHandle arg1)
+	jboolean TelecomManager::handleMmi(JString arg0, android::telecom::PhoneAccountHandle arg1) const
 	{
 		return callMethod<jboolean>(
 			"handleMmi",
@@ -647,28 +647,28 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	jboolean TelecomManager::hasManageOngoingCallsPermission()
+	jboolean TelecomManager::hasManageOngoingCallsPermission() const
 	{
 		return callMethod<jboolean>(
 			"hasManageOngoingCallsPermission",
 			"()Z"
 		);
 	}
-	jboolean TelecomManager::isInCall()
+	jboolean TelecomManager::isInCall() const
 	{
 		return callMethod<jboolean>(
 			"isInCall",
 			"()Z"
 		);
 	}
-	jboolean TelecomManager::isInManagedCall()
+	jboolean TelecomManager::isInManagedCall() const
 	{
 		return callMethod<jboolean>(
 			"isInManagedCall",
 			"()Z"
 		);
 	}
-	jboolean TelecomManager::isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0)
+	jboolean TelecomManager::isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isIncomingCallPermitted",
@@ -676,7 +676,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jboolean TelecomManager::isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0)
+	jboolean TelecomManager::isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOutgoingCallPermitted",
@@ -684,14 +684,14 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jboolean TelecomManager::isTtySupported()
+	jboolean TelecomManager::isTtySupported() const
 	{
 		return callMethod<jboolean>(
 			"isTtySupported",
 			"()Z"
 		);
 	}
-	jboolean TelecomManager::isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, JString arg1)
+	jboolean TelecomManager::isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isVoiceMailNumber",
@@ -700,7 +700,7 @@ namespace android::telecom
 			arg1.object<jstring>()
 		);
 	}
-	void TelecomManager::placeCall(android::net::Uri arg0, android::os::Bundle arg1)
+	void TelecomManager::placeCall(android::net::Uri arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"placeCall",
@@ -709,7 +709,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void TelecomManager::registerPhoneAccount(android::telecom::PhoneAccount arg0)
+	void TelecomManager::registerPhoneAccount(android::telecom::PhoneAccount arg0) const
 	{
 		callMethod<void>(
 			"registerPhoneAccount",
@@ -717,7 +717,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void TelecomManager::showInCallScreen(jboolean arg0)
+	void TelecomManager::showInCallScreen(jboolean arg0) const
 	{
 		callMethod<void>(
 			"showInCallScreen",
@@ -725,14 +725,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void TelecomManager::silenceRinger()
+	void TelecomManager::silenceRinger() const
 	{
 		callMethod<void>(
 			"silenceRinger",
 			"()V"
 		);
 	}
-	void TelecomManager::startConference(JObject arg0, android::os::Bundle arg1)
+	void TelecomManager::startConference(JObject arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"startConference",
@@ -741,7 +741,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void TelecomManager::unregisterPhoneAccount(android::telecom::PhoneAccountHandle arg0)
+	void TelecomManager::unregisterPhoneAccount(android::telecom::PhoneAccountHandle arg0) const
 	{
 		callMethod<void>(
 			"unregisterPhoneAccount",

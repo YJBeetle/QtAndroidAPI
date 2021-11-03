@@ -28,12 +28,12 @@ namespace android::app::people
 		ConversationStatus_Builder(JString arg0, jint arg1);
 		
 		// Methods
-		android::app::people::ConversationStatus build();
-		android::app::people::ConversationStatus_Builder setAvailability(jint arg0);
-		android::app::people::ConversationStatus_Builder setDescription(JString arg0);
-		android::app::people::ConversationStatus_Builder setEndTimeMillis(jlong arg0);
-		android::app::people::ConversationStatus_Builder setIcon(android::graphics::drawable::Icon arg0);
-		android::app::people::ConversationStatus_Builder setStartTimeMillis(jlong arg0);
+		android::app::people::ConversationStatus build() const;
+		android::app::people::ConversationStatus_Builder setAvailability(jint arg0) const;
+		android::app::people::ConversationStatus_Builder setDescription(JString arg0) const;
+		android::app::people::ConversationStatus_Builder setEndTimeMillis(jlong arg0) const;
+		android::app::people::ConversationStatus_Builder setIcon(android::graphics::drawable::Icon arg0) const;
+		android::app::people::ConversationStatus_Builder setStartTimeMillis(jlong arg0) const;
 	};
 } // namespace android::app::people
 

@@ -49,15 +49,15 @@ namespace android::icu::util
 		GregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint getActualMaximum(jint arg0);
-		jint getActualMinimum(jint arg0);
-		java::util::Date getGregorianChange();
-		JString getType();
-		jint hashCode();
-		jboolean isEquivalentTo(android::icu::util::Calendar arg0);
-		jboolean isLeapYear(jint arg0);
-		void roll(jint arg0, jint arg1);
-		void setGregorianChange(java::util::Date arg0);
+		jint getActualMaximum(jint arg0) const;
+		jint getActualMinimum(jint arg0) const;
+		java::util::Date getGregorianChange() const;
+		JString getType() const;
+		jint hashCode() const;
+		jboolean isEquivalentTo(android::icu::util::Calendar arg0) const;
+		jboolean isLeapYear(jint arg0) const;
+		void roll(jint arg0, jint arg1) const;
+		void setGregorianChange(java::util::Date arg0) const;
 	};
 } // namespace android::icu::util
 

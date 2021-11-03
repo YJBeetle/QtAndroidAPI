@@ -18,9 +18,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getDiagnosticInfo();
-		jint getErrorCode();
-		jboolean isTransient();
+		JString getDiagnosticInfo() const;
+		jint getErrorCode() const;
+		jboolean isTransient() const;
 	};
 } // namespace android::media
 

@@ -19,21 +19,21 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	JString TvInputService_HardwareSession::getHardwareInputId()
+	JString TvInputService_HardwareSession::getHardwareInputId() const
 	{
 		return callObjectMethod(
 			"getHardwareInputId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TvInputService_HardwareSession::onHardwareVideoAvailable()
+	void TvInputService_HardwareSession::onHardwareVideoAvailable() const
 	{
 		callMethod<void>(
 			"onHardwareVideoAvailable",
 			"()V"
 		);
 	}
-	void TvInputService_HardwareSession::onHardwareVideoUnavailable(jint arg0)
+	void TvInputService_HardwareSession::onHardwareVideoUnavailable(jint arg0) const
 	{
 		callMethod<void>(
 			"onHardwareVideoUnavailable",
@@ -41,7 +41,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	jboolean TvInputService_HardwareSession::onSetSurface(android::view::Surface arg0)
+	jboolean TvInputService_HardwareSession::onSetSurface(android::view::Surface arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSetSurface",

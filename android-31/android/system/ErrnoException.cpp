@@ -35,21 +35,21 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString ErrnoException::getMessage()
+	JString ErrnoException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::io::IOException ErrnoException::rethrowAsIOException()
+	java::io::IOException ErrnoException::rethrowAsIOException() const
 	{
 		return callObjectMethod(
 			"rethrowAsIOException",
 			"()Ljava/io/IOException;"
 		);
 	}
-	java::net::SocketException ErrnoException::rethrowAsSocketException()
+	java::net::SocketException ErrnoException::rethrowAsSocketException() const
 	{
 		return callObjectMethod(
 			"rethrowAsSocketException",

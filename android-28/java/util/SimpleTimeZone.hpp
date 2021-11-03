@@ -44,27 +44,27 @@ namespace java::util
 		SimpleTimeZone(jint arg0, JString arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		
 		// Methods
-		JObject clone();
-		jboolean equals(JObject arg0);
-		jint getDSTSavings();
-		jint getOffset(jlong arg0);
-		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		jint getRawOffset();
-		jboolean hasSameRules(java::util::TimeZone arg0);
-		jint hashCode();
-		jboolean inDaylightTime(java::util::Date arg0);
-		jboolean observesDaylightTime();
-		void setDSTSavings(jint arg0);
-		void setEndRule(jint arg0, jint arg1, jint arg2);
-		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
-		void setRawOffset(jint arg0);
-		void setStartRule(jint arg0, jint arg1, jint arg2);
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
-		void setStartYear(jint arg0);
-		JString toString();
-		jboolean useDaylightTime();
+		JObject clone() const;
+		jboolean equals(JObject arg0) const;
+		jint getDSTSavings() const;
+		jint getOffset(jlong arg0) const;
+		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		jint getRawOffset() const;
+		jboolean hasSameRules(java::util::TimeZone arg0) const;
+		jint hashCode() const;
+		jboolean inDaylightTime(java::util::Date arg0) const;
+		jboolean observesDaylightTime() const;
+		void setDSTSavings(jint arg0) const;
+		void setEndRule(jint arg0, jint arg1, jint arg2) const;
+		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const;
+		void setRawOffset(jint arg0) const;
+		void setStartRule(jint arg0, jint arg1, jint arg2) const;
+		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const;
+		void setStartYear(jint arg0) const;
+		JString toString() const;
+		jboolean useDaylightTime() const;
 	};
 } // namespace java::util
 

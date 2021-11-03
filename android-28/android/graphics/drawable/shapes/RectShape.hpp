@@ -39,9 +39,9 @@ namespace android::graphics::drawable::shapes
 		RectShape();
 		
 		// Methods
-		android::graphics::drawable::shapes::RectShape clone();
-		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1);
-		void getOutline(android::graphics::Outline arg0);
+		android::graphics::drawable::shapes::RectShape clone() const;
+		void draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const;
+		void getOutline(android::graphics::Outline arg0) const;
 	};
 } // namespace android::graphics::drawable::shapes
 

@@ -59,14 +59,14 @@ namespace android::hardware::camera2
 	// Constructors
 	
 	// Methods
-	void CameraDevice::close()
+	void CameraDevice::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0) const
 	{
 		return callObjectMethod(
 			"createCaptureRequest",
@@ -74,7 +74,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, JObject arg1)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"createCaptureRequest",
@@ -83,7 +83,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraDevice::createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0)
+	void CameraDevice::createCaptureSession(android::hardware::camera2::params::SessionConfiguration arg0) const
 	{
 		callMethod<void>(
 			"createCaptureSession",
@@ -91,7 +91,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice::createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"createCaptureSession",
@@ -101,7 +101,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraDevice::createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"createCaptureSessionByOutputConfigurations",
@@ -111,7 +111,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraDevice::createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"createConstrainedHighSpeedCaptureSession",
@@ -121,7 +121,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createReprocessCaptureRequest(android::hardware::camera2::TotalCaptureResult arg0) const
 	{
 		return callObjectMethod(
 			"createReprocessCaptureRequest",
@@ -129,7 +129,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
+	void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const
 	{
 		callMethod<void>(
 			"createReprocessableCaptureSession",
@@ -140,7 +140,7 @@ namespace android::hardware::camera2
 			arg3.object()
 		);
 	}
-	void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
+	void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3) const
 	{
 		callMethod<void>(
 			"createReprocessableCaptureSessionByConfigurations",
@@ -151,7 +151,7 @@ namespace android::hardware::camera2
 			arg3.object()
 		);
 	}
-	JString CameraDevice::getId()
+	JString CameraDevice::getId() const
 	{
 		return callObjectMethod(
 			"getId",

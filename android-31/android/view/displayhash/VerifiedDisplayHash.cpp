@@ -31,49 +31,49 @@ namespace android::view::displayhash
 		) {}
 	
 	// Methods
-	jint VerifiedDisplayHash::describeContents()
+	jint VerifiedDisplayHash::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::Rect VerifiedDisplayHash::getBoundsInWindow()
+	android::graphics::Rect VerifiedDisplayHash::getBoundsInWindow() const
 	{
 		return callObjectMethod(
 			"getBoundsInWindow",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	JString VerifiedDisplayHash::getHashAlgorithm()
+	JString VerifiedDisplayHash::getHashAlgorithm() const
 	{
 		return callObjectMethod(
 			"getHashAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray VerifiedDisplayHash::getImageHash()
+	JByteArray VerifiedDisplayHash::getImageHash() const
 	{
 		return callObjectMethod(
 			"getImageHash",
 			"()[B"
 		);
 	}
-	jlong VerifiedDisplayHash::getTimeMillis()
+	jlong VerifiedDisplayHash::getTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeMillis",
 			"()J"
 		);
 	}
-	JString VerifiedDisplayHash::toString()
+	JString VerifiedDisplayHash::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VerifiedDisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VerifiedDisplayHash::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

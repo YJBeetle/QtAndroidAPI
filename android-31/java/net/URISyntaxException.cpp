@@ -26,28 +26,28 @@ namespace java::net
 		) {}
 	
 	// Methods
-	jint URISyntaxException::getIndex()
+	jint URISyntaxException::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JString URISyntaxException::getInput()
+	JString URISyntaxException::getInput() const
 	{
 		return callObjectMethod(
 			"getInput",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URISyntaxException::getMessage()
+	JString URISyntaxException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URISyntaxException::getReason()
+	JString URISyntaxException::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",

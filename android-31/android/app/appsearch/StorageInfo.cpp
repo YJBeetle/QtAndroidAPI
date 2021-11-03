@@ -10,21 +10,21 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jint StorageInfo::getAliveDocumentsCount()
+	jint StorageInfo::getAliveDocumentsCount() const
 	{
 		return callMethod<jint>(
 			"getAliveDocumentsCount",
 			"()I"
 		);
 	}
-	jint StorageInfo::getAliveNamespacesCount()
+	jint StorageInfo::getAliveNamespacesCount() const
 	{
 		return callMethod<jint>(
 			"getAliveNamespacesCount",
 			"()I"
 		);
 	}
-	jlong StorageInfo::getSizeBytes()
+	jlong StorageInfo::getSizeBytes() const
 	{
 		return callMethod<jlong>(
 			"getSizeBytes",

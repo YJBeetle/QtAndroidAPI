@@ -42,49 +42,49 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString RatingBar::getAccessibilityClassName()
+	JString RatingBar::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint RatingBar::getNumStars()
+	jint RatingBar::getNumStars() const
 	{
 		return callMethod<jint>(
 			"getNumStars",
 			"()I"
 		);
 	}
-	JObject RatingBar::getOnRatingBarChangeListener()
+	JObject RatingBar::getOnRatingBarChangeListener() const
 	{
 		return callObjectMethod(
 			"getOnRatingBarChangeListener",
 			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;"
 		);
 	}
-	jfloat RatingBar::getRating()
+	jfloat RatingBar::getRating() const
 	{
 		return callMethod<jfloat>(
 			"getRating",
 			"()F"
 		);
 	}
-	jfloat RatingBar::getStepSize()
+	jfloat RatingBar::getStepSize() const
 	{
 		return callMethod<jfloat>(
 			"getStepSize",
 			"()F"
 		);
 	}
-	jboolean RatingBar::isIndicator()
+	jboolean RatingBar::isIndicator() const
 	{
 		return callMethod<jboolean>(
 			"isIndicator",
 			"()Z"
 		);
 	}
-	void RatingBar::setIsIndicator(jboolean arg0)
+	void RatingBar::setIsIndicator(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIsIndicator",
@@ -92,7 +92,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RatingBar::setMax(jint arg0)
+	void RatingBar::setMax(jint arg0) const
 	{
 		callMethod<void>(
 			"setMax",
@@ -100,7 +100,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RatingBar::setNumStars(jint arg0)
+	void RatingBar::setNumStars(jint arg0) const
 	{
 		callMethod<void>(
 			"setNumStars",
@@ -108,7 +108,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RatingBar::setOnRatingBarChangeListener(JObject arg0)
+	void RatingBar::setOnRatingBarChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnRatingBarChangeListener",
@@ -116,7 +116,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RatingBar::setRating(jfloat arg0)
+	void RatingBar::setRating(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setRating",
@@ -124,7 +124,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RatingBar::setStepSize(jfloat arg0)
+	void RatingBar::setStepSize(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setStepSize",

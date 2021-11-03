@@ -18,7 +18,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	void LongAdder::add(jlong arg0)
+	void LongAdder::add(jlong arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -26,70 +26,70 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void LongAdder::decrement()
+	void LongAdder::decrement() const
 	{
 		callMethod<void>(
 			"decrement",
 			"()V"
 		);
 	}
-	jdouble LongAdder::doubleValue()
+	jdouble LongAdder::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat LongAdder::floatValue()
+	jfloat LongAdder::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	void LongAdder::increment()
+	void LongAdder::increment() const
 	{
 		callMethod<void>(
 			"increment",
 			"()V"
 		);
 	}
-	jint LongAdder::intValue()
+	jint LongAdder::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong LongAdder::longValue()
+	jlong LongAdder::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	void LongAdder::reset()
+	void LongAdder::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong LongAdder::sum()
+	jlong LongAdder::sum() const
 	{
 		return callMethod<jlong>(
 			"sum",
 			"()J"
 		);
 	}
-	jlong LongAdder::sumThenReset()
+	jlong LongAdder::sumThenReset() const
 	{
 		return callMethod<jlong>(
 			"sumThenReset",
 			"()J"
 		);
 	}
-	JString LongAdder::toString()
+	JString LongAdder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

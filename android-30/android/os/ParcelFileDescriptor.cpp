@@ -207,28 +207,28 @@ namespace android::os
 			arg2.object()
 		);
 	}
-	jboolean ParcelFileDescriptor::canDetectErrors()
+	jboolean ParcelFileDescriptor::canDetectErrors() const
 	{
 		return callMethod<jboolean>(
 			"canDetectErrors",
 			"()Z"
 		);
 	}
-	void ParcelFileDescriptor::checkError()
+	void ParcelFileDescriptor::checkError() const
 	{
 		callMethod<void>(
 			"checkError",
 			"()V"
 		);
 	}
-	void ParcelFileDescriptor::close()
+	void ParcelFileDescriptor::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ParcelFileDescriptor::closeWithError(JString arg0)
+	void ParcelFileDescriptor::closeWithError(JString arg0) const
 	{
 		callMethod<void>(
 			"closeWithError",
@@ -236,56 +236,56 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jint ParcelFileDescriptor::describeContents()
+	jint ParcelFileDescriptor::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ParcelFileDescriptor::detachFd()
+	jint ParcelFileDescriptor::detachFd() const
 	{
 		return callMethod<jint>(
 			"detachFd",
 			"()I"
 		);
 	}
-	android::os::ParcelFileDescriptor ParcelFileDescriptor::dup()
+	android::os::ParcelFileDescriptor ParcelFileDescriptor::dup() const
 	{
 		return callObjectMethod(
 			"dup",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	jint ParcelFileDescriptor::getFd()
+	jint ParcelFileDescriptor::getFd() const
 	{
 		return callMethod<jint>(
 			"getFd",
 			"()I"
 		);
 	}
-	java::io::FileDescriptor ParcelFileDescriptor::getFileDescriptor()
+	java::io::FileDescriptor ParcelFileDescriptor::getFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	jlong ParcelFileDescriptor::getStatSize()
+	jlong ParcelFileDescriptor::getStatSize() const
 	{
 		return callMethod<jlong>(
 			"getStatSize",
 			"()J"
 		);
 	}
-	JString ParcelFileDescriptor::toString()
+	JString ParcelFileDescriptor::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ParcelFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ParcelFileDescriptor::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

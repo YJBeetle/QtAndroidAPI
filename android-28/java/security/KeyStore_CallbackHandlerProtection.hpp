@@ -17,7 +17,7 @@ namespace java::security
 		KeyStore_CallbackHandlerProtection(JObject arg0);
 		
 		// Methods
-		JObject getCallbackHandler();
+		JObject getCallbackHandler() const;
 	};
 } // namespace java::security
 

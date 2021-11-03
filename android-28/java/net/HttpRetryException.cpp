@@ -26,21 +26,21 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JString HttpRetryException::getLocation()
+	JString HttpRetryException::getLocation() const
 	{
 		return callObjectMethod(
 			"getLocation",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString HttpRetryException::getReason()
+	JString HttpRetryException::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint HttpRetryException::responseCode()
+	jint HttpRetryException::responseCode() const
 	{
 		return callMethod<jint>(
 			"responseCode",

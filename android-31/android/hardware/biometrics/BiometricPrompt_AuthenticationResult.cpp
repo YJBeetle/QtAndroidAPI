@@ -11,14 +11,14 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	jint BiometricPrompt_AuthenticationResult::getAuthenticationType()
+	jint BiometricPrompt_AuthenticationResult::getAuthenticationType() const
 	{
 		return callMethod<jint>(
 			"getAuthenticationType",
 			"()I"
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_CryptoObject BiometricPrompt_AuthenticationResult::getCryptoObject()
+	android::hardware::biometrics::BiometricPrompt_CryptoObject BiometricPrompt_AuthenticationResult::getCryptoObject() const
 	{
 		return callObjectMethod(
 			"getCryptoObject",

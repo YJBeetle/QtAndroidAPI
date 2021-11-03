@@ -33,15 +33,15 @@ namespace android::view
 		ViewGroup_MarginLayoutParams(jint arg0, jint arg1);
 		
 		// Methods
-		jint getLayoutDirection();
-		jint getMarginEnd();
-		jint getMarginStart();
-		jboolean isMarginRelative();
-		void resolveLayoutDirection(jint arg0);
-		void setLayoutDirection(jint arg0);
-		void setMarginEnd(jint arg0);
-		void setMarginStart(jint arg0);
-		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3);
+		jint getLayoutDirection() const;
+		jint getMarginEnd() const;
+		jint getMarginStart() const;
+		jboolean isMarginRelative() const;
+		void resolveLayoutDirection(jint arg0) const;
+		void setLayoutDirection(jint arg0) const;
+		void setMarginEnd(jint arg0) const;
+		void setMarginStart(jint arg0) const;
+		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::view
 

@@ -26,8 +26,8 @@ namespace android::view
 		WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1);
 		
 		// Methods
-		android::graphics::Rect getBounds();
-		android::view::WindowInsets getWindowInsets();
+		android::graphics::Rect getBounds() const;
+		android::view::WindowInsets getWindowInsets() const;
 	};
 } // namespace android::view
 

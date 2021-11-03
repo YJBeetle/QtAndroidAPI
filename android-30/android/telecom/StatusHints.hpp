@@ -33,13 +33,13 @@ namespace android::telecom
 		StatusHints(JString arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::Bundle getExtras();
-		android::graphics::drawable::Icon getIcon();
-		JString getLabel();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getExtras() const;
+		android::graphics::drawable::Icon getIcon() const;
+		JString getLabel() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telecom
 

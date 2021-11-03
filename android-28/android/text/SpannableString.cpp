@@ -31,7 +31,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	jchar SpannableString::charAt(jint arg0)
+	jchar SpannableString::charAt(jint arg0) const
 	{
 		return callMethod<jchar>(
 			"charAt",
@@ -39,7 +39,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean SpannableString::equals(JObject arg0)
+	jboolean SpannableString::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,7 +47,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	void SpannableString::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3)
+	void SpannableString::getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"getChars",
@@ -58,7 +58,7 @@ namespace android::text
 			arg3
 		);
 	}
-	jint SpannableString::getSpanEnd(JObject arg0)
+	jint SpannableString::getSpanEnd(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanEnd",
@@ -66,7 +66,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannableString::getSpanFlags(JObject arg0)
+	jint SpannableString::getSpanFlags(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanFlags",
@@ -74,7 +74,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	jint SpannableString::getSpanStart(JObject arg0)
+	jint SpannableString::getSpanStart(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getSpanStart",
@@ -82,7 +82,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	JObjectArray SpannableString::getSpans(jint arg0, jint arg1, JClass arg2)
+	JObjectArray SpannableString::getSpans(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"getSpans",
@@ -92,21 +92,21 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	jint SpannableString::hashCode()
+	jint SpannableString::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint SpannableString::length()
+	jint SpannableString::length() const
 	{
 		return callMethod<jint>(
 			"length",
 			"()I"
 		);
 	}
-	jint SpannableString::nextSpanTransition(jint arg0, jint arg1, JClass arg2)
+	jint SpannableString::nextSpanTransition(jint arg0, jint arg1, JClass arg2) const
 	{
 		return callMethod<jint>(
 			"nextSpanTransition",
@@ -116,7 +116,7 @@ namespace android::text
 			arg2.object<jclass>()
 		);
 	}
-	void SpannableString::removeSpan(JObject arg0)
+	void SpannableString::removeSpan(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeSpan",
@@ -124,7 +124,7 @@ namespace android::text
 			arg0.object<jobject>()
 		);
 	}
-	void SpannableString::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3)
+	void SpannableString::setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setSpan",
@@ -135,7 +135,7 @@ namespace android::text
 			arg3
 		);
 	}
-	JString SpannableString::subSequence(jint arg0, jint arg1)
+	JString SpannableString::subSequence(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subSequence",
@@ -144,7 +144,7 @@ namespace android::text
 			arg1
 		);
 	}
-	JString SpannableString::toString()
+	JString SpannableString::toString() const
 	{
 		return callObjectMethod(
 			"toString",

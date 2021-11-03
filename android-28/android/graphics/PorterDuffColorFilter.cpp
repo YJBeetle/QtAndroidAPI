@@ -19,7 +19,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	jboolean PorterDuffColorFilter::equals(JObject arg0)
+	jboolean PorterDuffColorFilter::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,7 +27,7 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint PorterDuffColorFilter::hashCode()
+	jint PorterDuffColorFilter::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

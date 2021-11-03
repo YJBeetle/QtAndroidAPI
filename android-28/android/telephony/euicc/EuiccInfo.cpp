@@ -26,21 +26,21 @@ namespace android::telephony::euicc
 		) {}
 	
 	// Methods
-	jint EuiccInfo::describeContents()
+	jint EuiccInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString EuiccInfo::getOsVersion()
+	JString EuiccInfo::getOsVersion() const
 	{
 		return callObjectMethod(
 			"getOsVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	void EuiccInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void EuiccInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -74,27 +74,27 @@ namespace android::view
 		// Methods
 		static android::view::InputDevice getDevice(jint arg0);
 		static JIntArray getDeviceIds();
-		jint describeContents();
-		jint getControllerNumber();
-		JString getDescriptor();
-		jint getId();
-		android::view::KeyCharacterMap getKeyCharacterMap();
-		jint getKeyboardType();
-		android::view::InputDevice_MotionRange getMotionRange(jint arg0);
-		android::view::InputDevice_MotionRange getMotionRange(jint arg0, jint arg1);
-		JObject getMotionRanges();
-		JString getName();
-		jint getProductId();
-		jint getSources();
-		jint getVendorId();
-		android::os::Vibrator getVibrator();
-		JBooleanArray hasKeys(JIntArray arg0);
-		jboolean hasMicrophone();
-		jboolean isEnabled();
-		jboolean isVirtual();
-		jboolean supportsSource(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getControllerNumber() const;
+		JString getDescriptor() const;
+		jint getId() const;
+		android::view::KeyCharacterMap getKeyCharacterMap() const;
+		jint getKeyboardType() const;
+		android::view::InputDevice_MotionRange getMotionRange(jint arg0) const;
+		android::view::InputDevice_MotionRange getMotionRange(jint arg0, jint arg1) const;
+		JObject getMotionRanges() const;
+		JString getName() const;
+		jint getProductId() const;
+		jint getSources() const;
+		jint getVendorId() const;
+		android::os::Vibrator getVibrator() const;
+		JBooleanArray hasKeys(JIntArray arg0) const;
+		jboolean hasMicrophone() const;
+		jboolean isEnabled() const;
+		jboolean isVirtual() const;
+		jboolean supportsSource(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

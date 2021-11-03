@@ -20,7 +20,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void TokenWatcher::acquire(JObject arg0, JString arg1)
+	void TokenWatcher::acquire(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"acquire",
@@ -29,14 +29,14 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void TokenWatcher::acquired()
+	void TokenWatcher::acquired() const
 	{
 		callMethod<void>(
 			"acquired",
 			"()V"
 		);
 	}
-	void TokenWatcher::cleanup(JObject arg0, jboolean arg1)
+	void TokenWatcher::cleanup(JObject arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"cleanup",
@@ -45,14 +45,14 @@ namespace android::os
 			arg1
 		);
 	}
-	void TokenWatcher::dump()
+	void TokenWatcher::dump() const
 	{
 		callMethod<void>(
 			"dump",
 			"()V"
 		);
 	}
-	void TokenWatcher::dump(java::io::PrintWriter arg0)
+	void TokenWatcher::dump(java::io::PrintWriter arg0) const
 	{
 		callMethod<void>(
 			"dump",
@@ -60,14 +60,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean TokenWatcher::isAcquired()
+	jboolean TokenWatcher::isAcquired() const
 	{
 		return callMethod<jboolean>(
 			"isAcquired",
 			"()Z"
 		);
 	}
-	void TokenWatcher::release(JObject arg0)
+	void TokenWatcher::release(JObject arg0) const
 	{
 		callMethod<void>(
 			"release",
@@ -75,7 +75,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void TokenWatcher::released()
+	void TokenWatcher::released() const
 	{
 		callMethod<void>(
 			"released",

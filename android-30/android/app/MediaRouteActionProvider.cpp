@@ -18,21 +18,21 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jboolean MediaRouteActionProvider::isVisible()
+	jboolean MediaRouteActionProvider::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	android::view::View MediaRouteActionProvider::onCreateActionView()
+	android::view::View MediaRouteActionProvider::onCreateActionView() const
 	{
 		return callObjectMethod(
 			"onCreateActionView",
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View MediaRouteActionProvider::onCreateActionView(JObject arg0)
+	android::view::View MediaRouteActionProvider::onCreateActionView(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onCreateActionView",
@@ -40,21 +40,21 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean MediaRouteActionProvider::onPerformDefaultAction()
+	jboolean MediaRouteActionProvider::onPerformDefaultAction() const
 	{
 		return callMethod<jboolean>(
 			"onPerformDefaultAction",
 			"()Z"
 		);
 	}
-	jboolean MediaRouteActionProvider::overridesItemVisibility()
+	jboolean MediaRouteActionProvider::overridesItemVisibility() const
 	{
 		return callMethod<jboolean>(
 			"overridesItemVisibility",
 			"()Z"
 		);
 	}
-	void MediaRouteActionProvider::setExtendedSettingsClickListener(JObject arg0)
+	void MediaRouteActionProvider::setExtendedSettingsClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setExtendedSettingsClickListener",
@@ -62,7 +62,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void MediaRouteActionProvider::setRouteTypes(jint arg0)
+	void MediaRouteActionProvider::setRouteTypes(jint arg0) const
 	{
 		callMethod<void>(
 			"setRouteTypes",

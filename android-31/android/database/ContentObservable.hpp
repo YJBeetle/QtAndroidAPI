@@ -27,11 +27,11 @@ namespace android::database
 		ContentObservable();
 		
 		// Methods
-		void dispatchChange(jboolean arg0);
-		void dispatchChange(jboolean arg0, android::net::Uri arg1);
-		void notifyChange(jboolean arg0);
-		void registerObserver(android::database::ContentObserver arg0);
-		void registerObserver(JObject arg0);
+		void dispatchChange(jboolean arg0) const;
+		void dispatchChange(jboolean arg0, android::net::Uri arg1) const;
+		void notifyChange(jboolean arg0) const;
+		void registerObserver(android::database::ContentObserver arg0) const;
+		void registerObserver(JObject arg0) const;
 	};
 } // namespace android::database
 

@@ -26,10 +26,10 @@ namespace android::text
 		PrecomputedText_Params_Builder(android::text::TextPaint arg0);
 		
 		// Methods
-		android::text::PrecomputedText_Params build();
-		android::text::PrecomputedText_Params_Builder setBreakStrategy(jint arg0);
-		android::text::PrecomputedText_Params_Builder setHyphenationFrequency(jint arg0);
-		android::text::PrecomputedText_Params_Builder setTextDirection(JObject arg0);
+		android::text::PrecomputedText_Params build() const;
+		android::text::PrecomputedText_Params_Builder setBreakStrategy(jint arg0) const;
+		android::text::PrecomputedText_Params_Builder setHyphenationFrequency(jint arg0) const;
+		android::text::PrecomputedText_Params_Builder setTextDirection(JObject arg0) const;
 	};
 } // namespace android::text
 

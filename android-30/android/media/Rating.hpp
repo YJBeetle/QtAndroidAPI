@@ -35,15 +35,15 @@ namespace android::media
 		static android::media::Rating newStarRating(jint arg0, jfloat arg1);
 		static android::media::Rating newThumbRating(jboolean arg0);
 		static android::media::Rating newUnratedRating(jint arg0);
-		jint describeContents();
-		jfloat getPercentRating();
-		jint getRatingStyle();
-		jfloat getStarRating();
-		jboolean hasHeart();
-		jboolean isRated();
-		jboolean isThumbUp();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jfloat getPercentRating() const;
+		jint getRatingStyle() const;
+		jfloat getStarRating() const;
+		jboolean hasHeart() const;
+		jboolean isRated() const;
+		jboolean isThumbUp() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

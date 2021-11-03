@@ -10,7 +10,7 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject PutDocumentsRequest::getGenericDocuments()
+	JObject PutDocumentsRequest::getGenericDocuments() const
 	{
 		return callObjectMethod(
 			"getGenericDocuments",

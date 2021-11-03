@@ -41,19 +41,19 @@ namespace android::service::controls
 		Control_StatefulBuilder(JString arg0, android::app::PendingIntent arg1);
 		
 		// Methods
-		android::service::controls::Control build();
-		android::service::controls::Control_StatefulBuilder setAppIntent(android::app::PendingIntent arg0);
-		android::service::controls::Control_StatefulBuilder setControlId(JString arg0);
-		android::service::controls::Control_StatefulBuilder setControlTemplate(android::service::controls::templates::ControlTemplate arg0);
-		android::service::controls::Control_StatefulBuilder setCustomColor(android::content::res::ColorStateList arg0);
-		android::service::controls::Control_StatefulBuilder setCustomIcon(android::graphics::drawable::Icon arg0);
-		android::service::controls::Control_StatefulBuilder setDeviceType(jint arg0);
-		android::service::controls::Control_StatefulBuilder setStatus(jint arg0);
-		android::service::controls::Control_StatefulBuilder setStatusText(JString arg0);
-		android::service::controls::Control_StatefulBuilder setStructure(JString arg0);
-		android::service::controls::Control_StatefulBuilder setSubtitle(JString arg0);
-		android::service::controls::Control_StatefulBuilder setTitle(JString arg0);
-		android::service::controls::Control_StatefulBuilder setZone(JString arg0);
+		android::service::controls::Control build() const;
+		android::service::controls::Control_StatefulBuilder setAppIntent(android::app::PendingIntent arg0) const;
+		android::service::controls::Control_StatefulBuilder setControlId(JString arg0) const;
+		android::service::controls::Control_StatefulBuilder setControlTemplate(android::service::controls::templates::ControlTemplate arg0) const;
+		android::service::controls::Control_StatefulBuilder setCustomColor(android::content::res::ColorStateList arg0) const;
+		android::service::controls::Control_StatefulBuilder setCustomIcon(android::graphics::drawable::Icon arg0) const;
+		android::service::controls::Control_StatefulBuilder setDeviceType(jint arg0) const;
+		android::service::controls::Control_StatefulBuilder setStatus(jint arg0) const;
+		android::service::controls::Control_StatefulBuilder setStatusText(JString arg0) const;
+		android::service::controls::Control_StatefulBuilder setStructure(JString arg0) const;
+		android::service::controls::Control_StatefulBuilder setSubtitle(JString arg0) const;
+		android::service::controls::Control_StatefulBuilder setTitle(JString arg0) const;
+		android::service::controls::Control_StatefulBuilder setZone(JString arg0) const;
 	};
 } // namespace android::service::controls
 

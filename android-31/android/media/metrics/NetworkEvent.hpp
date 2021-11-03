@@ -38,14 +38,14 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::Bundle getMetricsBundle();
-		jint getNetworkType();
-		jlong getTimeSinceCreatedMillis();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getMetricsBundle() const;
+		jint getNetworkType() const;
+		jlong getTimeSinceCreatedMillis() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::metrics
 

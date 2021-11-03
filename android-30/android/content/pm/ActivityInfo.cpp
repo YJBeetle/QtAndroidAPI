@@ -581,14 +581,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ActivityInfo::describeContents()
+	jint ActivityInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ActivityInfo::dump(JObject arg0, JString arg1)
+	void ActivityInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -597,21 +597,21 @@ namespace android::content::pm
 			arg1.object<jstring>()
 		);
 	}
-	jint ActivityInfo::getThemeResource()
+	jint ActivityInfo::getThemeResource() const
 	{
 		return callMethod<jint>(
 			"getThemeResource",
 			"()I"
 		);
 	}
-	JString ActivityInfo::toString()
+	JString ActivityInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ActivityInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ActivityInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

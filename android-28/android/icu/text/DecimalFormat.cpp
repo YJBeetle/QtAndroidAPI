@@ -82,7 +82,7 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	void DecimalFormat::applyLocalizedPattern(JString arg0)
+	void DecimalFormat::applyLocalizedPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyLocalizedPattern",
@@ -90,7 +90,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::applyPattern(JString arg0)
+	void DecimalFormat::applyPattern(JString arg0) const
 	{
 		callMethod<void>(
 			"applyPattern",
@@ -98,21 +98,21 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jboolean DecimalFormat::areSignificantDigitsUsed()
+	jboolean DecimalFormat::areSignificantDigitsUsed() const
 	{
 		return callMethod<jboolean>(
 			"areSignificantDigitsUsed",
 			"()Z"
 		);
 	}
-	JObject DecimalFormat::clone()
+	JObject DecimalFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DecimalFormat::equals(JObject arg0)
+	jboolean DecimalFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -120,7 +120,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(android::icu::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -130,7 +130,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(android::icu::util::CurrencyAmount arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -140,7 +140,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -150,7 +150,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -160,7 +160,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -170,7 +170,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DecimalFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -180,7 +180,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DecimalFormat::formatToCharacterIterator(JObject arg0)
+	JObject DecimalFormat::formatToCharacterIterator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",
@@ -188,252 +188,252 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::util::Currency DecimalFormat::getCurrency()
+	android::icu::util::Currency DecimalFormat::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Landroid/icu/util/Currency;"
 		);
 	}
-	android::icu::text::CurrencyPluralInfo DecimalFormat::getCurrencyPluralInfo()
+	android::icu::text::CurrencyPluralInfo DecimalFormat::getCurrencyPluralInfo() const
 	{
 		return callObjectMethod(
 			"getCurrencyPluralInfo",
 			"()Landroid/icu/text/CurrencyPluralInfo;"
 		);
 	}
-	android::icu::util::Currency_CurrencyUsage DecimalFormat::getCurrencyUsage()
+	android::icu::util::Currency_CurrencyUsage DecimalFormat::getCurrencyUsage() const
 	{
 		return callObjectMethod(
 			"getCurrencyUsage",
 			"()Landroid/icu/util/Currency$CurrencyUsage;"
 		);
 	}
-	android::icu::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols()
+	android::icu::text::DecimalFormatSymbols DecimalFormat::getDecimalFormatSymbols() const
 	{
 		return callObjectMethod(
 			"getDecimalFormatSymbols",
 			"()Landroid/icu/text/DecimalFormatSymbols;"
 		);
 	}
-	jint DecimalFormat::getFormatWidth()
+	jint DecimalFormat::getFormatWidth() const
 	{
 		return callMethod<jint>(
 			"getFormatWidth",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getGroupingSize()
+	jint DecimalFormat::getGroupingSize() const
 	{
 		return callMethod<jint>(
 			"getGroupingSize",
 			"()I"
 		);
 	}
-	java::math::MathContext DecimalFormat::getMathContext()
+	java::math::MathContext DecimalFormat::getMathContext() const
 	{
 		return callObjectMethod(
 			"getMathContext",
 			"()Ljava/math/MathContext;"
 		);
 	}
-	android::icu::math::MathContext DecimalFormat::getMathContextICU()
+	android::icu::math::MathContext DecimalFormat::getMathContextICU() const
 	{
 		return callObjectMethod(
 			"getMathContextICU",
 			"()Landroid/icu/math/MathContext;"
 		);
 	}
-	jint DecimalFormat::getMaximumFractionDigits()
+	jint DecimalFormat::getMaximumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumFractionDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMaximumIntegerDigits()
+	jint DecimalFormat::getMaximumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumIntegerDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMaximumSignificantDigits()
+	jint DecimalFormat::getMaximumSignificantDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumSignificantDigits",
 			"()I"
 		);
 	}
-	jbyte DecimalFormat::getMinimumExponentDigits()
+	jbyte DecimalFormat::getMinimumExponentDigits() const
 	{
 		return callMethod<jbyte>(
 			"getMinimumExponentDigits",
 			"()B"
 		);
 	}
-	jint DecimalFormat::getMinimumFractionDigits()
+	jint DecimalFormat::getMinimumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumFractionDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMinimumIntegerDigits()
+	jint DecimalFormat::getMinimumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumIntegerDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMinimumSignificantDigits()
+	jint DecimalFormat::getMinimumSignificantDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumSignificantDigits",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getMultiplier()
+	jint DecimalFormat::getMultiplier() const
 	{
 		return callMethod<jint>(
 			"getMultiplier",
 			"()I"
 		);
 	}
-	JString DecimalFormat::getNegativePrefix()
+	JString DecimalFormat::getNegativePrefix() const
 	{
 		return callObjectMethod(
 			"getNegativePrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::getNegativeSuffix()
+	JString DecimalFormat::getNegativeSuffix() const
 	{
 		return callObjectMethod(
 			"getNegativeSuffix",
 			"()Ljava/lang/String;"
 		);
 	}
-	jchar DecimalFormat::getPadCharacter()
+	jchar DecimalFormat::getPadCharacter() const
 	{
 		return callMethod<jchar>(
 			"getPadCharacter",
 			"()C"
 		);
 	}
-	jint DecimalFormat::getPadPosition()
+	jint DecimalFormat::getPadPosition() const
 	{
 		return callMethod<jint>(
 			"getPadPosition",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getParseMaxDigits()
+	jint DecimalFormat::getParseMaxDigits() const
 	{
 		return callMethod<jint>(
 			"getParseMaxDigits",
 			"()I"
 		);
 	}
-	JString DecimalFormat::getPositivePrefix()
+	JString DecimalFormat::getPositivePrefix() const
 	{
 		return callObjectMethod(
 			"getPositivePrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::getPositiveSuffix()
+	JString DecimalFormat::getPositiveSuffix() const
 	{
 		return callObjectMethod(
 			"getPositiveSuffix",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::math::BigDecimal DecimalFormat::getRoundingIncrement()
+	java::math::BigDecimal DecimalFormat::getRoundingIncrement() const
 	{
 		return callObjectMethod(
 			"getRoundingIncrement",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	jint DecimalFormat::getRoundingMode()
+	jint DecimalFormat::getRoundingMode() const
 	{
 		return callMethod<jint>(
 			"getRoundingMode",
 			"()I"
 		);
 	}
-	jint DecimalFormat::getSecondaryGroupingSize()
+	jint DecimalFormat::getSecondaryGroupingSize() const
 	{
 		return callMethod<jint>(
 			"getSecondaryGroupingSize",
 			"()I"
 		);
 	}
-	jint DecimalFormat::hashCode()
+	jint DecimalFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean DecimalFormat::isDecimalPatternMatchRequired()
+	jboolean DecimalFormat::isDecimalPatternMatchRequired() const
 	{
 		return callMethod<jboolean>(
 			"isDecimalPatternMatchRequired",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isDecimalSeparatorAlwaysShown()
+	jboolean DecimalFormat::isDecimalSeparatorAlwaysShown() const
 	{
 		return callMethod<jboolean>(
 			"isDecimalSeparatorAlwaysShown",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isExponentSignAlwaysShown()
+	jboolean DecimalFormat::isExponentSignAlwaysShown() const
 	{
 		return callMethod<jboolean>(
 			"isExponentSignAlwaysShown",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isGroupingUsed()
+	jboolean DecimalFormat::isGroupingUsed() const
 	{
 		return callMethod<jboolean>(
 			"isGroupingUsed",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isParseBigDecimal()
+	jboolean DecimalFormat::isParseBigDecimal() const
 	{
 		return callMethod<jboolean>(
 			"isParseBigDecimal",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isParseIntegerOnly()
+	jboolean DecimalFormat::isParseIntegerOnly() const
 	{
 		return callMethod<jboolean>(
 			"isParseIntegerOnly",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isParseStrict()
+	jboolean DecimalFormat::isParseStrict() const
 	{
 		return callMethod<jboolean>(
 			"isParseStrict",
 			"()Z"
 		);
 	}
-	jboolean DecimalFormat::isScientificNotation()
+	jboolean DecimalFormat::isScientificNotation() const
 	{
 		return callMethod<jboolean>(
 			"isScientificNotation",
 			"()Z"
 		);
 	}
-	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number DecimalFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -442,7 +442,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::util::CurrencyAmount DecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount DecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseCurrency",
@@ -451,7 +451,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void DecimalFormat::setCurrency(android::icu::util::Currency arg0)
+	void DecimalFormat::setCurrency(android::icu::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -459,7 +459,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setCurrencyPluralInfo(android::icu::text::CurrencyPluralInfo arg0)
+	void DecimalFormat::setCurrencyPluralInfo(android::icu::text::CurrencyPluralInfo arg0) const
 	{
 		callMethod<void>(
 			"setCurrencyPluralInfo",
@@ -467,7 +467,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setCurrencyUsage(android::icu::util::Currency_CurrencyUsage arg0)
+	void DecimalFormat::setCurrencyUsage(android::icu::util::Currency_CurrencyUsage arg0) const
 	{
 		callMethod<void>(
 			"setCurrencyUsage",
@@ -475,7 +475,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setDecimalFormatSymbols(android::icu::text::DecimalFormatSymbols arg0)
+	void DecimalFormat::setDecimalFormatSymbols(android::icu::text::DecimalFormatSymbols arg0) const
 	{
 		callMethod<void>(
 			"setDecimalFormatSymbols",
@@ -483,7 +483,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setDecimalPatternMatchRequired(jboolean arg0)
+	void DecimalFormat::setDecimalPatternMatchRequired(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDecimalPatternMatchRequired",
@@ -491,7 +491,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0)
+	void DecimalFormat::setDecimalSeparatorAlwaysShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDecimalSeparatorAlwaysShown",
@@ -499,7 +499,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setExponentSignAlwaysShown(jboolean arg0)
+	void DecimalFormat::setExponentSignAlwaysShown(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExponentSignAlwaysShown",
@@ -507,7 +507,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setFormatWidth(jint arg0)
+	void DecimalFormat::setFormatWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setFormatWidth",
@@ -515,7 +515,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setGroupingSize(jint arg0)
+	void DecimalFormat::setGroupingSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setGroupingSize",
@@ -523,7 +523,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setGroupingUsed(jboolean arg0)
+	void DecimalFormat::setGroupingUsed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setGroupingUsed",
@@ -531,7 +531,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMathContext(java::math::MathContext arg0)
+	void DecimalFormat::setMathContext(java::math::MathContext arg0) const
 	{
 		callMethod<void>(
 			"setMathContext",
@@ -539,7 +539,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setMathContextICU(android::icu::math::MathContext arg0)
+	void DecimalFormat::setMathContextICU(android::icu::math::MathContext arg0) const
 	{
 		callMethod<void>(
 			"setMathContextICU",
@@ -547,7 +547,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setMaximumFractionDigits(jint arg0)
+	void DecimalFormat::setMaximumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumFractionDigits",
@@ -555,7 +555,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMaximumIntegerDigits(jint arg0)
+	void DecimalFormat::setMaximumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumIntegerDigits",
@@ -563,7 +563,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMaximumSignificantDigits(jint arg0)
+	void DecimalFormat::setMaximumSignificantDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumSignificantDigits",
@@ -571,7 +571,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumExponentDigits(jbyte arg0)
+	void DecimalFormat::setMinimumExponentDigits(jbyte arg0) const
 	{
 		callMethod<void>(
 			"setMinimumExponentDigits",
@@ -579,7 +579,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumFractionDigits(jint arg0)
+	void DecimalFormat::setMinimumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumFractionDigits",
@@ -587,7 +587,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumIntegerDigits(jint arg0)
+	void DecimalFormat::setMinimumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumIntegerDigits",
@@ -595,7 +595,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMinimumSignificantDigits(jint arg0)
+	void DecimalFormat::setMinimumSignificantDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumSignificantDigits",
@@ -603,7 +603,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setMultiplier(jint arg0)
+	void DecimalFormat::setMultiplier(jint arg0) const
 	{
 		callMethod<void>(
 			"setMultiplier",
@@ -611,7 +611,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setNegativePrefix(JString arg0)
+	void DecimalFormat::setNegativePrefix(JString arg0) const
 	{
 		callMethod<void>(
 			"setNegativePrefix",
@@ -619,7 +619,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setNegativeSuffix(JString arg0)
+	void DecimalFormat::setNegativeSuffix(JString arg0) const
 	{
 		callMethod<void>(
 			"setNegativeSuffix",
@@ -627,7 +627,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setPadCharacter(jchar arg0)
+	void DecimalFormat::setPadCharacter(jchar arg0) const
 	{
 		callMethod<void>(
 			"setPadCharacter",
@@ -635,7 +635,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPadPosition(jint arg0)
+	void DecimalFormat::setPadPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setPadPosition",
@@ -643,7 +643,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setParseBigDecimal(jboolean arg0)
+	void DecimalFormat::setParseBigDecimal(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseBigDecimal",
@@ -651,7 +651,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setParseIntegerOnly(jboolean arg0)
+	void DecimalFormat::setParseIntegerOnly(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseIntegerOnly",
@@ -659,7 +659,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setParseMaxDigits(jint arg0)
+	void DecimalFormat::setParseMaxDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setParseMaxDigits",
@@ -667,7 +667,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setParseStrict(jboolean arg0)
+	void DecimalFormat::setParseStrict(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseStrict",
@@ -675,7 +675,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setPositivePrefix(JString arg0)
+	void DecimalFormat::setPositivePrefix(JString arg0) const
 	{
 		callMethod<void>(
 			"setPositivePrefix",
@@ -683,7 +683,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setPositiveSuffix(JString arg0)
+	void DecimalFormat::setPositiveSuffix(JString arg0) const
 	{
 		callMethod<void>(
 			"setPositiveSuffix",
@@ -691,7 +691,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	void DecimalFormat::setRoundingIncrement(android::icu::math::BigDecimal arg0)
+	void DecimalFormat::setRoundingIncrement(android::icu::math::BigDecimal arg0) const
 	{
 		callMethod<void>(
 			"setRoundingIncrement",
@@ -699,7 +699,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setRoundingIncrement(jdouble arg0)
+	void DecimalFormat::setRoundingIncrement(jdouble arg0) const
 	{
 		callMethod<void>(
 			"setRoundingIncrement",
@@ -707,7 +707,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setRoundingIncrement(java::math::BigDecimal arg0)
+	void DecimalFormat::setRoundingIncrement(java::math::BigDecimal arg0) const
 	{
 		callMethod<void>(
 			"setRoundingIncrement",
@@ -715,7 +715,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DecimalFormat::setRoundingMode(jint arg0)
+	void DecimalFormat::setRoundingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRoundingMode",
@@ -723,7 +723,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setScientificNotation(jboolean arg0)
+	void DecimalFormat::setScientificNotation(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScientificNotation",
@@ -731,7 +731,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setSecondaryGroupingSize(jint arg0)
+	void DecimalFormat::setSecondaryGroupingSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setSecondaryGroupingSize",
@@ -739,7 +739,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void DecimalFormat::setSignificantDigitsUsed(jboolean arg0)
+	void DecimalFormat::setSignificantDigitsUsed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSignificantDigitsUsed",
@@ -747,21 +747,21 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString DecimalFormat::toLocalizedPattern()
+	JString DecimalFormat::toLocalizedPattern() const
 	{
 		return callObjectMethod(
 			"toLocalizedPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::toPattern()
+	JString DecimalFormat::toPattern() const
 	{
 		return callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DecimalFormat::toString()
+	JString DecimalFormat::toString() const
 	{
 		return callObjectMethod(
 			"toString",

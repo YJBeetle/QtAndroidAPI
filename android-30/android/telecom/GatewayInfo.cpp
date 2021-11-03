@@ -29,42 +29,42 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint GatewayInfo::describeContents()
+	jint GatewayInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::Uri GatewayInfo::getGatewayAddress()
+	android::net::Uri GatewayInfo::getGatewayAddress() const
 	{
 		return callObjectMethod(
 			"getGatewayAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString GatewayInfo::getGatewayProviderPackageName()
+	JString GatewayInfo::getGatewayProviderPackageName() const
 	{
 		return callObjectMethod(
 			"getGatewayProviderPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri GatewayInfo::getOriginalAddress()
+	android::net::Uri GatewayInfo::getOriginalAddress() const
 	{
 		return callObjectMethod(
 			"getOriginalAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jboolean GatewayInfo::isEmpty()
+	jboolean GatewayInfo::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	void GatewayInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GatewayInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -55,28 +55,28 @@ namespace android::media::metrics
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAudioUnderrunCount();
-		jint getContentType();
-		JByteArray getDrmSessionId();
-		jint getDrmType();
-		JLongArray getExperimentIds();
-		jlong getLocalBytesRead();
-		jlong getMediaDurationMillis();
-		android::os::Bundle getMetricsBundle();
-		jlong getNetworkBytesRead();
-		jlong getNetworkTransferDurationMillis();
-		jint getPlaybackType();
-		JString getPlayerName();
-		JString getPlayerVersion();
-		jint getStreamSource();
-		jint getStreamType();
-		jint getVideoFramesDropped();
-		jint getVideoFramesPlayed();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAudioUnderrunCount() const;
+		jint getContentType() const;
+		JByteArray getDrmSessionId() const;
+		jint getDrmType() const;
+		JLongArray getExperimentIds() const;
+		jlong getLocalBytesRead() const;
+		jlong getMediaDurationMillis() const;
+		android::os::Bundle getMetricsBundle() const;
+		jlong getNetworkBytesRead() const;
+		jlong getNetworkTransferDurationMillis() const;
+		jint getPlaybackType() const;
+		JString getPlayerName() const;
+		JString getPlayerVersion() const;
+		jint getStreamSource() const;
+		jint getStreamType() const;
+		jint getVideoFramesDropped() const;
+		jint getVideoFramesPlayed() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::metrics
 

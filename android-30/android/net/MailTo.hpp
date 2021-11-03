@@ -21,12 +21,12 @@ namespace android::net
 		// Methods
 		static jboolean isMailTo(JString arg0);
 		static android::net::MailTo parse(JString arg0);
-		JString getBody();
-		JString getCc();
-		JObject getHeaders();
-		JString getSubject();
-		JString getTo();
-		JString toString();
+		JString getBody() const;
+		JString getCc() const;
+		JObject getHeaders() const;
+		JString getSubject() const;
+		JString getTo() const;
+		JString toString() const;
 	};
 } // namespace android::net
 

@@ -32,36 +32,36 @@ namespace android::security::keystore
 		// Constructors
 		
 		// Methods
-		JObject getAlgorithmParameterSpec();
-		JString getAttestKeyAlias();
-		JByteArray getAttestationChallenge();
-		JArray getBlockModes();
-		java::util::Date getCertificateNotAfter();
-		java::util::Date getCertificateNotBefore();
-		java::math::BigInteger getCertificateSerialNumber();
-		javax::security::auth::x500::X500Principal getCertificateSubject();
-		JArray getDigests();
-		JArray getEncryptionPaddings();
-		jint getKeySize();
-		java::util::Date getKeyValidityForConsumptionEnd();
-		java::util::Date getKeyValidityForOriginationEnd();
-		java::util::Date getKeyValidityStart();
-		JString getKeystoreAlias();
-		jint getMaxUsageCount();
-		jint getPurposes();
-		JArray getSignaturePaddings();
-		jint getUserAuthenticationType();
-		jint getUserAuthenticationValidityDurationSeconds();
-		jboolean isDevicePropertiesAttestationIncluded();
-		jboolean isDigestsSpecified();
-		jboolean isInvalidatedByBiometricEnrollment();
-		jboolean isRandomizedEncryptionRequired();
-		jboolean isStrongBoxBacked();
-		jboolean isUnlockedDeviceRequired();
-		jboolean isUserAuthenticationRequired();
-		jboolean isUserAuthenticationValidWhileOnBody();
-		jboolean isUserConfirmationRequired();
-		jboolean isUserPresenceRequired();
+		JObject getAlgorithmParameterSpec() const;
+		JString getAttestKeyAlias() const;
+		JByteArray getAttestationChallenge() const;
+		JArray getBlockModes() const;
+		java::util::Date getCertificateNotAfter() const;
+		java::util::Date getCertificateNotBefore() const;
+		java::math::BigInteger getCertificateSerialNumber() const;
+		javax::security::auth::x500::X500Principal getCertificateSubject() const;
+		JArray getDigests() const;
+		JArray getEncryptionPaddings() const;
+		jint getKeySize() const;
+		java::util::Date getKeyValidityForConsumptionEnd() const;
+		java::util::Date getKeyValidityForOriginationEnd() const;
+		java::util::Date getKeyValidityStart() const;
+		JString getKeystoreAlias() const;
+		jint getMaxUsageCount() const;
+		jint getPurposes() const;
+		JArray getSignaturePaddings() const;
+		jint getUserAuthenticationType() const;
+		jint getUserAuthenticationValidityDurationSeconds() const;
+		jboolean isDevicePropertiesAttestationIncluded() const;
+		jboolean isDigestsSpecified() const;
+		jboolean isInvalidatedByBiometricEnrollment() const;
+		jboolean isRandomizedEncryptionRequired() const;
+		jboolean isStrongBoxBacked() const;
+		jboolean isUnlockedDeviceRequired() const;
+		jboolean isUserAuthenticationRequired() const;
+		jboolean isUserAuthenticationValidWhileOnBody() const;
+		jboolean isUserConfirmationRequired() const;
+		jboolean isUserPresenceRequired() const;
 	};
 } // namespace android::security::keystore
 

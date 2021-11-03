@@ -30,21 +30,21 @@ namespace android::view::accessibility
 		
 		// Methods
 		static jboolean isAccessibilityButtonSupported();
-		void addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0);
-		jboolean addAccessibilityStateChangeListener(JObject arg0);
-		void addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1);
-		jboolean addTouchExplorationStateChangeListener(JObject arg0);
-		void addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1);
-		JObject getAccessibilityServiceList();
-		JObject getEnabledAccessibilityServiceList(jint arg0);
-		JObject getInstalledAccessibilityServiceList();
-		void interrupt();
-		jboolean isEnabled();
-		jboolean isTouchExplorationEnabled();
-		void removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0);
-		jboolean removeAccessibilityStateChangeListener(JObject arg0);
-		jboolean removeTouchExplorationStateChangeListener(JObject arg0);
-		void sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
+		void addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0) const;
+		jboolean addAccessibilityStateChangeListener(JObject arg0) const;
+		void addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1) const;
+		jboolean addTouchExplorationStateChangeListener(JObject arg0) const;
+		void addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1) const;
+		JObject getAccessibilityServiceList() const;
+		JObject getEnabledAccessibilityServiceList(jint arg0) const;
+		JObject getInstalledAccessibilityServiceList() const;
+		void interrupt() const;
+		jboolean isEnabled() const;
+		jboolean isTouchExplorationEnabled() const;
+		void removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0) const;
+		jboolean removeAccessibilityStateChangeListener(JObject arg0) const;
+		jboolean removeTouchExplorationStateChangeListener(JObject arg0) const;
+		void sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const;
 	};
 } // namespace android::view::accessibility
 

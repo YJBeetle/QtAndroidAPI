@@ -24,14 +24,14 @@ namespace android::bluetooth::le
 	// Constructors
 	
 	// Methods
-	jint ScanFilter::describeContents()
+	jint ScanFilter::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ScanFilter::equals(JObject arg0)
+	jboolean ScanFilter::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,98 +39,98 @@ namespace android::bluetooth::le
 			arg0.object<jobject>()
 		);
 	}
-	JString ScanFilter::getDeviceAddress()
+	JString ScanFilter::getDeviceAddress() const
 	{
 		return callObjectMethod(
 			"getDeviceAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ScanFilter::getDeviceName()
+	JString ScanFilter::getDeviceName() const
 	{
 		return callObjectMethod(
 			"getDeviceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray ScanFilter::getManufacturerData()
+	JByteArray ScanFilter::getManufacturerData() const
 	{
 		return callObjectMethod(
 			"getManufacturerData",
 			"()[B"
 		);
 	}
-	JByteArray ScanFilter::getManufacturerDataMask()
+	JByteArray ScanFilter::getManufacturerDataMask() const
 	{
 		return callObjectMethod(
 			"getManufacturerDataMask",
 			"()[B"
 		);
 	}
-	jint ScanFilter::getManufacturerId()
+	jint ScanFilter::getManufacturerId() const
 	{
 		return callMethod<jint>(
 			"getManufacturerId",
 			"()I"
 		);
 	}
-	JByteArray ScanFilter::getServiceData()
+	JByteArray ScanFilter::getServiceData() const
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()[B"
 		);
 	}
-	JByteArray ScanFilter::getServiceDataMask()
+	JByteArray ScanFilter::getServiceDataMask() const
 	{
 		return callObjectMethod(
 			"getServiceDataMask",
 			"()[B"
 		);
 	}
-	android::os::ParcelUuid ScanFilter::getServiceDataUuid()
+	android::os::ParcelUuid ScanFilter::getServiceDataUuid() const
 	{
 		return callObjectMethod(
 			"getServiceDataUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuid()
+	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuid() const
 	{
 		return callObjectMethod(
 			"getServiceSolicitationUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuidMask()
+	android::os::ParcelUuid ScanFilter::getServiceSolicitationUuidMask() const
 	{
 		return callObjectMethod(
 			"getServiceSolicitationUuidMask",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	android::os::ParcelUuid ScanFilter::getServiceUuid()
+	android::os::ParcelUuid ScanFilter::getServiceUuid() const
 	{
 		return callObjectMethod(
 			"getServiceUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	android::os::ParcelUuid ScanFilter::getServiceUuidMask()
+	android::os::ParcelUuid ScanFilter::getServiceUuidMask() const
 	{
 		return callObjectMethod(
 			"getServiceUuidMask",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	jint ScanFilter::hashCode()
+	jint ScanFilter::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ScanFilter::matches(android::bluetooth::le::ScanResult arg0)
+	jboolean ScanFilter::matches(android::bluetooth::le::ScanResult arg0) const
 	{
 		return callMethod<jboolean>(
 			"matches",
@@ -138,14 +138,14 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	JString ScanFilter::toString()
+	JString ScanFilter::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ScanFilter::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ScanFilter::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

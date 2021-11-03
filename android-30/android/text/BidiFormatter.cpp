@@ -39,14 +39,14 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	jboolean BidiFormatter::getStereoReset()
+	jboolean BidiFormatter::getStereoReset() const
 	{
 		return callMethod<jboolean>(
 			"getStereoReset",
 			"()Z"
 		);
 	}
-	jboolean BidiFormatter::isRtl(JString arg0)
+	jboolean BidiFormatter::isRtl(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRtl",
@@ -54,14 +54,14 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	jboolean BidiFormatter::isRtlContext()
+	jboolean BidiFormatter::isRtlContext() const
 	{
 		return callMethod<jboolean>(
 			"isRtlContext",
 			"()Z"
 		);
 	}
-	JString BidiFormatter::unicodeWrap(JString arg0)
+	JString BidiFormatter::unicodeWrap(JString arg0) const
 	{
 		return callObjectMethod(
 			"unicodeWrap",
@@ -69,7 +69,7 @@ namespace android::text
 			arg0.object<jstring>()
 		);
 	}
-	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1)
+	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"unicodeWrap",
@@ -78,7 +78,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	JString BidiFormatter::unicodeWrap(JString arg0, jboolean arg1)
+	JString BidiFormatter::unicodeWrap(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"unicodeWrap",
@@ -87,7 +87,7 @@ namespace android::text
 			arg1
 		);
 	}
-	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1, jboolean arg2)
+	JString BidiFormatter::unicodeWrap(JString arg0, JObject arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"unicodeWrap",

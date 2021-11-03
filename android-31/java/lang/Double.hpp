@@ -57,21 +57,21 @@ namespace java::lang
 		static JString toString(jdouble arg0);
 		static java::lang::Double valueOf(jdouble arg0);
 		static java::lang::Double valueOf(JString arg0);
-		jbyte byteValue();
-		jint compareTo(java::lang::Double arg0);
-		jint compareTo(JObject arg0);
-		java::util::Optional describeConstable();
-		jdouble doubleValue();
-		jboolean equals(JObject arg0);
-		jfloat floatValue();
-		jint hashCode();
-		jint intValue();
-		jboolean isInfinite();
-		jboolean isNaN();
-		jlong longValue();
-		java::lang::Double resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0);
-		jshort shortValue();
-		JString toString();
+		jbyte byteValue() const;
+		jint compareTo(java::lang::Double arg0) const;
+		jint compareTo(JObject arg0) const;
+		java::util::Optional describeConstable() const;
+		jdouble doubleValue() const;
+		jboolean equals(JObject arg0) const;
+		jfloat floatValue() const;
+		jint hashCode() const;
+		jint intValue() const;
+		jboolean isInfinite() const;
+		jboolean isNaN() const;
+		jlong longValue() const;
+		java::lang::Double resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0) const;
+		jshort shortValue() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

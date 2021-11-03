@@ -28,16 +28,16 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean getIncludeDeviceName();
-		jboolean getIncludeTxPowerLevel();
-		android::util::SparseArray getManufacturerSpecificData();
-		JObject getServiceData();
-		JObject getServiceUuids();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean getIncludeDeviceName() const;
+		jboolean getIncludeTxPowerLevel() const;
+		android::util::SparseArray getManufacturerSpecificData() const;
+		JObject getServiceData() const;
+		JObject getServiceUuids() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth::le
 

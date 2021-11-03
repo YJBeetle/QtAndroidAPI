@@ -31,12 +31,12 @@ namespace android::hardware::camera2::params
 		TonemapCurve(JFloatArray arg0, JFloatArray arg1, JFloatArray arg2);
 		
 		// Methods
-		void copyColorCurve(jint arg0, JFloatArray arg1, jint arg2);
-		jboolean equals(JObject arg0);
-		android::graphics::PointF getPoint(jint arg0, jint arg1);
-		jint getPointCount(jint arg0);
-		jint hashCode();
-		JString toString();
+		void copyColorCurve(jint arg0, JFloatArray arg1, jint arg2) const;
+		jboolean equals(JObject arg0) const;
+		android::graphics::PointF getPoint(jint arg0, jint arg1) const;
+		jint getPointCount(jint arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

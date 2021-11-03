@@ -85,7 +85,7 @@ namespace java::time::chrono
 			"()[Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	JString JapaneseEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString JapaneseEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -94,14 +94,14 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	jint JapaneseEra::getValue()
+	jint JapaneseEra::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	java::time::temporal::ValueRange JapaneseEra::range(JObject arg0)
+	java::time::temporal::ValueRange JapaneseEra::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -109,7 +109,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	JString JapaneseEra::toString()
+	JString JapaneseEra::toString() const
 	{
 		return callObjectMethod(
 			"toString",

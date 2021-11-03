@@ -38,7 +38,7 @@ namespace android::graphics::fonts
 			arg0.object<jarray>()
 		);
 	}
-	jboolean FontVariationAxis::equals(JObject arg0)
+	jboolean FontVariationAxis::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,28 +46,28 @@ namespace android::graphics::fonts
 			arg0.object<jobject>()
 		);
 	}
-	jfloat FontVariationAxis::getStyleValue()
+	jfloat FontVariationAxis::getStyleValue() const
 	{
 		return callMethod<jfloat>(
 			"getStyleValue",
 			"()F"
 		);
 	}
-	JString FontVariationAxis::getTag()
+	JString FontVariationAxis::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint FontVariationAxis::hashCode()
+	jint FontVariationAxis::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString FontVariationAxis::toString()
+	JString FontVariationAxis::toString() const
 	{
 		return callObjectMethod(
 			"toString",

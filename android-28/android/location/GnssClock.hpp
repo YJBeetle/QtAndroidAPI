@@ -23,25 +23,25 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jdouble getBiasNanos();
-		jdouble getBiasUncertaintyNanos();
-		jdouble getDriftNanosPerSecond();
-		jdouble getDriftUncertaintyNanosPerSecond();
-		jlong getFullBiasNanos();
-		jint getHardwareClockDiscontinuityCount();
-		jint getLeapSecond();
-		jlong getTimeNanos();
-		jdouble getTimeUncertaintyNanos();
-		jboolean hasBiasNanos();
-		jboolean hasBiasUncertaintyNanos();
-		jboolean hasDriftNanosPerSecond();
-		jboolean hasDriftUncertaintyNanosPerSecond();
-		jboolean hasFullBiasNanos();
-		jboolean hasLeapSecond();
-		jboolean hasTimeUncertaintyNanos();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jdouble getBiasNanos() const;
+		jdouble getBiasUncertaintyNanos() const;
+		jdouble getDriftNanosPerSecond() const;
+		jdouble getDriftUncertaintyNanosPerSecond() const;
+		jlong getFullBiasNanos() const;
+		jint getHardwareClockDiscontinuityCount() const;
+		jint getLeapSecond() const;
+		jlong getTimeNanos() const;
+		jdouble getTimeUncertaintyNanos() const;
+		jboolean hasBiasNanos() const;
+		jboolean hasBiasUncertaintyNanos() const;
+		jboolean hasDriftNanosPerSecond() const;
+		jboolean hasDriftUncertaintyNanosPerSecond() const;
+		jboolean hasFullBiasNanos() const;
+		jboolean hasLeapSecond() const;
+		jboolean hasTimeUncertaintyNanos() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

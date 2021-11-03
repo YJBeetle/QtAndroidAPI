@@ -21,7 +21,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaController2_ControllerCallback::onCommandResult(android::media::MediaController2 arg0, JObject arg1, android::media::Session2Command arg2, android::media::Session2Command_Result arg3)
+	void MediaController2_ControllerCallback::onCommandResult(android::media::MediaController2 arg0, JObject arg1, android::media::Session2Command arg2, android::media::Session2Command_Result arg3) const
 	{
 		callMethod<void>(
 			"onCommandResult",
@@ -32,7 +32,7 @@ namespace android::media
 			arg3.object()
 		);
 	}
-	void MediaController2_ControllerCallback::onConnected(android::media::MediaController2 arg0, android::media::Session2CommandGroup arg1)
+	void MediaController2_ControllerCallback::onConnected(android::media::MediaController2 arg0, android::media::Session2CommandGroup arg1) const
 	{
 		callMethod<void>(
 			"onConnected",
@@ -41,7 +41,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaController2_ControllerCallback::onDisconnected(android::media::MediaController2 arg0)
+	void MediaController2_ControllerCallback::onDisconnected(android::media::MediaController2 arg0) const
 	{
 		callMethod<void>(
 			"onDisconnected",
@@ -49,7 +49,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaController2_ControllerCallback::onPlaybackActiveChanged(android::media::MediaController2 arg0, jboolean arg1)
+	void MediaController2_ControllerCallback::onPlaybackActiveChanged(android::media::MediaController2 arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onPlaybackActiveChanged",
@@ -58,7 +58,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::Session2Command_Result MediaController2_ControllerCallback::onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2)
+	android::media::Session2Command_Result MediaController2_ControllerCallback::onSessionCommand(android::media::MediaController2 arg0, android::media::Session2Command arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"onSessionCommand",

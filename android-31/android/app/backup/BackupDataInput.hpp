@@ -19,11 +19,11 @@ namespace android::app::backup
 		// Constructors
 		
 		// Methods
-		jint getDataSize();
-		JString getKey();
-		jint readEntityData(JByteArray arg0, jint arg1, jint arg2);
-		jboolean readNextHeader();
-		void skipEntityData();
+		jint getDataSize() const;
+		JString getKey() const;
+		jint readEntityData(JByteArray arg0, jint arg1, jint arg2) const;
+		jboolean readNextHeader() const;
+		void skipEntityData() const;
 	};
 } // namespace android::app::backup
 

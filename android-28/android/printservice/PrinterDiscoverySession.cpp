@@ -18,7 +18,7 @@ namespace android::printservice
 		) {}
 	
 	// Methods
-	void PrinterDiscoverySession::addPrinters(JObject arg0)
+	void PrinterDiscoverySession::addPrinters(JObject arg0) const
 	{
 		callMethod<void>(
 			"addPrinters",
@@ -26,42 +26,42 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	JObject PrinterDiscoverySession::getPrinters()
+	JObject PrinterDiscoverySession::getPrinters() const
 	{
 		return callObjectMethod(
 			"getPrinters",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject PrinterDiscoverySession::getTrackedPrinters()
+	JObject PrinterDiscoverySession::getTrackedPrinters() const
 	{
 		return callObjectMethod(
 			"getTrackedPrinters",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean PrinterDiscoverySession::isDestroyed()
+	jboolean PrinterDiscoverySession::isDestroyed() const
 	{
 		return callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
 		);
 	}
-	jboolean PrinterDiscoverySession::isPrinterDiscoveryStarted()
+	jboolean PrinterDiscoverySession::isPrinterDiscoveryStarted() const
 	{
 		return callMethod<jboolean>(
 			"isPrinterDiscoveryStarted",
 			"()Z"
 		);
 	}
-	void PrinterDiscoverySession::onDestroy()
+	void PrinterDiscoverySession::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void PrinterDiscoverySession::onRequestCustomPrinterIcon(android::print::PrinterId arg0, android::os::CancellationSignal arg1, android::printservice::CustomPrinterIconCallback arg2)
+	void PrinterDiscoverySession::onRequestCustomPrinterIcon(android::print::PrinterId arg0, android::os::CancellationSignal arg1, android::printservice::CustomPrinterIconCallback arg2) const
 	{
 		callMethod<void>(
 			"onRequestCustomPrinterIcon",
@@ -71,7 +71,7 @@ namespace android::printservice
 			arg2.object()
 		);
 	}
-	void PrinterDiscoverySession::onStartPrinterDiscovery(JObject arg0)
+	void PrinterDiscoverySession::onStartPrinterDiscovery(JObject arg0) const
 	{
 		callMethod<void>(
 			"onStartPrinterDiscovery",
@@ -79,7 +79,7 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::onStartPrinterStateTracking(android::print::PrinterId arg0)
+	void PrinterDiscoverySession::onStartPrinterStateTracking(android::print::PrinterId arg0) const
 	{
 		callMethod<void>(
 			"onStartPrinterStateTracking",
@@ -87,14 +87,14 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::onStopPrinterDiscovery()
+	void PrinterDiscoverySession::onStopPrinterDiscovery() const
 	{
 		callMethod<void>(
 			"onStopPrinterDiscovery",
 			"()V"
 		);
 	}
-	void PrinterDiscoverySession::onStopPrinterStateTracking(android::print::PrinterId arg0)
+	void PrinterDiscoverySession::onStopPrinterStateTracking(android::print::PrinterId arg0) const
 	{
 		callMethod<void>(
 			"onStopPrinterStateTracking",
@@ -102,7 +102,7 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::onValidatePrinters(JObject arg0)
+	void PrinterDiscoverySession::onValidatePrinters(JObject arg0) const
 	{
 		callMethod<void>(
 			"onValidatePrinters",
@@ -110,7 +110,7 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::removePrinters(JObject arg0)
+	void PrinterDiscoverySession::removePrinters(JObject arg0) const
 	{
 		callMethod<void>(
 			"removePrinters",

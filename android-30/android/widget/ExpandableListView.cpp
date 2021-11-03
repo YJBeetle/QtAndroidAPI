@@ -126,7 +126,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ExpandableListView::collapseGroup(jint arg0)
+	jboolean ExpandableListView::collapseGroup(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"collapseGroup",
@@ -134,7 +134,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ExpandableListView::expandGroup(jint arg0)
+	jboolean ExpandableListView::expandGroup(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"expandGroup",
@@ -142,7 +142,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean ExpandableListView::expandGroup(jint arg0, jboolean arg1)
+	jboolean ExpandableListView::expandGroup(jint arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"expandGroup",
@@ -151,28 +151,28 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString ExpandableListView::getAccessibilityClassName()
+	JString ExpandableListView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject ExpandableListView::getAdapter()
+	JObject ExpandableListView::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	JObject ExpandableListView::getExpandableListAdapter()
+	JObject ExpandableListView::getExpandableListAdapter() const
 	{
 		return callObjectMethod(
 			"getExpandableListAdapter",
 			"()Landroid/widget/ExpandableListAdapter;"
 		);
 	}
-	jlong ExpandableListView::getExpandableListPosition(jint arg0)
+	jlong ExpandableListView::getExpandableListPosition(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getExpandableListPosition",
@@ -180,7 +180,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint ExpandableListView::getFlatListPosition(jlong arg0)
+	jint ExpandableListView::getFlatListPosition(jlong arg0) const
 	{
 		return callMethod<jint>(
 			"getFlatListPosition",
@@ -188,21 +188,21 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong ExpandableListView::getSelectedId()
+	jlong ExpandableListView::getSelectedId() const
 	{
 		return callMethod<jlong>(
 			"getSelectedId",
 			"()J"
 		);
 	}
-	jlong ExpandableListView::getSelectedPosition()
+	jlong ExpandableListView::getSelectedPosition() const
 	{
 		return callMethod<jlong>(
 			"getSelectedPosition",
 			"()J"
 		);
 	}
-	jboolean ExpandableListView::isGroupExpanded(jint arg0)
+	jboolean ExpandableListView::isGroupExpanded(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isGroupExpanded",
@@ -210,7 +210,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ExpandableListView::onRestoreInstanceState(JObject arg0)
+	void ExpandableListView::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -218,7 +218,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::onRtlPropertiesChanged(jint arg0)
+	void ExpandableListView::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -226,14 +226,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObject ExpandableListView::onSaveInstanceState()
+	JObject ExpandableListView::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jboolean ExpandableListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2)
+	jboolean ExpandableListView::performItemClick(android::view::View arg0, jint arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"performItemClick",
@@ -243,7 +243,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ExpandableListView::setAdapter(JObject arg0)
+	void ExpandableListView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -251,7 +251,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setChildDivider(android::graphics::drawable::Drawable arg0)
+	void ExpandableListView::setChildDivider(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setChildDivider",
@@ -259,7 +259,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setChildIndicator(android::graphics::drawable::Drawable arg0)
+	void ExpandableListView::setChildIndicator(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setChildIndicator",
@@ -267,7 +267,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setChildIndicatorBounds(jint arg0, jint arg1)
+	void ExpandableListView::setChildIndicatorBounds(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setChildIndicatorBounds",
@@ -276,7 +276,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ExpandableListView::setChildIndicatorBoundsRelative(jint arg0, jint arg1)
+	void ExpandableListView::setChildIndicatorBoundsRelative(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setChildIndicatorBoundsRelative",
@@ -285,7 +285,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ExpandableListView::setGroupIndicator(android::graphics::drawable::Drawable arg0)
+	void ExpandableListView::setGroupIndicator(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setGroupIndicator",
@@ -293,7 +293,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setIndicatorBounds(jint arg0, jint arg1)
+	void ExpandableListView::setIndicatorBounds(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setIndicatorBounds",
@@ -302,7 +302,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ExpandableListView::setIndicatorBoundsRelative(jint arg0, jint arg1)
+	void ExpandableListView::setIndicatorBoundsRelative(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setIndicatorBoundsRelative",
@@ -311,7 +311,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ExpandableListView::setOnChildClickListener(JObject arg0)
+	void ExpandableListView::setOnChildClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnChildClickListener",
@@ -319,7 +319,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupClickListener(JObject arg0)
+	void ExpandableListView::setOnGroupClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnGroupClickListener",
@@ -327,7 +327,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupCollapseListener(JObject arg0)
+	void ExpandableListView::setOnGroupCollapseListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnGroupCollapseListener",
@@ -335,7 +335,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupExpandListener(JObject arg0)
+	void ExpandableListView::setOnGroupExpandListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnGroupExpandListener",
@@ -343,7 +343,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnItemClickListener(JObject arg0)
+	void ExpandableListView::setOnItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -351,7 +351,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean ExpandableListView::setSelectedChild(jint arg0, jint arg1, jboolean arg2)
+	jboolean ExpandableListView::setSelectedChild(jint arg0, jint arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"setSelectedChild",
@@ -361,7 +361,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ExpandableListView::setSelectedGroup(jint arg0)
+	void ExpandableListView::setSelectedGroup(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelectedGroup",

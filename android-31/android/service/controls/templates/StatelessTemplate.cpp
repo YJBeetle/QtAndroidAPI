@@ -17,7 +17,7 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	jint StatelessTemplate::getTemplateType()
+	jint StatelessTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",

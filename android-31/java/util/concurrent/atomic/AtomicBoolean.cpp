@@ -22,7 +22,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jboolean AtomicBoolean::compareAndExchange(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::compareAndExchange(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndExchange",
@@ -31,7 +31,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::compareAndExchangeAcquire(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::compareAndExchangeAcquire(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndExchangeAcquire",
@@ -40,7 +40,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::compareAndExchangeRelease(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::compareAndExchangeRelease(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndExchangeRelease",
@@ -49,7 +49,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::compareAndSet(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::compareAndSet(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -58,21 +58,21 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::get()
+	jboolean AtomicBoolean::get() const
 	{
 		return callMethod<jboolean>(
 			"get",
 			"()Z"
 		);
 	}
-	jboolean AtomicBoolean::getAcquire()
+	jboolean AtomicBoolean::getAcquire() const
 	{
 		return callMethod<jboolean>(
 			"getAcquire",
 			"()Z"
 		);
 	}
-	jboolean AtomicBoolean::getAndSet(jboolean arg0)
+	jboolean AtomicBoolean::getAndSet(jboolean arg0) const
 	{
 		return callMethod<jboolean>(
 			"getAndSet",
@@ -80,21 +80,21 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jboolean AtomicBoolean::getOpaque()
+	jboolean AtomicBoolean::getOpaque() const
 	{
 		return callMethod<jboolean>(
 			"getOpaque",
 			"()Z"
 		);
 	}
-	jboolean AtomicBoolean::getPlain()
+	jboolean AtomicBoolean::getPlain() const
 	{
 		return callMethod<jboolean>(
 			"getPlain",
 			"()Z"
 		);
 	}
-	void AtomicBoolean::lazySet(jboolean arg0)
+	void AtomicBoolean::lazySet(jboolean arg0) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -102,7 +102,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicBoolean::set(jboolean arg0)
+	void AtomicBoolean::set(jboolean arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -110,7 +110,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicBoolean::setOpaque(jboolean arg0)
+	void AtomicBoolean::setOpaque(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -118,7 +118,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicBoolean::setPlain(jboolean arg0)
+	void AtomicBoolean::setPlain(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPlain",
@@ -126,7 +126,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	void AtomicBoolean::setRelease(jboolean arg0)
+	void AtomicBoolean::setRelease(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRelease",
@@ -134,14 +134,14 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	JString AtomicBoolean::toString()
+	JString AtomicBoolean::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean AtomicBoolean::weakCompareAndSet(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::weakCompareAndSet(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",
@@ -150,7 +150,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::weakCompareAndSetAcquire(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::weakCompareAndSetAcquire(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
@@ -159,7 +159,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::weakCompareAndSetPlain(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::weakCompareAndSetPlain(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
@@ -168,7 +168,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::weakCompareAndSetRelease(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::weakCompareAndSetRelease(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
@@ -177,7 +177,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jboolean AtomicBoolean::weakCompareAndSetVolatile(jboolean arg0, jboolean arg1)
+	jboolean AtomicBoolean::weakCompareAndSetVolatile(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",

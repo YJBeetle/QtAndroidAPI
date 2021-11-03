@@ -10,7 +10,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	jboolean RcsUceAdapter::isUceSettingEnabled()
+	jboolean RcsUceAdapter::isUceSettingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isUceSettingEnabled",

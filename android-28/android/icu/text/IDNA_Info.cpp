@@ -15,21 +15,21 @@ namespace android::icu::text
 		) {}
 	
 	// Methods
-	JObject IDNA_Info::getErrors()
+	JObject IDNA_Info::getErrors() const
 	{
 		return callObjectMethod(
 			"getErrors",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean IDNA_Info::hasErrors()
+	jboolean IDNA_Info::hasErrors() const
 	{
 		return callMethod<jboolean>(
 			"hasErrors",
 			"()Z"
 		);
 	}
-	jboolean IDNA_Info::isTransitionalDifferent()
+	jboolean IDNA_Info::isTransitionalDifferent() const
 	{
 		return callMethod<jboolean>(
 			"isTransitionalDifferent",

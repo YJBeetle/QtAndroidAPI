@@ -36,11 +36,11 @@ namespace android::widget
 		ResourceCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jint arg3);
 		
 		// Methods
-		android::view::View newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
-		android::view::View newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
-		void setDropDownViewResource(jint arg0);
-		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
-		void setViewResource(jint arg0);
+		android::view::View newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const;
+		android::view::View newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2) const;
+		void setDropDownViewResource(jint arg0) const;
+		void setDropDownViewTheme(android::content::res::Resources_Theme arg0) const;
+		void setViewResource(jint arg0) const;
 	};
 } // namespace android::widget
 

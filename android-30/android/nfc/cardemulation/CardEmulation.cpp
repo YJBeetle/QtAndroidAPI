@@ -85,7 +85,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean CardEmulation::categoryAllowsForegroundPreference(JString arg0)
+	jboolean CardEmulation::categoryAllowsForegroundPreference(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"categoryAllowsForegroundPreference",
@@ -93,14 +93,14 @@ namespace android::nfc::cardemulation
 			arg0.object<jstring>()
 		);
 	}
-	JObject CardEmulation::getAidsForPreferredPaymentService()
+	JObject CardEmulation::getAidsForPreferredPaymentService() const
 	{
 		return callObjectMethod(
 			"getAidsForPreferredPaymentService",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject CardEmulation::getAidsForService(android::content::ComponentName arg0, JString arg1)
+	JObject CardEmulation::getAidsForService(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getAidsForService",
@@ -109,21 +109,21 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	JString CardEmulation::getDescriptionForPreferredPaymentService()
+	JString CardEmulation::getDescriptionForPreferredPaymentService() const
 	{
 		return callObjectMethod(
 			"getDescriptionForPreferredPaymentService",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString CardEmulation::getRouteDestinationForPreferredPaymentService()
+	JString CardEmulation::getRouteDestinationForPreferredPaymentService() const
 	{
 		return callObjectMethod(
 			"getRouteDestinationForPreferredPaymentService",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CardEmulation::getSelectionModeForCategory(JString arg0)
+	jint CardEmulation::getSelectionModeForCategory(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getSelectionModeForCategory",
@@ -131,7 +131,7 @@ namespace android::nfc::cardemulation
 			arg0.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1)
+	jboolean CardEmulation::isDefaultServiceForAid(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isDefaultServiceForAid",
@@ -140,7 +140,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1)
+	jboolean CardEmulation::isDefaultServiceForCategory(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"isDefaultServiceForCategory",
@@ -149,7 +149,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2)
+	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, JString arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"registerAidsForService",
@@ -159,7 +159,7 @@ namespace android::nfc::cardemulation
 			arg2.object()
 		);
 	}
-	jboolean CardEmulation::removeAidsForService(android::content::ComponentName arg0, JString arg1)
+	jboolean CardEmulation::removeAidsForService(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeAidsForService",
@@ -168,7 +168,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::setOffHostForService(android::content::ComponentName arg0, JString arg1)
+	jboolean CardEmulation::setOffHostForService(android::content::ComponentName arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"setOffHostForService",
@@ -177,7 +177,7 @@ namespace android::nfc::cardemulation
 			arg1.object<jstring>()
 		);
 	}
-	jboolean CardEmulation::setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1)
+	jboolean CardEmulation::setPreferredService(android::app::Activity arg0, android::content::ComponentName arg1) const
 	{
 		return callMethod<jboolean>(
 			"setPreferredService",
@@ -186,14 +186,14 @@ namespace android::nfc::cardemulation
 			arg1.object()
 		);
 	}
-	jboolean CardEmulation::supportsAidPrefixRegistration()
+	jboolean CardEmulation::supportsAidPrefixRegistration() const
 	{
 		return callMethod<jboolean>(
 			"supportsAidPrefixRegistration",
 			"()Z"
 		);
 	}
-	jboolean CardEmulation::unsetOffHostForService(android::content::ComponentName arg0)
+	jboolean CardEmulation::unsetOffHostForService(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"unsetOffHostForService",
@@ -201,7 +201,7 @@ namespace android::nfc::cardemulation
 			arg0.object()
 		);
 	}
-	jboolean CardEmulation::unsetPreferredService(android::app::Activity arg0)
+	jboolean CardEmulation::unsetPreferredService(android::app::Activity arg0) const
 	{
 		return callMethod<jboolean>(
 			"unsetPreferredService",

@@ -32,14 +32,14 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pDeviceList::describeContents()
+	jint WifiP2pDeviceList::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(JString arg0)
+	android::net::wifi::p2p::WifiP2pDevice WifiP2pDeviceList::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -47,21 +47,21 @@ namespace android::net::wifi::p2p
 			arg0.object<jstring>()
 		);
 	}
-	JObject WifiP2pDeviceList::getDeviceList()
+	JObject WifiP2pDeviceList::getDeviceList() const
 	{
 		return callObjectMethod(
 			"getDeviceList",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JString WifiP2pDeviceList::toString()
+	JString WifiP2pDeviceList::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WifiP2pDeviceList::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pDeviceList::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

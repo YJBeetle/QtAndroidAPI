@@ -51,13 +51,13 @@ namespace android::preference
 		PreferenceActivity_Header();
 		
 		// Methods
-		jint describeContents();
-		JString getBreadCrumbShortTitle(android::content::res::Resources arg0);
-		JString getBreadCrumbTitle(android::content::res::Resources arg0);
-		JString getSummary(android::content::res::Resources arg0);
-		JString getTitle(android::content::res::Resources arg0);
-		void readFromParcel(android::os::Parcel arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getBreadCrumbShortTitle(android::content::res::Resources arg0) const;
+		JString getBreadCrumbTitle(android::content::res::Resources arg0) const;
+		JString getSummary(android::content::res::Resources arg0) const;
+		JString getTitle(android::content::res::Resources arg0) const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::preference
 

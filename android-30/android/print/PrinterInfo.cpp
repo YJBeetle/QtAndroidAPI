@@ -44,14 +44,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrinterInfo::describeContents()
+	jint PrinterInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrinterInfo::equals(JObject arg0)
+	jboolean PrinterInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -59,56 +59,56 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	android::print::PrinterCapabilitiesInfo PrinterInfo::getCapabilities()
+	android::print::PrinterCapabilitiesInfo PrinterInfo::getCapabilities() const
 	{
 		return callObjectMethod(
 			"getCapabilities",
 			"()Landroid/print/PrinterCapabilitiesInfo;"
 		);
 	}
-	JString PrinterInfo::getDescription()
+	JString PrinterInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::print::PrinterId PrinterInfo::getId()
+	android::print::PrinterId PrinterInfo::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Landroid/print/PrinterId;"
 		);
 	}
-	JString PrinterInfo::getName()
+	JString PrinterInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PrinterInfo::getStatus()
+	jint PrinterInfo::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jint PrinterInfo::hashCode()
+	jint PrinterInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrinterInfo::toString()
+	JString PrinterInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PrinterInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrinterInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

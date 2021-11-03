@@ -36,11 +36,11 @@ namespace android::net::vcn
 		// Constructors
 		
 		// Methods
-		void clearVcnConfig(android::os::ParcelUuid arg0);
-		JObject getConfiguredSubscriptionGroups();
-		void registerVcnStatusCallback(android::os::ParcelUuid arg0, JObject arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2);
-		void setVcnConfig(android::os::ParcelUuid arg0, android::net::vcn::VcnConfig arg1);
-		void unregisterVcnStatusCallback(android::net::vcn::VcnManager_VcnStatusCallback arg0);
+		void clearVcnConfig(android::os::ParcelUuid arg0) const;
+		JObject getConfiguredSubscriptionGroups() const;
+		void registerVcnStatusCallback(android::os::ParcelUuid arg0, JObject arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2) const;
+		void setVcnConfig(android::os::ParcelUuid arg0, android::net::vcn::VcnConfig arg1) const;
+		void unregisterVcnStatusCallback(android::net::vcn::VcnManager_VcnStatusCallback arg0) const;
 	};
 } // namespace android::net::vcn
 

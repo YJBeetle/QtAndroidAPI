@@ -53,7 +53,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void RelativeLayout_LayoutParams::addRule(jint arg0)
+	void RelativeLayout_LayoutParams::addRule(jint arg0) const
 	{
 		callMethod<void>(
 			"addRule",
@@ -61,7 +61,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RelativeLayout_LayoutParams::addRule(jint arg0, jint arg1)
+	void RelativeLayout_LayoutParams::addRule(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addRule",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString RelativeLayout_LayoutParams::debug(JString arg0)
+	JString RelativeLayout_LayoutParams::debug(JString arg0) const
 	{
 		return callObjectMethod(
 			"debug",
@@ -78,7 +78,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	jint RelativeLayout_LayoutParams::getRule(jint arg0)
+	jint RelativeLayout_LayoutParams::getRule(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getRule",
@@ -86,14 +86,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	JIntArray RelativeLayout_LayoutParams::getRules()
+	JIntArray RelativeLayout_LayoutParams::getRules() const
 	{
 		return callObjectMethod(
 			"getRules",
 			"()[I"
 		);
 	}
-	void RelativeLayout_LayoutParams::removeRule(jint arg0)
+	void RelativeLayout_LayoutParams::removeRule(jint arg0) const
 	{
 		callMethod<void>(
 			"removeRule",
@@ -101,7 +101,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RelativeLayout_LayoutParams::resolveLayoutDirection(jint arg0)
+	void RelativeLayout_LayoutParams::resolveLayoutDirection(jint arg0) const
 	{
 		callMethod<void>(
 			"resolveLayoutDirection",

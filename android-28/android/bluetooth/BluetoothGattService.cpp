@@ -42,7 +42,7 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	jboolean BluetoothGattService::addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0)
+	jboolean BluetoothGattService::addCharacteristic(android::bluetooth::BluetoothGattCharacteristic arg0) const
 	{
 		return callMethod<jboolean>(
 			"addCharacteristic",
@@ -50,7 +50,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothGattService::addService(android::bluetooth::BluetoothGattService arg0)
+	jboolean BluetoothGattService::addService(android::bluetooth::BluetoothGattService arg0) const
 	{
 		return callMethod<jboolean>(
 			"addService",
@@ -58,14 +58,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jint BluetoothGattService::describeContents()
+	jint BluetoothGattService::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::bluetooth::BluetoothGattCharacteristic BluetoothGattService::getCharacteristic(java::util::UUID arg0)
+	android::bluetooth::BluetoothGattCharacteristic BluetoothGattService::getCharacteristic(java::util::UUID arg0) const
 	{
 		return callObjectMethod(
 			"getCharacteristic",
@@ -73,42 +73,42 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	JObject BluetoothGattService::getCharacteristics()
+	JObject BluetoothGattService::getCharacteristics() const
 	{
 		return callObjectMethod(
 			"getCharacteristics",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject BluetoothGattService::getIncludedServices()
+	JObject BluetoothGattService::getIncludedServices() const
 	{
 		return callObjectMethod(
 			"getIncludedServices",
 			"()Ljava/util/List;"
 		);
 	}
-	jint BluetoothGattService::getInstanceId()
+	jint BluetoothGattService::getInstanceId() const
 	{
 		return callMethod<jint>(
 			"getInstanceId",
 			"()I"
 		);
 	}
-	jint BluetoothGattService::getType()
+	jint BluetoothGattService::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	java::util::UUID BluetoothGattService::getUuid()
+	java::util::UUID BluetoothGattService::getUuid() const
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
-	void BluetoothGattService::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothGattService::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

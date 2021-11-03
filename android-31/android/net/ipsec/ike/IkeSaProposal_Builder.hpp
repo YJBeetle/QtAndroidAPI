@@ -22,11 +22,11 @@ namespace android::net::ipsec::ike
 		IkeSaProposal_Builder();
 		
 		// Methods
-		android::net::ipsec::ike::IkeSaProposal_Builder addDhGroup(jint arg0);
-		android::net::ipsec::ike::IkeSaProposal_Builder addEncryptionAlgorithm(jint arg0, jint arg1);
-		android::net::ipsec::ike::IkeSaProposal_Builder addIntegrityAlgorithm(jint arg0);
-		android::net::ipsec::ike::IkeSaProposal_Builder addPseudorandomFunction(jint arg0);
-		android::net::ipsec::ike::IkeSaProposal build();
+		android::net::ipsec::ike::IkeSaProposal_Builder addDhGroup(jint arg0) const;
+		android::net::ipsec::ike::IkeSaProposal_Builder addEncryptionAlgorithm(jint arg0, jint arg1) const;
+		android::net::ipsec::ike::IkeSaProposal_Builder addIntegrityAlgorithm(jint arg0) const;
+		android::net::ipsec::ike::IkeSaProposal_Builder addPseudorandomFunction(jint arg0) const;
+		android::net::ipsec::ike::IkeSaProposal build() const;
 	};
 } // namespace android::net::ipsec::ike
 

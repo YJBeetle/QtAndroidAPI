@@ -111,7 +111,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean AudioPresentation::equals(JObject arg0)
+	jboolean AudioPresentation::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -119,70 +119,70 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JObject AudioPresentation::getLabels()
+	JObject AudioPresentation::getLabels() const
 	{
 		return callObjectMethod(
 			"getLabels",
 			"()Ljava/util/Map;"
 		);
 	}
-	java::util::Locale AudioPresentation::getLocale()
+	java::util::Locale AudioPresentation::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	jint AudioPresentation::getMasteringIndication()
+	jint AudioPresentation::getMasteringIndication() const
 	{
 		return callMethod<jint>(
 			"getMasteringIndication",
 			"()I"
 		);
 	}
-	jint AudioPresentation::getPresentationId()
+	jint AudioPresentation::getPresentationId() const
 	{
 		return callMethod<jint>(
 			"getPresentationId",
 			"()I"
 		);
 	}
-	jint AudioPresentation::getProgramId()
+	jint AudioPresentation::getProgramId() const
 	{
 		return callMethod<jint>(
 			"getProgramId",
 			"()I"
 		);
 	}
-	jboolean AudioPresentation::hasAudioDescription()
+	jboolean AudioPresentation::hasAudioDescription() const
 	{
 		return callMethod<jboolean>(
 			"hasAudioDescription",
 			"()Z"
 		);
 	}
-	jboolean AudioPresentation::hasDialogueEnhancement()
+	jboolean AudioPresentation::hasDialogueEnhancement() const
 	{
 		return callMethod<jboolean>(
 			"hasDialogueEnhancement",
 			"()Z"
 		);
 	}
-	jboolean AudioPresentation::hasSpokenSubtitles()
+	jboolean AudioPresentation::hasSpokenSubtitles() const
 	{
 		return callMethod<jboolean>(
 			"hasSpokenSubtitles",
 			"()Z"
 		);
 	}
-	jint AudioPresentation::hashCode()
+	jint AudioPresentation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AudioPresentation::toString()
+	JString AudioPresentation::toString() const
 	{
 		return callObjectMethod(
 			"toString",

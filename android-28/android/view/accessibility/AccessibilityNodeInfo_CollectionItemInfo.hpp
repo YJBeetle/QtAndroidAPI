@@ -18,12 +18,12 @@ namespace android::view::accessibility
 		// Methods
 		static android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
 		static android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5);
-		jint getColumnIndex();
-		jint getColumnSpan();
-		jint getRowIndex();
-		jint getRowSpan();
-		jboolean isHeading();
-		jboolean isSelected();
+		jint getColumnIndex() const;
+		jint getColumnSpan() const;
+		jint getRowIndex() const;
+		jint getRowSpan() const;
+		jboolean isHeading() const;
+		jboolean isSelected() const;
 	};
 } // namespace android::view::accessibility
 

@@ -36,14 +36,14 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint ParcelableColorSpace::describeContents()
+	jint ParcelableColorSpace::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ParcelableColorSpace::equals(JObject arg0)
+	jboolean ParcelableColorSpace::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,21 +51,21 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::ColorSpace ParcelableColorSpace::getColorSpace()
+	android::graphics::ColorSpace ParcelableColorSpace::getColorSpace() const
 	{
 		return callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jint ParcelableColorSpace::hashCode()
+	jint ParcelableColorSpace::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ParcelableColorSpace::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ParcelableColorSpace::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

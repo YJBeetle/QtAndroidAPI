@@ -18,14 +18,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	void AppSearchSession::close()
+	void AppSearchSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void AppSearchSession::getByDocumentId(android::app::appsearch::GetByDocumentIdRequest arg0, JObject arg1, JObject arg2)
+	void AppSearchSession::getByDocumentId(android::app::appsearch::GetByDocumentIdRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"getByDocumentId",
@@ -35,7 +35,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	void AppSearchSession::getNamespaces(JObject arg0, JObject arg1)
+	void AppSearchSession::getNamespaces(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getNamespaces",
@@ -44,7 +44,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchSession::getSchema(JObject arg0, JObject arg1)
+	void AppSearchSession::getSchema(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getSchema",
@@ -53,7 +53,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchSession::getStorageInfo(JObject arg0, JObject arg1)
+	void AppSearchSession::getStorageInfo(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getStorageInfo",
@@ -62,7 +62,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchSession::put(android::app::appsearch::PutDocumentsRequest arg0, JObject arg1, JObject arg2)
+	void AppSearchSession::put(android::app::appsearch::PutDocumentsRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"put",
@@ -72,7 +72,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	void AppSearchSession::remove(android::app::appsearch::RemoveByDocumentIdRequest arg0, JObject arg1, JObject arg2)
+	void AppSearchSession::remove(android::app::appsearch::RemoveByDocumentIdRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"remove",
@@ -82,7 +82,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	void AppSearchSession::remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3)
+	void AppSearchSession::remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"remove",
@@ -93,7 +93,7 @@ namespace android::app::appsearch
 			arg3.object()
 		);
 	}
-	void AppSearchSession::reportUsage(android::app::appsearch::ReportUsageRequest arg0, JObject arg1, JObject arg2)
+	void AppSearchSession::reportUsage(android::app::appsearch::ReportUsageRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"reportUsage",
@@ -103,7 +103,7 @@ namespace android::app::appsearch
 			arg2.object()
 		);
 	}
-	android::app::appsearch::SearchResults AppSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1)
+	android::app::appsearch::SearchResults AppSearchSession::search(JString arg0, android::app::appsearch::SearchSpec arg1) const
 	{
 		return callObjectMethod(
 			"search",
@@ -112,7 +112,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchSession::setSchema(android::app::appsearch::SetSchemaRequest arg0, JObject arg1, JObject arg2, JObject arg3)
+	void AppSearchSession::setSchema(android::app::appsearch::SetSchemaRequest arg0, JObject arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"setSchema",

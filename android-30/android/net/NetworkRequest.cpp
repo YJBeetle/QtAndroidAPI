@@ -23,7 +23,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jboolean NetworkRequest::canBeSatisfiedBy(android::net::NetworkCapabilities arg0)
+	jboolean NetworkRequest::canBeSatisfiedBy(android::net::NetworkCapabilities arg0) const
 	{
 		return callMethod<jboolean>(
 			"canBeSatisfiedBy",
@@ -31,14 +31,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	jint NetworkRequest::describeContents()
+	jint NetworkRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkRequest::equals(JObject arg0)
+	jboolean NetworkRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,14 +46,14 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	android::net::NetworkSpecifier NetworkRequest::getNetworkSpecifier()
+	android::net::NetworkSpecifier NetworkRequest::getNetworkSpecifier() const
 	{
 		return callObjectMethod(
 			"getNetworkSpecifier",
 			"()Landroid/net/NetworkSpecifier;"
 		);
 	}
-	jboolean NetworkRequest::hasCapability(jint arg0)
+	jboolean NetworkRequest::hasCapability(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCapability",
@@ -61,7 +61,7 @@ namespace android::net
 			arg0
 		);
 	}
-	jboolean NetworkRequest::hasTransport(jint arg0)
+	jboolean NetworkRequest::hasTransport(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasTransport",
@@ -69,21 +69,21 @@ namespace android::net
 			arg0
 		);
 	}
-	jint NetworkRequest::hashCode()
+	jint NetworkRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NetworkRequest::toString()
+	JString NetworkRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

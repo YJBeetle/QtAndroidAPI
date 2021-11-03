@@ -22,8 +22,8 @@ namespace android::provider
 		// Constructors
 		
 		// Methods
-		JArray getFonts();
-		jint getStatusCode();
+		JArray getFonts() const;
+		jint getStatusCode() const;
 	};
 } // namespace android::provider
 

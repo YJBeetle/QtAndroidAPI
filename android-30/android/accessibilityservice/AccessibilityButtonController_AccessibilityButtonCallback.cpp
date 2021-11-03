@@ -16,7 +16,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	void AccessibilityButtonController_AccessibilityButtonCallback::onAvailabilityChanged(android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1)
+	void AccessibilityButtonController_AccessibilityButtonCallback::onAvailabilityChanged(android::accessibilityservice::AccessibilityButtonController arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onAvailabilityChanged",
@@ -25,7 +25,7 @@ namespace android::accessibilityservice
 			arg1
 		);
 	}
-	void AccessibilityButtonController_AccessibilityButtonCallback::onClicked(android::accessibilityservice::AccessibilityButtonController arg0)
+	void AccessibilityButtonController_AccessibilityButtonCallback::onClicked(android::accessibilityservice::AccessibilityButtonController arg0) const
 	{
 		callMethod<void>(
 			"onClicked",

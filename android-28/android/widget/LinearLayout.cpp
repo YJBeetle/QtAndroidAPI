@@ -88,7 +88,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::LinearLayout_LayoutParams LinearLayout::generateLayoutParams(JObject arg0)
+	android::widget::LinearLayout_LayoutParams LinearLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -96,84 +96,84 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString LinearLayout::getAccessibilityClassName()
+	JString LinearLayout::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint LinearLayout::getBaseline()
+	jint LinearLayout::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	jint LinearLayout::getBaselineAlignedChildIndex()
+	jint LinearLayout::getBaselineAlignedChildIndex() const
 	{
 		return callMethod<jint>(
 			"getBaselineAlignedChildIndex",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable LinearLayout::getDividerDrawable()
+	android::graphics::drawable::Drawable LinearLayout::getDividerDrawable() const
 	{
 		return callObjectMethod(
 			"getDividerDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint LinearLayout::getDividerPadding()
+	jint LinearLayout::getDividerPadding() const
 	{
 		return callMethod<jint>(
 			"getDividerPadding",
 			"()I"
 		);
 	}
-	jint LinearLayout::getGravity()
+	jint LinearLayout::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jint LinearLayout::getOrientation()
+	jint LinearLayout::getOrientation() const
 	{
 		return callMethod<jint>(
 			"getOrientation",
 			"()I"
 		);
 	}
-	jint LinearLayout::getShowDividers()
+	jint LinearLayout::getShowDividers() const
 	{
 		return callMethod<jint>(
 			"getShowDividers",
 			"()I"
 		);
 	}
-	jfloat LinearLayout::getWeightSum()
+	jfloat LinearLayout::getWeightSum() const
 	{
 		return callMethod<jfloat>(
 			"getWeightSum",
 			"()F"
 		);
 	}
-	jboolean LinearLayout::isBaselineAligned()
+	jboolean LinearLayout::isBaselineAligned() const
 	{
 		return callMethod<jboolean>(
 			"isBaselineAligned",
 			"()Z"
 		);
 	}
-	jboolean LinearLayout::isMeasureWithLargestChildEnabled()
+	jboolean LinearLayout::isMeasureWithLargestChildEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isMeasureWithLargestChildEnabled",
 			"()Z"
 		);
 	}
-	void LinearLayout::onRtlPropertiesChanged(jint arg0)
+	void LinearLayout::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -181,7 +181,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setBaselineAligned(jboolean arg0)
+	void LinearLayout::setBaselineAligned(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setBaselineAligned",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setBaselineAlignedChildIndex(jint arg0)
+	void LinearLayout::setBaselineAlignedChildIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setBaselineAlignedChildIndex",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setDividerDrawable(android::graphics::drawable::Drawable arg0)
+	void LinearLayout::setDividerDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setDividerDrawable",
@@ -205,7 +205,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void LinearLayout::setDividerPadding(jint arg0)
+	void LinearLayout::setDividerPadding(jint arg0) const
 	{
 		callMethod<void>(
 			"setDividerPadding",
@@ -213,7 +213,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setGravity(jint arg0)
+	void LinearLayout::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -221,7 +221,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setHorizontalGravity(jint arg0)
+	void LinearLayout::setHorizontalGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalGravity",
@@ -229,7 +229,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setMeasureWithLargestChildEnabled(jboolean arg0)
+	void LinearLayout::setMeasureWithLargestChildEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMeasureWithLargestChildEnabled",
@@ -237,7 +237,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setOrientation(jint arg0)
+	void LinearLayout::setOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientation",
@@ -245,7 +245,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setShowDividers(jint arg0)
+	void LinearLayout::setShowDividers(jint arg0) const
 	{
 		callMethod<void>(
 			"setShowDividers",
@@ -253,7 +253,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setVerticalGravity(jint arg0)
+	void LinearLayout::setVerticalGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalGravity",
@@ -261,7 +261,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void LinearLayout::setWeightSum(jfloat arg0)
+	void LinearLayout::setWeightSum(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setWeightSum",
@@ -269,7 +269,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean LinearLayout::shouldDelayChildPressedState()
+	jboolean LinearLayout::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",

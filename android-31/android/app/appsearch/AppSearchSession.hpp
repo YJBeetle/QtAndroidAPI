@@ -46,17 +46,17 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		void close();
-		void getByDocumentId(android::app::appsearch::GetByDocumentIdRequest arg0, JObject arg1, JObject arg2);
-		void getNamespaces(JObject arg0, JObject arg1);
-		void getSchema(JObject arg0, JObject arg1);
-		void getStorageInfo(JObject arg0, JObject arg1);
-		void put(android::app::appsearch::PutDocumentsRequest arg0, JObject arg1, JObject arg2);
-		void remove(android::app::appsearch::RemoveByDocumentIdRequest arg0, JObject arg1, JObject arg2);
-		void remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3);
-		void reportUsage(android::app::appsearch::ReportUsageRequest arg0, JObject arg1, JObject arg2);
-		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1);
-		void setSchema(android::app::appsearch::SetSchemaRequest arg0, JObject arg1, JObject arg2, JObject arg3);
+		void close() const;
+		void getByDocumentId(android::app::appsearch::GetByDocumentIdRequest arg0, JObject arg1, JObject arg2) const;
+		void getNamespaces(JObject arg0, JObject arg1) const;
+		void getSchema(JObject arg0, JObject arg1) const;
+		void getStorageInfo(JObject arg0, JObject arg1) const;
+		void put(android::app::appsearch::PutDocumentsRequest arg0, JObject arg1, JObject arg2) const;
+		void remove(android::app::appsearch::RemoveByDocumentIdRequest arg0, JObject arg1, JObject arg2) const;
+		void remove(JString arg0, android::app::appsearch::SearchSpec arg1, JObject arg2, JObject arg3) const;
+		void reportUsage(android::app::appsearch::ReportUsageRequest arg0, JObject arg1, JObject arg2) const;
+		android::app::appsearch::SearchResults search(JString arg0, android::app::appsearch::SearchSpec arg1) const;
+		void setSchema(android::app::appsearch::SetSchemaRequest arg0, JObject arg1, JObject arg2, JObject arg3) const;
 	};
 } // namespace android::app::appsearch
 

@@ -42,7 +42,7 @@ namespace android::graphics
 			arg0.object<jbyteArray>()
 		);
 	}
-	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1)
+	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -51,7 +51,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::RectF arg1)
+	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::RectF arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -60,7 +60,7 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2)
+	void NinePatch::draw(android::graphics::Canvas arg0, android::graphics::Rect arg1, android::graphics::Paint arg2) const
 	{
 		callMethod<void>(
 			"draw",
@@ -70,42 +70,42 @@ namespace android::graphics
 			arg2.object()
 		);
 	}
-	android::graphics::Bitmap NinePatch::getBitmap()
+	android::graphics::Bitmap NinePatch::getBitmap() const
 	{
 		return callObjectMethod(
 			"getBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	jint NinePatch::getDensity()
+	jint NinePatch::getDensity() const
 	{
 		return callMethod<jint>(
 			"getDensity",
 			"()I"
 		);
 	}
-	jint NinePatch::getHeight()
+	jint NinePatch::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JString NinePatch::getName()
+	JString NinePatch::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::graphics::Paint NinePatch::getPaint()
+	android::graphics::Paint NinePatch::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	android::graphics::Region NinePatch::getTransparentRegion(android::graphics::Rect arg0)
+	android::graphics::Region NinePatch::getTransparentRegion(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
@@ -113,21 +113,21 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	jint NinePatch::getWidth()
+	jint NinePatch::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean NinePatch::hasAlpha()
+	jboolean NinePatch::hasAlpha() const
 	{
 		return callMethod<jboolean>(
 			"hasAlpha",
 			"()Z"
 		);
 	}
-	void NinePatch::setPaint(android::graphics::Paint arg0)
+	void NinePatch::setPaint(android::graphics::Paint arg0) const
 	{
 		callMethod<void>(
 			"setPaint",

@@ -21,8 +21,8 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		jboolean isApkVeritySupported();
-		jboolean isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0);
+		jboolean isApkVeritySupported() const;
+		jboolean isAppSourceCertificateTrusted(java::security::cert::X509Certificate arg0) const;
 	};
 } // namespace android::security
 

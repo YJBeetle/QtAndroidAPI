@@ -37,42 +37,42 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	javax::security::auth::x500::X500Principal TrustAnchor::getCA()
+	javax::security::auth::x500::X500Principal TrustAnchor::getCA() const
 	{
 		return callObjectMethod(
 			"getCA",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JString TrustAnchor::getCAName()
+	JString TrustAnchor::getCAName() const
 	{
 		return callObjectMethod(
 			"getCAName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject TrustAnchor::getCAPublicKey()
+	JObject TrustAnchor::getCAPublicKey() const
 	{
 		return callObjectMethod(
 			"getCAPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	JByteArray TrustAnchor::getNameConstraints()
+	JByteArray TrustAnchor::getNameConstraints() const
 	{
 		return callObjectMethod(
 			"getNameConstraints",
 			"()[B"
 		);
 	}
-	java::security::cert::X509Certificate TrustAnchor::getTrustedCert()
+	java::security::cert::X509Certificate TrustAnchor::getTrustedCert() const
 	{
 		return callObjectMethod(
 			"getTrustedCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	JString TrustAnchor::toString()
+	JString TrustAnchor::toString() const
 	{
 		return callObjectMethod(
 			"toString",

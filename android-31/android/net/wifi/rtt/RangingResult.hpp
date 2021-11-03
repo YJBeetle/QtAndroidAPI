@@ -39,22 +39,22 @@ namespace android::net::wifi::rtt
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getDistanceMm();
-		jint getDistanceStdDevMm();
-		android::net::MacAddress getMacAddress();
-		jint getNumAttemptedMeasurements();
-		jint getNumSuccessfulMeasurements();
-		android::net::wifi::aware::PeerHandle getPeerHandle();
-		jlong getRangingTimestampMillis();
-		jint getRssi();
-		jint getStatus();
-		android::net::wifi::rtt::ResponderLocation getUnverifiedResponderLocation();
-		jint hashCode();
-		jboolean is80211mcMeasurement();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getDistanceMm() const;
+		jint getDistanceStdDevMm() const;
+		android::net::MacAddress getMacAddress() const;
+		jint getNumAttemptedMeasurements() const;
+		jint getNumSuccessfulMeasurements() const;
+		android::net::wifi::aware::PeerHandle getPeerHandle() const;
+		jlong getRangingTimestampMillis() const;
+		jint getRssi() const;
+		jint getStatus() const;
+		android::net::wifi::rtt::ResponderLocation getUnverifiedResponderLocation() const;
+		jint hashCode() const;
+		jboolean is80211mcMeasurement() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::rtt
 

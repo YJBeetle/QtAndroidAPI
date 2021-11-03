@@ -20,7 +20,7 @@ namespace java::util::logging
 		) {}
 	
 	// Methods
-	JString XMLFormatter::format(java::util::logging::LogRecord arg0)
+	JString XMLFormatter::format(java::util::logging::LogRecord arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -28,7 +28,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JString XMLFormatter::getHead(java::util::logging::Handler arg0)
+	JString XMLFormatter::getHead(java::util::logging::Handler arg0) const
 	{
 		return callObjectMethod(
 			"getHead",
@@ -36,7 +36,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	JString XMLFormatter::getTail(java::util::logging::Handler arg0)
+	JString XMLFormatter::getTail(java::util::logging::Handler arg0) const
 	{
 		return callObjectMethod(
 			"getTail",

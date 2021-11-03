@@ -19,35 +19,35 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::ViewGroup ZoomButtonsController::getContainer()
+	android::view::ViewGroup ZoomButtonsController::getContainer() const
 	{
 		return callObjectMethod(
 			"getContainer",
 			"()Landroid/view/ViewGroup;"
 		);
 	}
-	android::view::View ZoomButtonsController::getZoomControls()
+	android::view::View ZoomButtonsController::getZoomControls() const
 	{
 		return callObjectMethod(
 			"getZoomControls",
 			"()Landroid/view/View;"
 		);
 	}
-	jboolean ZoomButtonsController::isAutoDismissed()
+	jboolean ZoomButtonsController::isAutoDismissed() const
 	{
 		return callMethod<jboolean>(
 			"isAutoDismissed",
 			"()Z"
 		);
 	}
-	jboolean ZoomButtonsController::isVisible()
+	jboolean ZoomButtonsController::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	jboolean ZoomButtonsController::onTouch(android::view::View arg0, android::view::MotionEvent arg1)
+	jboolean ZoomButtonsController::onTouch(android::view::View arg0, android::view::MotionEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onTouch",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void ZoomButtonsController::setAutoDismissed(jboolean arg0)
+	void ZoomButtonsController::setAutoDismissed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoDismissed",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setFocusable(jboolean arg0)
+	void ZoomButtonsController::setFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setOnZoomListener(JObject arg0)
+	void ZoomButtonsController::setOnZoomListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnZoomListener",
@@ -80,7 +80,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ZoomButtonsController::setVisible(jboolean arg0)
+	void ZoomButtonsController::setVisible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVisible",
@@ -88,7 +88,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setZoomInEnabled(jboolean arg0)
+	void ZoomButtonsController::setZoomInEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZoomInEnabled",
@@ -96,7 +96,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setZoomOutEnabled(jboolean arg0)
+	void ZoomButtonsController::setZoomOutEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setZoomOutEnabled",
@@ -104,7 +104,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setZoomSpeed(jlong arg0)
+	void ZoomButtonsController::setZoomSpeed(jlong arg0) const
 	{
 		callMethod<void>(
 			"setZoomSpeed",

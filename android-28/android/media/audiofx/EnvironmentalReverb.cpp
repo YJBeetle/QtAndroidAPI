@@ -88,84 +88,84 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jshort EnvironmentalReverb::getDecayHFRatio()
+	jshort EnvironmentalReverb::getDecayHFRatio() const
 	{
 		return callMethod<jshort>(
 			"getDecayHFRatio",
 			"()S"
 		);
 	}
-	jint EnvironmentalReverb::getDecayTime()
+	jint EnvironmentalReverb::getDecayTime() const
 	{
 		return callMethod<jint>(
 			"getDecayTime",
 			"()I"
 		);
 	}
-	jshort EnvironmentalReverb::getDensity()
+	jshort EnvironmentalReverb::getDensity() const
 	{
 		return callMethod<jshort>(
 			"getDensity",
 			"()S"
 		);
 	}
-	jshort EnvironmentalReverb::getDiffusion()
+	jshort EnvironmentalReverb::getDiffusion() const
 	{
 		return callMethod<jshort>(
 			"getDiffusion",
 			"()S"
 		);
 	}
-	android::media::audiofx::EnvironmentalReverb_Settings EnvironmentalReverb::getProperties()
+	android::media::audiofx::EnvironmentalReverb_Settings EnvironmentalReverb::getProperties() const
 	{
 		return callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/EnvironmentalReverb$Settings;"
 		);
 	}
-	jint EnvironmentalReverb::getReflectionsDelay()
+	jint EnvironmentalReverb::getReflectionsDelay() const
 	{
 		return callMethod<jint>(
 			"getReflectionsDelay",
 			"()I"
 		);
 	}
-	jshort EnvironmentalReverb::getReflectionsLevel()
+	jshort EnvironmentalReverb::getReflectionsLevel() const
 	{
 		return callMethod<jshort>(
 			"getReflectionsLevel",
 			"()S"
 		);
 	}
-	jint EnvironmentalReverb::getReverbDelay()
+	jint EnvironmentalReverb::getReverbDelay() const
 	{
 		return callMethod<jint>(
 			"getReverbDelay",
 			"()I"
 		);
 	}
-	jshort EnvironmentalReverb::getReverbLevel()
+	jshort EnvironmentalReverb::getReverbLevel() const
 	{
 		return callMethod<jshort>(
 			"getReverbLevel",
 			"()S"
 		);
 	}
-	jshort EnvironmentalReverb::getRoomHFLevel()
+	jshort EnvironmentalReverb::getRoomHFLevel() const
 	{
 		return callMethod<jshort>(
 			"getRoomHFLevel",
 			"()S"
 		);
 	}
-	jshort EnvironmentalReverb::getRoomLevel()
+	jshort EnvironmentalReverb::getRoomLevel() const
 	{
 		return callMethod<jshort>(
 			"getRoomLevel",
 			"()S"
 		);
 	}
-	void EnvironmentalReverb::setDecayHFRatio(jshort arg0)
+	void EnvironmentalReverb::setDecayHFRatio(jshort arg0) const
 	{
 		callMethod<void>(
 			"setDecayHFRatio",
@@ -173,7 +173,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setDecayTime(jint arg0)
+	void EnvironmentalReverb::setDecayTime(jint arg0) const
 	{
 		callMethod<void>(
 			"setDecayTime",
@@ -181,7 +181,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setDensity(jshort arg0)
+	void EnvironmentalReverb::setDensity(jshort arg0) const
 	{
 		callMethod<void>(
 			"setDensity",
@@ -189,7 +189,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setDiffusion(jshort arg0)
+	void EnvironmentalReverb::setDiffusion(jshort arg0) const
 	{
 		callMethod<void>(
 			"setDiffusion",
@@ -197,7 +197,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setParameterListener(JObject arg0)
+	void EnvironmentalReverb::setParameterListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setParameterListener",
@@ -205,7 +205,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void EnvironmentalReverb::setProperties(android::media::audiofx::EnvironmentalReverb_Settings arg0)
+	void EnvironmentalReverb::setProperties(android::media::audiofx::EnvironmentalReverb_Settings arg0) const
 	{
 		callMethod<void>(
 			"setProperties",
@@ -213,7 +213,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void EnvironmentalReverb::setReflectionsDelay(jint arg0)
+	void EnvironmentalReverb::setReflectionsDelay(jint arg0) const
 	{
 		callMethod<void>(
 			"setReflectionsDelay",
@@ -221,7 +221,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setReflectionsLevel(jshort arg0)
+	void EnvironmentalReverb::setReflectionsLevel(jshort arg0) const
 	{
 		callMethod<void>(
 			"setReflectionsLevel",
@@ -229,7 +229,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setReverbDelay(jint arg0)
+	void EnvironmentalReverb::setReverbDelay(jint arg0) const
 	{
 		callMethod<void>(
 			"setReverbDelay",
@@ -237,7 +237,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setReverbLevel(jshort arg0)
+	void EnvironmentalReverb::setReverbLevel(jshort arg0) const
 	{
 		callMethod<void>(
 			"setReverbLevel",
@@ -245,7 +245,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setRoomHFLevel(jshort arg0)
+	void EnvironmentalReverb::setRoomHFLevel(jshort arg0) const
 	{
 		callMethod<void>(
 			"setRoomHFLevel",
@@ -253,7 +253,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void EnvironmentalReverb::setRoomLevel(jshort arg0)
+	void EnvironmentalReverb::setRoomLevel(jshort arg0) const
 	{
 		callMethod<void>(
 			"setRoomLevel",

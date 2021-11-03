@@ -21,7 +21,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jint AlphabetIndexer::getPositionForSection(jint arg0)
+	jint AlphabetIndexer::getPositionForSection(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getPositionForSection",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint AlphabetIndexer::getSectionForPosition(jint arg0)
+	jint AlphabetIndexer::getSectionForPosition(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSectionForPosition",
@@ -37,28 +37,28 @@ namespace android::widget
 			arg0
 		);
 	}
-	JObjectArray AlphabetIndexer::getSections()
+	JObjectArray AlphabetIndexer::getSections() const
 	{
 		return callObjectMethod(
 			"getSections",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	void AlphabetIndexer::onChanged()
+	void AlphabetIndexer::onChanged() const
 	{
 		callMethod<void>(
 			"onChanged",
 			"()V"
 		);
 	}
-	void AlphabetIndexer::onInvalidated()
+	void AlphabetIndexer::onInvalidated() const
 	{
 		callMethod<void>(
 			"onInvalidated",
 			"()V"
 		);
 	}
-	void AlphabetIndexer::setCursor(JObject arg0)
+	void AlphabetIndexer::setCursor(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCursor",

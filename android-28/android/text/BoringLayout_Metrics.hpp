@@ -20,7 +20,7 @@ namespace android::text
 		BoringLayout_Metrics();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::text
 

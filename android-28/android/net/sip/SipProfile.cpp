@@ -20,98 +20,98 @@ namespace android::net::sip
 	// Constructors
 	
 	// Methods
-	jint SipProfile::describeContents()
+	jint SipProfile::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString SipProfile::getAuthUserName()
+	JString SipProfile::getAuthUserName() const
 	{
 		return callObjectMethod(
 			"getAuthUserName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SipProfile::getAutoRegistration()
+	jboolean SipProfile::getAutoRegistration() const
 	{
 		return callMethod<jboolean>(
 			"getAutoRegistration",
 			"()Z"
 		);
 	}
-	JString SipProfile::getDisplayName()
+	JString SipProfile::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipProfile::getPassword()
+	JString SipProfile::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SipProfile::getPort()
+	jint SipProfile::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString SipProfile::getProfileName()
+	JString SipProfile::getProfileName() const
 	{
 		return callObjectMethod(
 			"getProfileName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipProfile::getProtocol()
+	JString SipProfile::getProtocol() const
 	{
 		return callObjectMethod(
 			"getProtocol",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipProfile::getProxyAddress()
+	JString SipProfile::getProxyAddress() const
 	{
 		return callObjectMethod(
 			"getProxyAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SipProfile::getSendKeepAlive()
+	jboolean SipProfile::getSendKeepAlive() const
 	{
 		return callMethod<jboolean>(
 			"getSendKeepAlive",
 			"()Z"
 		);
 	}
-	JString SipProfile::getSipDomain()
+	JString SipProfile::getSipDomain() const
 	{
 		return callObjectMethod(
 			"getSipDomain",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipProfile::getUriString()
+	JString SipProfile::getUriString() const
 	{
 		return callObjectMethod(
 			"getUriString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SipProfile::getUserName()
+	JString SipProfile::getUserName() const
 	{
 		return callObjectMethod(
 			"getUserName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SipProfile::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SipProfile::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

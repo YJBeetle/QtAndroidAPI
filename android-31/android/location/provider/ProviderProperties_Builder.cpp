@@ -22,14 +22,14 @@ namespace android::location::provider
 		) {}
 	
 	// Methods
-	android::location::provider::ProviderProperties ProviderProperties_Builder::build()
+	android::location::provider::ProviderProperties ProviderProperties_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/provider/ProviderProperties;"
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setAccuracy(jint arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setAccuracy(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAccuracy",
@@ -37,7 +37,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasAltitudeSupport(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasAltitudeSupport(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasAltitudeSupport",
@@ -45,7 +45,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasBearingSupport(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasBearingSupport(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasBearingSupport",
@@ -53,7 +53,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasCellRequirement(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasCellRequirement(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasCellRequirement",
@@ -61,7 +61,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasMonetaryCost(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasMonetaryCost(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasMonetaryCost",
@@ -69,7 +69,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasNetworkRequirement(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasNetworkRequirement(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasNetworkRequirement",
@@ -77,7 +77,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasSatelliteRequirement(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasSatelliteRequirement(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasSatelliteRequirement",
@@ -85,7 +85,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasSpeedSupport(jboolean arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setHasSpeedSupport(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHasSpeedSupport",
@@ -93,7 +93,7 @@ namespace android::location::provider
 			arg0
 		);
 	}
-	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setPowerUsage(jint arg0)
+	android::location::provider::ProviderProperties_Builder ProviderProperties_Builder::setPowerUsage(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPowerUsage",

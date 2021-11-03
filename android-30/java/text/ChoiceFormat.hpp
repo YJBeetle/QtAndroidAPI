@@ -47,17 +47,17 @@ namespace java::text
 		static jdouble nextDouble(jdouble arg0);
 		static jdouble nextDouble(jdouble arg0, jboolean arg1);
 		static jdouble previousDouble(jdouble arg0);
-		void applyPattern(JString arg0);
-		JObject clone();
-		jboolean equals(JObject arg0);
-		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		JObjectArray getFormats();
-		JDoubleArray getLimits();
-		jint hashCode();
-		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1);
-		void setChoices(JDoubleArray arg0, JArray arg1);
-		JString toPattern();
+		void applyPattern(JString arg0) const;
+		JObject clone() const;
+		jboolean equals(JObject arg0) const;
+		java::lang::StringBuffer format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const;
+		JObjectArray getFormats() const;
+		JDoubleArray getLimits() const;
+		jint hashCode() const;
+		java::lang::Number parse(JString arg0, java::text::ParsePosition arg1) const;
+		void setChoices(JDoubleArray arg0, JArray arg1) const;
+		JString toPattern() const;
 	};
 } // namespace java::text
 

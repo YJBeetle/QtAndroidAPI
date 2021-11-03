@@ -17,14 +17,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::AudioRecord AudioRecord_Builder::build()
+	android::media::AudioRecord AudioRecord_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/AudioRecord;"
 		);
 	}
-	android::media::AudioRecord_Builder AudioRecord_Builder::setAudioFormat(android::media::AudioFormat arg0)
+	android::media::AudioRecord_Builder AudioRecord_Builder::setAudioFormat(android::media::AudioFormat arg0) const
 	{
 		return callObjectMethod(
 			"setAudioFormat",
@@ -32,7 +32,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioRecord_Builder AudioRecord_Builder::setAudioSource(jint arg0)
+	android::media::AudioRecord_Builder AudioRecord_Builder::setAudioSource(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioSource",
@@ -40,7 +40,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioRecord_Builder AudioRecord_Builder::setBufferSizeInBytes(jint arg0)
+	android::media::AudioRecord_Builder AudioRecord_Builder::setBufferSizeInBytes(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBufferSizeInBytes",

@@ -27,12 +27,12 @@ namespace java::net
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::net::InetAddress getAddress();
-		java::net::InetAddress getBroadcast();
-		jshort getNetworkPrefixLength();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		java::net::InetAddress getAddress() const;
+		java::net::InetAddress getBroadcast() const;
+		jshort getNetworkPrefixLength() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::net
 

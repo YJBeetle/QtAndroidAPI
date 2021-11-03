@@ -149,7 +149,7 @@ namespace android::os
 			arg4.object<jobject>()
 		);
 	}
-	void Message::copyFrom(android::os::Message arg0)
+	void Message::copyFrom(android::os::Message arg0) const
 	{
 		callMethod<void>(
 			"copyFrom",
@@ -157,70 +157,70 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jint Message::describeContents()
+	jint Message::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject Message::getCallback()
+	JObject Message::getCallback() const
 	{
 		return callObjectMethod(
 			"getCallback",
 			"()Ljava/lang/Runnable;"
 		);
 	}
-	android::os::Bundle Message::getData()
+	android::os::Bundle Message::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::os::Handler Message::getTarget()
+	android::os::Handler Message::getTarget() const
 	{
 		return callObjectMethod(
 			"getTarget",
 			"()Landroid/os/Handler;"
 		);
 	}
-	jlong Message::getWhen()
+	jlong Message::getWhen() const
 	{
 		return callMethod<jlong>(
 			"getWhen",
 			"()J"
 		);
 	}
-	jboolean Message::isAsynchronous()
+	jboolean Message::isAsynchronous() const
 	{
 		return callMethod<jboolean>(
 			"isAsynchronous",
 			"()Z"
 		);
 	}
-	android::os::Bundle Message::peekData()
+	android::os::Bundle Message::peekData() const
 	{
 		return callObjectMethod(
 			"peekData",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void Message::recycle()
+	void Message::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	void Message::sendToTarget()
+	void Message::sendToTarget() const
 	{
 		callMethod<void>(
 			"sendToTarget",
 			"()V"
 		);
 	}
-	void Message::setAsynchronous(jboolean arg0)
+	void Message::setAsynchronous(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAsynchronous",
@@ -228,7 +228,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Message::setData(android::os::Bundle arg0)
+	void Message::setData(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setData",
@@ -236,7 +236,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Message::setTarget(android::os::Handler arg0)
+	void Message::setTarget(android::os::Handler arg0) const
 	{
 		callMethod<void>(
 			"setTarget",
@@ -244,14 +244,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JString Message::toString()
+	JString Message::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Message::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Message::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -22,10 +22,10 @@ namespace android::view::translation
 		TranslationRequest_Builder();
 		
 		// Methods
-		android::view::translation::TranslationRequest build();
-		android::view::translation::TranslationRequest_Builder setFlags(jint arg0);
-		android::view::translation::TranslationRequest_Builder setTranslationRequestValues(JObject arg0);
-		android::view::translation::TranslationRequest_Builder setViewTranslationRequests(JObject arg0);
+		android::view::translation::TranslationRequest build() const;
+		android::view::translation::TranslationRequest_Builder setFlags(jint arg0) const;
+		android::view::translation::TranslationRequest_Builder setTranslationRequestValues(JObject arg0) const;
+		android::view::translation::TranslationRequest_Builder setViewTranslationRequests(JObject arg0) const;
 	};
 } // namespace android::view::translation
 

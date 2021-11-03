@@ -21,12 +21,12 @@ namespace android::media
 		MediaTimestamp(jlong arg0, jlong arg1, jfloat arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jlong getAnchorMediaTimeUs();
-		jlong getAnchorSystemNanoTime();
-		jlong getAnchorSytemNanoTime();
-		jfloat getMediaClockRate();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getAnchorMediaTimeUs() const;
+		jlong getAnchorSystemNanoTime() const;
+		jlong getAnchorSytemNanoTime() const;
+		jfloat getMediaClockRate() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

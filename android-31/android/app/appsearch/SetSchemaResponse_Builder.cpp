@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedType(JString arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addDeletedType",
@@ -26,7 +26,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedTypes(JObject arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addDeletedTypes",
@@ -34,7 +34,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleType(JString arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addIncompatibleType",
@@ -42,7 +42,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleTypes(JObject arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addIncompatibleTypes",
@@ -50,7 +50,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedType(JString arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedType(JString arg0) const
 	{
 		return callObjectMethod(
 			"addMigratedType",
@@ -58,7 +58,7 @@ namespace android::app::appsearch
 			arg0.object<jstring>()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedTypes(JObject arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addMigratedTypes",
@@ -66,7 +66,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailure(android::app::appsearch::SetSchemaResponse_MigrationFailure arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailure(android::app::appsearch::SetSchemaResponse_MigrationFailure arg0) const
 	{
 		return callObjectMethod(
 			"addMigrationFailure",
@@ -74,7 +74,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailures(JObject arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailures(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addMigrationFailures",
@@ -82,7 +82,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse SetSchemaResponse_Builder::build()
+	android::app::appsearch::SetSchemaResponse SetSchemaResponse_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

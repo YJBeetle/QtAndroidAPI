@@ -17,10 +17,10 @@ namespace android::os
 		CountDownTimer(jlong arg0, jlong arg1);
 		
 		// Methods
-		void cancel();
-		void onFinish();
-		void onTick(jlong arg0);
-		android::os::CountDownTimer start();
+		void cancel() const;
+		void onFinish() const;
+		void onTick(jlong arg0) const;
+		android::os::CountDownTimer start() const;
 	};
 } // namespace android::os
 

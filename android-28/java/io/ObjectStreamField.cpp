@@ -30,7 +30,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jint ObjectStreamField::compareTo(JObject arg0)
+	jint ObjectStreamField::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -38,56 +38,56 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	JString ObjectStreamField::getName()
+	JString ObjectStreamField::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint ObjectStreamField::getOffset()
+	jint ObjectStreamField::getOffset() const
 	{
 		return callMethod<jint>(
 			"getOffset",
 			"()I"
 		);
 	}
-	JClass ObjectStreamField::getType()
+	JClass ObjectStreamField::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jchar ObjectStreamField::getTypeCode()
+	jchar ObjectStreamField::getTypeCode() const
 	{
 		return callMethod<jchar>(
 			"getTypeCode",
 			"()C"
 		);
 	}
-	JString ObjectStreamField::getTypeString()
+	JString ObjectStreamField::getTypeString() const
 	{
 		return callObjectMethod(
 			"getTypeString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean ObjectStreamField::isPrimitive()
+	jboolean ObjectStreamField::isPrimitive() const
 	{
 		return callMethod<jboolean>(
 			"isPrimitive",
 			"()Z"
 		);
 	}
-	jboolean ObjectStreamField::isUnshared()
+	jboolean ObjectStreamField::isUnshared() const
 	{
 		return callMethod<jboolean>(
 			"isUnshared",
 			"()Z"
 		);
 	}
-	JString ObjectStreamField::toString()
+	JString ObjectStreamField::toString() const
 	{
 		return callObjectMethod(
 			"toString",

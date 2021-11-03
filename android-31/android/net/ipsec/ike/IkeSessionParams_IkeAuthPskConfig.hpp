@@ -19,9 +19,9 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getPsk();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JByteArray getPsk() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

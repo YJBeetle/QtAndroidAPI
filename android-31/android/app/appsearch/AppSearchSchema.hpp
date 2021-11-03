@@ -19,11 +19,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getProperties();
-		JString getSchemaType();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getProperties() const;
+		JString getSchemaType() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

@@ -27,11 +27,11 @@ namespace android::icu::text
 		Transliterator_Position(jint arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		void set(android::icu::text::Transliterator_Position arg0);
-		JString toString();
-		void validate(jint arg0);
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		void set(android::icu::text::Transliterator_Position arg0) const;
+		JString toString() const;
+		void validate(jint arg0) const;
 	};
 } // namespace android::icu::text
 

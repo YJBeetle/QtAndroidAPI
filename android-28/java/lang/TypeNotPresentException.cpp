@@ -19,7 +19,7 @@ namespace java::lang
 		) {}
 	
 	// Methods
-	JString TypeNotPresentException::typeName()
+	JString TypeNotPresentException::typeName() const
 	{
 		return callObjectMethod(
 			"typeName",

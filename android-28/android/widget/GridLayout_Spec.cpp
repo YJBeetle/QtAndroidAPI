@@ -12,7 +12,7 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	jboolean GridLayout_Spec::equals(JObject arg0)
+	jboolean GridLayout_Spec::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	jint GridLayout_Spec::hashCode()
+	jint GridLayout_Spec::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

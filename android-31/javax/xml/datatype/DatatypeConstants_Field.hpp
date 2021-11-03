@@ -18,8 +18,8 @@ namespace javax::xml::datatype
 		// Constructors
 		
 		// Methods
-		jint getId();
-		JString toString();
+		jint getId() const;
+		JString toString() const;
 	};
 } // namespace javax::xml::datatype
 

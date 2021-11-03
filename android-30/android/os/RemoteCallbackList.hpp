@@ -19,19 +19,19 @@ namespace android::os
 		RemoteCallbackList();
 		
 		// Methods
-		jint beginBroadcast();
-		void finishBroadcast();
-		JObject getBroadcastCookie(jint arg0);
-		JObject getBroadcastItem(jint arg0);
-		JObject getRegisteredCallbackCookie(jint arg0);
-		jint getRegisteredCallbackCount();
-		JObject getRegisteredCallbackItem(jint arg0);
-		void kill();
-		void onCallbackDied(JObject arg0);
-		void onCallbackDied(JObject arg0, JObject arg1);
-		jboolean _register(JObject arg0);
-		jboolean _register(JObject arg0, JObject arg1);
-		jboolean unregister(JObject arg0);
+		jint beginBroadcast() const;
+		void finishBroadcast() const;
+		JObject getBroadcastCookie(jint arg0) const;
+		JObject getBroadcastItem(jint arg0) const;
+		JObject getRegisteredCallbackCookie(jint arg0) const;
+		jint getRegisteredCallbackCount() const;
+		JObject getRegisteredCallbackItem(jint arg0) const;
+		void kill() const;
+		void onCallbackDied(JObject arg0) const;
+		void onCallbackDied(JObject arg0, JObject arg1) const;
+		jboolean _register(JObject arg0) const;
+		jboolean _register(JObject arg0, JObject arg1) const;
+		jboolean unregister(JObject arg0) const;
 	};
 } // namespace android::os
 

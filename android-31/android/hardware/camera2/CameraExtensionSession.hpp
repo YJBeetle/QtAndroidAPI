@@ -29,11 +29,11 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		jint capture(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2);
-		void close();
-		android::hardware::camera2::CameraDevice getDevice();
-		jint setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2);
-		void stopRepeating();
+		jint capture(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2) const;
+		void close() const;
+		android::hardware::camera2::CameraDevice getDevice() const;
+		jint setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2) const;
+		void stopRepeating() const;
 	};
 } // namespace android::hardware::camera2
 

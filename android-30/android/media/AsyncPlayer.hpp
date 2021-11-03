@@ -31,9 +31,9 @@ namespace android::media
 		AsyncPlayer(JString arg0);
 		
 		// Methods
-		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3);
-		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, jint arg3);
-		void stop();
+		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, android::media::AudioAttributes arg3) const;
+		void play(android::content::Context arg0, android::net::Uri arg1, jboolean arg2, jint arg3) const;
+		void stop() const;
 	};
 } // namespace android::media
 

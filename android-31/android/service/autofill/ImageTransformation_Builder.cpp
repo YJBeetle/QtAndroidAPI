@@ -31,7 +31,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1)
+	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"addOption",
@@ -40,7 +40,7 @@ namespace android::service::autofill
 			arg1
 		);
 	}
-	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1, JString arg2)
+	android::service::autofill::ImageTransformation_Builder ImageTransformation_Builder::addOption(java::util::regex::Pattern arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"addOption",
@@ -50,7 +50,7 @@ namespace android::service::autofill
 			arg2.object<jstring>()
 		);
 	}
-	android::service::autofill::ImageTransformation ImageTransformation_Builder::build()
+	android::service::autofill::ImageTransformation ImageTransformation_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

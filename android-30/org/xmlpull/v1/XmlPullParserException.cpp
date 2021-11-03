@@ -26,28 +26,28 @@ namespace org::xmlpull::v1
 		) {}
 	
 	// Methods
-	jint XmlPullParserException::getColumnNumber()
+	jint XmlPullParserException::getColumnNumber() const
 	{
 		return callMethod<jint>(
 			"getColumnNumber",
 			"()I"
 		);
 	}
-	JThrowable XmlPullParserException::getDetail()
+	JThrowable XmlPullParserException::getDetail() const
 	{
 		return callObjectMethod(
 			"getDetail",
 			"()Ljava/lang/Throwable;"
 		);
 	}
-	jint XmlPullParserException::getLineNumber()
+	jint XmlPullParserException::getLineNumber() const
 	{
 		return callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
 	}
-	void XmlPullParserException::printStackTrace()
+	void XmlPullParserException::printStackTrace() const
 	{
 		callMethod<void>(
 			"printStackTrace",

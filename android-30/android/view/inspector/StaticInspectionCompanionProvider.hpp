@@ -19,7 +19,7 @@ namespace android::view::inspector
 		StaticInspectionCompanionProvider();
 		
 		// Methods
-		JObject provide(JClass arg0);
+		JObject provide(JClass arg0) const;
 	};
 } // namespace android::view::inspector
 

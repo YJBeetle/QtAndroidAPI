@@ -57,21 +57,21 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	java::security::cert::CertPath CertPathValidatorException::getCertPath()
+	java::security::cert::CertPath CertPathValidatorException::getCertPath() const
 	{
 		return callObjectMethod(
 			"getCertPath",
 			"()Ljava/security/cert/CertPath;"
 		);
 	}
-	jint CertPathValidatorException::getIndex()
+	jint CertPathValidatorException::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JObject CertPathValidatorException::getReason()
+	JObject CertPathValidatorException::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",

@@ -23,16 +23,16 @@ namespace android::hardware::usb
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getAddress();
-		jint getAttributes();
-		jint getDirection();
-		jint getEndpointNumber();
-		jint getInterval();
-		jint getMaxPacketSize();
-		jint getType();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAddress() const;
+		jint getAttributes() const;
+		jint getDirection() const;
+		jint getEndpointNumber() const;
+		jint getInterval() const;
+		jint getMaxPacketSize() const;
+		jint getType() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::usb
 

@@ -65,7 +65,7 @@ namespace javax::security::auth::x500
 		) {}
 	
 	// Methods
-	jboolean X500Principal::equals(JObject arg0)
+	jboolean X500Principal::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -73,21 +73,21 @@ namespace javax::security::auth::x500
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray X500Principal::getEncoded()
+	JByteArray X500Principal::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JString X500Principal::getName()
+	JString X500Principal::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString X500Principal::getName(JString arg0)
+	JString X500Principal::getName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -95,7 +95,7 @@ namespace javax::security::auth::x500
 			arg0.object<jstring>()
 		);
 	}
-	JString X500Principal::getName(JString arg0, JObject arg1)
+	JString X500Principal::getName(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getName",
@@ -104,14 +104,14 @@ namespace javax::security::auth::x500
 			arg1.object()
 		);
 	}
-	jint X500Principal::hashCode()
+	jint X500Principal::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString X500Principal::toString()
+	JString X500Principal::toString() const
 	{
 		return callObjectMethod(
 			"toString",

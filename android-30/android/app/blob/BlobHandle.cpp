@@ -35,14 +35,14 @@ namespace android::app::blob
 			arg3.object<jstring>()
 		);
 	}
-	jint BlobHandle::describeContents()
+	jint BlobHandle::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BlobHandle::equals(JObject arg0)
+	jboolean BlobHandle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,49 +50,49 @@ namespace android::app::blob
 			arg0.object<jobject>()
 		);
 	}
-	jlong BlobHandle::getExpiryTimeMillis()
+	jlong BlobHandle::getExpiryTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getExpiryTimeMillis",
 			"()J"
 		);
 	}
-	JString BlobHandle::getLabel()
+	JString BlobHandle::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JByteArray BlobHandle::getSha256Digest()
+	JByteArray BlobHandle::getSha256Digest() const
 	{
 		return callObjectMethod(
 			"getSha256Digest",
 			"()[B"
 		);
 	}
-	JString BlobHandle::getTag()
+	JString BlobHandle::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint BlobHandle::hashCode()
+	jint BlobHandle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BlobHandle::toString()
+	JString BlobHandle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BlobHandle::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BlobHandle::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

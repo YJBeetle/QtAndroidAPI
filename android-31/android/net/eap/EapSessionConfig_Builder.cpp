@@ -19,14 +19,14 @@ namespace android::net::eap
 		) {}
 	
 	// Methods
-	android::net::eap::EapSessionConfig EapSessionConfig_Builder::build()
+	android::net::eap::EapSessionConfig EapSessionConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/eap/EapSessionConfig;"
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaConfig(jint arg0, jint arg1)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaConfig(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setEapAkaConfig",
@@ -35,7 +35,7 @@ namespace android::net::eap
 			arg1
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaPrimeConfig(jint arg0, jint arg1, JString arg2, jboolean arg3)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapAkaPrimeConfig(jint arg0, jint arg1, JString arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"setEapAkaPrimeConfig",
@@ -46,7 +46,7 @@ namespace android::net::eap
 			arg3
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapIdentity(JByteArray arg0)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapIdentity(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setEapIdentity",
@@ -54,7 +54,7 @@ namespace android::net::eap
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapMsChapV2Config(JString arg0, JString arg1)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapMsChapV2Config(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"setEapMsChapV2Config",
@@ -63,7 +63,7 @@ namespace android::net::eap
 			arg1.object<jstring>()
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapSimConfig(jint arg0, jint arg1)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapSimConfig(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setEapSimConfig",
@@ -72,7 +72,7 @@ namespace android::net::eap
 			arg1
 		);
 	}
-	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapTtlsConfig(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1)
+	android::net::eap::EapSessionConfig_Builder EapSessionConfig_Builder::setEapTtlsConfig(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1) const
 	{
 		return callObjectMethod(
 			"setEapTtlsConfig",

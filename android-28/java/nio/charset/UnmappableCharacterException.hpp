@@ -19,8 +19,8 @@ namespace java::nio::charset
 		UnmappableCharacterException(jint arg0);
 		
 		// Methods
-		jint getInputLength();
-		JString getMessage();
+		jint getInputLength() const;
+		JString getMessage() const;
 	};
 } // namespace java::nio::charset
 

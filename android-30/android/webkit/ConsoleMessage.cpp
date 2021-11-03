@@ -21,28 +21,28 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jint ConsoleMessage::lineNumber()
+	jint ConsoleMessage::lineNumber() const
 	{
 		return callMethod<jint>(
 			"lineNumber",
 			"()I"
 		);
 	}
-	JString ConsoleMessage::message()
+	JString ConsoleMessage::message() const
 	{
 		return callObjectMethod(
 			"message",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage::messageLevel()
+	android::webkit::ConsoleMessage_MessageLevel ConsoleMessage::messageLevel() const
 	{
 		return callObjectMethod(
 			"messageLevel",
 			"()Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	JString ConsoleMessage::sourceId()
+	JString ConsoleMessage::sourceId() const
 	{
 		return callObjectMethod(
 			"sourceId",

@@ -24,8 +24,8 @@ namespace android::content
 		UriMatcher(jint arg0);
 		
 		// Methods
-		void addURI(JString arg0, JString arg1, jint arg2);
-		jint match(android::net::Uri arg0);
+		void addURI(JString arg0, JString arg1, jint arg2) const;
+		jint match(android::net::Uri arg0) const;
 	};
 } // namespace android::content
 

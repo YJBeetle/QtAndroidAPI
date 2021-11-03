@@ -22,7 +22,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setCountryCode(JString arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setCountryCode(JString arg0) const
 	{
 		return callObjectMethod(
 			"setCountryCode",
@@ -30,7 +30,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setExtension(JString arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setExtension(JString arg0) const
 	{
 		return callObjectMethod(
 			"setExtension",
@@ -38,7 +38,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setNumberParts(JString arg0)
+	android::text::style::TtsSpan_TelephoneBuilder TtsSpan_TelephoneBuilder::setNumberParts(JString arg0) const
 	{
 		return callObjectMethod(
 			"setNumberParts",

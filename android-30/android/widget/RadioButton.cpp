@@ -43,14 +43,14 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString RadioButton::getAccessibilityClassName()
+	JString RadioButton::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void RadioButton::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0)
+	void RadioButton::onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfo",
@@ -58,7 +58,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioButton::toggle()
+	void RadioButton::toggle() const
 	{
 		callMethod<void>(
 			"toggle",

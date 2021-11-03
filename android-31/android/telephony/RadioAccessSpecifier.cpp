@@ -29,14 +29,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint RadioAccessSpecifier::describeContents()
+	jint RadioAccessSpecifier::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RadioAccessSpecifier::equals(JObject arg0)
+	jboolean RadioAccessSpecifier::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -44,35 +44,35 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JIntArray RadioAccessSpecifier::getBands()
+	JIntArray RadioAccessSpecifier::getBands() const
 	{
 		return callObjectMethod(
 			"getBands",
 			"()[I"
 		);
 	}
-	JIntArray RadioAccessSpecifier::getChannels()
+	JIntArray RadioAccessSpecifier::getChannels() const
 	{
 		return callObjectMethod(
 			"getChannels",
 			"()[I"
 		);
 	}
-	jint RadioAccessSpecifier::getRadioAccessNetwork()
+	jint RadioAccessSpecifier::getRadioAccessNetwork() const
 	{
 		return callMethod<jint>(
 			"getRadioAccessNetwork",
 			"()I"
 		);
 	}
-	jint RadioAccessSpecifier::hashCode()
+	jint RadioAccessSpecifier::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void RadioAccessSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RadioAccessSpecifier::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

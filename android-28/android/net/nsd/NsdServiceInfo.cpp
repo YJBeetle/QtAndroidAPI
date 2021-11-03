@@ -26,49 +26,49 @@ namespace android::net::nsd
 		) {}
 	
 	// Methods
-	jint NsdServiceInfo::describeContents()
+	jint NsdServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject NsdServiceInfo::getAttributes()
+	JObject NsdServiceInfo::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Map;"
 		);
 	}
-	java::net::InetAddress NsdServiceInfo::getHost()
+	java::net::InetAddress NsdServiceInfo::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint NsdServiceInfo::getPort()
+	jint NsdServiceInfo::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString NsdServiceInfo::getServiceName()
+	JString NsdServiceInfo::getServiceName() const
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString NsdServiceInfo::getServiceType()
+	JString NsdServiceInfo::getServiceType() const
 	{
 		return callObjectMethod(
 			"getServiceType",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NsdServiceInfo::removeAttribute(JString arg0)
+	void NsdServiceInfo::removeAttribute(JString arg0) const
 	{
 		callMethod<void>(
 			"removeAttribute",
@@ -76,7 +76,7 @@ namespace android::net::nsd
 			arg0.object<jstring>()
 		);
 	}
-	void NsdServiceInfo::setAttribute(JString arg0, JString arg1)
+	void NsdServiceInfo::setAttribute(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setAttribute",
@@ -85,7 +85,7 @@ namespace android::net::nsd
 			arg1.object<jstring>()
 		);
 	}
-	void NsdServiceInfo::setHost(java::net::InetAddress arg0)
+	void NsdServiceInfo::setHost(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"setHost",
@@ -93,7 +93,7 @@ namespace android::net::nsd
 			arg0.object()
 		);
 	}
-	void NsdServiceInfo::setPort(jint arg0)
+	void NsdServiceInfo::setPort(jint arg0) const
 	{
 		callMethod<void>(
 			"setPort",
@@ -101,7 +101,7 @@ namespace android::net::nsd
 			arg0
 		);
 	}
-	void NsdServiceInfo::setServiceName(JString arg0)
+	void NsdServiceInfo::setServiceName(JString arg0) const
 	{
 		callMethod<void>(
 			"setServiceName",
@@ -109,7 +109,7 @@ namespace android::net::nsd
 			arg0.object<jstring>()
 		);
 	}
-	void NsdServiceInfo::setServiceType(JString arg0)
+	void NsdServiceInfo::setServiceType(JString arg0) const
 	{
 		callMethod<void>(
 			"setServiceType",
@@ -117,14 +117,14 @@ namespace android::net::nsd
 			arg0.object<jstring>()
 		);
 	}
-	JString NsdServiceInfo::toString()
+	JString NsdServiceInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NsdServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NsdServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

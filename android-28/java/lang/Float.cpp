@@ -259,14 +259,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jbyte Float::byteValue()
+	jbyte Float::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Float::compareTo(java::lang::Float arg0)
+	jint Float::compareTo(java::lang::Float arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -274,7 +274,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Float::compareTo(JObject arg0)
+	jint Float::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -282,21 +282,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Float::describeConstable()
+	java::util::Optional Float::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Float::doubleValue()
+	jdouble Float::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Float::equals(JObject arg0)
+	jboolean Float::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -304,49 +304,49 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Float::floatValue()
+	jfloat Float::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Float::hashCode()
+	jint Float::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Float::intValue()
+	jint Float::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jboolean Float::isInfinite()
+	jboolean Float::isInfinite() const
 	{
 		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
-	jboolean Float::isNaN()
+	jboolean Float::isNaN() const
 	{
 		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
-	jlong Float::longValue()
+	jlong Float::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	java::lang::Float Float::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Float Float::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0) const
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",
@@ -354,14 +354,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jshort Float::shortValue()
+	jshort Float::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Float::toString()
+	JString Float::toString() const
 	{
 		return callObjectMethod(
 			"toString",

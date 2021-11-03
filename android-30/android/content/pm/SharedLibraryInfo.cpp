@@ -49,63 +49,63 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jint SharedLibraryInfo::describeContents()
+	jint SharedLibraryInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::content::pm::VersionedPackage SharedLibraryInfo::getDeclaringPackage()
+	android::content::pm::VersionedPackage SharedLibraryInfo::getDeclaringPackage() const
 	{
 		return callObjectMethod(
 			"getDeclaringPackage",
 			"()Landroid/content/pm/VersionedPackage;"
 		);
 	}
-	JObject SharedLibraryInfo::getDependentPackages()
+	JObject SharedLibraryInfo::getDependentPackages() const
 	{
 		return callObjectMethod(
 			"getDependentPackages",
 			"()Ljava/util/List;"
 		);
 	}
-	jlong SharedLibraryInfo::getLongVersion()
+	jlong SharedLibraryInfo::getLongVersion() const
 	{
 		return callMethod<jlong>(
 			"getLongVersion",
 			"()J"
 		);
 	}
-	JString SharedLibraryInfo::getName()
+	JString SharedLibraryInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SharedLibraryInfo::getType()
+	jint SharedLibraryInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint SharedLibraryInfo::getVersion()
+	jint SharedLibraryInfo::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	JString SharedLibraryInfo::toString()
+	JString SharedLibraryInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SharedLibraryInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SharedLibraryInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -64,7 +64,7 @@ namespace javax::xml::xpath
 			arg2.object()
 		);
 	}
-	jboolean XPathFactory::getFeature(JString arg0)
+	jboolean XPathFactory::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -72,7 +72,7 @@ namespace javax::xml::xpath
 			arg0.object<jstring>()
 		);
 	}
-	jboolean XPathFactory::isObjectModelSupported(JString arg0)
+	jboolean XPathFactory::isObjectModelSupported(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isObjectModelSupported",
@@ -80,14 +80,14 @@ namespace javax::xml::xpath
 			arg0.object<jstring>()
 		);
 	}
-	JObject XPathFactory::newXPath()
+	JObject XPathFactory::newXPath() const
 	{
 		return callObjectMethod(
 			"newXPath",
 			"()Ljavax/xml/xpath/XPath;"
 		);
 	}
-	void XPathFactory::setFeature(JString arg0, jboolean arg1)
+	void XPathFactory::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -96,7 +96,7 @@ namespace javax::xml::xpath
 			arg1
 		);
 	}
-	void XPathFactory::setXPathFunctionResolver(JObject arg0)
+	void XPathFactory::setXPathFunctionResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setXPathFunctionResolver",
@@ -104,7 +104,7 @@ namespace javax::xml::xpath
 			arg0.object()
 		);
 	}
-	void XPathFactory::setXPathVariableResolver(JObject arg0)
+	void XPathFactory::setXPathVariableResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setXPathVariableResolver",

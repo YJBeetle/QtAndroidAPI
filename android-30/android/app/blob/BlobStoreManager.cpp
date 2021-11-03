@@ -14,7 +14,7 @@ namespace android::app::blob
 	// Constructors
 	
 	// Methods
-	void BlobStoreManager::abandonSession(jlong arg0)
+	void BlobStoreManager::abandonSession(jlong arg0) const
 	{
 		callMethod<void>(
 			"abandonSession",
@@ -22,7 +22,7 @@ namespace android::app::blob
 			arg0
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jint arg1)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"acquireLease",
@@ -31,7 +31,7 @@ namespace android::app::blob
 			arg1
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"acquireLease",
@@ -40,7 +40,7 @@ namespace android::app::blob
 			arg1.object<jstring>()
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"acquireLease",
@@ -50,7 +50,7 @@ namespace android::app::blob
 			arg2
 		);
 	}
-	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2)
+	void BlobStoreManager::acquireLease(android::app::blob::BlobHandle arg0, JString arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"acquireLease",
@@ -60,7 +60,7 @@ namespace android::app::blob
 			arg2
 		);
 	}
-	jlong BlobStoreManager::createSession(android::app::blob::BlobHandle arg0)
+	jlong BlobStoreManager::createSession(android::app::blob::BlobHandle arg0) const
 	{
 		return callMethod<jlong>(
 			"createSession",
@@ -68,21 +68,21 @@ namespace android::app::blob
 			arg0.object()
 		);
 	}
-	JObject BlobStoreManager::getLeasedBlobs()
+	JObject BlobStoreManager::getLeasedBlobs() const
 	{
 		return callObjectMethod(
 			"getLeasedBlobs",
 			"()Ljava/util/List;"
 		);
 	}
-	jlong BlobStoreManager::getRemainingLeaseQuotaBytes()
+	jlong BlobStoreManager::getRemainingLeaseQuotaBytes() const
 	{
 		return callMethod<jlong>(
 			"getRemainingLeaseQuotaBytes",
 			"()J"
 		);
 	}
-	android::os::ParcelFileDescriptor BlobStoreManager::openBlob(android::app::blob::BlobHandle arg0)
+	android::os::ParcelFileDescriptor BlobStoreManager::openBlob(android::app::blob::BlobHandle arg0) const
 	{
 		return callObjectMethod(
 			"openBlob",
@@ -90,7 +90,7 @@ namespace android::app::blob
 			arg0.object()
 		);
 	}
-	android::app::blob::BlobStoreManager_Session BlobStoreManager::openSession(jlong arg0)
+	android::app::blob::BlobStoreManager_Session BlobStoreManager::openSession(jlong arg0) const
 	{
 		return callObjectMethod(
 			"openSession",
@@ -98,7 +98,7 @@ namespace android::app::blob
 			arg0
 		);
 	}
-	void BlobStoreManager::releaseLease(android::app::blob::BlobHandle arg0)
+	void BlobStoreManager::releaseLease(android::app::blob::BlobHandle arg0) const
 	{
 		callMethod<void>(
 			"releaseLease",

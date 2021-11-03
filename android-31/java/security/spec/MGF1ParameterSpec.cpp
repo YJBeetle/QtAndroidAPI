@@ -105,14 +105,14 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	JString MGF1ParameterSpec::getDigestAlgorithm()
+	JString MGF1ParameterSpec::getDigestAlgorithm() const
 	{
 		return callObjectMethod(
 			"getDigestAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MGF1ParameterSpec::toString()
+	JString MGF1ParameterSpec::toString() const
 	{
 		return callObjectMethod(
 			"toString",

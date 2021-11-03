@@ -782,21 +782,21 @@ namespace android::print
 		) {}
 	
 	// Methods
-	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asLandscape()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asLandscape() const
 	{
 		return callObjectMethod(
 			"asLandscape",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asPortrait()
+	android::print::PrintAttributes_MediaSize PrintAttributes_MediaSize::asPortrait() const
 	{
 		return callObjectMethod(
 			"asPortrait",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	jboolean PrintAttributes_MediaSize::equals(JObject arg0)
+	jboolean PrintAttributes_MediaSize::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -804,21 +804,21 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintAttributes_MediaSize::getHeightMils()
+	jint PrintAttributes_MediaSize::getHeightMils() const
 	{
 		return callMethod<jint>(
 			"getHeightMils",
 			"()I"
 		);
 	}
-	JString PrintAttributes_MediaSize::getId()
+	JString PrintAttributes_MediaSize::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0)
+	JString PrintAttributes_MediaSize::getLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"getLabel",
@@ -826,28 +826,28 @@ namespace android::print
 			arg0.object()
 		);
 	}
-	jint PrintAttributes_MediaSize::getWidthMils()
+	jint PrintAttributes_MediaSize::getWidthMils() const
 	{
 		return callMethod<jint>(
 			"getWidthMils",
 			"()I"
 		);
 	}
-	jint PrintAttributes_MediaSize::hashCode()
+	jint PrintAttributes_MediaSize::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean PrintAttributes_MediaSize::isPortrait()
+	jboolean PrintAttributes_MediaSize::isPortrait() const
 	{
 		return callMethod<jboolean>(
 			"isPortrait",
 			"()Z"
 		);
 	}
-	JString PrintAttributes_MediaSize::toString()
+	JString PrintAttributes_MediaSize::toString() const
 	{
 		return callObjectMethod(
 			"toString",

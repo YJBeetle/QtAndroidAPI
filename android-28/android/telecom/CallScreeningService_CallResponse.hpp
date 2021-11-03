@@ -16,10 +16,10 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		jboolean getDisallowCall();
-		jboolean getRejectCall();
-		jboolean getSkipCallLog();
-		jboolean getSkipNotification();
+		jboolean getDisallowCall() const;
+		jboolean getRejectCall() const;
+		jboolean getSkipCallLog() const;
+		jboolean getSkipNotification() const;
 	};
 } // namespace android::telecom
 

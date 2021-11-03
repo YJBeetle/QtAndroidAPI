@@ -16,14 +16,14 @@ namespace android::accounts
 		) {}
 	
 	// Methods
-	void AccountAuthenticatorActivity::finish()
+	void AccountAuthenticatorActivity::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	void AccountAuthenticatorActivity::setAccountAuthenticatorResult(android::os::Bundle arg0)
+	void AccountAuthenticatorActivity::setAccountAuthenticatorResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setAccountAuthenticatorResult",

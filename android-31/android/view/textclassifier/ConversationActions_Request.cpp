@@ -38,56 +38,56 @@ namespace android::view::textclassifier
 	// Constructors
 	
 	// Methods
-	jint ConversationActions_Request::describeContents()
+	jint ConversationActions_Request::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString ConversationActions_Request::getCallingPackageName()
+	JString ConversationActions_Request::getCallingPackageName() const
 	{
 		return callObjectMethod(
 			"getCallingPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject ConversationActions_Request::getConversation()
+	JObject ConversationActions_Request::getConversation() const
 	{
 		return callObjectMethod(
 			"getConversation",
 			"()Ljava/util/List;"
 		);
 	}
-	android::os::Bundle ConversationActions_Request::getExtras()
+	android::os::Bundle ConversationActions_Request::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject ConversationActions_Request::getHints()
+	JObject ConversationActions_Request::getHints() const
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ConversationActions_Request::getMaxSuggestions()
+	jint ConversationActions_Request::getMaxSuggestions() const
 	{
 		return callMethod<jint>(
 			"getMaxSuggestions",
 			"()I"
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig ConversationActions_Request::getTypeConfig()
+	android::view::textclassifier::TextClassifier_EntityConfig ConversationActions_Request::getTypeConfig() const
 	{
 		return callObjectMethod(
 			"getTypeConfig",
 			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
 		);
 	}
-	void ConversationActions_Request::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConversationActions_Request::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

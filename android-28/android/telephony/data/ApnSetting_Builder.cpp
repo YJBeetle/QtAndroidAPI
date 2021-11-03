@@ -19,14 +19,14 @@ namespace android::telephony::data
 		) {}
 	
 	// Methods
-	android::telephony::data::ApnSetting ApnSetting_Builder::build()
+	android::telephony::data::ApnSetting ApnSetting_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/data/ApnSetting;"
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnName(JString arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setApnName",
@@ -34,7 +34,7 @@ namespace android::telephony::data
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnTypeBitmask(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setApnTypeBitmask(jint arg0) const
 	{
 		return callObjectMethod(
 			"setApnTypeBitmask",
@@ -42,7 +42,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setAuthType(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setAuthType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAuthType",
@@ -50,7 +50,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setCarrierEnabled(jboolean arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setCarrierEnabled(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setCarrierEnabled",
@@ -58,7 +58,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setEntryName(JString arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setEntryName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setEntryName",
@@ -66,7 +66,7 @@ namespace android::telephony::data
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyAddress(java::net::InetAddress arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyAddress(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"setMmsProxyAddress",
@@ -74,7 +74,7 @@ namespace android::telephony::data
 			arg0.object()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyPort(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsProxyPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMmsProxyPort",
@@ -82,7 +82,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsc(android::net::Uri arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMmsc(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"setMmsc",
@@ -90,7 +90,7 @@ namespace android::telephony::data
 			arg0.object()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMvnoType(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setMvnoType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMvnoType",
@@ -98,7 +98,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setNetworkTypeBitmask(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setNetworkTypeBitmask(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkTypeBitmask",
@@ -106,7 +106,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setOperatorNumeric(JString arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setOperatorNumeric(JString arg0) const
 	{
 		return callObjectMethod(
 			"setOperatorNumeric",
@@ -114,7 +114,7 @@ namespace android::telephony::data
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setPassword(JString arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setPassword(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPassword",
@@ -122,7 +122,7 @@ namespace android::telephony::data
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProtocol(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProtocol(jint arg0) const
 	{
 		return callObjectMethod(
 			"setProtocol",
@@ -130,7 +130,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyAddress(java::net::InetAddress arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyAddress(java::net::InetAddress arg0) const
 	{
 		return callObjectMethod(
 			"setProxyAddress",
@@ -138,7 +138,7 @@ namespace android::telephony::data
 			arg0.object()
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyPort(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setProxyPort(jint arg0) const
 	{
 		return callObjectMethod(
 			"setProxyPort",
@@ -146,7 +146,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setRoamingProtocol(jint arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setRoamingProtocol(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRoamingProtocol",
@@ -154,7 +154,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setUser(JString arg0)
+	android::telephony::data::ApnSetting_Builder ApnSetting_Builder::setUser(JString arg0) const
 	{
 		return callObjectMethod(
 			"setUser",

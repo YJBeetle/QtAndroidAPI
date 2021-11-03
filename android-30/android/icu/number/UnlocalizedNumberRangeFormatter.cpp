@@ -13,7 +13,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::LocalizedNumberRangeFormatter UnlocalizedNumberRangeFormatter::locale(android::icu::util::ULocale arg0)
+	android::icu::number::LocalizedNumberRangeFormatter UnlocalizedNumberRangeFormatter::locale(android::icu::util::ULocale arg0) const
 	{
 		return callObjectMethod(
 			"locale",
@@ -21,7 +21,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::LocalizedNumberRangeFormatter UnlocalizedNumberRangeFormatter::locale(java::util::Locale arg0)
+	android::icu::number::LocalizedNumberRangeFormatter UnlocalizedNumberRangeFormatter::locale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"locale",

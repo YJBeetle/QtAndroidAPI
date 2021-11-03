@@ -39,17 +39,17 @@ namespace android::media::tv
 		TvRecordingClient(android::content::Context arg0, JString arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3);
 		
 		// Methods
-		void pauseRecording();
-		void pauseRecording(android::os::Bundle arg0);
-		void release();
-		void resumeRecording();
-		void resumeRecording(android::os::Bundle arg0);
-		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1);
-		void startRecording(android::net::Uri arg0);
-		void startRecording(android::net::Uri arg0, android::os::Bundle arg1);
-		void stopRecording();
-		void tune(JString arg0, android::net::Uri arg1);
-		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2);
+		void pauseRecording() const;
+		void pauseRecording(android::os::Bundle arg0) const;
+		void release() const;
+		void resumeRecording() const;
+		void resumeRecording(android::os::Bundle arg0) const;
+		void sendAppPrivateCommand(JString arg0, android::os::Bundle arg1) const;
+		void startRecording(android::net::Uri arg0) const;
+		void startRecording(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void stopRecording() const;
+		void tune(JString arg0, android::net::Uri arg1) const;
+		void tune(JString arg0, android::net::Uri arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::media::tv
 

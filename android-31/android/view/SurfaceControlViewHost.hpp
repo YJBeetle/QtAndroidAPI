@@ -34,11 +34,11 @@ namespace android::view
 		SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2);
 		
 		// Methods
-		android::view::SurfaceControlViewHost_SurfacePackage getSurfacePackage();
-		android::view::View getView();
-		void relayout(jint arg0, jint arg1);
-		void release();
-		void setView(android::view::View arg0, jint arg1, jint arg2);
+		android::view::SurfaceControlViewHost_SurfacePackage getSurfacePackage() const;
+		android::view::View getView() const;
+		void relayout(jint arg0, jint arg1) const;
+		void release() const;
+		void setView(android::view::View arg0, jint arg1, jint arg2) const;
 	};
 } // namespace android::view
 

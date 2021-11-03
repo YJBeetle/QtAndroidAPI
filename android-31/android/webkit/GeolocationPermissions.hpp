@@ -19,11 +19,11 @@ namespace android::webkit
 		
 		// Methods
 		static android::webkit::GeolocationPermissions getInstance();
-		void allow(JString arg0);
-		void clear(JString arg0);
-		void clearAll();
-		void getAllowed(JString arg0, JObject arg1);
-		void getOrigins(JObject arg0);
+		void allow(JString arg0) const;
+		void clear(JString arg0) const;
+		void clearAll() const;
+		void getAllowed(JString arg0, JObject arg1) const;
+		void getOrigins(JObject arg0) const;
 	};
 } // namespace android::webkit
 

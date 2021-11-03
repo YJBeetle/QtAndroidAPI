@@ -74,14 +74,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint ConnectivityDiagnosticsManager_DataStallReport::describeContents()
+	jint ConnectivityDiagnosticsManager_DataStallReport::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean ConnectivityDiagnosticsManager_DataStallReport::equals(JObject arg0)
+	jboolean ConnectivityDiagnosticsManager_DataStallReport::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -89,56 +89,56 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	jint ConnectivityDiagnosticsManager_DataStallReport::getDetectionMethod()
+	jint ConnectivityDiagnosticsManager_DataStallReport::getDetectionMethod() const
 	{
 		return callMethod<jint>(
 			"getDetectionMethod",
 			"()I"
 		);
 	}
-	android::net::LinkProperties ConnectivityDiagnosticsManager_DataStallReport::getLinkProperties()
+	android::net::LinkProperties ConnectivityDiagnosticsManager_DataStallReport::getLinkProperties() const
 	{
 		return callObjectMethod(
 			"getLinkProperties",
 			"()Landroid/net/LinkProperties;"
 		);
 	}
-	android::net::Network ConnectivityDiagnosticsManager_DataStallReport::getNetwork()
+	android::net::Network ConnectivityDiagnosticsManager_DataStallReport::getNetwork() const
 	{
 		return callObjectMethod(
 			"getNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	android::net::NetworkCapabilities ConnectivityDiagnosticsManager_DataStallReport::getNetworkCapabilities()
+	android::net::NetworkCapabilities ConnectivityDiagnosticsManager_DataStallReport::getNetworkCapabilities() const
 	{
 		return callObjectMethod(
 			"getNetworkCapabilities",
 			"()Landroid/net/NetworkCapabilities;"
 		);
 	}
-	jlong ConnectivityDiagnosticsManager_DataStallReport::getReportTimestamp()
+	jlong ConnectivityDiagnosticsManager_DataStallReport::getReportTimestamp() const
 	{
 		return callMethod<jlong>(
 			"getReportTimestamp",
 			"()J"
 		);
 	}
-	android::os::PersistableBundle ConnectivityDiagnosticsManager_DataStallReport::getStallDetails()
+	android::os::PersistableBundle ConnectivityDiagnosticsManager_DataStallReport::getStallDetails() const
 	{
 		return callObjectMethod(
 			"getStallDetails",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint ConnectivityDiagnosticsManager_DataStallReport::hashCode()
+	jint ConnectivityDiagnosticsManager_DataStallReport::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void ConnectivityDiagnosticsManager_DataStallReport::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConnectivityDiagnosticsManager_DataStallReport::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

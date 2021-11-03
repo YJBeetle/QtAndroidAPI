@@ -20,15 +20,15 @@ namespace java::util
 		LongSummaryStatistics(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
 		
 		// Methods
-		void accept(jint arg0);
-		void accept(jlong arg0);
-		void combine(java::util::LongSummaryStatistics arg0);
-		jdouble getAverage();
-		jlong getCount();
-		jlong getMax();
-		jlong getMin();
-		jlong getSum();
-		JString toString();
+		void accept(jint arg0) const;
+		void accept(jlong arg0) const;
+		void combine(java::util::LongSummaryStatistics arg0) const;
+		jdouble getAverage() const;
+		jlong getCount() const;
+		jlong getMax() const;
+		jlong getMin() const;
+		jlong getSum() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

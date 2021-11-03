@@ -18,7 +18,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void RotateDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void RotateDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -26,7 +26,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void RotateDrawable::draw(android::graphics::Canvas arg0)
+	void RotateDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -34,35 +34,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jfloat RotateDrawable::getFromDegrees()
+	jfloat RotateDrawable::getFromDegrees() const
 	{
 		return callMethod<jfloat>(
 			"getFromDegrees",
 			"()F"
 		);
 	}
-	jfloat RotateDrawable::getPivotX()
+	jfloat RotateDrawable::getPivotX() const
 	{
 		return callMethod<jfloat>(
 			"getPivotX",
 			"()F"
 		);
 	}
-	jfloat RotateDrawable::getPivotY()
+	jfloat RotateDrawable::getPivotY() const
 	{
 		return callMethod<jfloat>(
 			"getPivotY",
 			"()F"
 		);
 	}
-	jfloat RotateDrawable::getToDegrees()
+	jfloat RotateDrawable::getToDegrees() const
 	{
 		return callMethod<jfloat>(
 			"getToDegrees",
 			"()F"
 		);
 	}
-	void RotateDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void RotateDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -73,21 +73,21 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean RotateDrawable::isPivotXRelative()
+	jboolean RotateDrawable::isPivotXRelative() const
 	{
 		return callMethod<jboolean>(
 			"isPivotXRelative",
 			"()Z"
 		);
 	}
-	jboolean RotateDrawable::isPivotYRelative()
+	jboolean RotateDrawable::isPivotYRelative() const
 	{
 		return callMethod<jboolean>(
 			"isPivotYRelative",
 			"()Z"
 		);
 	}
-	void RotateDrawable::setFromDegrees(jfloat arg0)
+	void RotateDrawable::setFromDegrees(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFromDegrees",
@@ -95,7 +95,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RotateDrawable::setPivotX(jfloat arg0)
+	void RotateDrawable::setPivotX(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPivotX",
@@ -103,7 +103,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RotateDrawable::setPivotXRelative(jboolean arg0)
+	void RotateDrawable::setPivotXRelative(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPivotXRelative",
@@ -111,7 +111,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RotateDrawable::setPivotY(jfloat arg0)
+	void RotateDrawable::setPivotY(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPivotY",
@@ -119,7 +119,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RotateDrawable::setPivotYRelative(jboolean arg0)
+	void RotateDrawable::setPivotYRelative(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPivotYRelative",
@@ -127,7 +127,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void RotateDrawable::setToDegrees(jfloat arg0)
+	void RotateDrawable::setToDegrees(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setToDegrees",

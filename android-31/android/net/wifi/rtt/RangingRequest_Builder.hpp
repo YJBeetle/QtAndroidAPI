@@ -34,14 +34,14 @@ namespace android::net::wifi::rtt
 		RangingRequest_Builder();
 		
 		// Methods
-		android::net::wifi::rtt::RangingRequest_Builder addAccessPoint(android::net::wifi::ScanResult arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addAccessPoints(JObject arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addNon80211mcCapableAccessPoint(android::net::wifi::ScanResult arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addNon80211mcCapableAccessPoints(JObject arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::MacAddress arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0);
-		android::net::wifi::rtt::RangingRequest build();
-		android::net::wifi::rtt::RangingRequest_Builder setRttBurstSize(jint arg0);
+		android::net::wifi::rtt::RangingRequest_Builder addAccessPoint(android::net::wifi::ScanResult arg0) const;
+		android::net::wifi::rtt::RangingRequest_Builder addAccessPoints(JObject arg0) const;
+		android::net::wifi::rtt::RangingRequest_Builder addNon80211mcCapableAccessPoint(android::net::wifi::ScanResult arg0) const;
+		android::net::wifi::rtt::RangingRequest_Builder addNon80211mcCapableAccessPoints(JObject arg0) const;
+		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::MacAddress arg0) const;
+		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0) const;
+		android::net::wifi::rtt::RangingRequest build() const;
+		android::net::wifi::rtt::RangingRequest_Builder setRttBurstSize(jint arg0) const;
 	};
 } // namespace android::net::wifi::rtt
 

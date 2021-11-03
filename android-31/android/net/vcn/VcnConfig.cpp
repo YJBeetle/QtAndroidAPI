@@ -20,14 +20,14 @@ namespace android::net::vcn
 	// Constructors
 	
 	// Methods
-	jint VcnConfig::describeContents()
+	jint VcnConfig::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean VcnConfig::equals(JObject arg0)
+	jboolean VcnConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,21 +35,21 @@ namespace android::net::vcn
 			arg0.object<jobject>()
 		);
 	}
-	JObject VcnConfig::getGatewayConnectionConfigs()
+	JObject VcnConfig::getGatewayConnectionConfigs() const
 	{
 		return callObjectMethod(
 			"getGatewayConnectionConfigs",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint VcnConfig::hashCode()
+	jint VcnConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void VcnConfig::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VcnConfig::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

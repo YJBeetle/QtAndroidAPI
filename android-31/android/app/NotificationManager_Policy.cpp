@@ -273,14 +273,14 @@ namespace android::app
 			arg0
 		);
 	}
-	jint NotificationManager_Policy::describeContents()
+	jint NotificationManager_Policy::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NotificationManager_Policy::equals(JObject arg0)
+	jboolean NotificationManager_Policy::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -288,21 +288,21 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	jint NotificationManager_Policy::hashCode()
+	jint NotificationManager_Policy::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NotificationManager_Policy::toString()
+	JString NotificationManager_Policy::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NotificationManager_Policy::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NotificationManager_Policy::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

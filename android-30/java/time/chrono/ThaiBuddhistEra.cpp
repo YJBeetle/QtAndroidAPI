@@ -56,7 +56,7 @@ namespace java::time::chrono
 			"()[Ljava/time/chrono/ThaiBuddhistEra;"
 		);
 	}
-	JString ThaiBuddhistEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString ThaiBuddhistEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -65,7 +65,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	jint ThaiBuddhistEra::getValue()
+	jint ThaiBuddhistEra::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",

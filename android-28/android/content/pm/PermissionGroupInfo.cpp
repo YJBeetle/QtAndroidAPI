@@ -65,14 +65,14 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PermissionGroupInfo::describeContents()
+	jint PermissionGroupInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString PermissionGroupInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString PermissionGroupInfo::loadDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadDescription",
@@ -80,14 +80,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString PermissionGroupInfo::toString()
+	JString PermissionGroupInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PermissionGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PermissionGroupInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

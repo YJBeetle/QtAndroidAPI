@@ -15,14 +15,14 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	jboolean RenderProcessGoneDetail::didCrash()
+	jboolean RenderProcessGoneDetail::didCrash() const
 	{
 		return callMethod<jboolean>(
 			"didCrash",
 			"()Z"
 		);
 	}
-	jint RenderProcessGoneDetail::rendererPriorityAtExit()
+	jint RenderProcessGoneDetail::rendererPriorityAtExit() const
 	{
 		return callMethod<jint>(
 			"rendererPriorityAtExit",

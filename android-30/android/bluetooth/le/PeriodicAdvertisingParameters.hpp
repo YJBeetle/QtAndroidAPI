@@ -22,10 +22,10 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean getIncludeTxPower();
-		jint getInterval();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean getIncludeTxPower() const;
+		jint getInterval() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth::le
 

@@ -25,15 +25,15 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		void copyGainFactors(JFloatArray arg0, jint arg1);
-		jboolean equals(JObject arg0);
-		jint getColumnCount();
-		jfloat getGainFactor(jint arg0, jint arg1, jint arg2);
-		jint getGainFactorCount();
-		android::hardware::camera2::params::RggbChannelVector getGainFactorVector(jint arg0, jint arg1);
-		jint getRowCount();
-		jint hashCode();
-		JString toString();
+		void copyGainFactors(JFloatArray arg0, jint arg1) const;
+		jboolean equals(JObject arg0) const;
+		jint getColumnCount() const;
+		jfloat getGainFactor(jint arg0, jint arg1, jint arg2) const;
+		jint getGainFactorCount() const;
+		android::hardware::camera2::params::RggbChannelVector getGainFactorVector(jint arg0, jint arg1) const;
+		jint getRowCount() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

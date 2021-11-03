@@ -142,7 +142,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jint ActivityManager::addAppTask(android::app::Activity arg0, android::content::Intent arg1, android::app::ActivityManager_TaskDescription arg2, android::graphics::Bitmap arg3)
+	jint ActivityManager::addAppTask(android::app::Activity arg0, android::content::Intent arg1, android::app::ActivityManager_TaskDescription arg2, android::graphics::Bitmap arg3) const
 	{
 		return callMethod<jint>(
 			"addAppTask",
@@ -153,7 +153,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void ActivityManager::appNotResponding(JString arg0)
+	void ActivityManager::appNotResponding(JString arg0) const
 	{
 		callMethod<void>(
 			"appNotResponding",
@@ -161,21 +161,21 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	jboolean ActivityManager::clearApplicationUserData()
+	jboolean ActivityManager::clearApplicationUserData() const
 	{
 		return callMethod<jboolean>(
 			"clearApplicationUserData",
 			"()Z"
 		);
 	}
-	void ActivityManager::clearWatchHeapLimit()
+	void ActivityManager::clearWatchHeapLimit() const
 	{
 		callMethod<void>(
 			"clearWatchHeapLimit",
 			"()V"
 		);
 	}
-	void ActivityManager::dumpPackageState(java::io::FileDescriptor arg0, JString arg1)
+	void ActivityManager::dumpPackageState(java::io::FileDescriptor arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dumpPackageState",
@@ -184,28 +184,28 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::util::Size ActivityManager::getAppTaskThumbnailSize()
+	android::util::Size ActivityManager::getAppTaskThumbnailSize() const
 	{
 		return callObjectMethod(
 			"getAppTaskThumbnailSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	JObject ActivityManager::getAppTasks()
+	JObject ActivityManager::getAppTasks() const
 	{
 		return callObjectMethod(
 			"getAppTasks",
 			"()Ljava/util/List;"
 		);
 	}
-	android::content::pm::ConfigurationInfo ActivityManager::getDeviceConfigurationInfo()
+	android::content::pm::ConfigurationInfo ActivityManager::getDeviceConfigurationInfo() const
 	{
 		return callObjectMethod(
 			"getDeviceConfigurationInfo",
 			"()Landroid/content/pm/ConfigurationInfo;"
 		);
 	}
-	JObject ActivityManager::getHistoricalProcessExitReasons(JString arg0, jint arg1, jint arg2)
+	JObject ActivityManager::getHistoricalProcessExitReasons(JString arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getHistoricalProcessExitReasons",
@@ -215,42 +215,42 @@ namespace android::app
 			arg2
 		);
 	}
-	jint ActivityManager::getLargeMemoryClass()
+	jint ActivityManager::getLargeMemoryClass() const
 	{
 		return callMethod<jint>(
 			"getLargeMemoryClass",
 			"()I"
 		);
 	}
-	jint ActivityManager::getLauncherLargeIconDensity()
+	jint ActivityManager::getLauncherLargeIconDensity() const
 	{
 		return callMethod<jint>(
 			"getLauncherLargeIconDensity",
 			"()I"
 		);
 	}
-	jint ActivityManager::getLauncherLargeIconSize()
+	jint ActivityManager::getLauncherLargeIconSize() const
 	{
 		return callMethod<jint>(
 			"getLauncherLargeIconSize",
 			"()I"
 		);
 	}
-	jint ActivityManager::getLockTaskModeState()
+	jint ActivityManager::getLockTaskModeState() const
 	{
 		return callMethod<jint>(
 			"getLockTaskModeState",
 			"()I"
 		);
 	}
-	jint ActivityManager::getMemoryClass()
+	jint ActivityManager::getMemoryClass() const
 	{
 		return callMethod<jint>(
 			"getMemoryClass",
 			"()I"
 		);
 	}
-	void ActivityManager::getMemoryInfo(android::app::ActivityManager_MemoryInfo arg0)
+	void ActivityManager::getMemoryInfo(android::app::ActivityManager_MemoryInfo arg0) const
 	{
 		callMethod<void>(
 			"getMemoryInfo",
@@ -258,7 +258,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JArray ActivityManager::getProcessMemoryInfo(JIntArray arg0)
+	JArray ActivityManager::getProcessMemoryInfo(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"getProcessMemoryInfo",
@@ -266,14 +266,14 @@ namespace android::app
 			arg0.object<jintArray>()
 		);
 	}
-	JObject ActivityManager::getProcessesInErrorState()
+	JObject ActivityManager::getProcessesInErrorState() const
 	{
 		return callObjectMethod(
 			"getProcessesInErrorState",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ActivityManager::getRecentTasks(jint arg0, jint arg1)
+	JObject ActivityManager::getRecentTasks(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getRecentTasks",
@@ -282,14 +282,14 @@ namespace android::app
 			arg1
 		);
 	}
-	JObject ActivityManager::getRunningAppProcesses()
+	JObject ActivityManager::getRunningAppProcesses() const
 	{
 		return callObjectMethod(
 			"getRunningAppProcesses",
 			"()Ljava/util/List;"
 		);
 	}
-	android::app::PendingIntent ActivityManager::getRunningServiceControlPanel(android::content::ComponentName arg0)
+	android::app::PendingIntent ActivityManager::getRunningServiceControlPanel(android::content::ComponentName arg0) const
 	{
 		return callObjectMethod(
 			"getRunningServiceControlPanel",
@@ -297,7 +297,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JObject ActivityManager::getRunningServices(jint arg0)
+	JObject ActivityManager::getRunningServices(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRunningServices",
@@ -305,7 +305,7 @@ namespace android::app
 			arg0
 		);
 	}
-	JObject ActivityManager::getRunningTasks(jint arg0)
+	JObject ActivityManager::getRunningTasks(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRunningTasks",
@@ -313,7 +313,7 @@ namespace android::app
 			arg0
 		);
 	}
-	jboolean ActivityManager::isActivityStartAllowedOnDisplay(android::content::Context arg0, jint arg1, android::content::Intent arg2)
+	jboolean ActivityManager::isActivityStartAllowedOnDisplay(android::content::Context arg0, jint arg1, android::content::Intent arg2) const
 	{
 		return callMethod<jboolean>(
 			"isActivityStartAllowedOnDisplay",
@@ -323,28 +323,28 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean ActivityManager::isBackgroundRestricted()
+	jboolean ActivityManager::isBackgroundRestricted() const
 	{
 		return callMethod<jboolean>(
 			"isBackgroundRestricted",
 			"()Z"
 		);
 	}
-	jboolean ActivityManager::isInLockTaskMode()
+	jboolean ActivityManager::isInLockTaskMode() const
 	{
 		return callMethod<jboolean>(
 			"isInLockTaskMode",
 			"()Z"
 		);
 	}
-	jboolean ActivityManager::isLowRamDevice()
+	jboolean ActivityManager::isLowRamDevice() const
 	{
 		return callMethod<jboolean>(
 			"isLowRamDevice",
 			"()Z"
 		);
 	}
-	void ActivityManager::killBackgroundProcesses(JString arg0)
+	void ActivityManager::killBackgroundProcesses(JString arg0) const
 	{
 		callMethod<void>(
 			"killBackgroundProcesses",
@@ -352,7 +352,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ActivityManager::moveTaskToFront(jint arg0, jint arg1)
+	void ActivityManager::moveTaskToFront(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"moveTaskToFront",
@@ -361,7 +361,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void ActivityManager::moveTaskToFront(jint arg0, jint arg1, android::os::Bundle arg2)
+	void ActivityManager::moveTaskToFront(jint arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"moveTaskToFront",
@@ -371,7 +371,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void ActivityManager::restartPackage(JString arg0)
+	void ActivityManager::restartPackage(JString arg0) const
 	{
 		callMethod<void>(
 			"restartPackage",
@@ -379,7 +379,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void ActivityManager::setProcessStateSummary(JByteArray arg0)
+	void ActivityManager::setProcessStateSummary(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setProcessStateSummary",
@@ -387,7 +387,7 @@ namespace android::app
 			arg0.object<jbyteArray>()
 		);
 	}
-	void ActivityManager::setWatchHeapLimit(jlong arg0)
+	void ActivityManager::setWatchHeapLimit(jlong arg0) const
 	{
 		callMethod<void>(
 			"setWatchHeapLimit",

@@ -35,10 +35,10 @@ namespace android::view::textclassifier
 		ConversationActions_Message_Builder(android::app::Person arg0);
 		
 		// Methods
-		android::view::textclassifier::ConversationActions_Message build();
-		android::view::textclassifier::ConversationActions_Message_Builder setExtras(android::os::Bundle arg0);
-		android::view::textclassifier::ConversationActions_Message_Builder setReferenceTime(java::time::ZonedDateTime arg0);
-		android::view::textclassifier::ConversationActions_Message_Builder setText(JString arg0);
+		android::view::textclassifier::ConversationActions_Message build() const;
+		android::view::textclassifier::ConversationActions_Message_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::textclassifier::ConversationActions_Message_Builder setReferenceTime(java::time::ZonedDateTime arg0) const;
+		android::view::textclassifier::ConversationActions_Message_Builder setText(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

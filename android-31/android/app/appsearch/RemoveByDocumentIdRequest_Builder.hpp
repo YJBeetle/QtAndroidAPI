@@ -24,9 +24,9 @@ namespace android::app::appsearch
 		RemoveByDocumentIdRequest_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JArray arg0);
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JObject arg0);
-		android::app::appsearch::RemoveByDocumentIdRequest build();
+		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JArray arg0) const;
+		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JObject arg0) const;
+		android::app::appsearch::RemoveByDocumentIdRequest build() const;
 	};
 } // namespace android::app::appsearch
 

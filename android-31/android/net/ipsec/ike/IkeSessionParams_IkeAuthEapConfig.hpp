@@ -22,9 +22,9 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::net::eap::EapSessionConfig getEapConfig();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		android::net::eap::EapSessionConfig getEapConfig() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

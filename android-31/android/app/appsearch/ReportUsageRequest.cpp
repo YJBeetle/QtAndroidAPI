@@ -11,21 +11,21 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JString ReportUsageRequest::getDocumentId()
+	JString ReportUsageRequest::getDocumentId() const
 	{
 		return callObjectMethod(
 			"getDocumentId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ReportUsageRequest::getNamespace()
+	JString ReportUsageRequest::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong ReportUsageRequest::getUsageTimestampMillis()
+	jlong ReportUsageRequest::getUsageTimestampMillis() const
 	{
 		return callMethod<jlong>(
 			"getUsageTimestampMillis",

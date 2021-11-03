@@ -92,14 +92,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jint TrackChangeEvent::describeContents()
+	jint TrackChangeEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TrackChangeEvent::equals(JObject arg0)
+	jboolean TrackChangeEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -107,133 +107,133 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	jint TrackChangeEvent::getAudioSampleRate()
+	jint TrackChangeEvent::getAudioSampleRate() const
 	{
 		return callMethod<jint>(
 			"getAudioSampleRate",
 			"()I"
 		);
 	}
-	jint TrackChangeEvent::getBitrate()
+	jint TrackChangeEvent::getBitrate() const
 	{
 		return callMethod<jint>(
 			"getBitrate",
 			"()I"
 		);
 	}
-	jint TrackChangeEvent::getChannelCount()
+	jint TrackChangeEvent::getChannelCount() const
 	{
 		return callMethod<jint>(
 			"getChannelCount",
 			"()I"
 		);
 	}
-	JString TrackChangeEvent::getCodecName()
+	JString TrackChangeEvent::getCodecName() const
 	{
 		return callObjectMethod(
 			"getCodecName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TrackChangeEvent::getContainerMimeType()
+	JString TrackChangeEvent::getContainerMimeType() const
 	{
 		return callObjectMethod(
 			"getContainerMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TrackChangeEvent::getHeight()
+	jint TrackChangeEvent::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	JString TrackChangeEvent::getLanguage()
+	JString TrackChangeEvent::getLanguage() const
 	{
 		return callObjectMethod(
 			"getLanguage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TrackChangeEvent::getLanguageRegion()
+	JString TrackChangeEvent::getLanguageRegion() const
 	{
 		return callObjectMethod(
 			"getLanguageRegion",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::os::Bundle TrackChangeEvent::getMetricsBundle()
+	android::os::Bundle TrackChangeEvent::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString TrackChangeEvent::getSampleMimeType()
+	JString TrackChangeEvent::getSampleMimeType() const
 	{
 		return callObjectMethod(
 			"getSampleMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong TrackChangeEvent::getTimeSinceCreatedMillis()
+	jlong TrackChangeEvent::getTimeSinceCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeSinceCreatedMillis",
 			"()J"
 		);
 	}
-	jint TrackChangeEvent::getTrackChangeReason()
+	jint TrackChangeEvent::getTrackChangeReason() const
 	{
 		return callMethod<jint>(
 			"getTrackChangeReason",
 			"()I"
 		);
 	}
-	jint TrackChangeEvent::getTrackState()
+	jint TrackChangeEvent::getTrackState() const
 	{
 		return callMethod<jint>(
 			"getTrackState",
 			"()I"
 		);
 	}
-	jint TrackChangeEvent::getTrackType()
+	jint TrackChangeEvent::getTrackType() const
 	{
 		return callMethod<jint>(
 			"getTrackType",
 			"()I"
 		);
 	}
-	jfloat TrackChangeEvent::getVideoFrameRate()
+	jfloat TrackChangeEvent::getVideoFrameRate() const
 	{
 		return callMethod<jfloat>(
 			"getVideoFrameRate",
 			"()F"
 		);
 	}
-	jint TrackChangeEvent::getWidth()
+	jint TrackChangeEvent::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint TrackChangeEvent::hashCode()
+	jint TrackChangeEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TrackChangeEvent::toString()
+	JString TrackChangeEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TrackChangeEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TrackChangeEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

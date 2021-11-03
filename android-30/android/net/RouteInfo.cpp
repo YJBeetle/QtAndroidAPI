@@ -23,14 +23,14 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	jint RouteInfo::describeContents()
+	jint RouteInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RouteInfo::equals(JObject arg0)
+	jboolean RouteInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,49 +38,49 @@ namespace android::net
 			arg0.object<jobject>()
 		);
 	}
-	android::net::IpPrefix RouteInfo::getDestination()
+	android::net::IpPrefix RouteInfo::getDestination() const
 	{
 		return callObjectMethod(
 			"getDestination",
 			"()Landroid/net/IpPrefix;"
 		);
 	}
-	java::net::InetAddress RouteInfo::getGateway()
+	java::net::InetAddress RouteInfo::getGateway() const
 	{
 		return callObjectMethod(
 			"getGateway",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	JString RouteInfo::getInterface()
+	JString RouteInfo::getInterface() const
 	{
 		return callObjectMethod(
 			"getInterface",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean RouteInfo::hasGateway()
+	jboolean RouteInfo::hasGateway() const
 	{
 		return callMethod<jboolean>(
 			"hasGateway",
 			"()Z"
 		);
 	}
-	jint RouteInfo::hashCode()
+	jint RouteInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean RouteInfo::isDefaultRoute()
+	jboolean RouteInfo::isDefaultRoute() const
 	{
 		return callMethod<jboolean>(
 			"isDefaultRoute",
 			"()Z"
 		);
 	}
-	jboolean RouteInfo::matches(java::net::InetAddress arg0)
+	jboolean RouteInfo::matches(java::net::InetAddress arg0) const
 	{
 		return callMethod<jboolean>(
 			"matches",
@@ -88,14 +88,14 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	JString RouteInfo::toString()
+	JString RouteInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RouteInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RouteInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

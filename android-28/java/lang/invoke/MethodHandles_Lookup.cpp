@@ -72,7 +72,7 @@ namespace java::lang::invoke
 	// Constructors
 	
 	// Methods
-	JClass MethodHandles_Lookup::accessClass(JClass arg0)
+	JClass MethodHandles_Lookup::accessClass(JClass arg0) const
 	{
 		return callObjectMethod(
 			"accessClass",
@@ -80,7 +80,7 @@ namespace java::lang::invoke
 			arg0.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::bind(JObject arg0, JString arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::bind(JObject arg0, JString arg1, java::lang::invoke::MethodType arg2) const
 	{
 		return callObjectMethod(
 			"bind",
@@ -90,7 +90,7 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	JClass MethodHandles_Lookup::defineClass(JByteArray arg0)
+	JClass MethodHandles_Lookup::defineClass(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"defineClass",
@@ -98,7 +98,7 @@ namespace java::lang::invoke
 			arg0.object<jbyteArray>()
 		);
 	}
-	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClass(JByteArray arg0, jboolean arg1, JArray arg2)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClass(JByteArray arg0, jboolean arg1, JArray arg2) const
 	{
 		return callObjectMethod(
 			"defineHiddenClass",
@@ -108,7 +108,7 @@ namespace java::lang::invoke
 			arg2.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClassWithClassData(JByteArray arg0, JObject arg1, jboolean arg2, JArray arg3)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::defineHiddenClassWithClassData(JByteArray arg0, JObject arg1, jboolean arg2, JArray arg3) const
 	{
 		return callObjectMethod(
 			"defineHiddenClassWithClassData",
@@ -119,7 +119,7 @@ namespace java::lang::invoke
 			arg3.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::dropLookupMode(jint arg0)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::dropLookupMode(jint arg0) const
 	{
 		return callObjectMethod(
 			"dropLookupMode",
@@ -127,7 +127,7 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	JClass MethodHandles_Lookup::ensureInitialized(JClass arg0)
+	JClass MethodHandles_Lookup::ensureInitialized(JClass arg0) const
 	{
 		return callObjectMethod(
 			"ensureInitialized",
@@ -135,7 +135,7 @@ namespace java::lang::invoke
 			arg0.object<jclass>()
 		);
 	}
-	JClass MethodHandles_Lookup::findClass(JString arg0)
+	JClass MethodHandles_Lookup::findClass(JString arg0) const
 	{
 		return callObjectMethod(
 			"findClass",
@@ -143,7 +143,7 @@ namespace java::lang::invoke
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findConstructor(JClass arg0, java::lang::invoke::MethodType arg1)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findConstructor(JClass arg0, java::lang::invoke::MethodType arg1) const
 	{
 		return callObjectMethod(
 			"findConstructor",
@@ -152,7 +152,7 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findGetter(JClass arg0, JString arg1, JClass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findGetter(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findGetter",
@@ -162,7 +162,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSetter(JClass arg0, JString arg1, JClass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSetter(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findSetter",
@@ -172,7 +172,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSpecial(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2, JClass arg3)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findSpecial(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2, JClass arg3) const
 	{
 		return callObjectMethod(
 			"findSpecial",
@@ -183,7 +183,7 @@ namespace java::lang::invoke
 			arg3.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStatic(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStatic(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2) const
 	{
 		return callObjectMethod(
 			"findStatic",
@@ -193,7 +193,7 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticGetter(JClass arg0, JString arg1, JClass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticGetter(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findStaticGetter",
@@ -203,7 +203,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticSetter(JClass arg0, JString arg1, JClass arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findStaticSetter(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findStaticSetter",
@@ -213,7 +213,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	JObject MethodHandles_Lookup::findStaticVarHandle(JClass arg0, JString arg1, JClass arg2)
+	JObject MethodHandles_Lookup::findStaticVarHandle(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findStaticVarHandle",
@@ -223,7 +223,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	JObject MethodHandles_Lookup::findVarHandle(JClass arg0, JString arg1, JClass arg2)
+	JObject MethodHandles_Lookup::findVarHandle(JClass arg0, JString arg1, JClass arg2) const
 	{
 		return callObjectMethod(
 			"findVarHandle",
@@ -233,7 +233,7 @@ namespace java::lang::invoke
 			arg2.object<jclass>()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::findVirtual(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::findVirtual(JClass arg0, JString arg1, java::lang::invoke::MethodType arg2) const
 	{
 		return callObjectMethod(
 			"findVirtual",
@@ -243,21 +243,21 @@ namespace java::lang::invoke
 			arg2.object()
 		);
 	}
-	jboolean MethodHandles_Lookup::hasFullPrivilegeAccess()
+	jboolean MethodHandles_Lookup::hasFullPrivilegeAccess() const
 	{
 		return callMethod<jboolean>(
 			"hasFullPrivilegeAccess",
 			"()Z"
 		);
 	}
-	jboolean MethodHandles_Lookup::hasPrivateAccess()
+	jboolean MethodHandles_Lookup::hasPrivateAccess() const
 	{
 		return callMethod<jboolean>(
 			"hasPrivateAccess",
 			"()Z"
 		);
 	}
-	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::in(JClass arg0)
+	java::lang::invoke::MethodHandles_Lookup MethodHandles_Lookup::in(JClass arg0) const
 	{
 		return callObjectMethod(
 			"in",
@@ -265,28 +265,28 @@ namespace java::lang::invoke
 			arg0.object<jclass>()
 		);
 	}
-	JClass MethodHandles_Lookup::lookupClass()
+	JClass MethodHandles_Lookup::lookupClass() const
 	{
 		return callObjectMethod(
 			"lookupClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	jint MethodHandles_Lookup::lookupModes()
+	jint MethodHandles_Lookup::lookupModes() const
 	{
 		return callMethod<jint>(
 			"lookupModes",
 			"()I"
 		);
 	}
-	JClass MethodHandles_Lookup::previousLookupClass()
+	JClass MethodHandles_Lookup::previousLookupClass() const
 	{
 		return callObjectMethod(
 			"previousLookupClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JObject MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0)
+	JObject MethodHandles_Lookup::revealDirect(java::lang::invoke::MethodHandle arg0) const
 	{
 		return callObjectMethod(
 			"revealDirect",
@@ -294,14 +294,14 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	JString MethodHandles_Lookup::toString()
+	JString MethodHandles_Lookup::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflect(java::lang::reflect::Method arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflect(java::lang::reflect::Method arg0) const
 	{
 		return callObjectMethod(
 			"unreflect",
@@ -309,7 +309,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectConstructor(java::lang::reflect::Constructor arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectConstructor(java::lang::reflect::Constructor arg0) const
 	{
 		return callObjectMethod(
 			"unreflectConstructor",
@@ -317,7 +317,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectGetter(java::lang::reflect::Field arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectGetter(java::lang::reflect::Field arg0) const
 	{
 		return callObjectMethod(
 			"unreflectGetter",
@@ -325,7 +325,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSetter(java::lang::reflect::Field arg0)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSetter(java::lang::reflect::Field arg0) const
 	{
 		return callObjectMethod(
 			"unreflectSetter",
@@ -333,7 +333,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSpecial(java::lang::reflect::Method arg0, JClass arg1)
+	java::lang::invoke::MethodHandle MethodHandles_Lookup::unreflectSpecial(java::lang::reflect::Method arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"unreflectSpecial",
@@ -342,7 +342,7 @@ namespace java::lang::invoke
 			arg1.object<jclass>()
 		);
 	}
-	JObject MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0)
+	JObject MethodHandles_Lookup::unreflectVarHandle(java::lang::reflect::Field arg0) const
 	{
 		return callObjectMethod(
 			"unreflectVarHandle",

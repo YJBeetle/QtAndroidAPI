@@ -22,8 +22,8 @@ namespace java::net
 		CacheResponse();
 		
 		// Methods
-		java::io::InputStream getBody();
-		JObject getHeaders();
+		java::io::InputStream getBody() const;
+		JObject getHeaders() const;
 	};
 } // namespace java::net
 

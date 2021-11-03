@@ -21,7 +21,7 @@ namespace android::net::vcn
 		) {}
 	
 	// Methods
-	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::addExposedCapability(jint arg0)
+	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::addExposedCapability(jint arg0) const
 	{
 		return callObjectMethod(
 			"addExposedCapability",
@@ -29,14 +29,14 @@ namespace android::net::vcn
 			arg0
 		);
 	}
-	android::net::vcn::VcnGatewayConnectionConfig VcnGatewayConnectionConfig_Builder::build()
+	android::net::vcn::VcnGatewayConnectionConfig VcnGatewayConnectionConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/vcn/VcnGatewayConnectionConfig;"
 		);
 	}
-	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::removeExposedCapability(jint arg0)
+	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::removeExposedCapability(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeExposedCapability",
@@ -44,7 +44,7 @@ namespace android::net::vcn
 			arg0
 		);
 	}
-	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setMaxMtu(jint arg0)
+	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setMaxMtu(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxMtu",
@@ -52,7 +52,7 @@ namespace android::net::vcn
 			arg0
 		);
 	}
-	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setRetryIntervalsMillis(JLongArray arg0)
+	android::net::vcn::VcnGatewayConnectionConfig_Builder VcnGatewayConnectionConfig_Builder::setRetryIntervalsMillis(JLongArray arg0) const
 	{
 		return callObjectMethod(
 			"setRetryIntervalsMillis",

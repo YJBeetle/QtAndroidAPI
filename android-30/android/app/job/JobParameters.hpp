@@ -44,19 +44,19 @@ namespace android::app::job
 		// Constructors
 		
 		// Methods
-		void completeWork(android::app::job::JobWorkItem arg0);
-		android::app::job::JobWorkItem dequeueWork();
-		jint describeContents();
-		android::content::ClipData getClipData();
-		jint getClipGrantFlags();
-		android::os::PersistableBundle getExtras();
-		jint getJobId();
-		android::net::Network getNetwork();
-		android::os::Bundle getTransientExtras();
-		JArray getTriggeredContentAuthorities();
-		JArray getTriggeredContentUris();
-		jboolean isOverrideDeadlineExpired();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void completeWork(android::app::job::JobWorkItem arg0) const;
+		android::app::job::JobWorkItem dequeueWork() const;
+		jint describeContents() const;
+		android::content::ClipData getClipData() const;
+		jint getClipGrantFlags() const;
+		android::os::PersistableBundle getExtras() const;
+		jint getJobId() const;
+		android::net::Network getNetwork() const;
+		android::os::Bundle getTransientExtras() const;
+		JArray getTriggeredContentAuthorities() const;
+		JArray getTriggeredContentUris() const;
+		jboolean isOverrideDeadlineExpired() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::job
 

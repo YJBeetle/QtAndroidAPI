@@ -33,7 +33,7 @@ namespace android::nfc::cardemulation
 		) {}
 	
 	// Methods
-	JObject OffHostApduService::onBind(android::content::Intent arg0)
+	JObject OffHostApduService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",

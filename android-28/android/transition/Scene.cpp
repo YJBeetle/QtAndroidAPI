@@ -44,28 +44,28 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	void Scene::enter()
+	void Scene::enter() const
 	{
 		callMethod<void>(
 			"enter",
 			"()V"
 		);
 	}
-	void Scene::exit()
+	void Scene::exit() const
 	{
 		callMethod<void>(
 			"exit",
 			"()V"
 		);
 	}
-	android::view::ViewGroup Scene::getSceneRoot()
+	android::view::ViewGroup Scene::getSceneRoot() const
 	{
 		return callObjectMethod(
 			"getSceneRoot",
 			"()Landroid/view/ViewGroup;"
 		);
 	}
-	void Scene::setEnterAction(JObject arg0)
+	void Scene::setEnterAction(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEnterAction",
@@ -73,7 +73,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Scene::setExitAction(JObject arg0)
+	void Scene::setExitAction(JObject arg0) const
 	{
 		callMethod<void>(
 			"setExitAction",

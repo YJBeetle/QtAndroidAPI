@@ -18,7 +18,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	jint ParseException::getErrorOffset()
+	jint ParseException::getErrorOffset() const
 	{
 		return callMethod<jint>(
 			"getErrorOffset",

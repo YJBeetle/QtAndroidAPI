@@ -33,13 +33,13 @@ namespace android::view
 		SurfaceView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
-		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		JObject getHolder();
-		void setSecure(jboolean arg0);
-		void setVisibility(jint arg0);
-		void setZOrderMediaOverlay(jboolean arg0);
-		void setZOrderOnTop(jboolean arg0);
+		void draw(android::graphics::Canvas arg0) const;
+		jboolean gatherTransparentRegion(android::graphics::Region arg0) const;
+		JObject getHolder() const;
+		void setSecure(jboolean arg0) const;
+		void setVisibility(jint arg0) const;
+		void setZOrderMediaOverlay(jboolean arg0) const;
+		void setZOrderOnTop(jboolean arg0) const;
 	};
 } // namespace android::view
 

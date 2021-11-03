@@ -50,11 +50,11 @@ namespace android::speech
 		static android::speech::SpeechRecognizer createSpeechRecognizer(android::content::Context arg0, android::content::ComponentName arg1);
 		static jboolean isOnDeviceRecognitionAvailable(android::content::Context arg0);
 		static jboolean isRecognitionAvailable(android::content::Context arg0);
-		void cancel();
-		void destroy();
-		void setRecognitionListener(JObject arg0);
-		void startListening(android::content::Intent arg0);
-		void stopListening();
+		void cancel() const;
+		void destroy() const;
+		void setRecognitionListener(JObject arg0) const;
+		void startListening(android::content::Intent arg0) const;
+		void stopListening() const;
 	};
 } // namespace android::speech
 

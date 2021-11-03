@@ -19,8 +19,8 @@ namespace android::net::ipsec::ike::exceptions
 		InvalidSelectorsException(jint arg0, JByteArray arg1);
 		
 		// Methods
-		JByteArray getIpSecPacketInfo();
-		jint getIpSecSpi();
+		JByteArray getIpSecPacketInfo() const;
+		jint getIpSecSpi() const;
 	};
 } // namespace android::net::ipsec::ike::exceptions
 

@@ -58,21 +58,21 @@ namespace android::app::slice
 		SliceProvider(JArray arg0);
 		
 		// Methods
-		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1);
-		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2);
-		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2);
-		JString getType(android::net::Uri arg0);
-		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1);
-		android::app::slice::Slice onBindSlice(android::net::Uri arg0, JObject arg1);
-		android::app::PendingIntent onCreatePermissionRequest(android::net::Uri arg0);
-		JObject onGetSliceDescendants(android::net::Uri arg0);
-		android::net::Uri onMapIntentToUri(android::content::Intent arg0);
-		void onSlicePinned(android::net::Uri arg0);
-		void onSliceUnpinned(android::net::Uri arg0);
-		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4);
-		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5);
-		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3);
+		void attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1) const;
+		android::os::Bundle call(JString arg0, JString arg1, android::os::Bundle arg2) const;
+		jint _delete(android::net::Uri arg0, JString arg1, JArray arg2) const;
+		JString getType(android::net::Uri arg0) const;
+		android::net::Uri insert(android::net::Uri arg0, android::content::ContentValues arg1) const;
+		android::app::slice::Slice onBindSlice(android::net::Uri arg0, JObject arg1) const;
+		android::app::PendingIntent onCreatePermissionRequest(android::net::Uri arg0) const;
+		JObject onGetSliceDescendants(android::net::Uri arg0) const;
+		android::net::Uri onMapIntentToUri(android::content::Intent arg0) const;
+		void onSlicePinned(android::net::Uri arg0) const;
+		void onSliceUnpinned(android::net::Uri arg0) const;
+		JObject query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const;
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const;
+		JObject query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const;
+		jint update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const;
 	};
 } // namespace android::app::slice
 

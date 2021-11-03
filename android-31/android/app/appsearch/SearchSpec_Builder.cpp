@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JArray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addFilterNamespaces",
@@ -26,7 +26,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JObject arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addFilterNamespaces",
@@ -34,7 +34,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JArray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addFilterPackageNames",
@@ -42,7 +42,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JObject arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addFilterPackageNames",
@@ -50,7 +50,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JArray arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addFilterSchemas",
@@ -58,7 +58,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JObject arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addFilterSchemas",
@@ -66,7 +66,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(JString arg0, JObject arg1)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"addProjection",
@@ -75,14 +75,14 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	android::app::appsearch::SearchSpec SearchSpec_Builder::build()
+	android::app::appsearch::SearchSpec SearchSpec_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/SearchSpec;"
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setMaxSnippetSize(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setMaxSnippetSize(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxSnippetSize",
@@ -90,7 +90,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setOrder(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setOrder(jint arg0) const
 	{
 		return callObjectMethod(
 			"setOrder",
@@ -98,7 +98,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setRankingStrategy(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setRankingStrategy(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRankingStrategy",
@@ -106,7 +106,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setResultCountPerPage(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setResultCountPerPage(jint arg0) const
 	{
 		return callObjectMethod(
 			"setResultCountPerPage",
@@ -114,7 +114,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setResultGrouping(jint arg0, jint arg1)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setResultGrouping(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setResultGrouping",
@@ -123,7 +123,7 @@ namespace android::app::appsearch
 			arg1
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setSnippetCount(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setSnippetCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSnippetCount",
@@ -131,7 +131,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setSnippetCountPerProperty(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setSnippetCountPerProperty(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSnippetCountPerProperty",
@@ -139,7 +139,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setTermMatch(jint arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::setTermMatch(jint arg0) const
 	{
 		return callObjectMethod(
 			"setTermMatch",

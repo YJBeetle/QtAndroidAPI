@@ -24,10 +24,10 @@ namespace android::telephony::ims::feature
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jboolean isCapable(jint arg0);
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jboolean isCapable(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::telephony::ims::feature
 

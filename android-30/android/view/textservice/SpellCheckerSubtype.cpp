@@ -32,7 +32,7 @@ namespace android::view::textservice
 		) {}
 	
 	// Methods
-	jboolean SpellCheckerSubtype::containsExtraValueKey(JString arg0)
+	jboolean SpellCheckerSubtype::containsExtraValueKey(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsExtraValueKey",
@@ -40,14 +40,14 @@ namespace android::view::textservice
 			arg0.object<jstring>()
 		);
 	}
-	jint SpellCheckerSubtype::describeContents()
+	jint SpellCheckerSubtype::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SpellCheckerSubtype::equals(JObject arg0)
+	jboolean SpellCheckerSubtype::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,7 +55,7 @@ namespace android::view::textservice
 			arg0.object<jobject>()
 		);
 	}
-	JString SpellCheckerSubtype::getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2)
+	JString SpellCheckerSubtype::getDisplayName(android::content::Context arg0, JString arg1, android::content::pm::ApplicationInfo arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -65,14 +65,14 @@ namespace android::view::textservice
 			arg2.object()
 		);
 	}
-	JString SpellCheckerSubtype::getExtraValue()
+	JString SpellCheckerSubtype::getExtraValue() const
 	{
 		return callObjectMethod(
 			"getExtraValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SpellCheckerSubtype::getExtraValueOf(JString arg0)
+	JString SpellCheckerSubtype::getExtraValueOf(JString arg0) const
 	{
 		return callObjectMethod(
 			"getExtraValueOf",
@@ -80,35 +80,35 @@ namespace android::view::textservice
 			arg0.object<jstring>()
 		);
 	}
-	JString SpellCheckerSubtype::getLanguageTag()
+	JString SpellCheckerSubtype::getLanguageTag() const
 	{
 		return callObjectMethod(
 			"getLanguageTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SpellCheckerSubtype::getLocale()
+	JString SpellCheckerSubtype::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SpellCheckerSubtype::getNameResId()
+	jint SpellCheckerSubtype::getNameResId() const
 	{
 		return callMethod<jint>(
 			"getNameResId",
 			"()I"
 		);
 	}
-	jint SpellCheckerSubtype::hashCode()
+	jint SpellCheckerSubtype::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void SpellCheckerSubtype::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SpellCheckerSubtype::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

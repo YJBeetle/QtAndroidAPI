@@ -26,21 +26,21 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	jint SelectWalletCardRequest::describeContents()
+	jint SelectWalletCardRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString SelectWalletCardRequest::getCardId()
+	JString SelectWalletCardRequest::getCardId() const
 	{
 		return callObjectMethod(
 			"getCardId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SelectWalletCardRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SelectWalletCardRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

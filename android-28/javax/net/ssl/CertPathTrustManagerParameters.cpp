@@ -16,7 +16,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	JObject CertPathTrustManagerParameters::getParameters()
+	JObject CertPathTrustManagerParameters::getParameters() const
 	{
 		return callObjectMethod(
 			"getParameters",

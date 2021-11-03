@@ -67,7 +67,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/Normalizer2;"
 		);
 	}
-	java::lang::StringBuilder Normalizer2::append(java::lang::StringBuilder arg0, JString arg1)
+	java::lang::StringBuilder Normalizer2::append(java::lang::StringBuilder arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"append",
@@ -76,7 +76,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	jint Normalizer2::composePair(jint arg0, jint arg1)
+	jint Normalizer2::composePair(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"composePair",
@@ -85,7 +85,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	jint Normalizer2::getCombiningClass(jint arg0)
+	jint Normalizer2::getCombiningClass(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getCombiningClass",
@@ -93,7 +93,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString Normalizer2::getDecomposition(jint arg0)
+	JString Normalizer2::getDecomposition(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDecomposition",
@@ -101,7 +101,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	JString Normalizer2::getRawDecomposition(jint arg0)
+	JString Normalizer2::getRawDecomposition(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRawDecomposition",
@@ -109,7 +109,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean Normalizer2::hasBoundaryAfter(jint arg0)
+	jboolean Normalizer2::hasBoundaryAfter(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasBoundaryAfter",
@@ -117,7 +117,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean Normalizer2::hasBoundaryBefore(jint arg0)
+	jboolean Normalizer2::hasBoundaryBefore(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasBoundaryBefore",
@@ -125,7 +125,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean Normalizer2::isInert(jint arg0)
+	jboolean Normalizer2::isInert(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isInert",
@@ -133,7 +133,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean Normalizer2::isNormalized(JString arg0)
+	jboolean Normalizer2::isNormalized(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isNormalized",
@@ -141,7 +141,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject Normalizer2::normalize(JString arg0, JObject arg1)
+	JObject Normalizer2::normalize(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"normalize",
@@ -150,7 +150,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString Normalizer2::normalize(JString arg0)
+	JString Normalizer2::normalize(JString arg0) const
 	{
 		return callObjectMethod(
 			"normalize",
@@ -158,7 +158,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::StringBuilder Normalizer2::normalize(JString arg0, java::lang::StringBuilder arg1)
+	java::lang::StringBuilder Normalizer2::normalize(JString arg0, java::lang::StringBuilder arg1) const
 	{
 		return callObjectMethod(
 			"normalize",
@@ -167,7 +167,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	java::lang::StringBuilder Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, JString arg1)
+	java::lang::StringBuilder Normalizer2::normalizeSecondAndAppend(java::lang::StringBuilder arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"normalizeSecondAndAppend",
@@ -176,7 +176,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	android::icu::text::Normalizer_QuickCheckResult Normalizer2::quickCheck(JString arg0)
+	android::icu::text::Normalizer_QuickCheckResult Normalizer2::quickCheck(JString arg0) const
 	{
 		return callObjectMethod(
 			"quickCheck",
@@ -184,7 +184,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jint Normalizer2::spanQuickCheckYes(JString arg0)
+	jint Normalizer2::spanQuickCheckYes(JString arg0) const
 	{
 		return callMethod<jint>(
 			"spanQuickCheckYes",

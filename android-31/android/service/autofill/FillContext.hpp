@@ -31,12 +31,12 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::view::autofill::AutofillId getFocusedId();
-		jint getRequestId();
-		android::app::assist::AssistStructure getStructure();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::view::autofill::AutofillId getFocusedId() const;
+		jint getRequestId() const;
+		android::app::assist::AssistStructure getStructure() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::autofill
 

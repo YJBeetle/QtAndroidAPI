@@ -23,28 +23,28 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::VolumeShaper_Configuration VolumeShaper_Configuration_Builder::build()
+	android::media::VolumeShaper_Configuration VolumeShaper_Configuration_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/VolumeShaper$Configuration;"
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::invertVolumes()
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::invertVolumes() const
 	{
 		return callObjectMethod(
 			"invertVolumes",
 			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::reflectTimes()
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::reflectTimes() const
 	{
 		return callObjectMethod(
 			"reflectTimes",
 			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToEndVolume(jfloat arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToEndVolume(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleToEndVolume",
@@ -52,7 +52,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToStartVolume(jfloat arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::scaleToStartVolume(jfloat arg0) const
 	{
 		return callObjectMethod(
 			"scaleToStartVolume",
@@ -60,7 +60,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setCurve(JFloatArray arg0, JFloatArray arg1)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setCurve(JFloatArray arg0, JFloatArray arg1) const
 	{
 		return callObjectMethod(
 			"setCurve",
@@ -69,7 +69,7 @@ namespace android::media
 			arg1.object<jfloatArray>()
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setDuration(jlong arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -77,7 +77,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
+	android::media::VolumeShaper_Configuration_Builder VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setInterpolatorType",

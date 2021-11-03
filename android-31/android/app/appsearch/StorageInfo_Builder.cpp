@@ -16,14 +16,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::StorageInfo StorageInfo_Builder::build()
+	android::app::appsearch::StorageInfo StorageInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/StorageInfo;"
 		);
 	}
-	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setAliveDocumentsCount(jint arg0)
+	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setAliveDocumentsCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAliveDocumentsCount",
@@ -31,7 +31,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setAliveNamespacesCount(jint arg0)
+	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setAliveNamespacesCount(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAliveNamespacesCount",
@@ -39,7 +39,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setSizeBytes(jlong arg0)
+	android::app::appsearch::StorageInfo_Builder StorageInfo_Builder::setSizeBytes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setSizeBytes",

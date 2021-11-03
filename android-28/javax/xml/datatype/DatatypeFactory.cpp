@@ -60,7 +60,7 @@ namespace javax::xml::datatype
 			arg1.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDuration(JString arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDuration(JString arg0) const
 	{
 		return callObjectMethod(
 			"newDuration",
@@ -68,7 +68,7 @@ namespace javax::xml::datatype
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDuration(jlong arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"newDuration",
@@ -76,7 +76,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDuration(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
+	javax::xml::datatype::Duration DatatypeFactory::newDuration(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6) const
 	{
 		return callObjectMethod(
 			"newDuration",
@@ -90,7 +90,7 @@ namespace javax::xml::datatype
 			arg6
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDuration(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigDecimal arg6)
+	javax::xml::datatype::Duration DatatypeFactory::newDuration(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4, java::math::BigInteger arg5, java::math::BigDecimal arg6) const
 	{
 		return callObjectMethod(
 			"newDuration",
@@ -104,7 +104,7 @@ namespace javax::xml::datatype
 			arg6.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(JString arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(JString arg0) const
 	{
 		return callObjectMethod(
 			"newDurationDayTime",
@@ -112,7 +112,7 @@ namespace javax::xml::datatype
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jlong arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jlong arg0) const
 	{
 		return callObjectMethod(
 			"newDurationDayTime",
@@ -120,7 +120,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"newDurationDayTime",
@@ -132,7 +132,7 @@ namespace javax::xml::datatype
 			arg4
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationDayTime(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2, java::math::BigInteger arg3, java::math::BigInteger arg4) const
 	{
 		return callObjectMethod(
 			"newDurationDayTime",
@@ -144,7 +144,7 @@ namespace javax::xml::datatype
 			arg4.object()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(JString arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(JString arg0) const
 	{
 		return callObjectMethod(
 			"newDurationYearMonth",
@@ -152,7 +152,7 @@ namespace javax::xml::datatype
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jlong arg0)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jlong arg0) const
 	{
 		return callObjectMethod(
 			"newDurationYearMonth",
@@ -160,7 +160,7 @@ namespace javax::xml::datatype
 			arg0
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jboolean arg0, jint arg1, jint arg2)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jboolean arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"newDurationYearMonth",
@@ -170,7 +170,7 @@ namespace javax::xml::datatype
 			arg2
 		);
 	}
-	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
+	javax::xml::datatype::Duration DatatypeFactory::newDurationYearMonth(jboolean arg0, java::math::BigInteger arg1, java::math::BigInteger arg2) const
 	{
 		return callObjectMethod(
 			"newDurationYearMonth",
@@ -180,14 +180,14 @@ namespace javax::xml::datatype
 			arg2.object()
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar()
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar() const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
 			"()Ljavax/xml/datatype/XMLGregorianCalendar;"
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(JString arg0)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(JString arg0) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
@@ -195,7 +195,7 @@ namespace javax::xml::datatype
 			arg0.object<jstring>()
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(java::util::GregorianCalendar arg0)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(java::util::GregorianCalendar arg0) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
@@ -203,7 +203,7 @@ namespace javax::xml::datatype
 			arg0.object()
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
@@ -218,7 +218,7 @@ namespace javax::xml::datatype
 			arg7
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(java::math::BigInteger arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::math::BigDecimal arg6, jint arg7)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendar(java::math::BigInteger arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, java::math::BigDecimal arg6, jint arg7) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendar",
@@ -233,7 +233,7 @@ namespace javax::xml::datatype
 			arg7
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarDate(jint arg0, jint arg1, jint arg2, jint arg3)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarDate(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendarDate",
@@ -244,7 +244,7 @@ namespace javax::xml::datatype
 			arg3
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendarTime",
@@ -255,7 +255,7 @@ namespace javax::xml::datatype
 			arg3
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendarTime",
@@ -267,7 +267,7 @@ namespace javax::xml::datatype
 			arg4
 		);
 	}
-	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, java::math::BigDecimal arg3, jint arg4)
+	javax::xml::datatype::XMLGregorianCalendar DatatypeFactory::newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, java::math::BigDecimal arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"newXMLGregorianCalendarTime",

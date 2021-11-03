@@ -11,21 +11,21 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean TimerTask::cancel()
+	jboolean TimerTask::cancel() const
 	{
 		return callMethod<jboolean>(
 			"cancel",
 			"()Z"
 		);
 	}
-	void TimerTask::run()
+	void TimerTask::run() const
 	{
 		callMethod<void>(
 			"run",
 			"()V"
 		);
 	}
-	jlong TimerTask::scheduledExecutionTime()
+	jlong TimerTask::scheduledExecutionTime() const
 	{
 		return callMethod<jlong>(
 			"scheduledExecutionTime",

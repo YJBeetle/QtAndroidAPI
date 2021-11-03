@@ -27,15 +27,15 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getBarringType();
-		jint getConditionalBarringFactor();
-		jint getConditionalBarringTimeSeconds();
-		jint hashCode();
-		jboolean isBarred();
-		jboolean isConditionallyBarred();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getBarringType() const;
+		jint getConditionalBarringFactor() const;
+		jint getConditionalBarringTimeSeconds() const;
+		jint hashCode() const;
+		jboolean isBarred() const;
+		jboolean isConditionallyBarred() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

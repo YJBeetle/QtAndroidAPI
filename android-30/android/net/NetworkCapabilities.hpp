@@ -62,19 +62,19 @@ namespace android::net
 		NetworkCapabilities(android::net::NetworkCapabilities &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getLinkDownstreamBandwidthKbps();
-		jint getLinkUpstreamBandwidthKbps();
-		android::net::NetworkSpecifier getNetworkSpecifier();
-		jint getOwnerUid();
-		jint getSignalStrength();
-		JObject getTransportInfo();
-		jboolean hasCapability(jint arg0);
-		jboolean hasTransport(jint arg0);
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getLinkDownstreamBandwidthKbps() const;
+		jint getLinkUpstreamBandwidthKbps() const;
+		android::net::NetworkSpecifier getNetworkSpecifier() const;
+		jint getOwnerUid() const;
+		jint getSignalStrength() const;
+		JObject getTransportInfo() const;
+		jboolean hasCapability(jint arg0) const;
+		jboolean hasTransport(jint arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

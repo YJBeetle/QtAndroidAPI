@@ -70,7 +70,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::notifyCondition(android::service::notification::Condition arg0)
+	void ConditionProviderService::notifyCondition(android::service::notification::Condition arg0) const
 	{
 		callMethod<void>(
 			"notifyCondition",
@@ -78,7 +78,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::notifyConditions(JArray arg0)
+	void ConditionProviderService::notifyConditions(JArray arg0) const
 	{
 		callMethod<void>(
 			"notifyConditions",
@@ -86,7 +86,7 @@ namespace android::service::notification
 			arg0.object<jarray>()
 		);
 	}
-	JObject ConditionProviderService::onBind(android::content::Intent arg0)
+	JObject ConditionProviderService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -94,14 +94,14 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::onConnected()
+	void ConditionProviderService::onConnected() const
 	{
 		callMethod<void>(
 			"onConnected",
 			"()V"
 		);
 	}
-	void ConditionProviderService::onRequestConditions(jint arg0)
+	void ConditionProviderService::onRequestConditions(jint arg0) const
 	{
 		callMethod<void>(
 			"onRequestConditions",
@@ -109,7 +109,7 @@ namespace android::service::notification
 			arg0
 		);
 	}
-	void ConditionProviderService::onSubscribe(android::net::Uri arg0)
+	void ConditionProviderService::onSubscribe(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onSubscribe",
@@ -117,7 +117,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::onUnsubscribe(android::net::Uri arg0)
+	void ConditionProviderService::onUnsubscribe(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onUnsubscribe",
@@ -125,7 +125,7 @@ namespace android::service::notification
 			arg0.object()
 		);
 	}
-	void ConditionProviderService::requestUnbind()
+	void ConditionProviderService::requestUnbind() const
 	{
 		callMethod<void>(
 			"requestUnbind",

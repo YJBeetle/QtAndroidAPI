@@ -28,14 +28,14 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jboolean isFocused();
-		void registerFocusObserver(android::view::WindowId_FocusObserver arg0);
-		JString toString();
-		void unregisterFocusObserver(android::view::WindowId_FocusObserver arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jboolean isFocused() const;
+		void registerFocusObserver(android::view::WindowId_FocusObserver arg0) const;
+		JString toString() const;
+		void unregisterFocusObserver(android::view::WindowId_FocusObserver arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

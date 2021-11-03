@@ -23,9 +23,9 @@ namespace java::security::spec
 		RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, JObject arg2);
 		
 		// Methods
-		java::math::BigInteger getModulus();
-		JObject getParams();
-		java::math::BigInteger getPrivateExponent();
+		java::math::BigInteger getModulus() const;
+		JObject getParams() const;
+		java::math::BigInteger getPrivateExponent() const;
 	};
 } // namespace java::security::spec
 

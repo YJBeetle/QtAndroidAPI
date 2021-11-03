@@ -16,7 +16,7 @@ namespace android::net::ipsec::ike::exceptions
 		) {}
 	
 	// Methods
-	jint InvalidKeException::getDhGroup()
+	jint InvalidKeException::getDhGroup() const
 	{
 		return callMethod<jint>(
 			"getDhGroup",

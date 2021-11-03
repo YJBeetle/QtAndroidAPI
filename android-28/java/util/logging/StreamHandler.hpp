@@ -40,11 +40,11 @@ namespace java::util::logging
 		StreamHandler(java::io::OutputStream arg0, java::util::logging::Formatter arg1);
 		
 		// Methods
-		void close();
-		void flush();
-		jboolean isLoggable(java::util::logging::LogRecord arg0);
-		void publish(java::util::logging::LogRecord arg0);
-		void setEncoding(JString arg0);
+		void close() const;
+		void flush() const;
+		jboolean isLoggable(java::util::logging::LogRecord arg0) const;
+		void publish(java::util::logging::LogRecord arg0) const;
+		void setEncoding(JString arg0) const;
 	};
 } // namespace java::util::logging
 

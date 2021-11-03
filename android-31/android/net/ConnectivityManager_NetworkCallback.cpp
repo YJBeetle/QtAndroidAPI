@@ -31,7 +31,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	void ConnectivityManager_NetworkCallback::onAvailable(android::net::Network arg0)
+	void ConnectivityManager_NetworkCallback::onAvailable(android::net::Network arg0) const
 	{
 		callMethod<void>(
 			"onAvailable",
@@ -39,7 +39,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onBlockedStatusChanged(android::net::Network arg0, jboolean arg1)
+	void ConnectivityManager_NetworkCallback::onBlockedStatusChanged(android::net::Network arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onBlockedStatusChanged",
@@ -48,7 +48,7 @@ namespace android::net
 			arg1
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onCapabilitiesChanged(android::net::Network arg0, android::net::NetworkCapabilities arg1)
+	void ConnectivityManager_NetworkCallback::onCapabilitiesChanged(android::net::Network arg0, android::net::NetworkCapabilities arg1) const
 	{
 		callMethod<void>(
 			"onCapabilitiesChanged",
@@ -57,7 +57,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onLinkPropertiesChanged(android::net::Network arg0, android::net::LinkProperties arg1)
+	void ConnectivityManager_NetworkCallback::onLinkPropertiesChanged(android::net::Network arg0, android::net::LinkProperties arg1) const
 	{
 		callMethod<void>(
 			"onLinkPropertiesChanged",
@@ -66,7 +66,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onLosing(android::net::Network arg0, jint arg1)
+	void ConnectivityManager_NetworkCallback::onLosing(android::net::Network arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onLosing",
@@ -75,7 +75,7 @@ namespace android::net
 			arg1
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onLost(android::net::Network arg0)
+	void ConnectivityManager_NetworkCallback::onLost(android::net::Network arg0) const
 	{
 		callMethod<void>(
 			"onLost",
@@ -83,7 +83,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager_NetworkCallback::onUnavailable()
+	void ConnectivityManager_NetworkCallback::onUnavailable() const
 	{
 		callMethod<void>(
 			"onUnavailable",

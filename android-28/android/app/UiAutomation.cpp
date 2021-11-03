@@ -69,14 +69,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void UiAutomation::clearWindowAnimationFrameStats()
+	void UiAutomation::clearWindowAnimationFrameStats() const
 	{
 		callMethod<void>(
 			"clearWindowAnimationFrameStats",
 			"()V"
 		);
 	}
-	jboolean UiAutomation::clearWindowContentFrameStats(jint arg0)
+	jboolean UiAutomation::clearWindowContentFrameStats(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"clearWindowContentFrameStats",
@@ -84,7 +84,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::accessibility::AccessibilityEvent UiAutomation::executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2)
+	android::view::accessibility::AccessibilityEvent UiAutomation::executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"executeAndWaitForEvent",
@@ -94,7 +94,7 @@ namespace android::app
 			arg2
 		);
 	}
-	android::os::ParcelFileDescriptor UiAutomation::executeShellCommand(JString arg0)
+	android::os::ParcelFileDescriptor UiAutomation::executeShellCommand(JString arg0) const
 	{
 		return callObjectMethod(
 			"executeShellCommand",
@@ -102,7 +102,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo UiAutomation::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo UiAutomation::findFocus(jint arg0) const
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -110,28 +110,28 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo UiAutomation::getRootInActiveWindow()
+	android::view::accessibility::AccessibilityNodeInfo UiAutomation::getRootInActiveWindow() const
 	{
 		return callObjectMethod(
 			"getRootInActiveWindow",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	android::accessibilityservice::AccessibilityServiceInfo UiAutomation::getServiceInfo()
+	android::accessibilityservice::AccessibilityServiceInfo UiAutomation::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
-	android::view::WindowAnimationFrameStats UiAutomation::getWindowAnimationFrameStats()
+	android::view::WindowAnimationFrameStats UiAutomation::getWindowAnimationFrameStats() const
 	{
 		return callObjectMethod(
 			"getWindowAnimationFrameStats",
 			"()Landroid/view/WindowAnimationFrameStats;"
 		);
 	}
-	android::view::WindowContentFrameStats UiAutomation::getWindowContentFrameStats(jint arg0)
+	android::view::WindowContentFrameStats UiAutomation::getWindowContentFrameStats(jint arg0) const
 	{
 		return callObjectMethod(
 			"getWindowContentFrameStats",
@@ -139,14 +139,14 @@ namespace android::app
 			arg0
 		);
 	}
-	JObject UiAutomation::getWindows()
+	JObject UiAutomation::getWindows() const
 	{
 		return callObjectMethod(
 			"getWindows",
 			"()Ljava/util/List;"
 		);
 	}
-	void UiAutomation::grantRuntimePermission(JString arg0, JString arg1)
+	void UiAutomation::grantRuntimePermission(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"grantRuntimePermission",
@@ -155,7 +155,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void UiAutomation::grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2)
+	void UiAutomation::grantRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"grantRuntimePermissionAsUser",
@@ -165,7 +165,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	jboolean UiAutomation::injectInputEvent(android::view::InputEvent arg0, jboolean arg1)
+	jboolean UiAutomation::injectInputEvent(android::view::InputEvent arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"injectInputEvent",
@@ -174,7 +174,7 @@ namespace android::app
 			arg1
 		);
 	}
-	jboolean UiAutomation::performGlobalAction(jint arg0)
+	jboolean UiAutomation::performGlobalAction(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"performGlobalAction",
@@ -182,7 +182,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiAutomation::revokeRuntimePermission(JString arg0, JString arg1)
+	void UiAutomation::revokeRuntimePermission(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"revokeRuntimePermission",
@@ -191,7 +191,7 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	void UiAutomation::revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2)
+	void UiAutomation::revokeRuntimePermissionAsUser(JString arg0, JString arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"revokeRuntimePermissionAsUser",
@@ -201,7 +201,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void UiAutomation::setOnAccessibilityEventListener(JObject arg0)
+	void UiAutomation::setOnAccessibilityEventListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnAccessibilityEventListener",
@@ -209,7 +209,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean UiAutomation::setRotation(jint arg0)
+	jboolean UiAutomation::setRotation(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setRotation",
@@ -217,7 +217,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiAutomation::setRunAsMonkey(jboolean arg0)
+	void UiAutomation::setRunAsMonkey(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRunAsMonkey",
@@ -225,7 +225,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiAutomation::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0)
+	void UiAutomation::setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0) const
 	{
 		callMethod<void>(
 			"setServiceInfo",
@@ -233,14 +233,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::graphics::Bitmap UiAutomation::takeScreenshot()
+	android::graphics::Bitmap UiAutomation::takeScreenshot() const
 	{
 		return callObjectMethod(
 			"takeScreenshot",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	void UiAutomation::waitForIdle(jlong arg0, jlong arg1)
+	void UiAutomation::waitForIdle(jlong arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"waitForIdle",

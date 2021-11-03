@@ -19,7 +19,7 @@ namespace java::text
 		ParseException(JString arg0, jint arg1);
 		
 		// Methods
-		jint getErrorOffset();
+		jint getErrorOffset() const;
 	};
 } // namespace java::text
 

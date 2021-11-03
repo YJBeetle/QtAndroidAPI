@@ -44,35 +44,35 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jboolean TwoStatePreference::getDisableDependentsState()
+	jboolean TwoStatePreference::getDisableDependentsState() const
 	{
 		return callMethod<jboolean>(
 			"getDisableDependentsState",
 			"()Z"
 		);
 	}
-	JString TwoStatePreference::getSummaryOff()
+	JString TwoStatePreference::getSummaryOff() const
 	{
 		return callObjectMethod(
 			"getSummaryOff",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TwoStatePreference::getSummaryOn()
+	JString TwoStatePreference::getSummaryOn() const
 	{
 		return callObjectMethod(
 			"getSummaryOn",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean TwoStatePreference::isChecked()
+	jboolean TwoStatePreference::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	void TwoStatePreference::setChecked(jboolean arg0)
+	void TwoStatePreference::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -80,7 +80,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setDisableDependentsState(jboolean arg0)
+	void TwoStatePreference::setDisableDependentsState(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDisableDependentsState",
@@ -88,7 +88,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOff(jint arg0)
+	void TwoStatePreference::setSummaryOff(jint arg0) const
 	{
 		callMethod<void>(
 			"setSummaryOff",
@@ -96,7 +96,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOff(JString arg0)
+	void TwoStatePreference::setSummaryOff(JString arg0) const
 	{
 		callMethod<void>(
 			"setSummaryOff",
@@ -104,7 +104,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void TwoStatePreference::setSummaryOn(jint arg0)
+	void TwoStatePreference::setSummaryOn(jint arg0) const
 	{
 		callMethod<void>(
 			"setSummaryOn",
@@ -112,7 +112,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void TwoStatePreference::setSummaryOn(JString arg0)
+	void TwoStatePreference::setSummaryOn(JString arg0) const
 	{
 		callMethod<void>(
 			"setSummaryOn",
@@ -120,7 +120,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TwoStatePreference::shouldDisableDependents()
+	jboolean TwoStatePreference::shouldDisableDependents() const
 	{
 		return callMethod<jboolean>(
 			"shouldDisableDependents",

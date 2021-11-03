@@ -17,9 +17,9 @@ namespace android::net
 		Credentials(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getGid();
-		jint getPid();
-		jint getUid();
+		jint getGid() const;
+		jint getPid() const;
+		jint getUid() const;
 	};
 } // namespace android::net
 

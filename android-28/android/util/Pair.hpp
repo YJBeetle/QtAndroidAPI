@@ -23,9 +23,9 @@ namespace android::util
 		
 		// Methods
 		static android::util::Pair create(JObject arg0, JObject arg1);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

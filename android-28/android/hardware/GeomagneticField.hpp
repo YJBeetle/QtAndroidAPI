@@ -17,13 +17,13 @@ namespace android::hardware
 		GeomagneticField(jfloat arg0, jfloat arg1, jfloat arg2, jlong arg3);
 		
 		// Methods
-		jfloat getDeclination();
-		jfloat getFieldStrength();
-		jfloat getHorizontalStrength();
-		jfloat getInclination();
-		jfloat getX();
-		jfloat getY();
-		jfloat getZ();
+		jfloat getDeclination() const;
+		jfloat getFieldStrength() const;
+		jfloat getHorizontalStrength() const;
+		jfloat getInclination() const;
+		jfloat getX() const;
+		jfloat getY() const;
+		jfloat getZ() const;
 	};
 } // namespace android::hardware
 

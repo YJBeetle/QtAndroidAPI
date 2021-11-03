@@ -26,14 +26,14 @@ namespace android::service::controls::actions
 		) {}
 	
 	// Methods
-	jint FloatAction::getActionType()
+	jint FloatAction::getActionType() const
 	{
 		return callMethod<jint>(
 			"getActionType",
 			"()I"
 		);
 	}
-	jfloat FloatAction::getNewValue()
+	jfloat FloatAction::getNewValue() const
 	{
 		return callMethod<jfloat>(
 			"getNewValue",

@@ -27,9 +27,9 @@ namespace android::renderscript
 		Element_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1);
-		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1, jint arg2);
-		android::renderscript::Element create();
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1) const;
+		android::renderscript::Element_Builder add(android::renderscript::Element arg0, JString arg1, jint arg2) const;
+		android::renderscript::Element create() const;
 	};
 } // namespace android::renderscript
 

@@ -28,13 +28,13 @@ namespace android::speech::tts
 		TextToSpeechService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		void onCreate();
-		void onDestroy();
-		JString onGetDefaultVoiceNameFor(JString arg0, JString arg1, JString arg2);
-		JObject onGetVoices();
-		jint onIsValidVoiceName(JString arg0);
-		jint onLoadVoice(JString arg0);
+		JObject onBind(android::content::Intent arg0) const;
+		void onCreate() const;
+		void onDestroy() const;
+		JString onGetDefaultVoiceNameFor(JString arg0, JString arg1, JString arg2) const;
+		JObject onGetVoices() const;
+		jint onIsValidVoiceName(JString arg0) const;
+		jint onLoadVoice(JString arg0) const;
 	};
 } // namespace android::speech::tts
 

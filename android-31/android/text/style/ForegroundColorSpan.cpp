@@ -24,28 +24,28 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint ForegroundColorSpan::describeContents()
+	jint ForegroundColorSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ForegroundColorSpan::getForegroundColor()
+	jint ForegroundColorSpan::getForegroundColor() const
 	{
 		return callMethod<jint>(
 			"getForegroundColor",
 			"()I"
 		);
 	}
-	jint ForegroundColorSpan::getSpanTypeId()
+	jint ForegroundColorSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void ForegroundColorSpan::updateDrawState(android::text::TextPaint arg0)
+	void ForegroundColorSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -53,7 +53,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void ForegroundColorSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ForegroundColorSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -23,13 +23,13 @@ namespace android::media
 		VolumeProvider(jint arg0, jint arg1, jint arg2, JString arg3);
 		
 		// Methods
-		jint getCurrentVolume();
-		jint getMaxVolume();
-		jint getVolumeControl();
-		JString getVolumeControlId();
-		void onAdjustVolume(jint arg0);
-		void onSetVolumeTo(jint arg0);
-		void setCurrentVolume(jint arg0);
+		jint getCurrentVolume() const;
+		jint getMaxVolume() const;
+		jint getVolumeControl() const;
+		JString getVolumeControlId() const;
+		void onAdjustVolume(jint arg0) const;
+		void onSetVolumeTo(jint arg0) const;
+		void setCurrentVolume(jint arg0) const;
 	};
 } // namespace android::media
 

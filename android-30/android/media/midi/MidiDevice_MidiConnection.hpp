@@ -21,7 +21,7 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		void close();
+		void close() const;
 	};
 } // namespace android::media::midi
 

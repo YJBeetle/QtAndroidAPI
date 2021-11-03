@@ -215,21 +215,21 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	JObject RingtoneManager::getCursor()
+	JObject RingtoneManager::getCursor() const
 	{
 		return callObjectMethod(
 			"getCursor",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	jboolean RingtoneManager::getIncludeDrm()
+	jboolean RingtoneManager::getIncludeDrm() const
 	{
 		return callMethod<jboolean>(
 			"getIncludeDrm",
 			"()Z"
 		);
 	}
-	android::media::Ringtone RingtoneManager::getRingtone(jint arg0)
+	android::media::Ringtone RingtoneManager::getRingtone(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRingtone",
@@ -237,7 +237,7 @@ namespace android::media
 			arg0
 		);
 	}
-	jint RingtoneManager::getRingtonePosition(android::net::Uri arg0)
+	jint RingtoneManager::getRingtonePosition(android::net::Uri arg0) const
 	{
 		return callMethod<jint>(
 			"getRingtonePosition",
@@ -245,7 +245,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::net::Uri RingtoneManager::getRingtoneUri(jint arg0)
+	android::net::Uri RingtoneManager::getRingtoneUri(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRingtoneUri",
@@ -253,21 +253,21 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean RingtoneManager::getStopPreviousRingtone()
+	jboolean RingtoneManager::getStopPreviousRingtone() const
 	{
 		return callMethod<jboolean>(
 			"getStopPreviousRingtone",
 			"()Z"
 		);
 	}
-	jint RingtoneManager::inferStreamType()
+	jint RingtoneManager::inferStreamType() const
 	{
 		return callMethod<jint>(
 			"inferStreamType",
 			"()I"
 		);
 	}
-	void RingtoneManager::setIncludeDrm(jboolean arg0)
+	void RingtoneManager::setIncludeDrm(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setIncludeDrm",
@@ -275,7 +275,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void RingtoneManager::setStopPreviousRingtone(jboolean arg0)
+	void RingtoneManager::setStopPreviousRingtone(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStopPreviousRingtone",
@@ -283,7 +283,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void RingtoneManager::setType(jint arg0)
+	void RingtoneManager::setType(jint arg0) const
 	{
 		callMethod<void>(
 			"setType",
@@ -291,7 +291,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void RingtoneManager::stopPreviousRingtone()
+	void RingtoneManager::stopPreviousRingtone() const
 	{
 		callMethod<void>(
 			"stopPreviousRingtone",

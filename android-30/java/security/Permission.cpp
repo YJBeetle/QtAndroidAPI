@@ -19,7 +19,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void Permission::checkGuard(JObject arg0)
+	void Permission::checkGuard(JObject arg0) const
 	{
 		callMethod<void>(
 			"checkGuard",
@@ -27,7 +27,7 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Permission::equals(JObject arg0)
+	jboolean Permission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,28 +35,28 @@ namespace java::security
 			arg0.object<jobject>()
 		);
 	}
-	JString Permission::getActions()
+	JString Permission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Permission::getName()
+	JString Permission::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Permission::hashCode()
+	jint Permission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Permission::implies(java::security::Permission arg0)
+	jboolean Permission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -64,14 +64,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection Permission::newPermissionCollection()
+	java::security::PermissionCollection Permission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	JString Permission::toString()
+	JString Permission::toString() const
 	{
 		return callObjectMethod(
 			"toString",

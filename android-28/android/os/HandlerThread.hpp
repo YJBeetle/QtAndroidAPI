@@ -24,11 +24,11 @@ namespace android::os
 		HandlerThread(JString arg0, jint arg1);
 		
 		// Methods
-		android::os::Looper getLooper();
-		jint getThreadId();
-		jboolean quit();
-		jboolean quitSafely();
-		void run();
+		android::os::Looper getLooper() const;
+		jint getThreadId() const;
+		jboolean quit() const;
+		jboolean quitSafely() const;
+		void run() const;
 	};
 } // namespace android::os
 

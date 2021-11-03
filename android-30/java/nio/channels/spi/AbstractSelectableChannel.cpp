@@ -16,14 +16,14 @@ namespace java::nio::channels::spi
 	// Constructors
 	
 	// Methods
-	JObject AbstractSelectableChannel::blockingLock()
+	JObject AbstractSelectableChannel::blockingLock() const
 	{
 		return callObjectMethod(
 			"blockingLock",
 			"()Ljava/lang/Object;"
 		);
 	}
-	java::nio::channels::SelectableChannel AbstractSelectableChannel::configureBlocking(jboolean arg0)
+	java::nio::channels::SelectableChannel AbstractSelectableChannel::configureBlocking(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"configureBlocking",
@@ -31,21 +31,21 @@ namespace java::nio::channels::spi
 			arg0
 		);
 	}
-	jboolean AbstractSelectableChannel::isBlocking()
+	jboolean AbstractSelectableChannel::isBlocking() const
 	{
 		return callMethod<jboolean>(
 			"isBlocking",
 			"()Z"
 		);
 	}
-	jboolean AbstractSelectableChannel::isRegistered()
+	jboolean AbstractSelectableChannel::isRegistered() const
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
-	java::nio::channels::SelectionKey AbstractSelectableChannel::keyFor(java::nio::channels::Selector arg0)
+	java::nio::channels::SelectionKey AbstractSelectableChannel::keyFor(java::nio::channels::Selector arg0) const
 	{
 		return callObjectMethod(
 			"keyFor",
@@ -53,14 +53,14 @@ namespace java::nio::channels::spi
 			arg0.object()
 		);
 	}
-	java::nio::channels::spi::SelectorProvider AbstractSelectableChannel::provider()
+	java::nio::channels::spi::SelectorProvider AbstractSelectableChannel::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2)
+	java::nio::channels::SelectionKey AbstractSelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"register",

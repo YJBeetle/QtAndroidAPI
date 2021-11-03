@@ -23,42 +23,42 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	jfloat RangeTemplate::getCurrentValue()
+	jfloat RangeTemplate::getCurrentValue() const
 	{
 		return callMethod<jfloat>(
 			"getCurrentValue",
 			"()F"
 		);
 	}
-	JString RangeTemplate::getFormatString()
+	JString RangeTemplate::getFormatString() const
 	{
 		return callObjectMethod(
 			"getFormatString",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jfloat RangeTemplate::getMaxValue()
+	jfloat RangeTemplate::getMaxValue() const
 	{
 		return callMethod<jfloat>(
 			"getMaxValue",
 			"()F"
 		);
 	}
-	jfloat RangeTemplate::getMinValue()
+	jfloat RangeTemplate::getMinValue() const
 	{
 		return callMethod<jfloat>(
 			"getMinValue",
 			"()F"
 		);
 	}
-	jfloat RangeTemplate::getStepValue()
+	jfloat RangeTemplate::getStepValue() const
 	{
 		return callMethod<jfloat>(
 			"getStepValue",
 			"()F"
 		);
 	}
-	jint RangeTemplate::getTemplateType()
+	jint RangeTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",

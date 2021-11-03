@@ -19,10 +19,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getName();
-		jint getType();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JString getName() const;
+		jint getType() const;
+		jint hashCode() const;
 	};
 } // namespace android::media
 

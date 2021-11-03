@@ -28,8 +28,8 @@ namespace android::service::textservice
 		SpellCheckerService();
 		
 		// Methods
-		android::service::textservice::SpellCheckerService_Session createSession();
-		JObject onBind(android::content::Intent arg0);
+		android::service::textservice::SpellCheckerService_Session createSession() const;
+		JObject onBind(android::content::Intent arg0) const;
 	};
 } // namespace android::service::textservice
 

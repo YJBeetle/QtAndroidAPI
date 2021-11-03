@@ -36,28 +36,28 @@ namespace android::telephony
 		ServiceState(android::telephony::ServiceState &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCdmaNetworkId();
-		jint getCdmaSystemId();
-		JIntArray getCellBandwidths();
-		jint getChannelNumber();
-		jint getDuplexMode();
-		jboolean getIsManualSelection();
-		JString getOperatorAlphaLong();
-		JString getOperatorAlphaShort();
-		JString getOperatorNumeric();
-		jboolean getRoaming();
-		jint getState();
-		jint hashCode();
-		void setIsManualSelection(jboolean arg0);
-		void setOperatorName(JString arg0, JString arg1, JString arg2);
-		void setRoaming(jboolean arg0);
-		void setState(jint arg0);
-		void setStateOff();
-		void setStateOutOfService();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCdmaNetworkId() const;
+		jint getCdmaSystemId() const;
+		JIntArray getCellBandwidths() const;
+		jint getChannelNumber() const;
+		jint getDuplexMode() const;
+		jboolean getIsManualSelection() const;
+		JString getOperatorAlphaLong() const;
+		JString getOperatorAlphaShort() const;
+		JString getOperatorNumeric() const;
+		jboolean getRoaming() const;
+		jint getState() const;
+		jint hashCode() const;
+		void setIsManualSelection(jboolean arg0) const;
+		void setOperatorName(JString arg0, JString arg1, JString arg2) const;
+		void setRoaming(jboolean arg0) const;
+		void setState(jint arg0) const;
+		void setStateOff() const;
+		void setStateOutOfService() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

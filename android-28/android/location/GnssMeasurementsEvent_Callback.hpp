@@ -26,8 +26,8 @@ namespace android::location
 		GnssMeasurementsEvent_Callback();
 		
 		// Methods
-		void onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0);
-		void onStatusChanged(jint arg0);
+		void onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0) const;
+		void onStatusChanged(jint arg0) const;
 	};
 } // namespace android::location
 

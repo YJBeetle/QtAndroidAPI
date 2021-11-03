@@ -37,17 +37,17 @@ namespace android::view::inputmethod
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::Bundle getExtras();
-		JString getHostPackageName();
-		JObject getInlinePresentationSpecs();
-		android::widget::inline::InlinePresentationSpec getInlineTooltipPresentationSpec();
-		jint getMaxSuggestionCount();
-		android::os::LocaleList getSupportedLocales();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getExtras() const;
+		JString getHostPackageName() const;
+		JObject getInlinePresentationSpecs() const;
+		android::widget::inline::InlinePresentationSpec getInlineTooltipPresentationSpec() const;
+		jint getMaxSuggestionCount() const;
+		android::os::LocaleList getSupportedLocales() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

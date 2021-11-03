@@ -19,14 +19,14 @@ namespace java::lang::annotation
 		) {}
 	
 	// Methods
-	JClass IncompleteAnnotationException::annotationType()
+	JClass IncompleteAnnotationException::annotationType() const
 	{
 		return callObjectMethod(
 			"annotationType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JString IncompleteAnnotationException::elementName()
+	JString IncompleteAnnotationException::elementName() const
 	{
 		return callObjectMethod(
 			"elementName",

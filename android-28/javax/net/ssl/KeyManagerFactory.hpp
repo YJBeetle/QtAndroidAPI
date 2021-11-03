@@ -36,11 +36,11 @@ namespace javax::net::ssl
 		static javax::net::ssl::KeyManagerFactory getInstance(JString arg0);
 		static javax::net::ssl::KeyManagerFactory getInstance(JString arg0, JString arg1);
 		static javax::net::ssl::KeyManagerFactory getInstance(JString arg0, java::security::Provider arg1);
-		JString getAlgorithm();
-		JArray getKeyManagers();
-		java::security::Provider getProvider();
-		void init(JObject arg0);
-		void init(java::security::KeyStore arg0, JCharArray arg1);
+		JString getAlgorithm() const;
+		JArray getKeyManagers() const;
+		java::security::Provider getProvider() const;
+		void init(JObject arg0) const;
+		void init(java::security::KeyStore arg0, JCharArray arg1) const;
 	};
 } // namespace javax::net::ssl
 

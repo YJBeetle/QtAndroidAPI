@@ -54,21 +54,21 @@ namespace java::security
 			arg1.object<jbyteArray>()
 		);
 	}
-	JObject MessageDigest::clone()
+	JObject MessageDigest::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JByteArray MessageDigest::digest()
+	JByteArray MessageDigest::digest() const
 	{
 		return callObjectMethod(
 			"digest",
 			"()[B"
 		);
 	}
-	JByteArray MessageDigest::digest(JByteArray arg0)
+	JByteArray MessageDigest::digest(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"digest",
@@ -76,7 +76,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	jint MessageDigest::digest(JByteArray arg0, jint arg1, jint arg2)
+	jint MessageDigest::digest(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"digest",
@@ -86,42 +86,42 @@ namespace java::security
 			arg2
 		);
 	}
-	JString MessageDigest::getAlgorithm()
+	JString MessageDigest::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MessageDigest::getDigestLength()
+	jint MessageDigest::getDigestLength() const
 	{
 		return callMethod<jint>(
 			"getDigestLength",
 			"()I"
 		);
 	}
-	java::security::Provider MessageDigest::getProvider()
+	java::security::Provider MessageDigest::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void MessageDigest::reset()
+	void MessageDigest::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	JString MessageDigest::toString()
+	JString MessageDigest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MessageDigest::update(JByteArray arg0)
+	void MessageDigest::update(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -129,7 +129,7 @@ namespace java::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MessageDigest::update(jbyte arg0)
+	void MessageDigest::update(jbyte arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -137,7 +137,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void MessageDigest::update(java::nio::ByteBuffer arg0)
+	void MessageDigest::update(java::nio::ByteBuffer arg0) const
 	{
 		callMethod<void>(
 			"update",
@@ -145,7 +145,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void MessageDigest::update(JByteArray arg0, jint arg1, jint arg2)
+	void MessageDigest::update(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",

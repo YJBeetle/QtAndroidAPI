@@ -30,12 +30,12 @@ namespace android::media::metrics
 		PlaybackErrorEvent_Builder();
 		
 		// Methods
-		android::media::metrics::PlaybackErrorEvent build();
-		android::media::metrics::PlaybackErrorEvent_Builder setErrorCode(jint arg0);
-		android::media::metrics::PlaybackErrorEvent_Builder setException(java::lang::Exception arg0);
-		android::media::metrics::PlaybackErrorEvent_Builder setMetricsBundle(android::os::Bundle arg0);
-		android::media::metrics::PlaybackErrorEvent_Builder setSubErrorCode(jint arg0);
-		android::media::metrics::PlaybackErrorEvent_Builder setTimeSinceCreatedMillis(jlong arg0);
+		android::media::metrics::PlaybackErrorEvent build() const;
+		android::media::metrics::PlaybackErrorEvent_Builder setErrorCode(jint arg0) const;
+		android::media::metrics::PlaybackErrorEvent_Builder setException(java::lang::Exception arg0) const;
+		android::media::metrics::PlaybackErrorEvent_Builder setMetricsBundle(android::os::Bundle arg0) const;
+		android::media::metrics::PlaybackErrorEvent_Builder setSubErrorCode(jint arg0) const;
+		android::media::metrics::PlaybackErrorEvent_Builder setTimeSinceCreatedMillis(jlong arg0) const;
 	};
 } // namespace android::media::metrics
 

@@ -38,7 +38,7 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::app
 

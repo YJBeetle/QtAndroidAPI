@@ -29,12 +29,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JObject getChangedKeys();
-		jint getFlags();
-		android::media::MediaFormat getFormat();
-		android::hardware::HardwareBuffer getHardwareBuffer();
-		android::media::MediaCodec_LinearBlock getLinearBlock();
-		jlong getPresentationTimeUs();
+		JObject getChangedKeys() const;
+		jint getFlags() const;
+		android::media::MediaFormat getFormat() const;
+		android::hardware::HardwareBuffer getHardwareBuffer() const;
+		android::media::MediaCodec_LinearBlock getLinearBlock() const;
+		jlong getPresentationTimeUs() const;
 	};
 } // namespace android::media
 

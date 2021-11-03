@@ -24,7 +24,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::EventLogTags_Description EventLogTags::get(jint arg0)
+	android::util::EventLogTags_Description EventLogTags::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -32,7 +32,7 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::EventLogTags_Description EventLogTags::get(JString arg0)
+	android::util::EventLogTags_Description EventLogTags::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",

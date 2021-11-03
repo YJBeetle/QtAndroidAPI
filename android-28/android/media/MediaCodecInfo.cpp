@@ -14,7 +14,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(JString arg0)
+	android::media::MediaCodecInfo_CodecCapabilities MediaCodecInfo::getCapabilitiesForType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCapabilitiesForType",
@@ -22,21 +22,21 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	JString MediaCodecInfo::getName()
+	JString MediaCodecInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray MediaCodecInfo::getSupportedTypes()
+	JArray MediaCodecInfo::getSupportedTypes() const
 	{
 		return callObjectMethod(
 			"getSupportedTypes",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jboolean MediaCodecInfo::isEncoder()
+	jboolean MediaCodecInfo::isEncoder() const
 	{
 		return callMethod<jboolean>(
 			"isEncoder",

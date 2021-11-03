@@ -37,12 +37,12 @@ namespace android::net::http
 		SslError(jint arg0, java::security::cert::X509Certificate arg1, JString arg2);
 		
 		// Methods
-		jboolean addError(jint arg0);
-		android::net::http::SslCertificate getCertificate();
-		jint getPrimaryError();
-		JString getUrl();
-		jboolean hasError(jint arg0);
-		JString toString();
+		jboolean addError(jint arg0) const;
+		android::net::http::SslCertificate getCertificate() const;
+		jint getPrimaryError() const;
+		JString getUrl() const;
+		jboolean hasError(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::net::http
 

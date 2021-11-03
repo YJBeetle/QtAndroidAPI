@@ -24,7 +24,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void Animator::addListener(JObject arg0)
+	void Animator::addListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addListener",
@@ -32,7 +32,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::addPauseListener(JObject arg0)
+	void Animator::addPauseListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addPauseListener",
@@ -40,98 +40,98 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::cancel()
+	void Animator::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	android::animation::Animator Animator::clone()
+	android::animation::Animator Animator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/Animator;"
 		);
 	}
-	void Animator::end()
+	void Animator::end() const
 	{
 		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
-	jlong Animator::getDuration()
+	jlong Animator::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	JObject Animator::getInterpolator()
+	JObject Animator::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	java::util::ArrayList Animator::getListeners()
+	java::util::ArrayList Animator::getListeners() const
 	{
 		return callObjectMethod(
 			"getListeners",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jlong Animator::getStartDelay()
+	jlong Animator::getStartDelay() const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
 			"()J"
 		);
 	}
-	jlong Animator::getTotalDuration()
+	jlong Animator::getTotalDuration() const
 	{
 		return callMethod<jlong>(
 			"getTotalDuration",
 			"()J"
 		);
 	}
-	jboolean Animator::isPaused()
+	jboolean Animator::isPaused() const
 	{
 		return callMethod<jboolean>(
 			"isPaused",
 			"()Z"
 		);
 	}
-	jboolean Animator::isRunning()
+	jboolean Animator::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean Animator::isStarted()
+	jboolean Animator::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void Animator::pause()
+	void Animator::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void Animator::removeAllListeners()
+	void Animator::removeAllListeners() const
 	{
 		callMethod<void>(
 			"removeAllListeners",
 			"()V"
 		);
 	}
-	void Animator::removeListener(JObject arg0)
+	void Animator::removeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeListener",
@@ -139,7 +139,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::removePauseListener(JObject arg0)
+	void Animator::removePauseListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removePauseListener",
@@ -147,14 +147,14 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::resume()
+	void Animator::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	android::animation::Animator Animator::setDuration(jlong arg0)
+	android::animation::Animator Animator::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -162,7 +162,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Animator::setInterpolator(JObject arg0)
+	void Animator::setInterpolator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -170,7 +170,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::setStartDelay(jlong arg0)
+	void Animator::setStartDelay(jlong arg0) const
 	{
 		callMethod<void>(
 			"setStartDelay",
@@ -178,7 +178,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Animator::setTarget(JObject arg0)
+	void Animator::setTarget(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTarget",
@@ -186,21 +186,21 @@ namespace android::animation
 			arg0.object<jobject>()
 		);
 	}
-	void Animator::setupEndValues()
+	void Animator::setupEndValues() const
 	{
 		callMethod<void>(
 			"setupEndValues",
 			"()V"
 		);
 	}
-	void Animator::setupStartValues()
+	void Animator::setupStartValues() const
 	{
 		callMethod<void>(
 			"setupStartValues",
 			"()V"
 		);
 	}
-	void Animator::start()
+	void Animator::start() const
 	{
 		callMethod<void>(
 			"start",

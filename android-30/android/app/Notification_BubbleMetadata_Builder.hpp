@@ -33,14 +33,14 @@ namespace android::app
 		Notification_BubbleMetadata_Builder(android::app::PendingIntent arg0, android::graphics::drawable::Icon arg1);
 		
 		// Methods
-		android::app::Notification_BubbleMetadata build();
-		android::app::Notification_BubbleMetadata_Builder setAutoExpandBubble(jboolean arg0);
-		android::app::Notification_BubbleMetadata_Builder setDeleteIntent(android::app::PendingIntent arg0);
-		android::app::Notification_BubbleMetadata_Builder setDesiredHeight(jint arg0);
-		android::app::Notification_BubbleMetadata_Builder setDesiredHeightResId(jint arg0);
-		android::app::Notification_BubbleMetadata_Builder setIcon(android::graphics::drawable::Icon arg0);
-		android::app::Notification_BubbleMetadata_Builder setIntent(android::app::PendingIntent arg0);
-		android::app::Notification_BubbleMetadata_Builder setSuppressNotification(jboolean arg0);
+		android::app::Notification_BubbleMetadata build() const;
+		android::app::Notification_BubbleMetadata_Builder setAutoExpandBubble(jboolean arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setDeleteIntent(android::app::PendingIntent arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setDesiredHeight(jint arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setDesiredHeightResId(jint arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setIcon(android::graphics::drawable::Icon arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setIntent(android::app::PendingIntent arg0) const;
+		android::app::Notification_BubbleMetadata_Builder setSuppressNotification(jboolean arg0) const;
 	};
 } // namespace android::app
 

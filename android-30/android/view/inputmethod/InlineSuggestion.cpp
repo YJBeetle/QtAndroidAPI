@@ -24,14 +24,14 @@ namespace android::view::inputmethod
 	// Constructors
 	
 	// Methods
-	jint InlineSuggestion::describeContents()
+	jint InlineSuggestion::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlineSuggestion::equals(JObject arg0)
+	jboolean InlineSuggestion::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,21 +39,21 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionInfo InlineSuggestion::getInfo()
+	android::view::inputmethod::InlineSuggestionInfo InlineSuggestion::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",
 			"()Landroid/view/inputmethod/InlineSuggestionInfo;"
 		);
 	}
-	jint InlineSuggestion::hashCode()
+	jint InlineSuggestion::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void InlineSuggestion::inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3)
+	void InlineSuggestion::inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -64,14 +64,14 @@ namespace android::view::inputmethod
 			arg3.object()
 		);
 	}
-	JString InlineSuggestion::toString()
+	JString InlineSuggestion::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlineSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlineSuggestion::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

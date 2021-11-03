@@ -22,28 +22,28 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	JString ThumbnailTemplate::getContentDescription()
+	JString ThumbnailTemplate::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ThumbnailTemplate::getTemplateType()
+	jint ThumbnailTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon ThumbnailTemplate::getThumbnail()
+	android::graphics::drawable::Icon ThumbnailTemplate::getThumbnail() const
 	{
 		return callObjectMethod(
 			"getThumbnail",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jboolean ThumbnailTemplate::isActive()
+	jboolean ThumbnailTemplate::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",

@@ -97,14 +97,14 @@ namespace android::app::admin
 		) {}
 	
 	// Methods
-	jint DeviceAdminInfo::describeContents()
+	jint DeviceAdminInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void DeviceAdminInfo::dump(JObject arg0, JString arg1)
+	void DeviceAdminInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -113,35 +113,35 @@ namespace android::app::admin
 			arg1.object<jstring>()
 		);
 	}
-	android::content::pm::ActivityInfo DeviceAdminInfo::getActivityInfo()
+	android::content::pm::ActivityInfo DeviceAdminInfo::getActivityInfo() const
 	{
 		return callObjectMethod(
 			"getActivityInfo",
 			"()Landroid/content/pm/ActivityInfo;"
 		);
 	}
-	android::content::ComponentName DeviceAdminInfo::getComponent()
+	android::content::ComponentName DeviceAdminInfo::getComponent() const
 	{
 		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JString DeviceAdminInfo::getPackageName()
+	JString DeviceAdminInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DeviceAdminInfo::getReceiverName()
+	JString DeviceAdminInfo::getReceiverName() const
 	{
 		return callObjectMethod(
 			"getReceiverName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DeviceAdminInfo::getTagForPolicy(jint arg0)
+	JString DeviceAdminInfo::getTagForPolicy(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTagForPolicy",
@@ -149,14 +149,14 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	jboolean DeviceAdminInfo::isVisible()
+	jboolean DeviceAdminInfo::isVisible() const
 	{
 		return callMethod<jboolean>(
 			"isVisible",
 			"()Z"
 		);
 	}
-	JString DeviceAdminInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString DeviceAdminInfo::loadDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadDescription",
@@ -164,7 +164,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable DeviceAdminInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -172,7 +172,7 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	JString DeviceAdminInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString DeviceAdminInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -180,21 +180,21 @@ namespace android::app::admin
 			arg0.object()
 		);
 	}
-	jboolean DeviceAdminInfo::supportsTransferOwnership()
+	jboolean DeviceAdminInfo::supportsTransferOwnership() const
 	{
 		return callMethod<jboolean>(
 			"supportsTransferOwnership",
 			"()Z"
 		);
 	}
-	JString DeviceAdminInfo::toString()
+	JString DeviceAdminInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
+	jboolean DeviceAdminInfo::usesPolicy(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"usesPolicy",
@@ -202,7 +202,7 @@ namespace android::app::admin
 			arg0
 		);
 	}
-	void DeviceAdminInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DeviceAdminInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

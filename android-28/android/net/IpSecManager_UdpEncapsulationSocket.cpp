@@ -12,28 +12,28 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void IpSecManager_UdpEncapsulationSocket::close()
+	void IpSecManager_UdpEncapsulationSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::io::FileDescriptor IpSecManager_UdpEncapsulationSocket::getFileDescriptor()
+	java::io::FileDescriptor IpSecManager_UdpEncapsulationSocket::getFileDescriptor() const
 	{
 		return callObjectMethod(
 			"getFileDescriptor",
 			"()Ljava/io/FileDescriptor;"
 		);
 	}
-	jint IpSecManager_UdpEncapsulationSocket::getPort()
+	jint IpSecManager_UdpEncapsulationSocket::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString IpSecManager_UdpEncapsulationSocket::toString()
+	JString IpSecManager_UdpEncapsulationSocket::toString() const
 	{
 		return callObjectMethod(
 			"toString",

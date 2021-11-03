@@ -888,14 +888,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jboolean TelephonyManager::canChangeDtmfToneLength()
+	jboolean TelephonyManager::canChangeDtmfToneLength() const
 	{
 		return callMethod<jboolean>(
 			"canChangeDtmfToneLength",
 			"()Z"
 		);
 	}
-	android::telephony::TelephonyManager TelephonyManager::createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0)
+	android::telephony::TelephonyManager TelephonyManager::createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"createForPhoneAccountHandle",
@@ -903,7 +903,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	android::telephony::TelephonyManager TelephonyManager::createForSubscriptionId(jint arg0)
+	android::telephony::TelephonyManager TelephonyManager::createForSubscriptionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"createForSubscriptionId",
@@ -911,91 +911,91 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jboolean TelephonyManager::doesSwitchMultiSimConfigTriggerReboot()
+	jboolean TelephonyManager::doesSwitchMultiSimConfigTriggerReboot() const
 	{
 		return callMethod<jboolean>(
 			"doesSwitchMultiSimConfigTriggerReboot",
 			"()Z"
 		);
 	}
-	jint TelephonyManager::getActiveModemCount()
+	jint TelephonyManager::getActiveModemCount() const
 	{
 		return callMethod<jint>(
 			"getActiveModemCount",
 			"()I"
 		);
 	}
-	JObject TelephonyManager::getAllCellInfo()
+	JObject TelephonyManager::getAllCellInfo() const
 	{
 		return callObjectMethod(
 			"getAllCellInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	jint TelephonyManager::getCallState()
+	jint TelephonyManager::getCallState() const
 	{
 		return callMethod<jint>(
 			"getCallState",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getCardIdForDefaultEuicc()
+	jint TelephonyManager::getCardIdForDefaultEuicc() const
 	{
 		return callMethod<jint>(
 			"getCardIdForDefaultEuicc",
 			"()I"
 		);
 	}
-	android::os::PersistableBundle TelephonyManager::getCarrierConfig()
+	android::os::PersistableBundle TelephonyManager::getCarrierConfig() const
 	{
 		return callObjectMethod(
 			"getCarrierConfig",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	jint TelephonyManager::getCarrierIdFromSimMccMnc()
+	jint TelephonyManager::getCarrierIdFromSimMccMnc() const
 	{
 		return callMethod<jint>(
 			"getCarrierIdFromSimMccMnc",
 			"()I"
 		);
 	}
-	android::telephony::CellLocation TelephonyManager::getCellLocation()
+	android::telephony::CellLocation TelephonyManager::getCellLocation() const
 	{
 		return callObjectMethod(
 			"getCellLocation",
 			"()Landroid/telephony/CellLocation;"
 		);
 	}
-	jint TelephonyManager::getDataActivity()
+	jint TelephonyManager::getDataActivity() const
 	{
 		return callMethod<jint>(
 			"getDataActivity",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getDataNetworkType()
+	jint TelephonyManager::getDataNetworkType() const
 	{
 		return callMethod<jint>(
 			"getDataNetworkType",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getDataState()
+	jint TelephonyManager::getDataState() const
 	{
 		return callMethod<jint>(
 			"getDataState",
 			"()I"
 		);
 	}
-	JString TelephonyManager::getDeviceId()
+	JString TelephonyManager::getDeviceId() const
 	{
 		return callObjectMethod(
 			"getDeviceId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getDeviceId(jint arg0)
+	JString TelephonyManager::getDeviceId(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDeviceId",
@@ -1003,21 +1003,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getDeviceSoftwareVersion()
+	JString TelephonyManager::getDeviceSoftwareVersion() const
 	{
 		return callObjectMethod(
 			"getDeviceSoftwareVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject TelephonyManager::getEmergencyNumberList()
+	JObject TelephonyManager::getEmergencyNumberList() const
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject TelephonyManager::getEmergencyNumberList(jint arg0)
+	JObject TelephonyManager::getEmergencyNumberList(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
@@ -1025,21 +1025,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JArray TelephonyManager::getForbiddenPlmns()
+	JArray TelephonyManager::getForbiddenPlmns() const
 	{
 		return callObjectMethod(
 			"getForbiddenPlmns",
 			"()[Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getGroupIdLevel1()
+	JString TelephonyManager::getGroupIdLevel1() const
 	{
 		return callObjectMethod(
 			"getGroupIdLevel1",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getIccAuthentication(jint arg0, jint arg1, JString arg2)
+	JString TelephonyManager::getIccAuthentication(jint arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"getIccAuthentication",
@@ -1049,14 +1049,14 @@ namespace android::telephony
 			arg2.object<jstring>()
 		);
 	}
-	JString TelephonyManager::getImei()
+	JString TelephonyManager::getImei() const
 	{
 		return callObjectMethod(
 			"getImei",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getImei(jint arg0)
+	JString TelephonyManager::getImei(jint arg0) const
 	{
 		return callObjectMethod(
 			"getImei",
@@ -1064,28 +1064,28 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getLine1Number()
+	JString TelephonyManager::getLine1Number() const
 	{
 		return callObjectMethod(
 			"getLine1Number",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getManualNetworkSelectionPlmn()
+	JString TelephonyManager::getManualNetworkSelectionPlmn() const
 	{
 		return callObjectMethod(
 			"getManualNetworkSelectionPlmn",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getManufacturerCode()
+	JString TelephonyManager::getManufacturerCode() const
 	{
 		return callObjectMethod(
 			"getManufacturerCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getManufacturerCode(jint arg0)
+	JString TelephonyManager::getManufacturerCode(jint arg0) const
 	{
 		return callObjectMethod(
 			"getManufacturerCode",
@@ -1093,14 +1093,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getMeid()
+	JString TelephonyManager::getMeid() const
 	{
 		return callObjectMethod(
 			"getMeid",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getMeid(jint arg0)
+	JString TelephonyManager::getMeid(jint arg0) const
 	{
 		return callObjectMethod(
 			"getMeid",
@@ -1108,35 +1108,35 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getMmsUAProfUrl()
+	JString TelephonyManager::getMmsUAProfUrl() const
 	{
 		return callObjectMethod(
 			"getMmsUAProfUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getMmsUserAgent()
+	JString TelephonyManager::getMmsUserAgent() const
 	{
 		return callObjectMethod(
 			"getMmsUserAgent",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getNai()
+	JString TelephonyManager::getNai() const
 	{
 		return callObjectMethod(
 			"getNai",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getNetworkCountryIso()
+	JString TelephonyManager::getNetworkCountryIso() const
 	{
 		return callObjectMethod(
 			"getNetworkCountryIso",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getNetworkCountryIso(jint arg0)
+	JString TelephonyManager::getNetworkCountryIso(jint arg0) const
 	{
 		return callObjectMethod(
 			"getNetworkCountryIso",
@@ -1144,140 +1144,140 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getNetworkOperator()
+	JString TelephonyManager::getNetworkOperator() const
 	{
 		return callObjectMethod(
 			"getNetworkOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getNetworkOperatorName()
+	JString TelephonyManager::getNetworkOperatorName() const
 	{
 		return callObjectMethod(
 			"getNetworkOperatorName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TelephonyManager::getNetworkSelectionMode()
+	jint TelephonyManager::getNetworkSelectionMode() const
 	{
 		return callMethod<jint>(
 			"getNetworkSelectionMode",
 			"()I"
 		);
 	}
-	JString TelephonyManager::getNetworkSpecifier()
+	JString TelephonyManager::getNetworkSpecifier() const
 	{
 		return callObjectMethod(
 			"getNetworkSpecifier",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TelephonyManager::getNetworkType()
+	jint TelephonyManager::getNetworkType() const
 	{
 		return callMethod<jint>(
 			"getNetworkType",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getPhoneCount()
+	jint TelephonyManager::getPhoneCount() const
 	{
 		return callMethod<jint>(
 			"getPhoneCount",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getPhoneType()
+	jint TelephonyManager::getPhoneType() const
 	{
 		return callMethod<jint>(
 			"getPhoneType",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getPreferredOpportunisticDataSubscription()
+	jint TelephonyManager::getPreferredOpportunisticDataSubscription() const
 	{
 		return callMethod<jint>(
 			"getPreferredOpportunisticDataSubscription",
 			"()I"
 		);
 	}
-	android::telephony::ServiceState TelephonyManager::getServiceState()
+	android::telephony::ServiceState TelephonyManager::getServiceState() const
 	{
 		return callObjectMethod(
 			"getServiceState",
 			"()Landroid/telephony/ServiceState;"
 		);
 	}
-	android::telephony::SignalStrength TelephonyManager::getSignalStrength()
+	android::telephony::SignalStrength TelephonyManager::getSignalStrength() const
 	{
 		return callObjectMethod(
 			"getSignalStrength",
 			"()Landroid/telephony/SignalStrength;"
 		);
 	}
-	jint TelephonyManager::getSimCarrierId()
+	jint TelephonyManager::getSimCarrierId() const
 	{
 		return callMethod<jint>(
 			"getSimCarrierId",
 			"()I"
 		);
 	}
-	JString TelephonyManager::getSimCarrierIdName()
+	JString TelephonyManager::getSimCarrierIdName() const
 	{
 		return callObjectMethod(
 			"getSimCarrierIdName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString TelephonyManager::getSimCountryIso()
+	JString TelephonyManager::getSimCountryIso() const
 	{
 		return callObjectMethod(
 			"getSimCountryIso",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getSimOperator()
+	JString TelephonyManager::getSimOperator() const
 	{
 		return callObjectMethod(
 			"getSimOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getSimOperatorName()
+	JString TelephonyManager::getSimOperatorName() const
 	{
 		return callObjectMethod(
 			"getSimOperatorName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getSimSerialNumber()
+	JString TelephonyManager::getSimSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSimSerialNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TelephonyManager::getSimSpecificCarrierId()
+	jint TelephonyManager::getSimSpecificCarrierId() const
 	{
 		return callMethod<jint>(
 			"getSimSpecificCarrierId",
 			"()I"
 		);
 	}
-	JString TelephonyManager::getSimSpecificCarrierIdName()
+	JString TelephonyManager::getSimSpecificCarrierIdName() const
 	{
 		return callObjectMethod(
 			"getSimSpecificCarrierIdName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TelephonyManager::getSimState()
+	jint TelephonyManager::getSimState() const
 	{
 		return callMethod<jint>(
 			"getSimState",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getSimState(jint arg0)
+	jint TelephonyManager::getSimState(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getSimState",
@@ -1285,21 +1285,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JString TelephonyManager::getSubscriberId()
+	JString TelephonyManager::getSubscriberId() const
 	{
 		return callObjectMethod(
 			"getSubscriberId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TelephonyManager::getSubscriptionId()
+	jint TelephonyManager::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	jint TelephonyManager::getSubscriptionId(android::telecom::PhoneAccountHandle arg0)
+	jint TelephonyManager::getSubscriptionId(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
@@ -1307,21 +1307,21 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jint TelephonyManager::getSupportedModemCount()
+	jint TelephonyManager::getSupportedModemCount() const
 	{
 		return callMethod<jint>(
 			"getSupportedModemCount",
 			"()I"
 		);
 	}
-	JString TelephonyManager::getTypeAllocationCode()
+	JString TelephonyManager::getTypeAllocationCode() const
 	{
 		return callObjectMethod(
 			"getTypeAllocationCode",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getTypeAllocationCode(jint arg0)
+	JString TelephonyManager::getTypeAllocationCode(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTypeAllocationCode",
@@ -1329,42 +1329,42 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JObject TelephonyManager::getUiccCardsInfo()
+	JObject TelephonyManager::getUiccCardsInfo() const
 	{
 		return callObjectMethod(
 			"getUiccCardsInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	JString TelephonyManager::getVisualVoicemailPackageName()
+	JString TelephonyManager::getVisualVoicemailPackageName() const
 	{
 		return callObjectMethod(
 			"getVisualVoicemailPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getVoiceMailAlphaTag()
+	JString TelephonyManager::getVoiceMailAlphaTag() const
 	{
 		return callObjectMethod(
 			"getVoiceMailAlphaTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString TelephonyManager::getVoiceMailNumber()
+	JString TelephonyManager::getVoiceMailNumber() const
 	{
 		return callObjectMethod(
 			"getVoiceMailNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint TelephonyManager::getVoiceNetworkType()
+	jint TelephonyManager::getVoiceNetworkType() const
 	{
 		return callMethod<jint>(
 			"getVoiceNetworkType",
 			"()I"
 		);
 	}
-	android::net::Uri TelephonyManager::getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0)
+	android::net::Uri TelephonyManager::getVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callObjectMethod(
 			"getVoicemailRingtoneUri",
@@ -1372,21 +1372,21 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean TelephonyManager::hasCarrierPrivileges()
+	jboolean TelephonyManager::hasCarrierPrivileges() const
 	{
 		return callMethod<jboolean>(
 			"hasCarrierPrivileges",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::hasIccCard()
+	jboolean TelephonyManager::hasIccCard() const
 	{
 		return callMethod<jboolean>(
 			"hasIccCard",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::iccCloseLogicalChannel(jint arg0)
+	jboolean TelephonyManager::iccCloseLogicalChannel(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"iccCloseLogicalChannel",
@@ -1394,7 +1394,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	JByteArray TelephonyManager::iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5)
+	JByteArray TelephonyManager::iccExchangeSimIO(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5) const
 	{
 		return callObjectMethod(
 			"iccExchangeSimIO",
@@ -1407,7 +1407,7 @@ namespace android::telephony
 			arg5.object<jstring>()
 		);
 	}
-	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0) const
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
@@ -1415,7 +1415,7 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0, jint arg1)
+	android::telephony::IccOpenLogicalChannelResponse TelephonyManager::iccOpenLogicalChannel(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"iccOpenLogicalChannel",
@@ -1424,7 +1424,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	JString TelephonyManager::iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5)
+	JString TelephonyManager::iccTransmitApduBasicChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, JString arg5) const
 	{
 		return callObjectMethod(
 			"iccTransmitApduBasicChannel",
@@ -1437,7 +1437,7 @@ namespace android::telephony
 			arg5.object<jstring>()
 		);
 	}
-	JString TelephonyManager::iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JString arg6)
+	JString TelephonyManager::iccTransmitApduLogicalChannel(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, JString arg6) const
 	{
 		return callObjectMethod(
 			"iccTransmitApduLogicalChannel",
@@ -1451,28 +1451,28 @@ namespace android::telephony
 			arg6.object<jstring>()
 		);
 	}
-	jboolean TelephonyManager::isConcurrentVoiceAndDataSupported()
+	jboolean TelephonyManager::isConcurrentVoiceAndDataSupported() const
 	{
 		return callMethod<jboolean>(
 			"isConcurrentVoiceAndDataSupported",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isDataEnabled()
+	jboolean TelephonyManager::isDataEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isDataEnabled",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isDataRoamingEnabled()
+	jboolean TelephonyManager::isDataRoamingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isDataRoamingEnabled",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isEmergencyNumber(JString arg0)
+	jboolean TelephonyManager::isEmergencyNumber(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEmergencyNumber",
@@ -1480,21 +1480,21 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TelephonyManager::isHearingAidCompatibilitySupported()
+	jboolean TelephonyManager::isHearingAidCompatibilitySupported() const
 	{
 		return callMethod<jboolean>(
 			"isHearingAidCompatibilitySupported",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isManualNetworkSelectionAllowed()
+	jboolean TelephonyManager::isManualNetworkSelectionAllowed() const
 	{
 		return callMethod<jboolean>(
 			"isManualNetworkSelectionAllowed",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isModemEnabledForSlot(jint arg0)
+	jboolean TelephonyManager::isModemEnabledForSlot(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isModemEnabledForSlot",
@@ -1502,49 +1502,49 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jint TelephonyManager::isMultiSimSupported()
+	jint TelephonyManager::isMultiSimSupported() const
 	{
 		return callMethod<jint>(
 			"isMultiSimSupported",
 			"()I"
 		);
 	}
-	jboolean TelephonyManager::isNetworkRoaming()
+	jboolean TelephonyManager::isNetworkRoaming() const
 	{
 		return callMethod<jboolean>(
 			"isNetworkRoaming",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isRttSupported()
+	jboolean TelephonyManager::isRttSupported() const
 	{
 		return callMethod<jboolean>(
 			"isRttSupported",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isSmsCapable()
+	jboolean TelephonyManager::isSmsCapable() const
 	{
 		return callMethod<jboolean>(
 			"isSmsCapable",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isTtyModeSupported()
+	jboolean TelephonyManager::isTtyModeSupported() const
 	{
 		return callMethod<jboolean>(
 			"isTtyModeSupported",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isVoiceCapable()
+	jboolean TelephonyManager::isVoiceCapable() const
 	{
 		return callMethod<jboolean>(
 			"isVoiceCapable",
 			"()Z"
 		);
 	}
-	jboolean TelephonyManager::isVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0)
+	jboolean TelephonyManager::isVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0) const
 	{
 		return callMethod<jboolean>(
 			"isVoicemailVibrationEnabled",
@@ -1552,14 +1552,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean TelephonyManager::isWorldPhone()
+	jboolean TelephonyManager::isWorldPhone() const
 	{
 		return callMethod<jboolean>(
 			"isWorldPhone",
 			"()Z"
 		);
 	}
-	void TelephonyManager::listen(android::telephony::PhoneStateListener arg0, jint arg1)
+	void TelephonyManager::listen(android::telephony::PhoneStateListener arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"listen",
@@ -1568,7 +1568,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void TelephonyManager::requestCellInfoUpdate(JObject arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
+	void TelephonyManager::requestCellInfoUpdate(JObject arg0, android::telephony::TelephonyManager_CellInfoCallback arg1) const
 	{
 		callMethod<void>(
 			"requestCellInfoUpdate",
@@ -1577,7 +1577,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
+	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2) const
 	{
 		return callObjectMethod(
 			"requestNetworkScan",
@@ -1587,7 +1587,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void TelephonyManager::sendDialerSpecialCode(JString arg0)
+	void TelephonyManager::sendDialerSpecialCode(JString arg0) const
 	{
 		callMethod<void>(
 			"sendDialerSpecialCode",
@@ -1595,7 +1595,7 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	JString TelephonyManager::sendEnvelopeWithStatus(JString arg0)
+	JString TelephonyManager::sendEnvelopeWithStatus(JString arg0) const
 	{
 		return callObjectMethod(
 			"sendEnvelopeWithStatus",
@@ -1603,7 +1603,7 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	void TelephonyManager::sendUssdRequest(JString arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2)
+	void TelephonyManager::sendUssdRequest(JString arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"sendUssdRequest",
@@ -1613,7 +1613,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void TelephonyManager::sendVisualVoicemailSms(JString arg0, jint arg1, JString arg2, android::app::PendingIntent arg3)
+	void TelephonyManager::sendVisualVoicemailSms(JString arg0, jint arg1, JString arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"sendVisualVoicemailSms",
@@ -1624,7 +1624,7 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void TelephonyManager::setDataEnabled(jboolean arg0)
+	void TelephonyManager::setDataEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDataEnabled",
@@ -1632,7 +1632,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jint TelephonyManager::setForbiddenPlmns(JObject arg0)
+	jint TelephonyManager::setForbiddenPlmns(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"setForbiddenPlmns",
@@ -1640,7 +1640,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean TelephonyManager::setLine1NumberForDisplay(JString arg0, JString arg1)
+	jboolean TelephonyManager::setLine1NumberForDisplay(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"setLine1NumberForDisplay",
@@ -1649,14 +1649,14 @@ namespace android::telephony
 			arg1.object<jstring>()
 		);
 	}
-	void TelephonyManager::setNetworkSelectionModeAutomatic()
+	void TelephonyManager::setNetworkSelectionModeAutomatic() const
 	{
 		callMethod<void>(
 			"setNetworkSelectionModeAutomatic",
 			"()V"
 		);
 	}
-	jboolean TelephonyManager::setNetworkSelectionModeManual(JString arg0, jboolean arg1)
+	jboolean TelephonyManager::setNetworkSelectionModeManual(JString arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setNetworkSelectionModeManual",
@@ -1665,7 +1665,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	jboolean TelephonyManager::setNetworkSelectionModeManual(JString arg0, jboolean arg1, jint arg2)
+	jboolean TelephonyManager::setNetworkSelectionModeManual(JString arg0, jboolean arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"setNetworkSelectionModeManual",
@@ -1675,7 +1675,7 @@ namespace android::telephony
 			arg2
 		);
 	}
-	jboolean TelephonyManager::setOperatorBrandOverride(JString arg0)
+	jboolean TelephonyManager::setOperatorBrandOverride(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"setOperatorBrandOverride",
@@ -1683,14 +1683,14 @@ namespace android::telephony
 			arg0.object<jstring>()
 		);
 	}
-	jboolean TelephonyManager::setPreferredNetworkTypeToGlobal()
+	jboolean TelephonyManager::setPreferredNetworkTypeToGlobal() const
 	{
 		return callMethod<jboolean>(
 			"setPreferredNetworkTypeToGlobal",
 			"()Z"
 		);
 	}
-	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, JObject arg2, JObject arg3)
+	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"setPreferredOpportunisticDataSubscription",
@@ -1701,7 +1701,7 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void TelephonyManager::setVisualVoicemailSmsFilterSettings(android::telephony::VisualVoicemailSmsFilterSettings arg0)
+	void TelephonyManager::setVisualVoicemailSmsFilterSettings(android::telephony::VisualVoicemailSmsFilterSettings arg0) const
 	{
 		callMethod<void>(
 			"setVisualVoicemailSmsFilterSettings",
@@ -1709,7 +1709,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jboolean TelephonyManager::setVoiceMailNumber(JString arg0, JString arg1)
+	jboolean TelephonyManager::setVoiceMailNumber(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVoiceMailNumber",
@@ -1718,7 +1718,7 @@ namespace android::telephony
 			arg1.object<jstring>()
 		);
 	}
-	void TelephonyManager::setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1)
+	void TelephonyManager::setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"setVoicemailRingtoneUri",
@@ -1727,7 +1727,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void TelephonyManager::setVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0, jboolean arg1)
+	void TelephonyManager::setVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setVoicemailVibrationEnabled",
@@ -1736,7 +1736,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void TelephonyManager::switchMultiSimConfig(jint arg0)
+	void TelephonyManager::switchMultiSimConfig(jint arg0) const
 	{
 		callMethod<void>(
 			"switchMultiSimConfig",
@@ -1744,7 +1744,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void TelephonyManager::updateAvailableNetworks(JObject arg0, JObject arg1, JObject arg2)
+	void TelephonyManager::updateAvailableNetworks(JObject arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"updateAvailableNetworks",

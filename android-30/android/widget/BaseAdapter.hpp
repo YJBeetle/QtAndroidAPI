@@ -31,19 +31,19 @@ namespace android::widget
 		BaseAdapter();
 		
 		// Methods
-		jboolean areAllItemsEnabled();
-		JArray getAutofillOptions();
-		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		jint getItemViewType(jint arg0);
-		jint getViewTypeCount();
-		jboolean hasStableIds();
-		jboolean isEmpty();
-		jboolean isEnabled(jint arg0);
-		void notifyDataSetChanged();
-		void notifyDataSetInvalidated();
-		void registerDataSetObserver(android::database::DataSetObserver arg0);
-		void setAutofillOptions(JArray arg0);
-		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
+		jboolean areAllItemsEnabled() const;
+		JArray getAutofillOptions() const;
+		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2) const;
+		jint getItemViewType(jint arg0) const;
+		jint getViewTypeCount() const;
+		jboolean hasStableIds() const;
+		jboolean isEmpty() const;
+		jboolean isEnabled(jint arg0) const;
+		void notifyDataSetChanged() const;
+		void notifyDataSetInvalidated() const;
+		void registerDataSetObserver(android::database::DataSetObserver arg0) const;
+		void setAutofillOptions(JArray arg0) const;
+		void unregisterDataSetObserver(android::database::DataSetObserver arg0) const;
 	};
 } // namespace android::widget
 

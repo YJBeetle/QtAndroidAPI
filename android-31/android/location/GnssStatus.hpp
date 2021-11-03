@@ -31,23 +31,23 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jfloat getAzimuthDegrees(jint arg0);
-		jfloat getBasebandCn0DbHz(jint arg0);
-		jfloat getCarrierFrequencyHz(jint arg0);
-		jfloat getCn0DbHz(jint arg0);
-		jint getConstellationType(jint arg0);
-		jfloat getElevationDegrees(jint arg0);
-		jint getSatelliteCount();
-		jint getSvid(jint arg0);
-		jboolean hasAlmanacData(jint arg0);
-		jboolean hasBasebandCn0DbHz(jint arg0);
-		jboolean hasCarrierFrequencyHz(jint arg0);
-		jboolean hasEphemerisData(jint arg0);
-		jint hashCode();
-		jboolean usedInFix(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jfloat getAzimuthDegrees(jint arg0) const;
+		jfloat getBasebandCn0DbHz(jint arg0) const;
+		jfloat getCarrierFrequencyHz(jint arg0) const;
+		jfloat getCn0DbHz(jint arg0) const;
+		jint getConstellationType(jint arg0) const;
+		jfloat getElevationDegrees(jint arg0) const;
+		jint getSatelliteCount() const;
+		jint getSvid(jint arg0) const;
+		jboolean hasAlmanacData(jint arg0) const;
+		jboolean hasBasebandCn0DbHz(jint arg0) const;
+		jboolean hasCarrierFrequencyHz(jint arg0) const;
+		jboolean hasEphemerisData(jint arg0) const;
+		jint hashCode() const;
+		jboolean usedInFix(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

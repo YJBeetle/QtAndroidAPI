@@ -33,9 +33,9 @@ namespace android::os
 		FileObserver(JString arg0, jint arg1);
 		
 		// Methods
-		void onEvent(jint arg0, JString arg1);
-		void startWatching();
-		void stopWatching();
+		void onEvent(jint arg0, JString arg1) const;
+		void startWatching() const;
+		void stopWatching() const;
 	};
 } // namespace android::os
 

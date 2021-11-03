@@ -27,17 +27,17 @@ namespace android::media::tv
 		TvView_TvInputCallback();
 		
 		// Methods
-		void onChannelRetuned(JString arg0, android::net::Uri arg1);
-		void onConnectionFailed(JString arg0);
-		void onContentAllowed(JString arg0);
-		void onContentBlocked(JString arg0, android::media::tv::TvContentRating arg1);
-		void onDisconnected(JString arg0);
-		void onTimeShiftStatusChanged(JString arg0, jint arg1);
-		void onTrackSelected(JString arg0, jint arg1, JString arg2);
-		void onTracksChanged(JString arg0, JObject arg1);
-		void onVideoAvailable(JString arg0);
-		void onVideoSizeChanged(JString arg0, jint arg1, jint arg2);
-		void onVideoUnavailable(JString arg0, jint arg1);
+		void onChannelRetuned(JString arg0, android::net::Uri arg1) const;
+		void onConnectionFailed(JString arg0) const;
+		void onContentAllowed(JString arg0) const;
+		void onContentBlocked(JString arg0, android::media::tv::TvContentRating arg1) const;
+		void onDisconnected(JString arg0) const;
+		void onTimeShiftStatusChanged(JString arg0, jint arg1) const;
+		void onTrackSelected(JString arg0, jint arg1, JString arg2) const;
+		void onTracksChanged(JString arg0, JObject arg1) const;
+		void onVideoAvailable(JString arg0) const;
+		void onVideoSizeChanged(JString arg0, jint arg1, jint arg2) const;
+		void onVideoUnavailable(JString arg0, jint arg1) const;
 	};
 } // namespace android::media::tv
 

@@ -86,7 +86,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::BNNM(android::renderscript::Allocation arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6)
+	void ScriptIntrinsicBLAS::BNNM(android::renderscript::Allocation arg0, jint arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"BNNM",
@@ -100,7 +100,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::CGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Float2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Float2 arg7, android::renderscript::Allocation arg8, jint arg9)
+	void ScriptIntrinsicBLAS::CGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Float2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Float2 arg7, android::renderscript::Allocation arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"CGBMV",
@@ -117,7 +117,7 @@ namespace android::renderscript
 			arg9
 		);
 	}
-	void ScriptIntrinsicBLAS::CGEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CGEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CGEMM",
@@ -131,7 +131,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CGEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::CGEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"CGEMV",
@@ -146,7 +146,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::CGERC(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::CGERC(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"CGERC",
@@ -159,7 +159,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CGERU(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::CGERU(android::renderscript::Float2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"CGERU",
@@ -172,7 +172,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHBMV(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Float2 arg6, android::renderscript::Allocation arg7, jint arg8)
+	void ScriptIntrinsicBLAS::CHBMV(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Float2 arg6, android::renderscript::Allocation arg7, jint arg8) const
 	{
 		callMethod<void>(
 			"CHBMV",
@@ -188,7 +188,7 @@ namespace android::renderscript
 			arg8
 		);
 	}
-	void ScriptIntrinsicBLAS::CHEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CHEMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CHEMM",
@@ -202,7 +202,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::CHEMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"CHEMV",
@@ -217,7 +217,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::CHER(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::CHER(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"CHER",
@@ -229,7 +229,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHER2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CHER2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CHER2",
@@ -243,7 +243,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHER2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CHER2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CHER2K",
@@ -257,7 +257,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHERK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::CHERK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"CHERK",
@@ -270,7 +270,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHPMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::CHPMV(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"CHPMV",
@@ -285,7 +285,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::CHPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::CHPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"CHPR",
@@ -297,7 +297,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CHPR2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CHPR2(jint arg0, android::renderscript::Float2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CHPR2",
@@ -311,7 +311,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CSYMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CSYMM(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CSYMM",
@@ -325,7 +325,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CSYR2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CSYR2K(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Float2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CSYR2K",
@@ -339,7 +339,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CSYRK(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::CSYRK(jint arg0, jint arg1, android::renderscript::Float2 arg2, android::renderscript::Allocation arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"CSYRK",
@@ -352,7 +352,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::CTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"CTBMV",
@@ -366,7 +366,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::CTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::CTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"CTBSV",
@@ -380,7 +380,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::CTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::CTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"CTPMV",
@@ -393,7 +393,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::CTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::CTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"CTPSV",
@@ -406,7 +406,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::CTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CTRMM",
@@ -420,7 +420,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::CTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"CTRMV",
@@ -433,7 +433,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::CTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::CTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Float2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"CTRSM",
@@ -447,7 +447,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::CTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::CTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"CTRSV",
@@ -460,7 +460,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::DGBMV(jint arg0, jint arg1, jint arg2, jdouble arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jdouble arg7, android::renderscript::Allocation arg8, jint arg9)
+	void ScriptIntrinsicBLAS::DGBMV(jint arg0, jint arg1, jint arg2, jdouble arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jdouble arg7, android::renderscript::Allocation arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"DGBMV",
@@ -477,7 +477,7 @@ namespace android::renderscript
 			arg9
 		);
 	}
-	void ScriptIntrinsicBLAS::DGEMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DGEMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DGEMM",
@@ -491,7 +491,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DGEMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::DGEMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"DGEMV",
@@ -506,7 +506,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::DGER(jdouble arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::DGER(jdouble arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"DGER",
@@ -519,7 +519,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSBMV(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jdouble arg6, android::renderscript::Allocation arg7, jint arg8)
+	void ScriptIntrinsicBLAS::DSBMV(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jdouble arg6, android::renderscript::Allocation arg7, jint arg8) const
 	{
 		callMethod<void>(
 			"DSBMV",
@@ -535,7 +535,7 @@ namespace android::renderscript
 			arg8
 		);
 	}
-	void ScriptIntrinsicBLAS::DSPMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::DSPMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"DSPMV",
@@ -550,7 +550,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::DSPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::DSPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"DSPR",
@@ -562,7 +562,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSPR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DSPR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DSPR2",
@@ -576,7 +576,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DSYMM(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DSYMM",
@@ -590,7 +590,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::DSYMV(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jdouble arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"DSYMV",
@@ -605,7 +605,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::DSYR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"DSYR",
@@ -617,7 +617,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DSYR2(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DSYR2",
@@ -631,7 +631,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYR2K(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DSYR2K(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DSYR2K",
@@ -645,7 +645,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DSYRK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::DSYRK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"DSYRK",
@@ -658,7 +658,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::DTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"DTBMV",
@@ -672,7 +672,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::DTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::DTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"DTBSV",
@@ -686,7 +686,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::DTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::DTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"DTPMV",
@@ -699,7 +699,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::DTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::DTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"DTPSV",
@@ -712,7 +712,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::DTRMM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DTRMM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DTRMM",
@@ -726,7 +726,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::DTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"DTRMV",
@@ -739,7 +739,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::DTRSM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::DTRSM(jint arg0, jint arg1, jint arg2, jint arg3, jdouble arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"DTRSM",
@@ -753,7 +753,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::DTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::DTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"DTRSV",
@@ -766,7 +766,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::SGBMV(jint arg0, jint arg1, jint arg2, jfloat arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jfloat arg7, android::renderscript::Allocation arg8, jint arg9)
+	void ScriptIntrinsicBLAS::SGBMV(jint arg0, jint arg1, jint arg2, jfloat arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, jfloat arg7, android::renderscript::Allocation arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"SGBMV",
@@ -783,7 +783,7 @@ namespace android::renderscript
 			arg9
 		);
 	}
-	void ScriptIntrinsicBLAS::SGEMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::SGEMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"SGEMM",
@@ -797,7 +797,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SGEMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::SGEMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"SGEMV",
@@ -812,7 +812,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::SGER(jfloat arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::SGER(jfloat arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"SGER",
@@ -825,7 +825,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSBMV(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jfloat arg6, android::renderscript::Allocation arg7, jint arg8)
+	void ScriptIntrinsicBLAS::SSBMV(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, jfloat arg6, android::renderscript::Allocation arg7, jint arg8) const
 	{
 		callMethod<void>(
 			"SSBMV",
@@ -841,7 +841,7 @@ namespace android::renderscript
 			arg8
 		);
 	}
-	void ScriptIntrinsicBLAS::SSPMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::SSPMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"SSPMV",
@@ -856,7 +856,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::SSPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::SSPR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"SSPR",
@@ -868,7 +868,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSPR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::SSPR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"SSPR2",
@@ -882,7 +882,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::SSYMM(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"SSYMM",
@@ -896,7 +896,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::SSYMV(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, jfloat arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"SSYMV",
@@ -911,7 +911,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::SSYR(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"SSYR",
@@ -923,7 +923,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::SSYR2(jint arg0, jfloat arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"SSYR2",
@@ -937,7 +937,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYR2K(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::SSYR2K(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jfloat arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"SSYR2K",
@@ -951,7 +951,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::SSYRK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::SSYRK(jint arg0, jint arg1, jfloat arg2, android::renderscript::Allocation arg3, jfloat arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"SSYRK",
@@ -964,7 +964,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::STBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::STBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"STBMV",
@@ -978,7 +978,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::STBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::STBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"STBSV",
@@ -992,7 +992,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::STPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::STPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"STPMV",
@@ -1005,7 +1005,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::STPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::STPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"STPSV",
@@ -1018,7 +1018,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::STRMM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::STRMM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"STRMM",
@@ -1032,7 +1032,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::STRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::STRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"STRMV",
@@ -1045,7 +1045,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::STRSM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::STRSM(jint arg0, jint arg1, jint arg2, jint arg3, jfloat arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"STRSM",
@@ -1059,7 +1059,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::STRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::STRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"STRSV",
@@ -1072,7 +1072,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::ZGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Double2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Double2 arg7, android::renderscript::Allocation arg8, jint arg9)
+	void ScriptIntrinsicBLAS::ZGBMV(jint arg0, jint arg1, jint arg2, android::renderscript::Double2 arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6, android::renderscript::Double2 arg7, android::renderscript::Allocation arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"ZGBMV",
@@ -1089,7 +1089,7 @@ namespace android::renderscript
 			arg9
 		);
 	}
-	void ScriptIntrinsicBLAS::ZGEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZGEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZGEMM",
@@ -1103,7 +1103,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZGEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::ZGEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"ZGEMV",
@@ -1118,7 +1118,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::ZGERC(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::ZGERC(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"ZGERC",
@@ -1131,7 +1131,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZGERU(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::ZGERU(android::renderscript::Double2 arg0, android::renderscript::Allocation arg1, jint arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"ZGERU",
@@ -1144,7 +1144,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHBMV(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Double2 arg6, android::renderscript::Allocation arg7, jint arg8)
+	void ScriptIntrinsicBLAS::ZHBMV(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Double2 arg6, android::renderscript::Allocation arg7, jint arg8) const
 	{
 		callMethod<void>(
 			"ZHBMV",
@@ -1160,7 +1160,7 @@ namespace android::renderscript
 			arg8
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZHEMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZHEMM",
@@ -1174,7 +1174,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::ZHEMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"ZHEMV",
@@ -1189,7 +1189,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHER(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::ZHER(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"ZHER",
@@ -1201,7 +1201,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHER2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZHER2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZHER2",
@@ -1215,7 +1215,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHER2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZHER2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jdouble arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZHER2K",
@@ -1229,7 +1229,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHERK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::ZHERK(jint arg0, jint arg1, jdouble arg2, android::renderscript::Allocation arg3, jdouble arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"ZHERK",
@@ -1242,7 +1242,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHPMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7)
+	void ScriptIntrinsicBLAS::ZHPMV(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, android::renderscript::Allocation arg3, jint arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"ZHPMV",
@@ -1257,7 +1257,7 @@ namespace android::renderscript
 			arg7
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4)
+	void ScriptIntrinsicBLAS::ZHPR(jint arg0, jdouble arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4) const
 	{
 		callMethod<void>(
 			"ZHPR",
@@ -1269,7 +1269,7 @@ namespace android::renderscript
 			arg4.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZHPR2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZHPR2(jint arg0, android::renderscript::Double2 arg1, android::renderscript::Allocation arg2, jint arg3, android::renderscript::Allocation arg4, jint arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZHPR2",
@@ -1283,7 +1283,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZSYMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZSYMM(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZSYMM",
@@ -1297,7 +1297,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZSYR2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZSYR2K(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, android::renderscript::Double2 arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZSYR2K",
@@ -1311,7 +1311,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZSYRK(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5)
+	void ScriptIntrinsicBLAS::ZSYRK(jint arg0, jint arg1, android::renderscript::Double2 arg2, android::renderscript::Allocation arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5) const
 	{
 		callMethod<void>(
 			"ZSYRK",
@@ -1324,7 +1324,7 @@ namespace android::renderscript
 			arg5.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::ZTBMV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"ZTBMV",
@@ -1338,7 +1338,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6)
+	void ScriptIntrinsicBLAS::ZTBSV(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Allocation arg4, android::renderscript::Allocation arg5, jint arg6) const
 	{
 		callMethod<void>(
 			"ZTBSV",
@@ -1352,7 +1352,7 @@ namespace android::renderscript
 			arg6
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::ZTPMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"ZTPMV",
@@ -1365,7 +1365,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::ZTPSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"ZTPSV",
@@ -1378,7 +1378,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZTRMM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZTRMM",
@@ -1392,7 +1392,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::ZTRMV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"ZTRMV",
@@ -1405,7 +1405,7 @@ namespace android::renderscript
 			arg5
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6)
+	void ScriptIntrinsicBLAS::ZTRSM(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::Double2 arg4, android::renderscript::Allocation arg5, android::renderscript::Allocation arg6) const
 	{
 		callMethod<void>(
 			"ZTRSM",
@@ -1419,7 +1419,7 @@ namespace android::renderscript
 			arg6.object()
 		);
 	}
-	void ScriptIntrinsicBLAS::ZTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5)
+	void ScriptIntrinsicBLAS::ZTRSV(jint arg0, jint arg1, jint arg2, android::renderscript::Allocation arg3, android::renderscript::Allocation arg4, jint arg5) const
 	{
 		callMethod<void>(
 			"ZTRSV",

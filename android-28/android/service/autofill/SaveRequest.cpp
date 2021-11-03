@@ -20,35 +20,35 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint SaveRequest::describeContents()
+	jint SaveRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::Bundle SaveRequest::getClientState()
+	android::os::Bundle SaveRequest::getClientState() const
 	{
 		return callObjectMethod(
 			"getClientState",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject SaveRequest::getDatasetIds()
+	JObject SaveRequest::getDatasetIds() const
 	{
 		return callObjectMethod(
 			"getDatasetIds",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SaveRequest::getFillContexts()
+	JObject SaveRequest::getFillContexts() const
 	{
 		return callObjectMethod(
 			"getFillContexts",
 			"()Ljava/util/List;"
 		);
 	}
-	void SaveRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SaveRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

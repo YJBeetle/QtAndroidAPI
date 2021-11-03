@@ -25,8 +25,8 @@ namespace android::media
 		Session2Command_Result(jint arg0, android::os::Bundle arg1);
 		
 		// Methods
-		jint getResultCode();
-		android::os::Bundle getResultData();
+		jint getResultCode() const;
+		android::os::Bundle getResultData() const;
 	};
 } // namespace android::media
 

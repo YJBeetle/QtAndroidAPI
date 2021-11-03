@@ -31,28 +31,28 @@ namespace android::service::controls::templates
 		) {}
 	
 	// Methods
-	JString ToggleRangeTemplate::getActionDescription()
+	JString ToggleRangeTemplate::getActionDescription() const
 	{
 		return callObjectMethod(
 			"getActionDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::service::controls::templates::RangeTemplate ToggleRangeTemplate::getRange()
+	android::service::controls::templates::RangeTemplate ToggleRangeTemplate::getRange() const
 	{
 		return callObjectMethod(
 			"getRange",
 			"()Landroid/service/controls/templates/RangeTemplate;"
 		);
 	}
-	jint ToggleRangeTemplate::getTemplateType()
+	jint ToggleRangeTemplate::getTemplateType() const
 	{
 		return callMethod<jint>(
 			"getTemplateType",
 			"()I"
 		);
 	}
-	jboolean ToggleRangeTemplate::isChecked()
+	jboolean ToggleRangeTemplate::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",

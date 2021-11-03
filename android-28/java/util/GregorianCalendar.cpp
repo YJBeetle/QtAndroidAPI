@@ -95,7 +95,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void GregorianCalendar::add(jint arg0, jint arg1)
+	void GregorianCalendar::add(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -104,14 +104,14 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject GregorianCalendar::clone()
+	JObject GregorianCalendar::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean GregorianCalendar::equals(JObject arg0)
+	jboolean GregorianCalendar::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -119,7 +119,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint GregorianCalendar::getActualMaximum(jint arg0)
+	jint GregorianCalendar::getActualMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMaximum",
@@ -127,7 +127,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint GregorianCalendar::getActualMinimum(jint arg0)
+	jint GregorianCalendar::getActualMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getActualMinimum",
@@ -135,14 +135,14 @@ namespace java::util
 			arg0
 		);
 	}
-	JString GregorianCalendar::getCalendarType()
+	JString GregorianCalendar::getCalendarType() const
 	{
 		return callObjectMethod(
 			"getCalendarType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint GregorianCalendar::getGreatestMinimum(jint arg0)
+	jint GregorianCalendar::getGreatestMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getGreatestMinimum",
@@ -150,14 +150,14 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::Date GregorianCalendar::getGregorianChange()
+	java::util::Date GregorianCalendar::getGregorianChange() const
 	{
 		return callObjectMethod(
 			"getGregorianChange",
 			"()Ljava/util/Date;"
 		);
 	}
-	jint GregorianCalendar::getLeastMaximum(jint arg0)
+	jint GregorianCalendar::getLeastMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLeastMaximum",
@@ -165,7 +165,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint GregorianCalendar::getMaximum(jint arg0)
+	jint GregorianCalendar::getMaximum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMaximum",
@@ -173,7 +173,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jint GregorianCalendar::getMinimum(jint arg0)
+	jint GregorianCalendar::getMinimum(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getMinimum",
@@ -181,35 +181,35 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::TimeZone GregorianCalendar::getTimeZone()
+	java::util::TimeZone GregorianCalendar::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/util/TimeZone;"
 		);
 	}
-	jint GregorianCalendar::getWeekYear()
+	jint GregorianCalendar::getWeekYear() const
 	{
 		return callMethod<jint>(
 			"getWeekYear",
 			"()I"
 		);
 	}
-	jint GregorianCalendar::getWeeksInWeekYear()
+	jint GregorianCalendar::getWeeksInWeekYear() const
 	{
 		return callMethod<jint>(
 			"getWeeksInWeekYear",
 			"()I"
 		);
 	}
-	jint GregorianCalendar::hashCode()
+	jint GregorianCalendar::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean GregorianCalendar::isLeapYear(jint arg0)
+	jboolean GregorianCalendar::isLeapYear(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isLeapYear",
@@ -217,14 +217,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean GregorianCalendar::isWeekDateSupported()
+	jboolean GregorianCalendar::isWeekDateSupported() const
 	{
 		return callMethod<jboolean>(
 			"isWeekDateSupported",
 			"()Z"
 		);
 	}
-	void GregorianCalendar::roll(jint arg0, jboolean arg1)
+	void GregorianCalendar::roll(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -233,7 +233,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void GregorianCalendar::roll(jint arg0, jint arg1)
+	void GregorianCalendar::roll(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"roll",
@@ -242,7 +242,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void GregorianCalendar::setGregorianChange(java::util::Date arg0)
+	void GregorianCalendar::setGregorianChange(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setGregorianChange",
@@ -250,7 +250,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void GregorianCalendar::setTimeZone(java::util::TimeZone arg0)
+	void GregorianCalendar::setTimeZone(java::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",
@@ -258,7 +258,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void GregorianCalendar::setWeekDate(jint arg0, jint arg1, jint arg2)
+	void GregorianCalendar::setWeekDate(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setWeekDate",
@@ -268,7 +268,7 @@ namespace java::util
 			arg2
 		);
 	}
-	java::time::ZonedDateTime GregorianCalendar::toZonedDateTime()
+	java::time::ZonedDateTime GregorianCalendar::toZonedDateTime() const
 	{
 		return callObjectMethod(
 			"toZonedDateTime",

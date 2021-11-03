@@ -23,7 +23,7 @@ namespace javax::microedition::khronos::egl
 			"()Ljavax/microedition/khronos/egl/EGL;"
 		);
 	}
-	JObject EGLContext::getGL()
+	JObject EGLContext::getGL() const
 	{
 		return callObjectMethod(
 			"getGL",

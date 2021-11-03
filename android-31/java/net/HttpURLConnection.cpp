@@ -285,21 +285,21 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::disconnect()
+	void HttpURLConnection::disconnect() const
 	{
 		callMethod<void>(
 			"disconnect",
 			"()V"
 		);
 	}
-	java::io::InputStream HttpURLConnection::getErrorStream()
+	java::io::InputStream HttpURLConnection::getErrorStream() const
 	{
 		return callObjectMethod(
 			"getErrorStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	JString HttpURLConnection::getHeaderField(jint arg0)
+	JString HttpURLConnection::getHeaderField(jint arg0) const
 	{
 		return callObjectMethod(
 			"getHeaderField",
@@ -307,7 +307,7 @@ namespace java::net
 			arg0
 		);
 	}
-	jlong HttpURLConnection::getHeaderFieldDate(JString arg0, jlong arg1)
+	jlong HttpURLConnection::getHeaderFieldDate(JString arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getHeaderFieldDate",
@@ -316,7 +316,7 @@ namespace java::net
 			arg1
 		);
 	}
-	JString HttpURLConnection::getHeaderFieldKey(jint arg0)
+	JString HttpURLConnection::getHeaderFieldKey(jint arg0) const
 	{
 		return callObjectMethod(
 			"getHeaderFieldKey",
@@ -324,42 +324,42 @@ namespace java::net
 			arg0
 		);
 	}
-	jboolean HttpURLConnection::getInstanceFollowRedirects()
+	jboolean HttpURLConnection::getInstanceFollowRedirects() const
 	{
 		return callMethod<jboolean>(
 			"getInstanceFollowRedirects",
 			"()Z"
 		);
 	}
-	java::security::Permission HttpURLConnection::getPermission()
+	java::security::Permission HttpURLConnection::getPermission() const
 	{
 		return callObjectMethod(
 			"getPermission",
 			"()Ljava/security/Permission;"
 		);
 	}
-	JString HttpURLConnection::getRequestMethod()
+	JString HttpURLConnection::getRequestMethod() const
 	{
 		return callObjectMethod(
 			"getRequestMethod",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint HttpURLConnection::getResponseCode()
+	jint HttpURLConnection::getResponseCode() const
 	{
 		return callMethod<jint>(
 			"getResponseCode",
 			"()I"
 		);
 	}
-	JString HttpURLConnection::getResponseMessage()
+	JString HttpURLConnection::getResponseMessage() const
 	{
 		return callObjectMethod(
 			"getResponseMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	void HttpURLConnection::setAuthenticator(java::net::Authenticator arg0)
+	void HttpURLConnection::setAuthenticator(java::net::Authenticator arg0) const
 	{
 		callMethod<void>(
 			"setAuthenticator",
@@ -367,7 +367,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void HttpURLConnection::setChunkedStreamingMode(jint arg0)
+	void HttpURLConnection::setChunkedStreamingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setChunkedStreamingMode",
@@ -375,7 +375,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::setFixedLengthStreamingMode(jint arg0)
+	void HttpURLConnection::setFixedLengthStreamingMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setFixedLengthStreamingMode",
@@ -383,7 +383,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::setFixedLengthStreamingMode(jlong arg0)
+	void HttpURLConnection::setFixedLengthStreamingMode(jlong arg0) const
 	{
 		callMethod<void>(
 			"setFixedLengthStreamingMode",
@@ -391,7 +391,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::setInstanceFollowRedirects(jboolean arg0)
+	void HttpURLConnection::setInstanceFollowRedirects(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setInstanceFollowRedirects",
@@ -399,7 +399,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpURLConnection::setRequestMethod(JString arg0)
+	void HttpURLConnection::setRequestMethod(JString arg0) const
 	{
 		callMethod<void>(
 			"setRequestMethod",
@@ -407,7 +407,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	jboolean HttpURLConnection::usingProxy()
+	jboolean HttpURLConnection::usingProxy() const
 	{
 		return callMethod<jboolean>(
 			"usingProxy",

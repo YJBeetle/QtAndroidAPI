@@ -29,35 +29,35 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	jint ZipInputStream::available()
+	jint ZipInputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void ZipInputStream::close()
+	void ZipInputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void ZipInputStream::closeEntry()
+	void ZipInputStream::closeEntry() const
 	{
 		callMethod<void>(
 			"closeEntry",
 			"()V"
 		);
 	}
-	java::util::zip::ZipEntry ZipInputStream::getNextEntry()
+	java::util::zip::ZipEntry ZipInputStream::getNextEntry() const
 	{
 		return callObjectMethod(
 			"getNextEntry",
 			"()Ljava/util/zip/ZipEntry;"
 		);
 	}
-	jint ZipInputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint ZipInputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -67,7 +67,7 @@ namespace java::util::zip
 			arg2
 		);
 	}
-	jlong ZipInputStream::skip(jlong arg0)
+	jlong ZipInputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

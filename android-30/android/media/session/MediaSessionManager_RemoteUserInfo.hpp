@@ -20,11 +20,11 @@ namespace android::media::session
 		MediaSessionManager_RemoteUserInfo(JString arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getPackageName();
-		jint getPid();
-		jint getUid();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		JString getPackageName() const;
+		jint getPid() const;
+		jint getUid() const;
+		jint hashCode() const;
 	};
 } // namespace android::media::session
 

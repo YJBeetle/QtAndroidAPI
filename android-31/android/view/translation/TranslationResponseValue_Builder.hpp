@@ -27,10 +27,10 @@ namespace android::view::translation
 		TranslationResponseValue_Builder(jint arg0);
 		
 		// Methods
-		android::view::translation::TranslationResponseValue build();
-		android::view::translation::TranslationResponseValue_Builder setExtras(android::os::Bundle arg0);
-		android::view::translation::TranslationResponseValue_Builder setText(JString arg0);
-		android::view::translation::TranslationResponseValue_Builder setTransliteration(JString arg0);
+		android::view::translation::TranslationResponseValue build() const;
+		android::view::translation::TranslationResponseValue_Builder setExtras(android::os::Bundle arg0) const;
+		android::view::translation::TranslationResponseValue_Builder setText(JString arg0) const;
+		android::view::translation::TranslationResponseValue_Builder setTransliteration(JString arg0) const;
 	};
 } // namespace android::view::translation
 

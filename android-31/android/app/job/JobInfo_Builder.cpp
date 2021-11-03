@@ -24,7 +24,7 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	android::app::job::JobInfo_Builder JobInfo_Builder::addTriggerContentUri(android::app::job::JobInfo_TriggerContentUri arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::addTriggerContentUri(android::app::job::JobInfo_TriggerContentUri arg0) const
 	{
 		return callObjectMethod(
 			"addTriggerContentUri",
@@ -32,14 +32,14 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	android::app::job::JobInfo JobInfo_Builder::build()
+	android::app::job::JobInfo JobInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/job/JobInfo;"
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setBackoffCriteria(jlong arg0, jint arg1)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setBackoffCriteria(jlong arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setBackoffCriteria",
@@ -48,7 +48,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setClipData(android::content::ClipData arg0, jint arg1)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setClipData(android::content::ClipData arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setClipData",
@@ -57,7 +57,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setEstimatedNetworkBytes(jlong arg0, jlong arg1)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setEstimatedNetworkBytes(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"setEstimatedNetworkBytes",
@@ -66,7 +66,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setExpedited(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setExpedited(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setExpedited",
@@ -74,7 +74,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setExtras(android::os::PersistableBundle arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setExtras(android::os::PersistableBundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -82,7 +82,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setImportantWhileForeground(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setImportantWhileForeground(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setImportantWhileForeground",
@@ -90,7 +90,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setMinimumLatency(jlong arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setMinimumLatency(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setMinimumLatency",
@@ -98,7 +98,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setOverrideDeadline(jlong arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setOverrideDeadline(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setOverrideDeadline",
@@ -106,7 +106,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setPeriodic(jlong arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setPeriodic(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setPeriodic",
@@ -114,7 +114,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setPeriodic(jlong arg0, jlong arg1)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setPeriodic(jlong arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"setPeriodic",
@@ -123,7 +123,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setPersisted(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setPersisted(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setPersisted",
@@ -131,7 +131,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setPrefetch(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setPrefetch(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setPrefetch",
@@ -139,7 +139,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiredNetwork(android::net::NetworkRequest arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiredNetwork(android::net::NetworkRequest arg0) const
 	{
 		return callObjectMethod(
 			"setRequiredNetwork",
@@ -147,7 +147,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiredNetworkType(jint arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiredNetworkType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRequiredNetworkType",
@@ -155,7 +155,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresBatteryNotLow(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresBatteryNotLow(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresBatteryNotLow",
@@ -163,7 +163,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresCharging(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresCharging(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresCharging",
@@ -171,7 +171,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresDeviceIdle(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresDeviceIdle(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresDeviceIdle",
@@ -179,7 +179,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresStorageNotLow(jboolean arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setRequiresStorageNotLow(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setRequiresStorageNotLow",
@@ -187,7 +187,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setTransientExtras(android::os::Bundle arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setTransientExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setTransientExtras",
@@ -195,7 +195,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setTriggerContentMaxDelay(jlong arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setTriggerContentMaxDelay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTriggerContentMaxDelay",
@@ -203,7 +203,7 @@ namespace android::app::job
 			arg0
 		);
 	}
-	android::app::job::JobInfo_Builder JobInfo_Builder::setTriggerContentUpdateDelay(jlong arg0)
+	android::app::job::JobInfo_Builder JobInfo_Builder::setTriggerContentUpdateDelay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTriggerContentUpdateDelay",

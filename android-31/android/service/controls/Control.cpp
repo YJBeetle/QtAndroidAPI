@@ -60,98 +60,98 @@ namespace android::service::controls
 	// Constructors
 	
 	// Methods
-	jint Control::describeContents()
+	jint Control::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::app::PendingIntent Control::getAppIntent()
+	android::app::PendingIntent Control::getAppIntent() const
 	{
 		return callObjectMethod(
 			"getAppIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	JString Control::getControlId()
+	JString Control::getControlId() const
 	{
 		return callObjectMethod(
 			"getControlId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::service::controls::templates::ControlTemplate Control::getControlTemplate()
+	android::service::controls::templates::ControlTemplate Control::getControlTemplate() const
 	{
 		return callObjectMethod(
 			"getControlTemplate",
 			"()Landroid/service/controls/templates/ControlTemplate;"
 		);
 	}
-	android::content::res::ColorStateList Control::getCustomColor()
+	android::content::res::ColorStateList Control::getCustomColor() const
 	{
 		return callObjectMethod(
 			"getCustomColor",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::drawable::Icon Control::getCustomIcon()
+	android::graphics::drawable::Icon Control::getCustomIcon() const
 	{
 		return callObjectMethod(
 			"getCustomIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	jint Control::getDeviceType()
+	jint Control::getDeviceType() const
 	{
 		return callMethod<jint>(
 			"getDeviceType",
 			"()I"
 		);
 	}
-	jint Control::getStatus()
+	jint Control::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	JString Control::getStatusText()
+	JString Control::getStatusText() const
 	{
 		return callObjectMethod(
 			"getStatusText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Control::getStructure()
+	JString Control::getStructure() const
 	{
 		return callObjectMethod(
 			"getStructure",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Control::getSubtitle()
+	JString Control::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Control::getTitle()
+	JString Control::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Control::getZone()
+	JString Control::getZone() const
 	{
 		return callObjectMethod(
 			"getZone",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void Control::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Control::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

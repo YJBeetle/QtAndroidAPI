@@ -52,32 +52,32 @@ namespace android::net::wifi::rtt
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jdouble getAltitude();
-		jint getAltitudeType();
-		jdouble getAltitudeUncertainty();
-		JObject getColocatedBssids();
-		jint getDatum();
-		jint getExpectedToMove();
-		jdouble getFloorNumber();
-		jdouble getHeightAboveFloorMeters();
-		jdouble getHeightAboveFloorUncertaintyMeters();
-		jdouble getLatitude();
-		jdouble getLatitudeUncertainty();
-		jint getLciVersion();
-		jdouble getLongitude();
-		jdouble getLongitudeUncertainty();
-		JString getMapImageMimeType();
-		android::net::Uri getMapImageUri();
-		jboolean getRegisteredLocationAgreementIndication();
-		jint hashCode();
-		jboolean isLciSubelementValid();
-		jboolean isZaxisSubelementValid();
-		android::location::Address toCivicLocationAddress();
-		android::util::SparseArray toCivicLocationSparseArray();
-		android::location::Location toLocation();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jdouble getAltitude() const;
+		jint getAltitudeType() const;
+		jdouble getAltitudeUncertainty() const;
+		JObject getColocatedBssids() const;
+		jint getDatum() const;
+		jint getExpectedToMove() const;
+		jdouble getFloorNumber() const;
+		jdouble getHeightAboveFloorMeters() const;
+		jdouble getHeightAboveFloorUncertaintyMeters() const;
+		jdouble getLatitude() const;
+		jdouble getLatitudeUncertainty() const;
+		jint getLciVersion() const;
+		jdouble getLongitude() const;
+		jdouble getLongitudeUncertainty() const;
+		JString getMapImageMimeType() const;
+		android::net::Uri getMapImageUri() const;
+		jboolean getRegisteredLocationAgreementIndication() const;
+		jint hashCode() const;
+		jboolean isLciSubelementValid() const;
+		jboolean isZaxisSubelementValid() const;
+		android::location::Address toCivicLocationAddress() const;
+		android::util::SparseArray toCivicLocationSparseArray() const;
+		android::location::Location toLocation() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::rtt
 

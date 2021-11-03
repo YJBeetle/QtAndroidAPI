@@ -37,7 +37,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2)
+	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"get",
@@ -47,7 +47,7 @@ namespace java::net
 			arg2.object()
 		);
 	}
-	java::net::CacheRequest ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
+	java::net::CacheRequest ResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1) const
 	{
 		return callObjectMethod(
 			"put",

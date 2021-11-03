@@ -46,7 +46,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	void RotateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3)
+	void RotateAnimation::initialize(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"initialize",

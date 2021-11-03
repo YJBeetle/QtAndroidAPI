@@ -50,28 +50,28 @@ namespace android::widget
 		Gallery(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
-		void dispatchSetSelected(jboolean arg0);
-		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jboolean onDown(android::view::MotionEvent arg0);
-		jboolean onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
-		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void onLongPress(android::view::MotionEvent arg0);
-		jboolean onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
-		void onShowPress(android::view::MotionEvent arg0);
-		jboolean onSingleTapUp(android::view::MotionEvent arg0);
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setAnimationDuration(jint arg0);
-		void setCallbackDuringFling(jboolean arg0);
-		void setGravity(jint arg0);
-		void setSpacing(jint arg0);
-		void setUnselectedAlpha(jfloat arg0);
-		jboolean showContextMenu();
-		jboolean showContextMenu(jfloat arg0, jfloat arg1);
-		jboolean showContextMenuForChild(android::view::View arg0);
-		jboolean showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2);
+		jboolean dispatchKeyEvent(android::view::KeyEvent arg0) const;
+		void dispatchSetSelected(jboolean arg0) const;
+		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jboolean onDown(android::view::MotionEvent arg0) const;
+		jboolean onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const;
+		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1) const;
+		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1) const;
+		void onLongPress(android::view::MotionEvent arg0) const;
+		jboolean onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const;
+		void onShowPress(android::view::MotionEvent arg0) const;
+		jboolean onSingleTapUp(android::view::MotionEvent arg0) const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setAnimationDuration(jint arg0) const;
+		void setCallbackDuringFling(jboolean arg0) const;
+		void setGravity(jint arg0) const;
+		void setSpacing(jint arg0) const;
+		void setUnselectedAlpha(jfloat arg0) const;
+		jboolean showContextMenu() const;
+		jboolean showContextMenu(jfloat arg0, jfloat arg1) const;
+		jboolean showContextMenuForChild(android::view::View arg0) const;
+		jboolean showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2) const;
 	};
 } // namespace android::widget
 

@@ -237,7 +237,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean SaProposal::equals(JObject arg0)
+	jboolean SaProposal::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -245,35 +245,35 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	JObject SaProposal::getDhGroups()
+	JObject SaProposal::getDhGroups() const
 	{
 		return callObjectMethod(
 			"getDhGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SaProposal::getEncryptionAlgorithms()
+	JObject SaProposal::getEncryptionAlgorithms() const
 	{
 		return callObjectMethod(
 			"getEncryptionAlgorithms",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SaProposal::getIntegrityAlgorithms()
+	JObject SaProposal::getIntegrityAlgorithms() const
 	{
 		return callObjectMethod(
 			"getIntegrityAlgorithms",
 			"()Ljava/util/List;"
 		);
 	}
-	jint SaProposal::hashCode()
+	jint SaProposal::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SaProposal::toString()
+	JString SaProposal::toString() const
 	{
 		return callObjectMethod(
 			"toString",

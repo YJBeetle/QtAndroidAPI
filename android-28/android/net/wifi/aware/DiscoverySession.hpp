@@ -31,10 +31,10 @@ namespace android::net::wifi::aware
 		// Constructors
 		
 		// Methods
-		void close();
-		android::net::NetworkSpecifier createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0);
-		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1);
-		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2);
+		void close() const;
+		android::net::NetworkSpecifier createNetworkSpecifierOpen(android::net::wifi::aware::PeerHandle arg0) const;
+		android::net::NetworkSpecifier createNetworkSpecifierPassphrase(android::net::wifi::aware::PeerHandle arg0, JString arg1) const;
+		void sendMessage(android::net::wifi::aware::PeerHandle arg0, jint arg1, JByteArray arg2) const;
 	};
 } // namespace android::net::wifi::aware
 

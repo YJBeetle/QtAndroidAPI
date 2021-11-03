@@ -24,14 +24,14 @@ namespace android::webkit
 			"()Landroid/webkit/WebIconDatabase;"
 		);
 	}
-	void WebIconDatabase::close()
+	void WebIconDatabase::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void WebIconDatabase::open(JString arg0)
+	void WebIconDatabase::open(JString arg0) const
 	{
 		callMethod<void>(
 			"open",
@@ -39,7 +39,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebIconDatabase::releaseIconForPageUrl(JString arg0)
+	void WebIconDatabase::releaseIconForPageUrl(JString arg0) const
 	{
 		callMethod<void>(
 			"releaseIconForPageUrl",
@@ -47,14 +47,14 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebIconDatabase::removeAllIcons()
+	void WebIconDatabase::removeAllIcons() const
 	{
 		callMethod<void>(
 			"removeAllIcons",
 			"()V"
 		);
 	}
-	void WebIconDatabase::requestIconForPageUrl(JString arg0, JObject arg1)
+	void WebIconDatabase::requestIconForPageUrl(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"requestIconForPageUrl",
@@ -63,7 +63,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebIconDatabase::retainIconForPageUrl(JString arg0)
+	void WebIconDatabase::retainIconForPageUrl(JString arg0) const
 	{
 		callMethod<void>(
 			"retainIconForPageUrl",

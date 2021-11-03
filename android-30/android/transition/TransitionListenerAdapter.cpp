@@ -16,7 +16,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	void TransitionListenerAdapter::onTransitionCancel(android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionCancel(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"onTransitionCancel",
@@ -24,7 +24,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionListenerAdapter::onTransitionEnd(android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionEnd(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"onTransitionEnd",
@@ -32,7 +32,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionListenerAdapter::onTransitionPause(android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionPause(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"onTransitionPause",
@@ -40,7 +40,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionListenerAdapter::onTransitionResume(android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionResume(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"onTransitionResume",
@@ -48,7 +48,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void TransitionListenerAdapter::onTransitionStart(android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionStart(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"onTransitionStart",

@@ -83,77 +83,77 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	JString GridView::getAccessibilityClassName()
+	JString GridView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject GridView::getAdapter()
+	JObject GridView::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	jint GridView::getColumnWidth()
+	jint GridView::getColumnWidth() const
 	{
 		return callMethod<jint>(
 			"getColumnWidth",
 			"()I"
 		);
 	}
-	jint GridView::getGravity()
+	jint GridView::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jint GridView::getHorizontalSpacing()
+	jint GridView::getHorizontalSpacing() const
 	{
 		return callMethod<jint>(
 			"getHorizontalSpacing",
 			"()I"
 		);
 	}
-	jint GridView::getNumColumns()
+	jint GridView::getNumColumns() const
 	{
 		return callMethod<jint>(
 			"getNumColumns",
 			"()I"
 		);
 	}
-	jint GridView::getRequestedColumnWidth()
+	jint GridView::getRequestedColumnWidth() const
 	{
 		return callMethod<jint>(
 			"getRequestedColumnWidth",
 			"()I"
 		);
 	}
-	jint GridView::getRequestedHorizontalSpacing()
+	jint GridView::getRequestedHorizontalSpacing() const
 	{
 		return callMethod<jint>(
 			"getRequestedHorizontalSpacing",
 			"()I"
 		);
 	}
-	jint GridView::getStretchMode()
+	jint GridView::getStretchMode() const
 	{
 		return callMethod<jint>(
 			"getStretchMode",
 			"()I"
 		);
 	}
-	jint GridView::getVerticalSpacing()
+	jint GridView::getVerticalSpacing() const
 	{
 		return callMethod<jint>(
 			"getVerticalSpacing",
 			"()I"
 		);
 	}
-	void GridView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2)
+	void GridView::onInitializeAccessibilityNodeInfoForItem(android::view::View arg0, jint arg1, android::view::accessibility::AccessibilityNodeInfo arg2) const
 	{
 		callMethod<void>(
 			"onInitializeAccessibilityNodeInfoForItem",
@@ -163,7 +163,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean GridView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean GridView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -172,7 +172,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean GridView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2)
+	jboolean GridView::onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyMultiple",
@@ -182,7 +182,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean GridView::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean GridView::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -191,7 +191,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void GridView::setAdapter(JObject arg0)
+	void GridView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -199,7 +199,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void GridView::setColumnWidth(jint arg0)
+	void GridView::setColumnWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setColumnWidth",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setGravity(jint arg0)
+	void GridView::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setHorizontalSpacing(jint arg0)
+	void GridView::setHorizontalSpacing(jint arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalSpacing",
@@ -223,7 +223,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setNumColumns(jint arg0)
+	void GridView::setNumColumns(jint arg0) const
 	{
 		callMethod<void>(
 			"setNumColumns",
@@ -231,7 +231,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setRemoteViewsAdapter(android::content::Intent arg0)
+	void GridView::setRemoteViewsAdapter(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"setRemoteViewsAdapter",
@@ -239,7 +239,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void GridView::setSelection(jint arg0)
+	void GridView::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -247,7 +247,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setStretchMode(jint arg0)
+	void GridView::setStretchMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setStretchMode",
@@ -255,7 +255,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::setVerticalSpacing(jint arg0)
+	void GridView::setVerticalSpacing(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalSpacing",
@@ -263,7 +263,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::smoothScrollByOffset(jint arg0)
+	void GridView::smoothScrollByOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"smoothScrollByOffset",
@@ -271,7 +271,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void GridView::smoothScrollToPosition(jint arg0)
+	void GridView::smoothScrollToPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"smoothScrollToPosition",

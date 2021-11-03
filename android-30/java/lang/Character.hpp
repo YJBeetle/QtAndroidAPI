@@ -180,13 +180,13 @@ namespace java::lang
 		static jchar toUpperCase(jchar arg0);
 		static jint toUpperCase(jint arg0);
 		static java::lang::Character valueOf(jchar arg0);
-		jchar charValue();
-		jint compareTo(java::lang::Character arg0);
-		jint compareTo(JObject arg0);
-		java::util::Optional describeConstable();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jchar charValue() const;
+		jint compareTo(java::lang::Character arg0) const;
+		jint compareTo(JObject arg0) const;
+		java::util::Optional describeConstable() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

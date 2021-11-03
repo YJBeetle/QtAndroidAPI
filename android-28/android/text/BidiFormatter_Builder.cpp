@@ -29,14 +29,14 @@ namespace android::text
 		) {}
 	
 	// Methods
-	android::text::BidiFormatter BidiFormatter_Builder::build()
+	android::text::BidiFormatter BidiFormatter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/text/BidiFormatter;"
 		);
 	}
-	android::text::BidiFormatter_Builder BidiFormatter_Builder::setTextDirectionHeuristic(JObject arg0)
+	android::text::BidiFormatter_Builder BidiFormatter_Builder::setTextDirectionHeuristic(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setTextDirectionHeuristic",
@@ -44,7 +44,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	android::text::BidiFormatter_Builder BidiFormatter_Builder::stereoReset(jboolean arg0)
+	android::text::BidiFormatter_Builder BidiFormatter_Builder::stereoReset(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"stereoReset",

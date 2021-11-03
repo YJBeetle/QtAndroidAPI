@@ -41,17 +41,17 @@ namespace java::security
 		static java::security::SecureRandom getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
 		static java::security::SecureRandom getInstanceStrong();
 		static JByteArray getSeed(jint arg0);
-		JByteArray generateSeed(jint arg0);
-		JString getAlgorithm();
-		JObject getParameters();
-		java::security::Provider getProvider();
-		void nextBytes(JByteArray arg0);
-		void nextBytes(JByteArray arg0, JObject arg1);
-		void reseed();
-		void reseed(JObject arg0);
-		void setSeed(JByteArray arg0);
-		void setSeed(jlong arg0);
-		JString toString();
+		JByteArray generateSeed(jint arg0) const;
+		JString getAlgorithm() const;
+		JObject getParameters() const;
+		java::security::Provider getProvider() const;
+		void nextBytes(JByteArray arg0) const;
+		void nextBytes(JByteArray arg0, JObject arg1) const;
+		void reseed() const;
+		void reseed(JObject arg0) const;
+		void setSeed(JByteArray arg0) const;
+		void setSeed(jlong arg0) const;
+		JString toString() const;
 	};
 } // namespace java::security
 

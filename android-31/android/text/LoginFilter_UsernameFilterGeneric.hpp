@@ -18,7 +18,7 @@ namespace android::text
 		LoginFilter_UsernameFilterGeneric(jboolean arg0);
 		
 		// Methods
-		jboolean isAllowed(jchar arg0);
+		jboolean isAllowed(jchar arg0) const;
 	};
 } // namespace android::text
 

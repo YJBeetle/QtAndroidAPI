@@ -93,7 +93,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void UiModeManager::disableCarMode(jint arg0)
+	void UiModeManager::disableCarMode(jint arg0) const
 	{
 		callMethod<void>(
 			"disableCarMode",
@@ -101,7 +101,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiModeManager::enableCarMode(jint arg0)
+	void UiModeManager::enableCarMode(jint arg0) const
 	{
 		callMethod<void>(
 			"enableCarMode",
@@ -109,35 +109,35 @@ namespace android::app
 			arg0
 		);
 	}
-	jint UiModeManager::getCurrentModeType()
+	jint UiModeManager::getCurrentModeType() const
 	{
 		return callMethod<jint>(
 			"getCurrentModeType",
 			"()I"
 		);
 	}
-	java::time::LocalTime UiModeManager::getCustomNightModeEnd()
+	java::time::LocalTime UiModeManager::getCustomNightModeEnd() const
 	{
 		return callObjectMethod(
 			"getCustomNightModeEnd",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	java::time::LocalTime UiModeManager::getCustomNightModeStart()
+	java::time::LocalTime UiModeManager::getCustomNightModeStart() const
 	{
 		return callObjectMethod(
 			"getCustomNightModeStart",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	jint UiModeManager::getNightMode()
+	jint UiModeManager::getNightMode() const
 	{
 		return callMethod<jint>(
 			"getNightMode",
 			"()I"
 		);
 	}
-	void UiModeManager::setApplicationNightMode(jint arg0)
+	void UiModeManager::setApplicationNightMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setApplicationNightMode",
@@ -145,7 +145,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void UiModeManager::setCustomNightModeEnd(java::time::LocalTime arg0)
+	void UiModeManager::setCustomNightModeEnd(java::time::LocalTime arg0) const
 	{
 		callMethod<void>(
 			"setCustomNightModeEnd",
@@ -153,7 +153,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void UiModeManager::setCustomNightModeStart(java::time::LocalTime arg0)
+	void UiModeManager::setCustomNightModeStart(java::time::LocalTime arg0) const
 	{
 		callMethod<void>(
 			"setCustomNightModeStart",
@@ -161,7 +161,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void UiModeManager::setNightMode(jint arg0)
+	void UiModeManager::setNightMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setNightMode",

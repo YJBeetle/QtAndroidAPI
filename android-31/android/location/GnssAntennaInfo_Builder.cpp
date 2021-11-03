@@ -31,14 +31,14 @@ namespace android::location
 		) {}
 	
 	// Methods
-	android::location::GnssAntennaInfo GnssAntennaInfo_Builder::build()
+	android::location::GnssAntennaInfo GnssAntennaInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/GnssAntennaInfo;"
 		);
 	}
-	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setCarrierFrequencyMHz(jdouble arg0)
+	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setCarrierFrequencyMHz(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"setCarrierFrequencyMHz",
@@ -46,7 +46,7 @@ namespace android::location
 			arg0
 		);
 	}
-	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setPhaseCenterOffset(android::location::GnssAntennaInfo_PhaseCenterOffset arg0)
+	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setPhaseCenterOffset(android::location::GnssAntennaInfo_PhaseCenterOffset arg0) const
 	{
 		return callObjectMethod(
 			"setPhaseCenterOffset",
@@ -54,7 +54,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setPhaseCenterVariationCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0)
+	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setPhaseCenterVariationCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0) const
 	{
 		return callObjectMethod(
 			"setPhaseCenterVariationCorrections",
@@ -62,7 +62,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setSignalGainCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0)
+	android::location::GnssAntennaInfo_Builder GnssAntennaInfo_Builder::setSignalGainCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0) const
 	{
 		return callObjectMethod(
 			"setSignalGainCorrections",

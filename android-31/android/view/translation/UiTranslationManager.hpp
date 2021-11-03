@@ -16,8 +16,8 @@ namespace android::view::translation
 		// Constructors
 		
 		// Methods
-		void registerUiTranslationStateCallback(JObject arg0, JObject arg1);
-		void unregisterUiTranslationStateCallback(JObject arg0);
+		void registerUiTranslationStateCallback(JObject arg0, JObject arg1) const;
+		void unregisterUiTranslationStateCallback(JObject arg0) const;
 	};
 } // namespace android::view::translation
 

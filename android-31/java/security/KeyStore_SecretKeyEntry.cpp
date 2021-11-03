@@ -24,21 +24,21 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyStore_SecretKeyEntry::getAttributes()
+	JObject KeyStore_SecretKeyEntry::getAttributes() const
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject KeyStore_SecretKeyEntry::getSecretKey()
+	JObject KeyStore_SecretKeyEntry::getSecretKey() const
 	{
 		return callObjectMethod(
 			"getSecretKey",
 			"()Ljavax/crypto/SecretKey;"
 		);
 	}
-	JString KeyStore_SecretKeyEntry::toString()
+	JString KeyStore_SecretKeyEntry::toString() const
 	{
 		return callObjectMethod(
 			"toString",

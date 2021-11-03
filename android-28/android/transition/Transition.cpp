@@ -64,7 +64,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::transition::Transition Transition::addListener(JObject arg0)
+	android::transition::Transition Transition::addListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addListener",
@@ -72,7 +72,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::addTarget(android::view::View arg0)
+	android::transition::Transition Transition::addTarget(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -80,7 +80,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::addTarget(jint arg0)
+	android::transition::Transition Transition::addTarget(jint arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -88,7 +88,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::Transition Transition::addTarget(JClass arg0)
+	android::transition::Transition Transition::addTarget(JClass arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -96,7 +96,7 @@ namespace android::transition
 			arg0.object<jclass>()
 		);
 	}
-	android::transition::Transition Transition::addTarget(JString arg0)
+	android::transition::Transition Transition::addTarget(JString arg0) const
 	{
 		return callObjectMethod(
 			"addTarget",
@@ -104,14 +104,14 @@ namespace android::transition
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Transition::canRemoveViews()
+	jboolean Transition::canRemoveViews() const
 	{
 		return callMethod<jboolean>(
 			"canRemoveViews",
 			"()Z"
 		);
 	}
-	void Transition::captureEndValues(android::transition::TransitionValues arg0)
+	void Transition::captureEndValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureEndValues",
@@ -119,7 +119,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Transition::captureStartValues(android::transition::TransitionValues arg0)
+	void Transition::captureStartValues(android::transition::TransitionValues arg0) const
 	{
 		callMethod<void>(
 			"captureStartValues",
@@ -127,14 +127,14 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::clone()
+	android::transition::Transition Transition::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::animation::Animator Transition::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2)
+	android::animation::Animator Transition::createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const
 	{
 		return callObjectMethod(
 			"createAnimator",
@@ -144,7 +144,7 @@ namespace android::transition
 			arg2.object()
 		);
 	}
-	android::transition::Transition Transition::excludeChildren(android::view::View arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(android::view::View arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -153,7 +153,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeChildren(jint arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -162,7 +162,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeChildren(JClass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeChildren(JClass arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeChildren",
@@ -171,7 +171,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(android::view::View arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(android::view::View arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -180,7 +180,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(jint arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -189,7 +189,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(JClass arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(JClass arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -198,7 +198,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	android::transition::Transition Transition::excludeTarget(JString arg0, jboolean arg1)
+	android::transition::Transition Transition::excludeTarget(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"excludeTarget",
@@ -207,98 +207,98 @@ namespace android::transition
 			arg1
 		);
 	}
-	jlong Transition::getDuration()
+	jlong Transition::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	android::graphics::Rect Transition::getEpicenter()
+	android::graphics::Rect Transition::getEpicenter() const
 	{
 		return callObjectMethod(
 			"getEpicenter",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::transition::Transition_EpicenterCallback Transition::getEpicenterCallback()
+	android::transition::Transition_EpicenterCallback Transition::getEpicenterCallback() const
 	{
 		return callObjectMethod(
 			"getEpicenterCallback",
 			"()Landroid/transition/Transition$EpicenterCallback;"
 		);
 	}
-	JObject Transition::getInterpolator()
+	JObject Transition::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	JString Transition::getName()
+	JString Transition::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::transition::PathMotion Transition::getPathMotion()
+	android::transition::PathMotion Transition::getPathMotion() const
 	{
 		return callObjectMethod(
 			"getPathMotion",
 			"()Landroid/transition/PathMotion;"
 		);
 	}
-	android::transition::TransitionPropagation Transition::getPropagation()
+	android::transition::TransitionPropagation Transition::getPropagation() const
 	{
 		return callObjectMethod(
 			"getPropagation",
 			"()Landroid/transition/TransitionPropagation;"
 		);
 	}
-	jlong Transition::getStartDelay()
+	jlong Transition::getStartDelay() const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
 			"()J"
 		);
 	}
-	JObject Transition::getTargetIds()
+	JObject Transition::getTargetIds() const
 	{
 		return callObjectMethod(
 			"getTargetIds",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Transition::getTargetNames()
+	JObject Transition::getTargetNames() const
 	{
 		return callObjectMethod(
 			"getTargetNames",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Transition::getTargetTypes()
+	JObject Transition::getTargetTypes() const
 	{
 		return callObjectMethod(
 			"getTargetTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject Transition::getTargets()
+	JObject Transition::getTargets() const
 	{
 		return callObjectMethod(
 			"getTargets",
 			"()Ljava/util/List;"
 		);
 	}
-	JArray Transition::getTransitionProperties()
+	JArray Transition::getTransitionProperties() const
 	{
 		return callObjectMethod(
 			"getTransitionProperties",
 			"()[Ljava/lang/String;"
 		);
 	}
-	android::transition::TransitionValues Transition::getTransitionValues(android::view::View arg0, jboolean arg1)
+	android::transition::TransitionValues Transition::getTransitionValues(android::view::View arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getTransitionValues",
@@ -307,7 +307,7 @@ namespace android::transition
 			arg1
 		);
 	}
-	jboolean Transition::isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1)
+	jboolean Transition::isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1) const
 	{
 		return callMethod<jboolean>(
 			"isTransitionRequired",
@@ -316,7 +316,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	android::transition::Transition Transition::removeListener(JObject arg0)
+	android::transition::Transition Transition::removeListener(JObject arg0) const
 	{
 		return callObjectMethod(
 			"removeListener",
@@ -324,7 +324,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::removeTarget(android::view::View arg0)
+	android::transition::Transition Transition::removeTarget(android::view::View arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -332,7 +332,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::removeTarget(jint arg0)
+	android::transition::Transition Transition::removeTarget(jint arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -340,7 +340,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	android::transition::Transition Transition::removeTarget(JClass arg0)
+	android::transition::Transition Transition::removeTarget(JClass arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -348,7 +348,7 @@ namespace android::transition
 			arg0.object<jclass>()
 		);
 	}
-	android::transition::Transition Transition::removeTarget(JString arg0)
+	android::transition::Transition Transition::removeTarget(JString arg0) const
 	{
 		return callObjectMethod(
 			"removeTarget",
@@ -356,7 +356,7 @@ namespace android::transition
 			arg0.object<jstring>()
 		);
 	}
-	android::transition::Transition Transition::setDuration(jlong arg0)
+	android::transition::Transition Transition::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -364,7 +364,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void Transition::setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0)
+	void Transition::setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0) const
 	{
 		callMethod<void>(
 			"setEpicenterCallback",
@@ -372,7 +372,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::setInterpolator(JObject arg0)
+	android::transition::Transition Transition::setInterpolator(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -380,7 +380,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Transition::setMatchOrder(JIntArray arg0)
+	void Transition::setMatchOrder(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setMatchOrder",
@@ -388,7 +388,7 @@ namespace android::transition
 			arg0.object<jintArray>()
 		);
 	}
-	void Transition::setPathMotion(android::transition::PathMotion arg0)
+	void Transition::setPathMotion(android::transition::PathMotion arg0) const
 	{
 		callMethod<void>(
 			"setPathMotion",
@@ -396,7 +396,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Transition::setPropagation(android::transition::TransitionPropagation arg0)
+	void Transition::setPropagation(android::transition::TransitionPropagation arg0) const
 	{
 		callMethod<void>(
 			"setPropagation",
@@ -404,7 +404,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::setStartDelay(jlong arg0)
+	android::transition::Transition Transition::setStartDelay(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setStartDelay",
@@ -412,7 +412,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	JString Transition::toString()
+	JString Transition::toString() const
 	{
 		return callObjectMethod(
 			"toString",

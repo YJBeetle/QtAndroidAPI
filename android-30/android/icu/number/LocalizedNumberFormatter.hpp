@@ -33,11 +33,11 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::FormattedNumber format(android::icu::util::Measure arg0);
-		android::icu::number::FormattedNumber format(jdouble arg0);
-		android::icu::number::FormattedNumber format(java::lang::Number arg0);
-		android::icu::number::FormattedNumber format(jlong arg0);
-		java::text::Format toFormat();
+		android::icu::number::FormattedNumber format(android::icu::util::Measure arg0) const;
+		android::icu::number::FormattedNumber format(jdouble arg0) const;
+		android::icu::number::FormattedNumber format(java::lang::Number arg0) const;
+		android::icu::number::FormattedNumber format(jlong arg0) const;
+		java::text::Format toFormat() const;
 	};
 } // namespace android::icu::number
 

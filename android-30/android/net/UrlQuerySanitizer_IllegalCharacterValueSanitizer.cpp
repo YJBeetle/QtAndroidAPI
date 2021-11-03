@@ -171,7 +171,7 @@ namespace android::net
 		) {}
 	
 	// Methods
-	JString UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(JString arg0)
+	JString UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(JString arg0) const
 	{
 		return callObjectMethod(
 			"sanitize",

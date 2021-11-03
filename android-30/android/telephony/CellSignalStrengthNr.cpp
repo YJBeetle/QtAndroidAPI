@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellSignalStrengthNr::describeContents()
+	jint CellSignalStrengthNr::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthNr::equals(JObject arg0)
+	jboolean CellSignalStrengthNr::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,84 +36,84 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellSignalStrengthNr::getAsuLevel()
+	jint CellSignalStrengthNr::getAsuLevel() const
 	{
 		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getCsiRsrp()
+	jint CellSignalStrengthNr::getCsiRsrp() const
 	{
 		return callMethod<jint>(
 			"getCsiRsrp",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getCsiRsrq()
+	jint CellSignalStrengthNr::getCsiRsrq() const
 	{
 		return callMethod<jint>(
 			"getCsiRsrq",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getCsiSinr()
+	jint CellSignalStrengthNr::getCsiSinr() const
 	{
 		return callMethod<jint>(
 			"getCsiSinr",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getDbm()
+	jint CellSignalStrengthNr::getDbm() const
 	{
 		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getLevel()
+	jint CellSignalStrengthNr::getLevel() const
 	{
 		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getSsRsrp()
+	jint CellSignalStrengthNr::getSsRsrp() const
 	{
 		return callMethod<jint>(
 			"getSsRsrp",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getSsRsrq()
+	jint CellSignalStrengthNr::getSsRsrq() const
 	{
 		return callMethod<jint>(
 			"getSsRsrq",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getSsSinr()
+	jint CellSignalStrengthNr::getSsSinr() const
 	{
 		return callMethod<jint>(
 			"getSsSinr",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::hashCode()
+	jint CellSignalStrengthNr::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellSignalStrengthNr::toString()
+	JString CellSignalStrengthNr::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellSignalStrengthNr::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellSignalStrengthNr::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

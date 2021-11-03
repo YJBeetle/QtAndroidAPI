@@ -42,14 +42,14 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::content::ClipData getClip();
-		android::os::Bundle getExtras();
-		jint getFlags();
-		android::net::Uri getLinkUri();
-		jint getSource();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::content::ClipData getClip() const;
+		android::os::Bundle getExtras() const;
+		jint getFlags() const;
+		android::net::Uri getLinkUri() const;
+		jint getSource() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

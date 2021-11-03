@@ -12,14 +12,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void BugreportManager::cancelBugreport()
+	void BugreportManager::cancelBugreport() const
 	{
 		callMethod<void>(
 			"cancelBugreport",
 			"()V"
 		);
 	}
-	void BugreportManager::startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2)
+	void BugreportManager::startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2) const
 	{
 		callMethod<void>(
 			"startConnectivityBugreport",

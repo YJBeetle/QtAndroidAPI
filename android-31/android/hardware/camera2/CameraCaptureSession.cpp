@@ -23,14 +23,14 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraCaptureSession::abortCaptures()
+	void CameraCaptureSession::abortCaptures() const
 	{
 		callMethod<void>(
 			"abortCaptures",
 			"()V"
 		);
 	}
-	jint CameraCaptureSession::capture(android::hardware::camera2::CaptureRequest arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::capture(android::hardware::camera2::CaptureRequest arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2) const
 	{
 		return callMethod<jint>(
 			"capture",
@@ -40,7 +40,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::captureBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2) const
 	{
 		return callMethod<jint>(
 			"captureBurst",
@@ -50,7 +50,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::captureBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"captureBurstRequests",
@@ -60,7 +60,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::captureSingleRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::captureSingleRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"captureSingleRequest",
@@ -70,14 +70,14 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession::close()
+	void CameraCaptureSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void CameraCaptureSession::finalizeOutputConfigurations(JObject arg0)
+	void CameraCaptureSession::finalizeOutputConfigurations(JObject arg0) const
 	{
 		callMethod<void>(
 			"finalizeOutputConfigurations",
@@ -85,28 +85,28 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::hardware::camera2::CameraDevice CameraCaptureSession::getDevice()
+	android::hardware::camera2::CameraDevice CameraCaptureSession::getDevice() const
 	{
 		return callObjectMethod(
 			"getDevice",
 			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
-	android::view::Surface CameraCaptureSession::getInputSurface()
+	android::view::Surface CameraCaptureSession::getInputSurface() const
 	{
 		return callObjectMethod(
 			"getInputSurface",
 			"()Landroid/view/Surface;"
 		);
 	}
-	jboolean CameraCaptureSession::isReprocessable()
+	jboolean CameraCaptureSession::isReprocessable() const
 	{
 		return callMethod<jboolean>(
 			"isReprocessable",
 			"()Z"
 		);
 	}
-	void CameraCaptureSession::prepare(android::view::Surface arg0)
+	void CameraCaptureSession::prepare(android::view::Surface arg0) const
 	{
 		callMethod<void>(
 			"prepare",
@@ -114,7 +114,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::setRepeatingBurst(JObject arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2) const
 	{
 		return callMethod<jint>(
 			"setRepeatingBurst",
@@ -124,7 +124,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::setRepeatingBurstRequests(JObject arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"setRepeatingBurstRequests",
@@ -134,7 +134,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2)
+	jint CameraCaptureSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, android::os::Handler arg2) const
 	{
 		return callMethod<jint>(
 			"setRepeatingRequest",
@@ -144,7 +144,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	jint CameraCaptureSession::setSingleRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	jint CameraCaptureSession::setSingleRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2) const
 	{
 		return callMethod<jint>(
 			"setSingleRepeatingRequest",
@@ -154,14 +154,14 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession::stopRepeating()
+	void CameraCaptureSession::stopRepeating() const
 	{
 		callMethod<void>(
 			"stopRepeating",
 			"()V"
 		);
 	}
-	jboolean CameraCaptureSession::supportsOfflineProcessing(android::view::Surface arg0)
+	jboolean CameraCaptureSession::supportsOfflineProcessing(android::view::Surface arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsOfflineProcessing",
@@ -169,7 +169,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	android::hardware::camera2::CameraOfflineSession CameraCaptureSession::switchToOffline(JObject arg0, JObject arg1, android::hardware::camera2::CameraOfflineSession_CameraOfflineSessionCallback arg2)
+	android::hardware::camera2::CameraOfflineSession CameraCaptureSession::switchToOffline(JObject arg0, JObject arg1, android::hardware::camera2::CameraOfflineSession_CameraOfflineSessionCallback arg2) const
 	{
 		return callObjectMethod(
 			"switchToOffline",
@@ -179,7 +179,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraCaptureSession::updateOutputConfiguration(android::hardware::camera2::params::OutputConfiguration arg0)
+	void CameraCaptureSession::updateOutputConfiguration(android::hardware::camera2::params::OutputConfiguration arg0) const
 	{
 		callMethod<void>(
 			"updateOutputConfiguration",

@@ -85,7 +85,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void AlarmManager::cancel(JObject arg0)
+	void AlarmManager::cancel(JObject arg0) const
 	{
 		callMethod<void>(
 			"cancel",
@@ -93,7 +93,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AlarmManager::cancel(android::app::PendingIntent arg0)
+	void AlarmManager::cancel(android::app::PendingIntent arg0) const
 	{
 		callMethod<void>(
 			"cancel",
@@ -101,14 +101,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::AlarmManager_AlarmClockInfo AlarmManager::getNextAlarmClock()
+	android::app::AlarmManager_AlarmClockInfo AlarmManager::getNextAlarmClock() const
 	{
 		return callObjectMethod(
 			"getNextAlarmClock",
 			"()Landroid/app/AlarmManager$AlarmClockInfo;"
 		);
 	}
-	void AlarmManager::set(jint arg0, jlong arg1, android::app::PendingIntent arg2)
+	void AlarmManager::set(jint arg0, jlong arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -118,7 +118,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4)
+	void AlarmManager::set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"set",
@@ -130,7 +130,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	void AlarmManager::setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1)
+	void AlarmManager::setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1) const
 	{
 		callMethod<void>(
 			"setAlarmClock",
@@ -139,7 +139,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlarmManager::setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2)
+	void AlarmManager::setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"setAndAllowWhileIdle",
@@ -149,7 +149,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2)
+	void AlarmManager::setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"setExact",
@@ -159,7 +159,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4)
+	void AlarmManager::setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		callMethod<void>(
 			"setExact",
@@ -171,7 +171,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	void AlarmManager::setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2)
+	void AlarmManager::setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2) const
 	{
 		callMethod<void>(
 			"setExactAndAllowWhileIdle",
@@ -181,7 +181,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlarmManager::setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
+	void AlarmManager::setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"setInexactRepeating",
@@ -192,7 +192,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AlarmManager::setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
+	void AlarmManager::setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"setRepeating",
@@ -203,7 +203,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AlarmManager::setTime(jlong arg0)
+	void AlarmManager::setTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setTime",
@@ -211,7 +211,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlarmManager::setTimeZone(JString arg0)
+	void AlarmManager::setTimeZone(JString arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",
@@ -219,7 +219,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3)
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const
 	{
 		callMethod<void>(
 			"setWindow",
@@ -230,7 +230,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5)
+	void AlarmManager::setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5) const
 	{
 		callMethod<void>(
 			"setWindow",

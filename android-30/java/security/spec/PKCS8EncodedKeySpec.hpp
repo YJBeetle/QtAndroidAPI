@@ -21,8 +21,8 @@ namespace java::security::spec
 		PKCS8EncodedKeySpec(JByteArray arg0, JString arg1);
 		
 		// Methods
-		JByteArray getEncoded();
-		JString getFormat();
+		JByteArray getEncoded() const;
+		JString getFormat() const;
 	};
 } // namespace java::security::spec
 

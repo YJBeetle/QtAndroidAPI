@@ -35,17 +35,17 @@ namespace android::bluetooth
 		BluetoothGattServerCallback();
 		
 		// Methods
-		void onCharacteristicReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattCharacteristic arg3);
-		void onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6);
-		void onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2);
-		void onDescriptorReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattDescriptor arg3);
-		void onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6);
-		void onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2);
-		void onMtuChanged(android::bluetooth::BluetoothDevice arg0, jint arg1);
-		void onNotificationSent(android::bluetooth::BluetoothDevice arg0, jint arg1);
-		void onPhyRead(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3);
-		void onPhyUpdate(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3);
-		void onServiceAdded(jint arg0, android::bluetooth::BluetoothGattService arg1);
+		void onCharacteristicReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattCharacteristic arg3) const;
+		void onCharacteristicWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattCharacteristic arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6) const;
+		void onConnectionStateChange(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2) const;
+		void onDescriptorReadRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, android::bluetooth::BluetoothGattDescriptor arg3) const;
+		void onDescriptorWriteRequest(android::bluetooth::BluetoothDevice arg0, jint arg1, android::bluetooth::BluetoothGattDescriptor arg2, jboolean arg3, jboolean arg4, jint arg5, JByteArray arg6) const;
+		void onExecuteWrite(android::bluetooth::BluetoothDevice arg0, jint arg1, jboolean arg2) const;
+		void onMtuChanged(android::bluetooth::BluetoothDevice arg0, jint arg1) const;
+		void onNotificationSent(android::bluetooth::BluetoothDevice arg0, jint arg1) const;
+		void onPhyRead(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3) const;
+		void onPhyUpdate(android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3) const;
+		void onServiceAdded(jint arg0, android::bluetooth::BluetoothGattService arg1) const;
 	};
 } // namespace android::bluetooth
 

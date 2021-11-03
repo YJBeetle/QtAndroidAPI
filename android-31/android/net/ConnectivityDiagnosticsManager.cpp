@@ -12,7 +12,7 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void ConnectivityDiagnosticsManager::registerConnectivityDiagnosticsCallback(android::net::NetworkRequest arg0, JObject arg1, android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg2)
+	void ConnectivityDiagnosticsManager::registerConnectivityDiagnosticsCallback(android::net::NetworkRequest arg0, JObject arg1, android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg2) const
 	{
 		callMethod<void>(
 			"registerConnectivityDiagnosticsCallback",
@@ -22,7 +22,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	void ConnectivityDiagnosticsManager::unregisterConnectivityDiagnosticsCallback(android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg0)
+	void ConnectivityDiagnosticsManager::unregisterConnectivityDiagnosticsCallback(android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg0) const
 	{
 		callMethod<void>(
 			"unregisterConnectivityDiagnosticsCallback",

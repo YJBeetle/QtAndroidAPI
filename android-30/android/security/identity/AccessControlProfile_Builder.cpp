@@ -19,14 +19,14 @@ namespace android::security::identity
 		) {}
 	
 	// Methods
-	android::security::identity::AccessControlProfile AccessControlProfile_Builder::build()
+	android::security::identity::AccessControlProfile AccessControlProfile_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/identity/AccessControlProfile;"
 		);
 	}
-	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setReaderCertificate(java::security::cert::X509Certificate arg0)
+	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setReaderCertificate(java::security::cert::X509Certificate arg0) const
 	{
 		return callObjectMethod(
 			"setReaderCertificate",
@@ -34,7 +34,7 @@ namespace android::security::identity
 			arg0.object()
 		);
 	}
-	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationRequired(jboolean arg0)
+	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setUserAuthenticationRequired",
@@ -42,7 +42,7 @@ namespace android::security::identity
 			arg0
 		);
 	}
-	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationTimeout(jlong arg0)
+	android::security::identity::AccessControlProfile_Builder AccessControlProfile_Builder::setUserAuthenticationTimeout(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setUserAuthenticationTimeout",

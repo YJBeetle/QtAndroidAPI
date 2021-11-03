@@ -17,7 +17,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::GetSchemaResponse_Builder GetSchemaResponse_Builder::addSchema(android::app::appsearch::AppSearchSchema arg0)
+	android::app::appsearch::GetSchemaResponse_Builder GetSchemaResponse_Builder::addSchema(android::app::appsearch::AppSearchSchema arg0) const
 	{
 		return callObjectMethod(
 			"addSchema",
@@ -25,14 +25,14 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::GetSchemaResponse GetSchemaResponse_Builder::build()
+	android::app::appsearch::GetSchemaResponse GetSchemaResponse_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/GetSchemaResponse;"
 		);
 	}
-	android::app::appsearch::GetSchemaResponse_Builder GetSchemaResponse_Builder::setVersion(jint arg0)
+	android::app::appsearch::GetSchemaResponse_Builder GetSchemaResponse_Builder::setVersion(jint arg0) const
 	{
 		return callObjectMethod(
 			"setVersion",

@@ -18,14 +18,14 @@ namespace android::telephony::data
 		) {}
 	
 	// Methods
-	android::telephony::data::TrafficDescriptor TrafficDescriptor_Builder::build()
+	android::telephony::data::TrafficDescriptor TrafficDescriptor_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/data/TrafficDescriptor;"
 		);
 	}
-	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setDataNetworkName(JString arg0)
+	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setDataNetworkName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDataNetworkName",
@@ -33,7 +33,7 @@ namespace android::telephony::data
 			arg0.object<jstring>()
 		);
 	}
-	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setOsAppId(JByteArray arg0)
+	android::telephony::data::TrafficDescriptor_Builder TrafficDescriptor_Builder::setOsAppId(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setOsAppId",

@@ -39,9 +39,9 @@ namespace java::security
 		Permissions();
 		
 		// Methods
-		void add(java::security::Permission arg0);
-		JObject elements();
-		jboolean implies(java::security::Permission arg0);
+		void add(java::security::Permission arg0) const;
+		JObject elements() const;
+		jboolean implies(java::security::Permission arg0) const;
 	};
 } // namespace java::security
 

@@ -12,49 +12,49 @@ namespace android::se::omapi
 	// Constructors
 	
 	// Methods
-	void Channel::close()
+	void Channel::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JByteArray Channel::getSelectResponse()
+	JByteArray Channel::getSelectResponse() const
 	{
 		return callObjectMethod(
 			"getSelectResponse",
 			"()[B"
 		);
 	}
-	android::se::omapi::Session Channel::getSession()
+	android::se::omapi::Session Channel::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Landroid/se/omapi/Session;"
 		);
 	}
-	jboolean Channel::isBasicChannel()
+	jboolean Channel::isBasicChannel() const
 	{
 		return callMethod<jboolean>(
 			"isBasicChannel",
 			"()Z"
 		);
 	}
-	jboolean Channel::isOpen()
+	jboolean Channel::isOpen() const
 	{
 		return callMethod<jboolean>(
 			"isOpen",
 			"()Z"
 		);
 	}
-	jboolean Channel::selectNext()
+	jboolean Channel::selectNext() const
 	{
 		return callMethod<jboolean>(
 			"selectNext",
 			"()Z"
 		);
 	}
-	JByteArray Channel::transmit(JByteArray arg0)
+	JByteArray Channel::transmit(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"transmit",

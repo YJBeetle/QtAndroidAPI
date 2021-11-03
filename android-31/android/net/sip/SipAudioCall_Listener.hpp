@@ -27,16 +27,16 @@ namespace android::net::sip
 		SipAudioCall_Listener();
 		
 		// Methods
-		void onCallBusy(android::net::sip::SipAudioCall arg0);
-		void onCallEnded(android::net::sip::SipAudioCall arg0);
-		void onCallEstablished(android::net::sip::SipAudioCall arg0);
-		void onCallHeld(android::net::sip::SipAudioCall arg0);
-		void onCalling(android::net::sip::SipAudioCall arg0);
-		void onChanged(android::net::sip::SipAudioCall arg0);
-		void onError(android::net::sip::SipAudioCall arg0, jint arg1, JString arg2);
-		void onReadyToCall(android::net::sip::SipAudioCall arg0);
-		void onRinging(android::net::sip::SipAudioCall arg0, android::net::sip::SipProfile arg1);
-		void onRingingBack(android::net::sip::SipAudioCall arg0);
+		void onCallBusy(android::net::sip::SipAudioCall arg0) const;
+		void onCallEnded(android::net::sip::SipAudioCall arg0) const;
+		void onCallEstablished(android::net::sip::SipAudioCall arg0) const;
+		void onCallHeld(android::net::sip::SipAudioCall arg0) const;
+		void onCalling(android::net::sip::SipAudioCall arg0) const;
+		void onChanged(android::net::sip::SipAudioCall arg0) const;
+		void onError(android::net::sip::SipAudioCall arg0, jint arg1, JString arg2) const;
+		void onReadyToCall(android::net::sip::SipAudioCall arg0) const;
+		void onRinging(android::net::sip::SipAudioCall arg0, android::net::sip::SipProfile arg1) const;
+		void onRingingBack(android::net::sip::SipAudioCall arg0) const;
 	};
 } // namespace android::net::sip
 

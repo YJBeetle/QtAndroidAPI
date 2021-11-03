@@ -20,9 +20,9 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getDescriptor();
-		jint getEncapsulationType();
-		jint getStandard();
+		JByteArray getDescriptor() const;
+		jint getEncapsulationType() const;
+		jint getStandard() const;
 	};
 } // namespace android::media
 

@@ -13,21 +13,21 @@ namespace android::app::backup
 	// Constructors
 	
 	// Methods
-	jint BackupDataInput::getDataSize()
+	jint BackupDataInput::getDataSize() const
 	{
 		return callMethod<jint>(
 			"getDataSize",
 			"()I"
 		);
 	}
-	JString BackupDataInput::getKey()
+	JString BackupDataInput::getKey() const
 	{
 		return callObjectMethod(
 			"getKey",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint BackupDataInput::readEntityData(JByteArray arg0, jint arg1, jint arg2)
+	jint BackupDataInput::readEntityData(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"readEntityData",
@@ -37,14 +37,14 @@ namespace android::app::backup
 			arg2
 		);
 	}
-	jboolean BackupDataInput::readNextHeader()
+	jboolean BackupDataInput::readNextHeader() const
 	{
 		return callMethod<jboolean>(
 			"readNextHeader",
 			"()Z"
 		);
 	}
-	void BackupDataInput::skipEntityData()
+	void BackupDataInput::skipEntityData() const
 	{
 		callMethod<void>(
 			"skipEntityData",

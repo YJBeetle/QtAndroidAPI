@@ -27,7 +27,7 @@ namespace android::os::storage
 		OnObbStateChangeListener();
 		
 		// Methods
-		void onObbStateChange(JString arg0, jint arg1);
+		void onObbStateChange(JString arg0, jint arg1) const;
 	};
 } // namespace android::os::storage
 

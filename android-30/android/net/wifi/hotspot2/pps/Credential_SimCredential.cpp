@@ -32,14 +32,14 @@ namespace android::net::wifi::hotspot2::pps
 		) {}
 	
 	// Methods
-	jint Credential_SimCredential::describeContents()
+	jint Credential_SimCredential::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Credential_SimCredential::equals(JObject arg0)
+	jboolean Credential_SimCredential::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -47,28 +47,28 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jobject>()
 		);
 	}
-	jint Credential_SimCredential::getEapType()
+	jint Credential_SimCredential::getEapType() const
 	{
 		return callMethod<jint>(
 			"getEapType",
 			"()I"
 		);
 	}
-	JString Credential_SimCredential::getImsi()
+	JString Credential_SimCredential::getImsi() const
 	{
 		return callObjectMethod(
 			"getImsi",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Credential_SimCredential::hashCode()
+	jint Credential_SimCredential::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Credential_SimCredential::setEapType(jint arg0)
+	void Credential_SimCredential::setEapType(jint arg0) const
 	{
 		callMethod<void>(
 			"setEapType",
@@ -76,7 +76,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential_SimCredential::setImsi(JString arg0)
+	void Credential_SimCredential::setImsi(JString arg0) const
 	{
 		callMethod<void>(
 			"setImsi",
@@ -84,14 +84,14 @@ namespace android::net::wifi::hotspot2::pps
 			arg0.object<jstring>()
 		);
 	}
-	JString Credential_SimCredential::toString()
+	JString Credential_SimCredential::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Credential_SimCredential::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Credential_SimCredential::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

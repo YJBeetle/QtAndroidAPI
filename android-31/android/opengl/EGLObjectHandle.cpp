@@ -10,21 +10,21 @@ namespace android::opengl
 	// Constructors
 	
 	// Methods
-	jint EGLObjectHandle::getHandle()
+	jint EGLObjectHandle::getHandle() const
 	{
 		return callMethod<jint>(
 			"getHandle",
 			"()I"
 		);
 	}
-	jlong EGLObjectHandle::getNativeHandle()
+	jlong EGLObjectHandle::getNativeHandle() const
 	{
 		return callMethod<jlong>(
 			"getNativeHandle",
 			"()J"
 		);
 	}
-	jint EGLObjectHandle::hashCode()
+	jint EGLObjectHandle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

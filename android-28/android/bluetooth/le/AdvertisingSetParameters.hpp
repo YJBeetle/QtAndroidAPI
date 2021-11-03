@@ -34,18 +34,18 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getInterval();
-		jint getPrimaryPhy();
-		jint getSecondaryPhy();
-		jint getTxPowerLevel();
-		jboolean includeTxPower();
-		jboolean isAnonymous();
-		jboolean isConnectable();
-		jboolean isLegacy();
-		jboolean isScannable();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getInterval() const;
+		jint getPrimaryPhy() const;
+		jint getSecondaryPhy() const;
+		jint getTxPowerLevel() const;
+		jboolean includeTxPower() const;
+		jboolean isAnonymous() const;
+		jboolean isConnectable() const;
+		jboolean isLegacy() const;
+		jboolean isScannable() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth::le
 

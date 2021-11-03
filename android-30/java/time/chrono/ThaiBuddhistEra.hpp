@@ -32,8 +32,8 @@ namespace java::time::chrono
 		static java::time::chrono::ThaiBuddhistEra of(jint arg0);
 		static java::time::chrono::ThaiBuddhistEra valueOf(JString arg0);
 		static JArray values();
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jint getValue();
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
+		jint getValue() const;
 	};
 } // namespace java::time::chrono
 

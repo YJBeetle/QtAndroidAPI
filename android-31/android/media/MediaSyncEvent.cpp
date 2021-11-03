@@ -44,14 +44,14 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaSyncEvent::describeContents()
+	jint MediaSyncEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaSyncEvent::equals(JObject arg0)
+	jboolean MediaSyncEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -59,28 +59,28 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint MediaSyncEvent::getAudioSessionId()
+	jint MediaSyncEvent::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint MediaSyncEvent::getType()
+	jint MediaSyncEvent::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint MediaSyncEvent::hashCode()
+	jint MediaSyncEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0)
+	android::media::MediaSyncEvent MediaSyncEvent::setAudioSessionId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAudioSessionId",
@@ -88,14 +88,14 @@ namespace android::media
 			arg0
 		);
 	}
-	JString MediaSyncEvent::toString()
+	JString MediaSyncEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaSyncEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaSyncEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

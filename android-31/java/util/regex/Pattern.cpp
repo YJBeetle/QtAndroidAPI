@@ -120,28 +120,28 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
-	JObject Pattern::asMatchPredicate()
+	JObject Pattern::asMatchPredicate() const
 	{
 		return callObjectMethod(
 			"asMatchPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
-	JObject Pattern::asPredicate()
+	JObject Pattern::asPredicate() const
 	{
 		return callObjectMethod(
 			"asPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
-	jint Pattern::flags()
+	jint Pattern::flags() const
 	{
 		return callMethod<jint>(
 			"flags",
 			"()I"
 		);
 	}
-	java::util::regex::Matcher Pattern::matcher(JString arg0)
+	java::util::regex::Matcher Pattern::matcher(JString arg0) const
 	{
 		return callObjectMethod(
 			"matcher",
@@ -149,14 +149,14 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
-	JString Pattern::pattern()
+	JString Pattern::pattern() const
 	{
 		return callObjectMethod(
 			"pattern",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray Pattern::split(JString arg0)
+	JArray Pattern::split(JString arg0) const
 	{
 		return callObjectMethod(
 			"split",
@@ -164,7 +164,7 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
-	JArray Pattern::split(JString arg0, jint arg1)
+	JArray Pattern::split(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"split",
@@ -173,7 +173,7 @@ namespace java::util::regex
 			arg1
 		);
 	}
-	JObject Pattern::splitAsStream(JString arg0)
+	JObject Pattern::splitAsStream(JString arg0) const
 	{
 		return callObjectMethod(
 			"splitAsStream",
@@ -181,7 +181,7 @@ namespace java::util::regex
 			arg0.object<jstring>()
 		);
 	}
-	JString Pattern::toString()
+	JString Pattern::toString() const
 	{
 		return callObjectMethod(
 			"toString",

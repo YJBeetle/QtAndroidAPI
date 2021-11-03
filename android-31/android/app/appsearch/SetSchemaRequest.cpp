@@ -10,42 +10,42 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject SetSchemaRequest::getMigrators()
+	JObject SetSchemaRequest::getMigrators() const
 	{
 		return callObjectMethod(
 			"getMigrators",
 			"()Ljava/util/Map;"
 		);
 	}
-	JObject SetSchemaRequest::getSchemas()
+	JObject SetSchemaRequest::getSchemas() const
 	{
 		return callObjectMethod(
 			"getSchemas",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject SetSchemaRequest::getSchemasNotDisplayedBySystem()
+	JObject SetSchemaRequest::getSchemasNotDisplayedBySystem() const
 	{
 		return callObjectMethod(
 			"getSchemasNotDisplayedBySystem",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject SetSchemaRequest::getSchemasVisibleToPackages()
+	JObject SetSchemaRequest::getSchemasVisibleToPackages() const
 	{
 		return callObjectMethod(
 			"getSchemasVisibleToPackages",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint SetSchemaRequest::getVersion()
+	jint SetSchemaRequest::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	jboolean SetSchemaRequest::isForceOverride()
+	jboolean SetSchemaRequest::isForceOverride() const
 	{
 		return callMethod<jboolean>(
 			"isForceOverride",

@@ -1239,42 +1239,42 @@ namespace android::telephony::ims
 		) {}
 	
 	// Methods
-	jint ImsReasonInfo::describeContents()
+	jint ImsReasonInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint ImsReasonInfo::getCode()
+	jint ImsReasonInfo::getCode() const
 	{
 		return callMethod<jint>(
 			"getCode",
 			"()I"
 		);
 	}
-	jint ImsReasonInfo::getExtraCode()
+	jint ImsReasonInfo::getExtraCode() const
 	{
 		return callMethod<jint>(
 			"getExtraCode",
 			"()I"
 		);
 	}
-	JString ImsReasonInfo::getExtraMessage()
+	JString ImsReasonInfo::getExtraMessage() const
 	{
 		return callObjectMethod(
 			"getExtraMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString ImsReasonInfo::toString()
+	JString ImsReasonInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ImsReasonInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ImsReasonInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -11,14 +11,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession()
+	android::media::MediaCas_Session MediaExtractor_CasInfo::getSession() const
 	{
 		return callObjectMethod(
 			"getSession",
 			"()Landroid/media/MediaCas$Session;"
 		);
 	}
-	jint MediaExtractor_CasInfo::getSystemId()
+	jint MediaExtractor_CasInfo::getSystemId() const
 	{
 		return callMethod<jint>(
 			"getSystemId",

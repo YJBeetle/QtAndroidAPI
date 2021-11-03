@@ -30,12 +30,12 @@ namespace android::renderscript
 		Sampler_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		android::renderscript::Sampler create();
-		void setAnisotropy(jfloat arg0);
-		void setMagnification(android::renderscript::Sampler_Value arg0);
-		void setMinification(android::renderscript::Sampler_Value arg0);
-		void setWrapS(android::renderscript::Sampler_Value arg0);
-		void setWrapT(android::renderscript::Sampler_Value arg0);
+		android::renderscript::Sampler create() const;
+		void setAnisotropy(jfloat arg0) const;
+		void setMagnification(android::renderscript::Sampler_Value arg0) const;
+		void setMinification(android::renderscript::Sampler_Value arg0) const;
+		void setWrapS(android::renderscript::Sampler_Value arg0) const;
+		void setWrapT(android::renderscript::Sampler_Value arg0) const;
 	};
 } // namespace android::renderscript
 

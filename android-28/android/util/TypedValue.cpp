@@ -412,21 +412,21 @@ namespace android::util
 			arg2
 		);
 	}
-	JString TypedValue::coerceToString()
+	JString TypedValue::coerceToString() const
 	{
 		return callObjectMethod(
 			"coerceToString",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TypedValue::getComplexUnit()
+	jint TypedValue::getComplexUnit() const
 	{
 		return callMethod<jint>(
 			"getComplexUnit",
 			"()I"
 		);
 	}
-	jfloat TypedValue::getDimension(android::util::DisplayMetrics arg0)
+	jfloat TypedValue::getDimension(android::util::DisplayMetrics arg0) const
 	{
 		return callMethod<jfloat>(
 			"getDimension",
@@ -434,14 +434,14 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jfloat TypedValue::getFloat()
+	jfloat TypedValue::getFloat() const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
 			"()F"
 		);
 	}
-	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
+	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFraction",
@@ -450,7 +450,7 @@ namespace android::util
 			arg1
 		);
 	}
-	void TypedValue::setTo(android::util::TypedValue arg0)
+	void TypedValue::setTo(android::util::TypedValue arg0) const
 	{
 		callMethod<void>(
 			"setTo",
@@ -458,7 +458,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	JString TypedValue::toString()
+	JString TypedValue::toString() const
 	{
 		return callObjectMethod(
 			"toString",

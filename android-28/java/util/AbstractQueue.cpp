@@ -11,7 +11,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractQueue::add(JObject arg0)
+	jboolean AbstractQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -19,7 +19,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractQueue::addAll(JObject arg0)
+	jboolean AbstractQueue::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -27,21 +27,21 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void AbstractQueue::clear()
+	void AbstractQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject AbstractQueue::element()
+	JObject AbstractQueue::element() const
 	{
 		return callObjectMethod(
 			"element",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AbstractQueue::remove()
+	JObject AbstractQueue::remove() const
 	{
 		return callObjectMethod(
 			"remove",

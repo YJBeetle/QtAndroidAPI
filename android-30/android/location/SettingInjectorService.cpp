@@ -60,7 +60,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	JObject SettingInjectorService::onBind(android::content::Intent arg0)
+	JObject SettingInjectorService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -68,7 +68,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void SettingInjectorService::onStart(android::content::Intent arg0, jint arg1)
+	void SettingInjectorService::onStart(android::content::Intent arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onStart",
@@ -77,7 +77,7 @@ namespace android::location
 			arg1
 		);
 	}
-	jint SettingInjectorService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2)
+	jint SettingInjectorService::onStartCommand(android::content::Intent arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"onStartCommand",

@@ -16,7 +16,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject KeyStore_CallbackHandlerProtection::getCallbackHandler()
+	JObject KeyStore_CallbackHandlerProtection::getCallbackHandler() const
 	{
 		return callObjectMethod(
 			"getCallbackHandler",

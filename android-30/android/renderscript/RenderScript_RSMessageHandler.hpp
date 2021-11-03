@@ -19,7 +19,7 @@ namespace android::renderscript
 		RenderScript_RSMessageHandler();
 		
 		// Methods
-		void run();
+		void run() const;
 	};
 } // namespace android::renderscript
 

@@ -32,14 +32,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint MediaDrm_SessionException::getErrorCode()
+	jint MediaDrm_SessionException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	jboolean MediaDrm_SessionException::isTransient()
+	jboolean MediaDrm_SessionException::isTransient() const
 	{
 		return callMethod<jboolean>(
 			"isTransient",

@@ -18,7 +18,7 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		void confirm(JString arg0);
+		void confirm(JString arg0) const;
 	};
 } // namespace android::webkit
 

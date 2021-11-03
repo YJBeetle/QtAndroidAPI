@@ -24,7 +24,7 @@ namespace java::security
 		MessageDigestSpi();
 		
 		// Methods
-		JObject clone();
+		JObject clone() const;
 	};
 } // namespace java::security
 

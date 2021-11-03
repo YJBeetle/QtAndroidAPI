@@ -19,14 +19,14 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	jint ConsumerIrManager_CarrierFrequencyRange::getMaxFrequency()
+	jint ConsumerIrManager_CarrierFrequencyRange::getMaxFrequency() const
 	{
 		return callMethod<jint>(
 			"getMaxFrequency",
 			"()I"
 		);
 	}
-	jint ConsumerIrManager_CarrierFrequencyRange::getMinFrequency()
+	jint ConsumerIrManager_CarrierFrequencyRange::getMinFrequency() const
 	{
 		return callMethod<jint>(
 			"getMinFrequency",

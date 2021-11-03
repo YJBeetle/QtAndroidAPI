@@ -20,14 +20,14 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		void bindAllArgsAsStrings(JArray arg0);
-		void bindBlob(jint arg0, JByteArray arg1);
-		void bindDouble(jint arg0, jdouble arg1);
-		void bindLong(jint arg0, jlong arg1);
-		void bindNull(jint arg0);
-		void bindString(jint arg0, JString arg1);
-		void clearBindings();
-		jint getUniqueId();
+		void bindAllArgsAsStrings(JArray arg0) const;
+		void bindBlob(jint arg0, JByteArray arg1) const;
+		void bindDouble(jint arg0, jdouble arg1) const;
+		void bindLong(jint arg0, jlong arg1) const;
+		void bindNull(jint arg0) const;
+		void bindString(jint arg0, JString arg1) const;
+		void clearBindings() const;
+		jint getUniqueId() const;
 	};
 } // namespace android::database::sqlite
 

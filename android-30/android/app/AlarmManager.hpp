@@ -40,22 +40,22 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void cancel(JObject arg0);
-		void cancel(android::app::PendingIntent arg0);
-		android::app::AlarmManager_AlarmClockInfo getNextAlarmClock();
-		void set(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4);
-		void setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1);
-		void setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4);
-		void setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2);
-		void setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
-		void setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
-		void setTime(jlong arg0);
-		void setTimeZone(JString arg0);
-		void setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3);
-		void setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5);
+		void cancel(JObject arg0) const;
+		void cancel(android::app::PendingIntent arg0) const;
+		android::app::AlarmManager_AlarmClockInfo getNextAlarmClock() const;
+		void set(jint arg0, jlong arg1, android::app::PendingIntent arg2) const;
+		void set(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4) const;
+		void setAlarmClock(android::app::AlarmManager_AlarmClockInfo arg0, android::app::PendingIntent arg1) const;
+		void setAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2) const;
+		void setExact(jint arg0, jlong arg1, android::app::PendingIntent arg2) const;
+		void setExact(jint arg0, jlong arg1, JString arg2, JObject arg3, android::os::Handler arg4) const;
+		void setExactAndAllowWhileIdle(jint arg0, jlong arg1, android::app::PendingIntent arg2) const;
+		void setInexactRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const;
+		void setRepeating(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const;
+		void setTime(jlong arg0) const;
+		void setTimeZone(JString arg0) const;
+		void setWindow(jint arg0, jlong arg1, jlong arg2, android::app::PendingIntent arg3) const;
+		void setWindow(jint arg0, jlong arg1, jlong arg2, JString arg3, JObject arg4, android::os::Handler arg5) const;
 	};
 } // namespace android::app
 

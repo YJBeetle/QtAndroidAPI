@@ -12,7 +12,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	android::icu::text::AlphabeticIndex_Bucket AlphabeticIndex_ImmutableIndex::getBucket(jint arg0)
+	android::icu::text::AlphabeticIndex_Bucket AlphabeticIndex_ImmutableIndex::getBucket(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBucket",
@@ -20,14 +20,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint AlphabeticIndex_ImmutableIndex::getBucketCount()
+	jint AlphabeticIndex_ImmutableIndex::getBucketCount() const
 	{
 		return callMethod<jint>(
 			"getBucketCount",
 			"()I"
 		);
 	}
-	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(JString arg0)
+	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getBucketIndex",
@@ -35,7 +35,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JObject AlphabeticIndex_ImmutableIndex::iterator()
+	JObject AlphabeticIndex_ImmutableIndex::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",

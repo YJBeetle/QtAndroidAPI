@@ -21,7 +21,7 @@ namespace android::print
 		) {}
 	
 	// Methods
-	jboolean PrintAttributes_Resolution::equals(JObject arg0)
+	jboolean PrintAttributes_Resolution::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -29,42 +29,42 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintAttributes_Resolution::getHorizontalDpi()
+	jint PrintAttributes_Resolution::getHorizontalDpi() const
 	{
 		return callMethod<jint>(
 			"getHorizontalDpi",
 			"()I"
 		);
 	}
-	JString PrintAttributes_Resolution::getId()
+	JString PrintAttributes_Resolution::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PrintAttributes_Resolution::getLabel()
+	JString PrintAttributes_Resolution::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PrintAttributes_Resolution::getVerticalDpi()
+	jint PrintAttributes_Resolution::getVerticalDpi() const
 	{
 		return callMethod<jint>(
 			"getVerticalDpi",
 			"()I"
 		);
 	}
-	jint PrintAttributes_Resolution::hashCode()
+	jint PrintAttributes_Resolution::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrintAttributes_Resolution::toString()
+	JString PrintAttributes_Resolution::toString() const
 	{
 		return callObjectMethod(
 			"toString",

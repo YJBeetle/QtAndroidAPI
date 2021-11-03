@@ -14,7 +14,7 @@ namespace android::preference
 	// Constructors
 	
 	// Methods
-	void PreferenceScreen::bind(android::widget::ListView arg0)
+	void PreferenceScreen::bind(android::widget::ListView arg0) const
 	{
 		callMethod<void>(
 			"bind",
@@ -22,21 +22,21 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::app::Dialog PreferenceScreen::getDialog()
+	android::app::Dialog PreferenceScreen::getDialog() const
 	{
 		return callObjectMethod(
 			"getDialog",
 			"()Landroid/app/Dialog;"
 		);
 	}
-	JObject PreferenceScreen::getRootAdapter()
+	JObject PreferenceScreen::getRootAdapter() const
 	{
 		return callObjectMethod(
 			"getRootAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	void PreferenceScreen::onDismiss(JObject arg0)
+	void PreferenceScreen::onDismiss(JObject arg0) const
 	{
 		callMethod<void>(
 			"onDismiss",
@@ -44,7 +44,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceScreen::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3)
+	void PreferenceScreen::onItemClick(android::widget::AdapterView arg0, android::view::View arg1, jint arg2, jlong arg3) const
 	{
 		callMethod<void>(
 			"onItemClick",

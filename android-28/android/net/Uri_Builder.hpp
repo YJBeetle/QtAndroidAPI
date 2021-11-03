@@ -23,23 +23,23 @@ namespace android::net
 		Uri_Builder();
 		
 		// Methods
-		android::net::Uri_Builder appendEncodedPath(JString arg0);
-		android::net::Uri_Builder appendPath(JString arg0);
-		android::net::Uri_Builder appendQueryParameter(JString arg0, JString arg1);
-		android::net::Uri_Builder authority(JString arg0);
-		android::net::Uri build();
-		android::net::Uri_Builder clearQuery();
-		android::net::Uri_Builder encodedAuthority(JString arg0);
-		android::net::Uri_Builder encodedFragment(JString arg0);
-		android::net::Uri_Builder encodedOpaquePart(JString arg0);
-		android::net::Uri_Builder encodedPath(JString arg0);
-		android::net::Uri_Builder encodedQuery(JString arg0);
-		android::net::Uri_Builder fragment(JString arg0);
-		android::net::Uri_Builder opaquePart(JString arg0);
-		android::net::Uri_Builder path(JString arg0);
-		android::net::Uri_Builder query(JString arg0);
-		android::net::Uri_Builder scheme(JString arg0);
-		JString toString();
+		android::net::Uri_Builder appendEncodedPath(JString arg0) const;
+		android::net::Uri_Builder appendPath(JString arg0) const;
+		android::net::Uri_Builder appendQueryParameter(JString arg0, JString arg1) const;
+		android::net::Uri_Builder authority(JString arg0) const;
+		android::net::Uri build() const;
+		android::net::Uri_Builder clearQuery() const;
+		android::net::Uri_Builder encodedAuthority(JString arg0) const;
+		android::net::Uri_Builder encodedFragment(JString arg0) const;
+		android::net::Uri_Builder encodedOpaquePart(JString arg0) const;
+		android::net::Uri_Builder encodedPath(JString arg0) const;
+		android::net::Uri_Builder encodedQuery(JString arg0) const;
+		android::net::Uri_Builder fragment(JString arg0) const;
+		android::net::Uri_Builder opaquePart(JString arg0) const;
+		android::net::Uri_Builder path(JString arg0) const;
+		android::net::Uri_Builder query(JString arg0) const;
+		android::net::Uri_Builder scheme(JString arg0) const;
+		JString toString() const;
 	};
 } // namespace android::net
 

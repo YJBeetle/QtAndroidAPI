@@ -23,7 +23,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	android::media::Session2CommandGroup_Builder Session2CommandGroup_Builder::addCommand(android::media::Session2Command arg0)
+	android::media::Session2CommandGroup_Builder Session2CommandGroup_Builder::addCommand(android::media::Session2Command arg0) const
 	{
 		return callObjectMethod(
 			"addCommand",
@@ -31,14 +31,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::Session2CommandGroup Session2CommandGroup_Builder::build()
+	android::media::Session2CommandGroup Session2CommandGroup_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/Session2CommandGroup;"
 		);
 	}
-	android::media::Session2CommandGroup_Builder Session2CommandGroup_Builder::removeCommand(android::media::Session2Command arg0)
+	android::media::Session2CommandGroup_Builder Session2CommandGroup_Builder::removeCommand(android::media::Session2Command arg0) const
 	{
 		return callObjectMethod(
 			"removeCommand",

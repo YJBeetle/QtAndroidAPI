@@ -23,13 +23,13 @@ namespace java::util
 		Observable();
 		
 		// Methods
-		void addObserver(JObject arg0);
-		jint countObservers();
-		void deleteObserver(JObject arg0);
-		void deleteObservers();
-		jboolean hasChanged();
-		void notifyObservers();
-		void notifyObservers(JObject arg0);
+		void addObserver(JObject arg0) const;
+		jint countObservers() const;
+		void deleteObserver(JObject arg0) const;
+		void deleteObservers() const;
+		jboolean hasChanged() const;
+		void notifyObservers() const;
+		void notifyObservers(JObject arg0) const;
 	};
 } // namespace java::util
 

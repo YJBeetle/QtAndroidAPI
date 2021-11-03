@@ -23,10 +23,10 @@ namespace android::content::pm
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getLabel();
-		JString getTag();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getLabel() const;
+		JString getTag() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

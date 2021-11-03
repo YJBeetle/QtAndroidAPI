@@ -15,14 +15,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	android::media::RemoteControlClient MediaRouter_UserRouteInfo::getRemoteControlClient()
+	android::media::RemoteControlClient MediaRouter_UserRouteInfo::getRemoteControlClient() const
 	{
 		return callObjectMethod(
 			"getRemoteControlClient",
 			"()Landroid/media/RemoteControlClient;"
 		);
 	}
-	void MediaRouter_UserRouteInfo::requestSetVolume(jint arg0)
+	void MediaRouter_UserRouteInfo::requestSetVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestSetVolume",
@@ -30,7 +30,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::requestUpdateVolume(jint arg0)
+	void MediaRouter_UserRouteInfo::requestUpdateVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"requestUpdateVolume",
@@ -38,7 +38,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setDescription(JString arg0)
+	void MediaRouter_UserRouteInfo::setDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setDescription",
@@ -46,7 +46,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setIconDrawable(android::graphics::drawable::Drawable arg0)
+	void MediaRouter_UserRouteInfo::setIconDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setIconDrawable",
@@ -54,7 +54,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setIconResource(jint arg0)
+	void MediaRouter_UserRouteInfo::setIconResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setIconResource",
@@ -62,7 +62,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setName(jint arg0)
+	void MediaRouter_UserRouteInfo::setName(jint arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -70,7 +70,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setName(JString arg0)
+	void MediaRouter_UserRouteInfo::setName(JString arg0) const
 	{
 		callMethod<void>(
 			"setName",
@@ -78,7 +78,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setPlaybackStream(jint arg0)
+	void MediaRouter_UserRouteInfo::setPlaybackStream(jint arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackStream",
@@ -86,7 +86,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setPlaybackType(jint arg0)
+	void MediaRouter_UserRouteInfo::setPlaybackType(jint arg0) const
 	{
 		callMethod<void>(
 			"setPlaybackType",
@@ -94,7 +94,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setRemoteControlClient(android::media::RemoteControlClient arg0)
+	void MediaRouter_UserRouteInfo::setRemoteControlClient(android::media::RemoteControlClient arg0) const
 	{
 		callMethod<void>(
 			"setRemoteControlClient",
@@ -102,7 +102,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setStatus(JString arg0)
+	void MediaRouter_UserRouteInfo::setStatus(JString arg0) const
 	{
 		callMethod<void>(
 			"setStatus",
@@ -110,7 +110,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setVolume(jint arg0)
+	void MediaRouter_UserRouteInfo::setVolume(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolume",
@@ -118,7 +118,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0)
+	void MediaRouter_UserRouteInfo::setVolumeCallback(android::media::MediaRouter_VolumeCallback arg0) const
 	{
 		callMethod<void>(
 			"setVolumeCallback",
@@ -126,7 +126,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter_UserRouteInfo::setVolumeHandling(jint arg0)
+	void MediaRouter_UserRouteInfo::setVolumeHandling(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolumeHandling",
@@ -134,7 +134,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter_UserRouteInfo::setVolumeMax(jint arg0)
+	void MediaRouter_UserRouteInfo::setVolumeMax(jint arg0) const
 	{
 		callMethod<void>(
 			"setVolumeMax",

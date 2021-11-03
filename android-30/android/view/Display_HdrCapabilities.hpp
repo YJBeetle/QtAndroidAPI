@@ -30,15 +30,15 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jfloat getDesiredMaxAverageLuminance();
-		jfloat getDesiredMaxLuminance();
-		jfloat getDesiredMinLuminance();
-		JIntArray getSupportedHdrTypes();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jfloat getDesiredMaxAverageLuminance() const;
+		jfloat getDesiredMaxLuminance() const;
+		jfloat getDesiredMinLuminance() const;
+		JIntArray getSupportedHdrTypes() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

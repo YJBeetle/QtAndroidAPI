@@ -41,7 +41,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void ViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1)
+	void ViewOutlineProvider::getOutline(android::view::View arg0, android::graphics::Outline arg1) const
 	{
 		callMethod<void>(
 			"getOutline",

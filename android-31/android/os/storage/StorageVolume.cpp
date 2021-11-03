@@ -33,7 +33,7 @@ namespace android::os::storage
 	// Constructors
 	
 	// Methods
-	android::content::Intent StorageVolume::createAccessIntent(JString arg0)
+	android::content::Intent StorageVolume::createAccessIntent(JString arg0) const
 	{
 		return callObjectMethod(
 			"createAccessIntent",
@@ -41,21 +41,21 @@ namespace android::os::storage
 			arg0.object<jstring>()
 		);
 	}
-	android::content::Intent StorageVolume::createOpenDocumentTreeIntent()
+	android::content::Intent StorageVolume::createOpenDocumentTreeIntent() const
 	{
 		return callObjectMethod(
 			"createOpenDocumentTreeIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint StorageVolume::describeContents()
+	jint StorageVolume::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean StorageVolume::equals(JObject arg0)
+	jboolean StorageVolume::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,7 +63,7 @@ namespace android::os::storage
 			arg0.object<jobject>()
 		);
 	}
-	JString StorageVolume::getDescription(android::content::Context arg0)
+	JString StorageVolume::getDescription(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"getDescription",
@@ -71,77 +71,77 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	java::io::File StorageVolume::getDirectory()
+	java::io::File StorageVolume::getDirectory() const
 	{
 		return callObjectMethod(
 			"getDirectory",
 			"()Ljava/io/File;"
 		);
 	}
-	JString StorageVolume::getMediaStoreVolumeName()
+	JString StorageVolume::getMediaStoreVolumeName() const
 	{
 		return callObjectMethod(
 			"getMediaStoreVolumeName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString StorageVolume::getState()
+	JString StorageVolume::getState() const
 	{
 		return callObjectMethod(
 			"getState",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::util::UUID StorageVolume::getStorageUuid()
+	java::util::UUID StorageVolume::getStorageUuid() const
 	{
 		return callObjectMethod(
 			"getStorageUuid",
 			"()Ljava/util/UUID;"
 		);
 	}
-	JString StorageVolume::getUuid()
+	JString StorageVolume::getUuid() const
 	{
 		return callObjectMethod(
 			"getUuid",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint StorageVolume::hashCode()
+	jint StorageVolume::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean StorageVolume::isEmulated()
+	jboolean StorageVolume::isEmulated() const
 	{
 		return callMethod<jboolean>(
 			"isEmulated",
 			"()Z"
 		);
 	}
-	jboolean StorageVolume::isPrimary()
+	jboolean StorageVolume::isPrimary() const
 	{
 		return callMethod<jboolean>(
 			"isPrimary",
 			"()Z"
 		);
 	}
-	jboolean StorageVolume::isRemovable()
+	jboolean StorageVolume::isRemovable() const
 	{
 		return callMethod<jboolean>(
 			"isRemovable",
 			"()Z"
 		);
 	}
-	JString StorageVolume::toString()
+	JString StorageVolume::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StorageVolume::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StorageVolume::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

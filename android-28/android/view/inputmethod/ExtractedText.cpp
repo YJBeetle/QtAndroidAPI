@@ -89,14 +89,14 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint ExtractedText::describeContents()
+	jint ExtractedText::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ExtractedText::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ExtractedText::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

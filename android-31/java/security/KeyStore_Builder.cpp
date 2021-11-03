@@ -57,14 +57,14 @@ namespace java::security
 			arg3.object()
 		);
 	}
-	java::security::KeyStore KeyStore_Builder::getKeyStore()
+	java::security::KeyStore KeyStore_Builder::getKeyStore() const
 	{
 		return callObjectMethod(
 			"getKeyStore",
 			"()Ljava/security/KeyStore;"
 		);
 	}
-	JObject KeyStore_Builder::getProtectionParameter(JString arg0)
+	JObject KeyStore_Builder::getProtectionParameter(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProtectionParameter",

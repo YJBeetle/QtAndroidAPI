@@ -30,7 +30,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void TelephonyManager_CellInfoCallback::onCellInfo(JObject arg0)
+	void TelephonyManager_CellInfoCallback::onCellInfo(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCellInfo",
@@ -38,7 +38,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void TelephonyManager_CellInfoCallback::onError(jint arg0, JThrowable arg1)
+	void TelephonyManager_CellInfoCallback::onError(jint arg0, JThrowable arg1) const
 	{
 		callMethod<void>(
 			"onError",

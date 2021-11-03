@@ -26,11 +26,11 @@ namespace java::util
 		static JObject mapEquivalents(JObject arg0, JObject arg1);
 		static JObject parse(JString arg0);
 		static JObject parse(JString arg0, JObject arg1);
-		jboolean equals(JObject arg0);
-		JString getRange();
-		jdouble getWeight();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getRange() const;
+		jdouble getWeight() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

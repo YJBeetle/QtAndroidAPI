@@ -35,14 +35,14 @@ namespace java::security::cert
 		CertificateFactorySpi();
 		
 		// Methods
-		java::security::cert::CRL engineGenerateCRL(java::io::InputStream arg0);
-		JObject engineGenerateCRLs(java::io::InputStream arg0);
-		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0);
-		java::security::cert::CertPath engineGenerateCertPath(JObject arg0);
-		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, JString arg1);
-		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0);
-		JObject engineGenerateCertificates(java::io::InputStream arg0);
-		JObject engineGetCertPathEncodings();
+		java::security::cert::CRL engineGenerateCRL(java::io::InputStream arg0) const;
+		JObject engineGenerateCRLs(java::io::InputStream arg0) const;
+		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0) const;
+		java::security::cert::CertPath engineGenerateCertPath(JObject arg0) const;
+		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, JString arg1) const;
+		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0) const;
+		JObject engineGenerateCertificates(java::io::InputStream arg0) const;
+		JObject engineGetCertPathEncodings() const;
 	};
 } // namespace java::security::cert
 

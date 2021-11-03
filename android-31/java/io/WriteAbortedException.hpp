@@ -25,8 +25,8 @@ namespace java::io
 		WriteAbortedException(JString arg0, java::lang::Exception arg1);
 		
 		// Methods
-		JThrowable getCause();
-		JString getMessage();
+		JThrowable getCause() const;
+		JString getMessage() const;
 	};
 } // namespace java::io
 

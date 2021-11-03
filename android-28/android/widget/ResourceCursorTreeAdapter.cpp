@@ -43,7 +43,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::View ResourceCursorTreeAdapter::newChildView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3)
+	android::view::View ResourceCursorTreeAdapter::newChildView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3) const
 	{
 		return callObjectMethod(
 			"newChildView",
@@ -54,7 +54,7 @@ namespace android::widget
 			arg3.object()
 		);
 	}
-	android::view::View ResourceCursorTreeAdapter::newGroupView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3)
+	android::view::View ResourceCursorTreeAdapter::newGroupView(android::content::Context arg0, JObject arg1, jboolean arg2, android::view::ViewGroup arg3) const
 	{
 		return callObjectMethod(
 			"newGroupView",

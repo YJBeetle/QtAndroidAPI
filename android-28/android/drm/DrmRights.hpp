@@ -32,10 +32,10 @@ namespace android::drm
 		DrmRights(JString arg0, JString arg1, JString arg2, JString arg3);
 		
 		// Methods
-		JString getAccountId();
-		JByteArray getData();
-		JString getMimeType();
-		JString getSubscriptionId();
+		JString getAccountId() const;
+		JByteArray getData() const;
+		JString getMimeType() const;
+		JString getSubscriptionId() const;
 	};
 } // namespace android::drm
 

@@ -18,14 +18,14 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	jboolean BaseMovementMethod::canSelectArbitrarily()
+	jboolean BaseMovementMethod::canSelectArbitrarily() const
 	{
 		return callMethod<jboolean>(
 			"canSelectArbitrarily",
 			"()Z"
 		);
 	}
-	void BaseMovementMethod::initialize(android::widget::TextView arg0, JObject arg1)
+	void BaseMovementMethod::initialize(android::widget::TextView arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"initialize",
@@ -34,7 +34,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	jboolean BaseMovementMethod::onGenericMotionEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean BaseMovementMethod::onGenericMotionEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -44,7 +44,7 @@ namespace android::text::method
 			arg2.object()
 		);
 	}
-	jboolean BaseMovementMethod::onKeyDown(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean BaseMovementMethod::onKeyDown(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -55,7 +55,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean BaseMovementMethod::onKeyOther(android::widget::TextView arg0, JObject arg1, android::view::KeyEvent arg2)
+	jboolean BaseMovementMethod::onKeyOther(android::widget::TextView arg0, JObject arg1, android::view::KeyEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onKeyOther",
@@ -65,7 +65,7 @@ namespace android::text::method
 			arg2.object()
 		);
 	}
-	jboolean BaseMovementMethod::onKeyUp(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean BaseMovementMethod::onKeyUp(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -76,7 +76,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	void BaseMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
+	void BaseMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -86,7 +86,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean BaseMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean BaseMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -96,7 +96,7 @@ namespace android::text::method
 			arg2.object()
 		);
 	}
-	jboolean BaseMovementMethod::onTrackballEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
+	jboolean BaseMovementMethod::onTrackballEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",

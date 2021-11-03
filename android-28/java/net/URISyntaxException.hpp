@@ -20,10 +20,10 @@ namespace java::net
 		URISyntaxException(JString arg0, JString arg1, jint arg2);
 		
 		// Methods
-		jint getIndex();
-		JString getInput();
-		JString getMessage();
-		JString getReason();
+		jint getIndex() const;
+		JString getInput() const;
+		JString getMessage() const;
+		JString getReason() const;
 	};
 } // namespace java::net
 

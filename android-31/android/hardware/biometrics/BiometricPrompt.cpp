@@ -161,7 +161,7 @@ namespace android::hardware::biometrics
 	// Constructors
 	
 	// Methods
-	void BiometricPrompt::authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2)
+	void BiometricPrompt::authenticate(android::os::CancellationSignal arg0, JObject arg1, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2) const
 	{
 		callMethod<void>(
 			"authenticate",
@@ -171,7 +171,7 @@ namespace android::hardware::biometrics
 			arg2.object()
 		);
 	}
-	void BiometricPrompt::authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3)
+	void BiometricPrompt::authenticate(android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, android::os::CancellationSignal arg1, JObject arg2, android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3) const
 	{
 		callMethod<void>(
 			"authenticate",
@@ -182,42 +182,42 @@ namespace android::hardware::biometrics
 			arg3.object()
 		);
 	}
-	jint BiometricPrompt::getAllowedAuthenticators()
+	jint BiometricPrompt::getAllowedAuthenticators() const
 	{
 		return callMethod<jint>(
 			"getAllowedAuthenticators",
 			"()I"
 		);
 	}
-	JString BiometricPrompt::getDescription()
+	JString BiometricPrompt::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString BiometricPrompt::getNegativeButtonText()
+	JString BiometricPrompt::getNegativeButtonText() const
 	{
 		return callObjectMethod(
 			"getNegativeButtonText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString BiometricPrompt::getSubtitle()
+	JString BiometricPrompt::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString BiometricPrompt::getTitle()
+	JString BiometricPrompt::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean BiometricPrompt::isConfirmationRequired()
+	jboolean BiometricPrompt::isConfirmationRequired() const
 	{
 		return callMethod<jboolean>(
 			"isConfirmationRequired",

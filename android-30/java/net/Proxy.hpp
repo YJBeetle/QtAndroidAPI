@@ -29,11 +29,11 @@ namespace java::net
 		Proxy(java::net::Proxy_Type arg0, java::net::SocketAddress arg1);
 		
 		// Methods
-		java::net::SocketAddress address();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
-		java::net::Proxy_Type type();
+		java::net::SocketAddress address() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+		java::net::Proxy_Type type() const;
 	};
 } // namespace java::net
 

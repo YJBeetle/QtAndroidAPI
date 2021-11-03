@@ -30,7 +30,7 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void Gesture::addStroke(android::gesture::GestureStroke arg0)
+	void Gesture::addStroke(android::gesture::GestureStroke arg0) const
 	{
 		callMethod<void>(
 			"addStroke",
@@ -38,56 +38,56 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	JObject Gesture::clone()
+	JObject Gesture::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Gesture::describeContents()
+	jint Gesture::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::graphics::RectF Gesture::getBoundingBox()
+	android::graphics::RectF Gesture::getBoundingBox() const
 	{
 		return callObjectMethod(
 			"getBoundingBox",
 			"()Landroid/graphics/RectF;"
 		);
 	}
-	jlong Gesture::getID()
+	jlong Gesture::getID() const
 	{
 		return callMethod<jlong>(
 			"getID",
 			"()J"
 		);
 	}
-	jfloat Gesture::getLength()
+	jfloat Gesture::getLength() const
 	{
 		return callMethod<jfloat>(
 			"getLength",
 			"()F"
 		);
 	}
-	java::util::ArrayList Gesture::getStrokes()
+	java::util::ArrayList Gesture::getStrokes() const
 	{
 		return callObjectMethod(
 			"getStrokes",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jint Gesture::getStrokesCount()
+	jint Gesture::getStrokesCount() const
 	{
 		return callMethod<jint>(
 			"getStrokesCount",
 			"()I"
 		);
 	}
-	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"toBitmap",
@@ -98,7 +98,7 @@ namespace android::gesture
 			arg3
 		);
 	}
-	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::graphics::Bitmap Gesture::toBitmap(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"toBitmap",
@@ -110,14 +110,14 @@ namespace android::gesture
 			arg4
 		);
 	}
-	android::graphics::Path Gesture::toPath()
+	android::graphics::Path Gesture::toPath() const
 	{
 		return callObjectMethod(
 			"toPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	android::graphics::Path Gesture::toPath(android::graphics::Path arg0)
+	android::graphics::Path Gesture::toPath(android::graphics::Path arg0) const
 	{
 		return callObjectMethod(
 			"toPath",
@@ -125,7 +125,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	android::graphics::Path Gesture::toPath(jint arg0, jint arg1, jint arg2, jint arg3)
+	android::graphics::Path Gesture::toPath(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"toPath",
@@ -136,7 +136,7 @@ namespace android::gesture
 			arg3
 		);
 	}
-	android::graphics::Path Gesture::toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	android::graphics::Path Gesture::toPath(android::graphics::Path arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		return callObjectMethod(
 			"toPath",
@@ -148,7 +148,7 @@ namespace android::gesture
 			arg4
 		);
 	}
-	void Gesture::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Gesture::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

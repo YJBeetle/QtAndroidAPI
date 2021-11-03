@@ -23,14 +23,14 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat LoudnessEnhancer::getTargetGain()
+	jfloat LoudnessEnhancer::getTargetGain() const
 	{
 		return callMethod<jfloat>(
 			"getTargetGain",
 			"()F"
 		);
 	}
-	void LoudnessEnhancer::setTargetGain(jint arg0)
+	void LoudnessEnhancer::setTargetGain(jint arg0) const
 	{
 		callMethod<void>(
 			"setTargetGain",

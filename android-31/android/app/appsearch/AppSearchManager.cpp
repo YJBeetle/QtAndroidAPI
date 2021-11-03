@@ -11,7 +11,7 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	void AppSearchManager::createGlobalSearchSession(JObject arg0, JObject arg1)
+	void AppSearchManager::createGlobalSearchSession(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"createGlobalSearchSession",
@@ -20,7 +20,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchManager::createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2)
+	void AppSearchManager::createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"createSearchSession",

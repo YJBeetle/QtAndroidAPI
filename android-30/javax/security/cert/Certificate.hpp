@@ -21,13 +21,13 @@ namespace javax::security::cert
 		Certificate();
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		JObject getPublicKey();
-		jint hashCode();
-		JString toString();
-		void verify(JObject arg0);
-		void verify(JObject arg0, JString arg1);
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		JObject getPublicKey() const;
+		jint hashCode() const;
+		JString toString() const;
+		void verify(JObject arg0) const;
+		void verify(JObject arg0, JString arg1) const;
 	};
 } // namespace javax::security::cert
 

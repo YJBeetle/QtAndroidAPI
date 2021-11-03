@@ -25,12 +25,12 @@ namespace android::content
 		LocusId(JString arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JString getId();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JString getId() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

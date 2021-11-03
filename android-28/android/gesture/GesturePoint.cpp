@@ -37,7 +37,7 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	JObject GesturePoint::clone()
+	JObject GesturePoint::clone() const
 	{
 		return callObjectMethod(
 			"clone",

@@ -16,7 +16,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject EventListenerProxy::getListener()
+	JObject EventListenerProxy::getListener() const
 	{
 		return callObjectMethod(
 			"getListener",

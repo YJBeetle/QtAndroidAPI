@@ -29,7 +29,7 @@ namespace android::view::animation
 		PathInterpolator(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
-		jfloat getInterpolation(jfloat arg0);
+		jfloat getInterpolation(jfloat arg0) const;
 	};
 } // namespace android::view::animation
 

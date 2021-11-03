@@ -17,7 +17,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebMessagePort_WebMessageCallback::onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1)
+	void WebMessagePort_WebMessageCallback::onMessage(android::webkit::WebMessagePort arg0, android::webkit::WebMessage arg1) const
 	{
 		callMethod<void>(
 			"onMessage",

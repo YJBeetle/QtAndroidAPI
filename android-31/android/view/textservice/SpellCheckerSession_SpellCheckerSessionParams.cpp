@@ -12,28 +12,28 @@ namespace android::view::textservice
 	// Constructors
 	
 	// Methods
-	android::os::Bundle SpellCheckerSession_SpellCheckerSessionParams::getExtras()
+	android::os::Bundle SpellCheckerSession_SpellCheckerSessionParams::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	java::util::Locale SpellCheckerSession_SpellCheckerSessionParams::getLocale()
+	java::util::Locale SpellCheckerSession_SpellCheckerSessionParams::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	jint SpellCheckerSession_SpellCheckerSessionParams::getSupportedAttributes()
+	jint SpellCheckerSession_SpellCheckerSessionParams::getSupportedAttributes() const
 	{
 		return callMethod<jint>(
 			"getSupportedAttributes",
 			"()I"
 		);
 	}
-	jboolean SpellCheckerSession_SpellCheckerSessionParams::shouldReferToSpellCheckerLanguageSettings()
+	jboolean SpellCheckerSession_SpellCheckerSessionParams::shouldReferToSpellCheckerLanguageSettings() const
 	{
 		return callMethod<jboolean>(
 			"shouldReferToSpellCheckerLanguageSettings",

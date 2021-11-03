@@ -24,11 +24,11 @@ namespace android::view::contentcapture
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JObject getLocusIdRequests();
-		JString getPackageName();
-		jboolean isForEverything();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getLocusIdRequests() const;
+		JString getPackageName() const;
+		jboolean isForEverything() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::contentcapture
 

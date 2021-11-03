@@ -28,7 +28,7 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	JString Virtualizer_Settings::toString()
+	JString Virtualizer_Settings::toString() const
 	{
 		return callObjectMethod(
 			"toString",

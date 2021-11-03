@@ -25,13 +25,13 @@ namespace java::security
 		
 		// Methods
 		static java::security::IdentityScope getSystemScope();
-		void addIdentity(java::security::Identity arg0);
-		java::security::Identity getIdentity(JString arg0);
-		java::security::Identity getIdentity(JObject arg0);
-		JObject identities();
-		void removeIdentity(java::security::Identity arg0);
-		jint size();
-		JString toString();
+		void addIdentity(java::security::Identity arg0) const;
+		java::security::Identity getIdentity(JString arg0) const;
+		java::security::Identity getIdentity(JObject arg0) const;
+		JObject identities() const;
+		void removeIdentity(java::security::Identity arg0) const;
+		jint size() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

@@ -25,8 +25,8 @@ namespace android::printservice
 		// Constructors
 		
 		// Methods
-		android::os::ParcelFileDescriptor getData();
-		android::print::PrintDocumentInfo getInfo();
+		android::os::ParcelFileDescriptor getData() const;
+		android::print::PrintDocumentInfo getInfo() const;
 	};
 } // namespace android::printservice
 

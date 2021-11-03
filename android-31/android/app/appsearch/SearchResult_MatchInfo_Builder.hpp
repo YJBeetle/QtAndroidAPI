@@ -27,9 +27,9 @@ namespace android::app::appsearch
 		SearchResult_MatchInfo_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::SearchResult_MatchInfo build();
-		android::app::appsearch::SearchResult_MatchInfo_Builder setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0);
-		android::app::appsearch::SearchResult_MatchInfo_Builder setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0);
+		android::app::appsearch::SearchResult_MatchInfo build() const;
+		android::app::appsearch::SearchResult_MatchInfo_Builder setExactMatchRange(android::app::appsearch::SearchResult_MatchRange arg0) const;
+		android::app::appsearch::SearchResult_MatchInfo_Builder setSnippetRange(android::app::appsearch::SearchResult_MatchRange arg0) const;
 	};
 } // namespace android::app::appsearch
 

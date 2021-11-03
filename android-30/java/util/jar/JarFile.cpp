@@ -89,14 +89,14 @@ namespace java::util::jar
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	JObject JarFile::entries()
+	JObject JarFile::entries() const
 	{
 		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	java::util::zip::ZipEntry JarFile::getEntry(JString arg0)
+	java::util::zip::ZipEntry JarFile::getEntry(JString arg0) const
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -104,7 +104,7 @@ namespace java::util::jar
 			arg0.object<jstring>()
 		);
 	}
-	java::io::InputStream JarFile::getInputStream(java::util::zip::ZipEntry arg0)
+	java::io::InputStream JarFile::getInputStream(java::util::zip::ZipEntry arg0) const
 	{
 		return callObjectMethod(
 			"getInputStream",
@@ -112,7 +112,7 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	java::util::jar::JarEntry JarFile::getJarEntry(JString arg0)
+	java::util::jar::JarEntry JarFile::getJarEntry(JString arg0) const
 	{
 		return callObjectMethod(
 			"getJarEntry",
@@ -120,35 +120,35 @@ namespace java::util::jar
 			arg0.object<jstring>()
 		);
 	}
-	java::util::jar::Manifest JarFile::getManifest()
+	java::util::jar::Manifest JarFile::getManifest() const
 	{
 		return callObjectMethod(
 			"getManifest",
 			"()Ljava/util/jar/Manifest;"
 		);
 	}
-	JObject JarFile::getVersion()
+	JObject JarFile::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	jboolean JarFile::isMultiRelease()
+	jboolean JarFile::isMultiRelease() const
 	{
 		return callMethod<jboolean>(
 			"isMultiRelease",
 			"()Z"
 		);
 	}
-	JObject JarFile::stream()
+	JObject JarFile::stream() const
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	JObject JarFile::versionedStream()
+	JObject JarFile::versionedStream() const
 	{
 		return callObjectMethod(
 			"versionedStream",

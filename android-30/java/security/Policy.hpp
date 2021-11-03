@@ -53,13 +53,13 @@ namespace java::security
 		static java::security::Policy getInstance(JString arg0, JObject arg1, java::security::Provider arg2);
 		static java::security::Policy getPolicy();
 		static void setPolicy(java::security::Policy arg0);
-		JObject getParameters();
-		java::security::PermissionCollection getPermissions(java::security::CodeSource arg0);
-		java::security::PermissionCollection getPermissions(java::security::ProtectionDomain arg0);
-		java::security::Provider getProvider();
-		JString getType();
-		jboolean implies(java::security::ProtectionDomain arg0, java::security::Permission arg1);
-		void refresh();
+		JObject getParameters() const;
+		java::security::PermissionCollection getPermissions(java::security::CodeSource arg0) const;
+		java::security::PermissionCollection getPermissions(java::security::ProtectionDomain arg0) const;
+		java::security::Provider getProvider() const;
+		JString getType() const;
+		jboolean implies(java::security::ProtectionDomain arg0, java::security::Permission arg1) const;
+		void refresh() const;
 	};
 } // namespace java::security
 

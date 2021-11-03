@@ -53,14 +53,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray MediaDrm_KeyStatus::getKeyId()
+	JByteArray MediaDrm_KeyStatus::getKeyId() const
 	{
 		return callObjectMethod(
 			"getKeyId",
 			"()[B"
 		);
 	}
-	jint MediaDrm_KeyStatus::getStatusCode()
+	jint MediaDrm_KeyStatus::getStatusCode() const
 	{
 		return callMethod<jint>(
 			"getStatusCode",

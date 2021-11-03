@@ -29,7 +29,7 @@ namespace android::drm
 		) {}
 	
 	// Methods
-	JObject DrmInfo::get(JString arg0)
+	JObject DrmInfo::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -37,42 +37,42 @@ namespace android::drm
 			arg0.object<jstring>()
 		);
 	}
-	JByteArray DrmInfo::getData()
+	JByteArray DrmInfo::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	jint DrmInfo::getInfoType()
+	jint DrmInfo::getInfoType() const
 	{
 		return callMethod<jint>(
 			"getInfoType",
 			"()I"
 		);
 	}
-	JString DrmInfo::getMimeType()
+	JString DrmInfo::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject DrmInfo::iterator()
+	JObject DrmInfo::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject DrmInfo::keyIterator()
+	JObject DrmInfo::keyIterator() const
 	{
 		return callObjectMethod(
 			"keyIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void DrmInfo::put(JString arg0, JObject arg1)
+	void DrmInfo::put(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"put",

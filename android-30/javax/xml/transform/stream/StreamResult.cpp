@@ -51,28 +51,28 @@ namespace javax::xml::transform::stream
 		) {}
 	
 	// Methods
-	java::io::OutputStream StreamResult::getOutputStream()
+	java::io::OutputStream StreamResult::getOutputStream() const
 	{
 		return callObjectMethod(
 			"getOutputStream",
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	JString StreamResult::getSystemId()
+	JString StreamResult::getSystemId() const
 	{
 		return callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::io::Writer StreamResult::getWriter()
+	java::io::Writer StreamResult::getWriter() const
 	{
 		return callObjectMethod(
 			"getWriter",
 			"()Ljava/io/Writer;"
 		);
 	}
-	void StreamResult::setOutputStream(java::io::OutputStream arg0)
+	void StreamResult::setOutputStream(java::io::OutputStream arg0) const
 	{
 		callMethod<void>(
 			"setOutputStream",
@@ -80,7 +80,7 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamResult::setSystemId(java::io::File arg0)
+	void StreamResult::setSystemId(java::io::File arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",
@@ -88,7 +88,7 @@ namespace javax::xml::transform::stream
 			arg0.object()
 		);
 	}
-	void StreamResult::setSystemId(JString arg0)
+	void StreamResult::setSystemId(JString arg0) const
 	{
 		callMethod<void>(
 			"setSystemId",
@@ -96,7 +96,7 @@ namespace javax::xml::transform::stream
 			arg0.object<jstring>()
 		);
 	}
-	void StreamResult::setWriter(java::io::Writer arg0)
+	void StreamResult::setWriter(java::io::Writer arg0) const
 	{
 		callMethod<void>(
 			"setWriter",

@@ -19,7 +19,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::addServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1)
+	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::addServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1) const
 	{
 		return callObjectMethod(
 			"addServiceUuid",
@@ -28,14 +28,14 @@ namespace android::companion
 			arg1.object()
 		);
 	}
-	android::companion::BluetoothDeviceFilter BluetoothDeviceFilter_Builder::build()
+	android::companion::BluetoothDeviceFilter BluetoothDeviceFilter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/BluetoothDeviceFilter;"
 		);
 	}
-	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setAddress(JString arg0)
+	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setAddress(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAddress",
@@ -43,7 +43,7 @@ namespace android::companion
 			arg0.object<jstring>()
 		);
 	}
-	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
+	android::companion::BluetoothDeviceFilter_Builder BluetoothDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"setNamePattern",

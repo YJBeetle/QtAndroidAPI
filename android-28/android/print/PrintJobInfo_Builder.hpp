@@ -28,12 +28,12 @@ namespace android::print
 		PrintJobInfo_Builder(android::print::PrintJobInfo arg0);
 		
 		// Methods
-		android::print::PrintJobInfo build();
-		void putAdvancedOption(JString arg0, jint arg1);
-		void putAdvancedOption(JString arg0, JString arg1);
-		void setAttributes(android::print::PrintAttributes arg0);
-		void setCopies(jint arg0);
-		void setPages(JArray arg0);
+		android::print::PrintJobInfo build() const;
+		void putAdvancedOption(JString arg0, jint arg1) const;
+		void putAdvancedOption(JString arg0, JString arg1) const;
+		void setAttributes(android::print::PrintAttributes arg0) const;
+		void setCopies(jint arg0) const;
+		void setPages(JArray arg0) const;
 	};
 } // namespace android::print
 

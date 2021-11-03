@@ -67,7 +67,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean GridLayout_LayoutParams::equals(JObject arg0)
+	jboolean GridLayout_LayoutParams::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -75,14 +75,14 @@ namespace android::widget
 			arg0.object<jobject>()
 		);
 	}
-	jint GridLayout_LayoutParams::hashCode()
+	jint GridLayout_LayoutParams::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void GridLayout_LayoutParams::setGravity(jint arg0)
+	void GridLayout_LayoutParams::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",

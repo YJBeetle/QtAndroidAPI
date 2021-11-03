@@ -17,7 +17,7 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	void WebViewRenderProcessClient::onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1)
+	void WebViewRenderProcessClient::onRenderProcessResponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const
 	{
 		callMethod<void>(
 			"onRenderProcessResponsive",
@@ -26,7 +26,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebViewRenderProcessClient::onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1)
+	void WebViewRenderProcessClient::onRenderProcessUnresponsive(android::webkit::WebView arg0, android::webkit::WebViewRenderProcess arg1) const
 	{
 		callMethod<void>(
 			"onRenderProcessUnresponsive",

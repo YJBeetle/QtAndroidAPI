@@ -16,7 +16,7 @@ namespace android::service::carrier
 		) {}
 	
 	// Methods
-	JObject CarrierMessagingClientService::onBind(android::content::Intent arg0)
+	JObject CarrierMessagingClientService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",

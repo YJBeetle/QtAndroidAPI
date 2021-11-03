@@ -26,15 +26,15 @@ namespace java::util::concurrent::locks
 		// Constructors
 		
 		// Methods
-		jint getHoldCount();
-		jboolean isHeldByCurrentThread();
-		void lock();
-		void lockInterruptibly();
-		JObject newCondition();
-		JString toString();
-		jboolean tryLock();
-		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void unlock();
+		jint getHoldCount() const;
+		jboolean isHeldByCurrentThread() const;
+		void lock() const;
+		void lockInterruptibly() const;
+		JObject newCondition() const;
+		JString toString() const;
+		jboolean tryLock() const;
+		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void unlock() const;
 	};
 } // namespace java::util::concurrent::locks
 

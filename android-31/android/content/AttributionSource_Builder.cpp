@@ -18,14 +18,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	android::content::AttributionSource AttributionSource_Builder::build()
+	android::content::AttributionSource AttributionSource_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/content/AttributionSource;"
 		);
 	}
-	android::content::AttributionSource_Builder AttributionSource_Builder::setAttributionTag(JString arg0)
+	android::content::AttributionSource_Builder AttributionSource_Builder::setAttributionTag(JString arg0) const
 	{
 		return callObjectMethod(
 			"setAttributionTag",
@@ -33,7 +33,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	android::content::AttributionSource_Builder AttributionSource_Builder::setNext(android::content::AttributionSource arg0)
+	android::content::AttributionSource_Builder AttributionSource_Builder::setNext(android::content::AttributionSource arg0) const
 	{
 		return callObjectMethod(
 			"setNext",
@@ -41,7 +41,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	android::content::AttributionSource_Builder AttributionSource_Builder::setPackageName(JString arg0)
+	android::content::AttributionSource_Builder AttributionSource_Builder::setPackageName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPackageName",

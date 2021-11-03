@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellSignalStrengthCdma::describeContents()
+	jint CellSignalStrengthCdma::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellSignalStrengthCdma::equals(JObject arg0)
+	jboolean CellSignalStrengthCdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,91 +36,91 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint CellSignalStrengthCdma::getAsuLevel()
+	jint CellSignalStrengthCdma::getAsuLevel() const
 	{
 		return callMethod<jint>(
 			"getAsuLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getCdmaDbm()
+	jint CellSignalStrengthCdma::getCdmaDbm() const
 	{
 		return callMethod<jint>(
 			"getCdmaDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getCdmaEcio()
+	jint CellSignalStrengthCdma::getCdmaEcio() const
 	{
 		return callMethod<jint>(
 			"getCdmaEcio",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getCdmaLevel()
+	jint CellSignalStrengthCdma::getCdmaLevel() const
 	{
 		return callMethod<jint>(
 			"getCdmaLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getDbm()
+	jint CellSignalStrengthCdma::getDbm() const
 	{
 		return callMethod<jint>(
 			"getDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getEvdoDbm()
+	jint CellSignalStrengthCdma::getEvdoDbm() const
 	{
 		return callMethod<jint>(
 			"getEvdoDbm",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getEvdoEcio()
+	jint CellSignalStrengthCdma::getEvdoEcio() const
 	{
 		return callMethod<jint>(
 			"getEvdoEcio",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getEvdoLevel()
+	jint CellSignalStrengthCdma::getEvdoLevel() const
 	{
 		return callMethod<jint>(
 			"getEvdoLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getEvdoSnr()
+	jint CellSignalStrengthCdma::getEvdoSnr() const
 	{
 		return callMethod<jint>(
 			"getEvdoSnr",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::getLevel()
+	jint CellSignalStrengthCdma::getLevel() const
 	{
 		return callMethod<jint>(
 			"getLevel",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthCdma::hashCode()
+	jint CellSignalStrengthCdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellSignalStrengthCdma::toString()
+	JString CellSignalStrengthCdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellSignalStrengthCdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellSignalStrengthCdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

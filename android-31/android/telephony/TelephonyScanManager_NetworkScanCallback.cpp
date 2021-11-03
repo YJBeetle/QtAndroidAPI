@@ -15,14 +15,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void TelephonyScanManager_NetworkScanCallback::onComplete()
+	void TelephonyScanManager_NetworkScanCallback::onComplete() const
 	{
 		callMethod<void>(
 			"onComplete",
 			"()V"
 		);
 	}
-	void TelephonyScanManager_NetworkScanCallback::onError(jint arg0)
+	void TelephonyScanManager_NetworkScanCallback::onError(jint arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -30,7 +30,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void TelephonyScanManager_NetworkScanCallback::onResults(JObject arg0)
+	void TelephonyScanManager_NetworkScanCallback::onResults(JObject arg0) const
 	{
 		callMethod<void>(
 			"onResults",

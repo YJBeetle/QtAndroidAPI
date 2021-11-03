@@ -24,9 +24,9 @@ namespace android::media::audiofx
 		DynamicsProcessing_Mbc(jboolean arg0, jboolean arg1, jint arg2);
 		
 		// Methods
-		android::media::audiofx::DynamicsProcessing_MbcBand getBand(jint arg0);
-		void setBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1);
-		JString toString();
+		android::media::audiofx::DynamicsProcessing_MbcBand getBand(jint arg0) const;
+		void setBand(jint arg0, android::media::audiofx::DynamicsProcessing_MbcBand arg1) const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

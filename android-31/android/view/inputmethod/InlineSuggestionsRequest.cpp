@@ -31,14 +31,14 @@ namespace android::view::inputmethod
 	// Constructors
 	
 	// Methods
-	jint InlineSuggestionsRequest::describeContents()
+	jint InlineSuggestionsRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean InlineSuggestionsRequest::equals(JObject arg0)
+	jboolean InlineSuggestionsRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,63 +46,63 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle InlineSuggestionsRequest::getExtras()
+	android::os::Bundle InlineSuggestionsRequest::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString InlineSuggestionsRequest::getHostPackageName()
+	JString InlineSuggestionsRequest::getHostPackageName() const
 	{
 		return callObjectMethod(
 			"getHostPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject InlineSuggestionsRequest::getInlinePresentationSpecs()
+	JObject InlineSuggestionsRequest::getInlinePresentationSpecs() const
 	{
 		return callObjectMethod(
 			"getInlinePresentationSpecs",
 			"()Ljava/util/List;"
 		);
 	}
-	android::widget::inline::InlinePresentationSpec InlineSuggestionsRequest::getInlineTooltipPresentationSpec()
+	android::widget::inline::InlinePresentationSpec InlineSuggestionsRequest::getInlineTooltipPresentationSpec() const
 	{
 		return callObjectMethod(
 			"getInlineTooltipPresentationSpec",
 			"()Landroid/widget/inline/InlinePresentationSpec;"
 		);
 	}
-	jint InlineSuggestionsRequest::getMaxSuggestionCount()
+	jint InlineSuggestionsRequest::getMaxSuggestionCount() const
 	{
 		return callMethod<jint>(
 			"getMaxSuggestionCount",
 			"()I"
 		);
 	}
-	android::os::LocaleList InlineSuggestionsRequest::getSupportedLocales()
+	android::os::LocaleList InlineSuggestionsRequest::getSupportedLocales() const
 	{
 		return callObjectMethod(
 			"getSupportedLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint InlineSuggestionsRequest::hashCode()
+	jint InlineSuggestionsRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString InlineSuggestionsRequest::toString()
+	JString InlineSuggestionsRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void InlineSuggestionsRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void InlineSuggestionsRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

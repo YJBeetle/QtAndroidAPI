@@ -19,8 +19,8 @@ namespace android::security
 		
 		// Methods
 		static android::security::NetworkSecurityPolicy getInstance();
-		jboolean isCleartextTrafficPermitted();
-		jboolean isCleartextTrafficPermitted(JString arg0);
+		jboolean isCleartextTrafficPermitted() const;
+		jboolean isCleartextTrafficPermitted(JString arg0) const;
 	};
 } // namespace android::security
 

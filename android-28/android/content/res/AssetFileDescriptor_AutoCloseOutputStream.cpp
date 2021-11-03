@@ -18,7 +18,7 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0)
+	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -26,7 +26,7 @@ namespace android::content::res
 			arg0.object<jbyteArray>()
 		);
 	}
-	void AssetFileDescriptor_AutoCloseOutputStream::write(jint arg0)
+	void AssetFileDescriptor_AutoCloseOutputStream::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -34,7 +34,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0, jint arg1, jint arg2)
+	void AssetFileDescriptor_AutoCloseOutputStream::write(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

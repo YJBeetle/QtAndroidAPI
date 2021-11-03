@@ -24,15 +24,15 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JByteArray getEncoded();
-		JObject getPublicKey();
-		JString getType();
-		jint hashCode();
-		JString toString();
-		void verify(JObject arg0);
-		void verify(JObject arg0, JString arg1);
-		void verify(JObject arg0, java::security::Provider arg1);
+		jboolean equals(JObject arg0) const;
+		JByteArray getEncoded() const;
+		JObject getPublicKey() const;
+		JString getType() const;
+		jint hashCode() const;
+		JString toString() const;
+		void verify(JObject arg0) const;
+		void verify(JObject arg0, JString arg1) const;
+		void verify(JObject arg0, java::security::Provider arg1) const;
 	};
 } // namespace java::security::cert
 

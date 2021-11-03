@@ -72,35 +72,35 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		JString addAutomaticZenRule(android::app::AutomaticZenRule arg0);
-		jboolean areNotificationsEnabled();
-		void cancel(jint arg0);
-		void cancel(JString arg0, jint arg1);
-		void cancelAll();
-		void createNotificationChannel(android::app::NotificationChannel arg0);
-		void createNotificationChannelGroup(android::app::NotificationChannelGroup arg0);
-		void createNotificationChannelGroups(JObject arg0);
-		void createNotificationChannels(JObject arg0);
-		void deleteNotificationChannel(JString arg0);
-		void deleteNotificationChannelGroup(JString arg0);
-		JArray getActiveNotifications();
-		android::app::AutomaticZenRule getAutomaticZenRule(JString arg0);
-		JObject getAutomaticZenRules();
-		jint getCurrentInterruptionFilter();
-		jint getImportance();
-		android::app::NotificationChannel getNotificationChannel(JString arg0);
-		android::app::NotificationChannelGroup getNotificationChannelGroup(JString arg0);
-		JObject getNotificationChannelGroups();
-		JObject getNotificationChannels();
-		android::app::NotificationManager_Policy getNotificationPolicy();
-		jboolean isNotificationListenerAccessGranted(android::content::ComponentName arg0);
-		jboolean isNotificationPolicyAccessGranted();
-		void notify(jint arg0, android::app::Notification arg1);
-		void notify(JString arg0, jint arg1, android::app::Notification arg2);
-		jboolean removeAutomaticZenRule(JString arg0);
-		void setInterruptionFilter(jint arg0);
-		void setNotificationPolicy(android::app::NotificationManager_Policy arg0);
-		jboolean updateAutomaticZenRule(JString arg0, android::app::AutomaticZenRule arg1);
+		JString addAutomaticZenRule(android::app::AutomaticZenRule arg0) const;
+		jboolean areNotificationsEnabled() const;
+		void cancel(jint arg0) const;
+		void cancel(JString arg0, jint arg1) const;
+		void cancelAll() const;
+		void createNotificationChannel(android::app::NotificationChannel arg0) const;
+		void createNotificationChannelGroup(android::app::NotificationChannelGroup arg0) const;
+		void createNotificationChannelGroups(JObject arg0) const;
+		void createNotificationChannels(JObject arg0) const;
+		void deleteNotificationChannel(JString arg0) const;
+		void deleteNotificationChannelGroup(JString arg0) const;
+		JArray getActiveNotifications() const;
+		android::app::AutomaticZenRule getAutomaticZenRule(JString arg0) const;
+		JObject getAutomaticZenRules() const;
+		jint getCurrentInterruptionFilter() const;
+		jint getImportance() const;
+		android::app::NotificationChannel getNotificationChannel(JString arg0) const;
+		android::app::NotificationChannelGroup getNotificationChannelGroup(JString arg0) const;
+		JObject getNotificationChannelGroups() const;
+		JObject getNotificationChannels() const;
+		android::app::NotificationManager_Policy getNotificationPolicy() const;
+		jboolean isNotificationListenerAccessGranted(android::content::ComponentName arg0) const;
+		jboolean isNotificationPolicyAccessGranted() const;
+		void notify(jint arg0, android::app::Notification arg1) const;
+		void notify(JString arg0, jint arg1, android::app::Notification arg2) const;
+		jboolean removeAutomaticZenRule(JString arg0) const;
+		void setInterruptionFilter(jint arg0) const;
+		void setNotificationPolicy(android::app::NotificationManager_Policy arg0) const;
+		jboolean updateAutomaticZenRule(JString arg0, android::app::AutomaticZenRule arg1) const;
 	};
 } // namespace android::app
 

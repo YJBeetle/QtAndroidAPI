@@ -19,21 +19,21 @@ namespace android::util
 		) {}
 	
 	// Methods
-	jint Base64InputStream::available()
+	jint Base64InputStream::available() const
 	{
 		return callMethod<jint>(
 			"available",
 			"()I"
 		);
 	}
-	void Base64InputStream::close()
+	void Base64InputStream::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void Base64InputStream::mark(jint arg0)
+	void Base64InputStream::mark(jint arg0) const
 	{
 		callMethod<void>(
 			"mark",
@@ -41,21 +41,21 @@ namespace android::util
 			arg0
 		);
 	}
-	jboolean Base64InputStream::markSupported()
+	jboolean Base64InputStream::markSupported() const
 	{
 		return callMethod<jboolean>(
 			"markSupported",
 			"()Z"
 		);
 	}
-	jint Base64InputStream::read()
+	jint Base64InputStream::read() const
 	{
 		return callMethod<jint>(
 			"read",
 			"()I"
 		);
 	}
-	jint Base64InputStream::read(JByteArray arg0, jint arg1, jint arg2)
+	jint Base64InputStream::read(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"read",
@@ -65,14 +65,14 @@ namespace android::util
 			arg2
 		);
 	}
-	void Base64InputStream::reset()
+	void Base64InputStream::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jlong Base64InputStream::skip(jlong arg0)
+	jlong Base64InputStream::skip(jlong arg0) const
 	{
 		return callMethod<jlong>(
 			"skip",

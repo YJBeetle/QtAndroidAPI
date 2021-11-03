@@ -22,9 +22,9 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::security::cert::X509Certificate getRemoteCaCert();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		java::security::cert::X509Certificate getRemoteCaCert() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

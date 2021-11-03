@@ -19,7 +19,7 @@ namespace android::util
 		LogPrinter(jint arg0, JString arg1);
 		
 		// Methods
-		void println(JString arg0);
+		void println(JString arg0) const;
 	};
 } // namespace android::util
 

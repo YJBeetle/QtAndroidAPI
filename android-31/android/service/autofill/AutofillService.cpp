@@ -39,14 +39,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::FillEventHistory AutofillService::getFillEventHistory()
+	android::service::autofill::FillEventHistory AutofillService::getFillEventHistory() const
 	{
 		return callObjectMethod(
 			"getFillEventHistory",
 			"()Landroid/service/autofill/FillEventHistory;"
 		);
 	}
-	JObject AutofillService::onBind(android::content::Intent arg0)
+	JObject AutofillService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -54,28 +54,28 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	void AutofillService::onConnected()
+	void AutofillService::onConnected() const
 	{
 		callMethod<void>(
 			"onConnected",
 			"()V"
 		);
 	}
-	void AutofillService::onCreate()
+	void AutofillService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void AutofillService::onDisconnected()
+	void AutofillService::onDisconnected() const
 	{
 		callMethod<void>(
 			"onDisconnected",
 			"()V"
 		);
 	}
-	void AutofillService::onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2)
+	void AutofillService::onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2) const
 	{
 		callMethod<void>(
 			"onFillRequest",
@@ -85,7 +85,7 @@ namespace android::service::autofill
 			arg2.object()
 		);
 	}
-	void AutofillService::onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1)
+	void AutofillService::onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1) const
 	{
 		callMethod<void>(
 			"onSaveRequest",
@@ -94,7 +94,7 @@ namespace android::service::autofill
 			arg1.object()
 		);
 	}
-	void AutofillService::onSavedDatasetsInfoRequest(JObject arg0)
+	void AutofillService::onSavedDatasetsInfoRequest(JObject arg0) const
 	{
 		callMethod<void>(
 			"onSavedDatasetsInfoRequest",

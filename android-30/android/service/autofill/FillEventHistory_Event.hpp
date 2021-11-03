@@ -28,15 +28,15 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		JObject getChangedFields();
-		android::os::Bundle getClientState();
-		JString getDatasetId();
-		JObject getFieldsClassification();
-		JObject getIgnoredDatasetIds();
-		JObject getManuallyEnteredField();
-		JObject getSelectedDatasetIds();
-		jint getType();
-		JString toString();
+		JObject getChangedFields() const;
+		android::os::Bundle getClientState() const;
+		JString getDatasetId() const;
+		JObject getFieldsClassification() const;
+		JObject getIgnoredDatasetIds() const;
+		JObject getManuallyEnteredField() const;
+		JObject getSelectedDatasetIds() const;
+		jint getType() const;
+		JString toString() const;
 	};
 } // namespace android::service::autofill
 

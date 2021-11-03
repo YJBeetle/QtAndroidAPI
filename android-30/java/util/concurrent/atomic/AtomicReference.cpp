@@ -23,7 +23,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	JObject AtomicReference::accumulateAndGet(JObject arg0, JObject arg1)
+	JObject AtomicReference::accumulateAndGet(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"accumulateAndGet",
@@ -32,7 +32,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	JObject AtomicReference::compareAndExchange(JObject arg0, JObject arg1)
+	JObject AtomicReference::compareAndExchange(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compareAndExchange",
@@ -41,7 +41,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	JObject AtomicReference::compareAndExchangeAcquire(JObject arg0, JObject arg1)
+	JObject AtomicReference::compareAndExchangeAcquire(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compareAndExchangeAcquire",
@@ -50,7 +50,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	JObject AtomicReference::compareAndExchangeRelease(JObject arg0, JObject arg1)
+	JObject AtomicReference::compareAndExchangeRelease(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"compareAndExchangeRelease",
@@ -59,7 +59,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::compareAndSet(JObject arg0, JObject arg1)
+	jboolean AtomicReference::compareAndSet(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"compareAndSet",
@@ -68,21 +68,21 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	JObject AtomicReference::get()
+	JObject AtomicReference::get() const
 	{
 		return callObjectMethod(
 			"get",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AtomicReference::getAcquire()
+	JObject AtomicReference::getAcquire() const
 	{
 		return callObjectMethod(
 			"getAcquire",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AtomicReference::getAndAccumulate(JObject arg0, JObject arg1)
+	JObject AtomicReference::getAndAccumulate(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getAndAccumulate",
@@ -91,7 +91,7 @@ namespace java::util::concurrent::atomic
 			arg1.object()
 		);
 	}
-	JObject AtomicReference::getAndSet(JObject arg0)
+	JObject AtomicReference::getAndSet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getAndSet",
@@ -99,7 +99,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	JObject AtomicReference::getAndUpdate(JObject arg0)
+	JObject AtomicReference::getAndUpdate(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getAndUpdate",
@@ -107,21 +107,21 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	JObject AtomicReference::getOpaque()
+	JObject AtomicReference::getOpaque() const
 	{
 		return callObjectMethod(
 			"getOpaque",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject AtomicReference::getPlain()
+	JObject AtomicReference::getPlain() const
 	{
 		return callObjectMethod(
 			"getPlain",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void AtomicReference::lazySet(JObject arg0)
+	void AtomicReference::lazySet(JObject arg0) const
 	{
 		callMethod<void>(
 			"lazySet",
@@ -129,7 +129,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::set(JObject arg0)
+	void AtomicReference::set(JObject arg0) const
 	{
 		callMethod<void>(
 			"set",
@@ -137,7 +137,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setOpaque(JObject arg0)
+	void AtomicReference::setOpaque(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOpaque",
@@ -145,7 +145,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setPlain(JObject arg0)
+	void AtomicReference::setPlain(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPlain",
@@ -153,7 +153,7 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	void AtomicReference::setRelease(JObject arg0)
+	void AtomicReference::setRelease(JObject arg0) const
 	{
 		callMethod<void>(
 			"setRelease",
@@ -161,14 +161,14 @@ namespace java::util::concurrent::atomic
 			arg0.object<jobject>()
 		);
 	}
-	JString AtomicReference::toString()
+	JString AtomicReference::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject AtomicReference::updateAndGet(JObject arg0)
+	JObject AtomicReference::updateAndGet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"updateAndGet",
@@ -176,7 +176,7 @@ namespace java::util::concurrent::atomic
 			arg0.object()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSet(JObject arg0, JObject arg1)
+	jboolean AtomicReference::weakCompareAndSet(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSet",
@@ -185,7 +185,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetAcquire(JObject arg0, JObject arg1)
+	jboolean AtomicReference::weakCompareAndSetAcquire(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetAcquire",
@@ -194,7 +194,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetPlain(JObject arg0, JObject arg1)
+	jboolean AtomicReference::weakCompareAndSetPlain(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetPlain",
@@ -203,7 +203,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetRelease(JObject arg0, JObject arg1)
+	jboolean AtomicReference::weakCompareAndSetRelease(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetRelease",
@@ -212,7 +212,7 @@ namespace java::util::concurrent::atomic
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AtomicReference::weakCompareAndSetVolatile(JObject arg0, JObject arg1)
+	jboolean AtomicReference::weakCompareAndSetVolatile(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"weakCompareAndSetVolatile",

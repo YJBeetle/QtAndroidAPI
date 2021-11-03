@@ -15,7 +15,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraOfflineSession::close()
+	void CameraOfflineSession::close() const
 	{
 		callMethod<void>(
 			"close",

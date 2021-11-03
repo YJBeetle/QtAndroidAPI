@@ -12,21 +12,21 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	JString ContentResolver_MimeTypeInfo::getContentDescription()
+	JString ContentResolver_MimeTypeInfo::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Icon ContentResolver_MimeTypeInfo::getIcon()
+	android::graphics::drawable::Icon ContentResolver_MimeTypeInfo::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString ContentResolver_MimeTypeInfo::getLabel()
+	JString ContentResolver_MimeTypeInfo::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",

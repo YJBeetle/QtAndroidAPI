@@ -27,28 +27,28 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	jint ConversationActions::describeContents()
+	jint ConversationActions::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject ConversationActions::getConversationActions()
+	JObject ConversationActions::getConversationActions() const
 	{
 		return callObjectMethod(
 			"getConversationActions",
 			"()Ljava/util/List;"
 		);
 	}
-	JString ConversationActions::getId()
+	JString ConversationActions::getId() const
 	{
 		return callObjectMethod(
 			"getId",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ConversationActions::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConversationActions::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -168,21 +168,21 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString EthiopicCalendar::getType()
+	JString EthiopicCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean EthiopicCalendar::isAmeteAlemEra()
+	jboolean EthiopicCalendar::isAmeteAlemEra() const
 	{
 		return callMethod<jboolean>(
 			"isAmeteAlemEra",
 			"()Z"
 		);
 	}
-	void EthiopicCalendar::setAmeteAlemEra(jboolean arg0)
+	void EthiopicCalendar::setAmeteAlemEra(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAmeteAlemEra",

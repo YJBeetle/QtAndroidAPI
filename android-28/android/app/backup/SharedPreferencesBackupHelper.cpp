@@ -22,7 +22,7 @@ namespace android::app::backup
 		) {}
 	
 	// Methods
-	void SharedPreferencesBackupHelper::performBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2)
+	void SharedPreferencesBackupHelper::performBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2) const
 	{
 		callMethod<void>(
 			"performBackup",
@@ -32,7 +32,7 @@ namespace android::app::backup
 			arg2.object()
 		);
 	}
-	void SharedPreferencesBackupHelper::restoreEntity(android::app::backup::BackupDataInputStream arg0)
+	void SharedPreferencesBackupHelper::restoreEntity(android::app::backup::BackupDataInputStream arg0) const
 	{
 		callMethod<void>(
 			"restoreEntity",
@@ -40,7 +40,7 @@ namespace android::app::backup
 			arg0.object()
 		);
 	}
-	void SharedPreferencesBackupHelper::writeNewStateDescription(android::os::ParcelFileDescriptor arg0)
+	void SharedPreferencesBackupHelper::writeNewStateDescription(android::os::ParcelFileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"writeNewStateDescription",

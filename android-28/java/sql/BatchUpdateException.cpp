@@ -101,14 +101,14 @@ namespace java::sql
 		) {}
 	
 	// Methods
-	JLongArray BatchUpdateException::getLargeUpdateCounts()
+	JLongArray BatchUpdateException::getLargeUpdateCounts() const
 	{
 		return callObjectMethod(
 			"getLargeUpdateCounts",
 			"()[J"
 		);
 	}
-	JIntArray BatchUpdateException::getUpdateCounts()
+	JIntArray BatchUpdateException::getUpdateCounts() const
 	{
 		return callObjectMethod(
 			"getUpdateCounts",

@@ -26,10 +26,10 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0);
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1);
-		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1, jint arg2);
-		android::os::VibrationEffect compose();
+		android::os::VibrationEffect_Composition addPrimitive(jint arg0) const;
+		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1) const;
+		android::os::VibrationEffect_Composition addPrimitive(jint arg0, jfloat arg1, jint arg2) const;
+		android::os::VibrationEffect compose() const;
 	};
 } // namespace android::os
 

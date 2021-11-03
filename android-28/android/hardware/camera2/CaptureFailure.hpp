@@ -23,11 +23,11 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		jlong getFrameNumber();
-		jint getReason();
-		android::hardware::camera2::CaptureRequest getRequest();
-		jint getSequenceId();
-		jboolean wasImageCaptured();
+		jlong getFrameNumber() const;
+		jint getReason() const;
+		android::hardware::camera2::CaptureRequest getRequest() const;
+		jint getSequenceId() const;
+		jboolean wasImageCaptured() const;
 	};
 } // namespace android::hardware::camera2
 

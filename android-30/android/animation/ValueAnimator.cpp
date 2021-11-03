@@ -114,7 +114,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::addUpdateListener(JObject arg0)
+	void ValueAnimator::addUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addUpdateListener",
@@ -122,42 +122,42 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::cancel()
+	void ValueAnimator::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::clone()
+	android::animation::ValueAnimator ValueAnimator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/ValueAnimator;"
 		);
 	}
-	void ValueAnimator::end()
+	void ValueAnimator::end() const
 	{
 		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
-	jfloat ValueAnimator::getAnimatedFraction()
+	jfloat ValueAnimator::getAnimatedFraction() const
 	{
 		return callMethod<jfloat>(
 			"getAnimatedFraction",
 			"()F"
 		);
 	}
-	JObject ValueAnimator::getAnimatedValue()
+	JObject ValueAnimator::getAnimatedValue() const
 	{
 		return callObjectMethod(
 			"getAnimatedValue",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ValueAnimator::getAnimatedValue(JString arg0)
+	JObject ValueAnimator::getAnimatedValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAnimatedValue",
@@ -165,91 +165,91 @@ namespace android::animation
 			arg0.object<jstring>()
 		);
 	}
-	jlong ValueAnimator::getCurrentPlayTime()
+	jlong ValueAnimator::getCurrentPlayTime() const
 	{
 		return callMethod<jlong>(
 			"getCurrentPlayTime",
 			"()J"
 		);
 	}
-	jlong ValueAnimator::getDuration()
+	jlong ValueAnimator::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	JObject ValueAnimator::getInterpolator()
+	JObject ValueAnimator::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	jint ValueAnimator::getRepeatCount()
+	jint ValueAnimator::getRepeatCount() const
 	{
 		return callMethod<jint>(
 			"getRepeatCount",
 			"()I"
 		);
 	}
-	jint ValueAnimator::getRepeatMode()
+	jint ValueAnimator::getRepeatMode() const
 	{
 		return callMethod<jint>(
 			"getRepeatMode",
 			"()I"
 		);
 	}
-	jlong ValueAnimator::getStartDelay()
+	jlong ValueAnimator::getStartDelay() const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
 			"()J"
 		);
 	}
-	jlong ValueAnimator::getTotalDuration()
+	jlong ValueAnimator::getTotalDuration() const
 	{
 		return callMethod<jlong>(
 			"getTotalDuration",
 			"()J"
 		);
 	}
-	JArray ValueAnimator::getValues()
+	JArray ValueAnimator::getValues() const
 	{
 		return callObjectMethod(
 			"getValues",
 			"()[Landroid/animation/PropertyValuesHolder;"
 		);
 	}
-	jboolean ValueAnimator::isRunning()
+	jboolean ValueAnimator::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean ValueAnimator::isStarted()
+	jboolean ValueAnimator::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void ValueAnimator::pause()
+	void ValueAnimator::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	void ValueAnimator::removeAllUpdateListeners()
+	void ValueAnimator::removeAllUpdateListeners() const
 	{
 		callMethod<void>(
 			"removeAllUpdateListeners",
 			"()V"
 		);
 	}
-	void ValueAnimator::removeUpdateListener(JObject arg0)
+	void ValueAnimator::removeUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeUpdateListener",
@@ -257,21 +257,21 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::resume()
+	void ValueAnimator::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void ValueAnimator::reverse()
+	void ValueAnimator::reverse() const
 	{
 		callMethod<void>(
 			"reverse",
 			"()V"
 		);
 	}
-	void ValueAnimator::setCurrentFraction(jfloat arg0)
+	void ValueAnimator::setCurrentFraction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setCurrentFraction",
@@ -279,7 +279,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setCurrentPlayTime(jlong arg0)
+	void ValueAnimator::setCurrentPlayTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setCurrentPlayTime",
@@ -287,7 +287,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::setDuration(jlong arg0)
+	android::animation::ValueAnimator ValueAnimator::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -295,7 +295,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setEvaluator(JObject arg0)
+	void ValueAnimator::setEvaluator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEvaluator",
@@ -303,7 +303,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::setFloatValues(JFloatArray arg0)
+	void ValueAnimator::setFloatValues(JFloatArray arg0) const
 	{
 		callMethod<void>(
 			"setFloatValues",
@@ -311,7 +311,7 @@ namespace android::animation
 			arg0.object<jfloatArray>()
 		);
 	}
-	void ValueAnimator::setIntValues(JIntArray arg0)
+	void ValueAnimator::setIntValues(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setIntValues",
@@ -319,7 +319,7 @@ namespace android::animation
 			arg0.object<jintArray>()
 		);
 	}
-	void ValueAnimator::setInterpolator(JObject arg0)
+	void ValueAnimator::setInterpolator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -327,7 +327,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void ValueAnimator::setObjectValues(JObjectArray arg0)
+	void ValueAnimator::setObjectValues(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"setObjectValues",
@@ -335,7 +335,7 @@ namespace android::animation
 			arg0.object<jobjectArray>()
 		);
 	}
-	void ValueAnimator::setRepeatCount(jint arg0)
+	void ValueAnimator::setRepeatCount(jint arg0) const
 	{
 		callMethod<void>(
 			"setRepeatCount",
@@ -343,7 +343,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setRepeatMode(jint arg0)
+	void ValueAnimator::setRepeatMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setRepeatMode",
@@ -351,7 +351,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setStartDelay(jlong arg0)
+	void ValueAnimator::setStartDelay(jlong arg0) const
 	{
 		callMethod<void>(
 			"setStartDelay",
@@ -359,7 +359,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setValues(JArray arg0)
+	void ValueAnimator::setValues(JArray arg0) const
 	{
 		callMethod<void>(
 			"setValues",
@@ -367,14 +367,14 @@ namespace android::animation
 			arg0.object<jarray>()
 		);
 	}
-	void ValueAnimator::start()
+	void ValueAnimator::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	JString ValueAnimator::toString()
+	JString ValueAnimator::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -52,19 +52,19 @@ namespace android::media
 		MediaSync();
 		
 		// Methods
-		android::view::Surface createInputSurface();
-		void flush();
-		android::media::PlaybackParams getPlaybackParams();
-		android::media::SyncParams getSyncParams();
-		android::media::MediaTimestamp getTimestamp();
-		void queueAudio(java::nio::ByteBuffer arg0, jint arg1, jlong arg2);
-		void release();
-		void setAudioTrack(android::media::AudioTrack arg0);
-		void setCallback(android::media::MediaSync_Callback arg0, android::os::Handler arg1);
-		void setOnErrorListener(JObject arg0, android::os::Handler arg1);
-		void setPlaybackParams(android::media::PlaybackParams arg0);
-		void setSurface(android::view::Surface arg0);
-		void setSyncParams(android::media::SyncParams arg0);
+		android::view::Surface createInputSurface() const;
+		void flush() const;
+		android::media::PlaybackParams getPlaybackParams() const;
+		android::media::SyncParams getSyncParams() const;
+		android::media::MediaTimestamp getTimestamp() const;
+		void queueAudio(java::nio::ByteBuffer arg0, jint arg1, jlong arg2) const;
+		void release() const;
+		void setAudioTrack(android::media::AudioTrack arg0) const;
+		void setCallback(android::media::MediaSync_Callback arg0, android::os::Handler arg1) const;
+		void setOnErrorListener(JObject arg0, android::os::Handler arg1) const;
+		void setPlaybackParams(android::media::PlaybackParams arg0) const;
+		void setSurface(android::view::Surface arg0) const;
+		void setSyncParams(android::media::SyncParams arg0) const;
 	};
 } // namespace android::media
 

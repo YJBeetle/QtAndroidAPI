@@ -19,7 +19,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	void VoiceInteractor_CompleteVoiceRequest::onCompleteResult(android::os::Bundle arg0)
+	void VoiceInteractor_CompleteVoiceRequest::onCompleteResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onCompleteResult",

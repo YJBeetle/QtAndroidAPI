@@ -16,7 +16,7 @@ namespace android::telephony::ims
 		) {}
 	
 	// Methods
-	void ImsMmTelManager_CapabilityCallback::onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0)
+	void ImsMmTelManager_CapabilityCallback::onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0) const
 	{
 		callMethod<void>(
 			"onCapabilitiesStatusChanged",

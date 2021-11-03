@@ -4291,7 +4291,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	jint UCharacter_UnicodeBlock::getID()
+	jint UCharacter_UnicodeBlock::getID() const
 	{
 		return callMethod<jint>(
 			"getID",

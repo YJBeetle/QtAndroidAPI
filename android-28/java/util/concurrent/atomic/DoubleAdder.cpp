@@ -18,7 +18,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	void DoubleAdder::add(jdouble arg0)
+	void DoubleAdder::add(jdouble arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -26,56 +26,56 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jdouble DoubleAdder::doubleValue()
+	jdouble DoubleAdder::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jfloat DoubleAdder::floatValue()
+	jfloat DoubleAdder::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint DoubleAdder::intValue()
+	jint DoubleAdder::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jlong DoubleAdder::longValue()
+	jlong DoubleAdder::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	void DoubleAdder::reset()
+	void DoubleAdder::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	jdouble DoubleAdder::sum()
+	jdouble DoubleAdder::sum() const
 	{
 		return callMethod<jdouble>(
 			"sum",
 			"()D"
 		);
 	}
-	jdouble DoubleAdder::sumThenReset()
+	jdouble DoubleAdder::sumThenReset() const
 	{
 		return callMethod<jdouble>(
 			"sumThenReset",
 			"()D"
 		);
 	}
-	JString DoubleAdder::toString()
+	JString DoubleAdder::toString() const
 	{
 		return callObjectMethod(
 			"toString",

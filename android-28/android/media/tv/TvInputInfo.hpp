@@ -56,25 +56,25 @@ namespace android::media::tv
 		// Constructors
 		
 		// Methods
-		jboolean canRecord();
-		android::content::Intent createSettingsIntent();
-		android::content::Intent createSetupIntent();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::Bundle getExtras();
-		JString getId();
-		JString getParentId();
-		android::content::pm::ServiceInfo getServiceInfo();
-		jint getTunerCount();
-		jint getType();
-		jint hashCode();
-		jboolean isHidden(android::content::Context arg0);
-		jboolean isPassthroughInput();
-		JString loadCustomLabel(android::content::Context arg0);
-		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0);
-		JString loadLabel(android::content::Context arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean canRecord() const;
+		android::content::Intent createSettingsIntent() const;
+		android::content::Intent createSetupIntent() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getExtras() const;
+		JString getId() const;
+		JString getParentId() const;
+		android::content::pm::ServiceInfo getServiceInfo() const;
+		jint getTunerCount() const;
+		jint getType() const;
+		jint hashCode() const;
+		jboolean isHidden(android::content::Context arg0) const;
+		jboolean isPassthroughInput() const;
+		JString loadCustomLabel(android::content::Context arg0) const;
+		android::graphics::drawable::Drawable loadIcon(android::content::Context arg0) const;
+		JString loadLabel(android::content::Context arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::tv
 

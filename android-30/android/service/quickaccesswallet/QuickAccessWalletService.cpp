@@ -52,7 +52,7 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	JObject QuickAccessWalletService::onBind(android::content::Intent arg0)
+	JObject QuickAccessWalletService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -60,7 +60,7 @@ namespace android::service::quickaccesswallet
 			arg0.object()
 		);
 	}
-	void QuickAccessWalletService::onWalletCardSelected(android::service::quickaccesswallet::SelectWalletCardRequest arg0)
+	void QuickAccessWalletService::onWalletCardSelected(android::service::quickaccesswallet::SelectWalletCardRequest arg0) const
 	{
 		callMethod<void>(
 			"onWalletCardSelected",
@@ -68,7 +68,7 @@ namespace android::service::quickaccesswallet
 			arg0.object()
 		);
 	}
-	void QuickAccessWalletService::onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1)
+	void QuickAccessWalletService::onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onWalletCardsRequested",
@@ -77,14 +77,14 @@ namespace android::service::quickaccesswallet
 			arg1.object()
 		);
 	}
-	void QuickAccessWalletService::onWalletDismissed()
+	void QuickAccessWalletService::onWalletDismissed() const
 	{
 		callMethod<void>(
 			"onWalletDismissed",
 			"()V"
 		);
 	}
-	void QuickAccessWalletService::sendWalletServiceEvent(android::service::quickaccesswallet::WalletServiceEvent arg0)
+	void QuickAccessWalletService::sendWalletServiceEvent(android::service::quickaccesswallet::WalletServiceEvent arg0) const
 	{
 		callMethod<void>(
 			"sendWalletServiceEvent",

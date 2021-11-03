@@ -49,34 +49,34 @@ namespace android::view::autofill
 		// Constructors
 		
 		// Methods
-		void cancel();
-		void commit();
-		void disableAutofillServices();
-		android::content::ComponentName getAutofillServiceComponentName();
-		JObject getAvailableFieldClassificationAlgorithms();
-		JString getDefaultFieldClassificationAlgorithm();
-		android::view::autofill::AutofillId getNextAutofillId();
-		android::service::autofill::UserData getUserData();
-		JString getUserDataId();
-		jboolean hasEnabledAutofillServices();
-		jboolean isAutofillSupported();
-		jboolean isEnabled();
-		jboolean isFieldClassificationEnabled();
-		void notifyValueChanged(android::view::View arg0);
-		void notifyValueChanged(android::view::View arg0, jint arg1, android::view::autofill::AutofillValue arg2);
-		void notifyViewClicked(android::view::View arg0);
-		void notifyViewClicked(android::view::View arg0, jint arg1);
-		void notifyViewEntered(android::view::View arg0);
-		void notifyViewEntered(android::view::View arg0, jint arg1, android::graphics::Rect arg2);
-		void notifyViewExited(android::view::View arg0);
-		void notifyViewExited(android::view::View arg0, jint arg1);
-		void notifyViewVisibilityChanged(android::view::View arg0, jboolean arg1);
-		void notifyViewVisibilityChanged(android::view::View arg0, jint arg1, jboolean arg2);
-		void registerCallback(android::view::autofill::AutofillManager_AutofillCallback arg0);
-		void requestAutofill(android::view::View arg0);
-		void requestAutofill(android::view::View arg0, jint arg1, android::graphics::Rect arg2);
-		void setUserData(android::service::autofill::UserData arg0);
-		void unregisterCallback(android::view::autofill::AutofillManager_AutofillCallback arg0);
+		void cancel() const;
+		void commit() const;
+		void disableAutofillServices() const;
+		android::content::ComponentName getAutofillServiceComponentName() const;
+		JObject getAvailableFieldClassificationAlgorithms() const;
+		JString getDefaultFieldClassificationAlgorithm() const;
+		android::view::autofill::AutofillId getNextAutofillId() const;
+		android::service::autofill::UserData getUserData() const;
+		JString getUserDataId() const;
+		jboolean hasEnabledAutofillServices() const;
+		jboolean isAutofillSupported() const;
+		jboolean isEnabled() const;
+		jboolean isFieldClassificationEnabled() const;
+		void notifyValueChanged(android::view::View arg0) const;
+		void notifyValueChanged(android::view::View arg0, jint arg1, android::view::autofill::AutofillValue arg2) const;
+		void notifyViewClicked(android::view::View arg0) const;
+		void notifyViewClicked(android::view::View arg0, jint arg1) const;
+		void notifyViewEntered(android::view::View arg0) const;
+		void notifyViewEntered(android::view::View arg0, jint arg1, android::graphics::Rect arg2) const;
+		void notifyViewExited(android::view::View arg0) const;
+		void notifyViewExited(android::view::View arg0, jint arg1) const;
+		void notifyViewVisibilityChanged(android::view::View arg0, jboolean arg1) const;
+		void notifyViewVisibilityChanged(android::view::View arg0, jint arg1, jboolean arg2) const;
+		void registerCallback(android::view::autofill::AutofillManager_AutofillCallback arg0) const;
+		void requestAutofill(android::view::View arg0) const;
+		void requestAutofill(android::view::View arg0, jint arg1, android::graphics::Rect arg2) const;
+		void setUserData(android::service::autofill::UserData arg0) const;
+		void unregisterCallback(android::view::autofill::AutofillManager_AutofillCallback arg0) const;
 	};
 } // namespace android::view::autofill
 

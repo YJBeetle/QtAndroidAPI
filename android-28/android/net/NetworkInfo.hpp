@@ -31,22 +31,22 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::net::NetworkInfo_DetailedState getDetailedState();
-		JString getExtraInfo();
-		JString getReason();
-		android::net::NetworkInfo_State getState();
-		jint getSubtype();
-		JString getSubtypeName();
-		jint getType();
-		JString getTypeName();
-		jboolean isAvailable();
-		jboolean isConnected();
-		jboolean isConnectedOrConnecting();
-		jboolean isFailover();
-		jboolean isRoaming();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::net::NetworkInfo_DetailedState getDetailedState() const;
+		JString getExtraInfo() const;
+		JString getReason() const;
+		android::net::NetworkInfo_State getState() const;
+		jint getSubtype() const;
+		JString getSubtypeName() const;
+		jint getType() const;
+		JString getTypeName() const;
+		jboolean isAvailable() const;
+		jboolean isConnected() const;
+		jboolean isConnectedOrConnecting() const;
+		jboolean isFailover() const;
+		jboolean isRoaming() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

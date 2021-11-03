@@ -64,7 +64,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jboolean ProcessBuilder_Redirect::equals(JObject arg0)
+	jboolean ProcessBuilder_Redirect::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -72,21 +72,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::io::File ProcessBuilder_Redirect::file()
+	java::io::File ProcessBuilder_Redirect::file() const
 	{
 		return callObjectMethod(
 			"file",
 			"()Ljava/io/File;"
 		);
 	}
-	jint ProcessBuilder_Redirect::hashCode()
+	jint ProcessBuilder_Redirect::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect::type()
+	java::lang::ProcessBuilder_Redirect_Type ProcessBuilder_Redirect::type() const
 	{
 		return callObjectMethod(
 			"type",

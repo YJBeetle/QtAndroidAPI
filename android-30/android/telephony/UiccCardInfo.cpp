@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint UiccCardInfo::describeContents()
+	jint UiccCardInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean UiccCardInfo::equals(JObject arg0)
+	jboolean UiccCardInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,63 +36,63 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint UiccCardInfo::getCardId()
+	jint UiccCardInfo::getCardId() const
 	{
 		return callMethod<jint>(
 			"getCardId",
 			"()I"
 		);
 	}
-	JString UiccCardInfo::getEid()
+	JString UiccCardInfo::getEid() const
 	{
 		return callObjectMethod(
 			"getEid",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UiccCardInfo::getIccId()
+	JString UiccCardInfo::getIccId() const
 	{
 		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint UiccCardInfo::getSlotIndex()
+	jint UiccCardInfo::getSlotIndex() const
 	{
 		return callMethod<jint>(
 			"getSlotIndex",
 			"()I"
 		);
 	}
-	jint UiccCardInfo::hashCode()
+	jint UiccCardInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean UiccCardInfo::isEuicc()
+	jboolean UiccCardInfo::isEuicc() const
 	{
 		return callMethod<jboolean>(
 			"isEuicc",
 			"()Z"
 		);
 	}
-	jboolean UiccCardInfo::isRemovable()
+	jboolean UiccCardInfo::isRemovable() const
 	{
 		return callMethod<jboolean>(
 			"isRemovable",
 			"()Z"
 		);
 	}
-	JString UiccCardInfo::toString()
+	JString UiccCardInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UiccCardInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UiccCardInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

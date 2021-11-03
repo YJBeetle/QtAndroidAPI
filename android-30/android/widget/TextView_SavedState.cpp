@@ -20,14 +20,14 @@ namespace android::widget
 	// Constructors
 	
 	// Methods
-	JString TextView_SavedState::toString()
+	JString TextView_SavedState::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextView_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextView_SavedState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

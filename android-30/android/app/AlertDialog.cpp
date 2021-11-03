@@ -54,7 +54,7 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	android::widget::Button AlertDialog::getButton(jint arg0)
+	android::widget::Button AlertDialog::getButton(jint arg0) const
 	{
 		return callObjectMethod(
 			"getButton",
@@ -62,14 +62,14 @@ namespace android::app
 			arg0
 		);
 	}
-	android::widget::ListView AlertDialog::getListView()
+	android::widget::ListView AlertDialog::getListView() const
 	{
 		return callObjectMethod(
 			"getListView",
 			"()Landroid/widget/ListView;"
 		);
 	}
-	jboolean AlertDialog::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean AlertDialog::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -78,7 +78,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean AlertDialog::onKeyUp(jint arg0, android::view::KeyEvent arg1)
+	jboolean AlertDialog::onKeyUp(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",
@@ -87,7 +87,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(JString arg0, JObject arg1)
+	void AlertDialog::setButton(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setButton",
@@ -96,7 +96,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(JString arg0, android::os::Message arg1)
+	void AlertDialog::setButton(JString arg0, android::os::Message arg1) const
 	{
 		callMethod<void>(
 			"setButton",
@@ -105,7 +105,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, JString arg1, JObject arg2)
+	void AlertDialog::setButton(jint arg0, JString arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setButton",
@@ -115,7 +115,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, JString arg1, android::os::Message arg2)
+	void AlertDialog::setButton(jint arg0, JString arg1, android::os::Message arg2) const
 	{
 		callMethod<void>(
 			"setButton",
@@ -125,7 +125,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlertDialog::setButton2(JString arg0, JObject arg1)
+	void AlertDialog::setButton2(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setButton2",
@@ -134,7 +134,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton2(JString arg0, android::os::Message arg1)
+	void AlertDialog::setButton2(JString arg0, android::os::Message arg1) const
 	{
 		callMethod<void>(
 			"setButton2",
@@ -143,7 +143,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton3(JString arg0, JObject arg1)
+	void AlertDialog::setButton3(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setButton3",
@@ -152,7 +152,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton3(JString arg0, android::os::Message arg1)
+	void AlertDialog::setButton3(JString arg0, android::os::Message arg1) const
 	{
 		callMethod<void>(
 			"setButton3",
@@ -161,7 +161,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setCustomTitle(android::view::View arg0)
+	void AlertDialog::setCustomTitle(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setCustomTitle",
@@ -169,7 +169,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AlertDialog::setIcon(android::graphics::drawable::Drawable arg0)
+	void AlertDialog::setIcon(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -177,7 +177,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AlertDialog::setIcon(jint arg0)
+	void AlertDialog::setIcon(jint arg0) const
 	{
 		callMethod<void>(
 			"setIcon",
@@ -185,7 +185,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlertDialog::setIconAttribute(jint arg0)
+	void AlertDialog::setIconAttribute(jint arg0) const
 	{
 		callMethod<void>(
 			"setIconAttribute",
@@ -193,7 +193,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlertDialog::setInverseBackgroundForced(jboolean arg0)
+	void AlertDialog::setInverseBackgroundForced(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setInverseBackgroundForced",
@@ -201,7 +201,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void AlertDialog::setMessage(JString arg0)
+	void AlertDialog::setMessage(JString arg0) const
 	{
 		callMethod<void>(
 			"setMessage",
@@ -209,7 +209,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void AlertDialog::setTitle(JString arg0)
+	void AlertDialog::setTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setTitle",
@@ -217,7 +217,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	void AlertDialog::setView(android::view::View arg0)
+	void AlertDialog::setView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setView",
@@ -225,7 +225,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AlertDialog::setView(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void AlertDialog::setView(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setView",

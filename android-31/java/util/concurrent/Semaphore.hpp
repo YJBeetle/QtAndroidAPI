@@ -24,22 +24,22 @@ namespace java::util::concurrent
 		Semaphore(jint arg0, jboolean arg1);
 		
 		// Methods
-		void acquire();
-		void acquire(jint arg0);
-		void acquireUninterruptibly();
-		void acquireUninterruptibly(jint arg0);
-		jint availablePermits();
-		jint drainPermits();
-		jint getQueueLength();
-		jboolean hasQueuedThreads();
-		jboolean isFair();
-		void release();
-		void release(jint arg0);
-		JString toString();
-		jboolean tryAcquire();
-		jboolean tryAcquire(jint arg0);
-		jboolean tryAcquire(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jboolean tryAcquire(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		void acquire() const;
+		void acquire(jint arg0) const;
+		void acquireUninterruptibly() const;
+		void acquireUninterruptibly(jint arg0) const;
+		jint availablePermits() const;
+		jint drainPermits() const;
+		jint getQueueLength() const;
+		jboolean hasQueuedThreads() const;
+		jboolean isFair() const;
+		void release() const;
+		void release(jint arg0) const;
+		JString toString() const;
+		jboolean tryAcquire() const;
+		jboolean tryAcquire(jint arg0) const;
+		jboolean tryAcquire(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		jboolean tryAcquire(jint arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const;
 	};
 } // namespace java::util::concurrent
 

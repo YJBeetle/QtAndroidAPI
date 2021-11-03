@@ -37,13 +37,13 @@ namespace java::security
 		ProtectionDomain(java::security::CodeSource arg0, java::security::PermissionCollection arg1, java::lang::ClassLoader arg2, JArray arg3);
 		
 		// Methods
-		java::lang::ClassLoader getClassLoader();
-		java::security::CodeSource getCodeSource();
-		java::security::PermissionCollection getPermissions();
-		JArray getPrincipals();
-		jboolean implies(java::security::Permission arg0);
-		jboolean staticPermissionsOnly();
-		JString toString();
+		java::lang::ClassLoader getClassLoader() const;
+		java::security::CodeSource getCodeSource() const;
+		java::security::PermissionCollection getPermissions() const;
+		JArray getPrincipals() const;
+		jboolean implies(java::security::Permission arg0) const;
+		jboolean staticPermissionsOnly() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

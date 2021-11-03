@@ -11,7 +11,7 @@ namespace android::webkit
 	// Constructors
 	
 	// Methods
-	void JsPromptResult::confirm(JString arg0)
+	void JsPromptResult::confirm(JString arg0) const
 	{
 		callMethod<void>(
 			"confirm",

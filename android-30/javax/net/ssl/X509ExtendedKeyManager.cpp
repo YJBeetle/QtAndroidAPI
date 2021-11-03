@@ -14,7 +14,7 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	JString X509ExtendedKeyManager::chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2)
+	JString X509ExtendedKeyManager::chooseEngineClientAlias(JArray arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const
 	{
 		return callObjectMethod(
 			"chooseEngineClientAlias",
@@ -24,7 +24,7 @@ namespace javax::net::ssl
 			arg2.object()
 		);
 	}
-	JString X509ExtendedKeyManager::chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2)
+	JString X509ExtendedKeyManager::chooseEngineServerAlias(JString arg0, JArray arg1, javax::net::ssl::SSLEngine arg2) const
 	{
 		return callObjectMethod(
 			"chooseEngineServerAlias",

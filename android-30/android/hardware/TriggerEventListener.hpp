@@ -22,7 +22,7 @@ namespace android::hardware
 		TriggerEventListener();
 		
 		// Methods
-		void onTrigger(android::hardware::TriggerEvent arg0);
+		void onTrigger(android::hardware::TriggerEvent arg0) const;
 	};
 } // namespace android::hardware
 

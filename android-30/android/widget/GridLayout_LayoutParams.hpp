@@ -46,9 +46,9 @@ namespace android::widget
 		GridLayout_LayoutParams(android::widget::GridLayout_Spec arg0, android::widget::GridLayout_Spec arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		void setGravity(jint arg0);
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		void setGravity(jint arg0) const;
 	};
 } // namespace android::widget
 

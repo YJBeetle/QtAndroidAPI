@@ -72,7 +72,7 @@ namespace android::os::storage
 		) {}
 	
 	// Methods
-	void OnObbStateChangeListener::onObbStateChange(JString arg0, jint arg1)
+	void OnObbStateChangeListener::onObbStateChange(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onObbStateChange",

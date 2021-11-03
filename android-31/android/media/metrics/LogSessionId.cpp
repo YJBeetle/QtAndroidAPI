@@ -20,7 +20,7 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jboolean LogSessionId::equals(JObject arg0)
+	jboolean LogSessionId::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -28,21 +28,21 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	JString LogSessionId::getStringId()
+	JString LogSessionId::getStringId() const
 	{
 		return callObjectMethod(
 			"getStringId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint LogSessionId::hashCode()
+	jint LogSessionId::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LogSessionId::toString()
+	JString LogSessionId::toString() const
 	{
 		return callObjectMethod(
 			"toString",

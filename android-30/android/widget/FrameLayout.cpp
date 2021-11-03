@@ -44,7 +44,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::FrameLayout_LayoutParams FrameLayout::generateLayoutParams(JObject arg0)
+	android::widget::FrameLayout_LayoutParams FrameLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -52,28 +52,28 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString FrameLayout::getAccessibilityClassName()
+	JString FrameLayout::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring()
+	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring() const
 	{
 		return callMethod<jboolean>(
 			"getConsiderGoneChildrenWhenMeasuring",
 			"()Z"
 		);
 	}
-	jboolean FrameLayout::getMeasureAllChildren()
+	jboolean FrameLayout::getMeasureAllChildren() const
 	{
 		return callMethod<jboolean>(
 			"getMeasureAllChildren",
 			"()Z"
 		);
 	}
-	void FrameLayout::setForegroundGravity(jint arg0)
+	void FrameLayout::setForegroundGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setForegroundGravity",
@@ -81,7 +81,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void FrameLayout::setMeasureAllChildren(jboolean arg0)
+	void FrameLayout::setMeasureAllChildren(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMeasureAllChildren",
@@ -89,7 +89,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean FrameLayout::shouldDelayChildPressedState()
+	jboolean FrameLayout::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",

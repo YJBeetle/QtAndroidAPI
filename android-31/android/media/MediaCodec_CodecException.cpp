@@ -25,28 +25,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MediaCodec_CodecException::getDiagnosticInfo()
+	JString MediaCodec_CodecException::getDiagnosticInfo() const
 	{
 		return callObjectMethod(
 			"getDiagnosticInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaCodec_CodecException::getErrorCode()
+	jint MediaCodec_CodecException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	jboolean MediaCodec_CodecException::isRecoverable()
+	jboolean MediaCodec_CodecException::isRecoverable() const
 	{
 		return callMethod<jboolean>(
 			"isRecoverable",
 			"()Z"
 		);
 	}
-	jboolean MediaCodec_CodecException::isTransient()
+	jboolean MediaCodec_CodecException::isTransient() const
 	{
 		return callMethod<jboolean>(
 			"isTransient",

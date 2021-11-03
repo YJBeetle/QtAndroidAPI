@@ -13,7 +13,7 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapTtlsConfig::equals(JObject arg0)
+	jboolean EapSessionConfig_EapTtlsConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -21,21 +21,21 @@ namespace android::net::eap
 			arg0.object<jobject>()
 		);
 	}
-	android::net::eap::EapSessionConfig EapSessionConfig_EapTtlsConfig::getInnerEapSessionConfig()
+	android::net::eap::EapSessionConfig EapSessionConfig_EapTtlsConfig::getInnerEapSessionConfig() const
 	{
 		return callObjectMethod(
 			"getInnerEapSessionConfig",
 			"()Landroid/net/eap/EapSessionConfig;"
 		);
 	}
-	java::security::cert::X509Certificate EapSessionConfig_EapTtlsConfig::getServerCaCert()
+	java::security::cert::X509Certificate EapSessionConfig_EapTtlsConfig::getServerCaCert() const
 	{
 		return callObjectMethod(
 			"getServerCaCert",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	jint EapSessionConfig_EapTtlsConfig::hashCode()
+	jint EapSessionConfig_EapTtlsConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

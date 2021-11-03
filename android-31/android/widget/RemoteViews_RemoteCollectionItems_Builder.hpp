@@ -26,10 +26,10 @@ namespace android::widget
 		RemoteViews_RemoteCollectionItems_Builder();
 		
 		// Methods
-		android::widget::RemoteViews_RemoteCollectionItems_Builder addItem(jlong arg0, android::widget::RemoteViews arg1);
-		android::widget::RemoteViews_RemoteCollectionItems build();
-		android::widget::RemoteViews_RemoteCollectionItems_Builder setHasStableIds(jboolean arg0);
-		android::widget::RemoteViews_RemoteCollectionItems_Builder setViewTypeCount(jint arg0);
+		android::widget::RemoteViews_RemoteCollectionItems_Builder addItem(jlong arg0, android::widget::RemoteViews arg1) const;
+		android::widget::RemoteViews_RemoteCollectionItems build() const;
+		android::widget::RemoteViews_RemoteCollectionItems_Builder setHasStableIds(jboolean arg0) const;
+		android::widget::RemoteViews_RemoteCollectionItems_Builder setViewTypeCount(jint arg0) const;
 	};
 } // namespace android::widget
 

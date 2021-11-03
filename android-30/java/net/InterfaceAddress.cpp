@@ -14,7 +14,7 @@ namespace java::net
 	// Constructors
 	
 	// Methods
-	jboolean InterfaceAddress::equals(JObject arg0)
+	jboolean InterfaceAddress::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -22,35 +22,35 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	java::net::InetAddress InterfaceAddress::getAddress()
+	java::net::InetAddress InterfaceAddress::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	java::net::InetAddress InterfaceAddress::getBroadcast()
+	java::net::InetAddress InterfaceAddress::getBroadcast() const
 	{
 		return callObjectMethod(
 			"getBroadcast",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jshort InterfaceAddress::getNetworkPrefixLength()
+	jshort InterfaceAddress::getNetworkPrefixLength() const
 	{
 		return callMethod<jshort>(
 			"getNetworkPrefixLength",
 			"()S"
 		);
 	}
-	jint InterfaceAddress::hashCode()
+	jint InterfaceAddress::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString InterfaceAddress::toString()
+	JString InterfaceAddress::toString() const
 	{
 		return callObjectMethod(
 			"toString",

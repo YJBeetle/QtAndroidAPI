@@ -20,11 +20,11 @@ namespace android::hardware::camera2::params
 		MultiResolutionStreamInfo(jint arg0, jint arg1, JString arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getHeight();
-		JString getPhysicalCameraId();
-		jint getWidth();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getHeight() const;
+		JString getPhysicalCameraId() const;
+		jint getWidth() const;
+		jint hashCode() const;
 	};
 } // namespace android::hardware::camera2::params
 

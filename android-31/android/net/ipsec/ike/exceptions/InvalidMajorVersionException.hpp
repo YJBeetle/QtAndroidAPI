@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike::exceptions
 		InvalidMajorVersionException(jbyte arg0);
 		
 		// Methods
-		jbyte getMajorVersion();
+		jbyte getMajorVersion() const;
 	};
 } // namespace android::net::ipsec::ike::exceptions
 

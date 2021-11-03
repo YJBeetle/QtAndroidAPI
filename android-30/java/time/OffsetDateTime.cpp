@@ -152,7 +152,7 @@ namespace java::time
 			"()Ljava/util/Comparator;"
 		);
 	}
-	JObject OffsetDateTime::adjustInto(JObject arg0)
+	JObject OffsetDateTime::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -160,7 +160,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime OffsetDateTime::atZoneSameInstant(java::time::ZoneId arg0)
+	java::time::ZonedDateTime OffsetDateTime::atZoneSameInstant(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"atZoneSameInstant",
@@ -168,7 +168,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime OffsetDateTime::atZoneSimilarLocal(java::time::ZoneId arg0)
+	java::time::ZonedDateTime OffsetDateTime::atZoneSimilarLocal(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"atZoneSimilarLocal",
@@ -176,7 +176,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetDateTime::compareTo(JObject arg0)
+	jint OffsetDateTime::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -184,7 +184,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint OffsetDateTime::compareTo(java::time::OffsetDateTime arg0)
+	jint OffsetDateTime::compareTo(java::time::OffsetDateTime arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -192,7 +192,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::equals(JObject arg0)
+	jboolean OffsetDateTime::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -200,7 +200,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString OffsetDateTime::format(java::time::format::DateTimeFormatter arg0)
+	JString OffsetDateTime::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -208,7 +208,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetDateTime::get(JObject arg0)
+	jint OffsetDateTime::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -216,35 +216,35 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetDateTime::getDayOfMonth()
+	jint OffsetDateTime::getDayOfMonth() const
 	{
 		return callMethod<jint>(
 			"getDayOfMonth",
 			"()I"
 		);
 	}
-	java::time::DayOfWeek OffsetDateTime::getDayOfWeek()
+	java::time::DayOfWeek OffsetDateTime::getDayOfWeek() const
 	{
 		return callObjectMethod(
 			"getDayOfWeek",
 			"()Ljava/time/DayOfWeek;"
 		);
 	}
-	jint OffsetDateTime::getDayOfYear()
+	jint OffsetDateTime::getDayOfYear() const
 	{
 		return callMethod<jint>(
 			"getDayOfYear",
 			"()I"
 		);
 	}
-	jint OffsetDateTime::getHour()
+	jint OffsetDateTime::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jlong OffsetDateTime::getLong(JObject arg0)
+	jlong OffsetDateTime::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -252,63 +252,63 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint OffsetDateTime::getMinute()
+	jint OffsetDateTime::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	java::time::Month OffsetDateTime::getMonth()
+	java::time::Month OffsetDateTime::getMonth() const
 	{
 		return callObjectMethod(
 			"getMonth",
 			"()Ljava/time/Month;"
 		);
 	}
-	jint OffsetDateTime::getMonthValue()
+	jint OffsetDateTime::getMonthValue() const
 	{
 		return callMethod<jint>(
 			"getMonthValue",
 			"()I"
 		);
 	}
-	jint OffsetDateTime::getNano()
+	jint OffsetDateTime::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	java::time::ZoneOffset OffsetDateTime::getOffset()
+	java::time::ZoneOffset OffsetDateTime::getOffset() const
 	{
 		return callObjectMethod(
 			"getOffset",
 			"()Ljava/time/ZoneOffset;"
 		);
 	}
-	jint OffsetDateTime::getSecond()
+	jint OffsetDateTime::getSecond() const
 	{
 		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
-	jint OffsetDateTime::getYear()
+	jint OffsetDateTime::getYear() const
 	{
 		return callMethod<jint>(
 			"getYear",
 			"()I"
 		);
 	}
-	jint OffsetDateTime::hashCode()
+	jint OffsetDateTime::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean OffsetDateTime::isAfter(java::time::OffsetDateTime arg0)
+	jboolean OffsetDateTime::isAfter(java::time::OffsetDateTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -316,7 +316,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::isBefore(java::time::OffsetDateTime arg0)
+	jboolean OffsetDateTime::isBefore(java::time::OffsetDateTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -324,7 +324,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::isEqual(java::time::OffsetDateTime arg0)
+	jboolean OffsetDateTime::isEqual(java::time::OffsetDateTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEqual",
@@ -332,7 +332,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::isSupported(JObject arg0)
+	jboolean OffsetDateTime::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -340,7 +340,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minus(JObject arg0)
+	java::time::OffsetDateTime OffsetDateTime::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -348,7 +348,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minus(jlong arg0, JObject arg1)
+	java::time::OffsetDateTime OffsetDateTime::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -357,7 +357,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusDays(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusDays",
@@ -365,7 +365,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusHours(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -373,7 +373,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusMinutes(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -381,7 +381,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusMonths(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMonths",
@@ -389,7 +389,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusNanos(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -397,7 +397,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusSeconds(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -405,7 +405,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusWeeks(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusWeeks(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusWeeks",
@@ -413,7 +413,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minusYears(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::minusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusYears",
@@ -421,7 +421,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plus(JObject arg0)
+	java::time::OffsetDateTime OffsetDateTime::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -429,7 +429,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plus(jlong arg0, JObject arg1)
+	java::time::OffsetDateTime OffsetDateTime::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -438,7 +438,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusDays(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusDays(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusDays",
@@ -446,7 +446,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusHours(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -454,7 +454,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusMinutes(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -462,7 +462,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusMonths(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusMonths(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMonths",
@@ -470,7 +470,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusNanos(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -478,7 +478,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusSeconds(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -486,7 +486,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusWeeks(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusWeeks(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusWeeks",
@@ -494,7 +494,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plusYears(jlong arg0)
+	java::time::OffsetDateTime OffsetDateTime::plusYears(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusYears",
@@ -502,7 +502,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject OffsetDateTime::query(JObject arg0)
+	JObject OffsetDateTime::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -510,7 +510,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange OffsetDateTime::range(JObject arg0)
+	java::time::temporal::ValueRange OffsetDateTime::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -518,63 +518,63 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetDateTime::toEpochSecond()
+	jlong OffsetDateTime::toEpochSecond() const
 	{
 		return callMethod<jlong>(
 			"toEpochSecond",
 			"()J"
 		);
 	}
-	java::time::Instant OffsetDateTime::toInstant()
+	java::time::Instant OffsetDateTime::toInstant() const
 	{
 		return callObjectMethod(
 			"toInstant",
 			"()Ljava/time/Instant;"
 		);
 	}
-	java::time::LocalDate OffsetDateTime::toLocalDate()
+	java::time::LocalDate OffsetDateTime::toLocalDate() const
 	{
 		return callObjectMethod(
 			"toLocalDate",
 			"()Ljava/time/LocalDate;"
 		);
 	}
-	java::time::LocalDateTime OffsetDateTime::toLocalDateTime()
+	java::time::LocalDateTime OffsetDateTime::toLocalDateTime() const
 	{
 		return callObjectMethod(
 			"toLocalDateTime",
 			"()Ljava/time/LocalDateTime;"
 		);
 	}
-	java::time::LocalTime OffsetDateTime::toLocalTime()
+	java::time::LocalTime OffsetDateTime::toLocalTime() const
 	{
 		return callObjectMethod(
 			"toLocalTime",
 			"()Ljava/time/LocalTime;"
 		);
 	}
-	java::time::OffsetTime OffsetDateTime::toOffsetTime()
+	java::time::OffsetTime OffsetDateTime::toOffsetTime() const
 	{
 		return callObjectMethod(
 			"toOffsetTime",
 			"()Ljava/time/OffsetTime;"
 		);
 	}
-	JString OffsetDateTime::toString()
+	JString OffsetDateTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::ZonedDateTime OffsetDateTime::toZonedDateTime()
+	java::time::ZonedDateTime OffsetDateTime::toZonedDateTime() const
 	{
 		return callObjectMethod(
 			"toZonedDateTime",
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::truncatedTo(JObject arg0)
+	java::time::OffsetDateTime OffsetDateTime::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -582,7 +582,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetDateTime::until(JObject arg0, JObject arg1)
+	jlong OffsetDateTime::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -591,7 +591,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0)
+	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -599,7 +599,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0, jlong arg1)
+	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",
@@ -608,7 +608,7 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withDayOfMonth(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withDayOfMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDayOfMonth",
@@ -616,7 +616,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withDayOfYear(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withDayOfYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"withDayOfYear",
@@ -624,7 +624,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withHour(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withHour(jint arg0) const
 	{
 		return callObjectMethod(
 			"withHour",
@@ -632,7 +632,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withMinute(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withMinute(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinute",
@@ -640,7 +640,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withMonth(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMonth",
@@ -648,7 +648,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withNano(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withNano(jint arg0) const
 	{
 		return callObjectMethod(
 			"withNano",
@@ -656,7 +656,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withOffsetSameInstant(java::time::ZoneOffset arg0)
+	java::time::OffsetDateTime OffsetDateTime::withOffsetSameInstant(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"withOffsetSameInstant",
@@ -664,7 +664,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withOffsetSameLocal(java::time::ZoneOffset arg0)
+	java::time::OffsetDateTime OffsetDateTime::withOffsetSameLocal(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"withOffsetSameLocal",
@@ -672,7 +672,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withSecond(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withSecond(jint arg0) const
 	{
 		return callObjectMethod(
 			"withSecond",
@@ -680,7 +680,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::withYear(jint arg0)
+	java::time::OffsetDateTime OffsetDateTime::withYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"withYear",

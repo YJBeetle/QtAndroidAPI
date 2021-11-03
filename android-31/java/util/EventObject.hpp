@@ -20,8 +20,8 @@ namespace java::util
 		EventObject(JObject arg0);
 		
 		// Methods
-		JObject getSource();
-		JString toString();
+		JObject getSource() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

@@ -23,9 +23,9 @@ namespace android::database
 		Observable();
 		
 		// Methods
-		void registerObserver(JObject arg0);
-		void unregisterAll();
-		void unregisterObserver(JObject arg0);
+		void registerObserver(JObject arg0) const;
+		void unregisterAll() const;
+		void unregisterObserver(JObject arg0) const;
 	};
 } // namespace android::database
 

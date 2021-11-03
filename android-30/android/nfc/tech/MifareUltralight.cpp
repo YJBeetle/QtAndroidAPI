@@ -49,56 +49,56 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void MifareUltralight::close()
+	void MifareUltralight::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void MifareUltralight::connect()
+	void MifareUltralight::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	jint MifareUltralight::getMaxTransceiveLength()
+	jint MifareUltralight::getMaxTransceiveLength() const
 	{
 		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
-	android::nfc::Tag MifareUltralight::getTag()
+	android::nfc::Tag MifareUltralight::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jint MifareUltralight::getTimeout()
+	jint MifareUltralight::getTimeout() const
 	{
 		return callMethod<jint>(
 			"getTimeout",
 			"()I"
 		);
 	}
-	jint MifareUltralight::getType()
+	jint MifareUltralight::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jboolean MifareUltralight::isConnected()
+	jboolean MifareUltralight::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	JByteArray MifareUltralight::readPages(jint arg0)
+	JByteArray MifareUltralight::readPages(jint arg0) const
 	{
 		return callObjectMethod(
 			"readPages",
@@ -106,7 +106,7 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	void MifareUltralight::setTimeout(jint arg0)
+	void MifareUltralight::setTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setTimeout",
@@ -114,7 +114,7 @@ namespace android::nfc::tech
 			arg0
 		);
 	}
-	JByteArray MifareUltralight::transceive(JByteArray arg0)
+	JByteArray MifareUltralight::transceive(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"transceive",
@@ -122,7 +122,7 @@ namespace android::nfc::tech
 			arg0.object<jbyteArray>()
 		);
 	}
-	void MifareUltralight::writePage(jint arg0, JByteArray arg1)
+	void MifareUltralight::writePage(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"writePage",

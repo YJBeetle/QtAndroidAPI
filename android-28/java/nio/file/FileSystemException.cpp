@@ -25,28 +25,28 @@ namespace java::nio::file
 		) {}
 	
 	// Methods
-	JString FileSystemException::getFile()
+	JString FileSystemException::getFile() const
 	{
 		return callObjectMethod(
 			"getFile",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FileSystemException::getMessage()
+	JString FileSystemException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FileSystemException::getOtherFile()
+	JString FileSystemException::getOtherFile() const
 	{
 		return callObjectMethod(
 			"getOtherFile",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FileSystemException::getReason()
+	JString FileSystemException::getReason() const
 	{
 		return callObjectMethod(
 			"getReason",

@@ -25,7 +25,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	java::security::Permission AccessControlException::getPermission()
+	java::security::Permission AccessControlException::getPermission() const
 	{
 		return callObjectMethod(
 			"getPermission",

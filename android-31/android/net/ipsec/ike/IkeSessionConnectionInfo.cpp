@@ -20,21 +20,21 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	java::net::InetAddress IkeSessionConnectionInfo::getLocalAddress()
+	java::net::InetAddress IkeSessionConnectionInfo::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	android::net::Network IkeSessionConnectionInfo::getNetwork()
+	android::net::Network IkeSessionConnectionInfo::getNetwork() const
 	{
 		return callObjectMethod(
 			"getNetwork",
 			"()Landroid/net/Network;"
 		);
 	}
-	java::net::InetAddress IkeSessionConnectionInfo::getRemoteAddress()
+	java::net::InetAddress IkeSessionConnectionInfo::getRemoteAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteAddress",

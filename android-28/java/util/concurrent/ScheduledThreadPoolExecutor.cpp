@@ -34,7 +34,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void ScheduledThreadPoolExecutor::execute(JObject arg0)
+	void ScheduledThreadPoolExecutor::execute(JObject arg0) const
 	{
 		callMethod<void>(
 			"execute",
@@ -42,35 +42,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy()
+	jboolean ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy() const
 	{
 		return callMethod<jboolean>(
 			"getContinueExistingPeriodicTasksAfterShutdownPolicy",
 			"()Z"
 		);
 	}
-	jboolean ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy()
+	jboolean ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy() const
 	{
 		return callMethod<jboolean>(
 			"getExecuteExistingDelayedTasksAfterShutdownPolicy",
 			"()Z"
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::getQueue()
+	JObject ScheduledThreadPoolExecutor::getQueue() const
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/concurrent/BlockingQueue;"
 		);
 	}
-	jboolean ScheduledThreadPoolExecutor::getRemoveOnCancelPolicy()
+	jboolean ScheduledThreadPoolExecutor::getRemoveOnCancelPolicy() const
 	{
 		return callMethod<jboolean>(
 			"getRemoveOnCancelPolicy",
 			"()Z"
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject ScheduledThreadPoolExecutor::schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callObjectMethod(
 			"schedule",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	JObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const
 	{
 		return callObjectMethod(
 			"scheduleAtFixedRate",
@@ -91,7 +91,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	JObject ScheduledThreadPoolExecutor::scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3) const
 	{
 		return callObjectMethod(
 			"scheduleWithFixedDelay",
@@ -102,7 +102,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	void ScheduledThreadPoolExecutor::setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0)
+	void ScheduledThreadPoolExecutor::setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContinueExistingPeriodicTasksAfterShutdownPolicy",
@@ -110,7 +110,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ScheduledThreadPoolExecutor::setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0)
+	void ScheduledThreadPoolExecutor::setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExecuteExistingDelayedTasksAfterShutdownPolicy",
@@ -118,7 +118,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ScheduledThreadPoolExecutor::setRemoveOnCancelPolicy(jboolean arg0)
+	void ScheduledThreadPoolExecutor::setRemoveOnCancelPolicy(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setRemoveOnCancelPolicy",
@@ -126,21 +126,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ScheduledThreadPoolExecutor::shutdown()
+	void ScheduledThreadPoolExecutor::shutdown() const
 	{
 		callMethod<void>(
 			"shutdown",
 			"()V"
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::shutdownNow()
+	JObject ScheduledThreadPoolExecutor::shutdownNow() const
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::submit(JObject arg0)
+	JObject ScheduledThreadPoolExecutor::submit(JObject arg0) const
 	{
 		return callObjectMethod(
 			"submit",
@@ -148,7 +148,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	JObject ScheduledThreadPoolExecutor::submit(JObject arg0, JObject arg1)
+	JObject ScheduledThreadPoolExecutor::submit(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"submit",

@@ -23,9 +23,9 @@ namespace android::service::carrier
 		MessagePdu(JObject arg0);
 		
 		// Methods
-		jint describeContents();
-		JObject getPdus();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JObject getPdus() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::carrier
 

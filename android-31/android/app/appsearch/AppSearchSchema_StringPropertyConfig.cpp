@@ -45,14 +45,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	jint AppSearchSchema_StringPropertyConfig::getIndexingType()
+	jint AppSearchSchema_StringPropertyConfig::getIndexingType() const
 	{
 		return callMethod<jint>(
 			"getIndexingType",
 			"()I"
 		);
 	}
-	jint AppSearchSchema_StringPropertyConfig::getTokenizerType()
+	jint AppSearchSchema_StringPropertyConfig::getTokenizerType() const
 	{
 		return callMethod<jint>(
 			"getTokenizerType",

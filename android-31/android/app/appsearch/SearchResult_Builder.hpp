@@ -31,10 +31,10 @@ namespace android::app::appsearch
 		SearchResult_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::app::appsearch::SearchResult_Builder addMatchInfo(android::app::appsearch::SearchResult_MatchInfo arg0);
-		android::app::appsearch::SearchResult build();
-		android::app::appsearch::SearchResult_Builder setGenericDocument(android::app::appsearch::GenericDocument arg0);
-		android::app::appsearch::SearchResult_Builder setRankingSignal(jdouble arg0);
+		android::app::appsearch::SearchResult_Builder addMatchInfo(android::app::appsearch::SearchResult_MatchInfo arg0) const;
+		android::app::appsearch::SearchResult build() const;
+		android::app::appsearch::SearchResult_Builder setGenericDocument(android::app::appsearch::GenericDocument arg0) const;
+		android::app::appsearch::SearchResult_Builder setRankingSignal(jdouble arg0) const;
 	};
 } // namespace android::app::appsearch
 

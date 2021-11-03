@@ -23,11 +23,11 @@ namespace android::app::admin
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jlong getId();
-		JString getPackageName();
-		jlong getTimestamp();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getId() const;
+		JString getPackageName() const;
+		jlong getTimestamp() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::admin
 

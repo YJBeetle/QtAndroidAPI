@@ -38,7 +38,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	java::lang::Number CompactDecimalFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number CompactDecimalFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -47,7 +47,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::util::CurrencyAmount CompactDecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1)
+	android::icu::util::CurrencyAmount CompactDecimalFormat::parseCurrency(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseCurrency",

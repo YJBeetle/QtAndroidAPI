@@ -49,7 +49,7 @@ namespace java::time::chrono
 			"()[Ljava/time/chrono/HijrahEra;"
 		);
 	}
-	JString HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1)
+	JString HijrahEra::getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -58,14 +58,14 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	jint HijrahEra::getValue()
+	jint HijrahEra::getValue() const
 	{
 		return callMethod<jint>(
 			"getValue",
 			"()I"
 		);
 	}
-	java::time::temporal::ValueRange HijrahEra::range(JObject arg0)
+	java::time::temporal::ValueRange HijrahEra::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",

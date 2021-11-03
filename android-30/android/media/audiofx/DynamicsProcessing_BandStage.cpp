@@ -19,14 +19,14 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jint DynamicsProcessing_BandStage::getBandCount()
+	jint DynamicsProcessing_BandStage::getBandCount() const
 	{
 		return callMethod<jint>(
 			"getBandCount",
 			"()I"
 		);
 	}
-	JString DynamicsProcessing_BandStage::toString()
+	JString DynamicsProcessing_BandStage::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -26,14 +26,14 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	jboolean AlphaAnimation::willChangeBounds()
+	jboolean AlphaAnimation::willChangeBounds() const
 	{
 		return callMethod<jboolean>(
 			"willChangeBounds",
 			"()Z"
 		);
 	}
-	jboolean AlphaAnimation::willChangeTransformationMatrix()
+	jboolean AlphaAnimation::willChangeTransformationMatrix() const
 	{
 		return callMethod<jboolean>(
 			"willChangeTransformationMatrix",

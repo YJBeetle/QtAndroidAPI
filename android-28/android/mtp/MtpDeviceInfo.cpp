@@ -12,49 +12,49 @@ namespace android::mtp
 	// Constructors
 	
 	// Methods
-	JIntArray MtpDeviceInfo::getEventsSupported()
+	JIntArray MtpDeviceInfo::getEventsSupported() const
 	{
 		return callObjectMethod(
 			"getEventsSupported",
 			"()[I"
 		);
 	}
-	JString MtpDeviceInfo::getManufacturer()
+	JString MtpDeviceInfo::getManufacturer() const
 	{
 		return callObjectMethod(
 			"getManufacturer",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MtpDeviceInfo::getModel()
+	JString MtpDeviceInfo::getModel() const
 	{
 		return callObjectMethod(
 			"getModel",
 			"()Ljava/lang/String;"
 		);
 	}
-	JIntArray MtpDeviceInfo::getOperationsSupported()
+	JIntArray MtpDeviceInfo::getOperationsSupported() const
 	{
 		return callObjectMethod(
 			"getOperationsSupported",
 			"()[I"
 		);
 	}
-	JString MtpDeviceInfo::getSerialNumber()
+	JString MtpDeviceInfo::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MtpDeviceInfo::getVersion()
+	JString MtpDeviceInfo::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
+	jboolean MtpDeviceInfo::isEventSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isEventSupported",
@@ -62,7 +62,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	jboolean MtpDeviceInfo::isOperationSupported(jint arg0)
+	jboolean MtpDeviceInfo::isOperationSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOperationSupported",

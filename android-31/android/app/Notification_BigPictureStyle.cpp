@@ -25,7 +25,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::Bitmap arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"bigLargeIcon",
@@ -33,7 +33,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::drawable::Icon arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigLargeIcon(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"bigLargeIcon",
@@ -41,7 +41,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigPicture(android::graphics::Bitmap arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigPicture(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"bigPicture",
@@ -49,7 +49,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigPicture(android::graphics::drawable::Icon arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::bigPicture(android::graphics::drawable::Icon arg0) const
 	{
 		return callObjectMethod(
 			"bigPicture",
@@ -57,7 +57,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setBigContentTitle(JString arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setBigContentTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBigContentTitle",
@@ -65,7 +65,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setContentDescription(JString arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setContentDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setContentDescription",
@@ -73,7 +73,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setSummaryText(JString arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::setSummaryText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSummaryText",
@@ -81,7 +81,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::showBigPictureWhenCollapsed(jboolean arg0)
+	android::app::Notification_BigPictureStyle Notification_BigPictureStyle::showBigPictureWhenCollapsed(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"showBigPictureWhenCollapsed",

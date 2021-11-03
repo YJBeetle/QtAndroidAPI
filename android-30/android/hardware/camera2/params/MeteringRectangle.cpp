@@ -61,7 +61,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	jboolean MeteringRectangle::equals(android::hardware::camera2::params::MeteringRectangle arg0)
+	jboolean MeteringRectangle::equals(android::hardware::camera2::params::MeteringRectangle arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -69,7 +69,7 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	jboolean MeteringRectangle::equals(JObject arg0)
+	jboolean MeteringRectangle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -77,70 +77,70 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint MeteringRectangle::getHeight()
+	jint MeteringRectangle::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint MeteringRectangle::getMeteringWeight()
+	jint MeteringRectangle::getMeteringWeight() const
 	{
 		return callMethod<jint>(
 			"getMeteringWeight",
 			"()I"
 		);
 	}
-	android::graphics::Rect MeteringRectangle::getRect()
+	android::graphics::Rect MeteringRectangle::getRect() const
 	{
 		return callObjectMethod(
 			"getRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::util::Size MeteringRectangle::getSize()
+	android::util::Size MeteringRectangle::getSize() const
 	{
 		return callObjectMethod(
 			"getSize",
 			"()Landroid/util/Size;"
 		);
 	}
-	android::graphics::Point MeteringRectangle::getUpperLeftPoint()
+	android::graphics::Point MeteringRectangle::getUpperLeftPoint() const
 	{
 		return callObjectMethod(
 			"getUpperLeftPoint",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	jint MeteringRectangle::getWidth()
+	jint MeteringRectangle::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint MeteringRectangle::getX()
+	jint MeteringRectangle::getX() const
 	{
 		return callMethod<jint>(
 			"getX",
 			"()I"
 		);
 	}
-	jint MeteringRectangle::getY()
+	jint MeteringRectangle::getY() const
 	{
 		return callMethod<jint>(
 			"getY",
 			"()I"
 		);
 	}
-	jint MeteringRectangle::hashCode()
+	jint MeteringRectangle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MeteringRectangle::toString()
+	JString MeteringRectangle::toString() const
 	{
 		return callObjectMethod(
 			"toString",

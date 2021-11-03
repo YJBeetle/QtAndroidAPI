@@ -88,14 +88,14 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jint AccessibilityWindowInfo::describeContents()
+	jint AccessibilityWindowInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AccessibilityWindowInfo::equals(JObject arg0)
+	jboolean AccessibilityWindowInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -103,14 +103,14 @@ namespace android::view::accessibility
 			arg0.object<jobject>()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getAnchor()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getAnchor() const
 	{
 		return callObjectMethod(
 			"getAnchor",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	void AccessibilityWindowInfo::getBoundsInScreen(android::graphics::Rect arg0)
+	void AccessibilityWindowInfo::getBoundsInScreen(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getBoundsInScreen",
@@ -118,7 +118,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getChild(jint arg0)
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getChild(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -126,42 +126,42 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jint AccessibilityWindowInfo::getChildCount()
+	jint AccessibilityWindowInfo::getChildCount() const
 	{
 		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
-	jint AccessibilityWindowInfo::getDisplayId()
+	jint AccessibilityWindowInfo::getDisplayId() const
 	{
 		return callMethod<jint>(
 			"getDisplayId",
 			"()I"
 		);
 	}
-	jint AccessibilityWindowInfo::getId()
+	jint AccessibilityWindowInfo::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint AccessibilityWindowInfo::getLayer()
+	jint AccessibilityWindowInfo::getLayer() const
 	{
 		return callMethod<jint>(
 			"getLayer",
 			"()I"
 		);
 	}
-	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getParent()
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityWindowInfo::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
-	void AccessibilityWindowInfo::getRegionInScreen(android::graphics::Region arg0)
+	void AccessibilityWindowInfo::getRegionInScreen(android::graphics::Region arg0) const
 	{
 		callMethod<void>(
 			"getRegionInScreen",
@@ -169,77 +169,77 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getRoot()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityWindowInfo::getRoot() const
 	{
 		return callObjectMethod(
 			"getRoot",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	JString AccessibilityWindowInfo::getTitle()
+	JString AccessibilityWindowInfo::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AccessibilityWindowInfo::getType()
+	jint AccessibilityWindowInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint AccessibilityWindowInfo::hashCode()
+	jint AccessibilityWindowInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AccessibilityWindowInfo::isAccessibilityFocused()
+	jboolean AccessibilityWindowInfo::isAccessibilityFocused() const
 	{
 		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityWindowInfo::isActive()
+	jboolean AccessibilityWindowInfo::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityWindowInfo::isFocused()
+	jboolean AccessibilityWindowInfo::isFocused() const
 	{
 		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityWindowInfo::isInPictureInPictureMode()
+	jboolean AccessibilityWindowInfo::isInPictureInPictureMode() const
 	{
 		return callMethod<jboolean>(
 			"isInPictureInPictureMode",
 			"()Z"
 		);
 	}
-	void AccessibilityWindowInfo::recycle()
+	void AccessibilityWindowInfo::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	JString AccessibilityWindowInfo::toString()
+	JString AccessibilityWindowInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AccessibilityWindowInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AccessibilityWindowInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -16,7 +16,7 @@ namespace android::view::inspector
 		) {}
 	
 	// Methods
-	JObject StaticInspectionCompanionProvider::provide(JClass arg0)
+	JObject StaticInspectionCompanionProvider::provide(JClass arg0) const
 	{
 		return callObjectMethod(
 			"provide",

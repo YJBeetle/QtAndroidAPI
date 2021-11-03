@@ -19,14 +19,14 @@ namespace android::telephony::mbms
 	// Constructors
 	
 	// Methods
-	jint StreamingServiceInfo::describeContents()
+	jint StreamingServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void StreamingServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StreamingServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -19,49 +19,49 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	jint ExternalStorageStats::describeContents()
+	jint ExternalStorageStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong ExternalStorageStats::getAppBytes()
+	jlong ExternalStorageStats::getAppBytes() const
 	{
 		return callMethod<jlong>(
 			"getAppBytes",
 			"()J"
 		);
 	}
-	jlong ExternalStorageStats::getAudioBytes()
+	jlong ExternalStorageStats::getAudioBytes() const
 	{
 		return callMethod<jlong>(
 			"getAudioBytes",
 			"()J"
 		);
 	}
-	jlong ExternalStorageStats::getImageBytes()
+	jlong ExternalStorageStats::getImageBytes() const
 	{
 		return callMethod<jlong>(
 			"getImageBytes",
 			"()J"
 		);
 	}
-	jlong ExternalStorageStats::getTotalBytes()
+	jlong ExternalStorageStats::getTotalBytes() const
 	{
 		return callMethod<jlong>(
 			"getTotalBytes",
 			"()J"
 		);
 	}
-	jlong ExternalStorageStats::getVideoBytes()
+	jlong ExternalStorageStats::getVideoBytes() const
 	{
 		return callMethod<jlong>(
 			"getVideoBytes",
 			"()J"
 		);
 	}
-	void ExternalStorageStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ExternalStorageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

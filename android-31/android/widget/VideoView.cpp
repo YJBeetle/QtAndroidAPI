@@ -51,7 +51,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void VideoView::addSubtitleSource(java::io::InputStream arg0, android::media::MediaFormat arg1)
+	void VideoView::addSubtitleSource(java::io::InputStream arg0, android::media::MediaFormat arg1) const
 	{
 		callMethod<void>(
 			"addSubtitleSource",
@@ -60,28 +60,28 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean VideoView::canPause()
+	jboolean VideoView::canPause() const
 	{
 		return callMethod<jboolean>(
 			"canPause",
 			"()Z"
 		);
 	}
-	jboolean VideoView::canSeekBackward()
+	jboolean VideoView::canSeekBackward() const
 	{
 		return callMethod<jboolean>(
 			"canSeekBackward",
 			"()Z"
 		);
 	}
-	jboolean VideoView::canSeekForward()
+	jboolean VideoView::canSeekForward() const
 	{
 		return callMethod<jboolean>(
 			"canSeekForward",
 			"()Z"
 		);
 	}
-	void VideoView::draw(android::graphics::Canvas arg0)
+	void VideoView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -89,49 +89,49 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString VideoView::getAccessibilityClassName()
+	JString VideoView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint VideoView::getAudioSessionId()
+	jint VideoView::getAudioSessionId() const
 	{
 		return callMethod<jint>(
 			"getAudioSessionId",
 			"()I"
 		);
 	}
-	jint VideoView::getBufferPercentage()
+	jint VideoView::getBufferPercentage() const
 	{
 		return callMethod<jint>(
 			"getBufferPercentage",
 			"()I"
 		);
 	}
-	jint VideoView::getCurrentPosition()
+	jint VideoView::getCurrentPosition() const
 	{
 		return callMethod<jint>(
 			"getCurrentPosition",
 			"()I"
 		);
 	}
-	jint VideoView::getDuration()
+	jint VideoView::getDuration() const
 	{
 		return callMethod<jint>(
 			"getDuration",
 			"()I"
 		);
 	}
-	jboolean VideoView::isPlaying()
+	jboolean VideoView::isPlaying() const
 	{
 		return callMethod<jboolean>(
 			"isPlaying",
 			"()Z"
 		);
 	}
-	jboolean VideoView::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean VideoView::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -140,7 +140,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean VideoView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean VideoView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -148,7 +148,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean VideoView::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean VideoView::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -156,14 +156,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::pause()
+	void VideoView::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	jint VideoView::resolveAdjustedSize(jint arg0, jint arg1)
+	jint VideoView::resolveAdjustedSize(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"resolveAdjustedSize",
@@ -172,14 +172,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void VideoView::resume()
+	void VideoView::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void VideoView::seekTo(jint arg0)
+	void VideoView::seekTo(jint arg0) const
 	{
 		callMethod<void>(
 			"seekTo",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void VideoView::setAudioAttributes(android::media::AudioAttributes arg0)
+	void VideoView::setAudioAttributes(android::media::AudioAttributes arg0) const
 	{
 		callMethod<void>(
 			"setAudioAttributes",
@@ -195,7 +195,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setAudioFocusRequest(jint arg0)
+	void VideoView::setAudioFocusRequest(jint arg0) const
 	{
 		callMethod<void>(
 			"setAudioFocusRequest",
@@ -203,7 +203,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void VideoView::setMediaController(android::widget::MediaController arg0)
+	void VideoView::setMediaController(android::widget::MediaController arg0) const
 	{
 		callMethod<void>(
 			"setMediaController",
@@ -211,7 +211,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnCompletionListener(JObject arg0)
+	void VideoView::setOnCompletionListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnCompletionListener",
@@ -219,7 +219,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnErrorListener(JObject arg0)
+	void VideoView::setOnErrorListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -227,7 +227,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnInfoListener(JObject arg0)
+	void VideoView::setOnInfoListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnInfoListener",
@@ -235,7 +235,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setOnPreparedListener(JObject arg0)
+	void VideoView::setOnPreparedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnPreparedListener",
@@ -243,7 +243,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setVideoPath(JString arg0)
+	void VideoView::setVideoPath(JString arg0) const
 	{
 		callMethod<void>(
 			"setVideoPath",
@@ -251,7 +251,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void VideoView::setVideoURI(android::net::Uri arg0)
+	void VideoView::setVideoURI(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"setVideoURI",
@@ -259,7 +259,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void VideoView::setVideoURI(android::net::Uri arg0, JObject arg1)
+	void VideoView::setVideoURI(android::net::Uri arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setVideoURI",
@@ -268,21 +268,21 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void VideoView::start()
+	void VideoView::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	void VideoView::stopPlayback()
+	void VideoView::stopPlayback() const
 	{
 		callMethod<void>(
 			"stopPlayback",
 			"()V"
 		);
 	}
-	void VideoView::suspend()
+	void VideoView::suspend() const
 	{
 		callMethod<void>(
 			"suspend",

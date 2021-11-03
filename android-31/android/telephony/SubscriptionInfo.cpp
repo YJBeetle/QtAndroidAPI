@@ -25,7 +25,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	android::graphics::Bitmap SubscriptionInfo::createIconBitmap(android::content::Context arg0)
+	android::graphics::Bitmap SubscriptionInfo::createIconBitmap(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"createIconBitmap",
@@ -33,14 +33,14 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	jint SubscriptionInfo::describeContents()
+	jint SubscriptionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SubscriptionInfo::equals(JObject arg0)
+	jboolean SubscriptionInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -48,154 +48,154 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint SubscriptionInfo::getCardId()
+	jint SubscriptionInfo::getCardId() const
 	{
 		return callMethod<jint>(
 			"getCardId",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getCarrierId()
+	jint SubscriptionInfo::getCarrierId() const
 	{
 		return callMethod<jint>(
 			"getCarrierId",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getCarrierName()
+	JString SubscriptionInfo::getCarrierName() const
 	{
 		return callObjectMethod(
 			"getCarrierName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString SubscriptionInfo::getCountryIso()
+	JString SubscriptionInfo::getCountryIso() const
 	{
 		return callObjectMethod(
 			"getCountryIso",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getDataRoaming()
+	jint SubscriptionInfo::getDataRoaming() const
 	{
 		return callMethod<jint>(
 			"getDataRoaming",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getDisplayName()
+	JString SubscriptionInfo::getDisplayName() const
 	{
 		return callObjectMethod(
 			"getDisplayName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::ParcelUuid SubscriptionInfo::getGroupUuid()
+	android::os::ParcelUuid SubscriptionInfo::getGroupUuid() const
 	{
 		return callObjectMethod(
 			"getGroupUuid",
 			"()Landroid/os/ParcelUuid;"
 		);
 	}
-	JString SubscriptionInfo::getIccId()
+	JString SubscriptionInfo::getIccId() const
 	{
 		return callObjectMethod(
 			"getIccId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getIconTint()
+	jint SubscriptionInfo::getIconTint() const
 	{
 		return callMethod<jint>(
 			"getIconTint",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getMcc()
+	jint SubscriptionInfo::getMcc() const
 	{
 		return callMethod<jint>(
 			"getMcc",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getMccString()
+	JString SubscriptionInfo::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getMnc()
+	jint SubscriptionInfo::getMnc() const
 	{
 		return callMethod<jint>(
 			"getMnc",
 			"()I"
 		);
 	}
-	JString SubscriptionInfo::getMncString()
+	JString SubscriptionInfo::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SubscriptionInfo::getNumber()
+	JString SubscriptionInfo::getNumber() const
 	{
 		return callObjectMethod(
 			"getNumber",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint SubscriptionInfo::getSimSlotIndex()
+	jint SubscriptionInfo::getSimSlotIndex() const
 	{
 		return callMethod<jint>(
 			"getSimSlotIndex",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getSubscriptionId()
+	jint SubscriptionInfo::getSubscriptionId() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionId",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::getSubscriptionType()
+	jint SubscriptionInfo::getSubscriptionType() const
 	{
 		return callMethod<jint>(
 			"getSubscriptionType",
 			"()I"
 		);
 	}
-	jint SubscriptionInfo::hashCode()
+	jint SubscriptionInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean SubscriptionInfo::isEmbedded()
+	jboolean SubscriptionInfo::isEmbedded() const
 	{
 		return callMethod<jboolean>(
 			"isEmbedded",
 			"()Z"
 		);
 	}
-	jboolean SubscriptionInfo::isOpportunistic()
+	jboolean SubscriptionInfo::isOpportunistic() const
 	{
 		return callMethod<jboolean>(
 			"isOpportunistic",
 			"()Z"
 		);
 	}
-	JString SubscriptionInfo::toString()
+	JString SubscriptionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SubscriptionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SubscriptionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

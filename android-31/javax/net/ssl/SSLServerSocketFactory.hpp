@@ -23,8 +23,8 @@ namespace javax::net::ssl
 		
 		// Methods
 		static javax::net::ServerSocketFactory getDefault();
-		JArray getDefaultCipherSuites();
-		JArray getSupportedCipherSuites();
+		JArray getDefaultCipherSuites() const;
+		JArray getSupportedCipherSuites() const;
 	};
 } // namespace javax::net::ssl
 

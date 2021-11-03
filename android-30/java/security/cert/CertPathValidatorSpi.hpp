@@ -22,8 +22,8 @@ namespace java::security::cert
 		CertPathValidatorSpi();
 		
 		// Methods
-		JObject engineGetRevocationChecker();
-		JObject engineValidate(java::security::cert::CertPath arg0, JObject arg1);
+		JObject engineGetRevocationChecker() const;
+		JObject engineValidate(java::security::cert::CertPath arg0, JObject arg1) const;
 	};
 } // namespace java::security::cert
 

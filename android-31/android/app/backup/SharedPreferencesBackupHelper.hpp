@@ -35,9 +35,9 @@ namespace android::app::backup
 		SharedPreferencesBackupHelper(android::content::Context arg0, JArray arg1);
 		
 		// Methods
-		void performBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2);
-		void restoreEntity(android::app::backup::BackupDataInputStream arg0);
-		void writeNewStateDescription(android::os::ParcelFileDescriptor arg0);
+		void performBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2) const;
+		void restoreEntity(android::app::backup::BackupDataInputStream arg0) const;
+		void writeNewStateDescription(android::os::ParcelFileDescriptor arg0) const;
 	};
 } // namespace android::app::backup
 

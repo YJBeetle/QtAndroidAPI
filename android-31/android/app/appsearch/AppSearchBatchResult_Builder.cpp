@@ -19,14 +19,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchBatchResult AppSearchBatchResult_Builder::build()
+	android::app::appsearch::AppSearchBatchResult AppSearchBatchResult_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/AppSearchBatchResult;"
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setFailure(JObject arg0, jint arg1, JString arg2)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setFailure(JObject arg0, jint arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"setFailure",
@@ -36,7 +36,7 @@ namespace android::app::appsearch
 			arg2.object<jstring>()
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1) const
 	{
 		return callObjectMethod(
 			"setResult",
@@ -45,7 +45,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setSuccess(JObject arg0, JObject arg1)
+	android::app::appsearch::AppSearchBatchResult_Builder AppSearchBatchResult_Builder::setSuccess(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setSuccess",

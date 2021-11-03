@@ -19,8 +19,8 @@ namespace android::media::tv
 		TvView_TimeShiftPositionCallback();
 		
 		// Methods
-		void onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1);
-		void onTimeShiftStartPositionChanged(JString arg0, jlong arg1);
+		void onTimeShiftCurrentPositionChanged(JString arg0, jlong arg1) const;
+		void onTimeShiftStartPositionChanged(JString arg0, jlong arg1) const;
 	};
 } // namespace android::media::tv
 

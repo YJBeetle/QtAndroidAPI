@@ -12,7 +12,7 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	void TranslationManager::addOnDeviceTranslationCapabilityUpdateListener(JObject arg0, JObject arg1)
+	void TranslationManager::addOnDeviceTranslationCapabilityUpdateListener(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"addOnDeviceTranslationCapabilityUpdateListener",
@@ -21,7 +21,7 @@ namespace android::view::translation
 			arg1.object()
 		);
 	}
-	void TranslationManager::createOnDeviceTranslator(android::view::translation::TranslationContext arg0, JObject arg1, JObject arg2)
+	void TranslationManager::createOnDeviceTranslator(android::view::translation::TranslationContext arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"createOnDeviceTranslator",
@@ -31,7 +31,7 @@ namespace android::view::translation
 			arg2.object()
 		);
 	}
-	JObject TranslationManager::getOnDeviceTranslationCapabilities(jint arg0, jint arg1)
+	JObject TranslationManager::getOnDeviceTranslationCapabilities(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getOnDeviceTranslationCapabilities",
@@ -40,14 +40,14 @@ namespace android::view::translation
 			arg1
 		);
 	}
-	android::app::PendingIntent TranslationManager::getOnDeviceTranslationSettingsActivityIntent()
+	android::app::PendingIntent TranslationManager::getOnDeviceTranslationSettingsActivityIntent() const
 	{
 		return callObjectMethod(
 			"getOnDeviceTranslationSettingsActivityIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	void TranslationManager::removeOnDeviceTranslationCapabilityUpdateListener(JObject arg0)
+	void TranslationManager::removeOnDeviceTranslationCapabilityUpdateListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnDeviceTranslationCapabilityUpdateListener",

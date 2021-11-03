@@ -28,7 +28,7 @@ namespace java::lang::reflect
 		) {}
 	
 	// Methods
-	JThrowable UndeclaredThrowableException::getUndeclaredThrowable()
+	JThrowable UndeclaredThrowableException::getUndeclaredThrowable() const
 	{
 		return callObjectMethod(
 			"getUndeclaredThrowable",

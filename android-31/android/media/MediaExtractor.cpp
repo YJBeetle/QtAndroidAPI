@@ -71,14 +71,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jboolean MediaExtractor::advance()
+	jboolean MediaExtractor::advance() const
 	{
 		return callMethod<jboolean>(
 			"advance",
 			"()Z"
 		);
 	}
-	JObject MediaExtractor::getAudioPresentations(jint arg0)
+	JObject MediaExtractor::getAudioPresentations(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAudioPresentations",
@@ -86,14 +86,14 @@ namespace android::media
 			arg0
 		);
 	}
-	jlong MediaExtractor::getCachedDuration()
+	jlong MediaExtractor::getCachedDuration() const
 	{
 		return callMethod<jlong>(
 			"getCachedDuration",
 			"()J"
 		);
 	}
-	android::media::MediaExtractor_CasInfo MediaExtractor::getCasInfo(jint arg0)
+	android::media::MediaExtractor_CasInfo MediaExtractor::getCasInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getCasInfo",
@@ -101,35 +101,35 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::DrmInitData MediaExtractor::getDrmInitData()
+	android::media::DrmInitData MediaExtractor::getDrmInitData() const
 	{
 		return callObjectMethod(
 			"getDrmInitData",
 			"()Landroid/media/DrmInitData;"
 		);
 	}
-	android::media::metrics::LogSessionId MediaExtractor::getLogSessionId()
+	android::media::metrics::LogSessionId MediaExtractor::getLogSessionId() const
 	{
 		return callObjectMethod(
 			"getLogSessionId",
 			"()Landroid/media/metrics/LogSessionId;"
 		);
 	}
-	android::os::PersistableBundle MediaExtractor::getMetrics()
+	android::os::PersistableBundle MediaExtractor::getMetrics() const
 	{
 		return callObjectMethod(
 			"getMetrics",
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	JObject MediaExtractor::getPsshInfo()
+	JObject MediaExtractor::getPsshInfo() const
 	{
 		return callObjectMethod(
 			"getPsshInfo",
 			"()Ljava/util/Map;"
 		);
 	}
-	jboolean MediaExtractor::getSampleCryptoInfo(android::media::MediaCodec_CryptoInfo arg0)
+	jboolean MediaExtractor::getSampleCryptoInfo(android::media::MediaCodec_CryptoInfo arg0) const
 	{
 		return callMethod<jboolean>(
 			"getSampleCryptoInfo",
@@ -137,42 +137,42 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint MediaExtractor::getSampleFlags()
+	jint MediaExtractor::getSampleFlags() const
 	{
 		return callMethod<jint>(
 			"getSampleFlags",
 			"()I"
 		);
 	}
-	jlong MediaExtractor::getSampleSize()
+	jlong MediaExtractor::getSampleSize() const
 	{
 		return callMethod<jlong>(
 			"getSampleSize",
 			"()J"
 		);
 	}
-	jlong MediaExtractor::getSampleTime()
+	jlong MediaExtractor::getSampleTime() const
 	{
 		return callMethod<jlong>(
 			"getSampleTime",
 			"()J"
 		);
 	}
-	jint MediaExtractor::getSampleTrackIndex()
+	jint MediaExtractor::getSampleTrackIndex() const
 	{
 		return callMethod<jint>(
 			"getSampleTrackIndex",
 			"()I"
 		);
 	}
-	jint MediaExtractor::getTrackCount()
+	jint MediaExtractor::getTrackCount() const
 	{
 		return callMethod<jint>(
 			"getTrackCount",
 			"()I"
 		);
 	}
-	android::media::MediaFormat MediaExtractor::getTrackFormat(jint arg0)
+	android::media::MediaFormat MediaExtractor::getTrackFormat(jint arg0) const
 	{
 		return callObjectMethod(
 			"getTrackFormat",
@@ -180,14 +180,14 @@ namespace android::media
 			arg0
 		);
 	}
-	jboolean MediaExtractor::hasCacheReachedEndOfStream()
+	jboolean MediaExtractor::hasCacheReachedEndOfStream() const
 	{
 		return callMethod<jboolean>(
 			"hasCacheReachedEndOfStream",
 			"()Z"
 		);
 	}
-	jint MediaExtractor::readSampleData(java::nio::ByteBuffer arg0, jint arg1)
+	jint MediaExtractor::readSampleData(java::nio::ByteBuffer arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"readSampleData",
@@ -196,14 +196,14 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaExtractor::release()
+	void MediaExtractor::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaExtractor::seekTo(jlong arg0, jint arg1)
+	void MediaExtractor::seekTo(jlong arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"seekTo",
@@ -212,7 +212,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaExtractor::selectTrack(jint arg0)
+	void MediaExtractor::selectTrack(jint arg0) const
 	{
 		callMethod<void>(
 			"selectTrack",
@@ -220,7 +220,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaExtractor::setDataSource(android::content::res::AssetFileDescriptor arg0)
+	void MediaExtractor::setDataSource(android::content::res::AssetFileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -228,7 +228,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::setDataSource(android::media::MediaDataSource arg0)
+	void MediaExtractor::setDataSource(android::media::MediaDataSource arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -236,7 +236,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0)
+	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -244,7 +244,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::setDataSource(JString arg0)
+	void MediaExtractor::setDataSource(JString arg0) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -252,7 +252,7 @@ namespace android::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaExtractor::setDataSource(JString arg0, JObject arg1)
+	void MediaExtractor::setDataSource(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -261,7 +261,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaExtractor::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2)
+	void MediaExtractor::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -271,7 +271,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2)
+	void MediaExtractor::setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -281,7 +281,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaExtractor::setLogSessionId(android::media::metrics::LogSessionId arg0)
+	void MediaExtractor::setLogSessionId(android::media::metrics::LogSessionId arg0) const
 	{
 		callMethod<void>(
 			"setLogSessionId",
@@ -289,7 +289,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::setMediaCas(android::media::MediaCas arg0)
+	void MediaExtractor::setMediaCas(android::media::MediaCas arg0) const
 	{
 		callMethod<void>(
 			"setMediaCas",
@@ -297,7 +297,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaExtractor::unselectTrack(jint arg0)
+	void MediaExtractor::unselectTrack(jint arg0) const
 	{
 		callMethod<void>(
 			"unselectTrack",

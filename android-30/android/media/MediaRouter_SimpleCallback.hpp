@@ -30,14 +30,14 @@ namespace android::media
 		MediaRouter_SimpleCallback();
 		
 		// Methods
-		void onRouteAdded(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1);
-		void onRouteChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1);
-		void onRouteGrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2, jint arg3);
-		void onRouteRemoved(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1);
-		void onRouteSelected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2);
-		void onRouteUngrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2);
-		void onRouteUnselected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2);
-		void onRouteVolumeChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1);
+		void onRouteAdded(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
+		void onRouteChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
+		void onRouteGrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2, jint arg3) const;
+		void onRouteRemoved(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
+		void onRouteSelected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const;
+		void onRouteUngrouped(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1, android::media::MediaRouter_RouteGroup arg2) const;
+		void onRouteUnselected(android::media::MediaRouter arg0, jint arg1, android::media::MediaRouter_RouteInfo arg2) const;
+		void onRouteVolumeChanged(android::media::MediaRouter arg0, android::media::MediaRouter_RouteInfo arg1) const;
 	};
 } // namespace android::media
 

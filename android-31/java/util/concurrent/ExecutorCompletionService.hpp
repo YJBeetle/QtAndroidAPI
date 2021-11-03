@@ -28,11 +28,11 @@ namespace java::util::concurrent
 		ExecutorCompletionService(JObject arg0, JObject arg1);
 		
 		// Methods
-		JObject poll();
-		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		JObject submit(JObject arg0);
-		JObject submit(JObject arg0, JObject arg1);
-		JObject take();
+		JObject poll() const;
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		JObject submit(JObject arg0) const;
+		JObject submit(JObject arg0, JObject arg1) const;
+		JObject take() const;
 	};
 } // namespace java::util::concurrent
 

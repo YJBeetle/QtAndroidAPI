@@ -42,49 +42,49 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	jint TranslationResponse::describeContents()
+	jint TranslationResponse::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::util::SparseArray TranslationResponse::getTranslationResponseValues()
+	android::util::SparseArray TranslationResponse::getTranslationResponseValues() const
 	{
 		return callObjectMethod(
 			"getTranslationResponseValues",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	jint TranslationResponse::getTranslationStatus()
+	jint TranslationResponse::getTranslationStatus() const
 	{
 		return callMethod<jint>(
 			"getTranslationStatus",
 			"()I"
 		);
 	}
-	android::util::SparseArray TranslationResponse::getViewTranslationResponses()
+	android::util::SparseArray TranslationResponse::getViewTranslationResponses() const
 	{
 		return callObjectMethod(
 			"getViewTranslationResponses",
 			"()Landroid/util/SparseArray;"
 		);
 	}
-	jboolean TranslationResponse::isFinalResponse()
+	jboolean TranslationResponse::isFinalResponse() const
 	{
 		return callMethod<jboolean>(
 			"isFinalResponse",
 			"()Z"
 		);
 	}
-	JString TranslationResponse::toString()
+	JString TranslationResponse::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationResponse::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationResponse::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

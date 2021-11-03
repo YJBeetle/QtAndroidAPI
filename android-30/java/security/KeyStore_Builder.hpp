@@ -34,8 +34,8 @@ namespace java::security
 		static java::security::KeyStore_Builder newInstance(java::security::KeyStore arg0, JObject arg1);
 		static java::security::KeyStore_Builder newInstance(JString arg0, java::security::Provider arg1, JObject arg2);
 		static java::security::KeyStore_Builder newInstance(JString arg0, java::security::Provider arg1, java::io::File arg2, JObject arg3);
-		java::security::KeyStore getKeyStore();
-		JObject getProtectionParameter(JString arg0);
+		java::security::KeyStore getKeyStore() const;
+		JObject getProtectionParameter(JString arg0) const;
 	};
 } // namespace java::security
 

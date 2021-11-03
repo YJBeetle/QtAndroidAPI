@@ -77,7 +77,7 @@ namespace android::view::inputmethod
 	// Constructors
 	
 	// Methods
-	void InputMethodManager::dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1)
+	void InputMethodManager::dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1) const
 	{
 		callMethod<void>(
 			"dispatchKeyEventFromInputMethod",
@@ -86,7 +86,7 @@ namespace android::view::inputmethod
 			arg1.object()
 		);
 	}
-	void InputMethodManager::displayCompletions(android::view::View arg0, JArray arg1)
+	void InputMethodManager::displayCompletions(android::view::View arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"displayCompletions",
@@ -95,21 +95,21 @@ namespace android::view::inputmethod
 			arg1.object<jarray>()
 		);
 	}
-	android::view::inputmethod::InputMethodSubtype InputMethodManager::getCurrentInputMethodSubtype()
+	android::view::inputmethod::InputMethodSubtype InputMethodManager::getCurrentInputMethodSubtype() const
 	{
 		return callObjectMethod(
 			"getCurrentInputMethodSubtype",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	JObject InputMethodManager::getEnabledInputMethodList()
+	JObject InputMethodManager::getEnabledInputMethodList() const
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodList",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1)
+	JObject InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodSubtypeList",
@@ -118,28 +118,28 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	JObject InputMethodManager::getInputMethodList()
+	JObject InputMethodManager::getInputMethodList() const
 	{
 		return callObjectMethod(
 			"getInputMethodList",
 			"()Ljava/util/List;"
 		);
 	}
-	android::view::inputmethod::InputMethodSubtype InputMethodManager::getLastInputMethodSubtype()
+	android::view::inputmethod::InputMethodSubtype InputMethodManager::getLastInputMethodSubtype() const
 	{
 		return callObjectMethod(
 			"getLastInputMethodSubtype",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	JObject InputMethodManager::getShortcutInputMethodsAndSubtypes()
+	JObject InputMethodManager::getShortcutInputMethodsAndSubtypes() const
 	{
 		return callObjectMethod(
 			"getShortcutInputMethodsAndSubtypes",
 			"()Ljava/util/Map;"
 		);
 	}
-	void InputMethodManager::hideSoftInputFromInputMethod(JObject arg0, jint arg1)
+	void InputMethodManager::hideSoftInputFromInputMethod(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"hideSoftInputFromInputMethod",
@@ -148,7 +148,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1)
+	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"hideSoftInputFromWindow",
@@ -157,7 +157,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1, android::os::ResultReceiver arg2)
+	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1, android::os::ResultReceiver arg2) const
 	{
 		return callMethod<jboolean>(
 			"hideSoftInputFromWindow",
@@ -167,7 +167,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::hideStatusIcon(JObject arg0)
+	void InputMethodManager::hideStatusIcon(JObject arg0) const
 	{
 		callMethod<void>(
 			"hideStatusIcon",
@@ -175,21 +175,21 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputMethodManager::isAcceptingText()
+	jboolean InputMethodManager::isAcceptingText() const
 	{
 		return callMethod<jboolean>(
 			"isAcceptingText",
 			"()Z"
 		);
 	}
-	jboolean InputMethodManager::isActive()
+	jboolean InputMethodManager::isActive() const
 	{
 		return callMethod<jboolean>(
 			"isActive",
 			"()Z"
 		);
 	}
-	jboolean InputMethodManager::isActive(android::view::View arg0)
+	jboolean InputMethodManager::isActive(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"isActive",
@@ -197,14 +197,14 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputMethodManager::isFullscreenMode()
+	jboolean InputMethodManager::isFullscreenMode() const
 	{
 		return callMethod<jboolean>(
 			"isFullscreenMode",
 			"()Z"
 		);
 	}
-	jboolean InputMethodManager::isWatchingCursor(android::view::View arg0)
+	jboolean InputMethodManager::isWatchingCursor(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"isWatchingCursor",
@@ -212,7 +212,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::restartInput(android::view::View arg0)
+	void InputMethodManager::restartInput(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"restartInput",
@@ -220,7 +220,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::sendAppPrivateCommand(android::view::View arg0, JString arg1, android::os::Bundle arg2)
+	void InputMethodManager::sendAppPrivateCommand(android::view::View arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"sendAppPrivateCommand",
@@ -230,7 +230,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::setAdditionalInputMethodSubtypes(JString arg0, JArray arg1)
+	void InputMethodManager::setAdditionalInputMethodSubtypes(JString arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"setAdditionalInputMethodSubtypes",
@@ -239,7 +239,7 @@ namespace android::view::inputmethod
 			arg1.object<jarray>()
 		);
 	}
-	jboolean InputMethodManager::setCurrentInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0)
+	jboolean InputMethodManager::setCurrentInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0) const
 	{
 		return callMethod<jboolean>(
 			"setCurrentInputMethodSubtype",
@@ -247,7 +247,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::setInputMethod(JObject arg0, JString arg1)
+	void InputMethodManager::setInputMethod(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setInputMethod",
@@ -256,7 +256,7 @@ namespace android::view::inputmethod
 			arg1.object<jstring>()
 		);
 	}
-	void InputMethodManager::setInputMethodAndSubtype(JObject arg0, JString arg1, android::view::inputmethod::InputMethodSubtype arg2)
+	void InputMethodManager::setInputMethodAndSubtype(JObject arg0, JString arg1, android::view::inputmethod::InputMethodSubtype arg2) const
 	{
 		callMethod<void>(
 			"setInputMethodAndSubtype",
@@ -266,7 +266,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	jboolean InputMethodManager::shouldOfferSwitchingToNextInputMethod(JObject arg0)
+	jboolean InputMethodManager::shouldOfferSwitchingToNextInputMethod(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"shouldOfferSwitchingToNextInputMethod",
@@ -274,7 +274,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::showInputMethodAndSubtypeEnabler(JString arg0)
+	void InputMethodManager::showInputMethodAndSubtypeEnabler(JString arg0) const
 	{
 		callMethod<void>(
 			"showInputMethodAndSubtypeEnabler",
@@ -282,14 +282,14 @@ namespace android::view::inputmethod
 			arg0.object<jstring>()
 		);
 	}
-	void InputMethodManager::showInputMethodPicker()
+	void InputMethodManager::showInputMethodPicker() const
 	{
 		callMethod<void>(
 			"showInputMethodPicker",
 			"()V"
 		);
 	}
-	jboolean InputMethodManager::showSoftInput(android::view::View arg0, jint arg1)
+	jboolean InputMethodManager::showSoftInput(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"showSoftInput",
@@ -298,7 +298,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::showSoftInput(android::view::View arg0, jint arg1, android::os::ResultReceiver arg2)
+	jboolean InputMethodManager::showSoftInput(android::view::View arg0, jint arg1, android::os::ResultReceiver arg2) const
 	{
 		return callMethod<jboolean>(
 			"showSoftInput",
@@ -308,7 +308,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::showSoftInputFromInputMethod(JObject arg0, jint arg1)
+	void InputMethodManager::showSoftInputFromInputMethod(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"showSoftInputFromInputMethod",
@@ -317,7 +317,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::showStatusIcon(JObject arg0, JString arg1, jint arg2)
+	void InputMethodManager::showStatusIcon(JObject arg0, JString arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"showStatusIcon",
@@ -327,7 +327,7 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	jboolean InputMethodManager::switchToLastInputMethod(JObject arg0)
+	jboolean InputMethodManager::switchToLastInputMethod(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"switchToLastInputMethod",
@@ -335,7 +335,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputMethodManager::switchToNextInputMethod(JObject arg0, jboolean arg1)
+	jboolean InputMethodManager::switchToNextInputMethod(JObject arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"switchToNextInputMethod",
@@ -344,7 +344,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::toggleSoftInput(jint arg0, jint arg1)
+	void InputMethodManager::toggleSoftInput(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"toggleSoftInput",
@@ -353,7 +353,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::toggleSoftInputFromWindow(JObject arg0, jint arg1, jint arg2)
+	void InputMethodManager::toggleSoftInputFromWindow(JObject arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"toggleSoftInputFromWindow",
@@ -363,7 +363,7 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	void InputMethodManager::updateCursor(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void InputMethodManager::updateCursor(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"updateCursor",
@@ -375,7 +375,7 @@ namespace android::view::inputmethod
 			arg4
 		);
 	}
-	void InputMethodManager::updateCursorAnchorInfo(android::view::View arg0, android::view::inputmethod::CursorAnchorInfo arg1)
+	void InputMethodManager::updateCursorAnchorInfo(android::view::View arg0, android::view::inputmethod::CursorAnchorInfo arg1) const
 	{
 		callMethod<void>(
 			"updateCursorAnchorInfo",
@@ -384,7 +384,7 @@ namespace android::view::inputmethod
 			arg1.object()
 		);
 	}
-	void InputMethodManager::updateExtractedText(android::view::View arg0, jint arg1, android::view::inputmethod::ExtractedText arg2)
+	void InputMethodManager::updateExtractedText(android::view::View arg0, jint arg1, android::view::inputmethod::ExtractedText arg2) const
 	{
 		callMethod<void>(
 			"updateExtractedText",
@@ -394,7 +394,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::updateSelection(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void InputMethodManager::updateSelection(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"updateSelection",
@@ -406,7 +406,7 @@ namespace android::view::inputmethod
 			arg4
 		);
 	}
-	void InputMethodManager::viewClicked(android::view::View arg0)
+	void InputMethodManager::viewClicked(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"viewClicked",

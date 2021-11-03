@@ -11,7 +11,7 @@ namespace android::util
 	// Constructors
 	
 	// Methods
-	jboolean EventLog_Event::equals(JObject arg0)
+	jboolean EventLog_Event::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -19,42 +19,42 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject EventLog_Event::getData()
+	JObject EventLog_Event::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint EventLog_Event::getProcessId()
+	jint EventLog_Event::getProcessId() const
 	{
 		return callMethod<jint>(
 			"getProcessId",
 			"()I"
 		);
 	}
-	jint EventLog_Event::getTag()
+	jint EventLog_Event::getTag() const
 	{
 		return callMethod<jint>(
 			"getTag",
 			"()I"
 		);
 	}
-	jint EventLog_Event::getThreadId()
+	jint EventLog_Event::getThreadId() const
 	{
 		return callMethod<jint>(
 			"getThreadId",
 			"()I"
 		);
 	}
-	jlong EventLog_Event::getTimeNanos()
+	jlong EventLog_Event::getTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getTimeNanos",
 			"()J"
 		);
 	}
-	jint EventLog_Event::hashCode()
+	jint EventLog_Event::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

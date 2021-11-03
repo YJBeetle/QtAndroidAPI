@@ -28,10 +28,10 @@ namespace android::app::appsearch
 		AppSearchBatchResult_Builder();
 		
 		// Methods
-		android::app::appsearch::AppSearchBatchResult build();
-		android::app::appsearch::AppSearchBatchResult_Builder setFailure(JObject arg0, jint arg1, JString arg2);
-		android::app::appsearch::AppSearchBatchResult_Builder setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1);
-		android::app::appsearch::AppSearchBatchResult_Builder setSuccess(JObject arg0, JObject arg1);
+		android::app::appsearch::AppSearchBatchResult build() const;
+		android::app::appsearch::AppSearchBatchResult_Builder setFailure(JObject arg0, jint arg1, JString arg2) const;
+		android::app::appsearch::AppSearchBatchResult_Builder setResult(JObject arg0, android::app::appsearch::AppSearchResult arg1) const;
+		android::app::appsearch::AppSearchBatchResult_Builder setSuccess(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::app::appsearch
 

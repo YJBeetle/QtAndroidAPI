@@ -33,15 +33,15 @@ namespace android::view::translation
 		
 		// Methods
 		static android::view::translation::TranslationResponseValue forError();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::os::Bundle getExtras();
-		jint getStatusCode();
-		JString getText();
-		JString getTransliteration();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getExtras() const;
+		jint getStatusCode() const;
+		JString getText() const;
+		JString getTransliteration() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::translation
 

@@ -45,7 +45,7 @@ namespace android::service::dreams
 		) {}
 	
 	// Methods
-	void DreamService::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void DreamService::addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addContentView",
@@ -54,7 +54,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	jboolean DreamService::dispatchGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean DreamService::dispatchGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchGenericMotionEvent",
@@ -62,7 +62,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	jboolean DreamService::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean DreamService::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -70,7 +70,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	jboolean DreamService::dispatchKeyShortcutEvent(android::view::KeyEvent arg0)
+	jboolean DreamService::dispatchKeyShortcutEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyShortcutEvent",
@@ -78,7 +78,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	jboolean DreamService::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0)
+	jboolean DreamService::dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchPopulateAccessibilityEvent",
@@ -86,7 +86,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	jboolean DreamService::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean DreamService::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -94,7 +94,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	jboolean DreamService::dispatchTrackballEvent(android::view::MotionEvent arg0)
+	jboolean DreamService::dispatchTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTrackballEvent",
@@ -102,7 +102,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	android::view::View DreamService::findViewById(jint arg0)
+	android::view::View DreamService::findViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"findViewById",
@@ -110,49 +110,49 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::finish()
+	void DreamService::finish() const
 	{
 		callMethod<void>(
 			"finish",
 			"()V"
 		);
 	}
-	android::view::Window DreamService::getWindow()
+	android::view::Window DreamService::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/Window;"
 		);
 	}
-	JObject DreamService::getWindowManager()
+	JObject DreamService::getWindowManager() const
 	{
 		return callObjectMethod(
 			"getWindowManager",
 			"()Landroid/view/WindowManager;"
 		);
 	}
-	jboolean DreamService::isFullscreen()
+	jboolean DreamService::isFullscreen() const
 	{
 		return callMethod<jboolean>(
 			"isFullscreen",
 			"()Z"
 		);
 	}
-	jboolean DreamService::isInteractive()
+	jboolean DreamService::isInteractive() const
 	{
 		return callMethod<jboolean>(
 			"isInteractive",
 			"()Z"
 		);
 	}
-	jboolean DreamService::isScreenBright()
+	jboolean DreamService::isScreenBright() const
 	{
 		return callMethod<jboolean>(
 			"isScreenBright",
 			"()Z"
 		);
 	}
-	void DreamService::onActionModeFinished(android::view::ActionMode arg0)
+	void DreamService::onActionModeFinished(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeFinished",
@@ -160,7 +160,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::onActionModeStarted(android::view::ActionMode arg0)
+	void DreamService::onActionModeStarted(android::view::ActionMode arg0) const
 	{
 		callMethod<void>(
 			"onActionModeStarted",
@@ -168,14 +168,14 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::onAttachedToWindow()
+	void DreamService::onAttachedToWindow() const
 	{
 		callMethod<void>(
 			"onAttachedToWindow",
 			"()V"
 		);
 	}
-	JObject DreamService::onBind(android::content::Intent arg0)
+	JObject DreamService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -183,21 +183,21 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::onContentChanged()
+	void DreamService::onContentChanged() const
 	{
 		callMethod<void>(
 			"onContentChanged",
 			"()V"
 		);
 	}
-	void DreamService::onCreate()
+	void DreamService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	jboolean DreamService::onCreatePanelMenu(jint arg0, JObject arg1)
+	jboolean DreamService::onCreatePanelMenu(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -206,7 +206,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	android::view::View DreamService::onCreatePanelView(jint arg0)
+	android::view::View DreamService::onCreatePanelView(jint arg0) const
 	{
 		return callObjectMethod(
 			"onCreatePanelView",
@@ -214,35 +214,35 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::onDestroy()
+	void DreamService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void DreamService::onDetachedFromWindow()
+	void DreamService::onDetachedFromWindow() const
 	{
 		callMethod<void>(
 			"onDetachedFromWindow",
 			"()V"
 		);
 	}
-	void DreamService::onDreamingStarted()
+	void DreamService::onDreamingStarted() const
 	{
 		callMethod<void>(
 			"onDreamingStarted",
 			"()V"
 		);
 	}
-	void DreamService::onDreamingStopped()
+	void DreamService::onDreamingStopped() const
 	{
 		callMethod<void>(
 			"onDreamingStopped",
 			"()V"
 		);
 	}
-	jboolean DreamService::onMenuItemSelected(jint arg0, JObject arg1)
+	jboolean DreamService::onMenuItemSelected(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -251,7 +251,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	jboolean DreamService::onMenuOpened(jint arg0, JObject arg1)
+	jboolean DreamService::onMenuOpened(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -260,7 +260,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	void DreamService::onPanelClosed(jint arg0, JObject arg1)
+	void DreamService::onPanelClosed(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -269,7 +269,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	jboolean DreamService::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
+	jboolean DreamService::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2) const
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -279,14 +279,14 @@ namespace android::service::dreams
 			arg2.object()
 		);
 	}
-	jboolean DreamService::onSearchRequested()
+	jboolean DreamService::onSearchRequested() const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
 			"()Z"
 		);
 	}
-	jboolean DreamService::onSearchRequested(android::view::SearchEvent arg0)
+	jboolean DreamService::onSearchRequested(android::view::SearchEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSearchRequested",
@@ -294,14 +294,14 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::onWakeUp()
+	void DreamService::onWakeUp() const
 	{
 		callMethod<void>(
 			"onWakeUp",
 			"()V"
 		);
 	}
-	void DreamService::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0)
+	void DreamService::onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0) const
 	{
 		callMethod<void>(
 			"onWindowAttributesChanged",
@@ -309,7 +309,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::onWindowFocusChanged(jboolean arg0)
+	void DreamService::onWindowFocusChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onWindowFocusChanged",
@@ -317,7 +317,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -325,7 +325,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0, jint arg1)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -334,7 +334,7 @@ namespace android::service::dreams
 			arg1
 		);
 	}
-	android::view::View DreamService::requireViewById(jint arg0)
+	android::view::View DreamService::requireViewById(jint arg0) const
 	{
 		return callObjectMethod(
 			"requireViewById",
@@ -342,7 +342,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::setContentView(android::view::View arg0)
+	void DreamService::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -350,7 +350,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	void DreamService::setContentView(jint arg0)
+	void DreamService::setContentView(jint arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -358,7 +358,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void DreamService::setContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -367,7 +367,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	void DreamService::setFullscreen(jboolean arg0)
+	void DreamService::setFullscreen(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFullscreen",
@@ -375,7 +375,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::setInteractive(jboolean arg0)
+	void DreamService::setInteractive(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setInteractive",
@@ -383,7 +383,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::setScreenBright(jboolean arg0)
+	void DreamService::setScreenBright(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScreenBright",
@@ -391,7 +391,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::wakeUp()
+	void DreamService::wakeUp() const
 	{
 		callMethod<void>(
 			"wakeUp",

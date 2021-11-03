@@ -18,11 +18,11 @@ namespace android::text
 		// Constructors
 		
 		// Methods
-		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
-		jboolean isAllowed(jchar arg0);
-		void onInvalidCharacter(jchar arg0);
-		void onStart();
-		void onStop();
+		JString filter(JString arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5) const;
+		jboolean isAllowed(jchar arg0) const;
+		void onInvalidCharacter(jchar arg0) const;
+		void onStart() const;
+		void onStop() const;
 	};
 } // namespace android::text
 

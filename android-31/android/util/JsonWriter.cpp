@@ -19,56 +19,56 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::JsonWriter JsonWriter::beginArray()
+	android::util::JsonWriter JsonWriter::beginArray() const
 	{
 		return callObjectMethod(
 			"beginArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	android::util::JsonWriter JsonWriter::beginObject()
+	android::util::JsonWriter JsonWriter::beginObject() const
 	{
 		return callObjectMethod(
 			"beginObject",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	void JsonWriter::close()
+	void JsonWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::util::JsonWriter JsonWriter::endArray()
+	android::util::JsonWriter JsonWriter::endArray() const
 	{
 		return callObjectMethod(
 			"endArray",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	android::util::JsonWriter JsonWriter::endObject()
+	android::util::JsonWriter JsonWriter::endObject() const
 	{
 		return callObjectMethod(
 			"endObject",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	void JsonWriter::flush()
+	void JsonWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	jboolean JsonWriter::isLenient()
+	jboolean JsonWriter::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	android::util::JsonWriter JsonWriter::name(JString arg0)
+	android::util::JsonWriter JsonWriter::name(JString arg0) const
 	{
 		return callObjectMethod(
 			"name",
@@ -76,14 +76,14 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	android::util::JsonWriter JsonWriter::nullValue()
+	android::util::JsonWriter JsonWriter::nullValue() const
 	{
 		return callObjectMethod(
 			"nullValue",
 			"()Landroid/util/JsonWriter;"
 		);
 	}
-	void JsonWriter::setIndent(JString arg0)
+	void JsonWriter::setIndent(JString arg0) const
 	{
 		callMethod<void>(
 			"setIndent",
@@ -91,7 +91,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	void JsonWriter::setLenient(jboolean arg0)
+	void JsonWriter::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -99,7 +99,7 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(jboolean arg0)
+	android::util::JsonWriter JsonWriter::value(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -107,7 +107,7 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(jdouble arg0)
+	android::util::JsonWriter JsonWriter::value(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -115,7 +115,7 @@ namespace android::util
 			arg0
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(java::lang::Number arg0)
+	android::util::JsonWriter JsonWriter::value(java::lang::Number arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -123,7 +123,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(JString arg0)
+	android::util::JsonWriter JsonWriter::value(JString arg0) const
 	{
 		return callObjectMethod(
 			"value",
@@ -131,7 +131,7 @@ namespace android::util
 			arg0.object<jstring>()
 		);
 	}
-	android::util::JsonWriter JsonWriter::value(jlong arg0)
+	android::util::JsonWriter JsonWriter::value(jlong arg0) const
 	{
 		return callObjectMethod(
 			"value",

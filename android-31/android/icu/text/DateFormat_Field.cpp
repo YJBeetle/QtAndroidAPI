@@ -229,7 +229,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint DateFormat_Field::getCalendarField()
+	jint DateFormat_Field::getCalendarField() const
 	{
 		return callMethod<jint>(
 			"getCalendarField",

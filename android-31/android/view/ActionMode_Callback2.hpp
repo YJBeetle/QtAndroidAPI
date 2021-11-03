@@ -30,7 +30,7 @@ namespace android::view
 		ActionMode_Callback2();
 		
 		// Methods
-		void onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2);
+		void onGetContentRect(android::view::ActionMode arg0, android::view::View arg1, android::graphics::Rect arg2) const;
 	};
 } // namespace android::view
 

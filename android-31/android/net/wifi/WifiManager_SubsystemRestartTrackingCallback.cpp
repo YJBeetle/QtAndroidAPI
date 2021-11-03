@@ -15,14 +15,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarted()
+	void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarted() const
 	{
 		callMethod<void>(
 			"onSubsystemRestarted",
 			"()V"
 		);
 	}
-	void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarting()
+	void WifiManager_SubsystemRestartTrackingCallback::onSubsystemRestarting() const
 	{
 		callMethod<void>(
 			"onSubsystemRestarting",

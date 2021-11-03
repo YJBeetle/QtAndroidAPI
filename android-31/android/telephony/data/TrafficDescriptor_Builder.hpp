@@ -24,9 +24,9 @@ namespace android::telephony::data
 		TrafficDescriptor_Builder();
 		
 		// Methods
-		android::telephony::data::TrafficDescriptor build();
-		android::telephony::data::TrafficDescriptor_Builder setDataNetworkName(JString arg0);
-		android::telephony::data::TrafficDescriptor_Builder setOsAppId(JByteArray arg0);
+		android::telephony::data::TrafficDescriptor build() const;
+		android::telephony::data::TrafficDescriptor_Builder setDataNetworkName(JString arg0) const;
+		android::telephony::data::TrafficDescriptor_Builder setOsAppId(JByteArray arg0) const;
 	};
 } // namespace android::telephony::data
 

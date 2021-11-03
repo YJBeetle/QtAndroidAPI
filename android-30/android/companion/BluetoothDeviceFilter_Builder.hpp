@@ -31,10 +31,10 @@ namespace android::companion
 		BluetoothDeviceFilter_Builder();
 		
 		// Methods
-		android::companion::BluetoothDeviceFilter_Builder addServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1);
-		android::companion::BluetoothDeviceFilter build();
-		android::companion::BluetoothDeviceFilter_Builder setAddress(JString arg0);
-		android::companion::BluetoothDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0);
+		android::companion::BluetoothDeviceFilter_Builder addServiceUuid(android::os::ParcelUuid arg0, android::os::ParcelUuid arg1) const;
+		android::companion::BluetoothDeviceFilter build() const;
+		android::companion::BluetoothDeviceFilter_Builder setAddress(JString arg0) const;
+		android::companion::BluetoothDeviceFilter_Builder setNamePattern(java::util::regex::Pattern arg0) const;
 	};
 } // namespace android::companion
 

@@ -23,7 +23,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::decimal(android::icu::number::NumberFormatter_DecimalSeparatorDisplay arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::decimal(android::icu::number::NumberFormatter_DecimalSeparatorDisplay arg0) const
 	{
 		return callObjectMethod(
 			"decimal",
@@ -31,7 +31,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jboolean NumberFormatterSettings::equals(JObject arg0)
+	jboolean NumberFormatterSettings::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -39,7 +39,7 @@ namespace android::icu::number
 			arg0.object<jobject>()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::grouping(android::icu::number::NumberFormatter_GroupingStrategy arg0) const
 	{
 		return callObjectMethod(
 			"grouping",
@@ -47,14 +47,14 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	jint NumberFormatterSettings::hashCode()
+	jint NumberFormatterSettings::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::integerWidth(android::icu::number::IntegerWidth arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::integerWidth(android::icu::number::IntegerWidth arg0) const
 	{
 		return callObjectMethod(
 			"integerWidth",
@@ -62,7 +62,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::notation(android::icu::number::Notation arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::notation(android::icu::number::Notation arg0) const
 	{
 		return callObjectMethod(
 			"notation",
@@ -70,7 +70,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::perUnit(android::icu::util::MeasureUnit arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::perUnit(android::icu::util::MeasureUnit arg0) const
 	{
 		return callObjectMethod(
 			"perUnit",
@@ -78,7 +78,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::precision(android::icu::number::Precision arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::precision(android::icu::number::Precision arg0) const
 	{
 		return callObjectMethod(
 			"precision",
@@ -86,7 +86,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::roundingMode(java::math::RoundingMode arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::roundingMode(java::math::RoundingMode arg0) const
 	{
 		return callObjectMethod(
 			"roundingMode",
@@ -94,7 +94,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::scale(android::icu::number::Scale arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::scale(android::icu::number::Scale arg0) const
 	{
 		return callObjectMethod(
 			"scale",
@@ -102,7 +102,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::sign(android::icu::number::NumberFormatter_SignDisplay arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::sign(android::icu::number::NumberFormatter_SignDisplay arg0) const
 	{
 		return callObjectMethod(
 			"sign",
@@ -110,7 +110,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::symbols(android::icu::text::DecimalFormatSymbols arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::symbols(android::icu::text::DecimalFormatSymbols arg0) const
 	{
 		return callObjectMethod(
 			"symbols",
@@ -118,7 +118,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::symbols(android::icu::text::NumberingSystem arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::symbols(android::icu::text::NumberingSystem arg0) const
 	{
 		return callObjectMethod(
 			"symbols",
@@ -126,7 +126,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::unit(android::icu::util::MeasureUnit arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::unit(android::icu::util::MeasureUnit arg0) const
 	{
 		return callObjectMethod(
 			"unit",
@@ -134,7 +134,7 @@ namespace android::icu::number
 			arg0.object()
 		);
 	}
-	android::icu::number::NumberFormatterSettings NumberFormatterSettings::unitWidth(android::icu::number::NumberFormatter_UnitWidth arg0)
+	android::icu::number::NumberFormatterSettings NumberFormatterSettings::unitWidth(android::icu::number::NumberFormatter_UnitWidth arg0) const
 	{
 		return callObjectMethod(
 			"unitWidth",

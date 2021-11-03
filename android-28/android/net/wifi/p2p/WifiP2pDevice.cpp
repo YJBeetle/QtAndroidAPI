@@ -101,14 +101,14 @@ namespace android::net::wifi::p2p
 		) {}
 	
 	// Methods
-	jint WifiP2pDevice::describeContents()
+	jint WifiP2pDevice::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean WifiP2pDevice::equals(JObject arg0)
+	jboolean WifiP2pDevice::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -116,49 +116,49 @@ namespace android::net::wifi::p2p
 			arg0.object<jobject>()
 		);
 	}
-	jboolean WifiP2pDevice::isGroupOwner()
+	jboolean WifiP2pDevice::isGroupOwner() const
 	{
 		return callMethod<jboolean>(
 			"isGroupOwner",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pDevice::isServiceDiscoveryCapable()
+	jboolean WifiP2pDevice::isServiceDiscoveryCapable() const
 	{
 		return callMethod<jboolean>(
 			"isServiceDiscoveryCapable",
 			"()Z"
 		);
 	}
-	JString WifiP2pDevice::toString()
+	JString WifiP2pDevice::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean WifiP2pDevice::wpsDisplaySupported()
+	jboolean WifiP2pDevice::wpsDisplaySupported() const
 	{
 		return callMethod<jboolean>(
 			"wpsDisplaySupported",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pDevice::wpsKeypadSupported()
+	jboolean WifiP2pDevice::wpsKeypadSupported() const
 	{
 		return callMethod<jboolean>(
 			"wpsKeypadSupported",
 			"()Z"
 		);
 	}
-	jboolean WifiP2pDevice::wpsPbcSupported()
+	jboolean WifiP2pDevice::wpsPbcSupported() const
 	{
 		return callMethod<jboolean>(
 			"wpsPbcSupported",
 			"()Z"
 		);
 	}
-	void WifiP2pDevice::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WifiP2pDevice::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -33,19 +33,19 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		JObject cycleIterator();
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getDataLimitBehavior();
-		jlong getDataLimitBytes();
-		jlong getDataUsageBytes();
-		jlong getDataUsageTime();
-		JIntArray getNetworkTypes();
-		JString getSummary();
-		JString getTitle();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		JObject cycleIterator() const;
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getDataLimitBehavior() const;
+		jlong getDataLimitBytes() const;
+		jlong getDataUsageBytes() const;
+		jlong getDataUsageTime() const;
+		JIntArray getNetworkTypes() const;
+		JString getSummary() const;
+		JString getTitle() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

@@ -19,9 +19,9 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getIds();
-		JString getNamespace();
-		JObject getProjections();
+		JObject getIds() const;
+		JString getNamespace() const;
+		JObject getProjections() const;
 	};
 } // namespace android::app::appsearch
 

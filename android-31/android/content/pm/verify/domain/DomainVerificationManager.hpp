@@ -22,7 +22,7 @@ namespace android::content::pm::verify::domain
 		// Constructors
 		
 		// Methods
-		android::content::pm::verify::domain::DomainVerificationUserState getDomainVerificationUserState(JString arg0);
+		android::content::pm::verify::domain::DomainVerificationUserState getDomainVerificationUserState(JString arg0) const;
 	};
 } // namespace android::content::pm::verify::domain
 

@@ -28,11 +28,11 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void disableCarMode(jint arg0);
-		void enableCarMode(jint arg0);
-		jint getCurrentModeType();
-		jint getNightMode();
-		void setNightMode(jint arg0);
+		void disableCarMode(jint arg0) const;
+		void enableCarMode(jint arg0) const;
+		jint getCurrentModeType() const;
+		jint getNightMode() const;
+		void setNightMode(jint arg0) const;
 	};
 } // namespace android::app
 

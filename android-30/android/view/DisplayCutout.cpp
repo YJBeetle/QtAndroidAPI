@@ -42,7 +42,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean DisplayCutout::equals(JObject arg0)
+	jboolean DisplayCutout::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,84 +50,84 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::Rect DisplayCutout::getBoundingRectBottom()
+	android::graphics::Rect DisplayCutout::getBoundingRectBottom() const
 	{
 		return callObjectMethod(
 			"getBoundingRectBottom",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::graphics::Rect DisplayCutout::getBoundingRectLeft()
+	android::graphics::Rect DisplayCutout::getBoundingRectLeft() const
 	{
 		return callObjectMethod(
 			"getBoundingRectLeft",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::graphics::Rect DisplayCutout::getBoundingRectRight()
+	android::graphics::Rect DisplayCutout::getBoundingRectRight() const
 	{
 		return callObjectMethod(
 			"getBoundingRectRight",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::graphics::Rect DisplayCutout::getBoundingRectTop()
+	android::graphics::Rect DisplayCutout::getBoundingRectTop() const
 	{
 		return callObjectMethod(
 			"getBoundingRectTop",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	JObject DisplayCutout::getBoundingRects()
+	JObject DisplayCutout::getBoundingRects() const
 	{
 		return callObjectMethod(
 			"getBoundingRects",
 			"()Ljava/util/List;"
 		);
 	}
-	jint DisplayCutout::getSafeInsetBottom()
+	jint DisplayCutout::getSafeInsetBottom() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetBottom",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetLeft()
+	jint DisplayCutout::getSafeInsetLeft() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetLeft",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetRight()
+	jint DisplayCutout::getSafeInsetRight() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetRight",
 			"()I"
 		);
 	}
-	jint DisplayCutout::getSafeInsetTop()
+	jint DisplayCutout::getSafeInsetTop() const
 	{
 		return callMethod<jint>(
 			"getSafeInsetTop",
 			"()I"
 		);
 	}
-	android::graphics::Insets DisplayCutout::getWaterfallInsets()
+	android::graphics::Insets DisplayCutout::getWaterfallInsets() const
 	{
 		return callObjectMethod(
 			"getWaterfallInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	jint DisplayCutout::hashCode()
+	jint DisplayCutout::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DisplayCutout::toString()
+	JString DisplayCutout::toString() const
 	{
 		return callObjectMethod(
 			"toString",

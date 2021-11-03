@@ -41,13 +41,13 @@ namespace android::app::usage
 		UsageEvents_Event();
 		
 		// Methods
-		jint getAppStandbyBucket();
-		JString getClassName();
-		android::content::res::Configuration getConfiguration();
-		jint getEventType();
-		JString getPackageName();
-		JString getShortcutId();
-		jlong getTimeStamp();
+		jint getAppStandbyBucket() const;
+		JString getClassName() const;
+		android::content::res::Configuration getConfiguration() const;
+		jint getEventType() const;
+		JString getPackageName() const;
+		JString getShortcutId() const;
+		jlong getTimeStamp() const;
 	};
 } // namespace android::app::usage
 

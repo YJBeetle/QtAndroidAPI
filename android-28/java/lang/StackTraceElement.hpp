@@ -24,17 +24,17 @@ namespace java::lang
 		StackTraceElement(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5, jint arg6);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getClassLoaderName();
-		JString getClassName();
-		JString getFileName();
-		jint getLineNumber();
-		JString getMethodName();
-		JString getModuleName();
-		JString getModuleVersion();
-		jint hashCode();
-		jboolean isNativeMethod();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getClassLoaderName() const;
+		JString getClassName() const;
+		JString getFileName() const;
+		jint getLineNumber() const;
+		JString getMethodName() const;
+		JString getModuleName() const;
+		JString getModuleVersion() const;
+		jint hashCode() const;
+		jboolean isNativeMethod() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

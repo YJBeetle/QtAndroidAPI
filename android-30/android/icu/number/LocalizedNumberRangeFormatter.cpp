@@ -12,7 +12,7 @@ namespace android::icu::number
 	// Constructors
 	
 	// Methods
-	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(jdouble arg0, jdouble arg1)
+	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(jdouble arg0, jdouble arg1) const
 	{
 		return callObjectMethod(
 			"formatRange",
@@ -21,7 +21,7 @@ namespace android::icu::number
 			arg1
 		);
 	}
-	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(jint arg0, jint arg1)
+	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"formatRange",
@@ -30,7 +30,7 @@ namespace android::icu::number
 			arg1
 		);
 	}
-	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(java::lang::Number arg0, java::lang::Number arg1)
+	android::icu::number::FormattedNumberRange LocalizedNumberRangeFormatter::formatRange(java::lang::Number arg0, java::lang::Number arg1) const
 	{
 		return callObjectMethod(
 			"formatRange",

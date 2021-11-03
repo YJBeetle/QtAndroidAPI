@@ -17,8 +17,8 @@ namespace android::accessibilityservice
 		FingerprintGestureController_FingerprintGestureCallback();
 		
 		// Methods
-		void onGestureDetected(jint arg0);
-		void onGestureDetectionAvailabilityChanged(jboolean arg0);
+		void onGestureDetected(jint arg0) const;
+		void onGestureDetectionAvailabilityChanged(jboolean arg0) const;
 	};
 } // namespace android::accessibilityservice
 

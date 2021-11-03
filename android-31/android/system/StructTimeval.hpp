@@ -22,10 +22,10 @@ namespace android::system
 		
 		// Methods
 		static android::system::StructTimeval fromMillis(jlong arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		jlong toMillis();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		jlong toMillis() const;
+		JString toString() const;
 	};
 } // namespace android::system
 

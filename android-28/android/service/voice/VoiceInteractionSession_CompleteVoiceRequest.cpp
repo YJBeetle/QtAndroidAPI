@@ -13,21 +13,21 @@ namespace android::service::voice
 	// Constructors
 	
 	// Methods
-	JString VoiceInteractionSession_CompleteVoiceRequest::getMessage()
+	JString VoiceInteractionSession_CompleteVoiceRequest::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::app::VoiceInteractor_Prompt VoiceInteractionSession_CompleteVoiceRequest::getVoicePrompt()
+	android::app::VoiceInteractor_Prompt VoiceInteractionSession_CompleteVoiceRequest::getVoicePrompt() const
 	{
 		return callObjectMethod(
 			"getVoicePrompt",
 			"()Landroid/app/VoiceInteractor$Prompt;"
 		);
 	}
-	void VoiceInteractionSession_CompleteVoiceRequest::sendCompleteResult(android::os::Bundle arg0)
+	void VoiceInteractionSession_CompleteVoiceRequest::sendCompleteResult(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"sendCompleteResult",

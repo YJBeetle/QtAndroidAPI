@@ -91,7 +91,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_WearableExtender Notification_WearableExtender::addAction(android::app::Notification_Action arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addAction(android::app::Notification_Action arg0) const
 	{
 		return callObjectMethod(
 			"addAction",
@@ -99,7 +99,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::addActions(JObject arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addActions(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addActions",
@@ -107,7 +107,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::addPage(android::app::Notification arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addPage(android::app::Notification arg0) const
 	{
 		return callObjectMethod(
 			"addPage",
@@ -115,7 +115,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::addPages(JObject arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addPages(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addPages",
@@ -123,28 +123,28 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::clearActions()
+	android::app::Notification_WearableExtender Notification_WearableExtender::clearActions() const
 	{
 		return callObjectMethod(
 			"clearActions",
 			"()Landroid/app/Notification$WearableExtender;"
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::clearPages()
+	android::app::Notification_WearableExtender Notification_WearableExtender::clearPages() const
 	{
 		return callObjectMethod(
 			"clearPages",
 			"()Landroid/app/Notification$WearableExtender;"
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::clone()
+	android::app::Notification_WearableExtender Notification_WearableExtender::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification$WearableExtender;"
 		);
 	}
-	android::app::Notification_Builder Notification_WearableExtender::extend(android::app::Notification_Builder arg0)
+	android::app::Notification_Builder Notification_WearableExtender::extend(android::app::Notification_Builder arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -152,147 +152,147 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JObject Notification_WearableExtender::getActions()
+	JObject Notification_WearableExtender::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/util/List;"
 		);
 	}
-	android::graphics::Bitmap Notification_WearableExtender::getBackground()
+	android::graphics::Bitmap Notification_WearableExtender::getBackground() const
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	JString Notification_WearableExtender::getBridgeTag()
+	JString Notification_WearableExtender::getBridgeTag() const
 	{
 		return callObjectMethod(
 			"getBridgeTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Notification_WearableExtender::getContentAction()
+	jint Notification_WearableExtender::getContentAction() const
 	{
 		return callMethod<jint>(
 			"getContentAction",
 			"()I"
 		);
 	}
-	jint Notification_WearableExtender::getContentIcon()
+	jint Notification_WearableExtender::getContentIcon() const
 	{
 		return callMethod<jint>(
 			"getContentIcon",
 			"()I"
 		);
 	}
-	jint Notification_WearableExtender::getContentIconGravity()
+	jint Notification_WearableExtender::getContentIconGravity() const
 	{
 		return callMethod<jint>(
 			"getContentIconGravity",
 			"()I"
 		);
 	}
-	jboolean Notification_WearableExtender::getContentIntentAvailableOffline()
+	jboolean Notification_WearableExtender::getContentIntentAvailableOffline() const
 	{
 		return callMethod<jboolean>(
 			"getContentIntentAvailableOffline",
 			"()Z"
 		);
 	}
-	jint Notification_WearableExtender::getCustomContentHeight()
+	jint Notification_WearableExtender::getCustomContentHeight() const
 	{
 		return callMethod<jint>(
 			"getCustomContentHeight",
 			"()I"
 		);
 	}
-	jint Notification_WearableExtender::getCustomSizePreset()
+	jint Notification_WearableExtender::getCustomSizePreset() const
 	{
 		return callMethod<jint>(
 			"getCustomSizePreset",
 			"()I"
 		);
 	}
-	JString Notification_WearableExtender::getDismissalId()
+	JString Notification_WearableExtender::getDismissalId() const
 	{
 		return callObjectMethod(
 			"getDismissalId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::app::PendingIntent Notification_WearableExtender::getDisplayIntent()
+	android::app::PendingIntent Notification_WearableExtender::getDisplayIntent() const
 	{
 		return callObjectMethod(
 			"getDisplayIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jint Notification_WearableExtender::getGravity()
+	jint Notification_WearableExtender::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jboolean Notification_WearableExtender::getHintAmbientBigPicture()
+	jboolean Notification_WearableExtender::getHintAmbientBigPicture() const
 	{
 		return callMethod<jboolean>(
 			"getHintAmbientBigPicture",
 			"()Z"
 		);
 	}
-	jboolean Notification_WearableExtender::getHintAvoidBackgroundClipping()
+	jboolean Notification_WearableExtender::getHintAvoidBackgroundClipping() const
 	{
 		return callMethod<jboolean>(
 			"getHintAvoidBackgroundClipping",
 			"()Z"
 		);
 	}
-	jboolean Notification_WearableExtender::getHintContentIntentLaunchesActivity()
+	jboolean Notification_WearableExtender::getHintContentIntentLaunchesActivity() const
 	{
 		return callMethod<jboolean>(
 			"getHintContentIntentLaunchesActivity",
 			"()Z"
 		);
 	}
-	jboolean Notification_WearableExtender::getHintHideIcon()
+	jboolean Notification_WearableExtender::getHintHideIcon() const
 	{
 		return callMethod<jboolean>(
 			"getHintHideIcon",
 			"()Z"
 		);
 	}
-	jint Notification_WearableExtender::getHintScreenTimeout()
+	jint Notification_WearableExtender::getHintScreenTimeout() const
 	{
 		return callMethod<jint>(
 			"getHintScreenTimeout",
 			"()I"
 		);
 	}
-	jboolean Notification_WearableExtender::getHintShowBackgroundOnly()
+	jboolean Notification_WearableExtender::getHintShowBackgroundOnly() const
 	{
 		return callMethod<jboolean>(
 			"getHintShowBackgroundOnly",
 			"()Z"
 		);
 	}
-	JObject Notification_WearableExtender::getPages()
+	JObject Notification_WearableExtender::getPages() const
 	{
 		return callObjectMethod(
 			"getPages",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean Notification_WearableExtender::getStartScrollBottom()
+	jboolean Notification_WearableExtender::getStartScrollBottom() const
 	{
 		return callMethod<jboolean>(
 			"getStartScrollBottom",
 			"()Z"
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setBackground(android::graphics::Bitmap arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setBackground(android::graphics::Bitmap arg0) const
 	{
 		return callObjectMethod(
 			"setBackground",
@@ -300,7 +300,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setBridgeTag(JString arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setBridgeTag(JString arg0) const
 	{
 		return callObjectMethod(
 			"setBridgeTag",
@@ -308,7 +308,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setContentAction(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setContentAction(jint arg0) const
 	{
 		return callObjectMethod(
 			"setContentAction",
@@ -316,7 +316,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIcon(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIcon(jint arg0) const
 	{
 		return callObjectMethod(
 			"setContentIcon",
@@ -324,7 +324,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIconGravity(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIconGravity(jint arg0) const
 	{
 		return callObjectMethod(
 			"setContentIconGravity",
@@ -332,7 +332,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIntentAvailableOffline(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setContentIntentAvailableOffline(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setContentIntentAvailableOffline",
@@ -340,7 +340,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setCustomContentHeight(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setCustomContentHeight(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCustomContentHeight",
@@ -348,7 +348,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setCustomSizePreset(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setCustomSizePreset(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCustomSizePreset",
@@ -356,7 +356,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setDismissalId(JString arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setDismissalId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDismissalId",
@@ -364,7 +364,7 @@ namespace android::app
 			arg0.object<jstring>()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setDisplayIntent(android::app::PendingIntent arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setDisplayIntent(android::app::PendingIntent arg0) const
 	{
 		return callObjectMethod(
 			"setDisplayIntent",
@@ -372,7 +372,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setGravity(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setGravity(jint arg0) const
 	{
 		return callObjectMethod(
 			"setGravity",
@@ -380,7 +380,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintAmbientBigPicture(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintAmbientBigPicture(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHintAmbientBigPicture",
@@ -388,7 +388,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintAvoidBackgroundClipping(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintAvoidBackgroundClipping(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHintAvoidBackgroundClipping",
@@ -396,7 +396,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintContentIntentLaunchesActivity(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintContentIntentLaunchesActivity(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHintContentIntentLaunchesActivity",
@@ -404,7 +404,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintHideIcon(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintHideIcon(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHintHideIcon",
@@ -412,7 +412,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintScreenTimeout(jint arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintScreenTimeout(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHintScreenTimeout",
@@ -420,7 +420,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setHintShowBackgroundOnly(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setHintShowBackgroundOnly(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setHintShowBackgroundOnly",
@@ -428,7 +428,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::setStartScrollBottom(jboolean arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::setStartScrollBottom(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setStartScrollBottom",

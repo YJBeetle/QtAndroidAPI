@@ -18,8 +18,8 @@ namespace java::nio::file::attribute
 		// Constructors
 		
 		// Methods
-		JObject lookupPrincipalByGroupName(JString arg0);
-		JObject lookupPrincipalByName(JString arg0);
+		JObject lookupPrincipalByGroupName(JString arg0) const;
+		JObject lookupPrincipalByName(JString arg0) const;
 	};
 } // namespace java::nio::file::attribute
 

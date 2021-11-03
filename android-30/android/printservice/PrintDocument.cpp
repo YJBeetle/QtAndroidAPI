@@ -12,14 +12,14 @@ namespace android::printservice
 	// Constructors
 	
 	// Methods
-	android::os::ParcelFileDescriptor PrintDocument::getData()
+	android::os::ParcelFileDescriptor PrintDocument::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Landroid/os/ParcelFileDescriptor;"
 		);
 	}
-	android::print::PrintDocumentInfo PrintDocument::getInfo()
+	android::print::PrintDocumentInfo PrintDocument::getInfo() const
 	{
 		return callObjectMethod(
 			"getInfo",

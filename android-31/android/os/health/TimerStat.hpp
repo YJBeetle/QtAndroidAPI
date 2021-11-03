@@ -25,12 +25,12 @@ namespace android::os::health
 		TimerStat(jint arg0, jlong arg1);
 		
 		// Methods
-		jint describeContents();
-		jint getCount();
-		jlong getTime();
-		void setCount(jint arg0);
-		void setTime(jlong arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCount() const;
+		jlong getTime() const;
+		void setCount(jint arg0) const;
+		void setTime(jlong arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::os::health
 

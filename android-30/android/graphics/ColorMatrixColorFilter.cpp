@@ -24,7 +24,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	void ColorMatrixColorFilter::getColorMatrix(android::graphics::ColorMatrix arg0)
+	void ColorMatrixColorFilter::getColorMatrix(android::graphics::ColorMatrix arg0) const
 	{
 		callMethod<void>(
 			"getColorMatrix",

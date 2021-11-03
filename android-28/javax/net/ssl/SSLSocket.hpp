@@ -27,31 +27,31 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		void addHandshakeCompletedListener(JObject arg0);
-		JString getApplicationProtocol();
-		jboolean getEnableSessionCreation();
-		JArray getEnabledCipherSuites();
-		JArray getEnabledProtocols();
-		JString getHandshakeApplicationProtocol();
-		JObject getHandshakeApplicationProtocolSelector();
-		JObject getHandshakeSession();
-		jboolean getNeedClientAuth();
-		javax::net::ssl::SSLParameters getSSLParameters();
-		JObject getSession();
-		JArray getSupportedCipherSuites();
-		JArray getSupportedProtocols();
-		jboolean getUseClientMode();
-		jboolean getWantClientAuth();
-		void removeHandshakeCompletedListener(JObject arg0);
-		void setEnableSessionCreation(jboolean arg0);
-		void setEnabledCipherSuites(JArray arg0);
-		void setEnabledProtocols(JArray arg0);
-		void setHandshakeApplicationProtocolSelector(JObject arg0);
-		void setNeedClientAuth(jboolean arg0);
-		void setSSLParameters(javax::net::ssl::SSLParameters arg0);
-		void setUseClientMode(jboolean arg0);
-		void setWantClientAuth(jboolean arg0);
-		void startHandshake();
+		void addHandshakeCompletedListener(JObject arg0) const;
+		JString getApplicationProtocol() const;
+		jboolean getEnableSessionCreation() const;
+		JArray getEnabledCipherSuites() const;
+		JArray getEnabledProtocols() const;
+		JString getHandshakeApplicationProtocol() const;
+		JObject getHandshakeApplicationProtocolSelector() const;
+		JObject getHandshakeSession() const;
+		jboolean getNeedClientAuth() const;
+		javax::net::ssl::SSLParameters getSSLParameters() const;
+		JObject getSession() const;
+		JArray getSupportedCipherSuites() const;
+		JArray getSupportedProtocols() const;
+		jboolean getUseClientMode() const;
+		jboolean getWantClientAuth() const;
+		void removeHandshakeCompletedListener(JObject arg0) const;
+		void setEnableSessionCreation(jboolean arg0) const;
+		void setEnabledCipherSuites(JArray arg0) const;
+		void setEnabledProtocols(JArray arg0) const;
+		void setHandshakeApplicationProtocolSelector(JObject arg0) const;
+		void setNeedClientAuth(jboolean arg0) const;
+		void setSSLParameters(javax::net::ssl::SSLParameters arg0) const;
+		void setUseClientMode(jboolean arg0) const;
+		void setWantClientAuth(jboolean arg0) const;
+		void startHandshake() const;
 	};
 } // namespace javax::net::ssl
 

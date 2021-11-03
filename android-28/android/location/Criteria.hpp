@@ -34,29 +34,29 @@ namespace android::location
 		Criteria(android::location::Criteria &arg0);
 		
 		// Methods
-		jint describeContents();
-		jint getAccuracy();
-		jint getBearingAccuracy();
-		jint getHorizontalAccuracy();
-		jint getPowerRequirement();
-		jint getSpeedAccuracy();
-		jint getVerticalAccuracy();
-		jboolean isAltitudeRequired();
-		jboolean isBearingRequired();
-		jboolean isCostAllowed();
-		jboolean isSpeedRequired();
-		void setAccuracy(jint arg0);
-		void setAltitudeRequired(jboolean arg0);
-		void setBearingAccuracy(jint arg0);
-		void setBearingRequired(jboolean arg0);
-		void setCostAllowed(jboolean arg0);
-		void setHorizontalAccuracy(jint arg0);
-		void setPowerRequirement(jint arg0);
-		void setSpeedAccuracy(jint arg0);
-		void setSpeedRequired(jboolean arg0);
-		void setVerticalAccuracy(jint arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getAccuracy() const;
+		jint getBearingAccuracy() const;
+		jint getHorizontalAccuracy() const;
+		jint getPowerRequirement() const;
+		jint getSpeedAccuracy() const;
+		jint getVerticalAccuracy() const;
+		jboolean isAltitudeRequired() const;
+		jboolean isBearingRequired() const;
+		jboolean isCostAllowed() const;
+		jboolean isSpeedRequired() const;
+		void setAccuracy(jint arg0) const;
+		void setAltitudeRequired(jboolean arg0) const;
+		void setBearingAccuracy(jint arg0) const;
+		void setBearingRequired(jboolean arg0) const;
+		void setCostAllowed(jboolean arg0) const;
+		void setHorizontalAccuracy(jint arg0) const;
+		void setPowerRequirement(jint arg0) const;
+		void setSpeedAccuracy(jint arg0) const;
+		void setSpeedRequired(jboolean arg0) const;
+		void setVerticalAccuracy(jint arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

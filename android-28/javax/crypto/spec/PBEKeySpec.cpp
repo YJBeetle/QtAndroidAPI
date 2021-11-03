@@ -35,35 +35,35 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	void PBEKeySpec::clearPassword()
+	void PBEKeySpec::clearPassword() const
 	{
 		callMethod<void>(
 			"clearPassword",
 			"()V"
 		);
 	}
-	jint PBEKeySpec::getIterationCount()
+	jint PBEKeySpec::getIterationCount() const
 	{
 		return callMethod<jint>(
 			"getIterationCount",
 			"()I"
 		);
 	}
-	jint PBEKeySpec::getKeyLength()
+	jint PBEKeySpec::getKeyLength() const
 	{
 		return callMethod<jint>(
 			"getKeyLength",
 			"()I"
 		);
 	}
-	JCharArray PBEKeySpec::getPassword()
+	JCharArray PBEKeySpec::getPassword() const
 	{
 		return callObjectMethod(
 			"getPassword",
 			"()[C"
 		);
 	}
-	JByteArray PBEKeySpec::getSalt()
+	JByteArray PBEKeySpec::getSalt() const
 	{
 		return callObjectMethod(
 			"getSalt",

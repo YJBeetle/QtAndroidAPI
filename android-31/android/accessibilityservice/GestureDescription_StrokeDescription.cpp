@@ -28,7 +28,7 @@ namespace android::accessibilityservice
 		) {}
 	
 	// Methods
-	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
+	android::accessibilityservice::GestureDescription_StrokeDescription GestureDescription_StrokeDescription::continueStroke(android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"continueStroke",
@@ -39,28 +39,28 @@ namespace android::accessibilityservice
 			arg3
 		);
 	}
-	jlong GestureDescription_StrokeDescription::getDuration()
+	jlong GestureDescription_StrokeDescription::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	android::graphics::Path GestureDescription_StrokeDescription::getPath()
+	android::graphics::Path GestureDescription_StrokeDescription::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	jlong GestureDescription_StrokeDescription::getStartTime()
+	jlong GestureDescription_StrokeDescription::getStartTime() const
 	{
 		return callMethod<jlong>(
 			"getStartTime",
 			"()J"
 		);
 	}
-	jboolean GestureDescription_StrokeDescription::willContinue()
+	jboolean GestureDescription_StrokeDescription::willContinue() const
 	{
 		return callMethod<jboolean>(
 			"willContinue",

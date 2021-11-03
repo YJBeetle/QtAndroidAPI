@@ -45,12 +45,12 @@ namespace android::content
 		AsyncQueryHandler(android::content::ContentResolver arg0);
 		
 		// Methods
-		void cancelOperation(jint arg0);
-		void handleMessage(android::os::Message arg0);
-		void startDelete(jint arg0, JObject arg1, android::net::Uri arg2, JString arg3, JArray arg4);
-		void startInsert(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3);
-		void startQuery(jint arg0, JObject arg1, android::net::Uri arg2, JArray arg3, JString arg4, JArray arg5, JString arg6);
-		void startUpdate(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3, JString arg4, JArray arg5);
+		void cancelOperation(jint arg0) const;
+		void handleMessage(android::os::Message arg0) const;
+		void startDelete(jint arg0, JObject arg1, android::net::Uri arg2, JString arg3, JArray arg4) const;
+		void startInsert(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3) const;
+		void startQuery(jint arg0, JObject arg1, android::net::Uri arg2, JArray arg3, JString arg4, JArray arg5, JString arg6) const;
+		void startUpdate(jint arg0, JObject arg1, android::net::Uri arg2, android::content::ContentValues arg3, JString arg4, JArray arg5) const;
 	};
 } // namespace android::content
 

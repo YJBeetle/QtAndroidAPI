@@ -19,7 +19,7 @@ namespace android::security::identity
 		) {}
 	
 	// Methods
-	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::addAccessControlProfile(android::security::identity::AccessControlProfile arg0)
+	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::addAccessControlProfile(android::security::identity::AccessControlProfile arg0) const
 	{
 		return callObjectMethod(
 			"addAccessControlProfile",
@@ -27,14 +27,14 @@ namespace android::security::identity
 			arg0.object()
 		);
 	}
-	android::security::identity::PersonalizationData PersonalizationData_Builder::build()
+	android::security::identity::PersonalizationData PersonalizationData_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/identity/PersonalizationData;"
 		);
 	}
-	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3)
+	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(JString arg0, JString arg1, JObject arg2, JByteArray arg3) const
 	{
 		return callObjectMethod(
 			"putEntry",

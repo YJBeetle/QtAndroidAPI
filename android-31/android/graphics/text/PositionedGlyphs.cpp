@@ -13,7 +13,7 @@ namespace android::graphics::text
 	// Constructors
 	
 	// Methods
-	jboolean PositionedGlyphs::equals(JObject arg0)
+	jboolean PositionedGlyphs::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -21,28 +21,28 @@ namespace android::graphics::text
 			arg0.object<jobject>()
 		);
 	}
-	jfloat PositionedGlyphs::getAdvance()
+	jfloat PositionedGlyphs::getAdvance() const
 	{
 		return callMethod<jfloat>(
 			"getAdvance",
 			"()F"
 		);
 	}
-	jfloat PositionedGlyphs::getAscent()
+	jfloat PositionedGlyphs::getAscent() const
 	{
 		return callMethod<jfloat>(
 			"getAscent",
 			"()F"
 		);
 	}
-	jfloat PositionedGlyphs::getDescent()
+	jfloat PositionedGlyphs::getDescent() const
 	{
 		return callMethod<jfloat>(
 			"getDescent",
 			"()F"
 		);
 	}
-	android::graphics::fonts::Font PositionedGlyphs::getFont(jint arg0)
+	android::graphics::fonts::Font PositionedGlyphs::getFont(jint arg0) const
 	{
 		return callObjectMethod(
 			"getFont",
@@ -50,7 +50,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jint PositionedGlyphs::getGlyphId(jint arg0)
+	jint PositionedGlyphs::getGlyphId(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getGlyphId",
@@ -58,7 +58,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat PositionedGlyphs::getGlyphX(jint arg0)
+	jfloat PositionedGlyphs::getGlyphX(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getGlyphX",
@@ -66,7 +66,7 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat PositionedGlyphs::getGlyphY(jint arg0)
+	jfloat PositionedGlyphs::getGlyphY(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getGlyphY",
@@ -74,35 +74,35 @@ namespace android::graphics::text
 			arg0
 		);
 	}
-	jfloat PositionedGlyphs::getOffsetX()
+	jfloat PositionedGlyphs::getOffsetX() const
 	{
 		return callMethod<jfloat>(
 			"getOffsetX",
 			"()F"
 		);
 	}
-	jfloat PositionedGlyphs::getOffsetY()
+	jfloat PositionedGlyphs::getOffsetY() const
 	{
 		return callMethod<jfloat>(
 			"getOffsetY",
 			"()F"
 		);
 	}
-	jint PositionedGlyphs::glyphCount()
+	jint PositionedGlyphs::glyphCount() const
 	{
 		return callMethod<jint>(
 			"glyphCount",
 			"()I"
 		);
 	}
-	jint PositionedGlyphs::hashCode()
+	jint PositionedGlyphs::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PositionedGlyphs::toString()
+	JString PositionedGlyphs::toString() const
 	{
 		return callObjectMethod(
 			"toString",

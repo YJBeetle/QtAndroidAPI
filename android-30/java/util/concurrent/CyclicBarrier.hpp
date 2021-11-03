@@ -27,12 +27,12 @@ namespace java::util::concurrent
 		CyclicBarrier(jint arg0, JObject arg1);
 		
 		// Methods
-		jint await();
-		jint await(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		jint getNumberWaiting();
-		jint getParties();
-		jboolean isBroken();
-		void reset();
+		jint await() const;
+		jint await(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		jint getNumberWaiting() const;
+		jint getParties() const;
+		jboolean isBroken() const;
+		void reset() const;
 	};
 } // namespace java::util::concurrent
 

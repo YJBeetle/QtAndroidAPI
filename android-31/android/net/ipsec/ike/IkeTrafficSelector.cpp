@@ -47,7 +47,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeTrafficSelector::equals(JObject arg0)
+	jboolean IkeTrafficSelector::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,7 +55,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint IkeTrafficSelector::hashCode()
+	jint IkeTrafficSelector::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

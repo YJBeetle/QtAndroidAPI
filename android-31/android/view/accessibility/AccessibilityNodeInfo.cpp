@@ -430,7 +430,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::addAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
+	void AccessibilityNodeInfo::addAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0) const
 	{
 		callMethod<void>(
 			"addAction",
@@ -438,7 +438,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::addAction(jint arg0)
+	void AccessibilityNodeInfo::addAction(jint arg0) const
 	{
 		callMethod<void>(
 			"addAction",
@@ -446,7 +446,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::addChild(android::view::View arg0)
+	void AccessibilityNodeInfo::addChild(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addChild",
@@ -454,7 +454,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::addChild(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::addChild(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addChild",
@@ -463,21 +463,21 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	jboolean AccessibilityNodeInfo::canOpenPopup()
+	jboolean AccessibilityNodeInfo::canOpenPopup() const
 	{
 		return callMethod<jboolean>(
 			"canOpenPopup",
 			"()Z"
 		);
 	}
-	jint AccessibilityNodeInfo::describeContents()
+	jint AccessibilityNodeInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo::equals(JObject arg0)
+	jboolean AccessibilityNodeInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -485,7 +485,7 @@ namespace android::view::accessibility
 			arg0.object<jobject>()
 		);
 	}
-	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(JString arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(JString arg0) const
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
@@ -493,7 +493,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(JString arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(JString arg0) const
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
@@ -501,7 +501,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::findFocus(jint arg0) const
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -509,7 +509,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::focusSearch(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::focusSearch(jint arg0) const
 	{
 		return callObjectMethod(
 			"focusSearch",
@@ -517,28 +517,28 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JObject AccessibilityNodeInfo::getActionList()
+	JObject AccessibilityNodeInfo::getActionList() const
 	{
 		return callObjectMethod(
 			"getActionList",
 			"()Ljava/util/List;"
 		);
 	}
-	jint AccessibilityNodeInfo::getActions()
+	jint AccessibilityNodeInfo::getActions() const
 	{
 		return callMethod<jint>(
 			"getActions",
 			"()I"
 		);
 	}
-	JObject AccessibilityNodeInfo::getAvailableExtraData()
+	JObject AccessibilityNodeInfo::getAvailableExtraData() const
 	{
 		return callObjectMethod(
 			"getAvailableExtraData",
 			"()Ljava/util/List;"
 		);
 	}
-	void AccessibilityNodeInfo::getBoundsInParent(android::graphics::Rect arg0)
+	void AccessibilityNodeInfo::getBoundsInParent(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getBoundsInParent",
@@ -546,7 +546,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::getBoundsInScreen(android::graphics::Rect arg0)
+	void AccessibilityNodeInfo::getBoundsInScreen(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getBoundsInScreen",
@@ -554,7 +554,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getChild(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getChild(jint arg0) const
 	{
 		return callObjectMethod(
 			"getChild",
@@ -562,385 +562,385 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jint AccessibilityNodeInfo::getChildCount()
+	jint AccessibilityNodeInfo::getChildCount() const
 	{
 		return callMethod<jint>(
 			"getChildCount",
 			"()I"
 		);
 	}
-	JString AccessibilityNodeInfo::getClassName()
+	JString AccessibilityNodeInfo::getClassName() const
 	{
 		return callObjectMethod(
 			"getClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo::getCollectionInfo()
+	android::view::accessibility::AccessibilityNodeInfo_CollectionInfo AccessibilityNodeInfo::getCollectionInfo() const
 	{
 		return callObjectMethod(
 			"getCollectionInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo AccessibilityNodeInfo::getCollectionItemInfo()
+	android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo AccessibilityNodeInfo::getCollectionItemInfo() const
 	{
 		return callObjectMethod(
 			"getCollectionItemInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;"
 		);
 	}
-	JString AccessibilityNodeInfo::getContentDescription()
+	JString AccessibilityNodeInfo::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AccessibilityNodeInfo::getDrawingOrder()
+	jint AccessibilityNodeInfo::getDrawingOrder() const
 	{
 		return callMethod<jint>(
 			"getDrawingOrder",
 			"()I"
 		);
 	}
-	JString AccessibilityNodeInfo::getError()
+	JString AccessibilityNodeInfo::getError() const
 	{
 		return callObjectMethod(
 			"getError",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo_ExtraRenderingInfo AccessibilityNodeInfo::getExtraRenderingInfo()
+	android::view::accessibility::AccessibilityNodeInfo_ExtraRenderingInfo AccessibilityNodeInfo::getExtraRenderingInfo() const
 	{
 		return callObjectMethod(
 			"getExtraRenderingInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$ExtraRenderingInfo;"
 		);
 	}
-	android::os::Bundle AccessibilityNodeInfo::getExtras()
+	android::os::Bundle AccessibilityNodeInfo::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString AccessibilityNodeInfo::getHintText()
+	JString AccessibilityNodeInfo::getHintText() const
 	{
 		return callObjectMethod(
 			"getHintText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AccessibilityNodeInfo::getInputType()
+	jint AccessibilityNodeInfo::getInputType() const
 	{
 		return callMethod<jint>(
 			"getInputType",
 			"()I"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabelFor()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabelFor() const
 	{
 		return callObjectMethod(
 			"getLabelFor",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabeledBy()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getLabeledBy() const
 	{
 		return callObjectMethod(
 			"getLabeledBy",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	jint AccessibilityNodeInfo::getLiveRegion()
+	jint AccessibilityNodeInfo::getLiveRegion() const
 	{
 		return callMethod<jint>(
 			"getLiveRegion",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo::getMaxTextLength()
+	jint AccessibilityNodeInfo::getMaxTextLength() const
 	{
 		return callMethod<jint>(
 			"getMaxTextLength",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo::getMovementGranularities()
+	jint AccessibilityNodeInfo::getMovementGranularities() const
 	{
 		return callMethod<jint>(
 			"getMovementGranularities",
 			"()I"
 		);
 	}
-	JString AccessibilityNodeInfo::getPackageName()
+	JString AccessibilityNodeInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString AccessibilityNodeInfo::getPaneTitle()
+	JString AccessibilityNodeInfo::getPaneTitle() const
 	{
 		return callObjectMethod(
 			"getPaneTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getParent()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getParent() const
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo_RangeInfo AccessibilityNodeInfo::getRangeInfo()
+	android::view::accessibility::AccessibilityNodeInfo_RangeInfo AccessibilityNodeInfo::getRangeInfo() const
 	{
 		return callObjectMethod(
 			"getRangeInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$RangeInfo;"
 		);
 	}
-	JString AccessibilityNodeInfo::getStateDescription()
+	JString AccessibilityNodeInfo::getStateDescription() const
 	{
 		return callObjectMethod(
 			"getStateDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString AccessibilityNodeInfo::getText()
+	JString AccessibilityNodeInfo::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AccessibilityNodeInfo::getTextSelectionEnd()
+	jint AccessibilityNodeInfo::getTextSelectionEnd() const
 	{
 		return callMethod<jint>(
 			"getTextSelectionEnd",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo::getTextSelectionStart()
+	jint AccessibilityNodeInfo::getTextSelectionStart() const
 	{
 		return callMethod<jint>(
 			"getTextSelectionStart",
 			"()I"
 		);
 	}
-	JString AccessibilityNodeInfo::getTooltipText()
+	JString AccessibilityNodeInfo::getTooltipText() const
 	{
 		return callObjectMethod(
 			"getTooltipText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo AccessibilityNodeInfo::getTouchDelegateInfo()
+	android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo AccessibilityNodeInfo::getTouchDelegateInfo() const
 	{
 		return callObjectMethod(
 			"getTouchDelegateInfo",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalAfter()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalAfter() const
 	{
 		return callObjectMethod(
 			"getTraversalAfter",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalBefore()
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeInfo::getTraversalBefore() const
 	{
 		return callObjectMethod(
 			"getTraversalBefore",
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	JString AccessibilityNodeInfo::getViewIdResourceName()
+	JString AccessibilityNodeInfo::getViewIdResourceName() const
 	{
 		return callObjectMethod(
 			"getViewIdResourceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::view::accessibility::AccessibilityWindowInfo AccessibilityNodeInfo::getWindow()
+	android::view::accessibility::AccessibilityWindowInfo AccessibilityNodeInfo::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
 		);
 	}
-	jint AccessibilityNodeInfo::getWindowId()
+	jint AccessibilityNodeInfo::getWindowId() const
 	{
 		return callMethod<jint>(
 			"getWindowId",
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo::hashCode()
+	jint AccessibilityNodeInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isAccessibilityFocused()
+	jboolean AccessibilityNodeInfo::isAccessibilityFocused() const
 	{
 		return callMethod<jboolean>(
 			"isAccessibilityFocused",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isCheckable()
+	jboolean AccessibilityNodeInfo::isCheckable() const
 	{
 		return callMethod<jboolean>(
 			"isCheckable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isChecked()
+	jboolean AccessibilityNodeInfo::isChecked() const
 	{
 		return callMethod<jboolean>(
 			"isChecked",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isClickable()
+	jboolean AccessibilityNodeInfo::isClickable() const
 	{
 		return callMethod<jboolean>(
 			"isClickable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isContentInvalid()
+	jboolean AccessibilityNodeInfo::isContentInvalid() const
 	{
 		return callMethod<jboolean>(
 			"isContentInvalid",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isContextClickable()
+	jboolean AccessibilityNodeInfo::isContextClickable() const
 	{
 		return callMethod<jboolean>(
 			"isContextClickable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isDismissable()
+	jboolean AccessibilityNodeInfo::isDismissable() const
 	{
 		return callMethod<jboolean>(
 			"isDismissable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isEditable()
+	jboolean AccessibilityNodeInfo::isEditable() const
 	{
 		return callMethod<jboolean>(
 			"isEditable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isEnabled()
+	jboolean AccessibilityNodeInfo::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isFocusable()
+	jboolean AccessibilityNodeInfo::isFocusable() const
 	{
 		return callMethod<jboolean>(
 			"isFocusable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isFocused()
+	jboolean AccessibilityNodeInfo::isFocused() const
 	{
 		return callMethod<jboolean>(
 			"isFocused",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isHeading()
+	jboolean AccessibilityNodeInfo::isHeading() const
 	{
 		return callMethod<jboolean>(
 			"isHeading",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isImportantForAccessibility()
+	jboolean AccessibilityNodeInfo::isImportantForAccessibility() const
 	{
 		return callMethod<jboolean>(
 			"isImportantForAccessibility",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isLongClickable()
+	jboolean AccessibilityNodeInfo::isLongClickable() const
 	{
 		return callMethod<jboolean>(
 			"isLongClickable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isMultiLine()
+	jboolean AccessibilityNodeInfo::isMultiLine() const
 	{
 		return callMethod<jboolean>(
 			"isMultiLine",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isPassword()
+	jboolean AccessibilityNodeInfo::isPassword() const
 	{
 		return callMethod<jboolean>(
 			"isPassword",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isScreenReaderFocusable()
+	jboolean AccessibilityNodeInfo::isScreenReaderFocusable() const
 	{
 		return callMethod<jboolean>(
 			"isScreenReaderFocusable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isScrollable()
+	jboolean AccessibilityNodeInfo::isScrollable() const
 	{
 		return callMethod<jboolean>(
 			"isScrollable",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isSelected()
+	jboolean AccessibilityNodeInfo::isSelected() const
 	{
 		return callMethod<jboolean>(
 			"isSelected",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isShowingHintText()
+	jboolean AccessibilityNodeInfo::isShowingHintText() const
 	{
 		return callMethod<jboolean>(
 			"isShowingHintText",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isTextEntryKey()
+	jboolean AccessibilityNodeInfo::isTextEntryKey() const
 	{
 		return callMethod<jboolean>(
 			"isTextEntryKey",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::isVisibleToUser()
+	jboolean AccessibilityNodeInfo::isVisibleToUser() const
 	{
 		return callMethod<jboolean>(
 			"isVisibleToUser",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::performAction(jint arg0)
+	jboolean AccessibilityNodeInfo::performAction(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"performAction",
@@ -948,7 +948,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jboolean AccessibilityNodeInfo::performAction(jint arg0, android::os::Bundle arg1)
+	jboolean AccessibilityNodeInfo::performAction(jint arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"performAction",
@@ -957,21 +957,21 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	void AccessibilityNodeInfo::recycle()
+	void AccessibilityNodeInfo::recycle() const
 	{
 		callMethod<void>(
 			"recycle",
 			"()V"
 		);
 	}
-	jboolean AccessibilityNodeInfo::refresh()
+	jboolean AccessibilityNodeInfo::refresh() const
 	{
 		return callMethod<jboolean>(
 			"refresh",
 			"()Z"
 		);
 	}
-	jboolean AccessibilityNodeInfo::refreshWithExtraData(JString arg0, android::os::Bundle arg1)
+	jboolean AccessibilityNodeInfo::refreshWithExtraData(JString arg0, android::os::Bundle arg1) const
 	{
 		return callMethod<jboolean>(
 			"refreshWithExtraData",
@@ -980,7 +980,7 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	jboolean AccessibilityNodeInfo::removeAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0)
+	jboolean AccessibilityNodeInfo::removeAction(android::view::accessibility::AccessibilityNodeInfo_AccessibilityAction arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAction",
@@ -988,7 +988,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::removeAction(jint arg0)
+	void AccessibilityNodeInfo::removeAction(jint arg0) const
 	{
 		callMethod<void>(
 			"removeAction",
@@ -996,7 +996,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0)
+	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeChild",
@@ -1004,7 +1004,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0, jint arg1)
+	jboolean AccessibilityNodeInfo::removeChild(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"removeChild",
@@ -1013,7 +1013,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setAccessibilityFocused(jboolean arg0)
+	void AccessibilityNodeInfo::setAccessibilityFocused(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAccessibilityFocused",
@@ -1021,7 +1021,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setAvailableExtraData(JObject arg0)
+	void AccessibilityNodeInfo::setAvailableExtraData(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAvailableExtraData",
@@ -1029,7 +1029,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setBoundsInParent(android::graphics::Rect arg0)
+	void AccessibilityNodeInfo::setBoundsInParent(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setBoundsInParent",
@@ -1037,7 +1037,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setBoundsInScreen(android::graphics::Rect arg0)
+	void AccessibilityNodeInfo::setBoundsInScreen(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setBoundsInScreen",
@@ -1045,7 +1045,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setCanOpenPopup(jboolean arg0)
+	void AccessibilityNodeInfo::setCanOpenPopup(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCanOpenPopup",
@@ -1053,7 +1053,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setCheckable(jboolean arg0)
+	void AccessibilityNodeInfo::setCheckable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setCheckable",
@@ -1061,7 +1061,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setChecked(jboolean arg0)
+	void AccessibilityNodeInfo::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -1069,7 +1069,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setClassName(JString arg0)
+	void AccessibilityNodeInfo::setClassName(JString arg0) const
 	{
 		callMethod<void>(
 			"setClassName",
@@ -1077,7 +1077,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setClickable(jboolean arg0)
+	void AccessibilityNodeInfo::setClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClickable",
@@ -1085,7 +1085,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setCollectionInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionInfo arg0)
+	void AccessibilityNodeInfo::setCollectionInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionInfo arg0) const
 	{
 		callMethod<void>(
 			"setCollectionInfo",
@@ -1093,7 +1093,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setCollectionItemInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo arg0)
+	void AccessibilityNodeInfo::setCollectionItemInfo(android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo arg0) const
 	{
 		callMethod<void>(
 			"setCollectionItemInfo",
@@ -1101,7 +1101,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setContentDescription(JString arg0)
+	void AccessibilityNodeInfo::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -1109,7 +1109,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setContentInvalid(jboolean arg0)
+	void AccessibilityNodeInfo::setContentInvalid(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContentInvalid",
@@ -1117,7 +1117,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setContextClickable(jboolean arg0)
+	void AccessibilityNodeInfo::setContextClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContextClickable",
@@ -1125,7 +1125,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setDismissable(jboolean arg0)
+	void AccessibilityNodeInfo::setDismissable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDismissable",
@@ -1133,7 +1133,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setDrawingOrder(jint arg0)
+	void AccessibilityNodeInfo::setDrawingOrder(jint arg0) const
 	{
 		callMethod<void>(
 			"setDrawingOrder",
@@ -1141,7 +1141,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setEditable(jboolean arg0)
+	void AccessibilityNodeInfo::setEditable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEditable",
@@ -1149,7 +1149,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setEnabled(jboolean arg0)
+	void AccessibilityNodeInfo::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -1157,7 +1157,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setError(JString arg0)
+	void AccessibilityNodeInfo::setError(JString arg0) const
 	{
 		callMethod<void>(
 			"setError",
@@ -1165,7 +1165,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setFocusable(jboolean arg0)
+	void AccessibilityNodeInfo::setFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -1173,7 +1173,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setFocused(jboolean arg0)
+	void AccessibilityNodeInfo::setFocused(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocused",
@@ -1181,7 +1181,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setHeading(jboolean arg0)
+	void AccessibilityNodeInfo::setHeading(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHeading",
@@ -1189,7 +1189,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setHintText(JString arg0)
+	void AccessibilityNodeInfo::setHintText(JString arg0) const
 	{
 		callMethod<void>(
 			"setHintText",
@@ -1197,7 +1197,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0)
+	void AccessibilityNodeInfo::setImportantForAccessibility(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setImportantForAccessibility",
@@ -1205,7 +1205,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setInputType(jint arg0)
+	void AccessibilityNodeInfo::setInputType(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputType",
@@ -1213,7 +1213,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0)
+	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setLabelFor",
@@ -1221,7 +1221,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setLabelFor(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLabelFor",
@@ -1230,7 +1230,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0)
+	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setLabeledBy",
@@ -1238,7 +1238,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setLabeledBy(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setLabeledBy",
@@ -1247,7 +1247,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setLiveRegion(jint arg0)
+	void AccessibilityNodeInfo::setLiveRegion(jint arg0) const
 	{
 		callMethod<void>(
 			"setLiveRegion",
@@ -1255,7 +1255,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setLongClickable(jboolean arg0)
+	void AccessibilityNodeInfo::setLongClickable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLongClickable",
@@ -1263,7 +1263,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setMaxTextLength(jint arg0)
+	void AccessibilityNodeInfo::setMaxTextLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxTextLength",
@@ -1271,7 +1271,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setMovementGranularities(jint arg0)
+	void AccessibilityNodeInfo::setMovementGranularities(jint arg0) const
 	{
 		callMethod<void>(
 			"setMovementGranularities",
@@ -1279,7 +1279,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setMultiLine(jboolean arg0)
+	void AccessibilityNodeInfo::setMultiLine(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMultiLine",
@@ -1287,7 +1287,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setPackageName(JString arg0)
+	void AccessibilityNodeInfo::setPackageName(JString arg0) const
 	{
 		callMethod<void>(
 			"setPackageName",
@@ -1295,7 +1295,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setPaneTitle(JString arg0)
+	void AccessibilityNodeInfo::setPaneTitle(JString arg0) const
 	{
 		callMethod<void>(
 			"setPaneTitle",
@@ -1303,7 +1303,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setParent(android::view::View arg0)
+	void AccessibilityNodeInfo::setParent(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setParent",
@@ -1311,7 +1311,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setParent(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setParent(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setParent",
@@ -1320,7 +1320,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setPassword(jboolean arg0)
+	void AccessibilityNodeInfo::setPassword(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setPassword",
@@ -1328,7 +1328,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setRangeInfo(android::view::accessibility::AccessibilityNodeInfo_RangeInfo arg0)
+	void AccessibilityNodeInfo::setRangeInfo(android::view::accessibility::AccessibilityNodeInfo_RangeInfo arg0) const
 	{
 		callMethod<void>(
 			"setRangeInfo",
@@ -1336,7 +1336,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setScreenReaderFocusable(jboolean arg0)
+	void AccessibilityNodeInfo::setScreenReaderFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScreenReaderFocusable",
@@ -1344,7 +1344,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setScrollable(jboolean arg0)
+	void AccessibilityNodeInfo::setScrollable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setScrollable",
@@ -1352,7 +1352,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setSelected(jboolean arg0)
+	void AccessibilityNodeInfo::setSelected(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSelected",
@@ -1360,7 +1360,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setShowingHintText(jboolean arg0)
+	void AccessibilityNodeInfo::setShowingHintText(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowingHintText",
@@ -1368,7 +1368,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setSource(android::view::View arg0)
+	void AccessibilityNodeInfo::setSource(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -1376,7 +1376,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setSource(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setSource(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSource",
@@ -1385,7 +1385,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setStateDescription(JString arg0)
+	void AccessibilityNodeInfo::setStateDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setStateDescription",
@@ -1393,7 +1393,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setText(JString arg0)
+	void AccessibilityNodeInfo::setText(JString arg0) const
 	{
 		callMethod<void>(
 			"setText",
@@ -1401,7 +1401,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setTextEntryKey(jboolean arg0)
+	void AccessibilityNodeInfo::setTextEntryKey(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTextEntryKey",
@@ -1409,7 +1409,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setTextSelection(jint arg0, jint arg1)
+	void AccessibilityNodeInfo::setTextSelection(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTextSelection",
@@ -1418,7 +1418,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setTooltipText(JString arg0)
+	void AccessibilityNodeInfo::setTooltipText(JString arg0) const
 	{
 		callMethod<void>(
 			"setTooltipText",
@@ -1426,7 +1426,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setTouchDelegateInfo(android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo arg0)
+	void AccessibilityNodeInfo::setTouchDelegateInfo(android::view::accessibility::AccessibilityNodeInfo_TouchDelegateInfo arg0) const
 	{
 		callMethod<void>(
 			"setTouchDelegateInfo",
@@ -1434,7 +1434,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0)
+	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setTraversalAfter",
@@ -1442,7 +1442,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setTraversalAfter(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTraversalAfter",
@@ -1451,7 +1451,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0)
+	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setTraversalBefore",
@@ -1459,7 +1459,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0, jint arg1)
+	void AccessibilityNodeInfo::setTraversalBefore(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setTraversalBefore",
@@ -1468,7 +1468,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	void AccessibilityNodeInfo::setViewIdResourceName(JString arg0)
+	void AccessibilityNodeInfo::setViewIdResourceName(JString arg0) const
 	{
 		callMethod<void>(
 			"setViewIdResourceName",
@@ -1476,7 +1476,7 @@ namespace android::view::accessibility
 			arg0.object<jstring>()
 		);
 	}
-	void AccessibilityNodeInfo::setVisibleToUser(jboolean arg0)
+	void AccessibilityNodeInfo::setVisibleToUser(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setVisibleToUser",
@@ -1484,14 +1484,14 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JString AccessibilityNodeInfo::toString()
+	JString AccessibilityNodeInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AccessibilityNodeInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AccessibilityNodeInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -20,10 +20,10 @@ namespace android::view::accessibility
 		
 		// Methods
 		static android::view::accessibility::AccessibilityNodeInfo_RangeInfo obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		jfloat getCurrent();
-		jfloat getMax();
-		jfloat getMin();
-		jint getType();
+		jfloat getCurrent() const;
+		jfloat getMax() const;
+		jfloat getMin() const;
+		jint getType() const;
 	};
 } // namespace android::view::accessibility
 

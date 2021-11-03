@@ -17,7 +17,7 @@ namespace android::text::style
 		TabStopSpan_Standard(jint arg0);
 		
 		// Methods
-		jint getTabStop();
+		jint getTabStop() const;
 	};
 } // namespace android::text::style
 

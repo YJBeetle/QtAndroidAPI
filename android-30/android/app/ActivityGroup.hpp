@@ -31,8 +31,8 @@ namespace android::app
 		ActivityGroup(jboolean arg0);
 		
 		// Methods
-		android::app::Activity getCurrentActivity();
-		android::app::LocalActivityManager getLocalActivityManager();
+		android::app::Activity getCurrentActivity() const;
+		android::app::LocalActivityManager getLocalActivityManager() const;
 	};
 } // namespace android::app
 

@@ -21,11 +21,11 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		void copyTo(JIntArray arg0, jint arg1);
-		jboolean equals(JObject arg0);
-		jint getOffsetForIndex(jint arg0, jint arg1);
-		jint hashCode();
-		JString toString();
+		void copyTo(JIntArray arg0, jint arg1) const;
+		jboolean equals(JObject arg0) const;
+		jint getOffsetForIndex(jint arg0, jint arg1) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

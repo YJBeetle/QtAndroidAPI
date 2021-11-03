@@ -23,10 +23,10 @@ namespace android::webkit
 		WebBackForwardList();
 		
 		// Methods
-		jint getCurrentIndex();
-		android::webkit::WebHistoryItem getCurrentItem();
-		android::webkit::WebHistoryItem getItemAtIndex(jint arg0);
-		jint getSize();
+		jint getCurrentIndex() const;
+		android::webkit::WebHistoryItem getCurrentItem() const;
+		android::webkit::WebHistoryItem getItemAtIndex(jint arg0) const;
+		jint getSize() const;
 	};
 } // namespace android::webkit
 

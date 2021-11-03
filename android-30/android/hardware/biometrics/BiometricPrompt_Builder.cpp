@@ -19,14 +19,14 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	android::hardware::biometrics::BiometricPrompt BiometricPrompt_Builder::build()
+	android::hardware::biometrics::BiometricPrompt BiometricPrompt_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/hardware/biometrics/BiometricPrompt;"
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setAllowedAuthenticators(jint arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setAllowedAuthenticators(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAllowedAuthenticators",
@@ -34,7 +34,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setConfirmationRequired",
@@ -42,7 +42,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDescription(JString arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDescription(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDescription",
@@ -50,7 +50,7 @@ namespace android::hardware::biometrics
 			arg0.object<jstring>()
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceCredentialAllowed",
@@ -58,7 +58,7 @@ namespace android::hardware::biometrics
 			arg0
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setNegativeButton(JString arg0, JObject arg1, JObject arg2)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setNegativeButton(JString arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"setNegativeButton",
@@ -68,7 +68,7 @@ namespace android::hardware::biometrics
 			arg2.object()
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setSubtitle(JString arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setSubtitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSubtitle",
@@ -76,7 +76,7 @@ namespace android::hardware::biometrics
 			arg0.object<jstring>()
 		);
 	}
-	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setTitle(JString arg0)
+	android::hardware::biometrics::BiometricPrompt_Builder BiometricPrompt_Builder::setTitle(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTitle",

@@ -112,21 +112,21 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	jint PowerManager::getLocationPowerSaveMode()
+	jint PowerManager::getLocationPowerSaveMode() const
 	{
 		return callMethod<jint>(
 			"getLocationPowerSaveMode",
 			"()I"
 		);
 	}
-	jboolean PowerManager::isDeviceIdleMode()
+	jboolean PowerManager::isDeviceIdleMode() const
 	{
 		return callMethod<jboolean>(
 			"isDeviceIdleMode",
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isIgnoringBatteryOptimizations(JString arg0)
+	jboolean PowerManager::isIgnoringBatteryOptimizations(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"isIgnoringBatteryOptimizations",
@@ -134,35 +134,35 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean PowerManager::isInteractive()
+	jboolean PowerManager::isInteractive() const
 	{
 		return callMethod<jboolean>(
 			"isInteractive",
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isPowerSaveMode()
+	jboolean PowerManager::isPowerSaveMode() const
 	{
 		return callMethod<jboolean>(
 			"isPowerSaveMode",
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isScreenOn()
+	jboolean PowerManager::isScreenOn() const
 	{
 		return callMethod<jboolean>(
 			"isScreenOn",
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isSustainedPerformanceModeSupported()
+	jboolean PowerManager::isSustainedPerformanceModeSupported() const
 	{
 		return callMethod<jboolean>(
 			"isSustainedPerformanceModeSupported",
 			"()Z"
 		);
 	}
-	jboolean PowerManager::isWakeLockLevelSupported(jint arg0)
+	jboolean PowerManager::isWakeLockLevelSupported(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isWakeLockLevelSupported",
@@ -170,7 +170,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::PowerManager_WakeLock PowerManager::newWakeLock(jint arg0, JString arg1)
+	android::os::PowerManager_WakeLock PowerManager::newWakeLock(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"newWakeLock",
@@ -179,7 +179,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void PowerManager::reboot(JString arg0)
+	void PowerManager::reboot(JString arg0) const
 	{
 		callMethod<void>(
 			"reboot",

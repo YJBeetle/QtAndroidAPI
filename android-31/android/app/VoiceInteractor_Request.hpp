@@ -26,14 +26,14 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		void cancel();
-		android::app::Activity getActivity();
-		android::content::Context getContext();
-		JString getName();
-		void onAttached(android::app::Activity arg0);
-		void onCancel();
-		void onDetached();
-		JString toString();
+		void cancel() const;
+		android::app::Activity getActivity() const;
+		android::content::Context getContext() const;
+		JString getName() const;
+		void onAttached(android::app::Activity arg0) const;
+		void onCancel() const;
+		void onDetached() const;
+		JString toString() const;
 	};
 } // namespace android::app
 

@@ -37,21 +37,21 @@ namespace android::graphics::fonts
 			arg0.object<jarray>()
 		);
 	}
-	jfloat FontVariationAxis::getStyleValue()
+	jfloat FontVariationAxis::getStyleValue() const
 	{
 		return callMethod<jfloat>(
 			"getStyleValue",
 			"()F"
 		);
 	}
-	JString FontVariationAxis::getTag()
+	JString FontVariationAxis::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString FontVariationAxis::toString()
+	JString FontVariationAxis::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -28,13 +28,13 @@ namespace android::view::textservice
 		// Constructors
 		
 		// Methods
-		void cancel();
-		void close();
-		void getSentenceSuggestions(JArray arg0, jint arg1);
-		android::view::textservice::SpellCheckerInfo getSpellChecker();
-		void getSuggestions(android::view::textservice::TextInfo arg0, jint arg1);
-		void getSuggestions(JArray arg0, jint arg1, jboolean arg2);
-		jboolean isSessionDisconnected();
+		void cancel() const;
+		void close() const;
+		void getSentenceSuggestions(JArray arg0, jint arg1) const;
+		android::view::textservice::SpellCheckerInfo getSpellChecker() const;
+		void getSuggestions(android::view::textservice::TextInfo arg0, jint arg1) const;
+		void getSuggestions(JArray arg0, jint arg1, jboolean arg2) const;
+		jboolean isSessionDisconnected() const;
 	};
 } // namespace android::view::textservice
 

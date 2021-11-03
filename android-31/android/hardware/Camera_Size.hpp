@@ -25,8 +25,8 @@ namespace android::hardware
 		Camera_Size(android::hardware::Camera arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::hardware
 

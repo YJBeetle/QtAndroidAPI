@@ -22,8 +22,8 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		JObject getMatches();
-		JString toString();
+		JObject getMatches() const;
+		JString toString() const;
 	};
 } // namespace android::service::autofill
 

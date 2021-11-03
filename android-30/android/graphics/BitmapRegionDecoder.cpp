@@ -59,7 +59,7 @@ namespace android::graphics
 			arg3
 		);
 	}
-	android::graphics::Bitmap BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1)
+	android::graphics::Bitmap BitmapRegionDecoder::decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1) const
 	{
 		return callObjectMethod(
 			"decodeRegion",
@@ -68,28 +68,28 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jint BitmapRegionDecoder::getHeight()
+	jint BitmapRegionDecoder::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint BitmapRegionDecoder::getWidth()
+	jint BitmapRegionDecoder::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jboolean BitmapRegionDecoder::isRecycled()
+	jboolean BitmapRegionDecoder::isRecycled() const
 	{
 		return callMethod<jboolean>(
 			"isRecycled",
 			"()Z"
 		);
 	}
-	void BitmapRegionDecoder::recycle()
+	void BitmapRegionDecoder::recycle() const
 	{
 		callMethod<void>(
 			"recycle",

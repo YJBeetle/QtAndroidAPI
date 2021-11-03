@@ -27,8 +27,8 @@ namespace android::bluetooth::le
 		AdvertiseCallback();
 		
 		// Methods
-		void onStartFailure(jint arg0);
-		void onStartSuccess(android::bluetooth::le::AdvertiseSettings arg0);
+		void onStartFailure(jint arg0) const;
+		void onStartSuccess(android::bluetooth::le::AdvertiseSettings arg0) const;
 	};
 } // namespace android::bluetooth::le
 

@@ -26,12 +26,12 @@ namespace android::nfc::tech
 		
 		// Methods
 		static android::nfc::tech::NdefFormatable get(android::nfc::Tag arg0);
-		void close();
-		void connect();
-		void format(android::nfc::NdefMessage arg0);
-		void formatReadOnly(android::nfc::NdefMessage arg0);
-		android::nfc::Tag getTag();
-		jboolean isConnected();
+		void close() const;
+		void connect() const;
+		void format(android::nfc::NdefMessage arg0) const;
+		void formatReadOnly(android::nfc::NdefMessage arg0) const;
+		android::nfc::Tag getTag() const;
+		jboolean isConnected() const;
 	};
 } // namespace android::nfc::tech
 

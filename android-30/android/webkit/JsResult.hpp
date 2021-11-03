@@ -16,8 +16,8 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		void cancel();
-		void confirm();
+		void cancel() const;
+		void confirm() const;
 	};
 } // namespace android::webkit
 

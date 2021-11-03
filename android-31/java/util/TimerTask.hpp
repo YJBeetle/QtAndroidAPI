@@ -18,9 +18,9 @@ namespace java::util
 		// Constructors
 		
 		// Methods
-		jboolean cancel();
-		void run();
-		jlong scheduledExecutionTime();
+		jboolean cancel() const;
+		void run() const;
+		jlong scheduledExecutionTime() const;
 	};
 } // namespace java::util
 

@@ -18,9 +18,9 @@ namespace android::media::audiofx
 		// Methods
 		static android::media::audiofx::HapticGenerator create(jint arg0);
 		static jboolean isAvailable();
-		void close();
-		void release();
-		jint setEnabled(jboolean arg0);
+		void close() const;
+		void release() const;
+		jint setEnabled(jboolean arg0) const;
 	};
 } // namespace android::media::audiofx
 

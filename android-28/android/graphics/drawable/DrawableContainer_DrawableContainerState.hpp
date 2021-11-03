@@ -34,28 +34,28 @@ namespace android::graphics::drawable
 		// Constructors
 		
 		// Methods
-		jint addChild(android::graphics::drawable::Drawable arg0);
-		jboolean canApplyTheme();
-		jboolean canConstantState();
-		jint getChangingConfigurations();
-		android::graphics::drawable::Drawable getChild(jint arg0);
-		jint getChildCount();
-		JArray getChildren();
-		jint getConstantHeight();
-		jint getConstantMinimumHeight();
-		jint getConstantMinimumWidth();
-		android::graphics::Rect getConstantPadding();
-		jint getConstantWidth();
-		jint getEnterFadeDuration();
-		jint getExitFadeDuration();
-		jint getOpacity();
-		void growArray(jint arg0, jint arg1);
-		jboolean isConstantSize();
-		jboolean isStateful();
-		void setConstantSize(jboolean arg0);
-		void setEnterFadeDuration(jint arg0);
-		void setExitFadeDuration(jint arg0);
-		void setVariablePadding(jboolean arg0);
+		jint addChild(android::graphics::drawable::Drawable arg0) const;
+		jboolean canApplyTheme() const;
+		jboolean canConstantState() const;
+		jint getChangingConfigurations() const;
+		android::graphics::drawable::Drawable getChild(jint arg0) const;
+		jint getChildCount() const;
+		JArray getChildren() const;
+		jint getConstantHeight() const;
+		jint getConstantMinimumHeight() const;
+		jint getConstantMinimumWidth() const;
+		android::graphics::Rect getConstantPadding() const;
+		jint getConstantWidth() const;
+		jint getEnterFadeDuration() const;
+		jint getExitFadeDuration() const;
+		jint getOpacity() const;
+		void growArray(jint arg0, jint arg1) const;
+		jboolean isConstantSize() const;
+		jboolean isStateful() const;
+		void setConstantSize(jboolean arg0) const;
+		void setEnterFadeDuration(jint arg0) const;
+		void setExitFadeDuration(jint arg0) const;
+		void setVariablePadding(jboolean arg0) const;
 	};
 } // namespace android::graphics::drawable
 

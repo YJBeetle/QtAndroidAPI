@@ -22,14 +22,14 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void AsyncTaskLoader::cancelLoadInBackground()
+	void AsyncTaskLoader::cancelLoadInBackground() const
 	{
 		callMethod<void>(
 			"cancelLoadInBackground",
 			"()V"
 		);
 	}
-	void AsyncTaskLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3)
+	void AsyncTaskLoader::dump(JString arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"dump",
@@ -40,21 +40,21 @@ namespace android::content
 			arg3.object<jarray>()
 		);
 	}
-	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled()
+	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled() const
 	{
 		return callMethod<jboolean>(
 			"isLoadInBackgroundCanceled",
 			"()Z"
 		);
 	}
-	JObject AsyncTaskLoader::loadInBackground()
+	JObject AsyncTaskLoader::loadInBackground() const
 	{
 		return callObjectMethod(
 			"loadInBackground",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void AsyncTaskLoader::onCanceled(JObject arg0)
+	void AsyncTaskLoader::onCanceled(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCanceled",
@@ -62,7 +62,7 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)
+	void AsyncTaskLoader::setUpdateThrottle(jlong arg0) const
 	{
 		callMethod<void>(
 			"setUpdateThrottle",

@@ -27,10 +27,10 @@ namespace android::net::ipsec::ike
 		IkeTunnelConnectionParams(android::net::ipsec::ike::IkeSessionParams arg0, android::net::ipsec::ike::TunnelModeChildSessionParams arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::net::ipsec::ike::IkeSessionParams getIkeSessionParams();
-		android::net::ipsec::ike::TunnelModeChildSessionParams getTunnelModeChildSessionParams();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		android::net::ipsec::ike::IkeSessionParams getIkeSessionParams() const;
+		android::net::ipsec::ike::TunnelModeChildSessionParams getTunnelModeChildSessionParams() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

@@ -30,21 +30,21 @@ namespace java::nio::channels
 		// Constructors
 		
 		// Methods
-		JObject attach(JObject arg0);
-		JObject attachment();
-		void cancel();
-		java::nio::channels::SelectableChannel channel();
-		jint interestOps();
-		java::nio::channels::SelectionKey interestOps(jint arg0);
-		jint interestOpsAnd(jint arg0);
-		jint interestOpsOr(jint arg0);
-		jboolean isAcceptable();
-		jboolean isConnectable();
-		jboolean isReadable();
-		jboolean isValid();
-		jboolean isWritable();
-		jint readyOps();
-		java::nio::channels::Selector selector();
+		JObject attach(JObject arg0) const;
+		JObject attachment() const;
+		void cancel() const;
+		java::nio::channels::SelectableChannel channel() const;
+		jint interestOps() const;
+		java::nio::channels::SelectionKey interestOps(jint arg0) const;
+		jint interestOpsAnd(jint arg0) const;
+		jint interestOpsOr(jint arg0) const;
+		jboolean isAcceptable() const;
+		jboolean isConnectable() const;
+		jboolean isReadable() const;
+		jboolean isValid() const;
+		jboolean isWritable() const;
+		jint readyOps() const;
+		java::nio::channels::Selector selector() const;
 	};
 } // namespace java::nio::channels
 

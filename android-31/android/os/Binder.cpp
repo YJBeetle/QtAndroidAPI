@@ -126,7 +126,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Binder::attachInterface(JObject arg0, JString arg1)
+	void Binder::attachInterface(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"attachInterface",
@@ -135,7 +135,7 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void Binder::dump(java::io::FileDescriptor arg0, JArray arg1)
+	void Binder::dump(java::io::FileDescriptor arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -144,7 +144,7 @@ namespace android::os
 			arg1.object<jarray>()
 		);
 	}
-	void Binder::dumpAsync(java::io::FileDescriptor arg0, JArray arg1)
+	void Binder::dumpAsync(java::io::FileDescriptor arg0, JArray arg1) const
 	{
 		callMethod<void>(
 			"dumpAsync",
@@ -153,21 +153,21 @@ namespace android::os
 			arg1.object<jarray>()
 		);
 	}
-	JString Binder::getInterfaceDescriptor()
+	JString Binder::getInterfaceDescriptor() const
 	{
 		return callObjectMethod(
 			"getInterfaceDescriptor",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Binder::isBinderAlive()
+	jboolean Binder::isBinderAlive() const
 	{
 		return callMethod<jboolean>(
 			"isBinderAlive",
 			"()Z"
 		);
 	}
-	void Binder::linkToDeath(JObject arg0, jint arg1)
+	void Binder::linkToDeath(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"linkToDeath",
@@ -176,14 +176,14 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Binder::pingBinder()
+	jboolean Binder::pingBinder() const
 	{
 		return callMethod<jboolean>(
 			"pingBinder",
 			"()Z"
 		);
 	}
-	JObject Binder::queryLocalInterface(JString arg0)
+	JObject Binder::queryLocalInterface(JString arg0) const
 	{
 		return callObjectMethod(
 			"queryLocalInterface",
@@ -191,7 +191,7 @@ namespace android::os
 			arg0.object<jstring>()
 		);
 	}
-	jboolean Binder::transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3)
+	jboolean Binder::transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3) const
 	{
 		return callMethod<jboolean>(
 			"transact",
@@ -202,7 +202,7 @@ namespace android::os
 			arg3
 		);
 	}
-	jboolean Binder::unlinkToDeath(JObject arg0, jint arg1)
+	jboolean Binder::unlinkToDeath(JObject arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"unlinkToDeath",

@@ -26,16 +26,16 @@ namespace java::io
 		BufferedReader(java::io::Reader arg0, jint arg1);
 		
 		// Methods
-		void close();
-		JObject lines();
-		void mark(jint arg0);
-		jboolean markSupported();
-		jint read();
-		jint read(JCharArray arg0, jint arg1, jint arg2);
-		JString readLine();
-		jboolean ready();
-		void reset();
-		jlong skip(jlong arg0);
+		void close() const;
+		JObject lines() const;
+		void mark(jint arg0) const;
+		jboolean markSupported() const;
+		jint read() const;
+		jint read(JCharArray arg0, jint arg1, jint arg2) const;
+		JString readLine() const;
+		jboolean ready() const;
+		void reset() const;
+		jlong skip(jlong arg0) const;
 	};
 } // namespace java::io
 

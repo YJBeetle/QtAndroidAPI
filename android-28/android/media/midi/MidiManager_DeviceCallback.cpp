@@ -17,7 +17,7 @@ namespace android::media::midi
 		) {}
 	
 	// Methods
-	void MidiManager_DeviceCallback::onDeviceAdded(android::media::midi::MidiDeviceInfo arg0)
+	void MidiManager_DeviceCallback::onDeviceAdded(android::media::midi::MidiDeviceInfo arg0) const
 	{
 		callMethod<void>(
 			"onDeviceAdded",
@@ -25,7 +25,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiManager_DeviceCallback::onDeviceRemoved(android::media::midi::MidiDeviceInfo arg0)
+	void MidiManager_DeviceCallback::onDeviceRemoved(android::media::midi::MidiDeviceInfo arg0) const
 	{
 		callMethod<void>(
 			"onDeviceRemoved",
@@ -33,7 +33,7 @@ namespace android::media::midi
 			arg0.object()
 		);
 	}
-	void MidiManager_DeviceCallback::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0)
+	void MidiManager_DeviceCallback::onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0) const
 	{
 		callMethod<void>(
 			"onDeviceStatusChanged",

@@ -25,8 +25,8 @@ namespace android::graphics::pdf
 		// Constructors
 		
 		// Methods
-		android::graphics::Canvas getCanvas();
-		android::graphics::pdf::PdfDocument_PageInfo getInfo();
+		android::graphics::Canvas getCanvas() const;
+		android::graphics::pdf::PdfDocument_PageInfo getInfo() const;
 	};
 } // namespace android::graphics::pdf
 

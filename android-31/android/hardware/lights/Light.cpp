@@ -56,14 +56,14 @@ namespace android::hardware::lights
 	// Constructors
 	
 	// Methods
-	jint Light::describeContents()
+	jint Light::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Light::equals(JObject arg0)
+	jboolean Light::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -71,63 +71,63 @@ namespace android::hardware::lights
 			arg0.object<jobject>()
 		);
 	}
-	jint Light::getId()
+	jint Light::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	JString Light::getName()
+	JString Light::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint Light::getOrdinal()
+	jint Light::getOrdinal() const
 	{
 		return callMethod<jint>(
 			"getOrdinal",
 			"()I"
 		);
 	}
-	jint Light::getType()
+	jint Light::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jboolean Light::hasBrightnessControl()
+	jboolean Light::hasBrightnessControl() const
 	{
 		return callMethod<jboolean>(
 			"hasBrightnessControl",
 			"()Z"
 		);
 	}
-	jboolean Light::hasRgbControl()
+	jboolean Light::hasRgbControl() const
 	{
 		return callMethod<jboolean>(
 			"hasRgbControl",
 			"()Z"
 		);
 	}
-	jint Light::hashCode()
+	jint Light::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Light::toString()
+	JString Light::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Light::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Light::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

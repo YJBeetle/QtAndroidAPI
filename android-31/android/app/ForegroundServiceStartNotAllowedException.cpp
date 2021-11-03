@@ -26,14 +26,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint ForegroundServiceStartNotAllowedException::describeContents()
+	jint ForegroundServiceStartNotAllowedException::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void ForegroundServiceStartNotAllowedException::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ForegroundServiceStartNotAllowedException::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

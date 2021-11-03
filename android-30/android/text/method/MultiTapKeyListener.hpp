@@ -32,11 +32,11 @@ namespace android::text::method
 		
 		// Methods
 		static android::text::method::MultiTapKeyListener getInstance(jboolean arg0, android::text::method::TextKeyListener_Capitalize arg1);
-		jint getInputType();
-		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		void onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3);
-		void onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3);
+		jint getInputType() const;
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		void onSpanAdded(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
+		void onSpanChanged(JObject arg0, JObject arg1, jint arg2, jint arg3, jint arg4, jint arg5) const;
+		void onSpanRemoved(JObject arg0, JObject arg1, jint arg2, jint arg3) const;
 	};
 } // namespace android::text::method
 

@@ -49,14 +49,14 @@ namespace android::service::voice
 			arg1.object()
 		);
 	}
-	jint VoiceInteractionService::getDisabledShowContext()
+	jint VoiceInteractionService::getDisabledShowContext() const
 	{
 		return callMethod<jint>(
 			"getDisabledShowContext",
 			"()I"
 		);
 	}
-	JObject VoiceInteractionService::onBind(android::content::Intent arg0)
+	JObject VoiceInteractionService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -64,7 +64,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	JObject VoiceInteractionService::onGetSupportedVoiceActions(JObject arg0)
+	JObject VoiceInteractionService::onGetSupportedVoiceActions(JObject arg0) const
 	{
 		return callObjectMethod(
 			"onGetSupportedVoiceActions",
@@ -72,28 +72,28 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard()
+	void VoiceInteractionService::onLaunchVoiceAssistFromKeyguard() const
 	{
 		callMethod<void>(
 			"onLaunchVoiceAssistFromKeyguard",
 			"()V"
 		);
 	}
-	void VoiceInteractionService::onReady()
+	void VoiceInteractionService::onReady() const
 	{
 		callMethod<void>(
 			"onReady",
 			"()V"
 		);
 	}
-	void VoiceInteractionService::onShutdown()
+	void VoiceInteractionService::onShutdown() const
 	{
 		callMethod<void>(
 			"onShutdown",
 			"()V"
 		);
 	}
-	void VoiceInteractionService::setDisabledShowContext(jint arg0)
+	void VoiceInteractionService::setDisabledShowContext(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisabledShowContext",
@@ -101,7 +101,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionService::setUiHints(android::os::Bundle arg0)
+	void VoiceInteractionService::setUiHints(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"setUiHints",
@@ -109,7 +109,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionService::showSession(android::os::Bundle arg0, jint arg1)
+	void VoiceInteractionService::showSession(android::os::Bundle arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"showSession",

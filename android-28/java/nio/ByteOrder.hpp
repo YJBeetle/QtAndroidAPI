@@ -21,7 +21,7 @@ namespace java::nio
 		
 		// Methods
 		static java::nio::ByteOrder nativeOrder();
-		JString toString();
+		JString toString() const;
 	};
 } // namespace java::nio
 

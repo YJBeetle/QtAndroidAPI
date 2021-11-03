@@ -21,7 +21,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	void LensShadingMap::copyGainFactors(JFloatArray arg0, jint arg1)
+	void LensShadingMap::copyGainFactors(JFloatArray arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"copyGainFactors",
@@ -30,7 +30,7 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jboolean LensShadingMap::equals(JObject arg0)
+	jboolean LensShadingMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -38,14 +38,14 @@ namespace android::hardware::camera2::params
 			arg0.object<jobject>()
 		);
 	}
-	jint LensShadingMap::getColumnCount()
+	jint LensShadingMap::getColumnCount() const
 	{
 		return callMethod<jint>(
 			"getColumnCount",
 			"()I"
 		);
 	}
-	jfloat LensShadingMap::getGainFactor(jint arg0, jint arg1, jint arg2)
+	jfloat LensShadingMap::getGainFactor(jint arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jfloat>(
 			"getGainFactor",
@@ -55,14 +55,14 @@ namespace android::hardware::camera2::params
 			arg2
 		);
 	}
-	jint LensShadingMap::getGainFactorCount()
+	jint LensShadingMap::getGainFactorCount() const
 	{
 		return callMethod<jint>(
 			"getGainFactorCount",
 			"()I"
 		);
 	}
-	android::hardware::camera2::params::RggbChannelVector LensShadingMap::getGainFactorVector(jint arg0, jint arg1)
+	android::hardware::camera2::params::RggbChannelVector LensShadingMap::getGainFactorVector(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getGainFactorVector",
@@ -71,21 +71,21 @@ namespace android::hardware::camera2::params
 			arg1
 		);
 	}
-	jint LensShadingMap::getRowCount()
+	jint LensShadingMap::getRowCount() const
 	{
 		return callMethod<jint>(
 			"getRowCount",
 			"()I"
 		);
 	}
-	jint LensShadingMap::hashCode()
+	jint LensShadingMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LensShadingMap::toString()
+	JString LensShadingMap::toString() const
 	{
 		return callObjectMethod(
 			"toString",

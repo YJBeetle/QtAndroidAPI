@@ -22,84 +22,84 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint Notification_BubbleMetadata::describeContents()
+	jint Notification_BubbleMetadata::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Notification_BubbleMetadata::getAutoExpandBubble()
+	jboolean Notification_BubbleMetadata::getAutoExpandBubble() const
 	{
 		return callMethod<jboolean>(
 			"getAutoExpandBubble",
 			"()Z"
 		);
 	}
-	android::app::PendingIntent Notification_BubbleMetadata::getDeleteIntent()
+	android::app::PendingIntent Notification_BubbleMetadata::getDeleteIntent() const
 	{
 		return callObjectMethod(
 			"getDeleteIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	jint Notification_BubbleMetadata::getDesiredHeight()
+	jint Notification_BubbleMetadata::getDesiredHeight() const
 	{
 		return callMethod<jint>(
 			"getDesiredHeight",
 			"()I"
 		);
 	}
-	jint Notification_BubbleMetadata::getDesiredHeightResId()
+	jint Notification_BubbleMetadata::getDesiredHeightResId() const
 	{
 		return callMethod<jint>(
 			"getDesiredHeightResId",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon Notification_BubbleMetadata::getIcon()
+	android::graphics::drawable::Icon Notification_BubbleMetadata::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	android::app::PendingIntent Notification_BubbleMetadata::getIntent()
+	android::app::PendingIntent Notification_BubbleMetadata::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/app/PendingIntent;"
 		);
 	}
-	JString Notification_BubbleMetadata::getShortcutId()
+	JString Notification_BubbleMetadata::getShortcutId() const
 	{
 		return callObjectMethod(
 			"getShortcutId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean Notification_BubbleMetadata::isBubbleSuppressable()
+	jboolean Notification_BubbleMetadata::isBubbleSuppressable() const
 	{
 		return callMethod<jboolean>(
 			"isBubbleSuppressable",
 			"()Z"
 		);
 	}
-	jboolean Notification_BubbleMetadata::isBubbleSuppressed()
+	jboolean Notification_BubbleMetadata::isBubbleSuppressed() const
 	{
 		return callMethod<jboolean>(
 			"isBubbleSuppressed",
 			"()Z"
 		);
 	}
-	jboolean Notification_BubbleMetadata::isNotificationSuppressed()
+	jboolean Notification_BubbleMetadata::isNotificationSuppressed() const
 	{
 		return callMethod<jboolean>(
 			"isNotificationSuppressed",
 			"()Z"
 		);
 	}
-	void Notification_BubbleMetadata::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Notification_BubbleMetadata::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

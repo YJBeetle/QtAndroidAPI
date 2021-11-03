@@ -29,18 +29,18 @@ namespace android::hardware::display
 		DeviceProductInfo(JString arg0, JString arg1, JString arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getConnectionToSinkType();
-		jint getManufactureWeek();
-		jint getManufactureYear();
-		JString getManufacturerPnpId();
-		jint getModelYear();
-		JString getName();
-		JString getProductId();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getConnectionToSinkType() const;
+		jint getManufactureWeek() const;
+		jint getManufactureYear() const;
+		JString getManufacturerPnpId() const;
+		jint getModelYear() const;
+		JString getName() const;
+		JString getProductId() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::display
 

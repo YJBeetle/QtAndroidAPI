@@ -19,8 +19,8 @@ namespace android::hardware::camera2
 		CameraManager_AvailabilityCallback();
 		
 		// Methods
-		void onCameraAvailable(JString arg0);
-		void onCameraUnavailable(JString arg0);
+		void onCameraAvailable(JString arg0) const;
+		void onCameraUnavailable(JString arg0) const;
 	};
 } // namespace android::hardware::camera2
 

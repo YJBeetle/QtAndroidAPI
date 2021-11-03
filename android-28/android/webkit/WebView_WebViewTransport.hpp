@@ -22,8 +22,8 @@ namespace android::webkit
 		WebView_WebViewTransport(android::webkit::WebView arg0);
 		
 		// Methods
-		android::webkit::WebView getWebView();
-		void setWebView(android::webkit::WebView arg0);
+		android::webkit::WebView getWebView() const;
+		void setWebView(android::webkit::WebView arg0) const;
 	};
 } // namespace android::webkit
 

@@ -39,7 +39,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void SimpleCursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2)
+	void SimpleCursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"bindView",
@@ -49,7 +49,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void SimpleCursorAdapter::changeCursorAndColumns(JObject arg0, JArray arg1, JIntArray arg2)
+	void SimpleCursorAdapter::changeCursorAndColumns(JObject arg0, JArray arg1, JIntArray arg2) const
 	{
 		callMethod<void>(
 			"changeCursorAndColumns",
@@ -59,7 +59,7 @@ namespace android::widget
 			arg2.object<jintArray>()
 		);
 	}
-	JString SimpleCursorAdapter::convertToString(JObject arg0)
+	JString SimpleCursorAdapter::convertToString(JObject arg0) const
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -67,28 +67,28 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject SimpleCursorAdapter::getCursorToStringConverter()
+	JObject SimpleCursorAdapter::getCursorToStringConverter() const
 	{
 		return callObjectMethod(
 			"getCursorToStringConverter",
 			"()Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;"
 		);
 	}
-	jint SimpleCursorAdapter::getStringConversionColumn()
+	jint SimpleCursorAdapter::getStringConversionColumn() const
 	{
 		return callMethod<jint>(
 			"getStringConversionColumn",
 			"()I"
 		);
 	}
-	JObject SimpleCursorAdapter::getViewBinder()
+	JObject SimpleCursorAdapter::getViewBinder() const
 	{
 		return callObjectMethod(
 			"getViewBinder",
 			"()Landroid/widget/SimpleCursorAdapter$ViewBinder;"
 		);
 	}
-	void SimpleCursorAdapter::setCursorToStringConverter(JObject arg0)
+	void SimpleCursorAdapter::setCursorToStringConverter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCursorToStringConverter",
@@ -96,7 +96,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleCursorAdapter::setStringConversionColumn(jint arg0)
+	void SimpleCursorAdapter::setStringConversionColumn(jint arg0) const
 	{
 		callMethod<void>(
 			"setStringConversionColumn",
@@ -104,7 +104,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SimpleCursorAdapter::setViewBinder(JObject arg0)
+	void SimpleCursorAdapter::setViewBinder(JObject arg0) const
 	{
 		callMethod<void>(
 			"setViewBinder",
@@ -112,7 +112,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleCursorAdapter::setViewImage(android::widget::ImageView arg0, JString arg1)
+	void SimpleCursorAdapter::setViewImage(android::widget::ImageView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setViewImage",
@@ -121,7 +121,7 @@ namespace android::widget
 			arg1.object<jstring>()
 		);
 	}
-	void SimpleCursorAdapter::setViewText(android::widget::TextView arg0, JString arg1)
+	void SimpleCursorAdapter::setViewText(android::widget::TextView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setViewText",
@@ -130,7 +130,7 @@ namespace android::widget
 			arg1.object<jstring>()
 		);
 	}
-	JObject SimpleCursorAdapter::swapCursor(JObject arg0)
+	JObject SimpleCursorAdapter::swapCursor(JObject arg0) const
 	{
 		return callObjectMethod(
 			"swapCursor",

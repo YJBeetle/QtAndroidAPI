@@ -32,35 +32,35 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint LocaleSpan::describeContents()
+	jint LocaleSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	java::util::Locale LocaleSpan::getLocale()
+	java::util::Locale LocaleSpan::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	android::os::LocaleList LocaleSpan::getLocales()
+	android::os::LocaleList LocaleSpan::getLocales() const
 	{
 		return callObjectMethod(
 			"getLocales",
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint LocaleSpan::getSpanTypeId()
+	jint LocaleSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void LocaleSpan::updateDrawState(android::text::TextPaint arg0)
+	void LocaleSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -68,7 +68,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void LocaleSpan::updateMeasureState(android::text::TextPaint arg0)
+	void LocaleSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",
@@ -76,7 +76,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void LocaleSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LocaleSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

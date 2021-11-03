@@ -24,18 +24,18 @@ namespace java::util
 		static java::util::UUID fromString(JString arg0);
 		static java::util::UUID nameUUIDFromBytes(JByteArray arg0);
 		static java::util::UUID randomUUID();
-		jint clockSequence();
-		jint compareTo(JObject arg0);
-		jint compareTo(java::util::UUID arg0);
-		jboolean equals(JObject arg0);
-		jlong getLeastSignificantBits();
-		jlong getMostSignificantBits();
-		jint hashCode();
-		jlong node();
-		jlong timestamp();
-		JString toString();
-		jint variant();
-		jint version();
+		jint clockSequence() const;
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::util::UUID arg0) const;
+		jboolean equals(JObject arg0) const;
+		jlong getLeastSignificantBits() const;
+		jlong getMostSignificantBits() const;
+		jint hashCode() const;
+		jlong node() const;
+		jlong timestamp() const;
+		JString toString() const;
+		jint variant() const;
+		jint version() const;
 	};
 } // namespace java::util
 

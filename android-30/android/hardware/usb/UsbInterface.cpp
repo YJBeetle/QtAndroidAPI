@@ -21,21 +21,21 @@ namespace android::hardware::usb
 	// Constructors
 	
 	// Methods
-	jint UsbInterface::describeContents()
+	jint UsbInterface::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint UsbInterface::getAlternateSetting()
+	jint UsbInterface::getAlternateSetting() const
 	{
 		return callMethod<jint>(
 			"getAlternateSetting",
 			"()I"
 		);
 	}
-	android::hardware::usb::UsbEndpoint UsbInterface::getEndpoint(jint arg0)
+	android::hardware::usb::UsbEndpoint UsbInterface::getEndpoint(jint arg0) const
 	{
 		return callObjectMethod(
 			"getEndpoint",
@@ -43,56 +43,56 @@ namespace android::hardware::usb
 			arg0
 		);
 	}
-	jint UsbInterface::getEndpointCount()
+	jint UsbInterface::getEndpointCount() const
 	{
 		return callMethod<jint>(
 			"getEndpointCount",
 			"()I"
 		);
 	}
-	jint UsbInterface::getId()
+	jint UsbInterface::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint UsbInterface::getInterfaceClass()
+	jint UsbInterface::getInterfaceClass() const
 	{
 		return callMethod<jint>(
 			"getInterfaceClass",
 			"()I"
 		);
 	}
-	jint UsbInterface::getInterfaceProtocol()
+	jint UsbInterface::getInterfaceProtocol() const
 	{
 		return callMethod<jint>(
 			"getInterfaceProtocol",
 			"()I"
 		);
 	}
-	jint UsbInterface::getInterfaceSubclass()
+	jint UsbInterface::getInterfaceSubclass() const
 	{
 		return callMethod<jint>(
 			"getInterfaceSubclass",
 			"()I"
 		);
 	}
-	JString UsbInterface::getName()
+	JString UsbInterface::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString UsbInterface::toString()
+	JString UsbInterface::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void UsbInterface::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void UsbInterface::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

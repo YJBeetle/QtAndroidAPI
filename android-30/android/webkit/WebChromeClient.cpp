@@ -25,21 +25,21 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	android::graphics::Bitmap WebChromeClient::getDefaultVideoPoster()
+	android::graphics::Bitmap WebChromeClient::getDefaultVideoPoster() const
 	{
 		return callObjectMethod(
 			"getDefaultVideoPoster",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::view::View WebChromeClient::getVideoLoadingProgressView()
+	android::view::View WebChromeClient::getVideoLoadingProgressView() const
 	{
 		return callObjectMethod(
 			"getVideoLoadingProgressView",
 			"()Landroid/view/View;"
 		);
 	}
-	void WebChromeClient::getVisitedHistory(JObject arg0)
+	void WebChromeClient::getVisitedHistory(JObject arg0) const
 	{
 		callMethod<void>(
 			"getVisitedHistory",
@@ -47,7 +47,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onCloseWindow(android::webkit::WebView arg0)
+	void WebChromeClient::onCloseWindow(android::webkit::WebView arg0) const
 	{
 		callMethod<void>(
 			"onCloseWindow",
@@ -55,7 +55,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean WebChromeClient::onConsoleMessage(android::webkit::ConsoleMessage arg0)
+	jboolean WebChromeClient::onConsoleMessage(android::webkit::ConsoleMessage arg0) const
 	{
 		return callMethod<jboolean>(
 			"onConsoleMessage",
@@ -63,7 +63,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onConsoleMessage(JString arg0, jint arg1, JString arg2)
+	void WebChromeClient::onConsoleMessage(JString arg0, jint arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"onConsoleMessage",
@@ -73,7 +73,7 @@ namespace android::webkit
 			arg2.object<jstring>()
 		);
 	}
-	jboolean WebChromeClient::onCreateWindow(android::webkit::WebView arg0, jboolean arg1, jboolean arg2, android::os::Message arg3)
+	jboolean WebChromeClient::onCreateWindow(android::webkit::WebView arg0, jboolean arg1, jboolean arg2, android::os::Message arg3) const
 	{
 		return callMethod<jboolean>(
 			"onCreateWindow",
@@ -84,7 +84,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	void WebChromeClient::onExceededDatabaseQuota(JString arg0, JString arg1, jlong arg2, jlong arg3, jlong arg4, JObject arg5)
+	void WebChromeClient::onExceededDatabaseQuota(JString arg0, JString arg1, jlong arg2, jlong arg3, jlong arg4, JObject arg5) const
 	{
 		callMethod<void>(
 			"onExceededDatabaseQuota",
@@ -97,14 +97,14 @@ namespace android::webkit
 			arg5.object()
 		);
 	}
-	void WebChromeClient::onGeolocationPermissionsHidePrompt()
+	void WebChromeClient::onGeolocationPermissionsHidePrompt() const
 	{
 		callMethod<void>(
 			"onGeolocationPermissionsHidePrompt",
 			"()V"
 		);
 	}
-	void WebChromeClient::onGeolocationPermissionsShowPrompt(JString arg0, JObject arg1)
+	void WebChromeClient::onGeolocationPermissionsShowPrompt(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onGeolocationPermissionsShowPrompt",
@@ -113,14 +113,14 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebChromeClient::onHideCustomView()
+	void WebChromeClient::onHideCustomView() const
 	{
 		callMethod<void>(
 			"onHideCustomView",
 			"()V"
 		);
 	}
-	jboolean WebChromeClient::onJsAlert(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsAlert(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3) const
 	{
 		return callMethod<jboolean>(
 			"onJsAlert",
@@ -131,7 +131,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsBeforeUnload(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsBeforeUnload(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3) const
 	{
 		return callMethod<jboolean>(
 			"onJsBeforeUnload",
@@ -142,7 +142,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsConfirm(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3)
+	jboolean WebChromeClient::onJsConfirm(android::webkit::WebView arg0, JString arg1, JString arg2, android::webkit::JsResult arg3) const
 	{
 		return callMethod<jboolean>(
 			"onJsConfirm",
@@ -153,7 +153,7 @@ namespace android::webkit
 			arg3.object()
 		);
 	}
-	jboolean WebChromeClient::onJsPrompt(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3, android::webkit::JsPromptResult arg4)
+	jboolean WebChromeClient::onJsPrompt(android::webkit::WebView arg0, JString arg1, JString arg2, JString arg3, android::webkit::JsPromptResult arg4) const
 	{
 		return callMethod<jboolean>(
 			"onJsPrompt",
@@ -165,14 +165,14 @@ namespace android::webkit
 			arg4.object()
 		);
 	}
-	jboolean WebChromeClient::onJsTimeout()
+	jboolean WebChromeClient::onJsTimeout() const
 	{
 		return callMethod<jboolean>(
 			"onJsTimeout",
 			"()Z"
 		);
 	}
-	void WebChromeClient::onPermissionRequest(android::webkit::PermissionRequest arg0)
+	void WebChromeClient::onPermissionRequest(android::webkit::PermissionRequest arg0) const
 	{
 		callMethod<void>(
 			"onPermissionRequest",
@@ -180,7 +180,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onPermissionRequestCanceled(android::webkit::PermissionRequest arg0)
+	void WebChromeClient::onPermissionRequestCanceled(android::webkit::PermissionRequest arg0) const
 	{
 		callMethod<void>(
 			"onPermissionRequestCanceled",
@@ -188,7 +188,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onProgressChanged(android::webkit::WebView arg0, jint arg1)
+	void WebChromeClient::onProgressChanged(android::webkit::WebView arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProgressChanged",
@@ -197,7 +197,7 @@ namespace android::webkit
 			arg1
 		);
 	}
-	void WebChromeClient::onReachedMaxAppCacheSize(jlong arg0, jlong arg1, JObject arg2)
+	void WebChromeClient::onReachedMaxAppCacheSize(jlong arg0, jlong arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onReachedMaxAppCacheSize",
@@ -207,7 +207,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	void WebChromeClient::onReceivedIcon(android::webkit::WebView arg0, android::graphics::Bitmap arg1)
+	void WebChromeClient::onReceivedIcon(android::webkit::WebView arg0, android::graphics::Bitmap arg1) const
 	{
 		callMethod<void>(
 			"onReceivedIcon",
@@ -216,7 +216,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebChromeClient::onReceivedTitle(android::webkit::WebView arg0, JString arg1)
+	void WebChromeClient::onReceivedTitle(android::webkit::WebView arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onReceivedTitle",
@@ -225,7 +225,7 @@ namespace android::webkit
 			arg1.object<jstring>()
 		);
 	}
-	void WebChromeClient::onReceivedTouchIconUrl(android::webkit::WebView arg0, JString arg1, jboolean arg2)
+	void WebChromeClient::onReceivedTouchIconUrl(android::webkit::WebView arg0, JString arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onReceivedTouchIconUrl",
@@ -235,7 +235,7 @@ namespace android::webkit
 			arg2
 		);
 	}
-	void WebChromeClient::onRequestFocus(android::webkit::WebView arg0)
+	void WebChromeClient::onRequestFocus(android::webkit::WebView arg0) const
 	{
 		callMethod<void>(
 			"onRequestFocus",
@@ -243,7 +243,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebChromeClient::onShowCustomView(android::view::View arg0, JObject arg1)
+	void WebChromeClient::onShowCustomView(android::view::View arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"onShowCustomView",
@@ -252,7 +252,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebChromeClient::onShowCustomView(android::view::View arg0, jint arg1, JObject arg2)
+	void WebChromeClient::onShowCustomView(android::view::View arg0, jint arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"onShowCustomView",
@@ -262,7 +262,7 @@ namespace android::webkit
 			arg2.object()
 		);
 	}
-	jboolean WebChromeClient::onShowFileChooser(android::webkit::WebView arg0, JObject arg1, android::webkit::WebChromeClient_FileChooserParams arg2)
+	jboolean WebChromeClient::onShowFileChooser(android::webkit::WebView arg0, JObject arg1, android::webkit::WebChromeClient_FileChooserParams arg2) const
 	{
 		return callMethod<jboolean>(
 			"onShowFileChooser",

@@ -36,21 +36,21 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getDpdDelaySeconds();
-		jint getHardLifetimeSeconds();
-		JObject getIkeSaProposals();
-		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getLocalAuthConfig();
-		android::net::ipsec::ike::IkeIdentification getLocalIdentification();
-		jint getNattKeepAliveDelaySeconds();
-		android::net::Network getNetwork();
-		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getRemoteAuthConfig();
-		android::net::ipsec::ike::IkeIdentification getRemoteIdentification();
-		JIntArray getRetransmissionTimeoutsMillis();
-		JString getServerHostname();
-		jint getSoftLifetimeSeconds();
-		jboolean hasIkeOption(jint arg0);
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getDpdDelaySeconds() const;
+		jint getHardLifetimeSeconds() const;
+		JObject getIkeSaProposals() const;
+		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getLocalAuthConfig() const;
+		android::net::ipsec::ike::IkeIdentification getLocalIdentification() const;
+		jint getNattKeepAliveDelaySeconds() const;
+		android::net::Network getNetwork() const;
+		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getRemoteAuthConfig() const;
+		android::net::ipsec::ike::IkeIdentification getRemoteIdentification() const;
+		JIntArray getRetransmissionTimeoutsMillis() const;
+		JString getServerHostname() const;
+		jint getSoftLifetimeSeconds() const;
+		jboolean hasIkeOption(jint arg0) const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

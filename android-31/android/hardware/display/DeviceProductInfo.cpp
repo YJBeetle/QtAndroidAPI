@@ -59,14 +59,14 @@ namespace android::hardware::display
 		) {}
 	
 	// Methods
-	jint DeviceProductInfo::describeContents()
+	jint DeviceProductInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean DeviceProductInfo::equals(JObject arg0)
+	jboolean DeviceProductInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,70 +74,70 @@ namespace android::hardware::display
 			arg0.object<jobject>()
 		);
 	}
-	jint DeviceProductInfo::getConnectionToSinkType()
+	jint DeviceProductInfo::getConnectionToSinkType() const
 	{
 		return callMethod<jint>(
 			"getConnectionToSinkType",
 			"()I"
 		);
 	}
-	jint DeviceProductInfo::getManufactureWeek()
+	jint DeviceProductInfo::getManufactureWeek() const
 	{
 		return callMethod<jint>(
 			"getManufactureWeek",
 			"()I"
 		);
 	}
-	jint DeviceProductInfo::getManufactureYear()
+	jint DeviceProductInfo::getManufactureYear() const
 	{
 		return callMethod<jint>(
 			"getManufactureYear",
 			"()I"
 		);
 	}
-	JString DeviceProductInfo::getManufacturerPnpId()
+	JString DeviceProductInfo::getManufacturerPnpId() const
 	{
 		return callObjectMethod(
 			"getManufacturerPnpId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DeviceProductInfo::getModelYear()
+	jint DeviceProductInfo::getModelYear() const
 	{
 		return callMethod<jint>(
 			"getModelYear",
 			"()I"
 		);
 	}
-	JString DeviceProductInfo::getName()
+	JString DeviceProductInfo::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DeviceProductInfo::getProductId()
+	JString DeviceProductInfo::getProductId() const
 	{
 		return callObjectMethod(
 			"getProductId",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint DeviceProductInfo::hashCode()
+	jint DeviceProductInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DeviceProductInfo::toString()
+	JString DeviceProductInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DeviceProductInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DeviceProductInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

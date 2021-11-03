@@ -34,10 +34,10 @@ namespace android::media
 		MediaCodec_Callback();
 		
 		// Methods
-		void onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1);
-		void onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1);
-		void onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2);
-		void onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1);
+		void onError(android::media::MediaCodec arg0, android::media::MediaCodec_CodecException arg1) const;
+		void onInputBufferAvailable(android::media::MediaCodec arg0, jint arg1) const;
+		void onOutputBufferAvailable(android::media::MediaCodec arg0, jint arg1, android::media::MediaCodec_BufferInfo arg2) const;
+		void onOutputFormatChanged(android::media::MediaCodec arg0, android::media::MediaFormat arg1) const;
 	};
 } // namespace android::media
 

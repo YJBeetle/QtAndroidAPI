@@ -39,7 +39,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaCodec_BufferInfo::set(jint arg0, jint arg1, jlong arg2, jint arg3)
+	void MediaCodec_BufferInfo::set(jint arg0, jint arg1, jlong arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"set",

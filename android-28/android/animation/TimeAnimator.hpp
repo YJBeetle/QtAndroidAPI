@@ -17,9 +17,9 @@ namespace android::animation
 		TimeAnimator();
 		
 		// Methods
-		void setCurrentPlayTime(jlong arg0);
-		void setTimeListener(JObject arg0);
-		void start();
+		void setCurrentPlayTime(jlong arg0) const;
+		void setTimeListener(JObject arg0) const;
+		void start() const;
 	};
 } // namespace android::animation
 

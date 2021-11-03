@@ -25,7 +25,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void IntSummaryStatistics::accept(jint arg0)
+	void IntSummaryStatistics::accept(jint arg0) const
 	{
 		callMethod<void>(
 			"accept",
@@ -33,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void IntSummaryStatistics::combine(java::util::IntSummaryStatistics arg0)
+	void IntSummaryStatistics::combine(java::util::IntSummaryStatistics arg0) const
 	{
 		callMethod<void>(
 			"combine",
@@ -41,42 +41,42 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jdouble IntSummaryStatistics::getAverage()
+	jdouble IntSummaryStatistics::getAverage() const
 	{
 		return callMethod<jdouble>(
 			"getAverage",
 			"()D"
 		);
 	}
-	jlong IntSummaryStatistics::getCount()
+	jlong IntSummaryStatistics::getCount() const
 	{
 		return callMethod<jlong>(
 			"getCount",
 			"()J"
 		);
 	}
-	jint IntSummaryStatistics::getMax()
+	jint IntSummaryStatistics::getMax() const
 	{
 		return callMethod<jint>(
 			"getMax",
 			"()I"
 		);
 	}
-	jint IntSummaryStatistics::getMin()
+	jint IntSummaryStatistics::getMin() const
 	{
 		return callMethod<jint>(
 			"getMin",
 			"()I"
 		);
 	}
-	jlong IntSummaryStatistics::getSum()
+	jlong IntSummaryStatistics::getSum() const
 	{
 		return callMethod<jlong>(
 			"getSum",
 			"()J"
 		);
 	}
-	JString IntSummaryStatistics::toString()
+	JString IntSummaryStatistics::toString() const
 	{
 		return callObjectMethod(
 			"toString",

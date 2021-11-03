@@ -28,7 +28,7 @@ namespace android::webkit
 			"()Landroid/webkit/MimeTypeMap;"
 		);
 	}
-	JString MimeTypeMap::getExtensionFromMimeType(JString arg0)
+	JString MimeTypeMap::getExtensionFromMimeType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getExtensionFromMimeType",
@@ -36,7 +36,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	JString MimeTypeMap::getMimeTypeFromExtension(JString arg0)
+	JString MimeTypeMap::getMimeTypeFromExtension(JString arg0) const
 	{
 		return callObjectMethod(
 			"getMimeTypeFromExtension",
@@ -44,7 +44,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	jboolean MimeTypeMap::hasExtension(JString arg0)
+	jboolean MimeTypeMap::hasExtension(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasExtension",
@@ -52,7 +52,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	jboolean MimeTypeMap::hasMimeType(JString arg0)
+	jboolean MimeTypeMap::hasMimeType(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasMimeType",

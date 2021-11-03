@@ -140,105 +140,105 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JString MicrophoneInfo::getAddress()
+	JString MicrophoneInfo::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject MicrophoneInfo::getChannelMapping()
+	JObject MicrophoneInfo::getChannelMapping() const
 	{
 		return callObjectMethod(
 			"getChannelMapping",
 			"()Ljava/util/List;"
 		);
 	}
-	JString MicrophoneInfo::getDescription()
+	JString MicrophoneInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MicrophoneInfo::getDirectionality()
+	jint MicrophoneInfo::getDirectionality() const
 	{
 		return callMethod<jint>(
 			"getDirectionality",
 			"()I"
 		);
 	}
-	JObject MicrophoneInfo::getFrequencyResponse()
+	JObject MicrophoneInfo::getFrequencyResponse() const
 	{
 		return callObjectMethod(
 			"getFrequencyResponse",
 			"()Ljava/util/List;"
 		);
 	}
-	jint MicrophoneInfo::getGroup()
+	jint MicrophoneInfo::getGroup() const
 	{
 		return callMethod<jint>(
 			"getGroup",
 			"()I"
 		);
 	}
-	jint MicrophoneInfo::getId()
+	jint MicrophoneInfo::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jint MicrophoneInfo::getIndexInTheGroup()
+	jint MicrophoneInfo::getIndexInTheGroup() const
 	{
 		return callMethod<jint>(
 			"getIndexInTheGroup",
 			"()I"
 		);
 	}
-	jint MicrophoneInfo::getLocation()
+	jint MicrophoneInfo::getLocation() const
 	{
 		return callMethod<jint>(
 			"getLocation",
 			"()I"
 		);
 	}
-	jfloat MicrophoneInfo::getMaxSpl()
+	jfloat MicrophoneInfo::getMaxSpl() const
 	{
 		return callMethod<jfloat>(
 			"getMaxSpl",
 			"()F"
 		);
 	}
-	jfloat MicrophoneInfo::getMinSpl()
+	jfloat MicrophoneInfo::getMinSpl() const
 	{
 		return callMethod<jfloat>(
 			"getMinSpl",
 			"()F"
 		);
 	}
-	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getOrientation()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getOrientation() const
 	{
 		return callObjectMethod(
 			"getOrientation",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
-	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getPosition()
+	android::media::MicrophoneInfo_Coordinate3F MicrophoneInfo::getPosition() const
 	{
 		return callObjectMethod(
 			"getPosition",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
-	jfloat MicrophoneInfo::getSensitivity()
+	jfloat MicrophoneInfo::getSensitivity() const
 	{
 		return callMethod<jfloat>(
 			"getSensitivity",
 			"()F"
 		);
 	}
-	jint MicrophoneInfo::getType()
+	jint MicrophoneInfo::getType() const
 	{
 		return callMethod<jint>(
 			"getType",

@@ -19,7 +19,7 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"dispatchGenericMotionEvent",
@@ -29,7 +29,7 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"dispatchKeyEvent",
@@ -39,7 +39,7 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"dispatchTrackballEvent",
@@ -49,28 +49,28 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isEnabled()
+	jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isRevoked()
+	jboolean AbstractInputMethodService_AbstractInputMethodSessionImpl::isRevoked() const
 	{
 		return callMethod<jboolean>(
 			"isRevoked",
 			"()Z"
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::revokeSelf()
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::revokeSelf() const
 	{
 		callMethod<void>(
 			"revokeSelf",
 			"()V"
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",

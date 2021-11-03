@@ -34,28 +34,28 @@ namespace android::net::http
 			arg1
 		);
 	}
-	void HttpResponseCache::close()
+	void HttpResponseCache::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void HttpResponseCache::_delete()
+	void HttpResponseCache::_delete() const
 	{
 		callMethod<void>(
 			"delete",
 			"()V"
 		);
 	}
-	void HttpResponseCache::flush()
+	void HttpResponseCache::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2)
+	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, JString arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"get",
@@ -65,35 +65,35 @@ namespace android::net::http
 			arg2.object()
 		);
 	}
-	jint HttpResponseCache::getHitCount()
+	jint HttpResponseCache::getHitCount() const
 	{
 		return callMethod<jint>(
 			"getHitCount",
 			"()I"
 		);
 	}
-	jint HttpResponseCache::getNetworkCount()
+	jint HttpResponseCache::getNetworkCount() const
 	{
 		return callMethod<jint>(
 			"getNetworkCount",
 			"()I"
 		);
 	}
-	jint HttpResponseCache::getRequestCount()
+	jint HttpResponseCache::getRequestCount() const
 	{
 		return callMethod<jint>(
 			"getRequestCount",
 			"()I"
 		);
 	}
-	jlong HttpResponseCache::maxSize()
+	jlong HttpResponseCache::maxSize() const
 	{
 		return callMethod<jlong>(
 			"maxSize",
 			"()J"
 		);
 	}
-	java::net::CacheRequest HttpResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1)
+	java::net::CacheRequest HttpResponseCache::put(java::net::URI arg0, java::net::URLConnection arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -102,7 +102,7 @@ namespace android::net::http
 			arg1.object()
 		);
 	}
-	jlong HttpResponseCache::size()
+	jlong HttpResponseCache::size() const
 	{
 		return callMethod<jlong>(
 			"size",

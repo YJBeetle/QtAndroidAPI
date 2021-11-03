@@ -46,7 +46,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AbsSpinner::autofill(android::view::autofill::AutofillValue arg0)
+	void AbsSpinner::autofill(android::view::autofill::AutofillValue arg0) const
 	{
 		callMethod<void>(
 			"autofill",
@@ -54,49 +54,49 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString AbsSpinner::getAccessibilityClassName()
+	JString AbsSpinner::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject AbsSpinner::getAdapter()
+	JObject AbsSpinner::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/SpinnerAdapter;"
 		);
 	}
-	jint AbsSpinner::getAutofillType()
+	jint AbsSpinner::getAutofillType() const
 	{
 		return callMethod<jint>(
 			"getAutofillType",
 			"()I"
 		);
 	}
-	android::view::autofill::AutofillValue AbsSpinner::getAutofillValue()
+	android::view::autofill::AutofillValue AbsSpinner::getAutofillValue() const
 	{
 		return callObjectMethod(
 			"getAutofillValue",
 			"()Landroid/view/autofill/AutofillValue;"
 		);
 	}
-	jint AbsSpinner::getCount()
+	jint AbsSpinner::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::view::View AbsSpinner::getSelectedView()
+	android::view::View AbsSpinner::getSelectedView() const
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	void AbsSpinner::onRestoreInstanceState(JObject arg0)
+	void AbsSpinner::onRestoreInstanceState(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -104,14 +104,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject AbsSpinner::onSaveInstanceState()
+	JObject AbsSpinner::onSaveInstanceState() const
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
 		);
 	}
-	jint AbsSpinner::pointToPosition(jint arg0, jint arg1)
+	jint AbsSpinner::pointToPosition(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"pointToPosition",
@@ -120,14 +120,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AbsSpinner::requestLayout()
+	void AbsSpinner::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void AbsSpinner::setAdapter(JObject arg0)
+	void AbsSpinner::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -135,7 +135,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSpinner::setSelection(jint arg0)
+	void AbsSpinner::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",
@@ -143,7 +143,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSpinner::setSelection(jint arg0, jboolean arg1)
+	void AbsSpinner::setSelection(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setSelection",

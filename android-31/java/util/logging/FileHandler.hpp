@@ -37,8 +37,8 @@ namespace java::util::logging
 		FileHandler(JString arg0, jlong arg1, jint arg2, jboolean arg3);
 		
 		// Methods
-		void close();
-		void publish(java::util::logging::LogRecord arg0);
+		void close() const;
+		void publish(java::util::logging::LogRecord arg0) const;
 	};
 } // namespace java::util::logging
 

@@ -48,7 +48,7 @@ namespace android::service::controls
 			arg2.object()
 		);
 	}
-	JObject ControlsProviderService::createPublisherFor(JObject arg0)
+	JObject ControlsProviderService::createPublisherFor(JObject arg0) const
 	{
 		return callObjectMethod(
 			"createPublisherFor",
@@ -56,21 +56,21 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	JObject ControlsProviderService::createPublisherForAllAvailable()
+	JObject ControlsProviderService::createPublisherForAllAvailable() const
 	{
 		return callObjectMethod(
 			"createPublisherForAllAvailable",
 			"()Ljava/util/concurrent/Flow$Publisher;"
 		);
 	}
-	JObject ControlsProviderService::createPublisherForSuggested()
+	JObject ControlsProviderService::createPublisherForSuggested() const
 	{
 		return callObjectMethod(
 			"createPublisherForSuggested",
 			"()Ljava/util/concurrent/Flow$Publisher;"
 		);
 	}
-	JObject ControlsProviderService::onBind(android::content::Intent arg0)
+	JObject ControlsProviderService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -78,7 +78,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	jboolean ControlsProviderService::onUnbind(android::content::Intent arg0)
+	jboolean ControlsProviderService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",
@@ -86,7 +86,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	void ControlsProviderService::performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2)
+	void ControlsProviderService::performControlAction(JString arg0, android::service::controls::actions::ControlAction arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"performControlAction",

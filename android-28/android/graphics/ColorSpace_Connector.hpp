@@ -26,11 +26,11 @@ namespace android::graphics
 		// Constructors
 		
 		// Methods
-		android::graphics::ColorSpace getDestination();
-		android::graphics::ColorSpace_RenderIntent getRenderIntent();
-		android::graphics::ColorSpace getSource();
-		JFloatArray transform(JFloatArray arg0);
-		JFloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
+		android::graphics::ColorSpace getDestination() const;
+		android::graphics::ColorSpace_RenderIntent getRenderIntent() const;
+		android::graphics::ColorSpace getSource() const;
+		JFloatArray transform(JFloatArray arg0) const;
+		JFloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2) const;
 	};
 } // namespace android::graphics
 

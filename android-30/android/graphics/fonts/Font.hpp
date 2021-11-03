@@ -36,15 +36,15 @@ namespace android::graphics::fonts
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JArray getAxes();
-		java::nio::ByteBuffer getBuffer();
-		java::io::File getFile();
-		android::os::LocaleList getLocaleList();
-		android::graphics::fonts::FontStyle getStyle();
-		jint getTtcIndex();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JArray getAxes() const;
+		java::nio::ByteBuffer getBuffer() const;
+		java::io::File getFile() const;
+		android::os::LocaleList getLocaleList() const;
+		android::graphics::fonts::FontStyle getStyle() const;
+		jint getTtcIndex() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::graphics::fonts
 

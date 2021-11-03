@@ -44,7 +44,7 @@ namespace android::location
 		) {}
 	
 	// Methods
-	void GnssMeasurementsEvent_Callback::onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0)
+	void GnssMeasurementsEvent_Callback::onGnssMeasurementsReceived(android::location::GnssMeasurementsEvent arg0) const
 	{
 		callMethod<void>(
 			"onGnssMeasurementsReceived",
@@ -52,7 +52,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0)
+	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onStatusChanged",

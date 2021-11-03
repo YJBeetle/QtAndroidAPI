@@ -24,17 +24,17 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCardId();
-		JString getEid();
-		JString getIccId();
-		jint getSlotIndex();
-		jint hashCode();
-		jboolean isEuicc();
-		jboolean isRemovable();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCardId() const;
+		JString getEid() const;
+		JString getIccId() const;
+		jint getSlotIndex() const;
+		jint hashCode() const;
+		jboolean isEuicc() const;
+		jboolean isRemovable() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

@@ -56,7 +56,7 @@ namespace android::system
 		) {}
 	
 	// Methods
-	JString StructUtsname::toString()
+	JString StructUtsname::toString() const
 	{
 		return callObjectMethod(
 			"toString",

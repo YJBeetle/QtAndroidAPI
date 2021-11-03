@@ -22,7 +22,7 @@ namespace android::renderscript
 		) {}
 	
 	// Methods
-	jfloat Matrix3f::get(jint arg0, jint arg1)
+	jfloat Matrix3f::get(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"get",
@@ -31,14 +31,14 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	JFloatArray Matrix3f::getArray()
+	JFloatArray Matrix3f::getArray() const
 	{
 		return callObjectMethod(
 			"getArray",
 			"()[F"
 		);
 	}
-	void Matrix3f::load(android::renderscript::Matrix3f arg0)
+	void Matrix3f::load(android::renderscript::Matrix3f arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -46,14 +46,14 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Matrix3f::loadIdentity()
+	void Matrix3f::loadIdentity() const
 	{
 		callMethod<void>(
 			"loadIdentity",
 			"()V"
 		);
 	}
-	void Matrix3f::loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1)
+	void Matrix3f::loadMultiply(android::renderscript::Matrix3f arg0, android::renderscript::Matrix3f arg1) const
 	{
 		callMethod<void>(
 			"loadMultiply",
@@ -62,7 +62,7 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	void Matrix3f::loadRotate(jfloat arg0)
+	void Matrix3f::loadRotate(jfloat arg0) const
 	{
 		callMethod<void>(
 			"loadRotate",
@@ -70,7 +70,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Matrix3f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Matrix3f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"loadRotate",
@@ -81,7 +81,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	void Matrix3f::loadScale(jfloat arg0, jfloat arg1)
+	void Matrix3f::loadScale(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"loadScale",
@@ -90,7 +90,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix3f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Matrix3f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"loadScale",
@@ -100,7 +100,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	void Matrix3f::loadTranslate(jfloat arg0, jfloat arg1)
+	void Matrix3f::loadTranslate(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"loadTranslate",
@@ -109,7 +109,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix3f::multiply(android::renderscript::Matrix3f arg0)
+	void Matrix3f::multiply(android::renderscript::Matrix3f arg0) const
 	{
 		callMethod<void>(
 			"multiply",
@@ -117,7 +117,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void Matrix3f::rotate(jfloat arg0)
+	void Matrix3f::rotate(jfloat arg0) const
 	{
 		callMethod<void>(
 			"rotate",
@@ -125,7 +125,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void Matrix3f::rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void Matrix3f::rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const
 	{
 		callMethod<void>(
 			"rotate",
@@ -136,7 +136,7 @@ namespace android::renderscript
 			arg3
 		);
 	}
-	void Matrix3f::scale(jfloat arg0, jfloat arg1)
+	void Matrix3f::scale(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"scale",
@@ -145,7 +145,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix3f::scale(jfloat arg0, jfloat arg1, jfloat arg2)
+	void Matrix3f::scale(jfloat arg0, jfloat arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"scale",
@@ -155,7 +155,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	void Matrix3f::set(jint arg0, jint arg1, jfloat arg2)
+	void Matrix3f::set(jint arg0, jint arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"set",
@@ -165,7 +165,7 @@ namespace android::renderscript
 			arg2
 		);
 	}
-	void Matrix3f::translate(jfloat arg0, jfloat arg1)
+	void Matrix3f::translate(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"translate",
@@ -174,7 +174,7 @@ namespace android::renderscript
 			arg1
 		);
 	}
-	void Matrix3f::transpose()
+	void Matrix3f::transpose() const
 	{
 		callMethod<void>(
 			"transpose",

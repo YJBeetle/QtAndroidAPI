@@ -23,13 +23,13 @@ namespace java::security
 		PermissionCollection();
 		
 		// Methods
-		void add(java::security::Permission arg0);
-		JObject elements();
-		JObject elementsAsStream();
-		jboolean implies(java::security::Permission arg0);
-		jboolean isReadOnly();
-		void setReadOnly();
-		JString toString();
+		void add(java::security::Permission arg0) const;
+		JObject elements() const;
+		JObject elementsAsStream() const;
+		jboolean implies(java::security::Permission arg0) const;
+		jboolean isReadOnly() const;
+		void setReadOnly() const;
+		JString toString() const;
 	};
 } // namespace java::security
 

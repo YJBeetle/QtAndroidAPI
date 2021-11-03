@@ -23,9 +23,9 @@ namespace android::content::res
 		AssetFileDescriptor_AutoCloseOutputStream(android::content::res::AssetFileDescriptor arg0);
 		
 		// Methods
-		void write(JByteArray arg0);
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void write(JByteArray arg0) const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace android::content::res
 

@@ -335,7 +335,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaParser::advance(JObject arg0)
+	jboolean MediaParser::advance(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"advance",
@@ -343,21 +343,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	JString MediaParser::getParserName()
+	JString MediaParser::getParserName() const
 	{
 		return callObjectMethod(
 			"getParserName",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaParser::release()
+	void MediaParser::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void MediaParser::seek(android::media::MediaParser_SeekPoint arg0)
+	void MediaParser::seek(android::media::MediaParser_SeekPoint arg0) const
 	{
 		callMethod<void>(
 			"seek",
@@ -365,7 +365,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaParser MediaParser::setParameter(JString arg0, JObject arg1)
+	android::media::MediaParser MediaParser::setParameter(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setParameter",
@@ -374,7 +374,7 @@ namespace android::media
 			arg1.object<jobject>()
 		);
 	}
-	jboolean MediaParser::supportsParameter(JString arg0)
+	jboolean MediaParser::supportsParameter(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsParameter",

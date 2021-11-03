@@ -115,14 +115,14 @@ namespace android::graphics
 			arg1.object()
 		);
 	}
-	jint Insets::describeContents()
+	jint Insets::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean Insets::equals(JObject arg0)
+	jboolean Insets::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -130,21 +130,21 @@ namespace android::graphics
 			arg0.object<jobject>()
 		);
 	}
-	jint Insets::hashCode()
+	jint Insets::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Insets::toString()
+	JString Insets::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Insets::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void Insets::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -36,13 +36,13 @@ namespace javax::xml::transform::stream
 		StreamResult(JString arg0);
 		
 		// Methods
-		java::io::OutputStream getOutputStream();
-		JString getSystemId();
-		java::io::Writer getWriter();
-		void setOutputStream(java::io::OutputStream arg0);
-		void setSystemId(java::io::File arg0);
-		void setSystemId(JString arg0);
-		void setWriter(java::io::Writer arg0);
+		java::io::OutputStream getOutputStream() const;
+		JString getSystemId() const;
+		java::io::Writer getWriter() const;
+		void setOutputStream(java::io::OutputStream arg0) const;
+		void setSystemId(java::io::File arg0) const;
+		void setSystemId(JString arg0) const;
+		void setWriter(java::io::Writer arg0) const;
 	};
 } // namespace javax::xml::transform::stream
 

@@ -25,7 +25,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setDay(jint arg0)
+	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setDay(jint arg0) const
 	{
 		return callObjectMethod(
 			"setDay",
@@ -33,7 +33,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setMonth(jint arg0)
+	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setMonth(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMonth",
@@ -41,7 +41,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setWeekday(jint arg0)
+	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setWeekday(jint arg0) const
 	{
 		return callObjectMethod(
 			"setWeekday",
@@ -49,7 +49,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setYear(jint arg0)
+	android::text::style::TtsSpan_DateBuilder TtsSpan_DateBuilder::setYear(jint arg0) const
 	{
 		return callObjectMethod(
 			"setYear",

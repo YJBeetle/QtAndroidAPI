@@ -20,10 +20,10 @@ namespace java::text
 		// Constructors
 		
 		// Methods
-		jint compareTo(JObject arg0);
-		jint compareTo(java::text::CollationKey arg0);
-		JString getSourceString();
-		JByteArray toByteArray();
+		jint compareTo(JObject arg0) const;
+		jint compareTo(java::text::CollationKey arg0) const;
+		JString getSourceString() const;
+		JByteArray toByteArray() const;
 	};
 } // namespace java::text
 

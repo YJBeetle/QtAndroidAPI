@@ -26,10 +26,10 @@ namespace android::view::accessibility
 		CaptioningManager_CaptioningChangeListener();
 		
 		// Methods
-		void onEnabledChanged(jboolean arg0);
-		void onFontScaleChanged(jfloat arg0);
-		void onLocaleChanged(java::util::Locale arg0);
-		void onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0);
+		void onEnabledChanged(jboolean arg0) const;
+		void onFontScaleChanged(jfloat arg0) const;
+		void onLocaleChanged(java::util::Locale arg0) const;
+		void onUserStyleChanged(android::view::accessibility::CaptioningManager_CaptionStyle arg0) const;
 	};
 } // namespace android::view::accessibility
 

@@ -10,7 +10,7 @@ namespace android::view::translation
 	// Constructors
 	
 	// Methods
-	void UiTranslationManager::registerUiTranslationStateCallback(JObject arg0, JObject arg1)
+	void UiTranslationManager::registerUiTranslationStateCallback(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"registerUiTranslationStateCallback",
@@ -19,7 +19,7 @@ namespace android::view::translation
 			arg1.object()
 		);
 	}
-	void UiTranslationManager::unregisterUiTranslationStateCallback(JObject arg0)
+	void UiTranslationManager::unregisterUiTranslationStateCallback(JObject arg0) const
 	{
 		callMethod<void>(
 			"unregisterUiTranslationStateCallback",

@@ -23,7 +23,7 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	android::graphics::PointF PointFEvaluator::evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2)
+	android::graphics::PointF PointFEvaluator::evaluate(jfloat arg0, android::graphics::PointF arg1, android::graphics::PointF arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",
@@ -33,7 +33,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	JObject PointFEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2)
+	JObject PointFEvaluator::evaluate(jfloat arg0, JObject arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"evaluate",

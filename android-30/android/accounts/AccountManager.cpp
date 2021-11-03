@@ -376,7 +376,7 @@ namespace android::accounts
 			arg7.object()
 		);
 	}
-	JObject AccountManager::addAccount(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
+	JObject AccountManager::addAccount(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6) const
 	{
 		return callObjectMethod(
 			"addAccount",
@@ -390,7 +390,7 @@ namespace android::accounts
 			arg6.object()
 		);
 	}
-	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2)
+	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"addAccountExplicitly",
@@ -400,7 +400,7 @@ namespace android::accounts
 			arg2.object()
 		);
 	}
-	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, JObject arg3)
+	jboolean AccountManager::addAccountExplicitly(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, JObject arg3) const
 	{
 		return callMethod<jboolean>(
 			"addAccountExplicitly",
@@ -411,7 +411,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2)
+	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"addOnAccountsUpdatedListener",
@@ -421,7 +421,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2, JArray arg3)
+	void AccountManager::addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"addOnAccountsUpdatedListener",
@@ -432,7 +432,7 @@ namespace android::accounts
 			arg3.object<jarray>()
 		);
 	}
-	JString AccountManager::blockingGetAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2)
+	JString AccountManager::blockingGetAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"blockingGetAuthToken",
@@ -442,7 +442,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	void AccountManager::clearPassword(android::accounts::Account arg0)
+	void AccountManager::clearPassword(android::accounts::Account arg0) const
 	{
 		callMethod<void>(
 			"clearPassword",
@@ -450,7 +450,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JObject AccountManager::confirmCredentials(android::accounts::Account arg0, android::os::Bundle arg1, android::app::Activity arg2, JObject arg3, android::os::Handler arg4)
+	JObject AccountManager::confirmCredentials(android::accounts::Account arg0, android::os::Bundle arg1, android::app::Activity arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		return callObjectMethod(
 			"confirmCredentials",
@@ -462,7 +462,7 @@ namespace android::accounts
 			arg4.object()
 		);
 	}
-	JObject AccountManager::editProperties(JString arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::editProperties(JString arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"editProperties",
@@ -473,7 +473,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	JObject AccountManager::finishSession(android::os::Bundle arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::finishSession(android::os::Bundle arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"finishSession",
@@ -484,7 +484,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	jint AccountManager::getAccountVisibility(android::accounts::Account arg0, JString arg1)
+	jint AccountManager::getAccountVisibility(android::accounts::Account arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"getAccountVisibility",
@@ -493,14 +493,14 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JArray AccountManager::getAccounts()
+	JArray AccountManager::getAccounts() const
 	{
 		return callObjectMethod(
 			"getAccounts",
 			"()[Landroid/accounts/Account;"
 		);
 	}
-	JObject AccountManager::getAccountsAndVisibilityForPackage(JString arg0, JString arg1)
+	JObject AccountManager::getAccountsAndVisibilityForPackage(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getAccountsAndVisibilityForPackage",
@@ -509,7 +509,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JArray AccountManager::getAccountsByType(JString arg0)
+	JArray AccountManager::getAccountsByType(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAccountsByType",
@@ -517,7 +517,7 @@ namespace android::accounts
 			arg0.object<jstring>()
 		);
 	}
-	JObject AccountManager::getAccountsByTypeAndFeatures(JString arg0, JArray arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::getAccountsByTypeAndFeatures(JString arg0, JArray arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"getAccountsByTypeAndFeatures",
@@ -528,7 +528,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	JArray AccountManager::getAccountsByTypeForPackage(JString arg0, JString arg1)
+	JArray AccountManager::getAccountsByTypeForPackage(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getAccountsByTypeForPackage",
@@ -537,7 +537,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2, JObject arg3, android::os::Handler arg4)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, jboolean arg2, JObject arg3, android::os::Handler arg4) const
 	{
 		return callObjectMethod(
 			"getAuthToken",
@@ -549,7 +549,7 @@ namespace android::accounts
 			arg4.object()
 		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5) const
 	{
 		return callObjectMethod(
 			"getAuthToken",
@@ -562,7 +562,7 @@ namespace android::accounts
 			arg5.object()
 		);
 	}
-	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jboolean arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::getAuthToken(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, jboolean arg3, JObject arg4, android::os::Handler arg5) const
 	{
 		return callObjectMethod(
 			"getAuthToken",
@@ -575,7 +575,7 @@ namespace android::accounts
 			arg5.object()
 		);
 	}
-	JObject AccountManager::getAuthTokenByFeatures(JString arg0, JString arg1, JArray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, JObject arg6, android::os::Handler arg7)
+	JObject AccountManager::getAuthTokenByFeatures(JString arg0, JString arg1, JArray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, JObject arg6, android::os::Handler arg7) const
 	{
 		return callObjectMethod(
 			"getAuthTokenByFeatures",
@@ -590,14 +590,14 @@ namespace android::accounts
 			arg7.object()
 		);
 	}
-	JArray AccountManager::getAuthenticatorTypes()
+	JArray AccountManager::getAuthenticatorTypes() const
 	{
 		return callObjectMethod(
 			"getAuthenticatorTypes",
 			"()[Landroid/accounts/AuthenticatorDescription;"
 		);
 	}
-	JObject AccountManager::getPackagesAndVisibilityForAccount(android::accounts::Account arg0)
+	JObject AccountManager::getPackagesAndVisibilityForAccount(android::accounts::Account arg0) const
 	{
 		return callObjectMethod(
 			"getPackagesAndVisibilityForAccount",
@@ -605,7 +605,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JString AccountManager::getPassword(android::accounts::Account arg0)
+	JString AccountManager::getPassword(android::accounts::Account arg0) const
 	{
 		return callObjectMethod(
 			"getPassword",
@@ -613,7 +613,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JString AccountManager::getPreviousName(android::accounts::Account arg0)
+	JString AccountManager::getPreviousName(android::accounts::Account arg0) const
 	{
 		return callObjectMethod(
 			"getPreviousName",
@@ -621,7 +621,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JString AccountManager::getUserData(android::accounts::Account arg0, JString arg1)
+	JString AccountManager::getUserData(android::accounts::Account arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getUserData",
@@ -630,7 +630,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JObject AccountManager::hasFeatures(android::accounts::Account arg0, JArray arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::hasFeatures(android::accounts::Account arg0, JArray arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"hasFeatures",
@@ -641,7 +641,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	void AccountManager::invalidateAuthToken(JString arg0, JString arg1)
+	void AccountManager::invalidateAuthToken(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"invalidateAuthToken",
@@ -650,7 +650,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JObject AccountManager::isCredentialsUpdateSuggested(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::isCredentialsUpdateSuggested(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"isCredentialsUpdateSuggested",
@@ -661,7 +661,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	jboolean AccountManager::notifyAccountAuthenticated(android::accounts::Account arg0)
+	jboolean AccountManager::notifyAccountAuthenticated(android::accounts::Account arg0) const
 	{
 		return callMethod<jboolean>(
 			"notifyAccountAuthenticated",
@@ -669,7 +669,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JString AccountManager::peekAuthToken(android::accounts::Account arg0, JString arg1)
+	JString AccountManager::peekAuthToken(android::accounts::Account arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"peekAuthToken",
@@ -678,7 +678,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	JObject AccountManager::removeAccount(android::accounts::Account arg0, JObject arg1, android::os::Handler arg2)
+	JObject AccountManager::removeAccount(android::accounts::Account arg0, JObject arg1, android::os::Handler arg2) const
 	{
 		return callObjectMethod(
 			"removeAccount",
@@ -688,7 +688,7 @@ namespace android::accounts
 			arg2.object()
 		);
 	}
-	JObject AccountManager::removeAccount(android::accounts::Account arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::removeAccount(android::accounts::Account arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"removeAccount",
@@ -699,7 +699,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	jboolean AccountManager::removeAccountExplicitly(android::accounts::Account arg0)
+	jboolean AccountManager::removeAccountExplicitly(android::accounts::Account arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAccountExplicitly",
@@ -707,7 +707,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	void AccountManager::removeOnAccountsUpdatedListener(JObject arg0)
+	void AccountManager::removeOnAccountsUpdatedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnAccountsUpdatedListener",
@@ -715,7 +715,7 @@ namespace android::accounts
 			arg0.object()
 		);
 	}
-	JObject AccountManager::renameAccount(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3)
+	JObject AccountManager::renameAccount(android::accounts::Account arg0, JString arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callObjectMethod(
 			"renameAccount",
@@ -726,7 +726,7 @@ namespace android::accounts
 			arg3.object()
 		);
 	}
-	jboolean AccountManager::setAccountVisibility(android::accounts::Account arg0, JString arg1, jint arg2)
+	jboolean AccountManager::setAccountVisibility(android::accounts::Account arg0, JString arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"setAccountVisibility",
@@ -736,7 +736,7 @@ namespace android::accounts
 			arg2
 		);
 	}
-	void AccountManager::setAuthToken(android::accounts::Account arg0, JString arg1, JString arg2)
+	void AccountManager::setAuthToken(android::accounts::Account arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setAuthToken",
@@ -746,7 +746,7 @@ namespace android::accounts
 			arg2.object<jstring>()
 		);
 	}
-	void AccountManager::setPassword(android::accounts::Account arg0, JString arg1)
+	void AccountManager::setPassword(android::accounts::Account arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setPassword",
@@ -755,7 +755,7 @@ namespace android::accounts
 			arg1.object<jstring>()
 		);
 	}
-	void AccountManager::setUserData(android::accounts::Account arg0, JString arg1, JString arg2)
+	void AccountManager::setUserData(android::accounts::Account arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"setUserData",
@@ -765,7 +765,7 @@ namespace android::accounts
 			arg2.object<jstring>()
 		);
 	}
-	JObject AccountManager::startAddAccountSession(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6)
+	JObject AccountManager::startAddAccountSession(JString arg0, JString arg1, JArray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6) const
 	{
 		return callObjectMethod(
 			"startAddAccountSession",
@@ -779,7 +779,7 @@ namespace android::accounts
 			arg6.object()
 		);
 	}
-	JObject AccountManager::startUpdateCredentialsSession(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::startUpdateCredentialsSession(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5) const
 	{
 		return callObjectMethod(
 			"startUpdateCredentialsSession",
@@ -792,7 +792,7 @@ namespace android::accounts
 			arg5.object()
 		);
 	}
-	JObject AccountManager::updateCredentials(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5)
+	JObject AccountManager::updateCredentials(android::accounts::Account arg0, JString arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5) const
 	{
 		return callObjectMethod(
 			"updateCredentials",

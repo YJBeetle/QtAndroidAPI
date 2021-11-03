@@ -27,7 +27,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean LinkedTransferQueue::add(JObject arg0)
+	jboolean LinkedTransferQueue::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -35,14 +35,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void LinkedTransferQueue::clear()
+	void LinkedTransferQueue::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean LinkedTransferQueue::contains(JObject arg0)
+	jboolean LinkedTransferQueue::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -50,7 +50,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint LinkedTransferQueue::drainTo(JObject arg0)
+	jint LinkedTransferQueue::drainTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -58,7 +58,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedTransferQueue::drainTo(JObject arg0, jint arg1)
+	jint LinkedTransferQueue::drainTo(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -67,7 +67,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void LinkedTransferQueue::forEach(JObject arg0)
+	void LinkedTransferQueue::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -75,35 +75,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedTransferQueue::getWaitingConsumerCount()
+	jint LinkedTransferQueue::getWaitingConsumerCount() const
 	{
 		return callMethod<jint>(
 			"getWaitingConsumerCount",
 			"()I"
 		);
 	}
-	jboolean LinkedTransferQueue::hasWaitingConsumer()
+	jboolean LinkedTransferQueue::hasWaitingConsumer() const
 	{
 		return callMethod<jboolean>(
 			"hasWaitingConsumer",
 			"()Z"
 		);
 	}
-	jboolean LinkedTransferQueue::isEmpty()
+	jboolean LinkedTransferQueue::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject LinkedTransferQueue::iterator()
+	JObject LinkedTransferQueue::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean LinkedTransferQueue::offer(JObject arg0)
+	jboolean LinkedTransferQueue::offer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -111,7 +111,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedTransferQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean LinkedTransferQueue::offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"offer",
@@ -121,21 +121,21 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	JObject LinkedTransferQueue::peek()
+	JObject LinkedTransferQueue::peek() const
 	{
 		return callObjectMethod(
 			"peek",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject LinkedTransferQueue::poll()
+	JObject LinkedTransferQueue::poll() const
 	{
 		return callObjectMethod(
 			"poll",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject LinkedTransferQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1)
+	JObject LinkedTransferQueue::poll(jlong arg0, java::util::concurrent::TimeUnit arg1) const
 	{
 		return callObjectMethod(
 			"poll",
@@ -144,7 +144,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void LinkedTransferQueue::put(JObject arg0)
+	void LinkedTransferQueue::put(JObject arg0) const
 	{
 		callMethod<void>(
 			"put",
@@ -152,14 +152,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jint LinkedTransferQueue::remainingCapacity()
+	jint LinkedTransferQueue::remainingCapacity() const
 	{
 		return callMethod<jint>(
 			"remainingCapacity",
 			"()I"
 		);
 	}
-	jboolean LinkedTransferQueue::remove(JObject arg0)
+	jboolean LinkedTransferQueue::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -167,7 +167,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedTransferQueue::removeAll(JObject arg0)
+	jboolean LinkedTransferQueue::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -175,7 +175,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedTransferQueue::removeIf(JObject arg0)
+	jboolean LinkedTransferQueue::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -183,7 +183,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedTransferQueue::retainAll(JObject arg0)
+	jboolean LinkedTransferQueue::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -191,35 +191,35 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedTransferQueue::size()
+	jint LinkedTransferQueue::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject LinkedTransferQueue::spliterator()
+	JObject LinkedTransferQueue::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject LinkedTransferQueue::take()
+	JObject LinkedTransferQueue::take() const
 	{
 		return callObjectMethod(
 			"take",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObjectArray LinkedTransferQueue::toArray()
+	JObjectArray LinkedTransferQueue::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray LinkedTransferQueue::toArray(JObjectArray arg0)
+	JObjectArray LinkedTransferQueue::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -227,14 +227,14 @@ namespace java::util::concurrent
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString LinkedTransferQueue::toString()
+	JString LinkedTransferQueue::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LinkedTransferQueue::transfer(JObject arg0)
+	void LinkedTransferQueue::transfer(JObject arg0) const
 	{
 		callMethod<void>(
 			"transfer",
@@ -242,7 +242,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedTransferQueue::tryTransfer(JObject arg0)
+	jboolean LinkedTransferQueue::tryTransfer(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"tryTransfer",
@@ -250,7 +250,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean LinkedTransferQueue::tryTransfer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jboolean LinkedTransferQueue::tryTransfer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2) const
 	{
 		return callMethod<jboolean>(
 			"tryTransfer",

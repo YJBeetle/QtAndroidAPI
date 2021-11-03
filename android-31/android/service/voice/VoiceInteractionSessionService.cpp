@@ -22,7 +22,7 @@ namespace android::service::voice
 		) {}
 	
 	// Methods
-	JObject VoiceInteractionSessionService::onBind(android::content::Intent arg0)
+	JObject VoiceInteractionSessionService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -30,7 +30,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSessionService::onConfigurationChanged(android::content::res::Configuration arg0)
+	void VoiceInteractionSessionService::onConfigurationChanged(android::content::res::Configuration arg0) const
 	{
 		callMethod<void>(
 			"onConfigurationChanged",
@@ -38,21 +38,21 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSessionService::onCreate()
+	void VoiceInteractionSessionService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	void VoiceInteractionSessionService::onLowMemory()
+	void VoiceInteractionSessionService::onLowMemory() const
 	{
 		callMethod<void>(
 			"onLowMemory",
 			"()V"
 		);
 	}
-	android::service::voice::VoiceInteractionSession VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0)
+	android::service::voice::VoiceInteractionSession VoiceInteractionSessionService::onNewSession(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"onNewSession",
@@ -60,7 +60,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	void VoiceInteractionSessionService::onTrimMemory(jint arg0)
+	void VoiceInteractionSessionService::onTrimMemory(jint arg0) const
 	{
 		callMethod<void>(
 			"onTrimMemory",

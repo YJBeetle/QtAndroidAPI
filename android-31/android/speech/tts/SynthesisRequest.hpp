@@ -24,16 +24,16 @@ namespace android::speech::tts
 		SynthesisRequest(JString arg0, android::os::Bundle arg1);
 		
 		// Methods
-		jint getCallerUid();
-		JString getCharSequenceText();
-		JString getCountry();
-		JString getLanguage();
-		android::os::Bundle getParams();
-		jint getPitch();
-		jint getSpeechRate();
-		JString getText();
-		JString getVariant();
-		JString getVoiceName();
+		jint getCallerUid() const;
+		JString getCharSequenceText() const;
+		JString getCountry() const;
+		JString getLanguage() const;
+		android::os::Bundle getParams() const;
+		jint getPitch() const;
+		jint getSpeechRate() const;
+		JString getText() const;
+		JString getVariant() const;
+		JString getVoiceName() const;
 	};
 } // namespace android::speech::tts
 

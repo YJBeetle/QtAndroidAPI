@@ -38,11 +38,11 @@ namespace android::media::tv
 		TvInputService();
 		
 		// Methods
-		JObject onBind(android::content::Intent arg0);
-		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(JString arg0);
-		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(JString arg0, JString arg1);
-		android::media::tv::TvInputService_Session onCreateSession(JString arg0);
-		android::media::tv::TvInputService_Session onCreateSession(JString arg0, JString arg1);
+		JObject onBind(android::content::Intent arg0) const;
+		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(JString arg0) const;
+		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(JString arg0, JString arg1) const;
+		android::media::tv::TvInputService_Session onCreateSession(JString arg0) const;
+		android::media::tv::TvInputService_Session onCreateSession(JString arg0, JString arg1) const;
 	};
 } // namespace android::media::tv
 

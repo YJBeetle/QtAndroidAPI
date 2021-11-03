@@ -61,21 +61,21 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint SystemUpdatePolicy_ValidationFailedException::describeContents()
+	jint SystemUpdatePolicy_ValidationFailedException::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
+	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	void SystemUpdatePolicy_ValidationFailedException::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SystemUpdatePolicy_ValidationFailedException::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

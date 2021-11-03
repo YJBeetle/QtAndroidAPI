@@ -35,7 +35,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	jboolean MediaController::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean MediaController::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -43,35 +43,35 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString MediaController::getAccessibilityClassName()
+	JString MediaController::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void MediaController::hide()
+	void MediaController::hide() const
 	{
 		callMethod<void>(
 			"hide",
 			"()V"
 		);
 	}
-	jboolean MediaController::isShowing()
+	jboolean MediaController::isShowing() const
 	{
 		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
-	void MediaController::onFinishInflate()
+	void MediaController::onFinishInflate() const
 	{
 		callMethod<void>(
 			"onFinishInflate",
 			"()V"
 		);
 	}
-	jboolean MediaController::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean MediaController::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -79,7 +79,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean MediaController::onTrackballEvent(android::view::MotionEvent arg0)
+	jboolean MediaController::onTrackballEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTrackballEvent",
@@ -87,7 +87,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void MediaController::setAnchorView(android::view::View arg0)
+	void MediaController::setAnchorView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setAnchorView",
@@ -95,7 +95,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void MediaController::setEnabled(jboolean arg0)
+	void MediaController::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -103,7 +103,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void MediaController::setMediaPlayer(JObject arg0)
+	void MediaController::setMediaPlayer(JObject arg0) const
 	{
 		callMethod<void>(
 			"setMediaPlayer",
@@ -111,7 +111,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void MediaController::setPrevNextListeners(JObject arg0, JObject arg1)
+	void MediaController::setPrevNextListeners(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setPrevNextListeners",
@@ -120,14 +120,14 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void MediaController::show()
+	void MediaController::show() const
 	{
 		callMethod<void>(
 			"show",
 			"()V"
 		);
 	}
-	void MediaController::show(jint arg0)
+	void MediaController::show(jint arg0) const
 	{
 		callMethod<void>(
 			"show",

@@ -10,14 +10,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject GetSchemaResponse::getSchemas()
+	JObject GetSchemaResponse::getSchemas() const
 	{
 		return callObjectMethod(
 			"getSchemas",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint GetSchemaResponse::getVersion()
+	jint GetSchemaResponse::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",

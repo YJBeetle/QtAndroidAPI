@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void VolumeShaper::apply(android::media::VolumeShaper_Operation arg0)
+	void VolumeShaper::apply(android::media::VolumeShaper_Operation arg0) const
 	{
 		callMethod<void>(
 			"apply",
@@ -20,21 +20,21 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void VolumeShaper::close()
+	void VolumeShaper::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jfloat VolumeShaper::getVolume()
+	jfloat VolumeShaper::getVolume() const
 	{
 		return callMethod<jfloat>(
 			"getVolume",
 			"()F"
 		);
 	}
-	void VolumeShaper::replace(android::media::VolumeShaper_Configuration arg0, android::media::VolumeShaper_Operation arg1, jboolean arg2)
+	void VolumeShaper::replace(android::media::VolumeShaper_Configuration arg0, android::media::VolumeShaper_Operation arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"replace",

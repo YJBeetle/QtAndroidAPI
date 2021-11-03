@@ -22,11 +22,11 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		java::security::cert::X509Certificate getClientEndCertificate();
-		JObject getIntermediateCertificates();
-		JObject getPrivateKey();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		java::security::cert::X509Certificate getClientEndCertificate() const;
+		JObject getIntermediateCertificates() const;
+		JObject getPrivateKey() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::ipsec::ike
 

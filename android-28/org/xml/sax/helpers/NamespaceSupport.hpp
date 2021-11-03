@@ -23,18 +23,18 @@ namespace org::xml::sax::helpers
 		NamespaceSupport();
 		
 		// Methods
-		jboolean declarePrefix(JString arg0, JString arg1);
-		JObject getDeclaredPrefixes();
-		JString getPrefix(JString arg0);
-		JObject getPrefixes();
-		JObject getPrefixes(JString arg0);
-		JString getURI(JString arg0);
-		jboolean isNamespaceDeclUris();
-		void popContext();
-		JArray processName(JString arg0, JArray arg1, jboolean arg2);
-		void pushContext();
-		void reset();
-		void setNamespaceDeclUris(jboolean arg0);
+		jboolean declarePrefix(JString arg0, JString arg1) const;
+		JObject getDeclaredPrefixes() const;
+		JString getPrefix(JString arg0) const;
+		JObject getPrefixes() const;
+		JObject getPrefixes(JString arg0) const;
+		JString getURI(JString arg0) const;
+		jboolean isNamespaceDeclUris() const;
+		void popContext() const;
+		JArray processName(JString arg0, JArray arg1, jboolean arg2) const;
+		void pushContext() const;
+		void reset() const;
+		void setNamespaceDeclUris(jboolean arg0) const;
 	};
 } // namespace org::xml::sax::helpers
 

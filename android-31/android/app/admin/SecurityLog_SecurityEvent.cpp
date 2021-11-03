@@ -20,14 +20,14 @@ namespace android::app::admin
 	// Constructors
 	
 	// Methods
-	jint SecurityLog_SecurityEvent::describeContents()
+	jint SecurityLog_SecurityEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SecurityLog_SecurityEvent::equals(JObject arg0)
+	jboolean SecurityLog_SecurityEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,49 +35,49 @@ namespace android::app::admin
 			arg0.object<jobject>()
 		);
 	}
-	JObject SecurityLog_SecurityEvent::getData()
+	JObject SecurityLog_SecurityEvent::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jlong SecurityLog_SecurityEvent::getId()
+	jlong SecurityLog_SecurityEvent::getId() const
 	{
 		return callMethod<jlong>(
 			"getId",
 			"()J"
 		);
 	}
-	jint SecurityLog_SecurityEvent::getLogLevel()
+	jint SecurityLog_SecurityEvent::getLogLevel() const
 	{
 		return callMethod<jint>(
 			"getLogLevel",
 			"()I"
 		);
 	}
-	jint SecurityLog_SecurityEvent::getTag()
+	jint SecurityLog_SecurityEvent::getTag() const
 	{
 		return callMethod<jint>(
 			"getTag",
 			"()I"
 		);
 	}
-	jlong SecurityLog_SecurityEvent::getTimeNanos()
+	jlong SecurityLog_SecurityEvent::getTimeNanos() const
 	{
 		return callMethod<jlong>(
 			"getTimeNanos",
 			"()J"
 		);
 	}
-	jint SecurityLog_SecurityEvent::hashCode()
+	jint SecurityLog_SecurityEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void SecurityLog_SecurityEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SecurityLog_SecurityEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -19,7 +19,7 @@ namespace java::security::cert
 	// Constructors
 	
 	// Methods
-	jboolean X509CRL::equals(JObject arg0)
+	jboolean X509CRL::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,35 +27,35 @@ namespace java::security::cert
 			arg0.object<jobject>()
 		);
 	}
-	JByteArray X509CRL::getEncoded()
+	JByteArray X509CRL::getEncoded() const
 	{
 		return callObjectMethod(
 			"getEncoded",
 			"()[B"
 		);
 	}
-	JObject X509CRL::getIssuerDN()
+	JObject X509CRL::getIssuerDN() const
 	{
 		return callObjectMethod(
 			"getIssuerDN",
 			"()Ljava/security/Principal;"
 		);
 	}
-	javax::security::auth::x500::X500Principal X509CRL::getIssuerX500Principal()
+	javax::security::auth::x500::X500Principal X509CRL::getIssuerX500Principal() const
 	{
 		return callObjectMethod(
 			"getIssuerX500Principal",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	java::util::Date X509CRL::getNextUpdate()
+	java::util::Date X509CRL::getNextUpdate() const
 	{
 		return callObjectMethod(
 			"getNextUpdate",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::math::BigInteger arg0)
+	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"getRevokedCertificate",
@@ -63,7 +63,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::security::cert::X509Certificate arg0)
+	java::security::cert::X509CRLEntry X509CRL::getRevokedCertificate(java::security::cert::X509Certificate arg0) const
 	{
 		return callObjectMethod(
 			"getRevokedCertificate",
@@ -71,70 +71,70 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	JObject X509CRL::getRevokedCertificates()
+	JObject X509CRL::getRevokedCertificates() const
 	{
 		return callObjectMethod(
 			"getRevokedCertificates",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString X509CRL::getSigAlgName()
+	JString X509CRL::getSigAlgName() const
 	{
 		return callObjectMethod(
 			"getSigAlgName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString X509CRL::getSigAlgOID()
+	JString X509CRL::getSigAlgOID() const
 	{
 		return callObjectMethod(
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray X509CRL::getSigAlgParams()
+	JByteArray X509CRL::getSigAlgParams() const
 	{
 		return callObjectMethod(
 			"getSigAlgParams",
 			"()[B"
 		);
 	}
-	JByteArray X509CRL::getSignature()
+	JByteArray X509CRL::getSignature() const
 	{
 		return callObjectMethod(
 			"getSignature",
 			"()[B"
 		);
 	}
-	JByteArray X509CRL::getTBSCertList()
+	JByteArray X509CRL::getTBSCertList() const
 	{
 		return callObjectMethod(
 			"getTBSCertList",
 			"()[B"
 		);
 	}
-	java::util::Date X509CRL::getThisUpdate()
+	java::util::Date X509CRL::getThisUpdate() const
 	{
 		return callObjectMethod(
 			"getThisUpdate",
 			"()Ljava/util/Date;"
 		);
 	}
-	jint X509CRL::getVersion()
+	jint X509CRL::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	jint X509CRL::hashCode()
+	jint X509CRL::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void X509CRL::verify(JObject arg0)
+	void X509CRL::verify(JObject arg0) const
 	{
 		callMethod<void>(
 			"verify",
@@ -142,7 +142,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRL::verify(JObject arg0, JString arg1)
+	void X509CRL::verify(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"verify",
@@ -151,7 +151,7 @@ namespace java::security::cert
 			arg1.object<jstring>()
 		);
 	}
-	void X509CRL::verify(JObject arg0, java::security::Provider arg1)
+	void X509CRL::verify(JObject arg0, java::security::Provider arg1) const
 	{
 		callMethod<void>(
 			"verify",

@@ -28,23 +28,23 @@ namespace android::service::notification
 		NotificationListenerService_Ranking();
 		
 		// Methods
-		jboolean canBubble();
-		jboolean canShowBadge();
-		jboolean equals(JObject arg0);
-		android::app::NotificationChannel getChannel();
-		jint getImportance();
-		JString getImportanceExplanation();
-		JString getKey();
-		jlong getLastAudiblyAlertedMillis();
-		JString getOverrideGroupKey();
-		jint getRank();
-		JObject getSmartActions();
-		JObject getSmartReplies();
-		jint getSuppressedVisualEffects();
-		jint getUserSentiment();
-		jboolean isAmbient();
-		jboolean isSuspended();
-		jboolean matchesInterruptionFilter();
+		jboolean canBubble() const;
+		jboolean canShowBadge() const;
+		jboolean equals(JObject arg0) const;
+		android::app::NotificationChannel getChannel() const;
+		jint getImportance() const;
+		JString getImportanceExplanation() const;
+		JString getKey() const;
+		jlong getLastAudiblyAlertedMillis() const;
+		JString getOverrideGroupKey() const;
+		jint getRank() const;
+		JObject getSmartActions() const;
+		JObject getSmartReplies() const;
+		jint getSuppressedVisualEffects() const;
+		jint getUserSentiment() const;
+		jboolean isAmbient() const;
+		jboolean isSuspended() const;
+		jboolean matchesInterruptionFilter() const;
 	};
 } // namespace android::service::notification
 

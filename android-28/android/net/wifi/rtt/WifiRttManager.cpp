@@ -21,14 +21,14 @@ namespace android::net::wifi::rtt
 	// Constructors
 	
 	// Methods
-	jboolean WifiRttManager::isAvailable()
+	jboolean WifiRttManager::isAvailable() const
 	{
 		return callMethod<jboolean>(
 			"isAvailable",
 			"()Z"
 		);
 	}
-	void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2)
+	void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2) const
 	{
 		callMethod<void>(
 			"startRanging",

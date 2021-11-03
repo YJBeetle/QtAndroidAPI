@@ -37,14 +37,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	void WeakHashMap::clear()
+	void WeakHashMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean WeakHashMap::containsKey(JObject arg0)
+	jboolean WeakHashMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -52,7 +52,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean WeakHashMap::containsValue(JObject arg0)
+	jboolean WeakHashMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -60,14 +60,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject WeakHashMap::entrySet()
+	JObject WeakHashMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void WeakHashMap::forEach(JObject arg0)
+	void WeakHashMap::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -75,7 +75,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject WeakHashMap::get(JObject arg0)
+	JObject WeakHashMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -83,21 +83,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean WeakHashMap::isEmpty()
+	jboolean WeakHashMap::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject WeakHashMap::keySet()
+	JObject WeakHashMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject WeakHashMap::put(JObject arg0, JObject arg1)
+	JObject WeakHashMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -106,7 +106,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void WeakHashMap::putAll(JObject arg0)
+	void WeakHashMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -114,7 +114,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject WeakHashMap::remove(JObject arg0)
+	JObject WeakHashMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -122,7 +122,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void WeakHashMap::replaceAll(JObject arg0)
+	void WeakHashMap::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -130,14 +130,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint WeakHashMap::size()
+	jint WeakHashMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject WeakHashMap::values()
+	JObject WeakHashMap::values() const
 	{
 		return callObjectMethod(
 			"values",

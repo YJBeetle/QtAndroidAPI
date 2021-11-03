@@ -24,7 +24,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	void PreferenceFragment::addPreferencesFromIntent(android::content::Intent arg0)
+	void PreferenceFragment::addPreferencesFromIntent(android::content::Intent arg0) const
 	{
 		callMethod<void>(
 			"addPreferencesFromIntent",
@@ -32,7 +32,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceFragment::addPreferencesFromResource(jint arg0)
+	void PreferenceFragment::addPreferencesFromResource(jint arg0) const
 	{
 		callMethod<void>(
 			"addPreferencesFromResource",
@@ -40,7 +40,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	android::preference::Preference PreferenceFragment::findPreference(JString arg0)
+	android::preference::Preference PreferenceFragment::findPreference(JString arg0) const
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -48,21 +48,21 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	android::preference::PreferenceManager PreferenceFragment::getPreferenceManager()
+	android::preference::PreferenceManager PreferenceFragment::getPreferenceManager() const
 	{
 		return callObjectMethod(
 			"getPreferenceManager",
 			"()Landroid/preference/PreferenceManager;"
 		);
 	}
-	android::preference::PreferenceScreen PreferenceFragment::getPreferenceScreen()
+	android::preference::PreferenceScreen PreferenceFragment::getPreferenceScreen() const
 	{
 		return callObjectMethod(
 			"getPreferenceScreen",
 			"()Landroid/preference/PreferenceScreen;"
 		);
 	}
-	void PreferenceFragment::onActivityCreated(android::os::Bundle arg0)
+	void PreferenceFragment::onActivityCreated(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onActivityCreated",
@@ -70,7 +70,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceFragment::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2)
+	void PreferenceFragment::onActivityResult(jint arg0, jint arg1, android::content::Intent arg2) const
 	{
 		callMethod<void>(
 			"onActivityResult",
@@ -80,7 +80,7 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	void PreferenceFragment::onCreate(android::os::Bundle arg0)
+	void PreferenceFragment::onCreate(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onCreate",
@@ -88,7 +88,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::view::View PreferenceFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2)
+	android::view::View PreferenceFragment::onCreateView(android::view::LayoutInflater arg0, android::view::ViewGroup arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -98,21 +98,21 @@ namespace android::preference
 			arg2.object()
 		);
 	}
-	void PreferenceFragment::onDestroy()
+	void PreferenceFragment::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",
 			"()V"
 		);
 	}
-	void PreferenceFragment::onDestroyView()
+	void PreferenceFragment::onDestroyView() const
 	{
 		callMethod<void>(
 			"onDestroyView",
 			"()V"
 		);
 	}
-	jboolean PreferenceFragment::onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1)
+	jboolean PreferenceFragment::onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1) const
 	{
 		return callMethod<jboolean>(
 			"onPreferenceTreeClick",
@@ -121,7 +121,7 @@ namespace android::preference
 			arg1.object()
 		);
 	}
-	void PreferenceFragment::onSaveInstanceState(android::os::Bundle arg0)
+	void PreferenceFragment::onSaveInstanceState(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"onSaveInstanceState",
@@ -129,21 +129,21 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceFragment::onStart()
+	void PreferenceFragment::onStart() const
 	{
 		callMethod<void>(
 			"onStart",
 			"()V"
 		);
 	}
-	void PreferenceFragment::onStop()
+	void PreferenceFragment::onStop() const
 	{
 		callMethod<void>(
 			"onStop",
 			"()V"
 		);
 	}
-	void PreferenceFragment::onViewCreated(android::view::View arg0, android::os::Bundle arg1)
+	void PreferenceFragment::onViewCreated(android::view::View arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"onViewCreated",
@@ -152,7 +152,7 @@ namespace android::preference
 			arg1.object()
 		);
 	}
-	void PreferenceFragment::setPreferenceScreen(android::preference::PreferenceScreen arg0)
+	void PreferenceFragment::setPreferenceScreen(android::preference::PreferenceScreen arg0) const
 	{
 		callMethod<void>(
 			"setPreferenceScreen",

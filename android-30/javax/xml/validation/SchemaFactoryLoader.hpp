@@ -22,7 +22,7 @@ namespace javax::xml::validation
 		// Constructors
 		
 		// Methods
-		javax::xml::validation::SchemaFactory newFactory(JString arg0);
+		javax::xml::validation::SchemaFactory newFactory(JString arg0) const;
 	};
 } // namespace javax::xml::validation
 

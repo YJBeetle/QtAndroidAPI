@@ -37,12 +37,12 @@ namespace java::io
 		FileOutputStream(JString arg0, jboolean arg1);
 		
 		// Methods
-		void close();
-		java::nio::channels::FileChannel getChannel();
-		java::io::FileDescriptor getFD();
-		void write(JByteArray arg0);
-		void write(jint arg0);
-		void write(JByteArray arg0, jint arg1, jint arg2);
+		void close() const;
+		java::nio::channels::FileChannel getChannel() const;
+		java::io::FileDescriptor getFD() const;
+		void write(JByteArray arg0) const;
+		void write(jint arg0) const;
+		void write(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

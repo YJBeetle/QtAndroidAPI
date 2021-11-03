@@ -45,7 +45,7 @@ namespace android::renderscript
 			arg2.object()
 		);
 	}
-	void AllocationAdapter::resize(jint arg0)
+	void AllocationAdapter::resize(jint arg0) const
 	{
 		callMethod<void>(
 			"resize",
@@ -53,7 +53,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void AllocationAdapter::setFace(android::renderscript::Type_CubemapFace arg0)
+	void AllocationAdapter::setFace(android::renderscript::Type_CubemapFace arg0) const
 	{
 		callMethod<void>(
 			"setFace",
@@ -61,7 +61,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void AllocationAdapter::setLOD(jint arg0)
+	void AllocationAdapter::setLOD(jint arg0) const
 	{
 		callMethod<void>(
 			"setLOD",
@@ -69,7 +69,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void AllocationAdapter::setX(jint arg0)
+	void AllocationAdapter::setX(jint arg0) const
 	{
 		callMethod<void>(
 			"setX",
@@ -77,7 +77,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void AllocationAdapter::setY(jint arg0)
+	void AllocationAdapter::setY(jint arg0) const
 	{
 		callMethod<void>(
 			"setY",
@@ -85,7 +85,7 @@ namespace android::renderscript
 			arg0
 		);
 	}
-	void AllocationAdapter::setZ(jint arg0)
+	void AllocationAdapter::setZ(jint arg0) const
 	{
 		callMethod<void>(
 			"setZ",

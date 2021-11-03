@@ -31,14 +31,14 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint StatusHints::describeContents()
+	jint StatusHints::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean StatusHints::equals(JObject arg0)
+	jboolean StatusHints::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,35 +46,35 @@ namespace android::telecom
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle StatusHints::getExtras()
+	android::os::Bundle StatusHints::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::graphics::drawable::Icon StatusHints::getIcon()
+	android::graphics::drawable::Icon StatusHints::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString StatusHints::getLabel()
+	JString StatusHints::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint StatusHints::hashCode()
+	jint StatusHints::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void StatusHints::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StatusHints::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

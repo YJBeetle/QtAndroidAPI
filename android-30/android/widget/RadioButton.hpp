@@ -30,9 +30,9 @@ namespace android::widget
 		RadioButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
-		void onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0);
-		void toggle();
+		JString getAccessibilityClassName() const;
+		void onInitializeAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0) const;
+		void toggle() const;
 	};
 } // namespace android::widget
 

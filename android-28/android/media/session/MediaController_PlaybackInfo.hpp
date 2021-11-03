@@ -23,11 +23,11 @@ namespace android::media::session
 		// Constructors
 		
 		// Methods
-		android::media::AudioAttributes getAudioAttributes();
-		jint getCurrentVolume();
-		jint getMaxVolume();
-		jint getPlaybackType();
-		jint getVolumeControl();
+		android::media::AudioAttributes getAudioAttributes() const;
+		jint getCurrentVolume() const;
+		jint getMaxVolume() const;
+		jint getPlaybackType() const;
+		jint getVolumeControl() const;
 	};
 } // namespace android::media::session
 

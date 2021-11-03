@@ -26,7 +26,7 @@ namespace android::widget
 		CheckBox(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		JString getAccessibilityClassName();
+		JString getAccessibilityClassName() const;
 	};
 } // namespace android::widget
 

@@ -24,11 +24,11 @@ namespace android::text
 		Annotation(JString arg0, JString arg1);
 		
 		// Methods
-		jint describeContents();
-		JString getKey();
-		jint getSpanTypeId();
-		JString getValue();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getKey() const;
+		jint getSpanTypeId() const;
+		JString getValue() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::text
 

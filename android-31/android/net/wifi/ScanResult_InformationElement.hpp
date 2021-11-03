@@ -28,13 +28,13 @@ namespace android::net::wifi
 		ScanResult_InformationElement(android::net::wifi::ScanResult_InformationElement &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		java::nio::ByteBuffer getBytes();
-		jint getId();
-		jint getIdExt();
-		jint hashCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		java::nio::ByteBuffer getBytes() const;
+		jint getId() const;
+		jint getIdExt() const;
+		jint hashCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

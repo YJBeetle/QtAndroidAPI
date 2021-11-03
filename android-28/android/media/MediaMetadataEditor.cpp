@@ -35,7 +35,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaMetadataEditor::addEditableKey(jint arg0)
+	void MediaMetadataEditor::addEditableKey(jint arg0) const
 	{
 		callMethod<void>(
 			"addEditableKey",
@@ -43,21 +43,21 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaMetadataEditor::apply()
+	void MediaMetadataEditor::apply() const
 	{
 		callMethod<void>(
 			"apply",
 			"()V"
 		);
 	}
-	void MediaMetadataEditor::clear()
+	void MediaMetadataEditor::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	android::graphics::Bitmap MediaMetadataEditor::getBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::graphics::Bitmap MediaMetadataEditor::getBitmap(jint arg0, android::graphics::Bitmap arg1) const
 	{
 		return callObjectMethod(
 			"getBitmap",
@@ -66,14 +66,14 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	JIntArray MediaMetadataEditor::getEditableKeys()
+	JIntArray MediaMetadataEditor::getEditableKeys() const
 	{
 		return callObjectMethod(
 			"getEditableKeys",
 			"()[I"
 		);
 	}
-	jlong MediaMetadataEditor::getLong(jint arg0, jlong arg1)
+	jlong MediaMetadataEditor::getLong(jint arg0, jlong arg1) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -82,7 +82,7 @@ namespace android::media
 			arg1
 		);
 	}
-	JObject MediaMetadataEditor::getObject(jint arg0, JObject arg1)
+	JObject MediaMetadataEditor::getObject(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"getObject",
@@ -91,7 +91,7 @@ namespace android::media
 			arg1.object<jobject>()
 		);
 	}
-	JString MediaMetadataEditor::getString(jint arg0, JString arg1)
+	JString MediaMetadataEditor::getString(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -100,7 +100,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putBitmap(jint arg0, android::graphics::Bitmap arg1) const
 	{
 		return callObjectMethod(
 			"putBitmap",
@@ -109,7 +109,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putLong(jint arg0, jlong arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putLong(jint arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"putLong",
@@ -118,7 +118,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putObject(jint arg0, JObject arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putObject(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"putObject",
@@ -127,7 +127,7 @@ namespace android::media
 			arg1.object<jobject>()
 		);
 	}
-	android::media::MediaMetadataEditor MediaMetadataEditor::putString(jint arg0, JString arg1)
+	android::media::MediaMetadataEditor MediaMetadataEditor::putString(jint arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"putString",
@@ -136,7 +136,7 @@ namespace android::media
 			arg1.object<jstring>()
 		);
 	}
-	void MediaMetadataEditor::removeEditableKeys()
+	void MediaMetadataEditor::removeEditableKeys() const
 	{
 		callMethod<void>(
 			"removeEditableKeys",

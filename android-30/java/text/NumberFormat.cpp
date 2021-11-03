@@ -147,14 +147,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JObject NumberFormat::clone()
+	JObject NumberFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean NumberFormat::equals(JObject arg0)
+	jboolean NumberFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -162,7 +162,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	JString NumberFormat::format(jdouble arg0)
+	JString NumberFormat::format(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -170,7 +170,7 @@ namespace java::text
 			arg0
 		);
 	}
-	JString NumberFormat::format(jlong arg0)
+	JString NumberFormat::format(jlong arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -178,7 +178,7 @@ namespace java::text
 			arg0
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jdouble arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -188,7 +188,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -198,7 +198,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer NumberFormat::format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -208,70 +208,70 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::util::Currency NumberFormat::getCurrency()
+	java::util::Currency NumberFormat::getCurrency() const
 	{
 		return callObjectMethod(
 			"getCurrency",
 			"()Ljava/util/Currency;"
 		);
 	}
-	jint NumberFormat::getMaximumFractionDigits()
+	jint NumberFormat::getMaximumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumFractionDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMaximumIntegerDigits()
+	jint NumberFormat::getMaximumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMaximumIntegerDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMinimumFractionDigits()
+	jint NumberFormat::getMinimumFractionDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumFractionDigits",
 			"()I"
 		);
 	}
-	jint NumberFormat::getMinimumIntegerDigits()
+	jint NumberFormat::getMinimumIntegerDigits() const
 	{
 		return callMethod<jint>(
 			"getMinimumIntegerDigits",
 			"()I"
 		);
 	}
-	java::math::RoundingMode NumberFormat::getRoundingMode()
+	java::math::RoundingMode NumberFormat::getRoundingMode() const
 	{
 		return callObjectMethod(
 			"getRoundingMode",
 			"()Ljava/math/RoundingMode;"
 		);
 	}
-	jint NumberFormat::hashCode()
+	jint NumberFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean NumberFormat::isGroupingUsed()
+	jboolean NumberFormat::isGroupingUsed() const
 	{
 		return callMethod<jboolean>(
 			"isGroupingUsed",
 			"()Z"
 		);
 	}
-	jboolean NumberFormat::isParseIntegerOnly()
+	jboolean NumberFormat::isParseIntegerOnly() const
 	{
 		return callMethod<jboolean>(
 			"isParseIntegerOnly",
 			"()Z"
 		);
 	}
-	java::lang::Number NumberFormat::parse(JString arg0)
+	java::lang::Number NumberFormat::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -279,7 +279,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::lang::Number NumberFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -288,7 +288,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject NumberFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -297,7 +297,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void NumberFormat::setCurrency(java::util::Currency arg0)
+	void NumberFormat::setCurrency(java::util::Currency arg0) const
 	{
 		callMethod<void>(
 			"setCurrency",
@@ -305,7 +305,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void NumberFormat::setGroupingUsed(jboolean arg0)
+	void NumberFormat::setGroupingUsed(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setGroupingUsed",
@@ -313,7 +313,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setMaximumFractionDigits(jint arg0)
+	void NumberFormat::setMaximumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumFractionDigits",
@@ -321,7 +321,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setMaximumIntegerDigits(jint arg0)
+	void NumberFormat::setMaximumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaximumIntegerDigits",
@@ -329,7 +329,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setMinimumFractionDigits(jint arg0)
+	void NumberFormat::setMinimumFractionDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumFractionDigits",
@@ -337,7 +337,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setMinimumIntegerDigits(jint arg0)
+	void NumberFormat::setMinimumIntegerDigits(jint arg0) const
 	{
 		callMethod<void>(
 			"setMinimumIntegerDigits",
@@ -345,7 +345,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setParseIntegerOnly(jboolean arg0)
+	void NumberFormat::setParseIntegerOnly(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setParseIntegerOnly",
@@ -353,7 +353,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void NumberFormat::setRoundingMode(java::math::RoundingMode arg0)
+	void NumberFormat::setRoundingMode(java::math::RoundingMode arg0) const
 	{
 		callMethod<void>(
 			"setRoundingMode",

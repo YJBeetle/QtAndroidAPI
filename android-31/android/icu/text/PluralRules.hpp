@@ -49,16 +49,16 @@ namespace android::icu::text
 		static android::icu::text::PluralRules forLocale(android::icu::util::ULocale arg0, android::icu::text::PluralRules_PluralType arg1);
 		static android::icu::text::PluralRules forLocale(java::util::Locale arg0, android::icu::text::PluralRules_PluralType arg1);
 		static android::icu::text::PluralRules parseDescription(JString arg0);
-		jboolean equals(android::icu::text::PluralRules arg0);
-		jboolean equals(JObject arg0);
-		JObject getAllKeywordValues(JString arg0);
-		JObject getKeywords();
-		JObject getSamples(JString arg0);
-		jdouble getUniqueKeywordValue(JString arg0);
-		jint hashCode();
-		JString select(android::icu::number::FormattedNumber arg0);
-		JString select(jdouble arg0);
-		JString toString();
+		jboolean equals(android::icu::text::PluralRules arg0) const;
+		jboolean equals(JObject arg0) const;
+		JObject getAllKeywordValues(JString arg0) const;
+		JObject getKeywords() const;
+		JObject getSamples(JString arg0) const;
+		jdouble getUniqueKeywordValue(JString arg0) const;
+		jint hashCode() const;
+		JString select(android::icu::number::FormattedNumber arg0) const;
+		JString select(jdouble arg0) const;
+		JString toString() const;
 	};
 } // namespace android::icu::text
 

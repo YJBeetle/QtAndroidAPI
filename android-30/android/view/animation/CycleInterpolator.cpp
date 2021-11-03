@@ -24,7 +24,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	jfloat CycleInterpolator::getInterpolation(jfloat arg0)
+	jfloat CycleInterpolator::getInterpolation(jfloat arg0) const
 	{
 		return callMethod<jfloat>(
 			"getInterpolation",

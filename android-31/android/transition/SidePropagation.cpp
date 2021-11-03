@@ -18,7 +18,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	jlong SidePropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3)
+	jlong SidePropagation::getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
@@ -29,7 +29,7 @@ namespace android::transition
 			arg3.object()
 		);
 	}
-	void SidePropagation::setPropagationSpeed(jfloat arg0)
+	void SidePropagation::setPropagationSpeed(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setPropagationSpeed",
@@ -37,7 +37,7 @@ namespace android::transition
 			arg0
 		);
 	}
-	void SidePropagation::setSide(jint arg0)
+	void SidePropagation::setSide(jint arg0) const
 	{
 		callMethod<void>(
 			"setSide",

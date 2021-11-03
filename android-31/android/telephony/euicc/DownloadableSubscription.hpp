@@ -24,10 +24,10 @@ namespace android::telephony::euicc
 		
 		// Methods
 		static android::telephony::euicc::DownloadableSubscription forActivationCode(JString arg0);
-		jint describeContents();
-		JString getConfirmationCode();
-		JString getEncodedActivationCode();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getConfirmationCode() const;
+		JString getEncodedActivationCode() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::euicc
 

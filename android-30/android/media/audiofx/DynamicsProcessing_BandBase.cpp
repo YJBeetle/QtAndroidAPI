@@ -18,21 +18,21 @@ namespace android::media::audiofx
 		) {}
 	
 	// Methods
-	jfloat DynamicsProcessing_BandBase::getCutoffFrequency()
+	jfloat DynamicsProcessing_BandBase::getCutoffFrequency() const
 	{
 		return callMethod<jfloat>(
 			"getCutoffFrequency",
 			"()F"
 		);
 	}
-	jboolean DynamicsProcessing_BandBase::isEnabled()
+	jboolean DynamicsProcessing_BandBase::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	void DynamicsProcessing_BandBase::setCutoffFrequency(jfloat arg0)
+	void DynamicsProcessing_BandBase::setCutoffFrequency(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setCutoffFrequency",
@@ -40,7 +40,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	void DynamicsProcessing_BandBase::setEnabled(jboolean arg0)
+	void DynamicsProcessing_BandBase::setEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEnabled",
@@ -48,7 +48,7 @@ namespace android::media::audiofx
 			arg0
 		);
 	}
-	JString DynamicsProcessing_BandBase::toString()
+	JString DynamicsProcessing_BandBase::toString() const
 	{
 		return callObjectMethod(
 			"toString",

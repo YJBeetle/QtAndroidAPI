@@ -168,7 +168,7 @@ namespace android::icu::util
 		) {}
 	
 	// Methods
-	JString IndianCalendar::getType()
+	JString IndianCalendar::getType() const
 	{
 		return callObjectMethod(
 			"getType",

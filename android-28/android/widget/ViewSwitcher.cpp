@@ -27,7 +27,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ViewSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void ViewSwitcher::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -37,28 +37,28 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JString ViewSwitcher::getAccessibilityClassName()
+	JString ViewSwitcher::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View ViewSwitcher::getNextView()
+	android::view::View ViewSwitcher::getNextView() const
 	{
 		return callObjectMethod(
 			"getNextView",
 			"()Landroid/view/View;"
 		);
 	}
-	void ViewSwitcher::reset()
+	void ViewSwitcher::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void ViewSwitcher::setFactory(JObject arg0)
+	void ViewSwitcher::setFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setFactory",

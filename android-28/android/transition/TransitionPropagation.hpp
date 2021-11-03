@@ -31,9 +31,9 @@ namespace android::transition
 		TransitionPropagation();
 		
 		// Methods
-		void captureValues(android::transition::TransitionValues arg0);
-		JArray getPropagationProperties();
-		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
+		void captureValues(android::transition::TransitionValues arg0) const;
+		JArray getPropagationProperties() const;
+		jlong getStartDelay(android::view::ViewGroup arg0, android::transition::Transition arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
 	};
 } // namespace android::transition
 

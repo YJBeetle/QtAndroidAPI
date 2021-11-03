@@ -31,11 +31,11 @@ namespace android::app
 		Presentation(android::content::Context arg0, android::view::Display arg1, jint arg2);
 		
 		// Methods
-		android::view::Display getDisplay();
-		android::content::res::Resources getResources();
-		void onDisplayChanged();
-		void onDisplayRemoved();
-		void show();
+		android::view::Display getDisplay() const;
+		android::content::res::Resources getResources() const;
+		void onDisplayChanged() const;
+		void onDisplayRemoved() const;
+		void show() const;
 	};
 } // namespace android::app
 

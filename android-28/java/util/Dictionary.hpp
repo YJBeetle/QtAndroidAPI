@@ -19,13 +19,13 @@ namespace java::util
 		Dictionary();
 		
 		// Methods
-		JObject elements();
-		JObject get(JObject arg0);
-		jboolean isEmpty();
-		JObject keys();
-		JObject put(JObject arg0, JObject arg1);
-		JObject remove(JObject arg0);
-		jint size();
+		JObject elements() const;
+		JObject get(JObject arg0) const;
+		jboolean isEmpty() const;
+		JObject keys() const;
+		JObject put(JObject arg0, JObject arg1) const;
+		JObject remove(JObject arg0) const;
+		jint size() const;
 	};
 } // namespace java::util
 

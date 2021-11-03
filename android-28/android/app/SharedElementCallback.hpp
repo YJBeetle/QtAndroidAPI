@@ -34,13 +34,13 @@ namespace android::app
 		SharedElementCallback();
 		
 		// Methods
-		JObject onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2);
-		android::view::View onCreateSnapshotView(android::content::Context arg0, JObject arg1);
-		void onMapSharedElements(JObject arg0, JObject arg1);
-		void onRejectSharedElements(JObject arg0);
-		void onSharedElementEnd(JObject arg0, JObject arg1, JObject arg2);
-		void onSharedElementStart(JObject arg0, JObject arg1, JObject arg2);
-		void onSharedElementsArrived(JObject arg0, JObject arg1, JObject arg2);
+		JObject onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2) const;
+		android::view::View onCreateSnapshotView(android::content::Context arg0, JObject arg1) const;
+		void onMapSharedElements(JObject arg0, JObject arg1) const;
+		void onRejectSharedElements(JObject arg0) const;
+		void onSharedElementEnd(JObject arg0, JObject arg1, JObject arg2) const;
+		void onSharedElementStart(JObject arg0, JObject arg1, JObject arg2) const;
+		void onSharedElementsArrived(JObject arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::app
 

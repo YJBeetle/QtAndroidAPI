@@ -84,14 +84,14 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	JObject DateIntervalFormat::clone()
+	JObject DateIntervalFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::DateInterval arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -101,7 +101,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateIntervalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateIntervalFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -111,7 +111,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3)
+	java::lang::StringBuffer DateIntervalFormat::format(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1, java::lang::StringBuffer arg2, java::text::FieldPosition arg3) const
 	{
 		return callObjectMethod(
 			"format",
@@ -122,7 +122,7 @@ namespace android::icu::text
 			arg3.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat_FormattedDateInterval DateIntervalFormat::formatToValue(android::icu::util::DateInterval arg0)
+	android::icu::text::DateIntervalFormat_FormattedDateInterval DateIntervalFormat::formatToValue(android::icu::util::DateInterval arg0) const
 	{
 		return callObjectMethod(
 			"formatToValue",
@@ -130,7 +130,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	android::icu::text::DateIntervalFormat_FormattedDateInterval DateIntervalFormat::formatToValue(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1)
+	android::icu::text::DateIntervalFormat_FormattedDateInterval DateIntervalFormat::formatToValue(android::icu::util::Calendar arg0, android::icu::util::Calendar arg1) const
 	{
 		return callObjectMethod(
 			"formatToValue",
@@ -139,28 +139,28 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	android::icu::text::DateFormat DateIntervalFormat::getDateFormat()
+	android::icu::text::DateFormat DateIntervalFormat::getDateFormat() const
 	{
 		return callObjectMethod(
 			"getDateFormat",
 			"()Landroid/icu/text/DateFormat;"
 		);
 	}
-	android::icu::text::DateIntervalInfo DateIntervalFormat::getDateIntervalInfo()
+	android::icu::text::DateIntervalInfo DateIntervalFormat::getDateIntervalInfo() const
 	{
 		return callObjectMethod(
 			"getDateIntervalInfo",
 			"()Landroid/icu/text/DateIntervalInfo;"
 		);
 	}
-	android::icu::util::TimeZone DateIntervalFormat::getTimeZone()
+	android::icu::util::TimeZone DateIntervalFormat::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	JObject DateIntervalFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject DateIntervalFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -169,7 +169,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void DateIntervalFormat::setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0)
+	void DateIntervalFormat::setDateIntervalInfo(android::icu::text::DateIntervalInfo arg0) const
 	{
 		callMethod<void>(
 			"setDateIntervalInfo",
@@ -177,7 +177,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void DateIntervalFormat::setTimeZone(android::icu::util::TimeZone arg0)
+	void DateIntervalFormat::setTimeZone(android::icu::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",

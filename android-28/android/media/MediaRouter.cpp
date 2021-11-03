@@ -51,7 +51,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	void MediaRouter::addCallback(jint arg0, android::media::MediaRouter_Callback arg1)
+	void MediaRouter::addCallback(jint arg0, android::media::MediaRouter_Callback arg1) const
 	{
 		callMethod<void>(
 			"addCallback",
@@ -60,7 +60,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRouter::addCallback(jint arg0, android::media::MediaRouter_Callback arg1, jint arg2)
+	void MediaRouter::addCallback(jint arg0, android::media::MediaRouter_Callback arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addCallback",
@@ -70,7 +70,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaRouter::addUserRoute(android::media::MediaRouter_UserRouteInfo arg0)
+	void MediaRouter::addUserRoute(android::media::MediaRouter_UserRouteInfo arg0) const
 	{
 		callMethod<void>(
 			"addUserRoute",
@@ -78,14 +78,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter::clearUserRoutes()
+	void MediaRouter::clearUserRoutes() const
 	{
 		callMethod<void>(
 			"clearUserRoutes",
 			"()V"
 		);
 	}
-	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(jint arg0, jboolean arg1)
+	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"createRouteCategory",
@@ -94,7 +94,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(JString arg0, jboolean arg1)
+	android::media::MediaRouter_RouteCategory MediaRouter::createRouteCategory(JString arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"createRouteCategory",
@@ -103,7 +103,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaRouter_UserRouteInfo MediaRouter::createUserRoute(android::media::MediaRouter_RouteCategory arg0)
+	android::media::MediaRouter_UserRouteInfo MediaRouter::createUserRoute(android::media::MediaRouter_RouteCategory arg0) const
 	{
 		return callObjectMethod(
 			"createUserRoute",
@@ -111,7 +111,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaRouter_RouteCategory MediaRouter::getCategoryAt(jint arg0)
+	android::media::MediaRouter_RouteCategory MediaRouter::getCategoryAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getCategoryAt",
@@ -119,21 +119,21 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaRouter::getCategoryCount()
+	jint MediaRouter::getCategoryCount() const
 	{
 		return callMethod<jint>(
 			"getCategoryCount",
 			"()I"
 		);
 	}
-	android::media::MediaRouter_RouteInfo MediaRouter::getDefaultRoute()
+	android::media::MediaRouter_RouteInfo MediaRouter::getDefaultRoute() const
 	{
 		return callObjectMethod(
 			"getDefaultRoute",
 			"()Landroid/media/MediaRouter$RouteInfo;"
 		);
 	}
-	android::media::MediaRouter_RouteInfo MediaRouter::getRouteAt(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter::getRouteAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getRouteAt",
@@ -141,14 +141,14 @@ namespace android::media
 			arg0
 		);
 	}
-	jint MediaRouter::getRouteCount()
+	jint MediaRouter::getRouteCount() const
 	{
 		return callMethod<jint>(
 			"getRouteCount",
 			"()I"
 		);
 	}
-	android::media::MediaRouter_RouteInfo MediaRouter::getSelectedRoute(jint arg0)
+	android::media::MediaRouter_RouteInfo MediaRouter::getSelectedRoute(jint arg0) const
 	{
 		return callObjectMethod(
 			"getSelectedRoute",
@@ -156,7 +156,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaRouter::removeCallback(android::media::MediaRouter_Callback arg0)
+	void MediaRouter::removeCallback(android::media::MediaRouter_Callback arg0) const
 	{
 		callMethod<void>(
 			"removeCallback",
@@ -164,7 +164,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter::removeUserRoute(android::media::MediaRouter_UserRouteInfo arg0)
+	void MediaRouter::removeUserRoute(android::media::MediaRouter_UserRouteInfo arg0) const
 	{
 		callMethod<void>(
 			"removeUserRoute",
@@ -172,7 +172,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter::selectRoute(jint arg0, android::media::MediaRouter_RouteInfo arg1)
+	void MediaRouter::selectRoute(jint arg0, android::media::MediaRouter_RouteInfo arg1) const
 	{
 		callMethod<void>(
 			"selectRoute",

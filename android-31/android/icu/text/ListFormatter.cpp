@@ -40,7 +40,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString ListFormatter::format(JObjectArray arg0)
+	JString ListFormatter::format(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString ListFormatter::format(JObject arg0)
+	JString ListFormatter::format(JObject arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -56,7 +56,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JString ListFormatter::getPatternForNumItems(jint arg0)
+	JString ListFormatter::getPatternForNumItems(jint arg0) const
 	{
 		return callObjectMethod(
 			"getPatternForNumItems",

@@ -24,10 +24,10 @@ namespace java::io
 		SequenceInputStream(java::io::InputStream arg0, java::io::InputStream arg1);
 		
 		// Methods
-		jint available();
-		void close();
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
+		jint available() const;
+		void close() const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

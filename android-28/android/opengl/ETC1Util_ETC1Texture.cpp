@@ -19,21 +19,21 @@ namespace android::opengl
 		) {}
 	
 	// Methods
-	java::nio::ByteBuffer ETC1Util_ETC1Texture::getData()
+	java::nio::ByteBuffer ETC1Util_ETC1Texture::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint ETC1Util_ETC1Texture::getHeight()
+	jint ETC1Util_ETC1Texture::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint ETC1Util_ETC1Texture::getWidth()
+	jint ETC1Util_ETC1Texture::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",

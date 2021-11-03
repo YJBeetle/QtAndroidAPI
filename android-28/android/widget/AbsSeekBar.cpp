@@ -48,7 +48,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AbsSeekBar::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void AbsSeekBar::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -57,84 +57,84 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString AbsSeekBar::getAccessibilityClassName()
+	JString AbsSeekBar::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint AbsSeekBar::getKeyProgressIncrement()
+	jint AbsSeekBar::getKeyProgressIncrement() const
 	{
 		return callMethod<jint>(
 			"getKeyProgressIncrement",
 			"()I"
 		);
 	}
-	jboolean AbsSeekBar::getSplitTrack()
+	jboolean AbsSeekBar::getSplitTrack() const
 	{
 		return callMethod<jboolean>(
 			"getSplitTrack",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable AbsSeekBar::getThumb()
+	android::graphics::drawable::Drawable AbsSeekBar::getThumb() const
 	{
 		return callObjectMethod(
 			"getThumb",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint AbsSeekBar::getThumbOffset()
+	jint AbsSeekBar::getThumbOffset() const
 	{
 		return callMethod<jint>(
 			"getThumbOffset",
 			"()I"
 		);
 	}
-	android::content::res::ColorStateList AbsSeekBar::getThumbTintList()
+	android::content::res::ColorStateList AbsSeekBar::getThumbTintList() const
 	{
 		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode AbsSeekBar::getThumbTintMode()
+	android::graphics::PorterDuff_Mode AbsSeekBar::getThumbTintMode() const
 	{
 		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	android::graphics::drawable::Drawable AbsSeekBar::getTickMark()
+	android::graphics::drawable::Drawable AbsSeekBar::getTickMark() const
 	{
 		return callObjectMethod(
 			"getTickMark",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::content::res::ColorStateList AbsSeekBar::getTickMarkTintList()
+	android::content::res::ColorStateList AbsSeekBar::getTickMarkTintList() const
 	{
 		return callObjectMethod(
 			"getTickMarkTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode AbsSeekBar::getTickMarkTintMode()
+	android::graphics::PorterDuff_Mode AbsSeekBar::getTickMarkTintMode() const
 	{
 		return callObjectMethod(
 			"getTickMarkTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	void AbsSeekBar::jumpDrawablesToCurrentState()
+	void AbsSeekBar::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	jboolean AbsSeekBar::onKeyDown(jint arg0, android::view::KeyEvent arg1)
+	jboolean AbsSeekBar::onKeyDown(jint arg0, android::view::KeyEvent arg1) const
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -143,7 +143,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void AbsSeekBar::onRtlPropertiesChanged(jint arg0)
+	void AbsSeekBar::onRtlPropertiesChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onRtlPropertiesChanged",
@@ -151,7 +151,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean AbsSeekBar::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean AbsSeekBar::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -159,7 +159,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setKeyProgressIncrement(jint arg0)
+	void AbsSeekBar::setKeyProgressIncrement(jint arg0) const
 	{
 		callMethod<void>(
 			"setKeyProgressIncrement",
@@ -167,7 +167,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSeekBar::setMax(jint arg0)
+	void AbsSeekBar::setMax(jint arg0) const
 	{
 		callMethod<void>(
 			"setMax",
@@ -175,7 +175,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSeekBar::setMin(jint arg0)
+	void AbsSeekBar::setMin(jint arg0) const
 	{
 		callMethod<void>(
 			"setMin",
@@ -183,7 +183,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSeekBar::setSplitTrack(jboolean arg0)
+	void AbsSeekBar::setSplitTrack(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSplitTrack",
@@ -191,7 +191,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSeekBar::setThumb(android::graphics::drawable::Drawable arg0)
+	void AbsSeekBar::setThumb(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setThumb",
@@ -199,7 +199,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setThumbOffset(jint arg0)
+	void AbsSeekBar::setThumbOffset(jint arg0) const
 	{
 		callMethod<void>(
 			"setThumbOffset",
@@ -207,7 +207,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AbsSeekBar::setThumbTintList(android::content::res::ColorStateList arg0)
+	void AbsSeekBar::setThumbTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setThumbTintList",
@@ -215,7 +215,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setThumbTintMode(android::graphics::PorterDuff_Mode arg0)
+	void AbsSeekBar::setThumbTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setThumbTintMode",
@@ -223,7 +223,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setTickMark(android::graphics::drawable::Drawable arg0)
+	void AbsSeekBar::setTickMark(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTickMark",
@@ -231,7 +231,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setTickMarkTintList(android::content::res::ColorStateList arg0)
+	void AbsSeekBar::setTickMarkTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTickMarkTintList",
@@ -239,7 +239,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AbsSeekBar::setTickMarkTintMode(android::graphics::PorterDuff_Mode arg0)
+	void AbsSeekBar::setTickMarkTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setTickMarkTintMode",

@@ -22,7 +22,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	JString BoringLayout_Metrics::toString()
+	JString BoringLayout_Metrics::toString() const
 	{
 		return callObjectMethod(
 			"toString",

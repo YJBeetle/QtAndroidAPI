@@ -41,77 +41,77 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	jint ConnectionRequest::describeContents()
+	jint ConnectionRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::telecom::PhoneAccountHandle ConnectionRequest::getAccountHandle()
+	android::telecom::PhoneAccountHandle ConnectionRequest::getAccountHandle() const
 	{
 		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	android::net::Uri ConnectionRequest::getAddress()
+	android::net::Uri ConnectionRequest::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	android::os::Bundle ConnectionRequest::getExtras()
+	android::os::Bundle ConnectionRequest::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JObject ConnectionRequest::getParticipants()
+	JObject ConnectionRequest::getParticipants() const
 	{
 		return callObjectMethod(
 			"getParticipants",
 			"()Ljava/util/List;"
 		);
 	}
-	android::telecom::Connection_RttTextStream ConnectionRequest::getRttTextStream()
+	android::telecom::Connection_RttTextStream ConnectionRequest::getRttTextStream() const
 	{
 		return callObjectMethod(
 			"getRttTextStream",
 			"()Landroid/telecom/Connection$RttTextStream;"
 		);
 	}
-	jint ConnectionRequest::getVideoState()
+	jint ConnectionRequest::getVideoState() const
 	{
 		return callMethod<jint>(
 			"getVideoState",
 			"()I"
 		);
 	}
-	jboolean ConnectionRequest::isAdhocConferenceCall()
+	jboolean ConnectionRequest::isAdhocConferenceCall() const
 	{
 		return callMethod<jboolean>(
 			"isAdhocConferenceCall",
 			"()Z"
 		);
 	}
-	jboolean ConnectionRequest::isRequestingRtt()
+	jboolean ConnectionRequest::isRequestingRtt() const
 	{
 		return callMethod<jboolean>(
 			"isRequestingRtt",
 			"()Z"
 		);
 	}
-	JString ConnectionRequest::toString()
+	JString ConnectionRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ConnectionRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ConnectionRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

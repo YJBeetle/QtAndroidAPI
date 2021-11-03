@@ -36,15 +36,15 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JString getCallingPackageName();
-		android::os::LocaleList getDefaultLocales();
-		jint getEndIndex();
-		android::os::Bundle getExtras();
-		java::time::ZonedDateTime getReferenceTime();
-		jint getStartIndex();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getCallingPackageName() const;
+		android::os::LocaleList getDefaultLocales() const;
+		jint getEndIndex() const;
+		android::os::Bundle getExtras() const;
+		java::time::ZonedDateTime getReferenceTime() const;
+		jint getStartIndex() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textclassifier
 

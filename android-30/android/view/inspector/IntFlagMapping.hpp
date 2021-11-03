@@ -19,8 +19,8 @@ namespace android::view::inspector
 		IntFlagMapping();
 		
 		// Methods
-		void add(jint arg0, jint arg1, JString arg2);
-		JObject get(jint arg0);
+		void add(jint arg0, jint arg1, JString arg2) const;
+		JObject get(jint arg0) const;
 	};
 } // namespace android::view::inspector
 

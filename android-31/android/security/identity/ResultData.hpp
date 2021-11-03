@@ -26,14 +26,14 @@ namespace android::security::identity
 		// Constructors
 		
 		// Methods
-		JByteArray getAuthenticatedData();
-		JByteArray getEntry(JString arg0, JString arg1);
-		JObject getEntryNames(JString arg0);
-		JByteArray getMessageAuthenticationCode();
-		JObject getNamespaces();
-		JObject getRetrievedEntryNames(JString arg0);
-		JByteArray getStaticAuthenticationData();
-		jint getStatus(JString arg0, JString arg1);
+		JByteArray getAuthenticatedData() const;
+		JByteArray getEntry(JString arg0, JString arg1) const;
+		JObject getEntryNames(JString arg0) const;
+		JByteArray getMessageAuthenticationCode() const;
+		JObject getNamespaces() const;
+		JObject getRetrievedEntryNames(JString arg0) const;
+		JByteArray getStaticAuthenticationData() const;
+		jint getStatus(JString arg0, JString arg1) const;
 	};
 } // namespace android::security::identity
 

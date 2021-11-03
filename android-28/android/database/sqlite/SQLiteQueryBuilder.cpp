@@ -47,7 +47,7 @@ namespace android::database::sqlite
 			arg7.object<jstring>()
 		);
 	}
-	void SQLiteQueryBuilder::appendWhere(JString arg0)
+	void SQLiteQueryBuilder::appendWhere(JString arg0) const
 	{
 		callMethod<void>(
 			"appendWhere",
@@ -55,7 +55,7 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	void SQLiteQueryBuilder::appendWhereEscapeString(JString arg0)
+	void SQLiteQueryBuilder::appendWhereEscapeString(JString arg0) const
 	{
 		callMethod<void>(
 			"appendWhereEscapeString",
@@ -63,7 +63,7 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::buildQuery(JArray arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5)
+	JString SQLiteQueryBuilder::buildQuery(JArray arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5) const
 	{
 		return callObjectMethod(
 			"buildQuery",
@@ -76,7 +76,7 @@ namespace android::database::sqlite
 			arg5.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::buildQuery(JArray arg0, JString arg1, JArray arg2, JString arg3, JString arg4, JString arg5, JString arg6)
+	JString SQLiteQueryBuilder::buildQuery(JArray arg0, JString arg1, JArray arg2, JString arg3, JString arg4, JString arg5, JString arg6) const
 	{
 		return callObjectMethod(
 			"buildQuery",
@@ -90,7 +90,7 @@ namespace android::database::sqlite
 			arg6.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::buildUnionQuery(JArray arg0, JString arg1, JString arg2)
+	JString SQLiteQueryBuilder::buildUnionQuery(JArray arg0, JString arg1, JString arg2) const
 	{
 		return callObjectMethod(
 			"buildUnionQuery",
@@ -100,7 +100,7 @@ namespace android::database::sqlite
 			arg2.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JString arg6, JString arg7)
+	JString SQLiteQueryBuilder::buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JString arg6, JString arg7) const
 	{
 		return callObjectMethod(
 			"buildUnionSubQuery",
@@ -115,7 +115,7 @@ namespace android::database::sqlite
 			arg7.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JArray arg6, JString arg7, JString arg8)
+	JString SQLiteQueryBuilder::buildUnionSubQuery(JString arg0, JArray arg1, JObject arg2, jint arg3, JString arg4, JString arg5, JArray arg6, JString arg7, JString arg8) const
 	{
 		return callObjectMethod(
 			"buildUnionSubQuery",
@@ -131,14 +131,14 @@ namespace android::database::sqlite
 			arg8.object<jstring>()
 		);
 	}
-	JString SQLiteQueryBuilder::getTables()
+	JString SQLiteQueryBuilder::getTables() const
 	{
 		return callObjectMethod(
 			"getTables",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6) const
 	{
 		return callObjectMethod(
 			"query",
@@ -152,7 +152,7 @@ namespace android::database::sqlite
 			arg6.object<jstring>()
 		);
 	}
-	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7) const
 	{
 		return callObjectMethod(
 			"query",
@@ -167,7 +167,7 @@ namespace android::database::sqlite
 			arg7.object<jstring>()
 		);
 	}
-	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7, android::os::CancellationSignal arg8)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, JString arg5, JString arg6, JString arg7, android::os::CancellationSignal arg8) const
 	{
 		return callObjectMethod(
 			"query",
@@ -183,7 +183,7 @@ namespace android::database::sqlite
 			arg8.object()
 		);
 	}
-	void SQLiteQueryBuilder::setCursorFactory(JObject arg0)
+	void SQLiteQueryBuilder::setCursorFactory(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCursorFactory",
@@ -191,7 +191,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteQueryBuilder::setDistinct(jboolean arg0)
+	void SQLiteQueryBuilder::setDistinct(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDistinct",
@@ -199,7 +199,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteQueryBuilder::setProjectionMap(JObject arg0)
+	void SQLiteQueryBuilder::setProjectionMap(JObject arg0) const
 	{
 		callMethod<void>(
 			"setProjectionMap",
@@ -207,7 +207,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteQueryBuilder::setStrict(jboolean arg0)
+	void SQLiteQueryBuilder::setStrict(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setStrict",
@@ -215,7 +215,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteQueryBuilder::setTables(JString arg0)
+	void SQLiteQueryBuilder::setTables(JString arg0) const
 	{
 		callMethod<void>(
 			"setTables",

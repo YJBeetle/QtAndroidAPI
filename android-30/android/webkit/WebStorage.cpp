@@ -19,14 +19,14 @@ namespace android::webkit
 			"()Landroid/webkit/WebStorage;"
 		);
 	}
-	void WebStorage::deleteAllData()
+	void WebStorage::deleteAllData() const
 	{
 		callMethod<void>(
 			"deleteAllData",
 			"()V"
 		);
 	}
-	void WebStorage::deleteOrigin(JString arg0)
+	void WebStorage::deleteOrigin(JString arg0) const
 	{
 		callMethod<void>(
 			"deleteOrigin",
@@ -34,7 +34,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebStorage::getOrigins(JObject arg0)
+	void WebStorage::getOrigins(JObject arg0) const
 	{
 		callMethod<void>(
 			"getOrigins",
@@ -42,7 +42,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebStorage::getQuotaForOrigin(JString arg0, JObject arg1)
+	void WebStorage::getQuotaForOrigin(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getQuotaForOrigin",
@@ -51,7 +51,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebStorage::getUsageForOrigin(JString arg0, JObject arg1)
+	void WebStorage::getUsageForOrigin(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"getUsageForOrigin",
@@ -60,7 +60,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebStorage::setQuotaForOrigin(JString arg0, jlong arg1)
+	void WebStorage::setQuotaForOrigin(JString arg0, jlong arg1) const
 	{
 		callMethod<void>(
 			"setQuotaForOrigin",

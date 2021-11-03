@@ -27,7 +27,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean ChildSaProposal::equals(JObject arg0)
+	jboolean ChildSaProposal::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -35,7 +35,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint ChildSaProposal::hashCode()
+	jint ChildSaProposal::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

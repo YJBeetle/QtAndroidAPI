@@ -34,18 +34,18 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		void registerCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0);
-		void requestCallDataUsage();
-		void requestCameraCapabilities();
-		void sendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1);
-		void sendSessionModifyResponse(android::telecom::VideoProfile arg0);
-		void setCamera(JString arg0);
-		void setDeviceOrientation(jint arg0);
-		void setDisplaySurface(android::view::Surface arg0);
-		void setPauseImage(android::net::Uri arg0);
-		void setPreviewSurface(android::view::Surface arg0);
-		void setZoom(jfloat arg0);
-		void unregisterCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0);
+		void registerCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0) const;
+		void requestCallDataUsage() const;
+		void requestCameraCapabilities() const;
+		void sendSessionModifyRequest(android::telecom::VideoProfile arg0, android::telecom::VideoProfile arg1) const;
+		void sendSessionModifyResponse(android::telecom::VideoProfile arg0) const;
+		void setCamera(JString arg0) const;
+		void setDeviceOrientation(jint arg0) const;
+		void setDisplaySurface(android::view::Surface arg0) const;
+		void setPauseImage(android::net::Uri arg0) const;
+		void setPreviewSurface(android::view::Surface arg0) const;
+		void setZoom(jfloat arg0) const;
+		void unregisterCallback(android::telecom::RemoteConnection_VideoProvider_Callback arg0) const;
 	};
 } // namespace android::telecom
 

@@ -12,7 +12,7 @@ namespace android::drm
 	// Constructors
 	
 	// Methods
-	JString DrmUtils_ExtendedMetadataParser::get(JString arg0)
+	JString DrmUtils_ExtendedMetadataParser::get(JString arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -20,14 +20,14 @@ namespace android::drm
 			arg0.object<jstring>()
 		);
 	}
-	JObject DrmUtils_ExtendedMetadataParser::iterator()
+	JObject DrmUtils_ExtendedMetadataParser::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject DrmUtils_ExtendedMetadataParser::keyIterator()
+	JObject DrmUtils_ExtendedMetadataParser::keyIterator() const
 	{
 		return callObjectMethod(
 			"keyIterator",

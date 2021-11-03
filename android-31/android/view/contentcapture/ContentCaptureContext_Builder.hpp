@@ -30,8 +30,8 @@ namespace android::view::contentcapture
 		ContentCaptureContext_Builder(android::content::LocusId arg0);
 		
 		// Methods
-		android::view::contentcapture::ContentCaptureContext build();
-		android::view::contentcapture::ContentCaptureContext_Builder setExtras(android::os::Bundle arg0);
+		android::view::contentcapture::ContentCaptureContext build() const;
+		android::view::contentcapture::ContentCaptureContext_Builder setExtras(android::os::Bundle arg0) const;
 	};
 } // namespace android::view::contentcapture
 

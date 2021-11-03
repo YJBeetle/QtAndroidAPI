@@ -41,14 +41,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	JObject TimeZoneNames::getAvailableMetaZoneIDs()
+	JObject TimeZoneNames::getAvailableMetaZoneIDs() const
 	{
 		return callObjectMethod(
 			"getAvailableMetaZoneIDs",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject TimeZoneNames::getAvailableMetaZoneIDs(JString arg0)
+	JObject TimeZoneNames::getAvailableMetaZoneIDs(JString arg0) const
 	{
 		return callObjectMethod(
 			"getAvailableMetaZoneIDs",
@@ -56,7 +56,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString TimeZoneNames::getDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2)
+	JString TimeZoneNames::getDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2) const
 	{
 		return callObjectMethod(
 			"getDisplayName",
@@ -66,7 +66,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	JString TimeZoneNames::getExemplarLocationName(JString arg0)
+	JString TimeZoneNames::getExemplarLocationName(JString arg0) const
 	{
 		return callObjectMethod(
 			"getExemplarLocationName",
@@ -74,7 +74,7 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	JString TimeZoneNames::getMetaZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1)
+	JString TimeZoneNames::getMetaZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1) const
 	{
 		return callObjectMethod(
 			"getMetaZoneDisplayName",
@@ -83,7 +83,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	JString TimeZoneNames::getMetaZoneID(JString arg0, jlong arg1)
+	JString TimeZoneNames::getMetaZoneID(JString arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"getMetaZoneID",
@@ -92,7 +92,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	JString TimeZoneNames::getReferenceZoneID(JString arg0, JString arg1)
+	JString TimeZoneNames::getReferenceZoneID(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"getReferenceZoneID",
@@ -101,7 +101,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	JString TimeZoneNames::getTimeZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1)
+	JString TimeZoneNames::getTimeZoneDisplayName(JString arg0, android::icu::text::TimeZoneNames_NameType arg1) const
 	{
 		return callObjectMethod(
 			"getTimeZoneDisplayName",

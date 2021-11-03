@@ -29,16 +29,16 @@ namespace android::media::audiofx
 		Virtualizer(jint arg0, jint arg1);
 		
 		// Methods
-		jboolean canVirtualize(jint arg0, jint arg1);
-		jboolean forceVirtualizationMode(jint arg0);
-		android::media::audiofx::Virtualizer_Settings getProperties();
-		jshort getRoundedStrength();
-		jboolean getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2);
-		jboolean getStrengthSupported();
-		jint getVirtualizationMode();
-		void setParameterListener(JObject arg0);
-		void setProperties(android::media::audiofx::Virtualizer_Settings arg0);
-		void setStrength(jshort arg0);
+		jboolean canVirtualize(jint arg0, jint arg1) const;
+		jboolean forceVirtualizationMode(jint arg0) const;
+		android::media::audiofx::Virtualizer_Settings getProperties() const;
+		jshort getRoundedStrength() const;
+		jboolean getSpeakerAngles(jint arg0, jint arg1, JIntArray arg2) const;
+		jboolean getStrengthSupported() const;
+		jint getVirtualizationMode() const;
+		void setParameterListener(JObject arg0) const;
+		void setProperties(android::media::audiofx::Virtualizer_Settings arg0) const;
+		void setStrength(jshort arg0) const;
 	};
 } // namespace android::media::audiofx
 

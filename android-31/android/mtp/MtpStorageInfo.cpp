@@ -11,35 +11,35 @@ namespace android::mtp
 	// Constructors
 	
 	// Methods
-	JString MtpStorageInfo::getDescription()
+	JString MtpStorageInfo::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong MtpStorageInfo::getFreeSpace()
+	jlong MtpStorageInfo::getFreeSpace() const
 	{
 		return callMethod<jlong>(
 			"getFreeSpace",
 			"()J"
 		);
 	}
-	jlong MtpStorageInfo::getMaxCapacity()
+	jlong MtpStorageInfo::getMaxCapacity() const
 	{
 		return callMethod<jlong>(
 			"getMaxCapacity",
 			"()J"
 		);
 	}
-	jint MtpStorageInfo::getStorageId()
+	jint MtpStorageInfo::getStorageId() const
 	{
 		return callMethod<jint>(
 			"getStorageId",
 			"()I"
 		);
 	}
-	JString MtpStorageInfo::getVolumeIdentifier()
+	JString MtpStorageInfo::getVolumeIdentifier() const
 	{
 		return callObjectMethod(
 			"getVolumeIdentifier",

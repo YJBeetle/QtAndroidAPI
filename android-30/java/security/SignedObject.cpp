@@ -23,28 +23,28 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JString SignedObject::getAlgorithm()
+	JString SignedObject::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject SignedObject::getObject()
+	JObject SignedObject::getObject() const
 	{
 		return callObjectMethod(
 			"getObject",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JByteArray SignedObject::getSignature()
+	JByteArray SignedObject::getSignature() const
 	{
 		return callObjectMethod(
 			"getSignature",
 			"()[B"
 		);
 	}
-	jboolean SignedObject::verify(JObject arg0, java::security::Signature arg1)
+	jboolean SignedObject::verify(JObject arg0, java::security::Signature arg1) const
 	{
 		return callMethod<jboolean>(
 			"verify",

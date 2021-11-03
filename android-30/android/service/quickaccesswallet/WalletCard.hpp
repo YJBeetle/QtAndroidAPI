@@ -32,14 +32,14 @@ namespace android::service::quickaccesswallet
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::graphics::drawable::Icon getCardIcon();
-		JString getCardId();
-		android::graphics::drawable::Icon getCardImage();
-		JString getCardLabel();
-		JString getContentDescription();
-		android::app::PendingIntent getPendingIntent();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::graphics::drawable::Icon getCardIcon() const;
+		JString getCardId() const;
+		android::graphics::drawable::Icon getCardImage() const;
+		JString getCardLabel() const;
+		JString getContentDescription() const;
+		android::app::PendingIntent getPendingIntent() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::quickaccesswallet
 

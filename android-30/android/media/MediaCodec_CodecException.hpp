@@ -20,10 +20,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getDiagnosticInfo();
-		jint getErrorCode();
-		jboolean isRecoverable();
-		jboolean isTransient();
+		JString getDiagnosticInfo() const;
+		jint getErrorCode() const;
+		jboolean isRecoverable() const;
+		jboolean isTransient() const;
 	};
 } // namespace android::media
 

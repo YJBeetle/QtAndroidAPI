@@ -51,7 +51,7 @@ namespace android::bluetooth::le
 		) {}
 	
 	// Methods
-	void AdvertiseCallback::onStartFailure(jint arg0)
+	void AdvertiseCallback::onStartFailure(jint arg0) const
 	{
 		callMethod<void>(
 			"onStartFailure",
@@ -59,7 +59,7 @@ namespace android::bluetooth::le
 			arg0
 		);
 	}
-	void AdvertiseCallback::onStartSuccess(android::bluetooth::le::AdvertiseSettings arg0)
+	void AdvertiseCallback::onStartSuccess(android::bluetooth::le::AdvertiseSettings arg0) const
 	{
 		callMethod<void>(
 			"onStartSuccess",

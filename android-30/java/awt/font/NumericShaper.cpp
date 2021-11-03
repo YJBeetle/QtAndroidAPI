@@ -213,7 +213,7 @@ namespace java::awt::font
 			arg0.object()
 		);
 	}
-	jboolean NumericShaper::equals(JObject arg0)
+	jboolean NumericShaper::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -221,35 +221,35 @@ namespace java::awt::font
 			arg0.object<jobject>()
 		);
 	}
-	JObject NumericShaper::getRangeSet()
+	JObject NumericShaper::getRangeSet() const
 	{
 		return callObjectMethod(
 			"getRangeSet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint NumericShaper::getRanges()
+	jint NumericShaper::getRanges() const
 	{
 		return callMethod<jint>(
 			"getRanges",
 			"()I"
 		);
 	}
-	jint NumericShaper::hashCode()
+	jint NumericShaper::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean NumericShaper::isContextual()
+	jboolean NumericShaper::isContextual() const
 	{
 		return callMethod<jboolean>(
 			"isContextual",
 			"()Z"
 		);
 	}
-	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"shape",
@@ -259,7 +259,7 @@ namespace java::awt::font
 			arg2
 		);
 	}
-	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, jint arg3)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"shape",
@@ -270,7 +270,7 @@ namespace java::awt::font
 			arg3
 		);
 	}
-	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3)
+	void NumericShaper::shape(JCharArray arg0, jint arg1, jint arg2, java::awt::font::NumericShaper_Range arg3) const
 	{
 		callMethod<void>(
 			"shape",
@@ -281,7 +281,7 @@ namespace java::awt::font
 			arg3.object()
 		);
 	}
-	JString NumericShaper::toString()
+	JString NumericShaper::toString() const
 	{
 		return callObjectMethod(
 			"toString",

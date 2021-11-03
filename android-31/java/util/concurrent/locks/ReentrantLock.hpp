@@ -28,22 +28,22 @@ namespace java::util::concurrent::locks
 		ReentrantLock(jboolean arg0);
 		
 		// Methods
-		jint getHoldCount();
-		jint getQueueLength();
-		jint getWaitQueueLength(JObject arg0);
-		jboolean hasQueuedThread(java::lang::Thread arg0);
-		jboolean hasQueuedThreads();
-		jboolean hasWaiters(JObject arg0);
-		jboolean isFair();
-		jboolean isHeldByCurrentThread();
-		jboolean isLocked();
-		void lock();
-		void lockInterruptibly();
-		JObject newCondition();
-		JString toString();
-		jboolean tryLock();
-		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);
-		void unlock();
+		jint getHoldCount() const;
+		jint getQueueLength() const;
+		jint getWaitQueueLength(JObject arg0) const;
+		jboolean hasQueuedThread(java::lang::Thread arg0) const;
+		jboolean hasQueuedThreads() const;
+		jboolean hasWaiters(JObject arg0) const;
+		jboolean isFair() const;
+		jboolean isHeldByCurrentThread() const;
+		jboolean isLocked() const;
+		void lock() const;
+		void lockInterruptibly() const;
+		JObject newCondition() const;
+		JString toString() const;
+		jboolean tryLock() const;
+		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1) const;
+		void unlock() const;
 	};
 } // namespace java::util::concurrent::locks
 

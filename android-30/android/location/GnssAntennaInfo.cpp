@@ -22,49 +22,49 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint GnssAntennaInfo::describeContents()
+	jint GnssAntennaInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jdouble GnssAntennaInfo::getCarrierFrequencyMHz()
+	jdouble GnssAntennaInfo::getCarrierFrequencyMHz() const
 	{
 		return callMethod<jdouble>(
 			"getCarrierFrequencyMHz",
 			"()D"
 		);
 	}
-	android::location::GnssAntennaInfo_PhaseCenterOffset GnssAntennaInfo::getPhaseCenterOffset()
+	android::location::GnssAntennaInfo_PhaseCenterOffset GnssAntennaInfo::getPhaseCenterOffset() const
 	{
 		return callObjectMethod(
 			"getPhaseCenterOffset",
 			"()Landroid/location/GnssAntennaInfo$PhaseCenterOffset;"
 		);
 	}
-	android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getPhaseCenterVariationCorrections()
+	android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getPhaseCenterVariationCorrections() const
 	{
 		return callObjectMethod(
 			"getPhaseCenterVariationCorrections",
 			"()Landroid/location/GnssAntennaInfo$SphericalCorrections;"
 		);
 	}
-	android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getSignalGainCorrections()
+	android::location::GnssAntennaInfo_SphericalCorrections GnssAntennaInfo::getSignalGainCorrections() const
 	{
 		return callObjectMethod(
 			"getSignalGainCorrections",
 			"()Landroid/location/GnssAntennaInfo$SphericalCorrections;"
 		);
 	}
-	JString GnssAntennaInfo::toString()
+	JString GnssAntennaInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void GnssAntennaInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void GnssAntennaInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

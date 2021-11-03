@@ -17,14 +17,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JString MissingFormatWidthException::getFormatSpecifier()
+	JString MissingFormatWidthException::getFormatSpecifier() const
 	{
 		return callObjectMethod(
 			"getFormatSpecifier",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MissingFormatWidthException::getMessage()
+	JString MissingFormatWidthException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",

@@ -24,9 +24,9 @@ namespace android::media
 		// Methods
 		static jboolean isCodecCopyFreeCompatible(JArray arg0);
 		static android::media::MediaCodec_LinearBlock obtain(jint arg0, JArray arg1);
-		jboolean isMappable();
-		java::nio::ByteBuffer map();
-		void recycle();
+		jboolean isMappable() const;
+		java::nio::ByteBuffer map() const;
+		void recycle() const;
 	};
 } // namespace android::media
 

@@ -36,12 +36,12 @@ namespace java::text
 		AttributedString(JObject arg0, jint arg1, jint arg2, JArray arg3);
 		
 		// Methods
-		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1);
-		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1, jint arg2, jint arg3);
-		void addAttributes(JObject arg0, jint arg1, jint arg2);
-		JObject getIterator();
-		JObject getIterator(JArray arg0);
-		JObject getIterator(JArray arg0, jint arg1, jint arg2);
+		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1) const;
+		void addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1, jint arg2, jint arg3) const;
+		void addAttributes(JObject arg0, jint arg1, jint arg2) const;
+		JObject getIterator() const;
+		JObject getIterator(JArray arg0) const;
+		JObject getIterator(JArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::text
 

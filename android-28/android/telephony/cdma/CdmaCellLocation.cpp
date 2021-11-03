@@ -33,7 +33,7 @@ namespace android::telephony::cdma
 			arg0
 		);
 	}
-	jboolean CdmaCellLocation::equals(JObject arg0)
+	jboolean CdmaCellLocation::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -41,7 +41,7 @@ namespace android::telephony::cdma
 			arg0.object<jobject>()
 		);
 	}
-	void CdmaCellLocation::fillInNotifierBundle(android::os::Bundle arg0)
+	void CdmaCellLocation::fillInNotifierBundle(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"fillInNotifierBundle",
@@ -49,49 +49,49 @@ namespace android::telephony::cdma
 			arg0.object()
 		);
 	}
-	jint CdmaCellLocation::getBaseStationId()
+	jint CdmaCellLocation::getBaseStationId() const
 	{
 		return callMethod<jint>(
 			"getBaseStationId",
 			"()I"
 		);
 	}
-	jint CdmaCellLocation::getBaseStationLatitude()
+	jint CdmaCellLocation::getBaseStationLatitude() const
 	{
 		return callMethod<jint>(
 			"getBaseStationLatitude",
 			"()I"
 		);
 	}
-	jint CdmaCellLocation::getBaseStationLongitude()
+	jint CdmaCellLocation::getBaseStationLongitude() const
 	{
 		return callMethod<jint>(
 			"getBaseStationLongitude",
 			"()I"
 		);
 	}
-	jint CdmaCellLocation::getNetworkId()
+	jint CdmaCellLocation::getNetworkId() const
 	{
 		return callMethod<jint>(
 			"getNetworkId",
 			"()I"
 		);
 	}
-	jint CdmaCellLocation::getSystemId()
+	jint CdmaCellLocation::getSystemId() const
 	{
 		return callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);
 	}
-	jint CdmaCellLocation::hashCode()
+	jint CdmaCellLocation::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2)
+	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setCellLocationData",
@@ -101,7 +101,7 @@ namespace android::telephony::cdma
 			arg2
 		);
 	}
-	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"setCellLocationData",
@@ -113,14 +113,14 @@ namespace android::telephony::cdma
 			arg4
 		);
 	}
-	void CdmaCellLocation::setStateInvalid()
+	void CdmaCellLocation::setStateInvalid() const
 	{
 		callMethod<void>(
 			"setStateInvalid",
 			"()V"
 		);
 	}
-	JString CdmaCellLocation::toString()
+	JString CdmaCellLocation::toString() const
 	{
 		return callObjectMethod(
 			"toString",

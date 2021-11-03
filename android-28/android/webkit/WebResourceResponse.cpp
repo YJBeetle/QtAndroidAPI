@@ -31,49 +31,49 @@ namespace android::webkit
 		) {}
 	
 	// Methods
-	java::io::InputStream WebResourceResponse::getData()
+	java::io::InputStream WebResourceResponse::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	JString WebResourceResponse::getEncoding()
+	JString WebResourceResponse::getEncoding() const
 	{
 		return callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WebResourceResponse::getMimeType()
+	JString WebResourceResponse::getMimeType() const
 	{
 		return callObjectMethod(
 			"getMimeType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WebResourceResponse::getReasonPhrase()
+	JString WebResourceResponse::getReasonPhrase() const
 	{
 		return callObjectMethod(
 			"getReasonPhrase",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject WebResourceResponse::getResponseHeaders()
+	JObject WebResourceResponse::getResponseHeaders() const
 	{
 		return callObjectMethod(
 			"getResponseHeaders",
 			"()Ljava/util/Map;"
 		);
 	}
-	jint WebResourceResponse::getStatusCode()
+	jint WebResourceResponse::getStatusCode() const
 	{
 		return callMethod<jint>(
 			"getStatusCode",
 			"()I"
 		);
 	}
-	void WebResourceResponse::setData(java::io::InputStream arg0)
+	void WebResourceResponse::setData(java::io::InputStream arg0) const
 	{
 		callMethod<void>(
 			"setData",
@@ -81,7 +81,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebResourceResponse::setEncoding(JString arg0)
+	void WebResourceResponse::setEncoding(JString arg0) const
 	{
 		callMethod<void>(
 			"setEncoding",
@@ -89,7 +89,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebResourceResponse::setMimeType(JString arg0)
+	void WebResourceResponse::setMimeType(JString arg0) const
 	{
 		callMethod<void>(
 			"setMimeType",
@@ -97,7 +97,7 @@ namespace android::webkit
 			arg0.object<jstring>()
 		);
 	}
-	void WebResourceResponse::setResponseHeaders(JObject arg0)
+	void WebResourceResponse::setResponseHeaders(JObject arg0) const
 	{
 		callMethod<void>(
 			"setResponseHeaders",
@@ -105,7 +105,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, JString arg1)
+	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"setStatusCodeAndReasonPhrase",

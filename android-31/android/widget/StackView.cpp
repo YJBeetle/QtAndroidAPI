@@ -44,21 +44,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void StackView::advance()
+	void StackView::advance() const
 	{
 		callMethod<void>(
 			"advance",
 			"()V"
 		);
 	}
-	JString StackView::getAccessibilityClassName()
+	JString StackView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean StackView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean StackView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -66,7 +66,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean StackView::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean StackView::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean StackView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean StackView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -82,14 +82,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void StackView::showNext()
+	void StackView::showNext() const
 	{
 		callMethod<void>(
 			"showNext",
 			"()V"
 		);
 	}
-	void StackView::showPrevious()
+	void StackView::showPrevious() const
 	{
 		callMethod<void>(
 			"showPrevious",

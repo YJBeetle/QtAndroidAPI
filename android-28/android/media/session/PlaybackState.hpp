@@ -59,19 +59,19 @@ namespace android::media::session
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jlong getActions();
-		jlong getActiveQueueItemId();
-		jlong getBufferedPosition();
-		JObject getCustomActions();
-		JString getErrorMessage();
-		android::os::Bundle getExtras();
-		jlong getLastPositionUpdateTime();
-		jfloat getPlaybackSpeed();
-		jlong getPosition();
-		jint getState();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getActions() const;
+		jlong getActiveQueueItemId() const;
+		jlong getBufferedPosition() const;
+		JObject getCustomActions() const;
+		JString getErrorMessage() const;
+		android::os::Bundle getExtras() const;
+		jlong getLastPositionUpdateTime() const;
+		jfloat getPlaybackSpeed() const;
+		jlong getPosition() const;
+		jint getState() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media::session
 

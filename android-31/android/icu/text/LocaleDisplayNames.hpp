@@ -44,21 +44,21 @@ namespace android::icu::text
 		static android::icu::text::LocaleDisplayNames getInstance(android::icu::util::ULocale arg0, JArray arg1);
 		static android::icu::text::LocaleDisplayNames getInstance(android::icu::util::ULocale arg0, android::icu::text::LocaleDisplayNames_DialectHandling arg1);
 		static android::icu::text::LocaleDisplayNames getInstance(java::util::Locale arg0, JArray arg1);
-		android::icu::text::DisplayContext getContext(android::icu::text::DisplayContext_Type arg0);
-		android::icu::text::LocaleDisplayNames_DialectHandling getDialectHandling();
-		android::icu::util::ULocale getLocale();
-		JObject getUiList(JObject arg0, jboolean arg1, JObject arg2);
-		JObject getUiListCompareWholeItems(JObject arg0, JObject arg1);
-		JString keyDisplayName(JString arg0);
-		JString keyValueDisplayName(JString arg0, JString arg1);
-		JString languageDisplayName(JString arg0);
-		JString localeDisplayName(android::icu::util::ULocale arg0);
-		JString localeDisplayName(JString arg0);
-		JString localeDisplayName(java::util::Locale arg0);
-		JString regionDisplayName(JString arg0);
-		JString scriptDisplayName(jint arg0);
-		JString scriptDisplayName(JString arg0);
-		JString variantDisplayName(JString arg0);
+		android::icu::text::DisplayContext getContext(android::icu::text::DisplayContext_Type arg0) const;
+		android::icu::text::LocaleDisplayNames_DialectHandling getDialectHandling() const;
+		android::icu::util::ULocale getLocale() const;
+		JObject getUiList(JObject arg0, jboolean arg1, JObject arg2) const;
+		JObject getUiListCompareWholeItems(JObject arg0, JObject arg1) const;
+		JString keyDisplayName(JString arg0) const;
+		JString keyValueDisplayName(JString arg0, JString arg1) const;
+		JString languageDisplayName(JString arg0) const;
+		JString localeDisplayName(android::icu::util::ULocale arg0) const;
+		JString localeDisplayName(JString arg0) const;
+		JString localeDisplayName(java::util::Locale arg0) const;
+		JString regionDisplayName(JString arg0) const;
+		JString scriptDisplayName(jint arg0) const;
+		JString scriptDisplayName(JString arg0) const;
+		JString variantDisplayName(JString arg0) const;
 	};
 } // namespace android::icu::text
 

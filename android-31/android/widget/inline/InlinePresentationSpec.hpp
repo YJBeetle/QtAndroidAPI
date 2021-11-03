@@ -32,14 +32,14 @@ namespace android::widget::inline
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::util::Size getMaxSize();
-		android::util::Size getMinSize();
-		android::os::Bundle getStyle();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::util::Size getMaxSize() const;
+		android::util::Size getMinSize() const;
+		android::os::Bundle getStyle() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::widget::inline
 

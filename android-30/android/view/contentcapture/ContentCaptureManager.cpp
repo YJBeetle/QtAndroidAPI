@@ -34,28 +34,28 @@ namespace android::view::contentcapture
 	// Constructors
 	
 	// Methods
-	JObject ContentCaptureManager::getContentCaptureConditions()
+	JObject ContentCaptureManager::getContentCaptureConditions() const
 	{
 		return callObjectMethod(
 			"getContentCaptureConditions",
 			"()Ljava/util/Set;"
 		);
 	}
-	android::content::ComponentName ContentCaptureManager::getServiceComponentName()
+	android::content::ComponentName ContentCaptureManager::getServiceComponentName() const
 	{
 		return callObjectMethod(
 			"getServiceComponentName",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jboolean ContentCaptureManager::isContentCaptureEnabled()
+	jboolean ContentCaptureManager::isContentCaptureEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isContentCaptureEnabled",
 			"()Z"
 		);
 	}
-	void ContentCaptureManager::removeData(android::view::contentcapture::DataRemovalRequest arg0)
+	void ContentCaptureManager::removeData(android::view::contentcapture::DataRemovalRequest arg0) const
 	{
 		callMethod<void>(
 			"removeData",
@@ -63,7 +63,7 @@ namespace android::view::contentcapture
 			arg0.object()
 		);
 	}
-	void ContentCaptureManager::setContentCaptureEnabled(jboolean arg0)
+	void ContentCaptureManager::setContentCaptureEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setContentCaptureEnabled",
@@ -71,7 +71,7 @@ namespace android::view::contentcapture
 			arg0
 		);
 	}
-	void ContentCaptureManager::shareData(android::view::contentcapture::DataShareRequest arg0, JObject arg1, JObject arg2)
+	void ContentCaptureManager::shareData(android::view::contentcapture::DataShareRequest arg0, JObject arg1, JObject arg2) const
 	{
 		callMethod<void>(
 			"shareData",

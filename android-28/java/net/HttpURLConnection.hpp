@@ -73,23 +73,23 @@ namespace java::net
 		// Methods
 		static jboolean getFollowRedirects();
 		static void setFollowRedirects(jboolean arg0);
-		void disconnect();
-		java::io::InputStream getErrorStream();
-		JString getHeaderField(jint arg0);
-		jlong getHeaderFieldDate(JString arg0, jlong arg1);
-		JString getHeaderFieldKey(jint arg0);
-		jboolean getInstanceFollowRedirects();
-		java::security::Permission getPermission();
-		JString getRequestMethod();
-		jint getResponseCode();
-		JString getResponseMessage();
-		void setAuthenticator(java::net::Authenticator arg0);
-		void setChunkedStreamingMode(jint arg0);
-		void setFixedLengthStreamingMode(jint arg0);
-		void setFixedLengthStreamingMode(jlong arg0);
-		void setInstanceFollowRedirects(jboolean arg0);
-		void setRequestMethod(JString arg0);
-		jboolean usingProxy();
+		void disconnect() const;
+		java::io::InputStream getErrorStream() const;
+		JString getHeaderField(jint arg0) const;
+		jlong getHeaderFieldDate(JString arg0, jlong arg1) const;
+		JString getHeaderFieldKey(jint arg0) const;
+		jboolean getInstanceFollowRedirects() const;
+		java::security::Permission getPermission() const;
+		JString getRequestMethod() const;
+		jint getResponseCode() const;
+		JString getResponseMessage() const;
+		void setAuthenticator(java::net::Authenticator arg0) const;
+		void setChunkedStreamingMode(jint arg0) const;
+		void setFixedLengthStreamingMode(jint arg0) const;
+		void setFixedLengthStreamingMode(jlong arg0) const;
+		void setInstanceFollowRedirects(jboolean arg0) const;
+		void setRequestMethod(JString arg0) const;
+		jboolean usingProxy() const;
 	};
 } // namespace java::net
 

@@ -21,8 +21,8 @@ namespace java::lang::reflect
 		InvocationTargetException(JThrowable arg0, JString arg1);
 		
 		// Methods
-		JThrowable getCause();
-		JThrowable getTargetException();
+		JThrowable getCause() const;
+		JThrowable getTargetException() const;
 	};
 } // namespace java::lang::reflect
 

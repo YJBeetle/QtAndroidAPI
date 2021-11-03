@@ -34,7 +34,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void KeyboardShortcutGroup::addItem(android::view::KeyboardShortcutInfo arg0)
+	void KeyboardShortcutGroup::addItem(android::view::KeyboardShortcutInfo arg0) const
 	{
 		callMethod<void>(
 			"addItem",
@@ -42,28 +42,28 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jint KeyboardShortcutGroup::describeContents()
+	jint KeyboardShortcutGroup::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject KeyboardShortcutGroup::getItems()
+	JObject KeyboardShortcutGroup::getItems() const
 	{
 		return callObjectMethod(
 			"getItems",
 			"()Ljava/util/List;"
 		);
 	}
-	JString KeyboardShortcutGroup::getLabel()
+	JString KeyboardShortcutGroup::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	void KeyboardShortcutGroup::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void KeyboardShortcutGroup::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

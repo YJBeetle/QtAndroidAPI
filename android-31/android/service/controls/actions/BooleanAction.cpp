@@ -26,14 +26,14 @@ namespace android::service::controls::actions
 		) {}
 	
 	// Methods
-	jint BooleanAction::getActionType()
+	jint BooleanAction::getActionType() const
 	{
 		return callMethod<jint>(
 			"getActionType",
 			"()I"
 		);
 	}
-	jboolean BooleanAction::getNewState()
+	jboolean BooleanAction::getNewState() const
 	{
 		return callMethod<jboolean>(
 			"getNewState",

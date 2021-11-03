@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		RecursiveAction();
 		
 		// Methods
-		java::lang::Void getRawResult();
+		java::lang::Void getRawResult() const;
 	};
 } // namespace java::util::concurrent
 

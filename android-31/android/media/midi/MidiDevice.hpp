@@ -34,12 +34,12 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		void close();
-		android::media::midi::MidiDevice_MidiConnection connectPorts(android::media::midi::MidiInputPort arg0, jint arg1);
-		android::media::midi::MidiDeviceInfo getInfo();
-		android::media::midi::MidiInputPort openInputPort(jint arg0);
-		android::media::midi::MidiOutputPort openOutputPort(jint arg0);
-		JString toString();
+		void close() const;
+		android::media::midi::MidiDevice_MidiConnection connectPorts(android::media::midi::MidiInputPort arg0, jint arg1) const;
+		android::media::midi::MidiDeviceInfo getInfo() const;
+		android::media::midi::MidiInputPort openInputPort(jint arg0) const;
+		android::media::midi::MidiOutputPort openOutputPort(jint arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media::midi
 

@@ -26,14 +26,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::WindowInsets WindowInsets_Builder::build()
+	android::view::WindowInsets WindowInsets_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setDisplayCutout(android::view::DisplayCutout arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setDisplayCutout(android::view::DisplayCutout arg0) const
 	{
 		return callObjectMethod(
 			"setDisplayCutout",
@@ -41,7 +41,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setInsets(jint arg0, android::graphics::Insets arg1)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setInsets(jint arg0, android::graphics::Insets arg1) const
 	{
 		return callObjectMethod(
 			"setInsets",
@@ -50,7 +50,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setInsetsIgnoringVisibility(jint arg0, android::graphics::Insets arg1)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setInsetsIgnoringVisibility(jint arg0, android::graphics::Insets arg1) const
 	{
 		return callObjectMethod(
 			"setInsetsIgnoringVisibility",
@@ -59,7 +59,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setMandatorySystemGestureInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setMandatorySystemGestureInsets(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"setMandatorySystemGestureInsets",
@@ -67,7 +67,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setPrivacyIndicatorBounds(android::graphics::Rect arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setPrivacyIndicatorBounds(android::graphics::Rect arg0) const
 	{
 		return callObjectMethod(
 			"setPrivacyIndicatorBounds",
@@ -75,7 +75,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setRoundedCorner(jint arg0, android::view::RoundedCorner arg1)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setRoundedCorner(jint arg0, android::view::RoundedCorner arg1) const
 	{
 		return callObjectMethod(
 			"setRoundedCorner",
@@ -84,7 +84,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setStableInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setStableInsets(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"setStableInsets",
@@ -92,7 +92,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemGestureInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemGestureInsets(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"setSystemGestureInsets",
@@ -100,7 +100,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemWindowInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setSystemWindowInsets(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"setSystemWindowInsets",
@@ -108,7 +108,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setTappableElementInsets(android::graphics::Insets arg0)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setTappableElementInsets(android::graphics::Insets arg0) const
 	{
 		return callObjectMethod(
 			"setTappableElementInsets",
@@ -116,7 +116,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets_Builder WindowInsets_Builder::setVisible(jint arg0, jboolean arg1)
+	android::view::WindowInsets_Builder WindowInsets_Builder::setVisible(jint arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"setVisible",

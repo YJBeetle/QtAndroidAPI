@@ -16,7 +16,7 @@ namespace android::net::ipsec::ike::exceptions
 		) {}
 	
 	// Methods
-	jbyte InvalidMajorVersionException::getMajorVersion()
+	jbyte InvalidMajorVersionException::getMajorVersion() const
 	{
 		return callMethod<jbyte>(
 			"getMajorVersion",

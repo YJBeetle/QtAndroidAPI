@@ -22,9 +22,9 @@ namespace android::telephony
 		SignalStrengthUpdateRequest_Builder();
 		
 		// Methods
-		android::telephony::SignalStrengthUpdateRequest build();
-		android::telephony::SignalStrengthUpdateRequest_Builder setReportingRequestedWhileIdle(jboolean arg0);
-		android::telephony::SignalStrengthUpdateRequest_Builder setSignalThresholdInfos(JObject arg0);
+		android::telephony::SignalStrengthUpdateRequest build() const;
+		android::telephony::SignalStrengthUpdateRequest_Builder setReportingRequestedWhileIdle(jboolean arg0) const;
+		android::telephony::SignalStrengthUpdateRequest_Builder setSignalThresholdInfos(JObject arg0) const;
 	};
 } // namespace android::telephony
 

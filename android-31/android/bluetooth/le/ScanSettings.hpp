@@ -35,14 +35,14 @@ namespace android::bluetooth::le
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getCallbackType();
-		jboolean getLegacy();
-		jint getPhy();
-		jlong getReportDelayMillis();
-		jint getScanMode();
-		jint getScanResultType();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCallbackType() const;
+		jboolean getLegacy() const;
+		jint getPhy() const;
+		jlong getReportDelayMillis() const;
+		jint getScanMode() const;
+		jint getScanResultType() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth::le
 

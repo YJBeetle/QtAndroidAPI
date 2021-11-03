@@ -49,10 +49,10 @@ namespace java::time::chrono
 		static java::time::chrono::JapaneseEra of(jint arg0);
 		static java::time::chrono::JapaneseEra valueOf(JString arg0);
 		static JArray values();
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		jint getValue();
-		java::time::temporal::ValueRange range(JObject arg0);
-		JString toString();
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
+		jint getValue() const;
+		java::time::temporal::ValueRange range(JObject arg0) const;
+		JString toString() const;
 	};
 } // namespace java::time::chrono
 

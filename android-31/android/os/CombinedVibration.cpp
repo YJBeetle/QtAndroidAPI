@@ -37,7 +37,7 @@ namespace android::os
 			"()Landroid/os/CombinedVibration$ParallelCombination;"
 		);
 	}
-	jint CombinedVibration::describeContents()
+	jint CombinedVibration::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",

@@ -26,13 +26,13 @@ namespace android::view::inputmethod
 		CompletionInfo(jlong arg0, jint arg1, JString arg2, JString arg3);
 		
 		// Methods
-		jint describeContents();
-		jlong getId();
-		JString getLabel();
-		jint getPosition();
-		JString getText();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getId() const;
+		JString getLabel() const;
+		jint getPosition() const;
+		JString getText() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

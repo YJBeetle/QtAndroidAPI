@@ -28,21 +28,21 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	jint TextValueSanitizer::describeContents()
+	jint TextValueSanitizer::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString TextValueSanitizer::toString()
+	JString TextValueSanitizer::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TextValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TextValueSanitizer::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

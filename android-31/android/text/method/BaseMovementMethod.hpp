@@ -30,15 +30,15 @@ namespace android::text::method
 		BaseMovementMethod();
 		
 		// Methods
-		jboolean canSelectArbitrarily();
-		void initialize(android::widget::TextView arg0, JObject arg1);
-		jboolean onGenericMotionEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
-		jboolean onKeyDown(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyOther(android::widget::TextView arg0, JObject arg1, android::view::KeyEvent arg2);
-		jboolean onKeyUp(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
-		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2);
-		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
-		jboolean onTrackballEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
+		jboolean canSelectArbitrarily() const;
+		void initialize(android::widget::TextView arg0, JObject arg1) const;
+		jboolean onGenericMotionEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
+		jboolean onKeyDown(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		jboolean onKeyOther(android::widget::TextView arg0, JObject arg1, android::view::KeyEvent arg2) const;
+		jboolean onKeyUp(android::widget::TextView arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3) const;
+		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2) const;
+		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
+		jboolean onTrackballEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2) const;
 	};
 } // namespace android::text::method
 

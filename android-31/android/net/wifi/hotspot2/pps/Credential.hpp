@@ -43,25 +43,25 @@ namespace android::net::wifi::hotspot2::pps
 		Credential(android::net::wifi::hotspot2::pps::Credential &arg0);
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		java::security::cert::X509Certificate getCaCertificate();
-		android::net::wifi::hotspot2::pps::Credential_CertificateCredential getCertCredential();
-		JArray getClientCertificateChain();
-		JObject getClientPrivateKey();
-		JString getRealm();
-		android::net::wifi::hotspot2::pps::Credential_SimCredential getSimCredential();
-		android::net::wifi::hotspot2::pps::Credential_UserCredential getUserCredential();
-		jint hashCode();
-		void setCaCertificate(java::security::cert::X509Certificate arg0);
-		void setCertCredential(android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0);
-		void setClientCertificateChain(JArray arg0);
-		void setClientPrivateKey(JObject arg0);
-		void setRealm(JString arg0);
-		void setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0);
-		void setUserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		java::security::cert::X509Certificate getCaCertificate() const;
+		android::net::wifi::hotspot2::pps::Credential_CertificateCredential getCertCredential() const;
+		JArray getClientCertificateChain() const;
+		JObject getClientPrivateKey() const;
+		JString getRealm() const;
+		android::net::wifi::hotspot2::pps::Credential_SimCredential getSimCredential() const;
+		android::net::wifi::hotspot2::pps::Credential_UserCredential getUserCredential() const;
+		jint hashCode() const;
+		void setCaCertificate(java::security::cert::X509Certificate arg0) const;
+		void setCertCredential(android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0) const;
+		void setClientCertificateChain(JArray arg0) const;
+		void setClientPrivateKey(JObject arg0) const;
+		void setRealm(JString arg0) const;
+		void setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0) const;
+		void setUserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi::hotspot2::pps
 

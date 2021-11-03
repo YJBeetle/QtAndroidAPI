@@ -17,7 +17,7 @@ namespace android::security::identity
 		AccessControlProfileId(jint arg0);
 		
 		// Methods
-		jint getId();
+		jint getId() const;
 	};
 } // namespace android::security::identity
 

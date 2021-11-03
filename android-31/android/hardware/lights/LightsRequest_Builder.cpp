@@ -18,7 +18,7 @@ namespace android::hardware::lights
 		) {}
 	
 	// Methods
-	android::hardware::lights::LightsRequest_Builder LightsRequest_Builder::addLight(android::hardware::lights::Light arg0, android::hardware::lights::LightState arg1)
+	android::hardware::lights::LightsRequest_Builder LightsRequest_Builder::addLight(android::hardware::lights::Light arg0, android::hardware::lights::LightState arg1) const
 	{
 		return callObjectMethod(
 			"addLight",
@@ -27,14 +27,14 @@ namespace android::hardware::lights
 			arg1.object()
 		);
 	}
-	android::hardware::lights::LightsRequest LightsRequest_Builder::build()
+	android::hardware::lights::LightsRequest LightsRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/hardware/lights/LightsRequest;"
 		);
 	}
-	android::hardware::lights::LightsRequest_Builder LightsRequest_Builder::clearLight(android::hardware::lights::Light arg0)
+	android::hardware::lights::LightsRequest_Builder LightsRequest_Builder::clearLight(android::hardware::lights::Light arg0) const
 	{
 		return callObjectMethod(
 			"clearLight",

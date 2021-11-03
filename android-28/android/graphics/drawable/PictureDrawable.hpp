@@ -30,14 +30,14 @@ namespace android::graphics::drawable
 		PictureDrawable(android::graphics::Picture arg0);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
-		jint getIntrinsicHeight();
-		jint getIntrinsicWidth();
-		jint getOpacity();
-		android::graphics::Picture getPicture();
-		void setAlpha(jint arg0);
-		void setColorFilter(android::graphics::ColorFilter arg0);
-		void setPicture(android::graphics::Picture arg0);
+		void draw(android::graphics::Canvas arg0) const;
+		jint getIntrinsicHeight() const;
+		jint getIntrinsicWidth() const;
+		jint getOpacity() const;
+		android::graphics::Picture getPicture() const;
+		void setAlpha(jint arg0) const;
+		void setColorFilter(android::graphics::ColorFilter arg0) const;
+		void setPicture(android::graphics::Picture arg0) const;
 	};
 } // namespace android::graphics::drawable
 

@@ -26,14 +26,14 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	jint PKIXBuilderParameters::getMaxPathLength()
+	jint PKIXBuilderParameters::getMaxPathLength() const
 	{
 		return callMethod<jint>(
 			"getMaxPathLength",
 			"()I"
 		);
 	}
-	void PKIXBuilderParameters::setMaxPathLength(jint arg0)
+	void PKIXBuilderParameters::setMaxPathLength(jint arg0) const
 	{
 		callMethod<void>(
 			"setMaxPathLength",
@@ -41,7 +41,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	JString PKIXBuilderParameters::toString()
+	JString PKIXBuilderParameters::toString() const
 	{
 		return callObjectMethod(
 			"toString",

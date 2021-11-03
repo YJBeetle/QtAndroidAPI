@@ -45,7 +45,7 @@ namespace java::time::zone
 			arg4.object()
 		);
 	}
-	jboolean ZoneRules::equals(JObject arg0)
+	jboolean ZoneRules::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -53,7 +53,7 @@ namespace java::time::zone
 			arg0.object<jobject>()
 		);
 	}
-	java::time::Duration ZoneRules::getDaylightSavings(java::time::Instant arg0)
+	java::time::Duration ZoneRules::getDaylightSavings(java::time::Instant arg0) const
 	{
 		return callObjectMethod(
 			"getDaylightSavings",
@@ -61,7 +61,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::ZoneOffset ZoneRules::getOffset(java::time::Instant arg0)
+	java::time::ZoneOffset ZoneRules::getOffset(java::time::Instant arg0) const
 	{
 		return callObjectMethod(
 			"getOffset",
@@ -69,7 +69,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::ZoneOffset ZoneRules::getOffset(java::time::LocalDateTime arg0)
+	java::time::ZoneOffset ZoneRules::getOffset(java::time::LocalDateTime arg0) const
 	{
 		return callObjectMethod(
 			"getOffset",
@@ -77,7 +77,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::ZoneOffset ZoneRules::getStandardOffset(java::time::Instant arg0)
+	java::time::ZoneOffset ZoneRules::getStandardOffset(java::time::Instant arg0) const
 	{
 		return callObjectMethod(
 			"getStandardOffset",
@@ -85,7 +85,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::zone::ZoneOffsetTransition ZoneRules::getTransition(java::time::LocalDateTime arg0)
+	java::time::zone::ZoneOffsetTransition ZoneRules::getTransition(java::time::LocalDateTime arg0) const
 	{
 		return callObjectMethod(
 			"getTransition",
@@ -93,21 +93,21 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	JObject ZoneRules::getTransitionRules()
+	JObject ZoneRules::getTransitionRules() const
 	{
 		return callObjectMethod(
 			"getTransitionRules",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ZoneRules::getTransitions()
+	JObject ZoneRules::getTransitions() const
 	{
 		return callObjectMethod(
 			"getTransitions",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject ZoneRules::getValidOffsets(java::time::LocalDateTime arg0)
+	JObject ZoneRules::getValidOffsets(java::time::LocalDateTime arg0) const
 	{
 		return callObjectMethod(
 			"getValidOffsets",
@@ -115,14 +115,14 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jint ZoneRules::hashCode()
+	jint ZoneRules::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean ZoneRules::isDaylightSavings(java::time::Instant arg0)
+	jboolean ZoneRules::isDaylightSavings(java::time::Instant arg0) const
 	{
 		return callMethod<jboolean>(
 			"isDaylightSavings",
@@ -130,14 +130,14 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	jboolean ZoneRules::isFixedOffset()
+	jboolean ZoneRules::isFixedOffset() const
 	{
 		return callMethod<jboolean>(
 			"isFixedOffset",
 			"()Z"
 		);
 	}
-	jboolean ZoneRules::isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1)
+	jboolean ZoneRules::isValidOffset(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1) const
 	{
 		return callMethod<jboolean>(
 			"isValidOffset",
@@ -146,7 +146,7 @@ namespace java::time::zone
 			arg1.object()
 		);
 	}
-	java::time::zone::ZoneOffsetTransition ZoneRules::nextTransition(java::time::Instant arg0)
+	java::time::zone::ZoneOffsetTransition ZoneRules::nextTransition(java::time::Instant arg0) const
 	{
 		return callObjectMethod(
 			"nextTransition",
@@ -154,7 +154,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::zone::ZoneOffsetTransition ZoneRules::previousTransition(java::time::Instant arg0)
+	java::time::zone::ZoneOffsetTransition ZoneRules::previousTransition(java::time::Instant arg0) const
 	{
 		return callObjectMethod(
 			"previousTransition",
@@ -162,7 +162,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	JString ZoneRules::toString()
+	JString ZoneRules::toString() const
 	{
 		return callObjectMethod(
 			"toString",

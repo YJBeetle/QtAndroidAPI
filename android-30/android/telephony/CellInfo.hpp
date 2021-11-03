@@ -38,17 +38,17 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getCellConnectionStatus();
-		android::telephony::CellIdentity getCellIdentity();
-		android::telephony::CellSignalStrength getCellSignalStrength();
-		jlong getTimeStamp();
-		jlong getTimestampMillis();
-		jint hashCode();
-		jboolean isRegistered();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getCellConnectionStatus() const;
+		android::telephony::CellIdentity getCellIdentity() const;
+		android::telephony::CellSignalStrength getCellSignalStrength() const;
+		jlong getTimeStamp() const;
+		jlong getTimestampMillis() const;
+		jint hashCode() const;
+		jboolean isRegistered() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

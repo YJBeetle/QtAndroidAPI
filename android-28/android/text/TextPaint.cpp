@@ -60,7 +60,7 @@ namespace android::text
 		) {}
 	
 	// Methods
-	void TextPaint::set(android::text::TextPaint arg0)
+	void TextPaint::set(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"set",

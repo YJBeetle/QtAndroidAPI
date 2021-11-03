@@ -48,14 +48,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	jint NetworkScanRequest::describeContents()
+	jint NetworkScanRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkScanRequest::equals(JObject arg0)
+	jboolean NetworkScanRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,63 +63,63 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jboolean NetworkScanRequest::getIncrementalResults()
+	jboolean NetworkScanRequest::getIncrementalResults() const
 	{
 		return callMethod<jboolean>(
 			"getIncrementalResults",
 			"()Z"
 		);
 	}
-	jint NetworkScanRequest::getIncrementalResultsPeriodicity()
+	jint NetworkScanRequest::getIncrementalResultsPeriodicity() const
 	{
 		return callMethod<jint>(
 			"getIncrementalResultsPeriodicity",
 			"()I"
 		);
 	}
-	jint NetworkScanRequest::getMaxSearchTime()
+	jint NetworkScanRequest::getMaxSearchTime() const
 	{
 		return callMethod<jint>(
 			"getMaxSearchTime",
 			"()I"
 		);
 	}
-	java::util::ArrayList NetworkScanRequest::getPlmns()
+	java::util::ArrayList NetworkScanRequest::getPlmns() const
 	{
 		return callObjectMethod(
 			"getPlmns",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jint NetworkScanRequest::getScanType()
+	jint NetworkScanRequest::getScanType() const
 	{
 		return callMethod<jint>(
 			"getScanType",
 			"()I"
 		);
 	}
-	jint NetworkScanRequest::getSearchPeriodicity()
+	jint NetworkScanRequest::getSearchPeriodicity() const
 	{
 		return callMethod<jint>(
 			"getSearchPeriodicity",
 			"()I"
 		);
 	}
-	JArray NetworkScanRequest::getSpecifiers()
+	JArray NetworkScanRequest::getSpecifiers() const
 	{
 		return callObjectMethod(
 			"getSpecifiers",
 			"()[Landroid/telephony/RadioAccessSpecifier;"
 		);
 	}
-	jint NetworkScanRequest::hashCode()
+	jint NetworkScanRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void NetworkScanRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkScanRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -21,7 +21,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::SearchResult_Builder SearchResult_Builder::addMatchInfo(android::app::appsearch::SearchResult_MatchInfo arg0)
+	android::app::appsearch::SearchResult_Builder SearchResult_Builder::addMatchInfo(android::app::appsearch::SearchResult_MatchInfo arg0) const
 	{
 		return callObjectMethod(
 			"addMatchInfo",
@@ -29,14 +29,14 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchResult SearchResult_Builder::build()
+	android::app::appsearch::SearchResult SearchResult_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/SearchResult;"
 		);
 	}
-	android::app::appsearch::SearchResult_Builder SearchResult_Builder::setGenericDocument(android::app::appsearch::GenericDocument arg0)
+	android::app::appsearch::SearchResult_Builder SearchResult_Builder::setGenericDocument(android::app::appsearch::GenericDocument arg0) const
 	{
 		return callObjectMethod(
 			"setGenericDocument",
@@ -44,7 +44,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchResult_Builder SearchResult_Builder::setRankingSignal(jdouble arg0)
+	android::app::appsearch::SearchResult_Builder SearchResult_Builder::setRankingSignal(jdouble arg0) const
 	{
 		return callObjectMethod(
 			"setRankingSignal",

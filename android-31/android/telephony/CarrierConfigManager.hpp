@@ -306,10 +306,10 @@ namespace android::telephony
 		
 		// Methods
 		static jboolean isConfigForIdentifiedCarrier(android::os::PersistableBundle arg0);
-		android::os::PersistableBundle getConfig();
-		android::os::PersistableBundle getConfigByComponentForSubId(JString arg0, jint arg1);
-		android::os::PersistableBundle getConfigForSubId(jint arg0);
-		void notifyConfigChangedForSubId(jint arg0);
+		android::os::PersistableBundle getConfig() const;
+		android::os::PersistableBundle getConfigByComponentForSubId(JString arg0, jint arg1) const;
+		android::os::PersistableBundle getConfigForSubId(jint arg0) const;
+		void notifyConfigChangedForSubId(jint arg0) const;
 	};
 } // namespace android::telephony
 

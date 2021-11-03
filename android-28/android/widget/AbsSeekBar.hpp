@@ -50,32 +50,32 @@ namespace android::widget
 		AbsSeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		JString getAccessibilityClassName();
-		jint getKeyProgressIncrement();
-		jboolean getSplitTrack();
-		android::graphics::drawable::Drawable getThumb();
-		jint getThumbOffset();
-		android::content::res::ColorStateList getThumbTintList();
-		android::graphics::PorterDuff_Mode getThumbTintMode();
-		android::graphics::drawable::Drawable getTickMark();
-		android::content::res::ColorStateList getTickMarkTintList();
-		android::graphics::PorterDuff_Mode getTickMarkTintMode();
-		void jumpDrawablesToCurrentState();
-		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
-		void onRtlPropertiesChanged(jint arg0);
-		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setKeyProgressIncrement(jint arg0);
-		void setMax(jint arg0);
-		void setMin(jint arg0);
-		void setSplitTrack(jboolean arg0);
-		void setThumb(android::graphics::drawable::Drawable arg0);
-		void setThumbOffset(jint arg0);
-		void setThumbTintList(android::content::res::ColorStateList arg0);
-		void setThumbTintMode(android::graphics::PorterDuff_Mode arg0);
-		void setTickMark(android::graphics::drawable::Drawable arg0);
-		void setTickMarkTintList(android::content::res::ColorStateList arg0);
-		void setTickMarkTintMode(android::graphics::PorterDuff_Mode arg0);
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1) const;
+		JString getAccessibilityClassName() const;
+		jint getKeyProgressIncrement() const;
+		jboolean getSplitTrack() const;
+		android::graphics::drawable::Drawable getThumb() const;
+		jint getThumbOffset() const;
+		android::content::res::ColorStateList getThumbTintList() const;
+		android::graphics::PorterDuff_Mode getThumbTintMode() const;
+		android::graphics::drawable::Drawable getTickMark() const;
+		android::content::res::ColorStateList getTickMarkTintList() const;
+		android::graphics::PorterDuff_Mode getTickMarkTintMode() const;
+		void jumpDrawablesToCurrentState() const;
+		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1) const;
+		void onRtlPropertiesChanged(jint arg0) const;
+		jboolean onTouchEvent(android::view::MotionEvent arg0) const;
+		void setKeyProgressIncrement(jint arg0) const;
+		void setMax(jint arg0) const;
+		void setMin(jint arg0) const;
+		void setSplitTrack(jboolean arg0) const;
+		void setThumb(android::graphics::drawable::Drawable arg0) const;
+		void setThumbOffset(jint arg0) const;
+		void setThumbTintList(android::content::res::ColorStateList arg0) const;
+		void setThumbTintMode(android::graphics::PorterDuff_Mode arg0) const;
+		void setTickMark(android::graphics::drawable::Drawable arg0) const;
+		void setTickMarkTintList(android::content::res::ColorStateList arg0) const;
+		void setTickMarkTintMode(android::graphics::PorterDuff_Mode arg0) const;
 	};
 } // namespace android::widget
 

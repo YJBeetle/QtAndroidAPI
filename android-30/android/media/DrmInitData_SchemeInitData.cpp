@@ -43,7 +43,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean DrmInitData_SchemeInitData::equals(JObject arg0)
+	jboolean DrmInitData_SchemeInitData::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,7 +51,7 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint DrmInitData_SchemeInitData::hashCode()
+	jint DrmInitData_SchemeInitData::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

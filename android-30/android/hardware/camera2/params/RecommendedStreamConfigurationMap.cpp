@@ -63,7 +63,7 @@ namespace android::hardware::camera2::params
 	// Constructors
 	
 	// Methods
-	JObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0) const
 	{
 		return callObjectMethod(
 			"getHighResolutionOutputSizes",
@@ -71,14 +71,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges() const
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRanges",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0)
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(android::util::Size arg0) const
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoFpsRangesFor",
@@ -86,14 +86,14 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes() const
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizes",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0)
+	JObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(android::util::Range arg0) const
 	{
 		return callObjectMethod(
 			"getHighSpeedVideoSizesFor",
@@ -101,14 +101,14 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getInputFormats()
+	JObject RecommendedStreamConfigurationMap::getInputFormats() const
 	{
 		return callObjectMethod(
 			"getInputFormats",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getInputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getInputSizes(jint arg0) const
 	{
 		return callObjectMethod(
 			"getInputSizes",
@@ -116,14 +116,14 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getOutputFormats()
+	JObject RecommendedStreamConfigurationMap::getOutputFormats() const
 	{
 		return callObjectMethod(
 			"getOutputFormats",
 			"()Ljava/util/Set;"
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jint arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jint arg0, android::util::Size arg1) const
 	{
 		return callMethod<jlong>(
 			"getOutputMinFrameDuration",
@@ -132,7 +132,7 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(JClass arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(JClass arg0, android::util::Size arg1) const
 	{
 		return callMethod<jlong>(
 			"getOutputMinFrameDuration",
@@ -141,7 +141,7 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0) const
 	{
 		return callObjectMethod(
 			"getOutputSizes",
@@ -149,7 +149,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getOutputSizes(JClass arg0)
+	JObject RecommendedStreamConfigurationMap::getOutputSizes(JClass arg0) const
 	{
 		return callObjectMethod(
 			"getOutputSizes",
@@ -157,7 +157,7 @@ namespace android::hardware::camera2::params
 			arg0.object<jclass>()
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jint arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jint arg0, android::util::Size arg1) const
 	{
 		return callMethod<jlong>(
 			"getOutputStallDuration",
@@ -166,7 +166,7 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(JClass arg0, android::util::Size arg1)
+	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(JClass arg0, android::util::Size arg1) const
 	{
 		return callMethod<jlong>(
 			"getOutputStallDuration",
@@ -175,14 +175,14 @@ namespace android::hardware::camera2::params
 			arg1.object()
 		);
 	}
-	jint RecommendedStreamConfigurationMap::getRecommendedUseCase()
+	jint RecommendedStreamConfigurationMap::getRecommendedUseCase() const
 	{
 		return callMethod<jint>(
 			"getRecommendedUseCase",
 			"()I"
 		);
 	}
-	JObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
+	JObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0) const
 	{
 		return callObjectMethod(
 			"getValidOutputFormatsForInput",
@@ -190,7 +190,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(android::view::Surface arg0)
+	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(android::view::Surface arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOutputSupportedFor",
@@ -198,7 +198,7 @@ namespace android::hardware::camera2::params
 			arg0.object()
 		);
 	}
-	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(jint arg0)
+	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isOutputSupportedFor",

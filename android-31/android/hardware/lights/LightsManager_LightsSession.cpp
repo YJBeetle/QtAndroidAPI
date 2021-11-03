@@ -11,14 +11,14 @@ namespace android::hardware::lights
 	// Constructors
 	
 	// Methods
-	void LightsManager_LightsSession::close()
+	void LightsManager_LightsSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void LightsManager_LightsSession::requestLights(android::hardware::lights::LightsRequest arg0)
+	void LightsManager_LightsSession::requestLights(android::hardware::lights::LightsRequest arg0) const
 	{
 		callMethod<void>(
 			"requestLights",

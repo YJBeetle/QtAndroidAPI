@@ -11,21 +11,21 @@ namespace android::net
 	// Constructors
 	
 	// Methods
-	void IpSecManager_SecurityParameterIndex::close()
+	void IpSecManager_SecurityParameterIndex::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint IpSecManager_SecurityParameterIndex::getSpi()
+	jint IpSecManager_SecurityParameterIndex::getSpi() const
 	{
 		return callMethod<jint>(
 			"getSpi",
 			"()I"
 		);
 	}
-	JString IpSecManager_SecurityParameterIndex::toString()
+	JString IpSecManager_SecurityParameterIndex::toString() const
 	{
 		return callObjectMethod(
 			"toString",

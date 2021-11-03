@@ -37,15 +37,15 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		JByteArray getData();
-		jint getMessageId();
-		jint getStatus();
-		jint getSubmessageId();
-		jint getSvid();
-		jint getType();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JByteArray getData() const;
+		jint getMessageId() const;
+		jint getStatus() const;
+		jint getSubmessageId() const;
+		jint getSvid() const;
+		jint getType() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

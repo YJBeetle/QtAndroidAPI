@@ -53,28 +53,28 @@ namespace javax::net::ssl
 			arg1.object()
 		);
 	}
-	JString KeyManagerFactory::getAlgorithm()
+	JString KeyManagerFactory::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	JArray KeyManagerFactory::getKeyManagers()
+	JArray KeyManagerFactory::getKeyManagers() const
 	{
 		return callObjectMethod(
 			"getKeyManagers",
 			"()[Ljavax/net/ssl/KeyManager;"
 		);
 	}
-	java::security::Provider KeyManagerFactory::getProvider()
+	java::security::Provider KeyManagerFactory::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	void KeyManagerFactory::init(JObject arg0)
+	void KeyManagerFactory::init(JObject arg0) const
 	{
 		callMethod<void>(
 			"init",
@@ -82,7 +82,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void KeyManagerFactory::init(java::security::KeyStore arg0, JCharArray arg1)
+	void KeyManagerFactory::init(java::security::KeyStore arg0, JCharArray arg1) const
 	{
 		callMethod<void>(
 			"init",

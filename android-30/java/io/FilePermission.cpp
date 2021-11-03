@@ -24,7 +24,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jboolean FilePermission::equals(JObject arg0)
+	jboolean FilePermission::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -32,21 +32,21 @@ namespace java::io
 			arg0.object<jobject>()
 		);
 	}
-	JString FilePermission::getActions()
+	JString FilePermission::getActions() const
 	{
 		return callObjectMethod(
 			"getActions",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint FilePermission::hashCode()
+	jint FilePermission::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean FilePermission::implies(java::security::Permission arg0)
+	jboolean FilePermission::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -54,7 +54,7 @@ namespace java::io
 			arg0.object()
 		);
 	}
-	java::security::PermissionCollection FilePermission::newPermissionCollection()
+	java::security::PermissionCollection FilePermission::newPermissionCollection() const
 	{
 		return callObjectMethod(
 			"newPermissionCollection",

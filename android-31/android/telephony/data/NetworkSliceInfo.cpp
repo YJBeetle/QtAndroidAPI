@@ -98,14 +98,14 @@ namespace android::telephony::data
 	// Constructors
 	
 	// Methods
-	jint NetworkSliceInfo::describeContents()
+	jint NetworkSliceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean NetworkSliceInfo::equals(JObject arg0)
+	jboolean NetworkSliceInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -113,56 +113,56 @@ namespace android::telephony::data
 			arg0.object<jobject>()
 		);
 	}
-	jint NetworkSliceInfo::getMappedHplmnSliceDifferentiator()
+	jint NetworkSliceInfo::getMappedHplmnSliceDifferentiator() const
 	{
 		return callMethod<jint>(
 			"getMappedHplmnSliceDifferentiator",
 			"()I"
 		);
 	}
-	jint NetworkSliceInfo::getMappedHplmnSliceServiceType()
+	jint NetworkSliceInfo::getMappedHplmnSliceServiceType() const
 	{
 		return callMethod<jint>(
 			"getMappedHplmnSliceServiceType",
 			"()I"
 		);
 	}
-	jint NetworkSliceInfo::getSliceDifferentiator()
+	jint NetworkSliceInfo::getSliceDifferentiator() const
 	{
 		return callMethod<jint>(
 			"getSliceDifferentiator",
 			"()I"
 		);
 	}
-	jint NetworkSliceInfo::getSliceServiceType()
+	jint NetworkSliceInfo::getSliceServiceType() const
 	{
 		return callMethod<jint>(
 			"getSliceServiceType",
 			"()I"
 		);
 	}
-	jint NetworkSliceInfo::getStatus()
+	jint NetworkSliceInfo::getStatus() const
 	{
 		return callMethod<jint>(
 			"getStatus",
 			"()I"
 		);
 	}
-	jint NetworkSliceInfo::hashCode()
+	jint NetworkSliceInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString NetworkSliceInfo::toString()
+	JString NetworkSliceInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void NetworkSliceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void NetworkSliceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

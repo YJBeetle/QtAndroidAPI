@@ -50,21 +50,21 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	jboolean CursorWindow::allocRow()
+	jboolean CursorWindow::allocRow() const
 	{
 		return callMethod<jboolean>(
 			"allocRow",
 			"()Z"
 		);
 	}
-	void CursorWindow::clear()
+	void CursorWindow::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	void CursorWindow::copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2)
+	void CursorWindow::copyStringToBuffer(jint arg0, jint arg1, android::database::CharArrayBuffer arg2) const
 	{
 		callMethod<void>(
 			"copyStringToBuffer",
@@ -74,21 +74,21 @@ namespace android::database
 			arg2.object()
 		);
 	}
-	jint CursorWindow::describeContents()
+	jint CursorWindow::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void CursorWindow::freeLastRow()
+	void CursorWindow::freeLastRow() const
 	{
 		callMethod<void>(
 			"freeLastRow",
 			"()V"
 		);
 	}
-	JByteArray CursorWindow::getBlob(jint arg0, jint arg1)
+	JByteArray CursorWindow::getBlob(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getBlob",
@@ -97,7 +97,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jdouble CursorWindow::getDouble(jint arg0, jint arg1)
+	jdouble CursorWindow::getDouble(jint arg0, jint arg1) const
 	{
 		return callMethod<jdouble>(
 			"getDouble",
@@ -106,7 +106,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jfloat CursorWindow::getFloat(jint arg0, jint arg1)
+	jfloat CursorWindow::getFloat(jint arg0, jint arg1) const
 	{
 		return callMethod<jfloat>(
 			"getFloat",
@@ -115,7 +115,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jint CursorWindow::getInt(jint arg0, jint arg1)
+	jint CursorWindow::getInt(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getInt",
@@ -124,7 +124,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jlong CursorWindow::getLong(jint arg0, jint arg1)
+	jlong CursorWindow::getLong(jint arg0, jint arg1) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -133,14 +133,14 @@ namespace android::database
 			arg1
 		);
 	}
-	jint CursorWindow::getNumRows()
+	jint CursorWindow::getNumRows() const
 	{
 		return callMethod<jint>(
 			"getNumRows",
 			"()I"
 		);
 	}
-	jshort CursorWindow::getShort(jint arg0, jint arg1)
+	jshort CursorWindow::getShort(jint arg0, jint arg1) const
 	{
 		return callMethod<jshort>(
 			"getShort",
@@ -149,14 +149,14 @@ namespace android::database
 			arg1
 		);
 	}
-	jint CursorWindow::getStartPosition()
+	jint CursorWindow::getStartPosition() const
 	{
 		return callMethod<jint>(
 			"getStartPosition",
 			"()I"
 		);
 	}
-	JString CursorWindow::getString(jint arg0, jint arg1)
+	JString CursorWindow::getString(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"getString",
@@ -165,7 +165,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jint CursorWindow::getType(jint arg0, jint arg1)
+	jint CursorWindow::getType(jint arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getType",
@@ -174,7 +174,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::isBlob(jint arg0, jint arg1)
+	jboolean CursorWindow::isBlob(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isBlob",
@@ -183,7 +183,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::isFloat(jint arg0, jint arg1)
+	jboolean CursorWindow::isFloat(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isFloat",
@@ -192,7 +192,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::isLong(jint arg0, jint arg1)
+	jboolean CursorWindow::isLong(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isLong",
@@ -201,7 +201,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::isNull(jint arg0, jint arg1)
+	jboolean CursorWindow::isNull(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isNull",
@@ -210,7 +210,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::isString(jint arg0, jint arg1)
+	jboolean CursorWindow::isString(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"isString",
@@ -219,7 +219,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::putBlob(JByteArray arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putBlob(JByteArray arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"putBlob",
@@ -229,7 +229,7 @@ namespace android::database
 			arg2
 		);
 	}
-	jboolean CursorWindow::putDouble(jdouble arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putDouble(jdouble arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"putDouble",
@@ -239,7 +239,7 @@ namespace android::database
 			arg2
 		);
 	}
-	jboolean CursorWindow::putLong(jlong arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putLong(jlong arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"putLong",
@@ -249,7 +249,7 @@ namespace android::database
 			arg2
 		);
 	}
-	jboolean CursorWindow::putNull(jint arg0, jint arg1)
+	jboolean CursorWindow::putNull(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"putNull",
@@ -258,7 +258,7 @@ namespace android::database
 			arg1
 		);
 	}
-	jboolean CursorWindow::putString(JString arg0, jint arg1, jint arg2)
+	jboolean CursorWindow::putString(JString arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jboolean>(
 			"putString",
@@ -268,7 +268,7 @@ namespace android::database
 			arg2
 		);
 	}
-	jboolean CursorWindow::setNumColumns(jint arg0)
+	jboolean CursorWindow::setNumColumns(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"setNumColumns",
@@ -276,7 +276,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void CursorWindow::setStartPosition(jint arg0)
+	void CursorWindow::setStartPosition(jint arg0) const
 	{
 		callMethod<void>(
 			"setStartPosition",
@@ -284,14 +284,14 @@ namespace android::database
 			arg0
 		);
 	}
-	JString CursorWindow::toString()
+	JString CursorWindow::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CursorWindow::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CursorWindow::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

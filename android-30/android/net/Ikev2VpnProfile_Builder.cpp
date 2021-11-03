@@ -22,14 +22,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	android::net::Ikev2VpnProfile Ikev2VpnProfile_Builder::build()
+	android::net::Ikev2VpnProfile Ikev2VpnProfile_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/Ikev2VpnProfile;"
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAllowedAlgorithms(JObject arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAllowedAlgorithms(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setAllowedAlgorithms",
@@ -37,7 +37,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, JObject arg1, java::security::cert::X509Certificate arg2)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, JObject arg1, java::security::cert::X509Certificate arg2) const
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",
@@ -47,7 +47,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthPsk(JByteArray arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthPsk(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setAuthPsk",
@@ -55,7 +55,7 @@ namespace android::net
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthUsernamePassword(JString arg0, JString arg1, java::security::cert::X509Certificate arg2)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthUsernamePassword(JString arg0, JString arg1, java::security::cert::X509Certificate arg2) const
 	{
 		return callObjectMethod(
 			"setAuthUsernamePassword",
@@ -65,7 +65,7 @@ namespace android::net
 			arg2.object()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setBypassable(jboolean arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setBypassable(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setBypassable",
@@ -73,7 +73,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setMaxMtu(jint arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setMaxMtu(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxMtu",
@@ -81,7 +81,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setMetered(jboolean arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setMetered(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setMetered",
@@ -89,7 +89,7 @@ namespace android::net
 			arg0
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setProxy(android::net::ProxyInfo arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setProxy(android::net::ProxyInfo arg0) const
 	{
 		return callObjectMethod(
 			"setProxy",

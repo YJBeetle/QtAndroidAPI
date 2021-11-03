@@ -20,11 +20,11 @@ namespace android::text
 		TextUtils_SimpleStringSplitter(jchar arg0);
 		
 		// Methods
-		jboolean hasNext();
-		JObject iterator();
-		JString next();
-		void remove();
-		void setString(JString arg0);
+		jboolean hasNext() const;
+		JObject iterator() const;
+		JString next() const;
+		void remove() const;
+		void setString(JString arg0) const;
 	};
 } // namespace android::text
 

@@ -28,7 +28,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void ViewAnimator::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void ViewAnimator::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -38,63 +38,63 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JString ViewAnimator::getAccessibilityClassName()
+	JString ViewAnimator::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jboolean ViewAnimator::getAnimateFirstView()
+	jboolean ViewAnimator::getAnimateFirstView() const
 	{
 		return callMethod<jboolean>(
 			"getAnimateFirstView",
 			"()Z"
 		);
 	}
-	jint ViewAnimator::getBaseline()
+	jint ViewAnimator::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	android::view::View ViewAnimator::getCurrentView()
+	android::view::View ViewAnimator::getCurrentView() const
 	{
 		return callObjectMethod(
 			"getCurrentView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint ViewAnimator::getDisplayedChild()
+	jint ViewAnimator::getDisplayedChild() const
 	{
 		return callMethod<jint>(
 			"getDisplayedChild",
 			"()I"
 		);
 	}
-	android::view::animation::Animation ViewAnimator::getInAnimation()
+	android::view::animation::Animation ViewAnimator::getInAnimation() const
 	{
 		return callObjectMethod(
 			"getInAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	android::view::animation::Animation ViewAnimator::getOutAnimation()
+	android::view::animation::Animation ViewAnimator::getOutAnimation() const
 	{
 		return callObjectMethod(
 			"getOutAnimation",
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	void ViewAnimator::removeAllViews()
+	void ViewAnimator::removeAllViews() const
 	{
 		callMethod<void>(
 			"removeAllViews",
 			"()V"
 		);
 	}
-	void ViewAnimator::removeView(android::view::View arg0)
+	void ViewAnimator::removeView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"removeView",
@@ -102,7 +102,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ViewAnimator::removeViewAt(jint arg0)
+	void ViewAnimator::removeViewAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeViewAt",
@@ -110,7 +110,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ViewAnimator::removeViewInLayout(android::view::View arg0)
+	void ViewAnimator::removeViewInLayout(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"removeViewInLayout",
@@ -118,7 +118,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ViewAnimator::removeViews(jint arg0, jint arg1)
+	void ViewAnimator::removeViews(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"removeViews",
@@ -127,7 +127,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ViewAnimator::removeViewsInLayout(jint arg0, jint arg1)
+	void ViewAnimator::removeViewsInLayout(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"removeViewsInLayout",
@@ -136,7 +136,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ViewAnimator::setAnimateFirstView(jboolean arg0)
+	void ViewAnimator::setAnimateFirstView(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAnimateFirstView",
@@ -144,7 +144,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ViewAnimator::setDisplayedChild(jint arg0)
+	void ViewAnimator::setDisplayedChild(jint arg0) const
 	{
 		callMethod<void>(
 			"setDisplayedChild",
@@ -152,7 +152,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ViewAnimator::setInAnimation(android::view::animation::Animation arg0)
+	void ViewAnimator::setInAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"setInAnimation",
@@ -160,7 +160,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ViewAnimator::setInAnimation(android::content::Context arg0, jint arg1)
+	void ViewAnimator::setInAnimation(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setInAnimation",
@@ -169,7 +169,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ViewAnimator::setOutAnimation(android::view::animation::Animation arg0)
+	void ViewAnimator::setOutAnimation(android::view::animation::Animation arg0) const
 	{
 		callMethod<void>(
 			"setOutAnimation",
@@ -177,7 +177,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ViewAnimator::setOutAnimation(android::content::Context arg0, jint arg1)
+	void ViewAnimator::setOutAnimation(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setOutAnimation",
@@ -186,14 +186,14 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ViewAnimator::showNext()
+	void ViewAnimator::showNext() const
 	{
 		callMethod<void>(
 			"showNext",
 			"()V"
 		);
 	}
-	void ViewAnimator::showPrevious()
+	void ViewAnimator::showPrevious() const
 	{
 		callMethod<void>(
 			"showPrevious",

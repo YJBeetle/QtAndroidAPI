@@ -25,7 +25,7 @@ namespace android::view::accessibility
 		) {}
 	
 	// Methods
-	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3)
+	void AccessibilityNodeProvider::addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, JString arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"addExtraDataToAccessibilityNodeInfo",
@@ -36,7 +36,7 @@ namespace android::view::accessibility
 			arg3.object()
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::createAccessibilityNodeInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"createAccessibilityNodeInfo",
@@ -44,7 +44,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	JObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(JString arg0, jint arg1)
+	JObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(JString arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
@@ -53,7 +53,7 @@ namespace android::view::accessibility
 			arg1
 		);
 	}
-	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::findFocus(jint arg0)
+	android::view::accessibility::AccessibilityNodeInfo AccessibilityNodeProvider::findFocus(jint arg0) const
 	{
 		return callObjectMethod(
 			"findFocus",
@@ -61,7 +61,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	jboolean AccessibilityNodeProvider::performAction(jint arg0, jint arg1, android::os::Bundle arg2)
+	jboolean AccessibilityNodeProvider::performAction(jint arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callMethod<jboolean>(
 			"performAction",

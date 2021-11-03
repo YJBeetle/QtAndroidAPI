@@ -32,21 +32,21 @@ namespace android::database::sqlite
 		) {}
 	
 	// Methods
-	void SQLiteCursor::close()
+	void SQLiteCursor::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void SQLiteCursor::deactivate()
+	void SQLiteCursor::deactivate() const
 	{
 		callMethod<void>(
 			"deactivate",
 			"()V"
 		);
 	}
-	jint SQLiteCursor::getColumnIndex(JString arg0)
+	jint SQLiteCursor::getColumnIndex(JString arg0) const
 	{
 		return callMethod<jint>(
 			"getColumnIndex",
@@ -54,28 +54,28 @@ namespace android::database::sqlite
 			arg0.object<jstring>()
 		);
 	}
-	JArray SQLiteCursor::getColumnNames()
+	JArray SQLiteCursor::getColumnNames() const
 	{
 		return callObjectMethod(
 			"getColumnNames",
 			"()[Ljava/lang/String;"
 		);
 	}
-	jint SQLiteCursor::getCount()
+	jint SQLiteCursor::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteCursor::getDatabase()
+	android::database::sqlite::SQLiteDatabase SQLiteCursor::getDatabase() const
 	{
 		return callObjectMethod(
 			"getDatabase",
 			"()Landroid/database/sqlite/SQLiteDatabase;"
 		);
 	}
-	jboolean SQLiteCursor::onMove(jint arg0, jint arg1)
+	jboolean SQLiteCursor::onMove(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMove",
@@ -84,14 +84,14 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	jboolean SQLiteCursor::requery()
+	jboolean SQLiteCursor::requery() const
 	{
 		return callMethod<jboolean>(
 			"requery",
 			"()Z"
 		);
 	}
-	void SQLiteCursor::setFillWindowForwardOnly(jboolean arg0)
+	void SQLiteCursor::setFillWindowForwardOnly(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFillWindowForwardOnly",
@@ -99,7 +99,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteCursor::setSelectionArguments(JArray arg0)
+	void SQLiteCursor::setSelectionArguments(JArray arg0) const
 	{
 		callMethod<void>(
 			"setSelectionArguments",
@@ -107,7 +107,7 @@ namespace android::database::sqlite
 			arg0.object<jarray>()
 		);
 	}
-	void SQLiteCursor::setWindow(android::database::CursorWindow arg0)
+	void SQLiteCursor::setWindow(android::database::CursorWindow arg0) const
 	{
 		callMethod<void>(
 			"setWindow",

@@ -19,14 +19,14 @@ namespace android::view::textclassifier
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextLanguage TextLanguage_Builder::build()
+	android::view::textclassifier::TextLanguage TextLanguage_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLanguage;"
 		);
 	}
-	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::putLocale(android::icu::util::ULocale arg0, jfloat arg1)
+	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::putLocale(android::icu::util::ULocale arg0, jfloat arg1) const
 	{
 		return callObjectMethod(
 			"putLocale",
@@ -35,7 +35,7 @@ namespace android::view::textclassifier
 			arg1
 		);
 	}
-	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setExtras(android::os::Bundle arg0)
+	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -43,7 +43,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setId(JString arg0)
+	android::view::textclassifier::TextLanguage_Builder TextLanguage_Builder::setId(JString arg0) const
 	{
 		return callObjectMethod(
 			"setId",

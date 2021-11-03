@@ -19,14 +19,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::Shape Shape::clone()
+	android::graphics::drawable::shapes::Shape Shape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/Shape;"
 		);
 	}
-	void Shape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void Shape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",
@@ -35,14 +35,14 @@ namespace android::graphics::drawable::shapes
 			arg1.object()
 		);
 	}
-	jfloat Shape::getHeight()
+	jfloat Shape::getHeight() const
 	{
 		return callMethod<jfloat>(
 			"getHeight",
 			"()F"
 		);
 	}
-	void Shape::getOutline(android::graphics::Outline arg0)
+	void Shape::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -50,21 +50,21 @@ namespace android::graphics::drawable::shapes
 			arg0.object()
 		);
 	}
-	jfloat Shape::getWidth()
+	jfloat Shape::getWidth() const
 	{
 		return callMethod<jfloat>(
 			"getWidth",
 			"()F"
 		);
 	}
-	jboolean Shape::hasAlpha()
+	jboolean Shape::hasAlpha() const
 	{
 		return callMethod<jboolean>(
 			"hasAlpha",
 			"()Z"
 		);
 	}
-	void Shape::resize(jfloat arg0, jfloat arg1)
+	void Shape::resize(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"resize",

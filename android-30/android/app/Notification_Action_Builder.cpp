@@ -38,7 +38,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	android::app::Notification_Action_Builder Notification_Action_Builder::addExtras(android::os::Bundle arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::addExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"addExtras",
@@ -46,7 +46,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::addRemoteInput(android::app::RemoteInput arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::addRemoteInput(android::app::RemoteInput arg0) const
 	{
 		return callObjectMethod(
 			"addRemoteInput",
@@ -54,14 +54,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_Action Notification_Action_Builder::build()
+	android::app::Notification_Action Notification_Action_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$Action;"
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::extend(JObject arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::extend(JObject arg0) const
 	{
 		return callObjectMethod(
 			"extend",
@@ -69,14 +69,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::os::Bundle Notification_Action_Builder::getExtras()
+	android::os::Bundle Notification_Action_Builder::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setAllowGeneratedReplies",
@@ -84,7 +84,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::setContextual(jboolean arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setContextual(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setContextual",
@@ -92,7 +92,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::app::Notification_Action_Builder Notification_Action_Builder::setSemanticAction(jint arg0)
+	android::app::Notification_Action_Builder Notification_Action_Builder::setSemanticAction(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSemanticAction",

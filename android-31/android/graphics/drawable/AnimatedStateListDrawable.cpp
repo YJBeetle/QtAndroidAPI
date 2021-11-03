@@ -20,7 +20,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void AnimatedStateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2)
+	void AnimatedStateListDrawable::addState(JIntArray arg0, android::graphics::drawable::Drawable arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addState",
@@ -30,7 +30,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3)
+	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3) const
 	{
 		callMethod<void>(
 			"addTransition",
@@ -41,7 +41,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void AnimatedStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void AnimatedStateListDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -49,7 +49,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -60,28 +60,28 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean AnimatedStateListDrawable::isStateful()
+	jboolean AnimatedStateListDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void AnimatedStateListDrawable::jumpToCurrentState()
+	void AnimatedStateListDrawable::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable AnimatedStateListDrawable::mutate()
+	android::graphics::drawable::Drawable AnimatedStateListDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",

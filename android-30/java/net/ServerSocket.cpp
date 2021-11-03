@@ -53,14 +53,14 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::Socket ServerSocket::accept()
+	java::net::Socket ServerSocket::accept() const
 	{
 		return callObjectMethod(
 			"accept",
 			"()Ljava/net/Socket;"
 		);
 	}
-	void ServerSocket::bind(java::net::SocketAddress arg0)
+	void ServerSocket::bind(java::net::SocketAddress arg0) const
 	{
 		callMethod<void>(
 			"bind",
@@ -68,7 +68,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void ServerSocket::bind(java::net::SocketAddress arg0, jint arg1)
+	void ServerSocket::bind(java::net::SocketAddress arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"bind",
@@ -77,42 +77,42 @@ namespace java::net
 			arg1
 		);
 	}
-	void ServerSocket::close()
+	void ServerSocket::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	java::nio::channels::ServerSocketChannel ServerSocket::getChannel()
+	java::nio::channels::ServerSocketChannel ServerSocket::getChannel() const
 	{
 		return callObjectMethod(
 			"getChannel",
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	java::net::InetAddress ServerSocket::getInetAddress()
+	java::net::InetAddress ServerSocket::getInetAddress() const
 	{
 		return callObjectMethod(
 			"getInetAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint ServerSocket::getLocalPort()
+	jint ServerSocket::getLocalPort() const
 	{
 		return callMethod<jint>(
 			"getLocalPort",
 			"()I"
 		);
 	}
-	java::net::SocketAddress ServerSocket::getLocalSocketAddress()
+	java::net::SocketAddress ServerSocket::getLocalSocketAddress() const
 	{
 		return callObjectMethod(
 			"getLocalSocketAddress",
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	JObject ServerSocket::getOption(JObject arg0)
+	JObject ServerSocket::getOption(JObject arg0) const
 	{
 		return callObjectMethod(
 			"getOption",
@@ -120,42 +120,42 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jint ServerSocket::getReceiveBufferSize()
+	jint ServerSocket::getReceiveBufferSize() const
 	{
 		return callMethod<jint>(
 			"getReceiveBufferSize",
 			"()I"
 		);
 	}
-	jboolean ServerSocket::getReuseAddress()
+	jboolean ServerSocket::getReuseAddress() const
 	{
 		return callMethod<jboolean>(
 			"getReuseAddress",
 			"()Z"
 		);
 	}
-	jint ServerSocket::getSoTimeout()
+	jint ServerSocket::getSoTimeout() const
 	{
 		return callMethod<jint>(
 			"getSoTimeout",
 			"()I"
 		);
 	}
-	jboolean ServerSocket::isBound()
+	jboolean ServerSocket::isBound() const
 	{
 		return callMethod<jboolean>(
 			"isBound",
 			"()Z"
 		);
 	}
-	jboolean ServerSocket::isClosed()
+	jboolean ServerSocket::isClosed() const
 	{
 		return callMethod<jboolean>(
 			"isClosed",
 			"()Z"
 		);
 	}
-	java::net::ServerSocket ServerSocket::setOption(JObject arg0, JObject arg1)
+	java::net::ServerSocket ServerSocket::setOption(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"setOption",
@@ -164,7 +164,7 @@ namespace java::net
 			arg1.object<jobject>()
 		);
 	}
-	void ServerSocket::setPerformancePreferences(jint arg0, jint arg1, jint arg2)
+	void ServerSocket::setPerformancePreferences(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setPerformancePreferences",
@@ -174,7 +174,7 @@ namespace java::net
 			arg2
 		);
 	}
-	void ServerSocket::setReceiveBufferSize(jint arg0)
+	void ServerSocket::setReceiveBufferSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setReceiveBufferSize",
@@ -182,7 +182,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void ServerSocket::setReuseAddress(jboolean arg0)
+	void ServerSocket::setReuseAddress(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setReuseAddress",
@@ -190,7 +190,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void ServerSocket::setSoTimeout(jint arg0)
+	void ServerSocket::setSoTimeout(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoTimeout",
@@ -198,14 +198,14 @@ namespace java::net
 			arg0
 		);
 	}
-	JObject ServerSocket::supportedOptions()
+	JObject ServerSocket::supportedOptions() const
 	{
 		return callObjectMethod(
 			"supportedOptions",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString ServerSocket::toString()
+	JString ServerSocket::toString() const
 	{
 		return callObjectMethod(
 			"toString",

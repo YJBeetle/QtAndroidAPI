@@ -27,7 +27,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	java::io::IOException UncheckedIOException::getCause()
+	java::io::IOException UncheckedIOException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",

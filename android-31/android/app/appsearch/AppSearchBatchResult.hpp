@@ -18,11 +18,11 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JObject getAll();
-		JObject getFailures();
-		JObject getSuccesses();
-		jboolean isSuccess();
-		JString toString();
+		JObject getAll() const;
+		JObject getFailures() const;
+		JObject getSuccesses() const;
+		jboolean isSuccess() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

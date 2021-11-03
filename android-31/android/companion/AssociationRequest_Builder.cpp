@@ -17,7 +17,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	android::companion::AssociationRequest_Builder AssociationRequest_Builder::addDeviceFilter(JObject arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::addDeviceFilter(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addDeviceFilter",
@@ -25,14 +25,14 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	android::companion::AssociationRequest AssociationRequest_Builder::build()
+	android::companion::AssociationRequest AssociationRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/AssociationRequest;"
 		);
 	}
-	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setDeviceProfile(JString arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setDeviceProfile(JString arg0) const
 	{
 		return callObjectMethod(
 			"setDeviceProfile",
@@ -40,7 +40,7 @@ namespace android::companion
 			arg0.object<jstring>()
 		);
 	}
-	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setSingleDevice(jboolean arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::setSingleDevice(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setSingleDevice",

@@ -16,14 +16,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	android::telephony::SignalStrengthUpdateRequest SignalStrengthUpdateRequest_Builder::build()
+	android::telephony::SignalStrengthUpdateRequest SignalStrengthUpdateRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/SignalStrengthUpdateRequest;"
 		);
 	}
-	android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setReportingRequestedWhileIdle(jboolean arg0)
+	android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setReportingRequestedWhileIdle(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setReportingRequestedWhileIdle",
@@ -31,7 +31,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setSignalThresholdInfos(JObject arg0)
+	android::telephony::SignalStrengthUpdateRequest_Builder SignalStrengthUpdateRequest_Builder::setSignalThresholdInfos(JObject arg0) const
 	{
 		return callObjectMethod(
 			"setSignalThresholdInfos",

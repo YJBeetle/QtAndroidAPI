@@ -22,9 +22,9 @@ namespace android::media
 		AudioTrack_StreamEventCallback();
 		
 		// Methods
-		void onDataRequest(android::media::AudioTrack arg0, jint arg1);
-		void onPresentationEnded(android::media::AudioTrack arg0);
-		void onTearDown(android::media::AudioTrack arg0);
+		void onDataRequest(android::media::AudioTrack arg0, jint arg1) const;
+		void onPresentationEnded(android::media::AudioTrack arg0) const;
+		void onTearDown(android::media::AudioTrack arg0) const;
 	};
 } // namespace android::media
 

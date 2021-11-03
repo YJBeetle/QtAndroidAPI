@@ -25,14 +25,14 @@ namespace android::net
 		) {}
 	
 	// Methods
-	JString LocalSocketAddress::getName()
+	JString LocalSocketAddress::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::LocalSocketAddress_Namespace LocalSocketAddress::getNamespace()
+	android::net::LocalSocketAddress_Namespace LocalSocketAddress::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",

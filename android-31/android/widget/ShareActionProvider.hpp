@@ -32,12 +32,12 @@ namespace android::widget
 		ShareActionProvider(android::content::Context arg0);
 		
 		// Methods
-		jboolean hasSubMenu();
-		android::view::View onCreateActionView();
-		void onPrepareSubMenu(JObject arg0);
-		void setOnShareTargetSelectedListener(JObject arg0);
-		void setShareHistoryFileName(JString arg0);
-		void setShareIntent(android::content::Intent arg0);
+		jboolean hasSubMenu() const;
+		android::view::View onCreateActionView() const;
+		void onPrepareSubMenu(JObject arg0) const;
+		void setOnShareTargetSelectedListener(JObject arg0) const;
+		void setShareHistoryFileName(JString arg0) const;
+		void setShareIntent(android::content::Intent arg0) const;
 	};
 } // namespace android::widget
 

@@ -45,20 +45,20 @@ namespace android::service::controls
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::app::PendingIntent getAppIntent();
-		JString getControlId();
-		android::service::controls::templates::ControlTemplate getControlTemplate();
-		android::content::res::ColorStateList getCustomColor();
-		android::graphics::drawable::Icon getCustomIcon();
-		jint getDeviceType();
-		jint getStatus();
-		JString getStatusText();
-		JString getStructure();
-		JString getSubtitle();
-		JString getTitle();
-		JString getZone();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::app::PendingIntent getAppIntent() const;
+		JString getControlId() const;
+		android::service::controls::templates::ControlTemplate getControlTemplate() const;
+		android::content::res::ColorStateList getCustomColor() const;
+		android::graphics::drawable::Icon getCustomIcon() const;
+		jint getDeviceType() const;
+		jint getStatus() const;
+		JString getStatusText() const;
+		JString getStructure() const;
+		JString getSubtitle() const;
+		JString getTitle() const;
+		JString getZone() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::service::controls
 

@@ -12,14 +12,14 @@ namespace javax::xml::validation
 	// Constructors
 	
 	// Methods
-	JObject Validator::getErrorHandler()
+	JObject Validator::getErrorHandler() const
 	{
 		return callObjectMethod(
 			"getErrorHandler",
 			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
-	jboolean Validator::getFeature(JString arg0)
+	jboolean Validator::getFeature(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"getFeature",
@@ -27,7 +27,7 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject Validator::getProperty(JString arg0)
+	JObject Validator::getProperty(JString arg0) const
 	{
 		return callObjectMethod(
 			"getProperty",
@@ -35,21 +35,21 @@ namespace javax::xml::validation
 			arg0.object<jstring>()
 		);
 	}
-	JObject Validator::getResourceResolver()
+	JObject Validator::getResourceResolver() const
 	{
 		return callObjectMethod(
 			"getResourceResolver",
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
-	void Validator::reset()
+	void Validator::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void Validator::setErrorHandler(JObject arg0)
+	void Validator::setErrorHandler(JObject arg0) const
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -57,7 +57,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::setFeature(JString arg0, jboolean arg1)
+	void Validator::setFeature(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"setFeature",
@@ -66,7 +66,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void Validator::setProperty(JString arg0, JObject arg1)
+	void Validator::setProperty(JString arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"setProperty",
@@ -75,7 +75,7 @@ namespace javax::xml::validation
 			arg1.object<jobject>()
 		);
 	}
-	void Validator::setResourceResolver(JObject arg0)
+	void Validator::setResourceResolver(JObject arg0) const
 	{
 		callMethod<void>(
 			"setResourceResolver",
@@ -83,7 +83,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::validate(JObject arg0)
+	void Validator::validate(JObject arg0) const
 	{
 		callMethod<void>(
 			"validate",
@@ -91,7 +91,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::validate(JObject arg0, JObject arg1)
+	void Validator::validate(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"validate",

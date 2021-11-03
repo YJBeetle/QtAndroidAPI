@@ -101,14 +101,14 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	jint SignalThresholdInfo::describeContents()
+	jint SignalThresholdInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean SignalThresholdInfo::equals(JObject arg0)
+	jboolean SignalThresholdInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -116,42 +116,42 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint SignalThresholdInfo::getRadioAccessNetworkType()
+	jint SignalThresholdInfo::getRadioAccessNetworkType() const
 	{
 		return callMethod<jint>(
 			"getRadioAccessNetworkType",
 			"()I"
 		);
 	}
-	jint SignalThresholdInfo::getSignalMeasurementType()
+	jint SignalThresholdInfo::getSignalMeasurementType() const
 	{
 		return callMethod<jint>(
 			"getSignalMeasurementType",
 			"()I"
 		);
 	}
-	JIntArray SignalThresholdInfo::getThresholds()
+	JIntArray SignalThresholdInfo::getThresholds() const
 	{
 		return callObjectMethod(
 			"getThresholds",
 			"()[I"
 		);
 	}
-	jint SignalThresholdInfo::hashCode()
+	jint SignalThresholdInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString SignalThresholdInfo::toString()
+	JString SignalThresholdInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void SignalThresholdInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void SignalThresholdInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -30,19 +30,19 @@ namespace java::security
 		Identity(JString arg0, java::security::IdentityScope arg1);
 		
 		// Methods
-		void addCertificate(JObject arg0);
-		JArray certificates();
-		jboolean equals(JObject arg0);
-		JString getInfo();
-		JString getName();
-		JObject getPublicKey();
-		java::security::IdentityScope getScope();
-		jint hashCode();
-		void removeCertificate(JObject arg0);
-		void setInfo(JString arg0);
-		void setPublicKey(JObject arg0);
-		JString toString();
-		JString toString(jboolean arg0);
+		void addCertificate(JObject arg0) const;
+		JArray certificates() const;
+		jboolean equals(JObject arg0) const;
+		JString getInfo() const;
+		JString getName() const;
+		JObject getPublicKey() const;
+		java::security::IdentityScope getScope() const;
+		jint hashCode() const;
+		void removeCertificate(JObject arg0) const;
+		void setInfo(JString arg0) const;
+		void setPublicKey(JObject arg0) const;
+		JString toString() const;
+		JString toString(jboolean arg0) const;
 	};
 } // namespace java::security
 

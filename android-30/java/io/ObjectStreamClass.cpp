@@ -56,14 +56,14 @@ namespace java::io
 			arg0.object<jclass>()
 		);
 	}
-	JClass ObjectStreamClass::forClass()
+	JClass ObjectStreamClass::forClass() const
 	{
 		return callObjectMethod(
 			"forClass",
 			"()Ljava/lang/Class;"
 		);
 	}
-	java::io::ObjectStreamField ObjectStreamClass::getField(JString arg0)
+	java::io::ObjectStreamField ObjectStreamClass::getField(JString arg0) const
 	{
 		return callObjectMethod(
 			"getField",
@@ -71,28 +71,28 @@ namespace java::io
 			arg0.object<jstring>()
 		);
 	}
-	JArray ObjectStreamClass::getFields()
+	JArray ObjectStreamClass::getFields() const
 	{
 		return callObjectMethod(
 			"getFields",
 			"()[Ljava/io/ObjectStreamField;"
 		);
 	}
-	JString ObjectStreamClass::getName()
+	JString ObjectStreamClass::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong ObjectStreamClass::getSerialVersionUID()
+	jlong ObjectStreamClass::getSerialVersionUID() const
 	{
 		return callMethod<jlong>(
 			"getSerialVersionUID",
 			"()J"
 		);
 	}
-	JString ObjectStreamClass::toString()
+	JString ObjectStreamClass::toString() const
 	{
 		return callObjectMethod(
 			"toString",

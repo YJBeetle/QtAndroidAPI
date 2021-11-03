@@ -32,42 +32,42 @@ namespace java::net
 		) {}
 	
 	// Methods
-	java::net::InetAddress MulticastSocket::getInterface()
+	java::net::InetAddress MulticastSocket::getInterface() const
 	{
 		return callObjectMethod(
 			"getInterface",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jboolean MulticastSocket::getLoopbackMode()
+	jboolean MulticastSocket::getLoopbackMode() const
 	{
 		return callMethod<jboolean>(
 			"getLoopbackMode",
 			"()Z"
 		);
 	}
-	java::net::NetworkInterface MulticastSocket::getNetworkInterface()
+	java::net::NetworkInterface MulticastSocket::getNetworkInterface() const
 	{
 		return callObjectMethod(
 			"getNetworkInterface",
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	jbyte MulticastSocket::getTTL()
+	jbyte MulticastSocket::getTTL() const
 	{
 		return callMethod<jbyte>(
 			"getTTL",
 			"()B"
 		);
 	}
-	jint MulticastSocket::getTimeToLive()
+	jint MulticastSocket::getTimeToLive() const
 	{
 		return callMethod<jint>(
 			"getTimeToLive",
 			"()I"
 		);
 	}
-	void MulticastSocket::joinGroup(java::net::InetAddress arg0)
+	void MulticastSocket::joinGroup(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"joinGroup",
@@ -75,7 +75,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void MulticastSocket::joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1)
+	void MulticastSocket::joinGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
 	{
 		callMethod<void>(
 			"joinGroup",
@@ -84,7 +84,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void MulticastSocket::leaveGroup(java::net::InetAddress arg0)
+	void MulticastSocket::leaveGroup(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"leaveGroup",
@@ -92,7 +92,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void MulticastSocket::leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1)
+	void MulticastSocket::leaveGroup(java::net::SocketAddress arg0, java::net::NetworkInterface arg1) const
 	{
 		callMethod<void>(
 			"leaveGroup",
@@ -101,7 +101,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void MulticastSocket::send(java::net::DatagramPacket arg0, jbyte arg1)
+	void MulticastSocket::send(java::net::DatagramPacket arg0, jbyte arg1) const
 	{
 		callMethod<void>(
 			"send",
@@ -110,7 +110,7 @@ namespace java::net
 			arg1
 		);
 	}
-	void MulticastSocket::setInterface(java::net::InetAddress arg0)
+	void MulticastSocket::setInterface(java::net::InetAddress arg0) const
 	{
 		callMethod<void>(
 			"setInterface",
@@ -118,7 +118,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void MulticastSocket::setLoopbackMode(jboolean arg0)
+	void MulticastSocket::setLoopbackMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLoopbackMode",
@@ -126,7 +126,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void MulticastSocket::setNetworkInterface(java::net::NetworkInterface arg0)
+	void MulticastSocket::setNetworkInterface(java::net::NetworkInterface arg0) const
 	{
 		callMethod<void>(
 			"setNetworkInterface",
@@ -134,7 +134,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	void MulticastSocket::setTTL(jbyte arg0)
+	void MulticastSocket::setTTL(jbyte arg0) const
 	{
 		callMethod<void>(
 			"setTTL",
@@ -142,7 +142,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void MulticastSocket::setTimeToLive(jint arg0)
+	void MulticastSocket::setTimeToLive(jint arg0) const
 	{
 		callMethod<void>(
 			"setTimeToLive",

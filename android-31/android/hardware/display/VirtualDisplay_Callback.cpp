@@ -15,21 +15,21 @@ namespace android::hardware::display
 		) {}
 	
 	// Methods
-	void VirtualDisplay_Callback::onPaused()
+	void VirtualDisplay_Callback::onPaused() const
 	{
 		callMethod<void>(
 			"onPaused",
 			"()V"
 		);
 	}
-	void VirtualDisplay_Callback::onResumed()
+	void VirtualDisplay_Callback::onResumed() const
 	{
 		callMethod<void>(
 			"onResumed",
 			"()V"
 		);
 	}
-	void VirtualDisplay_Callback::onStopped()
+	void VirtualDisplay_Callback::onStopped() const
 	{
 		callMethod<void>(
 			"onStopped",

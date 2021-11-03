@@ -205,7 +205,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::RelativeLayout_LayoutParams RelativeLayout::generateLayoutParams(JObject arg0)
+	android::widget::RelativeLayout_LayoutParams RelativeLayout::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -213,42 +213,42 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString RelativeLayout::getAccessibilityClassName()
+	JString RelativeLayout::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint RelativeLayout::getBaseline()
+	jint RelativeLayout::getBaseline() const
 	{
 		return callMethod<jint>(
 			"getBaseline",
 			"()I"
 		);
 	}
-	jint RelativeLayout::getGravity()
+	jint RelativeLayout::getGravity() const
 	{
 		return callMethod<jint>(
 			"getGravity",
 			"()I"
 		);
 	}
-	jint RelativeLayout::getIgnoreGravity()
+	jint RelativeLayout::getIgnoreGravity() const
 	{
 		return callMethod<jint>(
 			"getIgnoreGravity",
 			"()I"
 		);
 	}
-	void RelativeLayout::requestLayout()
+	void RelativeLayout::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void RelativeLayout::setGravity(jint arg0)
+	void RelativeLayout::setGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setGravity",
@@ -256,7 +256,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RelativeLayout::setHorizontalGravity(jint arg0)
+	void RelativeLayout::setHorizontalGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setHorizontalGravity",
@@ -264,7 +264,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RelativeLayout::setIgnoreGravity(jint arg0)
+	void RelativeLayout::setIgnoreGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setIgnoreGravity",
@@ -272,7 +272,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void RelativeLayout::setVerticalGravity(jint arg0)
+	void RelativeLayout::setVerticalGravity(jint arg0) const
 	{
 		callMethod<void>(
 			"setVerticalGravity",
@@ -280,7 +280,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean RelativeLayout::shouldDelayChildPressedState()
+	jboolean RelativeLayout::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",

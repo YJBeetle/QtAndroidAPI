@@ -24,15 +24,15 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getBasestationId();
-		jint getLatitude();
-		jint getLongitude();
-		jint getNetworkId();
-		jint getSystemId();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean equals(JObject arg0) const;
+		jint getBasestationId() const;
+		jint getLatitude() const;
+		jint getLongitude() const;
+		jint getNetworkId() const;
+		jint getSystemId() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

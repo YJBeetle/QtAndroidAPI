@@ -32,7 +32,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaParser_SeekPoint::equals(JObject arg0)
+	jboolean MediaParser_SeekPoint::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -40,14 +40,14 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint MediaParser_SeekPoint::hashCode()
+	jint MediaParser_SeekPoint::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString MediaParser_SeekPoint::toString()
+	JString MediaParser_SeekPoint::toString() const
 	{
 		return callObjectMethod(
 			"toString",

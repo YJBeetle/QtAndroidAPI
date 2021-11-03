@@ -34,20 +34,20 @@ namespace android::graphics::drawable
 		AnimationDrawable();
 		
 		// Methods
-		void addFrame(android::graphics::drawable::Drawable arg0, jint arg1);
-		jint getDuration(jint arg0);
-		android::graphics::drawable::Drawable getFrame(jint arg0);
-		jint getNumberOfFrames();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		jboolean isOneShot();
-		jboolean isRunning();
-		android::graphics::drawable::Drawable mutate();
-		void run();
-		void setOneShot(jboolean arg0);
-		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void start();
-		void stop();
-		void unscheduleSelf(JObject arg0);
+		void addFrame(android::graphics::drawable::Drawable arg0, jint arg1) const;
+		jint getDuration(jint arg0) const;
+		android::graphics::drawable::Drawable getFrame(jint arg0) const;
+		jint getNumberOfFrames() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		jboolean isOneShot() const;
+		jboolean isRunning() const;
+		android::graphics::drawable::Drawable mutate() const;
+		void run() const;
+		void setOneShot(jboolean arg0) const;
+		jboolean setVisible(jboolean arg0, jboolean arg1) const;
+		void start() const;
+		void stop() const;
+		void unscheduleSelf(JObject arg0) const;
 	};
 } // namespace android::graphics::drawable
 

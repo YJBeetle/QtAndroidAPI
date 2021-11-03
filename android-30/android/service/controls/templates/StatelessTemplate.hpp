@@ -19,7 +19,7 @@ namespace android::service::controls::templates
 		StatelessTemplate(JString arg0);
 		
 		// Methods
-		jint getTemplateType();
+		jint getTemplateType() const;
 	};
 } // namespace android::service::controls::templates
 

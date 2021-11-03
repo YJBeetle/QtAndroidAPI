@@ -57,11 +57,11 @@ namespace android::media
 		MediaCodecInfo_VideoCapabilities_PerformancePoint(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0);
-		jboolean covers(android::media::MediaFormat arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean covers(android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0) const;
+		jboolean covers(android::media::MediaFormat arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

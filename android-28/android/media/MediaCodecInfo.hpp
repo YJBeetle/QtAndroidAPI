@@ -24,10 +24,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(JString arg0);
-		JString getName();
-		JArray getSupportedTypes();
-		jboolean isEncoder();
+		android::media::MediaCodecInfo_CodecCapabilities getCapabilitiesForType(JString arg0) const;
+		JString getName() const;
+		JArray getSupportedTypes() const;
+		jboolean isEncoder() const;
 	};
 } // namespace android::media
 

@@ -24,16 +24,16 @@ namespace android::database::sqlite
 		SQLiteDatabase_OpenParams_Builder(android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		
 		// Methods
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder addOpenFlags(jint arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams build();
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder removeOpenFlags(jint arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setCursorFactory(JObject arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setErrorHandler(JObject arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setIdleConnectionTimeout(jlong arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setJournalMode(JString arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setLookasideConfig(jint arg0, jint arg1);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setOpenFlags(jint arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setSynchronousMode(JString arg0);
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder addOpenFlags(jint arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams build() const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder removeOpenFlags(jint arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setCursorFactory(JObject arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setErrorHandler(JObject arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setIdleConnectionTimeout(jlong arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setJournalMode(JString arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setLookasideConfig(jint arg0, jint arg1) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setOpenFlags(jint arg0) const;
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setSynchronousMode(JString arg0) const;
 	};
 } // namespace android::database::sqlite
 

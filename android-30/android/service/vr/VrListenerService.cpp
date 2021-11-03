@@ -37,7 +37,7 @@ namespace android::service::vr
 			arg1.object()
 		);
 	}
-	JObject VrListenerService::onBind(android::content::Intent arg0)
+	JObject VrListenerService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -45,7 +45,7 @@ namespace android::service::vr
 			arg0.object()
 		);
 	}
-	void VrListenerService::onCurrentVrActivityChanged(android::content::ComponentName arg0)
+	void VrListenerService::onCurrentVrActivityChanged(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"onCurrentVrActivityChanged",

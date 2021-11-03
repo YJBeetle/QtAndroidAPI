@@ -27,8 +27,8 @@ namespace android::app::appsearch
 		AppSearchSchema_Builder(JString arg0);
 		
 		// Methods
-		android::app::appsearch::AppSearchSchema_Builder addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0);
-		android::app::appsearch::AppSearchSchema build();
+		android::app::appsearch::AppSearchSchema_Builder addProperty(android::app::appsearch::AppSearchSchema_PropertyConfig arg0) const;
+		android::app::appsearch::AppSearchSchema build() const;
 	};
 } // namespace android::app::appsearch
 

@@ -24,9 +24,9 @@ namespace android::widget
 		Filter();
 		
 		// Methods
-		JString convertResultToString(JObject arg0);
-		void filter(JString arg0);
-		void filter(JString arg0, JObject arg1);
+		JString convertResultToString(JObject arg0) const;
+		void filter(JString arg0) const;
+		void filter(JString arg0, JObject arg1) const;
 	};
 } // namespace android::widget
 

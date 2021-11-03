@@ -21,10 +21,10 @@ namespace android::view::textclassifier
 		// Constructors
 		
 		// Methods
-		JObject createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0);
-		JObject getTextClassifier();
-		void setTextClassificationSessionFactory(JObject arg0);
-		void setTextClassifier(JObject arg0);
+		JObject createTextClassificationSession(android::view::textclassifier::TextClassificationContext arg0) const;
+		JObject getTextClassifier() const;
+		void setTextClassificationSessionFactory(JObject arg0) const;
+		void setTextClassifier(JObject arg0) const;
 	};
 } // namespace android::view::textclassifier
 

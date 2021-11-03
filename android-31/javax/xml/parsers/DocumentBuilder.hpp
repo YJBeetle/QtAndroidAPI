@@ -34,20 +34,20 @@ namespace javax::xml::parsers
 		// Constructors
 		
 		// Methods
-		JObject getDOMImplementation();
-		javax::xml::validation::Schema getSchema();
-		jboolean isNamespaceAware();
-		jboolean isValidating();
-		jboolean isXIncludeAware();
-		JObject newDocument();
-		JObject parse(java::io::File arg0);
-		JObject parse(java::io::InputStream arg0);
-		JObject parse(JString arg0);
-		JObject parse(org::xml::sax::InputSource arg0);
-		JObject parse(java::io::InputStream arg0, JString arg1);
-		void reset();
-		void setEntityResolver(JObject arg0);
-		void setErrorHandler(JObject arg0);
+		JObject getDOMImplementation() const;
+		javax::xml::validation::Schema getSchema() const;
+		jboolean isNamespaceAware() const;
+		jboolean isValidating() const;
+		jboolean isXIncludeAware() const;
+		JObject newDocument() const;
+		JObject parse(java::io::File arg0) const;
+		JObject parse(java::io::InputStream arg0) const;
+		JObject parse(JString arg0) const;
+		JObject parse(org::xml::sax::InputSource arg0) const;
+		JObject parse(java::io::InputStream arg0, JString arg1) const;
+		void reset() const;
+		void setEntityResolver(JObject arg0) const;
+		void setErrorHandler(JObject arg0) const;
 	};
 } // namespace javax::xml::parsers
 

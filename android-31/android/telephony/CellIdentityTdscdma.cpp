@@ -22,14 +22,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellIdentityTdscdma::describeContents()
+	jint CellIdentityTdscdma::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellIdentityTdscdma::equals(JObject arg0)
+	jboolean CellIdentityTdscdma::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -37,84 +37,84 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JObject CellIdentityTdscdma::getAdditionalPlmns()
+	JObject CellIdentityTdscdma::getAdditionalPlmns() const
 	{
 		return callObjectMethod(
 			"getAdditionalPlmns",
 			"()Ljava/util/Set;"
 		);
 	}
-	jint CellIdentityTdscdma::getCid()
+	jint CellIdentityTdscdma::getCid() const
 	{
 		return callMethod<jint>(
 			"getCid",
 			"()I"
 		);
 	}
-	android::telephony::ClosedSubscriberGroupInfo CellIdentityTdscdma::getClosedSubscriberGroupInfo()
+	android::telephony::ClosedSubscriberGroupInfo CellIdentityTdscdma::getClosedSubscriberGroupInfo() const
 	{
 		return callObjectMethod(
 			"getClosedSubscriberGroupInfo",
 			"()Landroid/telephony/ClosedSubscriberGroupInfo;"
 		);
 	}
-	jint CellIdentityTdscdma::getCpid()
+	jint CellIdentityTdscdma::getCpid() const
 	{
 		return callMethod<jint>(
 			"getCpid",
 			"()I"
 		);
 	}
-	jint CellIdentityTdscdma::getLac()
+	jint CellIdentityTdscdma::getLac() const
 	{
 		return callMethod<jint>(
 			"getLac",
 			"()I"
 		);
 	}
-	JString CellIdentityTdscdma::getMccString()
+	JString CellIdentityTdscdma::getMccString() const
 	{
 		return callObjectMethod(
 			"getMccString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityTdscdma::getMncString()
+	JString CellIdentityTdscdma::getMncString() const
 	{
 		return callObjectMethod(
 			"getMncString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString CellIdentityTdscdma::getMobileNetworkOperator()
+	JString CellIdentityTdscdma::getMobileNetworkOperator() const
 	{
 		return callObjectMethod(
 			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint CellIdentityTdscdma::getUarfcn()
+	jint CellIdentityTdscdma::getUarfcn() const
 	{
 		return callMethod<jint>(
 			"getUarfcn",
 			"()I"
 		);
 	}
-	jint CellIdentityTdscdma::hashCode()
+	jint CellIdentityTdscdma::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CellIdentityTdscdma::toString()
+	JString CellIdentityTdscdma::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CellIdentityTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentityTdscdma::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

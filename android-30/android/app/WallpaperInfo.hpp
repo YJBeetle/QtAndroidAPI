@@ -53,25 +53,25 @@ namespace android::app
 		WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1);
 		
 		// Methods
-		jint describeContents();
-		void dump(JObject arg0, JString arg1);
-		android::content::ComponentName getComponent();
-		JString getPackageName();
-		android::content::pm::ServiceInfo getServiceInfo();
-		JString getServiceName();
-		JString getSettingsActivity();
-		android::net::Uri getSettingsSliceUri();
-		jboolean getShowMetadataInPreview();
-		JString loadAuthor(android::content::pm::PackageManager arg0);
-		JString loadContextDescription(android::content::pm::PackageManager arg0);
-		android::net::Uri loadContextUri(android::content::pm::PackageManager arg0);
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		android::graphics::drawable::Drawable loadThumbnail(android::content::pm::PackageManager arg0);
-		jboolean supportsMultipleDisplays();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		void dump(JObject arg0, JString arg1) const;
+		android::content::ComponentName getComponent() const;
+		JString getPackageName() const;
+		android::content::pm::ServiceInfo getServiceInfo() const;
+		JString getServiceName() const;
+		JString getSettingsActivity() const;
+		android::net::Uri getSettingsSliceUri() const;
+		jboolean getShowMetadataInPreview() const;
+		JString loadAuthor(android::content::pm::PackageManager arg0) const;
+		JString loadContextDescription(android::content::pm::PackageManager arg0) const;
+		android::net::Uri loadContextUri(android::content::pm::PackageManager arg0) const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		android::graphics::drawable::Drawable loadThumbnail(android::content::pm::PackageManager arg0) const;
+		jboolean supportsMultipleDisplays() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

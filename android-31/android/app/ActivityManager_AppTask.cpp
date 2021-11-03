@@ -14,28 +14,28 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	void ActivityManager_AppTask::finishAndRemoveTask()
+	void ActivityManager_AppTask::finishAndRemoveTask() const
 	{
 		callMethod<void>(
 			"finishAndRemoveTask",
 			"()V"
 		);
 	}
-	android::app::ActivityManager_RecentTaskInfo ActivityManager_AppTask::getTaskInfo()
+	android::app::ActivityManager_RecentTaskInfo ActivityManager_AppTask::getTaskInfo() const
 	{
 		return callObjectMethod(
 			"getTaskInfo",
 			"()Landroid/app/ActivityManager$RecentTaskInfo;"
 		);
 	}
-	void ActivityManager_AppTask::moveToFront()
+	void ActivityManager_AppTask::moveToFront() const
 	{
 		callMethod<void>(
 			"moveToFront",
 			"()V"
 		);
 	}
-	void ActivityManager_AppTask::setExcludeFromRecents(jboolean arg0)
+	void ActivityManager_AppTask::setExcludeFromRecents(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setExcludeFromRecents",
@@ -43,7 +43,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActivityManager_AppTask::startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2)
+	void ActivityManager_AppTask::startActivity(android::content::Context arg0, android::content::Intent arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"startActivity",

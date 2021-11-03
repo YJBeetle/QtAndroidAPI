@@ -19,7 +19,7 @@ namespace android::animation
 		ArgbEvaluator();
 		
 		// Methods
-		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2);
+		JObject evaluate(jfloat arg0, JObject arg1, JObject arg2) const;
 	};
 } // namespace android::animation
 

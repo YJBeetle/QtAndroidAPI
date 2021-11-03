@@ -21,14 +21,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint RouteDiscoveryPreference::describeContents()
+	jint RouteDiscoveryPreference::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RouteDiscoveryPreference::equals(JObject arg0)
+	jboolean RouteDiscoveryPreference::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,35 +36,35 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JObject RouteDiscoveryPreference::getPreferredFeatures()
+	JObject RouteDiscoveryPreference::getPreferredFeatures() const
 	{
 		return callObjectMethod(
 			"getPreferredFeatures",
 			"()Ljava/util/List;"
 		);
 	}
-	jint RouteDiscoveryPreference::hashCode()
+	jint RouteDiscoveryPreference::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean RouteDiscoveryPreference::shouldPerformActiveScan()
+	jboolean RouteDiscoveryPreference::shouldPerformActiveScan() const
 	{
 		return callMethod<jboolean>(
 			"shouldPerformActiveScan",
 			"()Z"
 		);
 	}
-	JString RouteDiscoveryPreference::toString()
+	JString RouteDiscoveryPreference::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RouteDiscoveryPreference::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RouteDiscoveryPreference::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -27,7 +27,7 @@ namespace android::app
 		VoiceInteractor_PickOptionRequest(android::app::VoiceInteractor_Prompt arg0, JArray arg1, android::os::Bundle arg2);
 		
 		// Methods
-		void onPickOptionResult(jboolean arg0, JArray arg1, android::os::Bundle arg2);
+		void onPickOptionResult(jboolean arg0, JArray arg1, android::os::Bundle arg2) const;
 	};
 } // namespace android::app
 

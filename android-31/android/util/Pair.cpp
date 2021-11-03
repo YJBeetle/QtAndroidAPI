@@ -43,7 +43,7 @@ namespace android::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Pair::equals(JObject arg0)
+	jboolean Pair::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -51,14 +51,14 @@ namespace android::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Pair::hashCode()
+	jint Pair::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Pair::toString()
+	JString Pair::toString() const
 	{
 		return callObjectMethod(
 			"toString",

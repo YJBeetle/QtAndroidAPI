@@ -107,7 +107,7 @@ namespace java::time
 			arg0.object<jstring>()
 		);
 	}
-	JObject Instant::adjustInto(JObject arg0)
+	JObject Instant::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -115,7 +115,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime Instant::atOffset(java::time::ZoneOffset arg0)
+	java::time::OffsetDateTime Instant::atOffset(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"atOffset",
@@ -123,7 +123,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime Instant::atZone(java::time::ZoneId arg0)
+	java::time::ZonedDateTime Instant::atZone(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"atZone",
@@ -131,7 +131,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Instant::compareTo(JObject arg0)
+	jint Instant::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -139,7 +139,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint Instant::compareTo(java::time::Instant arg0)
+	jint Instant::compareTo(java::time::Instant arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -147,7 +147,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Instant::equals(JObject arg0)
+	jboolean Instant::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -155,7 +155,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint Instant::get(JObject arg0)
+	jint Instant::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -163,14 +163,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Instant::getEpochSecond()
+	jlong Instant::getEpochSecond() const
 	{
 		return callMethod<jlong>(
 			"getEpochSecond",
 			"()J"
 		);
 	}
-	jlong Instant::getLong(JObject arg0)
+	jlong Instant::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -178,21 +178,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint Instant::getNano()
+	jint Instant::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	jint Instant::hashCode()
+	jint Instant::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Instant::isAfter(java::time::Instant arg0)
+	jboolean Instant::isAfter(java::time::Instant arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -200,7 +200,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Instant::isBefore(java::time::Instant arg0)
+	jboolean Instant::isBefore(java::time::Instant arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -208,7 +208,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean Instant::isSupported(JObject arg0)
+	jboolean Instant::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -216,7 +216,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::minus(JObject arg0)
+	java::time::Instant Instant::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -224,7 +224,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::minus(jlong arg0, JObject arg1)
+	java::time::Instant Instant::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -233,7 +233,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Instant Instant::minusMillis(jlong arg0)
+	java::time::Instant Instant::minusMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMillis",
@@ -241,7 +241,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::minusNanos(jlong arg0)
+	java::time::Instant Instant::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -249,7 +249,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::minusSeconds(jlong arg0)
+	java::time::Instant Instant::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -257,7 +257,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::plus(JObject arg0)
+	java::time::Instant Instant::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -265,7 +265,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::plus(jlong arg0, JObject arg1)
+	java::time::Instant Instant::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -274,7 +274,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Instant Instant::plusMillis(jlong arg0)
+	java::time::Instant Instant::plusMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMillis",
@@ -282,7 +282,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::plusNanos(jlong arg0)
+	java::time::Instant Instant::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -290,7 +290,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::Instant Instant::plusSeconds(jlong arg0)
+	java::time::Instant Instant::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -298,7 +298,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject Instant::query(JObject arg0)
+	JObject Instant::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -306,7 +306,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange Instant::range(JObject arg0)
+	java::time::temporal::ValueRange Instant::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -314,21 +314,21 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Instant::toEpochMilli()
+	jlong Instant::toEpochMilli() const
 	{
 		return callMethod<jlong>(
 			"toEpochMilli",
 			"()J"
 		);
 	}
-	JString Instant::toString()
+	JString Instant::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::Instant Instant::truncatedTo(JObject arg0)
+	java::time::Instant Instant::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -336,7 +336,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong Instant::until(JObject arg0, JObject arg1)
+	jlong Instant::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -345,7 +345,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Instant Instant::with(JObject arg0)
+	java::time::Instant Instant::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -353,7 +353,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Instant Instant::with(JObject arg0, jlong arg1)
+	java::time::Instant Instant::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",

@@ -17,7 +17,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureFailed(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1)
+	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureFailed(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1) const
 	{
 		callMethod<void>(
 			"onCaptureFailed",
@@ -26,7 +26,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureProcessStarted(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1)
+	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureProcessStarted(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1) const
 	{
 		callMethod<void>(
 			"onCaptureProcessStarted",
@@ -35,7 +35,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureSequenceAborted(android::hardware::camera2::CameraExtensionSession arg0, jint arg1)
+	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureSequenceAborted(android::hardware::camera2::CameraExtensionSession arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onCaptureSequenceAborted",
@@ -44,7 +44,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureSequenceCompleted(android::hardware::camera2::CameraExtensionSession arg0, jint arg1)
+	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureSequenceCompleted(android::hardware::camera2::CameraExtensionSession arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onCaptureSequenceCompleted",
@@ -53,7 +53,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureStarted(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1, jlong arg2)
+	void CameraExtensionSession_ExtensionCaptureCallback::onCaptureStarted(android::hardware::camera2::CameraExtensionSession arg0, android::hardware::camera2::CaptureRequest arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"onCaptureStarted",

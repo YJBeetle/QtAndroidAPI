@@ -25,7 +25,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	JObject CookieManager::get(java::net::URI arg0, JObject arg1)
+	JObject CookieManager::get(java::net::URI arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"get",
@@ -34,14 +34,14 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	JObject CookieManager::getCookieStore()
+	JObject CookieManager::getCookieStore() const
 	{
 		return callObjectMethod(
 			"getCookieStore",
 			"()Ljava/net/CookieStore;"
 		);
 	}
-	void CookieManager::put(java::net::URI arg0, JObject arg1)
+	void CookieManager::put(java::net::URI arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"put",
@@ -50,7 +50,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void CookieManager::setCookiePolicy(JObject arg0)
+	void CookieManager::setCookiePolicy(JObject arg0) const
 	{
 		callMethod<void>(
 			"setCookiePolicy",

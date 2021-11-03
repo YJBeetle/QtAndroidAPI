@@ -39,13 +39,13 @@ namespace java::lang
 		static JString toString(jboolean arg0);
 		static java::lang::Boolean valueOf(jboolean arg0);
 		static java::lang::Boolean valueOf(JString arg0);
-		jboolean booleanValue();
-		jint compareTo(java::lang::Boolean arg0);
-		jint compareTo(JObject arg0);
-		java::util::Optional describeConstable();
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		JString toString();
+		jboolean booleanValue() const;
+		jint compareTo(java::lang::Boolean arg0) const;
+		jint compareTo(JObject arg0) const;
+		java::util::Optional describeConstable() const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::lang
 

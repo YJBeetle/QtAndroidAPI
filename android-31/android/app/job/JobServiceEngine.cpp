@@ -18,14 +18,14 @@ namespace android::app::job
 		) {}
 	
 	// Methods
-	JObject JobServiceEngine::getBinder()
+	JObject JobServiceEngine::getBinder() const
 	{
 		return callObjectMethod(
 			"getBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void JobServiceEngine::jobFinished(android::app::job::JobParameters arg0, jboolean arg1)
+	void JobServiceEngine::jobFinished(android::app::job::JobParameters arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"jobFinished",
@@ -34,7 +34,7 @@ namespace android::app::job
 			arg1
 		);
 	}
-	jboolean JobServiceEngine::onStartJob(android::app::job::JobParameters arg0)
+	jboolean JobServiceEngine::onStartJob(android::app::job::JobParameters arg0) const
 	{
 		return callMethod<jboolean>(
 			"onStartJob",
@@ -42,7 +42,7 @@ namespace android::app::job
 			arg0.object()
 		);
 	}
-	jboolean JobServiceEngine::onStopJob(android::app::job::JobParameters arg0)
+	jboolean JobServiceEngine::onStopJob(android::app::job::JobParameters arg0) const
 	{
 		return callMethod<jboolean>(
 			"onStopJob",

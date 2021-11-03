@@ -35,14 +35,14 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void MbmsGroupCallSession::close()
+	void MbmsGroupCallSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::telephony::mbms::GroupCall MbmsGroupCallSession::startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4)
+	android::telephony::mbms::GroupCall MbmsGroupCallSession::startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4) const
 	{
 		return callObjectMethod(
 			"startGroupCall",

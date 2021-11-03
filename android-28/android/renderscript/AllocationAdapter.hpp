@@ -36,12 +36,12 @@ namespace android::renderscript
 		static android::renderscript::AllocationAdapter create1D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
 		static android::renderscript::AllocationAdapter create2D(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1);
 		static android::renderscript::AllocationAdapter createTyped(android::renderscript::RenderScript arg0, android::renderscript::Allocation arg1, android::renderscript::Type arg2);
-		void resize(jint arg0);
-		void setFace(android::renderscript::Type_CubemapFace arg0);
-		void setLOD(jint arg0);
-		void setX(jint arg0);
-		void setY(jint arg0);
-		void setZ(jint arg0);
+		void resize(jint arg0) const;
+		void setFace(android::renderscript::Type_CubemapFace arg0) const;
+		void setLOD(jint arg0) const;
+		void setX(jint arg0) const;
+		void setY(jint arg0) const;
+		void setZ(jint arg0) const;
 	};
 } // namespace android::renderscript
 

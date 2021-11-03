@@ -32,11 +32,11 @@ namespace android::location
 		GnssAntennaInfo_Builder(jdouble arg0, android::location::GnssAntennaInfo_PhaseCenterOffset arg1);
 		
 		// Methods
-		android::location::GnssAntennaInfo build();
-		android::location::GnssAntennaInfo_Builder setCarrierFrequencyMHz(jdouble arg0);
-		android::location::GnssAntennaInfo_Builder setPhaseCenterOffset(android::location::GnssAntennaInfo_PhaseCenterOffset arg0);
-		android::location::GnssAntennaInfo_Builder setPhaseCenterVariationCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0);
-		android::location::GnssAntennaInfo_Builder setSignalGainCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0);
+		android::location::GnssAntennaInfo build() const;
+		android::location::GnssAntennaInfo_Builder setCarrierFrequencyMHz(jdouble arg0) const;
+		android::location::GnssAntennaInfo_Builder setPhaseCenterOffset(android::location::GnssAntennaInfo_PhaseCenterOffset arg0) const;
+		android::location::GnssAntennaInfo_Builder setPhaseCenterVariationCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0) const;
+		android::location::GnssAntennaInfo_Builder setSignalGainCorrections(android::location::GnssAntennaInfo_SphericalCorrections arg0) const;
 	};
 } // namespace android::location
 

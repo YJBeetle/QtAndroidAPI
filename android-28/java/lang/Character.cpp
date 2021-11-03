@@ -1286,14 +1286,14 @@ namespace java::lang
 			arg0
 		);
 	}
-	jchar Character::charValue()
+	jchar Character::charValue() const
 	{
 		return callMethod<jchar>(
 			"charValue",
 			"()C"
 		);
 	}
-	jint Character::compareTo(java::lang::Character arg0)
+	jint Character::compareTo(java::lang::Character arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -1301,7 +1301,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Character::compareTo(JObject arg0)
+	jint Character::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -1309,14 +1309,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Character::describeConstable()
+	java::util::Optional Character::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jboolean Character::equals(JObject arg0)
+	jboolean Character::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -1324,14 +1324,14 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jint Character::hashCode()
+	jint Character::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Character::toString()
+	JString Character::toString() const
 	{
 		return callObjectMethod(
 			"toString",

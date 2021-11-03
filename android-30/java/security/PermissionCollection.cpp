@@ -17,7 +17,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void PermissionCollection::add(java::security::Permission arg0)
+	void PermissionCollection::add(java::security::Permission arg0) const
 	{
 		callMethod<void>(
 			"add",
@@ -25,21 +25,21 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	JObject PermissionCollection::elements()
+	JObject PermissionCollection::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject PermissionCollection::elementsAsStream()
+	JObject PermissionCollection::elementsAsStream() const
 	{
 		return callObjectMethod(
 			"elementsAsStream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	jboolean PermissionCollection::implies(java::security::Permission arg0)
+	jboolean PermissionCollection::implies(java::security::Permission arg0) const
 	{
 		return callMethod<jboolean>(
 			"implies",
@@ -47,21 +47,21 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	jboolean PermissionCollection::isReadOnly()
+	jboolean PermissionCollection::isReadOnly() const
 	{
 		return callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
 		);
 	}
-	void PermissionCollection::setReadOnly()
+	void PermissionCollection::setReadOnly() const
 	{
 		callMethod<void>(
 			"setReadOnly",
 			"()V"
 		);
 	}
-	JString PermissionCollection::toString()
+	JString PermissionCollection::toString() const
 	{
 		return callObjectMethod(
 			"toString",

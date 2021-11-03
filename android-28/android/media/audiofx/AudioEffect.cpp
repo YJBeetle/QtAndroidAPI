@@ -250,42 +250,42 @@ namespace android::media::audiofx
 			"()[Landroid/media/audiofx/AudioEffect$Descriptor;"
 		);
 	}
-	android::media::audiofx::AudioEffect_Descriptor AudioEffect::getDescriptor()
+	android::media::audiofx::AudioEffect_Descriptor AudioEffect::getDescriptor() const
 	{
 		return callObjectMethod(
 			"getDescriptor",
 			"()Landroid/media/audiofx/AudioEffect$Descriptor;"
 		);
 	}
-	jboolean AudioEffect::getEnabled()
+	jboolean AudioEffect::getEnabled() const
 	{
 		return callMethod<jboolean>(
 			"getEnabled",
 			"()Z"
 		);
 	}
-	jint AudioEffect::getId()
+	jint AudioEffect::getId() const
 	{
 		return callMethod<jint>(
 			"getId",
 			"()I"
 		);
 	}
-	jboolean AudioEffect::hasControl()
+	jboolean AudioEffect::hasControl() const
 	{
 		return callMethod<jboolean>(
 			"hasControl",
 			"()Z"
 		);
 	}
-	void AudioEffect::release()
+	void AudioEffect::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void AudioEffect::setControlStatusListener(JObject arg0)
+	void AudioEffect::setControlStatusListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setControlStatusListener",
@@ -293,7 +293,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void AudioEffect::setEnableStatusListener(JObject arg0)
+	void AudioEffect::setEnableStatusListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setEnableStatusListener",
@@ -301,7 +301,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	jint AudioEffect::setEnabled(jboolean arg0)
+	jint AudioEffect::setEnabled(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"setEnabled",

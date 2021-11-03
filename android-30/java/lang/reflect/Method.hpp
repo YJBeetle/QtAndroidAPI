@@ -35,32 +35,32 @@ namespace java::lang::reflect
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAnnotatedReturnType();
-		JObject getAnnotation(JClass arg0);
-		JArray getDeclaredAnnotations();
-		JClass getDeclaringClass();
-		JObject getDefaultValue();
-		JArray getExceptionTypes();
-		JArray getGenericExceptionTypes();
-		JArray getGenericParameterTypes();
-		JObject getGenericReturnType();
-		jint getModifiers();
-		JString getName();
-		JArray getParameterAnnotations();
-		jint getParameterCount();
-		JArray getParameterTypes();
-		JClass getReturnType();
-		JArray getTypeParameters();
-		jint hashCode();
-		JObject invoke(JObject arg0, JObjectArray arg1);
-		jboolean isBridge();
-		jboolean isDefault();
-		jboolean isSynthetic();
-		jboolean isVarArgs();
-		void setAccessible(jboolean arg0);
-		JString toGenericString();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getAnnotatedReturnType() const;
+		JObject getAnnotation(JClass arg0) const;
+		JArray getDeclaredAnnotations() const;
+		JClass getDeclaringClass() const;
+		JObject getDefaultValue() const;
+		JArray getExceptionTypes() const;
+		JArray getGenericExceptionTypes() const;
+		JArray getGenericParameterTypes() const;
+		JObject getGenericReturnType() const;
+		jint getModifiers() const;
+		JString getName() const;
+		JArray getParameterAnnotations() const;
+		jint getParameterCount() const;
+		JArray getParameterTypes() const;
+		JClass getReturnType() const;
+		JArray getTypeParameters() const;
+		jint hashCode() const;
+		JObject invoke(JObject arg0, JObjectArray arg1) const;
+		jboolean isBridge() const;
+		jboolean isDefault() const;
+		jboolean isSynthetic() const;
+		jboolean isVarArgs() const;
+		void setAccessible(jboolean arg0) const;
+		JString toGenericString() const;
+		JString toString() const;
 	};
 } // namespace java::lang::reflect
 

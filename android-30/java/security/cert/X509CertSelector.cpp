@@ -25,7 +25,7 @@ namespace java::security::cert
 		) {}
 	
 	// Methods
-	void X509CertSelector::addPathToName(jint arg0, JByteArray arg1)
+	void X509CertSelector::addPathToName(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"addPathToName",
@@ -34,7 +34,7 @@ namespace java::security::cert
 			arg1.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::addPathToName(jint arg0, JString arg1)
+	void X509CertSelector::addPathToName(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addPathToName",
@@ -43,7 +43,7 @@ namespace java::security::cert
 			arg1.object<jstring>()
 		);
 	}
-	void X509CertSelector::addSubjectAlternativeName(jint arg0, JByteArray arg1)
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"addSubjectAlternativeName",
@@ -52,7 +52,7 @@ namespace java::security::cert
 			arg1.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::addSubjectAlternativeName(jint arg0, JString arg1)
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addSubjectAlternativeName",
@@ -61,168 +61,168 @@ namespace java::security::cert
 			arg1.object<jstring>()
 		);
 	}
-	JObject X509CertSelector::clone()
+	JObject X509CertSelector::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JByteArray X509CertSelector::getAuthorityKeyIdentifier()
+	JByteArray X509CertSelector::getAuthorityKeyIdentifier() const
 	{
 		return callObjectMethod(
 			"getAuthorityKeyIdentifier",
 			"()[B"
 		);
 	}
-	jint X509CertSelector::getBasicConstraints()
+	jint X509CertSelector::getBasicConstraints() const
 	{
 		return callMethod<jint>(
 			"getBasicConstraints",
 			"()I"
 		);
 	}
-	java::security::cert::X509Certificate X509CertSelector::getCertificate()
+	java::security::cert::X509Certificate X509CertSelector::getCertificate() const
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	java::util::Date X509CertSelector::getCertificateValid()
+	java::util::Date X509CertSelector::getCertificateValid() const
 	{
 		return callObjectMethod(
 			"getCertificateValid",
 			"()Ljava/util/Date;"
 		);
 	}
-	JObject X509CertSelector::getExtendedKeyUsage()
+	JObject X509CertSelector::getExtendedKeyUsage() const
 	{
 		return callObjectMethod(
 			"getExtendedKeyUsage",
 			"()Ljava/util/Set;"
 		);
 	}
-	javax::security::auth::x500::X500Principal X509CertSelector::getIssuer()
+	javax::security::auth::x500::X500Principal X509CertSelector::getIssuer() const
 	{
 		return callObjectMethod(
 			"getIssuer",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JByteArray X509CertSelector::getIssuerAsBytes()
+	JByteArray X509CertSelector::getIssuerAsBytes() const
 	{
 		return callObjectMethod(
 			"getIssuerAsBytes",
 			"()[B"
 		);
 	}
-	JString X509CertSelector::getIssuerAsString()
+	JString X509CertSelector::getIssuerAsString() const
 	{
 		return callObjectMethod(
 			"getIssuerAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JBooleanArray X509CertSelector::getKeyUsage()
+	JBooleanArray X509CertSelector::getKeyUsage() const
 	{
 		return callObjectMethod(
 			"getKeyUsage",
 			"()[Z"
 		);
 	}
-	jboolean X509CertSelector::getMatchAllSubjectAltNames()
+	jboolean X509CertSelector::getMatchAllSubjectAltNames() const
 	{
 		return callMethod<jboolean>(
 			"getMatchAllSubjectAltNames",
 			"()Z"
 		);
 	}
-	JByteArray X509CertSelector::getNameConstraints()
+	JByteArray X509CertSelector::getNameConstraints() const
 	{
 		return callObjectMethod(
 			"getNameConstraints",
 			"()[B"
 		);
 	}
-	JObject X509CertSelector::getPathToNames()
+	JObject X509CertSelector::getPathToNames() const
 	{
 		return callObjectMethod(
 			"getPathToNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject X509CertSelector::getPolicy()
+	JObject X509CertSelector::getPolicy() const
 	{
 		return callObjectMethod(
 			"getPolicy",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::util::Date X509CertSelector::getPrivateKeyValid()
+	java::util::Date X509CertSelector::getPrivateKeyValid() const
 	{
 		return callObjectMethod(
 			"getPrivateKeyValid",
 			"()Ljava/util/Date;"
 		);
 	}
-	java::math::BigInteger X509CertSelector::getSerialNumber()
+	java::math::BigInteger X509CertSelector::getSerialNumber() const
 	{
 		return callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	javax::security::auth::x500::X500Principal X509CertSelector::getSubject()
+	javax::security::auth::x500::X500Principal X509CertSelector::getSubject() const
 	{
 		return callObjectMethod(
 			"getSubject",
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	JObject X509CertSelector::getSubjectAlternativeNames()
+	JObject X509CertSelector::getSubjectAlternativeNames() const
 	{
 		return callObjectMethod(
 			"getSubjectAlternativeNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JByteArray X509CertSelector::getSubjectAsBytes()
+	JByteArray X509CertSelector::getSubjectAsBytes() const
 	{
 		return callObjectMethod(
 			"getSubjectAsBytes",
 			"()[B"
 		);
 	}
-	JString X509CertSelector::getSubjectAsString()
+	JString X509CertSelector::getSubjectAsString() const
 	{
 		return callObjectMethod(
 			"getSubjectAsString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JByteArray X509CertSelector::getSubjectKeyIdentifier()
+	JByteArray X509CertSelector::getSubjectKeyIdentifier() const
 	{
 		return callObjectMethod(
 			"getSubjectKeyIdentifier",
 			"()[B"
 		);
 	}
-	JObject X509CertSelector::getSubjectPublicKey()
+	JObject X509CertSelector::getSubjectPublicKey() const
 	{
 		return callObjectMethod(
 			"getSubjectPublicKey",
 			"()Ljava/security/PublicKey;"
 		);
 	}
-	JString X509CertSelector::getSubjectPublicKeyAlgID()
+	JString X509CertSelector::getSubjectPublicKeyAlgID() const
 	{
 		return callObjectMethod(
 			"getSubjectPublicKeyAlgID",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean X509CertSelector::match(java::security::cert::Certificate arg0)
+	jboolean X509CertSelector::match(java::security::cert::Certificate arg0) const
 	{
 		return callMethod<jboolean>(
 			"match",
@@ -230,7 +230,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setAuthorityKeyIdentifier(JByteArray arg0)
+	void X509CertSelector::setAuthorityKeyIdentifier(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setAuthorityKeyIdentifier",
@@ -238,7 +238,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setBasicConstraints(jint arg0)
+	void X509CertSelector::setBasicConstraints(jint arg0) const
 	{
 		callMethod<void>(
 			"setBasicConstraints",
@@ -246,7 +246,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setCertificate(java::security::cert::X509Certificate arg0)
+	void X509CertSelector::setCertificate(java::security::cert::X509Certificate arg0) const
 	{
 		callMethod<void>(
 			"setCertificate",
@@ -254,7 +254,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setCertificateValid(java::util::Date arg0)
+	void X509CertSelector::setCertificateValid(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setCertificateValid",
@@ -262,7 +262,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setExtendedKeyUsage(JObject arg0)
+	void X509CertSelector::setExtendedKeyUsage(JObject arg0) const
 	{
 		callMethod<void>(
 			"setExtendedKeyUsage",
@@ -270,7 +270,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setIssuer(JByteArray arg0)
+	void X509CertSelector::setIssuer(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setIssuer",
@@ -278,7 +278,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setIssuer(JString arg0)
+	void X509CertSelector::setIssuer(JString arg0) const
 	{
 		callMethod<void>(
 			"setIssuer",
@@ -286,7 +286,7 @@ namespace java::security::cert
 			arg0.object<jstring>()
 		);
 	}
-	void X509CertSelector::setIssuer(javax::security::auth::x500::X500Principal arg0)
+	void X509CertSelector::setIssuer(javax::security::auth::x500::X500Principal arg0) const
 	{
 		callMethod<void>(
 			"setIssuer",
@@ -294,7 +294,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setKeyUsage(JBooleanArray arg0)
+	void X509CertSelector::setKeyUsage(JBooleanArray arg0) const
 	{
 		callMethod<void>(
 			"setKeyUsage",
@@ -302,7 +302,7 @@ namespace java::security::cert
 			arg0.object<jbooleanArray>()
 		);
 	}
-	void X509CertSelector::setMatchAllSubjectAltNames(jboolean arg0)
+	void X509CertSelector::setMatchAllSubjectAltNames(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setMatchAllSubjectAltNames",
@@ -310,7 +310,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setNameConstraints(JByteArray arg0)
+	void X509CertSelector::setNameConstraints(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setNameConstraints",
@@ -318,7 +318,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setPathToNames(JObject arg0)
+	void X509CertSelector::setPathToNames(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPathToNames",
@@ -326,7 +326,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setPolicy(JObject arg0)
+	void X509CertSelector::setPolicy(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPolicy",
@@ -334,7 +334,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setPrivateKeyValid(java::util::Date arg0)
+	void X509CertSelector::setPrivateKeyValid(java::util::Date arg0) const
 	{
 		callMethod<void>(
 			"setPrivateKeyValid",
@@ -342,7 +342,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSerialNumber(java::math::BigInteger arg0)
+	void X509CertSelector::setSerialNumber(java::math::BigInteger arg0) const
 	{
 		callMethod<void>(
 			"setSerialNumber",
@@ -350,7 +350,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubject(JByteArray arg0)
+	void X509CertSelector::setSubject(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setSubject",
@@ -358,7 +358,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setSubject(JString arg0)
+	void X509CertSelector::setSubject(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubject",
@@ -366,7 +366,7 @@ namespace java::security::cert
 			arg0.object<jstring>()
 		);
 	}
-	void X509CertSelector::setSubject(javax::security::auth::x500::X500Principal arg0)
+	void X509CertSelector::setSubject(javax::security::auth::x500::X500Principal arg0) const
 	{
 		callMethod<void>(
 			"setSubject",
@@ -374,7 +374,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectAlternativeNames(JObject arg0)
+	void X509CertSelector::setSubjectAlternativeNames(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSubjectAlternativeNames",
@@ -382,7 +382,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectKeyIdentifier(JByteArray arg0)
+	void X509CertSelector::setSubjectKeyIdentifier(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setSubjectKeyIdentifier",
@@ -390,7 +390,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setSubjectPublicKey(JByteArray arg0)
+	void X509CertSelector::setSubjectPublicKey(JByteArray arg0) const
 	{
 		callMethod<void>(
 			"setSubjectPublicKey",
@@ -398,7 +398,7 @@ namespace java::security::cert
 			arg0.object<jbyteArray>()
 		);
 	}
-	void X509CertSelector::setSubjectPublicKey(JObject arg0)
+	void X509CertSelector::setSubjectPublicKey(JObject arg0) const
 	{
 		callMethod<void>(
 			"setSubjectPublicKey",
@@ -406,7 +406,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectPublicKeyAlgID(JString arg0)
+	void X509CertSelector::setSubjectPublicKeyAlgID(JString arg0) const
 	{
 		callMethod<void>(
 			"setSubjectPublicKeyAlgID",
@@ -414,7 +414,7 @@ namespace java::security::cert
 			arg0.object<jstring>()
 		);
 	}
-	JString X509CertSelector::toString()
+	JString X509CertSelector::toString() const
 	{
 		return callObjectMethod(
 			"toString",

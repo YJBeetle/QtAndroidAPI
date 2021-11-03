@@ -25,7 +25,7 @@ namespace javax::crypto::spec
 		) {}
 	
 	// Methods
-	JByteArray IvParameterSpec::getIV()
+	JByteArray IvParameterSpec::getIV() const
 	{
 		return callObjectMethod(
 			"getIV",

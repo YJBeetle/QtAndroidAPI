@@ -281,14 +281,14 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	JObject DateFormat::clone()
+	JObject DateFormat::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean DateFormat::equals(JObject arg0)
+	jboolean DateFormat::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -296,7 +296,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	JString DateFormat::format(java::util::Date arg0)
+	JString DateFormat::format(java::util::Date arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -304,7 +304,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(JObject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -314,7 +314,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::lang::StringBuffer DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2)
+	java::lang::StringBuffer DateFormat::format(java::util::Date arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2) const
 	{
 		return callObjectMethod(
 			"format",
@@ -324,42 +324,42 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	java::util::Calendar DateFormat::getCalendar()
+	java::util::Calendar DateFormat::getCalendar() const
 	{
 		return callObjectMethod(
 			"getCalendar",
 			"()Ljava/util/Calendar;"
 		);
 	}
-	java::text::NumberFormat DateFormat::getNumberFormat()
+	java::text::NumberFormat DateFormat::getNumberFormat() const
 	{
 		return callObjectMethod(
 			"getNumberFormat",
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	java::util::TimeZone DateFormat::getTimeZone()
+	java::util::TimeZone DateFormat::getTimeZone() const
 	{
 		return callObjectMethod(
 			"getTimeZone",
 			"()Ljava/util/TimeZone;"
 		);
 	}
-	jint DateFormat::hashCode()
+	jint DateFormat::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean DateFormat::isLenient()
+	jboolean DateFormat::isLenient() const
 	{
 		return callMethod<jboolean>(
 			"isLenient",
 			"()Z"
 		);
 	}
-	java::util::Date DateFormat::parse(JString arg0)
+	java::util::Date DateFormat::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -367,7 +367,7 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1)
+	java::util::Date DateFormat::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -376,7 +376,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1)
+	JObject DateFormat::parseObject(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseObject",
@@ -385,7 +385,7 @@ namespace java::text
 			arg1.object()
 		);
 	}
-	void DateFormat::setCalendar(java::util::Calendar arg0)
+	void DateFormat::setCalendar(java::util::Calendar arg0) const
 	{
 		callMethod<void>(
 			"setCalendar",
@@ -393,7 +393,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DateFormat::setLenient(jboolean arg0)
+	void DateFormat::setLenient(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setLenient",
@@ -401,7 +401,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void DateFormat::setNumberFormat(java::text::NumberFormat arg0)
+	void DateFormat::setNumberFormat(java::text::NumberFormat arg0) const
 	{
 		callMethod<void>(
 			"setNumberFormat",
@@ -409,7 +409,7 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	void DateFormat::setTimeZone(java::util::TimeZone arg0)
+	void DateFormat::setTimeZone(java::util::TimeZone arg0) const
 	{
 		callMethod<void>(
 			"setTimeZone",

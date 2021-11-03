@@ -16,8 +16,8 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		void close();
-		void getNextPage(JObject arg0, JObject arg1);
+		void close() const;
+		void getNextPage(JObject arg0, JObject arg1) const;
 	};
 } // namespace android::app::appsearch
 

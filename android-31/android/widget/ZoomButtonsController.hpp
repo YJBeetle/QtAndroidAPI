@@ -30,18 +30,18 @@ namespace android::widget
 		ZoomButtonsController(android::view::View arg0);
 		
 		// Methods
-		android::view::ViewGroup getContainer();
-		android::view::View getZoomControls();
-		jboolean isAutoDismissed();
-		jboolean isVisible();
-		jboolean onTouch(android::view::View arg0, android::view::MotionEvent arg1);
-		void setAutoDismissed(jboolean arg0);
-		void setFocusable(jboolean arg0);
-		void setOnZoomListener(JObject arg0);
-		void setVisible(jboolean arg0);
-		void setZoomInEnabled(jboolean arg0);
-		void setZoomOutEnabled(jboolean arg0);
-		void setZoomSpeed(jlong arg0);
+		android::view::ViewGroup getContainer() const;
+		android::view::View getZoomControls() const;
+		jboolean isAutoDismissed() const;
+		jboolean isVisible() const;
+		jboolean onTouch(android::view::View arg0, android::view::MotionEvent arg1) const;
+		void setAutoDismissed(jboolean arg0) const;
+		void setFocusable(jboolean arg0) const;
+		void setOnZoomListener(JObject arg0) const;
+		void setVisible(jboolean arg0) const;
+		void setZoomInEnabled(jboolean arg0) const;
+		void setZoomOutEnabled(jboolean arg0) const;
+		void setZoomSpeed(jlong arg0) const;
 	};
 } // namespace android::widget
 

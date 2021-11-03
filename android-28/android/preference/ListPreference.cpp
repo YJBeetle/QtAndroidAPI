@@ -47,7 +47,7 @@ namespace android::preference
 		) {}
 	
 	// Methods
-	jint ListPreference::findIndexOfValue(JString arg0)
+	jint ListPreference::findIndexOfValue(JString arg0) const
 	{
 		return callMethod<jint>(
 			"findIndexOfValue",
@@ -55,42 +55,42 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	JArray ListPreference::getEntries()
+	JArray ListPreference::getEntries() const
 	{
 		return callObjectMethod(
 			"getEntries",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	JString ListPreference::getEntry()
+	JString ListPreference::getEntry() const
 	{
 		return callObjectMethod(
 			"getEntry",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JArray ListPreference::getEntryValues()
+	JArray ListPreference::getEntryValues() const
 	{
 		return callObjectMethod(
 			"getEntryValues",
 			"()[Ljava/lang/CharSequence;"
 		);
 	}
-	JString ListPreference::getSummary()
+	JString ListPreference::getSummary() const
 	{
 		return callObjectMethod(
 			"getSummary",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString ListPreference::getValue()
+	JString ListPreference::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ListPreference::setEntries(JArray arg0)
+	void ListPreference::setEntries(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEntries",
@@ -98,7 +98,7 @@ namespace android::preference
 			arg0.object<jarray>()
 		);
 	}
-	void ListPreference::setEntries(jint arg0)
+	void ListPreference::setEntries(jint arg0) const
 	{
 		callMethod<void>(
 			"setEntries",
@@ -106,7 +106,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void ListPreference::setEntryValues(JArray arg0)
+	void ListPreference::setEntryValues(JArray arg0) const
 	{
 		callMethod<void>(
 			"setEntryValues",
@@ -114,7 +114,7 @@ namespace android::preference
 			arg0.object<jarray>()
 		);
 	}
-	void ListPreference::setEntryValues(jint arg0)
+	void ListPreference::setEntryValues(jint arg0) const
 	{
 		callMethod<void>(
 			"setEntryValues",
@@ -122,7 +122,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void ListPreference::setSummary(JString arg0)
+	void ListPreference::setSummary(JString arg0) const
 	{
 		callMethod<void>(
 			"setSummary",
@@ -130,7 +130,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void ListPreference::setValue(JString arg0)
+	void ListPreference::setValue(JString arg0) const
 	{
 		callMethod<void>(
 			"setValue",
@@ -138,7 +138,7 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void ListPreference::setValueIndex(jint arg0)
+	void ListPreference::setValueIndex(jint arg0) const
 	{
 		callMethod<void>(
 			"setValueIndex",

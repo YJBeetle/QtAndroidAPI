@@ -19,42 +19,42 @@ namespace android::app::usage
 	// Constructors
 	
 	// Methods
-	jint StorageStats::describeContents()
+	jint StorageStats::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong StorageStats::getAppBytes()
+	jlong StorageStats::getAppBytes() const
 	{
 		return callMethod<jlong>(
 			"getAppBytes",
 			"()J"
 		);
 	}
-	jlong StorageStats::getCacheBytes()
+	jlong StorageStats::getCacheBytes() const
 	{
 		return callMethod<jlong>(
 			"getCacheBytes",
 			"()J"
 		);
 	}
-	jlong StorageStats::getDataBytes()
+	jlong StorageStats::getDataBytes() const
 	{
 		return callMethod<jlong>(
 			"getDataBytes",
 			"()J"
 		);
 	}
-	jlong StorageStats::getExternalCacheBytes()
+	jlong StorageStats::getExternalCacheBytes() const
 	{
 		return callMethod<jlong>(
 			"getExternalCacheBytes",
 			"()J"
 		);
 	}
-	void StorageStats::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void StorageStats::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

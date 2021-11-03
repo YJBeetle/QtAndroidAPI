@@ -48,14 +48,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint BarringInfo_BarringServiceInfo::describeContents()
+	jint BarringInfo_BarringServiceInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BarringInfo_BarringServiceInfo::equals(JObject arg0)
+	jboolean BarringInfo_BarringServiceInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -63,49 +63,49 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	jint BarringInfo_BarringServiceInfo::getBarringType()
+	jint BarringInfo_BarringServiceInfo::getBarringType() const
 	{
 		return callMethod<jint>(
 			"getBarringType",
 			"()I"
 		);
 	}
-	jint BarringInfo_BarringServiceInfo::getConditionalBarringFactor()
+	jint BarringInfo_BarringServiceInfo::getConditionalBarringFactor() const
 	{
 		return callMethod<jint>(
 			"getConditionalBarringFactor",
 			"()I"
 		);
 	}
-	jint BarringInfo_BarringServiceInfo::getConditionalBarringTimeSeconds()
+	jint BarringInfo_BarringServiceInfo::getConditionalBarringTimeSeconds() const
 	{
 		return callMethod<jint>(
 			"getConditionalBarringTimeSeconds",
 			"()I"
 		);
 	}
-	jint BarringInfo_BarringServiceInfo::hashCode()
+	jint BarringInfo_BarringServiceInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean BarringInfo_BarringServiceInfo::isBarred()
+	jboolean BarringInfo_BarringServiceInfo::isBarred() const
 	{
 		return callMethod<jboolean>(
 			"isBarred",
 			"()Z"
 		);
 	}
-	jboolean BarringInfo_BarringServiceInfo::isConditionallyBarred()
+	jboolean BarringInfo_BarringServiceInfo::isConditionallyBarred() const
 	{
 		return callMethod<jboolean>(
 			"isConditionallyBarred",
 			"()Z"
 		);
 	}
-	void BarringInfo_BarringServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BarringInfo_BarringServiceInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

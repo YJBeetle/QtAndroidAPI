@@ -19,8 +19,8 @@ namespace java::util
 		MissingFormatWidthException(JString arg0);
 		
 		// Methods
-		JString getFormatSpecifier();
-		JString getMessage();
+		JString getFormatSpecifier() const;
+		JString getMessage() const;
 	};
 } // namespace java::util
 

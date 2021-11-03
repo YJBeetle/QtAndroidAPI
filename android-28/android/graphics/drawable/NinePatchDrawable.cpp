@@ -60,7 +60,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void NinePatchDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void NinePatchDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -68,14 +68,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean NinePatchDrawable::canApplyTheme()
+	jboolean NinePatchDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void NinePatchDrawable::draw(android::graphics::Canvas arg0)
+	void NinePatchDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -83,49 +83,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint NinePatchDrawable::getAlpha()
+	jint NinePatchDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint NinePatchDrawable::getChangingConfigurations()
+	jint NinePatchDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState NinePatchDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState NinePatchDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint NinePatchDrawable::getIntrinsicHeight()
+	jint NinePatchDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint NinePatchDrawable::getIntrinsicWidth()
+	jint NinePatchDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint NinePatchDrawable::getOpacity()
+	jint NinePatchDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void NinePatchDrawable::getOutline(android::graphics::Outline arg0)
+	void NinePatchDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -133,7 +133,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean NinePatchDrawable::getPadding(android::graphics::Rect arg0)
+	jboolean NinePatchDrawable::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -141,21 +141,21 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::Paint NinePatchDrawable::getPaint()
+	android::graphics::Paint NinePatchDrawable::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
 		);
 	}
-	android::graphics::Region NinePatchDrawable::getTransparentRegion()
+	android::graphics::Region NinePatchDrawable::getTransparentRegion() const
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
 			"()Landroid/graphics/Region;"
 		);
 	}
-	void NinePatchDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void NinePatchDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -166,35 +166,35 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	jboolean NinePatchDrawable::isAutoMirrored()
+	jboolean NinePatchDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean NinePatchDrawable::isFilterBitmap()
+	jboolean NinePatchDrawable::isFilterBitmap() const
 	{
 		return callMethod<jboolean>(
 			"isFilterBitmap",
 			"()Z"
 		);
 	}
-	jboolean NinePatchDrawable::isStateful()
+	jboolean NinePatchDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	android::graphics::drawable::Drawable NinePatchDrawable::mutate()
+	android::graphics::drawable::Drawable NinePatchDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void NinePatchDrawable::setAlpha(jint arg0)
+	void NinePatchDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -202,7 +202,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void NinePatchDrawable::setAutoMirrored(jboolean arg0)
+	void NinePatchDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -210,7 +210,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void NinePatchDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void NinePatchDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -218,7 +218,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void NinePatchDrawable::setDither(jboolean arg0)
+	void NinePatchDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -226,7 +226,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void NinePatchDrawable::setFilterBitmap(jboolean arg0)
+	void NinePatchDrawable::setFilterBitmap(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFilterBitmap",
@@ -234,7 +234,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void NinePatchDrawable::setTargetDensity(android::graphics::Canvas arg0)
+	void NinePatchDrawable::setTargetDensity(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -242,7 +242,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void NinePatchDrawable::setTargetDensity(android::util::DisplayMetrics arg0)
+	void NinePatchDrawable::setTargetDensity(android::util::DisplayMetrics arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -250,7 +250,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void NinePatchDrawable::setTargetDensity(jint arg0)
+	void NinePatchDrawable::setTargetDensity(jint arg0) const
 	{
 		callMethod<void>(
 			"setTargetDensity",
@@ -258,7 +258,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void NinePatchDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void NinePatchDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -266,7 +266,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void NinePatchDrawable::setTintMode(android::graphics::PorterDuff_Mode arg0)
+	void NinePatchDrawable::setTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setTintMode",

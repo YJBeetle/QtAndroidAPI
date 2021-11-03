@@ -21,8 +21,8 @@ namespace java::lang
 		NullPointerException(JString arg0);
 		
 		// Methods
-		JThrowable fillInStackTrace();
-		JString getMessage();
+		JThrowable fillInStackTrace() const;
+		JString getMessage() const;
 	};
 } // namespace java::lang
 

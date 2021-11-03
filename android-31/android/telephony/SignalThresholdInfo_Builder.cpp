@@ -17,14 +17,14 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	android::telephony::SignalThresholdInfo SignalThresholdInfo_Builder::build()
+	android::telephony::SignalThresholdInfo SignalThresholdInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/telephony/SignalThresholdInfo;"
 		);
 	}
-	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setRadioAccessNetworkType(jint arg0)
+	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setRadioAccessNetworkType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setRadioAccessNetworkType",
@@ -32,7 +32,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setSignalMeasurementType(jint arg0)
+	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setSignalMeasurementType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setSignalMeasurementType",
@@ -40,7 +40,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setThresholds(JIntArray arg0)
+	android::telephony::SignalThresholdInfo_Builder SignalThresholdInfo_Builder::setThresholds(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"setThresholds",

@@ -51,12 +51,12 @@ namespace android::util
 		DisplayMetrics();
 		
 		// Methods
-		jboolean equals(android::util::DisplayMetrics arg0);
-		jboolean equals(JObject arg0);
-		jint hashCode();
-		void setTo(android::util::DisplayMetrics arg0);
-		void setToDefaults();
-		JString toString();
+		jboolean equals(android::util::DisplayMetrics arg0) const;
+		jboolean equals(JObject arg0) const;
+		jint hashCode() const;
+		void setTo(android::util::DisplayMetrics arg0) const;
+		void setToDefaults() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

@@ -20,11 +20,11 @@ namespace java::sql
 		DataTruncation(jint arg0, jboolean arg1, jboolean arg2, jint arg3, jint arg4, JThrowable arg5);
 		
 		// Methods
-		jint getDataSize();
-		jint getIndex();
-		jboolean getParameter();
-		jboolean getRead();
-		jint getTransferSize();
+		jint getDataSize() const;
+		jint getIndex() const;
+		jboolean getParameter() const;
+		jboolean getRead() const;
+		jint getTransferSize() const;
 	};
 } // namespace java::sql
 

@@ -23,8 +23,8 @@ namespace android::companion
 		CompanionDeviceManager_Callback();
 		
 		// Methods
-		void onDeviceFound(android::content::IntentSender arg0);
-		void onFailure(JString arg0);
+		void onDeviceFound(android::content::IntentSender arg0) const;
+		void onFailure(JString arg0) const;
 	};
 } // namespace android::companion
 

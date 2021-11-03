@@ -22,9 +22,9 @@ namespace android::text::util
 		// Methods
 		static JArray tokenize(JString arg0);
 		static void tokenize(JString arg0, JObject arg1);
-		jint findTokenEnd(JString arg0, jint arg1);
-		jint findTokenStart(JString arg0, jint arg1);
-		JString terminateToken(JString arg0);
+		jint findTokenEnd(JString arg0, jint arg1) const;
+		jint findTokenStart(JString arg0, jint arg1) const;
+		JString terminateToken(JString arg0) const;
 	};
 } // namespace android::text::util
 

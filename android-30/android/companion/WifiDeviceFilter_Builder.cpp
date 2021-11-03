@@ -18,14 +18,14 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	android::companion::WifiDeviceFilter WifiDeviceFilter_Builder::build()
+	android::companion::WifiDeviceFilter WifiDeviceFilter_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/companion/WifiDeviceFilter;"
 		);
 	}
-	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setBssid(android::net::MacAddress arg0)
+	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setBssid(android::net::MacAddress arg0) const
 	{
 		return callObjectMethod(
 			"setBssid",
@@ -33,7 +33,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setBssidMask(android::net::MacAddress arg0)
+	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setBssidMask(android::net::MacAddress arg0) const
 	{
 		return callObjectMethod(
 			"setBssidMask",
@@ -41,7 +41,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0)
+	android::companion::WifiDeviceFilter_Builder WifiDeviceFilter_Builder::setNamePattern(java::util::regex::Pattern arg0) const
 	{
 		return callObjectMethod(
 			"setNamePattern",

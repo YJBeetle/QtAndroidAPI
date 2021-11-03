@@ -31,8 +31,8 @@ namespace android::app
 		Notification_Style();
 		
 		// Methods
-		android::app::Notification build();
-		void setBuilder(android::app::Notification_Builder arg0);
+		android::app::Notification build() const;
+		void setBuilder(android::app::Notification_Builder arg0) const;
 	};
 } // namespace android::app
 

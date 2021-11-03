@@ -12,7 +12,7 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jboolean MediaCodec_ParameterDescriptor::equals(JObject arg0)
+	jboolean MediaCodec_ParameterDescriptor::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -20,21 +20,21 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JString MediaCodec_ParameterDescriptor::getName()
+	JString MediaCodec_ParameterDescriptor::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint MediaCodec_ParameterDescriptor::getType()
+	jint MediaCodec_ParameterDescriptor::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jint MediaCodec_ParameterDescriptor::hashCode()
+	jint MediaCodec_ParameterDescriptor::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

@@ -29,8 +29,8 @@ namespace android::icu::number
 		// Constructors
 		
 		// Methods
-		android::icu::number::LocalizedNumberFormatter locale(android::icu::util::ULocale arg0);
-		android::icu::number::LocalizedNumberFormatter locale(java::util::Locale arg0);
+		android::icu::number::LocalizedNumberFormatter locale(android::icu::util::ULocale arg0) const;
+		android::icu::number::LocalizedNumberFormatter locale(java::util::Locale arg0) const;
 	};
 } // namespace android::icu::number
 

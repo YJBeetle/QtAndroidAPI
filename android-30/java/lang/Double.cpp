@@ -253,14 +253,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jbyte Double::byteValue()
+	jbyte Double::byteValue() const
 	{
 		return callMethod<jbyte>(
 			"byteValue",
 			"()B"
 		);
 	}
-	jint Double::compareTo(java::lang::Double arg0)
+	jint Double::compareTo(java::lang::Double arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -268,7 +268,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Double::compareTo(JObject arg0)
+	jint Double::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -276,21 +276,21 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	java::util::Optional Double::describeConstable()
+	java::util::Optional Double::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	jdouble Double::doubleValue()
+	jdouble Double::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean Double::equals(JObject arg0)
+	jboolean Double::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -298,49 +298,49 @@ namespace java::lang
 			arg0.object<jobject>()
 		);
 	}
-	jfloat Double::floatValue()
+	jfloat Double::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	jint Double::hashCode()
+	jint Double::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Double::intValue()
+	jint Double::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jboolean Double::isInfinite()
+	jboolean Double::isInfinite() const
 	{
 		return callMethod<jboolean>(
 			"isInfinite",
 			"()Z"
 		);
 	}
-	jboolean Double::isNaN()
+	jboolean Double::isNaN() const
 	{
 		return callMethod<jboolean>(
 			"isNaN",
 			"()Z"
 		);
 	}
-	jlong Double::longValue()
+	jlong Double::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	java::lang::Double Double::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0)
+	java::lang::Double Double::resolveConstantDesc(java::lang::invoke::MethodHandles_Lookup arg0) const
 	{
 		return callObjectMethod(
 			"resolveConstantDesc",
@@ -348,14 +348,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jshort Double::shortValue()
+	jshort Double::shortValue() const
 	{
 		return callMethod<jshort>(
 			"shortValue",
 			"()S"
 		);
 	}
-	JString Double::toString()
+	JString Double::toString() const
 	{
 		return callObjectMethod(
 			"toString",

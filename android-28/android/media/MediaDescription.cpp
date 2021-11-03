@@ -82,14 +82,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint MediaDescription::describeContents()
+	jint MediaDescription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean MediaDescription::equals(JObject arg0)
+	jboolean MediaDescription::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -97,70 +97,70 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	JString MediaDescription::getDescription()
+	JString MediaDescription::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::os::Bundle MediaDescription::getExtras()
+	android::os::Bundle MediaDescription::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::graphics::Bitmap MediaDescription::getIconBitmap()
+	android::graphics::Bitmap MediaDescription::getIconBitmap() const
 	{
 		return callObjectMethod(
 			"getIconBitmap",
 			"()Landroid/graphics/Bitmap;"
 		);
 	}
-	android::net::Uri MediaDescription::getIconUri()
+	android::net::Uri MediaDescription::getIconUri() const
 	{
 		return callObjectMethod(
 			"getIconUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString MediaDescription::getMediaId()
+	JString MediaDescription::getMediaId() const
 	{
 		return callObjectMethod(
 			"getMediaId",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::net::Uri MediaDescription::getMediaUri()
+	android::net::Uri MediaDescription::getMediaUri() const
 	{
 		return callObjectMethod(
 			"getMediaUri",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JString MediaDescription::getSubtitle()
+	JString MediaDescription::getSubtitle() const
 	{
 		return callObjectMethod(
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString MediaDescription::getTitle()
+	JString MediaDescription::getTitle() const
 	{
 		return callObjectMethod(
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString MediaDescription::toString()
+	JString MediaDescription::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void MediaDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void MediaDescription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -38,28 +38,28 @@ namespace android::hardware::biometrics
 		) {}
 	
 	// Methods
-	javax::crypto::Cipher BiometricPrompt_CryptoObject::getCipher()
+	javax::crypto::Cipher BiometricPrompt_CryptoObject::getCipher() const
 	{
 		return callObjectMethod(
 			"getCipher",
 			"()Ljavax/crypto/Cipher;"
 		);
 	}
-	android::security::identity::IdentityCredential BiometricPrompt_CryptoObject::getIdentityCredential()
+	android::security::identity::IdentityCredential BiometricPrompt_CryptoObject::getIdentityCredential() const
 	{
 		return callObjectMethod(
 			"getIdentityCredential",
 			"()Landroid/security/identity/IdentityCredential;"
 		);
 	}
-	javax::crypto::Mac BiometricPrompt_CryptoObject::getMac()
+	javax::crypto::Mac BiometricPrompt_CryptoObject::getMac() const
 	{
 		return callObjectMethod(
 			"getMac",
 			"()Ljavax/crypto/Mac;"
 		);
 	}
-	java::security::Signature BiometricPrompt_CryptoObject::getSignature()
+	java::security::Signature BiometricPrompt_CryptoObject::getSignature() const
 	{
 		return callObjectMethod(
 			"getSignature",

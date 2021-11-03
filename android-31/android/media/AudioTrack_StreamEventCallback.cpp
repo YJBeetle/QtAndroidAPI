@@ -16,7 +16,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void AudioTrack_StreamEventCallback::onDataRequest(android::media::AudioTrack arg0, jint arg1)
+	void AudioTrack_StreamEventCallback::onDataRequest(android::media::AudioTrack arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onDataRequest",
@@ -25,7 +25,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void AudioTrack_StreamEventCallback::onPresentationEnded(android::media::AudioTrack arg0)
+	void AudioTrack_StreamEventCallback::onPresentationEnded(android::media::AudioTrack arg0) const
 	{
 		callMethod<void>(
 			"onPresentationEnded",
@@ -33,7 +33,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack_StreamEventCallback::onTearDown(android::media::AudioTrack arg0)
+	void AudioTrack_StreamEventCallback::onTearDown(android::media::AudioTrack arg0) const
 	{
 		callMethod<void>(
 			"onTearDown",

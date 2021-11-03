@@ -11,21 +11,21 @@ namespace android::telecom
 	// Constructors
 	
 	// Methods
-	JString Connection_RttTextStream::read()
+	JString Connection_RttTextStream::read() const
 	{
 		return callObjectMethod(
 			"read",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString Connection_RttTextStream::readImmediately()
+	JString Connection_RttTextStream::readImmediately() const
 	{
 		return callObjectMethod(
 			"readImmediately",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Connection_RttTextStream::write(JString arg0)
+	void Connection_RttTextStream::write(JString arg0) const
 	{
 		callMethod<void>(
 			"write",

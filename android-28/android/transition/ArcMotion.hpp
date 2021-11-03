@@ -27,13 +27,13 @@ namespace android::transition
 		ArcMotion(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jfloat getMaximumAngle();
-		jfloat getMinimumHorizontalAngle();
-		jfloat getMinimumVerticalAngle();
-		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setMaximumAngle(jfloat arg0);
-		void setMinimumHorizontalAngle(jfloat arg0);
-		void setMinimumVerticalAngle(jfloat arg0);
+		jfloat getMaximumAngle() const;
+		jfloat getMinimumHorizontalAngle() const;
+		jfloat getMinimumVerticalAngle() const;
+		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3) const;
+		void setMaximumAngle(jfloat arg0) const;
+		void setMinimumHorizontalAngle(jfloat arg0) const;
+		void setMinimumVerticalAngle(jfloat arg0) const;
 	};
 } // namespace android::transition
 

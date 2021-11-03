@@ -58,56 +58,56 @@ namespace android::bluetooth
 		) {}
 	
 	// Methods
-	jint BluetoothHidDeviceAppQosSettings::describeContents()
+	jint BluetoothHidDeviceAppQosSettings::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getDelayVariation()
+	jint BluetoothHidDeviceAppQosSettings::getDelayVariation() const
 	{
 		return callMethod<jint>(
 			"getDelayVariation",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getLatency()
+	jint BluetoothHidDeviceAppQosSettings::getLatency() const
 	{
 		return callMethod<jint>(
 			"getLatency",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
+	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth() const
 	{
 		return callMethod<jint>(
 			"getPeakBandwidth",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getServiceType()
+	jint BluetoothHidDeviceAppQosSettings::getServiceType() const
 	{
 		return callMethod<jint>(
 			"getServiceType",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
+	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize() const
 	{
 		return callMethod<jint>(
 			"getTokenBucketSize",
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
+	jint BluetoothHidDeviceAppQosSettings::getTokenRate() const
 	{
 		return callMethod<jint>(
 			"getTokenRate",
 			"()I"
 		);
 	}
-	void BluetoothHidDeviceAppQosSettings::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BluetoothHidDeviceAppQosSettings::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

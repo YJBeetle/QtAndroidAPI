@@ -22,12 +22,12 @@ namespace android::view
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getDeviceId();
-		jint getDisplayId();
-		jlong getEventTimeNanos();
-		jint getSource();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getDeviceId() const;
+		jint getDisplayId() const;
+		jlong getEventTimeNanos() const;
+		jint getSource() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view
 

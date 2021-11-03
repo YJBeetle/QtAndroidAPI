@@ -10,7 +10,7 @@ namespace android::hardware
 	// Constructors
 	
 	// Methods
-	jboolean SensorPrivacyManager::supportsSensorToggle(jint arg0)
+	jboolean SensorPrivacyManager::supportsSensorToggle(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsSensorToggle",

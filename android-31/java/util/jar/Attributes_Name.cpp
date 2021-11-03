@@ -162,7 +162,7 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	jboolean Attributes_Name::equals(JObject arg0)
+	jboolean Attributes_Name::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -170,14 +170,14 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	jint Attributes_Name::hashCode()
+	jint Attributes_Name::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString Attributes_Name::toString()
+	JString Attributes_Name::toString() const
 	{
 		return callObjectMethod(
 			"toString",

@@ -32,7 +32,7 @@ namespace android::content::res::loader
 		static android::content::res::loader::ResourcesProvider loadFromDirectory(JString arg0, JObject arg1);
 		static android::content::res::loader::ResourcesProvider loadFromSplit(android::content::Context arg0, JString arg1);
 		static android::content::res::loader::ResourcesProvider loadFromTable(android::os::ParcelFileDescriptor arg0, JObject arg1);
-		void close();
+		void close() const;
 	};
 } // namespace android::content::res::loader
 

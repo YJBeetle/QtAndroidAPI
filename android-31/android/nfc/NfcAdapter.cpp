@@ -249,7 +249,7 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	void NfcAdapter::disableForegroundDispatch(android::app::Activity arg0)
+	void NfcAdapter::disableForegroundDispatch(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"disableForegroundDispatch",
@@ -257,7 +257,7 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	void NfcAdapter::disableForegroundNdefPush(android::app::Activity arg0)
+	void NfcAdapter::disableForegroundNdefPush(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"disableForegroundNdefPush",
@@ -265,7 +265,7 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	void NfcAdapter::disableReaderMode(android::app::Activity arg0)
+	void NfcAdapter::disableReaderMode(android::app::Activity arg0) const
 	{
 		callMethod<void>(
 			"disableReaderMode",
@@ -273,7 +273,7 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	void NfcAdapter::enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, JArray arg2, JArray arg3)
+	void NfcAdapter::enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, JArray arg2, JArray arg3) const
 	{
 		callMethod<void>(
 			"enableForegroundDispatch",
@@ -284,7 +284,7 @@ namespace android::nfc
 			arg3.object<jarray>()
 		);
 	}
-	void NfcAdapter::enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1)
+	void NfcAdapter::enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1) const
 	{
 		callMethod<void>(
 			"enableForegroundNdefPush",
@@ -293,7 +293,7 @@ namespace android::nfc
 			arg1.object()
 		);
 	}
-	void NfcAdapter::enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3)
+	void NfcAdapter::enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"enableReaderMode",
@@ -304,7 +304,7 @@ namespace android::nfc
 			arg3.object()
 		);
 	}
-	jboolean NfcAdapter::ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3)
+	jboolean NfcAdapter::ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3) const
 	{
 		return callMethod<jboolean>(
 			"ignore",
@@ -315,7 +315,7 @@ namespace android::nfc
 			arg3.object()
 		);
 	}
-	jboolean NfcAdapter::invokeBeam(android::app::Activity arg0)
+	jboolean NfcAdapter::invokeBeam(android::app::Activity arg0) const
 	{
 		return callMethod<jboolean>(
 			"invokeBeam",
@@ -323,35 +323,35 @@ namespace android::nfc
 			arg0.object()
 		);
 	}
-	jboolean NfcAdapter::isEnabled()
+	jboolean NfcAdapter::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean NfcAdapter::isNdefPushEnabled()
+	jboolean NfcAdapter::isNdefPushEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isNdefPushEnabled",
 			"()Z"
 		);
 	}
-	jboolean NfcAdapter::isSecureNfcEnabled()
+	jboolean NfcAdapter::isSecureNfcEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSecureNfcEnabled",
 			"()Z"
 		);
 	}
-	jboolean NfcAdapter::isSecureNfcSupported()
+	jboolean NfcAdapter::isSecureNfcSupported() const
 	{
 		return callMethod<jboolean>(
 			"isSecureNfcSupported",
 			"()Z"
 		);
 	}
-	void NfcAdapter::setBeamPushUris(JArray arg0, android::app::Activity arg1)
+	void NfcAdapter::setBeamPushUris(JArray arg0, android::app::Activity arg1) const
 	{
 		callMethod<void>(
 			"setBeamPushUris",
@@ -360,7 +360,7 @@ namespace android::nfc
 			arg1.object()
 		);
 	}
-	void NfcAdapter::setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1)
+	void NfcAdapter::setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1) const
 	{
 		callMethod<void>(
 			"setBeamPushUrisCallback",
@@ -369,7 +369,7 @@ namespace android::nfc
 			arg1.object()
 		);
 	}
-	void NfcAdapter::setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, JArray arg2)
+	void NfcAdapter::setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"setNdefPushMessage",
@@ -379,7 +379,7 @@ namespace android::nfc
 			arg2.object<jarray>()
 		);
 	}
-	void NfcAdapter::setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, JArray arg2)
+	void NfcAdapter::setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"setNdefPushMessageCallback",
@@ -389,7 +389,7 @@ namespace android::nfc
 			arg2.object<jarray>()
 		);
 	}
-	void NfcAdapter::setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, JArray arg2)
+	void NfcAdapter::setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"setOnNdefPushCompleteCallback",

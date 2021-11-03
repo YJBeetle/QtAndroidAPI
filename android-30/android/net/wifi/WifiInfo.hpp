@@ -34,26 +34,26 @@ namespace android::net::wifi
 		
 		// Methods
 		static android::net::NetworkInfo_DetailedState getDetailedStateOf(android::net::wifi::SupplicantState arg0);
-		jint describeContents();
-		JString getBSSID();
-		jint getFrequency();
-		jboolean getHiddenSSID();
-		jint getIpAddress();
-		jint getLinkSpeed();
-		JString getMacAddress();
-		jint getMaxSupportedRxLinkSpeedMbps();
-		jint getMaxSupportedTxLinkSpeedMbps();
-		jint getNetworkId();
-		JString getPasspointFqdn();
-		JString getPasspointProviderFriendlyName();
-		jint getRssi();
-		jint getRxLinkSpeedMbps();
-		JString getSSID();
-		android::net::wifi::SupplicantState getSupplicantState();
-		jint getTxLinkSpeedMbps();
-		jint getWifiStandard();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString getBSSID() const;
+		jint getFrequency() const;
+		jboolean getHiddenSSID() const;
+		jint getIpAddress() const;
+		jint getLinkSpeed() const;
+		JString getMacAddress() const;
+		jint getMaxSupportedRxLinkSpeedMbps() const;
+		jint getMaxSupportedTxLinkSpeedMbps() const;
+		jint getNetworkId() const;
+		JString getPasspointFqdn() const;
+		JString getPasspointProviderFriendlyName() const;
+		jint getRssi() const;
+		jint getRxLinkSpeedMbps() const;
+		JString getSSID() const;
+		android::net::wifi::SupplicantState getSupplicantState() const;
+		jint getTxLinkSpeedMbps() const;
+		jint getWifiStandard() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

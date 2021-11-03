@@ -22,8 +22,8 @@ namespace android::accessibilityservice
 		AccessibilityService_GestureResultCallback();
 		
 		// Methods
-		void onCancelled(android::accessibilityservice::GestureDescription arg0);
-		void onCompleted(android::accessibilityservice::GestureDescription arg0);
+		void onCancelled(android::accessibilityservice::GestureDescription arg0) const;
+		void onCompleted(android::accessibilityservice::GestureDescription arg0) const;
 	};
 } // namespace android::accessibilityservice
 

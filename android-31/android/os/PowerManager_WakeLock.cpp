@@ -13,14 +13,14 @@ namespace android::os
 	// Constructors
 	
 	// Methods
-	void PowerManager_WakeLock::acquire()
+	void PowerManager_WakeLock::acquire() const
 	{
 		callMethod<void>(
 			"acquire",
 			"()V"
 		);
 	}
-	void PowerManager_WakeLock::acquire(jlong arg0)
+	void PowerManager_WakeLock::acquire(jlong arg0) const
 	{
 		callMethod<void>(
 			"acquire",
@@ -28,21 +28,21 @@ namespace android::os
 			arg0
 		);
 	}
-	jboolean PowerManager_WakeLock::isHeld()
+	jboolean PowerManager_WakeLock::isHeld() const
 	{
 		return callMethod<jboolean>(
 			"isHeld",
 			"()Z"
 		);
 	}
-	void PowerManager_WakeLock::release()
+	void PowerManager_WakeLock::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void PowerManager_WakeLock::release(jint arg0)
+	void PowerManager_WakeLock::release(jint arg0) const
 	{
 		callMethod<void>(
 			"release",
@@ -50,7 +50,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void PowerManager_WakeLock::setReferenceCounted(jboolean arg0)
+	void PowerManager_WakeLock::setReferenceCounted(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setReferenceCounted",
@@ -58,7 +58,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void PowerManager_WakeLock::setWorkSource(android::os::WorkSource arg0)
+	void PowerManager_WakeLock::setWorkSource(android::os::WorkSource arg0) const
 	{
 		callMethod<void>(
 			"setWorkSource",
@@ -66,7 +66,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	JString PowerManager_WakeLock::toString()
+	JString PowerManager_WakeLock::toString() const
 	{
 		return callObjectMethod(
 			"toString",

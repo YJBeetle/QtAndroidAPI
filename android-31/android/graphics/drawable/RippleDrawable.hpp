@@ -52,31 +52,31 @@ namespace android::graphics::drawable
 		RippleDrawable(android::content::res::ColorStateList arg0, android::graphics::drawable::Drawable arg1, android::graphics::drawable::Drawable arg2);
 		
 		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		jboolean canApplyTheme();
-		void draw(android::graphics::Canvas arg0);
-		android::graphics::drawable::Drawable_ConstantState getConstantState();
-		android::graphics::Rect getDirtyBounds();
-		android::content::res::ColorStateList getEffectColor();
-		void getHotspotBounds(android::graphics::Rect arg0);
-		jint getOpacity();
-		void getOutline(android::graphics::Outline arg0);
-		jint getRadius();
-		jboolean hasFocusStateSpecified();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		void invalidateSelf();
-		jboolean isProjected();
-		jboolean isStateful();
-		void jumpToCurrentState();
-		android::graphics::drawable::Drawable mutate();
-		void setColor(android::content::res::ColorStateList arg0);
-		jboolean setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1);
-		void setEffectColor(android::content::res::ColorStateList arg0);
-		void setHotspot(jfloat arg0, jfloat arg1);
-		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setPaddingMode(jint arg0);
-		void setRadius(jint arg0);
-		jboolean setVisible(jboolean arg0, jboolean arg1);
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		jboolean canApplyTheme() const;
+		void draw(android::graphics::Canvas arg0) const;
+		android::graphics::drawable::Drawable_ConstantState getConstantState() const;
+		android::graphics::Rect getDirtyBounds() const;
+		android::content::res::ColorStateList getEffectColor() const;
+		void getHotspotBounds(android::graphics::Rect arg0) const;
+		jint getOpacity() const;
+		void getOutline(android::graphics::Outline arg0) const;
+		jint getRadius() const;
+		jboolean hasFocusStateSpecified() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		void invalidateSelf() const;
+		jboolean isProjected() const;
+		jboolean isStateful() const;
+		void jumpToCurrentState() const;
+		android::graphics::drawable::Drawable mutate() const;
+		void setColor(android::content::res::ColorStateList arg0) const;
+		jboolean setDrawableByLayerId(jint arg0, android::graphics::drawable::Drawable arg1) const;
+		void setEffectColor(android::content::res::ColorStateList arg0) const;
+		void setHotspot(jfloat arg0, jfloat arg1) const;
+		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setPaddingMode(jint arg0) const;
+		void setRadius(jint arg0) const;
+		jboolean setVisible(jboolean arg0, jboolean arg1) const;
 	};
 } // namespace android::graphics::drawable
 

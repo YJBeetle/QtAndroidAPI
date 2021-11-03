@@ -80,35 +80,35 @@ namespace android::telecom
 		// Constructors
 		
 		// Methods
-		void acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2);
-		void acceptRingingCall();
-		void acceptRingingCall(jint arg0);
-		void addNewIncomingCall(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1);
-		void cancelMissedCallsNotification();
-		android::content::Intent createManageBlockedNumbersIntent();
-		jboolean endCall();
-		android::net::Uri getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		JObject getCallCapablePhoneAccounts();
-		JString getDefaultDialerPackage();
-		android::telecom::PhoneAccountHandle getDefaultOutgoingPhoneAccount(JString arg0);
-		JString getLine1Number(android::telecom::PhoneAccountHandle arg0);
-		android::telecom::PhoneAccount getPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		JObject getSelfManagedPhoneAccounts();
-		android::telecom::PhoneAccountHandle getSimCallManager();
-		JString getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0);
-		jboolean handleMmi(JString arg0);
-		jboolean handleMmi(JString arg0, android::telecom::PhoneAccountHandle arg1);
-		jboolean isInCall();
-		jboolean isInManagedCall();
-		jboolean isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0);
-		jboolean isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0);
-		jboolean isTtySupported();
-		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, JString arg1);
-		void placeCall(android::net::Uri arg0, android::os::Bundle arg1);
-		void registerPhoneAccount(android::telecom::PhoneAccount arg0);
-		void showInCallScreen(jboolean arg0);
-		void silenceRinger();
-		void unregisterPhoneAccount(android::telecom::PhoneAccountHandle arg0);
+		void acceptHandover(android::net::Uri arg0, jint arg1, android::telecom::PhoneAccountHandle arg2) const;
+		void acceptRingingCall() const;
+		void acceptRingingCall(jint arg0) const;
+		void addNewIncomingCall(android::telecom::PhoneAccountHandle arg0, android::os::Bundle arg1) const;
+		void cancelMissedCallsNotification() const;
+		android::content::Intent createManageBlockedNumbersIntent() const;
+		jboolean endCall() const;
+		android::net::Uri getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0) const;
+		JObject getCallCapablePhoneAccounts() const;
+		JString getDefaultDialerPackage() const;
+		android::telecom::PhoneAccountHandle getDefaultOutgoingPhoneAccount(JString arg0) const;
+		JString getLine1Number(android::telecom::PhoneAccountHandle arg0) const;
+		android::telecom::PhoneAccount getPhoneAccount(android::telecom::PhoneAccountHandle arg0) const;
+		JObject getSelfManagedPhoneAccounts() const;
+		android::telecom::PhoneAccountHandle getSimCallManager() const;
+		JString getVoiceMailNumber(android::telecom::PhoneAccountHandle arg0) const;
+		jboolean handleMmi(JString arg0) const;
+		jboolean handleMmi(JString arg0, android::telecom::PhoneAccountHandle arg1) const;
+		jboolean isInCall() const;
+		jboolean isInManagedCall() const;
+		jboolean isIncomingCallPermitted(android::telecom::PhoneAccountHandle arg0) const;
+		jboolean isOutgoingCallPermitted(android::telecom::PhoneAccountHandle arg0) const;
+		jboolean isTtySupported() const;
+		jboolean isVoiceMailNumber(android::telecom::PhoneAccountHandle arg0, JString arg1) const;
+		void placeCall(android::net::Uri arg0, android::os::Bundle arg1) const;
+		void registerPhoneAccount(android::telecom::PhoneAccount arg0) const;
+		void showInCallScreen(jboolean arg0) const;
+		void silenceRinger() const;
+		void unregisterPhoneAccount(android::telecom::PhoneAccountHandle arg0) const;
 	};
 } // namespace android::telecom
 

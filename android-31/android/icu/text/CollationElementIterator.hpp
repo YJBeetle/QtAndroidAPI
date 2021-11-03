@@ -28,17 +28,17 @@ namespace android::icu::text
 		static jint primaryOrder(jint arg0);
 		static jint secondaryOrder(jint arg0);
 		static jint tertiaryOrder(jint arg0);
-		jboolean equals(JObject arg0);
-		jint getMaxExpansion(jint arg0);
-		jint getOffset();
-		jint hashCode();
-		jint next();
-		jint previous();
-		void reset();
-		void setOffset(jint arg0);
-		void setText(android::icu::text::UCharacterIterator arg0);
-		void setText(JString arg0);
-		void setText(JObject arg0);
+		jboolean equals(JObject arg0) const;
+		jint getMaxExpansion(jint arg0) const;
+		jint getOffset() const;
+		jint hashCode() const;
+		jint next() const;
+		jint previous() const;
+		void reset() const;
+		void setOffset(jint arg0) const;
+		void setText(android::icu::text::UCharacterIterator arg0) const;
+		void setText(JString arg0) const;
+		void setText(JObject arg0) const;
 	};
 } // namespace android::icu::text
 

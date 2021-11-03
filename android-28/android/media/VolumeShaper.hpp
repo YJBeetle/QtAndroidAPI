@@ -25,10 +25,10 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		void apply(android::media::VolumeShaper_Operation arg0);
-		void close();
-		jfloat getVolume();
-		void replace(android::media::VolumeShaper_Configuration arg0, android::media::VolumeShaper_Operation arg1, jboolean arg2);
+		void apply(android::media::VolumeShaper_Operation arg0) const;
+		void close() const;
+		jfloat getVolume() const;
+		void replace(android::media::VolumeShaper_Configuration arg0, android::media::VolumeShaper_Operation arg1, jboolean arg2) const;
 	};
 } // namespace android::media
 

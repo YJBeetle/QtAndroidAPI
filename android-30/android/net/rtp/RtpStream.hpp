@@ -24,15 +24,15 @@ namespace android::net::rtp
 		// Constructors
 		
 		// Methods
-		void associate(java::net::InetAddress arg0, jint arg1);
-		java::net::InetAddress getLocalAddress();
-		jint getLocalPort();
-		jint getMode();
-		java::net::InetAddress getRemoteAddress();
-		jint getRemotePort();
-		jboolean isBusy();
-		void release();
-		void setMode(jint arg0);
+		void associate(java::net::InetAddress arg0, jint arg1) const;
+		java::net::InetAddress getLocalAddress() const;
+		jint getLocalPort() const;
+		jint getMode() const;
+		java::net::InetAddress getRemoteAddress() const;
+		jint getRemotePort() const;
+		jboolean isBusy() const;
+		void release() const;
+		void setMode(jint arg0) const;
 	};
 } // namespace android::net::rtp
 

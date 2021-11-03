@@ -22,9 +22,9 @@ namespace android::opengl
 		ETC1Util_ETC1Texture(jint arg0, jint arg1, java::nio::ByteBuffer arg2);
 		
 		// Methods
-		java::nio::ByteBuffer getData();
-		jint getHeight();
-		jint getWidth();
+		java::nio::ByteBuffer getData() const;
+		jint getHeight() const;
+		jint getWidth() const;
 	};
 } // namespace android::opengl
 

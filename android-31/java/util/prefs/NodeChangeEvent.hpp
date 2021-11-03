@@ -30,8 +30,8 @@ namespace java::util::prefs
 		NodeChangeEvent(java::util::prefs::Preferences arg0, java::util::prefs::Preferences arg1);
 		
 		// Methods
-		java::util::prefs::Preferences getChild();
-		java::util::prefs::Preferences getParent();
+		java::util::prefs::Preferences getChild() const;
+		java::util::prefs::Preferences getParent() const;
 	};
 } // namespace java::util::prefs
 

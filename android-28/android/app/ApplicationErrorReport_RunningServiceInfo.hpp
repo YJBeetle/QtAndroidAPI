@@ -26,8 +26,8 @@ namespace android::app
 		ApplicationErrorReport_RunningServiceInfo(android::os::Parcel arg0);
 		
 		// Methods
-		void dump(JObject arg0, JString arg1);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void dump(JObject arg0, JString arg1) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

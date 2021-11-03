@@ -30,13 +30,13 @@ namespace android::app::appsearch
 		// Methods
 		static android::app::appsearch::AppSearchResult newFailedResult(jint arg0, JString arg1);
 		static android::app::appsearch::AppSearchResult newSuccessfulResult(JObject arg0);
-		jboolean equals(JObject arg0);
-		JString getErrorMessage();
-		jint getResultCode();
-		JObject getResultValue();
-		jint hashCode();
-		jboolean isSuccess();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getErrorMessage() const;
+		jint getResultCode() const;
+		JObject getResultValue() const;
+		jint hashCode() const;
+		jboolean isSuccess() const;
+		JString toString() const;
 	};
 } // namespace android::app::appsearch
 

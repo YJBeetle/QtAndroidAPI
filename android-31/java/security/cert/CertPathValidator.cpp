@@ -51,28 +51,28 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	JString CertPathValidator::getAlgorithm()
+	JString CertPathValidator::getAlgorithm() const
 	{
 		return callObjectMethod(
 			"getAlgorithm",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::security::Provider CertPathValidator::getProvider()
+	java::security::Provider CertPathValidator::getProvider() const
 	{
 		return callObjectMethod(
 			"getProvider",
 			"()Ljava/security/Provider;"
 		);
 	}
-	JObject CertPathValidator::getRevocationChecker()
+	JObject CertPathValidator::getRevocationChecker() const
 	{
 		return callObjectMethod(
 			"getRevocationChecker",
 			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
-	JObject CertPathValidator::validate(java::security::cert::CertPath arg0, JObject arg1)
+	JObject CertPathValidator::validate(java::security::cert::CertPath arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"validate",

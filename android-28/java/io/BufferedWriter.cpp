@@ -26,28 +26,28 @@ namespace java::io
 		) {}
 	
 	// Methods
-	void BufferedWriter::close()
+	void BufferedWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void BufferedWriter::flush()
+	void BufferedWriter::flush() const
 	{
 		callMethod<void>(
 			"flush",
 			"()V"
 		);
 	}
-	void BufferedWriter::newLine()
+	void BufferedWriter::newLine() const
 	{
 		callMethod<void>(
 			"newLine",
 			"()V"
 		);
 	}
-	void BufferedWriter::write(jint arg0)
+	void BufferedWriter::write(jint arg0) const
 	{
 		callMethod<void>(
 			"write",
@@ -55,7 +55,7 @@ namespace java::io
 			arg0
 		);
 	}
-	void BufferedWriter::write(JCharArray arg0, jint arg1, jint arg2)
+	void BufferedWriter::write(JCharArray arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",
@@ -65,7 +65,7 @@ namespace java::io
 			arg2
 		);
 	}
-	void BufferedWriter::write(JString arg0, jint arg1, jint arg2)
+	void BufferedWriter::write(JString arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"write",

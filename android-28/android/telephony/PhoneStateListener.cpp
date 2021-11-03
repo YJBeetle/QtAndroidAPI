@@ -103,7 +103,7 @@ namespace android::telephony
 		) {}
 	
 	// Methods
-	void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0)
+	void PhoneStateListener::onCallForwardingIndicatorChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onCallForwardingIndicatorChanged",
@@ -111,7 +111,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1)
+	void PhoneStateListener::onCallStateChanged(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onCallStateChanged",
@@ -120,7 +120,7 @@ namespace android::telephony
 			arg1.object<jstring>()
 		);
 	}
-	void PhoneStateListener::onCellInfoChanged(JObject arg0)
+	void PhoneStateListener::onCellInfoChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onCellInfoChanged",
@@ -128,7 +128,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0)
+	void PhoneStateListener::onCellLocationChanged(android::telephony::CellLocation arg0) const
 	{
 		callMethod<void>(
 			"onCellLocationChanged",
@@ -136,7 +136,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onDataActivity(jint arg0)
+	void PhoneStateListener::onDataActivity(jint arg0) const
 	{
 		callMethod<void>(
 			"onDataActivity",
@@ -144,7 +144,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onDataConnectionStateChanged(jint arg0)
+	void PhoneStateListener::onDataConnectionStateChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onDataConnectionStateChanged",
@@ -152,7 +152,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1)
+	void PhoneStateListener::onDataConnectionStateChanged(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onDataConnectionStateChanged",
@@ -161,7 +161,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0)
+	void PhoneStateListener::onMessageWaitingIndicatorChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onMessageWaitingIndicatorChanged",
@@ -169,7 +169,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0)
+	void PhoneStateListener::onServiceStateChanged(android::telephony::ServiceState arg0) const
 	{
 		callMethod<void>(
 			"onServiceStateChanged",
@@ -177,7 +177,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onSignalStrengthChanged(jint arg0)
+	void PhoneStateListener::onSignalStrengthChanged(jint arg0) const
 	{
 		callMethod<void>(
 			"onSignalStrengthChanged",
@@ -185,7 +185,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0)
+	void PhoneStateListener::onSignalStrengthsChanged(android::telephony::SignalStrength arg0) const
 	{
 		callMethod<void>(
 			"onSignalStrengthsChanged",
@@ -193,7 +193,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0)
+	void PhoneStateListener::onUserMobileDataStateChanged(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onUserMobileDataStateChanged",

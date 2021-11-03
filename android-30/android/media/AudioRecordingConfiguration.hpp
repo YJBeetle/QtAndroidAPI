@@ -31,19 +31,19 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::media::AudioDeviceInfo getAudioDevice();
-		jint getAudioSource();
-		jint getClientAudioSessionId();
-		jint getClientAudioSource();
-		JObject getClientEffects();
-		android::media::AudioFormat getClientFormat();
-		JObject getEffects();
-		android::media::AudioFormat getFormat();
-		jint hashCode();
-		jboolean isClientSilenced();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::media::AudioDeviceInfo getAudioDevice() const;
+		jint getAudioSource() const;
+		jint getClientAudioSessionId() const;
+		jint getClientAudioSource() const;
+		JObject getClientEffects() const;
+		android::media::AudioFormat getClientFormat() const;
+		JObject getEffects() const;
+		android::media::AudioFormat getFormat() const;
+		jint hashCode() const;
+		jboolean isClientSilenced() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::media
 

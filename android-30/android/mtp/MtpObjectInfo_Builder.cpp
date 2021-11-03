@@ -23,14 +23,14 @@ namespace android::mtp
 		) {}
 	
 	// Methods
-	android::mtp::MtpObjectInfo MtpObjectInfo_Builder::build()
+	android::mtp::MtpObjectInfo MtpObjectInfo_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/mtp/MtpObjectInfo;"
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationDesc(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationDesc(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAssociationDesc",
@@ -38,7 +38,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationType(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setAssociationType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setAssociationType",
@@ -46,7 +46,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setCompressedSize(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setCompressedSize(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setCompressedSize",
@@ -54,7 +54,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateCreated(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateCreated(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDateCreated",
@@ -62,7 +62,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateModified(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setDateModified(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDateModified",
@@ -70,7 +70,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setFormat(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setFormat(jint arg0) const
 	{
 		return callObjectMethod(
 			"setFormat",
@@ -78,7 +78,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixDepth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixDepth(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setImagePixDepth",
@@ -86,7 +86,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixHeight(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixHeight(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setImagePixHeight",
@@ -94,7 +94,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixWidth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setImagePixWidth(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setImagePixWidth",
@@ -102,7 +102,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setKeywords(JString arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setKeywords(JString arg0) const
 	{
 		return callObjectMethod(
 			"setKeywords",
@@ -110,7 +110,7 @@ namespace android::mtp
 			arg0.object<jstring>()
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setName(JString arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setName(JString arg0) const
 	{
 		return callObjectMethod(
 			"setName",
@@ -118,7 +118,7 @@ namespace android::mtp
 			arg0.object<jstring>()
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setObjectHandle(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setObjectHandle(jint arg0) const
 	{
 		return callObjectMethod(
 			"setObjectHandle",
@@ -126,7 +126,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setParent(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setParent(jint arg0) const
 	{
 		return callObjectMethod(
 			"setParent",
@@ -134,7 +134,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setProtectionStatus(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setProtectionStatus(jint arg0) const
 	{
 		return callObjectMethod(
 			"setProtectionStatus",
@@ -142,7 +142,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setSequenceNumber(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setSequenceNumber(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setSequenceNumber",
@@ -150,7 +150,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setStorageId(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setStorageId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setStorageId",
@@ -158,7 +158,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbCompressedSize(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbCompressedSize(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setThumbCompressedSize",
@@ -166,7 +166,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbFormat(jint arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbFormat(jint arg0) const
 	{
 		return callObjectMethod(
 			"setThumbFormat",
@@ -174,7 +174,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixHeight(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixHeight(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setThumbPixHeight",
@@ -182,7 +182,7 @@ namespace android::mtp
 			arg0
 		);
 	}
-	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixWidth(jlong arg0)
+	android::mtp::MtpObjectInfo_Builder MtpObjectInfo_Builder::setThumbPixWidth(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setThumbPixWidth",

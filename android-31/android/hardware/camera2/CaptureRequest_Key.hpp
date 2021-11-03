@@ -21,10 +21,10 @@ namespace android::hardware::camera2
 		CaptureRequest_Key(JString arg0, JClass arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JString getName();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getName() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2
 

@@ -20,9 +20,9 @@ namespace android::media::midi
 		// Constructors
 		
 		// Methods
-		JString getName();
-		jint getPortNumber();
-		jint getType();
+		JString getName() const;
+		jint getPortNumber() const;
+		jint getType() const;
 	};
 } // namespace android::media::midi
 

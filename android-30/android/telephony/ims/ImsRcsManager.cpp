@@ -20,7 +20,7 @@ namespace android::telephony::ims
 	// Constructors
 	
 	// Methods
-	android::telephony::ims::RcsUceAdapter ImsRcsManager::getUceAdapter()
+	android::telephony::ims::RcsUceAdapter ImsRcsManager::getUceAdapter() const
 	{
 		return callObjectMethod(
 			"getUceAdapter",

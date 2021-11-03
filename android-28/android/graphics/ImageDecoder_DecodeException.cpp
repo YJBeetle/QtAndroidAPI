@@ -33,14 +33,14 @@ namespace android::graphics
 	// Constructors
 	
 	// Methods
-	jint ImageDecoder_DecodeException::getError()
+	jint ImageDecoder_DecodeException::getError() const
 	{
 		return callMethod<jint>(
 			"getError",
 			"()I"
 		);
 	}
-	android::graphics::ImageDecoder_Source ImageDecoder_DecodeException::getSource()
+	android::graphics::ImageDecoder_Source ImageDecoder_DecodeException::getSource() const
 	{
 		return callObjectMethod(
 			"getSource",

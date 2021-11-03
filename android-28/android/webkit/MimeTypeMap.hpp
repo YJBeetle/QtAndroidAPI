@@ -20,10 +20,10 @@ namespace android::webkit
 		// Methods
 		static JString getFileExtensionFromUrl(JString arg0);
 		static android::webkit::MimeTypeMap getSingleton();
-		JString getExtensionFromMimeType(JString arg0);
-		JString getMimeTypeFromExtension(JString arg0);
-		jboolean hasExtension(JString arg0);
-		jboolean hasMimeType(JString arg0);
+		JString getExtensionFromMimeType(JString arg0) const;
+		JString getMimeTypeFromExtension(JString arg0) const;
+		jboolean hasExtension(JString arg0) const;
+		jboolean hasMimeType(JString arg0) const;
 	};
 } // namespace android::webkit
 

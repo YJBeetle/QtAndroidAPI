@@ -30,18 +30,18 @@ namespace javax::xml::transform
 		static javax::xml::transform::TransformerFactory newDefaultInstance();
 		static javax::xml::transform::TransformerFactory newInstance();
 		static javax::xml::transform::TransformerFactory newInstance(JString arg0, java::lang::ClassLoader arg1);
-		JObject getAssociatedStylesheet(JObject arg0, JString arg1, JString arg2, JString arg3);
-		JObject getAttribute(JString arg0);
-		JObject getErrorListener();
-		jboolean getFeature(JString arg0);
-		JObject getURIResolver();
-		JObject newTemplates(JObject arg0);
-		javax::xml::transform::Transformer newTransformer();
-		javax::xml::transform::Transformer newTransformer(JObject arg0);
-		void setAttribute(JString arg0, JObject arg1);
-		void setErrorListener(JObject arg0);
-		void setFeature(JString arg0, jboolean arg1);
-		void setURIResolver(JObject arg0);
+		JObject getAssociatedStylesheet(JObject arg0, JString arg1, JString arg2, JString arg3) const;
+		JObject getAttribute(JString arg0) const;
+		JObject getErrorListener() const;
+		jboolean getFeature(JString arg0) const;
+		JObject getURIResolver() const;
+		JObject newTemplates(JObject arg0) const;
+		javax::xml::transform::Transformer newTransformer() const;
+		javax::xml::transform::Transformer newTransformer(JObject arg0) const;
+		void setAttribute(JString arg0, JObject arg1) const;
+		void setErrorListener(JObject arg0) const;
+		void setFeature(JString arg0, jboolean arg1) const;
+		void setURIResolver(JObject arg0) const;
 	};
 } // namespace javax::xml::transform
 

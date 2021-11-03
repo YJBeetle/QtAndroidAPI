@@ -18,9 +18,9 @@ namespace android::service::autofill
 		// Constructors
 		
 		// Methods
-		JString getCategoryId();
-		jfloat getScore();
-		JString toString();
+		JString getCategoryId() const;
+		jfloat getScore() const;
+		JString toString() const;
 	};
 } // namespace android::service::autofill
 

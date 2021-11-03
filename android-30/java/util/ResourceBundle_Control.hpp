@@ -45,14 +45,14 @@ namespace java::util
 		// Methods
 		static java::util::ResourceBundle_Control getControl(JObject arg0);
 		static java::util::ResourceBundle_Control getNoFallbackControl(JObject arg0);
-		JObject getCandidateLocales(JString arg0, java::util::Locale arg1);
-		java::util::Locale getFallbackLocale(JString arg0, java::util::Locale arg1);
-		JObject getFormats(JString arg0);
-		jlong getTimeToLive(JString arg0, java::util::Locale arg1);
-		jboolean needsReload(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5);
-		java::util::ResourceBundle newBundle(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, jboolean arg4);
-		JString toBundleName(JString arg0, java::util::Locale arg1);
-		JString toResourceName(JString arg0, JString arg1);
+		JObject getCandidateLocales(JString arg0, java::util::Locale arg1) const;
+		java::util::Locale getFallbackLocale(JString arg0, java::util::Locale arg1) const;
+		JObject getFormats(JString arg0) const;
+		jlong getTimeToLive(JString arg0, java::util::Locale arg1) const;
+		jboolean needsReload(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, java::util::ResourceBundle arg4, jlong arg5) const;
+		java::util::ResourceBundle newBundle(JString arg0, java::util::Locale arg1, JString arg2, java::lang::ClassLoader arg3, jboolean arg4) const;
+		JString toBundleName(JString arg0, java::util::Locale arg1) const;
+		JString toResourceName(JString arg0, JString arg1) const;
 	};
 } // namespace java::util
 

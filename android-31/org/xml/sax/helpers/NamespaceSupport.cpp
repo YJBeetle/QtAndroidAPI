@@ -34,7 +34,7 @@ namespace org::xml::sax::helpers
 		) {}
 	
 	// Methods
-	jboolean NamespaceSupport::declarePrefix(JString arg0, JString arg1)
+	jboolean NamespaceSupport::declarePrefix(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"declarePrefix",
@@ -43,14 +43,14 @@ namespace org::xml::sax::helpers
 			arg1.object<jstring>()
 		);
 	}
-	JObject NamespaceSupport::getDeclaredPrefixes()
+	JObject NamespaceSupport::getDeclaredPrefixes() const
 	{
 		return callObjectMethod(
 			"getDeclaredPrefixes",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JString NamespaceSupport::getPrefix(JString arg0)
+	JString NamespaceSupport::getPrefix(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPrefix",
@@ -58,14 +58,14 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JObject NamespaceSupport::getPrefixes()
+	JObject NamespaceSupport::getPrefixes() const
 	{
 		return callObjectMethod(
 			"getPrefixes",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject NamespaceSupport::getPrefixes(JString arg0)
+	JObject NamespaceSupport::getPrefixes(JString arg0) const
 	{
 		return callObjectMethod(
 			"getPrefixes",
@@ -73,7 +73,7 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	JString NamespaceSupport::getURI(JString arg0)
+	JString NamespaceSupport::getURI(JString arg0) const
 	{
 		return callObjectMethod(
 			"getURI",
@@ -81,21 +81,21 @@ namespace org::xml::sax::helpers
 			arg0.object<jstring>()
 		);
 	}
-	jboolean NamespaceSupport::isNamespaceDeclUris()
+	jboolean NamespaceSupport::isNamespaceDeclUris() const
 	{
 		return callMethod<jboolean>(
 			"isNamespaceDeclUris",
 			"()Z"
 		);
 	}
-	void NamespaceSupport::popContext()
+	void NamespaceSupport::popContext() const
 	{
 		callMethod<void>(
 			"popContext",
 			"()V"
 		);
 	}
-	JArray NamespaceSupport::processName(JString arg0, JArray arg1, jboolean arg2)
+	JArray NamespaceSupport::processName(JString arg0, JArray arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"processName",
@@ -105,21 +105,21 @@ namespace org::xml::sax::helpers
 			arg2
 		);
 	}
-	void NamespaceSupport::pushContext()
+	void NamespaceSupport::pushContext() const
 	{
 		callMethod<void>(
 			"pushContext",
 			"()V"
 		);
 	}
-	void NamespaceSupport::reset()
+	void NamespaceSupport::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void NamespaceSupport::setNamespaceDeclUris(jboolean arg0)
+	void NamespaceSupport::setNamespaceDeclUris(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNamespaceDeclUris",

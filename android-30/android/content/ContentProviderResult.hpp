@@ -45,9 +45,9 @@ namespace android::content
 		ContentProviderResult(JThrowable arg0);
 		
 		// Methods
-		jint describeContents();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content
 

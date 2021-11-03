@@ -25,20 +25,20 @@ namespace android::text
 		
 		// Methods
 		static android::text::SpannableString valueOf(JString arg0);
-		jchar charAt(jint arg0);
-		jboolean equals(JObject arg0);
-		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3);
-		jint getSpanEnd(JObject arg0);
-		jint getSpanFlags(JObject arg0);
-		jint getSpanStart(JObject arg0);
-		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2);
-		jint hashCode();
-		jint length();
-		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2);
-		void removeSpan(JObject arg0);
-		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3);
-		JString subSequence(jint arg0, jint arg1);
-		JString toString();
+		jchar charAt(jint arg0) const;
+		jboolean equals(JObject arg0) const;
+		void getChars(jint arg0, jint arg1, JCharArray arg2, jint arg3) const;
+		jint getSpanEnd(JObject arg0) const;
+		jint getSpanFlags(JObject arg0) const;
+		jint getSpanStart(JObject arg0) const;
+		JObjectArray getSpans(jint arg0, jint arg1, JClass arg2) const;
+		jint hashCode() const;
+		jint length() const;
+		jint nextSpanTransition(jint arg0, jint arg1, JClass arg2) const;
+		void removeSpan(JObject arg0) const;
+		void setSpan(JObject arg0, jint arg1, jint arg2, jint arg3) const;
+		JString subSequence(jint arg0, jint arg1) const;
+		JString toString() const;
 	};
 } // namespace android::text
 

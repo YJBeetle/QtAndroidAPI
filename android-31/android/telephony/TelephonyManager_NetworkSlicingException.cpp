@@ -11,7 +11,7 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	JString TelephonyManager_NetworkSlicingException::toString()
+	JString TelephonyManager_NetworkSlicingException::toString() const
 	{
 		return callObjectMethod(
 			"toString",

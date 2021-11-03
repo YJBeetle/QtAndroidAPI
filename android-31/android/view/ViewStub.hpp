@@ -38,16 +38,16 @@ namespace android::view
 		ViewStub(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void draw(android::graphics::Canvas arg0);
-		jint getInflatedId();
-		android::view::LayoutInflater getLayoutInflater();
-		jint getLayoutResource();
-		android::view::View inflate();
-		void setInflatedId(jint arg0);
-		void setLayoutInflater(android::view::LayoutInflater arg0);
-		void setLayoutResource(jint arg0);
-		void setOnInflateListener(JObject arg0);
-		void setVisibility(jint arg0);
+		void draw(android::graphics::Canvas arg0) const;
+		jint getInflatedId() const;
+		android::view::LayoutInflater getLayoutInflater() const;
+		jint getLayoutResource() const;
+		android::view::View inflate() const;
+		void setInflatedId(jint arg0) const;
+		void setLayoutInflater(android::view::LayoutInflater arg0) const;
+		void setLayoutResource(jint arg0) const;
+		void setOnInflateListener(JObject arg0) const;
+		void setVisibility(jint arg0) const;
 	};
 } // namespace android::view
 

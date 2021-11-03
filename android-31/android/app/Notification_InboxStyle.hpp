@@ -24,9 +24,9 @@ namespace android::app
 		Notification_InboxStyle(android::app::Notification_Builder arg0);
 		
 		// Methods
-		android::app::Notification_InboxStyle addLine(JString arg0);
-		android::app::Notification_InboxStyle setBigContentTitle(JString arg0);
-		android::app::Notification_InboxStyle setSummaryText(JString arg0);
+		android::app::Notification_InboxStyle addLine(JString arg0) const;
+		android::app::Notification_InboxStyle setBigContentTitle(JString arg0) const;
+		android::app::Notification_InboxStyle setSummaryText(JString arg0) const;
 	};
 } // namespace android::app
 

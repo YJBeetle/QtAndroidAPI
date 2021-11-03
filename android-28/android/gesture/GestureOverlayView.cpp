@@ -74,7 +74,7 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void GestureOverlayView::addOnGestureListener(JObject arg0)
+	void GestureOverlayView::addOnGestureListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnGestureListener",
@@ -82,7 +82,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::addOnGesturePerformedListener(JObject arg0)
+	void GestureOverlayView::addOnGesturePerformedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnGesturePerformedListener",
@@ -90,7 +90,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::addOnGesturingListener(JObject arg0)
+	void GestureOverlayView::addOnGesturingListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"addOnGesturingListener",
@@ -98,21 +98,21 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::cancelClearAnimation()
+	void GestureOverlayView::cancelClearAnimation() const
 	{
 		callMethod<void>(
 			"cancelClearAnimation",
 			"()V"
 		);
 	}
-	void GestureOverlayView::cancelGesture()
+	void GestureOverlayView::cancelGesture() const
 	{
 		callMethod<void>(
 			"cancelGesture",
 			"()V"
 		);
 	}
-	void GestureOverlayView::clear(jboolean arg0)
+	void GestureOverlayView::clear(jboolean arg0) const
 	{
 		callMethod<void>(
 			"clear",
@@ -120,7 +120,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	jboolean GestureOverlayView::dispatchTouchEvent(android::view::MotionEvent arg0)
+	jboolean GestureOverlayView::dispatchTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchTouchEvent",
@@ -128,7 +128,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::draw(android::graphics::Canvas arg0)
+	void GestureOverlayView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -136,42 +136,42 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	java::util::ArrayList GestureOverlayView::getCurrentStroke()
+	java::util::ArrayList GestureOverlayView::getCurrentStroke() const
 	{
 		return callObjectMethod(
 			"getCurrentStroke",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jlong GestureOverlayView::getFadeOffset()
+	jlong GestureOverlayView::getFadeOffset() const
 	{
 		return callMethod<jlong>(
 			"getFadeOffset",
 			"()J"
 		);
 	}
-	android::gesture::Gesture GestureOverlayView::getGesture()
+	android::gesture::Gesture GestureOverlayView::getGesture() const
 	{
 		return callObjectMethod(
 			"getGesture",
 			"()Landroid/gesture/Gesture;"
 		);
 	}
-	jint GestureOverlayView::getGestureColor()
+	jint GestureOverlayView::getGestureColor() const
 	{
 		return callMethod<jint>(
 			"getGestureColor",
 			"()I"
 		);
 	}
-	android::graphics::Path GestureOverlayView::getGesturePath()
+	android::graphics::Path GestureOverlayView::getGesturePath() const
 	{
 		return callObjectMethod(
 			"getGesturePath",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	android::graphics::Path GestureOverlayView::getGesturePath(android::graphics::Path arg0)
+	android::graphics::Path GestureOverlayView::getGesturePath(android::graphics::Path arg0) const
 	{
 		return callObjectMethod(
 			"getGesturePath",
@@ -179,105 +179,105 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	jfloat GestureOverlayView::getGestureStrokeAngleThreshold()
+	jfloat GestureOverlayView::getGestureStrokeAngleThreshold() const
 	{
 		return callMethod<jfloat>(
 			"getGestureStrokeAngleThreshold",
 			"()F"
 		);
 	}
-	jfloat GestureOverlayView::getGestureStrokeLengthThreshold()
+	jfloat GestureOverlayView::getGestureStrokeLengthThreshold() const
 	{
 		return callMethod<jfloat>(
 			"getGestureStrokeLengthThreshold",
 			"()F"
 		);
 	}
-	jfloat GestureOverlayView::getGestureStrokeSquarenessTreshold()
+	jfloat GestureOverlayView::getGestureStrokeSquarenessTreshold() const
 	{
 		return callMethod<jfloat>(
 			"getGestureStrokeSquarenessTreshold",
 			"()F"
 		);
 	}
-	jint GestureOverlayView::getGestureStrokeType()
+	jint GestureOverlayView::getGestureStrokeType() const
 	{
 		return callMethod<jint>(
 			"getGestureStrokeType",
 			"()I"
 		);
 	}
-	jfloat GestureOverlayView::getGestureStrokeWidth()
+	jfloat GestureOverlayView::getGestureStrokeWidth() const
 	{
 		return callMethod<jfloat>(
 			"getGestureStrokeWidth",
 			"()F"
 		);
 	}
-	jint GestureOverlayView::getOrientation()
+	jint GestureOverlayView::getOrientation() const
 	{
 		return callMethod<jint>(
 			"getOrientation",
 			"()I"
 		);
 	}
-	jint GestureOverlayView::getUncertainGestureColor()
+	jint GestureOverlayView::getUncertainGestureColor() const
 	{
 		return callMethod<jint>(
 			"getUncertainGestureColor",
 			"()I"
 		);
 	}
-	jboolean GestureOverlayView::isEventsInterceptionEnabled()
+	jboolean GestureOverlayView::isEventsInterceptionEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEventsInterceptionEnabled",
 			"()Z"
 		);
 	}
-	jboolean GestureOverlayView::isFadeEnabled()
+	jboolean GestureOverlayView::isFadeEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isFadeEnabled",
 			"()Z"
 		);
 	}
-	jboolean GestureOverlayView::isGestureVisible()
+	jboolean GestureOverlayView::isGestureVisible() const
 	{
 		return callMethod<jboolean>(
 			"isGestureVisible",
 			"()Z"
 		);
 	}
-	jboolean GestureOverlayView::isGesturing()
+	jboolean GestureOverlayView::isGesturing() const
 	{
 		return callMethod<jboolean>(
 			"isGesturing",
 			"()Z"
 		);
 	}
-	void GestureOverlayView::removeAllOnGestureListeners()
+	void GestureOverlayView::removeAllOnGestureListeners() const
 	{
 		callMethod<void>(
 			"removeAllOnGestureListeners",
 			"()V"
 		);
 	}
-	void GestureOverlayView::removeAllOnGesturePerformedListeners()
+	void GestureOverlayView::removeAllOnGesturePerformedListeners() const
 	{
 		callMethod<void>(
 			"removeAllOnGesturePerformedListeners",
 			"()V"
 		);
 	}
-	void GestureOverlayView::removeAllOnGesturingListeners()
+	void GestureOverlayView::removeAllOnGesturingListeners() const
 	{
 		callMethod<void>(
 			"removeAllOnGesturingListeners",
 			"()V"
 		);
 	}
-	void GestureOverlayView::removeOnGestureListener(JObject arg0)
+	void GestureOverlayView::removeOnGestureListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnGestureListener",
@@ -285,7 +285,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::removeOnGesturePerformedListener(JObject arg0)
+	void GestureOverlayView::removeOnGesturePerformedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnGesturePerformedListener",
@@ -293,7 +293,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::removeOnGesturingListener(JObject arg0)
+	void GestureOverlayView::removeOnGesturingListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"removeOnGesturingListener",
@@ -301,7 +301,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::setEventsInterceptionEnabled(jboolean arg0)
+	void GestureOverlayView::setEventsInterceptionEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setEventsInterceptionEnabled",
@@ -309,7 +309,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setFadeEnabled(jboolean arg0)
+	void GestureOverlayView::setFadeEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFadeEnabled",
@@ -317,7 +317,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setFadeOffset(jlong arg0)
+	void GestureOverlayView::setFadeOffset(jlong arg0) const
 	{
 		callMethod<void>(
 			"setFadeOffset",
@@ -325,7 +325,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGesture(android::gesture::Gesture arg0)
+	void GestureOverlayView::setGesture(android::gesture::Gesture arg0) const
 	{
 		callMethod<void>(
 			"setGesture",
@@ -333,7 +333,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::setGestureColor(jint arg0)
+	void GestureOverlayView::setGestureColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setGestureColor",
@@ -341,7 +341,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureStrokeAngleThreshold(jfloat arg0)
+	void GestureOverlayView::setGestureStrokeAngleThreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGestureStrokeAngleThreshold",
@@ -349,7 +349,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureStrokeLengthThreshold(jfloat arg0)
+	void GestureOverlayView::setGestureStrokeLengthThreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGestureStrokeLengthThreshold",
@@ -357,7 +357,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureStrokeSquarenessTreshold(jfloat arg0)
+	void GestureOverlayView::setGestureStrokeSquarenessTreshold(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGestureStrokeSquarenessTreshold",
@@ -365,7 +365,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureStrokeType(jint arg0)
+	void GestureOverlayView::setGestureStrokeType(jint arg0) const
 	{
 		callMethod<void>(
 			"setGestureStrokeType",
@@ -373,7 +373,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureStrokeWidth(jfloat arg0)
+	void GestureOverlayView::setGestureStrokeWidth(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setGestureStrokeWidth",
@@ -381,7 +381,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setGestureVisible(jboolean arg0)
+	void GestureOverlayView::setGestureVisible(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setGestureVisible",
@@ -389,7 +389,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setOrientation(jint arg0)
+	void GestureOverlayView::setOrientation(jint arg0) const
 	{
 		callMethod<void>(
 			"setOrientation",
@@ -397,7 +397,7 @@ namespace android::gesture
 			arg0
 		);
 	}
-	void GestureOverlayView::setUncertainGestureColor(jint arg0)
+	void GestureOverlayView::setUncertainGestureColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setUncertainGestureColor",

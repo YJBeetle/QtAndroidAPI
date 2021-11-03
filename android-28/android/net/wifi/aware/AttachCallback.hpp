@@ -22,8 +22,8 @@ namespace android::net::wifi::aware
 		AttachCallback();
 		
 		// Methods
-		void onAttachFailed();
-		void onAttached(android::net::wifi::aware::WifiAwareSession arg0);
+		void onAttachFailed() const;
+		void onAttached(android::net::wifi::aware::WifiAwareSession arg0) const;
 	};
 } // namespace android::net::wifi::aware
 

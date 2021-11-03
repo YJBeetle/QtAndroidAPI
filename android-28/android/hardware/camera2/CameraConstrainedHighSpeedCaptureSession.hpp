@@ -22,7 +22,7 @@ namespace android::hardware::camera2
 		CameraConstrainedHighSpeedCaptureSession();
 		
 		// Methods
-		JObject createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0);
+		JObject createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0) const;
 	};
 } // namespace android::hardware::camera2
 

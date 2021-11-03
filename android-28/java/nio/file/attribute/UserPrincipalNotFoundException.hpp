@@ -19,7 +19,7 @@ namespace java::nio::file::attribute
 		UserPrincipalNotFoundException(JString arg0);
 		
 		// Methods
-		JString getName();
+		JString getName() const;
 	};
 } // namespace java::nio::file::attribute
 

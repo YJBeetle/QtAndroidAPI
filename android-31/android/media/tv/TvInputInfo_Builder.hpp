@@ -34,11 +34,11 @@ namespace android::media::tv
 		TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1);
 		
 		// Methods
-		android::media::tv::TvInputInfo build();
-		android::media::tv::TvInputInfo_Builder setCanPauseRecording(jboolean arg0);
-		android::media::tv::TvInputInfo_Builder setCanRecord(jboolean arg0);
-		android::media::tv::TvInputInfo_Builder setExtras(android::os::Bundle arg0);
-		android::media::tv::TvInputInfo_Builder setTunerCount(jint arg0);
+		android::media::tv::TvInputInfo build() const;
+		android::media::tv::TvInputInfo_Builder setCanPauseRecording(jboolean arg0) const;
+		android::media::tv::TvInputInfo_Builder setCanRecord(jboolean arg0) const;
+		android::media::tv::TvInputInfo_Builder setExtras(android::os::Bundle arg0) const;
+		android::media::tv::TvInputInfo_Builder setTunerCount(jint arg0) const;
 	};
 } // namespace android::media::tv
 

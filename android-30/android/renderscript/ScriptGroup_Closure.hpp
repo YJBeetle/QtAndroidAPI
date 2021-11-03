@@ -25,9 +25,9 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		void destroy();
-		android::renderscript::ScriptGroup_Future getGlobal(android::renderscript::Script_FieldID arg0);
-		android::renderscript::ScriptGroup_Future getReturn();
+		void destroy() const;
+		android::renderscript::ScriptGroup_Future getGlobal(android::renderscript::Script_FieldID arg0) const;
+		android::renderscript::ScriptGroup_Future getReturn() const;
 	};
 } // namespace android::renderscript
 

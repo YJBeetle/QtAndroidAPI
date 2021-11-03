@@ -51,11 +51,11 @@ namespace android::graphics
 		static android::graphics::BitmapRegionDecoder newInstance(JString arg0, jboolean arg1);
 		static android::graphics::BitmapRegionDecoder newInstance(JByteArray arg0, jint arg1, jint arg2);
 		static android::graphics::BitmapRegionDecoder newInstance(JByteArray arg0, jint arg1, jint arg2, jboolean arg3);
-		android::graphics::Bitmap decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1);
-		jint getHeight();
-		jint getWidth();
-		jboolean isRecycled();
-		void recycle();
+		android::graphics::Bitmap decodeRegion(android::graphics::Rect arg0, android::graphics::BitmapFactory_Options arg1) const;
+		jint getHeight() const;
+		jint getWidth() const;
+		jboolean isRecycled() const;
+		void recycle() const;
 	};
 } // namespace android::graphics
 

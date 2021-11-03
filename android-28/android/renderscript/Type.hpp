@@ -28,14 +28,14 @@ namespace android::renderscript
 		static android::renderscript::Type createX(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2);
 		static android::renderscript::Type createXY(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3);
 		static android::renderscript::Type createXYZ(android::renderscript::RenderScript arg0, android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4);
-		jint getCount();
-		android::renderscript::Element getElement();
-		jint getX();
-		jint getY();
-		jint getYuv();
-		jint getZ();
-		jboolean hasFaces();
-		jboolean hasMipmaps();
+		jint getCount() const;
+		android::renderscript::Element getElement() const;
+		jint getX() const;
+		jint getY() const;
+		jint getYuv() const;
+		jint getZ() const;
+		jboolean hasFaces() const;
+		jboolean hasMipmaps() const;
 	};
 } // namespace android::renderscript
 

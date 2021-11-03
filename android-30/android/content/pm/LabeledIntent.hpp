@@ -40,14 +40,14 @@ namespace android::content::pm
 		LabeledIntent(android::content::Intent arg0, JString arg1, JString arg2, jint arg3);
 		
 		// Methods
-		jint getIconResource();
-		jint getLabelResource();
-		JString getNonLocalizedLabel();
-		JString getSourcePackage();
-		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);
-		JString loadLabel(android::content::pm::PackageManager arg0);
-		void readFromParcel(android::os::Parcel arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint getIconResource() const;
+		jint getLabelResource() const;
+		JString getNonLocalizedLabel() const;
+		JString getSourcePackage() const;
+		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0) const;
+		JString loadLabel(android::content::pm::PackageManager arg0) const;
+		void readFromParcel(android::os::Parcel arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

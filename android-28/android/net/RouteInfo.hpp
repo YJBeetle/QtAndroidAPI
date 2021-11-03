@@ -32,16 +32,16 @@ namespace android::net
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::IpPrefix getDestination();
-		java::net::InetAddress getGateway();
-		JString getInterface();
-		jint hashCode();
-		jboolean isDefaultRoute();
-		jboolean matches(java::net::InetAddress arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::IpPrefix getDestination() const;
+		java::net::InetAddress getGateway() const;
+		JString getInterface() const;
+		jint hashCode() const;
+		jboolean isDefaultRoute() const;
+		jboolean matches(java::net::InetAddress arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net
 

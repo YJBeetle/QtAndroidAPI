@@ -24,21 +24,21 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getAsuLevel();
-		jint getCqi();
-		jint getCqiTableIndex();
-		jint getDbm();
-		jint getLevel();
-		jint getRsrp();
-		jint getRsrq();
-		jint getRssi();
-		jint getRssnr();
-		jint getTimingAdvance();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getAsuLevel() const;
+		jint getCqi() const;
+		jint getCqiTableIndex() const;
+		jint getDbm() const;
+		jint getLevel() const;
+		jint getRsrp() const;
+		jint getRsrq() const;
+		jint getRssi() const;
+		jint getRssnr() const;
+		jint getTimingAdvance() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

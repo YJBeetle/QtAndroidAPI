@@ -24,8 +24,8 @@ namespace android::net
 		LocalSocketAddress(JString arg0, android::net::LocalSocketAddress_Namespace arg1);
 		
 		// Methods
-		JString getName();
-		android::net::LocalSocketAddress_Namespace getNamespace();
+		JString getName() const;
+		android::net::LocalSocketAddress_Namespace getNamespace() const;
 	};
 } // namespace android::net
 

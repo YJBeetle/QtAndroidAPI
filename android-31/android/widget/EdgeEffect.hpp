@@ -32,21 +32,21 @@ namespace android::widget
 		EdgeEffect(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		jboolean draw(android::graphics::Canvas arg0);
-		void finish();
-		android::graphics::BlendMode getBlendMode();
-		jint getColor();
-		jfloat getDistance();
-		jint getMaxHeight();
-		jboolean isFinished();
-		void onAbsorb(jint arg0);
-		void onPull(jfloat arg0);
-		void onPull(jfloat arg0, jfloat arg1);
-		jfloat onPullDistance(jfloat arg0, jfloat arg1);
-		void onRelease();
-		void setBlendMode(android::graphics::BlendMode arg0);
-		void setColor(jint arg0);
-		void setSize(jint arg0, jint arg1);
+		jboolean draw(android::graphics::Canvas arg0) const;
+		void finish() const;
+		android::graphics::BlendMode getBlendMode() const;
+		jint getColor() const;
+		jfloat getDistance() const;
+		jint getMaxHeight() const;
+		jboolean isFinished() const;
+		void onAbsorb(jint arg0) const;
+		void onPull(jfloat arg0) const;
+		void onPull(jfloat arg0, jfloat arg1) const;
+		jfloat onPullDistance(jfloat arg0, jfloat arg1) const;
+		void onRelease() const;
+		void setBlendMode(android::graphics::BlendMode arg0) const;
+		void setColor(jint arg0) const;
+		void setSize(jint arg0, jint arg1) const;
 	};
 } // namespace android::widget
 

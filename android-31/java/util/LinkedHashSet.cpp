@@ -34,7 +34,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject LinkedHashSet::spliterator()
+	JObject LinkedHashSet::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",

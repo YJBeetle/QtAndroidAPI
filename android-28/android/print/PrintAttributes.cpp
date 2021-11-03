@@ -59,14 +59,14 @@ namespace android::print
 	// Constructors
 	
 	// Methods
-	jint PrintAttributes::describeContents()
+	jint PrintAttributes::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PrintAttributes::equals(JObject arg0)
+	jboolean PrintAttributes::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,56 +74,56 @@ namespace android::print
 			arg0.object<jobject>()
 		);
 	}
-	jint PrintAttributes::getColorMode()
+	jint PrintAttributes::getColorMode() const
 	{
 		return callMethod<jint>(
 			"getColorMode",
 			"()I"
 		);
 	}
-	jint PrintAttributes::getDuplexMode()
+	jint PrintAttributes::getDuplexMode() const
 	{
 		return callMethod<jint>(
 			"getDuplexMode",
 			"()I"
 		);
 	}
-	android::print::PrintAttributes_MediaSize PrintAttributes::getMediaSize()
+	android::print::PrintAttributes_MediaSize PrintAttributes::getMediaSize() const
 	{
 		return callObjectMethod(
 			"getMediaSize",
 			"()Landroid/print/PrintAttributes$MediaSize;"
 		);
 	}
-	android::print::PrintAttributes_Margins PrintAttributes::getMinMargins()
+	android::print::PrintAttributes_Margins PrintAttributes::getMinMargins() const
 	{
 		return callObjectMethod(
 			"getMinMargins",
 			"()Landroid/print/PrintAttributes$Margins;"
 		);
 	}
-	android::print::PrintAttributes_Resolution PrintAttributes::getResolution()
+	android::print::PrintAttributes_Resolution PrintAttributes::getResolution() const
 	{
 		return callObjectMethod(
 			"getResolution",
 			"()Landroid/print/PrintAttributes$Resolution;"
 		);
 	}
-	jint PrintAttributes::hashCode()
+	jint PrintAttributes::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PrintAttributes::toString()
+	JString PrintAttributes::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PrintAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PrintAttributes::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

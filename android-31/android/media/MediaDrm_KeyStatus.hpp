@@ -24,8 +24,8 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JByteArray getKeyId();
-		jint getStatusCode();
+		JByteArray getKeyId() const;
+		jint getStatusCode() const;
 	};
 } // namespace android::media
 

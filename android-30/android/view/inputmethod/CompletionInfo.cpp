@@ -38,49 +38,49 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint CompletionInfo::describeContents()
+	jint CompletionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jlong CompletionInfo::getId()
+	jlong CompletionInfo::getId() const
 	{
 		return callMethod<jlong>(
 			"getId",
 			"()J"
 		);
 	}
-	JString CompletionInfo::getLabel()
+	JString CompletionInfo::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint CompletionInfo::getPosition()
+	jint CompletionInfo::getPosition() const
 	{
 		return callMethod<jint>(
 			"getPosition",
 			"()I"
 		);
 	}
-	JString CompletionInfo::getText()
+	JString CompletionInfo::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString CompletionInfo::toString()
+	JString CompletionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CompletionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CompletionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

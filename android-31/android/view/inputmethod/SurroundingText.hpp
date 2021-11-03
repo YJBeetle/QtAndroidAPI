@@ -24,12 +24,12 @@ namespace android::view::inputmethod
 		SurroundingText(JString arg0, jint arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		jint getOffset();
-		jint getSelectionEnd();
-		jint getSelectionStart();
-		JString getText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getOffset() const;
+		jint getSelectionEnd() const;
+		jint getSelectionStart() const;
+		JString getText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::inputmethod
 

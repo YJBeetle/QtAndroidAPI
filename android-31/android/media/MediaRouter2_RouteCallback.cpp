@@ -15,7 +15,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaRouter2_RouteCallback::onRoutesAdded(JObject arg0)
+	void MediaRouter2_RouteCallback::onRoutesAdded(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRoutesAdded",
@@ -23,7 +23,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_RouteCallback::onRoutesChanged(JObject arg0)
+	void MediaRouter2_RouteCallback::onRoutesChanged(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRoutesChanged",
@@ -31,7 +31,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_RouteCallback::onRoutesRemoved(JObject arg0)
+	void MediaRouter2_RouteCallback::onRoutesRemoved(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRoutesRemoved",

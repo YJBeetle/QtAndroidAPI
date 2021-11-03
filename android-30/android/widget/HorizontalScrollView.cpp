@@ -48,7 +48,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void HorizontalScrollView::addView(android::view::View arg0)
+	void HorizontalScrollView::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -56,7 +56,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void HorizontalScrollView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void HorizontalScrollView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -65,7 +65,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void HorizontalScrollView::addView(android::view::View arg0, jint arg1)
+	void HorizontalScrollView::addView(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void HorizontalScrollView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void HorizontalScrollView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	jboolean HorizontalScrollView::arrowScroll(jint arg0)
+	jboolean HorizontalScrollView::arrowScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"arrowScroll",
@@ -92,14 +92,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::computeScroll()
+	void HorizontalScrollView::computeScroll() const
 	{
 		callMethod<void>(
 			"computeScroll",
 			"()V"
 		);
 	}
-	jboolean HorizontalScrollView::dispatchKeyEvent(android::view::KeyEvent arg0)
+	jboolean HorizontalScrollView::dispatchKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"dispatchKeyEvent",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void HorizontalScrollView::draw(android::graphics::Canvas arg0)
+	void HorizontalScrollView::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -115,7 +115,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HorizontalScrollView::executeKeyEvent(android::view::KeyEvent arg0)
+	jboolean HorizontalScrollView::executeKeyEvent(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"executeKeyEvent",
@@ -123,7 +123,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void HorizontalScrollView::fling(jint arg0)
+	void HorizontalScrollView::fling(jint arg0) const
 	{
 		callMethod<void>(
 			"fling",
@@ -131,7 +131,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean HorizontalScrollView::fullScroll(jint arg0)
+	jboolean HorizontalScrollView::fullScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"fullScroll",
@@ -139,49 +139,49 @@ namespace android::widget
 			arg0
 		);
 	}
-	JString HorizontalScrollView::getAccessibilityClassName()
+	JString HorizontalScrollView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint HorizontalScrollView::getLeftEdgeEffectColor()
+	jint HorizontalScrollView::getLeftEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getLeftEdgeEffectColor",
 			"()I"
 		);
 	}
-	jint HorizontalScrollView::getMaxScrollAmount()
+	jint HorizontalScrollView::getMaxScrollAmount() const
 	{
 		return callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
 		);
 	}
-	jint HorizontalScrollView::getRightEdgeEffectColor()
+	jint HorizontalScrollView::getRightEdgeEffectColor() const
 	{
 		return callMethod<jint>(
 			"getRightEdgeEffectColor",
 			"()I"
 		);
 	}
-	jboolean HorizontalScrollView::isFillViewport()
+	jboolean HorizontalScrollView::isFillViewport() const
 	{
 		return callMethod<jboolean>(
 			"isFillViewport",
 			"()Z"
 		);
 	}
-	jboolean HorizontalScrollView::isSmoothScrollingEnabled()
+	jboolean HorizontalScrollView::isSmoothScrollingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSmoothScrollingEnabled",
 			"()Z"
 		);
 	}
-	jboolean HorizontalScrollView::onGenericMotionEvent(android::view::MotionEvent arg0)
+	jboolean HorizontalScrollView::onGenericMotionEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onGenericMotionEvent",
@@ -189,7 +189,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HorizontalScrollView::onInterceptTouchEvent(android::view::MotionEvent arg0)
+	jboolean HorizontalScrollView::onInterceptTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onInterceptTouchEvent",
@@ -197,7 +197,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HorizontalScrollView::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean HorizontalScrollView::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -205,7 +205,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jboolean HorizontalScrollView::pageScroll(jint arg0)
+	jboolean HorizontalScrollView::pageScroll(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"pageScroll",
@@ -213,7 +213,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::requestChildFocus(android::view::View arg0, android::view::View arg1)
+	void HorizontalScrollView::requestChildFocus(android::view::View arg0, android::view::View arg1) const
 	{
 		callMethod<void>(
 			"requestChildFocus",
@@ -222,7 +222,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	jboolean HorizontalScrollView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2)
+	jboolean HorizontalScrollView::requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"requestChildRectangleOnScreen",
@@ -232,7 +232,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void HorizontalScrollView::requestDisallowInterceptTouchEvent(jboolean arg0)
+	void HorizontalScrollView::requestDisallowInterceptTouchEvent(jboolean arg0) const
 	{
 		callMethod<void>(
 			"requestDisallowInterceptTouchEvent",
@@ -240,14 +240,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::requestLayout()
+	void HorizontalScrollView::requestLayout() const
 	{
 		callMethod<void>(
 			"requestLayout",
 			"()V"
 		);
 	}
-	void HorizontalScrollView::scrollTo(jint arg0, jint arg1)
+	void HorizontalScrollView::scrollTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"scrollTo",
@@ -256,7 +256,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void HorizontalScrollView::setEdgeEffectColor(jint arg0)
+	void HorizontalScrollView::setEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setEdgeEffectColor",
@@ -264,7 +264,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::setFillViewport(jboolean arg0)
+	void HorizontalScrollView::setFillViewport(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFillViewport",
@@ -272,7 +272,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::setLeftEdgeEffectColor(jint arg0)
+	void HorizontalScrollView::setLeftEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setLeftEdgeEffectColor",
@@ -280,7 +280,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::setRightEdgeEffectColor(jint arg0)
+	void HorizontalScrollView::setRightEdgeEffectColor(jint arg0) const
 	{
 		callMethod<void>(
 			"setRightEdgeEffectColor",
@@ -288,7 +288,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void HorizontalScrollView::setSmoothScrollingEnabled(jboolean arg0)
+	void HorizontalScrollView::setSmoothScrollingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSmoothScrollingEnabled",
@@ -296,14 +296,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean HorizontalScrollView::shouldDelayChildPressedState()
+	jboolean HorizontalScrollView::shouldDelayChildPressedState() const
 	{
 		return callMethod<jboolean>(
 			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
-	void HorizontalScrollView::smoothScrollBy(jint arg0, jint arg1)
+	void HorizontalScrollView::smoothScrollBy(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollBy",
@@ -312,7 +312,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void HorizontalScrollView::smoothScrollTo(jint arg0, jint arg1)
+	void HorizontalScrollView::smoothScrollTo(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"smoothScrollTo",

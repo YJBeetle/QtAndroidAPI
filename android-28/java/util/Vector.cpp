@@ -40,7 +40,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	jboolean Vector::add(JObject arg0)
+	jboolean Vector::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -48,7 +48,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void Vector::add(jint arg0, JObject arg1)
+	void Vector::add(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -57,7 +57,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean Vector::addAll(JObject arg0)
+	jboolean Vector::addAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -65,7 +65,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Vector::addAll(jint arg0, JObject arg1)
+	jboolean Vector::addAll(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -74,7 +74,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Vector::addElement(JObject arg0)
+	void Vector::addElement(JObject arg0) const
 	{
 		callMethod<void>(
 			"addElement",
@@ -82,28 +82,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Vector::capacity()
+	jint Vector::capacity() const
 	{
 		return callMethod<jint>(
 			"capacity",
 			"()I"
 		);
 	}
-	void Vector::clear()
+	void Vector::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Vector::clone()
+	JObject Vector::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Vector::contains(JObject arg0)
+	jboolean Vector::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Vector::containsAll(JObject arg0)
+	jboolean Vector::containsAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -119,7 +119,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Vector::copyInto(JObjectArray arg0)
+	void Vector::copyInto(JObjectArray arg0) const
 	{
 		callMethod<void>(
 			"copyInto",
@@ -127,7 +127,7 @@ namespace java::util
 			arg0.object<jobjectArray>()
 		);
 	}
-	JObject Vector::elementAt(jint arg0)
+	JObject Vector::elementAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"elementAt",
@@ -135,14 +135,14 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject Vector::elements()
+	JObject Vector::elements() const
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	void Vector::ensureCapacity(jint arg0)
+	void Vector::ensureCapacity(jint arg0) const
 	{
 		callMethod<void>(
 			"ensureCapacity",
@@ -150,7 +150,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::equals(JObject arg0)
+	jboolean Vector::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -158,14 +158,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Vector::firstElement()
+	JObject Vector::firstElement() const
 	{
 		return callObjectMethod(
 			"firstElement",
 			"()Ljava/lang/Object;"
 		);
 	}
-	void Vector::forEach(JObject arg0)
+	void Vector::forEach(JObject arg0) const
 	{
 		callMethod<void>(
 			"forEach",
@@ -173,7 +173,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Vector::get(jint arg0)
+	JObject Vector::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -181,14 +181,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Vector::hashCode()
+	jint Vector::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint Vector::indexOf(JObject arg0)
+	jint Vector::indexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -196,7 +196,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Vector::indexOf(JObject arg0, jint arg1)
+	jint Vector::indexOf(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -205,7 +205,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Vector::insertElementAt(JObject arg0, jint arg1)
+	void Vector::insertElementAt(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"insertElementAt",
@@ -214,28 +214,28 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean Vector::isEmpty()
+	jboolean Vector::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject Vector::iterator()
+	JObject Vector::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject Vector::lastElement()
+	JObject Vector::lastElement() const
 	{
 		return callObjectMethod(
 			"lastElement",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Vector::lastIndexOf(JObject arg0)
+	jint Vector::lastIndexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -243,7 +243,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint Vector::lastIndexOf(JObject arg0, jint arg1)
+	jint Vector::lastIndexOf(JObject arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -252,14 +252,14 @@ namespace java::util
 			arg1
 		);
 	}
-	JObject Vector::listIterator()
+	JObject Vector::listIterator() const
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	JObject Vector::listIterator(jint arg0)
+	JObject Vector::listIterator(jint arg0) const
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -267,7 +267,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::remove(JObject arg0)
+	jboolean Vector::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -275,7 +275,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject Vector::remove(jint arg0)
+	JObject Vector::remove(jint arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -283,7 +283,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::removeAll(JObject arg0)
+	jboolean Vector::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -291,14 +291,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Vector::removeAllElements()
+	void Vector::removeAllElements() const
 	{
 		callMethod<void>(
 			"removeAllElements",
 			"()V"
 		);
 	}
-	jboolean Vector::removeElement(JObject arg0)
+	jboolean Vector::removeElement(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeElement",
@@ -306,7 +306,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void Vector::removeElementAt(jint arg0)
+	void Vector::removeElementAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeElementAt",
@@ -314,7 +314,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean Vector::removeIf(JObject arg0)
+	jboolean Vector::removeIf(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -322,7 +322,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Vector::replaceAll(JObject arg0)
+	void Vector::replaceAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -330,7 +330,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Vector::retainAll(JObject arg0)
+	jboolean Vector::retainAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -338,7 +338,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Vector::set(jint arg0, JObject arg1)
+	JObject Vector::set(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"set",
@@ -347,7 +347,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void Vector::setElementAt(JObject arg0, jint arg1)
+	void Vector::setElementAt(JObject arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setElementAt",
@@ -356,7 +356,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Vector::setSize(jint arg0)
+	void Vector::setSize(jint arg0) const
 	{
 		callMethod<void>(
 			"setSize",
@@ -364,14 +364,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jint Vector::size()
+	jint Vector::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	void Vector::sort(JObject arg0)
+	void Vector::sort(JObject arg0) const
 	{
 		callMethod<void>(
 			"sort",
@@ -379,14 +379,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject Vector::spliterator()
+	JObject Vector::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject Vector::subList(jint arg0, jint arg1)
+	JObject Vector::subList(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subList",
@@ -395,14 +395,14 @@ namespace java::util
 			arg1
 		);
 	}
-	JObjectArray Vector::toArray()
+	JObjectArray Vector::toArray() const
 	{
 		return callObjectMethod(
 			"toArray",
 			"()[Ljava/lang/Object;"
 		);
 	}
-	JObjectArray Vector::toArray(JObjectArray arg0)
+	JObjectArray Vector::toArray(JObjectArray arg0) const
 	{
 		return callObjectMethod(
 			"toArray",
@@ -410,14 +410,14 @@ namespace java::util
 			arg0.object<jobjectArray>()
 		);
 	}
-	JString Vector::toString()
+	JString Vector::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void Vector::trimToSize()
+	void Vector::trimToSize() const
 	{
 		callMethod<void>(
 			"trimToSize",

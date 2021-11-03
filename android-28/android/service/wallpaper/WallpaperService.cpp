@@ -37,7 +37,7 @@ namespace android::service::wallpaper
 		) {}
 	
 	// Methods
-	JObject WallpaperService::onBind(android::content::Intent arg0)
+	JObject WallpaperService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -45,21 +45,21 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService::onCreate()
+	void WallpaperService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	android::service::wallpaper::WallpaperService_Engine WallpaperService::onCreateEngine()
+	android::service::wallpaper::WallpaperService_Engine WallpaperService::onCreateEngine() const
 	{
 		return callObjectMethod(
 			"onCreateEngine",
 			"()Landroid/service/wallpaper/WallpaperService$Engine;"
 		);
 	}
-	void WallpaperService::onDestroy()
+	void WallpaperService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",

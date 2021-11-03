@@ -19,14 +19,14 @@ namespace android::view::translation
 		) {}
 	
 	// Methods
-	android::view::translation::TranslationResponseValue TranslationResponseValue_Builder::build()
+	android::view::translation::TranslationResponseValue TranslationResponseValue_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/view/translation/TranslationResponseValue;"
 		);
 	}
-	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setExtras(android::os::Bundle arg0)
+	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setExtras(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setExtras",
@@ -34,7 +34,7 @@ namespace android::view::translation
 			arg0.object()
 		);
 	}
-	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setText(JString arg0)
+	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setText",
@@ -42,7 +42,7 @@ namespace android::view::translation
 			arg0.object<jstring>()
 		);
 	}
-	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setTransliteration(JString arg0)
+	android::view::translation::TranslationResponseValue_Builder TranslationResponseValue_Builder::setTransliteration(JString arg0) const
 	{
 		return callObjectMethod(
 			"setTransliteration",

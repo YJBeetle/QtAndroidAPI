@@ -22,7 +22,7 @@ namespace android::telephony::ims
 		ImsMmTelManager_CapabilityCallback();
 		
 		// Methods
-		void onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0);
+		void onCapabilitiesStatusChanged(android::telephony::ims::feature::MmTelFeature_MmTelCapabilities arg0) const;
 	};
 } // namespace android::telephony::ims
 

@@ -38,10 +38,10 @@ namespace android::renderscript
 		ScriptGroup_Builder(android::renderscript::RenderScript arg0);
 		
 		// Methods
-		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2);
-		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2);
-		android::renderscript::ScriptGroup_Builder addKernel(android::renderscript::Script_KernelID arg0);
-		android::renderscript::ScriptGroup create();
+		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_FieldID arg2) const;
+		android::renderscript::ScriptGroup_Builder addConnection(android::renderscript::Type arg0, android::renderscript::Script_KernelID arg1, android::renderscript::Script_KernelID arg2) const;
+		android::renderscript::ScriptGroup_Builder addKernel(android::renderscript::Script_KernelID arg0) const;
+		android::renderscript::ScriptGroup create() const;
 	};
 } // namespace android::renderscript
 

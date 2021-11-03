@@ -24,7 +24,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"forEach_bicubic",
@@ -32,7 +32,7 @@ namespace android::renderscript
 			arg0.object()
 		);
 	}
-	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1)
+	void ScriptIntrinsicResize::forEach_bicubic(android::renderscript::Allocation arg0, android::renderscript::Script_LaunchOptions arg1) const
 	{
 		callMethod<void>(
 			"forEach_bicubic",
@@ -41,21 +41,21 @@ namespace android::renderscript
 			arg1.object()
 		);
 	}
-	android::renderscript::Script_FieldID ScriptIntrinsicResize::getFieldID_Input()
+	android::renderscript::Script_FieldID ScriptIntrinsicResize::getFieldID_Input() const
 	{
 		return callObjectMethod(
 			"getFieldID_Input",
 			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
-	android::renderscript::Script_KernelID ScriptIntrinsicResize::getKernelID_bicubic()
+	android::renderscript::Script_KernelID ScriptIntrinsicResize::getKernelID_bicubic() const
 	{
 		return callObjectMethod(
 			"getKernelID_bicubic",
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicResize::setInput(android::renderscript::Allocation arg0)
+	void ScriptIntrinsicResize::setInput(android::renderscript::Allocation arg0) const
 	{
 		callMethod<void>(
 			"setInput",

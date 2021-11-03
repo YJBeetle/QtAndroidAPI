@@ -17,7 +17,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void CrossProcessCursorWrapper::fillWindow(jint arg0, android::database::CursorWindow arg1)
+	void CrossProcessCursorWrapper::fillWindow(jint arg0, android::database::CursorWindow arg1) const
 	{
 		callMethod<void>(
 			"fillWindow",
@@ -26,14 +26,14 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	android::database::CursorWindow CrossProcessCursorWrapper::getWindow()
+	android::database::CursorWindow CrossProcessCursorWrapper::getWindow() const
 	{
 		return callObjectMethod(
 			"getWindow",
 			"()Landroid/database/CursorWindow;"
 		);
 	}
-	jboolean CrossProcessCursorWrapper::onMove(jint arg0, jint arg1)
+	jboolean CrossProcessCursorWrapper::onMove(jint arg0, jint arg1) const
 	{
 		return callMethod<jboolean>(
 			"onMove",

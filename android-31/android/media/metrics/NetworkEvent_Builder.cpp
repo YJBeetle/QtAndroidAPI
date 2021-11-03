@@ -17,14 +17,14 @@ namespace android::media::metrics
 		) {}
 	
 	// Methods
-	android::media::metrics::NetworkEvent NetworkEvent_Builder::build()
+	android::media::metrics::NetworkEvent NetworkEvent_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/media/metrics/NetworkEvent;"
 		);
 	}
-	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setMetricsBundle(android::os::Bundle arg0)
+	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setMetricsBundle(android::os::Bundle arg0) const
 	{
 		return callObjectMethod(
 			"setMetricsBundle",
@@ -32,7 +32,7 @@ namespace android::media::metrics
 			arg0.object()
 		);
 	}
-	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setNetworkType(jint arg0)
+	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setNetworkType(jint arg0) const
 	{
 		return callObjectMethod(
 			"setNetworkType",
@@ -40,7 +40,7 @@ namespace android::media::metrics
 			arg0
 		);
 	}
-	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setTimeSinceCreatedMillis(jlong arg0)
+	android::media::metrics::NetworkEvent_Builder NetworkEvent_Builder::setTimeSinceCreatedMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setTimeSinceCreatedMillis",

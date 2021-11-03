@@ -21,8 +21,8 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		JObject getSyncContextBinder();
-		void onFinished(android::content::SyncResult arg0);
+		JObject getSyncContextBinder() const;
+		void onFinished(android::content::SyncResult arg0) const;
 	};
 } // namespace android::content
 

@@ -32,7 +32,7 @@ namespace java::util::jar
 		JarOutputStream(java::io::OutputStream arg0, java::util::jar::Manifest arg1);
 		
 		// Methods
-		void putNextEntry(java::util::zip::ZipEntry arg0);
+		void putNextEntry(java::util::zip::ZipEntry arg0) const;
 	};
 } // namespace java::util::jar
 

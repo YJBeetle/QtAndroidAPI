@@ -19,7 +19,7 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JArray arg0)
+	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JArray arg0) const
 	{
 		return callObjectMethod(
 			"addIds",
@@ -27,7 +27,7 @@ namespace android::app::appsearch
 			arg0.object<jarray>()
 		);
 	}
-	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JObject arg0)
+	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JObject arg0) const
 	{
 		return callObjectMethod(
 			"addIds",
@@ -35,7 +35,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::RemoveByDocumentIdRequest RemoveByDocumentIdRequest_Builder::build()
+	android::app::appsearch::RemoveByDocumentIdRequest RemoveByDocumentIdRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",

@@ -25,11 +25,11 @@ namespace android::view
 		OrientationListener(android::content::Context arg0, jint arg1);
 		
 		// Methods
-		void disable();
-		void enable();
-		void onAccuracyChanged(jint arg0, jint arg1);
-		void onOrientationChanged(jint arg0);
-		void onSensorChanged(jint arg0, JFloatArray arg1);
+		void disable() const;
+		void enable() const;
+		void onAccuracyChanged(jint arg0, jint arg1) const;
+		void onOrientationChanged(jint arg0) const;
+		void onSensorChanged(jint arg0, JFloatArray arg1) const;
 	};
 } // namespace android::view
 

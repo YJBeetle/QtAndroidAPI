@@ -24,14 +24,14 @@ namespace android::bluetooth
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jint getDeviceClass();
-		jint getMajorDeviceClass();
-		jboolean hasService(jint arg0);
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jint getDeviceClass() const;
+		jint getMajorDeviceClass() const;
+		jboolean hasService(jint arg0) const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

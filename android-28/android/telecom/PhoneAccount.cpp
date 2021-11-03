@@ -184,84 +184,84 @@ namespace android::telecom
 			arg1.object<jstring>()
 		);
 	}
-	jint PhoneAccount::describeContents()
+	jint PhoneAccount::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::telecom::PhoneAccountHandle PhoneAccount::getAccountHandle()
+	android::telecom::PhoneAccountHandle PhoneAccount::getAccountHandle() const
 	{
 		return callObjectMethod(
 			"getAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	android::net::Uri PhoneAccount::getAddress()
+	android::net::Uri PhoneAccount::getAddress() const
 	{
 		return callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint PhoneAccount::getCapabilities()
+	jint PhoneAccount::getCapabilities() const
 	{
 		return callMethod<jint>(
 			"getCapabilities",
 			"()I"
 		);
 	}
-	android::os::Bundle PhoneAccount::getExtras()
+	android::os::Bundle PhoneAccount::getExtras() const
 	{
 		return callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint PhoneAccount::getHighlightColor()
+	jint PhoneAccount::getHighlightColor() const
 	{
 		return callMethod<jint>(
 			"getHighlightColor",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Icon PhoneAccount::getIcon()
+	android::graphics::drawable::Icon PhoneAccount::getIcon() const
 	{
 		return callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	JString PhoneAccount::getLabel()
+	JString PhoneAccount::getLabel() const
 	{
 		return callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString PhoneAccount::getShortDescription()
+	JString PhoneAccount::getShortDescription() const
 	{
 		return callObjectMethod(
 			"getShortDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::net::Uri PhoneAccount::getSubscriptionAddress()
+	android::net::Uri PhoneAccount::getSubscriptionAddress() const
 	{
 		return callObjectMethod(
 			"getSubscriptionAddress",
 			"()Landroid/net/Uri;"
 		);
 	}
-	JObject PhoneAccount::getSupportedUriSchemes()
+	JObject PhoneAccount::getSupportedUriSchemes() const
 	{
 		return callObjectMethod(
 			"getSupportedUriSchemes",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean PhoneAccount::hasCapabilities(jint arg0)
+	jboolean PhoneAccount::hasCapabilities(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCapabilities",
@@ -269,14 +269,14 @@ namespace android::telecom
 			arg0
 		);
 	}
-	jboolean PhoneAccount::isEnabled()
+	jboolean PhoneAccount::isEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
 		);
 	}
-	jboolean PhoneAccount::supportsUriScheme(JString arg0)
+	jboolean PhoneAccount::supportsUriScheme(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"supportsUriScheme",
@@ -284,21 +284,21 @@ namespace android::telecom
 			arg0.object<jstring>()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount::toBuilder()
+	android::telecom::PhoneAccount_Builder PhoneAccount::toBuilder() const
 	{
 		return callObjectMethod(
 			"toBuilder",
 			"()Landroid/telecom/PhoneAccount$Builder;"
 		);
 	}
-	JString PhoneAccount::toString()
+	JString PhoneAccount::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PhoneAccount::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PhoneAccount::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

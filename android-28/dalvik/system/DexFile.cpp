@@ -46,28 +46,28 @@ namespace dalvik::system
 			arg2
 		);
 	}
-	void DexFile::close()
+	void DexFile::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	JObject DexFile::entries()
+	JObject DexFile::entries() const
 	{
 		return callObjectMethod(
 			"entries",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JString DexFile::getName()
+	JString DexFile::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JClass DexFile::loadClass(JString arg0, java::lang::ClassLoader arg1)
+	JClass DexFile::loadClass(JString arg0, java::lang::ClassLoader arg1) const
 	{
 		return callObjectMethod(
 			"loadClass",
@@ -76,7 +76,7 @@ namespace dalvik::system
 			arg1.object()
 		);
 	}
-	JString DexFile::toString()
+	JString DexFile::toString() const
 	{
 		return callObjectMethod(
 			"toString",

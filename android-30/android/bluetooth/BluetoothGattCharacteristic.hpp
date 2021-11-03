@@ -72,26 +72,26 @@ namespace android::bluetooth
 		BluetoothGattCharacteristic(java::util::UUID arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0);
-		jint describeContents();
-		android::bluetooth::BluetoothGattDescriptor getDescriptor(java::util::UUID arg0);
-		JObject getDescriptors();
-		java::lang::Float getFloatValue(jint arg0, jint arg1);
-		jint getInstanceId();
-		java::lang::Integer getIntValue(jint arg0, jint arg1);
-		jint getPermissions();
-		jint getProperties();
-		android::bluetooth::BluetoothGattService getService();
-		JString getStringValue(jint arg0);
-		java::util::UUID getUuid();
-		JByteArray getValue();
-		jint getWriteType();
-		jboolean setValue(JByteArray arg0);
-		jboolean setValue(JString arg0);
-		jboolean setValue(jint arg0, jint arg1, jint arg2);
-		jboolean setValue(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setWriteType(jint arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0) const;
+		jint describeContents() const;
+		android::bluetooth::BluetoothGattDescriptor getDescriptor(java::util::UUID arg0) const;
+		JObject getDescriptors() const;
+		java::lang::Float getFloatValue(jint arg0, jint arg1) const;
+		jint getInstanceId() const;
+		java::lang::Integer getIntValue(jint arg0, jint arg1) const;
+		jint getPermissions() const;
+		jint getProperties() const;
+		android::bluetooth::BluetoothGattService getService() const;
+		JString getStringValue(jint arg0) const;
+		java::util::UUID getUuid() const;
+		JByteArray getValue() const;
+		jint getWriteType() const;
+		jboolean setValue(JByteArray arg0) const;
+		jboolean setValue(JString arg0) const;
+		jboolean setValue(jint arg0, jint arg1, jint arg2) const;
+		jboolean setValue(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void setWriteType(jint arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::bluetooth
 

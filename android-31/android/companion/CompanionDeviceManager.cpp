@@ -23,7 +23,7 @@ namespace android::companion
 	// Constructors
 	
 	// Methods
-	void CompanionDeviceManager::associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2)
+	void CompanionDeviceManager::associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2) const
 	{
 		callMethod<void>(
 			"associate",
@@ -33,7 +33,7 @@ namespace android::companion
 			arg2.object()
 		);
 	}
-	void CompanionDeviceManager::disassociate(JString arg0)
+	void CompanionDeviceManager::disassociate(JString arg0) const
 	{
 		callMethod<void>(
 			"disassociate",
@@ -41,14 +41,14 @@ namespace android::companion
 			arg0.object<jstring>()
 		);
 	}
-	JObject CompanionDeviceManager::getAssociations()
+	JObject CompanionDeviceManager::getAssociations() const
 	{
 		return callObjectMethod(
 			"getAssociations",
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean CompanionDeviceManager::hasNotificationAccess(android::content::ComponentName arg0)
+	jboolean CompanionDeviceManager::hasNotificationAccess(android::content::ComponentName arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasNotificationAccess",
@@ -56,7 +56,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceManager::requestNotificationAccess(android::content::ComponentName arg0)
+	void CompanionDeviceManager::requestNotificationAccess(android::content::ComponentName arg0) const
 	{
 		callMethod<void>(
 			"requestNotificationAccess",
@@ -64,7 +64,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceManager::startObservingDevicePresence(JString arg0)
+	void CompanionDeviceManager::startObservingDevicePresence(JString arg0) const
 	{
 		callMethod<void>(
 			"startObservingDevicePresence",
@@ -72,7 +72,7 @@ namespace android::companion
 			arg0.object<jstring>()
 		);
 	}
-	void CompanionDeviceManager::stopObservingDevicePresence(JString arg0)
+	void CompanionDeviceManager::stopObservingDevicePresence(JString arg0) const
 	{
 		callMethod<void>(
 			"stopObservingDevicePresence",

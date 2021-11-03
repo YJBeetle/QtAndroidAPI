@@ -27,7 +27,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	JObject CallScreeningService::onBind(android::content::Intent arg0)
+	JObject CallScreeningService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -35,7 +35,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void CallScreeningService::onScreenCall(android::telecom::Call_Details arg0)
+	void CallScreeningService::onScreenCall(android::telecom::Call_Details arg0) const
 	{
 		callMethod<void>(
 			"onScreenCall",
@@ -43,7 +43,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jboolean CallScreeningService::onUnbind(android::content::Intent arg0)
+	jboolean CallScreeningService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",
@@ -51,7 +51,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void CallScreeningService::respondToCall(android::telecom::Call_Details arg0, android::telecom::CallScreeningService_CallResponse arg1)
+	void CallScreeningService::respondToCall(android::telecom::Call_Details arg0, android::telecom::CallScreeningService_CallResponse arg1) const
 	{
 		callMethod<void>(
 			"respondToCall",

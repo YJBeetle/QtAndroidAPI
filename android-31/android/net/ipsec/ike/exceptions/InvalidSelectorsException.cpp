@@ -18,14 +18,14 @@ namespace android::net::ipsec::ike::exceptions
 		) {}
 	
 	// Methods
-	JByteArray InvalidSelectorsException::getIpSecPacketInfo()
+	JByteArray InvalidSelectorsException::getIpSecPacketInfo() const
 	{
 		return callObjectMethod(
 			"getIpSecPacketInfo",
 			"()[B"
 		);
 	}
-	jint InvalidSelectorsException::getIpSecSpi()
+	jint InvalidSelectorsException::getIpSecSpi() const
 	{
 		return callMethod<jint>(
 			"getIpSecSpi",

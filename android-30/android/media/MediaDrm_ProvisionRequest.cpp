@@ -12,14 +12,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JByteArray MediaDrm_ProvisionRequest::getData()
+	JByteArray MediaDrm_ProvisionRequest::getData() const
 	{
 		return callObjectMethod(
 			"getData",
 			"()[B"
 		);
 	}
-	JString MediaDrm_ProvisionRequest::getDefaultUrl()
+	JString MediaDrm_ProvisionRequest::getDefaultUrl() const
 	{
 		return callObjectMethod(
 			"getDefaultUrl",

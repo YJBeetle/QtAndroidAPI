@@ -92,7 +92,7 @@ namespace android::net::http
 		) {}
 	
 	// Methods
-	jboolean SslError::addError(jint arg0)
+	jboolean SslError::addError(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"addError",
@@ -100,28 +100,28 @@ namespace android::net::http
 			arg0
 		);
 	}
-	android::net::http::SslCertificate SslError::getCertificate()
+	android::net::http::SslCertificate SslError::getCertificate() const
 	{
 		return callObjectMethod(
 			"getCertificate",
 			"()Landroid/net/http/SslCertificate;"
 		);
 	}
-	jint SslError::getPrimaryError()
+	jint SslError::getPrimaryError() const
 	{
 		return callMethod<jint>(
 			"getPrimaryError",
 			"()I"
 		);
 	}
-	JString SslError::getUrl()
+	JString SslError::getUrl() const
 	{
 		return callObjectMethod(
 			"getUrl",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean SslError::hasError(jint arg0)
+	jboolean SslError::hasError(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasError",
@@ -129,7 +129,7 @@ namespace android::net::http
 			arg0
 		);
 	}
-	JString SslError::toString()
+	JString SslError::toString() const
 	{
 		return callObjectMethod(
 			"toString",

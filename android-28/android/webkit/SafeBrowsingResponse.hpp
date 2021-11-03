@@ -17,9 +17,9 @@ namespace android::webkit
 		SafeBrowsingResponse();
 		
 		// Methods
-		void backToSafety(jboolean arg0);
-		void proceed(jboolean arg0);
-		void showInterstitial(jboolean arg0);
+		void backToSafety(jboolean arg0) const;
+		void proceed(jboolean arg0) const;
+		void showInterstitial(jboolean arg0) const;
 	};
 } // namespace android::webkit
 

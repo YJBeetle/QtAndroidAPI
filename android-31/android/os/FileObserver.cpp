@@ -142,7 +142,7 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void FileObserver::onEvent(jint arg0, JString arg1)
+	void FileObserver::onEvent(jint arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"onEvent",
@@ -151,14 +151,14 @@ namespace android::os
 			arg1.object<jstring>()
 		);
 	}
-	void FileObserver::startWatching()
+	void FileObserver::startWatching() const
 	{
 		callMethod<void>(
 			"startWatching",
 			"()V"
 		);
 	}
-	void FileObserver::stopWatching()
+	void FileObserver::stopWatching() const
 	{
 		callMethod<void>(
 			"stopWatching",

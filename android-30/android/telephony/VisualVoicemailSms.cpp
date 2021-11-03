@@ -22,42 +22,42 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint VisualVoicemailSms::describeContents()
+	jint VisualVoicemailSms::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	android::os::Bundle VisualVoicemailSms::getFields()
+	android::os::Bundle VisualVoicemailSms::getFields() const
 	{
 		return callObjectMethod(
 			"getFields",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	JString VisualVoicemailSms::getMessageBody()
+	JString VisualVoicemailSms::getMessageBody() const
 	{
 		return callObjectMethod(
 			"getMessageBody",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::telecom::PhoneAccountHandle VisualVoicemailSms::getPhoneAccountHandle()
+	android::telecom::PhoneAccountHandle VisualVoicemailSms::getPhoneAccountHandle() const
 	{
 		return callObjectMethod(
 			"getPhoneAccountHandle",
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	JString VisualVoicemailSms::getPrefix()
+	JString VisualVoicemailSms::getPrefix() const
 	{
 		return callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
 		);
 	}
-	void VisualVoicemailSms::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void VisualVoicemailSms::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

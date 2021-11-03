@@ -32,7 +32,7 @@ namespace java::time::zone
 		// Methods
 		static java::time::zone::ZoneOffsetTransitionRule_TimeDefinition valueOf(JString arg0);
 		static JArray values();
-		java::time::LocalDateTime createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2);
+		java::time::LocalDateTime createDateTime(java::time::LocalDateTime arg0, java::time::ZoneOffset arg1, java::time::ZoneOffset arg2) const;
 	};
 } // namespace java::time::zone
 

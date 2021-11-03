@@ -12,7 +12,7 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	jboolean AbstractList::add(JObject arg0)
+	jboolean AbstractList::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -20,7 +20,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	void AbstractList::add(jint arg0, JObject arg1)
+	void AbstractList::add(jint arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"add",
@@ -29,7 +29,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	jboolean AbstractList::addAll(jint arg0, JObject arg1)
+	jboolean AbstractList::addAll(jint arg0, JObject arg1) const
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -38,14 +38,14 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void AbstractList::clear()
+	void AbstractList::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean AbstractList::equals(JObject arg0)
+	jboolean AbstractList::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -53,7 +53,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractList::get(jint arg0)
+	JObject AbstractList::get(jint arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -61,14 +61,14 @@ namespace java::util
 			arg0
 		);
 	}
-	jint AbstractList::hashCode()
+	jint AbstractList::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint AbstractList::indexOf(JObject arg0)
+	jint AbstractList::indexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"indexOf",
@@ -76,14 +76,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractList::iterator()
+	JObject AbstractList::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint AbstractList::lastIndexOf(JObject arg0)
+	jint AbstractList::lastIndexOf(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"lastIndexOf",
@@ -91,14 +91,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractList::listIterator()
+	JObject AbstractList::listIterator() const
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	JObject AbstractList::listIterator(jint arg0)
+	JObject AbstractList::listIterator(jint arg0) const
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -106,7 +106,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject AbstractList::remove(jint arg0)
+	JObject AbstractList::remove(jint arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -114,7 +114,7 @@ namespace java::util
 			arg0
 		);
 	}
-	JObject AbstractList::set(jint arg0, JObject arg1)
+	JObject AbstractList::set(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"set",
@@ -123,7 +123,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	JObject AbstractList::subList(jint arg0, jint arg1)
+	JObject AbstractList::subList(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"subList",

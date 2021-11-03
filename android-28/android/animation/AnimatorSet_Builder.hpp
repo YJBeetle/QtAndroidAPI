@@ -25,10 +25,10 @@ namespace android::animation
 		// Constructors
 		
 		// Methods
-		android::animation::AnimatorSet_Builder after(android::animation::Animator arg0);
-		android::animation::AnimatorSet_Builder after(jlong arg0);
-		android::animation::AnimatorSet_Builder before(android::animation::Animator arg0);
-		android::animation::AnimatorSet_Builder with(android::animation::Animator arg0);
+		android::animation::AnimatorSet_Builder after(android::animation::Animator arg0) const;
+		android::animation::AnimatorSet_Builder after(jlong arg0) const;
+		android::animation::AnimatorSet_Builder before(android::animation::Animator arg0) const;
+		android::animation::AnimatorSet_Builder with(android::animation::Animator arg0) const;
 	};
 } // namespace android::animation
 

@@ -26,21 +26,21 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	java::math::BigInteger RSAPrivateKeySpec::getModulus()
+	java::math::BigInteger RSAPrivateKeySpec::getModulus() const
 	{
 		return callObjectMethod(
 			"getModulus",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JObject RSAPrivateKeySpec::getParams()
+	JObject RSAPrivateKeySpec::getParams() const
 	{
 		return callObjectMethod(
 			"getParams",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	java::math::BigInteger RSAPrivateKeySpec::getPrivateExponent()
+	java::math::BigInteger RSAPrivateKeySpec::getPrivateExponent() const
 	{
 		return callObjectMethod(
 			"getPrivateExponent",

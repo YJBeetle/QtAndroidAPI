@@ -15,7 +15,7 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	void WifiManager_ScanResultsCallback::onScanResultsAvailable()
+	void WifiManager_ScanResultsCallback::onScanResultsAvailable() const
 	{
 		callMethod<void>(
 			"onScanResultsAvailable",

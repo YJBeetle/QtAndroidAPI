@@ -31,7 +31,7 @@ namespace android::telecom
 		) {}
 	
 	// Methods
-	void ConnectionService::addConference(android::telecom::Conference arg0)
+	void ConnectionService::addConference(android::telecom::Conference arg0) const
 	{
 		callMethod<void>(
 			"addConference",
@@ -39,7 +39,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void ConnectionService::addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1)
+	void ConnectionService::addExistingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::Connection arg1) const
 	{
 		callMethod<void>(
 			"addExistingConnection",
@@ -48,7 +48,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1)
+	void ConnectionService::conferenceRemoteConnections(android::telecom::RemoteConnection arg0, android::telecom::RemoteConnection arg1) const
 	{
 		callMethod<void>(
 			"conferenceRemoteConnections",
@@ -57,14 +57,14 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::connectionServiceFocusReleased()
+	void ConnectionService::connectionServiceFocusReleased() const
 	{
 		callMethod<void>(
 			"connectionServiceFocusReleased",
 			"()V"
 		);
 	}
-	android::telecom::RemoteConnection ConnectionService::createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::RemoteConnection ConnectionService::createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"createRemoteIncomingConnection",
@@ -73,7 +73,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	android::telecom::RemoteConnection ConnectionService::createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::RemoteConnection ConnectionService::createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"createRemoteOutgoingConnection",
@@ -82,21 +82,21 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	JObject ConnectionService::getAllConferences()
+	JObject ConnectionService::getAllConferences() const
 	{
 		return callObjectMethod(
 			"getAllConferences",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject ConnectionService::getAllConnections()
+	JObject ConnectionService::getAllConnections() const
 	{
 		return callObjectMethod(
 			"getAllConnections",
 			"()Ljava/util/Collection;"
 		);
 	}
-	JObject ConnectionService::onBind(android::content::Intent arg0)
+	JObject ConnectionService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -104,7 +104,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void ConnectionService::onConference(android::telecom::Connection arg0, android::telecom::Connection arg1)
+	void ConnectionService::onConference(android::telecom::Connection arg0, android::telecom::Connection arg1) const
 	{
 		callMethod<void>(
 			"onConference",
@@ -113,21 +113,21 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::onConnectionServiceFocusGained()
+	void ConnectionService::onConnectionServiceFocusGained() const
 	{
 		callMethod<void>(
 			"onConnectionServiceFocusGained",
 			"()V"
 		);
 	}
-	void ConnectionService::onConnectionServiceFocusLost()
+	void ConnectionService::onConnectionServiceFocusLost() const
 	{
 		callMethod<void>(
 			"onConnectionServiceFocusLost",
 			"()V"
 		);
 	}
-	android::telecom::Connection ConnectionService::onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"onCreateIncomingConnection",
@@ -136,7 +136,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	void ConnectionService::onCreateIncomingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		callMethod<void>(
 			"onCreateIncomingConnectionFailed",
@@ -145,7 +145,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	android::telecom::Connection ConnectionService::onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateIncomingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"onCreateIncomingHandoverConnection",
@@ -154,7 +154,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	android::telecom::Connection ConnectionService::onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"onCreateOutgoingConnection",
@@ -163,7 +163,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	void ConnectionService::onCreateOutgoingConnectionFailed(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		callMethod<void>(
 			"onCreateOutgoingConnectionFailed",
@@ -172,7 +172,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	android::telecom::Connection ConnectionService::onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1)
+	android::telecom::Connection ConnectionService::onCreateOutgoingHandoverConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1) const
 	{
 		return callObjectMethod(
 			"onCreateOutgoingHandoverConnection",
@@ -181,7 +181,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void ConnectionService::onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1)
+	void ConnectionService::onHandoverFailed(android::telecom::ConnectionRequest arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onHandoverFailed",
@@ -190,7 +190,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void ConnectionService::onRemoteConferenceAdded(android::telecom::RemoteConference arg0)
+	void ConnectionService::onRemoteConferenceAdded(android::telecom::RemoteConference arg0) const
 	{
 		callMethod<void>(
 			"onRemoteConferenceAdded",
@@ -198,7 +198,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void ConnectionService::onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0)
+	void ConnectionService::onRemoteExistingConnectionAdded(android::telecom::RemoteConnection arg0) const
 	{
 		callMethod<void>(
 			"onRemoteExistingConnectionAdded",
@@ -206,7 +206,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	jboolean ConnectionService::onUnbind(android::content::Intent arg0)
+	jboolean ConnectionService::onUnbind(android::content::Intent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onUnbind",

@@ -40,7 +40,7 @@ namespace android::app::slice
 		) {}
 	
 	// Methods
-	void SliceProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1)
+	void SliceProvider::attachInfo(android::content::Context arg0, android::content::pm::ProviderInfo arg1) const
 	{
 		callMethod<void>(
 			"attachInfo",
@@ -49,7 +49,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::os::Bundle SliceProvider::call(JString arg0, JString arg1, android::os::Bundle arg2)
+	android::os::Bundle SliceProvider::call(JString arg0, JString arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"call",
@@ -59,7 +59,7 @@ namespace android::app::slice
 			arg2.object()
 		);
 	}
-	jint SliceProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2)
+	jint SliceProvider::_delete(android::net::Uri arg0, JString arg1, JArray arg2) const
 	{
 		return callMethod<jint>(
 			"delete",
@@ -69,7 +69,7 @@ namespace android::app::slice
 			arg2.object<jarray>()
 		);
 	}
-	JString SliceProvider::getType(android::net::Uri arg0)
+	JString SliceProvider::getType(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getType",
@@ -77,7 +77,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	android::net::Uri SliceProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1)
+	android::net::Uri SliceProvider::insert(android::net::Uri arg0, android::content::ContentValues arg1) const
 	{
 		return callObjectMethod(
 			"insert",
@@ -86,7 +86,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::app::slice::Slice SliceProvider::onBindSlice(android::net::Uri arg0, JObject arg1)
+	android::app::slice::Slice SliceProvider::onBindSlice(android::net::Uri arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"onBindSlice",
@@ -95,7 +95,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::app::PendingIntent SliceProvider::onCreatePermissionRequest(android::net::Uri arg0)
+	android::app::PendingIntent SliceProvider::onCreatePermissionRequest(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"onCreatePermissionRequest",
@@ -103,7 +103,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	JObject SliceProvider::onGetSliceDescendants(android::net::Uri arg0)
+	JObject SliceProvider::onGetSliceDescendants(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"onGetSliceDescendants",
@@ -111,7 +111,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	android::net::Uri SliceProvider::onMapIntentToUri(android::content::Intent arg0)
+	android::net::Uri SliceProvider::onMapIntentToUri(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onMapIntentToUri",
@@ -119,7 +119,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceProvider::onSlicePinned(android::net::Uri arg0)
+	void SliceProvider::onSlicePinned(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onSlicePinned",
@@ -127,7 +127,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceProvider::onSliceUnpinned(android::net::Uri arg0)
+	void SliceProvider::onSliceUnpinned(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"onSliceUnpinned",
@@ -135,7 +135,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3) const
 	{
 		return callObjectMethod(
 			"query",
@@ -146,7 +146,7 @@ namespace android::app::slice
 			arg3.object()
 		);
 	}
-	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4)
+	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4) const
 	{
 		return callObjectMethod(
 			"query",
@@ -158,7 +158,7 @@ namespace android::app::slice
 			arg4.object<jstring>()
 		);
 	}
-	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5)
+	JObject SliceProvider::query(android::net::Uri arg0, JArray arg1, JString arg2, JArray arg3, JString arg4, android::os::CancellationSignal arg5) const
 	{
 		return callObjectMethod(
 			"query",
@@ -171,7 +171,7 @@ namespace android::app::slice
 			arg5.object()
 		);
 	}
-	jint SliceProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3)
+	jint SliceProvider::update(android::net::Uri arg0, android::content::ContentValues arg1, JString arg2, JArray arg3) const
 	{
 		return callMethod<jint>(
 			"update",

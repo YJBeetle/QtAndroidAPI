@@ -30,7 +30,7 @@ namespace android::app::slice
 	// Constructors
 	
 	// Methods
-	android::app::slice::Slice SliceManager::bindSlice(android::content::Intent arg0, JObject arg1)
+	android::app::slice::Slice SliceManager::bindSlice(android::content::Intent arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"bindSlice",
@@ -39,7 +39,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::app::slice::Slice SliceManager::bindSlice(android::net::Uri arg0, JObject arg1)
+	android::app::slice::Slice SliceManager::bindSlice(android::net::Uri arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"bindSlice",
@@ -48,7 +48,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	jint SliceManager::checkSlicePermission(android::net::Uri arg0, jint arg1, jint arg2)
+	jint SliceManager::checkSlicePermission(android::net::Uri arg0, jint arg1, jint arg2) const
 	{
 		return callMethod<jint>(
 			"checkSlicePermission",
@@ -58,14 +58,14 @@ namespace android::app::slice
 			arg2
 		);
 	}
-	JObject SliceManager::getPinnedSlices()
+	JObject SliceManager::getPinnedSlices() const
 	{
 		return callObjectMethod(
 			"getPinnedSlices",
 			"()Ljava/util/List;"
 		);
 	}
-	JObject SliceManager::getPinnedSpecs(android::net::Uri arg0)
+	JObject SliceManager::getPinnedSpecs(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getPinnedSpecs",
@@ -73,7 +73,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	JObject SliceManager::getSliceDescendants(android::net::Uri arg0)
+	JObject SliceManager::getSliceDescendants(android::net::Uri arg0) const
 	{
 		return callObjectMethod(
 			"getSliceDescendants",
@@ -81,7 +81,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceManager::grantSlicePermission(JString arg0, android::net::Uri arg1)
+	void SliceManager::grantSlicePermission(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"grantSlicePermission",
@@ -90,7 +90,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::net::Uri SliceManager::mapIntentToUri(android::content::Intent arg0)
+	android::net::Uri SliceManager::mapIntentToUri(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"mapIntentToUri",
@@ -98,7 +98,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceManager::pinSlice(android::net::Uri arg0, JObject arg1)
+	void SliceManager::pinSlice(android::net::Uri arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"pinSlice",
@@ -107,7 +107,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	void SliceManager::revokeSlicePermission(JString arg0, android::net::Uri arg1)
+	void SliceManager::revokeSlicePermission(JString arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"revokeSlicePermission",
@@ -116,7 +116,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	void SliceManager::unpinSlice(android::net::Uri arg0)
+	void SliceManager::unpinSlice(android::net::Uri arg0) const
 	{
 		callMethod<void>(
 			"unpinSlice",

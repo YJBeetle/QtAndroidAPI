@@ -18,7 +18,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	JObject MessageDigestSpi::clone()
+	JObject MessageDigestSpi::clone() const
 	{
 		return callObjectMethod(
 			"clone",

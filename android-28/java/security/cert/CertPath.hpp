@@ -20,14 +20,14 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getCertificates();
-		JByteArray getEncoded();
-		JByteArray getEncoded(JString arg0);
-		JObject getEncodings();
-		JString getType();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JObject getCertificates() const;
+		JByteArray getEncoded() const;
+		JByteArray getEncoded(JString arg0) const;
+		JObject getEncodings() const;
+		JString getType() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace java::security::cert
 

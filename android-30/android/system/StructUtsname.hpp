@@ -24,7 +24,7 @@ namespace android::system
 		StructUtsname(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::system
 

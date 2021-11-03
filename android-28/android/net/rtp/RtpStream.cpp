@@ -32,7 +32,7 @@ namespace android::net::rtp
 	// Constructors
 	
 	// Methods
-	void RtpStream::associate(java::net::InetAddress arg0, jint arg1)
+	void RtpStream::associate(java::net::InetAddress arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"associate",
@@ -41,56 +41,56 @@ namespace android::net::rtp
 			arg1
 		);
 	}
-	java::net::InetAddress RtpStream::getLocalAddress()
+	java::net::InetAddress RtpStream::getLocalAddress() const
 	{
 		return callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint RtpStream::getLocalPort()
+	jint RtpStream::getLocalPort() const
 	{
 		return callMethod<jint>(
 			"getLocalPort",
 			"()I"
 		);
 	}
-	jint RtpStream::getMode()
+	jint RtpStream::getMode() const
 	{
 		return callMethod<jint>(
 			"getMode",
 			"()I"
 		);
 	}
-	java::net::InetAddress RtpStream::getRemoteAddress()
+	java::net::InetAddress RtpStream::getRemoteAddress() const
 	{
 		return callObjectMethod(
 			"getRemoteAddress",
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint RtpStream::getRemotePort()
+	jint RtpStream::getRemotePort() const
 	{
 		return callMethod<jint>(
 			"getRemotePort",
 			"()I"
 		);
 	}
-	jboolean RtpStream::isBusy()
+	jboolean RtpStream::isBusy() const
 	{
 		return callMethod<jboolean>(
 			"isBusy",
 			"()Z"
 		);
 	}
-	void RtpStream::release()
+	void RtpStream::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void RtpStream::setMode(jint arg0)
+	void RtpStream::setMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setMode",

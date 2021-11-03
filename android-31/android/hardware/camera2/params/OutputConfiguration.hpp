@@ -42,20 +42,20 @@ namespace android::hardware::camera2::params
 		
 		// Methods
 		static JObject createInstancesForMultiResolutionOutput(android::hardware::camera2::MultiResolutionImageReader arg0);
-		void addSensorPixelModeUsed(jint arg0);
-		void addSurface(android::view::Surface arg0);
-		jint describeContents();
-		void enableSurfaceSharing();
-		jboolean equals(JObject arg0);
-		jint getMaxSharedSurfaceCount();
-		android::view::Surface getSurface();
-		jint getSurfaceGroupId();
-		JObject getSurfaces();
-		jint hashCode();
-		void removeSensorPixelModeUsed(jint arg0);
-		void removeSurface(android::view::Surface arg0);
-		void setPhysicalCameraId(JString arg0);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		void addSensorPixelModeUsed(jint arg0) const;
+		void addSurface(android::view::Surface arg0) const;
+		jint describeContents() const;
+		void enableSurfaceSharing() const;
+		jboolean equals(JObject arg0) const;
+		jint getMaxSharedSurfaceCount() const;
+		android::view::Surface getSurface() const;
+		jint getSurfaceGroupId() const;
+		JObject getSurfaces() const;
+		jint hashCode() const;
+		void removeSensorPixelModeUsed(jint arg0) const;
+		void removeSurface(android::view::Surface arg0) const;
+		void setPhysicalCameraId(JString arg0) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::hardware::camera2::params
 

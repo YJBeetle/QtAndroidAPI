@@ -26,9 +26,9 @@ namespace android::media
 		MediaRouter2_TransferCallback();
 		
 		// Methods
-		void onStop(android::media::MediaRouter2_RoutingController arg0);
-		void onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1);
-		void onTransferFailure(android::media::MediaRoute2Info arg0);
+		void onStop(android::media::MediaRouter2_RoutingController arg0) const;
+		void onTransfer(android::media::MediaRouter2_RoutingController arg0, android::media::MediaRouter2_RoutingController arg1) const;
+		void onTransferFailure(android::media::MediaRoute2Info arg0) const;
 	};
 } // namespace android::media
 

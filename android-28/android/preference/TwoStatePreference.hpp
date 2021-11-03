@@ -31,17 +31,17 @@ namespace android::preference
 		TwoStatePreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean getDisableDependentsState();
-		JString getSummaryOff();
-		JString getSummaryOn();
-		jboolean isChecked();
-		void setChecked(jboolean arg0);
-		void setDisableDependentsState(jboolean arg0);
-		void setSummaryOff(jint arg0);
-		void setSummaryOff(JString arg0);
-		void setSummaryOn(jint arg0);
-		void setSummaryOn(JString arg0);
-		jboolean shouldDisableDependents();
+		jboolean getDisableDependentsState() const;
+		JString getSummaryOff() const;
+		JString getSummaryOn() const;
+		jboolean isChecked() const;
+		void setChecked(jboolean arg0) const;
+		void setDisableDependentsState(jboolean arg0) const;
+		void setSummaryOff(jint arg0) const;
+		void setSummaryOff(JString arg0) const;
+		void setSummaryOn(jint arg0) const;
+		void setSummaryOn(JString arg0) const;
+		jboolean shouldDisableDependents() const;
 	};
 } // namespace android::preference
 

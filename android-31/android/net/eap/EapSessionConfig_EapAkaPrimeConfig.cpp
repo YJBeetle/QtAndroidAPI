@@ -12,14 +12,14 @@ namespace android::net::eap
 	// Constructors
 	
 	// Methods
-	jboolean EapSessionConfig_EapAkaPrimeConfig::allowsMismatchedNetworkNames()
+	jboolean EapSessionConfig_EapAkaPrimeConfig::allowsMismatchedNetworkNames() const
 	{
 		return callMethod<jboolean>(
 			"allowsMismatchedNetworkNames",
 			"()Z"
 		);
 	}
-	jboolean EapSessionConfig_EapAkaPrimeConfig::equals(JObject arg0)
+	jboolean EapSessionConfig_EapAkaPrimeConfig::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -27,14 +27,14 @@ namespace android::net::eap
 			arg0.object<jobject>()
 		);
 	}
-	JString EapSessionConfig_EapAkaPrimeConfig::getNetworkName()
+	JString EapSessionConfig_EapAkaPrimeConfig::getNetworkName() const
 	{
 		return callObjectMethod(
 			"getNetworkName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint EapSessionConfig_EapAkaPrimeConfig::hashCode()
+	jint EapSessionConfig_EapAkaPrimeConfig::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

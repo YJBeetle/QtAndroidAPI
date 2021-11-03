@@ -20,14 +20,14 @@ namespace android::security
 		) {}
 	
 	// Methods
-	android::security::ConfirmationPrompt ConfirmationPrompt_Builder::build()
+	android::security::ConfirmationPrompt ConfirmationPrompt_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/security/ConfirmationPrompt;"
 		);
 	}
-	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(JByteArray arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setExtraData(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"setExtraData",
@@ -35,7 +35,7 @@ namespace android::security
 			arg0.object<jbyteArray>()
 		);
 	}
-	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(JString arg0)
+	android::security::ConfirmationPrompt_Builder ConfirmationPrompt_Builder::setPromptText(JString arg0) const
 	{
 		return callObjectMethod(
 			"setPromptText",

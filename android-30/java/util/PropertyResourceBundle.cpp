@@ -26,14 +26,14 @@ namespace java::util
 		) {}
 	
 	// Methods
-	JObject PropertyResourceBundle::getKeys()
+	JObject PropertyResourceBundle::getKeys() const
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	JObject PropertyResourceBundle::handleGetObject(JString arg0)
+	JObject PropertyResourceBundle::handleGetObject(JString arg0) const
 	{
 		return callObjectMethod(
 			"handleGetObject",

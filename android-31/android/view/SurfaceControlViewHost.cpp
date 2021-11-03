@@ -22,21 +22,21 @@ namespace android::view
 		) {}
 	
 	// Methods
-	android::view::SurfaceControlViewHost_SurfacePackage SurfaceControlViewHost::getSurfacePackage()
+	android::view::SurfaceControlViewHost_SurfacePackage SurfaceControlViewHost::getSurfacePackage() const
 	{
 		return callObjectMethod(
 			"getSurfacePackage",
 			"()Landroid/view/SurfaceControlViewHost$SurfacePackage;"
 		);
 	}
-	android::view::View SurfaceControlViewHost::getView()
+	android::view::View SurfaceControlViewHost::getView() const
 	{
 		return callObjectMethod(
 			"getView",
 			"()Landroid/view/View;"
 		);
 	}
-	void SurfaceControlViewHost::relayout(jint arg0, jint arg1)
+	void SurfaceControlViewHost::relayout(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"relayout",
@@ -45,14 +45,14 @@ namespace android::view
 			arg1
 		);
 	}
-	void SurfaceControlViewHost::release()
+	void SurfaceControlViewHost::release() const
 	{
 		callMethod<void>(
 			"release",
 			"()V"
 		);
 	}
-	void SurfaceControlViewHost::setView(android::view::View arg0, jint arg1, jint arg2)
+	void SurfaceControlViewHost::setView(android::view::View arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"setView",

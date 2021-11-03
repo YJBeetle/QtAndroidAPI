@@ -54,7 +54,7 @@ namespace java::text
 		) {}
 	
 	// Methods
-	void AttributedString::addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1)
+	void AttributedString::addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"addAttribute",
@@ -63,7 +63,7 @@ namespace java::text
 			arg1.object<jobject>()
 		);
 	}
-	void AttributedString::addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1, jint arg2, jint arg3)
+	void AttributedString::addAttribute(java::text::AttributedCharacterIterator_Attribute arg0, JObject arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"addAttribute",
@@ -74,7 +74,7 @@ namespace java::text
 			arg3
 		);
 	}
-	void AttributedString::addAttributes(JObject arg0, jint arg1, jint arg2)
+	void AttributedString::addAttributes(JObject arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"addAttributes",
@@ -84,14 +84,14 @@ namespace java::text
 			arg2
 		);
 	}
-	JObject AttributedString::getIterator()
+	JObject AttributedString::getIterator() const
 	{
 		return callObjectMethod(
 			"getIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	JObject AttributedString::getIterator(JArray arg0)
+	JObject AttributedString::getIterator(JArray arg0) const
 	{
 		return callObjectMethod(
 			"getIterator",
@@ -99,7 +99,7 @@ namespace java::text
 			arg0.object<jarray>()
 		);
 	}
-	JObject AttributedString::getIterator(JArray arg0, jint arg1, jint arg2)
+	JObject AttributedString::getIterator(JArray arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getIterator",

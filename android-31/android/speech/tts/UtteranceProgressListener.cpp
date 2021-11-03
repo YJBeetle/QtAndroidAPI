@@ -17,7 +17,7 @@ namespace android::speech::tts
 		) {}
 	
 	// Methods
-	void UtteranceProgressListener::onAudioAvailable(JString arg0, JByteArray arg1)
+	void UtteranceProgressListener::onAudioAvailable(JString arg0, JByteArray arg1) const
 	{
 		callMethod<void>(
 			"onAudioAvailable",
@@ -26,7 +26,7 @@ namespace android::speech::tts
 			arg1.object<jbyteArray>()
 		);
 	}
-	void UtteranceProgressListener::onBeginSynthesis(JString arg0, jint arg1, jint arg2, jint arg3)
+	void UtteranceProgressListener::onBeginSynthesis(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onBeginSynthesis",
@@ -37,7 +37,7 @@ namespace android::speech::tts
 			arg3
 		);
 	}
-	void UtteranceProgressListener::onDone(JString arg0)
+	void UtteranceProgressListener::onDone(JString arg0) const
 	{
 		callMethod<void>(
 			"onDone",
@@ -45,7 +45,7 @@ namespace android::speech::tts
 			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onError(JString arg0)
+	void UtteranceProgressListener::onError(JString arg0) const
 	{
 		callMethod<void>(
 			"onError",
@@ -53,7 +53,7 @@ namespace android::speech::tts
 			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onError(JString arg0, jint arg1)
+	void UtteranceProgressListener::onError(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onError",
@@ -62,7 +62,7 @@ namespace android::speech::tts
 			arg1
 		);
 	}
-	void UtteranceProgressListener::onRangeStart(JString arg0, jint arg1, jint arg2, jint arg3)
+	void UtteranceProgressListener::onRangeStart(JString arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"onRangeStart",
@@ -73,7 +73,7 @@ namespace android::speech::tts
 			arg3
 		);
 	}
-	void UtteranceProgressListener::onStart(JString arg0)
+	void UtteranceProgressListener::onStart(JString arg0) const
 	{
 		callMethod<void>(
 			"onStart",
@@ -81,7 +81,7 @@ namespace android::speech::tts
 			arg0.object<jstring>()
 		);
 	}
-	void UtteranceProgressListener::onStop(JString arg0, jboolean arg1)
+	void UtteranceProgressListener::onStop(JString arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"onStop",

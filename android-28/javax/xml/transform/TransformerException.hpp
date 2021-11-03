@@ -36,16 +36,16 @@ namespace javax::xml::transform
 		TransformerException(JString arg0, JObject arg1, JThrowable arg2);
 		
 		// Methods
-		JThrowable getCause();
-		JThrowable getException();
-		JString getLocationAsString();
-		JObject getLocator();
-		JString getMessageAndLocation();
-		JThrowable initCause(JThrowable arg0);
-		void printStackTrace();
-		void printStackTrace(java::io::PrintStream arg0);
-		void printStackTrace(java::io::PrintWriter arg0);
-		void setLocator(JObject arg0);
+		JThrowable getCause() const;
+		JThrowable getException() const;
+		JString getLocationAsString() const;
+		JObject getLocator() const;
+		JString getMessageAndLocation() const;
+		JThrowable initCause(JThrowable arg0) const;
+		void printStackTrace() const;
+		void printStackTrace(java::io::PrintStream arg0) const;
+		void printStackTrace(java::io::PrintWriter arg0) const;
+		void setLocator(JObject arg0) const;
 	};
 } // namespace javax::xml::transform
 

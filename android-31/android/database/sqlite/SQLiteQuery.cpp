@@ -11,7 +11,7 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	JString SQLiteQuery::toString()
+	JString SQLiteQuery::toString() const
 	{
 		return callObjectMethod(
 			"toString",

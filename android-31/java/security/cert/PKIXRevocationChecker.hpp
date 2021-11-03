@@ -26,18 +26,18 @@ namespace java::security::cert
 		// Constructors
 		
 		// Methods
-		java::security::cert::PKIXRevocationChecker clone();
-		JObject getOcspExtensions();
-		java::net::URI getOcspResponder();
-		java::security::cert::X509Certificate getOcspResponderCert();
-		JObject getOcspResponses();
-		JObject getOptions();
-		JObject getSoftFailExceptions();
-		void setOcspExtensions(JObject arg0);
-		void setOcspResponder(java::net::URI arg0);
-		void setOcspResponderCert(java::security::cert::X509Certificate arg0);
-		void setOcspResponses(JObject arg0);
-		void setOptions(JObject arg0);
+		java::security::cert::PKIXRevocationChecker clone() const;
+		JObject getOcspExtensions() const;
+		java::net::URI getOcspResponder() const;
+		java::security::cert::X509Certificate getOcspResponderCert() const;
+		JObject getOcspResponses() const;
+		JObject getOptions() const;
+		JObject getSoftFailExceptions() const;
+		void setOcspExtensions(JObject arg0) const;
+		void setOcspResponder(java::net::URI arg0) const;
+		void setOcspResponderCert(java::security::cert::X509Certificate arg0) const;
+		void setOcspResponses(JObject arg0) const;
+		void setOptions(JObject arg0) const;
 	};
 } // namespace java::security::cert
 

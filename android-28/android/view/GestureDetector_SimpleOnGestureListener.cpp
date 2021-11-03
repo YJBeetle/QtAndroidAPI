@@ -16,7 +16,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jboolean GestureDetector_SimpleOnGestureListener::onContextClick(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onContextClick(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onContextClick",
@@ -24,7 +24,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onDoubleTap(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onDoubleTap(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDoubleTap",
@@ -32,7 +32,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onDoubleTapEvent(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onDoubleTapEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDoubleTapEvent",
@@ -40,7 +40,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onDown(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onDown(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onDown",
@@ -48,7 +48,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	jboolean GestureDetector_SimpleOnGestureListener::onFling(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"onFling",
@@ -59,7 +59,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void GestureDetector_SimpleOnGestureListener::onLongPress(android::view::MotionEvent arg0)
+	void GestureDetector_SimpleOnGestureListener::onLongPress(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"onLongPress",
@@ -67,7 +67,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	jboolean GestureDetector_SimpleOnGestureListener::onScroll(android::view::MotionEvent arg0, android::view::MotionEvent arg1, jfloat arg2, jfloat arg3) const
 	{
 		return callMethod<jboolean>(
 			"onScroll",
@@ -78,7 +78,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void GestureDetector_SimpleOnGestureListener::onShowPress(android::view::MotionEvent arg0)
+	void GestureDetector_SimpleOnGestureListener::onShowPress(android::view::MotionEvent arg0) const
 	{
 		callMethod<void>(
 			"onShowPress",
@@ -86,7 +86,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onSingleTapConfirmed(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onSingleTapConfirmed(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSingleTapConfirmed",
@@ -94,7 +94,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onSingleTapUp(android::view::MotionEvent arg0)
+	jboolean GestureDetector_SimpleOnGestureListener::onSingleTapUp(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onSingleTapUp",

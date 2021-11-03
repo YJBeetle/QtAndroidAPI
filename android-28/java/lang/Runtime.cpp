@@ -32,7 +32,7 @@ namespace java::lang
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	void Runtime::addShutdownHook(java::lang::Thread arg0)
+	void Runtime::addShutdownHook(java::lang::Thread arg0) const
 	{
 		callMethod<void>(
 			"addShutdownHook",
@@ -40,14 +40,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	jint Runtime::availableProcessors()
+	jint Runtime::availableProcessors() const
 	{
 		return callMethod<jint>(
 			"availableProcessors",
 			"()I"
 		);
 	}
-	java::lang::Process Runtime::exec(JArray arg0)
+	java::lang::Process Runtime::exec(JArray arg0) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -55,7 +55,7 @@ namespace java::lang
 			arg0.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(JString arg0)
+	java::lang::Process Runtime::exec(JString arg0) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -63,7 +63,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	java::lang::Process Runtime::exec(JArray arg0, JArray arg1)
+	java::lang::Process Runtime::exec(JArray arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -72,7 +72,7 @@ namespace java::lang
 			arg1.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(JString arg0, JArray arg1)
+	java::lang::Process Runtime::exec(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -81,7 +81,7 @@ namespace java::lang
 			arg1.object<jarray>()
 		);
 	}
-	java::lang::Process Runtime::exec(JArray arg0, JArray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(JArray arg0, JArray arg1, java::io::File arg2) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -91,7 +91,7 @@ namespace java::lang
 			arg2.object()
 		);
 	}
-	java::lang::Process Runtime::exec(JString arg0, JArray arg1, java::io::File arg2)
+	java::lang::Process Runtime::exec(JString arg0, JArray arg1, java::io::File arg2) const
 	{
 		return callObjectMethod(
 			"exec",
@@ -101,7 +101,7 @@ namespace java::lang
 			arg2.object()
 		);
 	}
-	void Runtime::exit(jint arg0)
+	void Runtime::exit(jint arg0) const
 	{
 		callMethod<void>(
 			"exit",
@@ -109,21 +109,21 @@ namespace java::lang
 			arg0
 		);
 	}
-	jlong Runtime::freeMemory()
+	jlong Runtime::freeMemory() const
 	{
 		return callMethod<jlong>(
 			"freeMemory",
 			"()J"
 		);
 	}
-	void Runtime::gc()
+	void Runtime::gc() const
 	{
 		callMethod<void>(
 			"gc",
 			"()V"
 		);
 	}
-	void Runtime::halt(jint arg0)
+	void Runtime::halt(jint arg0) const
 	{
 		callMethod<void>(
 			"halt",
@@ -131,7 +131,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	void Runtime::load(JString arg0)
+	void Runtime::load(JString arg0) const
 	{
 		callMethod<void>(
 			"load",
@@ -139,7 +139,7 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	void Runtime::loadLibrary(JString arg0)
+	void Runtime::loadLibrary(JString arg0) const
 	{
 		callMethod<void>(
 			"loadLibrary",
@@ -147,14 +147,14 @@ namespace java::lang
 			arg0.object<jstring>()
 		);
 	}
-	jlong Runtime::maxMemory()
+	jlong Runtime::maxMemory() const
 	{
 		return callMethod<jlong>(
 			"maxMemory",
 			"()J"
 		);
 	}
-	jboolean Runtime::removeShutdownHook(java::lang::Thread arg0)
+	jboolean Runtime::removeShutdownHook(java::lang::Thread arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeShutdownHook",
@@ -162,14 +162,14 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	void Runtime::runFinalization()
+	void Runtime::runFinalization() const
 	{
 		callMethod<void>(
 			"runFinalization",
 			"()V"
 		);
 	}
-	jlong Runtime::totalMemory()
+	jlong Runtime::totalMemory() const
 	{
 		return callMethod<jlong>(
 			"totalMemory",

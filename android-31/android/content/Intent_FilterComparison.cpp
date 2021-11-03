@@ -18,7 +18,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	jboolean Intent_FilterComparison::equals(JObject arg0)
+	jboolean Intent_FilterComparison::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -26,14 +26,14 @@ namespace android::content
 			arg0.object<jobject>()
 		);
 	}
-	android::content::Intent Intent_FilterComparison::getIntent()
+	android::content::Intent Intent_FilterComparison::getIntent() const
 	{
 		return callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	jint Intent_FilterComparison::hashCode()
+	jint Intent_FilterComparison::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

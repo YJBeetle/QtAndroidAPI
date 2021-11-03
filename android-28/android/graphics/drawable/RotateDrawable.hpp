@@ -30,21 +30,21 @@ namespace android::graphics::drawable
 		RotateDrawable();
 		
 		// Methods
-		void applyTheme(android::content::res::Resources_Theme arg0);
-		void draw(android::graphics::Canvas arg0);
-		jfloat getFromDegrees();
-		jfloat getPivotX();
-		jfloat getPivotY();
-		jfloat getToDegrees();
-		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
-		jboolean isPivotXRelative();
-		jboolean isPivotYRelative();
-		void setFromDegrees(jfloat arg0);
-		void setPivotX(jfloat arg0);
-		void setPivotXRelative(jboolean arg0);
-		void setPivotY(jfloat arg0);
-		void setPivotYRelative(jboolean arg0);
-		void setToDegrees(jfloat arg0);
+		void applyTheme(android::content::res::Resources_Theme arg0) const;
+		void draw(android::graphics::Canvas arg0) const;
+		jfloat getFromDegrees() const;
+		jfloat getPivotX() const;
+		jfloat getPivotY() const;
+		jfloat getToDegrees() const;
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const;
+		jboolean isPivotXRelative() const;
+		jboolean isPivotYRelative() const;
+		void setFromDegrees(jfloat arg0) const;
+		void setPivotX(jfloat arg0) const;
+		void setPivotXRelative(jboolean arg0) const;
+		void setPivotY(jfloat arg0) const;
+		void setPivotYRelative(jboolean arg0) const;
+		void setToDegrees(jfloat arg0) const;
 	};
 } // namespace android::graphics::drawable
 

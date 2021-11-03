@@ -22,7 +22,7 @@ namespace android::telephony::gsm
 		SmsMessage_SubmitPdu();
 		
 		// Methods
-		JString toString();
+		JString toString() const;
 	};
 } // namespace android::telephony::gsm
 

@@ -86,7 +86,7 @@ namespace android::icu::util
 			arg0.object()
 		);
 	}
-	JString LocaleData::getDelimiter(jint arg0)
+	JString LocaleData::getDelimiter(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDelimiter",
@@ -94,14 +94,14 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	jboolean LocaleData::getNoSubstitute()
+	jboolean LocaleData::getNoSubstitute() const
 	{
 		return callMethod<jboolean>(
 			"getNoSubstitute",
 			"()Z"
 		);
 	}
-	void LocaleData::setNoSubstitute(jboolean arg0)
+	void LocaleData::setNoSubstitute(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setNoSubstitute",

@@ -73,7 +73,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	jint URI::compareTo(JObject arg0)
+	jint URI::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -81,7 +81,7 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	jint URI::compareTo(java::net::URI arg0)
+	jint URI::compareTo(java::net::URI arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -89,7 +89,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	jboolean URI::equals(JObject arg0)
+	jboolean URI::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -97,147 +97,147 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JString URI::getAuthority()
+	JString URI::getAuthority() const
 	{
 		return callObjectMethod(
 			"getAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getFragment()
+	JString URI::getFragment() const
 	{
 		return callObjectMethod(
 			"getFragment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getHost()
+	JString URI::getHost() const
 	{
 		return callObjectMethod(
 			"getHost",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getPath()
+	JString URI::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint URI::getPort()
+	jint URI::getPort() const
 	{
 		return callMethod<jint>(
 			"getPort",
 			"()I"
 		);
 	}
-	JString URI::getQuery()
+	JString URI::getQuery() const
 	{
 		return callObjectMethod(
 			"getQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawAuthority()
+	JString URI::getRawAuthority() const
 	{
 		return callObjectMethod(
 			"getRawAuthority",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawFragment()
+	JString URI::getRawFragment() const
 	{
 		return callObjectMethod(
 			"getRawFragment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawPath()
+	JString URI::getRawPath() const
 	{
 		return callObjectMethod(
 			"getRawPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawQuery()
+	JString URI::getRawQuery() const
 	{
 		return callObjectMethod(
 			"getRawQuery",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawSchemeSpecificPart()
+	JString URI::getRawSchemeSpecificPart() const
 	{
 		return callObjectMethod(
 			"getRawSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getRawUserInfo()
+	JString URI::getRawUserInfo() const
 	{
 		return callObjectMethod(
 			"getRawUserInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getScheme()
+	JString URI::getScheme() const
 	{
 		return callObjectMethod(
 			"getScheme",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getSchemeSpecificPart()
+	JString URI::getSchemeSpecificPart() const
 	{
 		return callObjectMethod(
 			"getSchemeSpecificPart",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::getUserInfo()
+	JString URI::getUserInfo() const
 	{
 		return callObjectMethod(
 			"getUserInfo",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint URI::hashCode()
+	jint URI::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean URI::isAbsolute()
+	jboolean URI::isAbsolute() const
 	{
 		return callMethod<jboolean>(
 			"isAbsolute",
 			"()Z"
 		);
 	}
-	jboolean URI::isOpaque()
+	jboolean URI::isOpaque() const
 	{
 		return callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
 		);
 	}
-	java::net::URI URI::normalize()
+	java::net::URI URI::normalize() const
 	{
 		return callObjectMethod(
 			"normalize",
 			"()Ljava/net/URI;"
 		);
 	}
-	java::net::URI URI::parseServerAuthority()
+	java::net::URI URI::parseServerAuthority() const
 	{
 		return callObjectMethod(
 			"parseServerAuthority",
 			"()Ljava/net/URI;"
 		);
 	}
-	java::net::URI URI::relativize(java::net::URI arg0)
+	java::net::URI URI::relativize(java::net::URI arg0) const
 	{
 		return callObjectMethod(
 			"relativize",
@@ -245,7 +245,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::URI URI::resolve(JString arg0)
+	java::net::URI URI::resolve(JString arg0) const
 	{
 		return callObjectMethod(
 			"resolve",
@@ -253,7 +253,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	java::net::URI URI::resolve(java::net::URI arg0)
+	java::net::URI URI::resolve(java::net::URI arg0) const
 	{
 		return callObjectMethod(
 			"resolve",
@@ -261,21 +261,21 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	JString URI::toASCIIString()
+	JString URI::toASCIIString() const
 	{
 		return callObjectMethod(
 			"toASCIIString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString URI::toString()
+	JString URI::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::net::URL URI::toURL()
+	java::net::URL URI::toURL() const
 	{
 		return callObjectMethod(
 			"toURL",

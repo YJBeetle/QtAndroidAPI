@@ -20,7 +20,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	void ReplacementSpan::draw(android::graphics::Canvas arg0, JString arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8)
+	void ReplacementSpan::draw(android::graphics::Canvas arg0, JString arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, android::graphics::Paint arg8) const
 	{
 		callMethod<void>(
 			"draw",
@@ -36,14 +36,14 @@ namespace android::text::style
 			arg8.object()
 		);
 	}
-	JString ReplacementSpan::getContentDescription()
+	JString ReplacementSpan::getContentDescription() const
 	{
 		return callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint ReplacementSpan::getSize(android::graphics::Paint arg0, JString arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4)
+	jint ReplacementSpan::getSize(android::graphics::Paint arg0, JString arg1, jint arg2, jint arg3, android::graphics::Paint_FontMetricsInt arg4) const
 	{
 		return callMethod<jint>(
 			"getSize",
@@ -55,7 +55,7 @@ namespace android::text::style
 			arg4.object()
 		);
 	}
-	void ReplacementSpan::setContentDescription(JString arg0)
+	void ReplacementSpan::setContentDescription(JString arg0) const
 	{
 		callMethod<void>(
 			"setContentDescription",
@@ -63,7 +63,7 @@ namespace android::text::style
 			arg0.object<jstring>()
 		);
 	}
-	void ReplacementSpan::updateDrawState(android::text::TextPaint arg0)
+	void ReplacementSpan::updateDrawState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateDrawState",
@@ -71,7 +71,7 @@ namespace android::text::style
 			arg0.object()
 		);
 	}
-	void ReplacementSpan::updateMeasureState(android::text::TextPaint arg0)
+	void ReplacementSpan::updateMeasureState(android::text::TextPaint arg0) const
 	{
 		callMethod<void>(
 			"updateMeasureState",

@@ -189,14 +189,14 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	jint AudioAttributes::describeContents()
+	jint AudioAttributes::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AudioAttributes::equals(JObject arg0)
+	jboolean AudioAttributes::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -204,49 +204,49 @@ namespace android::media
 			arg0.object<jobject>()
 		);
 	}
-	jint AudioAttributes::getContentType()
+	jint AudioAttributes::getContentType() const
 	{
 		return callMethod<jint>(
 			"getContentType",
 			"()I"
 		);
 	}
-	jint AudioAttributes::getFlags()
+	jint AudioAttributes::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	jint AudioAttributes::getUsage()
+	jint AudioAttributes::getUsage() const
 	{
 		return callMethod<jint>(
 			"getUsage",
 			"()I"
 		);
 	}
-	jint AudioAttributes::getVolumeControlStream()
+	jint AudioAttributes::getVolumeControlStream() const
 	{
 		return callMethod<jint>(
 			"getVolumeControlStream",
 			"()I"
 		);
 	}
-	jint AudioAttributes::hashCode()
+	jint AudioAttributes::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString AudioAttributes::toString()
+	JString AudioAttributes::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void AudioAttributes::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AudioAttributes::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

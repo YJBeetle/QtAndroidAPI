@@ -226,28 +226,28 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint PermissionInfo::describeContents()
+	jint PermissionInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint PermissionInfo::getProtection()
+	jint PermissionInfo::getProtection() const
 	{
 		return callMethod<jint>(
 			"getProtection",
 			"()I"
 		);
 	}
-	jint PermissionInfo::getProtectionFlags()
+	jint PermissionInfo::getProtectionFlags() const
 	{
 		return callMethod<jint>(
 			"getProtectionFlags",
 			"()I"
 		);
 	}
-	JString PermissionInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString PermissionInfo::loadDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadDescription",
@@ -255,14 +255,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString PermissionInfo::toString()
+	JString PermissionInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PermissionInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PermissionInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

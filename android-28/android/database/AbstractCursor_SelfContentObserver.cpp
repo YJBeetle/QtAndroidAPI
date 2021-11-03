@@ -17,14 +17,14 @@ namespace android::database
 		) {}
 	
 	// Methods
-	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications()
+	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications() const
 	{
 		return callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
 		);
 	}
-	void AbstractCursor_SelfContentObserver::onChange(jboolean arg0)
+	void AbstractCursor_SelfContentObserver::onChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onChange",

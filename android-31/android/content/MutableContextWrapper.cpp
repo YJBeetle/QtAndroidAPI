@@ -17,7 +17,7 @@ namespace android::content
 		) {}
 	
 	// Methods
-	void MutableContextWrapper::setBaseContext(android::content::Context arg0)
+	void MutableContextWrapper::setBaseContext(android::content::Context arg0) const
 	{
 		callMethod<void>(
 			"setBaseContext",

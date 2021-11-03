@@ -25,8 +25,8 @@ namespace android::location
 		GnssNavigationMessage_Callback();
 		
 		// Methods
-		void onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0);
-		void onStatusChanged(jint arg0);
+		void onGnssNavigationMessageReceived(android::location::GnssNavigationMessage arg0) const;
+		void onStatusChanged(jint arg0) const;
 	};
 } // namespace android::location
 

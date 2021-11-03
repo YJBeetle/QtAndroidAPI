@@ -25,9 +25,9 @@ namespace android::content::pm
 		PathPermission(JString arg0, jint arg1, JString arg2, JString arg3);
 		
 		// Methods
-		JString getReadPermission();
-		JString getWritePermission();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		JString getReadPermission() const;
+		JString getWritePermission() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::content::pm
 

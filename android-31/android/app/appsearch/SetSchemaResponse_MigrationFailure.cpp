@@ -21,35 +21,35 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchResult SetSchemaResponse_MigrationFailure::getAppSearchResult()
+	android::app::appsearch::AppSearchResult SetSchemaResponse_MigrationFailure::getAppSearchResult() const
 	{
 		return callObjectMethod(
 			"getAppSearchResult",
 			"()Landroid/app/appsearch/AppSearchResult;"
 		);
 	}
-	JString SetSchemaResponse_MigrationFailure::getDocumentId()
+	JString SetSchemaResponse_MigrationFailure::getDocumentId() const
 	{
 		return callObjectMethod(
 			"getDocumentId",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SetSchemaResponse_MigrationFailure::getNamespace()
+	JString SetSchemaResponse_MigrationFailure::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SetSchemaResponse_MigrationFailure::getSchemaType()
+	JString SetSchemaResponse_MigrationFailure::getSchemaType() const
 	{
 		return callObjectMethod(
 			"getSchemaType",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString SetSchemaResponse_MigrationFailure::toString()
+	JString SetSchemaResponse_MigrationFailure::toString() const
 	{
 		return callObjectMethod(
 			"toString",

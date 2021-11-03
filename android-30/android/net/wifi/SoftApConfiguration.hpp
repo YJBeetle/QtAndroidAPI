@@ -32,16 +32,16 @@ namespace android::net::wifi
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		android::net::MacAddress getBssid();
-		JString getPassphrase();
-		jint getSecurityType();
-		JString getSsid();
-		jint hashCode();
-		jboolean isHiddenSsid();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		android::net::MacAddress getBssid() const;
+		JString getPassphrase() const;
+		jint getSecurityType() const;
+		JString getSsid() const;
+		jint hashCode() const;
+		jboolean isHiddenSsid() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::net::wifi
 

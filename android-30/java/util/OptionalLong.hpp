@@ -21,19 +21,19 @@ namespace java::util
 		// Methods
 		static java::util::OptionalLong empty();
 		static java::util::OptionalLong of(jlong arg0);
-		jboolean equals(JObject arg0);
-		jlong getAsLong();
-		jint hashCode();
-		void ifPresent(JObject arg0);
-		void ifPresentOrElse(JObject arg0, JObject arg1);
-		jboolean isEmpty();
-		jboolean isPresent();
-		jlong orElse(jlong arg0);
-		jlong orElseGet(JObject arg0);
-		jlong orElseThrow();
-		jlong orElseThrow(JObject arg0);
-		JObject stream();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getAsLong() const;
+		jint hashCode() const;
+		void ifPresent(JObject arg0) const;
+		void ifPresentOrElse(JObject arg0, JObject arg1) const;
+		jboolean isEmpty() const;
+		jboolean isPresent() const;
+		jlong orElse(jlong arg0) const;
+		jlong orElseGet(JObject arg0) const;
+		jlong orElseThrow() const;
+		jlong orElseThrow(JObject arg0) const;
+		JObject stream() const;
+		JString toString() const;
 	};
 } // namespace java::util
 

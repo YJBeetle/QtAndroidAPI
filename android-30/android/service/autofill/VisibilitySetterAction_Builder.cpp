@@ -18,14 +18,14 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::VisibilitySetterAction VisibilitySetterAction_Builder::build()
+	android::service::autofill::VisibilitySetterAction VisibilitySetterAction_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/service/autofill/VisibilitySetterAction;"
 		);
 	}
-	android::service::autofill::VisibilitySetterAction_Builder VisibilitySetterAction_Builder::setVisibility(jint arg0, jint arg1)
+	android::service::autofill::VisibilitySetterAction_Builder VisibilitySetterAction_Builder::setVisibility(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"setVisibility",

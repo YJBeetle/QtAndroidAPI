@@ -46,7 +46,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(JObject arg0)
+	android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -54,28 +54,28 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	jint AppWidgetHostView::getAppWidgetId()
+	jint AppWidgetHostView::getAppWidgetId() const
 	{
 		return callMethod<jint>(
 			"getAppWidgetId",
 			"()I"
 		);
 	}
-	android::appwidget::AppWidgetProviderInfo AppWidgetHostView::getAppWidgetInfo()
+	android::appwidget::AppWidgetProviderInfo AppWidgetHostView::getAppWidgetInfo() const
 	{
 		return callObjectMethod(
 			"getAppWidgetInfo",
 			"()Landroid/appwidget/AppWidgetProviderInfo;"
 		);
 	}
-	void AppWidgetHostView::resetColorResources()
+	void AppWidgetHostView::resetColorResources() const
 	{
 		callMethod<void>(
 			"resetColorResources",
 			"()V"
 		);
 	}
-	void AppWidgetHostView::setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1)
+	void AppWidgetHostView::setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1) const
 	{
 		callMethod<void>(
 			"setAppWidget",
@@ -84,7 +84,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetHostView::setColorResources(android::util::SparseIntArray arg0)
+	void AppWidgetHostView::setColorResources(android::util::SparseIntArray arg0) const
 	{
 		callMethod<void>(
 			"setColorResources",
@@ -92,7 +92,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::setExecutor(JObject arg0)
+	void AppWidgetHostView::setExecutor(JObject arg0) const
 	{
 		callMethod<void>(
 			"setExecutor",
@@ -100,7 +100,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::setOnLightBackground(jboolean arg0)
+	void AppWidgetHostView::setOnLightBackground(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOnLightBackground",
@@ -108,7 +108,7 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	void AppWidgetHostView::updateAppWidget(android::widget::RemoteViews arg0)
+	void AppWidgetHostView::updateAppWidget(android::widget::RemoteViews arg0) const
 	{
 		callMethod<void>(
 			"updateAppWidget",
@@ -116,7 +116,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::updateAppWidgetOptions(android::os::Bundle arg0)
+	void AppWidgetHostView::updateAppWidgetOptions(android::os::Bundle arg0) const
 	{
 		callMethod<void>(
 			"updateAppWidgetOptions",
@@ -124,7 +124,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, JObject arg1)
+	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"updateAppWidgetSize",
@@ -133,7 +133,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"updateAppWidgetSize",

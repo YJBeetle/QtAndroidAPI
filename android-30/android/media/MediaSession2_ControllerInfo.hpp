@@ -27,13 +27,13 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		android::os::Bundle getConnectionHints();
-		JString getPackageName();
-		android::media::session::MediaSessionManager_RemoteUserInfo getRemoteUserInfo();
-		jint getUid();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		android::os::Bundle getConnectionHints() const;
+		JString getPackageName() const;
+		android::media::session::MediaSessionManager_RemoteUserInfo getRemoteUserInfo() const;
+		jint getUid() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

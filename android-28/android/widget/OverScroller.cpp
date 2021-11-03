@@ -43,21 +43,21 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void OverScroller::abortAnimation()
+	void OverScroller::abortAnimation() const
 	{
 		callMethod<void>(
 			"abortAnimation",
 			"()V"
 		);
 	}
-	jboolean OverScroller::computeScrollOffset()
+	jboolean OverScroller::computeScrollOffset() const
 	{
 		return callMethod<jboolean>(
 			"computeScrollOffset",
 			"()Z"
 		);
 	}
-	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7) const
 	{
 		callMethod<void>(
 			"fling",
@@ -72,7 +72,7 @@ namespace android::widget
 			arg7
 		);
 	}
-	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	void OverScroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9) const
 	{
 		callMethod<void>(
 			"fling",
@@ -89,7 +89,7 @@ namespace android::widget
 			arg9
 		);
 	}
-	void OverScroller::forceFinished(jboolean arg0)
+	void OverScroller::forceFinished(jboolean arg0) const
 	{
 		callMethod<void>(
 			"forceFinished",
@@ -97,70 +97,70 @@ namespace android::widget
 			arg0
 		);
 	}
-	jfloat OverScroller::getCurrVelocity()
+	jfloat OverScroller::getCurrVelocity() const
 	{
 		return callMethod<jfloat>(
 			"getCurrVelocity",
 			"()F"
 		);
 	}
-	jint OverScroller::getCurrX()
+	jint OverScroller::getCurrX() const
 	{
 		return callMethod<jint>(
 			"getCurrX",
 			"()I"
 		);
 	}
-	jint OverScroller::getCurrY()
+	jint OverScroller::getCurrY() const
 	{
 		return callMethod<jint>(
 			"getCurrY",
 			"()I"
 		);
 	}
-	jint OverScroller::getFinalX()
+	jint OverScroller::getFinalX() const
 	{
 		return callMethod<jint>(
 			"getFinalX",
 			"()I"
 		);
 	}
-	jint OverScroller::getFinalY()
+	jint OverScroller::getFinalY() const
 	{
 		return callMethod<jint>(
 			"getFinalY",
 			"()I"
 		);
 	}
-	jint OverScroller::getStartX()
+	jint OverScroller::getStartX() const
 	{
 		return callMethod<jint>(
 			"getStartX",
 			"()I"
 		);
 	}
-	jint OverScroller::getStartY()
+	jint OverScroller::getStartY() const
 	{
 		return callMethod<jint>(
 			"getStartY",
 			"()I"
 		);
 	}
-	jboolean OverScroller::isFinished()
+	jboolean OverScroller::isFinished() const
 	{
 		return callMethod<jboolean>(
 			"isFinished",
 			"()Z"
 		);
 	}
-	jboolean OverScroller::isOverScrolled()
+	jboolean OverScroller::isOverScrolled() const
 	{
 		return callMethod<jboolean>(
 			"isOverScrolled",
 			"()Z"
 		);
 	}
-	void OverScroller::notifyHorizontalEdgeReached(jint arg0, jint arg1, jint arg2)
+	void OverScroller::notifyHorizontalEdgeReached(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"notifyHorizontalEdgeReached",
@@ -170,7 +170,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void OverScroller::notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2)
+	void OverScroller::notifyVerticalEdgeReached(jint arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"notifyVerticalEdgeReached",
@@ -180,7 +180,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void OverScroller::setFriction(jfloat arg0)
+	void OverScroller::setFriction(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setFriction",
@@ -188,7 +188,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jboolean OverScroller::springBack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	jboolean OverScroller::springBack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5) const
 	{
 		return callMethod<jboolean>(
 			"springBack",
@@ -201,7 +201,7 @@ namespace android::widget
 			arg5
 		);
 	}
-	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
+	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"startScroll",
@@ -212,7 +212,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void OverScroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"startScroll",

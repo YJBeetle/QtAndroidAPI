@@ -59,14 +59,14 @@ namespace android::view
 		) {}
 	
 	// Methods
-	jint RoundedCorner::describeContents()
+	jint RoundedCorner::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean RoundedCorner::equals(JObject arg0)
+	jboolean RoundedCorner::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -74,42 +74,42 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::Point RoundedCorner::getCenter()
+	android::graphics::Point RoundedCorner::getCenter() const
 	{
 		return callObjectMethod(
 			"getCenter",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	jint RoundedCorner::getPosition()
+	jint RoundedCorner::getPosition() const
 	{
 		return callMethod<jint>(
 			"getPosition",
 			"()I"
 		);
 	}
-	jint RoundedCorner::getRadius()
+	jint RoundedCorner::getRadius() const
 	{
 		return callMethod<jint>(
 			"getRadius",
 			"()I"
 		);
 	}
-	jint RoundedCorner::hashCode()
+	jint RoundedCorner::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString RoundedCorner::toString()
+	JString RoundedCorner::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void RoundedCorner::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void RoundedCorner::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -16,14 +16,14 @@ namespace android::hardware::lights
 		) {}
 	
 	// Methods
-	android::hardware::lights::LightState LightState_Builder::build()
+	android::hardware::lights::LightState LightState_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/hardware/lights/LightState;"
 		);
 	}
-	android::hardware::lights::LightState_Builder LightState_Builder::setColor(jint arg0)
+	android::hardware::lights::LightState_Builder LightState_Builder::setColor(jint arg0) const
 	{
 		return callObjectMethod(
 			"setColor",
@@ -31,7 +31,7 @@ namespace android::hardware::lights
 			arg0
 		);
 	}
-	android::hardware::lights::LightState_Builder LightState_Builder::setPlayerId(jint arg0)
+	android::hardware::lights::LightState_Builder LightState_Builder::setPlayerId(jint arg0) const
 	{
 		return callObjectMethod(
 			"setPlayerId",

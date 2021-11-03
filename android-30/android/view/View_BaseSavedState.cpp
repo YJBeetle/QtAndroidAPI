@@ -39,7 +39,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void View_BaseSavedState::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void View_BaseSavedState::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

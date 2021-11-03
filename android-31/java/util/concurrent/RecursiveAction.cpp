@@ -17,7 +17,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	java::lang::Void RecursiveAction::getRawResult()
+	java::lang::Void RecursiveAction::getRawResult() const
 	{
 		return callObjectMethod(
 			"getRawResult",

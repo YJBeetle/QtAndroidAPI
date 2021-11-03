@@ -34,7 +34,7 @@ namespace android::speech
 		) {}
 	
 	// Methods
-	JObject RecognitionService::onBind(android::content::Intent arg0)
+	JObject RecognitionService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -42,7 +42,7 @@ namespace android::speech
 			arg0.object()
 		);
 	}
-	void RecognitionService::onDestroy()
+	void RecognitionService::onDestroy() const
 	{
 		callMethod<void>(
 			"onDestroy",

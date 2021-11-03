@@ -32,24 +32,24 @@ namespace android::view::animation
 		AnimationSet(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void addAnimation(android::view::animation::Animation arg0);
-		jlong computeDurationHint();
-		JObject getAnimations();
-		jlong getDuration();
-		jlong getStartTime();
-		jboolean getTransformation(jlong arg0, android::view::animation::Transformation arg1);
-		void initialize(jint arg0, jint arg1, jint arg2, jint arg3);
-		void reset();
-		void restrictDuration(jlong arg0);
-		void scaleCurrentDuration(jfloat arg0);
-		void setDuration(jlong arg0);
-		void setFillAfter(jboolean arg0);
-		void setFillBefore(jboolean arg0);
-		void setRepeatMode(jint arg0);
-		void setStartOffset(jlong arg0);
-		void setStartTime(jlong arg0);
-		jboolean willChangeBounds();
-		jboolean willChangeTransformationMatrix();
+		void addAnimation(android::view::animation::Animation arg0) const;
+		jlong computeDurationHint() const;
+		JObject getAnimations() const;
+		jlong getDuration() const;
+		jlong getStartTime() const;
+		jboolean getTransformation(jlong arg0, android::view::animation::Transformation arg1) const;
+		void initialize(jint arg0, jint arg1, jint arg2, jint arg3) const;
+		void reset() const;
+		void restrictDuration(jlong arg0) const;
+		void scaleCurrentDuration(jfloat arg0) const;
+		void setDuration(jlong arg0) const;
+		void setFillAfter(jboolean arg0) const;
+		void setFillBefore(jboolean arg0) const;
+		void setRepeatMode(jint arg0) const;
+		void setStartOffset(jlong arg0) const;
+		void setStartTime(jlong arg0) const;
+		jboolean willChangeBounds() const;
+		jboolean willChangeTransformationMatrix() const;
 	};
 } // namespace android::view::animation
 

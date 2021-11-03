@@ -39,14 +39,14 @@ namespace android::media
 		) {}
 	
 	// Methods
-	jint Session2Command_Result::getResultCode()
+	jint Session2Command_Result::getResultCode() const
 	{
 		return callMethod<jint>(
 			"getResultCode",
 			"()I"
 		);
 	}
-	android::os::Bundle Session2Command_Result::getResultData()
+	android::os::Bundle Session2Command_Result::getResultData() const
 	{
 		return callObjectMethod(
 			"getResultData",

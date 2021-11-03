@@ -30,14 +30,14 @@ namespace android::view::textservice
 		SuggestionsInfo(jint arg0, JArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint describeContents();
-		jint getCookie();
-		jint getSequence();
-		JString getSuggestionAt(jint arg0);
-		jint getSuggestionsAttributes();
-		jint getSuggestionsCount();
-		void setCookieAndSequence(jint arg0, jint arg1);
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getCookie() const;
+		jint getSequence() const;
+		JString getSuggestionAt(jint arg0) const;
+		jint getSuggestionsAttributes() const;
+		jint getSuggestionsCount() const;
+		void setCookieAndSequence(jint arg0, jint arg1) const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::view::textservice
 

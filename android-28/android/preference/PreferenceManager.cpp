@@ -73,7 +73,7 @@ namespace android::preference
 			arg4
 		);
 	}
-	android::preference::PreferenceScreen PreferenceManager::createPreferenceScreen(android::content::Context arg0)
+	android::preference::PreferenceScreen PreferenceManager::createPreferenceScreen(android::content::Context arg0) const
 	{
 		return callObjectMethod(
 			"createPreferenceScreen",
@@ -81,7 +81,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	android::preference::Preference PreferenceManager::findPreference(JString arg0)
+	android::preference::Preference PreferenceManager::findPreference(JString arg0) const
 	{
 		return callObjectMethod(
 			"findPreference",
@@ -89,49 +89,49 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	JObject PreferenceManager::getPreferenceDataStore()
+	JObject PreferenceManager::getPreferenceDataStore() const
 	{
 		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
-	JObject PreferenceManager::getSharedPreferences()
+	JObject PreferenceManager::getSharedPreferences() const
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
 			"()Landroid/content/SharedPreferences;"
 		);
 	}
-	jint PreferenceManager::getSharedPreferencesMode()
+	jint PreferenceManager::getSharedPreferencesMode() const
 	{
 		return callMethod<jint>(
 			"getSharedPreferencesMode",
 			"()I"
 		);
 	}
-	JString PreferenceManager::getSharedPreferencesName()
+	JString PreferenceManager::getSharedPreferencesName() const
 	{
 		return callObjectMethod(
 			"getSharedPreferencesName",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean PreferenceManager::isStorageDefault()
+	jboolean PreferenceManager::isStorageDefault() const
 	{
 		return callMethod<jboolean>(
 			"isStorageDefault",
 			"()Z"
 		);
 	}
-	jboolean PreferenceManager::isStorageDeviceProtected()
+	jboolean PreferenceManager::isStorageDeviceProtected() const
 	{
 		return callMethod<jboolean>(
 			"isStorageDeviceProtected",
 			"()Z"
 		);
 	}
-	void PreferenceManager::setPreferenceDataStore(JObject arg0)
+	void PreferenceManager::setPreferenceDataStore(JObject arg0) const
 	{
 		callMethod<void>(
 			"setPreferenceDataStore",
@@ -139,7 +139,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceManager::setSharedPreferencesMode(jint arg0)
+	void PreferenceManager::setSharedPreferencesMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setSharedPreferencesMode",
@@ -147,7 +147,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void PreferenceManager::setSharedPreferencesName(JString arg0)
+	void PreferenceManager::setSharedPreferencesName(JString arg0) const
 	{
 		callMethod<void>(
 			"setSharedPreferencesName",
@@ -155,14 +155,14 @@ namespace android::preference
 			arg0.object<jstring>()
 		);
 	}
-	void PreferenceManager::setStorageDefault()
+	void PreferenceManager::setStorageDefault() const
 	{
 		callMethod<void>(
 			"setStorageDefault",
 			"()V"
 		);
 	}
-	void PreferenceManager::setStorageDeviceProtected()
+	void PreferenceManager::setStorageDeviceProtected() const
 	{
 		callMethod<void>(
 			"setStorageDeviceProtected",

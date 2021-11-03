@@ -126,14 +126,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jint PlaybackStateEvent::describeContents()
+	jint PlaybackStateEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PlaybackStateEvent::equals(JObject arg0)
+	jboolean PlaybackStateEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -141,35 +141,35 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	android::os::Bundle PlaybackStateEvent::getMetricsBundle()
+	android::os::Bundle PlaybackStateEvent::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint PlaybackStateEvent::getState()
+	jint PlaybackStateEvent::getState() const
 	{
 		return callMethod<jint>(
 			"getState",
 			"()I"
 		);
 	}
-	jlong PlaybackStateEvent::getTimeSinceCreatedMillis()
+	jlong PlaybackStateEvent::getTimeSinceCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeSinceCreatedMillis",
 			"()J"
 		);
 	}
-	jint PlaybackStateEvent::hashCode()
+	jint PlaybackStateEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void PlaybackStateEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackStateEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

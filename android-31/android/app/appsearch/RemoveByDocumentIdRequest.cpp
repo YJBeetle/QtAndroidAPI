@@ -11,14 +11,14 @@ namespace android::app::appsearch
 	// Constructors
 	
 	// Methods
-	JObject RemoveByDocumentIdRequest::getIds()
+	JObject RemoveByDocumentIdRequest::getIds() const
 	{
 		return callObjectMethod(
 			"getIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	JString RemoveByDocumentIdRequest::getNamespace()
+	JString RemoveByDocumentIdRequest::getNamespace() const
 	{
 		return callObjectMethod(
 			"getNamespace",

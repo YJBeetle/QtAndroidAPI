@@ -37,7 +37,7 @@ namespace java::nio::channels
 			arg3.object<jarray>()
 		);
 	}
-	void AsynchronousFileChannel::force(jboolean arg0)
+	void AsynchronousFileChannel::force(jboolean arg0) const
 	{
 		callMethod<void>(
 			"force",
@@ -45,14 +45,14 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	JObject AsynchronousFileChannel::lock()
+	JObject AsynchronousFileChannel::lock() const
 	{
 		return callObjectMethod(
 			"lock",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	JObject AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2)
+	JObject AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"lock",
@@ -62,7 +62,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	void AsynchronousFileChannel::lock(JObject arg0, JObject arg1)
+	void AsynchronousFileChannel::lock(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"lock",
@@ -71,7 +71,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	void AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2, JObject arg3, JObject arg4)
+	void AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2, JObject arg3, JObject arg4) const
 	{
 		callMethod<void>(
 			"lock",
@@ -83,7 +83,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	JObject AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1)
+	JObject AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"read",
@@ -92,7 +92,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	void AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3)
+	void AsynchronousFileChannel::read(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"read",
@@ -103,14 +103,14 @@ namespace java::nio::channels
 			arg3.object()
 		);
 	}
-	jlong AsynchronousFileChannel::size()
+	jlong AsynchronousFileChannel::size() const
 	{
 		return callMethod<jlong>(
 			"size",
 			"()J"
 		);
 	}
-	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::truncate(jlong arg0)
+	java::nio::channels::AsynchronousFileChannel AsynchronousFileChannel::truncate(jlong arg0) const
 	{
 		return callObjectMethod(
 			"truncate",
@@ -118,14 +118,14 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	java::nio::channels::FileLock AsynchronousFileChannel::tryLock()
+	java::nio::channels::FileLock AsynchronousFileChannel::tryLock() const
 	{
 		return callObjectMethod(
 			"tryLock",
 			"()Ljava/nio/channels/FileLock;"
 		);
 	}
-	java::nio::channels::FileLock AsynchronousFileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2)
+	java::nio::channels::FileLock AsynchronousFileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2) const
 	{
 		return callObjectMethod(
 			"tryLock",
@@ -135,7 +135,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	JObject AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1)
+	JObject AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"write",
@@ -144,7 +144,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	void AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3)
+	void AsynchronousFileChannel::write(java::nio::ByteBuffer arg0, jlong arg1, JObject arg2, JObject arg3) const
 	{
 		callMethod<void>(
 			"write",

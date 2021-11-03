@@ -27,15 +27,15 @@ namespace android::app::blob
 		
 		// Methods
 		static android::app::blob::BlobHandle createWithSha256(JByteArray arg0, JString arg1, jlong arg2, JString arg3);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jlong getExpiryTimeMillis();
-		JString getLabel();
-		JByteArray getSha256Digest();
-		JString getTag();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jlong getExpiryTimeMillis() const;
+		JString getLabel() const;
+		JByteArray getSha256Digest() const;
+		JString getTag() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::blob
 

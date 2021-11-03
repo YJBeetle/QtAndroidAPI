@@ -22,14 +22,14 @@ namespace android::location
 		) {}
 	
 	// Methods
-	android::location::GnssMeasurementRequest GnssMeasurementRequest_Builder::build()
+	android::location::GnssMeasurementRequest GnssMeasurementRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/location/GnssMeasurementRequest;"
 		);
 	}
-	android::location::GnssMeasurementRequest_Builder GnssMeasurementRequest_Builder::setFullTracking(jboolean arg0)
+	android::location::GnssMeasurementRequest_Builder GnssMeasurementRequest_Builder::setFullTracking(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setFullTracking",

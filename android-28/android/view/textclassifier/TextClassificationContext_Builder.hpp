@@ -23,8 +23,8 @@ namespace android::view::textclassifier
 		TextClassificationContext_Builder(JString arg0, JString arg1);
 		
 		// Methods
-		android::view::textclassifier::TextClassificationContext build();
-		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(JString arg0);
+		android::view::textclassifier::TextClassificationContext build() const;
+		android::view::textclassifier::TextClassificationContext_Builder setWidgetVersion(JString arg0) const;
 	};
 } // namespace android::view::textclassifier
 

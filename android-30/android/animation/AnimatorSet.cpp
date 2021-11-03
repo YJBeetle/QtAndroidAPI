@@ -21,91 +21,91 @@ namespace android::animation
 		) {}
 	
 	// Methods
-	void AnimatorSet::cancel()
+	void AnimatorSet::cancel() const
 	{
 		callMethod<void>(
 			"cancel",
 			"()V"
 		);
 	}
-	android::animation::AnimatorSet AnimatorSet::clone()
+	android::animation::AnimatorSet AnimatorSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/animation/AnimatorSet;"
 		);
 	}
-	void AnimatorSet::end()
+	void AnimatorSet::end() const
 	{
 		callMethod<void>(
 			"end",
 			"()V"
 		);
 	}
-	java::util::ArrayList AnimatorSet::getChildAnimations()
+	java::util::ArrayList AnimatorSet::getChildAnimations() const
 	{
 		return callObjectMethod(
 			"getChildAnimations",
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jlong AnimatorSet::getCurrentPlayTime()
+	jlong AnimatorSet::getCurrentPlayTime() const
 	{
 		return callMethod<jlong>(
 			"getCurrentPlayTime",
 			"()J"
 		);
 	}
-	jlong AnimatorSet::getDuration()
+	jlong AnimatorSet::getDuration() const
 	{
 		return callMethod<jlong>(
 			"getDuration",
 			"()J"
 		);
 	}
-	JObject AnimatorSet::getInterpolator()
+	JObject AnimatorSet::getInterpolator() const
 	{
 		return callObjectMethod(
 			"getInterpolator",
 			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
-	jlong AnimatorSet::getStartDelay()
+	jlong AnimatorSet::getStartDelay() const
 	{
 		return callMethod<jlong>(
 			"getStartDelay",
 			"()J"
 		);
 	}
-	jlong AnimatorSet::getTotalDuration()
+	jlong AnimatorSet::getTotalDuration() const
 	{
 		return callMethod<jlong>(
 			"getTotalDuration",
 			"()J"
 		);
 	}
-	jboolean AnimatorSet::isRunning()
+	jboolean AnimatorSet::isRunning() const
 	{
 		return callMethod<jboolean>(
 			"isRunning",
 			"()Z"
 		);
 	}
-	jboolean AnimatorSet::isStarted()
+	jboolean AnimatorSet::isStarted() const
 	{
 		return callMethod<jboolean>(
 			"isStarted",
 			"()Z"
 		);
 	}
-	void AnimatorSet::pause()
+	void AnimatorSet::pause() const
 	{
 		callMethod<void>(
 			"pause",
 			"()V"
 		);
 	}
-	android::animation::AnimatorSet_Builder AnimatorSet::play(android::animation::Animator arg0)
+	android::animation::AnimatorSet_Builder AnimatorSet::play(android::animation::Animator arg0) const
 	{
 		return callObjectMethod(
 			"play",
@@ -113,7 +113,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::playSequentially(JArray arg0)
+	void AnimatorSet::playSequentially(JArray arg0) const
 	{
 		callMethod<void>(
 			"playSequentially",
@@ -121,7 +121,7 @@ namespace android::animation
 			arg0.object<jarray>()
 		);
 	}
-	void AnimatorSet::playSequentially(JObject arg0)
+	void AnimatorSet::playSequentially(JObject arg0) const
 	{
 		callMethod<void>(
 			"playSequentially",
@@ -129,7 +129,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::playTogether(JArray arg0)
+	void AnimatorSet::playTogether(JArray arg0) const
 	{
 		callMethod<void>(
 			"playTogether",
@@ -137,7 +137,7 @@ namespace android::animation
 			arg0.object<jarray>()
 		);
 	}
-	void AnimatorSet::playTogether(JObject arg0)
+	void AnimatorSet::playTogether(JObject arg0) const
 	{
 		callMethod<void>(
 			"playTogether",
@@ -145,21 +145,21 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::resume()
+	void AnimatorSet::resume() const
 	{
 		callMethod<void>(
 			"resume",
 			"()V"
 		);
 	}
-	void AnimatorSet::reverse()
+	void AnimatorSet::reverse() const
 	{
 		callMethod<void>(
 			"reverse",
 			"()V"
 		);
 	}
-	void AnimatorSet::setCurrentPlayTime(jlong arg0)
+	void AnimatorSet::setCurrentPlayTime(jlong arg0) const
 	{
 		callMethod<void>(
 			"setCurrentPlayTime",
@@ -167,7 +167,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::AnimatorSet AnimatorSet::setDuration(jlong arg0)
+	android::animation::AnimatorSet AnimatorSet::setDuration(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setDuration",
@@ -175,7 +175,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::setInterpolator(JObject arg0)
+	void AnimatorSet::setInterpolator(JObject arg0) const
 	{
 		callMethod<void>(
 			"setInterpolator",
@@ -183,7 +183,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void AnimatorSet::setStartDelay(jlong arg0)
+	void AnimatorSet::setStartDelay(jlong arg0) const
 	{
 		callMethod<void>(
 			"setStartDelay",
@@ -191,7 +191,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::setTarget(JObject arg0)
+	void AnimatorSet::setTarget(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTarget",
@@ -199,28 +199,28 @@ namespace android::animation
 			arg0.object<jobject>()
 		);
 	}
-	void AnimatorSet::setupEndValues()
+	void AnimatorSet::setupEndValues() const
 	{
 		callMethod<void>(
 			"setupEndValues",
 			"()V"
 		);
 	}
-	void AnimatorSet::setupStartValues()
+	void AnimatorSet::setupStartValues() const
 	{
 		callMethod<void>(
 			"setupStartValues",
 			"()V"
 		);
 	}
-	void AnimatorSet::start()
+	void AnimatorSet::start() const
 	{
 		callMethod<void>(
 			"start",
 			"()V"
 		);
 	}
-	JString AnimatorSet::toString()
+	JString AnimatorSet::toString() const
 	{
 		return callObjectMethod(
 			"toString",

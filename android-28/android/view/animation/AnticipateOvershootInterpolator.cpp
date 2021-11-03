@@ -36,7 +36,7 @@ namespace android::view::animation
 		) {}
 	
 	// Methods
-	jfloat AnticipateOvershootInterpolator::getInterpolation(jfloat arg0)
+	jfloat AnticipateOvershootInterpolator::getInterpolation(jfloat arg0) const
 	{
 		return callMethod<jfloat>(
 			"getInterpolation",

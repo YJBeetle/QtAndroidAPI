@@ -216,21 +216,21 @@ namespace android::icu::text
 			"()[Ljava/lang/String;"
 		);
 	}
-	JObject Collator::clone()
+	JObject Collator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	android::icu::text::Collator Collator::cloneAsThawed()
+	android::icu::text::Collator Collator::cloneAsThawed() const
 	{
 		return callObjectMethod(
 			"cloneAsThawed",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	jint Collator::compare(JObject arg0, JObject arg1)
+	jint Collator::compare(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -239,7 +239,7 @@ namespace android::icu::text
 			arg1.object<jobject>()
 		);
 	}
-	jint Collator::compare(JString arg0, JString arg1)
+	jint Collator::compare(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -248,7 +248,7 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	jboolean Collator::equals(JObject arg0)
+	jboolean Collator::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -256,7 +256,7 @@ namespace android::icu::text
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Collator::equals(JString arg0, JString arg1)
+	jboolean Collator::equals(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -265,14 +265,14 @@ namespace android::icu::text
 			arg1.object<jstring>()
 		);
 	}
-	android::icu::text::Collator Collator::freeze()
+	android::icu::text::Collator Collator::freeze() const
 	{
 		return callObjectMethod(
 			"freeze",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	android::icu::text::CollationKey Collator::getCollationKey(JString arg0)
+	android::icu::text::CollationKey Collator::getCollationKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -280,77 +280,77 @@ namespace android::icu::text
 			arg0.object<jstring>()
 		);
 	}
-	jint Collator::getDecomposition()
+	jint Collator::getDecomposition() const
 	{
 		return callMethod<jint>(
 			"getDecomposition",
 			"()I"
 		);
 	}
-	jint Collator::getMaxVariable()
+	jint Collator::getMaxVariable() const
 	{
 		return callMethod<jint>(
 			"getMaxVariable",
 			"()I"
 		);
 	}
-	JIntArray Collator::getReorderCodes()
+	JIntArray Collator::getReorderCodes() const
 	{
 		return callObjectMethod(
 			"getReorderCodes",
 			"()[I"
 		);
 	}
-	jint Collator::getStrength()
+	jint Collator::getStrength() const
 	{
 		return callMethod<jint>(
 			"getStrength",
 			"()I"
 		);
 	}
-	android::icu::text::UnicodeSet Collator::getTailoredSet()
+	android::icu::text::UnicodeSet Collator::getTailoredSet() const
 	{
 		return callObjectMethod(
 			"getTailoredSet",
 			"()Landroid/icu/text/UnicodeSet;"
 		);
 	}
-	android::icu::util::VersionInfo Collator::getUCAVersion()
+	android::icu::util::VersionInfo Collator::getUCAVersion() const
 	{
 		return callObjectMethod(
 			"getUCAVersion",
 			"()Landroid/icu/util/VersionInfo;"
 		);
 	}
-	jint Collator::getVariableTop()
+	jint Collator::getVariableTop() const
 	{
 		return callMethod<jint>(
 			"getVariableTop",
 			"()I"
 		);
 	}
-	android::icu::util::VersionInfo Collator::getVersion()
+	android::icu::util::VersionInfo Collator::getVersion() const
 	{
 		return callObjectMethod(
 			"getVersion",
 			"()Landroid/icu/util/VersionInfo;"
 		);
 	}
-	jint Collator::hashCode()
+	jint Collator::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Collator::isFrozen()
+	jboolean Collator::isFrozen() const
 	{
 		return callMethod<jboolean>(
 			"isFrozen",
 			"()Z"
 		);
 	}
-	void Collator::setDecomposition(jint arg0)
+	void Collator::setDecomposition(jint arg0) const
 	{
 		callMethod<void>(
 			"setDecomposition",
@@ -358,7 +358,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::Collator Collator::setMaxVariable(jint arg0)
+	android::icu::text::Collator Collator::setMaxVariable(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMaxVariable",
@@ -366,7 +366,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void Collator::setReorderCodes(JIntArray arg0)
+	void Collator::setReorderCodes(JIntArray arg0) const
 	{
 		callMethod<void>(
 			"setReorderCodes",
@@ -374,7 +374,7 @@ namespace android::icu::text
 			arg0.object<jintArray>()
 		);
 	}
-	void Collator::setStrength(jint arg0)
+	void Collator::setStrength(jint arg0) const
 	{
 		callMethod<void>(
 			"setStrength",

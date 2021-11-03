@@ -42,18 +42,18 @@ namespace android::transition
 		Visibility(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		void captureEndValues(android::transition::TransitionValues arg0);
-		void captureStartValues(android::transition::TransitionValues arg0);
-		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2);
-		jint getMode();
-		JArray getTransitionProperties();
-		jboolean isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1);
-		jboolean isVisible(android::transition::TransitionValues arg0);
-		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
-		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4);
-		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3);
-		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4);
-		void setMode(jint arg0);
+		void captureEndValues(android::transition::TransitionValues arg0) const;
+		void captureStartValues(android::transition::TransitionValues arg0) const;
+		android::animation::Animator createAnimator(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, android::transition::TransitionValues arg2) const;
+		jint getMode() const;
+		JArray getTransitionProperties() const;
+		jboolean isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1) const;
+		jboolean isVisible(android::transition::TransitionValues arg0) const;
+		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
+		android::animation::Animator onAppear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4) const;
+		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::view::View arg1, android::transition::TransitionValues arg2, android::transition::TransitionValues arg3) const;
+		android::animation::Animator onDisappear(android::view::ViewGroup arg0, android::transition::TransitionValues arg1, jint arg2, android::transition::TransitionValues arg3, jint arg4) const;
+		void setMode(jint arg0) const;
 	};
 } // namespace android::transition
 

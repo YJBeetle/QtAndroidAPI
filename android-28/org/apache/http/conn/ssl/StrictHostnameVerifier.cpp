@@ -17,14 +17,14 @@ namespace org::apache::http::conn::ssl
 		) {}
 	
 	// Methods
-	JString StrictHostnameVerifier::toString()
+	JString StrictHostnameVerifier::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void StrictHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2)
+	void StrictHostnameVerifier::verify(JString arg0, JArray arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"verify",

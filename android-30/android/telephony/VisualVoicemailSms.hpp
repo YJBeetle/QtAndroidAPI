@@ -31,12 +31,12 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::os::Bundle getFields();
-		JString getMessageBody();
-		android::telecom::PhoneAccountHandle getPhoneAccountHandle();
-		JString getPrefix();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::os::Bundle getFields() const;
+		JString getMessageBody() const;
+		android::telecom::PhoneAccountHandle getPhoneAccountHandle() const;
+		JString getPrefix() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

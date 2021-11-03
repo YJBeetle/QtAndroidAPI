@@ -112,7 +112,7 @@ namespace java::lang::invoke
 			arg2.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::appendParameterTypes(JArray arg0)
+	java::lang::invoke::MethodType MethodType::appendParameterTypes(JArray arg0) const
 	{
 		return callObjectMethod(
 			"appendParameterTypes",
@@ -120,7 +120,7 @@ namespace java::lang::invoke
 			arg0.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::appendParameterTypes(JObject arg0)
+	java::lang::invoke::MethodType MethodType::appendParameterTypes(JObject arg0) const
 	{
 		return callObjectMethod(
 			"appendParameterTypes",
@@ -128,7 +128,7 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::changeParameterType(jint arg0, JClass arg1)
+	java::lang::invoke::MethodType MethodType::changeParameterType(jint arg0, JClass arg1) const
 	{
 		return callObjectMethod(
 			"changeParameterType",
@@ -137,7 +137,7 @@ namespace java::lang::invoke
 			arg1.object<jclass>()
 		);
 	}
-	JObject MethodType::changeParameterType(jint arg0, JObject arg1)
+	JObject MethodType::changeParameterType(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"changeParameterType",
@@ -146,7 +146,7 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::changeReturnType(JClass arg0)
+	java::lang::invoke::MethodType MethodType::changeReturnType(JClass arg0) const
 	{
 		return callObjectMethod(
 			"changeReturnType",
@@ -154,7 +154,7 @@ namespace java::lang::invoke
 			arg0.object<jclass>()
 		);
 	}
-	JObject MethodType::changeReturnType(JObject arg0)
+	JObject MethodType::changeReturnType(JObject arg0) const
 	{
 		return callObjectMethod(
 			"changeReturnType",
@@ -162,21 +162,21 @@ namespace java::lang::invoke
 			arg0.object()
 		);
 	}
-	java::util::Optional MethodType::describeConstable()
+	java::util::Optional MethodType::describeConstable() const
 	{
 		return callObjectMethod(
 			"describeConstable",
 			"()Ljava/util/Optional;"
 		);
 	}
-	JString MethodType::descriptorString()
+	JString MethodType::descriptorString() const
 	{
 		return callObjectMethod(
 			"descriptorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::dropParameterTypes(jint arg0, jint arg1)
+	java::lang::invoke::MethodType MethodType::dropParameterTypes(jint arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"dropParameterTypes",
@@ -185,7 +185,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	jboolean MethodType::equals(JObject arg0)
+	jboolean MethodType::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -193,42 +193,42 @@ namespace java::lang::invoke
 			arg0.object<jobject>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::erase()
+	java::lang::invoke::MethodType MethodType::erase() const
 	{
 		return callObjectMethod(
 			"erase",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::generic()
+	java::lang::invoke::MethodType MethodType::generic() const
 	{
 		return callObjectMethod(
 			"generic",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
-	jboolean MethodType::hasPrimitives()
+	jboolean MethodType::hasPrimitives() const
 	{
 		return callMethod<jboolean>(
 			"hasPrimitives",
 			"()Z"
 		);
 	}
-	jboolean MethodType::hasWrappers()
+	jboolean MethodType::hasWrappers() const
 	{
 		return callMethod<jboolean>(
 			"hasWrappers",
 			"()Z"
 		);
 	}
-	jint MethodType::hashCode()
+	jint MethodType::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JArray arg1)
+	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"insertParameterTypes",
@@ -237,7 +237,7 @@ namespace java::lang::invoke
 			arg1.object<jarray>()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JObject arg1)
+	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"insertParameterTypes",
@@ -246,35 +246,35 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	JClass MethodType::lastParameterType()
+	JClass MethodType::lastParameterType() const
 	{
 		return callObjectMethod(
 			"lastParameterType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JArray MethodType::parameterArray()
+	JArray MethodType::parameterArray() const
 	{
 		return callObjectMethod(
 			"parameterArray",
 			"()[Ljava/lang/Class;"
 		);
 	}
-	jint MethodType::parameterCount()
+	jint MethodType::parameterCount() const
 	{
 		return callMethod<jint>(
 			"parameterCount",
 			"()I"
 		);
 	}
-	JObject MethodType::parameterList()
+	JObject MethodType::parameterList() const
 	{
 		return callObjectMethod(
 			"parameterList",
 			"()Ljava/util/List;"
 		);
 	}
-	JClass MethodType::parameterType(jint arg0)
+	JClass MethodType::parameterType(jint arg0) const
 	{
 		return callObjectMethod(
 			"parameterType",
@@ -282,35 +282,35 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	JClass MethodType::returnType()
+	JClass MethodType::returnType() const
 	{
 		return callObjectMethod(
 			"returnType",
 			"()Ljava/lang/Class;"
 		);
 	}
-	JString MethodType::toMethodDescriptorString()
+	JString MethodType::toMethodDescriptorString() const
 	{
 		return callObjectMethod(
 			"toMethodDescriptorString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString MethodType::toString()
+	JString MethodType::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::unwrap()
+	java::lang::invoke::MethodType MethodType::unwrap() const
 	{
 		return callObjectMethod(
 			"unwrap",
 			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
-	java::lang::invoke::MethodType MethodType::wrap()
+	java::lang::invoke::MethodType MethodType::wrap() const
 	{
 		return callObjectMethod(
 			"wrap",

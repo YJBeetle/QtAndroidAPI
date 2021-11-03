@@ -21,14 +21,14 @@ namespace android::app
 	// Constructors
 	
 	// Methods
-	jint AsyncNotedAppOp::describeContents()
+	jint AsyncNotedAppOp::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AsyncNotedAppOp::equals(JObject arg0)
+	jboolean AsyncNotedAppOp::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,49 +36,49 @@ namespace android::app
 			arg0.object<jobject>()
 		);
 	}
-	JString AsyncNotedAppOp::getAttributionTag()
+	JString AsyncNotedAppOp::getAttributionTag() const
 	{
 		return callObjectMethod(
 			"getAttributionTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString AsyncNotedAppOp::getMessage()
+	JString AsyncNotedAppOp::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint AsyncNotedAppOp::getNotingUid()
+	jint AsyncNotedAppOp::getNotingUid() const
 	{
 		return callMethod<jint>(
 			"getNotingUid",
 			"()I"
 		);
 	}
-	JString AsyncNotedAppOp::getOp()
+	JString AsyncNotedAppOp::getOp() const
 	{
 		return callObjectMethod(
 			"getOp",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong AsyncNotedAppOp::getTime()
+	jlong AsyncNotedAppOp::getTime() const
 	{
 		return callMethod<jlong>(
 			"getTime",
 			"()J"
 		);
 	}
-	jint AsyncNotedAppOp::hashCode()
+	jint AsyncNotedAppOp::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void AsyncNotedAppOp::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void AsyncNotedAppOp::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

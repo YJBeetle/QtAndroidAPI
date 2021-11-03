@@ -24,10 +24,10 @@ namespace android::view
 		OrientationEventListener(android::content::Context arg0, jint arg1);
 		
 		// Methods
-		jboolean canDetectOrientation();
-		void disable();
-		void enable();
-		void onOrientationChanged(jint arg0);
+		jboolean canDetectOrientation() const;
+		void disable() const;
+		void enable() const;
+		void onOrientationChanged(jint arg0) const;
 	};
 } // namespace android::view
 

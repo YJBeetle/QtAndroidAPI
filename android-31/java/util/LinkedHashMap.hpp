@@ -28,15 +28,15 @@ namespace java::util
 		LinkedHashMap(jint arg0, jfloat arg1, jboolean arg2);
 		
 		// Methods
-		void clear();
-		jboolean containsValue(JObject arg0);
-		JObject entrySet();
-		void forEach(JObject arg0);
-		JObject get(JObject arg0);
-		JObject getOrDefault(JObject arg0, JObject arg1);
-		JObject keySet();
-		void replaceAll(JObject arg0);
-		JObject values();
+		void clear() const;
+		jboolean containsValue(JObject arg0) const;
+		JObject entrySet() const;
+		void forEach(JObject arg0) const;
+		JObject get(JObject arg0) const;
+		JObject getOrDefault(JObject arg0, JObject arg1) const;
+		JObject keySet() const;
+		void replaceAll(JObject arg0) const;
+		JObject values() const;
 	};
 } // namespace java::util
 

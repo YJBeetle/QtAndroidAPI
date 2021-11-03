@@ -75,7 +75,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void AdapterView::addView(android::view::View arg0)
+	void AdapterView::addView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"addView",
@@ -83,7 +83,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1)
+	void AdapterView::addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -92,7 +92,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void AdapterView::addView(android::view::View arg0, jint arg1)
+	void AdapterView::addView(android::view::View arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addView",
@@ -101,7 +101,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void AdapterView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2)
+	void AdapterView::addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2) const
 	{
 		callMethod<void>(
 			"addView",
@@ -111,42 +111,42 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	JString AdapterView::getAccessibilityClassName()
+	JString AdapterView::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JObject AdapterView::getAdapter()
+	JObject AdapterView::getAdapter() const
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/Adapter;"
 		);
 	}
-	jint AdapterView::getCount()
+	jint AdapterView::getCount() const
 	{
 		return callMethod<jint>(
 			"getCount",
 			"()I"
 		);
 	}
-	android::view::View AdapterView::getEmptyView()
+	android::view::View AdapterView::getEmptyView() const
 	{
 		return callObjectMethod(
 			"getEmptyView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint AdapterView::getFirstVisiblePosition()
+	jint AdapterView::getFirstVisiblePosition() const
 	{
 		return callMethod<jint>(
 			"getFirstVisiblePosition",
 			"()I"
 		);
 	}
-	JObject AdapterView::getItemAtPosition(jint arg0)
+	JObject AdapterView::getItemAtPosition(jint arg0) const
 	{
 		return callObjectMethod(
 			"getItemAtPosition",
@@ -154,7 +154,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	jlong AdapterView::getItemIdAtPosition(jint arg0)
+	jlong AdapterView::getItemIdAtPosition(jint arg0) const
 	{
 		return callMethod<jlong>(
 			"getItemIdAtPosition",
@@ -162,35 +162,35 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint AdapterView::getLastVisiblePosition()
+	jint AdapterView::getLastVisiblePosition() const
 	{
 		return callMethod<jint>(
 			"getLastVisiblePosition",
 			"()I"
 		);
 	}
-	JObject AdapterView::getOnItemClickListener()
+	JObject AdapterView::getOnItemClickListener() const
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	JObject AdapterView::getOnItemLongClickListener()
+	JObject AdapterView::getOnItemLongClickListener() const
 	{
 		return callObjectMethod(
 			"getOnItemLongClickListener",
 			"()Landroid/widget/AdapterView$OnItemLongClickListener;"
 		);
 	}
-	JObject AdapterView::getOnItemSelectedListener()
+	JObject AdapterView::getOnItemSelectedListener() const
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
 			"()Landroid/widget/AdapterView$OnItemSelectedListener;"
 		);
 	}
-	jint AdapterView::getPositionForView(android::view::View arg0)
+	jint AdapterView::getPositionForView(android::view::View arg0) const
 	{
 		return callMethod<jint>(
 			"getPositionForView",
@@ -198,35 +198,35 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JObject AdapterView::getSelectedItem()
+	JObject AdapterView::getSelectedItem() const
 	{
 		return callObjectMethod(
 			"getSelectedItem",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jlong AdapterView::getSelectedItemId()
+	jlong AdapterView::getSelectedItemId() const
 	{
 		return callMethod<jlong>(
 			"getSelectedItemId",
 			"()J"
 		);
 	}
-	jint AdapterView::getSelectedItemPosition()
+	jint AdapterView::getSelectedItemPosition() const
 	{
 		return callMethod<jint>(
 			"getSelectedItemPosition",
 			"()I"
 		);
 	}
-	android::view::View AdapterView::getSelectedView()
+	android::view::View AdapterView::getSelectedView() const
 	{
 		return callObjectMethod(
 			"getSelectedView",
 			"()Landroid/view/View;"
 		);
 	}
-	void AdapterView::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1)
+	void AdapterView::onProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onProvideAutofillStructure",
@@ -235,7 +235,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jboolean AdapterView::performItemClick(android::view::View arg0, jint arg1, jlong arg2)
+	jboolean AdapterView::performItemClick(android::view::View arg0, jint arg1, jlong arg2) const
 	{
 		return callMethod<jboolean>(
 			"performItemClick",
@@ -245,14 +245,14 @@ namespace android::widget
 			arg2
 		);
 	}
-	void AdapterView::removeAllViews()
+	void AdapterView::removeAllViews() const
 	{
 		callMethod<void>(
 			"removeAllViews",
 			"()V"
 		);
 	}
-	void AdapterView::removeView(android::view::View arg0)
+	void AdapterView::removeView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"removeView",
@@ -260,7 +260,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::removeViewAt(jint arg0)
+	void AdapterView::removeViewAt(jint arg0) const
 	{
 		callMethod<void>(
 			"removeViewAt",
@@ -268,7 +268,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterView::setAdapter(JObject arg0)
+	void AdapterView::setAdapter(JObject arg0) const
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -276,7 +276,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setEmptyView(android::view::View arg0)
+	void AdapterView::setEmptyView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setEmptyView",
@@ -284,7 +284,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setFocusable(jint arg0)
+	void AdapterView::setFocusable(jint arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -292,7 +292,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterView::setFocusableInTouchMode(jboolean arg0)
+	void AdapterView::setFocusableInTouchMode(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusableInTouchMode",
@@ -300,7 +300,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterView::setOnClickListener(JObject arg0)
+	void AdapterView::setOnClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -308,7 +308,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemClickListener(JObject arg0)
+	void AdapterView::setOnItemClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -316,7 +316,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemLongClickListener(JObject arg0)
+	void AdapterView::setOnItemLongClickListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemLongClickListener",
@@ -324,7 +324,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemSelectedListener(JObject arg0)
+	void AdapterView::setOnItemSelectedListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",
@@ -332,7 +332,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setSelection(jint arg0)
+	void AdapterView::setSelection(jint arg0) const
 	{
 		callMethod<void>(
 			"setSelection",

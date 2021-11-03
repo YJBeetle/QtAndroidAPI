@@ -16,7 +16,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaRouter_VolumeCallback::onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1)
+	void MediaRouter_VolumeCallback::onVolumeSetRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onVolumeSetRequest",
@@ -25,7 +25,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRouter_VolumeCallback::onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1)
+	void MediaRouter_VolumeCallback::onVolumeUpdateRequest(android::media::MediaRouter_RouteInfo arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onVolumeUpdateRequest",

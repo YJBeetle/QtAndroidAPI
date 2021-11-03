@@ -19,10 +19,10 @@ namespace android::media::audiofx
 		DynamicsProcessing_Stage(jboolean arg0, jboolean arg1);
 		
 		// Methods
-		jboolean isEnabled();
-		jboolean isInUse();
-		void setEnabled(jboolean arg0);
-		JString toString();
+		jboolean isEnabled() const;
+		jboolean isInUse() const;
+		void setEnabled(jboolean arg0) const;
+		JString toString() const;
 	};
 } // namespace android::media::audiofx
 

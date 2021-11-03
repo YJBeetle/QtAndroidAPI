@@ -54,14 +54,14 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	jint BulletSpan::describeContents()
+	jint BulletSpan::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void BulletSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11)
+	void BulletSpan::drawLeadingMargin(android::graphics::Canvas arg0, android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, JString arg7, jint arg8, jint arg9, jboolean arg10, android::text::Layout arg11) const
 	{
 		callMethod<void>(
 			"drawLeadingMargin",
@@ -80,28 +80,28 @@ namespace android::text::style
 			arg11.object()
 		);
 	}
-	jint BulletSpan::getBulletRadius()
+	jint BulletSpan::getBulletRadius() const
 	{
 		return callMethod<jint>(
 			"getBulletRadius",
 			"()I"
 		);
 	}
-	jint BulletSpan::getColor()
+	jint BulletSpan::getColor() const
 	{
 		return callMethod<jint>(
 			"getColor",
 			"()I"
 		);
 	}
-	jint BulletSpan::getGapWidth()
+	jint BulletSpan::getGapWidth() const
 	{
 		return callMethod<jint>(
 			"getGapWidth",
 			"()I"
 		);
 	}
-	jint BulletSpan::getLeadingMargin(jboolean arg0)
+	jint BulletSpan::getLeadingMargin(jboolean arg0) const
 	{
 		return callMethod<jint>(
 			"getLeadingMargin",
@@ -109,14 +109,14 @@ namespace android::text::style
 			arg0
 		);
 	}
-	jint BulletSpan::getSpanTypeId()
+	jint BulletSpan::getSpanTypeId() const
 	{
 		return callMethod<jint>(
 			"getSpanTypeId",
 			"()I"
 		);
 	}
-	void BulletSpan::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BulletSpan::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

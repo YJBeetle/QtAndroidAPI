@@ -51,14 +51,14 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint CursorAnchorInfo::describeContents()
+	jint CursorAnchorInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CursorAnchorInfo::equals(JObject arg0)
+	jboolean CursorAnchorInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -66,7 +66,7 @@ namespace android::view::inputmethod
 			arg0.object<jobject>()
 		);
 	}
-	android::graphics::RectF CursorAnchorInfo::getCharacterBounds(jint arg0)
+	android::graphics::RectF CursorAnchorInfo::getCharacterBounds(jint arg0) const
 	{
 		return callObjectMethod(
 			"getCharacterBounds",
@@ -74,7 +74,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0)
+	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getCharacterBoundsFlags",
@@ -82,91 +82,91 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	JString CursorAnchorInfo::getComposingText()
+	JString CursorAnchorInfo::getComposingText() const
 	{
 		return callObjectMethod(
 			"getComposingText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint CursorAnchorInfo::getComposingTextStart()
+	jint CursorAnchorInfo::getComposingTextStart() const
 	{
 		return callMethod<jint>(
 			"getComposingTextStart",
 			"()I"
 		);
 	}
-	jfloat CursorAnchorInfo::getInsertionMarkerBaseline()
+	jfloat CursorAnchorInfo::getInsertionMarkerBaseline() const
 	{
 		return callMethod<jfloat>(
 			"getInsertionMarkerBaseline",
 			"()F"
 		);
 	}
-	jfloat CursorAnchorInfo::getInsertionMarkerBottom()
+	jfloat CursorAnchorInfo::getInsertionMarkerBottom() const
 	{
 		return callMethod<jfloat>(
 			"getInsertionMarkerBottom",
 			"()F"
 		);
 	}
-	jint CursorAnchorInfo::getInsertionMarkerFlags()
+	jint CursorAnchorInfo::getInsertionMarkerFlags() const
 	{
 		return callMethod<jint>(
 			"getInsertionMarkerFlags",
 			"()I"
 		);
 	}
-	jfloat CursorAnchorInfo::getInsertionMarkerHorizontal()
+	jfloat CursorAnchorInfo::getInsertionMarkerHorizontal() const
 	{
 		return callMethod<jfloat>(
 			"getInsertionMarkerHorizontal",
 			"()F"
 		);
 	}
-	jfloat CursorAnchorInfo::getInsertionMarkerTop()
+	jfloat CursorAnchorInfo::getInsertionMarkerTop() const
 	{
 		return callMethod<jfloat>(
 			"getInsertionMarkerTop",
 			"()F"
 		);
 	}
-	android::graphics::Matrix CursorAnchorInfo::getMatrix()
+	android::graphics::Matrix CursorAnchorInfo::getMatrix() const
 	{
 		return callObjectMethod(
 			"getMatrix",
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	jint CursorAnchorInfo::getSelectionEnd()
+	jint CursorAnchorInfo::getSelectionEnd() const
 	{
 		return callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
 		);
 	}
-	jint CursorAnchorInfo::getSelectionStart()
+	jint CursorAnchorInfo::getSelectionStart() const
 	{
 		return callMethod<jint>(
 			"getSelectionStart",
 			"()I"
 		);
 	}
-	jint CursorAnchorInfo::hashCode()
+	jint CursorAnchorInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString CursorAnchorInfo::toString()
+	JString CursorAnchorInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CursorAnchorInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CursorAnchorInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

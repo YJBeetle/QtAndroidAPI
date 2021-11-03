@@ -171,7 +171,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	JObject LocalTime::adjustInto(JObject arg0)
+	JObject LocalTime::adjustInto(JObject arg0) const
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -179,7 +179,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalDateTime LocalTime::atDate(java::time::LocalDate arg0)
+	java::time::LocalDateTime LocalTime::atDate(java::time::LocalDate arg0) const
 	{
 		return callObjectMethod(
 			"atDate",
@@ -187,7 +187,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime LocalTime::atOffset(java::time::ZoneOffset arg0)
+	java::time::OffsetTime LocalTime::atOffset(java::time::ZoneOffset arg0) const
 	{
 		return callObjectMethod(
 			"atOffset",
@@ -195,7 +195,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint LocalTime::compareTo(JObject arg0)
+	jint LocalTime::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -203,7 +203,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	jint LocalTime::compareTo(java::time::LocalTime arg0)
+	jint LocalTime::compareTo(java::time::LocalTime arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -211,7 +211,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalTime::equals(JObject arg0)
+	jboolean LocalTime::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -219,7 +219,7 @@ namespace java::time
 			arg0.object<jobject>()
 		);
 	}
-	JString LocalTime::format(java::time::format::DateTimeFormatter arg0)
+	JString LocalTime::format(java::time::format::DateTimeFormatter arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -227,7 +227,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint LocalTime::get(JObject arg0)
+	jint LocalTime::get(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"get",
@@ -235,14 +235,14 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint LocalTime::getHour()
+	jint LocalTime::getHour() const
 	{
 		return callMethod<jint>(
 			"getHour",
 			"()I"
 		);
 	}
-	jlong LocalTime::getLong(JObject arg0)
+	jlong LocalTime::getLong(JObject arg0) const
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -250,35 +250,35 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jint LocalTime::getMinute()
+	jint LocalTime::getMinute() const
 	{
 		return callMethod<jint>(
 			"getMinute",
 			"()I"
 		);
 	}
-	jint LocalTime::getNano()
+	jint LocalTime::getNano() const
 	{
 		return callMethod<jint>(
 			"getNano",
 			"()I"
 		);
 	}
-	jint LocalTime::getSecond()
+	jint LocalTime::getSecond() const
 	{
 		return callMethod<jint>(
 			"getSecond",
 			"()I"
 		);
 	}
-	jint LocalTime::hashCode()
+	jint LocalTime::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean LocalTime::isAfter(java::time::LocalTime arg0)
+	jboolean LocalTime::isAfter(java::time::LocalTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isAfter",
@@ -286,7 +286,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalTime::isBefore(java::time::LocalTime arg0)
+	jboolean LocalTime::isBefore(java::time::LocalTime arg0) const
 	{
 		return callMethod<jboolean>(
 			"isBefore",
@@ -294,7 +294,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalTime::isSupported(JObject arg0)
+	jboolean LocalTime::isSupported(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -302,7 +302,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::minus(JObject arg0)
+	java::time::LocalTime LocalTime::minus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -310,7 +310,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::minus(jlong arg0, JObject arg1)
+	java::time::LocalTime LocalTime::minus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"minus",
@@ -319,7 +319,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalTime LocalTime::minusHours(jlong arg0)
+	java::time::LocalTime LocalTime::minusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusHours",
@@ -327,7 +327,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::minusMinutes(jlong arg0)
+	java::time::LocalTime LocalTime::minusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusMinutes",
@@ -335,7 +335,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::minusNanos(jlong arg0)
+	java::time::LocalTime LocalTime::minusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusNanos",
@@ -343,7 +343,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::minusSeconds(jlong arg0)
+	java::time::LocalTime LocalTime::minusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"minusSeconds",
@@ -351,7 +351,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::plus(JObject arg0)
+	java::time::LocalTime LocalTime::plus(JObject arg0) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -359,7 +359,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::plus(jlong arg0, JObject arg1)
+	java::time::LocalTime LocalTime::plus(jlong arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"plus",
@@ -368,7 +368,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalTime LocalTime::plusHours(jlong arg0)
+	java::time::LocalTime LocalTime::plusHours(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusHours",
@@ -376,7 +376,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::plusMinutes(jlong arg0)
+	java::time::LocalTime LocalTime::plusMinutes(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusMinutes",
@@ -384,7 +384,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::plusNanos(jlong arg0)
+	java::time::LocalTime LocalTime::plusNanos(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusNanos",
@@ -392,7 +392,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::plusSeconds(jlong arg0)
+	java::time::LocalTime LocalTime::plusSeconds(jlong arg0) const
 	{
 		return callObjectMethod(
 			"plusSeconds",
@@ -400,7 +400,7 @@ namespace java::time
 			arg0
 		);
 	}
-	JObject LocalTime::query(JObject arg0)
+	JObject LocalTime::query(JObject arg0) const
 	{
 		return callObjectMethod(
 			"query",
@@ -408,7 +408,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::temporal::ValueRange LocalTime::range(JObject arg0)
+	java::time::temporal::ValueRange LocalTime::range(JObject arg0) const
 	{
 		return callObjectMethod(
 			"range",
@@ -416,7 +416,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong LocalTime::toEpochSecond(java::time::LocalDate arg0, java::time::ZoneOffset arg1)
+	jlong LocalTime::toEpochSecond(java::time::LocalDate arg0, java::time::ZoneOffset arg1) const
 	{
 		return callMethod<jlong>(
 			"toEpochSecond",
@@ -425,28 +425,28 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	jlong LocalTime::toNanoOfDay()
+	jlong LocalTime::toNanoOfDay() const
 	{
 		return callMethod<jlong>(
 			"toNanoOfDay",
 			"()J"
 		);
 	}
-	jint LocalTime::toSecondOfDay()
+	jint LocalTime::toSecondOfDay() const
 	{
 		return callMethod<jint>(
 			"toSecondOfDay",
 			"()I"
 		);
 	}
-	JString LocalTime::toString()
+	JString LocalTime::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::LocalTime LocalTime::truncatedTo(JObject arg0)
+	java::time::LocalTime LocalTime::truncatedTo(JObject arg0) const
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -454,7 +454,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong LocalTime::until(JObject arg0, JObject arg1)
+	jlong LocalTime::until(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jlong>(
 			"until",
@@ -463,7 +463,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalTime LocalTime::with(JObject arg0)
+	java::time::LocalTime LocalTime::with(JObject arg0) const
 	{
 		return callObjectMethod(
 			"with",
@@ -471,7 +471,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::with(JObject arg0, jlong arg1)
+	java::time::LocalTime LocalTime::with(JObject arg0, jlong arg1) const
 	{
 		return callObjectMethod(
 			"with",
@@ -480,7 +480,7 @@ namespace java::time
 			arg1
 		);
 	}
-	java::time::LocalTime LocalTime::withHour(jint arg0)
+	java::time::LocalTime LocalTime::withHour(jint arg0) const
 	{
 		return callObjectMethod(
 			"withHour",
@@ -488,7 +488,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::withMinute(jint arg0)
+	java::time::LocalTime LocalTime::withMinute(jint arg0) const
 	{
 		return callObjectMethod(
 			"withMinute",
@@ -496,7 +496,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::withNano(jint arg0)
+	java::time::LocalTime LocalTime::withNano(jint arg0) const
 	{
 		return callObjectMethod(
 			"withNano",
@@ -504,7 +504,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::withSecond(jint arg0)
+	java::time::LocalTime LocalTime::withSecond(jint arg0) const
 	{
 		return callObjectMethod(
 			"withSecond",

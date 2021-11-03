@@ -35,14 +35,14 @@ namespace android::app
 		) {}
 	
 	// Methods
-	jint WallpaperInfo::describeContents()
+	jint WallpaperInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void WallpaperInfo::dump(JObject arg0, JString arg1)
+	void WallpaperInfo::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -51,49 +51,49 @@ namespace android::app
 			arg1.object<jstring>()
 		);
 	}
-	android::content::ComponentName WallpaperInfo::getComponent()
+	android::content::ComponentName WallpaperInfo::getComponent() const
 	{
 		return callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	JString WallpaperInfo::getPackageName()
+	JString WallpaperInfo::getPackageName() const
 	{
 		return callObjectMethod(
 			"getPackageName",
 			"()Ljava/lang/String;"
 		);
 	}
-	android::content::pm::ServiceInfo WallpaperInfo::getServiceInfo()
+	android::content::pm::ServiceInfo WallpaperInfo::getServiceInfo() const
 	{
 		return callObjectMethod(
 			"getServiceInfo",
 			"()Landroid/content/pm/ServiceInfo;"
 		);
 	}
-	JString WallpaperInfo::getServiceName()
+	JString WallpaperInfo::getServiceName() const
 	{
 		return callObjectMethod(
 			"getServiceName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString WallpaperInfo::getSettingsActivity()
+	JString WallpaperInfo::getSettingsActivity() const
 	{
 		return callObjectMethod(
 			"getSettingsActivity",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean WallpaperInfo::getShowMetadataInPreview()
+	jboolean WallpaperInfo::getShowMetadataInPreview() const
 	{
 		return callMethod<jboolean>(
 			"getShowMetadataInPreview",
 			"()Z"
 		);
 	}
-	JString WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadAuthor(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadAuthor",
@@ -101,7 +101,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadContextDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadContextDescription",
@@ -109,7 +109,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::net::Uri WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0)
+	android::net::Uri WallpaperInfo::loadContextUri(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadContextUri",
@@ -117,7 +117,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadDescription(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadDescription",
@@ -125,7 +125,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable WallpaperInfo::loadIcon(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadIcon",
@@ -133,7 +133,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0)
+	JString WallpaperInfo::loadLabel(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadLabel",
@@ -141,7 +141,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0)
+	android::graphics::drawable::Drawable WallpaperInfo::loadThumbnail(android::content::pm::PackageManager arg0) const
 	{
 		return callObjectMethod(
 			"loadThumbnail",
@@ -149,14 +149,14 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	JString WallpaperInfo::toString()
+	JString WallpaperInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void WallpaperInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void WallpaperInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

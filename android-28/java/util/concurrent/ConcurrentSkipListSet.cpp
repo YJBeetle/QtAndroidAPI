@@ -23,7 +23,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	jboolean ConcurrentSkipListSet::add(JObject arg0)
+	jboolean ConcurrentSkipListSet::add(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"add",
@@ -31,7 +31,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::ceiling(JObject arg0)
+	JObject ConcurrentSkipListSet::ceiling(JObject arg0) const
 	{
 		return callObjectMethod(
 			"ceiling",
@@ -39,28 +39,28 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	void ConcurrentSkipListSet::clear()
+	void ConcurrentSkipListSet::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	java::util::concurrent::ConcurrentSkipListSet ConcurrentSkipListSet::clone()
+	java::util::concurrent::ConcurrentSkipListSet ConcurrentSkipListSet::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/util/concurrent/ConcurrentSkipListSet;"
 		);
 	}
-	JObject ConcurrentSkipListSet::comparator()
+	JObject ConcurrentSkipListSet::comparator() const
 	{
 		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jboolean ConcurrentSkipListSet::contains(JObject arg0)
+	jboolean ConcurrentSkipListSet::contains(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -68,21 +68,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::descendingIterator()
+	JObject ConcurrentSkipListSet::descendingIterator() const
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject ConcurrentSkipListSet::descendingSet()
+	JObject ConcurrentSkipListSet::descendingSet() const
 	{
 		return callObjectMethod(
 			"descendingSet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	jboolean ConcurrentSkipListSet::equals(JObject arg0)
+	jboolean ConcurrentSkipListSet::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -90,14 +90,14 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::first()
+	JObject ConcurrentSkipListSet::first() const
 	{
 		return callObjectMethod(
 			"first",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentSkipListSet::floor(JObject arg0)
+	JObject ConcurrentSkipListSet::floor(JObject arg0) const
 	{
 		return callObjectMethod(
 			"floor",
@@ -105,7 +105,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::headSet(JObject arg0)
+	JObject ConcurrentSkipListSet::headSet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"headSet",
@@ -113,7 +113,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::headSet(JObject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::headSet(JObject arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"headSet",
@@ -122,7 +122,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	JObject ConcurrentSkipListSet::higher(JObject arg0)
+	JObject ConcurrentSkipListSet::higher(JObject arg0) const
 	{
 		return callObjectMethod(
 			"higher",
@@ -130,28 +130,28 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentSkipListSet::isEmpty()
+	jboolean ConcurrentSkipListSet::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject ConcurrentSkipListSet::iterator()
+	JObject ConcurrentSkipListSet::iterator() const
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject ConcurrentSkipListSet::last()
+	JObject ConcurrentSkipListSet::last() const
 	{
 		return callObjectMethod(
 			"last",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentSkipListSet::lower(JObject arg0)
+	JObject ConcurrentSkipListSet::lower(JObject arg0) const
 	{
 		return callObjectMethod(
 			"lower",
@@ -159,21 +159,21 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::pollFirst()
+	JObject ConcurrentSkipListSet::pollFirst() const
 	{
 		return callObjectMethod(
 			"pollFirst",
 			"()Ljava/lang/Object;"
 		);
 	}
-	JObject ConcurrentSkipListSet::pollLast()
+	JObject ConcurrentSkipListSet::pollLast() const
 	{
 		return callObjectMethod(
 			"pollLast",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean ConcurrentSkipListSet::remove(JObject arg0)
+	jboolean ConcurrentSkipListSet::remove(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -181,7 +181,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	jboolean ConcurrentSkipListSet::removeAll(JObject arg0)
+	jboolean ConcurrentSkipListSet::removeAll(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -189,21 +189,21 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ConcurrentSkipListSet::size()
+	jint ConcurrentSkipListSet::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject ConcurrentSkipListSet::spliterator()
+	JObject ConcurrentSkipListSet::spliterator() const
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	JObject ConcurrentSkipListSet::subSet(JObject arg0, JObject arg1)
+	JObject ConcurrentSkipListSet::subSet(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"subSet",
@@ -212,7 +212,7 @@ namespace java::util::concurrent
 			arg1.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3)
+	JObject ConcurrentSkipListSet::subSet(JObject arg0, jboolean arg1, JObject arg2, jboolean arg3) const
 	{
 		return callObjectMethod(
 			"subSet",
@@ -223,7 +223,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	JObject ConcurrentSkipListSet::tailSet(JObject arg0)
+	JObject ConcurrentSkipListSet::tailSet(JObject arg0) const
 	{
 		return callObjectMethod(
 			"tailSet",
@@ -231,7 +231,7 @@ namespace java::util::concurrent
 			arg0.object<jobject>()
 		);
 	}
-	JObject ConcurrentSkipListSet::tailSet(JObject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::tailSet(JObject arg0, jboolean arg1) const
 	{
 		return callObjectMethod(
 			"tailSet",

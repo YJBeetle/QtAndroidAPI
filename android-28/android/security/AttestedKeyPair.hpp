@@ -22,8 +22,8 @@ namespace android::security
 		// Constructors
 		
 		// Methods
-		JObject getAttestationRecord();
-		java::security::KeyPair getKeyPair();
+		JObject getAttestationRecord() const;
+		java::security::KeyPair getKeyPair() const;
 	};
 } // namespace android::security
 

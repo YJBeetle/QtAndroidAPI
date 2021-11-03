@@ -19,9 +19,9 @@ namespace android::util
 		CloseGuard();
 		
 		// Methods
-		void close();
-		void open(JString arg0);
-		void warnIfOpen();
+		void close() const;
+		void open(JString arg0) const;
+		void warnIfOpen() const;
 	};
 } // namespace android::util
 

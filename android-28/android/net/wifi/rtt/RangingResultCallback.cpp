@@ -29,7 +29,7 @@ namespace android::net::wifi::rtt
 		) {}
 	
 	// Methods
-	void RangingResultCallback::onRangingFailure(jint arg0)
+	void RangingResultCallback::onRangingFailure(jint arg0) const
 	{
 		callMethod<void>(
 			"onRangingFailure",
@@ -37,7 +37,7 @@ namespace android::net::wifi::rtt
 			arg0
 		);
 	}
-	void RangingResultCallback::onRangingResults(JObject arg0)
+	void RangingResultCallback::onRangingResults(JObject arg0) const
 	{
 		callMethod<void>(
 			"onRangingResults",

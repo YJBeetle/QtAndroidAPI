@@ -25,7 +25,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	JObject CompanionDeviceService::onBind(android::content::Intent arg0)
+	JObject CompanionDeviceService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -33,7 +33,7 @@ namespace android::companion
 			arg0.object()
 		);
 	}
-	void CompanionDeviceService::onDeviceAppeared(JString arg0)
+	void CompanionDeviceService::onDeviceAppeared(JString arg0) const
 	{
 		callMethod<void>(
 			"onDeviceAppeared",
@@ -41,7 +41,7 @@ namespace android::companion
 			arg0.object<jstring>()
 		);
 	}
-	void CompanionDeviceService::onDeviceDisappeared(JString arg0)
+	void CompanionDeviceService::onDeviceDisappeared(JString arg0) const
 	{
 		callMethod<void>(
 			"onDeviceDisappeared",

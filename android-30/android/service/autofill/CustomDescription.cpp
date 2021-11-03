@@ -20,21 +20,21 @@ namespace android::service::autofill
 	// Constructors
 	
 	// Methods
-	jint CustomDescription::describeContents()
+	jint CustomDescription::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString CustomDescription::toString()
+	JString CustomDescription::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void CustomDescription::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CustomDescription::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

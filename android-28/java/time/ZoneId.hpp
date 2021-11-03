@@ -46,13 +46,13 @@ namespace java::time
 		static java::time::ZoneId of(JString arg0, JObject arg1);
 		static java::time::ZoneId ofOffset(JString arg0, java::time::ZoneOffset arg1);
 		static java::time::ZoneId systemDefault();
-		jboolean equals(JObject arg0);
-		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
-		JString getId();
-		java::time::zone::ZoneRules getRules();
-		jint hashCode();
-		java::time::ZoneId normalized();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		JString getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1) const;
+		JString getId() const;
+		java::time::zone::ZoneRules getRules() const;
+		jint hashCode() const;
+		java::time::ZoneId normalized() const;
+		JString toString() const;
 	};
 } // namespace java::time
 

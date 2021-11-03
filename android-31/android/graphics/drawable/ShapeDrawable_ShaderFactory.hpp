@@ -22,7 +22,7 @@ namespace android::graphics::drawable
 		ShapeDrawable_ShaderFactory();
 		
 		// Methods
-		android::graphics::Shader resize(jint arg0, jint arg1);
+		android::graphics::Shader resize(jint arg0, jint arg1) const;
 	};
 } // namespace android::graphics::drawable
 

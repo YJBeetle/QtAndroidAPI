@@ -46,7 +46,7 @@ namespace android::graphics
 		) {}
 	
 	// Methods
-	JString Paint_FontMetricsInt::toString()
+	JString Paint_FontMetricsInt::toString() const
 	{
 		return callObjectMethod(
 			"toString",

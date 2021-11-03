@@ -22,11 +22,11 @@ namespace android::view::textclassifier
 		TextClassifierEvent_TextSelectionEvent_Builder(jint arg0);
 		
 		// Methods
-		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent build();
-		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordEndIndex(jint arg0);
-		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordStartIndex(jint arg0);
-		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordEndIndex(jint arg0);
-		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordStartIndex(jint arg0);
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent build() const;
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordEndIndex(jint arg0) const;
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeSuggestedWordStartIndex(jint arg0) const;
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordEndIndex(jint arg0) const;
+		android::view::textclassifier::TextClassifierEvent_TextSelectionEvent_Builder setRelativeWordStartIndex(jint arg0) const;
 	};
 } // namespace android::view::textclassifier
 

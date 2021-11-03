@@ -20,8 +20,8 @@ namespace android::net::vcn
 		VcnManager_VcnStatusCallback();
 		
 		// Methods
-		void onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2);
-		void onStatusChanged(jint arg0);
+		void onGatewayConnectionError(JString arg0, jint arg1, JThrowable arg2) const;
+		void onStatusChanged(jint arg0) const;
 	};
 } // namespace android::net::vcn
 

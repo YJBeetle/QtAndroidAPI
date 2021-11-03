@@ -30,10 +30,10 @@ namespace java::security
 		AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1);
 		
 		// Methods
-		void checkPermission(java::security::Permission arg0);
-		jboolean equals(JObject arg0);
-		JObject getDomainCombiner();
-		jint hashCode();
+		void checkPermission(java::security::Permission arg0) const;
+		jboolean equals(JObject arg0) const;
+		JObject getDomainCombiner() const;
+		jint hashCode() const;
 	};
 } // namespace java::security
 

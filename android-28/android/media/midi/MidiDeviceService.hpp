@@ -33,13 +33,13 @@ namespace android::media::midi
 		MidiDeviceService();
 		
 		// Methods
-		android::media::midi::MidiDeviceInfo getDeviceInfo();
-		JArray getOutputPortReceivers();
-		JObject onBind(android::content::Intent arg0);
-		void onClose();
-		void onCreate();
-		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0);
-		JArray onGetInputPortReceivers();
+		android::media::midi::MidiDeviceInfo getDeviceInfo() const;
+		JArray getOutputPortReceivers() const;
+		JObject onBind(android::content::Intent arg0) const;
+		void onClose() const;
+		void onCreate() const;
+		void onDeviceStatusChanged(android::media::midi::MidiDeviceStatus arg0) const;
+		JArray onGetInputPortReceivers() const;
 	};
 } // namespace android::media::midi
 

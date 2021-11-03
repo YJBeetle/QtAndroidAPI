@@ -23,19 +23,19 @@ namespace javax::xml::transform
 		// Constructors
 		
 		// Methods
-		void clearParameters();
-		JObject getErrorListener();
-		java::util::Properties getOutputProperties();
-		JString getOutputProperty(JString arg0);
-		JObject getParameter(JString arg0);
-		JObject getURIResolver();
-		void reset();
-		void setErrorListener(JObject arg0);
-		void setOutputProperties(java::util::Properties arg0);
-		void setOutputProperty(JString arg0, JString arg1);
-		void setParameter(JString arg0, JObject arg1);
-		void setURIResolver(JObject arg0);
-		void transform(JObject arg0, JObject arg1);
+		void clearParameters() const;
+		JObject getErrorListener() const;
+		java::util::Properties getOutputProperties() const;
+		JString getOutputProperty(JString arg0) const;
+		JObject getParameter(JString arg0) const;
+		JObject getURIResolver() const;
+		void reset() const;
+		void setErrorListener(JObject arg0) const;
+		void setOutputProperties(java::util::Properties arg0) const;
+		void setOutputProperty(JString arg0, JString arg1) const;
+		void setParameter(JString arg0, JObject arg1) const;
+		void setURIResolver(JObject arg0) const;
+		void transform(JObject arg0, JObject arg1) const;
 	};
 } // namespace javax::xml::transform
 

@@ -47,42 +47,42 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JObject AudioPresentation::getLabels()
+	JObject AudioPresentation::getLabels() const
 	{
 		return callObjectMethod(
 			"getLabels",
 			"()Ljava/util/Map;"
 		);
 	}
-	java::util::Locale AudioPresentation::getLocale()
+	java::util::Locale AudioPresentation::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	jint AudioPresentation::getMasteringIndication()
+	jint AudioPresentation::getMasteringIndication() const
 	{
 		return callMethod<jint>(
 			"getMasteringIndication",
 			"()I"
 		);
 	}
-	jboolean AudioPresentation::hasAudioDescription()
+	jboolean AudioPresentation::hasAudioDescription() const
 	{
 		return callMethod<jboolean>(
 			"hasAudioDescription",
 			"()Z"
 		);
 	}
-	jboolean AudioPresentation::hasDialogueEnhancement()
+	jboolean AudioPresentation::hasDialogueEnhancement() const
 	{
 		return callMethod<jboolean>(
 			"hasDialogueEnhancement",
 			"()Z"
 		);
 	}
-	jboolean AudioPresentation::hasSpokenSubtitles()
+	jboolean AudioPresentation::hasSpokenSubtitles() const
 	{
 		return callMethod<jboolean>(
 			"hasSpokenSubtitles",

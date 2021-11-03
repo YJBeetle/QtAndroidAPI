@@ -21,28 +21,28 @@ namespace android::print::pdf
 		) {}
 	
 	// Methods
-	android::graphics::Rect PrintedPdfDocument::getPageContentRect()
+	android::graphics::Rect PrintedPdfDocument::getPageContentRect() const
 	{
 		return callObjectMethod(
 			"getPageContentRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	jint PrintedPdfDocument::getPageHeight()
+	jint PrintedPdfDocument::getPageHeight() const
 	{
 		return callMethod<jint>(
 			"getPageHeight",
 			"()I"
 		);
 	}
-	jint PrintedPdfDocument::getPageWidth()
+	jint PrintedPdfDocument::getPageWidth() const
 	{
 		return callMethod<jint>(
 			"getPageWidth",
 			"()I"
 		);
 	}
-	android::graphics::pdf::PdfDocument_Page PrintedPdfDocument::startPage(jint arg0)
+	android::graphics::pdf::PdfDocument_Page PrintedPdfDocument::startPage(jint arg0) const
 	{
 		return callObjectMethod(
 			"startPage",

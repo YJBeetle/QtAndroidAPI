@@ -19,14 +19,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::ReportUsageRequest ReportUsageRequest_Builder::build()
+	android::app::appsearch::ReportUsageRequest ReportUsageRequest_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/ReportUsageRequest;"
 		);
 	}
-	android::app::appsearch::ReportUsageRequest_Builder ReportUsageRequest_Builder::setUsageTimestampMillis(jlong arg0)
+	android::app::appsearch::ReportUsageRequest_Builder ReportUsageRequest_Builder::setUsageTimestampMillis(jlong arg0) const
 	{
 		return callObjectMethod(
 			"setUsageTimestampMillis",

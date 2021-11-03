@@ -59,21 +59,21 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint DhcpInfo::describeContents()
+	jint DhcpInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JString DhcpInfo::toString()
+	JString DhcpInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void DhcpInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DhcpInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

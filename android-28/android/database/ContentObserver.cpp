@@ -18,14 +18,14 @@ namespace android::database
 		) {}
 	
 	// Methods
-	jboolean ContentObserver::deliverSelfNotifications()
+	jboolean ContentObserver::deliverSelfNotifications() const
 	{
 		return callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
 		);
 	}
-	void ContentObserver::dispatchChange(jboolean arg0)
+	void ContentObserver::dispatchChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchChange",
@@ -33,7 +33,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void ContentObserver::dispatchChange(jboolean arg0, android::net::Uri arg1)
+	void ContentObserver::dispatchChange(jboolean arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"dispatchChange",
@@ -42,7 +42,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void ContentObserver::onChange(jboolean arg0)
+	void ContentObserver::onChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"onChange",
@@ -50,7 +50,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void ContentObserver::onChange(jboolean arg0, android::net::Uri arg1)
+	void ContentObserver::onChange(jboolean arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"onChange",

@@ -26,8 +26,8 @@ namespace android::widget
 		RemoteViews_RemoteViewOutlineProvider(jfloat arg0);
 		
 		// Methods
-		void getOutline(android::view::View arg0, android::graphics::Outline arg1);
-		jfloat getRadius();
+		void getOutline(android::view::View arg0, android::graphics::Outline arg1) const;
+		jfloat getRadius() const;
 	};
 } // namespace android::widget
 

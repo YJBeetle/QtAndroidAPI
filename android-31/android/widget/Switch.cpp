@@ -51,7 +51,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void Switch::draw(android::graphics::Canvas arg0)
+	void Switch::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -59,7 +59,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	void Switch::drawableHotspotChanged(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"drawableHotspotChanged",
@@ -68,140 +68,140 @@ namespace android::widget
 			arg1
 		);
 	}
-	JString Switch::getAccessibilityClassName()
+	JString Switch::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Switch::getCompoundPaddingLeft()
+	jint Switch::getCompoundPaddingLeft() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingLeft",
 			"()I"
 		);
 	}
-	jint Switch::getCompoundPaddingRight()
+	jint Switch::getCompoundPaddingRight() const
 	{
 		return callMethod<jint>(
 			"getCompoundPaddingRight",
 			"()I"
 		);
 	}
-	jboolean Switch::getShowText()
+	jboolean Switch::getShowText() const
 	{
 		return callMethod<jboolean>(
 			"getShowText",
 			"()Z"
 		);
 	}
-	jboolean Switch::getSplitTrack()
+	jboolean Switch::getSplitTrack() const
 	{
 		return callMethod<jboolean>(
 			"getSplitTrack",
 			"()Z"
 		);
 	}
-	jint Switch::getSwitchMinWidth()
+	jint Switch::getSwitchMinWidth() const
 	{
 		return callMethod<jint>(
 			"getSwitchMinWidth",
 			"()I"
 		);
 	}
-	jint Switch::getSwitchPadding()
+	jint Switch::getSwitchPadding() const
 	{
 		return callMethod<jint>(
 			"getSwitchPadding",
 			"()I"
 		);
 	}
-	JString Switch::getTextOff()
+	JString Switch::getTextOff() const
 	{
 		return callObjectMethod(
 			"getTextOff",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString Switch::getTextOn()
+	JString Switch::getTextOn() const
 	{
 		return callObjectMethod(
 			"getTextOn",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::graphics::drawable::Drawable Switch::getThumbDrawable()
+	android::graphics::drawable::Drawable Switch::getThumbDrawable() const
 	{
 		return callObjectMethod(
 			"getThumbDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint Switch::getThumbTextPadding()
+	jint Switch::getThumbTextPadding() const
 	{
 		return callMethod<jint>(
 			"getThumbTextPadding",
 			"()I"
 		);
 	}
-	android::graphics::BlendMode Switch::getThumbTintBlendMode()
+	android::graphics::BlendMode Switch::getThumbTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getThumbTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList Switch::getThumbTintList()
+	android::content::res::ColorStateList Switch::getThumbTintList() const
 	{
 		return callObjectMethod(
 			"getThumbTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode Switch::getThumbTintMode()
+	android::graphics::PorterDuff_Mode Switch::getThumbTintMode() const
 	{
 		return callObjectMethod(
 			"getThumbTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	android::graphics::drawable::Drawable Switch::getTrackDrawable()
+	android::graphics::drawable::Drawable Switch::getTrackDrawable() const
 	{
 		return callObjectMethod(
 			"getTrackDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::graphics::BlendMode Switch::getTrackTintBlendMode()
+	android::graphics::BlendMode Switch::getTrackTintBlendMode() const
 	{
 		return callObjectMethod(
 			"getTrackTintBlendMode",
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	android::content::res::ColorStateList Switch::getTrackTintList()
+	android::content::res::ColorStateList Switch::getTrackTintList() const
 	{
 		return callObjectMethod(
 			"getTrackTintList",
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	android::graphics::PorterDuff_Mode Switch::getTrackTintMode()
+	android::graphics::PorterDuff_Mode Switch::getTrackTintMode() const
 	{
 		return callObjectMethod(
 			"getTrackTintMode",
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	void Switch::jumpDrawablesToCurrentState()
+	void Switch::jumpDrawablesToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	void Switch::onMeasure(jint arg0, jint arg1)
+	void Switch::onMeasure(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"onMeasure",
@@ -210,7 +210,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jboolean Switch::onTouchEvent(android::view::MotionEvent arg0)
+	jboolean Switch::onTouchEvent(android::view::MotionEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",
@@ -218,7 +218,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setChecked(jboolean arg0)
+	void Switch::setChecked(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setChecked",
@@ -226,7 +226,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setShowText(jboolean arg0)
+	void Switch::setShowText(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setShowText",
@@ -234,7 +234,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setSplitTrack(jboolean arg0)
+	void Switch::setSplitTrack(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSplitTrack",
@@ -242,7 +242,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setSwitchMinWidth(jint arg0)
+	void Switch::setSwitchMinWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setSwitchMinWidth",
@@ -250,7 +250,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setSwitchPadding(jint arg0)
+	void Switch::setSwitchPadding(jint arg0) const
 	{
 		callMethod<void>(
 			"setSwitchPadding",
@@ -258,7 +258,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setSwitchTextAppearance(android::content::Context arg0, jint arg1)
+	void Switch::setSwitchTextAppearance(android::content::Context arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSwitchTextAppearance",
@@ -267,7 +267,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Switch::setSwitchTypeface(android::graphics::Typeface arg0)
+	void Switch::setSwitchTypeface(android::graphics::Typeface arg0) const
 	{
 		callMethod<void>(
 			"setSwitchTypeface",
@@ -275,7 +275,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setSwitchTypeface(android::graphics::Typeface arg0, jint arg1)
+	void Switch::setSwitchTypeface(android::graphics::Typeface arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setSwitchTypeface",
@@ -284,7 +284,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Switch::setTextOff(JString arg0)
+	void Switch::setTextOff(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextOff",
@@ -292,7 +292,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Switch::setTextOn(JString arg0)
+	void Switch::setTextOn(JString arg0) const
 	{
 		callMethod<void>(
 			"setTextOn",
@@ -300,7 +300,7 @@ namespace android::widget
 			arg0.object<jstring>()
 		);
 	}
-	void Switch::setThumbDrawable(android::graphics::drawable::Drawable arg0)
+	void Switch::setThumbDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setThumbDrawable",
@@ -308,7 +308,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setThumbIcon(android::graphics::drawable::Icon arg0)
+	void Switch::setThumbIcon(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setThumbIcon",
@@ -316,7 +316,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setThumbResource(jint arg0)
+	void Switch::setThumbResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setThumbResource",
@@ -324,7 +324,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setThumbTextPadding(jint arg0)
+	void Switch::setThumbTextPadding(jint arg0) const
 	{
 		callMethod<void>(
 			"setThumbTextPadding",
@@ -332,7 +332,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setThumbTintBlendMode(android::graphics::BlendMode arg0)
+	void Switch::setThumbTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setThumbTintBlendMode",
@@ -340,7 +340,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setThumbTintList(android::content::res::ColorStateList arg0)
+	void Switch::setThumbTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setThumbTintList",
@@ -348,7 +348,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setThumbTintMode(android::graphics::PorterDuff_Mode arg0)
+	void Switch::setThumbTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setThumbTintMode",
@@ -356,7 +356,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setTrackDrawable(android::graphics::drawable::Drawable arg0)
+	void Switch::setTrackDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setTrackDrawable",
@@ -364,7 +364,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setTrackIcon(android::graphics::drawable::Icon arg0)
+	void Switch::setTrackIcon(android::graphics::drawable::Icon arg0) const
 	{
 		callMethod<void>(
 			"setTrackIcon",
@@ -372,7 +372,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setTrackResource(jint arg0)
+	void Switch::setTrackResource(jint arg0) const
 	{
 		callMethod<void>(
 			"setTrackResource",
@@ -380,7 +380,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Switch::setTrackTintBlendMode(android::graphics::BlendMode arg0)
+	void Switch::setTrackTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTrackTintBlendMode",
@@ -388,7 +388,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setTrackTintList(android::content::res::ColorStateList arg0)
+	void Switch::setTrackTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTrackTintList",
@@ -396,7 +396,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::setTrackTintMode(android::graphics::PorterDuff_Mode arg0)
+	void Switch::setTrackTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setTrackTintMode",
@@ -404,7 +404,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void Switch::toggle()
+	void Switch::toggle() const
 	{
 		callMethod<void>(
 			"toggle",

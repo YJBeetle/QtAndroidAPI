@@ -19,14 +19,14 @@ namespace android::app::appsearch
 		) {}
 	
 	// Methods
-	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig AppSearchSchema_DocumentPropertyConfig_Builder::build()
+	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig AppSearchSchema_DocumentPropertyConfig_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/app/appsearch/AppSearchSchema$DocumentPropertyConfig;"
 		);
 	}
-	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder AppSearchSchema_DocumentPropertyConfig_Builder::setCardinality(jint arg0)
+	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder AppSearchSchema_DocumentPropertyConfig_Builder::setCardinality(jint arg0) const
 	{
 		return callObjectMethod(
 			"setCardinality",
@@ -34,7 +34,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder AppSearchSchema_DocumentPropertyConfig_Builder::setShouldIndexNestedProperties(jboolean arg0)
+	android::app::appsearch::AppSearchSchema_DocumentPropertyConfig_Builder AppSearchSchema_DocumentPropertyConfig_Builder::setShouldIndexNestedProperties(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setShouldIndexNestedProperties",

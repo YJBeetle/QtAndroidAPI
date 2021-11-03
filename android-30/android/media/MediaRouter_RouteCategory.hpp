@@ -23,12 +23,12 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		JString getName();
-		JString getName(android::content::Context arg0);
-		JObject getRoutes(JObject arg0);
-		jint getSupportedTypes();
-		jboolean isGroupable();
-		JString toString();
+		JString getName() const;
+		JString getName(android::content::Context arg0) const;
+		JObject getRoutes(JObject arg0) const;
+		jint getSupportedTypes() const;
+		jboolean isGroupable() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

@@ -18,7 +18,7 @@ namespace android::database
 		) {}
 	
 	// Methods
-	void ContentObservable::dispatchChange(jboolean arg0)
+	void ContentObservable::dispatchChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"dispatchChange",
@@ -26,7 +26,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void ContentObservable::dispatchChange(jboolean arg0, android::net::Uri arg1)
+	void ContentObservable::dispatchChange(jboolean arg0, android::net::Uri arg1) const
 	{
 		callMethod<void>(
 			"dispatchChange",
@@ -35,7 +35,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void ContentObservable::notifyChange(jboolean arg0)
+	void ContentObservable::notifyChange(jboolean arg0) const
 	{
 		callMethod<void>(
 			"notifyChange",
@@ -43,7 +43,7 @@ namespace android::database
 			arg0
 		);
 	}
-	void ContentObservable::registerObserver(android::database::ContentObserver arg0)
+	void ContentObservable::registerObserver(android::database::ContentObserver arg0) const
 	{
 		callMethod<void>(
 			"registerObserver",
@@ -51,7 +51,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void ContentObservable::registerObserver(JObject arg0)
+	void ContentObservable::registerObserver(JObject arg0) const
 	{
 		callMethod<void>(
 			"registerObserver",

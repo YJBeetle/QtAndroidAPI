@@ -26,9 +26,9 @@ namespace android::service::voice
 		// Constructors
 		
 		// Methods
-		JString getMessage();
-		android::app::VoiceInteractor_Prompt getVoicePrompt();
-		void sendAbortResult(android::os::Bundle arg0);
+		JString getMessage() const;
+		android::app::VoiceInteractor_Prompt getVoicePrompt() const;
+		void sendAbortResult(android::os::Bundle arg0) const;
 	};
 } // namespace android::service::voice
 

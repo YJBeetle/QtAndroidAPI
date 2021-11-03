@@ -23,49 +23,49 @@ namespace android::view
 		) {}
 	
 	// Methods
-	JObject ScrollCaptureTarget::getCallback()
+	JObject ScrollCaptureTarget::getCallback() const
 	{
 		return callObjectMethod(
 			"getCallback",
 			"()Landroid/view/ScrollCaptureCallback;"
 		);
 	}
-	android::view::View ScrollCaptureTarget::getContainingView()
+	android::view::View ScrollCaptureTarget::getContainingView() const
 	{
 		return callObjectMethod(
 			"getContainingView",
 			"()Landroid/view/View;"
 		);
 	}
-	jint ScrollCaptureTarget::getHint()
+	jint ScrollCaptureTarget::getHint() const
 	{
 		return callMethod<jint>(
 			"getHint",
 			"()I"
 		);
 	}
-	android::graphics::Rect ScrollCaptureTarget::getLocalVisibleRect()
+	android::graphics::Rect ScrollCaptureTarget::getLocalVisibleRect() const
 	{
 		return callObjectMethod(
 			"getLocalVisibleRect",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	android::graphics::Point ScrollCaptureTarget::getPositionInWindow()
+	android::graphics::Point ScrollCaptureTarget::getPositionInWindow() const
 	{
 		return callObjectMethod(
 			"getPositionInWindow",
 			"()Landroid/graphics/Point;"
 		);
 	}
-	android::graphics::Rect ScrollCaptureTarget::getScrollBounds()
+	android::graphics::Rect ScrollCaptureTarget::getScrollBounds() const
 	{
 		return callObjectMethod(
 			"getScrollBounds",
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	void ScrollCaptureTarget::setScrollBounds(android::graphics::Rect arg0)
+	void ScrollCaptureTarget::setScrollBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"setScrollBounds",
@@ -73,14 +73,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	JString ScrollCaptureTarget::toString()
+	JString ScrollCaptureTarget::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void ScrollCaptureTarget::updatePositionInWindow()
+	void ScrollCaptureTarget::updatePositionInWindow() const
 	{
 		callMethod<void>(
 			"updatePositionInWindow",

@@ -16,7 +16,7 @@ namespace android::hardware::camera2
 		) {}
 	
 	// Methods
-	void CameraExtensionSession_StateCallback::onClosed(android::hardware::camera2::CameraExtensionSession arg0)
+	void CameraExtensionSession_StateCallback::onClosed(android::hardware::camera2::CameraExtensionSession arg0) const
 	{
 		callMethod<void>(
 			"onClosed",
@@ -24,7 +24,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraExtensionSession_StateCallback::onConfigureFailed(android::hardware::camera2::CameraExtensionSession arg0)
+	void CameraExtensionSession_StateCallback::onConfigureFailed(android::hardware::camera2::CameraExtensionSession arg0) const
 	{
 		callMethod<void>(
 			"onConfigureFailed",
@@ -32,7 +32,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraExtensionSession_StateCallback::onConfigured(android::hardware::camera2::CameraExtensionSession arg0)
+	void CameraExtensionSession_StateCallback::onConfigured(android::hardware::camera2::CameraExtensionSession arg0) const
 	{
 		callMethod<void>(
 			"onConfigured",

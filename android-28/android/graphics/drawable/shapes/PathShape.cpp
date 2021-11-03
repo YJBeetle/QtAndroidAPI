@@ -23,14 +23,14 @@ namespace android::graphics::drawable::shapes
 		) {}
 	
 	// Methods
-	android::graphics::drawable::shapes::PathShape PathShape::clone()
+	android::graphics::drawable::shapes::PathShape PathShape::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/PathShape;"
 		);
 	}
-	void PathShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1)
+	void PathShape::draw(android::graphics::Canvas arg0, android::graphics::Paint arg1) const
 	{
 		callMethod<void>(
 			"draw",

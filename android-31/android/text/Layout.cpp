@@ -124,7 +124,7 @@ namespace android::text
 			arg3.object()
 		);
 	}
-	void Layout::draw(android::graphics::Canvas arg0)
+	void Layout::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -132,7 +132,7 @@ namespace android::text
 			arg0.object()
 		);
 	}
-	void Layout::draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3)
+	void Layout::draw(android::graphics::Canvas arg0, android::graphics::Path arg1, android::graphics::Paint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"draw",
@@ -143,21 +143,21 @@ namespace android::text
 			arg3
 		);
 	}
-	android::text::Layout_Alignment Layout::getAlignment()
+	android::text::Layout_Alignment Layout::getAlignment() const
 	{
 		return callObjectMethod(
 			"getAlignment",
 			"()Landroid/text/Layout$Alignment;"
 		);
 	}
-	jint Layout::getBottomPadding()
+	jint Layout::getBottomPadding() const
 	{
 		return callMethod<jint>(
 			"getBottomPadding",
 			"()I"
 		);
 	}
-	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, JString arg2)
+	void Layout::getCursorPath(jint arg0, android::graphics::Path arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"getCursorPath",
@@ -167,7 +167,7 @@ namespace android::text
 			arg2.object<jstring>()
 		);
 	}
-	jint Layout::getEllipsisCount(jint arg0)
+	jint Layout::getEllipsisCount(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisCount",
@@ -175,7 +175,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getEllipsisStart(jint arg0)
+	jint Layout::getEllipsisStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getEllipsisStart",
@@ -183,21 +183,21 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getEllipsizedWidth()
+	jint Layout::getEllipsizedWidth() const
 	{
 		return callMethod<jint>(
 			"getEllipsizedWidth",
 			"()I"
 		);
 	}
-	jint Layout::getHeight()
+	jint Layout::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint Layout::getLineAscent(jint arg0)
+	jint Layout::getLineAscent(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineAscent",
@@ -205,7 +205,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineBaseline(jint arg0)
+	jint Layout::getLineBaseline(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineBaseline",
@@ -213,7 +213,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineBottom(jint arg0)
+	jint Layout::getLineBottom(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineBottom",
@@ -221,7 +221,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineBounds(jint arg0, android::graphics::Rect arg1)
+	jint Layout::getLineBounds(jint arg0, android::graphics::Rect arg1) const
 	{
 		return callMethod<jint>(
 			"getLineBounds",
@@ -230,7 +230,7 @@ namespace android::text
 			arg1.object()
 		);
 	}
-	jboolean Layout::getLineContainsTab(jint arg0)
+	jboolean Layout::getLineContainsTab(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"getLineContainsTab",
@@ -238,14 +238,14 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineCount()
+	jint Layout::getLineCount() const
 	{
 		return callMethod<jint>(
 			"getLineCount",
 			"()I"
 		);
 	}
-	jint Layout::getLineDescent(jint arg0)
+	jint Layout::getLineDescent(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineDescent",
@@ -253,7 +253,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::Layout_Directions Layout::getLineDirections(jint arg0)
+	android::text::Layout_Directions Layout::getLineDirections(jint arg0) const
 	{
 		return callObjectMethod(
 			"getLineDirections",
@@ -261,7 +261,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineEnd(jint arg0)
+	jint Layout::getLineEnd(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineEnd",
@@ -269,7 +269,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineForOffset(jint arg0)
+	jint Layout::getLineForOffset(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineForOffset",
@@ -277,7 +277,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineForVertical(jint arg0)
+	jint Layout::getLineForVertical(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineForVertical",
@@ -285,7 +285,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getLineLeft(jint arg0)
+	jfloat Layout::getLineLeft(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineLeft",
@@ -293,7 +293,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getLineMax(jint arg0)
+	jfloat Layout::getLineMax(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineMax",
@@ -301,7 +301,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getLineRight(jint arg0)
+	jfloat Layout::getLineRight(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineRight",
@@ -309,7 +309,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineStart(jint arg0)
+	jint Layout::getLineStart(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineStart",
@@ -317,7 +317,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineTop(jint arg0)
+	jint Layout::getLineTop(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineTop",
@@ -325,7 +325,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getLineVisibleEnd(jint arg0)
+	jint Layout::getLineVisibleEnd(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getLineVisibleEnd",
@@ -333,7 +333,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getLineWidth(jint arg0)
+	jfloat Layout::getLineWidth(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getLineWidth",
@@ -341,7 +341,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getOffsetForHorizontal(jint arg0, jfloat arg1)
+	jint Layout::getOffsetForHorizontal(jint arg0, jfloat arg1) const
 	{
 		return callMethod<jint>(
 			"getOffsetForHorizontal",
@@ -350,7 +350,7 @@ namespace android::text
 			arg1
 		);
 	}
-	jint Layout::getOffsetToLeftOf(jint arg0)
+	jint Layout::getOffsetToLeftOf(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOffsetToLeftOf",
@@ -358,7 +358,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getOffsetToRightOf(jint arg0)
+	jint Layout::getOffsetToRightOf(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getOffsetToRightOf",
@@ -366,14 +366,14 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::TextPaint Layout::getPaint()
+	android::text::TextPaint Layout::getPaint() const
 	{
 		return callObjectMethod(
 			"getPaint",
 			"()Landroid/text/TextPaint;"
 		);
 	}
-	android::text::Layout_Alignment Layout::getParagraphAlignment(jint arg0)
+	android::text::Layout_Alignment Layout::getParagraphAlignment(jint arg0) const
 	{
 		return callObjectMethod(
 			"getParagraphAlignment",
@@ -381,7 +381,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getParagraphDirection(jint arg0)
+	jint Layout::getParagraphDirection(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParagraphDirection",
@@ -389,7 +389,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getParagraphLeft(jint arg0)
+	jint Layout::getParagraphLeft(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParagraphLeft",
@@ -397,7 +397,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jint Layout::getParagraphRight(jint arg0)
+	jint Layout::getParagraphRight(jint arg0) const
 	{
 		return callMethod<jint>(
 			"getParagraphRight",
@@ -405,7 +405,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getPrimaryHorizontal(jint arg0)
+	jfloat Layout::getPrimaryHorizontal(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getPrimaryHorizontal",
@@ -413,7 +413,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jfloat Layout::getSecondaryHorizontal(jint arg0)
+	jfloat Layout::getSecondaryHorizontal(jint arg0) const
 	{
 		return callMethod<jfloat>(
 			"getSecondaryHorizontal",
@@ -421,7 +421,7 @@ namespace android::text
 			arg0
 		);
 	}
-	void Layout::getSelectionPath(jint arg0, jint arg1, android::graphics::Path arg2)
+	void Layout::getSelectionPath(jint arg0, jint arg1, android::graphics::Path arg2) const
 	{
 		callMethod<void>(
 			"getSelectionPath",
@@ -431,42 +431,42 @@ namespace android::text
 			arg2.object()
 		);
 	}
-	jfloat Layout::getSpacingAdd()
+	jfloat Layout::getSpacingAdd() const
 	{
 		return callMethod<jfloat>(
 			"getSpacingAdd",
 			"()F"
 		);
 	}
-	jfloat Layout::getSpacingMultiplier()
+	jfloat Layout::getSpacingMultiplier() const
 	{
 		return callMethod<jfloat>(
 			"getSpacingMultiplier",
 			"()F"
 		);
 	}
-	JString Layout::getText()
+	JString Layout::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint Layout::getTopPadding()
+	jint Layout::getTopPadding() const
 	{
 		return callMethod<jint>(
 			"getTopPadding",
 			"()I"
 		);
 	}
-	jint Layout::getWidth()
+	jint Layout::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	void Layout::increaseWidthTo(jint arg0)
+	void Layout::increaseWidthTo(jint arg0) const
 	{
 		callMethod<void>(
 			"increaseWidthTo",
@@ -474,7 +474,7 @@ namespace android::text
 			arg0
 		);
 	}
-	jboolean Layout::isRtlCharAt(jint arg0)
+	jboolean Layout::isRtlCharAt(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isRtlCharAt",

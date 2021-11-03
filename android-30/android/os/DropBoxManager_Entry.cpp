@@ -66,42 +66,42 @@ namespace android::os
 		) {}
 	
 	// Methods
-	void DropBoxManager_Entry::close()
+	void DropBoxManager_Entry::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	jint DropBoxManager_Entry::describeContents()
+	jint DropBoxManager_Entry::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jint DropBoxManager_Entry::getFlags()
+	jint DropBoxManager_Entry::getFlags() const
 	{
 		return callMethod<jint>(
 			"getFlags",
 			"()I"
 		);
 	}
-	java::io::InputStream DropBoxManager_Entry::getInputStream()
+	java::io::InputStream DropBoxManager_Entry::getInputStream() const
 	{
 		return callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
 		);
 	}
-	JString DropBoxManager_Entry::getTag()
+	JString DropBoxManager_Entry::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString DropBoxManager_Entry::getText(jint arg0)
+	JString DropBoxManager_Entry::getText(jint arg0) const
 	{
 		return callObjectMethod(
 			"getText",
@@ -109,14 +109,14 @@ namespace android::os
 			arg0
 		);
 	}
-	jlong DropBoxManager_Entry::getTimeMillis()
+	jlong DropBoxManager_Entry::getTimeMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeMillis",
 			"()J"
 		);
 	}
-	void DropBoxManager_Entry::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void DropBoxManager_Entry::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

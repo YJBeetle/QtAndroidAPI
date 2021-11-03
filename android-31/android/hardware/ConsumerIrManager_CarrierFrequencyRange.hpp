@@ -22,8 +22,8 @@ namespace android::hardware
 		ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getMaxFrequency();
-		jint getMinFrequency();
+		jint getMaxFrequency() const;
+		jint getMinFrequency() const;
 	};
 } // namespace android::hardware
 

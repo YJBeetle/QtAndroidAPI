@@ -29,7 +29,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::TableRow_LayoutParams TableRow::generateLayoutParams(JObject arg0)
+	android::widget::TableRow_LayoutParams TableRow::generateLayoutParams(JObject arg0) const
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -37,14 +37,14 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	JString TableRow::getAccessibilityClassName()
+	JString TableRow::getAccessibilityClassName() const
 	{
 		return callObjectMethod(
 			"getAccessibilityClassName",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	android::view::View TableRow::getVirtualChildAt(jint arg0)
+	android::view::View TableRow::getVirtualChildAt(jint arg0) const
 	{
 		return callObjectMethod(
 			"getVirtualChildAt",
@@ -52,14 +52,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	jint TableRow::getVirtualChildCount()
+	jint TableRow::getVirtualChildCount() const
 	{
 		return callMethod<jint>(
 			"getVirtualChildCount",
 			"()I"
 		);
 	}
-	void TableRow::setOnHierarchyChangeListener(JObject arg0)
+	void TableRow::setOnHierarchyChangeListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",

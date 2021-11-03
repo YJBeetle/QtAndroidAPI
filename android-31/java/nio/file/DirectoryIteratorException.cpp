@@ -19,7 +19,7 @@ namespace java::nio::file
 		) {}
 	
 	// Methods
-	java::io::IOException DirectoryIteratorException::getCause()
+	java::io::IOException DirectoryIteratorException::getCause() const
 	{
 		return callObjectMethod(
 			"getCause",

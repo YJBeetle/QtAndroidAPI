@@ -28,11 +28,11 @@ namespace android::location
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		android::location::GnssClock getClock();
-		JObject getMeasurements();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		android::location::GnssClock getClock() const;
+		JObject getMeasurements() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::location
 

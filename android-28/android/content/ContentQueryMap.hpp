@@ -27,11 +27,11 @@ namespace android::content
 		ContentQueryMap(JObject arg0, JString arg1, jboolean arg2, android::os::Handler arg3);
 		
 		// Methods
-		void close();
-		JObject getRows();
-		android::content::ContentValues getValues(JString arg0);
-		void requery();
-		void setKeepUpdated(jboolean arg0);
+		void close() const;
+		JObject getRows() const;
+		android::content::ContentValues getValues(JString arg0) const;
+		void requery() const;
+		void setKeepUpdated(jboolean arg0) const;
 	};
 } // namespace android::content
 

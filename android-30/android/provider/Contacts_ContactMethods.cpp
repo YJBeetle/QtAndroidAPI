@@ -206,7 +206,7 @@ namespace android::provider
 			arg3.object<jstring>()
 		);
 	}
-	void Contacts_ContactMethods::addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3)
+	void Contacts_ContactMethods::addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3) const
 	{
 		callMethod<void>(
 			"addPostalLocation",

@@ -40,14 +40,14 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	JObject HttpCookie::clone()
+	JObject HttpCookie::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean HttpCookie::equals(JObject arg0)
+	jboolean HttpCookie::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -55,105 +55,105 @@ namespace java::net
 			arg0.object<jobject>()
 		);
 	}
-	JString HttpCookie::getComment()
+	JString HttpCookie::getComment() const
 	{
 		return callObjectMethod(
 			"getComment",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString HttpCookie::getCommentURL()
+	JString HttpCookie::getCommentURL() const
 	{
 		return callObjectMethod(
 			"getCommentURL",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean HttpCookie::getDiscard()
+	jboolean HttpCookie::getDiscard() const
 	{
 		return callMethod<jboolean>(
 			"getDiscard",
 			"()Z"
 		);
 	}
-	JString HttpCookie::getDomain()
+	JString HttpCookie::getDomain() const
 	{
 		return callObjectMethod(
 			"getDomain",
 			"()Ljava/lang/String;"
 		);
 	}
-	jlong HttpCookie::getMaxAge()
+	jlong HttpCookie::getMaxAge() const
 	{
 		return callMethod<jlong>(
 			"getMaxAge",
 			"()J"
 		);
 	}
-	JString HttpCookie::getName()
+	JString HttpCookie::getName() const
 	{
 		return callObjectMethod(
 			"getName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString HttpCookie::getPath()
+	JString HttpCookie::getPath() const
 	{
 		return callObjectMethod(
 			"getPath",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString HttpCookie::getPortlist()
+	JString HttpCookie::getPortlist() const
 	{
 		return callObjectMethod(
 			"getPortlist",
 			"()Ljava/lang/String;"
 		);
 	}
-	jboolean HttpCookie::getSecure()
+	jboolean HttpCookie::getSecure() const
 	{
 		return callMethod<jboolean>(
 			"getSecure",
 			"()Z"
 		);
 	}
-	JString HttpCookie::getValue()
+	JString HttpCookie::getValue() const
 	{
 		return callObjectMethod(
 			"getValue",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint HttpCookie::getVersion()
+	jint HttpCookie::getVersion() const
 	{
 		return callMethod<jint>(
 			"getVersion",
 			"()I"
 		);
 	}
-	jboolean HttpCookie::hasExpired()
+	jboolean HttpCookie::hasExpired() const
 	{
 		return callMethod<jboolean>(
 			"hasExpired",
 			"()Z"
 		);
 	}
-	jint HttpCookie::hashCode()
+	jint HttpCookie::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean HttpCookie::isHttpOnly()
+	jboolean HttpCookie::isHttpOnly() const
 	{
 		return callMethod<jboolean>(
 			"isHttpOnly",
 			"()Z"
 		);
 	}
-	void HttpCookie::setComment(JString arg0)
+	void HttpCookie::setComment(JString arg0) const
 	{
 		callMethod<void>(
 			"setComment",
@@ -161,7 +161,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setCommentURL(JString arg0)
+	void HttpCookie::setCommentURL(JString arg0) const
 	{
 		callMethod<void>(
 			"setCommentURL",
@@ -169,7 +169,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setDiscard(jboolean arg0)
+	void HttpCookie::setDiscard(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDiscard",
@@ -177,7 +177,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setDomain(JString arg0)
+	void HttpCookie::setDomain(JString arg0) const
 	{
 		callMethod<void>(
 			"setDomain",
@@ -185,7 +185,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setHttpOnly(jboolean arg0)
+	void HttpCookie::setHttpOnly(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setHttpOnly",
@@ -193,7 +193,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setMaxAge(jlong arg0)
+	void HttpCookie::setMaxAge(jlong arg0) const
 	{
 		callMethod<void>(
 			"setMaxAge",
@@ -201,7 +201,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setPath(JString arg0)
+	void HttpCookie::setPath(JString arg0) const
 	{
 		callMethod<void>(
 			"setPath",
@@ -209,7 +209,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setPortlist(JString arg0)
+	void HttpCookie::setPortlist(JString arg0) const
 	{
 		callMethod<void>(
 			"setPortlist",
@@ -217,7 +217,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setSecure(jboolean arg0)
+	void HttpCookie::setSecure(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSecure",
@@ -225,7 +225,7 @@ namespace java::net
 			arg0
 		);
 	}
-	void HttpCookie::setValue(JString arg0)
+	void HttpCookie::setValue(JString arg0) const
 	{
 		callMethod<void>(
 			"setValue",
@@ -233,7 +233,7 @@ namespace java::net
 			arg0.object<jstring>()
 		);
 	}
-	void HttpCookie::setVersion(jint arg0)
+	void HttpCookie::setVersion(jint arg0) const
 	{
 		callMethod<void>(
 			"setVersion",
@@ -241,7 +241,7 @@ namespace java::net
 			arg0
 		);
 	}
-	JString HttpCookie::toString()
+	JString HttpCookie::toString() const
 	{
 		return callObjectMethod(
 			"toString",

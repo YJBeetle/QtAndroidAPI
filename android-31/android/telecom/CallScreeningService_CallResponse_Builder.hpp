@@ -22,13 +22,13 @@ namespace android::telecom
 		CallScreeningService_CallResponse_Builder();
 		
 		// Methods
-		android::telecom::CallScreeningService_CallResponse build();
-		android::telecom::CallScreeningService_CallResponse_Builder setCallComposerAttachmentsToShow(jint arg0);
-		android::telecom::CallScreeningService_CallResponse_Builder setDisallowCall(jboolean arg0);
-		android::telecom::CallScreeningService_CallResponse_Builder setRejectCall(jboolean arg0);
-		android::telecom::CallScreeningService_CallResponse_Builder setSilenceCall(jboolean arg0);
-		android::telecom::CallScreeningService_CallResponse_Builder setSkipCallLog(jboolean arg0);
-		android::telecom::CallScreeningService_CallResponse_Builder setSkipNotification(jboolean arg0);
+		android::telecom::CallScreeningService_CallResponse build() const;
+		android::telecom::CallScreeningService_CallResponse_Builder setCallComposerAttachmentsToShow(jint arg0) const;
+		android::telecom::CallScreeningService_CallResponse_Builder setDisallowCall(jboolean arg0) const;
+		android::telecom::CallScreeningService_CallResponse_Builder setRejectCall(jboolean arg0) const;
+		android::telecom::CallScreeningService_CallResponse_Builder setSilenceCall(jboolean arg0) const;
+		android::telecom::CallScreeningService_CallResponse_Builder setSkipCallLog(jboolean arg0) const;
+		android::telecom::CallScreeningService_CallResponse_Builder setSkipNotification(jboolean arg0) const;
 	};
 } // namespace android::telecom
 

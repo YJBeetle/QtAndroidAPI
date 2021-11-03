@@ -38,7 +38,7 @@ namespace android::graphics::drawable
 			"()F"
 		);
 	}
-	void AdaptiveIconDrawable::applyTheme(android::content::res::Resources_Theme arg0)
+	void AdaptiveIconDrawable::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -46,14 +46,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean AdaptiveIconDrawable::canApplyTheme()
+	jboolean AdaptiveIconDrawable::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void AdaptiveIconDrawable::draw(android::graphics::Canvas arg0)
+	void AdaptiveIconDrawable::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -61,42 +61,42 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint AdaptiveIconDrawable::getAlpha()
+	jint AdaptiveIconDrawable::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable AdaptiveIconDrawable::getBackground()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::getBackground() const
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jint AdaptiveIconDrawable::getChangingConfigurations()
+	jint AdaptiveIconDrawable::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState AdaptiveIconDrawable::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState AdaptiveIconDrawable::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::drawable::Drawable AdaptiveIconDrawable::getForeground()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::getForeground() const
 	{
 		return callObjectMethod(
 			"getForeground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void AdaptiveIconDrawable::getHotspotBounds(android::graphics::Rect arg0)
+	void AdaptiveIconDrawable::getHotspotBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHotspotBounds",
@@ -104,35 +104,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::Path AdaptiveIconDrawable::getIconMask()
+	android::graphics::Path AdaptiveIconDrawable::getIconMask() const
 	{
 		return callObjectMethod(
 			"getIconMask",
 			"()Landroid/graphics/Path;"
 		);
 	}
-	jint AdaptiveIconDrawable::getIntrinsicHeight()
+	jint AdaptiveIconDrawable::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint AdaptiveIconDrawable::getIntrinsicWidth()
+	jint AdaptiveIconDrawable::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint AdaptiveIconDrawable::getOpacity()
+	jint AdaptiveIconDrawable::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	void AdaptiveIconDrawable::getOutline(android::graphics::Outline arg0)
+	void AdaptiveIconDrawable::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -140,14 +140,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	android::graphics::Region AdaptiveIconDrawable::getTransparentRegion()
+	android::graphics::Region AdaptiveIconDrawable::getTransparentRegion() const
 	{
 		return callObjectMethod(
 			"getTransparentRegion",
 			"()Landroid/graphics/Region;"
 		);
 	}
-	void AdaptiveIconDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
+	void AdaptiveIconDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3) const
 	{
 		callMethod<void>(
 			"inflate",
@@ -158,7 +158,7 @@ namespace android::graphics::drawable
 			arg3.object()
 		);
 	}
-	void AdaptiveIconDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void AdaptiveIconDrawable::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -166,42 +166,42 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AdaptiveIconDrawable::invalidateSelf()
+	void AdaptiveIconDrawable::invalidateSelf() const
 	{
 		callMethod<void>(
 			"invalidateSelf",
 			"()V"
 		);
 	}
-	jboolean AdaptiveIconDrawable::isAutoMirrored()
+	jboolean AdaptiveIconDrawable::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean AdaptiveIconDrawable::isStateful()
+	jboolean AdaptiveIconDrawable::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void AdaptiveIconDrawable::jumpToCurrentState()
+	void AdaptiveIconDrawable::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable AdaptiveIconDrawable::mutate()
+	android::graphics::drawable::Drawable AdaptiveIconDrawable::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void AdaptiveIconDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void AdaptiveIconDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -211,7 +211,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	void AdaptiveIconDrawable::setAlpha(jint arg0)
+	void AdaptiveIconDrawable::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -219,7 +219,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AdaptiveIconDrawable::setAutoMirrored(jboolean arg0)
+	void AdaptiveIconDrawable::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -227,7 +227,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AdaptiveIconDrawable::setColorFilter(android::graphics::ColorFilter arg0)
+	void AdaptiveIconDrawable::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -235,7 +235,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AdaptiveIconDrawable::setDither(jboolean arg0)
+	void AdaptiveIconDrawable::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -243,7 +243,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AdaptiveIconDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	void AdaptiveIconDrawable::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -252,7 +252,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AdaptiveIconDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void AdaptiveIconDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -263,7 +263,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void AdaptiveIconDrawable::setOpacity(jint arg0)
+	void AdaptiveIconDrawable::setOpacity(jint arg0) const
 	{
 		callMethod<void>(
 			"setOpacity",
@@ -271,7 +271,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void AdaptiveIconDrawable::setTintList(android::content::res::ColorStateList arg0)
+	void AdaptiveIconDrawable::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -279,7 +279,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AdaptiveIconDrawable::setTintMode(android::graphics::PorterDuff_Mode arg0)
+	void AdaptiveIconDrawable::setTintMode(android::graphics::PorterDuff_Mode arg0) const
 	{
 		callMethod<void>(
 			"setTintMode",
@@ -287,7 +287,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean AdaptiveIconDrawable::setVisible(jboolean arg0, jboolean arg1)
+	jboolean AdaptiveIconDrawable::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -296,7 +296,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AdaptiveIconDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void AdaptiveIconDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

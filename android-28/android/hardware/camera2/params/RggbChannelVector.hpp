@@ -26,15 +26,15 @@ namespace android::hardware::camera2::params
 		RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
-		void copyTo(JFloatArray arg0, jint arg1);
-		jboolean equals(JObject arg0);
-		jfloat getBlue();
-		jfloat getComponent(jint arg0);
-		jfloat getGreenEven();
-		jfloat getGreenOdd();
-		jfloat getRed();
-		jint hashCode();
-		JString toString();
+		void copyTo(JFloatArray arg0, jint arg1) const;
+		jboolean equals(JObject arg0) const;
+		jfloat getBlue() const;
+		jfloat getComponent(jint arg0) const;
+		jfloat getGreenEven() const;
+		jfloat getGreenOdd() const;
+		jfloat getRed() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::hardware::camera2::params
 

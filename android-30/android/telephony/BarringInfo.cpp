@@ -92,14 +92,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint BarringInfo::describeContents()
+	jint BarringInfo::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean BarringInfo::equals(JObject arg0)
+	jboolean BarringInfo::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -107,7 +107,7 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	android::telephony::BarringInfo_BarringServiceInfo BarringInfo::getBarringServiceInfo(jint arg0)
+	android::telephony::BarringInfo_BarringServiceInfo BarringInfo::getBarringServiceInfo(jint arg0) const
 	{
 		return callObjectMethod(
 			"getBarringServiceInfo",
@@ -115,21 +115,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	jint BarringInfo::hashCode()
+	jint BarringInfo::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString BarringInfo::toString()
+	JString BarringInfo::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void BarringInfo::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void BarringInfo::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

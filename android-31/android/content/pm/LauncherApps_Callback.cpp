@@ -19,7 +19,7 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	void LauncherApps_Callback::onPackageAdded(JString arg0, android::os::UserHandle arg1)
+	void LauncherApps_Callback::onPackageAdded(JString arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onPackageAdded",
@@ -28,7 +28,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onPackageChanged(JString arg0, android::os::UserHandle arg1)
+	void LauncherApps_Callback::onPackageChanged(JString arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onPackageChanged",
@@ -37,7 +37,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2)
+	void LauncherApps_Callback::onPackageLoadingProgressChanged(JString arg0, android::os::UserHandle arg1, jfloat arg2) const
 	{
 		callMethod<void>(
 			"onPackageLoadingProgressChanged",
@@ -47,7 +47,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void LauncherApps_Callback::onPackageRemoved(JString arg0, android::os::UserHandle arg1)
+	void LauncherApps_Callback::onPackageRemoved(JString arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onPackageRemoved",
@@ -56,7 +56,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2)
+	void LauncherApps_Callback::onPackagesAvailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onPackagesAvailable",
@@ -66,7 +66,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1)
+	void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onPackagesSuspended",
@@ -75,7 +75,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2)
+	void LauncherApps_Callback::onPackagesSuspended(JArray arg0, android::os::UserHandle arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onPackagesSuspended",
@@ -85,7 +85,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	void LauncherApps_Callback::onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2)
+	void LauncherApps_Callback::onPackagesUnavailable(JArray arg0, android::os::UserHandle arg1, jboolean arg2) const
 	{
 		callMethod<void>(
 			"onPackagesUnavailable",
@@ -95,7 +95,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	void LauncherApps_Callback::onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1)
+	void LauncherApps_Callback::onPackagesUnsuspended(JArray arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"onPackagesUnsuspended",
@@ -104,7 +104,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2)
+	void LauncherApps_Callback::onShortcutsChanged(JString arg0, JObject arg1, android::os::UserHandle arg2) const
 	{
 		callMethod<void>(
 			"onShortcutsChanged",

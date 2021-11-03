@@ -19,28 +19,28 @@ namespace java::util::regex
 		) {}
 	
 	// Methods
-	JString PatternSyntaxException::getDescription()
+	JString PatternSyntaxException::getDescription() const
 	{
 		return callObjectMethod(
 			"getDescription",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PatternSyntaxException::getIndex()
+	jint PatternSyntaxException::getIndex() const
 	{
 		return callMethod<jint>(
 			"getIndex",
 			"()I"
 		);
 	}
-	JString PatternSyntaxException::getMessage()
+	JString PatternSyntaxException::getMessage() const
 	{
 		return callObjectMethod(
 			"getMessage",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PatternSyntaxException::getPattern()
+	JString PatternSyntaxException::getPattern() const
 	{
 		return callObjectMethod(
 			"getPattern",

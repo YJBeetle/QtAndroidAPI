@@ -21,14 +21,14 @@ namespace android::telephony
 	// Constructors
 	
 	// Methods
-	jint CellIdentity::describeContents()
+	jint CellIdentity::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean CellIdentity::equals(JObject arg0)
+	jboolean CellIdentity::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -36,28 +36,28 @@ namespace android::telephony
 			arg0.object<jobject>()
 		);
 	}
-	JString CellIdentity::getOperatorAlphaLong()
+	JString CellIdentity::getOperatorAlphaLong() const
 	{
 		return callObjectMethod(
 			"getOperatorAlphaLong",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	JString CellIdentity::getOperatorAlphaShort()
+	JString CellIdentity::getOperatorAlphaShort() const
 	{
 		return callObjectMethod(
 			"getOperatorAlphaShort",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint CellIdentity::hashCode()
+	jint CellIdentity::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void CellIdentity::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void CellIdentity::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

@@ -31,14 +31,14 @@ namespace android::view::translation
 			arg0.object<jstring>()
 		);
 	}
-	jint TranslationRequestValue::describeContents()
+	jint TranslationRequestValue::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean TranslationRequestValue::equals(JObject arg0)
+	jboolean TranslationRequestValue::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -46,28 +46,28 @@ namespace android::view::translation
 			arg0.object<jobject>()
 		);
 	}
-	JString TranslationRequestValue::getText()
+	JString TranslationRequestValue::getText() const
 	{
 		return callObjectMethod(
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		);
 	}
-	jint TranslationRequestValue::hashCode()
+	jint TranslationRequestValue::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString TranslationRequestValue::toString()
+	JString TranslationRequestValue::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void TranslationRequestValue::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void TranslationRequestValue::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

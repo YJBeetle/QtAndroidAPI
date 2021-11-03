@@ -18,7 +18,7 @@ namespace android::app::appsearch
 		// Constructors
 		
 		// Methods
-		JString getDatabaseName();
+		JString getDatabaseName() const;
 	};
 } // namespace android::app::appsearch
 

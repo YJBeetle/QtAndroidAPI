@@ -30,16 +30,16 @@ namespace android::telephony::data
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		JObject getDataNetworkName();
-		jint getPrecedence();
-		jint getSessionType();
-		JObject getSliceInfo();
-		jint getSscMode();
-		jint hashCode();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		JObject getDataNetworkName() const;
+		jint getPrecedence() const;
+		jint getSessionType() const;
+		JObject getSliceInfo() const;
+		jint getSscMode() const;
+		jint hashCode() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony::data
 

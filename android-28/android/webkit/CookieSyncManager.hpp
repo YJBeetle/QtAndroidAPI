@@ -24,11 +24,11 @@ namespace android::webkit
 		// Methods
 		static android::webkit::CookieSyncManager createInstance(android::content::Context arg0);
 		static android::webkit::CookieSyncManager getInstance();
-		void resetSync();
-		void run();
-		void startSync();
-		void stopSync();
-		void sync();
+		void resetSync() const;
+		void run() const;
+		void startSync() const;
+		void stopSync() const;
+		void sync() const;
 	};
 } // namespace android::webkit
 

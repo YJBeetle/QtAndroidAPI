@@ -30,11 +30,11 @@ namespace java::io
 		PipedInputStream(java::io::PipedOutputStream arg0, jint arg1);
 		
 		// Methods
-		jint available();
-		void close();
-		void connect(java::io::PipedOutputStream arg0);
-		jint read();
-		jint read(JByteArray arg0, jint arg1, jint arg2);
+		jint available() const;
+		void close() const;
+		void connect(java::io::PipedOutputStream arg0) const;
+		jint read() const;
+		jint read(JByteArray arg0, jint arg1, jint arg2) const;
 	};
 } // namespace java::io
 

@@ -31,14 +31,14 @@ namespace android::media
 		AudioFocusRequest_Builder(jint arg0);
 		
 		// Methods
-		android::media::AudioFocusRequest build();
-		android::media::AudioFocusRequest_Builder setAcceptsDelayedFocusGain(jboolean arg0);
-		android::media::AudioFocusRequest_Builder setAudioAttributes(android::media::AudioAttributes arg0);
-		android::media::AudioFocusRequest_Builder setFocusGain(jint arg0);
-		android::media::AudioFocusRequest_Builder setForceDucking(jboolean arg0);
-		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(JObject arg0);
-		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(JObject arg0, android::os::Handler arg1);
-		android::media::AudioFocusRequest_Builder setWillPauseWhenDucked(jboolean arg0);
+		android::media::AudioFocusRequest build() const;
+		android::media::AudioFocusRequest_Builder setAcceptsDelayedFocusGain(jboolean arg0) const;
+		android::media::AudioFocusRequest_Builder setAudioAttributes(android::media::AudioAttributes arg0) const;
+		android::media::AudioFocusRequest_Builder setFocusGain(jint arg0) const;
+		android::media::AudioFocusRequest_Builder setForceDucking(jboolean arg0) const;
+		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(JObject arg0) const;
+		android::media::AudioFocusRequest_Builder setOnAudioFocusChangeListener(JObject arg0, android::os::Handler arg1) const;
+		android::media::AudioFocusRequest_Builder setWillPauseWhenDucked(jboolean arg0) const;
 	};
 } // namespace android::media
 

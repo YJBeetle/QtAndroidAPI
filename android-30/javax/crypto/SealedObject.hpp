@@ -29,10 +29,10 @@ namespace javax::crypto
 		SealedObject(JObject arg0, javax::crypto::Cipher arg1);
 		
 		// Methods
-		JString getAlgorithm();
-		JObject getObject(JObject arg0);
-		JObject getObject(javax::crypto::Cipher arg0);
-		JObject getObject(JObject arg0, JString arg1);
+		JString getAlgorithm() const;
+		JObject getObject(JObject arg0) const;
+		JObject getObject(javax::crypto::Cipher arg0) const;
+		JObject getObject(JObject arg0, JString arg1) const;
 	};
 } // namespace javax::crypto
 

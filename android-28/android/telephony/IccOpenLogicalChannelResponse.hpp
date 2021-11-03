@@ -29,12 +29,12 @@ namespace android::telephony
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jint getChannel();
-		JByteArray getSelectResponse();
-		jint getStatus();
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jint getChannel() const;
+		JByteArray getSelectResponse() const;
+		jint getStatus() const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::telephony
 

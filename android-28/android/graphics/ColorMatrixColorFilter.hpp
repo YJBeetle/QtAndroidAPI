@@ -24,7 +24,7 @@ namespace android::graphics
 		ColorMatrixColorFilter(android::graphics::ColorMatrix arg0);
 		
 		// Methods
-		void getColorMatrix(android::graphics::ColorMatrix arg0);
+		void getColorMatrix(android::graphics::ColorMatrix arg0) const;
 	};
 } // namespace android::graphics
 

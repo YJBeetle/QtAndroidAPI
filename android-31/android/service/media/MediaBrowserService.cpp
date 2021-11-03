@@ -33,7 +33,7 @@ namespace android::service::media
 		) {}
 	
 	// Methods
-	void MediaBrowserService::dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2)
+	void MediaBrowserService::dump(java::io::FileDescriptor arg0, java::io::PrintWriter arg1, JArray arg2) const
 	{
 		callMethod<void>(
 			"dump",
@@ -43,28 +43,28 @@ namespace android::service::media
 			arg2.object<jarray>()
 		);
 	}
-	android::os::Bundle MediaBrowserService::getBrowserRootHints()
+	android::os::Bundle MediaBrowserService::getBrowserRootHints() const
 	{
 		return callObjectMethod(
 			"getBrowserRootHints",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	android::media::session::MediaSessionManager_RemoteUserInfo MediaBrowserService::getCurrentBrowserInfo()
+	android::media::session::MediaSessionManager_RemoteUserInfo MediaBrowserService::getCurrentBrowserInfo() const
 	{
 		return callObjectMethod(
 			"getCurrentBrowserInfo",
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	android::media::session::MediaSession_Token MediaBrowserService::getSessionToken()
+	android::media::session::MediaSession_Token MediaBrowserService::getSessionToken() const
 	{
 		return callObjectMethod(
 			"getSessionToken",
 			"()Landroid/media/session/MediaSession$Token;"
 		);
 	}
-	void MediaBrowserService::notifyChildrenChanged(JString arg0)
+	void MediaBrowserService::notifyChildrenChanged(JString arg0) const
 	{
 		callMethod<void>(
 			"notifyChildrenChanged",
@@ -72,7 +72,7 @@ namespace android::service::media
 			arg0.object<jstring>()
 		);
 	}
-	void MediaBrowserService::notifyChildrenChanged(JString arg0, android::os::Bundle arg1)
+	void MediaBrowserService::notifyChildrenChanged(JString arg0, android::os::Bundle arg1) const
 	{
 		callMethod<void>(
 			"notifyChildrenChanged",
@@ -81,7 +81,7 @@ namespace android::service::media
 			arg1.object()
 		);
 	}
-	JObject MediaBrowserService::onBind(android::content::Intent arg0)
+	JObject MediaBrowserService::onBind(android::content::Intent arg0) const
 	{
 		return callObjectMethod(
 			"onBind",
@@ -89,14 +89,14 @@ namespace android::service::media
 			arg0.object()
 		);
 	}
-	void MediaBrowserService::onCreate()
+	void MediaBrowserService::onCreate() const
 	{
 		callMethod<void>(
 			"onCreate",
 			"()V"
 		);
 	}
-	android::service::media::MediaBrowserService_BrowserRoot MediaBrowserService::onGetRoot(JString arg0, jint arg1, android::os::Bundle arg2)
+	android::service::media::MediaBrowserService_BrowserRoot MediaBrowserService::onGetRoot(JString arg0, jint arg1, android::os::Bundle arg2) const
 	{
 		return callObjectMethod(
 			"onGetRoot",
@@ -106,7 +106,7 @@ namespace android::service::media
 			arg2.object()
 		);
 	}
-	void MediaBrowserService::onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1)
+	void MediaBrowserService::onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1) const
 	{
 		callMethod<void>(
 			"onLoadChildren",
@@ -115,7 +115,7 @@ namespace android::service::media
 			arg1.object()
 		);
 	}
-	void MediaBrowserService::onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2)
+	void MediaBrowserService::onLoadChildren(JString arg0, android::service::media::MediaBrowserService_Result arg1, android::os::Bundle arg2) const
 	{
 		callMethod<void>(
 			"onLoadChildren",
@@ -125,7 +125,7 @@ namespace android::service::media
 			arg2.object()
 		);
 	}
-	void MediaBrowserService::onLoadItem(JString arg0, android::service::media::MediaBrowserService_Result arg1)
+	void MediaBrowserService::onLoadItem(JString arg0, android::service::media::MediaBrowserService_Result arg1) const
 	{
 		callMethod<void>(
 			"onLoadItem",
@@ -134,7 +134,7 @@ namespace android::service::media
 			arg1.object()
 		);
 	}
-	void MediaBrowserService::setSessionToken(android::media::session::MediaSession_Token arg0)
+	void MediaBrowserService::setSessionToken(android::media::session::MediaSession_Token arg0) const
 	{
 		callMethod<void>(
 			"setSessionToken",

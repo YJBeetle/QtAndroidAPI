@@ -32,21 +32,21 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	void Attributes::clear()
+	void Attributes::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	JObject Attributes::clone()
+	JObject Attributes::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jboolean Attributes::containsKey(JObject arg0)
+	jboolean Attributes::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -54,7 +54,7 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Attributes::containsValue(JObject arg0)
+	jboolean Attributes::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -62,14 +62,14 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	JObject Attributes::entrySet()
+	JObject Attributes::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean Attributes::equals(JObject arg0)
+	jboolean Attributes::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -77,7 +77,7 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	JObject Attributes::get(JObject arg0)
+	JObject Attributes::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -85,7 +85,7 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	JString Attributes::getValue(JString arg0)
+	JString Attributes::getValue(JString arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -93,7 +93,7 @@ namespace java::util::jar
 			arg0.object<jstring>()
 		);
 	}
-	JString Attributes::getValue(java::util::jar::Attributes_Name arg0)
+	JString Attributes::getValue(java::util::jar::Attributes_Name arg0) const
 	{
 		return callObjectMethod(
 			"getValue",
@@ -101,28 +101,28 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	jint Attributes::hashCode()
+	jint Attributes::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean Attributes::isEmpty()
+	jboolean Attributes::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject Attributes::keySet()
+	JObject Attributes::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject Attributes::put(JObject arg0, JObject arg1)
+	JObject Attributes::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -131,7 +131,7 @@ namespace java::util::jar
 			arg1.object<jobject>()
 		);
 	}
-	void Attributes::putAll(JObject arg0)
+	void Attributes::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -139,7 +139,7 @@ namespace java::util::jar
 			arg0.object()
 		);
 	}
-	JString Attributes::putValue(JString arg0, JString arg1)
+	JString Attributes::putValue(JString arg0, JString arg1) const
 	{
 		return callObjectMethod(
 			"putValue",
@@ -148,7 +148,7 @@ namespace java::util::jar
 			arg1.object<jstring>()
 		);
 	}
-	JObject Attributes::remove(JObject arg0)
+	JObject Attributes::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -156,14 +156,14 @@ namespace java::util::jar
 			arg0.object<jobject>()
 		);
 	}
-	jint Attributes::size()
+	jint Attributes::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JObject Attributes::values()
+	JObject Attributes::values() const
 	{
 		return callObjectMethod(
 			"values",

@@ -133,14 +133,14 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::abs()
+	java::math::BigInteger BigInteger::abs() const
 	{
 		return callObjectMethod(
 			"abs",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::add(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::add(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"add",
@@ -148,7 +148,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::_and(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_and(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"and",
@@ -156,7 +156,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::andNot(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::andNot(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"andNot",
@@ -164,28 +164,28 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jint BigInteger::bitCount()
+	jint BigInteger::bitCount() const
 	{
 		return callMethod<jint>(
 			"bitCount",
 			"()I"
 		);
 	}
-	jint BigInteger::bitLength()
+	jint BigInteger::bitLength() const
 	{
 		return callMethod<jint>(
 			"bitLength",
 			"()I"
 		);
 	}
-	jbyte BigInteger::byteValueExact()
+	jbyte BigInteger::byteValueExact() const
 	{
 		return callMethod<jbyte>(
 			"byteValueExact",
 			"()B"
 		);
 	}
-	java::math::BigInteger BigInteger::clearBit(jint arg0)
+	java::math::BigInteger BigInteger::clearBit(jint arg0) const
 	{
 		return callObjectMethod(
 			"clearBit",
@@ -193,7 +193,7 @@ namespace java::math
 			arg0
 		);
 	}
-	jint BigInteger::compareTo(JObject arg0)
+	jint BigInteger::compareTo(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -201,7 +201,7 @@ namespace java::math
 			arg0.object<jobject>()
 		);
 	}
-	jint BigInteger::compareTo(java::math::BigInteger arg0)
+	jint BigInteger::compareTo(java::math::BigInteger arg0) const
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -209,7 +209,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::divide(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::divide(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"divide",
@@ -217,7 +217,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	JArray BigInteger::divideAndRemainder(java::math::BigInteger arg0)
+	JArray BigInteger::divideAndRemainder(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"divideAndRemainder",
@@ -225,14 +225,14 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jdouble BigInteger::doubleValue()
+	jdouble BigInteger::doubleValue() const
 	{
 		return callMethod<jdouble>(
 			"doubleValue",
 			"()D"
 		);
 	}
-	jboolean BigInteger::equals(JObject arg0)
+	jboolean BigInteger::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -240,7 +240,7 @@ namespace java::math
 			arg0.object<jobject>()
 		);
 	}
-	java::math::BigInteger BigInteger::flipBit(jint arg0)
+	java::math::BigInteger BigInteger::flipBit(jint arg0) const
 	{
 		return callObjectMethod(
 			"flipBit",
@@ -248,14 +248,14 @@ namespace java::math
 			arg0
 		);
 	}
-	jfloat BigInteger::floatValue()
+	jfloat BigInteger::floatValue() const
 	{
 		return callMethod<jfloat>(
 			"floatValue",
 			"()F"
 		);
 	}
-	java::math::BigInteger BigInteger::gcd(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::gcd(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"gcd",
@@ -263,35 +263,35 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jint BigInteger::getLowestSetBit()
+	jint BigInteger::getLowestSetBit() const
 	{
 		return callMethod<jint>(
 			"getLowestSetBit",
 			"()I"
 		);
 	}
-	jint BigInteger::hashCode()
+	jint BigInteger::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jint BigInteger::intValue()
+	jint BigInteger::intValue() const
 	{
 		return callMethod<jint>(
 			"intValue",
 			"()I"
 		);
 	}
-	jint BigInteger::intValueExact()
+	jint BigInteger::intValueExact() const
 	{
 		return callMethod<jint>(
 			"intValueExact",
 			"()I"
 		);
 	}
-	jboolean BigInteger::isProbablePrime(jint arg0)
+	jboolean BigInteger::isProbablePrime(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"isProbablePrime",
@@ -299,21 +299,21 @@ namespace java::math
 			arg0
 		);
 	}
-	jlong BigInteger::longValue()
+	jlong BigInteger::longValue() const
 	{
 		return callMethod<jlong>(
 			"longValue",
 			"()J"
 		);
 	}
-	jlong BigInteger::longValueExact()
+	jlong BigInteger::longValueExact() const
 	{
 		return callMethod<jlong>(
 			"longValueExact",
 			"()J"
 		);
 	}
-	java::math::BigInteger BigInteger::max(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::max(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"max",
@@ -321,7 +321,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::min(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::min(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"min",
@@ -329,7 +329,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::mod(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::mod(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"mod",
@@ -337,7 +337,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::modInverse(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::modInverse(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"modInverse",
@@ -345,7 +345,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::modPow(java::math::BigInteger arg0, java::math::BigInteger arg1)
+	java::math::BigInteger BigInteger::modPow(java::math::BigInteger arg0, java::math::BigInteger arg1) const
 	{
 		return callObjectMethod(
 			"modPow",
@@ -354,7 +354,7 @@ namespace java::math
 			arg1.object()
 		);
 	}
-	java::math::BigInteger BigInteger::multiply(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::multiply(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"multiply",
@@ -362,28 +362,28 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::negate()
+	java::math::BigInteger BigInteger::negate() const
 	{
 		return callObjectMethod(
 			"negate",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::nextProbablePrime()
+	java::math::BigInteger BigInteger::nextProbablePrime() const
 	{
 		return callObjectMethod(
 			"nextProbablePrime",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::_not()
+	java::math::BigInteger BigInteger::_not() const
 	{
 		return callObjectMethod(
 			"not",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::_or(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_or(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"or",
@@ -391,7 +391,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::pow(jint arg0)
+	java::math::BigInteger BigInteger::pow(jint arg0) const
 	{
 		return callObjectMethod(
 			"pow",
@@ -399,7 +399,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::remainder(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::remainder(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"remainder",
@@ -407,7 +407,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	java::math::BigInteger BigInteger::setBit(jint arg0)
+	java::math::BigInteger BigInteger::setBit(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBit",
@@ -415,7 +415,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::shiftLeft(jint arg0)
+	java::math::BigInteger BigInteger::shiftLeft(jint arg0) const
 	{
 		return callObjectMethod(
 			"shiftLeft",
@@ -423,7 +423,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::shiftRight(jint arg0)
+	java::math::BigInteger BigInteger::shiftRight(jint arg0) const
 	{
 		return callObjectMethod(
 			"shiftRight",
@@ -431,35 +431,35 @@ namespace java::math
 			arg0
 		);
 	}
-	jshort BigInteger::shortValueExact()
+	jshort BigInteger::shortValueExact() const
 	{
 		return callMethod<jshort>(
 			"shortValueExact",
 			"()S"
 		);
 	}
-	jint BigInteger::signum()
+	jint BigInteger::signum() const
 	{
 		return callMethod<jint>(
 			"signum",
 			"()I"
 		);
 	}
-	java::math::BigInteger BigInteger::sqrt()
+	java::math::BigInteger BigInteger::sqrt() const
 	{
 		return callObjectMethod(
 			"sqrt",
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	JArray BigInteger::sqrtAndRemainder()
+	JArray BigInteger::sqrtAndRemainder() const
 	{
 		return callObjectMethod(
 			"sqrtAndRemainder",
 			"()[Ljava/math/BigInteger;"
 		);
 	}
-	java::math::BigInteger BigInteger::subtract(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::subtract(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"subtract",
@@ -467,7 +467,7 @@ namespace java::math
 			arg0.object()
 		);
 	}
-	jboolean BigInteger::testBit(jint arg0)
+	jboolean BigInteger::testBit(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"testBit",
@@ -475,21 +475,21 @@ namespace java::math
 			arg0
 		);
 	}
-	JByteArray BigInteger::toByteArray()
+	JByteArray BigInteger::toByteArray() const
 	{
 		return callObjectMethod(
 			"toByteArray",
 			"()[B"
 		);
 	}
-	JString BigInteger::toString()
+	JString BigInteger::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString BigInteger::toString(jint arg0)
+	JString BigInteger::toString(jint arg0) const
 	{
 		return callObjectMethod(
 			"toString",
@@ -497,7 +497,7 @@ namespace java::math
 			arg0
 		);
 	}
-	java::math::BigInteger BigInteger::_xor(java::math::BigInteger arg0)
+	java::math::BigInteger BigInteger::_xor(java::math::BigInteger arg0) const
 	{
 		return callObjectMethod(
 			"xor",

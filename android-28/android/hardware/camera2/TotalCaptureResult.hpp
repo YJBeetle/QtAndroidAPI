@@ -16,8 +16,8 @@ namespace android::hardware::camera2
 		// Constructors
 		
 		// Methods
-		JObject getPartialResults();
-		JObject getPhysicalCameraResults();
+		JObject getPartialResults() const;
+		JObject getPhysicalCameraResults() const;
 	};
 } // namespace android::hardware::camera2
 

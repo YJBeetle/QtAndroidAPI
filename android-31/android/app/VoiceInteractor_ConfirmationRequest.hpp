@@ -26,7 +26,7 @@ namespace android::app
 		VoiceInteractor_ConfirmationRequest(android::app::VoiceInteractor_Prompt arg0, android::os::Bundle arg1);
 		
 		// Methods
-		void onConfirmationResult(jboolean arg0, android::os::Bundle arg1);
+		void onConfirmationResult(jboolean arg0, android::os::Bundle arg1) const;
 	};
 } // namespace android::app
 

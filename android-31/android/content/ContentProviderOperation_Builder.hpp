@@ -32,22 +32,22 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		android::content::ContentProviderOperation build();
-		android::content::ContentProviderOperation_Builder withExceptionAllowed(jboolean arg0);
-		android::content::ContentProviderOperation_Builder withExpectedCount(jint arg0);
-		android::content::ContentProviderOperation_Builder withExtra(JString arg0, JObject arg1);
-		android::content::ContentProviderOperation_Builder withExtraBackReference(JString arg0, jint arg1);
-		android::content::ContentProviderOperation_Builder withExtraBackReference(JString arg0, jint arg1, JString arg2);
-		android::content::ContentProviderOperation_Builder withExtras(android::os::Bundle arg0);
-		android::content::ContentProviderOperation_Builder withSelection(JString arg0, JArray arg1);
-		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1);
-		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1, JString arg2);
-		android::content::ContentProviderOperation_Builder withValue(JString arg0, JObject arg1);
-		android::content::ContentProviderOperation_Builder withValueBackReference(JString arg0, jint arg1);
-		android::content::ContentProviderOperation_Builder withValueBackReference(JString arg0, jint arg1, JString arg2);
-		android::content::ContentProviderOperation_Builder withValueBackReferences(android::content::ContentValues arg0);
-		android::content::ContentProviderOperation_Builder withValues(android::content::ContentValues arg0);
-		android::content::ContentProviderOperation_Builder withYieldAllowed(jboolean arg0);
+		android::content::ContentProviderOperation build() const;
+		android::content::ContentProviderOperation_Builder withExceptionAllowed(jboolean arg0) const;
+		android::content::ContentProviderOperation_Builder withExpectedCount(jint arg0) const;
+		android::content::ContentProviderOperation_Builder withExtra(JString arg0, JObject arg1) const;
+		android::content::ContentProviderOperation_Builder withExtraBackReference(JString arg0, jint arg1) const;
+		android::content::ContentProviderOperation_Builder withExtraBackReference(JString arg0, jint arg1, JString arg2) const;
+		android::content::ContentProviderOperation_Builder withExtras(android::os::Bundle arg0) const;
+		android::content::ContentProviderOperation_Builder withSelection(JString arg0, JArray arg1) const;
+		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1) const;
+		android::content::ContentProviderOperation_Builder withSelectionBackReference(jint arg0, jint arg1, JString arg2) const;
+		android::content::ContentProviderOperation_Builder withValue(JString arg0, JObject arg1) const;
+		android::content::ContentProviderOperation_Builder withValueBackReference(JString arg0, jint arg1) const;
+		android::content::ContentProviderOperation_Builder withValueBackReference(JString arg0, jint arg1, JString arg2) const;
+		android::content::ContentProviderOperation_Builder withValueBackReferences(android::content::ContentValues arg0) const;
+		android::content::ContentProviderOperation_Builder withValues(android::content::ContentValues arg0) const;
+		android::content::ContentProviderOperation_Builder withYieldAllowed(jboolean arg0) const;
 	};
 } // namespace android::content
 

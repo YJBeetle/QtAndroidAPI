@@ -218,7 +218,7 @@ namespace java::time::format
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
-	JString DateTimeFormatter::format(JObject arg0)
+	JString DateTimeFormatter::format(JObject arg0) const
 	{
 		return callObjectMethod(
 			"format",
@@ -226,7 +226,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	void DateTimeFormatter::formatTo(JObject arg0, JObject arg1)
+	void DateTimeFormatter::formatTo(JObject arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"formatTo",
@@ -235,49 +235,49 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	JObject DateTimeFormatter::getChronology()
+	JObject DateTimeFormatter::getChronology() const
 	{
 		return callObjectMethod(
 			"getChronology",
 			"()Ljava/time/chrono/Chronology;"
 		);
 	}
-	java::time::format::DecimalStyle DateTimeFormatter::getDecimalStyle()
+	java::time::format::DecimalStyle DateTimeFormatter::getDecimalStyle() const
 	{
 		return callObjectMethod(
 			"getDecimalStyle",
 			"()Ljava/time/format/DecimalStyle;"
 		);
 	}
-	java::util::Locale DateTimeFormatter::getLocale()
+	java::util::Locale DateTimeFormatter::getLocale() const
 	{
 		return callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
 		);
 	}
-	JObject DateTimeFormatter::getResolverFields()
+	JObject DateTimeFormatter::getResolverFields() const
 	{
 		return callObjectMethod(
 			"getResolverFields",
 			"()Ljava/util/Set;"
 		);
 	}
-	java::time::format::ResolverStyle DateTimeFormatter::getResolverStyle()
+	java::time::format::ResolverStyle DateTimeFormatter::getResolverStyle() const
 	{
 		return callObjectMethod(
 			"getResolverStyle",
 			"()Ljava/time/format/ResolverStyle;"
 		);
 	}
-	java::time::ZoneId DateTimeFormatter::getZone()
+	java::time::ZoneId DateTimeFormatter::getZone() const
 	{
 		return callObjectMethod(
 			"getZone",
 			"()Ljava/time/ZoneId;"
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::localizedBy(java::util::Locale arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::localizedBy(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"localizedBy",
@@ -285,7 +285,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	JObject DateTimeFormatter::parse(JString arg0, JObject arg1)
+	JObject DateTimeFormatter::parse(JString arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -294,7 +294,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	JObject DateTimeFormatter::parse(JString arg0)
+	JObject DateTimeFormatter::parse(JString arg0) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -302,7 +302,7 @@ namespace java::time::format
 			arg0.object<jstring>()
 		);
 	}
-	JObject DateTimeFormatter::parse(JString arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parse(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parse",
@@ -311,7 +311,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	JObject DateTimeFormatter::parseBest(JString arg0, JArray arg1)
+	JObject DateTimeFormatter::parseBest(JString arg0, JArray arg1) const
 	{
 		return callObjectMethod(
 			"parseBest",
@@ -320,7 +320,7 @@ namespace java::time::format
 			arg1.object<jarray>()
 		);
 	}
-	JObject DateTimeFormatter::parseUnresolved(JString arg0, java::text::ParsePosition arg1)
+	JObject DateTimeFormatter::parseUnresolved(JString arg0, java::text::ParsePosition arg1) const
 	{
 		return callObjectMethod(
 			"parseUnresolved",
@@ -329,14 +329,14 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::text::Format DateTimeFormatter::toFormat()
+	java::text::Format DateTimeFormatter::toFormat() const
 	{
 		return callObjectMethod(
 			"toFormat",
 			"()Ljava/text/Format;"
 		);
 	}
-	java::text::Format DateTimeFormatter::toFormat(JObject arg0)
+	java::text::Format DateTimeFormatter::toFormat(JObject arg0) const
 	{
 		return callObjectMethod(
 			"toFormat",
@@ -344,14 +344,14 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	JString DateTimeFormatter::toString()
+	JString DateTimeFormatter::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withChronology(JObject arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withChronology(JObject arg0) const
 	{
 		return callObjectMethod(
 			"withChronology",
@@ -359,7 +359,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withDecimalStyle(java::time::format::DecimalStyle arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withDecimalStyle(java::time::format::DecimalStyle arg0) const
 	{
 		return callObjectMethod(
 			"withDecimalStyle",
@@ -367,7 +367,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withLocale(java::util::Locale arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withLocale(java::util::Locale arg0) const
 	{
 		return callObjectMethod(
 			"withLocale",
@@ -375,7 +375,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JArray arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JArray arg0) const
 	{
 		return callObjectMethod(
 			"withResolverFields",
@@ -383,7 +383,7 @@ namespace java::time::format
 			arg0.object<jarray>()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JObject arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverFields(JObject arg0) const
 	{
 		return callObjectMethod(
 			"withResolverFields",
@@ -391,7 +391,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverStyle(java::time::format::ResolverStyle arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withResolverStyle(java::time::format::ResolverStyle arg0) const
 	{
 		return callObjectMethod(
 			"withResolverStyle",
@@ -399,7 +399,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatter DateTimeFormatter::withZone(java::time::ZoneId arg0)
+	java::time::format::DateTimeFormatter DateTimeFormatter::withZone(java::time::ZoneId arg0) const
 	{
 		return callObjectMethod(
 			"withZone",

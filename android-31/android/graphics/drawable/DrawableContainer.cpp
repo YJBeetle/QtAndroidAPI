@@ -27,7 +27,7 @@ namespace android::graphics::drawable
 		) {}
 	
 	// Methods
-	void DrawableContainer::applyTheme(android::content::res::Resources_Theme arg0)
+	void DrawableContainer::applyTheme(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"applyTheme",
@@ -35,14 +35,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer::canApplyTheme()
+	jboolean DrawableContainer::canApplyTheme() const
 	{
 		return callMethod<jboolean>(
 			"canApplyTheme",
 			"()Z"
 		);
 	}
-	void DrawableContainer::draw(android::graphics::Canvas arg0)
+	void DrawableContainer::draw(android::graphics::Canvas arg0) const
 	{
 		callMethod<void>(
 			"draw",
@@ -50,35 +50,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint DrawableContainer::getAlpha()
+	jint DrawableContainer::getAlpha() const
 	{
 		return callMethod<jint>(
 			"getAlpha",
 			"()I"
 		);
 	}
-	jint DrawableContainer::getChangingConfigurations()
+	jint DrawableContainer::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable_ConstantState DrawableContainer::getConstantState()
+	android::graphics::drawable::Drawable_ConstantState DrawableContainer::getConstantState() const
 	{
 		return callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	android::graphics::drawable::Drawable DrawableContainer::getCurrent()
+	android::graphics::drawable::Drawable DrawableContainer::getCurrent() const
 	{
 		return callObjectMethod(
 			"getCurrent",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void DrawableContainer::getHotspotBounds(android::graphics::Rect arg0)
+	void DrawableContainer::getHotspotBounds(android::graphics::Rect arg0) const
 	{
 		callMethod<void>(
 			"getHotspotBounds",
@@ -86,49 +86,49 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jint DrawableContainer::getIntrinsicHeight()
+	jint DrawableContainer::getIntrinsicHeight() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicHeight",
 			"()I"
 		);
 	}
-	jint DrawableContainer::getIntrinsicWidth()
+	jint DrawableContainer::getIntrinsicWidth() const
 	{
 		return callMethod<jint>(
 			"getIntrinsicWidth",
 			"()I"
 		);
 	}
-	jint DrawableContainer::getMinimumHeight()
+	jint DrawableContainer::getMinimumHeight() const
 	{
 		return callMethod<jint>(
 			"getMinimumHeight",
 			"()I"
 		);
 	}
-	jint DrawableContainer::getMinimumWidth()
+	jint DrawableContainer::getMinimumWidth() const
 	{
 		return callMethod<jint>(
 			"getMinimumWidth",
 			"()I"
 		);
 	}
-	jint DrawableContainer::getOpacity()
+	jint DrawableContainer::getOpacity() const
 	{
 		return callMethod<jint>(
 			"getOpacity",
 			"()I"
 		);
 	}
-	android::graphics::Insets DrawableContainer::getOpticalInsets()
+	android::graphics::Insets DrawableContainer::getOpticalInsets() const
 	{
 		return callObjectMethod(
 			"getOpticalInsets",
 			"()Landroid/graphics/Insets;"
 		);
 	}
-	void DrawableContainer::getOutline(android::graphics::Outline arg0)
+	void DrawableContainer::getOutline(android::graphics::Outline arg0) const
 	{
 		callMethod<void>(
 			"getOutline",
@@ -136,7 +136,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer::getPadding(android::graphics::Rect arg0)
+	jboolean DrawableContainer::getPadding(android::graphics::Rect arg0) const
 	{
 		return callMethod<jboolean>(
 			"getPadding",
@@ -144,14 +144,14 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer::hasFocusStateSpecified()
+	jboolean DrawableContainer::hasFocusStateSpecified() const
 	{
 		return callMethod<jboolean>(
 			"hasFocusStateSpecified",
 			"()Z"
 		);
 	}
-	void DrawableContainer::invalidateDrawable(android::graphics::drawable::Drawable arg0)
+	void DrawableContainer::invalidateDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"invalidateDrawable",
@@ -159,35 +159,35 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer::isAutoMirrored()
+	jboolean DrawableContainer::isAutoMirrored() const
 	{
 		return callMethod<jboolean>(
 			"isAutoMirrored",
 			"()Z"
 		);
 	}
-	jboolean DrawableContainer::isStateful()
+	jboolean DrawableContainer::isStateful() const
 	{
 		return callMethod<jboolean>(
 			"isStateful",
 			"()Z"
 		);
 	}
-	void DrawableContainer::jumpToCurrentState()
+	void DrawableContainer::jumpToCurrentState() const
 	{
 		callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
 		);
 	}
-	android::graphics::drawable::Drawable DrawableContainer::mutate()
+	android::graphics::drawable::Drawable DrawableContainer::mutate() const
 	{
 		return callObjectMethod(
 			"mutate",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	jboolean DrawableContainer::onLayoutDirectionChanged(jint arg0)
+	jboolean DrawableContainer::onLayoutDirectionChanged(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"onLayoutDirectionChanged",
@@ -195,7 +195,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
+	void DrawableContainer::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2) const
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -205,7 +205,7 @@ namespace android::graphics::drawable
 			arg2
 		);
 	}
-	jboolean DrawableContainer::selectDrawable(jint arg0)
+	jboolean DrawableContainer::selectDrawable(jint arg0) const
 	{
 		return callMethod<jboolean>(
 			"selectDrawable",
@@ -213,7 +213,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setAlpha(jint arg0)
+	void DrawableContainer::setAlpha(jint arg0) const
 	{
 		callMethod<void>(
 			"setAlpha",
@@ -221,7 +221,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setAutoMirrored(jboolean arg0)
+	void DrawableContainer::setAutoMirrored(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAutoMirrored",
@@ -229,7 +229,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setColorFilter(android::graphics::ColorFilter arg0)
+	void DrawableContainer::setColorFilter(android::graphics::ColorFilter arg0) const
 	{
 		callMethod<void>(
 			"setColorFilter",
@@ -237,7 +237,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableContainer::setDither(jboolean arg0)
+	void DrawableContainer::setDither(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setDither",
@@ -245,7 +245,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setEnterFadeDuration(jint arg0)
+	void DrawableContainer::setEnterFadeDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setEnterFadeDuration",
@@ -253,7 +253,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setExitFadeDuration(jint arg0)
+	void DrawableContainer::setExitFadeDuration(jint arg0) const
 	{
 		callMethod<void>(
 			"setExitFadeDuration",
@@ -261,7 +261,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void DrawableContainer::setHotspot(jfloat arg0, jfloat arg1)
+	void DrawableContainer::setHotspot(jfloat arg0, jfloat arg1) const
 	{
 		callMethod<void>(
 			"setHotspot",
@@ -270,7 +270,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void DrawableContainer::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	void DrawableContainer::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"setHotspotBounds",
@@ -281,7 +281,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void DrawableContainer::setTintBlendMode(android::graphics::BlendMode arg0)
+	void DrawableContainer::setTintBlendMode(android::graphics::BlendMode arg0) const
 	{
 		callMethod<void>(
 			"setTintBlendMode",
@@ -289,7 +289,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void DrawableContainer::setTintList(android::content::res::ColorStateList arg0)
+	void DrawableContainer::setTintList(android::content::res::ColorStateList arg0) const
 	{
 		callMethod<void>(
 			"setTintList",
@@ -297,7 +297,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	jboolean DrawableContainer::setVisible(jboolean arg0, jboolean arg1)
+	jboolean DrawableContainer::setVisible(jboolean arg0, jboolean arg1) const
 	{
 		return callMethod<jboolean>(
 			"setVisible",
@@ -306,7 +306,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void DrawableContainer::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
+	void DrawableContainer::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

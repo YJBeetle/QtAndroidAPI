@@ -67,19 +67,19 @@ namespace android::accessibilityservice
 		static JString capabilityToString(jint arg0);
 		static JString feedbackTypeToString(jint arg0);
 		static JString flagToString(jint arg0);
-		jint describeContents();
-		jboolean equals(JObject arg0);
-		jboolean getCanRetrieveWindowContent();
-		jint getCapabilities();
-		JString getDescription();
-		JString getId();
-		android::content::pm::ResolveInfo getResolveInfo();
-		JString getSettingsActivityName();
-		jint hashCode();
-		JString loadDescription(android::content::pm::PackageManager arg0);
-		JString loadSummary(android::content::pm::PackageManager arg0);
-		JString toString();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jboolean equals(JObject arg0) const;
+		jboolean getCanRetrieveWindowContent() const;
+		jint getCapabilities() const;
+		JString getDescription() const;
+		JString getId() const;
+		android::content::pm::ResolveInfo getResolveInfo() const;
+		JString getSettingsActivityName() const;
+		jint hashCode() const;
+		JString loadDescription(android::content::pm::PackageManager arg0) const;
+		JString loadSummary(android::content::pm::PackageManager arg0) const;
+		JString toString() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::accessibilityservice
 

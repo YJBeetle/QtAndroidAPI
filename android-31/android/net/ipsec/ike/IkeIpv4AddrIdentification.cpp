@@ -25,7 +25,7 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	jboolean IkeIpv4AddrIdentification::equals(JObject arg0)
+	jboolean IkeIpv4AddrIdentification::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -33,7 +33,7 @@ namespace android::net::ipsec::ike
 			arg0.object<jobject>()
 		);
 	}
-	jint IkeIpv4AddrIdentification::hashCode()
+	jint IkeIpv4AddrIdentification::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",

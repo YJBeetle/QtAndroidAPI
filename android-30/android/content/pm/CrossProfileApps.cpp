@@ -26,28 +26,28 @@ namespace android::content::pm
 	// Constructors
 	
 	// Methods
-	jboolean CrossProfileApps::canInteractAcrossProfiles()
+	jboolean CrossProfileApps::canInteractAcrossProfiles() const
 	{
 		return callMethod<jboolean>(
 			"canInteractAcrossProfiles",
 			"()Z"
 		);
 	}
-	jboolean CrossProfileApps::canRequestInteractAcrossProfiles()
+	jboolean CrossProfileApps::canRequestInteractAcrossProfiles() const
 	{
 		return callMethod<jboolean>(
 			"canRequestInteractAcrossProfiles",
 			"()Z"
 		);
 	}
-	android::content::Intent CrossProfileApps::createRequestInteractAcrossProfilesIntent()
+	android::content::Intent CrossProfileApps::createRequestInteractAcrossProfilesIntent() const
 	{
 		return callObjectMethod(
 			"createRequestInteractAcrossProfilesIntent",
 			"()Landroid/content/Intent;"
 		);
 	}
-	android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0)
+	android::graphics::drawable::Drawable CrossProfileApps::getProfileSwitchingIconDrawable(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getProfileSwitchingIconDrawable",
@@ -55,7 +55,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0)
+	JString CrossProfileApps::getProfileSwitchingLabel(android::os::UserHandle arg0) const
 	{
 		return callObjectMethod(
 			"getProfileSwitchingLabel",
@@ -63,14 +63,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	JObject CrossProfileApps::getTargetUserProfiles()
+	JObject CrossProfileApps::getTargetUserProfiles() const
 	{
 		return callObjectMethod(
 			"getTargetUserProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	void CrossProfileApps::startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2)
+	void CrossProfileApps::startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -80,7 +80,7 @@ namespace android::content::pm
 			arg2.object()
 		);
 	}
-	void CrossProfileApps::startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2, android::os::Bundle arg3)
+	void CrossProfileApps::startActivity(android::content::Intent arg0, android::os::UserHandle arg1, android::app::Activity arg2, android::os::Bundle arg3) const
 	{
 		callMethod<void>(
 			"startActivity",
@@ -91,7 +91,7 @@ namespace android::content::pm
 			arg3.object()
 		);
 	}
-	void CrossProfileApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1)
+	void CrossProfileApps::startMainActivity(android::content::ComponentName arg0, android::os::UserHandle arg1) const
 	{
 		callMethod<void>(
 			"startMainActivity",

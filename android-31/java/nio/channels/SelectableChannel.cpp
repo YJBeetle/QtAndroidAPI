@@ -14,14 +14,14 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	JObject SelectableChannel::blockingLock()
+	JObject SelectableChannel::blockingLock() const
 	{
 		return callObjectMethod(
 			"blockingLock",
 			"()Ljava/lang/Object;"
 		);
 	}
-	java::nio::channels::SelectableChannel SelectableChannel::configureBlocking(jboolean arg0)
+	java::nio::channels::SelectableChannel SelectableChannel::configureBlocking(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"configureBlocking",
@@ -29,21 +29,21 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jboolean SelectableChannel::isBlocking()
+	jboolean SelectableChannel::isBlocking() const
 	{
 		return callMethod<jboolean>(
 			"isBlocking",
 			"()Z"
 		);
 	}
-	jboolean SelectableChannel::isRegistered()
+	jboolean SelectableChannel::isRegistered() const
 	{
 		return callMethod<jboolean>(
 			"isRegistered",
 			"()Z"
 		);
 	}
-	java::nio::channels::SelectionKey SelectableChannel::keyFor(java::nio::channels::Selector arg0)
+	java::nio::channels::SelectionKey SelectableChannel::keyFor(java::nio::channels::Selector arg0) const
 	{
 		return callObjectMethod(
 			"keyFor",
@@ -51,14 +51,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	java::nio::channels::spi::SelectorProvider SelectableChannel::provider()
+	java::nio::channels::spi::SelectorProvider SelectableChannel::provider() const
 	{
 		return callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1)
+	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1) const
 	{
 		return callObjectMethod(
 			"register",
@@ -67,7 +67,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2)
+	java::nio::channels::SelectionKey SelectableChannel::_register(java::nio::channels::Selector arg0, jint arg1, JObject arg2) const
 	{
 		return callObjectMethod(
 			"register",
@@ -77,7 +77,7 @@ namespace java::nio::channels
 			arg2.object<jobject>()
 		);
 	}
-	jint SelectableChannel::validOps()
+	jint SelectableChannel::validOps() const
 	{
 		return callMethod<jint>(
 			"validOps",

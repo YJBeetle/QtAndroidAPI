@@ -18,11 +18,11 @@ namespace android::hardware::camera2::params
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		JObject getAvailableSizes();
-		jint getFormat();
-		jint hashCode();
-		jboolean isInput();
+		jboolean equals(JObject arg0) const;
+		JObject getAvailableSizes() const;
+		jint getFormat() const;
+		jint hashCode() const;
+		jboolean isInput() const;
 	};
 } // namespace android::hardware::camera2::params
 

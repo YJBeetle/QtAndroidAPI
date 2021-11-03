@@ -46,7 +46,7 @@ namespace java::time::format
 			"()Ljava/time/format/DecimalStyle;"
 		);
 	}
-	jboolean DecimalStyle::equals(JObject arg0)
+	jboolean DecimalStyle::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -54,49 +54,49 @@ namespace java::time::format
 			arg0.object<jobject>()
 		);
 	}
-	jchar DecimalStyle::getDecimalSeparator()
+	jchar DecimalStyle::getDecimalSeparator() const
 	{
 		return callMethod<jchar>(
 			"getDecimalSeparator",
 			"()C"
 		);
 	}
-	jchar DecimalStyle::getNegativeSign()
+	jchar DecimalStyle::getNegativeSign() const
 	{
 		return callMethod<jchar>(
 			"getNegativeSign",
 			"()C"
 		);
 	}
-	jchar DecimalStyle::getPositiveSign()
+	jchar DecimalStyle::getPositiveSign() const
 	{
 		return callMethod<jchar>(
 			"getPositiveSign",
 			"()C"
 		);
 	}
-	jchar DecimalStyle::getZeroDigit()
+	jchar DecimalStyle::getZeroDigit() const
 	{
 		return callMethod<jchar>(
 			"getZeroDigit",
 			"()C"
 		);
 	}
-	jint DecimalStyle::hashCode()
+	jint DecimalStyle::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString DecimalStyle::toString()
+	JString DecimalStyle::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	java::time::format::DecimalStyle DecimalStyle::withDecimalSeparator(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withDecimalSeparator(jchar arg0) const
 	{
 		return callObjectMethod(
 			"withDecimalSeparator",
@@ -104,7 +104,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DecimalStyle DecimalStyle::withNegativeSign(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withNegativeSign(jchar arg0) const
 	{
 		return callObjectMethod(
 			"withNegativeSign",
@@ -112,7 +112,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DecimalStyle DecimalStyle::withPositiveSign(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withPositiveSign(jchar arg0) const
 	{
 		return callObjectMethod(
 			"withPositiveSign",
@@ -120,7 +120,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DecimalStyle DecimalStyle::withZeroDigit(jchar arg0)
+	java::time::format::DecimalStyle DecimalStyle::withZeroDigit(jchar arg0) const
 	{
 		return callObjectMethod(
 			"withZeroDigit",

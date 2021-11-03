@@ -26,28 +26,28 @@ namespace android::content::pm
 		) {}
 	
 	// Methods
-	jint ChangedPackages::describeContents()
+	jint ChangedPackages::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	JObject ChangedPackages::getPackageNames()
+	JObject ChangedPackages::getPackageNames() const
 	{
 		return callObjectMethod(
 			"getPackageNames",
 			"()Ljava/util/List;"
 		);
 	}
-	jint ChangedPackages::getSequenceNumber()
+	jint ChangedPackages::getSequenceNumber() const
 	{
 		return callMethod<jint>(
 			"getSequenceNumber",
 			"()I"
 		);
 	}
-	void ChangedPackages::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void ChangedPackages::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

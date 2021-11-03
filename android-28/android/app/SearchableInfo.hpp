@@ -27,32 +27,32 @@ namespace android::app
 		// Constructors
 		
 		// Methods
-		jboolean autoUrlDetect();
-		jint describeContents();
-		jint getHintId();
-		jint getImeOptions();
-		jint getInputType();
-		android::content::ComponentName getSearchActivity();
-		jint getSettingsDescriptionId();
-		JString getSuggestAuthority();
-		JString getSuggestIntentAction();
-		JString getSuggestIntentData();
-		JString getSuggestPackage();
-		JString getSuggestPath();
-		JString getSuggestSelection();
-		jint getSuggestThreshold();
-		jint getVoiceLanguageId();
-		jint getVoiceLanguageModeId();
-		jint getVoiceMaxResults();
-		jint getVoicePromptTextId();
-		jboolean getVoiceSearchEnabled();
-		jboolean getVoiceSearchLaunchRecognizer();
-		jboolean getVoiceSearchLaunchWebSearch();
-		jboolean queryAfterZeroResults();
-		jboolean shouldIncludeInGlobalSearch();
-		jboolean shouldRewriteQueryFromData();
-		jboolean shouldRewriteQueryFromText();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jboolean autoUrlDetect() const;
+		jint describeContents() const;
+		jint getHintId() const;
+		jint getImeOptions() const;
+		jint getInputType() const;
+		android::content::ComponentName getSearchActivity() const;
+		jint getSettingsDescriptionId() const;
+		JString getSuggestAuthority() const;
+		JString getSuggestIntentAction() const;
+		JString getSuggestIntentData() const;
+		JString getSuggestPackage() const;
+		JString getSuggestPath() const;
+		JString getSuggestSelection() const;
+		jint getSuggestThreshold() const;
+		jint getVoiceLanguageId() const;
+		jint getVoiceLanguageModeId() const;
+		jint getVoiceMaxResults() const;
+		jint getVoicePromptTextId() const;
+		jboolean getVoiceSearchEnabled() const;
+		jboolean getVoiceSearchLaunchRecognizer() const;
+		jboolean getVoiceSearchLaunchWebSearch() const;
+		jboolean queryAfterZeroResults() const;
+		jboolean shouldIncludeInGlobalSearch() const;
+		jboolean shouldRewriteQueryFromData() const;
+		jboolean shouldRewriteQueryFromText() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app
 

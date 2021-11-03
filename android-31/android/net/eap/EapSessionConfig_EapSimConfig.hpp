@@ -18,10 +18,10 @@ namespace android::net::eap
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getAppType();
-		jint getSubId();
-		jint hashCode();
+		jboolean equals(JObject arg0) const;
+		jint getAppType() const;
+		jint getSubId() const;
+		jint hashCode() const;
 	};
 } // namespace android::net::eap
 

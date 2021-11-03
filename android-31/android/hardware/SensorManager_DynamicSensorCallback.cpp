@@ -16,7 +16,7 @@ namespace android::hardware
 		) {}
 	
 	// Methods
-	void SensorManager_DynamicSensorCallback::onDynamicSensorConnected(android::hardware::Sensor arg0)
+	void SensorManager_DynamicSensorCallback::onDynamicSensorConnected(android::hardware::Sensor arg0) const
 	{
 		callMethod<void>(
 			"onDynamicSensorConnected",
@@ -24,7 +24,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager_DynamicSensorCallback::onDynamicSensorDisconnected(android::hardware::Sensor arg0)
+	void SensorManager_DynamicSensorCallback::onDynamicSensorDisconnected(android::hardware::Sensor arg0) const
 	{
 		callMethod<void>(
 			"onDynamicSensorDisconnected",

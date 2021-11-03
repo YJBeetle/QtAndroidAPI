@@ -54,11 +54,11 @@ namespace android::view::accessibility
 		AccessibilityNodeInfo_AccessibilityAction(jint arg0, JString arg1);
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jint getId();
-		JString getLabel();
-		jint hashCode();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jint getId() const;
+		JString getLabel() const;
+		jint hashCode() const;
+		JString toString() const;
 	};
 } // namespace android::view::accessibility
 

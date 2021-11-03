@@ -22,11 +22,11 @@ namespace android::service::voice
 		AlwaysOnHotwordDetector_Callback();
 		
 		// Methods
-		void onAvailabilityChanged(jint arg0);
-		void onDetected(android::service::voice::AlwaysOnHotwordDetector_EventPayload arg0);
-		void onError();
-		void onRecognitionPaused();
-		void onRecognitionResumed();
+		void onAvailabilityChanged(jint arg0) const;
+		void onDetected(android::service::voice::AlwaysOnHotwordDetector_EventPayload arg0) const;
+		void onError() const;
+		void onRecognitionPaused() const;
+		void onRecognitionResumed() const;
 	};
 } // namespace android::service::voice
 

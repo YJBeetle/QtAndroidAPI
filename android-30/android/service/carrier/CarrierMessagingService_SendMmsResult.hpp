@@ -19,8 +19,8 @@ namespace android::service::carrier
 		CarrierMessagingService_SendMmsResult(jint arg0, JByteArray arg1);
 		
 		// Methods
-		JByteArray getSendConfPdu();
-		jint getSendStatus();
+		JByteArray getSendConfPdu() const;
+		jint getSendStatus() const;
 	};
 } // namespace android::service::carrier
 

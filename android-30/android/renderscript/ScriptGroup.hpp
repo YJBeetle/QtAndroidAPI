@@ -26,11 +26,11 @@ namespace android::renderscript
 		// Constructors
 		
 		// Methods
-		void destroy();
-		JObjectArray execute(JObjectArray arg0);
-		void execute();
-		void setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1);
-		void setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1);
+		void destroy() const;
+		JObjectArray execute(JObjectArray arg0) const;
+		void execute() const;
+		void setInput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const;
+		void setOutput(android::renderscript::Script_KernelID arg0, android::renderscript::Allocation arg1) const;
 	};
 } // namespace android::renderscript
 

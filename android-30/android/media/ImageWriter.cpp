@@ -34,35 +34,35 @@ namespace android::media
 			arg2
 		);
 	}
-	void ImageWriter::close()
+	void ImageWriter::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	android::media::Image ImageWriter::dequeueInputImage()
+	android::media::Image ImageWriter::dequeueInputImage() const
 	{
 		return callObjectMethod(
 			"dequeueInputImage",
 			"()Landroid/media/Image;"
 		);
 	}
-	jint ImageWriter::getFormat()
+	jint ImageWriter::getFormat() const
 	{
 		return callMethod<jint>(
 			"getFormat",
 			"()I"
 		);
 	}
-	jint ImageWriter::getMaxImages()
+	jint ImageWriter::getMaxImages() const
 	{
 		return callMethod<jint>(
 			"getMaxImages",
 			"()I"
 		);
 	}
-	void ImageWriter::queueInputImage(android::media::Image arg0)
+	void ImageWriter::queueInputImage(android::media::Image arg0) const
 	{
 		callMethod<void>(
 			"queueInputImage",
@@ -70,7 +70,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void ImageWriter::setOnImageReleasedListener(JObject arg0, android::os::Handler arg1)
+	void ImageWriter::setOnImageReleasedListener(JObject arg0, android::os::Handler arg1) const
 	{
 		callMethod<void>(
 			"setOnImageReleasedListener",

@@ -274,14 +274,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jint PlaybackErrorEvent::describeContents()
+	jint PlaybackErrorEvent::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PlaybackErrorEvent::equals(JObject arg0)
+	jboolean PlaybackErrorEvent::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -289,49 +289,49 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	jint PlaybackErrorEvent::getErrorCode()
+	jint PlaybackErrorEvent::getErrorCode() const
 	{
 		return callMethod<jint>(
 			"getErrorCode",
 			"()I"
 		);
 	}
-	android::os::Bundle PlaybackErrorEvent::getMetricsBundle()
+	android::os::Bundle PlaybackErrorEvent::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint PlaybackErrorEvent::getSubErrorCode()
+	jint PlaybackErrorEvent::getSubErrorCode() const
 	{
 		return callMethod<jint>(
 			"getSubErrorCode",
 			"()I"
 		);
 	}
-	jlong PlaybackErrorEvent::getTimeSinceCreatedMillis()
+	jlong PlaybackErrorEvent::getTimeSinceCreatedMillis() const
 	{
 		return callMethod<jlong>(
 			"getTimeSinceCreatedMillis",
 			"()J"
 		);
 	}
-	jint PlaybackErrorEvent::hashCode()
+	jint PlaybackErrorEvent::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PlaybackErrorEvent::toString()
+	JString PlaybackErrorEvent::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PlaybackErrorEvent::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackErrorEvent::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

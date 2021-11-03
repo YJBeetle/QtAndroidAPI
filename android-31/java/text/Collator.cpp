@@ -89,14 +89,14 @@ namespace java::text
 			arg0.object()
 		);
 	}
-	JObject Collator::clone()
+	JObject Collator::clone() const
 	{
 		return callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		);
 	}
-	jint Collator::compare(JObject arg0, JObject arg1)
+	jint Collator::compare(JObject arg0, JObject arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -105,7 +105,7 @@ namespace java::text
 			arg1.object<jobject>()
 		);
 	}
-	jint Collator::compare(JString arg0, JString arg1)
+	jint Collator::compare(JString arg0, JString arg1) const
 	{
 		return callMethod<jint>(
 			"compare",
@@ -114,7 +114,7 @@ namespace java::text
 			arg1.object<jstring>()
 		);
 	}
-	jboolean Collator::equals(JObject arg0)
+	jboolean Collator::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -122,7 +122,7 @@ namespace java::text
 			arg0.object<jobject>()
 		);
 	}
-	jboolean Collator::equals(JString arg0, JString arg1)
+	jboolean Collator::equals(JString arg0, JString arg1) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -131,7 +131,7 @@ namespace java::text
 			arg1.object<jstring>()
 		);
 	}
-	java::text::CollationKey Collator::getCollationKey(JString arg0)
+	java::text::CollationKey Collator::getCollationKey(JString arg0) const
 	{
 		return callObjectMethod(
 			"getCollationKey",
@@ -139,28 +139,28 @@ namespace java::text
 			arg0.object<jstring>()
 		);
 	}
-	jint Collator::getDecomposition()
+	jint Collator::getDecomposition() const
 	{
 		return callMethod<jint>(
 			"getDecomposition",
 			"()I"
 		);
 	}
-	jint Collator::getStrength()
+	jint Collator::getStrength() const
 	{
 		return callMethod<jint>(
 			"getStrength",
 			"()I"
 		);
 	}
-	jint Collator::hashCode()
+	jint Collator::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	void Collator::setDecomposition(jint arg0)
+	void Collator::setDecomposition(jint arg0) const
 	{
 		callMethod<void>(
 			"setDecomposition",
@@ -168,7 +168,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void Collator::setStrength(jint arg0)
+	void Collator::setStrength(jint arg0) const
 	{
 		callMethod<void>(
 			"setStrength",

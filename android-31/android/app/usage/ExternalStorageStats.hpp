@@ -22,13 +22,13 @@ namespace android::app::usage
 		// Constructors
 		
 		// Methods
-		jint describeContents();
-		jlong getAppBytes();
-		jlong getAudioBytes();
-		jlong getImageBytes();
-		jlong getTotalBytes();
-		jlong getVideoBytes();
-		void writeToParcel(android::os::Parcel arg0, jint arg1);
+		jint describeContents() const;
+		jlong getAppBytes() const;
+		jlong getAudioBytes() const;
+		jlong getImageBytes() const;
+		jlong getTotalBytes() const;
+		jlong getVideoBytes() const;
+		void writeToParcel(android::os::Parcel arg0, jint arg1) const;
 	};
 } // namespace android::app::usage
 

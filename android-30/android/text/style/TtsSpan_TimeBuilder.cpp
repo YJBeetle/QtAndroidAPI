@@ -22,7 +22,7 @@ namespace android::text::style
 		) {}
 	
 	// Methods
-	android::text::style::TtsSpan_TimeBuilder TtsSpan_TimeBuilder::setHours(jint arg0)
+	android::text::style::TtsSpan_TimeBuilder TtsSpan_TimeBuilder::setHours(jint arg0) const
 	{
 		return callObjectMethod(
 			"setHours",
@@ -30,7 +30,7 @@ namespace android::text::style
 			arg0
 		);
 	}
-	android::text::style::TtsSpan_TimeBuilder TtsSpan_TimeBuilder::setMinutes(jint arg0)
+	android::text::style::TtsSpan_TimeBuilder TtsSpan_TimeBuilder::setMinutes(jint arg0) const
 	{
 		return callObjectMethod(
 			"setMinutes",

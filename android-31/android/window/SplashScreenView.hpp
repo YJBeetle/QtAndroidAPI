@@ -29,11 +29,11 @@ namespace android::window
 		// Constructors
 		
 		// Methods
-		java::time::Duration getIconAnimationDuration();
-		java::time::Instant getIconAnimationStart();
-		android::view::View getIconView();
-		void remove();
-		void setAlpha(jfloat arg0);
+		java::time::Duration getIconAnimationDuration() const;
+		java::time::Instant getIconAnimationStart() const;
+		android::view::View getIconView() const;
+		void remove() const;
+		void setAlpha(jfloat arg0) const;
 	};
 } // namespace android::window
 

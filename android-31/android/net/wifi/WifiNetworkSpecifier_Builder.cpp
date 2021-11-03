@@ -20,14 +20,14 @@ namespace android::net::wifi
 		) {}
 	
 	// Methods
-	android::net::wifi::WifiNetworkSpecifier WifiNetworkSpecifier_Builder::build()
+	android::net::wifi::WifiNetworkSpecifier WifiNetworkSpecifier_Builder::build() const
 	{
 		return callObjectMethod(
 			"build",
 			"()Landroid/net/wifi/WifiNetworkSpecifier;"
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBand(jint arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBand(jint arg0) const
 	{
 		return callObjectMethod(
 			"setBand",
@@ -35,7 +35,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBssid(android::net::MacAddress arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBssid(android::net::MacAddress arg0) const
 	{
 		return callObjectMethod(
 			"setBssid",
@@ -43,7 +43,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1) const
 	{
 		return callObjectMethod(
 			"setBssidPattern",
@@ -52,7 +52,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setIsEnhancedOpen(jboolean arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setIsEnhancedOpen(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsEnhancedOpen",
@@ -60,7 +60,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setIsHiddenSsid(jboolean arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setIsHiddenSsid(jboolean arg0) const
 	{
 		return callObjectMethod(
 			"setIsHiddenSsid",
@@ -68,7 +68,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsid(JString arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsid(JString arg0) const
 	{
 		return callObjectMethod(
 			"setSsid",
@@ -76,7 +76,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsidPattern(android::os::PatternMatcher arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setSsidPattern(android::os::PatternMatcher arg0) const
 	{
 		return callObjectMethod(
 			"setSsidPattern",
@@ -84,7 +84,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa2EnterpriseConfig",
@@ -92,7 +92,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2Passphrase(JString arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa2Passphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setWpa2Passphrase",
@@ -100,7 +100,7 @@ namespace android::net::wifi
 			arg0.object<jstring>()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Enterprise192BitModeConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Enterprise192BitModeConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3Enterprise192BitModeConfig",
@@ -108,7 +108,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3EnterpriseConfig",
@@ -116,7 +116,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3EnterpriseStandardModeConfig(android::net::wifi::WifiEnterpriseConfig arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3EnterpriseStandardModeConfig(android::net::wifi::WifiEnterpriseConfig arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3EnterpriseStandardModeConfig",
@@ -124,7 +124,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Passphrase(JString arg0)
+	android::net::wifi::WifiNetworkSpecifier_Builder WifiNetworkSpecifier_Builder::setWpa3Passphrase(JString arg0) const
 	{
 		return callObjectMethod(
 			"setWpa3Passphrase",

@@ -171,14 +171,14 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	JObject IntentFilter::actionsIterator()
+	JObject IntentFilter::actionsIterator() const
 	{
 		return callObjectMethod(
 			"actionsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::addAction(JString arg0)
+	void IntentFilter::addAction(JString arg0) const
 	{
 		callMethod<void>(
 			"addAction",
@@ -186,7 +186,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addCategory(JString arg0)
+	void IntentFilter::addCategory(JString arg0) const
 	{
 		callMethod<void>(
 			"addCategory",
@@ -194,7 +194,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataAuthority(JString arg0, JString arg1)
+	void IntentFilter::addDataAuthority(JString arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"addDataAuthority",
@@ -203,7 +203,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataPath(JString arg0, jint arg1)
+	void IntentFilter::addDataPath(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addDataPath",
@@ -212,7 +212,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::addDataScheme(JString arg0)
+	void IntentFilter::addDataScheme(JString arg0) const
 	{
 		callMethod<void>(
 			"addDataScheme",
@@ -220,7 +220,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	void IntentFilter::addDataSchemeSpecificPart(JString arg0, jint arg1)
+	void IntentFilter::addDataSchemeSpecificPart(JString arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"addDataSchemeSpecificPart",
@@ -229,7 +229,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::addDataType(JString arg0)
+	void IntentFilter::addDataType(JString arg0) const
 	{
 		callMethod<void>(
 			"addDataType",
@@ -237,77 +237,77 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JObject IntentFilter::authoritiesIterator()
+	JObject IntentFilter::authoritiesIterator() const
 	{
 		return callObjectMethod(
 			"authoritiesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject IntentFilter::categoriesIterator()
+	JObject IntentFilter::categoriesIterator() const
 	{
 		return callObjectMethod(
 			"categoriesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint IntentFilter::countActions()
+	jint IntentFilter::countActions() const
 	{
 		return callMethod<jint>(
 			"countActions",
 			"()I"
 		);
 	}
-	jint IntentFilter::countCategories()
+	jint IntentFilter::countCategories() const
 	{
 		return callMethod<jint>(
 			"countCategories",
 			"()I"
 		);
 	}
-	jint IntentFilter::countDataAuthorities()
+	jint IntentFilter::countDataAuthorities() const
 	{
 		return callMethod<jint>(
 			"countDataAuthorities",
 			"()I"
 		);
 	}
-	jint IntentFilter::countDataPaths()
+	jint IntentFilter::countDataPaths() const
 	{
 		return callMethod<jint>(
 			"countDataPaths",
 			"()I"
 		);
 	}
-	jint IntentFilter::countDataSchemeSpecificParts()
+	jint IntentFilter::countDataSchemeSpecificParts() const
 	{
 		return callMethod<jint>(
 			"countDataSchemeSpecificParts",
 			"()I"
 		);
 	}
-	jint IntentFilter::countDataSchemes()
+	jint IntentFilter::countDataSchemes() const
 	{
 		return callMethod<jint>(
 			"countDataSchemes",
 			"()I"
 		);
 	}
-	jint IntentFilter::countDataTypes()
+	jint IntentFilter::countDataTypes() const
 	{
 		return callMethod<jint>(
 			"countDataTypes",
 			"()I"
 		);
 	}
-	jint IntentFilter::describeContents()
+	jint IntentFilter::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	void IntentFilter::dump(JObject arg0, JString arg1)
+	void IntentFilter::dump(JObject arg0, JString arg1) const
 	{
 		callMethod<void>(
 			"dump",
@@ -316,7 +316,7 @@ namespace android::content
 			arg1.object<jstring>()
 		);
 	}
-	JString IntentFilter::getAction(jint arg0)
+	JString IntentFilter::getAction(jint arg0) const
 	{
 		return callObjectMethod(
 			"getAction",
@@ -324,7 +324,7 @@ namespace android::content
 			arg0
 		);
 	}
-	JString IntentFilter::getCategory(jint arg0)
+	JString IntentFilter::getCategory(jint arg0) const
 	{
 		return callObjectMethod(
 			"getCategory",
@@ -332,7 +332,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::IntentFilter_AuthorityEntry IntentFilter::getDataAuthority(jint arg0)
+	android::content::IntentFilter_AuthorityEntry IntentFilter::getDataAuthority(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDataAuthority",
@@ -340,7 +340,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::os::PatternMatcher IntentFilter::getDataPath(jint arg0)
+	android::os::PatternMatcher IntentFilter::getDataPath(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDataPath",
@@ -348,7 +348,7 @@ namespace android::content
 			arg0
 		);
 	}
-	JString IntentFilter::getDataScheme(jint arg0)
+	JString IntentFilter::getDataScheme(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDataScheme",
@@ -356,7 +356,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::os::PatternMatcher IntentFilter::getDataSchemeSpecificPart(jint arg0)
+	android::os::PatternMatcher IntentFilter::getDataSchemeSpecificPart(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDataSchemeSpecificPart",
@@ -364,7 +364,7 @@ namespace android::content
 			arg0
 		);
 	}
-	JString IntentFilter::getDataType(jint arg0)
+	JString IntentFilter::getDataType(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDataType",
@@ -372,14 +372,14 @@ namespace android::content
 			arg0
 		);
 	}
-	jint IntentFilter::getPriority()
+	jint IntentFilter::getPriority() const
 	{
 		return callMethod<jint>(
 			"getPriority",
 			"()I"
 		);
 	}
-	jboolean IntentFilter::hasAction(JString arg0)
+	jboolean IntentFilter::hasAction(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasAction",
@@ -387,7 +387,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasCategory(JString arg0)
+	jboolean IntentFilter::hasCategory(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasCategory",
@@ -395,7 +395,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataAuthority(android::net::Uri arg0)
+	jboolean IntentFilter::hasDataAuthority(android::net::Uri arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasDataAuthority",
@@ -403,7 +403,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jboolean IntentFilter::hasDataPath(JString arg0)
+	jboolean IntentFilter::hasDataPath(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasDataPath",
@@ -411,7 +411,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataScheme(JString arg0)
+	jboolean IntentFilter::hasDataScheme(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasDataScheme",
@@ -419,7 +419,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataSchemeSpecificPart(JString arg0)
+	jboolean IntentFilter::hasDataSchemeSpecificPart(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasDataSchemeSpecificPart",
@@ -427,7 +427,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::hasDataType(JString arg0)
+	jboolean IntentFilter::hasDataType(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"hasDataType",
@@ -435,7 +435,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, JString arg3)
+	jint IntentFilter::match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, JString arg3) const
 	{
 		return callMethod<jint>(
 			"match",
@@ -446,7 +446,7 @@ namespace android::content
 			arg3.object<jstring>()
 		);
 	}
-	jint IntentFilter::match(JString arg0, JString arg1, JString arg2, android::net::Uri arg3, JObject arg4, JString arg5)
+	jint IntentFilter::match(JString arg0, JString arg1, JString arg2, android::net::Uri arg3, JObject arg4, JString arg5) const
 	{
 		return callMethod<jint>(
 			"match",
@@ -459,7 +459,7 @@ namespace android::content
 			arg5.object<jstring>()
 		);
 	}
-	jboolean IntentFilter::matchAction(JString arg0)
+	jboolean IntentFilter::matchAction(JString arg0) const
 	{
 		return callMethod<jboolean>(
 			"matchAction",
@@ -467,7 +467,7 @@ namespace android::content
 			arg0.object<jstring>()
 		);
 	}
-	JString IntentFilter::matchCategories(JObject arg0)
+	JString IntentFilter::matchCategories(JObject arg0) const
 	{
 		return callObjectMethod(
 			"matchCategories",
@@ -475,7 +475,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	jint IntentFilter::matchData(JString arg0, JString arg1, android::net::Uri arg2)
+	jint IntentFilter::matchData(JString arg0, JString arg1, android::net::Uri arg2) const
 	{
 		return callMethod<jint>(
 			"matchData",
@@ -485,7 +485,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	jint IntentFilter::matchDataAuthority(android::net::Uri arg0)
+	jint IntentFilter::matchDataAuthority(android::net::Uri arg0) const
 	{
 		return callMethod<jint>(
 			"matchDataAuthority",
@@ -493,14 +493,14 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JObject IntentFilter::pathsIterator()
+	JObject IntentFilter::pathsIterator() const
 	{
 		return callObjectMethod(
 			"pathsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::readFromXml(JObject arg0)
+	void IntentFilter::readFromXml(JObject arg0) const
 	{
 		callMethod<void>(
 			"readFromXml",
@@ -508,21 +508,21 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	JObject IntentFilter::schemeSpecificPartsIterator()
+	JObject IntentFilter::schemeSpecificPartsIterator() const
 	{
 		return callObjectMethod(
 			"schemeSpecificPartsIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	JObject IntentFilter::schemesIterator()
+	JObject IntentFilter::schemesIterator() const
 	{
 		return callObjectMethod(
 			"schemesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::setPriority(jint arg0)
+	void IntentFilter::setPriority(jint arg0) const
 	{
 		callMethod<void>(
 			"setPriority",
@@ -530,14 +530,14 @@ namespace android::content
 			arg0
 		);
 	}
-	JObject IntentFilter::typesIterator()
+	JObject IntentFilter::typesIterator() const
 	{
 		return callObjectMethod(
 			"typesIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	void IntentFilter::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void IntentFilter::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",
@@ -546,7 +546,7 @@ namespace android::content
 			arg1
 		);
 	}
-	void IntentFilter::writeToXml(JObject arg0)
+	void IntentFilter::writeToXml(JObject arg0) const
 	{
 		callMethod<void>(
 			"writeToXml",

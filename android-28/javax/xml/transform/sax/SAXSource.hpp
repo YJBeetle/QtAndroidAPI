@@ -27,13 +27,13 @@ namespace javax::xml::transform::sax
 		
 		// Methods
 		static org::xml::sax::InputSource sourceToInputSource(JObject arg0);
-		org::xml::sax::InputSource getInputSource();
-		JString getSystemId();
-		JObject getXMLReader();
-		jboolean isEmpty();
-		void setInputSource(org::xml::sax::InputSource arg0);
-		void setSystemId(JString arg0);
-		void setXMLReader(JObject arg0);
+		org::xml::sax::InputSource getInputSource() const;
+		JString getSystemId() const;
+		JObject getXMLReader() const;
+		jboolean isEmpty() const;
+		void setInputSource(org::xml::sax::InputSource arg0) const;
+		void setSystemId(JString arg0) const;
+		void setXMLReader(JObject arg0) const;
 	};
 } // namespace javax::xml::transform::sax
 

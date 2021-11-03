@@ -16,7 +16,7 @@ namespace android::content::res
 	// Constructors
 	
 	// Methods
-	void Resources_Theme::applyStyle(jint arg0, jboolean arg1)
+	void Resources_Theme::applyStyle(jint arg0, jboolean arg1) const
 	{
 		callMethod<void>(
 			"applyStyle",
@@ -25,7 +25,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	void Resources_Theme::dump(jint arg0, JString arg1, JString arg2)
+	void Resources_Theme::dump(jint arg0, JString arg1, JString arg2) const
 	{
 		callMethod<void>(
 			"dump",
@@ -35,7 +35,7 @@ namespace android::content::res
 			arg2.object<jstring>()
 		);
 	}
-	JIntArray Resources_Theme::getAttributeResolutionStack(jint arg0, jint arg1, jint arg2)
+	JIntArray Resources_Theme::getAttributeResolutionStack(jint arg0, jint arg1, jint arg2) const
 	{
 		return callObjectMethod(
 			"getAttributeResolutionStack",
@@ -45,14 +45,14 @@ namespace android::content::res
 			arg2
 		);
 	}
-	jint Resources_Theme::getChangingConfigurations()
+	jint Resources_Theme::getChangingConfigurations() const
 	{
 		return callMethod<jint>(
 			"getChangingConfigurations",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable Resources_Theme::getDrawable(jint arg0)
+	android::graphics::drawable::Drawable Resources_Theme::getDrawable(jint arg0) const
 	{
 		return callObjectMethod(
 			"getDrawable",
@@ -60,7 +60,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	jint Resources_Theme::getExplicitStyle(JObject arg0)
+	jint Resources_Theme::getExplicitStyle(JObject arg0) const
 	{
 		return callMethod<jint>(
 			"getExplicitStyle",
@@ -68,14 +68,14 @@ namespace android::content::res
 			arg0.object()
 		);
 	}
-	android::content::res::Resources Resources_Theme::getResources()
+	android::content::res::Resources Resources_Theme::getResources() const
 	{
 		return callObjectMethod(
 			"getResources",
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JIntArray arg0)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JIntArray arg0) const
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -83,7 +83,7 @@ namespace android::content::res
 			arg0.object<jintArray>()
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jint arg0, JIntArray arg1)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(jint arg0, JIntArray arg1) const
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -92,7 +92,7 @@ namespace android::content::res
 			arg1.object<jintArray>()
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JObject arg0, JIntArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JObject arg0, JIntArray arg1, jint arg2, jint arg3) const
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -103,14 +103,14 @@ namespace android::content::res
 			arg3
 		);
 	}
-	void Resources_Theme::rebase()
+	void Resources_Theme::rebase() const
 	{
 		callMethod<void>(
 			"rebase",
 			"()V"
 		);
 	}
-	jboolean Resources_Theme::resolveAttribute(jint arg0, android::util::TypedValue arg1, jboolean arg2)
+	jboolean Resources_Theme::resolveAttribute(jint arg0, android::util::TypedValue arg1, jboolean arg2) const
 	{
 		return callMethod<jboolean>(
 			"resolveAttribute",
@@ -120,7 +120,7 @@ namespace android::content::res
 			arg2
 		);
 	}
-	void Resources_Theme::setTo(android::content::res::Resources_Theme arg0)
+	void Resources_Theme::setTo(android::content::res::Resources_Theme arg0) const
 	{
 		callMethod<void>(
 			"setTo",

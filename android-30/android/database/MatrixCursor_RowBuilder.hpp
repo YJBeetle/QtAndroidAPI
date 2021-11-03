@@ -23,8 +23,8 @@ namespace android::database
 		// Constructors
 		
 		// Methods
-		android::database::MatrixCursor_RowBuilder add(JObject arg0);
-		android::database::MatrixCursor_RowBuilder add(JString arg0, JObject arg1);
+		android::database::MatrixCursor_RowBuilder add(JObject arg0) const;
+		android::database::MatrixCursor_RowBuilder add(JString arg0, JObject arg1) const;
 	};
 } // namespace android::database
 

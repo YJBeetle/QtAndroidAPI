@@ -16,9 +16,9 @@ namespace android::os
 		// Constructors
 		
 		// Methods
-		void close();
-		void reportActualWorkDuration(jlong arg0);
-		void updateTargetWorkDuration(jlong arg0);
+		void close() const;
+		void reportActualWorkDuration(jlong arg0) const;
+		void updateTargetWorkDuration(jlong arg0) const;
 	};
 } // namespace android::os
 

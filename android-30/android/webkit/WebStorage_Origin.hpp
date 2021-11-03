@@ -18,9 +18,9 @@ namespace android::webkit
 		// Constructors
 		
 		// Methods
-		JString getOrigin();
-		jlong getQuota();
-		jlong getUsage();
+		JString getOrigin() const;
+		jlong getQuota() const;
+		jlong getUsage() const;
 	};
 } // namespace android::webkit
 

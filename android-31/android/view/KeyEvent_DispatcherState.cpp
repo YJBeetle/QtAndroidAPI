@@ -17,7 +17,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	void KeyEvent_DispatcherState::handleUpEvent(android::view::KeyEvent arg0)
+	void KeyEvent_DispatcherState::handleUpEvent(android::view::KeyEvent arg0) const
 	{
 		callMethod<void>(
 			"handleUpEvent",
@@ -25,7 +25,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean KeyEvent_DispatcherState::isTracking(android::view::KeyEvent arg0)
+	jboolean KeyEvent_DispatcherState::isTracking(android::view::KeyEvent arg0) const
 	{
 		return callMethod<jboolean>(
 			"isTracking",
@@ -33,7 +33,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void KeyEvent_DispatcherState::performedLongPress(android::view::KeyEvent arg0)
+	void KeyEvent_DispatcherState::performedLongPress(android::view::KeyEvent arg0) const
 	{
 		callMethod<void>(
 			"performedLongPress",
@@ -41,14 +41,14 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void KeyEvent_DispatcherState::reset()
+	void KeyEvent_DispatcherState::reset() const
 	{
 		callMethod<void>(
 			"reset",
 			"()V"
 		);
 	}
-	void KeyEvent_DispatcherState::reset(JObject arg0)
+	void KeyEvent_DispatcherState::reset(JObject arg0) const
 	{
 		callMethod<void>(
 			"reset",
@@ -56,7 +56,7 @@ namespace android::view
 			arg0.object<jobject>()
 		);
 	}
-	void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, JObject arg1)
+	void KeyEvent_DispatcherState::startTracking(android::view::KeyEvent arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"startTracking",

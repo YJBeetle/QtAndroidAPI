@@ -24,27 +24,27 @@ namespace android::os
 		StrictMode_VmPolicy_Builder(android::os::StrictMode_VmPolicy arg0);
 		
 		// Methods
-		android::os::StrictMode_VmPolicy build();
-		android::os::StrictMode_VmPolicy_Builder detectActivityLeaks();
-		android::os::StrictMode_VmPolicy_Builder detectAll();
-		android::os::StrictMode_VmPolicy_Builder detectCleartextNetwork();
-		android::os::StrictMode_VmPolicy_Builder detectContentUriWithoutPermission();
-		android::os::StrictMode_VmPolicy_Builder detectCredentialProtectedWhileLocked();
-		android::os::StrictMode_VmPolicy_Builder detectFileUriExposure();
-		android::os::StrictMode_VmPolicy_Builder detectImplicitDirectBoot();
-		android::os::StrictMode_VmPolicy_Builder detectLeakedClosableObjects();
-		android::os::StrictMode_VmPolicy_Builder detectLeakedRegistrationObjects();
-		android::os::StrictMode_VmPolicy_Builder detectLeakedSqlLiteObjects();
-		android::os::StrictMode_VmPolicy_Builder detectNonSdkApiUsage();
-		android::os::StrictMode_VmPolicy_Builder detectUntaggedSockets();
-		android::os::StrictMode_VmPolicy_Builder penaltyDeath();
-		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnCleartextNetwork();
-		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnFileUriExposure();
-		android::os::StrictMode_VmPolicy_Builder penaltyDropBox();
-		android::os::StrictMode_VmPolicy_Builder penaltyListener(JObject arg0, JObject arg1);
-		android::os::StrictMode_VmPolicy_Builder penaltyLog();
-		android::os::StrictMode_VmPolicy_Builder permitNonSdkApiUsage();
-		android::os::StrictMode_VmPolicy_Builder setClassInstanceLimit(JClass arg0, jint arg1);
+		android::os::StrictMode_VmPolicy build() const;
+		android::os::StrictMode_VmPolicy_Builder detectActivityLeaks() const;
+		android::os::StrictMode_VmPolicy_Builder detectAll() const;
+		android::os::StrictMode_VmPolicy_Builder detectCleartextNetwork() const;
+		android::os::StrictMode_VmPolicy_Builder detectContentUriWithoutPermission() const;
+		android::os::StrictMode_VmPolicy_Builder detectCredentialProtectedWhileLocked() const;
+		android::os::StrictMode_VmPolicy_Builder detectFileUriExposure() const;
+		android::os::StrictMode_VmPolicy_Builder detectImplicitDirectBoot() const;
+		android::os::StrictMode_VmPolicy_Builder detectLeakedClosableObjects() const;
+		android::os::StrictMode_VmPolicy_Builder detectLeakedRegistrationObjects() const;
+		android::os::StrictMode_VmPolicy_Builder detectLeakedSqlLiteObjects() const;
+		android::os::StrictMode_VmPolicy_Builder detectNonSdkApiUsage() const;
+		android::os::StrictMode_VmPolicy_Builder detectUntaggedSockets() const;
+		android::os::StrictMode_VmPolicy_Builder penaltyDeath() const;
+		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnCleartextNetwork() const;
+		android::os::StrictMode_VmPolicy_Builder penaltyDeathOnFileUriExposure() const;
+		android::os::StrictMode_VmPolicy_Builder penaltyDropBox() const;
+		android::os::StrictMode_VmPolicy_Builder penaltyListener(JObject arg0, JObject arg1) const;
+		android::os::StrictMode_VmPolicy_Builder penaltyLog() const;
+		android::os::StrictMode_VmPolicy_Builder permitNonSdkApiUsage() const;
+		android::os::StrictMode_VmPolicy_Builder setClassInstanceLimit(JClass arg0, jint arg1) const;
 	};
 } // namespace android::os
 

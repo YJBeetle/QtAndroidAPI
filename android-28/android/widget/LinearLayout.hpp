@@ -48,31 +48,31 @@ namespace android::widget
 		LinearLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::LinearLayout_LayoutParams generateLayoutParams(JObject arg0);
-		JString getAccessibilityClassName();
-		jint getBaseline();
-		jint getBaselineAlignedChildIndex();
-		android::graphics::drawable::Drawable getDividerDrawable();
-		jint getDividerPadding();
-		jint getGravity();
-		jint getOrientation();
-		jint getShowDividers();
-		jfloat getWeightSum();
-		jboolean isBaselineAligned();
-		jboolean isMeasureWithLargestChildEnabled();
-		void onRtlPropertiesChanged(jint arg0);
-		void setBaselineAligned(jboolean arg0);
-		void setBaselineAlignedChildIndex(jint arg0);
-		void setDividerDrawable(android::graphics::drawable::Drawable arg0);
-		void setDividerPadding(jint arg0);
-		void setGravity(jint arg0);
-		void setHorizontalGravity(jint arg0);
-		void setMeasureWithLargestChildEnabled(jboolean arg0);
-		void setOrientation(jint arg0);
-		void setShowDividers(jint arg0);
-		void setVerticalGravity(jint arg0);
-		void setWeightSum(jfloat arg0);
-		jboolean shouldDelayChildPressedState();
+		android::widget::LinearLayout_LayoutParams generateLayoutParams(JObject arg0) const;
+		JString getAccessibilityClassName() const;
+		jint getBaseline() const;
+		jint getBaselineAlignedChildIndex() const;
+		android::graphics::drawable::Drawable getDividerDrawable() const;
+		jint getDividerPadding() const;
+		jint getGravity() const;
+		jint getOrientation() const;
+		jint getShowDividers() const;
+		jfloat getWeightSum() const;
+		jboolean isBaselineAligned() const;
+		jboolean isMeasureWithLargestChildEnabled() const;
+		void onRtlPropertiesChanged(jint arg0) const;
+		void setBaselineAligned(jboolean arg0) const;
+		void setBaselineAlignedChildIndex(jint arg0) const;
+		void setDividerDrawable(android::graphics::drawable::Drawable arg0) const;
+		void setDividerPadding(jint arg0) const;
+		void setGravity(jint arg0) const;
+		void setHorizontalGravity(jint arg0) const;
+		void setMeasureWithLargestChildEnabled(jboolean arg0) const;
+		void setOrientation(jint arg0) const;
+		void setShowDividers(jint arg0) const;
+		void setVerticalGravity(jint arg0) const;
+		void setWeightSum(jfloat arg0) const;
+		jboolean shouldDelayChildPressedState() const;
 	};
 } // namespace android::widget
 

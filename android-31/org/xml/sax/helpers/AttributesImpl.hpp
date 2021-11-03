@@ -21,28 +21,28 @@ namespace org::xml::sax::helpers
 		AttributesImpl(JObject arg0);
 		
 		// Methods
-		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4);
-		void clear();
-		jint getIndex(JString arg0);
-		jint getIndex(JString arg0, JString arg1);
-		jint getLength();
-		JString getLocalName(jint arg0);
-		JString getQName(jint arg0);
-		JString getType(jint arg0);
-		JString getType(JString arg0);
-		JString getType(JString arg0, JString arg1);
-		JString getURI(jint arg0);
-		JString getValue(jint arg0);
-		JString getValue(JString arg0);
-		JString getValue(JString arg0, JString arg1);
-		void removeAttribute(jint arg0);
-		void setAttribute(jint arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5);
-		void setAttributes(JObject arg0);
-		void setLocalName(jint arg0, JString arg1);
-		void setQName(jint arg0, JString arg1);
-		void setType(jint arg0, JString arg1);
-		void setURI(jint arg0, JString arg1);
-		void setValue(jint arg0, JString arg1);
+		void addAttribute(JString arg0, JString arg1, JString arg2, JString arg3, JString arg4) const;
+		void clear() const;
+		jint getIndex(JString arg0) const;
+		jint getIndex(JString arg0, JString arg1) const;
+		jint getLength() const;
+		JString getLocalName(jint arg0) const;
+		JString getQName(jint arg0) const;
+		JString getType(jint arg0) const;
+		JString getType(JString arg0) const;
+		JString getType(JString arg0, JString arg1) const;
+		JString getURI(jint arg0) const;
+		JString getValue(jint arg0) const;
+		JString getValue(JString arg0) const;
+		JString getValue(JString arg0, JString arg1) const;
+		void removeAttribute(jint arg0) const;
+		void setAttribute(jint arg0, JString arg1, JString arg2, JString arg3, JString arg4, JString arg5) const;
+		void setAttributes(JObject arg0) const;
+		void setLocalName(jint arg0, JString arg1) const;
+		void setQName(jint arg0, JString arg1) const;
+		void setType(jint arg0, JString arg1) const;
+		void setURI(jint arg0, JString arg1) const;
+		void setValue(jint arg0, JString arg1) const;
 	};
 } // namespace org::xml::sax::helpers
 

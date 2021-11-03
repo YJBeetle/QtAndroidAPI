@@ -49,18 +49,18 @@ namespace android::media::browse
 		MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3);
 		
 		// Methods
-		void connect();
-		void disconnect();
-		android::os::Bundle getExtras();
-		void getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1);
-		JString getRoot();
-		android::content::ComponentName getServiceComponent();
-		android::media::session::MediaSession_Token getSessionToken();
-		jboolean isConnected();
-		void subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
-		void subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2);
-		void unsubscribe(JString arg0);
-		void unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1);
+		void connect() const;
+		void disconnect() const;
+		android::os::Bundle getExtras() const;
+		void getItem(JString arg0, android::media::browse::MediaBrowser_ItemCallback arg1) const;
+		JString getRoot() const;
+		android::content::ComponentName getServiceComponent() const;
+		android::media::session::MediaSession_Token getSessionToken() const;
+		jboolean isConnected() const;
+		void subscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1) const;
+		void subscribe(JString arg0, android::os::Bundle arg1, android::media::browse::MediaBrowser_SubscriptionCallback arg2) const;
+		void unsubscribe(JString arg0) const;
+		void unsubscribe(JString arg0, android::media::browse::MediaBrowser_SubscriptionCallback arg1) const;
 	};
 } // namespace android::media::browse
 

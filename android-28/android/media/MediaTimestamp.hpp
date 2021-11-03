@@ -20,11 +20,11 @@ namespace android::media
 		// Constructors
 		
 		// Methods
-		jboolean equals(JObject arg0);
-		jlong getAnchorMediaTimeUs();
-		jlong getAnchorSytemNanoTime();
-		jfloat getMediaClockRate();
-		JString toString();
+		jboolean equals(JObject arg0) const;
+		jlong getAnchorMediaTimeUs() const;
+		jlong getAnchorSytemNanoTime() const;
+		jfloat getMediaClockRate() const;
+		JString toString() const;
 	};
 } // namespace android::media
 

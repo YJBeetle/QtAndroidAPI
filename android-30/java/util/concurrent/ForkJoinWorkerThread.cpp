@@ -15,21 +15,21 @@ namespace java::util::concurrent
 	// Constructors
 	
 	// Methods
-	java::util::concurrent::ForkJoinPool ForkJoinWorkerThread::getPool()
+	java::util::concurrent::ForkJoinPool ForkJoinWorkerThread::getPool() const
 	{
 		return callObjectMethod(
 			"getPool",
 			"()Ljava/util/concurrent/ForkJoinPool;"
 		);
 	}
-	jint ForkJoinWorkerThread::getPoolIndex()
+	jint ForkJoinWorkerThread::getPoolIndex() const
 	{
 		return callMethod<jint>(
 			"getPoolIndex",
 			"()I"
 		);
 	}
-	void ForkJoinWorkerThread::run()
+	void ForkJoinWorkerThread::run() const
 	{
 		callMethod<void>(
 			"run",

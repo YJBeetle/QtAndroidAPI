@@ -10,28 +10,28 @@ namespace android::media
 	// Constructors
 	
 	// Methods
-	JObject EncoderProfiles::getAudioProfiles()
+	JObject EncoderProfiles::getAudioProfiles() const
 	{
 		return callObjectMethod(
 			"getAudioProfiles",
 			"()Ljava/util/List;"
 		);
 	}
-	jint EncoderProfiles::getDefaultDurationSeconds()
+	jint EncoderProfiles::getDefaultDurationSeconds() const
 	{
 		return callMethod<jint>(
 			"getDefaultDurationSeconds",
 			"()I"
 		);
 	}
-	jint EncoderProfiles::getRecommendedFileFormat()
+	jint EncoderProfiles::getRecommendedFileFormat() const
 	{
 		return callMethod<jint>(
 			"getRecommendedFileFormat",
 			"()I"
 		);
 	}
-	JObject EncoderProfiles::getVideoProfiles()
+	JObject EncoderProfiles::getVideoProfiles() const
 	{
 		return callObjectMethod(
 			"getVideoProfiles",

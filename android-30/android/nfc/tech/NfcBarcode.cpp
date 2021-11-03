@@ -35,42 +35,42 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void NfcBarcode::close()
+	void NfcBarcode::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void NfcBarcode::connect()
+	void NfcBarcode::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	JByteArray NfcBarcode::getBarcode()
+	JByteArray NfcBarcode::getBarcode() const
 	{
 		return callObjectMethod(
 			"getBarcode",
 			"()[B"
 		);
 	}
-	android::nfc::Tag NfcBarcode::getTag()
+	android::nfc::Tag NfcBarcode::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jint NfcBarcode::getType()
+	jint NfcBarcode::getType() const
 	{
 		return callMethod<jint>(
 			"getType",
 			"()I"
 		);
 	}
-	jboolean NfcBarcode::isConnected()
+	jboolean NfcBarcode::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",

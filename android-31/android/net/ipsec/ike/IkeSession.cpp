@@ -24,14 +24,14 @@ namespace android::net::ipsec::ike
 		) {}
 	
 	// Methods
-	void IkeSession::close()
+	void IkeSession::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void IkeSession::closeChildSession(JObject arg0)
+	void IkeSession::closeChildSession(JObject arg0) const
 	{
 		callMethod<void>(
 			"closeChildSession",
@@ -39,21 +39,21 @@ namespace android::net::ipsec::ike
 			arg0.object()
 		);
 	}
-	void IkeSession::finalize()
+	void IkeSession::finalize() const
 	{
 		callMethod<void>(
 			"finalize",
 			"()V"
 		);
 	}
-	void IkeSession::kill()
+	void IkeSession::kill() const
 	{
 		callMethod<void>(
 			"kill",
 			"()V"
 		);
 	}
-	void IkeSession::openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, JObject arg1)
+	void IkeSession::openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, JObject arg1) const
 	{
 		callMethod<void>(
 			"openChildSession",

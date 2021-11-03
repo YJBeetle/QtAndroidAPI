@@ -22,7 +22,7 @@ namespace android::view::textclassifier
 		TextClassifierEvent_LanguageDetectionEvent_Builder(jint arg0);
 		
 		// Methods
-		android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent build();
+		android::view::textclassifier::TextClassifierEvent_LanguageDetectionEvent build() const;
 	};
 } // namespace android::view::textclassifier
 

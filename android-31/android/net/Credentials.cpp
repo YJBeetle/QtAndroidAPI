@@ -18,21 +18,21 @@ namespace android::net
 		) {}
 	
 	// Methods
-	jint Credentials::getGid()
+	jint Credentials::getGid() const
 	{
 		return callMethod<jint>(
 			"getGid",
 			"()I"
 		);
 	}
-	jint Credentials::getPid()
+	jint Credentials::getPid() const
 	{
 		return callMethod<jint>(
 			"getPid",
 			"()I"
 		);
 	}
-	jint Credentials::getUid()
+	jint Credentials::getUid() const
 	{
 		return callMethod<jint>(
 			"getUid",

@@ -12,14 +12,14 @@ namespace java::util
 	// Constructors
 	
 	// Methods
-	void AbstractMap::clear()
+	void AbstractMap::clear() const
 	{
 		callMethod<void>(
 			"clear",
 			"()V"
 		);
 	}
-	jboolean AbstractMap::containsKey(JObject arg0)
+	jboolean AbstractMap::containsKey(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsKey",
@@ -27,7 +27,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jboolean AbstractMap::containsValue(JObject arg0)
+	jboolean AbstractMap::containsValue(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"containsValue",
@@ -35,14 +35,14 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractMap::entrySet()
+	JObject AbstractMap::entrySet() const
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean AbstractMap::equals(JObject arg0)
+	jboolean AbstractMap::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -50,7 +50,7 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	JObject AbstractMap::get(JObject arg0)
+	JObject AbstractMap::get(JObject arg0) const
 	{
 		return callObjectMethod(
 			"get",
@@ -58,28 +58,28 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint AbstractMap::hashCode()
+	jint AbstractMap::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	jboolean AbstractMap::isEmpty()
+	jboolean AbstractMap::isEmpty() const
 	{
 		return callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
 		);
 	}
-	JObject AbstractMap::keySet()
+	JObject AbstractMap::keySet() const
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	JObject AbstractMap::put(JObject arg0, JObject arg1)
+	JObject AbstractMap::put(JObject arg0, JObject arg1) const
 	{
 		return callObjectMethod(
 			"put",
@@ -88,7 +88,7 @@ namespace java::util
 			arg1.object<jobject>()
 		);
 	}
-	void AbstractMap::putAll(JObject arg0)
+	void AbstractMap::putAll(JObject arg0) const
 	{
 		callMethod<void>(
 			"putAll",
@@ -96,7 +96,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	JObject AbstractMap::remove(JObject arg0)
+	JObject AbstractMap::remove(JObject arg0) const
 	{
 		return callObjectMethod(
 			"remove",
@@ -104,21 +104,21 @@ namespace java::util
 			arg0.object<jobject>()
 		);
 	}
-	jint AbstractMap::size()
+	jint AbstractMap::size() const
 	{
 		return callMethod<jint>(
 			"size",
 			"()I"
 		);
 	}
-	JString AbstractMap::toString()
+	JString AbstractMap::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	JObject AbstractMap::values()
+	JObject AbstractMap::values() const
 	{
 		return callObjectMethod(
 			"values",

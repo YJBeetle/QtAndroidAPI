@@ -21,56 +21,56 @@ namespace android::nfc::tech
 			arg0.object()
 		);
 	}
-	void NfcB::close()
+	void NfcB::close() const
 	{
 		callMethod<void>(
 			"close",
 			"()V"
 		);
 	}
-	void NfcB::connect()
+	void NfcB::connect() const
 	{
 		callMethod<void>(
 			"connect",
 			"()V"
 		);
 	}
-	JByteArray NfcB::getApplicationData()
+	JByteArray NfcB::getApplicationData() const
 	{
 		return callObjectMethod(
 			"getApplicationData",
 			"()[B"
 		);
 	}
-	jint NfcB::getMaxTransceiveLength()
+	jint NfcB::getMaxTransceiveLength() const
 	{
 		return callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
 		);
 	}
-	JByteArray NfcB::getProtocolInfo()
+	JByteArray NfcB::getProtocolInfo() const
 	{
 		return callObjectMethod(
 			"getProtocolInfo",
 			"()[B"
 		);
 	}
-	android::nfc::Tag NfcB::getTag()
+	android::nfc::Tag NfcB::getTag() const
 	{
 		return callObjectMethod(
 			"getTag",
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jboolean NfcB::isConnected()
+	jboolean NfcB::isConnected() const
 	{
 		return callMethod<jboolean>(
 			"isConnected",
 			"()Z"
 		);
 	}
-	JByteArray NfcB::transceive(JByteArray arg0)
+	JByteArray NfcB::transceive(JByteArray arg0) const
 	{
 		return callObjectMethod(
 			"transceive",

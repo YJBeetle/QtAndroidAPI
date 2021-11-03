@@ -100,70 +100,70 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void PopupWindow::dismiss()
+	void PopupWindow::dismiss() const
 	{
 		callMethod<void>(
 			"dismiss",
 			"()V"
 		);
 	}
-	jint PopupWindow::getAnimationStyle()
+	jint PopupWindow::getAnimationStyle() const
 	{
 		return callMethod<jint>(
 			"getAnimationStyle",
 			"()I"
 		);
 	}
-	android::graphics::drawable::Drawable PopupWindow::getBackground()
+	android::graphics::drawable::Drawable PopupWindow::getBackground() const
 	{
 		return callObjectMethod(
 			"getBackground",
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	android::view::View PopupWindow::getContentView()
+	android::view::View PopupWindow::getContentView() const
 	{
 		return callObjectMethod(
 			"getContentView",
 			"()Landroid/view/View;"
 		);
 	}
-	jfloat PopupWindow::getElevation()
+	jfloat PopupWindow::getElevation() const
 	{
 		return callMethod<jfloat>(
 			"getElevation",
 			"()F"
 		);
 	}
-	android::transition::Transition PopupWindow::getEnterTransition()
+	android::transition::Transition PopupWindow::getEnterTransition() const
 	{
 		return callObjectMethod(
 			"getEnterTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	android::transition::Transition PopupWindow::getExitTransition()
+	android::transition::Transition PopupWindow::getExitTransition() const
 	{
 		return callObjectMethod(
 			"getExitTransition",
 			"()Landroid/transition/Transition;"
 		);
 	}
-	jint PopupWindow::getHeight()
+	jint PopupWindow::getHeight() const
 	{
 		return callMethod<jint>(
 			"getHeight",
 			"()I"
 		);
 	}
-	jint PopupWindow::getInputMethodMode()
+	jint PopupWindow::getInputMethodMode() const
 	{
 		return callMethod<jint>(
 			"getInputMethodMode",
 			"()I"
 		);
 	}
-	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0)
+	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0) const
 	{
 		return callMethod<jint>(
 			"getMaxAvailableHeight",
@@ -171,7 +171,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0, jint arg1)
+	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0, jint arg1) const
 	{
 		return callMethod<jint>(
 			"getMaxAvailableHeight",
@@ -180,7 +180,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0, jint arg1, jboolean arg2)
+	jint PopupWindow::getMaxAvailableHeight(android::view::View arg0, jint arg1, jboolean arg2) const
 	{
 		return callMethod<jint>(
 			"getMaxAvailableHeight",
@@ -190,91 +190,91 @@ namespace android::widget
 			arg2
 		);
 	}
-	jboolean PopupWindow::getOverlapAnchor()
+	jboolean PopupWindow::getOverlapAnchor() const
 	{
 		return callMethod<jboolean>(
 			"getOverlapAnchor",
 			"()Z"
 		);
 	}
-	jint PopupWindow::getSoftInputMode()
+	jint PopupWindow::getSoftInputMode() const
 	{
 		return callMethod<jint>(
 			"getSoftInputMode",
 			"()I"
 		);
 	}
-	jint PopupWindow::getWidth()
+	jint PopupWindow::getWidth() const
 	{
 		return callMethod<jint>(
 			"getWidth",
 			"()I"
 		);
 	}
-	jint PopupWindow::getWindowLayoutType()
+	jint PopupWindow::getWindowLayoutType() const
 	{
 		return callMethod<jint>(
 			"getWindowLayoutType",
 			"()I"
 		);
 	}
-	jboolean PopupWindow::isAboveAnchor()
+	jboolean PopupWindow::isAboveAnchor() const
 	{
 		return callMethod<jboolean>(
 			"isAboveAnchor",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isAttachedInDecor()
+	jboolean PopupWindow::isAttachedInDecor() const
 	{
 		return callMethod<jboolean>(
 			"isAttachedInDecor",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isClippingEnabled()
+	jboolean PopupWindow::isClippingEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isClippingEnabled",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isFocusable()
+	jboolean PopupWindow::isFocusable() const
 	{
 		return callMethod<jboolean>(
 			"isFocusable",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isOutsideTouchable()
+	jboolean PopupWindow::isOutsideTouchable() const
 	{
 		return callMethod<jboolean>(
 			"isOutsideTouchable",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isShowing()
+	jboolean PopupWindow::isShowing() const
 	{
 		return callMethod<jboolean>(
 			"isShowing",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isSplitTouchEnabled()
+	jboolean PopupWindow::isSplitTouchEnabled() const
 	{
 		return callMethod<jboolean>(
 			"isSplitTouchEnabled",
 			"()Z"
 		);
 	}
-	jboolean PopupWindow::isTouchable()
+	jboolean PopupWindow::isTouchable() const
 	{
 		return callMethod<jboolean>(
 			"isTouchable",
 			"()Z"
 		);
 	}
-	void PopupWindow::setAnimationStyle(jint arg0)
+	void PopupWindow::setAnimationStyle(jint arg0) const
 	{
 		callMethod<void>(
 			"setAnimationStyle",
@@ -282,7 +282,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setAttachedInDecor(jboolean arg0)
+	void PopupWindow::setAttachedInDecor(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setAttachedInDecor",
@@ -290,7 +290,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setBackgroundDrawable(android::graphics::drawable::Drawable arg0)
+	void PopupWindow::setBackgroundDrawable(android::graphics::drawable::Drawable arg0) const
 	{
 		callMethod<void>(
 			"setBackgroundDrawable",
@@ -298,7 +298,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setClippingEnabled(jboolean arg0)
+	void PopupWindow::setClippingEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setClippingEnabled",
@@ -306,7 +306,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setContentView(android::view::View arg0)
+	void PopupWindow::setContentView(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"setContentView",
@@ -314,7 +314,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setElevation(jfloat arg0)
+	void PopupWindow::setElevation(jfloat arg0) const
 	{
 		callMethod<void>(
 			"setElevation",
@@ -322,7 +322,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setEnterTransition(android::transition::Transition arg0)
+	void PopupWindow::setEnterTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setEnterTransition",
@@ -330,7 +330,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setExitTransition(android::transition::Transition arg0)
+	void PopupWindow::setExitTransition(android::transition::Transition arg0) const
 	{
 		callMethod<void>(
 			"setExitTransition",
@@ -338,7 +338,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setFocusable(jboolean arg0)
+	void PopupWindow::setFocusable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setFocusable",
@@ -346,7 +346,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setHeight(jint arg0)
+	void PopupWindow::setHeight(jint arg0) const
 	{
 		callMethod<void>(
 			"setHeight",
@@ -354,14 +354,14 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setIgnoreCheekPress()
+	void PopupWindow::setIgnoreCheekPress() const
 	{
 		callMethod<void>(
 			"setIgnoreCheekPress",
 			"()V"
 		);
 	}
-	void PopupWindow::setInputMethodMode(jint arg0)
+	void PopupWindow::setInputMethodMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setInputMethodMode",
@@ -369,7 +369,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setOnDismissListener(JObject arg0)
+	void PopupWindow::setOnDismissListener(JObject arg0) const
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -377,7 +377,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setOutsideTouchable(jboolean arg0)
+	void PopupWindow::setOutsideTouchable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOutsideTouchable",
@@ -385,7 +385,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setOverlapAnchor(jboolean arg0)
+	void PopupWindow::setOverlapAnchor(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setOverlapAnchor",
@@ -393,7 +393,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setSoftInputMode(jint arg0)
+	void PopupWindow::setSoftInputMode(jint arg0) const
 	{
 		callMethod<void>(
 			"setSoftInputMode",
@@ -401,7 +401,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setSplitTouchEnabled(jboolean arg0)
+	void PopupWindow::setSplitTouchEnabled(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setSplitTouchEnabled",
@@ -409,7 +409,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setTouchInterceptor(JObject arg0)
+	void PopupWindow::setTouchInterceptor(JObject arg0) const
 	{
 		callMethod<void>(
 			"setTouchInterceptor",
@@ -417,7 +417,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::setTouchable(jboolean arg0)
+	void PopupWindow::setTouchable(jboolean arg0) const
 	{
 		callMethod<void>(
 			"setTouchable",
@@ -425,7 +425,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setWidth(jint arg0)
+	void PopupWindow::setWidth(jint arg0) const
 	{
 		callMethod<void>(
 			"setWidth",
@@ -433,7 +433,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setWindowLayoutMode(jint arg0, jint arg1)
+	void PopupWindow::setWindowLayoutMode(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"setWindowLayoutMode",
@@ -442,7 +442,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void PopupWindow::setWindowLayoutType(jint arg0)
+	void PopupWindow::setWindowLayoutType(jint arg0) const
 	{
 		callMethod<void>(
 			"setWindowLayoutType",
@@ -450,7 +450,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::showAsDropDown(android::view::View arg0)
+	void PopupWindow::showAsDropDown(android::view::View arg0) const
 	{
 		callMethod<void>(
 			"showAsDropDown",
@@ -458,7 +458,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void PopupWindow::showAsDropDown(android::view::View arg0, jint arg1, jint arg2)
+	void PopupWindow::showAsDropDown(android::view::View arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"showAsDropDown",
@@ -468,7 +468,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void PopupWindow::showAsDropDown(android::view::View arg0, jint arg1, jint arg2, jint arg3)
+	void PopupWindow::showAsDropDown(android::view::View arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"showAsDropDown",
@@ -479,7 +479,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void PopupWindow::showAtLocation(android::view::View arg0, jint arg1, jint arg2, jint arg3)
+	void PopupWindow::showAtLocation(android::view::View arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"showAtLocation",
@@ -490,14 +490,14 @@ namespace android::widget
 			arg3
 		);
 	}
-	void PopupWindow::update()
+	void PopupWindow::update() const
 	{
 		callMethod<void>(
 			"update",
 			"()V"
 		);
 	}
-	void PopupWindow::update(jint arg0, jint arg1)
+	void PopupWindow::update(jint arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"update",
@@ -506,7 +506,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void PopupWindow::update(android::view::View arg0, jint arg1, jint arg2)
+	void PopupWindow::update(android::view::View arg0, jint arg1, jint arg2) const
 	{
 		callMethod<void>(
 			"update",
@@ -516,7 +516,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void PopupWindow::update(jint arg0, jint arg1, jint arg2, jint arg3)
+	void PopupWindow::update(jint arg0, jint arg1, jint arg2, jint arg3) const
 	{
 		callMethod<void>(
 			"update",
@@ -527,7 +527,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	void PopupWindow::update(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void PopupWindow::update(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4) const
 	{
 		callMethod<void>(
 			"update",
@@ -539,7 +539,7 @@ namespace android::widget
 			arg4
 		);
 	}
-	void PopupWindow::update(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
+	void PopupWindow::update(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4) const
 	{
 		callMethod<void>(
 			"update",

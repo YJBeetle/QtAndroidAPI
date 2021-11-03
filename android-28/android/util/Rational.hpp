@@ -25,22 +25,22 @@ namespace android::util
 		
 		// Methods
 		static android::util::Rational parseRational(JString arg0);
-		jint compareTo(android::util::Rational arg0);
-		jint compareTo(JObject arg0);
-		jdouble doubleValue();
-		jboolean equals(JObject arg0);
-		jfloat floatValue();
-		jint getDenominator();
-		jint getNumerator();
-		jint hashCode();
-		jint intValue();
-		jboolean isFinite();
-		jboolean isInfinite();
-		jboolean isNaN();
-		jboolean isZero();
-		jlong longValue();
-		jshort shortValue();
-		JString toString();
+		jint compareTo(android::util::Rational arg0) const;
+		jint compareTo(JObject arg0) const;
+		jdouble doubleValue() const;
+		jboolean equals(JObject arg0) const;
+		jfloat floatValue() const;
+		jint getDenominator() const;
+		jint getNumerator() const;
+		jint hashCode() const;
+		jint intValue() const;
+		jboolean isFinite() const;
+		jboolean isInfinite() const;
+		jboolean isNaN() const;
+		jboolean isZero() const;
+		jlong longValue() const;
+		jshort shortValue() const;
+		JString toString() const;
 	};
 } // namespace android::util
 

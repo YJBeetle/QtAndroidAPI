@@ -49,14 +49,14 @@ namespace android::location
 	// Constructors
 	
 	// Methods
-	jint LocationRequest::describeContents()
+	jint LocationRequest::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean LocationRequest::equals(JObject arg0)
+	jboolean LocationRequest::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -64,70 +64,70 @@ namespace android::location
 			arg0.object<jobject>()
 		);
 	}
-	jlong LocationRequest::getDurationMillis()
+	jlong LocationRequest::getDurationMillis() const
 	{
 		return callMethod<jlong>(
 			"getDurationMillis",
 			"()J"
 		);
 	}
-	jlong LocationRequest::getIntervalMillis()
+	jlong LocationRequest::getIntervalMillis() const
 	{
 		return callMethod<jlong>(
 			"getIntervalMillis",
 			"()J"
 		);
 	}
-	jlong LocationRequest::getMaxUpdateDelayMillis()
+	jlong LocationRequest::getMaxUpdateDelayMillis() const
 	{
 		return callMethod<jlong>(
 			"getMaxUpdateDelayMillis",
 			"()J"
 		);
 	}
-	jint LocationRequest::getMaxUpdates()
+	jint LocationRequest::getMaxUpdates() const
 	{
 		return callMethod<jint>(
 			"getMaxUpdates",
 			"()I"
 		);
 	}
-	jfloat LocationRequest::getMinUpdateDistanceMeters()
+	jfloat LocationRequest::getMinUpdateDistanceMeters() const
 	{
 		return callMethod<jfloat>(
 			"getMinUpdateDistanceMeters",
 			"()F"
 		);
 	}
-	jlong LocationRequest::getMinUpdateIntervalMillis()
+	jlong LocationRequest::getMinUpdateIntervalMillis() const
 	{
 		return callMethod<jlong>(
 			"getMinUpdateIntervalMillis",
 			"()J"
 		);
 	}
-	jint LocationRequest::getQuality()
+	jint LocationRequest::getQuality() const
 	{
 		return callMethod<jint>(
 			"getQuality",
 			"()I"
 		);
 	}
-	jint LocationRequest::hashCode()
+	jint LocationRequest::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString LocationRequest::toString()
+	JString LocationRequest::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void LocationRequest::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void LocationRequest::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",

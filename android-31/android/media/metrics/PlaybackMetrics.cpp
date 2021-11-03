@@ -199,14 +199,14 @@ namespace android::media::metrics
 	// Constructors
 	
 	// Methods
-	jint PlaybackMetrics::describeContents()
+	jint PlaybackMetrics::describeContents() const
 	{
 		return callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
 	}
-	jboolean PlaybackMetrics::equals(JObject arg0)
+	jboolean PlaybackMetrics::equals(JObject arg0) const
 	{
 		return callMethod<jboolean>(
 			"equals",
@@ -214,140 +214,140 @@ namespace android::media::metrics
 			arg0.object<jobject>()
 		);
 	}
-	jint PlaybackMetrics::getAudioUnderrunCount()
+	jint PlaybackMetrics::getAudioUnderrunCount() const
 	{
 		return callMethod<jint>(
 			"getAudioUnderrunCount",
 			"()I"
 		);
 	}
-	jint PlaybackMetrics::getContentType()
+	jint PlaybackMetrics::getContentType() const
 	{
 		return callMethod<jint>(
 			"getContentType",
 			"()I"
 		);
 	}
-	JByteArray PlaybackMetrics::getDrmSessionId()
+	JByteArray PlaybackMetrics::getDrmSessionId() const
 	{
 		return callObjectMethod(
 			"getDrmSessionId",
 			"()[B"
 		);
 	}
-	jint PlaybackMetrics::getDrmType()
+	jint PlaybackMetrics::getDrmType() const
 	{
 		return callMethod<jint>(
 			"getDrmType",
 			"()I"
 		);
 	}
-	JLongArray PlaybackMetrics::getExperimentIds()
+	JLongArray PlaybackMetrics::getExperimentIds() const
 	{
 		return callObjectMethod(
 			"getExperimentIds",
 			"()[J"
 		);
 	}
-	jlong PlaybackMetrics::getLocalBytesRead()
+	jlong PlaybackMetrics::getLocalBytesRead() const
 	{
 		return callMethod<jlong>(
 			"getLocalBytesRead",
 			"()J"
 		);
 	}
-	jlong PlaybackMetrics::getMediaDurationMillis()
+	jlong PlaybackMetrics::getMediaDurationMillis() const
 	{
 		return callMethod<jlong>(
 			"getMediaDurationMillis",
 			"()J"
 		);
 	}
-	android::os::Bundle PlaybackMetrics::getMetricsBundle()
+	android::os::Bundle PlaybackMetrics::getMetricsBundle() const
 	{
 		return callObjectMethod(
 			"getMetricsBundle",
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jlong PlaybackMetrics::getNetworkBytesRead()
+	jlong PlaybackMetrics::getNetworkBytesRead() const
 	{
 		return callMethod<jlong>(
 			"getNetworkBytesRead",
 			"()J"
 		);
 	}
-	jlong PlaybackMetrics::getNetworkTransferDurationMillis()
+	jlong PlaybackMetrics::getNetworkTransferDurationMillis() const
 	{
 		return callMethod<jlong>(
 			"getNetworkTransferDurationMillis",
 			"()J"
 		);
 	}
-	jint PlaybackMetrics::getPlaybackType()
+	jint PlaybackMetrics::getPlaybackType() const
 	{
 		return callMethod<jint>(
 			"getPlaybackType",
 			"()I"
 		);
 	}
-	JString PlaybackMetrics::getPlayerName()
+	JString PlaybackMetrics::getPlayerName() const
 	{
 		return callObjectMethod(
 			"getPlayerName",
 			"()Ljava/lang/String;"
 		);
 	}
-	JString PlaybackMetrics::getPlayerVersion()
+	JString PlaybackMetrics::getPlayerVersion() const
 	{
 		return callObjectMethod(
 			"getPlayerVersion",
 			"()Ljava/lang/String;"
 		);
 	}
-	jint PlaybackMetrics::getStreamSource()
+	jint PlaybackMetrics::getStreamSource() const
 	{
 		return callMethod<jint>(
 			"getStreamSource",
 			"()I"
 		);
 	}
-	jint PlaybackMetrics::getStreamType()
+	jint PlaybackMetrics::getStreamType() const
 	{
 		return callMethod<jint>(
 			"getStreamType",
 			"()I"
 		);
 	}
-	jint PlaybackMetrics::getVideoFramesDropped()
+	jint PlaybackMetrics::getVideoFramesDropped() const
 	{
 		return callMethod<jint>(
 			"getVideoFramesDropped",
 			"()I"
 		);
 	}
-	jint PlaybackMetrics::getVideoFramesPlayed()
+	jint PlaybackMetrics::getVideoFramesPlayed() const
 	{
 		return callMethod<jint>(
 			"getVideoFramesPlayed",
 			"()I"
 		);
 	}
-	jint PlaybackMetrics::hashCode()
+	jint PlaybackMetrics::hashCode() const
 	{
 		return callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
 	}
-	JString PlaybackMetrics::toString()
+	JString PlaybackMetrics::toString() const
 	{
 		return callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		);
 	}
-	void PlaybackMetrics::writeToParcel(android::os::Parcel arg0, jint arg1)
+	void PlaybackMetrics::writeToParcel(android::os::Parcel arg0, jint arg1) const
 	{
 		callMethod<void>(
 			"writeToParcel",
