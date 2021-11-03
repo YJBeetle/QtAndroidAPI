@@ -8,6 +8,7 @@
 #include <QJniEnvironment>
 
 #include <__JniUtils.hpp>
+#include <JString.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
 #include <android/app/AlertDialog_Builder.hpp>
@@ -35,7 +36,7 @@ void MainWindow::on_showToast_clicked()
     auto message = ui->toastText->text();
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([message] {
         auto toast = Toast::makeText(CONTEXT,
-                                     JSTRING(message),
+                                     message,
                                      0);
         toast.show();
     });
@@ -52,8 +53,8 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
         progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
-        progressDialog->setTitle(JSTRING(title));
-        progressDialog->setMessage(JSTRING(message));
+        progressDialog->setTitle(title);
+        progressDialog->setMessage(message);
 
         progressDialog->Dialog::show();
     }).waitForFinished();
@@ -74,8 +75,8 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
         progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
-        progressDialog->setTitle(JSTRING(title));
-        progressDialog->setMessage(JSTRING(message));
+        progressDialog->setTitle(title);
+        progressDialog->setMessage(message);
 
         progressDialog->setProgressStyle(ProgressDialog::STYLE_HORIZONTAL());
         progressDialog->setMax(PROGRESS_DIALOG_MAX);
@@ -112,8 +113,8 @@ void MainWindow::on_showAlert_clicked()
 {
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([] {
         auto dialog = AlertDialog_Builder(CONTEXT);
-        dialog.setMessage(JSTRING("提示信息"));
-        dialog.setTitle(JSTRING("标题"));
+        dialog.setMessage(QStringLiteral("提示信息"));
+        dialog.setTitle(QStringLiteral("标题"));
 
         JNINativeMethod methods[] {{"callCppAlertDialogPositive", "()V", reinterpret_cast<void *>(fromJavaAlertDialogPositive)}};
         QJniObject javaClass("QtAndroidApiExample/mainwindow");
@@ -130,8 +131,8 @@ void MainWindow::on_showAlert_clicked()
             "Landroid/content/DialogInterface$OnClickListener;"
             );
 
-        dialog.setNegativeButton(JSTRING("取消"), JObject());
-        dialog.setPositiveButton(JSTRING("确定"), clickListener);
+        dialog.setNegativeButton(QStringLiteral("取消"), JObject());
+        dialog.setPositiveButton(QStringLiteral("确定"), clickListener);
         dialog.show();
     }).waitForFinished();
 }
@@ -140,7 +141,7 @@ void MainWindow::on_openFile_clicked() // WIP
 {
     QNativeInterface::QAndroidApplication::runOnAndroidMainThread([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
-        intent.setType(JSTRING("image/*"));
+        intent.setType(QStringLiteral("image/*"));
 
 
 //            if (intent.resolveActivity(getPackageManager()) != null) {

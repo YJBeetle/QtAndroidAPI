@@ -15,11 +15,12 @@ toast.callMethod<void>("show");
 
 而现在你只需要
 ```
+#include "JString.hpp"
 #include "android/widget/Toast.hpp"
 using android::widget::Toast;
 using android::content::Context;
 auto toast = Toast::makeText(Context(QtAndroid::androidContext()),
-                             QJniObject::fromString("Message").object(),
+                             QStringLiteral("Message"),
                              0);
 toast.show();
 ```
