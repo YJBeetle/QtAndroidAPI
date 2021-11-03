@@ -130,7 +130,7 @@ void MainWindow::on_showAlert_clicked()
             "Landroid/content/DialogInterface$OnClickListener;"
             );
 
-        dialog.setNegativeButton(JSTRING("取消"), QAndroidJniObject());
+        dialog.setNegativeButton(JSTRING("取消"), JObject());
         dialog.setPositiveButton(JSTRING("确定"), clickListener);
         dialog.show();
     });
