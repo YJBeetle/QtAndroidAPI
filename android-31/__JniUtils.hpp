@@ -8,6 +8,6 @@
 
 #define JSTRING(str) QJniObject::fromString(str).object<jstring>()
 
-#define ACTIVITY QNativeInterface::QAndroidApplication::isActivityContext()?android::app::Activity(QNativeInterface::QAndroidApplication::context()):android::app::Activity()
-#define SERVICE QNativeInterface::QAndroidApplication::isActivityContext()?android::app::Service():android::app::Service(QNativeInterface::QAndroidApplication::context)
+#define ACTIVITY android::app::Activity(QNativeInterface::QAndroidApplication::isActivityContext()?QNativeInterface::QAndroidApplication::context():QJniObject())
+#define SERVICE android::app::Service(QNativeInterface::QAndroidApplication::isActivityContext()?QJniObject():QNativeInterface::QAndroidApplication::context)
 #define CONTEXT android::content::Context(QNativeInterface::QAndroidApplication::context())
