@@ -5,6 +5,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Core AndroidExtras REQUIRED)
 set(SRC_LIST 
 	"JObject.cpp" "JObject.hpp"
+	"JClass.cpp" "JClass.hpp"
+	"JString.cpp" "JString.hpp"
+	"JThrowable.cpp" "JThrowable.hpp"
+	"JArray.cpp" "JArray.hpp"
 	"android/Manifest.cpp" "android/Manifest.hpp"
 	"android/nfc/NfcAdapter.cpp" "android/nfc/NfcAdapter.hpp"
 	"android/nfc/Tag.cpp" "android/nfc/Tag.hpp"
