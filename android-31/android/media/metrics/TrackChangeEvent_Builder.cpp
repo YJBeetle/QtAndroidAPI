@@ -7,11 +7,11 @@ namespace android::media::metrics
 	// Fields
 	
 	// QJniObject forward
-	TrackChangeEvent_Builder::TrackChangeEvent_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TrackChangeEvent_Builder::TrackChangeEvent_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TrackChangeEvent_Builder::TrackChangeEvent_Builder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.metrics.TrackChangeEvent$Builder",
 			"(I)V",
 			arg0

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,13 +9,13 @@ namespace android::graphics
 
 namespace android::accessibilityservice
 {
-	class GestureDescription_StrokeDescription : public __JniBaseClass
+	class GestureDescription_StrokeDescription : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GestureDescription_StrokeDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GestureDescription_StrokeDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GestureDescription_StrokeDescription(QJniObject obj);
 		
 		// Constructors

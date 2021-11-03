@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace java::io
 
 namespace android::provider
 {
-	class Contacts_People : public __JniBaseClass
+	class Contacts_People : public JObject
 	{
 	public:
 		// Fields
@@ -48,7 +48,7 @@ namespace android::provider
 		static jstring PRIMARY_PHONE_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Contacts_People(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Contacts_People(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_People(QJniObject obj);
 		
 		// Constructors
@@ -61,7 +61,7 @@ namespace android::provider
 		static android::graphics::Bitmap loadContactPhoto(android::content::Context arg0, android::net::Uri arg1, jint arg2, android::graphics::BitmapFactory_Options arg3);
 		static void markAsContacted(android::content::ContentResolver arg0, jlong arg1);
 		static java::io::InputStream openContactPhotoInputStream(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static __JniBaseClass queryGroups(android::content::ContentResolver arg0, jlong arg1);
+		static JObject queryGroups(android::content::ContentResolver arg0, jlong arg1);
 		static void setPhotoData(android::content::ContentResolver arg0, android::net::Uri arg1, jbyteArray arg2);
 	};
 } // namespace android::provider

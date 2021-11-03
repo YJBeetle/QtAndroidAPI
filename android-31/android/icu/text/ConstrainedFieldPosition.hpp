@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::text
 {
@@ -9,13 +9,13 @@ namespace java::text
 
 namespace android::icu::text
 {
-	class ConstrainedFieldPosition : public __JniBaseClass
+	class ConstrainedFieldPosition : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConstrainedFieldPosition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConstrainedFieldPosition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConstrainedFieldPosition(QJniObject obj);
 		
 		// Constructors

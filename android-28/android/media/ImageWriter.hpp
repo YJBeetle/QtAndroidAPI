@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::media
 {
-	class ImageWriter : public __JniBaseClass
+	class ImageWriter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImageWriter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImageWriter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImageWriter(QJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::media
 		jint getFormat();
 		jint getMaxImages();
 		void queueInputImage(android::media::Image arg0);
-		void setOnImageReleasedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setOnImageReleasedListener(JObject arg0, android::os::Handler arg1);
 	};
 } // namespace android::media
 

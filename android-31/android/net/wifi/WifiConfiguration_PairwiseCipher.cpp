@@ -63,7 +63,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiConfiguration_PairwiseCipher::WifiConfiguration_PairwiseCipher(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration_PairwiseCipher::WifiConfiguration_PairwiseCipher(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

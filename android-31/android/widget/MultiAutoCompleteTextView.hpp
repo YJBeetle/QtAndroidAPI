@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./EditText.hpp"
@@ -24,15 +24,15 @@ namespace android::widget
 		
 		// Constructors
 		MultiAutoCompleteTextView(android::content::Context arg0);
-		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1);
-		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1);
+		MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2);
+		MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean enoughToFilter();
 		jstring getAccessibilityClassName();
 		void performValidation();
-		void setTokenizer(__JniBaseClass arg0);
+		void setTokenizer(JObject arg0);
 	};
 } // namespace android::widget
 

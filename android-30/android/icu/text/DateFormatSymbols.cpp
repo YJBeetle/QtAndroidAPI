@@ -51,63 +51,63 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	DateFormatSymbols::DateFormatSymbols(QJniObject obj) : __JniBaseClass(obj) {}
+	DateFormatSymbols::DateFormatSymbols(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"()V"
 		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::ULocale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/Locale;)V",
 			arg0.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, android::icu::util::ULocale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/Calendar;Landroid/icu/util/ULocale;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(android::icu::util::Calendar arg0, java::util::Locale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Landroid/icu/util/Calendar;Ljava/util/Locale;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(jclass arg0, android::icu::util::ULocale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/lang/Class;Landroid/icu/util/ULocale;)V",
 			arg0,
 			arg1.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(jclass arg0, java::util::Locale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/lang/Class;Ljava/util/Locale;)V",
 			arg0,
 			arg1.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, android::icu::util::ULocale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/ResourceBundle;Landroid/icu/util/ULocale;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::ResourceBundle arg0, java::util::Locale arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateFormatSymbols",
 			"(Ljava/util/ResourceBundle;Ljava/util/Locale;)V",
 			arg0.object(),

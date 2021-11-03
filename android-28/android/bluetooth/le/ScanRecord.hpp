@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,13 +13,13 @@ namespace android::util
 
 namespace android::bluetooth::le
 {
-	class ScanRecord : public __JniBaseClass
+	class ScanRecord : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ScanRecord(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScanRecord(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScanRecord(QJniObject obj);
 		
 		// Constructors
@@ -31,8 +31,8 @@ namespace android::bluetooth::le
 		jbyteArray getManufacturerSpecificData(jint arg0);
 		android::util::SparseArray getManufacturerSpecificData();
 		jbyteArray getServiceData(android::os::ParcelUuid arg0);
-		__JniBaseClass getServiceData();
-		__JniBaseClass getServiceUuids();
+		JObject getServiceData();
+		JObject getServiceUuids();
 		jint getTxPowerLevel();
 		jstring toString();
 	};

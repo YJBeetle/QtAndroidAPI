@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::accessibilityservice
 {
-	class AccessibilityGestureEvent : public __JniBaseClass
+	class AccessibilityGestureEvent : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityGestureEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityGestureEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityGestureEvent(QJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::accessibilityservice
 		jint describeContents();
 		jint getDisplayId();
 		jint getGestureId();
-		__JniBaseClass getMotionEvents();
+		JObject getMotionEvents();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

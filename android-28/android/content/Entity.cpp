@@ -8,11 +8,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	Entity::Entity(QJniObject obj) : __JniBaseClass(obj) {}
+	Entity::Entity(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Entity::Entity(android::content::ContentValues arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Entity",
 			"(Landroid/content/ContentValues;)V",
 			arg0.object()

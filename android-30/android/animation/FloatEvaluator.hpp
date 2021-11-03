@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,13 +13,13 @@ namespace java::lang
 
 namespace android::animation
 {
-	class FloatEvaluator : public __JniBaseClass
+	class FloatEvaluator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FloatEvaluator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FloatEvaluator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FloatEvaluator(QJniObject obj);
 		
 		// Constructors

@@ -5,7 +5,7 @@
 namespace android::media::metrics
 {
 	// Fields
-	__JniBaseClass TrackChangeEvent::CREATOR()
+	JObject TrackChangeEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.metrics.TrackChangeEvent",

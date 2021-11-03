@@ -7,17 +7,17 @@ namespace dalvik::system
 	// Fields
 	
 	// QJniObject forward
-	DexFile::DexFile(QJniObject obj) : __JniBaseClass(obj) {}
+	DexFile::DexFile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DexFile::DexFile(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"dalvik.system.DexFile",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	DexFile::DexFile(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"dalvik.system.DexFile",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -51,7 +51,7 @@ namespace dalvik::system
 			"()V"
 		);
 	}
-	__JniBaseClass DexFile::entries()
+	JObject DexFile::entries()
 	{
 		return callObjectMethod(
 			"entries",

@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GetByDocumentIdRequest_Builder::GetByDocumentIdRequest_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.GetByDocumentIdRequest$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -25,7 +25,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(__JniBaseClass arg0)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addIds(JObject arg0)
 	{
 		return callObjectMethod(
 			"addIds",
@@ -33,7 +33,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(jstring arg0, __JniBaseClass arg1)
+	android::app::appsearch::GetByDocumentIdRequest_Builder GetByDocumentIdRequest_Builder::addProjection(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addProjection",

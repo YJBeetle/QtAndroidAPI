@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class MbmsStreamingSessionCallback : public __JniBaseClass
+	class MbmsStreamingSessionCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MbmsStreamingSessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsStreamingSessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsStreamingSessionCallback(QJniObject obj);
 		
 		// Constructors
@@ -20,7 +20,7 @@ namespace android::telephony::mbms
 		// Methods
 		void onError(jint arg0, jstring arg1);
 		void onMiddlewareReady();
-		void onStreamingServicesUpdated(__JniBaseClass arg0);
+		void onStreamingServicesUpdated(JObject arg0);
 	};
 } // namespace android::telephony::mbms
 

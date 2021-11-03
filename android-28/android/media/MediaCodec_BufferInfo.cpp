@@ -29,11 +29,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCodec_BufferInfo::MediaCodec_BufferInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_BufferInfo::MediaCodec_BufferInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodec_BufferInfo::MediaCodec_BufferInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodec$BufferInfo",
 			"()V"
 		) {}

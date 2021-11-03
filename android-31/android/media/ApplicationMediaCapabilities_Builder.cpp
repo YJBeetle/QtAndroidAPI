@@ -6,11 +6,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	ApplicationMediaCapabilities_Builder::ApplicationMediaCapabilities_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationMediaCapabilities_Builder::ApplicationMediaCapabilities_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationMediaCapabilities_Builder::ApplicationMediaCapabilities_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ApplicationMediaCapabilities$Builder",
 			"()V"
 		) {}

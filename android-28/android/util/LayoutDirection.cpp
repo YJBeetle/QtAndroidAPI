@@ -33,7 +33,7 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	LayoutDirection::LayoutDirection(QJniObject obj) : __JniBaseClass(obj) {}
+	LayoutDirection::LayoutDirection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

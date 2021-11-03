@@ -11,7 +11,7 @@ namespace java::nio::channels::spi
 	// Fields
 	
 	// QJniObject forward
-	SelectorProvider::SelectorProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	SelectorProvider::SelectorProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -24,7 +24,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
-	__JniBaseClass SelectorProvider::inheritedChannel()
+	JObject SelectorProvider::inheritedChannel()
 	{
 		return callObjectMethod(
 			"inheritedChannel",
@@ -38,7 +38,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel(__JniBaseClass arg0)
+	java::nio::channels::DatagramChannel SelectorProvider::openDatagramChannel(JObject arg0)
 	{
 		return callObjectMethod(
 			"openDatagramChannel",
@@ -67,7 +67,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
-	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel(__JniBaseClass arg0)
+	java::nio::channels::ServerSocketChannel SelectorProvider::openServerSocketChannel(JObject arg0)
 	{
 		return callObjectMethod(
 			"openServerSocketChannel",
@@ -82,7 +82,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel(__JniBaseClass arg0)
+	java::nio::channels::SocketChannel SelectorProvider::openSocketChannel(JObject arg0)
 	{
 		return callObjectMethod(
 			"openSocketChannel",

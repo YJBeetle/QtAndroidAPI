@@ -5,7 +5,7 @@ namespace android::drm
 	// Fields
 	
 	// QJniObject forward
-	ProcessedData::ProcessedData(QJniObject obj) : __JniBaseClass(obj) {}
+	ProcessedData::ProcessedData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

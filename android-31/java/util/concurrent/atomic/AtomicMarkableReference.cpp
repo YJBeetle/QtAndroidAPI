@@ -5,11 +5,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	AtomicMarkableReference::AtomicMarkableReference(QJniObject obj) : __JniBaseClass(obj) {}
+	AtomicMarkableReference::AtomicMarkableReference(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicMarkableReference::AtomicMarkableReference(jobject arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicMarkableReference",
 			"(Ljava/lang/Object;Z)V",
 			arg0,

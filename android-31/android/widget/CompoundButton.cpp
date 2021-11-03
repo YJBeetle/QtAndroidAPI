@@ -22,14 +22,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1)
+	CompoundButton::CompoundButton(android::content::Context arg0, JObject arg1)
 		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	CompoundButton::CompoundButton(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	CompoundButton::CompoundButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	CompoundButton::CompoundButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::Button(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -142,7 +142,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void CompoundButton::onRestoreInstanceState(__JniBaseClass arg0)
+	void CompoundButton::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -150,7 +150,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass CompoundButton::onSaveInstanceState()
+	JObject CompoundButton::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -220,7 +220,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void CompoundButton::setOnCheckedChangeListener(__JniBaseClass arg0)
+	void CompoundButton::setOnCheckedChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCheckedChangeListener",

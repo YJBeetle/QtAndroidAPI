@@ -52,7 +52,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	DialerFilter::DialerFilter(android::content::Context arg0, __JniBaseClass arg1)
+	DialerFilter::DialerFilter(android::content::Context arg0, JObject arg1)
 		: android::widget::RelativeLayout(
 			"android.widget.DialerFilter",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -129,7 +129,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void DialerFilter::removeFilterWatcher(__JniBaseClass arg0)
+	void DialerFilter::removeFilterWatcher(JObject arg0)
 	{
 		callMethod<void>(
 			"removeFilterWatcher",
@@ -137,7 +137,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setDigitsWatcher(__JniBaseClass arg0)
+	void DialerFilter::setDigitsWatcher(JObject arg0)
 	{
 		callMethod<void>(
 			"setDigitsWatcher",
@@ -145,7 +145,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setFilterWatcher(__JniBaseClass arg0)
+	void DialerFilter::setFilterWatcher(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilterWatcher",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void DialerFilter::setLettersWatcher(__JniBaseClass arg0)
+	void DialerFilter::setLettersWatcher(JObject arg0)
 	{
 		callMethod<void>(
 			"setLettersWatcher",

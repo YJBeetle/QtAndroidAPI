@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	Property::Property(QJniObject obj) : __JniBaseClass(obj) {}
+	Property::Property(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Property::Property(jclass arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.Property",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,

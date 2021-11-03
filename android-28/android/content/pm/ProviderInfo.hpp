@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
@@ -15,7 +15,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_SINGLE_USER();
 		jstring authority();
 		jint flags();
@@ -38,7 +38,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

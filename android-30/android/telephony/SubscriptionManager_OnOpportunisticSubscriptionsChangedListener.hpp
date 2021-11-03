@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class SubscriptionManager_OnOpportunisticSubscriptionsChangedListener : public __JniBaseClass
+	class SubscriptionManager_OnOpportunisticSubscriptionsChangedListener : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QJniObject obj);
 		
 		// Constructors

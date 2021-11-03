@@ -18,7 +18,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean AbstractQueue::addAll(__JniBaseClass arg0)
+	jboolean AbstractQueue::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",

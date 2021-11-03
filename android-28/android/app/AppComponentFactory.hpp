@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,13 +33,13 @@ namespace java::lang
 
 namespace android::app
 {
-	class AppComponentFactory : public __JniBaseClass
+	class AppComponentFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppComponentFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppComponentFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppComponentFactory(QJniObject obj);
 		
 		// Constructors

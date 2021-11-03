@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace java::io
 
 namespace android::os
 {
-	class DropBoxManager : public __JniBaseClass
+	class DropBoxManager : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::os
 		static jint IS_TEXT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DropBoxManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DropBoxManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DropBoxManager(QJniObject obj);
 		
 		// Constructors

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::audiofx
 {
-	class Equalizer_Settings : public __JniBaseClass
+	class Equalizer_Settings : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::media::audiofx
 		jshort numBands();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Equalizer_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Equalizer_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Equalizer_Settings(QJniObject obj);
 		
 		// Constructors

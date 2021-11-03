@@ -53,7 +53,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject Properties::compute(jobject arg0, __JniBaseClass arg1)
+	jobject Properties::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -62,7 +62,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Properties::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject Properties::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -71,7 +71,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Properties::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject Properties::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -104,14 +104,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Properties::elements()
+	JObject Properties::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Properties::entrySet()
+	JObject Properties::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -126,7 +126,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Properties::forEach(__JniBaseClass arg0)
+	void Properties::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -182,14 +182,14 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass Properties::keySet()
+	JObject Properties::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Properties::keys()
+	JObject Properties::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -236,7 +236,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Properties::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject Properties::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -246,7 +246,7 @@ namespace java::util
 			arg2.object()
 		).object<jobject>();
 	}
-	__JniBaseClass Properties::propertyNames()
+	JObject Properties::propertyNames()
 	{
 		return callObjectMethod(
 			"propertyNames",
@@ -262,7 +262,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void Properties::putAll(__JniBaseClass arg0)
+	void Properties::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -315,7 +315,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void Properties::replaceAll(__JniBaseClass arg0)
+	void Properties::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -395,7 +395,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	__JniBaseClass Properties::stringPropertyNames()
+	JObject Properties::stringPropertyNames()
 	{
 		return callObjectMethod(
 			"stringPropertyNames",
@@ -409,7 +409,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Properties::values()
+	JObject Properties::values()
 	{
 		return callObjectMethod(
 			"values",

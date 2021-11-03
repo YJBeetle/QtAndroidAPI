@@ -5,11 +5,11 @@ namespace android::app::backup
 	// Fields
 	
 	// QJniObject forward
-	RestoreObserver::RestoreObserver(QJniObject obj) : __JniBaseClass(obj) {}
+	RestoreObserver::RestoreObserver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RestoreObserver::RestoreObserver()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.backup.RestoreObserver",
 			"()V"
 		) {}

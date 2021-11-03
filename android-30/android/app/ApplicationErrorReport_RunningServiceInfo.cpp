@@ -19,23 +19,23 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$RunningServiceInfo",
 			"()V"
 		) {}
 	ApplicationErrorReport_RunningServiceInfo::ApplicationErrorReport_RunningServiceInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$RunningServiceInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_RunningServiceInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationErrorReport_RunningServiceInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

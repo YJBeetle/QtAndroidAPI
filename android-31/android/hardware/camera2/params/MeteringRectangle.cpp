@@ -29,18 +29,18 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QJniObject forward
-	MeteringRectangle::MeteringRectangle(QJniObject obj) : __JniBaseClass(obj) {}
+	MeteringRectangle::MeteringRectangle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MeteringRectangle::MeteringRectangle(android::graphics::Rect arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"(Landroid/graphics/Rect;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	MeteringRectangle::MeteringRectangle(android::graphics::Point arg0, android::util::Size arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"(Landroid/graphics/Point;Landroid/util/Size;I)V",
 			arg0.object(),
@@ -48,7 +48,7 @@ namespace android::hardware::camera2::params
 			arg2
 		) {}
 	MeteringRectangle::MeteringRectangle(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.MeteringRectangle",
 			"(IIIII)V",
 			arg0,

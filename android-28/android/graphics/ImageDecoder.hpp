@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -49,7 +49,7 @@ namespace java::nio
 
 namespace android::graphics
 {
-	class ImageDecoder : public __JniBaseClass
+	class ImageDecoder : public JObject
 	{
 	public:
 		// Fields
@@ -61,7 +61,7 @@ namespace android::graphics
 		static jint MEMORY_POLICY_LOW_RAM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImageDecoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImageDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImageDecoder(QJniObject obj);
 		
 		// Constructors
@@ -73,15 +73,15 @@ namespace android::graphics
 		static android::graphics::ImageDecoder_Source createSource(android::content::res::AssetManager arg0, jstring arg1);
 		static android::graphics::ImageDecoder_Source createSource(android::content::res::Resources arg0, jint arg1);
 		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0);
-		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
+		static android::graphics::Bitmap decodeBitmap(android::graphics::ImageDecoder_Source arg0, JObject arg1);
 		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0);
-		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1);
+		static android::graphics::drawable::Drawable decodeDrawable(android::graphics::ImageDecoder_Source arg0, JObject arg1);
 		void close();
 		jint getAllocator();
 		android::graphics::Rect getCrop();
 		jint getMemorySizePolicy();
-		__JniBaseClass getOnPartialImageListener();
-		__JniBaseClass getPostProcessor();
+		JObject getOnPartialImageListener();
+		JObject getPostProcessor();
 		jboolean isDecodeAsAlphaMaskEnabled();
 		jboolean isMutableRequired();
 		jboolean isUnpremultipliedRequired();
@@ -90,8 +90,8 @@ namespace android::graphics
 		void setDecodeAsAlphaMaskEnabled(jboolean arg0);
 		void setMemorySizePolicy(jint arg0);
 		void setMutableRequired(jboolean arg0);
-		void setOnPartialImageListener(__JniBaseClass arg0);
-		void setPostProcessor(__JniBaseClass arg0);
+		void setOnPartialImageListener(JObject arg0);
+		void setPostProcessor(JObject arg0);
 		void setTargetColorSpace(android::graphics::ColorSpace arg0);
 		void setTargetSampleSize(jint arg0);
 		void setTargetSize(jint arg0, jint arg1);

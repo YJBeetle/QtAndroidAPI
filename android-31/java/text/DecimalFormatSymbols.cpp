@@ -8,16 +8,16 @@ namespace java::text
 	// Fields
 	
 	// QJniObject forward
-	DecimalFormatSymbols::DecimalFormatSymbols(QJniObject obj) : __JniBaseClass(obj) {}
+	DecimalFormatSymbols::DecimalFormatSymbols(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DecimalFormatSymbols::DecimalFormatSymbols()
-		: __JniBaseClass(
+		: JObject(
 			"java.text.DecimalFormatSymbols",
 			"()V"
 		) {}
 	DecimalFormatSymbols::DecimalFormatSymbols(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.DecimalFormatSymbols",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

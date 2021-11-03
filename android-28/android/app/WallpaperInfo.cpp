@@ -11,7 +11,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass WallpaperInfo::CREATOR()
+	JObject WallpaperInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperInfo",
@@ -21,11 +21,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	WallpaperInfo::WallpaperInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	WallpaperInfo::WallpaperInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WallpaperInfo::WallpaperInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.WallpaperInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
 			arg0.object(),
@@ -40,7 +40,7 @@ namespace android::app
 			"()I"
 		);
 	}
-	void WallpaperInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void WallpaperInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

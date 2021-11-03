@@ -7,11 +7,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaScannerConnection::MediaScannerConnection(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaScannerConnection::MediaScannerConnection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MediaScannerConnection::MediaScannerConnection(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	MediaScannerConnection::MediaScannerConnection(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.media.MediaScannerConnection",
 			"(Landroid/content/Context;Landroid/media/MediaScannerConnection$MediaScannerConnectionClient;)V",
 			arg0.object(),
@@ -19,7 +19,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	void MediaScannerConnection::scanFile(android::content::Context arg0, jarray arg1, jarray arg2, __JniBaseClass arg3)
+	void MediaScannerConnection::scanFile(android::content::Context arg0, jarray arg1, jarray arg2, JObject arg3)
 	{
 		callStaticMethod<void>(
 			"android.media.MediaScannerConnection",
@@ -52,7 +52,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	void MediaScannerConnection::onServiceConnected(android::content::ComponentName arg0, __JniBaseClass arg1)
+	void MediaScannerConnection::onServiceConnected(android::content::ComponentName arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onServiceConnected",

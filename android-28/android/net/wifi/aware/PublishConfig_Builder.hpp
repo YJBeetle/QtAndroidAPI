@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::aware
 {
@@ -9,13 +9,13 @@ namespace android::net::wifi::aware
 
 namespace android::net::wifi::aware
 {
-	class PublishConfig_Builder : public __JniBaseClass
+	class PublishConfig_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PublishConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PublishConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PublishConfig_Builder(QJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::net::wifi::aware
 		
 		// Methods
 		android::net::wifi::aware::PublishConfig build();
-		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(__JniBaseClass arg0);
+		android::net::wifi::aware::PublishConfig_Builder setMatchFilter(JObject arg0);
 		android::net::wifi::aware::PublishConfig_Builder setPublishType(jint arg0);
 		android::net::wifi::aware::PublishConfig_Builder setRangingEnabled(jboolean arg0);
 		android::net::wifi::aware::PublishConfig_Builder setServiceName(jstring arg0);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dialog.hpp"
 #include "./AlertDialog.hpp"
 
@@ -31,16 +31,16 @@ namespace android::app
 		// Constructors
 		DatePickerDialog(android::content::Context arg0);
 		DatePickerDialog(android::content::Context arg0, jint arg1);
-		DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4);
-		DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5);
+		DatePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4);
+		DatePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		android::widget::DatePicker getDatePicker();
-		void onClick(__JniBaseClass arg0, jint arg1);
+		void onClick(JObject arg0, jint arg1);
 		void onDateChanged(android::widget::DatePicker arg0, jint arg1, jint arg2, jint arg3);
 		void onRestoreInstanceState(android::os::Bundle arg0);
 		android::os::Bundle onSaveInstanceState();
-		void setOnDateSetListener(__JniBaseClass arg0);
+		void setOnDateSetListener(JObject arg0);
 		void updateDate(jint arg0, jint arg1, jint arg2);
 	};
 } // namespace android::app

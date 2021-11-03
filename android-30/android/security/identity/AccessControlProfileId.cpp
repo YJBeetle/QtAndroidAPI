@@ -5,11 +5,11 @@ namespace android::security::identity
 	// Fields
 	
 	// QJniObject forward
-	AccessControlProfileId::AccessControlProfileId(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessControlProfileId::AccessControlProfileId(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessControlProfileId::AccessControlProfileId(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.identity.AccessControlProfileId",
 			"(I)V",
 			arg0

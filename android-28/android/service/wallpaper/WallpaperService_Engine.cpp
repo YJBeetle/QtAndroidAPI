@@ -12,11 +12,11 @@ namespace android::service::wallpaper
 	// Fields
 	
 	// QJniObject forward
-	WallpaperService_Engine::WallpaperService_Engine(QJniObject obj) : __JniBaseClass(obj) {}
+	WallpaperService_Engine::WallpaperService_Engine(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WallpaperService_Engine::WallpaperService_Engine(android::service::wallpaper::WallpaperService arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.wallpaper.WallpaperService$Engine",
 			"(Landroid/service/wallpaper/WallpaperService;)V",
 			arg0.object()
@@ -37,7 +37,7 @@ namespace android::service::wallpaper
 			"()I"
 		);
 	}
-	__JniBaseClass WallpaperService_Engine::getSurfaceHolder()
+	JObject WallpaperService_Engine::getSurfaceHolder()
 	{
 		return callObjectMethod(
 			"getSurfaceHolder",
@@ -93,7 +93,7 @@ namespace android::service::wallpaper
 			"()Landroid/app/WallpaperColors;"
 		);
 	}
-	void WallpaperService_Engine::onCreate(__JniBaseClass arg0)
+	void WallpaperService_Engine::onCreate(JObject arg0)
 	{
 		callMethod<void>(
 			"onCreate",
@@ -130,7 +130,7 @@ namespace android::service::wallpaper
 			arg5
 		);
 	}
-	void WallpaperService_Engine::onSurfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	void WallpaperService_Engine::onSurfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onSurfaceChanged",
@@ -141,7 +141,7 @@ namespace android::service::wallpaper
 			arg3
 		);
 	}
-	void WallpaperService_Engine::onSurfaceCreated(__JniBaseClass arg0)
+	void WallpaperService_Engine::onSurfaceCreated(JObject arg0)
 	{
 		callMethod<void>(
 			"onSurfaceCreated",
@@ -149,7 +149,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onSurfaceDestroyed(__JniBaseClass arg0)
+	void WallpaperService_Engine::onSurfaceDestroyed(JObject arg0)
 	{
 		callMethod<void>(
 			"onSurfaceDestroyed",
@@ -157,7 +157,7 @@ namespace android::service::wallpaper
 			arg0.object()
 		);
 	}
-	void WallpaperService_Engine::onSurfaceRedrawNeeded(__JniBaseClass arg0)
+	void WallpaperService_Engine::onSurfaceRedrawNeeded(JObject arg0)
 	{
 		callMethod<void>(
 			"onSurfaceRedrawNeeded",

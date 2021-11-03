@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssAntennaInfo_SphericalCorrections::CREATOR()
+	JObject GnssAntennaInfo_SphericalCorrections::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssAntennaInfo$SphericalCorrections",
@@ -14,11 +14,11 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(QJniObject obj) : __JniBaseClass(obj) {}
+	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssAntennaInfo_SphericalCorrections::GnssAntennaInfo_SphericalCorrections(jarray arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssAntennaInfo$SphericalCorrections",
 			"([[D[[D)V",
 			arg0,

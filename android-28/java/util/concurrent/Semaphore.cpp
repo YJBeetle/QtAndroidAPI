@@ -6,17 +6,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	Semaphore::Semaphore(QJniObject obj) : __JniBaseClass(obj) {}
+	Semaphore::Semaphore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Semaphore::Semaphore(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Semaphore",
 			"(I)V",
 			arg0
 		) {}
 	Semaphore::Semaphore(jint arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Semaphore",
 			"(IZ)V",
 			arg0,

@@ -9,11 +9,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextClassification_Builder::TextClassification_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassification_Builder::TextClassification_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextClassification_Builder::TextClassification_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextClassification$Builder",
 			"()V"
 		) {}
@@ -75,7 +75,7 @@ namespace android::view::textclassifier
 			arg0
 		);
 	}
-	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassification_Builder TextClassification_Builder::setOnClickListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"setOnClickListener",

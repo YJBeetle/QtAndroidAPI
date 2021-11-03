@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,19 +13,19 @@ namespace android::net
 
 namespace android::net
 {
-	class ConnectivityDiagnosticsManager : public __JniBaseClass
+	class ConnectivityDiagnosticsManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConnectivityDiagnosticsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConnectivityDiagnosticsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectivityDiagnosticsManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void registerConnectivityDiagnosticsCallback(android::net::NetworkRequest arg0, __JniBaseClass arg1, android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg2);
+		void registerConnectivityDiagnosticsCallback(android::net::NetworkRequest arg0, JObject arg1, android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg2);
 		void unregisterConnectivityDiagnosticsCallback(android::net::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback arg0);
 	};
 } // namespace android::net

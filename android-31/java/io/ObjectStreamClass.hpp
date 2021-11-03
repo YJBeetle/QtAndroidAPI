@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -45,14 +45,14 @@ namespace java::security
 
 namespace java::io
 {
-	class ObjectStreamClass : public __JniBaseClass
+	class ObjectStreamClass : public JObject
 	{
 	public:
 		// Fields
 		static jarray NO_FIELDS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ObjectStreamClass(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ObjectStreamClass(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectStreamClass(QJniObject obj);
 		
 		// Constructors

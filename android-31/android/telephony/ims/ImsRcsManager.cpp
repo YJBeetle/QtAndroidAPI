@@ -15,12 +15,12 @@ namespace android::telephony::ims
 	}
 	
 	// QJniObject forward
-	ImsRcsManager::ImsRcsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ImsRcsManager::ImsRcsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void ImsRcsManager::getRegistrationState(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ImsRcsManager::getRegistrationState(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getRegistrationState",
@@ -29,7 +29,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsRcsManager::getRegistrationTransportType(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ImsRcsManager::getRegistrationTransportType(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getRegistrationTransportType",
@@ -45,7 +45,7 @@ namespace android::telephony::ims
 			"()Landroid/telephony/ims/RcsUceAdapter;"
 		);
 	}
-	void ImsRcsManager::registerImsRegistrationCallback(__JniBaseClass arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
+	void ImsRcsManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
 	{
 		callMethod<void>(
 			"registerImsRegistrationCallback",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::service::autofill
 {
-	class SavedDatasetsInfo : public __JniBaseClass
+	class SavedDatasetsInfo : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::service::autofill
 		static jstring TYPE_PASSWORDS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SavedDatasetsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SavedDatasetsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SavedDatasetsInfo(QJniObject obj);
 		
 		// Constructors

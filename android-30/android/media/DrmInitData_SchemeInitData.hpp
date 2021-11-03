@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace android::media
 {
-	class DrmInitData_SchemeInitData : public __JniBaseClass
+	class DrmInitData_SchemeInitData : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::media
 		java::util::UUID uuid();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmInitData_SchemeInitData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInitData_SchemeInitData(QJniObject obj);
 		
 		// Constructors

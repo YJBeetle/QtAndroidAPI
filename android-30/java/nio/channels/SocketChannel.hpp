@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./spi/AbstractInterruptibleChannel.hpp"
 #include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
@@ -37,7 +37,7 @@ namespace java::nio::channels
 		
 		// Methods
 		static java::nio::channels::SocketChannel open();
-		static java::nio::channels::SocketChannel open(__JniBaseClass arg0);
+		static java::nio::channels::SocketChannel open(JObject arg0);
 		static java::nio::channels::SocketChannel open(java::net::SocketAddress arg0);
 		java::nio::channels::SocketChannel bind(java::net::SocketAddress arg0);
 		jboolean connect(java::net::SocketAddress arg0);
@@ -49,7 +49,7 @@ namespace java::nio::channels
 		jint read(java::nio::ByteBuffer arg0);
 		jlong read(jarray arg0);
 		jlong read(jarray arg0, jint arg1, jint arg2);
-		java::nio::channels::SocketChannel setOption(__JniBaseClass arg0, jobject arg1);
+		java::nio::channels::SocketChannel setOption(JObject arg0, jobject arg1);
 		java::nio::channels::SocketChannel shutdownInput();
 		java::nio::channels::SocketChannel shutdownOutput();
 		java::net::Socket socket();

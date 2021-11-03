@@ -4,7 +4,7 @@
 namespace android::net::sip
 {
 	// Fields
-	__JniBaseClass SipProfile::CREATOR()
+	JObject SipProfile::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.sip.SipProfile",
@@ -14,7 +14,7 @@ namespace android::net::sip
 	}
 	
 	// QJniObject forward
-	SipProfile::SipProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	SipProfile::SipProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

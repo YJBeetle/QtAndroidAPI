@@ -19,7 +19,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QJniObject forward
-	MbmsErrors_GroupCallErrors::MbmsErrors_GroupCallErrors(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsErrors_GroupCallErrors::MbmsErrors_GroupCallErrors(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

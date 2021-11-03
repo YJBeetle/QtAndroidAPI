@@ -255,11 +255,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore::MediaStore(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore::MediaStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore::MediaStore()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore",
 			"()V"
 		) {}

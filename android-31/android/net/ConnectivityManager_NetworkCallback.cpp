@@ -15,16 +15,16 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ConnectivityManager$NetworkCallback",
 			"()V"
 		) {}
 	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ConnectivityManager$NetworkCallback",
 			"(I)V",
 			arg0

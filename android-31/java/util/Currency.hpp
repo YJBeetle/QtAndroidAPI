@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -29,19 +29,19 @@ namespace java::util::regex
 
 namespace java::util
 {
-	class Currency : public __JniBaseClass
+	class Currency : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Currency(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Currency(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Currency(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getAvailableCurrencies();
+		static JObject getAvailableCurrencies();
 		static java::util::Currency getInstance(jstring arg0);
 		static java::util::Currency getInstance(java::util::Locale arg0);
 		jstring getCurrencyCode();

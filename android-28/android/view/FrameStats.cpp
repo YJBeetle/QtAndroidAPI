@@ -12,11 +12,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	FrameStats::FrameStats(QJniObject obj) : __JniBaseClass(obj) {}
+	FrameStats::FrameStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FrameStats::FrameStats()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.FrameStats",
 			"()V"
 		) {}

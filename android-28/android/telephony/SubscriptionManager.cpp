@@ -69,7 +69,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SubscriptionManager::SubscriptionManager(QJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionManager::SubscriptionManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -131,7 +131,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	__JniBaseClass SubscriptionManager::getAccessibleSubscriptionInfoList()
+	JObject SubscriptionManager::getAccessibleSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getAccessibleSubscriptionInfoList",
@@ -168,14 +168,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass SubscriptionManager::getActiveSubscriptionInfoList()
+	JObject SubscriptionManager::getActiveSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SubscriptionManager::getSubscriptionPlans(jint arg0)
+	JObject SubscriptionManager::getSubscriptionPlans(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionPlans",
@@ -219,7 +219,7 @@ namespace android::telephony
 			arg2
 		);
 	}
-	void SubscriptionManager::setSubscriptionPlans(jint arg0, __JniBaseClass arg1)
+	void SubscriptionManager::setSubscriptionPlans(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setSubscriptionPlans",

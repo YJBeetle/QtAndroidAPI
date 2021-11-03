@@ -6,7 +6,7 @@ namespace android::app::usage
 	// Fields
 	
 	// QJniObject forward
-	NetworkStats::NetworkStats(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkStats::NetworkStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

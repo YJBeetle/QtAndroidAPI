@@ -26,7 +26,7 @@ namespace java::util
 	}
 	
 	// QJniObject forward
-	FormattableFlags::FormattableFlags(QJniObject obj) : __JniBaseClass(obj) {}
+	FormattableFlags::FormattableFlags(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

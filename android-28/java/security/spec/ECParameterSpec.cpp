@@ -8,11 +8,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	ECParameterSpec::ECParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	ECParameterSpec::ECParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ECParameterSpec::ECParameterSpec(java::security::spec::EllipticCurve arg0, java::security::spec::ECPoint arg1, java::math::BigInteger arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECParameterSpec",
 			"(Ljava/security/spec/EllipticCurve;Ljava/security/spec/ECPoint;Ljava/math/BigInteger;I)V",
 			arg0.object(),

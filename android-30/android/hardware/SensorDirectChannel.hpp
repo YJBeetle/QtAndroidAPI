@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -9,7 +9,7 @@ namespace android::hardware
 
 namespace android::hardware
 {
-	class SensorDirectChannel : public __JniBaseClass
+	class SensorDirectChannel : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::hardware
 		static jint TYPE_MEMORY_FILE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SensorDirectChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SensorDirectChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SensorDirectChannel(QJniObject obj);
 		
 		// Constructors

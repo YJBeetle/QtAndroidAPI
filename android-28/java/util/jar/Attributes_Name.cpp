@@ -149,11 +149,11 @@ namespace java::util::jar
 	}
 	
 	// QJniObject forward
-	Attributes_Name::Attributes_Name(QJniObject obj) : __JniBaseClass(obj) {}
+	Attributes_Name::Attributes_Name(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Attributes_Name::Attributes_Name(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Attributes$Name",
 			"(Ljava/lang/String;)V",
 			arg0

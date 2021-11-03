@@ -157,11 +157,11 @@ namespace android::webkit
 	}
 	
 	// QJniObject forward
-	WebViewClient::WebViewClient(QJniObject obj) : __JniBaseClass(obj) {}
+	WebViewClient::WebViewClient(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebViewClient::WebViewClient()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebViewClient",
 			"()V"
 		) {}
@@ -233,7 +233,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebViewClient::onReceivedError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceError arg2)
+	void WebViewClient::onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2)
 	{
 		callMethod<void>(
 			"onReceivedError",
@@ -265,7 +265,7 @@ namespace android::webkit
 			arg3
 		);
 	}
-	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceResponse arg2)
+	void WebViewClient::onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2)
 	{
 		callMethod<void>(
 			"onReceivedHttpError",
@@ -305,7 +305,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void WebViewClient::onSafeBrowsingHit(android::webkit::WebView arg0, __JniBaseClass arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3)
+	void WebViewClient::onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3)
 	{
 		callMethod<void>(
 			"onSafeBrowsingHit",
@@ -345,7 +345,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1)
+	android::webkit::WebResourceResponse WebViewClient::shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",
@@ -372,7 +372,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, __JniBaseClass arg1)
+	jboolean WebViewClient::shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"shouldOverrideUrlLoading",

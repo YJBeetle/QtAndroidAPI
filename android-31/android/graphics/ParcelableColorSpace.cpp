@@ -5,7 +5,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass ParcelableColorSpace::CREATOR()
+	JObject ParcelableColorSpace::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.ParcelableColorSpace",
@@ -15,11 +15,11 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	ParcelableColorSpace::ParcelableColorSpace(QJniObject obj) : __JniBaseClass(obj) {}
+	ParcelableColorSpace::ParcelableColorSpace(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParcelableColorSpace::ParcelableColorSpace(android::graphics::ColorSpace arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ParcelableColorSpace",
 			"(Landroid/graphics/ColorSpace;)V",
 			arg0.object()

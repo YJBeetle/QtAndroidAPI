@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::net
 {
-	class UrlQuerySanitizer : public __JniBaseClass
+	class UrlQuerySanitizer : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UrlQuerySanitizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UrlQuerySanitizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer(QJniObject obj);
 		
 		// Constructors
@@ -19,31 +19,31 @@ namespace android::net
 		UrlQuerySanitizer(jstring arg0);
 		
 		// Methods
-		static __JniBaseClass getAllButNulAndAngleBracketsLegal();
-		static __JniBaseClass getAllButNulLegal();
-		static __JniBaseClass getAllButWhitespaceLegal();
-		static __JniBaseClass getAllIllegal();
-		static __JniBaseClass getAmpAndSpaceLegal();
-		static __JniBaseClass getAmpLegal();
-		static __JniBaseClass getSpaceLegal();
-		static __JniBaseClass getUrlAndSpaceLegal();
-		static __JniBaseClass getUrlLegal();
+		static JObject getAllButNulAndAngleBracketsLegal();
+		static JObject getAllButNulLegal();
+		static JObject getAllButWhitespaceLegal();
+		static JObject getAllIllegal();
+		static JObject getAmpAndSpaceLegal();
+		static JObject getAmpLegal();
+		static JObject getSpaceLegal();
+		static JObject getUrlAndSpaceLegal();
+		static JObject getUrlLegal();
 		jboolean getAllowUnregisteredParamaters();
-		__JniBaseClass getEffectiveValueSanitizer(jstring arg0);
-		__JniBaseClass getParameterList();
-		__JniBaseClass getParameterSet();
+		JObject getEffectiveValueSanitizer(jstring arg0);
+		JObject getParameterList();
+		JObject getParameterSet();
 		jboolean getPreferFirstRepeatedParameter();
-		__JniBaseClass getUnregisteredParameterValueSanitizer();
+		JObject getUnregisteredParameterValueSanitizer();
 		jstring getValue(jstring arg0);
-		__JniBaseClass getValueSanitizer(jstring arg0);
+		JObject getValueSanitizer(jstring arg0);
 		jboolean hasParameter(jstring arg0);
 		void parseQuery(jstring arg0);
 		void parseUrl(jstring arg0);
-		void registerParameter(jstring arg0, __JniBaseClass arg1);
-		void registerParameters(jarray arg0, __JniBaseClass arg1);
+		void registerParameter(jstring arg0, JObject arg1);
+		void registerParameters(jarray arg0, JObject arg1);
 		void setAllowUnregisteredParamaters(jboolean arg0);
 		void setPreferFirstRepeatedParameter(jboolean arg0);
-		void setUnregisteredParameterValueSanitizer(__JniBaseClass arg0);
+		void setUnregisteredParameterValueSanitizer(JObject arg0);
 		jstring unescape(jstring arg0);
 	};
 } // namespace android::net

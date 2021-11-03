@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::view
 {
-	class ContentInfo : public __JniBaseClass
+	class ContentInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_CONVERT_TO_PLAIN_TEXT();
 		static jint SOURCE_APP();
 		static jint SOURCE_AUTOFILL();
@@ -35,7 +35,7 @@ namespace android::view
 		static jint SOURCE_PROCESS_TEXT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContentInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentInfo(QJniObject obj);
 		
 		// Constructors

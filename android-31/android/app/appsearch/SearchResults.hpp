@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class SearchResults : public __JniBaseClass
+	class SearchResults : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SearchResults(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SearchResults(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SearchResults(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void close();
-		void getNextPage(__JniBaseClass arg0, __JniBaseClass arg1);
+		void getNextPage(JObject arg0, JObject arg1);
 	};
 } // namespace android::app::appsearch
 

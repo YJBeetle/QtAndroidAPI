@@ -7,11 +7,11 @@ namespace android::content::pm
 	// Fields
 	
 	// QJniObject forward
-	LauncherApps_Callback::LauncherApps_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	LauncherApps_Callback::LauncherApps_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LauncherApps_Callback::LauncherApps_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.LauncherApps$Callback",
 			"()V"
 		) {}
@@ -92,7 +92,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps_Callback::onShortcutsChanged(jstring arg0, __JniBaseClass arg1, android::os::UserHandle arg2)
+	void LauncherApps_Callback::onShortcutsChanged(jstring arg0, JObject arg1, android::os::UserHandle arg2)
 	{
 		callMethod<void>(
 			"onShortcutsChanged",

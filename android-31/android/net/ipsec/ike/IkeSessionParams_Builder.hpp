@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net
 {
@@ -29,13 +29,13 @@ namespace java::security::cert
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionParams_Builder : public __JniBaseClass
+	class IkeSessionParams_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IkeSessionParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IkeSessionParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IkeSessionParams_Builder(QJniObject obj);
 		
 		// Constructors
@@ -47,8 +47,8 @@ namespace android::net::ipsec::ike
 		android::net::ipsec::ike::IkeSessionParams_Builder addIkeSaProposal(android::net::ipsec::ike::IkeSaProposal arg0);
 		android::net::ipsec::ike::IkeSessionParams build();
 		android::net::ipsec::ike::IkeSessionParams_Builder removeIkeOption(jint arg0);
-		android::net::ipsec::ike::IkeSessionParams_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, __JniBaseClass arg2);
-		android::net::ipsec::ike::IkeSessionParams_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		android::net::ipsec::ike::IkeSessionParams_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2);
+		android::net::ipsec::ike::IkeSessionParams_Builder setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2, JObject arg3);
 		android::net::ipsec::ike::IkeSessionParams_Builder setAuthEap(java::security::cert::X509Certificate arg0, android::net::eap::EapSessionConfig arg1);
 		android::net::ipsec::ike::IkeSessionParams_Builder setAuthPsk(jbyteArray arg0);
 		android::net::ipsec::ike::IkeSessionParams_Builder setDpdDelaySeconds(jint arg0);

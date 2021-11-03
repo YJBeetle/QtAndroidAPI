@@ -2122,11 +2122,11 @@ namespace android::opengl
 	}
 	
 	// QJniObject forward
-	GLES20::GLES20(QJniObject obj) : __JniBaseClass(obj) {}
+	GLES20::GLES20(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLES20::GLES20()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLES20",
 			"()V"
 		) {}

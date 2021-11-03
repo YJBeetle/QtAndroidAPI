@@ -7,12 +7,12 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QJniObject forward
-	AccessibilityService_SoftKeyboardController::AccessibilityService_SoftKeyboardController(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityService_SoftKeyboardController::AccessibilityService_SoftKeyboardController(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void AccessibilityService_SoftKeyboardController::addOnShowModeChangedListener(__JniBaseClass arg0)
+	void AccessibilityService_SoftKeyboardController::addOnShowModeChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnShowModeChangedListener",
@@ -20,7 +20,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService_SoftKeyboardController::addOnShowModeChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AccessibilityService_SoftKeyboardController::addOnShowModeChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnShowModeChangedListener",
@@ -36,7 +36,7 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	jboolean AccessibilityService_SoftKeyboardController::removeOnShowModeChangedListener(__JniBaseClass arg0)
+	jboolean AccessibilityService_SoftKeyboardController::removeOnShowModeChangedListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeOnShowModeChangedListener",

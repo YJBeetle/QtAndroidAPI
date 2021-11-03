@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -42,9 +42,9 @@ namespace android::widget
 		
 		// Constructors
 		AdapterView(android::content::Context arg0);
-		AdapterView(android::content::Context arg0, __JniBaseClass arg1);
-		AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AdapterView(android::content::Context arg0, JObject arg1);
+		AdapterView(android::content::Context arg0, JObject arg1, jint arg2);
+		AdapterView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addView(android::view::View arg0);
@@ -52,16 +52,16 @@ namespace android::widget
 		void addView(android::view::View arg0, jint arg1);
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jint getCount();
 		android::view::View getEmptyView();
 		jint getFirstVisiblePosition();
 		jobject getItemAtPosition(jint arg0);
 		jlong getItemIdAtPosition(jint arg0);
 		jint getLastVisiblePosition();
-		__JniBaseClass getOnItemClickListener();
-		__JniBaseClass getOnItemLongClickListener();
-		__JniBaseClass getOnItemSelectedListener();
+		JObject getOnItemClickListener();
+		JObject getOnItemLongClickListener();
+		JObject getOnItemSelectedListener();
 		jint getPositionForView(android::view::View arg0);
 		jobject getSelectedItem();
 		jlong getSelectedItemId();
@@ -72,14 +72,14 @@ namespace android::widget
 		void removeAllViews();
 		void removeView(android::view::View arg0);
 		void removeViewAt(jint arg0);
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setEmptyView(android::view::View arg0);
 		void setFocusable(jint arg0);
 		void setFocusableInTouchMode(jboolean arg0);
-		void setOnClickListener(__JniBaseClass arg0);
-		void setOnItemClickListener(__JniBaseClass arg0);
-		void setOnItemLongClickListener(__JniBaseClass arg0);
-		void setOnItemSelectedListener(__JniBaseClass arg0);
+		void setOnClickListener(JObject arg0);
+		void setOnItemClickListener(JObject arg0);
+		void setOnItemLongClickListener(JObject arg0);
+		void setOnItemSelectedListener(JObject arg0);
 		void setSelection(jint arg0);
 	};
 } // namespace android::widget

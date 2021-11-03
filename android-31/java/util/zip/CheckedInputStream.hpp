@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/FilterInputStream.hpp"
 
@@ -21,10 +21,10 @@ namespace java::util::zip
 		CheckedInputStream(QJniObject obj);
 		
 		// Constructors
-		CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1);
+		CheckedInputStream(java::io::InputStream arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass getChecksum();
+		JObject getChecksum();
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jlong skip(jlong arg0);

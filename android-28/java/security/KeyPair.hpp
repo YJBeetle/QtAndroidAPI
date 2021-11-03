@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::security
 {
-	class KeyPair : public __JniBaseClass
+	class KeyPair : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyPair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyPair(QJniObject obj);
 		
 		// Constructors
-		KeyPair(__JniBaseClass arg0, __JniBaseClass arg1);
+		KeyPair(JObject arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass getPrivate();
-		__JniBaseClass getPublic();
+		JObject getPrivate();
+		JObject getPublic();
 	};
 } // namespace java::security
 

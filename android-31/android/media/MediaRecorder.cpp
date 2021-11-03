@@ -68,16 +68,16 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaRecorder::MediaRecorder(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaRecorder::MediaRecorder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaRecorder::MediaRecorder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaRecorder",
 			"()V"
 		) {}
 	MediaRecorder::MediaRecorder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaRecorder",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -92,7 +92,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	void MediaRecorder::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaRecorder::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -101,7 +101,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaRecorder::getActiveMicrophones()
+	JObject MediaRecorder::getActiveMicrophones()
 	{
 		return callObjectMethod(
 			"getActiveMicrophones",
@@ -178,7 +178,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaRecorder::registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1)
+	void MediaRecorder::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1)
 	{
 		callMethod<void>(
 			"registerAudioRecordingCallback",
@@ -194,7 +194,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaRecorder::removeOnRoutingChangedListener(__JniBaseClass arg0)
+	void MediaRecorder::removeOnRoutingChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -337,7 +337,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOnErrorListener(__JniBaseClass arg0)
+	void MediaRecorder::setOnErrorListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnErrorListener",
@@ -345,7 +345,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRecorder::setOnInfoListener(__JniBaseClass arg0)
+	void MediaRecorder::setOnInfoListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnInfoListener",

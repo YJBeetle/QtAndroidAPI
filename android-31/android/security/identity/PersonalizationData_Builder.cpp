@@ -7,11 +7,11 @@ namespace android::security::identity
 	// Fields
 	
 	// QJniObject forward
-	PersonalizationData_Builder::PersonalizationData_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PersonalizationData_Builder::PersonalizationData_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PersonalizationData_Builder::PersonalizationData_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.security.identity.PersonalizationData$Builder",
 			"()V"
 		) {}
@@ -32,7 +32,7 @@ namespace android::security::identity
 			"()Landroid/security/identity/PersonalizationData;"
 		);
 	}
-	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(jstring arg0, jstring arg1, __JniBaseClass arg2, jbyteArray arg3)
+	android::security::identity::PersonalizationData_Builder PersonalizationData_Builder::putEntry(jstring arg0, jstring arg1, JObject arg2, jbyteArray arg3)
 	{
 		return callObjectMethod(
 			"putEntry",

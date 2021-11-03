@@ -9,14 +9,14 @@ namespace java::security::cert
 	PKIXBuilderParameters::PKIXBuilderParameters(QJniObject obj) : java::security::cert::PKIXParameters(obj) {}
 	
 	// Constructors
-	PKIXBuilderParameters::PKIXBuilderParameters(java::security::KeyStore arg0, __JniBaseClass arg1)
+	PKIXBuilderParameters::PKIXBuilderParameters(java::security::KeyStore arg0, JObject arg1)
 		: java::security::cert::PKIXParameters(
 			"java.security.cert.PKIXBuilderParameters",
 			"(Ljava/security/KeyStore;Ljava/security/cert/CertSelector;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	PKIXBuilderParameters::PKIXBuilderParameters(__JniBaseClass arg0, __JniBaseClass arg1)
+	PKIXBuilderParameters::PKIXBuilderParameters(JObject arg0, JObject arg1)
 		: java::security::cert::PKIXParameters(
 			"java.security.cert.PKIXBuilderParameters",
 			"(Ljava/util/Set;Ljava/security/cert/CertSelector;)V",

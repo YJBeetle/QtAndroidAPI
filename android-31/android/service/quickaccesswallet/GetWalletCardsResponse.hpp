@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,23 +9,23 @@ namespace android::os
 
 namespace android::service::quickaccesswallet
 {
-	class GetWalletCardsResponse : public __JniBaseClass
+	class GetWalletCardsResponse : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GetWalletCardsResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GetWalletCardsResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GetWalletCardsResponse(QJniObject obj);
 		
 		// Constructors
-		GetWalletCardsResponse(__JniBaseClass arg0, jint arg1);
+		GetWalletCardsResponse(JObject arg0, jint arg1);
 		
 		// Methods
 		jint describeContents();
 		jint getSelectedIndex();
-		__JniBaseClass getWalletCards();
+		JObject getWalletCards();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::quickaccesswallet

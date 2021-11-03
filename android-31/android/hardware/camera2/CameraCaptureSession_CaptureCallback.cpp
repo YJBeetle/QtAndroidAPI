@@ -11,11 +11,11 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	CameraCaptureSession_CaptureCallback::CameraCaptureSession_CaptureCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraCaptureSession_CaptureCallback::CameraCaptureSession_CaptureCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraCaptureSession_CaptureCallback::CameraCaptureSession_CaptureCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CameraCaptureSession$CaptureCallback",
 			"()V"
 		) {}

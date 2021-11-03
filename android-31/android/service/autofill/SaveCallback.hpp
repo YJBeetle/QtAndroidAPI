@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,13 +9,13 @@ namespace android::content
 
 namespace android::service::autofill
 {
-	class SaveCallback : public __JniBaseClass
+	class SaveCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SaveCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SaveCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SaveCallback(QJniObject obj);
 		
 		// Constructors

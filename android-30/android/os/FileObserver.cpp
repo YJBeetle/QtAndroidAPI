@@ -97,43 +97,43 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	FileObserver::FileObserver(QJniObject obj) : __JniBaseClass(obj) {}
+	FileObserver::FileObserver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FileObserver::FileObserver(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	FileObserver::FileObserver(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	FileObserver::FileObserver(__JniBaseClass arg0)
-		: __JniBaseClass(
+	FileObserver::FileObserver(JObject arg0)
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/util/List;)V",
 			arg0.object()
 		) {}
 	FileObserver::FileObserver(java::io::File arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/io/File;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	FileObserver::FileObserver(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
-	FileObserver::FileObserver(__JniBaseClass arg0, jint arg1)
-		: __JniBaseClass(
+	FileObserver::FileObserver(JObject arg0, jint arg1)
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/util/List;I)V",
 			arg0.object(),

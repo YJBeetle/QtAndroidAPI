@@ -7,11 +7,11 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	KeyStoreParameter_Builder::KeyStoreParameter_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyStoreParameter_Builder::KeyStoreParameter_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyStoreParameter_Builder::KeyStoreParameter_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.KeyStoreParameter$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()

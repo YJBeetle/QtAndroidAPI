@@ -17,11 +17,11 @@ namespace android::media::audiofx
 	}
 	
 	// QJniObject forward
-	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms(QJniObject obj) : __JniBaseClass(obj) {}
+	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Visualizer_MeasurementPeakRms::Visualizer_MeasurementPeakRms()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Visualizer$MeasurementPeakRms",
 			"()V"
 		) {}

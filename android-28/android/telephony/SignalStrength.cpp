@@ -6,7 +6,7 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	SignalStrength::SignalStrength(QJniObject obj) : __JniBaseClass(obj) {}
+	SignalStrength::SignalStrength(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

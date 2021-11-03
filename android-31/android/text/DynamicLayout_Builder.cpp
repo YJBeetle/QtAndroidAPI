@@ -9,7 +9,7 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	DynamicLayout_Builder::DynamicLayout_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	DynamicLayout_Builder::DynamicLayout_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -105,7 +105,7 @@ namespace android::text
 			arg1
 		);
 	}
-	android::text::DynamicLayout_Builder DynamicLayout_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::DynamicLayout_Builder DynamicLayout_Builder::setTextDirection(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",

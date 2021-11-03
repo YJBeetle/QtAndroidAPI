@@ -5,7 +5,7 @@ namespace javax::xml::datatype
 	// Fields
 	
 	// QJniObject forward
-	DatatypeConstants_Field::DatatypeConstants_Field(QJniObject obj) : __JniBaseClass(obj) {}
+	DatatypeConstants_Field::DatatypeConstants_Field(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

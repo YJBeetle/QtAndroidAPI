@@ -7,16 +7,16 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	Outline::Outline(QJniObject obj) : __JniBaseClass(obj) {}
+	Outline::Outline(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Outline::Outline()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Outline",
 			"()V"
 		) {}
 	Outline::Outline(android::graphics::Outline &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Outline",
 			"(Landroid/graphics/Outline;)V",
 			arg0.object()

@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass ConversationActions_Request::CREATOR()
+	JObject ConversationActions_Request::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationActions$Request",
@@ -32,7 +32,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	ConversationActions_Request::ConversationActions_Request(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationActions_Request::ConversationActions_Request(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -51,7 +51,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass ConversationActions_Request::getConversation()
+	JObject ConversationActions_Request::getConversation()
 	{
 		return callObjectMethod(
 			"getConversation",
@@ -65,7 +65,7 @@ namespace android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass ConversationActions_Request::getHints()
+	JObject ConversationActions_Request::getHints()
 	{
 		return callObjectMethod(
 			"getHints",

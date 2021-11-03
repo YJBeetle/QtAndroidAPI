@@ -54,7 +54,7 @@ namespace android::service::controls::templates
 	}
 	
 	// QJniObject forward
-	ControlTemplate::ControlTemplate(QJniObject obj) : __JniBaseClass(obj) {}
+	ControlTemplate::ControlTemplate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

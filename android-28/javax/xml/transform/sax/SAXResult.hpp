@@ -1,30 +1,30 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace javax::xml::transform::sax
 {
-	class SAXResult : public __JniBaseClass
+	class SAXResult : public JObject
 	{
 	public:
 		// Fields
 		static jstring FEATURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SAXResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SAXResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SAXResult(QJniObject obj);
 		
 		// Constructors
 		SAXResult();
-		SAXResult(__JniBaseClass arg0);
+		SAXResult(JObject arg0);
 		
 		// Methods
-		__JniBaseClass getHandler();
-		__JniBaseClass getLexicalHandler();
+		JObject getHandler();
+		JObject getLexicalHandler();
 		jstring getSystemId();
-		void setHandler(__JniBaseClass arg0);
-		void setLexicalHandler(__JniBaseClass arg0);
+		void setHandler(JObject arg0);
+		void setLexicalHandler(JObject arg0);
 		void setSystemId(jstring arg0);
 	};
 } // namespace javax::xml::transform::sax

@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QJniObject forward
-	R_bool::R_bool(QJniObject obj) : __JniBaseClass(obj) {}
+	R_bool::R_bool(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_bool::R_bool()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$bool",
 			"()V"
 		) {}

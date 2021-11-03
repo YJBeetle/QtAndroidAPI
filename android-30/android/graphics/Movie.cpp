@@ -8,7 +8,7 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	Movie::Movie(QJniObject obj) : __JniBaseClass(obj) {}
+	Movie::Movie(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

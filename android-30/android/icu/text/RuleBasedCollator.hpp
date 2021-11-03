@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Collator.hpp"
 
 namespace android::icu::text
@@ -50,7 +50,7 @@ namespace android::icu::text
 		android::icu::text::Collator freeze();
 		android::icu::text::CollationElementIterator getCollationElementIterator(android::icu::text::UCharacterIterator arg0);
 		android::icu::text::CollationElementIterator getCollationElementIterator(jstring arg0);
-		android::icu::text::CollationElementIterator getCollationElementIterator(__JniBaseClass arg0);
+		android::icu::text::CollationElementIterator getCollationElementIterator(JObject arg0);
 		android::icu::text::CollationKey getCollationKey(jstring arg0);
 		void getContractionsAndExpansions(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet arg1, jboolean arg2);
 		jint getDecomposition();

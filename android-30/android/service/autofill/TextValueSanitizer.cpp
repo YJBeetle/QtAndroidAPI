@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass TextValueSanitizer::CREATOR()
+	JObject TextValueSanitizer::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.TextValueSanitizer",
@@ -15,11 +15,11 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	TextValueSanitizer::TextValueSanitizer(QJniObject obj) : __JniBaseClass(obj) {}
+	TextValueSanitizer::TextValueSanitizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextValueSanitizer::TextValueSanitizer(java::util::regex::Pattern arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.TextValueSanitizer",
 			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.object(),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
@@ -78,9 +78,9 @@ namespace android::preference
 		jboolean hasHeaders();
 		void invalidateHeaders();
 		jboolean isMultiPane();
-		void loadHeadersFromResource(jint arg0, __JniBaseClass arg1);
+		void loadHeadersFromResource(jint arg0, JObject arg1);
 		void onBackPressed();
-		void onBuildHeaders(__JniBaseClass arg0);
+		void onBuildHeaders(JObject arg0);
 		android::content::Intent onBuildStartFragmentIntent(jstring arg0, android::os::Bundle arg1, jint arg2, jint arg3);
 		void onContentChanged();
 		android::preference::PreferenceActivity_Header onGetInitialHeader();
@@ -88,11 +88,11 @@ namespace android::preference
 		void onHeaderClick(android::preference::PreferenceActivity_Header arg0, jint arg1);
 		jboolean onIsHidingHeaders();
 		jboolean onIsMultiPane();
-		jboolean onOptionsItemSelected(__JniBaseClass arg0);
+		jboolean onOptionsItemSelected(JObject arg0);
 		jboolean onPreferenceStartFragment(android::preference::PreferenceFragment arg0, android::preference::Preference arg1);
 		jboolean onPreferenceTreeClick(android::preference::PreferenceScreen arg0, android::preference::Preference arg1);
 		void setListFooter(android::view::View arg0);
-		void setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		void setParentTitle(jstring arg0, jstring arg1, JObject arg2);
 		void setPreferenceScreen(android::preference::PreferenceScreen arg0);
 		void showBreadCrumbs(jstring arg0, jstring arg1);
 		void startPreferenceFragment(android::app::Fragment arg0, jboolean arg1);

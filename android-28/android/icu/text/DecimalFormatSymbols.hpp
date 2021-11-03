@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -17,7 +17,7 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class DecimalFormatSymbols : public __JniBaseClass
+	class DecimalFormatSymbols : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::icu::text
 		static jint CURRENCY_SPC_SURROUNDING_MATCH();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DecimalFormatSymbols(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DecimalFormatSymbols(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DecimalFormatSymbols(QJniObject obj);
 		
 		// Constructors

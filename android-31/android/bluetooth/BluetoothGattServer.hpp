@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -21,13 +21,13 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothGattServer : public __JniBaseClass
+	class BluetoothGattServer : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothGattServer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothGattServer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattServer(QJniObject obj);
 		
 		// Constructors
@@ -38,11 +38,11 @@ namespace android::bluetooth
 		void clearServices();
 		void close();
 		jboolean connect(android::bluetooth::BluetoothDevice arg0, jboolean arg1);
-		__JniBaseClass getConnectedDevices();
+		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(jintArray arg0);
 		android::bluetooth::BluetoothGattService getService(java::util::UUID arg0);
-		__JniBaseClass getServices();
+		JObject getServices();
 		jboolean notifyCharacteristicChanged(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothGattCharacteristic arg1, jboolean arg2);
 		void readPhy(android::bluetooth::BluetoothDevice arg0);
 		jboolean removeService(android::bluetooth::BluetoothGattService arg0);

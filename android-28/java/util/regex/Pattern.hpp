@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,7 +21,7 @@ namespace java::util::regex
 
 namespace java::util::regex
 {
-	class Pattern : public __JniBaseClass
+	class Pattern : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace java::util::regex
 		static jint UNIX_LINES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Pattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Pattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Pattern(QJniObject obj);
 		
 		// Constructors
@@ -46,14 +46,14 @@ namespace java::util::regex
 		static java::util::regex::Pattern compile(jstring arg0, jint arg1);
 		static jboolean matches(jstring arg0, jstring arg1);
 		static jstring quote(jstring arg0);
-		__JniBaseClass asMatchPredicate();
-		__JniBaseClass asPredicate();
+		JObject asMatchPredicate();
+		JObject asPredicate();
 		jint flags();
 		java::util::regex::Matcher matcher(jstring arg0);
 		jstring pattern();
 		jarray split(jstring arg0);
 		jarray split(jstring arg0, jint arg1);
-		__JniBaseClass splitAsStream(jstring arg0);
+		JObject splitAsStream(jstring arg0);
 		jstring toString();
 	};
 } // namespace java::util::regex

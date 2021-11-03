@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellSignalStrengthNr::CREATOR()
+	JObject CellSignalStrengthNr::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellSignalStrengthNr",
@@ -41,7 +41,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	__JniBaseClass CellSignalStrengthNr::getCsiCqiReport()
+	JObject CellSignalStrengthNr::getCsiCqiReport()
 	{
 		return callObjectMethod(
 			"getCsiCqiReport",

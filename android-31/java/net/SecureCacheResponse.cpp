@@ -23,21 +23,21 @@ namespace java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SecureCacheResponse::getLocalCertificateChain()
+	JObject SecureCacheResponse::getLocalCertificateChain()
 	{
 		return callObjectMethod(
 			"getLocalCertificateChain",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SecureCacheResponse::getLocalPrincipal()
+	JObject SecureCacheResponse::getLocalPrincipal()
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	__JniBaseClass SecureCacheResponse::getPeerPrincipal()
+	JObject SecureCacheResponse::getPeerPrincipal()
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
@@ -51,7 +51,7 @@ namespace java::net
 			"()Ljava/util/Optional;"
 		);
 	}
-	__JniBaseClass SecureCacheResponse::getServerCertificateChain()
+	JObject SecureCacheResponse::getServerCertificateChain()
 	{
 		return callObjectMethod(
 			"getServerCertificateChain",

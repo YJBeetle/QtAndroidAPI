@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaDrm_ErrorCodes : public __JniBaseClass
+	class MediaDrm_ErrorCodes : public JObject
 	{
 	public:
 		// Fields
@@ -45,7 +45,7 @@ namespace android::media
 		static jint ERROR_ZERO_SUBSAMPLES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaDrm_ErrorCodes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDrm_ErrorCodes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_ErrorCodes(QJniObject obj);
 		
 		// Constructors

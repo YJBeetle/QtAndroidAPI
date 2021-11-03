@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,11 +21,11 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityWindowInfo : public __JniBaseClass
+	class AccessibilityWindowInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_ACCESSIBILITY_OVERLAY();
 		static jint TYPE_APPLICATION();
 		static jint TYPE_INPUT_METHOD();
@@ -33,7 +33,7 @@ namespace android::view::accessibility
 		static jint TYPE_SYSTEM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityWindowInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityWindowInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityWindowInfo(QJniObject obj);
 		
 		// Constructors

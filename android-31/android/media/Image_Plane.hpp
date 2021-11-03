@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -9,13 +9,13 @@ namespace java::nio
 
 namespace android::media
 {
-	class Image_Plane : public __JniBaseClass
+	class Image_Plane : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Image_Plane(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Image_Plane(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Image_Plane(QJniObject obj);
 		
 		// Constructors

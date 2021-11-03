@@ -7,7 +7,7 @@
 namespace android::hardware::camera2::params
 {
 	// Fields
-	__JniBaseClass SessionConfiguration::CREATOR()
+	JObject SessionConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.camera2.params.SessionConfiguration",
@@ -31,11 +31,11 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QJniObject forward
-	SessionConfiguration::SessionConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	SessionConfiguration::SessionConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SessionConfiguration::SessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3)
-		: __JniBaseClass(
+	SessionConfiguration::SessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraCaptureSession_StateCallback arg3)
+		: JObject(
 			"android.hardware.camera2.params.SessionConfiguration",
 			"(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$StateCallback;)V",
 			arg0,
@@ -60,7 +60,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	__JniBaseClass SessionConfiguration::getExecutor()
+	JObject SessionConfiguration::getExecutor()
 	{
 		return callObjectMethod(
 			"getExecutor",
@@ -74,7 +74,7 @@ namespace android::hardware::camera2::params
 			"()Landroid/hardware/camera2/params/InputConfiguration;"
 		);
 	}
-	__JniBaseClass SessionConfiguration::getOutputConfigurations()
+	JObject SessionConfiguration::getOutputConfigurations()
 	{
 		return callObjectMethod(
 			"getOutputConfigurations",

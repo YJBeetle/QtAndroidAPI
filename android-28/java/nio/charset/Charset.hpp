@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -33,23 +33,23 @@ namespace java::util
 
 namespace java::nio::charset
 {
-	class Charset : public __JniBaseClass
+	class Charset : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Charset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Charset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Charset(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass availableCharsets();
+		static JObject availableCharsets();
 		static java::nio::charset::Charset defaultCharset();
 		static java::nio::charset::Charset forName(jstring arg0);
 		static jboolean isSupported(jstring arg0);
-		__JniBaseClass aliases();
+		JObject aliases();
 		jboolean canEncode();
 		jint compareTo(jobject arg0);
 		jint compareTo(java::nio::charset::Charset arg0);

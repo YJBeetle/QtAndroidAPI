@@ -105,22 +105,22 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Paint::Paint(QJniObject obj) : __JniBaseClass(obj) {}
+	Paint::Paint(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Paint::Paint()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Paint",
 			"()V"
 		) {}
 	Paint::Paint(android::graphics::Paint &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Paint",
 			"(Landroid/graphics/Paint;)V",
 			arg0.object()
 		) {}
 	Paint::Paint(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Paint",
 			"(I)V",
 			arg0

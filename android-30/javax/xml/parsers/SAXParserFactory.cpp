@@ -8,7 +8,7 @@ namespace javax::xml::parsers
 	// Fields
 	
 	// QJniObject forward
-	SAXParserFactory::SAXParserFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	SAXParserFactory::SAXParserFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

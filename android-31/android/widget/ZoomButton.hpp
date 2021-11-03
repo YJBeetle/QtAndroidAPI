@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./ImageView.hpp"
 #include "./ImageButton.hpp"
@@ -35,9 +35,9 @@ namespace android::widget
 		
 		// Constructors
 		ZoomButton(android::content::Context arg0);
-		ZoomButton(android::content::Context arg0, __JniBaseClass arg1);
-		ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ZoomButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ZoomButton(android::content::Context arg0, JObject arg1);
+		ZoomButton(android::content::Context arg0, JObject arg1, jint arg2);
+		ZoomButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean dispatchUnhandledMove(android::view::View arg0, jint arg1);

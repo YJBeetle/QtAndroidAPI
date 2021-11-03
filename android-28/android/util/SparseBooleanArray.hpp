@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class SparseBooleanArray : public __JniBaseClass
+	class SparseBooleanArray : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SparseBooleanArray(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SparseBooleanArray(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SparseBooleanArray(QJniObject obj);
 		
 		// Constructors

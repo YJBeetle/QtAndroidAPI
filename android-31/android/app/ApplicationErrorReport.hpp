@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,11 +33,11 @@ namespace android::os
 
 namespace android::app
 {
-	class ApplicationErrorReport : public __JniBaseClass
+	class ApplicationErrorReport : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_ANR();
 		static jint TYPE_BATTERY();
 		static jint TYPE_CRASH();
@@ -55,7 +55,7 @@ namespace android::app
 		jint type();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ApplicationErrorReport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ApplicationErrorReport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationErrorReport(QJniObject obj);
 		
 		// Constructors
@@ -64,7 +64,7 @@ namespace android::app
 		// Methods
 		static android::content::ComponentName getErrorReportReceiver(android::content::Context arg0, jstring arg1, jint arg2);
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		void readFromParcel(android::os::Parcel arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

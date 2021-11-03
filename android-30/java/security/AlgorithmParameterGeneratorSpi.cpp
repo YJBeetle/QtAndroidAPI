@@ -7,11 +7,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlgorithmParameterGeneratorSpi::AlgorithmParameterGeneratorSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.AlgorithmParameterGeneratorSpi",
 			"()V"
 		) {}

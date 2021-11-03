@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::lang
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::icu::lang
 {
-	class UScript : public __JniBaseClass
+	class UScript : public JObject
 	{
 	public:
 		// Fields
@@ -226,7 +226,7 @@ namespace android::icu::lang
 		static jint ZANABAZAR_SQUARE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UScript(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UScript(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UScript(QJniObject obj);
 		
 		// Constructors

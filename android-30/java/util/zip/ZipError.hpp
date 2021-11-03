@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Error.hpp"
 #include "../../lang/VirtualMachineError.hpp"
 #include "../../lang/InternalError.hpp"

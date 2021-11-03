@@ -7,7 +7,7 @@
 namespace android::service::notification
 {
 	// Fields
-	__JniBaseClass Condition::CREATOR()
+	JObject Condition::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.notification.Condition",
@@ -113,17 +113,17 @@ namespace android::service::notification
 	}
 	
 	// QJniObject forward
-	Condition::Condition(QJniObject obj) : __JniBaseClass(obj) {}
+	Condition::Condition(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Condition::Condition(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.Condition",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	Condition::Condition(android::net::Uri arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.Condition",
 			"(Landroid/net/Uri;Ljava/lang/String;I)V",
 			arg0.object(),
@@ -131,7 +131,7 @@ namespace android::service::notification
 			arg2
 		) {}
 	Condition::Condition(android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.Condition",
 			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V",
 			arg0.object(),

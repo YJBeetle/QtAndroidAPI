@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -47,9 +47,9 @@ namespace android::widget
 		
 		// Constructors
 		TabHost(android::content::Context arg0);
-		TabHost(android::content::Context arg0, __JniBaseClass arg1);
-		TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TabHost(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TabHost(android::content::Context arg0, JObject arg1);
+		TabHost(android::content::Context arg0, JObject arg1, jint arg2);
+		TabHost(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addTab(android::widget::TabHost_TabSpec arg0);
@@ -67,7 +67,7 @@ namespace android::widget
 		void onTouchModeChanged(jboolean arg0);
 		void setCurrentTab(jint arg0);
 		void setCurrentTabByTag(jstring arg0);
-		void setOnTabChangedListener(__JniBaseClass arg0);
+		void setOnTabChangedListener(JObject arg0);
 		void setup();
 		void setup(android::app::LocalActivityManager arg0);
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::hardware::camera2
 {
@@ -21,15 +21,15 @@ namespace android::view
 
 namespace android::hardware::camera2::params
 {
-	class OutputConfiguration : public __JniBaseClass
+	class OutputConfiguration : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SURFACE_GROUP_ID_NONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OutputConfiguration(QJniObject obj);
 		
 		// Constructors
@@ -38,7 +38,7 @@ namespace android::hardware::camera2::params
 		OutputConfiguration(jint arg0, android::view::Surface arg1);
 		
 		// Methods
-		static __JniBaseClass createInstancesForMultiResolutionOutput(android::hardware::camera2::MultiResolutionImageReader arg0);
+		static JObject createInstancesForMultiResolutionOutput(android::hardware::camera2::MultiResolutionImageReader arg0);
 		void addSensorPixelModeUsed(jint arg0);
 		void addSurface(android::view::Surface arg0);
 		jint describeContents();
@@ -47,7 +47,7 @@ namespace android::hardware::camera2::params
 		jint getMaxSharedSurfaceCount();
 		android::view::Surface getSurface();
 		jint getSurfaceGroupId();
-		__JniBaseClass getSurfaces();
+		JObject getSurfaces();
 		jint hashCode();
 		void removeSensorPixelModeUsed(jint arg0);
 		void removeSurface(android::view::Surface arg0);

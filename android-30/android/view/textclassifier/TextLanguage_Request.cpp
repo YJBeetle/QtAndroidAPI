@@ -5,7 +5,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextLanguage_Request::CREATOR()
+	JObject TextLanguage_Request::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextLanguage$Request",
@@ -15,7 +15,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextLanguage_Request::TextLanguage_Request(QJniObject obj) : __JniBaseClass(obj) {}
+	TextLanguage_Request::TextLanguage_Request(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

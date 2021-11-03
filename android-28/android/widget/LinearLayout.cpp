@@ -61,14 +61,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1)
+	LinearLayout::LinearLayout(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	LinearLayout::LinearLayout(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -76,7 +76,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	LinearLayout::LinearLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	LinearLayout::LinearLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::ViewGroup(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -87,7 +87,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::widget::LinearLayout_LayoutParams LinearLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::LinearLayout_LayoutParams LinearLayout::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

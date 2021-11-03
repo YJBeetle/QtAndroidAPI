@@ -71,7 +71,7 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	AsyncQueryHandler_WorkerArgs::AsyncQueryHandler_WorkerArgs(QJniObject obj) : __JniBaseClass(obj) {}
+	AsyncQueryHandler_WorkerArgs::AsyncQueryHandler_WorkerArgs(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -19,11 +19,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	Pair::Pair(QJniObject obj) : __JniBaseClass(obj) {}
+	Pair::Pair(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Pair::Pair(jobject arg0, jobject arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.Pair",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,

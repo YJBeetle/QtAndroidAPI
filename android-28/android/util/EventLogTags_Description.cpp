@@ -18,7 +18,7 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	EventLogTags_Description::EventLogTags_Description(QJniObject obj) : __JniBaseClass(obj) {}
+	EventLogTags_Description::EventLogTags_Description(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

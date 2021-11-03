@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -39,23 +39,23 @@ namespace android::widget
 		
 		// Constructors
 		AbsSpinner(android::content::Context arg0);
-		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1);
-		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AbsSpinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AbsSpinner(android::content::Context arg0, JObject arg1);
+		AbsSpinner(android::content::Context arg0, JObject arg1, jint arg2);
+		AbsSpinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jint getAutofillType();
 		android::view::autofill::AutofillValue getAutofillValue();
 		jint getCount();
 		android::view::View getSelectedView();
-		void onRestoreInstanceState(__JniBaseClass arg0);
-		__JniBaseClass onSaveInstanceState();
+		void onRestoreInstanceState(JObject arg0);
+		JObject onSaveInstanceState();
 		jint pointToPosition(jint arg0, jint arg1);
 		void requestLayout();
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setSelection(jint arg0);
 		void setSelection(jint arg0, jboolean arg1);
 	};

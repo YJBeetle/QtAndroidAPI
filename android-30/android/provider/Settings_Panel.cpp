@@ -37,7 +37,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Settings_Panel::Settings_Panel(QJniObject obj) : __JniBaseClass(obj) {}
+	Settings_Panel::Settings_Panel(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

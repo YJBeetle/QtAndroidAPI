@@ -141,7 +141,7 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	void PreferenceActivity::loadHeadersFromResource(jint arg0, __JniBaseClass arg1)
+	void PreferenceActivity::loadHeadersFromResource(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"loadHeadersFromResource",
@@ -157,7 +157,7 @@ namespace android::preference
 			"()V"
 		);
 	}
-	void PreferenceActivity::onBuildHeaders(__JniBaseClass arg0)
+	void PreferenceActivity::onBuildHeaders(JObject arg0)
 	{
 		callMethod<void>(
 			"onBuildHeaders",
@@ -220,7 +220,7 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	jboolean PreferenceActivity::onOptionsItemSelected(__JniBaseClass arg0)
+	jboolean PreferenceActivity::onOptionsItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -254,7 +254,7 @@ namespace android::preference
 			arg0.object()
 		);
 	}
-	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	void PreferenceActivity::setParentTitle(jstring arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setParentTitle",

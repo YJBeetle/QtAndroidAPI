@@ -22,14 +22,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1)
+	Switch::Switch(android::content::Context arg0, JObject arg1)
 		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Switch::Switch(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -37,7 +37,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Switch::Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Switch::Switch(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::CompoundButton(
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

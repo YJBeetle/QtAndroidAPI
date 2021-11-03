@@ -26,11 +26,11 @@ namespace android::view::accessibility
 	}
 	
 	// QJniObject forward
-	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(jint arg0, jint arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"(IIZ)V",
 			arg0,
@@ -38,7 +38,7 @@ namespace android::view::accessibility
 			arg2
 		) {}
 	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(jint arg0, jint arg1, jboolean arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
 			"(IIZI)V",
 			arg0,

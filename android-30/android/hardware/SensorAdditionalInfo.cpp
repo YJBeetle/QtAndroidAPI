@@ -88,7 +88,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	SensorAdditionalInfo::SensorAdditionalInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SensorAdditionalInfo::SensorAdditionalInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

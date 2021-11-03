@@ -20,7 +20,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	LinkedHashMap::LinkedHashMap(__JniBaseClass arg0)
+	LinkedHashMap::LinkedHashMap(JObject arg0)
 		: java::util::HashMap(
 			"java.util.LinkedHashMap",
 			"(Ljava/util/Map;)V",
@@ -58,14 +58,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass LinkedHashMap::entrySet()
+	JObject LinkedHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void LinkedHashMap::forEach(__JniBaseClass arg0)
+	void LinkedHashMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -90,14 +90,14 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	__JniBaseClass LinkedHashMap::keySet()
+	JObject LinkedHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void LinkedHashMap::replaceAll(__JniBaseClass arg0)
+	void LinkedHashMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass LinkedHashMap::values()
+	JObject LinkedHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

@@ -9,7 +9,7 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	Security::Security(QJniObject obj) : __JniBaseClass(obj) {}
+	Security::Security(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -33,7 +33,7 @@ namespace java::security
 			arg1
 		).object<jstring>();
 	}
-	__JniBaseClass Security::getAlgorithms(jstring arg0)
+	JObject Security::getAlgorithms(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.Security",
@@ -77,7 +77,7 @@ namespace java::security
 			arg0
 		).object<jarray>();
 	}
-	jarray Security::getProviders(__JniBaseClass arg0)
+	jarray Security::getProviders(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.security.Security",

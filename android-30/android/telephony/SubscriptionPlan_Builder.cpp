@@ -8,7 +8,7 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	SubscriptionPlan_Builder::SubscriptionPlan_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionPlan_Builder::SubscriptionPlan_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

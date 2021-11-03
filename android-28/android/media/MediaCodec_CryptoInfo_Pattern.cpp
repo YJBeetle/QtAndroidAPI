@@ -5,11 +5,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodec_CryptoInfo_Pattern::MediaCodec_CryptoInfo_Pattern(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodec$CryptoInfo$Pattern",
 			"(II)V",
 			arg0,

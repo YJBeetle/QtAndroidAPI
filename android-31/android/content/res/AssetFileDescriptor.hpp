@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -29,15 +29,15 @@ namespace java::io
 
 namespace android::content::res
 {
-	class AssetFileDescriptor : public __JniBaseClass
+	class AssetFileDescriptor : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jlong UNKNOWN_LENGTH();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AssetFileDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AssetFileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AssetFileDescriptor(QJniObject obj);
 		
 		// Constructors

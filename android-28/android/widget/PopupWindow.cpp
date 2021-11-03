@@ -30,42 +30,42 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	PopupWindow::PopupWindow(QJniObject obj) : __JniBaseClass(obj) {}
+	PopupWindow::PopupWindow(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PopupWindow::PopupWindow()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"()V"
 		) {}
 	PopupWindow::PopupWindow(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	PopupWindow::PopupWindow(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/view/View;)V",
 			arg0.object()
 		) {}
-	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	PopupWindow::PopupWindow(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	PopupWindow::PopupWindow(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
-	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-		: __JniBaseClass(
+	PopupWindow::PopupWindow(android::content::Context arg0, JObject arg1, jint arg2)
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.object(),
@@ -73,15 +73,15 @@ namespace android::widget
 			arg2
 		) {}
 	PopupWindow::PopupWindow(android::view::View arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/view/View;II)V",
 			arg0.object(),
 			arg1,
 			arg2
 		) {}
-	PopupWindow::PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+	PopupWindow::PopupWindow(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.object(),
@@ -90,7 +90,7 @@ namespace android::widget
 			arg3
 		) {}
 	PopupWindow::PopupWindow(android::view::View arg0, jint arg1, jint arg2, jboolean arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.PopupWindow",
 			"(Landroid/view/View;IIZ)V",
 			arg0.object(),
@@ -369,7 +369,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setOnDismissListener(__JniBaseClass arg0)
+	void PopupWindow::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -409,7 +409,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void PopupWindow::setTouchInterceptor(__JniBaseClass arg0)
+	void PopupWindow::setTouchInterceptor(JObject arg0)
 	{
 		callMethod<void>(
 			"setTouchInterceptor",

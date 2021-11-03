@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security::cert
 {
@@ -9,21 +9,21 @@ namespace java::security::cert
 
 namespace java::security::cert
 {
-	class CertPathValidatorSpi : public __JniBaseClass
+	class CertPathValidatorSpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CertPathValidatorSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertPathValidatorSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertPathValidatorSpi(QJniObject obj);
 		
 		// Constructors
 		CertPathValidatorSpi();
 		
 		// Methods
-		__JniBaseClass engineGetRevocationChecker();
-		__JniBaseClass engineValidate(java::security::cert::CertPath arg0, __JniBaseClass arg1);
+		JObject engineGetRevocationChecker();
+		JObject engineValidate(java::security::cert::CertPath arg0, JObject arg1);
 	};
 } // namespace java::security::cert
 

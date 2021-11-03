@@ -33,7 +33,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	GameManager::GameManager(QJniObject obj) : __JniBaseClass(obj) {}
+	GameManager::GameManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

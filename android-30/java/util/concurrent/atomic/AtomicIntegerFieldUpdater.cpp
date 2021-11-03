@@ -5,7 +5,7 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	AtomicIntegerFieldUpdater::AtomicIntegerFieldUpdater(QJniObject obj) : __JniBaseClass(obj) {}
+	AtomicIntegerFieldUpdater::AtomicIntegerFieldUpdater(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::accumulateAndGet(jobject arg0, jint arg1, __JniBaseClass arg2)
+	jint AtomicIntegerFieldUpdater::accumulateAndGet(jobject arg0, jint arg1, JObject arg2)
 	{
 		return callMethod<jint>(
 			"accumulateAndGet",
@@ -65,7 +65,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndAccumulate(jobject arg0, jint arg1, __JniBaseClass arg2)
+	jint AtomicIntegerFieldUpdater::getAndAccumulate(jobject arg0, jint arg1, JObject arg2)
 	{
 		return callMethod<jint>(
 			"getAndAccumulate",
@@ -109,7 +109,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::getAndUpdate(jobject arg0, __JniBaseClass arg1)
+	jint AtomicIntegerFieldUpdater::getAndUpdate(jobject arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"getAndUpdate",
@@ -144,7 +144,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerFieldUpdater::updateAndGet(jobject arg0, __JniBaseClass arg1)
+	jint AtomicIntegerFieldUpdater::updateAndGet(jobject arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"updateAndGet",

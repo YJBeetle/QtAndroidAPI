@@ -6,11 +6,11 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	MacSpi::MacSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	MacSpi::MacSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MacSpi::MacSpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.MacSpi",
 			"()V"
 		) {}

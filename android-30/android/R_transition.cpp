@@ -61,11 +61,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_transition::R_transition(QJniObject obj) : __JniBaseClass(obj) {}
+	R_transition::R_transition(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_transition::R_transition()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$transition",
 			"()V"
 		) {}

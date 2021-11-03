@@ -5,7 +5,7 @@
 namespace android::app::job
 {
 	// Fields
-	__JniBaseClass JobWorkItem::CREATOR()
+	JObject JobWorkItem::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.job.JobWorkItem",
@@ -15,17 +15,17 @@ namespace android::app::job
 	}
 	
 	// QJniObject forward
-	JobWorkItem::JobWorkItem(QJniObject obj) : __JniBaseClass(obj) {}
+	JobWorkItem::JobWorkItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JobWorkItem::JobWorkItem(android::content::Intent arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.job.JobWorkItem",
 			"(Landroid/content/Intent;)V",
 			arg0.object()
 		) {}
 	JobWorkItem::JobWorkItem(android::content::Intent arg0, jlong arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.job.JobWorkItem",
 			"(Landroid/content/Intent;JJ)V",
 			arg0.object(),

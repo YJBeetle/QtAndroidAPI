@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,22 +9,22 @@ namespace java::util
 
 namespace java::util
 {
-	class Observable : public __JniBaseClass
+	class Observable : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Observable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Observable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Observable(QJniObject obj);
 		
 		// Constructors
 		Observable();
 		
 		// Methods
-		void addObserver(__JniBaseClass arg0);
+		void addObserver(JObject arg0);
 		jint countObservers();
-		void deleteObserver(__JniBaseClass arg0);
+		void deleteObserver(JObject arg0);
 		void deleteObservers();
 		jboolean hasChanged();
 		void notifyObservers();

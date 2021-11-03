@@ -39,23 +39,23 @@ namespace java::math
 	}
 	
 	// QJniObject forward
-	MathContext::MathContext(QJniObject obj) : __JniBaseClass(obj) {}
+	MathContext::MathContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MathContext::MathContext(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.math.MathContext",
 			"(I)V",
 			arg0
 		) {}
 	MathContext::MathContext(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.math.MathContext",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	MathContext::MathContext(jint arg0, java::math::RoundingMode arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.math.MathContext",
 			"(ILjava/math/RoundingMode;)V",
 			arg0,

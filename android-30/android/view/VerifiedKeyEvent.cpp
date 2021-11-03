@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass VerifiedKeyEvent::CREATOR()
+	JObject VerifiedKeyEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.VerifiedKeyEvent",

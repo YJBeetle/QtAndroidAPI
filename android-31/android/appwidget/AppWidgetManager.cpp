@@ -243,7 +243,7 @@ namespace android::appwidget
 	}
 	
 	// QJniObject forward
-	AppWidgetManager::AppWidgetManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AppWidgetManager::AppWidgetManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -311,14 +311,14 @@ namespace android::appwidget
 			arg0
 		);
 	}
-	__JniBaseClass AppWidgetManager::getInstalledProviders()
+	JObject AppWidgetManager::getInstalledProviders()
 	{
 		return callObjectMethod(
 			"getInstalledProviders",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1)
+	JObject AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForPackage",
@@ -327,7 +327,7 @@ namespace android::appwidget
 			arg1.object()
 		);
 	}
-	__JniBaseClass AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
+	JObject AppWidgetManager::getInstalledProvidersForProfile(android::os::UserHandle arg0)
 	{
 		return callObjectMethod(
 			"getInstalledProvidersForProfile",

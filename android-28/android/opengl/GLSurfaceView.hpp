@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/SurfaceView.hpp"
 
@@ -26,7 +26,7 @@ namespace android::opengl
 		
 		// Constructors
 		GLSurfaceView(android::content::Context arg0);
-		GLSurfaceView(android::content::Context arg0, __JniBaseClass arg1);
+		GLSurfaceView(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jint getDebugFlags();
@@ -34,24 +34,24 @@ namespace android::opengl
 		jint getRenderMode();
 		void onPause();
 		void onResume();
-		void queueEvent(__JniBaseClass arg0);
+		void queueEvent(JObject arg0);
 		void requestRender();
 		void setDebugFlags(jint arg0);
-		void setEGLConfigChooser(__JniBaseClass arg0);
+		void setEGLConfigChooser(JObject arg0);
 		void setEGLConfigChooser(jboolean arg0);
 		void setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void setEGLContextClientVersion(jint arg0);
-		void setEGLContextFactory(__JniBaseClass arg0);
-		void setEGLWindowSurfaceFactory(__JniBaseClass arg0);
-		void setGLWrapper(__JniBaseClass arg0);
+		void setEGLContextFactory(JObject arg0);
+		void setEGLWindowSurfaceFactory(JObject arg0);
+		void setGLWrapper(JObject arg0);
 		void setPreserveEGLContextOnPause(jboolean arg0);
 		void setRenderMode(jint arg0);
-		void setRenderer(__JniBaseClass arg0);
-		void surfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
-		void surfaceCreated(__JniBaseClass arg0);
-		void surfaceDestroyed(__JniBaseClass arg0);
-		void surfaceRedrawNeeded(__JniBaseClass arg0);
-		void surfaceRedrawNeededAsync(__JniBaseClass arg0, __JniBaseClass arg1);
+		void setRenderer(JObject arg0);
+		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3);
+		void surfaceCreated(JObject arg0);
+		void surfaceDestroyed(JObject arg0);
+		void surfaceRedrawNeeded(JObject arg0);
+		void surfaceRedrawNeededAsync(JObject arg0, JObject arg1);
 	};
 } // namespace android::opengl
 

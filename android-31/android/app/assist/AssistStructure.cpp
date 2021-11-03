@@ -6,7 +6,7 @@
 namespace android::app::assist
 {
 	// Fields
-	__JniBaseClass AssistStructure::CREATOR()
+	JObject AssistStructure::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.assist.AssistStructure",
@@ -16,11 +16,11 @@ namespace android::app::assist
 	}
 	
 	// QJniObject forward
-	AssistStructure::AssistStructure(QJniObject obj) : __JniBaseClass(obj) {}
+	AssistStructure::AssistStructure(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AssistStructure::AssistStructure()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.assist.AssistStructure",
 			"()V"
 		) {}

@@ -7,7 +7,7 @@ namespace java::util::logging
 	// Fields
 	
 	// QJniObject forward
-	Formatter::Formatter(QJniObject obj) : __JniBaseClass(obj) {}
+	Formatter::Formatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -160,12 +160,12 @@ namespace android::accessibilityservice
 		android::view::accessibility::AccessibilityNodeInfo getRootInActiveWindow();
 		android::accessibilityservice::AccessibilityServiceInfo getServiceInfo();
 		android::accessibilityservice::AccessibilityService_SoftKeyboardController getSoftKeyboardController();
-		__JniBaseClass getSystemActions();
+		JObject getSystemActions();
 		jobject getSystemService(jstring arg0);
-		__JniBaseClass getWindows();
+		JObject getWindows();
 		android::util::SparseArray getWindowsOnAllDisplays();
 		void onAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		jboolean onGesture(android::accessibilityservice::AccessibilityGestureEvent arg0);
 		void onInterrupt();
 		void onSystemActionsChanged();
@@ -173,7 +173,7 @@ namespace android::accessibilityservice
 		void setGestureDetectionPassthroughRegion(jint arg0, android::graphics::Region arg1);
 		void setServiceInfo(android::accessibilityservice::AccessibilityServiceInfo arg0);
 		void setTouchExplorationPassthroughRegion(jint arg0, android::graphics::Region arg1);
-		void takeScreenshot(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		void takeScreenshot(jint arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::accessibilityservice
 

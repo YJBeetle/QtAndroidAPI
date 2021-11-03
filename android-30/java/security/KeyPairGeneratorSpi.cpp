@@ -7,11 +7,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyPairGeneratorSpi::KeyPairGeneratorSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyPairGeneratorSpi::KeyPairGeneratorSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyPairGeneratorSpi",
 			"()V"
 		) {}
@@ -33,7 +33,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyPairGeneratorSpi::initialize(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void KeyPairGeneratorSpi::initialize(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"initialize",

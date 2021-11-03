@@ -13,11 +13,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	ThumbnailUtils::ThumbnailUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	ThumbnailUtils::ThumbnailUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThumbnailUtils::ThumbnailUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ThumbnailUtils",
 			"()V"
 		) {}

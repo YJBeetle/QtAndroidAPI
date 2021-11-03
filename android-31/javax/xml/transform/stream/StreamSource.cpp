@@ -16,47 +16,47 @@ namespace javax::xml::transform::stream
 	}
 	
 	// QJniObject forward
-	StreamSource::StreamSource(QJniObject obj) : __JniBaseClass(obj) {}
+	StreamSource::StreamSource(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StreamSource::StreamSource()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"()V"
 		) {}
 	StreamSource::StreamSource(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	StreamSource::StreamSource(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	StreamSource::StreamSource(java::io::Reader arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/Reader;)V",
 			arg0.object()
 		) {}
 	StreamSource::StreamSource(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	StreamSource::StreamSource(java::io::InputStream arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	StreamSource::StreamSource(java::io::Reader arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/Reader;Ljava/lang/String;)V",
 			arg0.object(),

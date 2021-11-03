@@ -69,7 +69,7 @@ namespace android::media
 		) {}
 	
 	// Methods
-	__JniBaseClass MediaRoute2ProviderService::getAllSessionInfo()
+	JObject MediaRoute2ProviderService::getAllSessionInfo()
 	{
 		return callObjectMethod(
 			"getAllSessionInfo",
@@ -93,7 +93,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaRoute2ProviderService::notifyRoutes(__JniBaseClass arg0)
+	void MediaRoute2ProviderService::notifyRoutes(JObject arg0)
 	{
 		callMethod<void>(
 			"notifyRoutes",
@@ -126,7 +126,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	__JniBaseClass MediaRoute2ProviderService::onBind(android::content::Intent arg0)
+	JObject MediaRoute2ProviderService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

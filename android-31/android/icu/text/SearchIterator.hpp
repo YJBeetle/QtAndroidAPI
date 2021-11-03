@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -13,14 +13,14 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class SearchIterator : public __JniBaseClass
+	class SearchIterator : public JObject
 	{
 	public:
 		// Fields
 		static jint DONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SearchIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SearchIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SearchIterator(QJniObject obj);
 		
 		// Constructors
@@ -34,7 +34,7 @@ namespace android::icu::text
 		jint getMatchLength();
 		jint getMatchStart();
 		jstring getMatchedText();
-		__JniBaseClass getTarget();
+		JObject getTarget();
 		jboolean isOverlapping();
 		jint last();
 		jint next();
@@ -45,7 +45,7 @@ namespace android::icu::text
 		void setElementComparisonType(android::icu::text::SearchIterator_ElementComparisonType arg0);
 		void setIndex(jint arg0);
 		void setOverlapping(jboolean arg0);
-		void setTarget(__JniBaseClass arg0);
+		void setTarget(JObject arg0);
 	};
 } // namespace android::icu::text
 

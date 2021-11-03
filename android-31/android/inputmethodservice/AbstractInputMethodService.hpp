@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -51,7 +51,7 @@ namespace android::inputmethodservice
 		// Methods
 		android::view::KeyEvent_DispatcherState getKeyDispatcherState();
 		jboolean isUiContext();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodImpl onCreateInputMethodInterface();
 		android::inputmethodservice::AbstractInputMethodService_AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);

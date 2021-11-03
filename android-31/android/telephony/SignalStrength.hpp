@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,15 +9,15 @@ namespace android::os
 
 namespace android::telephony
 {
-	class SignalStrength : public __JniBaseClass
+	class SignalStrength : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint INVALID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SignalStrength(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SignalStrength(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SignalStrength(QJniObject obj);
 		
 		// Constructors
@@ -28,8 +28,8 @@ namespace android::telephony
 		jboolean equals(jobject arg0);
 		jint getCdmaDbm();
 		jint getCdmaEcio();
-		__JniBaseClass getCellSignalStrengths();
-		__JniBaseClass getCellSignalStrengths(jclass arg0);
+		JObject getCellSignalStrengths();
+		JObject getCellSignalStrengths(jclass arg0);
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();

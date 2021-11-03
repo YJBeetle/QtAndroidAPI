@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QJniObject forward
-	R_raw::R_raw(QJniObject obj) : __JniBaseClass(obj) {}
+	R_raw::R_raw(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_raw::R_raw()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$raw",
 			"()V"
 		) {}

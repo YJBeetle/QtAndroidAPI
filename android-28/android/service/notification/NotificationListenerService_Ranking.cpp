@@ -27,11 +27,11 @@ namespace android::service::notification
 	}
 	
 	// QJniObject forward
-	NotificationListenerService_Ranking::NotificationListenerService_Ranking(QJniObject obj) : __JniBaseClass(obj) {}
+	NotificationListenerService_Ranking::NotificationListenerService_Ranking(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NotificationListenerService_Ranking::NotificationListenerService_Ranking()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.NotificationListenerService$Ranking",
 			"()V"
 		) {}

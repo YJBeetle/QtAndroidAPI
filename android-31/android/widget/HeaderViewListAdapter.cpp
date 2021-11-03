@@ -10,11 +10,11 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	HeaderViewListAdapter::HeaderViewListAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	HeaderViewListAdapter::HeaderViewListAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	HeaderViewListAdapter::HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	HeaderViewListAdapter::HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, JObject arg2)
+		: JObject(
 			"android.widget.HeaderViewListAdapter",
 			"(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/ListAdapter;)V",
 			arg0.object(),
@@ -99,7 +99,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass HeaderViewListAdapter::getWrappedAdapter()
+	JObject HeaderViewListAdapter::getWrappedAdapter()
 	{
 		return callObjectMethod(
 			"getWrappedAdapter",

@@ -40,7 +40,7 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	Connection_RttModifyStatus::Connection_RttModifyStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	Connection_RttModifyStatus::Connection_RttModifyStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellIdentityTdscdma::CREATOR()
+	JObject CellIdentityTdscdma::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellIdentityTdscdma",
@@ -35,7 +35,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass CellIdentityTdscdma::getAdditionalPlmns()
+	JObject CellIdentityTdscdma::getAdditionalPlmns()
 	{
 		return callObjectMethod(
 			"getAdditionalPlmns",

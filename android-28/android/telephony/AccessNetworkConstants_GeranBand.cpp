@@ -103,7 +103,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	AccessNetworkConstants_GeranBand::AccessNetworkConstants_GeranBand(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessNetworkConstants_GeranBand::AccessNetworkConstants_GeranBand(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

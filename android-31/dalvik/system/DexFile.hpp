@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,13 +13,13 @@ namespace java::lang
 
 namespace dalvik::system
 {
-	class DexFile : public __JniBaseClass
+	class DexFile : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DexFile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DexFile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DexFile(QJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace dalvik::system
 		static jboolean isDexOptNeeded(jstring arg0);
 		static dalvik::system::DexFile loadDex(jstring arg0, jstring arg1, jint arg2);
 		void close();
-		__JniBaseClass entries();
+		JObject entries();
 		jstring getName();
 		jclass loadClass(jstring arg0, java::lang::ClassLoader arg1);
 		jstring toString();

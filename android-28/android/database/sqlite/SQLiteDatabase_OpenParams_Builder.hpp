@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::database::sqlite
 {
@@ -9,13 +9,13 @@ namespace android::database::sqlite
 
 namespace android::database::sqlite
 {
-	class SQLiteDatabase_OpenParams_Builder : public __JniBaseClass
+	class SQLiteDatabase_OpenParams_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteDatabase_OpenParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SQLiteDatabase_OpenParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteDatabase_OpenParams_Builder(QJniObject obj);
 		
 		// Constructors
@@ -26,8 +26,8 @@ namespace android::database::sqlite
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder addOpenFlags(jint arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams build();
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder removeOpenFlags(jint arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setCursorFactory(__JniBaseClass arg0);
-		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setErrorHandler(__JniBaseClass arg0);
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setCursorFactory(JObject arg0);
+		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setErrorHandler(JObject arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setIdleConnectionTimeout(jlong arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setJournalMode(jstring arg0);
 		android::database::sqlite::SQLiteDatabase_OpenParams_Builder setLookasideConfig(jint arg0, jint arg1);

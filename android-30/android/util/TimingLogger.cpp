@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	TimingLogger::TimingLogger(QJniObject obj) : __JniBaseClass(obj) {}
+	TimingLogger::TimingLogger(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TimingLogger::TimingLogger(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.TimingLogger",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

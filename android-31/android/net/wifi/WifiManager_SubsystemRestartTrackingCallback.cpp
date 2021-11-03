@@ -5,11 +5,11 @@ namespace android::net::wifi
 	// Fields
 	
 	// QJniObject forward
-	WifiManager_SubsystemRestartTrackingCallback::WifiManager_SubsystemRestartTrackingCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_SubsystemRestartTrackingCallback::WifiManager_SubsystemRestartTrackingCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiManager_SubsystemRestartTrackingCallback::WifiManager_SubsystemRestartTrackingCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiManager$SubsystemRestartTrackingCallback",
 			"()V"
 		) {}

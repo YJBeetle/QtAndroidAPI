@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,13 +9,13 @@ namespace java::util
 
 namespace java::net
 {
-	class HttpCookie : public __JniBaseClass
+	class HttpCookie : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit HttpCookie(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HttpCookie(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HttpCookie(QJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace java::net
 		
 		// Methods
 		static jboolean domainMatches(jstring arg0, jstring arg1);
-		static __JniBaseClass parse(jstring arg0);
+		static JObject parse(jstring arg0);
 		jobject clone();
 		jboolean equals(jobject arg0);
 		jstring getComment();

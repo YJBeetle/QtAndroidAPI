@@ -86,11 +86,11 @@ namespace android::database
 	}
 	
 	// QJniObject forward
-	DatabaseUtils::DatabaseUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	DatabaseUtils::DatabaseUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DatabaseUtils::DatabaseUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.DatabaseUtils",
 			"()V"
 		) {}
@@ -180,7 +180,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorDoubleToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorDoubleToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -192,7 +192,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorDoubleToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -203,7 +203,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorDoubleToCursorValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorDoubleToCursorValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -214,7 +214,7 @@ namespace android::database
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorFloatToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorFloatToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -225,7 +225,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -236,7 +236,7 @@ namespace android::database
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -248,7 +248,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorIntToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorIntToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -259,7 +259,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -270,7 +270,7 @@ namespace android::database
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -282,7 +282,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorLongToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorLongToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -293,7 +293,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorRowToContentValues(__JniBaseClass arg0, android::content::ContentValues arg1)
+	void DatabaseUtils::cursorRowToContentValues(JObject arg0, android::content::ContentValues arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -303,7 +303,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void DatabaseUtils::cursorShortToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorShortToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -314,7 +314,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2)
+	void DatabaseUtils::cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -325,7 +325,7 @@ namespace android::database
 			arg2.object()
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
+	void DatabaseUtils::cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -337,7 +337,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::cursorStringToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2)
+	void DatabaseUtils::cursorStringToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -348,7 +348,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void DatabaseUtils::cursorStringToInsertHelper(__JniBaseClass arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
+	void DatabaseUtils::cursorStringToInsertHelper(JObject arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -360,7 +360,7 @@ namespace android::database
 			arg3
 		);
 	}
-	void DatabaseUtils::dumpCurrentRow(__JniBaseClass arg0)
+	void DatabaseUtils::dumpCurrentRow(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -369,7 +369,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void DatabaseUtils::dumpCurrentRow(__JniBaseClass arg0, java::io::PrintStream arg1)
+	void DatabaseUtils::dumpCurrentRow(JObject arg0, java::io::PrintStream arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -379,7 +379,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void DatabaseUtils::dumpCurrentRow(__JniBaseClass arg0, java::lang::StringBuilder arg1)
+	void DatabaseUtils::dumpCurrentRow(JObject arg0, java::lang::StringBuilder arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -389,7 +389,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jstring DatabaseUtils::dumpCurrentRowToString(__JniBaseClass arg0)
+	jstring DatabaseUtils::dumpCurrentRowToString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",
@@ -398,7 +398,7 @@ namespace android::database
 			arg0.object()
 		).object<jstring>();
 	}
-	void DatabaseUtils::dumpCursor(__JniBaseClass arg0)
+	void DatabaseUtils::dumpCursor(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -407,7 +407,7 @@ namespace android::database
 			arg0.object()
 		);
 	}
-	void DatabaseUtils::dumpCursor(__JniBaseClass arg0, java::io::PrintStream arg1)
+	void DatabaseUtils::dumpCursor(JObject arg0, java::io::PrintStream arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -417,7 +417,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void DatabaseUtils::dumpCursor(__JniBaseClass arg0, java::lang::StringBuilder arg1)
+	void DatabaseUtils::dumpCursor(JObject arg0, java::lang::StringBuilder arg1)
 	{
 		callStaticMethod<void>(
 			"android.database.DatabaseUtils",
@@ -427,7 +427,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	jstring DatabaseUtils::dumpCursorToString(__JniBaseClass arg0)
+	jstring DatabaseUtils::dumpCursorToString(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.DatabaseUtils",

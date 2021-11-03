@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -53,7 +53,7 @@ namespace android::webkit
 
 namespace android::webkit
 {
-	class WebViewClient : public __JniBaseClass
+	class WebViewClient : public JObject
 	{
 	public:
 		// Fields
@@ -80,7 +80,7 @@ namespace android::webkit
 		static jint SAFE_BROWSING_THREAT_UNWANTED_SOFTWARE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WebViewClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WebViewClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WebViewClient(QJniObject obj);
 		
 		// Constructors
@@ -94,21 +94,21 @@ namespace android::webkit
 		void onPageFinished(android::webkit::WebView arg0, jstring arg1);
 		void onPageStarted(android::webkit::WebView arg0, jstring arg1, android::graphics::Bitmap arg2);
 		void onReceivedClientCertRequest(android::webkit::WebView arg0, android::webkit::ClientCertRequest arg1);
-		void onReceivedError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceError arg2);
+		void onReceivedError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceError arg2);
 		void onReceivedError(android::webkit::WebView arg0, jint arg1, jstring arg2, jstring arg3);
 		void onReceivedHttpAuthRequest(android::webkit::WebView arg0, android::webkit::HttpAuthHandler arg1, jstring arg2, jstring arg3);
-		void onReceivedHttpError(android::webkit::WebView arg0, __JniBaseClass arg1, android::webkit::WebResourceResponse arg2);
+		void onReceivedHttpError(android::webkit::WebView arg0, JObject arg1, android::webkit::WebResourceResponse arg2);
 		void onReceivedLoginRequest(android::webkit::WebView arg0, jstring arg1, jstring arg2, jstring arg3);
 		void onReceivedSslError(android::webkit::WebView arg0, android::webkit::SslErrorHandler arg1, android::net::http::SslError arg2);
 		jboolean onRenderProcessGone(android::webkit::WebView arg0, android::webkit::RenderProcessGoneDetail arg1);
-		void onSafeBrowsingHit(android::webkit::WebView arg0, __JniBaseClass arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3);
+		void onSafeBrowsingHit(android::webkit::WebView arg0, JObject arg1, jint arg2, android::webkit::SafeBrowsingResponse arg3);
 		void onScaleChanged(android::webkit::WebView arg0, jfloat arg1, jfloat arg2);
 		void onTooManyRedirects(android::webkit::WebView arg0, android::os::Message arg1, android::os::Message arg2);
 		void onUnhandledKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
-		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, __JniBaseClass arg1);
+		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, JObject arg1);
 		android::webkit::WebResourceResponse shouldInterceptRequest(android::webkit::WebView arg0, jstring arg1);
 		jboolean shouldOverrideKeyEvent(android::webkit::WebView arg0, android::view::KeyEvent arg1);
-		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, __JniBaseClass arg1);
+		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, JObject arg1);
 		jboolean shouldOverrideUrlLoading(android::webkit::WebView arg0, jstring arg1);
 	};
 } // namespace android::webkit

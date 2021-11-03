@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeIdentification.hpp"
 
 namespace javax::security::auth::x500

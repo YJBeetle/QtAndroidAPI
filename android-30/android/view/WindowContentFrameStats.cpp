@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass WindowContentFrameStats::CREATOR()
+	JObject WindowContentFrameStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.WindowContentFrameStats",

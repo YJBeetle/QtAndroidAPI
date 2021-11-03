@@ -61,7 +61,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiEnterpriseConfig_Phase2::WifiEnterpriseConfig_Phase2(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiEnterpriseConfig_Phase2::WifiEnterpriseConfig_Phase2(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

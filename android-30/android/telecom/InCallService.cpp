@@ -42,14 +42,14 @@ namespace android::telecom
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	__JniBaseClass InCallService::getCalls()
+	JObject InCallService::getCalls()
 	{
 		return callObjectMethod(
 			"getCalls",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass InCallService::onBind(android::content::Intent arg0)
+	JObject InCallService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

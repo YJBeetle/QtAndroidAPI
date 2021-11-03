@@ -11,7 +11,7 @@ namespace android::app
 			"CRASHED"
 		);
 	}
-	__JniBaseClass ActivityManager_ProcessErrorStateInfo::CREATOR()
+	JObject ActivityManager_ProcessErrorStateInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
@@ -95,11 +95,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_ProcessErrorStateInfo::ActivityManager_ProcessErrorStateInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$ProcessErrorStateInfo",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::view
 {
-	class ViewOverlay : public __JniBaseClass
+	class ViewOverlay : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ViewOverlay(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewOverlay(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewOverlay(QJniObject obj);
 		
 		// Constructors

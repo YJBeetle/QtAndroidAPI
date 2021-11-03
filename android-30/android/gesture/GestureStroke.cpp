@@ -29,11 +29,11 @@ namespace android::gesture
 	}
 	
 	// QJniObject forward
-	GestureStroke::GestureStroke(QJniObject obj) : __JniBaseClass(obj) {}
+	GestureStroke::GestureStroke(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GestureStroke::GestureStroke(java::util::ArrayList arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.gesture.GestureStroke",
 			"(Ljava/util/ArrayList;)V",
 			arg0.object()

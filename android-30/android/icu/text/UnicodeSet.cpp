@@ -114,7 +114,7 @@ namespace android::icu::text
 			arg0,
 			arg1
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2)
+	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;)V",
@@ -122,7 +122,7 @@ namespace android::icu::text
 			arg1.object(),
 			arg2.object()
 		) {}
-	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2, jint arg3)
+	UnicodeSet::UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2, jint arg3)
 		: android::icu::text::UnicodeFilter(
 			"android.icu.text.UnicodeSet",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/text/SymbolTable;I)V",
@@ -186,7 +186,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::add(__JniBaseClass arg0)
+	android::icu::text::UnicodeSet UnicodeSet::add(JObject arg0)
 	{
 		return callObjectMethod(
 			"add",
@@ -227,7 +227,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::addAll(__JniBaseClass arg0)
+	android::icu::text::UnicodeSet UnicodeSet::addAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"addAll",
@@ -244,7 +244,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	__JniBaseClass UnicodeSet::addAllTo(__JniBaseClass arg0)
+	JObject UnicodeSet::addAllTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"addAllTo",
@@ -304,7 +304,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	android::icu::text::UnicodeSet UnicodeSet::applyPropertyAlias(jstring arg0, jstring arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"applyPropertyAlias",
@@ -366,7 +366,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jint UnicodeSet::compareTo(__JniBaseClass arg0)
+	jint UnicodeSet::compareTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"compareTo",
@@ -472,7 +472,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	jboolean UnicodeSet::containsAll(__JniBaseClass arg0)
+	jboolean UnicodeSet::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -504,7 +504,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean UnicodeSet::containsNone(__JniBaseClass arg0)
+	jboolean UnicodeSet::containsNone(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsNone",
@@ -537,7 +537,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jboolean UnicodeSet::containsSome(__JniBaseClass arg0)
+	jboolean UnicodeSet::containsSome(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsSome",
@@ -621,14 +621,14 @@ namespace android::icu::text
 			"()Z"
 		);
 	}
-	__JniBaseClass UnicodeSet::iterator()
+	JObject UnicodeSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint UnicodeSet::matches(__JniBaseClass arg0, jintArray arg1, jint arg2, jboolean arg3)
+	jint UnicodeSet::matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3)
 	{
 		return callMethod<jint>(
 			"matches",
@@ -647,7 +647,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass UnicodeSet::ranges()
+	JObject UnicodeSet::ranges()
 	{
 		return callObjectMethod(
 			"ranges",
@@ -695,7 +695,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::removeAll(__JniBaseClass arg0)
+	android::icu::text::UnicodeSet UnicodeSet::removeAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"removeAll",
@@ -751,7 +751,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UnicodeSet UnicodeSet::retainAll(__JniBaseClass arg0)
+	android::icu::text::UnicodeSet UnicodeSet::retainAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"retainAll",
@@ -821,7 +821,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass UnicodeSet::strings()
+	JObject UnicodeSet::strings()
 	{
 		return callObjectMethod(
 			"strings",

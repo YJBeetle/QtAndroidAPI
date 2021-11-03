@@ -20,7 +20,7 @@ namespace java::net
 	}
 	
 	// QJniObject forward
-	IDN::IDN(QJniObject obj) : __JniBaseClass(obj) {}
+	IDN::IDN(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -33,7 +33,7 @@ namespace javax::xml::datatype
 
 namespace javax::xml::datatype
 {
-	class DatatypeFactory : public __JniBaseClass
+	class DatatypeFactory : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace javax::xml::datatype
 		static jstring DATATYPEFACTORY_PROPERTY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DatatypeFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DatatypeFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DatatypeFactory(QJniObject obj);
 		
 		// Constructors

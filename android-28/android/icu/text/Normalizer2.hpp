@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -21,13 +21,13 @@ namespace java::lang
 
 namespace android::icu::text
 {
-	class Normalizer2 : public __JniBaseClass
+	class Normalizer2 : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Normalizer2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Normalizer2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Normalizer2(QJniObject obj);
 		
 		// Constructors
@@ -48,7 +48,7 @@ namespace android::icu::text
 		jboolean hasBoundaryBefore(jint arg0);
 		jboolean isInert(jint arg0);
 		jboolean isNormalized(jstring arg0);
-		__JniBaseClass normalize(jstring arg0, __JniBaseClass arg1);
+		JObject normalize(jstring arg0, JObject arg1);
 		jstring normalize(jstring arg0);
 		java::lang::StringBuilder normalize(jstring arg0, java::lang::StringBuilder arg1);
 		java::lang::StringBuilder normalizeSecondAndAppend(java::lang::StringBuilder arg0, jstring arg1);

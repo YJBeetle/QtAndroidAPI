@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	Trace::Trace(QJniObject obj) : __JniBaseClass(obj) {}
+	Trace::Trace(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

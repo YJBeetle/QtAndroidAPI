@@ -17,7 +17,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	UnicodeSet_EntryRange::UnicodeSet_EntryRange(QJniObject obj) : __JniBaseClass(obj) {}
+	UnicodeSet_EntryRange::UnicodeSet_EntryRange(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

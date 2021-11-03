@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	PictureInPictureParams_Builder::PictureInPictureParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PictureInPictureParams_Builder::PictureInPictureParams_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PictureInPictureParams_Builder::PictureInPictureParams_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.PictureInPictureParams$Builder",
 			"()V"
 		) {}
@@ -25,7 +25,7 @@ namespace android::app
 			"()Landroid/app/PictureInPictureParams;"
 		);
 	}
-	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(__JniBaseClass arg0)
+	android::app::PictureInPictureParams_Builder PictureInPictureParams_Builder::setActions(JObject arg0)
 	{
 		return callObjectMethod(
 			"setActions",

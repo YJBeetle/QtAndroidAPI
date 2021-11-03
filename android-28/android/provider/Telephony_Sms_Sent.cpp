@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Sms_Sent::Telephony_Sms_Sent(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Sms_Sent::Telephony_Sms_Sent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

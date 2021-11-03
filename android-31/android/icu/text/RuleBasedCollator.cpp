@@ -76,7 +76,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
+	android::icu::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",

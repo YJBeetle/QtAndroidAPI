@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::math
 {
-	class MathContext : public __JniBaseClass
+	class MathContext : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::icu::math
 		static jint SCIENTIFIC();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MathContext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MathContext(QJniObject obj);
 		
 		// Constructors

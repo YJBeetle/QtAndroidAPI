@@ -27,7 +27,7 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	LocationProvider::LocationProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	LocationProvider::LocationProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

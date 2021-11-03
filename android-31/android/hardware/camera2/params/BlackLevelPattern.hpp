@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::hardware::camera2::params
 {
-	class BlackLevelPattern : public __JniBaseClass
+	class BlackLevelPattern : public JObject
 	{
 	public:
 		// Fields
 		static jint COUNT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BlackLevelPattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BlackLevelPattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BlackLevelPattern(QJniObject obj);
 		
 		// Constructors

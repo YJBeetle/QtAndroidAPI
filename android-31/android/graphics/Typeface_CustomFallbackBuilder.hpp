@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,13 +17,13 @@ namespace android::graphics::fonts
 
 namespace android::graphics
 {
-	class Typeface_CustomFallbackBuilder : public __JniBaseClass
+	class Typeface_CustomFallbackBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Typeface_CustomFallbackBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Typeface_CustomFallbackBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Typeface_CustomFallbackBuilder(QJniObject obj);
 		
 		// Constructors

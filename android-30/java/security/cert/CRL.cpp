@@ -6,7 +6,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CRL::CRL(QJniObject obj) : __JniBaseClass(obj) {}
+	CRL::CRL(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::text
 {
-	class Bidi : public __JniBaseClass
+	class Bidi : public JObject
 	{
 	public:
 		// Fields
@@ -15,11 +15,11 @@ namespace java::text
 		static jint DIRECTION_RIGHT_TO_LEFT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Bidi(QJniObject obj);
 		
 		// Constructors
-		Bidi(__JniBaseClass arg0);
+		Bidi(JObject arg0);
 		Bidi(jstring arg0, jint arg1);
 		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		

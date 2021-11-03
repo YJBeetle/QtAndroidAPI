@@ -16,7 +16,7 @@ namespace android::widget
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.object()
 		) {}
-	Gallery_LayoutParams::Gallery_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	Gallery_LayoutParams::Gallery_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_LayoutParams(
 			"android.widget.Gallery$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

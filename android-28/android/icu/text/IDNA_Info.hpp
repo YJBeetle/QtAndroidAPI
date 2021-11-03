@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::text
 {
-	class IDNA_Info : public __JniBaseClass
+	class IDNA_Info : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IDNA_Info(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IDNA_Info(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IDNA_Info(QJniObject obj);
 		
 		// Constructors
 		IDNA_Info();
 		
 		// Methods
-		__JniBaseClass getErrors();
+		JObject getErrors();
 		jboolean hasErrors();
 		jboolean isTransitionalDifferent();
 	};

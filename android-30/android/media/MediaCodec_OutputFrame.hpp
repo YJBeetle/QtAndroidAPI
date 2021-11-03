@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -17,19 +17,19 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaCodec_OutputFrame : public __JniBaseClass
+	class MediaCodec_OutputFrame : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_OutputFrame(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodec_OutputFrame(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec_OutputFrame(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getChangedKeys();
+		JObject getChangedKeys();
 		jint getFlags();
 		android::media::MediaFormat getFormat();
 		android::hardware::HardwareBuffer getHardwareBuffer();

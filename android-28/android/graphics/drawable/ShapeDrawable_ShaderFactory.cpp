@@ -6,11 +6,11 @@ namespace android::graphics::drawable
 	// Fields
 	
 	// QJniObject forward
-	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ShapeDrawable_ShaderFactory::ShapeDrawable_ShaderFactory()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.drawable.ShapeDrawable$ShaderFactory",
 			"()V"
 		) {}

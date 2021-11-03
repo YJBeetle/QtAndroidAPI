@@ -8,11 +8,11 @@ namespace android::widget::inline
 	// Fields
 	
 	// QJniObject forward
-	InlinePresentationSpec_Builder::InlinePresentationSpec_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	InlinePresentationSpec_Builder::InlinePresentationSpec_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InlinePresentationSpec_Builder::InlinePresentationSpec_Builder(android::util::Size arg0, android::util::Size arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.inline.InlinePresentationSpec$Builder",
 			"(Landroid/util/Size;Landroid/util/Size;)V",
 			arg0.object(),

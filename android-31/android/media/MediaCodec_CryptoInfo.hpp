@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -9,7 +9,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaCodec_CryptoInfo : public __JniBaseClass
+	class MediaCodec_CryptoInfo : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::media
 		jint numSubSamples();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_CryptoInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodec_CryptoInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec_CryptoInfo(QJniObject obj);
 		
 		// Constructors

@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	DebugUtils::DebugUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	DebugUtils::DebugUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

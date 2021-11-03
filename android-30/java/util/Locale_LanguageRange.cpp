@@ -19,17 +19,17 @@ namespace java::util
 	}
 	
 	// QJniObject forward
-	Locale_LanguageRange::Locale_LanguageRange(QJniObject obj) : __JniBaseClass(obj) {}
+	Locale_LanguageRange::Locale_LanguageRange(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Locale_LanguageRange::Locale_LanguageRange(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Locale_LanguageRange::Locale_LanguageRange(jstring arg0, jdouble arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;D)V",
 			arg0,
@@ -37,7 +37,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass Locale_LanguageRange::mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Locale_LanguageRange::mapEquivalents(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
@@ -47,7 +47,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Locale_LanguageRange::parse(jstring arg0)
+	JObject Locale_LanguageRange::parse(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",
@@ -56,7 +56,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Locale_LanguageRange::parse(jstring arg0, __JniBaseClass arg1)
+	JObject Locale_LanguageRange::parse(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale$LanguageRange",

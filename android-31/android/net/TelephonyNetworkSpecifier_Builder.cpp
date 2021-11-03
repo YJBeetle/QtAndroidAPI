@@ -6,11 +6,11 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TelephonyNetworkSpecifier_Builder::TelephonyNetworkSpecifier_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.TelephonyNetworkSpecifier$Builder",
 			"()V"
 		) {}

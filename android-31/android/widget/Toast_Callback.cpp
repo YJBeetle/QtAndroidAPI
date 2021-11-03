@@ -5,11 +5,11 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	Toast_Callback::Toast_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	Toast_Callback::Toast_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Toast_Callback::Toast_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Toast$Callback",
 			"()V"
 		) {}

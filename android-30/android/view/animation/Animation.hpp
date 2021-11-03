@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::view::animation
 
 namespace android::view::animation
 {
-	class Animation : public __JniBaseClass
+	class Animation : public JObject
 	{
 	public:
 		// Fields
@@ -29,12 +29,12 @@ namespace android::view::animation
 		static jint ZORDER_TOP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Animation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Animation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Animation(QJniObject obj);
 		
 		// Constructors
 		Animation();
-		Animation(android::content::Context arg0, __JniBaseClass arg1);
+		Animation(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void cancel();
@@ -44,7 +44,7 @@ namespace android::view::animation
 		jlong getDuration();
 		jboolean getFillAfter();
 		jboolean getFillBefore();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jint getRepeatCount();
 		jint getRepeatMode();
 		jlong getStartOffset();
@@ -60,14 +60,14 @@ namespace android::view::animation
 		void reset();
 		void restrictDuration(jlong arg0);
 		void scaleCurrentDuration(jfloat arg0);
-		void setAnimationListener(__JniBaseClass arg0);
+		void setAnimationListener(JObject arg0);
 		void setBackgroundColor(jint arg0);
 		void setDetachWallpaper(jboolean arg0);
 		void setDuration(jlong arg0);
 		void setFillAfter(jboolean arg0);
 		void setFillBefore(jboolean arg0);
 		void setFillEnabled(jboolean arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setInterpolator(android::content::Context arg0, jint arg1);
 		void setRepeatCount(jint arg0);
 		void setRepeatMode(jint arg0);

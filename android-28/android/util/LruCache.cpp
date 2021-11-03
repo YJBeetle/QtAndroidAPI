@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	LruCache::LruCache(QJniObject obj) : __JniBaseClass(obj) {}
+	LruCache::LruCache(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LruCache::LruCache(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.LruCache",
 			"(I)V",
 			arg0
@@ -105,7 +105,7 @@ namespace android::util
 			"()I"
 		);
 	}
-	__JniBaseClass LruCache::snapshot()
+	JObject LruCache::snapshot()
 	{
 		return callObjectMethod(
 			"snapshot",

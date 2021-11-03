@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -17,11 +17,11 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothGattDescriptor : public __JniBaseClass
+	class BluetoothGattDescriptor : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jbyteArray DISABLE_NOTIFICATION_VALUE();
 		static jbyteArray ENABLE_INDICATION_VALUE();
 		static jbyteArray ENABLE_NOTIFICATION_VALUE();
@@ -35,7 +35,7 @@ namespace android::bluetooth
 		static jint PERMISSION_WRITE_SIGNED_MITM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothGattDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothGattDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattDescriptor(QJniObject obj);
 		
 		// Constructors

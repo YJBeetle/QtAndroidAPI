@@ -32,7 +32,7 @@ namespace android::app
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View MediaRouteActionProvider::onCreateActionView(__JniBaseClass arg0)
+	android::view::View MediaRouteActionProvider::onCreateActionView(JObject arg0)
 	{
 		return callObjectMethod(
 			"onCreateActionView",
@@ -54,7 +54,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	void MediaRouteActionProvider::setExtendedSettingsClickListener(__JniBaseClass arg0)
+	void MediaRouteActionProvider::setExtendedSettingsClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setExtendedSettingsClickListener",

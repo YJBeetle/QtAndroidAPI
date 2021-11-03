@@ -9,11 +9,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	LocalActivityManager::LocalActivityManager(QJniObject obj) : __JniBaseClass(obj) {}
+	LocalActivityManager::LocalActivityManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocalActivityManager::LocalActivityManager(android::app::Activity arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.LocalActivityManager",
 			"(Landroid/app/Activity;Z)V",
 			arg0.object(),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -29,13 +29,13 @@ namespace android::view::contentcapture
 
 namespace android::view::contentcapture
 {
-	class ContentCaptureSession : public __JniBaseClass
+	class ContentCaptureSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContentCaptureSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentCaptureSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureSession(QJniObject obj);
 		
 		// Constructors

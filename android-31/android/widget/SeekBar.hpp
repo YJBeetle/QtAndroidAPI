@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./ProgressBar.hpp"
 #include "./AbsSeekBar.hpp"
@@ -23,13 +23,13 @@ namespace android::widget
 		
 		// Constructors
 		SeekBar(android::content::Context arg0);
-		SeekBar(android::content::Context arg0, __JniBaseClass arg1);
-		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		SeekBar(android::content::Context arg0, JObject arg1);
+		SeekBar(android::content::Context arg0, JObject arg1, jint arg2);
+		SeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		void setOnSeekBarChangeListener(__JniBaseClass arg0);
+		void setOnSeekBarChangeListener(JObject arg0);
 	};
 } // namespace android::widget
 

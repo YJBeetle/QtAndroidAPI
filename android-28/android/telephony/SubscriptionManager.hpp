@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class SubscriptionManager : public __JniBaseClass
+	class SubscriptionManager : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::telephony
 		static jint INVALID_SUBSCRIPTION_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SubscriptionManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubscriptionManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionManager(QJniObject obj);
 		
 		// Constructors
@@ -44,18 +44,18 @@ namespace android::telephony
 		static jint getDefaultVoiceSubscriptionId();
 		void addOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
 		jboolean canManageSubscription(android::telephony::SubscriptionInfo arg0);
-		__JniBaseClass getAccessibleSubscriptionInfoList();
+		JObject getAccessibleSubscriptionInfoList();
 		android::telephony::SubscriptionInfo getActiveSubscriptionInfo(jint arg0);
 		jint getActiveSubscriptionInfoCount();
 		jint getActiveSubscriptionInfoCountMax();
 		android::telephony::SubscriptionInfo getActiveSubscriptionInfoForSimSlotIndex(jint arg0);
-		__JniBaseClass getActiveSubscriptionInfoList();
-		__JniBaseClass getSubscriptionPlans(jint arg0);
+		JObject getActiveSubscriptionInfoList();
+		JObject getSubscriptionPlans(jint arg0);
 		jboolean isNetworkRoaming(jint arg0);
 		void removeOnSubscriptionsChangedListener(android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
 		void setSubscriptionOverrideCongested(jint arg0, jboolean arg1, jlong arg2);
 		void setSubscriptionOverrideUnmetered(jint arg0, jboolean arg1, jlong arg2);
-		void setSubscriptionPlans(jint arg0, __JniBaseClass arg1);
+		void setSubscriptionPlans(jint arg0, JObject arg1);
 	};
 } // namespace android::telephony
 

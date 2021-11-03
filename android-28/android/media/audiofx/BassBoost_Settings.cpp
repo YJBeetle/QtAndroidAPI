@@ -11,16 +11,16 @@ namespace android::media::audiofx
 	}
 	
 	// QJniObject forward
-	BassBoost_Settings::BassBoost_Settings(QJniObject obj) : __JniBaseClass(obj) {}
+	BassBoost_Settings::BassBoost_Settings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BassBoost_Settings::BassBoost_Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.BassBoost$Settings",
 			"()V"
 		) {}
 	BassBoost_Settings::BassBoost_Settings(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.BassBoost$Settings",
 			"(Ljava/lang/String;)V",
 			arg0

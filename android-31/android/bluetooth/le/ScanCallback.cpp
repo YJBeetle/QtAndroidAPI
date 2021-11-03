@@ -34,17 +34,17 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	ScanCallback::ScanCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	ScanCallback::ScanCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScanCallback::ScanCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.le.ScanCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void ScanCallback::onBatchScanResults(__JniBaseClass arg0)
+	void ScanCallback::onBatchScanResults(JObject arg0)
 	{
 		callMethod<void>(
 			"onBatchScanResults",

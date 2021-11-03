@@ -22,18 +22,18 @@ namespace java::security::spec
 	}
 	
 	// QJniObject forward
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"(ILjava/math/BigInteger;)V",
 			arg0,
 			arg1.object()
 		) {}
-	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	RSAKeyGenParameterSpec::RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, JObject arg2)
+		: JObject(
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"(ILjava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
@@ -42,7 +42,7 @@ namespace java::security::spec
 		) {}
 	
 	// Methods
-	__JniBaseClass RSAKeyGenParameterSpec::getKeyParams()
+	JObject RSAKeyGenParameterSpec::getKeyParams()
 	{
 		return callObjectMethod(
 			"getKeyParams",

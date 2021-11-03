@@ -7,7 +7,7 @@ namespace java::nio::channels
 	// Fields
 	
 	// QJniObject forward
-	Selector::Selector(QJniObject obj) : __JniBaseClass(obj) {}
+	Selector::Selector(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace java::nio::channels
 			"()Z"
 		);
 	}
-	__JniBaseClass Selector::keys()
+	JObject Selector::keys()
 	{
 		return callObjectMethod(
 			"keys",
@@ -55,7 +55,7 @@ namespace java::nio::channels
 			"()I"
 		);
 	}
-	jint Selector::select(__JniBaseClass arg0)
+	jint Selector::select(JObject arg0)
 	{
 		return callMethod<jint>(
 			"select",
@@ -71,7 +71,7 @@ namespace java::nio::channels
 			arg0
 		);
 	}
-	jint Selector::select(__JniBaseClass arg0, jlong arg1)
+	jint Selector::select(JObject arg0, jlong arg1)
 	{
 		return callMethod<jint>(
 			"select",
@@ -87,7 +87,7 @@ namespace java::nio::channels
 			"()I"
 		);
 	}
-	jint Selector::selectNow(__JniBaseClass arg0)
+	jint Selector::selectNow(JObject arg0)
 	{
 		return callMethod<jint>(
 			"selectNow",
@@ -95,7 +95,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	__JniBaseClass Selector::selectedKeys()
+	JObject Selector::selectedKeys()
 	{
 		return callObjectMethod(
 			"selectedKeys",

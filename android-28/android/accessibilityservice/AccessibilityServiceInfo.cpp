@@ -55,7 +55,7 @@ namespace android::accessibilityservice
 			"CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT"
 		);
 	}
-	__JniBaseClass AccessibilityServiceInfo::CREATOR()
+	JObject AccessibilityServiceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityServiceInfo",
@@ -215,11 +215,11 @@ namespace android::accessibilityservice
 	}
 	
 	// QJniObject forward
-	AccessibilityServiceInfo::AccessibilityServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityServiceInfo::AccessibilityServiceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityServiceInfo::AccessibilityServiceInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.accessibilityservice.AccessibilityServiceInfo",
 			"()V"
 		) {}

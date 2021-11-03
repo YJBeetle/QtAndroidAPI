@@ -26,7 +26,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	PlatformVpnProfile::PlatformVpnProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	PlatformVpnProfile::PlatformVpnProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

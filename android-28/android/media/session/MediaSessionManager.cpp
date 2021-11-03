@@ -9,12 +9,12 @@ namespace android::media::session
 	// Fields
 	
 	// QJniObject forward
-	MediaSessionManager::MediaSessionManager(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSessionManager::MediaSessionManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void MediaSessionManager::addOnActiveSessionsChangedListener(__JniBaseClass arg0, android::content::ComponentName arg1)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1)
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -23,7 +23,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSessionManager::addOnActiveSessionsChangedListener(__JniBaseClass arg0, android::content::ComponentName arg1, android::os::Handler arg2)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -33,7 +33,7 @@ namespace android::media::session
 			arg2.object()
 		);
 	}
-	__JniBaseClass MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
+	JObject MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActiveSessions",
@@ -49,7 +49,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::removeOnActiveSessionsChangedListener(__JniBaseClass arg0)
+	void MediaSessionManager::removeOnActiveSessionsChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnActiveSessionsChangedListener",

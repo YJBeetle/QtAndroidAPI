@@ -10,23 +10,23 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	AlphabeticIndex::AlphabeticIndex(QJniObject obj) : __JniBaseClass(obj) {}
+	AlphabeticIndex::AlphabeticIndex(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlphabeticIndex::AlphabeticIndex(android::icu::text::RuleBasedCollator arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.AlphabeticIndex",
 			"(Landroid/icu/text/RuleBasedCollator;)V",
 			arg0.object()
 		) {}
 	AlphabeticIndex::AlphabeticIndex(android::icu::util::ULocale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.AlphabeticIndex",
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
 	AlphabeticIndex::AlphabeticIndex(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.AlphabeticIndex",
 			"(Ljava/util/Locale;)V",
 			arg0.object()
@@ -87,7 +87,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass AlphabeticIndex::getBucketLabels()
+	JObject AlphabeticIndex::getBucketLabels()
 	{
 		return callObjectMethod(
 			"getBucketLabels",
@@ -136,7 +136,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass AlphabeticIndex::iterator()
+	JObject AlphabeticIndex::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

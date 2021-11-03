@@ -8,11 +8,11 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	MultiResolutionImageReader::MultiResolutionImageReader(QJniObject obj) : __JniBaseClass(obj) {}
+	MultiResolutionImageReader::MultiResolutionImageReader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MultiResolutionImageReader::MultiResolutionImageReader(__JniBaseClass arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+	MultiResolutionImageReader::MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2)
+		: JObject(
 			"android.hardware.camera2.MultiResolutionImageReader",
 			"(Ljava/util/Collection;II)V",
 			arg0.object(),
@@ -50,7 +50,7 @@ namespace android::hardware::camera2
 			"()Landroid/view/Surface;"
 		);
 	}
-	void MultiResolutionImageReader::setOnImageAvailableListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MultiResolutionImageReader::setOnImageAvailableListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnImageAvailableListener",

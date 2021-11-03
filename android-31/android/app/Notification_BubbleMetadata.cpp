@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass Notification_BubbleMetadata::CREATOR()
+	JObject Notification_BubbleMetadata::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification$BubbleMetadata",
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	Notification_BubbleMetadata::Notification_BubbleMetadata(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_BubbleMetadata::Notification_BubbleMetadata(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -8,7 +8,7 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	ExemptionMechanism::ExemptionMechanism(QJniObject obj) : __JniBaseClass(obj) {}
+	ExemptionMechanism::ExemptionMechanism(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -88,7 +88,7 @@ namespace javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	void ExemptionMechanism::init(__JniBaseClass arg0)
+	void ExemptionMechanism::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",
@@ -96,7 +96,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void ExemptionMechanism::init(__JniBaseClass arg0, java::security::AlgorithmParameters arg1)
+	void ExemptionMechanism::init(JObject arg0, java::security::AlgorithmParameters arg1)
 	{
 		callMethod<void>(
 			"init",
@@ -105,7 +105,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void ExemptionMechanism::init(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ExemptionMechanism::init(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"init",
@@ -114,7 +114,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	jboolean ExemptionMechanism::isCryptoAllowed(__JniBaseClass arg0)
+	jboolean ExemptionMechanism::isCryptoAllowed(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isCryptoAllowed",

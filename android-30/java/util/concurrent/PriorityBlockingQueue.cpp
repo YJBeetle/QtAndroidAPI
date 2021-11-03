@@ -24,13 +24,13 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	PriorityBlockingQueue::PriorityBlockingQueue(__JniBaseClass arg0)
+	PriorityBlockingQueue::PriorityBlockingQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.PriorityBlockingQueue",
 			"(Ljava/util/Collection;)V",
 			arg0.object()
 		) {}
-	PriorityBlockingQueue::PriorityBlockingQueue(jint arg0, __JniBaseClass arg1)
+	PriorityBlockingQueue::PriorityBlockingQueue(jint arg0, JObject arg1)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.PriorityBlockingQueue",
 			"(ILjava/util/Comparator;)V",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	__JniBaseClass PriorityBlockingQueue::comparator()
+	JObject PriorityBlockingQueue::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint PriorityBlockingQueue::drainTo(__JniBaseClass arg0)
+	jint PriorityBlockingQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -77,7 +77,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint PriorityBlockingQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint PriorityBlockingQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -86,7 +86,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void PriorityBlockingQueue::forEach(__JniBaseClass arg0)
+	void PriorityBlockingQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -94,7 +94,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass PriorityBlockingQueue::iterator()
+	JObject PriorityBlockingQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -165,7 +165,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean PriorityBlockingQueue::removeAll(__JniBaseClass arg0)
+	jboolean PriorityBlockingQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -173,7 +173,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean PriorityBlockingQueue::removeIf(__JniBaseClass arg0)
+	jboolean PriorityBlockingQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -181,7 +181,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean PriorityBlockingQueue::retainAll(__JniBaseClass arg0)
+	jboolean PriorityBlockingQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -196,7 +196,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass PriorityBlockingQueue::spliterator()
+	JObject PriorityBlockingQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

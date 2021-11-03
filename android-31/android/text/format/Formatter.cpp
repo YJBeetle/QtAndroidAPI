@@ -6,11 +6,11 @@ namespace android::text::format
 	// Fields
 	
 	// QJniObject forward
-	Formatter::Formatter(QJniObject obj) : __JniBaseClass(obj) {}
+	Formatter::Formatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Formatter::Formatter()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.Formatter",
 			"()V"
 		) {}

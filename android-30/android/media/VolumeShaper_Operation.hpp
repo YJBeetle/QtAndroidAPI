@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,16 +9,16 @@ namespace android::os
 
 namespace android::media
 {
-	class VolumeShaper_Operation : public __JniBaseClass
+	class VolumeShaper_Operation : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::media::VolumeShaper_Operation PLAY();
 		static android::media::VolumeShaper_Operation REVERSE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VolumeShaper_Operation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VolumeShaper_Operation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VolumeShaper_Operation(QJniObject obj);
 		
 		// Constructors

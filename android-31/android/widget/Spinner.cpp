@@ -33,7 +33,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1)
+	Spinner::Spinner(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsSpinner(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -47,7 +47,7 @@ namespace android::widget
 			arg0.object(),
 			arg1
 		) {}
-	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Spinner::Spinner(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsSpinner(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Spinner::Spinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsSpinner(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg2,
 			arg3
 		) {}
-	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
+	Spinner::Spinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4)
 		: android::widget::AbsSpinner(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;III)V",
@@ -74,7 +74,7 @@ namespace android::widget
 			arg3,
 			arg4
 		) {}
-	Spinner::Spinner(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5)
+	Spinner::Spinner(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4, android::content::res::Resources_Theme arg5)
 		: android::widget::AbsSpinner(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;IIILandroid/content/res/Resources$Theme;)V",
@@ -150,7 +150,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	void Spinner::onClick(__JniBaseClass arg0, jint arg1)
+	void Spinner::onClick(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onClick",
@@ -168,7 +168,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void Spinner::onRestoreInstanceState(__JniBaseClass arg0)
+	void Spinner::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass Spinner::onSaveInstanceState()
+	JObject Spinner::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -198,7 +198,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	void Spinner::setAdapter(__JniBaseClass arg0)
+	void Spinner::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -246,7 +246,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void Spinner::setOnItemClickListener(__JniBaseClass arg0)
+	void Spinner::setOnItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemClickListener",

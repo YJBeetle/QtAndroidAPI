@@ -106,7 +106,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	PowerManager::PowerManager(QJniObject obj) : __JniBaseClass(obj) {}
+	PowerManager::PowerManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

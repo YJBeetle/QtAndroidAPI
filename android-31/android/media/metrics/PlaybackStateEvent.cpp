@@ -5,7 +5,7 @@
 namespace android::media::metrics
 {
 	// Fields
-	__JniBaseClass PlaybackStateEvent::CREATOR()
+	JObject PlaybackStateEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.metrics.PlaybackStateEvent",

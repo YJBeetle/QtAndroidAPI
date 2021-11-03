@@ -10,11 +10,11 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	KeyPairGeneratorSpec_Builder::KeyPairGeneratorSpec_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyPairGeneratorSpec_Builder::KeyPairGeneratorSpec_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyPairGeneratorSpec_Builder::KeyPairGeneratorSpec_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.KeyPairGeneratorSpec$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -28,7 +28,7 @@ namespace android::security
 			"()Landroid/security/KeyPairGeneratorSpec;"
 		);
 	}
-	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(__JniBaseClass arg0)
+	android::security::KeyPairGeneratorSpec_Builder KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(JObject arg0)
 	{
 		return callObjectMethod(
 			"setAlgorithmParameterSpec",

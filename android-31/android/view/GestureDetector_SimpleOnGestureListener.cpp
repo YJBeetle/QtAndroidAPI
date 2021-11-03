@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	GestureDetector_SimpleOnGestureListener::GestureDetector_SimpleOnGestureListener(QJniObject obj) : __JniBaseClass(obj) {}
+	GestureDetector_SimpleOnGestureListener::GestureDetector_SimpleOnGestureListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GestureDetector_SimpleOnGestureListener::GestureDetector_SimpleOnGestureListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.GestureDetector$SimpleOnGestureListener",
 			"()V"
 		) {}

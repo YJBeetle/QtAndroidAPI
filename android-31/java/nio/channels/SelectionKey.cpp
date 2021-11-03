@@ -35,7 +35,7 @@ namespace java::nio::channels
 	}
 	
 	// QJniObject forward
-	SelectionKey::SelectionKey(QJniObject obj) : __JniBaseClass(obj) {}
+	SelectionKey::SelectionKey(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

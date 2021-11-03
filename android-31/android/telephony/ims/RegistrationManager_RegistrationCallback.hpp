@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::telephony::ims
 {
@@ -13,13 +13,13 @@ namespace android::telephony::ims
 
 namespace android::telephony::ims
 {
-	class RegistrationManager_RegistrationCallback : public __JniBaseClass
+	class RegistrationManager_RegistrationCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RegistrationManager_RegistrationCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RegistrationManager_RegistrationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RegistrationManager_RegistrationCallback(QJniObject obj);
 		
 		// Constructors

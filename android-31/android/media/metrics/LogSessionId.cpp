@@ -13,7 +13,7 @@ namespace android::media::metrics
 	}
 	
 	// QJniObject forward
-	LogSessionId::LogSessionId(QJniObject obj) : __JniBaseClass(obj) {}
+	LogSessionId::LogSessionId(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

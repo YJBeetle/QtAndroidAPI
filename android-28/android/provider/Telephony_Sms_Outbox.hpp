@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Telephony_Sms_Outbox : public __JniBaseClass
+	class Telephony_Sms_Outbox : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::provider
 		static jstring DEFAULT_SORT_ORDER();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Telephony_Sms_Outbox(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Telephony_Sms_Outbox(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Sms_Outbox(QJniObject obj);
 		
 		// Constructors

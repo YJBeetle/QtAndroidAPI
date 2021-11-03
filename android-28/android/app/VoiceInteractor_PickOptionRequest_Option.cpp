@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass VoiceInteractor_PickOptionRequest_Option::CREATOR()
+	JObject VoiceInteractor_PickOptionRequest_Option::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
@@ -15,11 +15,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VoiceInteractor_PickOptionRequest_Option::VoiceInteractor_PickOptionRequest_Option(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.VoiceInteractor$PickOptionRequest$Option",
 			"(Ljava/lang/CharSequence;I)V",
 			arg0,

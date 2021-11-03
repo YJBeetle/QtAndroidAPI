@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class GenericDocument : public __JniBaseClass
+	class GenericDocument : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GenericDocument(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GenericDocument(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GenericDocument(QJniObject obj);
 		
 		// Constructors
@@ -33,7 +33,7 @@ namespace android::app::appsearch
 		jdoubleArray getPropertyDoubleArray(jstring arg0);
 		jlong getPropertyLong(jstring arg0);
 		jlongArray getPropertyLongArray(jstring arg0);
-		__JniBaseClass getPropertyNames();
+		JObject getPropertyNames();
 		jstring getPropertyString(jstring arg0);
 		jarray getPropertyStringArray(jstring arg0);
 		jstring getSchemaType();

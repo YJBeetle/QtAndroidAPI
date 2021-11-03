@@ -258,7 +258,7 @@ namespace android::speech
 	}
 	
 	// QJniObject forward
-	RecognizerIntent::RecognizerIntent(QJniObject obj) : __JniBaseClass(obj) {}
+	RecognizerIntent::RecognizerIntent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

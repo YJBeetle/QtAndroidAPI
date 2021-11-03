@@ -15,7 +15,7 @@ namespace android::security::identity
 	}
 	
 	// QJniObject forward
-	IdentityCredentialStore::IdentityCredentialStore(QJniObject obj) : __JniBaseClass(obj) {}
+	IdentityCredentialStore::IdentityCredentialStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

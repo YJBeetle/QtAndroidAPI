@@ -20,14 +20,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1)
+	DatePicker::DatePicker(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.widget.DatePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	DatePicker::DatePicker(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::FrameLayout(
 			"android.widget.DatePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	DatePicker::DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	DatePicker::DatePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::FrameLayout(
 			"android.widget.DatePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -147,7 +147,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	void DatePicker::init(jint arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	void DatePicker::init(jint arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"init",
@@ -205,7 +205,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void DatePicker::setOnDateChangedListener(__JniBaseClass arg0)
+	void DatePicker::setOnDateChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDateChangedListener",

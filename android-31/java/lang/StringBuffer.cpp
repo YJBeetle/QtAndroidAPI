@@ -7,22 +7,22 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	StringBuffer::StringBuffer(QJniObject obj) : __JniBaseClass(obj) {}
+	StringBuffer::StringBuffer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringBuffer::StringBuffer()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuffer",
 			"()V"
 		) {}
 	StringBuffer::StringBuffer(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuffer",
 			"(I)V",
 			arg0
 		) {}
 	StringBuffer::StringBuffer(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuffer",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -152,7 +152,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass StringBuffer::chars()
+	JObject StringBuffer::chars()
 	{
 		return callObjectMethod(
 			"chars",
@@ -184,7 +184,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	__JniBaseClass StringBuffer::codePoints()
+	JObject StringBuffer::codePoints()
 	{
 		return callObjectMethod(
 			"codePoints",

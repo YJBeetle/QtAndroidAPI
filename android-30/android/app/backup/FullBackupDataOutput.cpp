@@ -5,7 +5,7 @@ namespace android::app::backup
 	// Fields
 	
 	// QJniObject forward
-	FullBackupDataOutput::FullBackupDataOutput(QJniObject obj) : __JniBaseClass(obj) {}
+	FullBackupDataOutput::FullBackupDataOutput(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

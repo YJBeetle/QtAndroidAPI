@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::text
 {
-	class Spannable_Factory : public __JniBaseClass
+	class Spannable_Factory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Spannable_Factory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Spannable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Spannable_Factory(QJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Spannable_Factory getInstance();
-		__JniBaseClass newSpannable(jstring arg0);
+		JObject newSpannable(jstring arg0);
 	};
 } // namespace android::text
 

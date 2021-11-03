@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	PermissionCollection::PermissionCollection(QJniObject obj) : __JniBaseClass(obj) {}
+	PermissionCollection::PermissionCollection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PermissionCollection::PermissionCollection()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.PermissionCollection",
 			"()V"
 		) {}
@@ -24,14 +24,14 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	__JniBaseClass PermissionCollection::elements()
+	JObject PermissionCollection::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass PermissionCollection::elementsAsStream()
+	JObject PermissionCollection::elementsAsStream()
 	{
 		return callObjectMethod(
 			"elementsAsStream",

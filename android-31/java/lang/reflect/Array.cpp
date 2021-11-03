@@ -5,7 +5,7 @@ namespace java::lang::reflect
 	// Fields
 	
 	// QJniObject forward
-	Array::Array(QJniObject obj) : __JniBaseClass(obj) {}
+	Array::Array(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

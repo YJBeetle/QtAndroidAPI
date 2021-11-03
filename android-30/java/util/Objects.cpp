@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Objects::Objects(QJniObject obj) : __JniBaseClass(obj) {}
+	Objects::Objects(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -74,7 +74,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Objects::compare(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jint Objects::compare(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Objects",
@@ -160,7 +160,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	jobject Objects::requireNonNull(jobject arg0, __JniBaseClass arg1)
+	jobject Objects::requireNonNull(jobject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",
@@ -180,7 +180,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	jobject Objects::requireNonNullElseGet(jobject arg0, __JniBaseClass arg1)
+	jobject Objects::requireNonNullElseGet(jobject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Objects",

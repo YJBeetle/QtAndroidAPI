@@ -79,7 +79,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	UiModeManager::UiModeManager(QJniObject obj) : __JniBaseClass(obj) {}
+	UiModeManager::UiModeManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

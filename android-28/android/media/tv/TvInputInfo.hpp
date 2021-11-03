@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,11 +29,11 @@ namespace android::os
 
 namespace android::media::tv
 {
-	class TvInputInfo : public __JniBaseClass
+	class TvInputInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_INPUT_ID();
 		static jint TYPE_COMPONENT();
 		static jint TYPE_COMPOSITE();
@@ -47,7 +47,7 @@ namespace android::media::tv
 		static jint TYPE_VGA();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvInputInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvInputInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputInfo(QJniObject obj);
 		
 		// Constructors

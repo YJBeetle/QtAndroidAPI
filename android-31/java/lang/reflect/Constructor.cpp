@@ -20,21 +20,21 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	__JniBaseClass Constructor::getAnnotatedReceiverType()
+	JObject Constructor::getAnnotatedReceiverType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReceiverType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Constructor::getAnnotatedReturnType()
+	JObject Constructor::getAnnotatedReturnType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Constructor::getAnnotation(jclass arg0)
+	JObject Constructor::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",

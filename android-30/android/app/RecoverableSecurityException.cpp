@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass RecoverableSecurityException::CREATOR()
+	JObject RecoverableSecurityException::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.RecoverableSecurityException",

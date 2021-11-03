@@ -19,11 +19,11 @@ namespace android::print
 	}
 	
 	// QJniObject forward
-	PrintDocumentAdapter::PrintDocumentAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintDocumentAdapter::PrintDocumentAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintDocumentAdapter::PrintDocumentAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintDocumentAdapter",
 			"()V"
 		) {}

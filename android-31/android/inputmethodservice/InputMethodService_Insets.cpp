@@ -59,11 +59,11 @@ namespace android::inputmethodservice
 	}
 	
 	// QJniObject forward
-	InputMethodService_Insets::InputMethodService_Insets(QJniObject obj) : __JniBaseClass(obj) {}
+	InputMethodService_Insets::InputMethodService_Insets(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputMethodService_Insets::InputMethodService_Insets()
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.InputMethodService$Insets",
 			"()V"
 		) {}

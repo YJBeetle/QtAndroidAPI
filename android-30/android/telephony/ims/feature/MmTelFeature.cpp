@@ -5,7 +5,7 @@ namespace android::telephony::ims::feature
 	// Fields
 	
 	// QJniObject forward
-	MmTelFeature::MmTelFeature(QJniObject obj) : __JniBaseClass(obj) {}
+	MmTelFeature::MmTelFeature(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

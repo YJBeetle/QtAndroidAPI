@@ -27,11 +27,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaSync::MediaSync(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSync::MediaSync(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSync::MediaSync()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaSync",
 			"()V"
 		) {}
@@ -106,7 +106,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaSync::setOnErrorListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaSync::setOnErrorListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnErrorListener",

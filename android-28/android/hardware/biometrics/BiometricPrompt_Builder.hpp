@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace android::hardware::biometrics
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_Builder : public __JniBaseClass
+	class BiometricPrompt_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BiometricPrompt_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt_Builder(QJniObject obj);
 		
 		// Constructors
@@ -28,7 +28,7 @@ namespace android::hardware::biometrics
 		// Methods
 		android::hardware::biometrics::BiometricPrompt build();
 		android::hardware::biometrics::BiometricPrompt_Builder setDescription(jstring arg0);
-		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		android::hardware::biometrics::BiometricPrompt_Builder setNegativeButton(jstring arg0, JObject arg1, JObject arg2);
 		android::hardware::biometrics::BiometricPrompt_Builder setSubtitle(jstring arg0);
 		android::hardware::biometrics::BiometricPrompt_Builder setTitle(jstring arg0);
 	};

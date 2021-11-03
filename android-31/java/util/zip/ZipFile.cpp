@@ -24,44 +24,44 @@ namespace java::util::zip
 	}
 	
 	// QJniObject forward
-	ZipFile::ZipFile(QJniObject obj) : __JniBaseClass(obj) {}
+	ZipFile::ZipFile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ZipFile::ZipFile(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	ZipFile::ZipFile(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	ZipFile::ZipFile(java::io::File arg0, java::nio::charset::Charset arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	ZipFile::ZipFile(jstring arg0, java::nio::charset::Charset arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0,
 			arg1.object()
 		) {}
 	ZipFile::ZipFile(java::io::File arg0, jint arg1, java::nio::charset::Charset arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipFile",
 			"(Ljava/io/File;ILjava/nio/charset/Charset;)V",
 			arg0.object(),
@@ -77,7 +77,7 @@ namespace java::util::zip
 			"()V"
 		);
 	}
-	__JniBaseClass ZipFile::entries()
+	JObject ZipFile::entries()
 	{
 		return callObjectMethod(
 			"entries",
@@ -121,7 +121,7 @@ namespace java::util::zip
 			"()I"
 		);
 	}
-	__JniBaseClass ZipFile::stream()
+	JObject ZipFile::stream()
 	{
 		return callObjectMethod(
 			"stream",

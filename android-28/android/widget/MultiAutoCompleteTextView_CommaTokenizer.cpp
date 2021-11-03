@@ -5,11 +5,11 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer(QJniObject obj) : __JniBaseClass(obj) {}
+	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MultiAutoCompleteTextView_CommaTokenizer::MultiAutoCompleteTextView_CommaTokenizer()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.MultiAutoCompleteTextView$CommaTokenizer",
 			"()V"
 		) {}

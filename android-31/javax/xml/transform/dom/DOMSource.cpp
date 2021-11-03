@@ -13,22 +13,22 @@ namespace javax::xml::transform::dom
 	}
 	
 	// QJniObject forward
-	DOMSource::DOMSource(QJniObject obj) : __JniBaseClass(obj) {}
+	DOMSource::DOMSource(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DOMSource::DOMSource()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.dom.DOMSource",
 			"()V"
 		) {}
-	DOMSource::DOMSource(__JniBaseClass arg0)
-		: __JniBaseClass(
+	DOMSource::DOMSource(JObject arg0)
+		: JObject(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.object()
 		) {}
-	DOMSource::DOMSource(__JniBaseClass arg0, jstring arg1)
-		: __JniBaseClass(
+	DOMSource::DOMSource(JObject arg0, jstring arg1)
+		: JObject(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
@@ -36,7 +36,7 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	__JniBaseClass DOMSource::getNode()
+	JObject DOMSource::getNode()
 	{
 		return callObjectMethod(
 			"getNode",
@@ -57,7 +57,7 @@ namespace javax::xml::transform::dom
 			"()Z"
 		);
 	}
-	void DOMSource::setNode(__JniBaseClass arg0)
+	void DOMSource::setNode(JObject arg0)
 	{
 		callMethod<void>(
 			"setNode",

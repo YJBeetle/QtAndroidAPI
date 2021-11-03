@@ -6,7 +6,7 @@
 namespace android::widget::inline
 {
 	// Fields
-	__JniBaseClass InlinePresentationSpec::CREATOR()
+	JObject InlinePresentationSpec::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.widget.inline.InlinePresentationSpec",
@@ -16,7 +16,7 @@ namespace android::widget::inline
 	}
 	
 	// QJniObject forward
-	InlinePresentationSpec::InlinePresentationSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	InlinePresentationSpec::InlinePresentationSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

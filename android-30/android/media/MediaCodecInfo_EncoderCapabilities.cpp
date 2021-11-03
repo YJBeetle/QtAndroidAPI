@@ -27,7 +27,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo_EncoderCapabilities::MediaCodecInfo_EncoderCapabilities(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

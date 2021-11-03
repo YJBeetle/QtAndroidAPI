@@ -6,7 +6,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageInstaller_SessionParams::CREATOR()
+	JObject PackageInstaller_SessionParams::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
@@ -28,7 +28,7 @@ namespace android::content::pm
 			"MODE_INHERIT_EXISTING"
 		);
 	}
-	__JniBaseClass PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
+	JObject PackageInstaller_SessionParams::RESTRICTED_PERMISSIONS_ALL()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
@@ -38,11 +38,11 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"(I)V",
 			arg0
@@ -143,7 +143,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setWhitelistedRestrictedPermissions(__JniBaseClass arg0)
+	void PackageInstaller_SessionParams::setWhitelistedRestrictedPermissions(JObject arg0)
 	{
 		callMethod<void>(
 			"setWhitelistedRestrictedPermissions",

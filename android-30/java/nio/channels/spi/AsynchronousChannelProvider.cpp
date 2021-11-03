@@ -9,7 +9,7 @@ namespace java::nio::channels::spi
 	// Fields
 	
 	// QJniObject forward
-	AsynchronousChannelProvider::AsynchronousChannelProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	AsynchronousChannelProvider::AsynchronousChannelProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -22,7 +22,7 @@ namespace java::nio::channels::spi
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, __JniBaseClass arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",
@@ -31,7 +31,7 @@ namespace java::nio::channels::spi
 			arg1.object()
 		);
 	}
-	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(__JniBaseClass arg0, jint arg1)
+	java::nio::channels::AsynchronousChannelGroup AsynchronousChannelProvider::openAsynchronousChannelGroup(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"openAsynchronousChannelGroup",

@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableChar::MutableChar(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableChar::MutableChar(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableChar::MutableChar(jchar arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableChar",
 			"(C)V",
 			arg0

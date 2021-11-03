@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -81,7 +81,7 @@ namespace java::util
 
 namespace android::content
 {
-	class ContentResolver : public __JniBaseClass
+	class ContentResolver : public JObject
 	{
 	public:
 		// Fields
@@ -133,7 +133,7 @@ namespace android::content
 		static jint SYNC_OBSERVER_TYPE_SETTINGS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContentResolver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentResolver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentResolver(QJniObject obj);
 		
 		// Constructors
@@ -141,14 +141,14 @@ namespace android::content
 		
 		// Methods
 		static void addPeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3);
-		static jobject addStatusChangeListener(jint arg0, __JniBaseClass arg1);
+		static jobject addStatusChangeListener(jint arg0, JObject arg1);
 		static void cancelSync(android::content::SyncRequest arg0);
 		static void cancelSync(android::accounts::Account arg0, jstring arg1);
 		static android::content::SyncInfo getCurrentSync();
-		static __JniBaseClass getCurrentSyncs();
+		static JObject getCurrentSyncs();
 		static jint getIsSyncable(android::accounts::Account arg0, jstring arg1);
 		static jboolean getMasterSyncAutomatically();
-		static __JniBaseClass getPeriodicSyncs(android::accounts::Account arg0, jstring arg1);
+		static JObject getPeriodicSyncs(android::accounts::Account arg0, jstring arg1);
 		static jarray getSyncAdapterTypes();
 		static jboolean getSyncAutomatically(android::accounts::Account arg0, jstring arg1);
 		static jboolean isSyncActive(android::accounts::Account arg0, jstring arg1);
@@ -175,8 +175,8 @@ namespace android::content
 		android::net::Uri canonicalize(android::net::Uri arg0);
 		jint _delete(android::net::Uri arg0, android::os::Bundle arg1);
 		jint _delete(android::net::Uri arg0, jstring arg1, jarray arg2);
-		__JniBaseClass getOutgoingPersistedUriPermissions();
-		__JniBaseClass getPersistedUriPermissions();
+		JObject getOutgoingPersistedUriPermissions();
+		JObject getPersistedUriPermissions();
 		jarray getStreamTypes(android::net::Uri arg0, jstring arg1);
 		jstring getType(android::net::Uri arg0);
 		android::content::ContentResolver_MimeTypeInfo getTypeInfo(jstring arg0);
@@ -186,7 +186,7 @@ namespace android::content
 		void notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1);
 		void notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jboolean arg2);
 		void notifyChange(android::net::Uri arg0, android::database::ContentObserver arg1, jint arg2);
-		void notifyChange(__JniBaseClass arg0, android::database::ContentObserver arg1, jint arg2);
+		void notifyChange(JObject arg0, android::database::ContentObserver arg1, jint arg2);
 		android::content::res::AssetFileDescriptor openAssetFile(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
 		android::content::res::AssetFileDescriptor openAssetFileDescriptor(android::net::Uri arg0, jstring arg1);
 		android::content::res::AssetFileDescriptor openAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::CancellationSignal arg2);
@@ -199,9 +199,9 @@ namespace android::content
 		android::content::res::AssetFileDescriptor openTypedAssetFile(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
 		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2);
 		android::content::res::AssetFileDescriptor openTypedAssetFileDescriptor(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		__JniBaseClass query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
+		JObject query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3);
+		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		JObject query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5);
 		jboolean refresh(android::net::Uri arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2);
 		void registerContentObserver(android::net::Uri arg0, jboolean arg1, android::database::ContentObserver arg2);
 		void releasePersistableUriPermission(android::net::Uri arg0, jint arg1);

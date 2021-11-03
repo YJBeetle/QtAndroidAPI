@@ -34,7 +34,7 @@ namespace android::telephony::data
 			"AUTH_TYPE_PAP_OR_CHAP"
 		);
 	}
-	__JniBaseClass ApnSetting::CREATOR()
+	JObject ApnSetting::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.ApnSetting",
@@ -198,7 +198,7 @@ namespace android::telephony::data
 	}
 	
 	// QJniObject forward
-	ApnSetting::ApnSetting(QJniObject obj) : __JniBaseClass(obj) {}
+	ApnSetting::ApnSetting(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -9,11 +9,11 @@ namespace android::opengl
 	// Fields
 	
 	// QJniObject forward
-	ETC1Util::ETC1Util(QJniObject obj) : __JniBaseClass(obj) {}
+	ETC1Util::ETC1Util(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ETC1Util::ETC1Util()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.ETC1Util",
 			"()V"
 		) {}

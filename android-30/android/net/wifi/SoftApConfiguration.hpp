@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,18 +13,18 @@ namespace android::os
 
 namespace android::net::wifi
 {
-	class SoftApConfiguration : public __JniBaseClass
+	class SoftApConfiguration : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SECURITY_TYPE_OPEN();
 		static jint SECURITY_TYPE_WPA2_PSK();
 		static jint SECURITY_TYPE_WPA3_SAE();
 		static jint SECURITY_TYPE_WPA3_SAE_TRANSITION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SoftApConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SoftApConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SoftApConfiguration(QJniObject obj);
 		
 		// Constructors

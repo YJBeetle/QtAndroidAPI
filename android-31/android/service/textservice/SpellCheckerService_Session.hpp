@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,13 +17,13 @@ namespace android::view::textservice
 
 namespace android::service::textservice
 {
-	class SpellCheckerService_Session : public __JniBaseClass
+	class SpellCheckerService_Session : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SpellCheckerService_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SpellCheckerService_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SpellCheckerService_Session(QJniObject obj);
 		
 		// Constructors

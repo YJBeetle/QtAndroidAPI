@@ -5,11 +5,11 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	RemoteCallbackList::RemoteCallbackList(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteCallbackList::RemoteCallbackList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteCallbackList::RemoteCallbackList()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.RemoteCallbackList",
 			"()V"
 		) {}
@@ -37,7 +37,7 @@ namespace android::os
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass RemoteCallbackList::getBroadcastItem(jint arg0)
+	JObject RemoteCallbackList::getBroadcastItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getBroadcastItem",
@@ -60,7 +60,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	__JniBaseClass RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
+	JObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
 	{
 		return callObjectMethod(
 			"getRegisteredCallbackItem",
@@ -75,7 +75,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void RemoteCallbackList::onCallbackDied(__JniBaseClass arg0)
+	void RemoteCallbackList::onCallbackDied(JObject arg0)
 	{
 		callMethod<void>(
 			"onCallbackDied",
@@ -83,7 +83,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void RemoteCallbackList::onCallbackDied(__JniBaseClass arg0, jobject arg1)
+	void RemoteCallbackList::onCallbackDied(JObject arg0, jobject arg1)
 	{
 		callMethod<void>(
 			"onCallbackDied",
@@ -92,7 +92,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean RemoteCallbackList::_register(__JniBaseClass arg0)
+	jboolean RemoteCallbackList::_register(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"register",
@@ -100,7 +100,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean RemoteCallbackList::_register(__JniBaseClass arg0, jobject arg1)
+	jboolean RemoteCallbackList::_register(JObject arg0, jobject arg1)
 	{
 		return callMethod<jboolean>(
 			"register",
@@ -109,7 +109,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean RemoteCallbackList::unregister(__JniBaseClass arg0)
+	jboolean RemoteCallbackList::unregister(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"unregister",

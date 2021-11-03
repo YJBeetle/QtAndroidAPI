@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass BackgroundServiceStartNotAllowedException::CREATOR()
+	JObject BackgroundServiceStartNotAllowedException::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.BackgroundServiceStartNotAllowedException",

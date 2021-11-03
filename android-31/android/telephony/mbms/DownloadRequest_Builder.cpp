@@ -9,11 +9,11 @@ namespace android::telephony::mbms
 	// Fields
 	
 	// QJniObject forward
-	DownloadRequest_Builder::DownloadRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	DownloadRequest_Builder::DownloadRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DownloadRequest_Builder::DownloadRequest_Builder(android::net::Uri arg0, android::net::Uri arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.mbms.DownloadRequest$Builder",
 			"(Landroid/net/Uri;Landroid/net/Uri;)V",
 			arg0.object(),

@@ -84,14 +84,14 @@ namespace android::printservice
 			arg0
 		);
 	}
-	__JniBaseClass PrintService::getActivePrintJobs()
+	JObject PrintService::getActivePrintJobs()
 	{
 		return callObjectMethod(
 			"getActivePrintJobs",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PrintService::onBind(android::content::Intent arg0)
+	JObject PrintService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

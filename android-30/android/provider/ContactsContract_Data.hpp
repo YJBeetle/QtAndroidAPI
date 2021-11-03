@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class ContactsContract_Data : public __JniBaseClass
+	class ContactsContract_Data : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::provider
 		static jstring VISIBLE_CONTACTS_ONLY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Data(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_Data(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Data(QJniObject obj);
 		
 		// Constructors

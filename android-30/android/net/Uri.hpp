@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,15 +17,15 @@ namespace java::io
 
 namespace android::net
 {
-	class Uri : public __JniBaseClass
+	class Uri : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::net::Uri EMPTY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Uri(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Uri(QJniObject obj);
 		
 		// Constructors
@@ -55,12 +55,12 @@ namespace android::net
 		jstring getHost();
 		jstring getLastPathSegment();
 		jstring getPath();
-		__JniBaseClass getPathSegments();
+		JObject getPathSegments();
 		jint getPort();
 		jstring getQuery();
 		jstring getQueryParameter(jstring arg0);
-		__JniBaseClass getQueryParameterNames();
-		__JniBaseClass getQueryParameters(jstring arg0);
+		JObject getQueryParameterNames();
+		JObject getQueryParameters(jstring arg0);
 		jstring getScheme();
 		jstring getSchemeSpecificPart();
 		jstring getUserInfo();

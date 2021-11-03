@@ -5,11 +5,11 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Number::Number(QJniObject obj) : __JniBaseClass(obj) {}
+	Number::Number(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Number::Number()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Number",
 			"()V"
 		) {}

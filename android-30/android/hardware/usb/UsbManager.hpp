@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -29,7 +29,7 @@ namespace java::util
 
 namespace android::hardware::usb
 {
-	class UsbManager : public __JniBaseClass
+	class UsbManager : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::hardware::usb
 		static jstring EXTRA_PERMISSION_GRANTED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UsbManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UsbManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UsbManager(QJniObject obj);
 		
 		// Constructors

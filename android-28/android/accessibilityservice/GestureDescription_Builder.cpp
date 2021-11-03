@@ -7,11 +7,11 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QJniObject forward
-	GestureDescription_Builder::GestureDescription_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	GestureDescription_Builder::GestureDescription_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GestureDescription_Builder::GestureDescription_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.accessibilityservice.GestureDescription$Builder",
 			"()V"
 		) {}

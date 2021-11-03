@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	EventLog_Event::EventLog_Event(QJniObject obj) : __JniBaseClass(obj) {}
+	EventLog_Event::EventLog_Event(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

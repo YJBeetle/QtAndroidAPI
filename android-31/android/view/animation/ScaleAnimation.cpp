@@ -10,7 +10,7 @@ namespace android::view::animation
 	ScaleAnimation::ScaleAnimation(QJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
-	ScaleAnimation::ScaleAnimation(android::content::Context arg0, __JniBaseClass arg1)
+	ScaleAnimation::ScaleAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(
 			"android.view.animation.ScaleAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

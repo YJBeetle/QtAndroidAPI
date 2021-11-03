@@ -31,7 +31,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::LocalDate IsoChronology::date(__JniBaseClass arg0)
+	java::time::LocalDate IsoChronology::date(JObject arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -49,7 +49,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::LocalDate IsoChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::LocalDate IsoChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -100,7 +100,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::LocalDate IsoChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::LocalDate IsoChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -132,7 +132,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	__JniBaseClass IsoChronology::eras()
+	JObject IsoChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -161,7 +161,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	java::time::LocalDateTime IsoChronology::localDateTime(__JniBaseClass arg0)
+	java::time::LocalDateTime IsoChronology::localDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -179,7 +179,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	jint IsoChronology::prolepticYear(__JniBaseClass arg0, jint arg1)
+	jint IsoChronology::prolepticYear(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -196,7 +196,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::LocalDate IsoChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::LocalDate IsoChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -205,7 +205,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime IsoChronology::zonedDateTime(__JniBaseClass arg0)
+	java::time::ZonedDateTime IsoChronology::zonedDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

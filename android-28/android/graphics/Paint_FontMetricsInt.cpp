@@ -35,11 +35,11 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Paint_FontMetricsInt::Paint_FontMetricsInt(QJniObject obj) : __JniBaseClass(obj) {}
+	Paint_FontMetricsInt::Paint_FontMetricsInt(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Paint_FontMetricsInt::Paint_FontMetricsInt()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Paint$FontMetricsInt",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::content
 
 namespace android::speech
 {
-	class SpeechRecognizer : public __JniBaseClass
+	class SpeechRecognizer : public JObject
 	{
 	public:
 		// Fields
@@ -38,7 +38,7 @@ namespace android::speech
 		static jstring RESULTS_RECOGNITION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SpeechRecognizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SpeechRecognizer(QJniObject obj);
 		
 		// Constructors
@@ -51,7 +51,7 @@ namespace android::speech
 		static jboolean isRecognitionAvailable(android::content::Context arg0);
 		void cancel();
 		void destroy();
-		void setRecognitionListener(__JniBaseClass arg0);
+		void setRecognitionListener(JObject arg0);
 		void startListening(android::content::Intent arg0);
 		void stopListening();
 	};

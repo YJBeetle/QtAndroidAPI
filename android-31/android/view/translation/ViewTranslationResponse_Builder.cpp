@@ -8,11 +8,11 @@ namespace android::view::translation
 	// Fields
 	
 	// QJniObject forward
-	ViewTranslationResponse_Builder::ViewTranslationResponse_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewTranslationResponse_Builder::ViewTranslationResponse_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewTranslationResponse_Builder::ViewTranslationResponse_Builder(android::view::autofill::AutofillId arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.ViewTranslationResponse$Builder",
 			"(Landroid/view/autofill/AutofillId;)V",
 			arg0.object()

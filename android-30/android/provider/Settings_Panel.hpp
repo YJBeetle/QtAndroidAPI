@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class Settings_Panel : public __JniBaseClass
+	class Settings_Panel : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::provider
 		static jstring ACTION_WIFI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Settings_Panel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Settings_Panel(QJniObject obj);
 		
 		// Constructors

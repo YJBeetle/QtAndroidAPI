@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::bluetooth::le
 {
@@ -9,7 +9,7 @@ namespace android::bluetooth::le
 
 namespace android::bluetooth::le
 {
-	class ScanCallback : public __JniBaseClass
+	class ScanCallback : public JObject
 	{
 	public:
 		// Fields
@@ -19,14 +19,14 @@ namespace android::bluetooth::le
 		static jint SCAN_FAILED_INTERNAL_ERROR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ScanCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScanCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScanCallback(QJniObject obj);
 		
 		// Constructors
 		ScanCallback();
 		
 		// Methods
-		void onBatchScanResults(__JniBaseClass arg0);
+		void onBatchScanResults(JObject arg0);
 		void onScanFailed(jint arg0);
 		void onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1);
 	};

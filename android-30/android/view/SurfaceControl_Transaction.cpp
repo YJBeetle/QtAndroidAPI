@@ -6,7 +6,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass SurfaceControl_Transaction::CREATOR()
+	JObject SurfaceControl_Transaction::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.SurfaceControl$Transaction",
@@ -16,11 +16,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	SurfaceControl_Transaction::SurfaceControl_Transaction(QJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControl_Transaction::SurfaceControl_Transaction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurfaceControl_Transaction::SurfaceControl_Transaction()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.SurfaceControl$Transaction",
 			"()V"
 		) {}

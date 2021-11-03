@@ -29,11 +29,11 @@ namespace java::io
 	}
 	
 	// QJniObject forward
-	FileDescriptor::FileDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
+	FileDescriptor::FileDescriptor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FileDescriptor::FileDescriptor()
-		: __JniBaseClass(
+		: JObject(
 			"java.io.FileDescriptor",
 			"()V"
 		) {}

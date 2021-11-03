@@ -497,11 +497,11 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	Character::Character(QJniObject obj) : __JniBaseClass(obj) {}
+	Character::Character(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Character::Character(jchar arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Character",
 			"(C)V",
 			arg0

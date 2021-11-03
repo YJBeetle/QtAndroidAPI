@@ -114,7 +114,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	SimPhonebookContract_ElementaryFiles::SimPhonebookContract_ElementaryFiles(QJniObject obj) : __JniBaseClass(obj) {}
+	SimPhonebookContract_ElementaryFiles::SimPhonebookContract_ElementaryFiles(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

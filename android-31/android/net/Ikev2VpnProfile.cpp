@@ -20,7 +20,7 @@ namespace android::net
 			arg0
 		);
 	}
-	__JniBaseClass Ikev2VpnProfile::getAllowedAlgorithms()
+	JObject Ikev2VpnProfile::getAllowedAlgorithms()
 	{
 		return callObjectMethod(
 			"getAllowedAlgorithms",
@@ -55,7 +55,7 @@ namespace android::net
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
-	__JniBaseClass Ikev2VpnProfile::getRsaPrivateKey()
+	JObject Ikev2VpnProfile::getRsaPrivateKey()
 	{
 		return callObjectMethod(
 			"getRsaPrivateKey",

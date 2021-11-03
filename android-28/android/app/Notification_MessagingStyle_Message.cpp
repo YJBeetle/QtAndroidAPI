@@ -8,11 +8,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, android::app::Person arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$MessagingStyle$Message",
 			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
 			arg0,
@@ -20,7 +20,7 @@ namespace android::app
 			arg2.object()
 		) {}
 	Notification_MessagingStyle_Message::Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$MessagingStyle$Message",
 			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
 			arg0,

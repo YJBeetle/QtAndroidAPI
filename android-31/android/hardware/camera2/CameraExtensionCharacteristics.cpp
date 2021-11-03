@@ -42,7 +42,7 @@ namespace android::hardware::camera2
 	}
 	
 	// QJniObject forward
-	CameraExtensionCharacteristics::CameraExtensionCharacteristics(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraExtensionCharacteristics::CameraExtensionCharacteristics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -57,7 +57,7 @@ namespace android::hardware::camera2
 			arg2
 		);
 	}
-	__JniBaseClass CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jint arg1)
+	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getExtensionSupportedSizes",
@@ -66,7 +66,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	__JniBaseClass CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jclass arg1)
+	JObject CameraExtensionCharacteristics::getExtensionSupportedSizes(jint arg0, jclass arg1)
 	{
 		return callObjectMethod(
 			"getExtensionSupportedSizes",
@@ -75,7 +75,7 @@ namespace android::hardware::camera2
 			arg1
 		);
 	}
-	__JniBaseClass CameraExtensionCharacteristics::getSupportedExtensions()
+	JObject CameraExtensionCharacteristics::getSupportedExtensions()
 	{
 		return callObjectMethod(
 			"getSupportedExtensions",

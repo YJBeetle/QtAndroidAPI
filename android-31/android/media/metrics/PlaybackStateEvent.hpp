@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Event.hpp"
 
 namespace android::os
@@ -18,7 +18,7 @@ namespace android::media::metrics
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATE_ABANDONED();
 		static jint STATE_BUFFERING();
 		static jint STATE_ENDED();

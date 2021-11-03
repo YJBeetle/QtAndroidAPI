@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,7 +9,7 @@ namespace java::io
 
 namespace android::system
 {
-	class StructPollfd : public __JniBaseClass
+	class StructPollfd : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::system
 		jobject userData();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StructPollfd(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StructPollfd(QJniObject obj);
 		
 		// Constructors

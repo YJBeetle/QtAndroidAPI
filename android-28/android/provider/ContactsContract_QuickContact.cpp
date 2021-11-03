@@ -62,11 +62,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_QuickContact::ContactsContract_QuickContact(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_QuickContact::ContactsContract_QuickContact(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_QuickContact::ContactsContract_QuickContact()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$QuickContact",
 			"()V"
 		) {}

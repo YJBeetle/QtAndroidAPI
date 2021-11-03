@@ -10,7 +10,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass DeviceAdminInfo::CREATOR()
+	JObject DeviceAdminInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DeviceAdminInfo",
@@ -83,11 +83,11 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	DeviceAdminInfo::DeviceAdminInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	DeviceAdminInfo::DeviceAdminInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DeviceAdminInfo::DeviceAdminInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.DeviceAdminInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
 			arg0.object(),
@@ -102,7 +102,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	void DeviceAdminInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void DeviceAdminInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

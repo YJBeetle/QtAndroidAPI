@@ -78,7 +78,7 @@ namespace android::view::accessibility
 	}
 	
 	// QJniObject forward
-	CaptioningManager_CaptionStyle::CaptioningManager_CaptionStyle(QJniObject obj) : __JniBaseClass(obj) {}
+	CaptioningManager_CaptionStyle::CaptioningManager_CaptionStyle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

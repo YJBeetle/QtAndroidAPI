@@ -5,11 +5,11 @@ namespace android::drm
 	// Fields
 	
 	// QJniObject forward
-	DrmSupportInfo::DrmSupportInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmSupportInfo::DrmSupportInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmSupportInfo::DrmSupportInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmSupportInfo",
 			"()V"
 		) {}
@@ -53,14 +53,14 @@ namespace android::drm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass DrmSupportInfo::getFileSuffixIterator()
+	JObject DrmSupportInfo::getFileSuffixIterator()
 	{
 		return callObjectMethod(
 			"getFileSuffixIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass DrmSupportInfo::getMimeTypeIterator()
+	JObject DrmSupportInfo::getMimeTypeIterator()
 	{
 		return callObjectMethod(
 			"getMimeTypeIterator",

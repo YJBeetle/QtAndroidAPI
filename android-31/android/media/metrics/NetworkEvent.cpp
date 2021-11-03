@@ -5,7 +5,7 @@
 namespace android::media::metrics
 {
 	// Fields
-	__JniBaseClass NetworkEvent::CREATOR()
+	JObject NetworkEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.metrics.NetworkEvent",

@@ -1,29 +1,29 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::time::temporal
 {
-	class TemporalQueries : public __JniBaseClass
+	class TemporalQueries : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TemporalQueries(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TemporalQueries(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TemporalQueries(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass chronology();
-		static __JniBaseClass localDate();
-		static __JniBaseClass localTime();
-		static __JniBaseClass offset();
-		static __JniBaseClass precision();
-		static __JniBaseClass zone();
-		static __JniBaseClass zoneId();
+		static JObject chronology();
+		static JObject localDate();
+		static JObject localTime();
+		static JObject offset();
+		static JObject precision();
+		static JObject zone();
+		static JObject zoneId();
 	};
 } // namespace java::time::temporal
 

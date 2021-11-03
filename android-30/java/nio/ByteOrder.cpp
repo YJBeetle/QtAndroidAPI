@@ -21,7 +21,7 @@ namespace java::nio
 	}
 	
 	// QJniObject forward
-	ByteOrder::ByteOrder(QJniObject obj) : __JniBaseClass(obj) {}
+	ByteOrder::ByteOrder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

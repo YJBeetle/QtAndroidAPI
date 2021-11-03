@@ -4,7 +4,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	__JniBaseClass HomeSp::CREATOR()
+	JObject HomeSp::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.HomeSp",
@@ -14,16 +14,16 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	
 	// QJniObject forward
-	HomeSp::HomeSp(QJniObject obj) : __JniBaseClass(obj) {}
+	HomeSp::HomeSp(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	HomeSp::HomeSp()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.HomeSp",
 			"()V"
 		) {}
 	HomeSp::HomeSp(android::net::wifi::hotspot2::pps::HomeSp &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.HomeSp",
 			"(Landroid/net/wifi/hotspot2/pps/HomeSp;)V",
 			arg0.object()
@@ -73,7 +73,7 @@ namespace android::net::wifi::hotspot2::pps
 			"()[J"
 		).object<jlongArray>();
 	}
-	__JniBaseClass HomeSp::getOtherHomePartnersList()
+	JObject HomeSp::getOtherHomePartnersList()
 	{
 		return callObjectMethod(
 			"getOtherHomePartnersList",
@@ -126,7 +126,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void HomeSp::setOtherHomePartnersList(__JniBaseClass arg0)
+	void HomeSp::setOtherHomePartnersList(JObject arg0)
 	{
 		callMethod<void>(
 			"setOtherHomePartnersList",

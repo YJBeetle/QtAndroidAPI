@@ -7,11 +7,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SearchResult_MatchInfo_Builder::SearchResult_MatchInfo_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.SearchResult$MatchInfo$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

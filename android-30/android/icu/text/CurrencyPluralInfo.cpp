@@ -8,22 +8,22 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	CurrencyPluralInfo::CurrencyPluralInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	CurrencyPluralInfo::CurrencyPluralInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CurrencyPluralInfo::CurrencyPluralInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.CurrencyPluralInfo",
 			"()V"
 		) {}
 	CurrencyPluralInfo::CurrencyPluralInfo(android::icu::util::ULocale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.CurrencyPluralInfo",
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
 	CurrencyPluralInfo::CurrencyPluralInfo(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.CurrencyPluralInfo",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

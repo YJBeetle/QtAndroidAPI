@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::aware
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::net::wifi::aware
 {
-	class WifiAwareManager : public __JniBaseClass
+	class WifiAwareManager : public JObject
 	{
 	public:
 		// Fields
@@ -30,7 +30,7 @@ namespace android::net::wifi::aware
 		static jint WIFI_AWARE_DATA_PATH_ROLE_RESPONDER();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiAwareManager(QJniObject obj);
 		
 		// Constructors

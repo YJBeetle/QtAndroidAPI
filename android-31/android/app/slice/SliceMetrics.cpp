@@ -7,11 +7,11 @@ namespace android::app::slice
 	// Fields
 	
 	// QJniObject forward
-	SliceMetrics::SliceMetrics(QJniObject obj) : __JniBaseClass(obj) {}
+	SliceMetrics::SliceMetrics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SliceMetrics::SliceMetrics(android::content::Context arg0, android::net::Uri arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.slice.SliceMetrics",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
 			arg0.object(),

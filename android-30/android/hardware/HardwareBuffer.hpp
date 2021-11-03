@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,12 +9,12 @@ namespace android::os
 
 namespace android::hardware
 {
-	class HardwareBuffer : public __JniBaseClass
+	class HardwareBuffer : public JObject
 	{
 	public:
 		// Fields
 		static jint BLOB();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DS_24UI8();
 		static jint DS_FP32UI8();
 		static jint D_16();
@@ -42,7 +42,7 @@ namespace android::hardware
 		static jint YCBCR_420_888();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit HardwareBuffer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HardwareBuffer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HardwareBuffer(QJniObject obj);
 		
 		// Constructors

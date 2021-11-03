@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../../../lang/Number.hpp"
 
 
@@ -20,7 +20,7 @@ namespace java::util::concurrent::atomic
 		AtomicInteger(jint arg0);
 		
 		// Methods
-		jint accumulateAndGet(jint arg0, __JniBaseClass arg1);
+		jint accumulateAndGet(jint arg0, JObject arg1);
 		jint addAndGet(jint arg0);
 		jint compareAndExchange(jint arg0, jint arg1);
 		jint compareAndExchangeAcquire(jint arg0, jint arg1);
@@ -31,12 +31,12 @@ namespace java::util::concurrent::atomic
 		jfloat floatValue();
 		jint get();
 		jint getAcquire();
-		jint getAndAccumulate(jint arg0, __JniBaseClass arg1);
+		jint getAndAccumulate(jint arg0, JObject arg1);
 		jint getAndAdd(jint arg0);
 		jint getAndDecrement();
 		jint getAndIncrement();
 		jint getAndSet(jint arg0);
-		jint getAndUpdate(__JniBaseClass arg0);
+		jint getAndUpdate(JObject arg0);
 		jint getOpaque();
 		jint getPlain();
 		jint incrementAndGet();
@@ -48,7 +48,7 @@ namespace java::util::concurrent::atomic
 		void setPlain(jint arg0);
 		void setRelease(jint arg0);
 		jstring toString();
-		jint updateAndGet(__JniBaseClass arg0);
+		jint updateAndGet(JObject arg0);
 		jboolean weakCompareAndSet(jint arg0, jint arg1);
 		jboolean weakCompareAndSetAcquire(jint arg0, jint arg1);
 		jboolean weakCompareAndSetPlain(jint arg0, jint arg1);

@@ -208,11 +208,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Build_VERSION_CODES::Build_VERSION_CODES(QJniObject obj) : __JniBaseClass(obj) {}
+	Build_VERSION_CODES::Build_VERSION_CODES(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Build_VERSION_CODES::Build_VERSION_CODES()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Build$VERSION_CODES",
 			"()V"
 		) {}

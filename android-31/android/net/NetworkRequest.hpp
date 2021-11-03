@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,14 +17,14 @@ namespace android::os
 
 namespace android::net
 {
-	class NetworkRequest : public __JniBaseClass
+	class NetworkRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NetworkRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkRequest(QJniObject obj);
 		
 		// Constructors

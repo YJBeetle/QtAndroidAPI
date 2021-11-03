@@ -60,7 +60,7 @@ namespace android::media
 			"CONTENT_TYPE_UNKNOWN"
 		);
 	}
-	__JniBaseClass AudioAttributes::CREATOR()
+	JObject AudioAttributes::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.AudioAttributes",
@@ -203,7 +203,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioAttributes::AudioAttributes(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioAttributes::AudioAttributes(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

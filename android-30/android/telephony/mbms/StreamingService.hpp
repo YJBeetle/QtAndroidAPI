@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,7 +13,7 @@ namespace android::telephony::mbms
 
 namespace android::telephony::mbms
 {
-	class StreamingService : public __JniBaseClass
+	class StreamingService : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::telephony::mbms
 		static jint UNICAST_METHOD();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StreamingService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StreamingService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StreamingService(QJniObject obj);
 		
 		// Constructors

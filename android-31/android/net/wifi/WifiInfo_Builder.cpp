@@ -6,11 +6,11 @@ namespace android::net::wifi
 	// Fields
 	
 	// QJniObject forward
-	WifiInfo_Builder::WifiInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiInfo_Builder::WifiInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiInfo_Builder::WifiInfo_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiInfo$Builder",
 			"()V"
 		) {}

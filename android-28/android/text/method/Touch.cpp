@@ -8,12 +8,12 @@ namespace android::text::method
 	// Fields
 	
 	// QJniObject forward
-	Touch::Touch(QJniObject obj) : __JniBaseClass(obj) {}
+	Touch::Touch(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jint Touch::getInitialScrollX(android::widget::TextView arg0, __JniBaseClass arg1)
+	jint Touch::getInitialScrollX(android::widget::TextView arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.Touch",
@@ -23,7 +23,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	jint Touch::getInitialScrollY(android::widget::TextView arg0, __JniBaseClass arg1)
+	jint Touch::getInitialScrollY(android::widget::TextView arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"android.text.method.Touch",
@@ -33,7 +33,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	jboolean Touch::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
+	jboolean Touch::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.method.Touch",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -17,13 +17,13 @@ namespace javax::net::ssl
 
 namespace javax::net::ssl
 {
-	class TrustManagerFactory : public __JniBaseClass
+	class TrustManagerFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TrustManagerFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TrustManagerFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TrustManagerFactory(QJniObject obj);
 		
 		// Constructors
@@ -37,7 +37,7 @@ namespace javax::net::ssl
 		java::security::Provider getProvider();
 		jarray getTrustManagers();
 		void init(java::security::KeyStore arg0);
-		void init(__JniBaseClass arg0);
+		void init(JObject arg0);
 	};
 } // namespace javax::net::ssl
 

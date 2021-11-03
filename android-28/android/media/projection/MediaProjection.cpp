@@ -10,7 +10,7 @@ namespace android::media::projection
 	// Fields
 	
 	// QJniObject forward
-	MediaProjection::MediaProjection(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaProjection::MediaProjection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

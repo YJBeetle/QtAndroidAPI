@@ -6,7 +6,7 @@ namespace android::graphics::text
 	// Fields
 	
 	// QJniObject forward
-	PositionedGlyphs::PositionedGlyphs(QJniObject obj) : __JniBaseClass(obj) {}
+	PositionedGlyphs::PositionedGlyphs(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

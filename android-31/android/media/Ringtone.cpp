@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	Ringtone::Ringtone(QJniObject obj) : __JniBaseClass(obj) {}
+	Ringtone::Ringtone(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,11 +5,11 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QJniObject forward
-	InputConfiguration::InputConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	InputConfiguration::InputConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputConfiguration::InputConfiguration(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.InputConfiguration",
 			"(III)V",
 			arg0,

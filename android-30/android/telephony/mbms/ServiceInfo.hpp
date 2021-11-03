@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util
 {
@@ -13,22 +13,22 @@ namespace java::util
 
 namespace android::telephony::mbms
 {
-	class ServiceInfo : public __JniBaseClass
+	class ServiceInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceInfo(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getLocales();
+		JObject getLocales();
 		jstring getNameForLocale(java::util::Locale arg0);
-		__JniBaseClass getNamedContentLocales();
+		JObject getNamedContentLocales();
 		jstring getServiceClassName();
 		jstring getServiceId();
 		java::util::Date getSessionEndTime();

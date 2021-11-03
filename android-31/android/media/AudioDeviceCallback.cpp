@@ -5,11 +5,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	AudioDeviceCallback::AudioDeviceCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioDeviceCallback::AudioDeviceCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioDeviceCallback::AudioDeviceCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioDeviceCallback",
 			"()V"
 		) {}

@@ -4,7 +4,7 @@
 namespace android::app::usage
 {
 	// Fields
-	__JniBaseClass ExternalStorageStats::CREATOR()
+	JObject ExternalStorageStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.usage.ExternalStorageStats",
@@ -14,7 +14,7 @@ namespace android::app::usage
 	}
 	
 	// QJniObject forward
-	ExternalStorageStats::ExternalStorageStats(QJniObject obj) : __JniBaseClass(obj) {}
+	ExternalStorageStats::ExternalStorageStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

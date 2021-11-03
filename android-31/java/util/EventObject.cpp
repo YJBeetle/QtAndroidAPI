@@ -5,11 +5,11 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	EventObject::EventObject(QJniObject obj) : __JniBaseClass(obj) {}
+	EventObject::EventObject(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EventObject::EventObject(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.EventObject",
 			"(Ljava/lang/Object;)V",
 			arg0

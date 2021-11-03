@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass NetworkRegistrationInfo::CREATOR()
+	JObject NetworkRegistrationInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.NetworkRegistrationInfo",
@@ -113,7 +113,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	NetworkRegistrationInfo::NetworkRegistrationInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkRegistrationInfo::NetworkRegistrationInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -140,7 +140,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	__JniBaseClass NetworkRegistrationInfo::getAvailableServices()
+	JObject NetworkRegistrationInfo::getAvailableServices()
 	{
 		return callObjectMethod(
 			"getAvailableServices",

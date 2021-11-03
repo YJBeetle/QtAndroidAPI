@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	DisplayCutout::DisplayCutout(QJniObject obj) : __JniBaseClass(obj) {}
+	DisplayCutout::DisplayCutout(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DisplayCutout::DisplayCutout(android::graphics::Rect arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	DisplayCutout::DisplayCutout(android::graphics::Rect arg0, JObject arg1)
+		: JObject(
 			"android.view.DisplayCutout",
 			"(Landroid/graphics/Rect;Ljava/util/List;)V",
 			arg0.object(),
@@ -26,7 +26,7 @@ namespace android::view
 			arg0
 		);
 	}
-	__JniBaseClass DisplayCutout::getBoundingRects()
+	JObject DisplayCutout::getBoundingRects()
 	{
 		return callObjectMethod(
 			"getBoundingRects",

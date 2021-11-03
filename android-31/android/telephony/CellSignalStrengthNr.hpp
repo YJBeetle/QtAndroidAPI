@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./CellSignalStrength.hpp"
 
 namespace android::os
@@ -14,7 +14,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit CellSignalStrengthNr(const char *className, const char *sig, Ts...agv) : android::telephony::CellSignalStrength(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::telephony
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getAsuLevel();
-		__JniBaseClass getCsiCqiReport();
+		JObject getCsiCqiReport();
 		jint getCsiCqiTableIndex();
 		jint getCsiRsrp();
 		jint getCsiRsrq();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
@@ -36,7 +36,7 @@ namespace android::widget
 		// Constructors
 		RadioGroup_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		RadioGroup_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
-		RadioGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		RadioGroup_LayoutParams(android::content::Context arg0, JObject arg1);
 		RadioGroup_LayoutParams(jint arg0, jint arg1);
 		RadioGroup_LayoutParams(jint arg0, jint arg1, jfloat arg2);
 		

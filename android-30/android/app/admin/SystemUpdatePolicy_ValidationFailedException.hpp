@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/lang/IllegalArgumentException.hpp"
@@ -16,7 +16,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_CLOSE();
 		static jint ERROR_COMBINED_FREEZE_PERIOD_TOO_LONG();
 		static jint ERROR_DUPLICATE_OR_OVERLAP();

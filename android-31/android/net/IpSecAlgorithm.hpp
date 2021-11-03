@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::net
 {
-	class IpSecAlgorithm : public __JniBaseClass
+	class IpSecAlgorithm : public JObject
 	{
 	public:
 		// Fields
@@ -22,12 +22,12 @@ namespace android::net
 		static jstring AUTH_HMAC_SHA256();
 		static jstring AUTH_HMAC_SHA384();
 		static jstring AUTH_HMAC_SHA512();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring CRYPT_AES_CBC();
 		static jstring CRYPT_AES_CTR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IpSecAlgorithm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IpSecAlgorithm(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IpSecAlgorithm(QJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::net
 		IpSecAlgorithm(jstring arg0, jbyteArray arg1, jint arg2);
 		
 		// Methods
-		static __JniBaseClass getSupportedAlgorithms();
+		static JObject getSupportedAlgorithms();
 		jint describeContents();
 		jbyteArray getKey();
 		jstring getName();

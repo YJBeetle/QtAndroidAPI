@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,13 +9,13 @@ namespace android::graphics
 
 namespace android::text
 {
-	class SpannableStringBuilder : public __JniBaseClass
+	class SpannableStringBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SpannableStringBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SpannableStringBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SpannableStringBuilder(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util::regex
 {
@@ -13,7 +13,7 @@ namespace java::util::regex
 
 namespace android::util
 {
-	class Patterns : public __JniBaseClass
+	class Patterns : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android::util
 		static java::util::regex::Pattern WEB_URL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Patterns(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Patterns(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Patterns(QJniObject obj);
 		
 		// Constructors

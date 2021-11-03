@@ -40,7 +40,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaDrm_KeyStatus::MediaDrm_KeyStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_KeyStatus::MediaDrm_KeyStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

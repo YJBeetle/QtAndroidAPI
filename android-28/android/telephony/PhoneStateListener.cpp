@@ -92,11 +92,11 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	PhoneStateListener::PhoneStateListener(QJniObject obj) : __JniBaseClass(obj) {}
+	PhoneStateListener::PhoneStateListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneStateListener::PhoneStateListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.PhoneStateListener",
 			"()V"
 		) {}
@@ -119,7 +119,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void PhoneStateListener::onCellInfoChanged(__JniBaseClass arg0)
+	void PhoneStateListener::onCellInfoChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onCellInfoChanged",

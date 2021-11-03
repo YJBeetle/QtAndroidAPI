@@ -28,11 +28,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	ActionMode::ActionMode(QJniObject obj) : __JniBaseClass(obj) {}
+	ActionMode::ActionMode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActionMode::ActionMode()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ActionMode",
 			"()V"
 		) {}
@@ -52,7 +52,7 @@ namespace android::view
 			"()Landroid/view/View;"
 		);
 	}
-	__JniBaseClass ActionMode::getMenu()
+	JObject ActionMode::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",

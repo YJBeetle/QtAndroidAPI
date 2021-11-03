@@ -21,7 +21,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	CarrierConfigManager_Gps::CarrierConfigManager_Gps(QJniObject obj) : __JniBaseClass(obj) {}
+	CarrierConfigManager_Gps::CarrierConfigManager_Gps(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,11 +17,11 @@ namespace android::os
 
 namespace android::view::textclassifier
 {
-	class ConversationAction : public __JniBaseClass
+	class ConversationAction : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring TYPE_CALL_PHONE();
 		static jstring TYPE_CREATE_REMINDER();
 		static jstring TYPE_OPEN_URL();
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 		static jstring TYPE_VIEW_MAP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConversationAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConversationAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConversationAction(QJniObject obj);
 		
 		// Constructors

@@ -14,12 +14,12 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothHearingAid::BluetoothHearingAid(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHearingAid::BluetoothHearingAid(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass BluetoothHearingAid::getConnectedDevices()
+	JObject BluetoothHearingAid::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -34,7 +34,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothHearingAid::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHearingAid::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

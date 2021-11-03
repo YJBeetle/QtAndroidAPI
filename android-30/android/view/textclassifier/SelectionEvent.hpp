@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -21,7 +21,7 @@ namespace android::view::textclassifier
 
 namespace android::view::textclassifier
 {
-	class SelectionEvent : public __JniBaseClass
+	class SelectionEvent : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace android::view::textclassifier
 		static jint ACTION_SELECT_ALL();
 		static jint ACTION_SHARE();
 		static jint ACTION_SMART_SHARE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint EVENT_AUTO_SELECTION();
 		static jint EVENT_SELECTION_MODIFIED();
 		static jint EVENT_SELECTION_STARTED();
@@ -47,7 +47,7 @@ namespace android::view::textclassifier
 		static jint INVOCATION_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SelectionEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SelectionEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SelectionEvent(QJniObject obj);
 		
 		// Constructors

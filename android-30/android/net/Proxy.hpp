@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::net
 {
-	class Proxy : public __JniBaseClass
+	class Proxy : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::net
 		static jstring PROXY_CHANGE_ACTION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Proxy(QJniObject obj);
 		
 		// Constructors

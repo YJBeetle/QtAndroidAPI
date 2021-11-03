@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::hotspot2
 {
@@ -9,13 +9,13 @@ namespace android::net::wifi::hotspot2
 
 namespace android::net::wifi::hotspot2
 {
-	class ConfigParser : public __JniBaseClass
+	class ConfigParser : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConfigParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConfigParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConfigParser(QJniObject obj);
 		
 		// Constructors

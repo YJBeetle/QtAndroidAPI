@@ -23,7 +23,7 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	LinkedBlockingDeque::LinkedBlockingDeque(__JniBaseClass arg0)
+	LinkedBlockingDeque::LinkedBlockingDeque(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"(Ljava/util/Collection;)V",
@@ -39,7 +39,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean LinkedBlockingDeque::addAll(__JniBaseClass arg0)
+	jboolean LinkedBlockingDeque::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -78,14 +78,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass LinkedBlockingDeque::descendingIterator()
+	JObject LinkedBlockingDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jint LinkedBlockingDeque::drainTo(__JniBaseClass arg0)
+	jint LinkedBlockingDeque::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -93,7 +93,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedBlockingDeque::drainTo(__JniBaseClass arg0, jint arg1)
+	jint LinkedBlockingDeque::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void LinkedBlockingDeque::forEach(__JniBaseClass arg0)
+	void LinkedBlockingDeque::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -131,7 +131,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass LinkedBlockingDeque::iterator()
+	JObject LinkedBlockingDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -322,7 +322,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jboolean LinkedBlockingDeque::removeAll(__JniBaseClass arg0)
+	jboolean LinkedBlockingDeque::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -345,7 +345,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean LinkedBlockingDeque::removeIf(__JniBaseClass arg0)
+	jboolean LinkedBlockingDeque::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -368,7 +368,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean LinkedBlockingDeque::retainAll(__JniBaseClass arg0)
+	jboolean LinkedBlockingDeque::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -383,7 +383,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass LinkedBlockingDeque::spliterator()
+	JObject LinkedBlockingDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

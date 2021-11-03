@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::lang
 {
-	class StrictMath : public __JniBaseClass
+	class StrictMath : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace java::lang
 		static jdouble PI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StrictMath(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StrictMath(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StrictMath(QJniObject obj);
 		
 		// Constructors

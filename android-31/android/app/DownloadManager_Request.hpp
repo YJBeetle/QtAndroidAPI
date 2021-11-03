@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::app
 {
-	class DownloadManager_Request : public __JniBaseClass
+	class DownloadManager_Request : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::app
 		static jint VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DownloadManager_Request(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DownloadManager_Request(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadManager_Request(QJniObject obj);
 		
 		// Constructors

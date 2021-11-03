@@ -5,17 +5,17 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewStructure_HtmlInfo::ViewStructure_HtmlInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewStructure$HtmlInfo",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass ViewStructure_HtmlInfo::getAttributes()
+	JObject ViewStructure_HtmlInfo::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",

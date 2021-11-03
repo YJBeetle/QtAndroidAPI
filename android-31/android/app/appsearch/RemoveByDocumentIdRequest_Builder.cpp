@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	RemoveByDocumentIdRequest_Builder::RemoveByDocumentIdRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoveByDocumentIdRequest_Builder::RemoveByDocumentIdRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoveByDocumentIdRequest_Builder::RemoveByDocumentIdRequest_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.RemoveByDocumentIdRequest$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -25,7 +25,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(__JniBaseClass arg0)
+	android::app::appsearch::RemoveByDocumentIdRequest_Builder RemoveByDocumentIdRequest_Builder::addIds(JObject arg0)
 	{
 		return callObjectMethod(
 			"addIds",

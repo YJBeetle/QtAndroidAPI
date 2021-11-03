@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./LayerDrawable.hpp"
 
@@ -62,7 +62,7 @@ namespace android::graphics::drawable
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
 		jint getRadius();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		void invalidateSelf();
 		jboolean isStateful();
 		void jumpToCurrentState();

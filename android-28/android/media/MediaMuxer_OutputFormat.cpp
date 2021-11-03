@@ -33,7 +33,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaMuxer_OutputFormat::MediaMuxer_OutputFormat(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaMuxer_OutputFormat::MediaMuxer_OutputFormat(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

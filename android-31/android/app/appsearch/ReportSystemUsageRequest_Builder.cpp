@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ReportSystemUsageRequest_Builder::ReportSystemUsageRequest_Builder(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.ReportSystemUsageRequest$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

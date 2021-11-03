@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass AuthenticationRequiredException::CREATOR()
+	JObject AuthenticationRequiredException::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.AuthenticationRequiredException",

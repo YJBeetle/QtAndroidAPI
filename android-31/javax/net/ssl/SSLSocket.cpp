@@ -12,7 +12,7 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	void SSLSocket::addHandshakeCompletedListener(__JniBaseClass arg0)
+	void SSLSocket::addHandshakeCompletedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addHandshakeCompletedListener",
@@ -55,14 +55,14 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SSLSocket::getHandshakeApplicationProtocolSelector()
+	JObject SSLSocket::getHandshakeApplicationProtocolSelector()
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
 		);
 	}
-	__JniBaseClass SSLSocket::getHandshakeSession()
+	JObject SSLSocket::getHandshakeSession()
 	{
 		return callObjectMethod(
 			"getHandshakeSession",
@@ -83,7 +83,7 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	__JniBaseClass SSLSocket::getSession()
+	JObject SSLSocket::getSession()
 	{
 		return callObjectMethod(
 			"getSession",
@@ -118,7 +118,7 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	void SSLSocket::removeHandshakeCompletedListener(__JniBaseClass arg0)
+	void SSLSocket::removeHandshakeCompletedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeHandshakeCompletedListener",
@@ -150,7 +150,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLSocket::setHandshakeApplicationProtocolSelector(__JniBaseClass arg0)
+	void SSLSocket::setHandshakeApplicationProtocolSelector(JObject arg0)
 	{
 		callMethod<void>(
 			"setHandshakeApplicationProtocolSelector",

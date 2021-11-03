@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::net
 {
-	class UrlQuerySanitizer_IllegalCharacterValueSanitizer : public __JniBaseClass
+	class UrlQuerySanitizer_IllegalCharacterValueSanitizer : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::net
 		static jint URL_LEGAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UrlQuerySanitizer_IllegalCharacterValueSanitizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UrlQuerySanitizer_IllegalCharacterValueSanitizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UrlQuerySanitizer_IllegalCharacterValueSanitizer(QJniObject obj);
 		
 		// Constructors

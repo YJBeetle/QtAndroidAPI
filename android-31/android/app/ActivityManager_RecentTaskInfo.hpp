@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./TaskInfo.hpp"
 
 namespace android::os
@@ -14,7 +14,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jint affiliatedTaskId();
 		jstring description();
 		jint id();

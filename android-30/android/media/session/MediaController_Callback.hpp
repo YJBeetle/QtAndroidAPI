@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media
 {
@@ -21,13 +21,13 @@ namespace android::os
 
 namespace android::media::session
 {
-	class MediaController_Callback : public __JniBaseClass
+	class MediaController_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaController_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaController_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController_Callback(QJniObject obj);
 		
 		// Constructors
@@ -38,7 +38,7 @@ namespace android::media::session
 		void onExtrasChanged(android::os::Bundle arg0);
 		void onMetadataChanged(android::media::MediaMetadata arg0);
 		void onPlaybackStateChanged(android::media::session::PlaybackState arg0);
-		void onQueueChanged(__JniBaseClass arg0);
+		void onQueueChanged(JObject arg0);
 		void onQueueTitleChanged(jstring arg0);
 		void onSessionDestroyed();
 		void onSessionEvent(jstring arg0, android::os::Bundle arg1);

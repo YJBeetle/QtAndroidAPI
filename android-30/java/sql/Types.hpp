@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::sql
 {
-	class Types : public __JniBaseClass
+	class Types : public JObject
 	{
 	public:
 		// Fields
@@ -50,7 +50,7 @@ namespace java::sql
 		static jint VARCHAR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Types(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Types(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Types(QJniObject obj);
 		
 		// Constructors

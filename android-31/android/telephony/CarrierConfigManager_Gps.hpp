@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class CarrierConfigManager_Gps : public __JniBaseClass
+	class CarrierConfigManager_Gps : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::telephony
 		static jstring KEY_PREFIX();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_Gps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CarrierConfigManager_Gps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager_Gps(QJniObject obj);
 		
 		// Constructors

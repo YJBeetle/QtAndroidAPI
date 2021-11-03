@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -33,7 +33,7 @@ namespace java::util
 
 namespace android::accounts
 {
-	class AccountManager : public __JniBaseClass
+	class AccountManager : public JObject
 	{
 	public:
 		// Fields
@@ -80,57 +80,57 @@ namespace android::accounts
 		static jint VISIBILITY_VISIBLE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccountManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccountManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccountManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static android::accounts::AccountManager get(android::content::Context arg0);
-		static android::content::Intent newChooseAccountIntent(android::accounts::Account arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jstring arg4, jarray arg5, android::os::Bundle arg6);
+		static android::content::Intent newChooseAccountIntent(android::accounts::Account arg0, JObject arg1, jarray arg2, jstring arg3, jstring arg4, jarray arg5, android::os::Bundle arg6);
 		static android::content::Intent newChooseAccountIntent(android::accounts::Account arg0, java::util::ArrayList arg1, jarray arg2, jboolean arg3, jstring arg4, jstring arg5, jarray arg6, android::os::Bundle arg7);
-		__JniBaseClass addAccount(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, __JniBaseClass arg5, android::os::Handler arg6);
+		JObject addAccount(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6);
 		jboolean addAccountExplicitly(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2);
-		jboolean addAccountExplicitly(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, __JniBaseClass arg3);
-		void addOnAccountsUpdatedListener(__JniBaseClass arg0, android::os::Handler arg1, jboolean arg2);
-		void addOnAccountsUpdatedListener(__JniBaseClass arg0, android::os::Handler arg1, jboolean arg2, jarray arg3);
+		jboolean addAccountExplicitly(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, JObject arg3);
+		void addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2);
+		void addOnAccountsUpdatedListener(JObject arg0, android::os::Handler arg1, jboolean arg2, jarray arg3);
 		jstring blockingGetAuthToken(android::accounts::Account arg0, jstring arg1, jboolean arg2);
 		void clearPassword(android::accounts::Account arg0);
-		__JniBaseClass confirmCredentials(android::accounts::Account arg0, android::os::Bundle arg1, android::app::Activity arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		__JniBaseClass editProperties(jstring arg0, android::app::Activity arg1, __JniBaseClass arg2, android::os::Handler arg3);
-		__JniBaseClass finishSession(android::os::Bundle arg0, android::app::Activity arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		JObject confirmCredentials(android::accounts::Account arg0, android::os::Bundle arg1, android::app::Activity arg2, JObject arg3, android::os::Handler arg4);
+		JObject editProperties(jstring arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3);
+		JObject finishSession(android::os::Bundle arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3);
 		jint getAccountVisibility(android::accounts::Account arg0, jstring arg1);
 		jarray getAccounts();
-		__JniBaseClass getAccountsAndVisibilityForPackage(jstring arg0, jstring arg1);
+		JObject getAccountsAndVisibilityForPackage(jstring arg0, jstring arg1);
 		jarray getAccountsByType(jstring arg0);
-		__JniBaseClass getAccountsByTypeAndFeatures(jstring arg0, jarray arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		JObject getAccountsByTypeAndFeatures(jstring arg0, jarray arg1, JObject arg2, android::os::Handler arg3);
 		jarray getAccountsByTypeForPackage(jstring arg0, jstring arg1);
-		__JniBaseClass getAuthToken(android::accounts::Account arg0, jstring arg1, jboolean arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		__JniBaseClass getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, __JniBaseClass arg4, android::os::Handler arg5);
-		__JniBaseClass getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jboolean arg3, __JniBaseClass arg4, android::os::Handler arg5);
-		__JniBaseClass getAuthTokenByFeatures(jstring arg0, jstring arg1, jarray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, __JniBaseClass arg6, android::os::Handler arg7);
+		JObject getAuthToken(android::accounts::Account arg0, jstring arg1, jboolean arg2, JObject arg3, android::os::Handler arg4);
+		JObject getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5);
+		JObject getAuthToken(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jboolean arg3, JObject arg4, android::os::Handler arg5);
+		JObject getAuthTokenByFeatures(jstring arg0, jstring arg1, jarray arg2, android::app::Activity arg3, android::os::Bundle arg4, android::os::Bundle arg5, JObject arg6, android::os::Handler arg7);
 		jarray getAuthenticatorTypes();
-		__JniBaseClass getPackagesAndVisibilityForAccount(android::accounts::Account arg0);
+		JObject getPackagesAndVisibilityForAccount(android::accounts::Account arg0);
 		jstring getPassword(android::accounts::Account arg0);
 		jstring getPreviousName(android::accounts::Account arg0);
 		jstring getUserData(android::accounts::Account arg0, jstring arg1);
-		__JniBaseClass hasFeatures(android::accounts::Account arg0, jarray arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		JObject hasFeatures(android::accounts::Account arg0, jarray arg1, JObject arg2, android::os::Handler arg3);
 		void invalidateAuthToken(jstring arg0, jstring arg1);
-		__JniBaseClass isCredentialsUpdateSuggested(android::accounts::Account arg0, jstring arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		JObject isCredentialsUpdateSuggested(android::accounts::Account arg0, jstring arg1, JObject arg2, android::os::Handler arg3);
 		jboolean notifyAccountAuthenticated(android::accounts::Account arg0);
 		jstring peekAuthToken(android::accounts::Account arg0, jstring arg1);
-		__JniBaseClass removeAccount(android::accounts::Account arg0, __JniBaseClass arg1, android::os::Handler arg2);
-		__JniBaseClass removeAccount(android::accounts::Account arg0, android::app::Activity arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		JObject removeAccount(android::accounts::Account arg0, JObject arg1, android::os::Handler arg2);
+		JObject removeAccount(android::accounts::Account arg0, android::app::Activity arg1, JObject arg2, android::os::Handler arg3);
 		jboolean removeAccountExplicitly(android::accounts::Account arg0);
-		void removeOnAccountsUpdatedListener(__JniBaseClass arg0);
-		__JniBaseClass renameAccount(android::accounts::Account arg0, jstring arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		void removeOnAccountsUpdatedListener(JObject arg0);
+		JObject renameAccount(android::accounts::Account arg0, jstring arg1, JObject arg2, android::os::Handler arg3);
 		jboolean setAccountVisibility(android::accounts::Account arg0, jstring arg1, jint arg2);
 		void setAuthToken(android::accounts::Account arg0, jstring arg1, jstring arg2);
 		void setPassword(android::accounts::Account arg0, jstring arg1);
 		void setUserData(android::accounts::Account arg0, jstring arg1, jstring arg2);
-		__JniBaseClass startAddAccountSession(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, __JniBaseClass arg5, android::os::Handler arg6);
-		__JniBaseClass startUpdateCredentialsSession(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, __JniBaseClass arg4, android::os::Handler arg5);
-		__JniBaseClass updateCredentials(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, __JniBaseClass arg4, android::os::Handler arg5);
+		JObject startAddAccountSession(jstring arg0, jstring arg1, jarray arg2, android::os::Bundle arg3, android::app::Activity arg4, JObject arg5, android::os::Handler arg6);
+		JObject startUpdateCredentialsSession(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5);
+		JObject updateCredentials(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, android::app::Activity arg3, JObject arg4, android::os::Handler arg5);
 	};
 } // namespace android::accounts
 

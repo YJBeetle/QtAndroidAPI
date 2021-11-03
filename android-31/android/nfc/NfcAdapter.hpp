@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,7 +33,7 @@ namespace android::os
 
 namespace android::nfc
 {
-	class NfcAdapter : public __JniBaseClass
+	class NfcAdapter : public JObject
 	{
 	public:
 		// Fields
@@ -68,7 +68,7 @@ namespace android::nfc
 		static jint STATE_TURNING_ON();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NfcAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NfcAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NfcAdapter(QJniObject obj);
 		
 		// Constructors
@@ -80,18 +80,18 @@ namespace android::nfc
 		void disableReaderMode(android::app::Activity arg0);
 		void enableForegroundDispatch(android::app::Activity arg0, android::app::PendingIntent arg1, jarray arg2, jarray arg3);
 		void enableForegroundNdefPush(android::app::Activity arg0, android::nfc::NdefMessage arg1);
-		void enableReaderMode(android::app::Activity arg0, __JniBaseClass arg1, jint arg2, android::os::Bundle arg3);
-		jboolean ignore(android::nfc::Tag arg0, jint arg1, __JniBaseClass arg2, android::os::Handler arg3);
+		void enableReaderMode(android::app::Activity arg0, JObject arg1, jint arg2, android::os::Bundle arg3);
+		jboolean ignore(android::nfc::Tag arg0, jint arg1, JObject arg2, android::os::Handler arg3);
 		jboolean invokeBeam(android::app::Activity arg0);
 		jboolean isEnabled();
 		jboolean isNdefPushEnabled();
 		jboolean isSecureNfcEnabled();
 		jboolean isSecureNfcSupported();
 		void setBeamPushUris(jarray arg0, android::app::Activity arg1);
-		void setBeamPushUrisCallback(__JniBaseClass arg0, android::app::Activity arg1);
+		void setBeamPushUrisCallback(JObject arg0, android::app::Activity arg1);
 		void setNdefPushMessage(android::nfc::NdefMessage arg0, android::app::Activity arg1, jarray arg2);
-		void setNdefPushMessageCallback(__JniBaseClass arg0, android::app::Activity arg1, jarray arg2);
-		void setOnNdefPushCompleteCallback(__JniBaseClass arg0, android::app::Activity arg1, jarray arg2);
+		void setNdefPushMessageCallback(JObject arg0, android::app::Activity arg1, jarray arg2);
+		void setOnNdefPushCompleteCallback(JObject arg0, android::app::Activity arg1, jarray arg2);
 	};
 } // namespace android::nfc
 

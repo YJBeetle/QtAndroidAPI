@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::telephony::ims::feature
 {
-	class MmTelFeature_MmTelCapabilities : public __JniBaseClass
+	class MmTelFeature_MmTelCapabilities : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::telephony::ims::feature
 		static jint CAPABILITY_TYPE_VOICE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MmTelFeature_MmTelCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MmTelFeature_MmTelCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MmTelFeature_MmTelCapabilities(QJniObject obj);
 		
 		// Constructors

@@ -13,7 +13,7 @@ namespace org::xml::sax::ext
 			"org.xml.sax.ext.Locator2Impl",
 			"()V"
 		) {}
-	Locator2Impl::Locator2Impl(__JniBaseClass arg0)
+	Locator2Impl::Locator2Impl(JObject arg0)
 		: org::xml::sax::helpers::LocatorImpl(
 			"org.xml.sax.ext.Locator2Impl",
 			"(Lorg/xml/sax/Locator;)V",

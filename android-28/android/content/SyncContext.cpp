@@ -6,12 +6,12 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	SyncContext::SyncContext(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncContext::SyncContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SyncContext::getSyncContextBinder()
+	JObject SyncContext::getSyncContextBinder()
 	{
 		return callObjectMethod(
 			"getSyncContextBinder",

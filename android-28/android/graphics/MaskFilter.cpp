@@ -5,11 +5,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	MaskFilter::MaskFilter(QJniObject obj) : __JniBaseClass(obj) {}
+	MaskFilter::MaskFilter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MaskFilter::MaskFilter()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.MaskFilter",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::util
 {
@@ -17,13 +17,13 @@ namespace java::util::concurrent::locks
 
 namespace java::util::concurrent::locks
 {
-	class AbstractQueuedLongSynchronizer_ConditionObject : public __JniBaseClass
+	class AbstractQueuedLongSynchronizer_ConditionObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer_ConditionObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractQueuedLongSynchronizer_ConditionObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractQueuedLongSynchronizer_ConditionObject(QJniObject obj);
 		
 		// Constructors

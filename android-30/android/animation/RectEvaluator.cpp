@@ -6,16 +6,16 @@ namespace android::animation
 	// Fields
 	
 	// QJniObject forward
-	RectEvaluator::RectEvaluator(QJniObject obj) : __JniBaseClass(obj) {}
+	RectEvaluator::RectEvaluator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RectEvaluator::RectEvaluator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.RectEvaluator",
 			"()V"
 		) {}
 	RectEvaluator::RectEvaluator(android::graphics::Rect arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.RectEvaluator",
 			"(Landroid/graphics/Rect;)V",
 			arg0.object()

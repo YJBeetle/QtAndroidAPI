@@ -22,7 +22,7 @@ namespace javax::xml::xpath
 	}
 	
 	// QJniObject forward
-	XPathFactory::XPathFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	XPathFactory::XPathFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -79,7 +79,7 @@ namespace javax::xml::xpath
 			arg0
 		);
 	}
-	__JniBaseClass XPathFactory::newXPath()
+	JObject XPathFactory::newXPath()
 	{
 		return callObjectMethod(
 			"newXPath",
@@ -95,7 +95,7 @@ namespace javax::xml::xpath
 			arg1
 		);
 	}
-	void XPathFactory::setXPathFunctionResolver(__JniBaseClass arg0)
+	void XPathFactory::setXPathFunctionResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setXPathFunctionResolver",
@@ -103,7 +103,7 @@ namespace javax::xml::xpath
 			arg0.object()
 		);
 	}
-	void XPathFactory::setXPathVariableResolver(__JniBaseClass arg0)
+	void XPathFactory::setXPathVariableResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setXPathVariableResolver",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace java::security
 
 namespace java::security
 {
-	class KeyFactory : public __JniBaseClass
+	class KeyFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyFactory(QJniObject obj);
 		
 		// Constructors
@@ -28,12 +28,12 @@ namespace java::security
 		static java::security::KeyFactory getInstance(jstring arg0);
 		static java::security::KeyFactory getInstance(jstring arg0, jstring arg1);
 		static java::security::KeyFactory getInstance(jstring arg0, java::security::Provider arg1);
-		__JniBaseClass generatePrivate(__JniBaseClass arg0);
-		__JniBaseClass generatePublic(__JniBaseClass arg0);
+		JObject generatePrivate(JObject arg0);
+		JObject generatePublic(JObject arg0);
 		jstring getAlgorithm();
-		__JniBaseClass getKeySpec(__JniBaseClass arg0, jclass arg1);
+		JObject getKeySpec(JObject arg0, jclass arg1);
 		java::security::Provider getProvider();
-		__JniBaseClass translateKey(__JniBaseClass arg0);
+		JObject translateKey(JObject arg0);
 	};
 } // namespace java::security
 

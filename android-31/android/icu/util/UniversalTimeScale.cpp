@@ -132,7 +132,7 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	UniversalTimeScale::UniversalTimeScale(QJniObject obj) : __JniBaseClass(obj) {}
+	UniversalTimeScale::UniversalTimeScale(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

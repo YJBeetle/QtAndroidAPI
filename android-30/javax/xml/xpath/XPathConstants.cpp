@@ -54,7 +54,7 @@ namespace javax::xml::xpath
 	}
 	
 	// QJniObject forward
-	XPathConstants::XPathConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	XPathConstants::XPathConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

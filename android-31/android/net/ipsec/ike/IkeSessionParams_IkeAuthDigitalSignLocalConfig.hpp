@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
 
 namespace java::security::cert
@@ -24,8 +24,8 @@ namespace android::net::ipsec::ike
 		// Methods
 		jboolean equals(jobject arg0);
 		java::security::cert::X509Certificate getClientEndCertificate();
-		__JniBaseClass getIntermediateCertificates();
-		__JniBaseClass getPrivateKey();
+		JObject getIntermediateCertificates();
+		JObject getPrivateKey();
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

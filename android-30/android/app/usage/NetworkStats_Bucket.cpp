@@ -117,11 +117,11 @@ namespace android::app::usage
 	}
 	
 	// QJniObject forward
-	NetworkStats_Bucket::NetworkStats_Bucket(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkStats_Bucket::NetworkStats_Bucket(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkStats_Bucket::NetworkStats_Bucket()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.usage.NetworkStats$Bucket",
 			"()V"
 		) {}

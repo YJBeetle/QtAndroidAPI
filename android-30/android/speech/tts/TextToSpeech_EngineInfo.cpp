@@ -25,11 +25,11 @@ namespace android::speech::tts
 	}
 	
 	// QJniObject forward
-	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextToSpeech_EngineInfo::TextToSpeech_EngineInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.speech.tts.TextToSpeech$EngineInfo",
 			"()V"
 		) {}

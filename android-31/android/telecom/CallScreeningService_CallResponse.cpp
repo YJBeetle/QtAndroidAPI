@@ -33,7 +33,7 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	CallScreeningService_CallResponse::CallScreeningService_CallResponse(QJniObject obj) : __JniBaseClass(obj) {}
+	CallScreeningService_CallResponse::CallScreeningService_CallResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

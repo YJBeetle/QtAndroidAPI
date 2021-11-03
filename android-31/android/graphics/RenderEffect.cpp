@@ -11,7 +11,7 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	RenderEffect::RenderEffect(QJniObject obj) : __JniBaseClass(obj) {}
+	RenderEffect::RenderEffect(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

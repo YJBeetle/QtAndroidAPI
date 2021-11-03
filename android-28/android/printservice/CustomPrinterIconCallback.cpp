@@ -6,7 +6,7 @@ namespace android::printservice
 	// Fields
 	
 	// QJniObject forward
-	CustomPrinterIconCallback::CustomPrinterIconCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	CustomPrinterIconCallback::CustomPrinterIconCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

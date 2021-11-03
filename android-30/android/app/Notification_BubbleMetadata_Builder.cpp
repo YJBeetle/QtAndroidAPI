@@ -8,22 +8,22 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"()V"
 		) {}
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Notification_BubbleMetadata_Builder::Notification_BubbleMetadata_Builder(android::app::PendingIntent arg0, android::graphics::drawable::Icon arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$BubbleMetadata$Builder",
 			"(Landroid/app/PendingIntent;Landroid/graphics/drawable/Icon;)V",
 			arg0.object(),

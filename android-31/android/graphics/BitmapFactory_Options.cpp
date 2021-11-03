@@ -147,11 +147,11 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	BitmapFactory_Options::BitmapFactory_Options(QJniObject obj) : __JniBaseClass(obj) {}
+	BitmapFactory_Options::BitmapFactory_Options(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BitmapFactory_Options::BitmapFactory_Options()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.BitmapFactory$Options",
 			"()V"
 		) {}

@@ -12,12 +12,12 @@ namespace java::nio::charset
 	// Fields
 	
 	// QJniObject forward
-	Charset::Charset(QJniObject obj) : __JniBaseClass(obj) {}
+	Charset::Charset(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Charset::availableCharsets()
+	JObject Charset::availableCharsets()
 	{
 		return callStaticObjectMethod(
 			"java.nio.charset.Charset",
@@ -51,7 +51,7 @@ namespace java::nio::charset
 			arg0
 		);
 	}
-	__JniBaseClass Charset::aliases()
+	JObject Charset::aliases()
 	{
 		return callObjectMethod(
 			"aliases",

@@ -7,28 +7,28 @@ namespace org::xml::sax
 	// Fields
 	
 	// QJniObject forward
-	InputSource::InputSource(QJniObject obj) : __JniBaseClass(obj) {}
+	InputSource::InputSource(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputSource::InputSource()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.InputSource",
 			"()V"
 		) {}
 	InputSource::InputSource(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.InputSource",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	InputSource::InputSource(java::io::Reader arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.InputSource",
 			"(Ljava/io/Reader;)V",
 			arg0.object()
 		) {}
 	InputSource::InputSource(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.InputSource",
 			"(Ljava/lang/String;)V",
 			arg0

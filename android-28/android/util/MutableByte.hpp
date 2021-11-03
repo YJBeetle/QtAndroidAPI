@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class MutableByte : public __JniBaseClass
+	class MutableByte : public JObject
 	{
 	public:
 		// Fields
 		jbyte value();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MutableByte(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MutableByte(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MutableByte(QJniObject obj);
 		
 		// Constructors

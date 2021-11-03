@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass ConversationAction::CREATOR()
+	JObject ConversationAction::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.ConversationAction",
@@ -96,7 +96,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	ConversationAction::ConversationAction(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationAction::ConversationAction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,24 +5,24 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	StringTokenizer::StringTokenizer(QJniObject obj) : __JniBaseClass(obj) {}
+	StringTokenizer::StringTokenizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringTokenizer::StringTokenizer(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	StringTokenizer::StringTokenizer(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	StringTokenizer::StringTokenizer(jstring arg0, jstring arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,

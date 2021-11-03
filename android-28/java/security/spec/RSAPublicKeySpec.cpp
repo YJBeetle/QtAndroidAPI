@@ -6,18 +6,18 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	RSAPublicKeySpec::RSAPublicKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
+	RSAPublicKeySpec::RSAPublicKeySpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.RSAPublicKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	RSAPublicKeySpec::RSAPublicKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, JObject arg2)
+		: JObject(
 			"java.security.spec.RSAPublicKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0.object(),
@@ -33,7 +33,7 @@ namespace java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	__JniBaseClass RSAPublicKeySpec::getParams()
+	JObject RSAPublicKeySpec::getParams()
 	{
 		return callObjectMethod(
 			"getParams",

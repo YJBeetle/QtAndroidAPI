@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::net
 {
-	class MailTo : public __JniBaseClass
+	class MailTo : public JObject
 	{
 	public:
 		// Fields
 		static jstring MAILTO_SCHEME();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MailTo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MailTo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MailTo(QJniObject obj);
 		
 		// Constructors
@@ -22,7 +22,7 @@ namespace android::net
 		static android::net::MailTo parse(jstring arg0);
 		jstring getBody();
 		jstring getCc();
-		__JniBaseClass getHeaders();
+		JObject getHeaders();
 		jstring getSubject();
 		jstring getTo();
 		jstring toString();

@@ -13,7 +13,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Audio_Radio::MediaStore_Audio_Radio(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Audio_Radio::MediaStore_Audio_Radio(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

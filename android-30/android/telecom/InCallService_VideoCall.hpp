@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -25,13 +25,13 @@ namespace android::view
 
 namespace android::telecom
 {
-	class InCallService_VideoCall : public __JniBaseClass
+	class InCallService_VideoCall : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit InCallService_VideoCall(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InCallService_VideoCall(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InCallService_VideoCall(QJniObject obj);
 		
 		// Constructors

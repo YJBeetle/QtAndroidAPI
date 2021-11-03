@@ -467,7 +467,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	Sensor::Sensor(QJniObject obj) : __JniBaseClass(obj) {}
+	Sensor::Sensor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

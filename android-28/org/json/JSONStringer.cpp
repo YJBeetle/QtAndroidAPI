@@ -5,11 +5,11 @@ namespace org::json
 	// Fields
 	
 	// QJniObject forward
-	JSONStringer::JSONStringer(QJniObject obj) : __JniBaseClass(obj) {}
+	JSONStringer::JSONStringer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JSONStringer::JSONStringer()
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONStringer",
 			"()V"
 		) {}

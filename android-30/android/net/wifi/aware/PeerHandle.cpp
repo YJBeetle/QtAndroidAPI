@@ -5,7 +5,7 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QJniObject forward
-	PeerHandle::PeerHandle(QJniObject obj) : __JniBaseClass(obj) {}
+	PeerHandle::PeerHandle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

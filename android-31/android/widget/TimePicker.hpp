@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -39,9 +39,9 @@ namespace android::widget
 		
 		// Constructors
 		TimePicker(android::content::Context arg0);
-		TimePicker(android::content::Context arg0, __JniBaseClass arg1);
-		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TimePicker(android::content::Context arg0, JObject arg1);
+		TimePicker(android::content::Context arg0, JObject arg1, jint arg2);
+		TimePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
@@ -62,7 +62,7 @@ namespace android::widget
 		void setHour(jint arg0);
 		void setIs24HourView(java::lang::Boolean arg0);
 		void setMinute(jint arg0);
-		void setOnTimeChangedListener(__JniBaseClass arg0);
+		void setOnTimeChangedListener(JObject arg0);
 		jboolean validateInput();
 	};
 } // namespace android::widget

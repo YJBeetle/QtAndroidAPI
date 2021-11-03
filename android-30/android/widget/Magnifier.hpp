@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::view
 
 namespace android::widget
 {
-	class Magnifier : public __JniBaseClass
+	class Magnifier : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::widget
 		static jint SOURCE_BOUND_MAX_VISIBLE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Magnifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Magnifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Magnifier(QJniObject obj);
 		
 		// Constructors

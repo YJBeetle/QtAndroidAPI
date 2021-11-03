@@ -13,17 +13,17 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	OrientationEventListener::OrientationEventListener(QJniObject obj) : __JniBaseClass(obj) {}
+	OrientationEventListener::OrientationEventListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	OrientationEventListener::OrientationEventListener(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.OrientationEventListener",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	OrientationEventListener::OrientationEventListener(android::content::Context arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.OrientationEventListener",
 			"(Landroid/content/Context;I)V",
 			arg0.object(),

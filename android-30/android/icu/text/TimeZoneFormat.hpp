@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 
@@ -73,7 +73,7 @@ namespace android::icu::text
 		jstring formatOffsetISO8601Extended(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3);
 		jstring formatOffsetLocalizedGMT(jint arg0);
 		jstring formatOffsetShortLocalizedGMT(jint arg0);
-		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(jobject arg0);
 		android::icu::text::TimeZoneFormat freeze();
 		java::util::EnumSet getDefaultParseOptions();
 		jstring getGMTOffsetDigits();

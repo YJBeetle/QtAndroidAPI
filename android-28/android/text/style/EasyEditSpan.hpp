@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::text::style
 {
-	class EasyEditSpan : public __JniBaseClass
+	class EasyEditSpan : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::text::style
 		static jint TEXT_MODIFIED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EasyEditSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EasyEditSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EasyEditSpan(QJniObject obj);
 		
 		// Constructors

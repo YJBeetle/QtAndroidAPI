@@ -6,17 +6,17 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	ServiceWorkerClient::ServiceWorkerClient(QJniObject obj) : __JniBaseClass(obj) {}
+	ServiceWorkerClient::ServiceWorkerClient(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ServiceWorkerClient::ServiceWorkerClient()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.ServiceWorkerClient",
 			"()V"
 		) {}
 	
 	// Methods
-	android::webkit::WebResourceResponse ServiceWorkerClient::shouldInterceptRequest(__JniBaseClass arg0)
+	android::webkit::WebResourceResponse ServiceWorkerClient::shouldInterceptRequest(JObject arg0)
 	{
 		return callObjectMethod(
 			"shouldInterceptRequest",

@@ -54,11 +54,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	SyncParams::SyncParams(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncParams::SyncParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncParams::SyncParams()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.SyncParams",
 			"()V"
 		) {}

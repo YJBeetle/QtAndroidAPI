@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::metrics
 {
@@ -29,13 +29,13 @@ namespace android::media::metrics
 
 namespace android::media::metrics
 {
-	class PlaybackSession : public __JniBaseClass
+	class PlaybackSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PlaybackSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackSession(QJniObject obj);
 		
 		// Constructors

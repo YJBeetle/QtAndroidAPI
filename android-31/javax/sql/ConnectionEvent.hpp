@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/EventObject.hpp"
 
 namespace java::sql
@@ -20,8 +20,8 @@ namespace javax::sql
 		ConnectionEvent(QJniObject obj);
 		
 		// Constructors
-		ConnectionEvent(__JniBaseClass arg0);
-		ConnectionEvent(__JniBaseClass arg0, java::sql::SQLException arg1);
+		ConnectionEvent(JObject arg0);
+		ConnectionEvent(JObject arg0, java::sql::SQLException arg1);
 		
 		// Methods
 		java::sql::SQLException getSQLException();

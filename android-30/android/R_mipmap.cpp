@@ -12,11 +12,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_mipmap::R_mipmap(QJniObject obj) : __JniBaseClass(obj) {}
+	R_mipmap::R_mipmap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_mipmap::R_mipmap()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$mipmap",
 			"()V"
 		) {}

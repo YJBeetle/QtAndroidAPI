@@ -47,7 +47,7 @@ namespace android::widget
 			"(I)V",
 			arg0
 		) {}
-	TableRow_LayoutParams::TableRow_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	TableRow_LayoutParams::TableRow_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout_LayoutParams(
 			"android.widget.TableRow$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

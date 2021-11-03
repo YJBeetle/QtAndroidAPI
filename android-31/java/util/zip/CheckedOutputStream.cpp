@@ -9,7 +9,7 @@ namespace java::util::zip
 	CheckedOutputStream::CheckedOutputStream(QJniObject obj) : java::io::FilterOutputStream(obj) {}
 	
 	// Constructors
-	CheckedOutputStream::CheckedOutputStream(java::io::OutputStream arg0, __JniBaseClass arg1)
+	CheckedOutputStream::CheckedOutputStream(java::io::OutputStream arg0, JObject arg1)
 		: java::io::FilterOutputStream(
 			"java.util.zip.CheckedOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/zip/Checksum;)V",
@@ -18,7 +18,7 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	__JniBaseClass CheckedOutputStream::getChecksum()
+	JObject CheckedOutputStream::getChecksum()
 	{
 		return callObjectMethod(
 			"getChecksum",

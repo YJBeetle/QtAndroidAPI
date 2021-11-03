@@ -36,7 +36,7 @@ namespace android::inputmethodservice
 			"()Z"
 		);
 	}
-	__JniBaseClass AbstractInputMethodService::onBind(android::content::Intent arg0)
+	JObject AbstractInputMethodService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

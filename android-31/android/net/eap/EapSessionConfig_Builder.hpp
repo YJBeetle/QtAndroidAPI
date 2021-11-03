@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::eap
 {
@@ -13,13 +13,13 @@ namespace java::security::cert
 
 namespace android::net::eap
 {
-	class EapSessionConfig_Builder : public __JniBaseClass
+	class EapSessionConfig_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EapSessionConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EapSessionConfig_Builder(QJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	KeyManagerFactorySpi::KeyManagerFactorySpi(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyManagerFactorySpi::KeyManagerFactorySpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyManagerFactorySpi::KeyManagerFactorySpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.KeyManagerFactorySpi",
 			"()V"
 		) {}

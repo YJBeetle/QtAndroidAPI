@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
 
@@ -20,19 +20,19 @@ namespace java::util
 		// Methods
 		jboolean add(jobject arg0);
 		void add(jint arg0, jobject arg1);
-		jboolean addAll(jint arg0, __JniBaseClass arg1);
+		jboolean addAll(jint arg0, JObject arg1);
 		void clear();
 		jboolean equals(jobject arg0);
 		jobject get(jint arg0);
 		jint hashCode();
 		jint indexOf(jobject arg0);
-		__JniBaseClass iterator();
+		JObject iterator();
 		jint lastIndexOf(jobject arg0);
-		__JniBaseClass listIterator();
-		__JniBaseClass listIterator(jint arg0);
+		JObject listIterator();
+		JObject listIterator(jint arg0);
 		jobject remove(jint arg0);
 		jobject set(jint arg0, jobject arg1);
-		__JniBaseClass subList(jint arg0, jint arg1);
+		JObject subList(jint arg0, jint arg1);
 	};
 } // namespace java::util
 

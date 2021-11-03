@@ -12,11 +12,11 @@ namespace android::database
 	// Fields
 	
 	// QJniObject forward
-	AbstractCursor::AbstractCursor(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractCursor::AbstractCursor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractCursor::AbstractCursor()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.AbstractCursor",
 			"()V"
 		) {}
@@ -153,7 +153,7 @@ namespace android::database
 			"()Landroid/net/Uri;"
 		);
 	}
-	__JniBaseClass AbstractCursor::getNotificationUris()
+	JObject AbstractCursor::getNotificationUris()
 	{
 		return callObjectMethod(
 			"getNotificationUris",
@@ -349,7 +349,7 @@ namespace android::database
 			arg1.object()
 		);
 	}
-	void AbstractCursor::setNotificationUris(android::content::ContentResolver arg0, __JniBaseClass arg1)
+	void AbstractCursor::setNotificationUris(android::content::ContentResolver arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setNotificationUris",

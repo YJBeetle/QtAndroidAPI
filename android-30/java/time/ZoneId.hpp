@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -25,23 +25,23 @@ namespace java::util
 
 namespace java::time
 {
-	class ZoneId : public __JniBaseClass
+	class ZoneId : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass SHORT_IDS();
+		static JObject SHORT_IDS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ZoneId(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZoneId(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneId(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::ZoneId from(__JniBaseClass arg0);
-		static __JniBaseClass getAvailableZoneIds();
+		static java::time::ZoneId from(JObject arg0);
+		static JObject getAvailableZoneIds();
 		static java::time::ZoneId of(jstring arg0);
-		static java::time::ZoneId of(jstring arg0, __JniBaseClass arg1);
+		static java::time::ZoneId of(jstring arg0, JObject arg1);
 		static java::time::ZoneId ofOffset(jstring arg0, java::time::ZoneOffset arg1);
 		static java::time::ZoneId systemDefault();
 		jboolean equals(jobject arg0);

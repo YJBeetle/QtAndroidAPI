@@ -17,7 +17,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	__JniBaseClass ScrollingMovementMethod::getInstance()
+	JObject ScrollingMovementMethod::getInstance()
 	{
 		return callStaticObjectMethod(
 			"android.text.method.ScrollingMovementMethod",
@@ -25,7 +25,7 @@ namespace android::text::method
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
-	void ScrollingMovementMethod::onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2)
+	void ScrollingMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -35,7 +35,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean ScrollingMovementMethod::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
+	jboolean ScrollingMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

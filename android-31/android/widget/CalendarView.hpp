@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -31,9 +31,9 @@ namespace android::widget
 		
 		// Constructors
 		CalendarView(android::content::Context arg0);
-		CalendarView(android::content::Context arg0, __JniBaseClass arg1);
-		CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CalendarView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		CalendarView(android::content::Context arg0, JObject arg1);
+		CalendarView(android::content::Context arg0, JObject arg1, jint arg2);
+		CalendarView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();
@@ -58,7 +58,7 @@ namespace android::widget
 		void setFocusedMonthDateColor(jint arg0);
 		void setMaxDate(jlong arg0);
 		void setMinDate(jlong arg0);
-		void setOnDateChangeListener(__JniBaseClass arg0);
+		void setOnDateChangeListener(JObject arg0);
 		void setSelectedDateVerticalBar(android::graphics::drawable::Drawable arg0);
 		void setSelectedDateVerticalBar(jint arg0);
 		void setSelectedWeekBackgroundColor(jint arg0);

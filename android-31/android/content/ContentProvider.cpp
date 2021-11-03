@@ -19,11 +19,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	ContentProvider::ContentProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentProvider::ContentProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentProvider::ContentProvider()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentProvider",
 			"()V"
 		) {}
@@ -296,7 +296,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::os::ParcelFileDescriptor ContentProvider::openPipeHelper(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, jobject arg3, __JniBaseClass arg4)
+	android::os::ParcelFileDescriptor ContentProvider::openPipeHelper(android::net::Uri arg0, jstring arg1, android::os::Bundle arg2, jobject arg3, JObject arg4)
 	{
 		return callObjectMethod(
 			"openPipeHelper",
@@ -329,7 +329,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -340,7 +340,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject ContentProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -352,7 +352,7 @@ namespace android::content
 			arg4
 		);
 	}
-	__JniBaseClass ContentProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject ContentProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",

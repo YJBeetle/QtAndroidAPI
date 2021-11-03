@@ -5,11 +5,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyFactorySpi::KeyFactorySpi(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyFactorySpi::KeyFactorySpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyFactorySpi::KeyFactorySpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyFactorySpi",
 			"()V"
 		) {}

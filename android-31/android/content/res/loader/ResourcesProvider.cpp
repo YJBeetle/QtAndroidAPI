@@ -7,12 +7,12 @@ namespace android::content::res::loader
 	// Fields
 	
 	// QJniObject forward
-	ResourcesProvider::ResourcesProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	ResourcesProvider::ResourcesProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::content::res::loader::ResourcesProvider ResourcesProvider::empty(__JniBaseClass arg0)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::empty(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",
@@ -30,7 +30,7 @@ namespace android::content::res::loader
 			arg0.object()
 		);
 	}
-	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromApk(android::os::ParcelFileDescriptor arg0, __JniBaseClass arg1)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromApk(android::os::ParcelFileDescriptor arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",
@@ -40,7 +40,7 @@ namespace android::content::res::loader
 			arg1.object()
 		);
 	}
-	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromDirectory(jstring arg0, __JniBaseClass arg1)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromDirectory(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",
@@ -60,7 +60,7 @@ namespace android::content::res::loader
 			arg1
 		);
 	}
-	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromTable(android::os::ParcelFileDescriptor arg0, __JniBaseClass arg1)
+	android::content::res::loader::ResourcesProvider ResourcesProvider::loadFromTable(android::os::ParcelFileDescriptor arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.loader.ResourcesProvider",

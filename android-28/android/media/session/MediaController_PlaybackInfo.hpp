@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media
 {
@@ -9,7 +9,7 @@ namespace android::media
 
 namespace android::media::session
 {
-	class MediaController_PlaybackInfo : public __JniBaseClass
+	class MediaController_PlaybackInfo : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::media::session
 		static jint PLAYBACK_TYPE_REMOTE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaController_PlaybackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaController_PlaybackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaController_PlaybackInfo(QJniObject obj);
 		
 		// Constructors

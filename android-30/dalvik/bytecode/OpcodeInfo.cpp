@@ -19,7 +19,7 @@ namespace dalvik::bytecode
 	}
 	
 	// QJniObject forward
-	OpcodeInfo::OpcodeInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	OpcodeInfo::OpcodeInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

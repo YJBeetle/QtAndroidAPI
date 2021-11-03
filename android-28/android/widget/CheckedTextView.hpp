@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -38,9 +38,9 @@ namespace android::widget
 		
 		// Constructors
 		CheckedTextView(android::content::Context arg0);
-		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1);
-		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CheckedTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		CheckedTextView(android::content::Context arg0, JObject arg1);
+		CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2);
+		CheckedTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -50,9 +50,9 @@ namespace android::widget
 		android::graphics::PorterDuff_Mode getCheckMarkTintMode();
 		jboolean isChecked();
 		void jumpDrawablesToCurrentState();
-		void onRestoreInstanceState(__JniBaseClass arg0);
+		void onRestoreInstanceState(JObject arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		__JniBaseClass onSaveInstanceState();
+		JObject onSaveInstanceState();
 		void setCheckMarkDrawable(android::graphics::drawable::Drawable arg0);
 		void setCheckMarkDrawable(jint arg0);
 		void setCheckMarkTintList(android::content::res::ColorStateList arg0);

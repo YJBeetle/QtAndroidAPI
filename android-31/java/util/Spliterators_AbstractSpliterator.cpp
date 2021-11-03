@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Spliterators_AbstractSpliterator::Spliterators_AbstractSpliterator(QJniObject obj) : __JniBaseClass(obj) {}
+	Spliterators_AbstractSpliterator::Spliterators_AbstractSpliterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -24,7 +24,7 @@ namespace java::util
 			"()J"
 		);
 	}
-	__JniBaseClass Spliterators_AbstractSpliterator::trySplit()
+	JObject Spliterators_AbstractSpliterator::trySplit()
 	{
 		return callObjectMethod(
 			"trySplit",

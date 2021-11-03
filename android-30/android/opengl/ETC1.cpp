@@ -34,11 +34,11 @@ namespace android::opengl
 	}
 	
 	// QJniObject forward
-	ETC1::ETC1(QJniObject obj) : __JniBaseClass(obj) {}
+	ETC1::ETC1(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ETC1::ETC1()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.ETC1",
 			"()V"
 		) {}

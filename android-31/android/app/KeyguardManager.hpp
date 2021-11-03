@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,20 +21,20 @@ namespace android::content
 
 namespace android::app
 {
-	class KeyguardManager : public __JniBaseClass
+	class KeyguardManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyguardManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyguardManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyguardManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		android::content::Intent createConfirmDeviceCredentialIntent(jstring arg0, jstring arg1);
-		void exitKeyguardSecurely(__JniBaseClass arg0);
+		void exitKeyguardSecurely(JObject arg0);
 		jboolean inKeyguardRestrictedInputMode();
 		jboolean isDeviceLocked();
 		jboolean isDeviceSecure();

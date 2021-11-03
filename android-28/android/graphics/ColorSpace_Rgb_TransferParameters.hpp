@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::graphics
 {
-	class ColorSpace_Rgb_TransferParameters : public __JniBaseClass
+	class ColorSpace_Rgb_TransferParameters : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::graphics
 		jdouble g();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ColorSpace_Rgb_TransferParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ColorSpace_Rgb_TransferParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ColorSpace_Rgb_TransferParameters(QJniObject obj);
 		
 		// Constructors

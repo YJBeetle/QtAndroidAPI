@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableFloat::MutableFloat(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableFloat::MutableFloat(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableFloat::MutableFloat(jfloat arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableFloat",
 			"(F)V",
 			arg0

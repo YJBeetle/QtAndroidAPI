@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class Config : public __JniBaseClass
+	class Config : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::util
 		static jboolean RELEASE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Config(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Config(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Config(QJniObject obj);
 		
 		// Constructors

@@ -14,7 +14,7 @@ namespace android::transition
 			"android.transition.AutoTransition",
 			"()V"
 		) {}
-	AutoTransition::AutoTransition(android::content::Context arg0, __JniBaseClass arg1)
+	AutoTransition::AutoTransition(android::content::Context arg0, JObject arg1)
 		: android::transition::TransitionSet(
 			"android.transition.AutoTransition",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

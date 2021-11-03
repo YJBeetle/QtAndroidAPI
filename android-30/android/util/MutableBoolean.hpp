@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class MutableBoolean : public __JniBaseClass
+	class MutableBoolean : public JObject
 	{
 	public:
 		// Fields
 		jboolean value();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MutableBoolean(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MutableBoolean(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MutableBoolean(QJniObject obj);
 		
 		// Constructors

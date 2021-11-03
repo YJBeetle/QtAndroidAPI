@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -9,13 +9,13 @@ namespace java::math
 
 namespace java::security::spec
 {
-	class ECFieldF2m : public __JniBaseClass
+	class ECFieldF2m : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ECFieldF2m(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ECFieldF2m(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ECFieldF2m(QJniObject obj);
 		
 		// Constructors

@@ -6,7 +6,7 @@ namespace java::lang::ref
 	// Fields
 	
 	// QJniObject forward
-	Reference::Reference(QJniObject obj) : __JniBaseClass(obj) {}
+	Reference::Reference(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

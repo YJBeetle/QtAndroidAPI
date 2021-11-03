@@ -26,7 +26,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_SyncState::ContactsContract_SyncState(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_SyncState::ContactsContract_SyncState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

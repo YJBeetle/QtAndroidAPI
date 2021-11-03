@@ -539,7 +539,7 @@ namespace android::view
 			"BUTTON_TERTIARY"
 		);
 	}
-	__JniBaseClass MotionEvent::CREATOR()
+	JObject MotionEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.MotionEvent",

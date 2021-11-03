@@ -18,7 +18,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	__JniBaseClass TunnelModeChildSessionParams::getConfigurationRequests()
+	JObject TunnelModeChildSessionParams::getConfigurationRequests()
 	{
 		return callObjectMethod(
 			"getConfigurationRequests",

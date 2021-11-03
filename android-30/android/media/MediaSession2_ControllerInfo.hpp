@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media::session
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaSession2_ControllerInfo : public __JniBaseClass
+	class MediaSession2_ControllerInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaSession2_ControllerInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaSession2_ControllerInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession2_ControllerInfo(QJniObject obj);
 		
 		// Constructors

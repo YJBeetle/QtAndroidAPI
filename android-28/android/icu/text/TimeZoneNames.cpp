@@ -8,7 +8,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	TimeZoneNames::TimeZoneNames(QJniObject obj) : __JniBaseClass(obj) {}
+	TimeZoneNames::TimeZoneNames(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,14 +40,14 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	__JniBaseClass TimeZoneNames::getAvailableMetaZoneIDs()
+	JObject TimeZoneNames::getAvailableMetaZoneIDs()
 	{
 		return callObjectMethod(
 			"getAvailableMetaZoneIDs",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass TimeZoneNames::getAvailableMetaZoneIDs(jstring arg0)
+	JObject TimeZoneNames::getAvailableMetaZoneIDs(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAvailableMetaZoneIDs",

@@ -12,7 +12,7 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	URLConnection::URLConnection(QJniObject obj) : __JniBaseClass(obj) {}
+	URLConnection::URLConnection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -43,7 +43,7 @@ namespace java::net
 			arg0
 		);
 	}
-	__JniBaseClass URLConnection::getFileNameMap()
+	JObject URLConnection::getFileNameMap()
 	{
 		return callStaticObjectMethod(
 			"java.net.URLConnection",
@@ -69,7 +69,7 @@ namespace java::net
 			arg0.object()
 		).object<jstring>();
 	}
-	void URLConnection::setContentHandlerFactory(__JniBaseClass arg0)
+	void URLConnection::setContentHandlerFactory(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.URLConnection",
@@ -107,7 +107,7 @@ namespace java::net
 			arg1
 		);
 	}
-	void URLConnection::setFileNameMap(__JniBaseClass arg0)
+	void URLConnection::setFileNameMap(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.URLConnection",
@@ -275,7 +275,7 @@ namespace java::net
 			arg1
 		);
 	}
-	__JniBaseClass URLConnection::getHeaderFields()
+	JObject URLConnection::getHeaderFields()
 	{
 		return callObjectMethod(
 			"getHeaderFields",
@@ -324,7 +324,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	__JniBaseClass URLConnection::getRequestProperties()
+	JObject URLConnection::getRequestProperties()
 	{
 		return callObjectMethod(
 			"getRequestProperties",

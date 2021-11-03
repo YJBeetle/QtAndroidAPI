@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputEvent.hpp"
 
 namespace android::graphics
@@ -102,7 +102,7 @@ namespace android::view
 		static jint BUTTON_STYLUS_PRIMARY();
 		static jint BUTTON_STYLUS_SECONDARY();
 		static jint BUTTON_TERTIARY();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint EDGE_BOTTOM();
 		static jint EDGE_LEFT();
 		static jint EDGE_RIGHT();

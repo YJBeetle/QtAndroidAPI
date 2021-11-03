@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener(QJniObject obj) : __JniBaseClass(obj) {}
+	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScaleGestureDetector_SimpleOnScaleGestureListener::ScaleGestureDetector_SimpleOnScaleGestureListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ScaleGestureDetector$SimpleOnScaleGestureListener",
 			"()V"
 		) {}

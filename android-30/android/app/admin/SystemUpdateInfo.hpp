@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,17 +9,17 @@ namespace android::os
 
 namespace android::app::admin
 {
-	class SystemUpdateInfo : public __JniBaseClass
+	class SystemUpdateInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SECURITY_PATCH_STATE_FALSE();
 		static jint SECURITY_PATCH_STATE_TRUE();
 		static jint SECURITY_PATCH_STATE_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SystemUpdateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SystemUpdateInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SystemUpdateInfo(QJniObject obj);
 		
 		// Constructors

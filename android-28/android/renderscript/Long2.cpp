@@ -17,16 +17,16 @@ namespace android::renderscript
 	}
 	
 	// QJniObject forward
-	Long2::Long2(QJniObject obj) : __JniBaseClass(obj) {}
+	Long2::Long2(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Long2::Long2()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Long2",
 			"()V"
 		) {}
 	Long2::Long2(jlong arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Long2",
 			"(JJ)V",
 			arg0,

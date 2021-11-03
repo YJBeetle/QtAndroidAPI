@@ -54,7 +54,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	AccessNetworkConstants_AccessNetworkType::AccessNetworkConstants_AccessNetworkType(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessNetworkConstants_AccessNetworkType::AccessNetworkConstants_AccessNetworkType(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

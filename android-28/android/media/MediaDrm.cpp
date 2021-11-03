@@ -199,11 +199,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaDrm::MediaDrm(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm::MediaDrm(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaDrm::MediaDrm(java::util::UUID arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaDrm",
 			"(Ljava/util/UUID;)V",
 			arg0.object()
@@ -340,14 +340,14 @@ namespace android::media
 			arg0
 		).object<jbyteArray>();
 	}
-	__JniBaseClass MediaDrm::getSecureStopIds()
+	JObject MediaDrm::getSecureStopIds()
 	{
 		return callObjectMethod(
 			"getSecureStopIds",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass MediaDrm::getSecureStops()
+	JObject MediaDrm::getSecureStops()
 	{
 		return callObjectMethod(
 			"getSecureStops",
@@ -456,7 +456,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaDrm::setOnEventListener(__JniBaseClass arg0)
+	void MediaDrm::setOnEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnEventListener",
@@ -464,7 +464,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaDrm::setOnExpirationUpdateListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnExpirationUpdateListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnExpirationUpdateListener",
@@ -473,7 +473,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnKeyStatusChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnKeyStatusChangeListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnKeyStatusChangeListener",

@@ -6,11 +6,11 @@ namespace android::service::autofill
 	// Fields
 	
 	// QJniObject forward
-	VisibilitySetterAction_Builder::VisibilitySetterAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	VisibilitySetterAction_Builder::VisibilitySetterAction_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VisibilitySetterAction_Builder::VisibilitySetterAction_Builder(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.VisibilitySetterAction$Builder",
 			"(II)V",
 			arg0,

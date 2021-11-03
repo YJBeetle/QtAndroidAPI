@@ -6,11 +6,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	LongAdder::LongAdder(QJniObject obj) : __JniBaseClass(obj) {}
+	LongAdder::LongAdder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LongAdder::LongAdder()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.LongAdder",
 			"()V"
 		) {}

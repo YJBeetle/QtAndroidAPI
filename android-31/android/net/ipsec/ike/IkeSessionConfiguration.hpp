@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::ipsec::ike
 {
@@ -9,7 +9,7 @@ namespace android::net::ipsec::ike
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionConfiguration : public __JniBaseClass
+	class IkeSessionConfiguration : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike
 		static jint EXTENSION_TYPE_MOBIKE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IkeSessionConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IkeSessionConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IkeSessionConfiguration(QJniObject obj);
 		
 		// Constructors
@@ -25,7 +25,7 @@ namespace android::net::ipsec::ike
 		// Methods
 		android::net::ipsec::ike::IkeSessionConnectionInfo getIkeSessionConnectionInfo();
 		jstring getRemoteApplicationVersion();
-		__JniBaseClass getRemoteVendorIds();
+		JObject getRemoteVendorIds();
 		jboolean isIkeExtensionEnabled(jint arg0);
 	};
 } // namespace android::net::ipsec::ike

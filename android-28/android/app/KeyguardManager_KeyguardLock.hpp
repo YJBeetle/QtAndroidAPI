@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -9,13 +9,13 @@ namespace android::app
 
 namespace android::app
 {
-	class KeyguardManager_KeyguardLock : public __JniBaseClass
+	class KeyguardManager_KeyguardLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyguardManager_KeyguardLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyguardManager_KeyguardLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyguardManager_KeyguardLock(QJniObject obj);
 		
 		// Constructors

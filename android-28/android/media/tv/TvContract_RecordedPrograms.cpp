@@ -307,7 +307,7 @@ namespace android::media::tv
 	}
 	
 	// QJniObject forward
-	TvContract_RecordedPrograms::TvContract_RecordedPrograms(QJniObject obj) : __JniBaseClass(obj) {}
+	TvContract_RecordedPrograms::TvContract_RecordedPrograms(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

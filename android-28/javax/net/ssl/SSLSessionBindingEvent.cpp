@@ -8,7 +8,7 @@ namespace javax::net::ssl
 	SSLSessionBindingEvent::SSLSessionBindingEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	SSLSessionBindingEvent::SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1)
+	SSLSessionBindingEvent::SSLSessionBindingEvent(JObject arg0, jstring arg1)
 		: java::util::EventObject(
 			"javax.net.ssl.SSLSessionBindingEvent",
 			"(Ljavax/net/ssl/SSLSession;Ljava/lang/String;)V",
@@ -24,7 +24,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SSLSessionBindingEvent::getSession()
+	JObject SSLSessionBindingEvent::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

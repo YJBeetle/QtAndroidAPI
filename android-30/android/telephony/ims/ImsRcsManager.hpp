@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::telephony::ims
 {
@@ -9,14 +9,14 @@ namespace android::telephony::ims
 
 namespace android::telephony::ims
 {
-	class ImsRcsManager : public __JniBaseClass
+	class ImsRcsManager : public JObject
 	{
 	public:
 		// Fields
 		static jstring ACTION_SHOW_CAPABILITY_DISCOVERY_OPT_IN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImsRcsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImsRcsManager(QJniObject obj);
 		
 		// Constructors

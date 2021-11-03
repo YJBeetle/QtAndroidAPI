@@ -17,11 +17,11 @@ namespace android::accounts
 	}
 	
 	// QJniObject forward
-	AbstractAccountAuthenticator::AbstractAccountAuthenticator(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractAccountAuthenticator::AbstractAccountAuthenticator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractAccountAuthenticator::AbstractAccountAuthenticator(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.AbstractAccountAuthenticator",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -116,7 +116,7 @@ namespace android::accounts
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass AbstractAccountAuthenticator::getIBinder()
+	JObject AbstractAccountAuthenticator::getIBinder()
 	{
 		return callObjectMethod(
 			"getIBinder",

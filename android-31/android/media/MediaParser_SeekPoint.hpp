@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaParser_SeekPoint : public __JniBaseClass
+	class MediaParser_SeekPoint : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::media
 		jlong timeMicros();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaParser_SeekPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaParser_SeekPoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaParser_SeekPoint(QJniObject obj);
 		
 		// Constructors

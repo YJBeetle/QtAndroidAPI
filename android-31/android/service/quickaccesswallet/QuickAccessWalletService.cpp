@@ -51,7 +51,7 @@ namespace android::service::quickaccesswallet
 		) {}
 	
 	// Methods
-	__JniBaseClass QuickAccessWalletService::onBind(android::content::Intent arg0)
+	JObject QuickAccessWalletService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -67,7 +67,7 @@ namespace android::service::quickaccesswallet
 			arg0.object()
 		);
 	}
-	void QuickAccessWalletService::onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, __JniBaseClass arg1)
+	void QuickAccessWalletService::onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onWalletCardsRequested",

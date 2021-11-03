@@ -6,12 +6,12 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	HardwareRenderer_FrameRenderRequest::HardwareRenderer_FrameRenderRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::graphics::HardwareRenderer_FrameRenderRequest HardwareRenderer_FrameRenderRequest::setFrameCommitCallback(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"setFrameCommitCallback",

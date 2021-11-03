@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,14 +17,14 @@ namespace android::net
 
 namespace android::net
 {
-	class ConnectivityManager_NetworkCallback : public __JniBaseClass
+	class ConnectivityManager_NetworkCallback : public JObject
 	{
 	public:
 		// Fields
 		static jint FLAG_INCLUDE_LOCATION_INFO();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConnectivityManager_NetworkCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConnectivityManager_NetworkCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectivityManager_NetworkCallback(QJniObject obj);
 		
 		// Constructors

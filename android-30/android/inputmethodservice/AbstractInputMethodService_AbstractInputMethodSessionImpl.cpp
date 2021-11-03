@@ -8,18 +8,18 @@ namespace android::inputmethodservice
 	// Fields
 	
 	// QJniObject forward
-	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractInputMethodService_AbstractInputMethodSessionImpl::AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodSessionImpl",
 			"(Landroid/inputmethodservice/AbstractInputMethodService;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, __JniBaseClass arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"dispatchGenericMotionEvent",
@@ -29,7 +29,7 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, __JniBaseClass arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"dispatchKeyEvent",
@@ -39,7 +39,7 @@ namespace android::inputmethodservice
 			arg2.object()
 		);
 	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, __JniBaseClass arg2)
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"dispatchTrackballEvent",

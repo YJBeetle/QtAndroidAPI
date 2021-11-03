@@ -157,11 +157,11 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	PixelFormat::PixelFormat(QJniObject obj) : __JniBaseClass(obj) {}
+	PixelFormat::PixelFormat(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PixelFormat::PixelFormat()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PixelFormat",
 			"()V"
 		) {}

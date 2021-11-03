@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -24,9 +24,9 @@ namespace android::widget
 		
 		// Constructors
 		TextClock(android::content::Context arg0);
-		TextClock(android::content::Context arg0, __JniBaseClass arg1);
-		TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TextClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TextClock(android::content::Context arg0, JObject arg1);
+		TextClock(android::content::Context arg0, JObject arg1, jint arg2);
+		TextClock(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getFormat12Hour();

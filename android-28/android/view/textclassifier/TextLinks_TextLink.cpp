@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextLinks_TextLink::CREATOR()
+	JObject TextLinks_TextLink::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextLinks$TextLink",
@@ -14,7 +14,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextLinks_TextLink::TextLinks_TextLink(QJniObject obj) : __JniBaseClass(obj) {}
+	TextLinks_TextLink::TextLinks_TextLink(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

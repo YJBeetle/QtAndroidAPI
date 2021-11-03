@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 
@@ -17,7 +17,7 @@ namespace org::xmlpull::v1
 		
 		// Constructors
 		XmlPullParserException(jstring arg0);
-		XmlPullParserException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
+		XmlPullParserException(jstring arg0, JObject arg1, jthrowable arg2);
 		
 		// Methods
 		jint getColumnNumber();

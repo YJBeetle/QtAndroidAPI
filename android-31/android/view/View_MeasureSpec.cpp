@@ -26,11 +26,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	View_MeasureSpec::View_MeasureSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	View_MeasureSpec::View_MeasureSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	View_MeasureSpec::View_MeasureSpec()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.View$MeasureSpec",
 			"()V"
 		) {}

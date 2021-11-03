@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telephony::data
 {
-	class RouteSelectionDescriptor : public __JniBaseClass
+	class RouteSelectionDescriptor : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint ROUTE_SSC_MODE_1();
 		static jint ROUTE_SSC_MODE_2();
 		static jint ROUTE_SSC_MODE_3();
@@ -22,7 +22,7 @@ namespace android::telephony::data
 		static jint SESSION_TYPE_IPV6();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RouteSelectionDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RouteSelectionDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RouteSelectionDescriptor(QJniObject obj);
 		
 		// Constructors
@@ -30,10 +30,10 @@ namespace android::telephony::data
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getDataNetworkName();
+		JObject getDataNetworkName();
 		jint getPrecedence();
 		jint getSessionType();
-		__JniBaseClass getSliceInfo();
+		JObject getSliceInfo();
 		jint getSscMode();
 		jint hashCode();
 		jstring toString();

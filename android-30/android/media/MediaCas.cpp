@@ -148,17 +148,17 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCas::MediaCas(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCas::MediaCas(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCas::MediaCas(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCas",
 			"(I)V",
 			arg0
 		) {}
 	MediaCas::MediaCas(android::content::Context arg0, jint arg1, jstring arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCas",
 			"(Landroid/content/Context;ILjava/lang/String;I)V",
 			arg0.object(),
@@ -253,7 +253,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaCas::setEventListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaCas::setEventListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setEventListener",

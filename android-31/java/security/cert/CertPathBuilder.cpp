@@ -7,7 +7,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertPathBuilder::CertPathBuilder(QJniObject obj) : __JniBaseClass(obj) {}
+	CertPathBuilder::CertPathBuilder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	__JniBaseClass CertPathBuilder::build(__JniBaseClass arg0)
+	JObject CertPathBuilder::build(JObject arg0)
 	{
 		return callObjectMethod(
 			"build",
@@ -71,7 +71,7 @@ namespace java::security::cert
 			"()Ljava/security/Provider;"
 		);
 	}
-	__JniBaseClass CertPathBuilder::getRevocationChecker()
+	JObject CertPathBuilder::getRevocationChecker()
 	{
 		return callObjectMethod(
 			"getRevocationChecker",

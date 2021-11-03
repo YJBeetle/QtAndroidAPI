@@ -4,7 +4,7 @@
 namespace android::service::controls::templates
 {
 	// Fields
-	__JniBaseClass ControlButton::CREATOR()
+	JObject ControlButton::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.controls.templates.ControlButton",
@@ -14,11 +14,11 @@ namespace android::service::controls::templates
 	}
 	
 	// QJniObject forward
-	ControlButton::ControlButton(QJniObject obj) : __JniBaseClass(obj) {}
+	ControlButton::ControlButton(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ControlButton::ControlButton(jboolean arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.controls.templates.ControlButton",
 			"(ZLjava/lang/CharSequence;)V",
 			arg0,

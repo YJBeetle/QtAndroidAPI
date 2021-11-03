@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableLong::MutableLong(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableLong::MutableLong(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableLong::MutableLong(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableLong",
 			"(J)V",
 			arg0

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -35,7 +35,7 @@ namespace android::service::carrier
 		
 		// Methods
 		void notifyCarrierNetworkChange(jboolean arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		android::os::PersistableBundle onLoadConfig(android::service::carrier::CarrierIdentifier arg0);
 	};
 } // namespace android::service::carrier

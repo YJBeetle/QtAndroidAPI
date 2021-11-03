@@ -6,7 +6,7 @@ namespace android::app::blob
 	// Fields
 	
 	// QJniObject forward
-	BlobStoreManager_Session::BlobStoreManager_Session(QJniObject obj) : __JniBaseClass(obj) {}
+	BlobStoreManager_Session::BlobStoreManager_Session(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -48,7 +48,7 @@ namespace android::app::blob
 			"()V"
 		);
 	}
-	void BlobStoreManager_Session::commit(__JniBaseClass arg0, __JniBaseClass arg1)
+	void BlobStoreManager_Session::commit(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"commit",

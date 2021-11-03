@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::service::autofill
 {
-	class FillEventHistory_Event : public __JniBaseClass
+	class FillEventHistory_Event : public JObject
 	{
 	public:
 		// Fields
@@ -28,20 +28,20 @@ namespace android::service::autofill
 		static jint TYPE_SAVE_SHOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FillEventHistory_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FillEventHistory_Event(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FillEventHistory_Event(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getChangedFields();
+		JObject getChangedFields();
 		android::os::Bundle getClientState();
 		jstring getDatasetId();
-		__JniBaseClass getFieldsClassification();
-		__JniBaseClass getIgnoredDatasetIds();
-		__JniBaseClass getManuallyEnteredField();
+		JObject getFieldsClassification();
+		JObject getIgnoredDatasetIds();
+		JObject getManuallyEnteredField();
 		jint getNoSaveUiReason();
-		__JniBaseClass getSelectedDatasetIds();
+		JObject getSelectedDatasetIds();
 		jint getType();
 		jstring toString();
 	};

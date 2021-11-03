@@ -9,7 +9,7 @@ namespace android::service::voice
 	// Fields
 	
 	// QJniObject forward
-	VoiceInteractionSession_AssistState::VoiceInteractionSession_AssistState(QJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractionSession_AssistState::VoiceInteractionSession_AssistState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

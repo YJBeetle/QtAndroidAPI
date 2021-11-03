@@ -29,22 +29,22 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	DecimalFormatSymbols::DecimalFormatSymbols(QJniObject obj) : __JniBaseClass(obj) {}
+	DecimalFormatSymbols::DecimalFormatSymbols(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DecimalFormatSymbols::DecimalFormatSymbols()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DecimalFormatSymbols",
 			"()V"
 		) {}
 	DecimalFormatSymbols::DecimalFormatSymbols(android::icu::util::ULocale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DecimalFormatSymbols",
 			"(Landroid/icu/util/ULocale;)V",
 			arg0.object()
 		) {}
 	DecimalFormatSymbols::DecimalFormatSymbols(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DecimalFormatSymbols",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

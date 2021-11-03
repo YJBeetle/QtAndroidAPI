@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -17,22 +17,22 @@ namespace android::os
 
 namespace android::content::res
 {
-	class ColorStateList : public __JniBaseClass
+	class ColorStateList : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ColorStateList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ColorStateList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ColorStateList(QJniObject obj);
 		
 		// Constructors
 		ColorStateList(jarray arg0, jintArray arg1);
 		
 		// Methods
-		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1);
-		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2);
+		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, JObject arg1);
+		static android::content::res::ColorStateList createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2);
 		static android::content::res::ColorStateList valueOf(jint arg0);
 		jint describeContents();
 		jint getChangingConfigurations();

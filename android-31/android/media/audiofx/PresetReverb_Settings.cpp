@@ -11,16 +11,16 @@ namespace android::media::audiofx
 	}
 	
 	// QJniObject forward
-	PresetReverb_Settings::PresetReverb_Settings(QJniObject obj) : __JniBaseClass(obj) {}
+	PresetReverb_Settings::PresetReverb_Settings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PresetReverb_Settings::PresetReverb_Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.PresetReverb$Settings",
 			"()V"
 		) {}
 	PresetReverb_Settings::PresetReverb_Settings(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.PresetReverb$Settings",
 			"(Ljava/lang/String;)V",
 			arg0

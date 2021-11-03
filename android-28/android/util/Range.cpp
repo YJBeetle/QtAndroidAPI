@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	Range::Range(QJniObject obj) : __JniBaseClass(obj) {}
+	Range::Range(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Range::Range(__JniBaseClass arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Range::Range(JObject arg0, JObject arg1)
+		: JObject(
 			"android.util.Range",
 			"(Ljava/lang/Comparable;Ljava/lang/Comparable;)V",
 			arg0.object(),
@@ -17,7 +17,7 @@ namespace android::util
 		) {}
 	
 	// Methods
-	android::util::Range Range::create(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::create(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.util.Range",
@@ -27,7 +27,7 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Range::clamp(__JniBaseClass arg0)
+	JObject Range::clamp(JObject arg0)
 	{
 		return callObjectMethod(
 			"clamp",
@@ -43,7 +43,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	jboolean Range::contains(__JniBaseClass arg0)
+	jboolean Range::contains(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"contains",
@@ -67,7 +67,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::extend(__JniBaseClass arg0)
+	android::util::Range Range::extend(JObject arg0)
 	{
 		return callObjectMethod(
 			"extend",
@@ -75,7 +75,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::extend(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::extend(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"extend",
@@ -84,14 +84,14 @@ namespace android::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Range::getLower()
+	JObject Range::getLower()
 	{
 		return callObjectMethod(
 			"getLower",
 			"()Ljava/lang/Comparable;"
 		);
 	}
-	__JniBaseClass Range::getUpper()
+	JObject Range::getUpper()
 	{
 		return callObjectMethod(
 			"getUpper",
@@ -113,7 +113,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	android::util::Range Range::intersect(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::util::Range Range::intersect(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"intersect",

@@ -59,16 +59,16 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	MotionEvent_PointerCoords::MotionEvent_PointerCoords(QJniObject obj) : __JniBaseClass(obj) {}
+	MotionEvent_PointerCoords::MotionEvent_PointerCoords(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MotionEvent_PointerCoords::MotionEvent_PointerCoords()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.MotionEvent$PointerCoords",
 			"()V"
 		) {}
 	MotionEvent_PointerCoords::MotionEvent_PointerCoords(android::view::MotionEvent_PointerCoords &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.MotionEvent$PointerCoords",
 			"(Landroid/view/MotionEvent$PointerCoords;)V",
 			arg0.object()

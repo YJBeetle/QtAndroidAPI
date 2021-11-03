@@ -33,11 +33,11 @@ namespace android::drm
 	}
 	
 	// QJniObject forward
-	DrmStore_DrmObjectType::DrmStore_DrmObjectType(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmStore_DrmObjectType::DrmStore_DrmObjectType(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmStore_DrmObjectType::DrmStore_DrmObjectType()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmStore$DrmObjectType",
 			"()V"
 		) {}

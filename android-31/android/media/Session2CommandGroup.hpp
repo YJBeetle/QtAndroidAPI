@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,21 +13,21 @@ namespace android::os
 
 namespace android::media
 {
-	class Session2CommandGroup : public __JniBaseClass
+	class Session2CommandGroup : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Session2CommandGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Session2CommandGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Session2CommandGroup(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getCommands();
+		JObject getCommands();
 		jboolean hasCommand(android::media::Session2Command arg0);
 		jboolean hasCommand(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

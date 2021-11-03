@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -13,7 +13,7 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class Bidi : public __JniBaseClass
+	class Bidi : public JObject
 	{
 	public:
 		// Fields
@@ -48,12 +48,12 @@ namespace android::icu::text
 		static jbyte RTL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Bidi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Bidi(QJniObject obj);
 		
 		// Constructors
 		Bidi();
-		Bidi(__JniBaseClass arg0);
+		Bidi(JObject arg0);
 		Bidi(jint arg0, jint arg1);
 		Bidi(jstring arg0, jint arg1);
 		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
@@ -107,7 +107,7 @@ namespace android::icu::text
 		void setCustomClassifier(android::icu::text::BidiClassifier arg0);
 		void setInverse(jboolean arg0);
 		android::icu::text::Bidi setLine(jint arg0, jint arg1);
-		void setPara(__JniBaseClass arg0);
+		void setPara(JObject arg0);
 		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
 		void setReorderingMode(jint arg0);

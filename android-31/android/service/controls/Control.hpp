@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,11 +25,11 @@ namespace android::service::controls::templates
 
 namespace android::service::controls
 {
-	class Control : public __JniBaseClass
+	class Control : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATUS_DISABLED();
 		static jint STATUS_ERROR();
 		static jint STATUS_NOT_FOUND();
@@ -37,7 +37,7 @@ namespace android::service::controls
 		static jint STATUS_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Control(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Control(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Control(QJniObject obj);
 		
 		// Constructors

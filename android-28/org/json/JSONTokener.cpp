@@ -6,11 +6,11 @@ namespace org::json
 	// Fields
 	
 	// QJniObject forward
-	JSONTokener::JSONTokener(QJniObject obj) : __JniBaseClass(obj) {}
+	JSONTokener::JSONTokener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JSONTokener::JSONTokener(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONTokener",
 			"(Ljava/lang/String;)V",
 			arg0

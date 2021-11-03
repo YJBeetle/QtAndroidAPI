@@ -8,7 +8,7 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	InetAddress::InetAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	InetAddress::InetAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

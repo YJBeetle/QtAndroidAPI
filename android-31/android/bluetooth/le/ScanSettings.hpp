@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::bluetooth::le
 {
-	class ScanSettings : public __JniBaseClass
+	class ScanSettings : public JObject
 	{
 	public:
 		// Fields
 		static jint CALLBACK_TYPE_ALL_MATCHES();
 		static jint CALLBACK_TYPE_FIRST_MATCH();
 		static jint CALLBACK_TYPE_MATCH_LOST();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MATCH_MODE_AGGRESSIVE();
 		static jint MATCH_MODE_STICKY();
 		static jint MATCH_NUM_FEW_ADVERTISEMENT();
@@ -29,7 +29,7 @@ namespace android::bluetooth::le
 		static jint SCAN_MODE_OPPORTUNISTIC();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ScanSettings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScanSettings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScanSettings(QJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaCrypto::MediaCrypto(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCrypto::MediaCrypto(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCrypto::MediaCrypto(java::util::UUID arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCrypto",
 			"(Ljava/util/UUID;[B)V",
 			arg0.object(),

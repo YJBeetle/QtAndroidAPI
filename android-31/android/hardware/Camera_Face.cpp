@@ -47,11 +47,11 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	Camera_Face::Camera_Face(QJniObject obj) : __JniBaseClass(obj) {}
+	Camera_Face::Camera_Face(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Camera_Face::Camera_Face()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.Camera$Face",
 			"()V"
 		) {}

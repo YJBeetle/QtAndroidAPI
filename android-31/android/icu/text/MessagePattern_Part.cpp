@@ -7,7 +7,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	MessagePattern_Part::MessagePattern_Part(QJniObject obj) : __JniBaseClass(obj) {}
+	MessagePattern_Part::MessagePattern_Part(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

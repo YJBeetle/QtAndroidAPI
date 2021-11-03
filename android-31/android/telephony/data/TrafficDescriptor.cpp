@@ -4,7 +4,7 @@
 namespace android::telephony::data
 {
 	// Fields
-	__JniBaseClass TrafficDescriptor::CREATOR()
+	JObject TrafficDescriptor::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.TrafficDescriptor",
@@ -14,7 +14,7 @@ namespace android::telephony::data
 	}
 	
 	// QJniObject forward
-	TrafficDescriptor::TrafficDescriptor(QJniObject obj) : __JniBaseClass(obj) {}
+	TrafficDescriptor::TrafficDescriptor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

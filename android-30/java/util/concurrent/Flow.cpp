@@ -5,7 +5,7 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	Flow::Flow(QJniObject obj) : __JniBaseClass(obj) {}
+	Flow::Flow(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

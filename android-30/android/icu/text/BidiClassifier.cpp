@@ -5,11 +5,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	BidiClassifier::BidiClassifier(QJniObject obj) : __JniBaseClass(obj) {}
+	BidiClassifier::BidiClassifier(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BidiClassifier::BidiClassifier(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.BidiClassifier",
 			"(Ljava/lang/Object;)V",
 			arg0

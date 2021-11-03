@@ -5,7 +5,7 @@ namespace android::mtp
 	// Fields
 	
 	// QJniObject forward
-	MtpObjectInfo::MtpObjectInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MtpObjectInfo::MtpObjectInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

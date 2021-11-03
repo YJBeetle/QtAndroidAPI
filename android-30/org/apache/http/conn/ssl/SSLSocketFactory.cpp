@@ -7,7 +7,7 @@
 namespace org::apache::http::conn::ssl
 {
 	// Fields
-	__JniBaseClass SSLSocketFactory::ALLOW_ALL_HOSTNAME_VERIFIER()
+	JObject SSLSocketFactory::ALLOW_ALL_HOSTNAME_VERIFIER()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -15,7 +15,7 @@ namespace org::apache::http::conn::ssl
 			"Lorg/apache/http/conn/ssl/X509HostnameVerifier;"
 		);
 	}
-	__JniBaseClass SSLSocketFactory::BROWSER_COMPATIBLE_HOSTNAME_VERIFIER()
+	JObject SSLSocketFactory::BROWSER_COMPATIBLE_HOSTNAME_VERIFIER()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -39,7 +39,7 @@ namespace org::apache::http::conn::ssl
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SSLSocketFactory::STRICT_HOSTNAME_VERIFIER()
+	JObject SSLSocketFactory::STRICT_HOSTNAME_VERIFIER()
 	{
 		return getStaticObjectField(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
@@ -57,32 +57,32 @@ namespace org::apache::http::conn::ssl
 	}
 	
 	// QJniObject forward
-	SSLSocketFactory::SSLSocketFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	SSLSocketFactory::SSLSocketFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/security/KeyStore;)V",
 			arg0.object()
 		) {}
 	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/security/KeyStore;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	SSLSocketFactory::SSLSocketFactory(java::security::KeyStore arg0, jstring arg1, java::security::KeyStore arg2)
-		: __JniBaseClass(
+		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;)V",
 			arg0.object(),
 			arg1,
 			arg2.object()
 		) {}
-	SSLSocketFactory::SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, __JniBaseClass arg5)
-		: __JniBaseClass(
+	SSLSocketFactory::SSLSocketFactory(jstring arg0, java::security::KeyStore arg1, jstring arg2, java::security::KeyStore arg3, java::security::SecureRandom arg4, JObject arg5)
+		: JObject(
 			"org.apache.http.conn.ssl.SSLSocketFactory",
 			"(Ljava/lang/String;Ljava/security/KeyStore;Ljava/lang/String;Ljava/security/KeyStore;Ljava/security/SecureRandom;Lorg/apache/http/conn/scheme/HostNameResolver;)V",
 			arg0,
@@ -102,7 +102,7 @@ namespace org::apache::http::conn::ssl
 			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
 		);
 	}
-	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, jstring arg1, jint arg2, java::net::InetAddress arg3, jint arg4, __JniBaseClass arg5)
+	java::net::Socket SSLSocketFactory::connectSocket(java::net::Socket arg0, jstring arg1, jint arg2, java::net::InetAddress arg3, jint arg4, JObject arg5)
 	{
 		return callObjectMethod(
 			"connectSocket",
@@ -133,7 +133,7 @@ namespace org::apache::http::conn::ssl
 			arg3
 		);
 	}
-	__JniBaseClass SSLSocketFactory::getHostnameVerifier()
+	JObject SSLSocketFactory::getHostnameVerifier()
 	{
 		return callObjectMethod(
 			"getHostnameVerifier",
@@ -148,7 +148,7 @@ namespace org::apache::http::conn::ssl
 			arg0.object()
 		);
 	}
-	void SSLSocketFactory::setHostnameVerifier(__JniBaseClass arg0)
+	void SSLSocketFactory::setHostnameVerifier(JObject arg0)
 	{
 		callMethod<void>(
 			"setHostnameVerifier",

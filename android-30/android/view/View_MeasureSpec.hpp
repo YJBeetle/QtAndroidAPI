@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class View_MeasureSpec : public __JniBaseClass
+	class View_MeasureSpec : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::view
 		static jint UNSPECIFIED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit View_MeasureSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit View_MeasureSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		View_MeasureSpec(QJniObject obj);
 		
 		// Constructors

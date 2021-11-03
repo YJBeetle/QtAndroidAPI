@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::number
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class PluralRules : public __JniBaseClass
+	class PluralRules : public JObject
 	{
 	public:
 		// Fields
@@ -35,7 +35,7 @@ namespace android::icu::text
 		static jdouble NO_UNIQUE_VALUE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PluralRules(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PluralRules(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PluralRules(QJniObject obj);
 		
 		// Constructors
@@ -49,9 +49,9 @@ namespace android::icu::text
 		static android::icu::text::PluralRules parseDescription(jstring arg0);
 		jboolean equals(android::icu::text::PluralRules arg0);
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAllKeywordValues(jstring arg0);
-		__JniBaseClass getKeywords();
-		__JniBaseClass getSamples(jstring arg0);
+		JObject getAllKeywordValues(jstring arg0);
+		JObject getKeywords();
+		JObject getSamples(jstring arg0);
 		jdouble getUniqueKeywordValue(jstring arg0);
 		jint hashCode();
 		jstring select(android::icu::number::FormattedNumber arg0);

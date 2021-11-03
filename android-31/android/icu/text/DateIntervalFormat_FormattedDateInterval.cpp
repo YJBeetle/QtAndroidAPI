@@ -6,12 +6,12 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	DateIntervalFormat_FormattedDateInterval::DateIntervalFormat_FormattedDateInterval(QJniObject obj) : __JniBaseClass(obj) {}
+	DateIntervalFormat_FormattedDateInterval::DateIntervalFormat_FormattedDateInterval(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass DateIntervalFormat_FormattedDateInterval::appendTo(__JniBaseClass arg0)
+	JObject DateIntervalFormat_FormattedDateInterval::appendTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"appendTo",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	__JniBaseClass DateIntervalFormat_FormattedDateInterval::toCharacterIterator()
+	JObject DateIntervalFormat_FormattedDateInterval::toCharacterIterator()
 	{
 		return callObjectMethod(
 			"toCharacterIterator",

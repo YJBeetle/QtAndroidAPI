@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./SignatureSpi.hpp"
 
 namespace java::nio
@@ -50,11 +50,11 @@ namespace java::security
 		jobject getParameter(jstring arg0);
 		java::security::AlgorithmParameters getParameters();
 		java::security::Provider getProvider();
-		void initSign(__JniBaseClass arg0);
-		void initSign(__JniBaseClass arg0, java::security::SecureRandom arg1);
-		void initVerify(__JniBaseClass arg0);
+		void initSign(JObject arg0);
+		void initSign(JObject arg0, java::security::SecureRandom arg1);
+		void initVerify(JObject arg0);
 		void initVerify(java::security::cert::Certificate arg0);
-		void setParameter(__JniBaseClass arg0);
+		void setParameter(JObject arg0);
 		void setParameter(jstring arg0, jobject arg1);
 		jbyteArray sign();
 		jint sign(jbyteArray arg0, jint arg1, jint arg2);

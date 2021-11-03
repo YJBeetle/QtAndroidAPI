@@ -20,7 +20,7 @@ namespace android::hardware::camera2
 	}
 	
 	// QJniObject forward
-	CaptureFailure::CaptureFailure(QJniObject obj) : __JniBaseClass(obj) {}
+	CaptureFailure::CaptureFailure(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

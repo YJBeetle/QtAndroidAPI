@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class AppSearchResult : public __JniBaseClass
+	class AppSearchResult : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::app::appsearch
 		static jint RESULT_UNKNOWN_ERROR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppSearchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppSearchResult(QJniObject obj);
 		
 		// Constructors

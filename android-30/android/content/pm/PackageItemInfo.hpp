@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageItemInfo : public __JniBaseClass
+	class PackageItemInfo : public JObject
 	{
 	public:
 		// Fields
@@ -35,7 +35,7 @@ namespace android::content::pm
 		jstring packageName();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PackageItemInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageItemInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageItemInfo(QJniObject obj);
 		
 		// Constructors
@@ -48,7 +48,7 @@ namespace android::content::pm
 		jstring loadLabel(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadLogo(android::content::pm::PackageManager arg0);
 		android::graphics::drawable::Drawable loadUnbadgedIcon(android::content::pm::PackageManager arg0);
-		__JniBaseClass loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1);
+		JObject loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm

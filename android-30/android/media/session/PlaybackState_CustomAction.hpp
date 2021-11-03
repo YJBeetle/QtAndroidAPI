@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::media::session
 {
-	class PlaybackState_CustomAction : public __JniBaseClass
+	class PlaybackState_CustomAction : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PlaybackState_CustomAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackState_CustomAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackState_CustomAction(QJniObject obj);
 		
 		// Constructors

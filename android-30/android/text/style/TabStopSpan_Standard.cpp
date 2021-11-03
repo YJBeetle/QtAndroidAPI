@@ -5,11 +5,11 @@ namespace android::text::style
 	// Fields
 	
 	// QJniObject forward
-	TabStopSpan_Standard::TabStopSpan_Standard(QJniObject obj) : __JniBaseClass(obj) {}
+	TabStopSpan_Standard::TabStopSpan_Standard(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TabStopSpan_Standard::TabStopSpan_Standard(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.TabStopSpan$Standard",
 			"(I)V",
 			arg0

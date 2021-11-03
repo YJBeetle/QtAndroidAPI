@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::audiofx
 {
-	class PresetReverb_Settings : public __JniBaseClass
+	class PresetReverb_Settings : public JObject
 	{
 	public:
 		// Fields
 		jshort preset();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PresetReverb_Settings(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PresetReverb_Settings(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PresetReverb_Settings(QJniObject obj);
 		
 		// Constructors

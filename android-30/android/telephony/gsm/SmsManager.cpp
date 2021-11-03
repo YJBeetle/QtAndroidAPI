@@ -70,7 +70,7 @@ namespace android::telephony::gsm
 	}
 	
 	// QJniObject forward
-	SmsManager::SmsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	SmsManager::SmsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

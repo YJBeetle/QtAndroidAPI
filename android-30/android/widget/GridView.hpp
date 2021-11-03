@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -53,13 +53,13 @@ namespace android::widget
 		
 		// Constructors
 		GridView(android::content::Context arg0);
-		GridView(android::content::Context arg0, __JniBaseClass arg1);
-		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		GridView(android::content::Context arg0, JObject arg1);
+		GridView(android::content::Context arg0, JObject arg1, jint arg2);
+		GridView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jint getColumnWidth();
 		jint getGravity();
 		jint getHorizontalSpacing();
@@ -72,7 +72,7 @@ namespace android::widget
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setColumnWidth(jint arg0);
 		void setGravity(jint arg0);
 		void setHorizontalSpacing(jint arg0);

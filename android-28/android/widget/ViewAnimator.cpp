@@ -18,7 +18,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ViewAnimator::ViewAnimator(android::content::Context arg0, __JniBaseClass arg1)
+	ViewAnimator::ViewAnimator(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.widget.ViewAnimator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

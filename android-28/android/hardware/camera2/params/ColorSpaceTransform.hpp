@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::util
 {
@@ -9,13 +9,13 @@ namespace android::util
 
 namespace android::hardware::camera2::params
 {
-	class ColorSpaceTransform : public __JniBaseClass
+	class ColorSpaceTransform : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ColorSpaceTransform(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ColorSpaceTransform(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ColorSpaceTransform(QJniObject obj);
 		
 		// Constructors

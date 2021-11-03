@@ -8,17 +8,17 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaRoute2Info_Builder::MediaRoute2Info_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaRoute2Info_Builder::MediaRoute2Info_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaRoute2Info_Builder::MediaRoute2Info_Builder(android::media::MediaRoute2Info arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaRoute2Info$Builder",
 			"(Landroid/media/MediaRoute2Info;)V",
 			arg0.object()
 		) {}
 	MediaRoute2Info_Builder::MediaRoute2Info_Builder(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaRoute2Info$Builder",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
@@ -34,7 +34,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeatures(__JniBaseClass arg0)
+	android::media::MediaRoute2Info_Builder MediaRoute2Info_Builder::addFeatures(JObject arg0)
 	{
 		return callObjectMethod(
 			"addFeatures",

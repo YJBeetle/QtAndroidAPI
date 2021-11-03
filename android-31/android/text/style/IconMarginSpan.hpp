@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -25,13 +25,13 @@ namespace android::text
 
 namespace android::text::style
 {
-	class IconMarginSpan : public __JniBaseClass
+	class IconMarginSpan : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IconMarginSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IconMarginSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IconMarginSpan(QJniObject obj);
 		
 		// Constructors

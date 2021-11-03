@@ -6,11 +6,11 @@ namespace java::util::zip
 	// Fields
 	
 	// QJniObject forward
-	CRC32::CRC32(QJniObject obj) : __JniBaseClass(obj) {}
+	CRC32::CRC32(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CRC32::CRC32()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.CRC32",
 			"()V"
 		) {}

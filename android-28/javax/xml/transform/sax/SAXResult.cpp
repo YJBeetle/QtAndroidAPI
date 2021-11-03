@@ -13,30 +13,30 @@ namespace javax::xml::transform::sax
 	}
 	
 	// QJniObject forward
-	SAXResult::SAXResult(QJniObject obj) : __JniBaseClass(obj) {}
+	SAXResult::SAXResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SAXResult::SAXResult()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.sax.SAXResult",
 			"()V"
 		) {}
-	SAXResult::SAXResult(__JniBaseClass arg0)
-		: __JniBaseClass(
+	SAXResult::SAXResult(JObject arg0)
+		: JObject(
 			"javax.xml.transform.sax.SAXResult",
 			"(Lorg/xml/sax/ContentHandler;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass SAXResult::getHandler()
+	JObject SAXResult::getHandler()
 	{
 		return callObjectMethod(
 			"getHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	__JniBaseClass SAXResult::getLexicalHandler()
+	JObject SAXResult::getLexicalHandler()
 	{
 		return callObjectMethod(
 			"getLexicalHandler",
@@ -50,7 +50,7 @@ namespace javax::xml::transform::sax
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void SAXResult::setHandler(__JniBaseClass arg0)
+	void SAXResult::setHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setHandler",
@@ -58,7 +58,7 @@ namespace javax::xml::transform::sax
 			arg0.object()
 		);
 	}
-	void SAXResult::setLexicalHandler(__JniBaseClass arg0)
+	void SAXResult::setLexicalHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setLexicalHandler",

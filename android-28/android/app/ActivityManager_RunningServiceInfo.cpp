@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_RunningServiceInfo::CREATOR()
+	JObject ActivityManager_RunningServiceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$RunningServiceInfo",
@@ -130,11 +130,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_RunningServiceInfo::ActivityManager_RunningServiceInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$RunningServiceInfo",
 			"()V"
 		) {}

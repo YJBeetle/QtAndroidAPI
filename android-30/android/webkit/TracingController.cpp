@@ -7,11 +7,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	TracingController::TracingController(QJniObject obj) : __JniBaseClass(obj) {}
+	TracingController::TracingController(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TracingController::TracingController()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.TracingController",
 			"()V"
 		) {}
@@ -40,7 +40,7 @@ namespace android::webkit
 			arg0.object()
 		);
 	}
-	jboolean TracingController::stop(java::io::OutputStream arg0, __JniBaseClass arg1)
+	jboolean TracingController::stop(java::io::OutputStream arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"stop",

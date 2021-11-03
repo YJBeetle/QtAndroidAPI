@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class AudioDeviceInfo : public __JniBaseClass
+	class AudioDeviceInfo : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace android::media
 		static jint TYPE_WIRED_HEADSET();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioDeviceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioDeviceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioDeviceInfo(QJniObject obj);
 		
 		// Constructors

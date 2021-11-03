@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -21,11 +21,11 @@ namespace android::view
 
 namespace android::view
 {
-	class InputDevice : public __JniBaseClass
+	class InputDevice : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint KEYBOARD_TYPE_ALPHABETIC();
 		static jint KEYBOARD_TYPE_NONE();
 		static jint KEYBOARD_TYPE_NON_ALPHABETIC();
@@ -63,7 +63,7 @@ namespace android::view
 		static jint SOURCE_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit InputDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputDevice(QJniObject obj);
 		
 		// Constructors
@@ -79,7 +79,7 @@ namespace android::view
 		jint getKeyboardType();
 		android::view::InputDevice_MotionRange getMotionRange(jint arg0);
 		android::view::InputDevice_MotionRange getMotionRange(jint arg0, jint arg1);
-		__JniBaseClass getMotionRanges();
+		JObject getMotionRanges();
 		jstring getName();
 		jint getProductId();
 		jint getSources();

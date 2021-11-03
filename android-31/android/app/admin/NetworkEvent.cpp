@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass NetworkEvent::CREATOR()
+	JObject NetworkEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.NetworkEvent",
@@ -14,7 +14,7 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	NetworkEvent::NetworkEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkEvent::NetworkEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

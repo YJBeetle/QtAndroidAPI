@@ -8,11 +8,11 @@ namespace android::security::identity
 	// Fields
 	
 	// QJniObject forward
-	AccessControlProfile_Builder::AccessControlProfile_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessControlProfile_Builder::AccessControlProfile_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessControlProfile_Builder::AccessControlProfile_Builder(android::security::identity::AccessControlProfileId arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.identity.AccessControlProfile$Builder",
 			"(Landroid/security/identity/AccessControlProfileId;)V",
 			arg0.object()

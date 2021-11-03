@@ -8,12 +8,12 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	CameraExtensionSession::CameraExtensionSession(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraExtensionSession::CameraExtensionSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jint CameraExtensionSession::capture(android::hardware::camera2::CaptureRequest arg0, __JniBaseClass arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
+	jint CameraExtensionSession::capture(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"capture",
@@ -37,7 +37,7 @@ namespace android::hardware::camera2
 			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
-	jint CameraExtensionSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, __JniBaseClass arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
+	jint CameraExtensionSession::setRepeatingRequest(android::hardware::camera2::CaptureRequest arg0, JObject arg1, android::hardware::camera2::CameraExtensionSession_ExtensionCaptureCallback arg2)
 	{
 		return callMethod<jint>(
 			"setRepeatingRequest",

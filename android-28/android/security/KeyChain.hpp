@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,7 +21,7 @@ namespace android::net
 
 namespace android::security
 {
-	class KeyChain : public __JniBaseClass
+	class KeyChain : public JObject
 	{
 	public:
 		// Fields
@@ -36,18 +36,18 @@ namespace android::security
 		static jstring EXTRA_PKCS12();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyChain(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyChain(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyChain(QJniObject obj);
 		
 		// Constructors
 		KeyChain();
 		
 		// Methods
-		static void choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5);
-		static void choosePrivateKeyAlias(android::app::Activity arg0, __JniBaseClass arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6);
+		static void choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, jarray arg2, jarray arg3, android::net::Uri arg4, jstring arg5);
+		static void choosePrivateKeyAlias(android::app::Activity arg0, JObject arg1, jarray arg2, jarray arg3, jstring arg4, jint arg5, jstring arg6);
 		static android::content::Intent createInstallIntent();
 		static jarray getCertificateChain(android::content::Context arg0, jstring arg1);
-		static __JniBaseClass getPrivateKey(android::content::Context arg0, jstring arg1);
+		static JObject getPrivateKey(android::content::Context arg0, jstring arg1);
 		static jboolean isBoundKeyAlgorithm(jstring arg0);
 		static jboolean isKeyAlgorithmSupported(jstring arg0);
 	};

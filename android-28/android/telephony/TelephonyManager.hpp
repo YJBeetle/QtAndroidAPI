@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -65,7 +65,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class TelephonyManager : public __JniBaseClass
+	class TelephonyManager : public JObject
 	{
 	public:
 		// Fields
@@ -153,7 +153,7 @@ namespace android::telephony
 		static jstring VVM_TYPE_OMTP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TelephonyManager(QJniObject obj);
 		
 		// Constructors
@@ -162,7 +162,7 @@ namespace android::telephony
 		jboolean canChangeDtmfToneLength();
 		android::telephony::TelephonyManager createForPhoneAccountHandle(android::telecom::PhoneAccountHandle arg0);
 		android::telephony::TelephonyManager createForSubscriptionId(jint arg0);
-		__JniBaseClass getAllCellInfo();
+		JObject getAllCellInfo();
 		jint getCallState();
 		android::os::PersistableBundle getCarrierConfig();
 		android::telephony::CellLocation getCellLocation();
@@ -183,7 +183,7 @@ namespace android::telephony
 		jstring getMmsUAProfUrl();
 		jstring getMmsUserAgent();
 		jstring getNai();
-		__JniBaseClass getNeighboringCellInfo();
+		JObject getNeighboringCellInfo();
 		jstring getNetworkCountryIso();
 		jstring getNetworkOperator();
 		jstring getNetworkOperatorName();
@@ -225,7 +225,7 @@ namespace android::telephony
 		jboolean isVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0);
 		jboolean isWorldPhone();
 		void listen(android::telephony::PhoneStateListener arg0, jint arg1);
-		android::telephony::NetworkScan requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2);
+		android::telephony::NetworkScan requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2);
 		void sendDialerSpecialCode(jstring arg0);
 		jstring sendEnvelopeWithStatus(jstring arg0);
 		void sendUssdRequest(jstring arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2);

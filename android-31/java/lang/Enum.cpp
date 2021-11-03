@@ -7,7 +7,7 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Enum::Enum(QJniObject obj) : __JniBaseClass(obj) {}
+	Enum::Enum(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::hardware::camera2::params
 {
-	class MandatoryStreamCombination : public __JniBaseClass
+	class MandatoryStreamCombination : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MandatoryStreamCombination(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MandatoryStreamCombination(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MandatoryStreamCombination(QJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace android::hardware::camera2::params
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring getDescription();
-		__JniBaseClass getStreamsInformation();
+		JObject getStreamsInformation();
 		jint hashCode();
 		jboolean isReprocessable();
 	};

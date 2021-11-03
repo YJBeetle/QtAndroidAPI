@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 #include "./ComponentInfo.hpp"
 
@@ -39,7 +39,7 @@ namespace android::content::pm
 		static jint CONFIG_SMALLEST_SCREEN_SIZE();
 		static jint CONFIG_TOUCHSCREEN();
 		static jint CONFIG_UI_MODE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DOCUMENT_LAUNCH_ALWAYS();
 		static jint DOCUMENT_LAUNCH_INTO_EXISTING();
 		static jint DOCUMENT_LAUNCH_NEVER();
@@ -113,7 +113,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jint getThemeResource();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

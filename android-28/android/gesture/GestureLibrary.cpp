@@ -8,7 +8,7 @@ namespace android::gesture
 	// Fields
 	
 	// QJniObject forward
-	GestureLibrary::GestureLibrary(QJniObject obj) : __JniBaseClass(obj) {}
+	GestureLibrary::GestureLibrary(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -22,7 +22,7 @@ namespace android::gesture
 			arg1.object()
 		);
 	}
-	__JniBaseClass GestureLibrary::getGestureEntries()
+	JObject GestureLibrary::getGestureEntries()
 	{
 		return callObjectMethod(
 			"getGestureEntries",

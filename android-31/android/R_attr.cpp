@@ -10260,11 +10260,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_attr::R_attr(QJniObject obj) : __JniBaseClass(obj) {}
+	R_attr::R_attr(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_attr::R_attr()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$attr",
 			"()V"
 		) {}

@@ -8,11 +8,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	SyncRequest_Builder::SyncRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncRequest_Builder::SyncRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncRequest_Builder::SyncRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncRequest$Builder",
 			"()V"
 		) {}

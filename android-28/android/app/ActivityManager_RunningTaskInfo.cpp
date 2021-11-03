@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_RunningTaskInfo::CREATOR()
+	JObject ActivityManager_RunningTaskInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$RunningTaskInfo",
@@ -62,11 +62,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager_RunningTaskInfo::ActivityManager_RunningTaskInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_RunningTaskInfo::ActivityManager_RunningTaskInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_RunningTaskInfo::ActivityManager_RunningTaskInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$RunningTaskInfo",
 			"()V"
 		) {}

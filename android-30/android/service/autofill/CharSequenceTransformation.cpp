@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass CharSequenceTransformation::CREATOR()
+	JObject CharSequenceTransformation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.CharSequenceTransformation",
@@ -14,7 +14,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	CharSequenceTransformation::CharSequenceTransformation(QJniObject obj) : __JniBaseClass(obj) {}
+	CharSequenceTransformation::CharSequenceTransformation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	SubtitleData::SubtitleData(QJniObject obj) : __JniBaseClass(obj) {}
+	SubtitleData::SubtitleData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

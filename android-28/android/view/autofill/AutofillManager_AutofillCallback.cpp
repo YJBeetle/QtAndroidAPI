@@ -27,11 +27,11 @@ namespace android::view::autofill
 	}
 	
 	// QJniObject forward
-	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AutofillManager_AutofillCallback::AutofillManager_AutofillCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.autofill.AutofillManager$AutofillCallback",
 			"()V"
 		) {}

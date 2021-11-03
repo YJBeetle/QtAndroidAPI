@@ -8,17 +8,17 @@ namespace android::printservice
 	// Fields
 	
 	// QJniObject forward
-	PrinterDiscoverySession::PrinterDiscoverySession(QJniObject obj) : __JniBaseClass(obj) {}
+	PrinterDiscoverySession::PrinterDiscoverySession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrinterDiscoverySession::PrinterDiscoverySession()
-		: __JniBaseClass(
+		: JObject(
 			"android.printservice.PrinterDiscoverySession",
 			"()V"
 		) {}
 	
 	// Methods
-	void PrinterDiscoverySession::addPrinters(__JniBaseClass arg0)
+	void PrinterDiscoverySession::addPrinters(JObject arg0)
 	{
 		callMethod<void>(
 			"addPrinters",
@@ -26,14 +26,14 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	__JniBaseClass PrinterDiscoverySession::getPrinters()
+	JObject PrinterDiscoverySession::getPrinters()
 	{
 		return callObjectMethod(
 			"getPrinters",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PrinterDiscoverySession::getTrackedPrinters()
+	JObject PrinterDiscoverySession::getTrackedPrinters()
 	{
 		return callObjectMethod(
 			"getTrackedPrinters",
@@ -71,7 +71,7 @@ namespace android::printservice
 			arg2.object()
 		);
 	}
-	void PrinterDiscoverySession::onStartPrinterDiscovery(__JniBaseClass arg0)
+	void PrinterDiscoverySession::onStartPrinterDiscovery(JObject arg0)
 	{
 		callMethod<void>(
 			"onStartPrinterDiscovery",
@@ -102,7 +102,7 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::onValidatePrinters(__JniBaseClass arg0)
+	void PrinterDiscoverySession::onValidatePrinters(JObject arg0)
 	{
 		callMethod<void>(
 			"onValidatePrinters",
@@ -110,7 +110,7 @@ namespace android::printservice
 			arg0.object()
 		);
 	}
-	void PrinterDiscoverySession::removePrinters(__JniBaseClass arg0)
+	void PrinterDiscoverySession::removePrinters(JObject arg0)
 	{
 		callMethod<void>(
 			"removePrinters",

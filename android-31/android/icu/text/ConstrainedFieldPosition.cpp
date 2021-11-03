@@ -6,11 +6,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	ConstrainedFieldPosition::ConstrainedFieldPosition(QJniObject obj) : __JniBaseClass(obj) {}
+	ConstrainedFieldPosition::ConstrainedFieldPosition(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConstrainedFieldPosition::ConstrainedFieldPosition()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.ConstrainedFieldPosition",
 			"()V"
 		) {}

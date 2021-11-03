@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -29,11 +29,11 @@ namespace java::net
 
 namespace android::os
 {
-	class ParcelFileDescriptor : public __JniBaseClass
+	class ParcelFileDescriptor : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MODE_APPEND();
 		static jint MODE_CREATE();
 		static jint MODE_READ_ONLY();
@@ -44,7 +44,7 @@ namespace android::os
 		static jint MODE_WRITE_ONLY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ParcelFileDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ParcelFileDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ParcelFileDescriptor(QJniObject obj);
 		
 		// Constructors
@@ -61,9 +61,9 @@ namespace android::os
 		static android::os::ParcelFileDescriptor fromFd(jint arg0);
 		static android::os::ParcelFileDescriptor fromSocket(java::net::Socket arg0);
 		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1);
-		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1, android::os::Handler arg2, __JniBaseClass arg3);
+		static android::os::ParcelFileDescriptor open(java::io::File arg0, jint arg1, android::os::Handler arg2, JObject arg3);
 		static jint parseMode(jstring arg0);
-		static android::os::ParcelFileDescriptor wrap(android::os::ParcelFileDescriptor arg0, android::os::Handler arg1, __JniBaseClass arg2);
+		static android::os::ParcelFileDescriptor wrap(android::os::ParcelFileDescriptor arg0, android::os::Handler arg1, JObject arg2);
 		jboolean canDetectErrors();
 		void checkError();
 		void close();

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class AudioDescriptor : public __JniBaseClass
+	class AudioDescriptor : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::media
 		static jint STANDARD_NONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioDescriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioDescriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioDescriptor(QJniObject obj);
 		
 		// Constructors

@@ -15,7 +15,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	DigitalClock::DigitalClock(android::content::Context arg0, __JniBaseClass arg1)
+	DigitalClock::DigitalClock(android::content::Context arg0, JObject arg1)
 		: android::widget::TextView(
 			"android.widget.DigitalClock",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

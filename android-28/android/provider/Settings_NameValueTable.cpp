@@ -23,11 +23,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Settings_NameValueTable::Settings_NameValueTable(QJniObject obj) : __JniBaseClass(obj) {}
+	Settings_NameValueTable::Settings_NameValueTable(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Settings_NameValueTable::Settings_NameValueTable()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.Settings$NameValueTable",
 			"()V"
 		) {}

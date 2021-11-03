@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace java::security::cert
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig : public __JniBaseClass
+	class WifiEnterpriseConfig : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig(QJniObject obj);
 		
 		// Constructors
@@ -47,8 +47,8 @@ namespace android::net::wifi
 		void setAnonymousIdentity(jstring arg0);
 		void setCaCertificate(java::security::cert::X509Certificate arg0);
 		void setCaCertificates(jarray arg0);
-		void setClientKeyEntry(__JniBaseClass arg0, java::security::cert::X509Certificate arg1);
-		void setClientKeyEntryWithCertificateChain(__JniBaseClass arg0, jarray arg1);
+		void setClientKeyEntry(JObject arg0, java::security::cert::X509Certificate arg1);
+		void setClientKeyEntryWithCertificateChain(JObject arg0, jarray arg1);
 		void setDomainSuffixMatch(jstring arg0);
 		void setEapMethod(jint arg0);
 		void setIdentity(jstring arg0);

@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass RegexValidator::CREATOR()
+	JObject RegexValidator::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.RegexValidator",
@@ -16,11 +16,11 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	RegexValidator::RegexValidator(QJniObject obj) : __JniBaseClass(obj) {}
+	RegexValidator::RegexValidator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RegexValidator::RegexValidator(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.RegexValidator",
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;)V",
 			arg0.object(),

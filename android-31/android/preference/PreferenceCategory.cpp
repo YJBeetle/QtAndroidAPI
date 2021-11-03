@@ -16,14 +16,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1)
 		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -31,7 +31,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	PreferenceCategory::PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	PreferenceCategory::PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::PreferenceGroup(
 			"android.preference.PreferenceCategory",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

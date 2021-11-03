@@ -32,11 +32,11 @@ namespace android::system
 	}
 	
 	// QJniObject forward
-	StructPollfd::StructPollfd(QJniObject obj) : __JniBaseClass(obj) {}
+	StructPollfd::StructPollfd(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StructPollfd::StructPollfd()
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructPollfd",
 			"()V"
 		) {}

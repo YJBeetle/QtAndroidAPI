@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -9,13 +9,13 @@ namespace android::view
 
 namespace android::view
 {
-	class VelocityTracker : public __JniBaseClass
+	class VelocityTracker : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VelocityTracker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VelocityTracker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VelocityTracker(QJniObject obj);
 		
 		// Constructors

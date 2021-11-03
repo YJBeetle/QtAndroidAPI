@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 
 namespace android::content
@@ -44,7 +44,7 @@ namespace android::widget
 		SimpleAdapter(QJniObject obj);
 		
 		// Constructors
-		SimpleAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4);
+		SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4);
 		
 		// Methods
 		jint getCount();
@@ -54,10 +54,10 @@ namespace android::widget
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
-		__JniBaseClass getViewBinder();
+		JObject getViewBinder();
 		void setDropDownViewResource(jint arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
-		void setViewBinder(__JniBaseClass arg0);
+		void setViewBinder(JObject arg0);
 		void setViewImage(android::widget::ImageView arg0, jint arg1);
 		void setViewImage(android::widget::ImageView arg0, jstring arg1);
 		void setViewText(android::widget::TextView arg0, jstring arg1);

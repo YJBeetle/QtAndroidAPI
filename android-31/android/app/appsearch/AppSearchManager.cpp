@@ -6,12 +6,12 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	AppSearchManager::AppSearchManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AppSearchManager::AppSearchManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void AppSearchManager::createGlobalSearchSession(__JniBaseClass arg0, __JniBaseClass arg1)
+	void AppSearchManager::createGlobalSearchSession(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"createGlobalSearchSession",
@@ -20,7 +20,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	void AppSearchManager::createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void AppSearchManager::createSearchSession(android::app::appsearch::AppSearchManager_SearchContext arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"createSearchSession",

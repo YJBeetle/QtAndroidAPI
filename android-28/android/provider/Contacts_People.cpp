@@ -84,7 +84,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Contacts_People::Contacts_People(QJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_People::Contacts_People(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -163,7 +163,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass Contacts_People::queryGroups(android::content::ContentResolver arg0, jlong arg1)
+	JObject Contacts_People::queryGroups(android::content::ContentResolver arg0, jlong arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.Contacts$People",

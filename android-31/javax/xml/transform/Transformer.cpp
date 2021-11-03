@@ -6,7 +6,7 @@ namespace javax::xml::transform
 	// Fields
 	
 	// QJniObject forward
-	Transformer::Transformer(QJniObject obj) : __JniBaseClass(obj) {}
+	Transformer::Transformer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace javax::xml::transform
 			"()V"
 		);
 	}
-	__JniBaseClass Transformer::getErrorListener()
+	JObject Transformer::getErrorListener()
 	{
 		return callObjectMethod(
 			"getErrorListener",
@@ -48,7 +48,7 @@ namespace javax::xml::transform
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass Transformer::getURIResolver()
+	JObject Transformer::getURIResolver()
 	{
 		return callObjectMethod(
 			"getURIResolver",
@@ -62,7 +62,7 @@ namespace javax::xml::transform
 			"()V"
 		);
 	}
-	void Transformer::setErrorListener(__JniBaseClass arg0)
+	void Transformer::setErrorListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorListener",
@@ -96,7 +96,7 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	void Transformer::setURIResolver(__JniBaseClass arg0)
+	void Transformer::setURIResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setURIResolver",
@@ -104,7 +104,7 @@ namespace javax::xml::transform
 			arg0.object()
 		);
 	}
-	void Transformer::transform(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Transformer::transform(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"transform",

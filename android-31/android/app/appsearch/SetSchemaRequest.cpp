@@ -5,33 +5,33 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	SetSchemaRequest::SetSchemaRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	SetSchemaRequest::SetSchemaRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SetSchemaRequest::getMigrators()
+	JObject SetSchemaRequest::getMigrators()
 	{
 		return callObjectMethod(
 			"getMigrators",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass SetSchemaRequest::getSchemas()
+	JObject SetSchemaRequest::getSchemas()
 	{
 		return callObjectMethod(
 			"getSchemas",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass SetSchemaRequest::getSchemasNotDisplayedBySystem()
+	JObject SetSchemaRequest::getSchemasNotDisplayedBySystem()
 	{
 		return callObjectMethod(
 			"getSchemasNotDisplayedBySystem",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass SetSchemaRequest::getSchemasVisibleToPackages()
+	JObject SetSchemaRequest::getSchemasVisibleToPackages()
 	{
 		return callObjectMethod(
 			"getSchemasVisibleToPackages",

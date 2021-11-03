@@ -83,7 +83,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager::ActivityManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager::ActivityManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -187,7 +187,7 @@ namespace android::app
 			"()Landroid/util/Size;"
 		);
 	}
-	__JniBaseClass ActivityManager::getAppTasks()
+	JObject ActivityManager::getAppTasks()
 	{
 		return callObjectMethod(
 			"getAppTasks",
@@ -201,7 +201,7 @@ namespace android::app
 			"()Landroid/content/pm/ConfigurationInfo;"
 		);
 	}
-	__JniBaseClass ActivityManager::getHistoricalProcessExitReasons(jstring arg0, jint arg1, jint arg2)
+	JObject ActivityManager::getHistoricalProcessExitReasons(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getHistoricalProcessExitReasons",
@@ -262,14 +262,14 @@ namespace android::app
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass ActivityManager::getProcessesInErrorState()
+	JObject ActivityManager::getProcessesInErrorState()
 	{
 		return callObjectMethod(
 			"getProcessesInErrorState",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ActivityManager::getRecentTasks(jint arg0, jint arg1)
+	JObject ActivityManager::getRecentTasks(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getRecentTasks",
@@ -278,7 +278,7 @@ namespace android::app
 			arg1
 		);
 	}
-	__JniBaseClass ActivityManager::getRunningAppProcesses()
+	JObject ActivityManager::getRunningAppProcesses()
 	{
 		return callObjectMethod(
 			"getRunningAppProcesses",
@@ -293,7 +293,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	__JniBaseClass ActivityManager::getRunningServices(jint arg0)
+	JObject ActivityManager::getRunningServices(jint arg0)
 	{
 		return callObjectMethod(
 			"getRunningServices",
@@ -301,7 +301,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass ActivityManager::getRunningTasks(jint arg0)
+	JObject ActivityManager::getRunningTasks(jint arg0)
 	{
 		return callObjectMethod(
 			"getRunningTasks",

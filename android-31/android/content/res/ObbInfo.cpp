@@ -4,7 +4,7 @@
 namespace android::content::res
 {
 	// Fields
-	__JniBaseClass ObbInfo::CREATOR()
+	JObject ObbInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.res.ObbInfo",
@@ -47,7 +47,7 @@ namespace android::content::res
 	}
 	
 	// QJniObject forward
-	ObbInfo::ObbInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ObbInfo::ObbInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

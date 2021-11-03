@@ -11,7 +11,7 @@ namespace android::media::metrics
 	// Fields
 	
 	// QJniObject forward
-	PlaybackSession::PlaybackSession(QJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackSession::PlaybackSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

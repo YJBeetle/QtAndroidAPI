@@ -12,11 +12,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	BitmapFactory::BitmapFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	BitmapFactory::BitmapFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BitmapFactory::BitmapFactory()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.BitmapFactory",
 			"()V"
 		) {}

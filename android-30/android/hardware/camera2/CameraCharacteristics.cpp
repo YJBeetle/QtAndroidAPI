@@ -740,49 +740,49 @@ namespace android::hardware::camera2
 			arg0.object()
 		).object<jobject>();
 	}
-	__JniBaseClass CameraCharacteristics::getAvailableCaptureRequestKeys()
+	JObject CameraCharacteristics::getAvailableCaptureRequestKeys()
 	{
 		return callObjectMethod(
 			"getAvailableCaptureRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getAvailableCaptureResultKeys()
+	JObject CameraCharacteristics::getAvailableCaptureResultKeys()
 	{
 		return callObjectMethod(
 			"getAvailableCaptureResultKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
+	JObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
 	{
 		return callObjectMethod(
 			"getAvailablePhysicalCameraRequestKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getAvailableSessionKeys()
+	JObject CameraCharacteristics::getAvailableSessionKeys()
 	{
 		return callObjectMethod(
 			"getAvailableSessionKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getKeys()
+	JObject CameraCharacteristics::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getKeysNeedingPermission()
+	JObject CameraCharacteristics::getKeysNeedingPermission()
 	{
 		return callObjectMethod(
 			"getKeysNeedingPermission",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CameraCharacteristics::getPhysicalCameraIds()
+	JObject CameraCharacteristics::getPhysicalCameraIds()
 	{
 		return callObjectMethod(
 			"getPhysicalCameraIds",

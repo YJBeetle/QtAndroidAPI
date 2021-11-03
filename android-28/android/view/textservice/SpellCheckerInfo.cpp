@@ -9,7 +9,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	__JniBaseClass SpellCheckerInfo::CREATOR()
+	JObject SpellCheckerInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textservice.SpellCheckerInfo",
@@ -19,7 +19,7 @@ namespace android::view::textservice
 	}
 	
 	// QJniObject forward
-	SpellCheckerInfo::SpellCheckerInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SpellCheckerInfo::SpellCheckerInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

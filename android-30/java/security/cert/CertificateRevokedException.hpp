@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 #include "./CertificateException.hpp"
@@ -38,11 +38,11 @@ namespace java::security::cert
 		CertificateRevokedException(QJniObject obj);
 		
 		// Constructors
-		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3);
+		CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3);
 		
 		// Methods
 		javax::security::auth::x500::X500Principal getAuthorityName();
-		__JniBaseClass getExtensions();
+		JObject getExtensions();
 		java::util::Date getInvalidityDate();
 		jstring getMessage();
 		java::util::Date getRevocationDate();

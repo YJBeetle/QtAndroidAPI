@@ -4,7 +4,7 @@
 namespace android::accessibilityservice
 {
 	// Fields
-	__JniBaseClass AccessibilityGestureEvent::CREATOR()
+	JObject AccessibilityGestureEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.accessibilityservice.AccessibilityGestureEvent",
@@ -14,7 +14,7 @@ namespace android::accessibilityservice
 	}
 	
 	// QJniObject forward
-	AccessibilityGestureEvent::AccessibilityGestureEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityGestureEvent::AccessibilityGestureEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace android::accessibilityservice
 			"()I"
 		);
 	}
-	__JniBaseClass AccessibilityGestureEvent::getMotionEvents()
+	JObject AccessibilityGestureEvent::getMotionEvents()
 	{
 		return callObjectMethod(
 			"getMotionEvents",

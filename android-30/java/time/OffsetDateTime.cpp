@@ -35,12 +35,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	OffsetDateTime::OffsetDateTime(QJniObject obj) : __JniBaseClass(obj) {}
+	OffsetDateTime::OffsetDateTime(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::OffsetDateTime OffsetDateTime::from(__JniBaseClass arg0)
+	java::time::OffsetDateTime OffsetDateTime::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.OffsetDateTime",
@@ -141,7 +141,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	__JniBaseClass OffsetDateTime::timeLineOrder()
+	JObject OffsetDateTime::timeLineOrder()
 	{
 		return callStaticObjectMethod(
 			"java.time.OffsetDateTime",
@@ -149,7 +149,7 @@ namespace java::time
 			"()Ljava/util/Comparator;"
 		);
 	}
-	__JniBaseClass OffsetDateTime::adjustInto(__JniBaseClass arg0)
+	JObject OffsetDateTime::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -205,7 +205,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint OffsetDateTime::get(__JniBaseClass arg0)
+	jint OffsetDateTime::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -241,7 +241,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jlong OffsetDateTime::getLong(__JniBaseClass arg0)
+	jlong OffsetDateTime::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -329,7 +329,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetDateTime::isSupported(__JniBaseClass arg0)
+	jboolean OffsetDateTime::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -337,7 +337,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minus(__JniBaseClass arg0)
+	java::time::OffsetDateTime OffsetDateTime::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -345,7 +345,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetDateTime OffsetDateTime::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -418,7 +418,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plus(__JniBaseClass arg0)
+	java::time::OffsetDateTime OffsetDateTime::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -426,7 +426,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetDateTime OffsetDateTime::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -499,7 +499,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject OffsetDateTime::query(__JniBaseClass arg0)
+	jobject OffsetDateTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -507,7 +507,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange OffsetDateTime::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange OffsetDateTime::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -571,7 +571,7 @@ namespace java::time
 			"()Ljava/time/ZonedDateTime;"
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::truncatedTo(__JniBaseClass arg0)
+	java::time::OffsetDateTime OffsetDateTime::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -579,7 +579,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetDateTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong OffsetDateTime::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -588,7 +588,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::with(__JniBaseClass arg0)
+	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -596,7 +596,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetDateTime OffsetDateTime::with(__JniBaseClass arg0, jlong arg1)
+	java::time::OffsetDateTime OffsetDateTime::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

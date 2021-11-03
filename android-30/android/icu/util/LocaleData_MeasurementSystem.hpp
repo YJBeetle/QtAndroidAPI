@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::util
 {
-	class LocaleData_MeasurementSystem : public __JniBaseClass
+	class LocaleData_MeasurementSystem : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::icu::util
 		static android::icu::util::LocaleData_MeasurementSystem US();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LocaleData_MeasurementSystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocaleData_MeasurementSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleData_MeasurementSystem(QJniObject obj);
 		
 		// Constructors

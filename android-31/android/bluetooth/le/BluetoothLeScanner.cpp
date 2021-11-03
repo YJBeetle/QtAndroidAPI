@@ -32,7 +32,7 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	BluetoothLeScanner::BluetoothLeScanner(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothLeScanner::BluetoothLeScanner(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -45,7 +45,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	jint BluetoothLeScanner::startScan(__JniBaseClass arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2)
+	jint BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::app::PendingIntent arg2)
 	{
 		return callMethod<jint>(
 			"startScan",
@@ -63,7 +63,7 @@ namespace android::bluetooth::le
 			arg0.object()
 		);
 	}
-	void BluetoothLeScanner::startScan(__JniBaseClass arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2)
+	void BluetoothLeScanner::startScan(JObject arg0, android::bluetooth::le::ScanSettings arg1, android::bluetooth::le::ScanCallback arg2)
 	{
 		callMethod<void>(
 			"startScan",

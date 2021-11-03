@@ -33,7 +33,7 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GpsStatus::GpsStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	GpsStatus::GpsStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -45,7 +45,7 @@ namespace android::location
 			"()I"
 		);
 	}
-	__JniBaseClass GpsStatus::getSatellites()
+	JObject GpsStatus::getSatellites()
 	{
 		return callObjectMethod(
 			"getSatellites",

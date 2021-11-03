@@ -23,7 +23,7 @@ namespace java::io
 	}
 	
 	// QJniObject forward
-	ObjectStreamClass::ObjectStreamClass(QJniObject obj) : __JniBaseClass(obj) {}
+	ObjectStreamClass::ObjectStreamClass(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

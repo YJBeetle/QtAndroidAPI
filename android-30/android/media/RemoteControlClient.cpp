@@ -142,17 +142,17 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	RemoteControlClient::RemoteControlClient(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteControlClient::RemoteControlClient(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;)V",
 			arg0.object()
 		) {}
 	RemoteControlClient::RemoteControlClient(android::app::PendingIntent arg0, android::os::Looper arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;Landroid/os/Looper;)V",
 			arg0.object(),
@@ -175,7 +175,7 @@ namespace android::media
 			"()Landroid/media/session/MediaSession;"
 		);
 	}
-	void RemoteControlClient::setMetadataUpdateListener(__JniBaseClass arg0)
+	void RemoteControlClient::setMetadataUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setMetadataUpdateListener",
@@ -183,7 +183,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void RemoteControlClient::setOnGetPlaybackPositionListener(__JniBaseClass arg0)
+	void RemoteControlClient::setOnGetPlaybackPositionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGetPlaybackPositionListener",
@@ -191,7 +191,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void RemoteControlClient::setPlaybackPositionUpdateListener(__JniBaseClass arg0)
+	void RemoteControlClient::setPlaybackPositionUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",

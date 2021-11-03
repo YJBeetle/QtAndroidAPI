@@ -8,22 +8,22 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	StringBuilder::StringBuilder(QJniObject obj) : __JniBaseClass(obj) {}
+	StringBuilder::StringBuilder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringBuilder::StringBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuilder",
 			"()V"
 		) {}
 	StringBuilder::StringBuilder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuilder",
 			"(I)V",
 			arg0
 		) {}
 	StringBuilder::StringBuilder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StringBuilder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
@@ -153,7 +153,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass StringBuilder::chars()
+	JObject StringBuilder::chars()
 	{
 		return callObjectMethod(
 			"chars",
@@ -185,7 +185,7 @@ namespace java::lang
 			arg1
 		);
 	}
-	__JniBaseClass StringBuilder::codePoints()
+	JObject StringBuilder::codePoints()
 	{
 		return callObjectMethod(
 			"codePoints",

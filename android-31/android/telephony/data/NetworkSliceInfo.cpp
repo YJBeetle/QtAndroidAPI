@@ -4,7 +4,7 @@
 namespace android::telephony::data
 {
 	// Fields
-	__JniBaseClass NetworkSliceInfo::CREATOR()
+	JObject NetworkSliceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.NetworkSliceInfo",
@@ -91,7 +91,7 @@ namespace android::telephony::data
 	}
 	
 	// QJniObject forward
-	NetworkSliceInfo::NetworkSliceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkSliceInfo::NetworkSliceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

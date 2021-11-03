@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -21,13 +21,13 @@ namespace android::net::wifi::hotspot2
 
 namespace android::net::wifi
 {
-	class WifiNetworkSuggestion_Builder : public __JniBaseClass
+	class WifiNetworkSuggestion_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiNetworkSuggestion_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiNetworkSuggestion_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiNetworkSuggestion_Builder(QJniObject obj);
 		
 		// Constructors

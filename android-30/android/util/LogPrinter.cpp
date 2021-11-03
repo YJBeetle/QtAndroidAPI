@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	LogPrinter::LogPrinter(QJniObject obj) : __JniBaseClass(obj) {}
+	LogPrinter::LogPrinter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LogPrinter::LogPrinter(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.LogPrinter",
 			"(ILjava/lang/String;)V",
 			arg0,

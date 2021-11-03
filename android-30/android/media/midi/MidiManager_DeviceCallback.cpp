@@ -7,11 +7,11 @@ namespace android::media::midi
 	// Fields
 	
 	// QJniObject forward
-	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiManager_DeviceCallback::MidiManager_DeviceCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MidiManager_DeviceCallback::MidiManager_DeviceCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.midi.MidiManager$DeviceCallback",
 			"()V"
 		) {}

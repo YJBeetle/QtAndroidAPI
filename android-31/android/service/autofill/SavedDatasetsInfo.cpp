@@ -21,11 +21,11 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	SavedDatasetsInfo::SavedDatasetsInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SavedDatasetsInfo::SavedDatasetsInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SavedDatasetsInfo::SavedDatasetsInfo(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.SavedDatasetsInfo",
 			"(Ljava/lang/String;I)V",
 			arg0,

@@ -8,7 +8,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass MediaMetadata::CREATOR()
+	JObject MediaMetadata::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.MediaMetadata",
@@ -250,7 +250,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaMetadata::MediaMetadata(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaMetadata::MediaMetadata(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -332,7 +332,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass MediaMetadata::keySet()
+	JObject MediaMetadata::keySet()
 	{
 		return callObjectMethod(
 			"keySet",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::preference
 {
-	class PreferenceActivity_Header : public __JniBaseClass
+	class PreferenceActivity_Header : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jstring breadCrumbShortTitle();
 		jint breadCrumbShortTitleRes();
 		jstring breadCrumbTitle();
@@ -42,7 +42,7 @@ namespace android::preference
 		jint titleRes();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PreferenceActivity_Header(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PreferenceActivity_Header(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PreferenceActivity_Header(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::provider
 {
-	class ContactsContract_PinnedPositions : public __JniBaseClass
+	class ContactsContract_PinnedPositions : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::provider
 		static jint UNPINNED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_PinnedPositions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_PinnedPositions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_PinnedPositions(QJniObject obj);
 		
 		// Constructors

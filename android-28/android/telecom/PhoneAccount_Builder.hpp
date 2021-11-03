@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -25,13 +25,13 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class PhoneAccount_Builder : public __JniBaseClass
+	class PhoneAccount_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PhoneAccount_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhoneAccount_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccount_Builder(QJniObject obj);
 		
 		// Constructors
@@ -48,7 +48,7 @@ namespace android::telecom
 		android::telecom::PhoneAccount_Builder setIcon(android::graphics::drawable::Icon arg0);
 		android::telecom::PhoneAccount_Builder setShortDescription(jstring arg0);
 		android::telecom::PhoneAccount_Builder setSubscriptionAddress(android::net::Uri arg0);
-		android::telecom::PhoneAccount_Builder setSupportedUriSchemes(__JniBaseClass arg0);
+		android::telecom::PhoneAccount_Builder setSupportedUriSchemes(JObject arg0);
 	};
 } // namespace android::telecom
 

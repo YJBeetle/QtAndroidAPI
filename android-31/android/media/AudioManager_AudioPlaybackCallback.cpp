@@ -5,17 +5,17 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioManager_AudioPlaybackCallback::AudioManager_AudioPlaybackCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioManager$AudioPlaybackCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(__JniBaseClass arg0)
+	void AudioManager_AudioPlaybackCallback::onPlaybackConfigChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onPlaybackConfigChanged",

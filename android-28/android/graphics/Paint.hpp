@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -69,7 +69,7 @@ namespace java::util
 
 namespace android::graphics
 {
-	class Paint : public __JniBaseClass
+	class Paint : public JObject
 	{
 	public:
 		// Fields
@@ -87,7 +87,7 @@ namespace android::graphics
 		static jint UNDERLINE_TEXT_FLAG();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Paint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Paint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Paint(QJniObject obj);
 		
 		// Constructors

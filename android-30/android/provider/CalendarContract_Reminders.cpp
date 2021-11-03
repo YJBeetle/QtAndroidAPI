@@ -15,12 +15,12 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	CalendarContract_Reminders::CalendarContract_Reminders(QJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_Reminders::CalendarContract_Reminders(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_Reminders::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
+	JObject CalendarContract_Reminders::query(android::content::ContentResolver arg0, jlong arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$Reminders",

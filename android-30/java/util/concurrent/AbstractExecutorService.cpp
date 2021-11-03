@@ -7,17 +7,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	AbstractExecutorService::AbstractExecutorService(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractExecutorService::AbstractExecutorService(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractExecutorService::AbstractExecutorService()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.AbstractExecutorService",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass AbstractExecutorService::invokeAll(__JniBaseClass arg0)
+	JObject AbstractExecutorService::invokeAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -25,7 +25,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass AbstractExecutorService::invokeAll(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject AbstractExecutorService::invokeAll(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -35,7 +35,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	jobject AbstractExecutorService::invokeAny(__JniBaseClass arg0)
+	jobject AbstractExecutorService::invokeAny(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeAny",
@@ -43,7 +43,7 @@ namespace java::util::concurrent
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject AbstractExecutorService::invokeAny(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	jobject AbstractExecutorService::invokeAny(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"invokeAny",
@@ -53,7 +53,7 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	__JniBaseClass AbstractExecutorService::submit(__JniBaseClass arg0)
+	JObject AbstractExecutorService::submit(JObject arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -61,7 +61,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass AbstractExecutorService::submit(__JniBaseClass arg0, jobject arg1)
+	JObject AbstractExecutorService::submit(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

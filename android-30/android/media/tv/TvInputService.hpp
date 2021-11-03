@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -40,7 +40,7 @@ namespace android::media::tv
 		TvInputService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(jstring arg0);
 		android::media::tv::TvInputService_RecordingSession onCreateRecordingSession(jstring arg0, jstring arg1);
 		android::media::tv::TvInputService_Session onCreateSession(jstring arg0);

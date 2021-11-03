@@ -40,11 +40,11 @@ namespace android::system
 	}
 	
 	// QJniObject forward
-	StructUtsname::StructUtsname(QJniObject obj) : __JniBaseClass(obj) {}
+	StructUtsname::StructUtsname(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StructUtsname::StructUtsname(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructUtsname",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

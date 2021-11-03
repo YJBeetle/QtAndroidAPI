@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -9,7 +9,7 @@ namespace android::app
 
 namespace android::app
 {
-	class AppOpsManager : public __JniBaseClass
+	class AppOpsManager : public JObject
 	{
 	public:
 		// Fields
@@ -55,7 +55,7 @@ namespace android::app
 		static jint WATCH_FOREGROUND_CHANGES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppOpsManager(QJniObject obj);
 		
 		// Constructors
@@ -77,16 +77,16 @@ namespace android::app
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1);
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2);
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1, jint arg2, jstring arg3, jstring arg4);
-		void setOnOpNotedCallback(__JniBaseClass arg0, android::app::AppOpsManager_OnOpNotedCallback arg1);
+		void setOnOpNotedCallback(JObject arg0, android::app::AppOpsManager_OnOpNotedCallback arg1);
 		jint startOp(jstring arg0, jint arg1, jstring arg2);
 		jint startOp(jstring arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4);
 		jint startOpNoThrow(jstring arg0, jint arg1, jstring arg2);
 		jint startOpNoThrow(jstring arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4);
-		void startWatchingActive(jarray arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		void startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3);
-		void stopWatchingActive(__JniBaseClass arg0);
-		void stopWatchingMode(__JniBaseClass arg0);
+		void startWatchingActive(jarray arg0, JObject arg1, JObject arg2);
+		void startWatchingMode(jstring arg0, jstring arg1, JObject arg2);
+		void startWatchingMode(jstring arg0, jstring arg1, jint arg2, JObject arg3);
+		void stopWatchingActive(JObject arg0);
+		void stopWatchingMode(JObject arg0);
 		jint unsafeCheckOp(jstring arg0, jint arg1, jstring arg2);
 		jint unsafeCheckOpNoThrow(jstring arg0, jint arg1, jstring arg2);
 		jint unsafeCheckOpRaw(jstring arg0, jint arg1, jstring arg2);

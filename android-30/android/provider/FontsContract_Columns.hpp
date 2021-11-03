@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class FontsContract_Columns : public __JniBaseClass
+	class FontsContract_Columns : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::provider
 		static jstring WEIGHT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FontsContract_Columns(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FontsContract_Columns(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_Columns(QJniObject obj);
 		
 		// Constructors

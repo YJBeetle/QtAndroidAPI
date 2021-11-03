@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass LinkAddress::CREATOR()
+	JObject LinkAddress::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.LinkAddress",
@@ -16,7 +16,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	LinkAddress::LinkAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	LinkAddress::LinkAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass RadioAccessSpecifier::CREATOR()
+	JObject RadioAccessSpecifier::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.RadioAccessSpecifier",
@@ -14,11 +14,11 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	RadioAccessSpecifier::RadioAccessSpecifier(QJniObject obj) : __JniBaseClass(obj) {}
+	RadioAccessSpecifier::RadioAccessSpecifier(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RadioAccessSpecifier::RadioAccessSpecifier(jint arg0, jintArray arg1, jintArray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.RadioAccessSpecifier",
 			"(I[I[I)V",
 			arg0,

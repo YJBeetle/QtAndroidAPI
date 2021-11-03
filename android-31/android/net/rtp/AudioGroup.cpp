@@ -34,16 +34,16 @@ namespace android::net::rtp
 	}
 	
 	// QJniObject forward
-	AudioGroup::AudioGroup(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioGroup::AudioGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioGroup::AudioGroup()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.rtp.AudioGroup",
 			"()V"
 		) {}
 	AudioGroup::AudioGroup(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.rtp.AudioGroup",
 			"(Landroid/content/Context;)V",
 			arg0.object()

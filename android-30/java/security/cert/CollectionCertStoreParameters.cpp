@@ -5,16 +5,16 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CollectionCertStoreParameters::CollectionCertStoreParameters(QJniObject obj) : __JniBaseClass(obj) {}
+	CollectionCertStoreParameters::CollectionCertStoreParameters(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CollectionCertStoreParameters::CollectionCertStoreParameters()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.CollectionCertStoreParameters",
 			"()V"
 		) {}
-	CollectionCertStoreParameters::CollectionCertStoreParameters(__JniBaseClass arg0)
-		: __JniBaseClass(
+	CollectionCertStoreParameters::CollectionCertStoreParameters(JObject arg0)
+		: JObject(
 			"java.security.cert.CollectionCertStoreParameters",
 			"(Ljava/util/Collection;)V",
 			arg0.object()
@@ -28,7 +28,7 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass CollectionCertStoreParameters::getCollection()
+	JObject CollectionCertStoreParameters::getCollection()
 	{
 		return callObjectMethod(
 			"getCollection",

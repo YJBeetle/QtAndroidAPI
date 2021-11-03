@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -44,8 +44,8 @@ namespace android::telecom
 		// Methods
 		jboolean canAddCall();
 		android::telecom::CallAudioState getCallAudioState();
-		__JniBaseClass getCalls();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject getCalls();
+		JObject onBind(android::content::Intent arg0);
 		void onBringToForeground(jboolean arg0);
 		void onCallAdded(android::telecom::Call arg0);
 		void onCallAudioStateChanged(android::telecom::CallAudioState arg0);

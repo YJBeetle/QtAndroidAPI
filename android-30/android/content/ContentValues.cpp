@@ -11,7 +11,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ContentValues::CREATOR()
+	JObject ContentValues::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ContentValues",
@@ -29,22 +29,22 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	ContentValues::ContentValues(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentValues::ContentValues(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentValues::ContentValues()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentValues",
 			"()V"
 		) {}
 	ContentValues::ContentValues(android::content::ContentValues &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentValues",
 			"(Landroid/content/ContentValues;)V",
 			arg0.object()
 		) {}
 	ContentValues::ContentValues(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentValues",
 			"(I)V",
 			arg0
@@ -175,7 +175,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	__JniBaseClass ContentValues::keySet()
+	JObject ContentValues::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -301,7 +301,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass ContentValues::valueSet()
+	JObject ContentValues::valueSet()
 	{
 		return callObjectMethod(
 			"valueSet",

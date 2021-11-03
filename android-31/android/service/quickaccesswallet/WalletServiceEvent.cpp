@@ -4,7 +4,7 @@
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	__JniBaseClass WalletServiceEvent::CREATOR()
+	JObject WalletServiceEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.WalletServiceEvent",
@@ -21,11 +21,11 @@ namespace android::service::quickaccesswallet
 	}
 	
 	// QJniObject forward
-	WalletServiceEvent::WalletServiceEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	WalletServiceEvent::WalletServiceEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WalletServiceEvent::WalletServiceEvent(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.quickaccesswallet.WalletServiceEvent",
 			"(I)V",
 			arg0

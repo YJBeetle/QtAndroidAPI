@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::util
 {
-	class RangeValueIterator_Element : public __JniBaseClass
+	class RangeValueIterator_Element : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::icu::util
 		jint value();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RangeValueIterator_Element(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RangeValueIterator_Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RangeValueIterator_Element(QJniObject obj);
 		
 		// Constructors

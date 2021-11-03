@@ -7,11 +7,11 @@ namespace android::view::translation
 	// Fields
 	
 	// QJniObject forward
-	TranslationContext_Builder::TranslationContext_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TranslationContext_Builder::TranslationContext_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TranslationContext_Builder::TranslationContext_Builder(android::view::translation::TranslationSpec arg0, android::view::translation::TranslationSpec arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.TranslationContext$Builder",
 			"(Landroid/view/translation/TranslationSpec;Landroid/view/translation/TranslationSpec;)V",
 			arg0.object(),

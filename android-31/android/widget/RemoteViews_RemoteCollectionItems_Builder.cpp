@@ -7,11 +7,11 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	RemoteViews_RemoteCollectionItems_Builder::RemoteViews_RemoteCollectionItems_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteViews_RemoteCollectionItems_Builder::RemoteViews_RemoteCollectionItems_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteViews_RemoteCollectionItems_Builder::RemoteViews_RemoteCollectionItems_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.RemoteViews$RemoteCollectionItems$Builder",
 			"()V"
 		) {}

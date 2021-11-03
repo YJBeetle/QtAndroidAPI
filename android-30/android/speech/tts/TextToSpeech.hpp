@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -41,7 +41,7 @@ namespace java::util
 
 namespace android::speech::tts
 {
-	class TextToSpeech : public __JniBaseClass
+	class TextToSpeech : public JObject
 	{
 	public:
 		// Fields
@@ -65,12 +65,12 @@ namespace android::speech::tts
 		static jint SUCCESS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextToSpeech(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextToSpeech(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextToSpeech(QJniObject obj);
 		
 		// Constructors
-		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1);
-		TextToSpeech(android::content::Context arg0, __JniBaseClass arg1, jstring arg2);
+		TextToSpeech(android::content::Context arg0, JObject arg1);
+		TextToSpeech(android::content::Context arg0, JObject arg1, jstring arg2);
 		
 		// Methods
 		static jint getMaxSpeechInputLength();
@@ -81,15 +81,15 @@ namespace android::speech::tts
 		jint addSpeech(jstring arg0, jstring arg1);
 		jint addSpeech(jstring arg0, jstring arg1, jint arg2);
 		jboolean areDefaultsEnforced();
-		__JniBaseClass getAvailableLanguages();
+		JObject getAvailableLanguages();
 		jstring getDefaultEngine();
 		java::util::Locale getDefaultLanguage();
 		android::speech::tts::Voice getDefaultVoice();
-		__JniBaseClass getEngines();
-		__JniBaseClass getFeatures(java::util::Locale arg0);
+		JObject getEngines();
+		JObject getFeatures(java::util::Locale arg0);
 		java::util::Locale getLanguage();
 		android::speech::tts::Voice getVoice();
-		__JniBaseClass getVoices();
+		JObject getVoices();
 		jint isLanguageAvailable(java::util::Locale arg0);
 		jboolean isSpeaking();
 		jint playEarcon(jstring arg0, jint arg1, java::util::HashMap arg2);
@@ -99,7 +99,7 @@ namespace android::speech::tts
 		jint setAudioAttributes(android::media::AudioAttributes arg0);
 		jint setEngineByPackageName(jstring arg0);
 		jint setLanguage(java::util::Locale arg0);
-		jint setOnUtteranceCompletedListener(__JniBaseClass arg0);
+		jint setOnUtteranceCompletedListener(JObject arg0);
 		jint setOnUtteranceProgressListener(android::speech::tts::UtteranceProgressListener arg0);
 		jint setPitch(jfloat arg0);
 		jint setSpeechRate(jfloat arg0);

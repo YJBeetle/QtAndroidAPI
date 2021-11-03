@@ -11,11 +11,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	View_AccessibilityDelegate::View_AccessibilityDelegate(QJniObject obj) : __JniBaseClass(obj) {}
+	View_AccessibilityDelegate::View_AccessibilityDelegate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	View_AccessibilityDelegate::View_AccessibilityDelegate()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.View$AccessibilityDelegate",
 			"()V"
 		) {}

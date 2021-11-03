@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass SyncAdapterType::CREATOR()
+	JObject SyncAdapterType::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.SyncAdapterType",
@@ -34,17 +34,17 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	SyncAdapterType::SyncAdapterType(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncAdapterType::SyncAdapterType(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncAdapterType::SyncAdapterType(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncAdapterType",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	SyncAdapterType::SyncAdapterType(jstring arg0, jstring arg1, jboolean arg2, jboolean arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncAdapterType",
 			"(Ljava/lang/String;Ljava/lang/String;ZZ)V",
 			arg0,

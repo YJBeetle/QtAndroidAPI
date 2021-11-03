@@ -269,7 +269,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoField;"
 		).object<jarray>();
 	}
-	__JniBaseClass ChronoField::adjustInto(__JniBaseClass arg0, jlong arg1)
+	JObject ChronoField::adjustInto(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -294,7 +294,7 @@ namespace java::time::temporal
 			arg0
 		);
 	}
-	__JniBaseClass ChronoField::getBaseUnit()
+	JObject ChronoField::getBaseUnit()
 	{
 		return callObjectMethod(
 			"getBaseUnit",
@@ -309,7 +309,7 @@ namespace java::time::temporal
 			arg0.object()
 		).object<jstring>();
 	}
-	jlong ChronoField::getFrom(__JniBaseClass arg0)
+	jlong ChronoField::getFrom(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getFrom",
@@ -317,7 +317,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass ChronoField::getRangeUnit()
+	JObject ChronoField::getRangeUnit()
 	{
 		return callObjectMethod(
 			"getRangeUnit",
@@ -331,7 +331,7 @@ namespace java::time::temporal
 			"()Z"
 		);
 	}
-	jboolean ChronoField::isSupportedBy(__JniBaseClass arg0)
+	jboolean ChronoField::isSupportedBy(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupportedBy",
@@ -353,7 +353,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/ValueRange;"
 		);
 	}
-	java::time::temporal::ValueRange ChronoField::rangeRefinedBy(__JniBaseClass arg0)
+	java::time::temporal::ValueRange ChronoField::rangeRefinedBy(JObject arg0)
 	{
 		return callObjectMethod(
 			"rangeRefinedBy",

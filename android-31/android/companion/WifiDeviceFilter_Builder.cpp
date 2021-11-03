@@ -8,11 +8,11 @@ namespace android::companion
 	// Fields
 	
 	// QJniObject forward
-	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiDeviceFilter_Builder::WifiDeviceFilter_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.companion.WifiDeviceFilter$Builder",
 			"()V"
 		) {}

@@ -4,7 +4,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	__JniBaseClass SubscribeConfig::CREATOR()
+	JObject SubscribeConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.SubscribeConfig",
@@ -28,7 +28,7 @@ namespace android::net::wifi::aware
 	}
 	
 	// QJniObject forward
-	SubscribeConfig::SubscribeConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	SubscribeConfig::SubscribeConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

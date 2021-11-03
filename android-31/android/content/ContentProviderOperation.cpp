@@ -10,7 +10,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ContentProviderOperation::CREATOR()
+	JObject ContentProviderOperation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ContentProviderOperation",
@@ -20,7 +20,7 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	ContentProviderOperation::ContentProviderOperation(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentProviderOperation::ContentProviderOperation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

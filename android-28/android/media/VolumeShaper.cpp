@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	VolumeShaper::VolumeShaper(QJniObject obj) : __JniBaseClass(obj) {}
+	VolumeShaper::VolumeShaper(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_StreamingErrors : public __JniBaseClass
+	class MbmsErrors_StreamingErrors : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::telephony::mbms
 		static jint ERROR_UNABLE_TO_START_SERVICE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_StreamingErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsErrors_StreamingErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsErrors_StreamingErrors(QJniObject obj);
 		
 		// Constructors

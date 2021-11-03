@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./View.hpp"
 
 namespace android::content
@@ -53,9 +53,9 @@ namespace android::view
 		
 		// Constructors
 		TextureView(android::content::Context arg0);
-		TextureView(android::content::Context arg0, __JniBaseClass arg1);
-		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TextureView(android::content::Context arg0, JObject arg1);
+		TextureView(android::content::Context arg0, JObject arg1, jint arg2);
+		TextureView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void buildLayer();
@@ -65,7 +65,7 @@ namespace android::view
 		android::graphics::Bitmap getBitmap(jint arg0, jint arg1);
 		jint getLayerType();
 		android::graphics::SurfaceTexture getSurfaceTexture();
-		__JniBaseClass getSurfaceTextureListener();
+		JObject getSurfaceTextureListener();
 		android::graphics::Matrix getTransform(android::graphics::Matrix arg0);
 		jboolean isAvailable();
 		jboolean isOpaque();
@@ -77,7 +77,7 @@ namespace android::view
 		void setLayerType(jint arg0, android::graphics::Paint arg1);
 		void setOpaque(jboolean arg0);
 		void setSurfaceTexture(android::graphics::SurfaceTexture arg0);
-		void setSurfaceTextureListener(__JniBaseClass arg0);
+		void setSurfaceTextureListener(JObject arg0);
 		void setTransform(android::graphics::Matrix arg0);
 		void unlockCanvasAndPost(android::graphics::Canvas arg0);
 	};

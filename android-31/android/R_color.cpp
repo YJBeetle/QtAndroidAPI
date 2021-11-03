@@ -656,11 +656,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_color::R_color(QJniObject obj) : __JniBaseClass(obj) {}
+	R_color::R_color(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_color::R_color()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$color",
 			"()V"
 		) {}

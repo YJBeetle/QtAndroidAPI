@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class MutableDouble : public __JniBaseClass
+	class MutableDouble : public JObject
 	{
 	public:
 		// Fields
 		jdouble value();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MutableDouble(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MutableDouble(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MutableDouble(QJniObject obj);
 		
 		// Constructors

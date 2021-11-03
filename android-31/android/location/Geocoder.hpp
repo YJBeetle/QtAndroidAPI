@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::location
 {
-	class Geocoder : public __JniBaseClass
+	class Geocoder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Geocoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Geocoder(QJniObject obj);
 		
 		// Constructors
@@ -28,9 +28,9 @@ namespace android::location
 		
 		// Methods
 		static jboolean isPresent();
-		__JniBaseClass getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
-		__JniBaseClass getFromLocationName(jstring arg0, jint arg1);
-		__JniBaseClass getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
+		JObject getFromLocation(jdouble arg0, jdouble arg1, jint arg2);
+		JObject getFromLocationName(jstring arg0, jint arg1);
+		JObject getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
 	};
 } // namespace android::location
 

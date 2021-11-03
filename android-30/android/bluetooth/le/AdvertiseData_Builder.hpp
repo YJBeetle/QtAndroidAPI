@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::bluetooth::le
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::bluetooth::le
 {
-	class AdvertiseData_Builder : public __JniBaseClass
+	class AdvertiseData_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AdvertiseData_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AdvertiseData_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertiseData_Builder(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -49,13 +49,13 @@ namespace java::util
 
 namespace java::net
 {
-	class URL : public __JniBaseClass
+	class URL : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit URL(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit URL(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		URL(QJniObject obj);
 		
 		// Constructors
@@ -67,7 +67,7 @@ namespace java::net
 		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4);
 		
 		// Methods
-		static void setURLStreamHandlerFactory(__JniBaseClass arg0);
+		static void setURLStreamHandlerFactory(JObject arg0);
 		jboolean equals(jobject arg0);
 		jstring getAuthority();
 		jobject getContent();

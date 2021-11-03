@@ -9,7 +9,7 @@
 namespace java::util::concurrent
 {
 	// Fields
-	__JniBaseClass ForkJoinPool::defaultForkJoinWorkerThreadFactory()
+	JObject ForkJoinPool::defaultForkJoinWorkerThreadFactory()
 	{
 		return getStaticObjectField(
 			"java.util.concurrent.ForkJoinPool",
@@ -33,7 +33,7 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	ForkJoinPool::ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3)
+	ForkJoinPool::ForkJoinPool(jint arg0, JObject arg1, JObject arg2, jboolean arg3)
 		: java::util::concurrent::AbstractExecutorService(
 			"java.util.concurrent.ForkJoinPool",
 			"(ILjava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;Ljava/lang/Thread$UncaughtExceptionHandler;Z)V",
@@ -42,7 +42,7 @@ namespace java::util::concurrent
 			arg2.object(),
 			arg3
 		) {}
-	ForkJoinPool::ForkJoinPool(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, __JniBaseClass arg7, jlong arg8, java::util::concurrent::TimeUnit arg9)
+	ForkJoinPool::ForkJoinPool(jint arg0, JObject arg1, JObject arg2, jboolean arg3, jint arg4, jint arg5, jint arg6, JObject arg7, jlong arg8, java::util::concurrent::TimeUnit arg9)
 		: java::util::concurrent::AbstractExecutorService(
 			"java.util.concurrent.ForkJoinPool",
 			"(ILjava/util/concurrent/ForkJoinPool$ForkJoinWorkerThreadFactory;Ljava/lang/Thread$UncaughtExceptionHandler;ZIIILjava/util/function/Predicate;JLjava/util/concurrent/TimeUnit;)V",
@@ -75,7 +75,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	void ForkJoinPool::managedBlock(__JniBaseClass arg0)
+	void ForkJoinPool::managedBlock(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.concurrent.ForkJoinPool",
@@ -102,7 +102,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ForkJoinPool::execute(__JniBaseClass arg0)
+	void ForkJoinPool::execute(JObject arg0)
 	{
 		callMethod<void>(
 			"execute",
@@ -132,7 +132,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ForkJoinPool::getFactory()
+	JObject ForkJoinPool::getFactory()
 	{
 		return callObjectMethod(
 			"getFactory",
@@ -181,7 +181,7 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	__JniBaseClass ForkJoinPool::getUncaughtExceptionHandler()
+	JObject ForkJoinPool::getUncaughtExceptionHandler()
 	{
 		return callObjectMethod(
 			"getUncaughtExceptionHandler",
@@ -203,7 +203,7 @@ namespace java::util::concurrent
 			arg0.object()
 		).object<jobject>();
 	}
-	__JniBaseClass ForkJoinPool::invokeAll(__JniBaseClass arg0)
+	JObject ForkJoinPool::invokeAll(JObject arg0)
 	{
 		return callObjectMethod(
 			"invokeAll",
@@ -246,14 +246,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	__JniBaseClass ForkJoinPool::shutdownNow()
+	JObject ForkJoinPool::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(__JniBaseClass arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -269,7 +269,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(__JniBaseClass arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinPool::submit(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

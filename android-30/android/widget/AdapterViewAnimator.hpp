@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -39,16 +39,16 @@ namespace android::widget
 		
 		// Constructors
 		AdapterViewAnimator(android::content::Context arg0);
-		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1);
-		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AdapterViewAnimator(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AdapterViewAnimator(android::content::Context arg0, JObject arg1);
+		AdapterViewAnimator(android::content::Context arg0, JObject arg1, jint arg2);
+		AdapterViewAnimator(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void advance();
 		void deferNotifyDataSetChanged();
 		void fyiWillBeAdvancedByHostKThx();
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jint getBaseline();
 		android::view::View getCurrentView();
 		jint getDisplayedChild();
@@ -57,10 +57,10 @@ namespace android::widget
 		android::view::View getSelectedView();
 		jboolean onRemoteAdapterConnected();
 		void onRemoteAdapterDisconnected();
-		void onRestoreInstanceState(__JniBaseClass arg0);
-		__JniBaseClass onSaveInstanceState();
+		void onRestoreInstanceState(JObject arg0);
+		JObject onSaveInstanceState();
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setAnimateFirstView(jboolean arg0);
 		void setDisplayedChild(jint arg0);
 		void setInAnimation(android::animation::ObjectAnimator arg0);

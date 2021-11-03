@@ -38,7 +38,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	void CursorLoader::deliverResult(__JniBaseClass arg0)
+	void CursorLoader::deliverResult(JObject arg0)
 	{
 		callMethod<void>(
 			"deliverResult",
@@ -100,14 +100,14 @@ namespace android::content
 			"()Landroid/net/Uri;"
 		);
 	}
-	__JniBaseClass CursorLoader::loadInBackground()
+	JObject CursorLoader::loadInBackground()
 	{
 		return callObjectMethod(
 			"loadInBackground",
 			"()Landroid/database/Cursor;"
 		);
 	}
-	void CursorLoader::onCanceled(__JniBaseClass arg0)
+	void CursorLoader::onCanceled(JObject arg0)
 	{
 		callMethod<void>(
 			"onCanceled",

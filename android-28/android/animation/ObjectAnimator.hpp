@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Animator.hpp"
 #include "./ValueAnimator.hpp"
 
@@ -52,15 +52,15 @@ namespace android::animation
 		static android::animation::ObjectAnimator ofInt(jobject arg0, jstring arg1, jstring arg2, android::graphics::Path arg3);
 		static android::animation::ObjectAnimator ofMultiFloat(jobject arg0, jstring arg1, jarray arg2);
 		static android::animation::ObjectAnimator ofMultiFloat(jobject arg0, jstring arg1, android::graphics::Path arg2);
-		static android::animation::ObjectAnimator ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4);
+		static android::animation::ObjectAnimator ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4);
 		static android::animation::ObjectAnimator ofMultiInt(jobject arg0, jstring arg1, jarray arg2);
 		static android::animation::ObjectAnimator ofMultiInt(jobject arg0, jstring arg1, android::graphics::Path arg2);
-		static android::animation::ObjectAnimator ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4);
+		static android::animation::ObjectAnimator ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4);
 		static android::animation::ObjectAnimator ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3);
-		static android::animation::ObjectAnimator ofObject(jobject arg0, android::util::Property arg1, __JniBaseClass arg2, jobjectArray arg3);
+		static android::animation::ObjectAnimator ofObject(jobject arg0, android::util::Property arg1, JObject arg2, jobjectArray arg3);
 		static android::animation::ObjectAnimator ofObject(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, android::graphics::Path arg3);
-		static android::animation::ObjectAnimator ofObject(jobject arg0, jstring arg1, __JniBaseClass arg2, jobjectArray arg3);
-		static android::animation::ObjectAnimator ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4);
+		static android::animation::ObjectAnimator ofObject(jobject arg0, jstring arg1, JObject arg2, jobjectArray arg3);
+		static android::animation::ObjectAnimator ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4);
 		static android::animation::ObjectAnimator ofPropertyValuesHolder(jobject arg0, jarray arg1);
 		android::animation::ObjectAnimator clone();
 		jstring getPropertyName();

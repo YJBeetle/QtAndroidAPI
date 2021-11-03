@@ -107,7 +107,7 @@ namespace android::database::sqlite
 	// Constructors
 	
 	// Methods
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::create(__JniBaseClass arg0)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::create(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -153,7 +153,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, JObject arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -164,7 +164,7 @@ namespace android::database::sqlite
 			arg2
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openDatabase(jstring arg0, JObject arg1, jint arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -176,7 +176,7 @@ namespace android::database::sqlite
 			arg3.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(java::io::File arg0, __JniBaseClass arg1)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(java::io::File arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -186,7 +186,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, __JniBaseClass arg1)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -196,7 +196,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::database::sqlite::SQLiteDatabase SQLiteDatabase::openOrCreateDatabase(jstring arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
@@ -229,7 +229,7 @@ namespace android::database::sqlite
 			"()V"
 		);
 	}
-	void SQLiteDatabase::beginTransactionWithListener(__JniBaseClass arg0)
+	void SQLiteDatabase::beginTransactionWithListener(JObject arg0)
 	{
 		callMethod<void>(
 			"beginTransactionWithListener",
@@ -237,7 +237,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteDatabase::beginTransactionWithListenerNonExclusive(__JniBaseClass arg0)
+	void SQLiteDatabase::beginTransactionWithListenerNonExclusive(JObject arg0)
 	{
 		callMethod<void>(
 			"beginTransactionWithListenerNonExclusive",
@@ -310,7 +310,7 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	__JniBaseClass SQLiteDatabase::getAttachedDbs()
+	JObject SQLiteDatabase::getAttachedDbs()
 	{
 		return callObjectMethod(
 			"getAttachedDbs",
@@ -338,7 +338,7 @@ namespace android::database::sqlite
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SQLiteDatabase::getSyncedTables()
+	JObject SQLiteDatabase::getSyncedTables()
 	{
 		return callObjectMethod(
 			"getSyncedTables",
@@ -459,7 +459,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	__JniBaseClass SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
+	JObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
 		return callObjectMethod(
 			"query",
@@ -473,7 +473,7 @@ namespace android::database::sqlite
 			arg6
 		);
 	}
-	__JniBaseClass SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	JObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return callObjectMethod(
 			"query",
@@ -488,7 +488,7 @@ namespace android::database::sqlite
 			arg7
 		);
 	}
-	__JniBaseClass SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8)
+	JObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8)
 	{
 		return callObjectMethod(
 			"query",
@@ -504,7 +504,7 @@ namespace android::database::sqlite
 			arg8
 		);
 	}
-	__JniBaseClass SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, android::os::CancellationSignal arg9)
+	JObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, android::os::CancellationSignal arg9)
 	{
 		return callObjectMethod(
 			"query",
@@ -521,7 +521,7 @@ namespace android::database::sqlite
 			arg9.object()
 		);
 	}
-	__JniBaseClass SQLiteDatabase::queryWithFactory(__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9)
+	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9)
 	{
 		return callObjectMethod(
 			"queryWithFactory",
@@ -538,7 +538,7 @@ namespace android::database::sqlite
 			arg9
 		);
 	}
-	__JniBaseClass SQLiteDatabase::queryWithFactory(__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, android::os::CancellationSignal arg10)
+	JObject SQLiteDatabase::queryWithFactory(JObject arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, android::os::CancellationSignal arg10)
 	{
 		return callObjectMethod(
 			"queryWithFactory",
@@ -556,7 +556,7 @@ namespace android::database::sqlite
 			arg10.object()
 		);
 	}
-	__JniBaseClass SQLiteDatabase::rawQuery(jstring arg0, jarray arg1)
+	JObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"rawQuery",
@@ -565,7 +565,7 @@ namespace android::database::sqlite
 			arg1
 		);
 	}
-	__JniBaseClass SQLiteDatabase::rawQuery(jstring arg0, jarray arg1, android::os::CancellationSignal arg2)
+	JObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1, android::os::CancellationSignal arg2)
 	{
 		return callObjectMethod(
 			"rawQuery",
@@ -575,7 +575,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	__JniBaseClass SQLiteDatabase::rawQueryWithFactory(__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3)
+	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, jstring arg1, jarray arg2, jstring arg3)
 	{
 		return callObjectMethod(
 			"rawQueryWithFactory",
@@ -586,7 +586,7 @@ namespace android::database::sqlite
 			arg3
 		);
 	}
-	__JniBaseClass SQLiteDatabase::rawQueryWithFactory(__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3, android::os::CancellationSignal arg4)
+	JObject SQLiteDatabase::rawQueryWithFactory(JObject arg0, jstring arg1, jarray arg2, jstring arg3, android::os::CancellationSignal arg4)
 	{
 		return callObjectMethod(
 			"rawQueryWithFactory",
@@ -618,7 +618,7 @@ namespace android::database::sqlite
 			arg2.object()
 		);
 	}
-	void SQLiteDatabase::setCustomAggregateFunction(jstring arg0, __JniBaseClass arg1)
+	void SQLiteDatabase::setCustomAggregateFunction(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setCustomAggregateFunction",
@@ -627,7 +627,7 @@ namespace android::database::sqlite
 			arg1.object()
 		);
 	}
-	void SQLiteDatabase::setCustomScalarFunction(jstring arg0, __JniBaseClass arg1)
+	void SQLiteDatabase::setCustomScalarFunction(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setCustomScalarFunction",

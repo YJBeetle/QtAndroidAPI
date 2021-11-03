@@ -7,11 +7,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QJniObject forward
-	TvTrackInfo_Builder::TvTrackInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TvTrackInfo_Builder::TvTrackInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvTrackInfo_Builder::TvTrackInfo_Builder(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvTrackInfo$Builder",
 			"(ILjava/lang/String;)V",
 			arg0,

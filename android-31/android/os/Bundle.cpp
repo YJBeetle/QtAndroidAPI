@@ -11,7 +11,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass Bundle::CREATOR()
+	JObject Bundle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.Bundle",
@@ -91,7 +91,7 @@ namespace android::os
 			"()I"
 		);
 	}
-	__JniBaseClass Bundle::getBinder(jstring arg0)
+	JObject Bundle::getBinder(jstring arg0)
 	{
 		return callObjectMethod(
 			"getBinder",
@@ -230,7 +230,7 @@ namespace android::os
 			arg0
 		);
 	}
-	__JniBaseClass Bundle::getParcelable(jstring arg0)
+	JObject Bundle::getParcelable(jstring arg0)
 	{
 		return callObjectMethod(
 			"getParcelable",
@@ -254,7 +254,7 @@ namespace android::os
 			arg0
 		);
 	}
-	__JniBaseClass Bundle::getSerializable(jstring arg0)
+	JObject Bundle::getSerializable(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSerializable",
@@ -334,7 +334,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Bundle::putBinder(jstring arg0, __JniBaseClass arg1)
+	void Bundle::putBinder(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"putBinder",
@@ -442,7 +442,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putParcelable(jstring arg0, __JniBaseClass arg1)
+	void Bundle::putParcelable(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"putParcelable",
@@ -469,7 +469,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Bundle::putSerializable(jstring arg0, __JniBaseClass arg1)
+	void Bundle::putSerializable(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"putSerializable",

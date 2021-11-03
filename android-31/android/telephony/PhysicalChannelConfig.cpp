@@ -46,7 +46,7 @@ namespace android::telephony
 			"CONNECTION_UNKNOWN"
 		);
 	}
-	__JniBaseClass PhysicalChannelConfig::CREATOR()
+	JObject PhysicalChannelConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.PhysicalChannelConfig",
@@ -77,7 +77,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	PhysicalChannelConfig::PhysicalChannelConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	PhysicalChannelConfig::PhysicalChannelConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

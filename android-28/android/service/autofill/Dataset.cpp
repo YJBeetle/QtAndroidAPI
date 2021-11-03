@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass Dataset::CREATOR()
+	JObject Dataset::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.Dataset",
@@ -15,7 +15,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	Dataset::Dataset(QJniObject obj) : __JniBaseClass(obj) {}
+	Dataset::Dataset(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

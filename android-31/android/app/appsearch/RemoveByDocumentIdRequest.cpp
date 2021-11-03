@@ -5,12 +5,12 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	RemoveByDocumentIdRequest::RemoveByDocumentIdRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoveByDocumentIdRequest::RemoveByDocumentIdRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass RemoveByDocumentIdRequest::getIds()
+	JObject RemoveByDocumentIdRequest::getIds()
 	{
 		return callObjectMethod(
 			"getIds",

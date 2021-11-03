@@ -11,11 +11,11 @@ namespace android::service::autofill
 	// Fields
 	
 	// QJniObject forward
-	FillResponse_Builder::FillResponse_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	FillResponse_Builder::FillResponse_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FillResponse_Builder::FillResponse_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.FillResponse$Builder",
 			"()V"
 		) {}

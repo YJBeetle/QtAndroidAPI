@@ -10,7 +10,7 @@ namespace android::view::animation
 	TranslateAnimation::TranslateAnimation(QJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
-	TranslateAnimation::TranslateAnimation(android::content::Context arg0, __JniBaseClass arg1)
+	TranslateAnimation::TranslateAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(
 			"android.view.animation.TranslateAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

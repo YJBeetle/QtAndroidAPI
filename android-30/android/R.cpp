@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QJniObject forward
-	R::R(QJniObject obj) : __JniBaseClass(obj) {}
+	R::R(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R::R()
-		: __JniBaseClass(
+		: JObject(
 			"android.R",
 			"()V"
 		) {}

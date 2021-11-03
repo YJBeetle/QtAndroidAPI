@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::service::controls::actions
 {
-	class ControlAction : public __JniBaseClass
+	class ControlAction : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::service::controls::actions
 		static jint TYPE_MODE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ControlAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ControlAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ControlAction(QJniObject obj);
 		
 		// Constructors

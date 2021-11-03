@@ -8,24 +8,24 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	ProcessBuilder::ProcessBuilder(QJniObject obj) : __JniBaseClass(obj) {}
+	ProcessBuilder::ProcessBuilder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProcessBuilder::ProcessBuilder(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ProcessBuilder",
 			"([Ljava/lang/String;)V",
 			arg0
 		) {}
-	ProcessBuilder::ProcessBuilder(__JniBaseClass arg0)
-		: __JniBaseClass(
+	ProcessBuilder::ProcessBuilder(JObject arg0)
+		: JObject(
 			"java.lang.ProcessBuilder",
 			"(Ljava/util/List;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass ProcessBuilder::startPipeline(__JniBaseClass arg0)
+	JObject ProcessBuilder::startPipeline(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ProcessBuilder",
@@ -42,7 +42,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	java::lang::ProcessBuilder ProcessBuilder::command(__JniBaseClass arg0)
+	java::lang::ProcessBuilder ProcessBuilder::command(JObject arg0)
 	{
 		return callObjectMethod(
 			"command",
@@ -50,7 +50,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	__JniBaseClass ProcessBuilder::command()
+	JObject ProcessBuilder::command()
 	{
 		return callObjectMethod(
 			"command",
@@ -72,7 +72,7 @@ namespace java::lang
 			arg0.object()
 		);
 	}
-	__JniBaseClass ProcessBuilder::environment()
+	JObject ProcessBuilder::environment()
 	{
 		return callObjectMethod(
 			"environment",

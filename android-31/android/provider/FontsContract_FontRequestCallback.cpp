@@ -48,11 +48,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FontsContract_FontRequestCallback::FontsContract_FontRequestCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.FontsContract$FontRequestCallback",
 			"()V"
 		) {}

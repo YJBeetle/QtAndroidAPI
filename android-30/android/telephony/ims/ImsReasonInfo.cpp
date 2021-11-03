@@ -1194,7 +1194,7 @@ namespace android::telephony::ims
 			"CODE_WIFI_LOST"
 		);
 	}
-	__JniBaseClass ImsReasonInfo::CREATOR()
+	JObject ImsReasonInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsReasonInfo",
@@ -1225,11 +1225,11 @@ namespace android::telephony::ims
 	}
 	
 	// QJniObject forward
-	ImsReasonInfo::ImsReasonInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ImsReasonInfo::ImsReasonInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ImsReasonInfo::ImsReasonInfo(jint arg0, jint arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.ims.ImsReasonInfo",
 			"(IILjava/lang/String;)V",
 			arg0,

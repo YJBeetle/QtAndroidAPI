@@ -6,11 +6,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	Intent_FilterComparison::Intent_FilterComparison(QJniObject obj) : __JniBaseClass(obj) {}
+	Intent_FilterComparison::Intent_FilterComparison(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Intent_FilterComparison::Intent_FilterComparison(android::content::Intent arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent$FilterComparison",
 			"(Landroid/content/Intent;)V",
 			arg0.object()

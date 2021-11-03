@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
@@ -43,7 +43,7 @@ namespace android::app
 		LauncherActivity();
 		
 		// Methods
-		__JniBaseClass makeListItems();
+		JObject makeListItems();
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
 	};

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::io
 {
-	class ObjectOutputStream_PutField : public __JniBaseClass
+	class ObjectOutputStream_PutField : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ObjectOutputStream_PutField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ObjectOutputStream_PutField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectOutputStream_PutField(QJniObject obj);
 		
 		// Constructors
@@ -27,7 +27,7 @@ namespace java::io
 		void put(jstring arg0, jobject arg1);
 		void put(jstring arg0, jlong arg1);
 		void put(jstring arg0, jshort arg1);
-		void write(__JniBaseClass arg0);
+		void write(JObject arg0);
 	};
 } // namespace java::io
 

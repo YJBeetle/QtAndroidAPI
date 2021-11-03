@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../widget/FrameLayout.hpp"
@@ -67,17 +67,17 @@ namespace android::appwidget
 		
 		// Methods
 		static android::graphics::Rect getDefaultPaddingForWidget(android::content::Context arg0, android::content::ComponentName arg1, android::graphics::Rect arg2);
-		android::widget::FrameLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0);
 		jint getAppWidgetId();
 		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo();
 		void resetColorResources();
 		void setAppWidget(jint arg0, android::appwidget::AppWidgetProviderInfo arg1);
 		void setColorResources(android::util::SparseIntArray arg0);
-		void setExecutor(__JniBaseClass arg0);
+		void setExecutor(JObject arg0);
 		void setOnLightBackground(jboolean arg0);
 		void updateAppWidget(android::widget::RemoteViews arg0);
 		void updateAppWidgetOptions(android::os::Bundle arg0);
-		void updateAppWidgetSize(android::os::Bundle arg0, __JniBaseClass arg1);
+		void updateAppWidgetSize(android::os::Bundle arg0, JObject arg1);
 		void updateAppWidgetSize(android::os::Bundle arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 	};
 } // namespace android::appwidget

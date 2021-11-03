@@ -5,11 +5,11 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	ConfirmationCallback::ConfirmationCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	ConfirmationCallback::ConfirmationCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConfirmationCallback::ConfirmationCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.security.ConfirmationCallback",
 			"()V"
 		) {}

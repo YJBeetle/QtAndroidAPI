@@ -11,11 +11,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaSession2_SessionCallback::MediaSession2_SessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession2_SessionCallback::MediaSession2_SessionCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSession2_SessionCallback::MediaSession2_SessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaSession2$SessionCallback",
 			"()V"
 		) {}

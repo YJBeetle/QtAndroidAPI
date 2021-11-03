@@ -7,11 +7,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppOpsManager_OnOpNotedCallback::AppOpsManager_OnOpNotedCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AppOpsManager$OnOpNotedCallback",
 			"()V"
 		) {}

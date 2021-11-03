@@ -5,7 +5,7 @@
 namespace android::media::midi
 {
 	// Fields
-	__JniBaseClass MidiDeviceStatus::CREATOR()
+	JObject MidiDeviceStatus::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.midi.MidiDeviceStatus",
@@ -15,7 +15,7 @@ namespace android::media::midi
 	}
 	
 	// QJniObject forward
-	MidiDeviceStatus::MidiDeviceStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiDeviceStatus::MidiDeviceStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

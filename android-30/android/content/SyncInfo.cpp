@@ -27,7 +27,7 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	SyncInfo::SyncInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncInfo::SyncInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

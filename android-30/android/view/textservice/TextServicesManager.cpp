@@ -8,12 +8,12 @@ namespace android::view::textservice
 	// Fields
 	
 	// QJniObject forward
-	TextServicesManager::TextServicesManager(QJniObject obj) : __JniBaseClass(obj) {}
+	TextServicesManager::TextServicesManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, __JniBaseClass arg2, jboolean arg3)
+	android::view::textservice::SpellCheckerSession TextServicesManager::newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"newSpellCheckerSession",

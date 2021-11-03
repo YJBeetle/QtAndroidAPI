@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	Image_Plane::Image_Plane(QJniObject obj) : __JniBaseClass(obj) {}
+	Image_Plane::Image_Plane(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -30,7 +30,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::EnumSet EnumSet::copyOf(__JniBaseClass arg0)
+	java::util::EnumSet EnumSet::copyOf(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.EnumSet",

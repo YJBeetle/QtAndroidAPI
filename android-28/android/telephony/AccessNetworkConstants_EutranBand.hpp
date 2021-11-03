@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class AccessNetworkConstants_EutranBand : public __JniBaseClass
+	class AccessNetworkConstants_EutranBand : public JObject
 	{
 	public:
 		// Fields
@@ -59,7 +59,7 @@ namespace android::telephony
 		static jint BAND_9();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants_EutranBand(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessNetworkConstants_EutranBand(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessNetworkConstants_EutranBand(QJniObject obj);
 		
 		// Constructors

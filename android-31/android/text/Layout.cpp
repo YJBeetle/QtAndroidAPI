@@ -96,7 +96,7 @@ namespace android::text
 	}
 	
 	// QJniObject forward
-	Layout::Layout(QJniObject obj) : __JniBaseClass(obj) {}
+	Layout::Layout(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

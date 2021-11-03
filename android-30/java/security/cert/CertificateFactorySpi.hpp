@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,13 +21,13 @@ namespace java::security::cert
 
 namespace java::security::cert
 {
-	class CertificateFactorySpi : public __JniBaseClass
+	class CertificateFactorySpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CertificateFactorySpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CertificateFactorySpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CertificateFactorySpi(QJniObject obj);
 		
 		// Constructors
@@ -35,13 +35,13 @@ namespace java::security::cert
 		
 		// Methods
 		java::security::cert::CRL engineGenerateCRL(java::io::InputStream arg0);
-		__JniBaseClass engineGenerateCRLs(java::io::InputStream arg0);
+		JObject engineGenerateCRLs(java::io::InputStream arg0);
 		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0);
-		java::security::cert::CertPath engineGenerateCertPath(__JniBaseClass arg0);
+		java::security::cert::CertPath engineGenerateCertPath(JObject arg0);
 		java::security::cert::CertPath engineGenerateCertPath(java::io::InputStream arg0, jstring arg1);
 		java::security::cert::Certificate engineGenerateCertificate(java::io::InputStream arg0);
-		__JniBaseClass engineGenerateCertificates(java::io::InputStream arg0);
-		__JniBaseClass engineGetCertPathEncodings();
+		JObject engineGenerateCertificates(java::io::InputStream arg0);
+		JObject engineGetCertPathEncodings();
 	};
 } // namespace java::security::cert
 

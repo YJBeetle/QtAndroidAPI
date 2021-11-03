@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass BatchUpdates::CREATOR()
+	JObject BatchUpdates::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.BatchUpdates",
@@ -14,7 +14,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	BatchUpdates::BatchUpdates(QJniObject obj) : __JniBaseClass(obj) {}
+	BatchUpdates::BatchUpdates(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

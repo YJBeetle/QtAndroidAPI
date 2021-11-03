@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,13 +25,13 @@ namespace android::os
 
 namespace android::app
 {
-	class Notification_Action_Builder : public __JniBaseClass
+	class Notification_Action_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Notification_Action_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_Action_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_Action_Builder(QJniObject obj);
 		
 		// Constructors
@@ -43,7 +43,7 @@ namespace android::app
 		android::app::Notification_Action_Builder addExtras(android::os::Bundle arg0);
 		android::app::Notification_Action_Builder addRemoteInput(android::app::RemoteInput arg0);
 		android::app::Notification_Action build();
-		android::app::Notification_Action_Builder extend(__JniBaseClass arg0);
+		android::app::Notification_Action_Builder extend(JObject arg0);
 		android::os::Bundle getExtras();
 		android::app::Notification_Action_Builder setAllowGeneratedReplies(jboolean arg0);
 		android::app::Notification_Action_Builder setAuthenticationRequired(jboolean arg0);

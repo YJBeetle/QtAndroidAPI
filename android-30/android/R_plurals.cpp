@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QJniObject forward
-	R_plurals::R_plurals(QJniObject obj) : __JniBaseClass(obj) {}
+	R_plurals::R_plurals(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_plurals::R_plurals()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$plurals",
 			"()V"
 		) {}

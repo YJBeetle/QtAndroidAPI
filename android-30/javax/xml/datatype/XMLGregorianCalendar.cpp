@@ -12,11 +12,11 @@ namespace javax::xml::datatype
 	// Fields
 	
 	// QJniObject forward
-	XMLGregorianCalendar::XMLGregorianCalendar(QJniObject obj) : __JniBaseClass(obj) {}
+	XMLGregorianCalendar::XMLGregorianCalendar(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	XMLGregorianCalendar::XMLGregorianCalendar()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.datatype.XMLGregorianCalendar",
 			"()V"
 		) {}

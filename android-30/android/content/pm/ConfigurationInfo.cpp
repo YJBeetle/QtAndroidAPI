@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ConfigurationInfo::CREATOR()
+	JObject ConfigurationInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ConfigurationInfo",
@@ -65,16 +65,16 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	ConfigurationInfo::ConfigurationInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ConfigurationInfo::ConfigurationInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConfigurationInfo::ConfigurationInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ConfigurationInfo",
 			"()V"
 		) {}
 	ConfigurationInfo::ConfigurationInfo(android::content::pm::ConfigurationInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ConfigurationInfo",
 			"(Landroid/content/pm/ConfigurationInfo;)V",
 			arg0.object()

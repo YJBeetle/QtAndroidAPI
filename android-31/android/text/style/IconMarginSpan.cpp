@@ -10,17 +10,17 @@ namespace android::text::style
 	// Fields
 	
 	// QJniObject forward
-	IconMarginSpan::IconMarginSpan(QJniObject obj) : __JniBaseClass(obj) {}
+	IconMarginSpan::IconMarginSpan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IconMarginSpan::IconMarginSpan(android::graphics::Bitmap arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.IconMarginSpan",
 			"(Landroid/graphics/Bitmap;)V",
 			arg0.object()
 		) {}
 	IconMarginSpan::IconMarginSpan(android::graphics::Bitmap arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.IconMarginSpan",
 			"(Landroid/graphics/Bitmap;I)V",
 			arg0.object(),

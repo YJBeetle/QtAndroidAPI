@@ -19,7 +19,7 @@ namespace android::media::midi
 	}
 	
 	// QJniObject forward
-	MidiDeviceInfo_PortInfo::MidiDeviceInfo_PortInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiDeviceInfo_PortInfo::MidiDeviceInfo_PortInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::hardware::display
 {
-	class DeviceProductInfo : public __JniBaseClass
+	class DeviceProductInfo : public JObject
 	{
 	public:
 		// Fields
@@ -17,10 +17,10 @@ namespace android::hardware::display
 		static jint CONNECTION_TO_SINK_DIRECT();
 		static jint CONNECTION_TO_SINK_TRANSITIVE();
 		static jint CONNECTION_TO_SINK_UNKNOWN();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DeviceProductInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DeviceProductInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DeviceProductInfo(QJniObject obj);
 		
 		// Constructors

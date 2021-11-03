@@ -8,7 +8,7 @@
 namespace android::net::wifi::hotspot2::pps
 {
 	// Fields
-	__JniBaseClass Credential::CREATOR()
+	JObject Credential::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.hotspot2.pps.Credential",
@@ -18,16 +18,16 @@ namespace android::net::wifi::hotspot2::pps
 	}
 	
 	// QJniObject forward
-	Credential::Credential(QJniObject obj) : __JniBaseClass(obj) {}
+	Credential::Credential(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Credential::Credential()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.Credential",
 			"()V"
 		) {}
 	Credential::Credential(android::net::wifi::hotspot2::pps::Credential &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.hotspot2.pps.Credential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential;)V",
 			arg0.object()
@@ -70,7 +70,7 @@ namespace android::net::wifi::hotspot2::pps
 			"()[Ljava/security/cert/X509Certificate;"
 		).object<jarray>();
 	}
-	__JniBaseClass Credential::getClientPrivateKey()
+	JObject Credential::getClientPrivateKey()
 	{
 		return callObjectMethod(
 			"getClientPrivateKey",
@@ -129,7 +129,7 @@ namespace android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	void Credential::setClientPrivateKey(__JniBaseClass arg0)
+	void Credential::setClientPrivateKey(JObject arg0)
 	{
 		callMethod<void>(
 			"setClientPrivateKey",

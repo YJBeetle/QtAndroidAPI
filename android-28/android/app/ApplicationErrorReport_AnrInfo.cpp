@@ -27,23 +27,23 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$AnrInfo",
 			"()V"
 		) {}
 	ApplicationErrorReport_AnrInfo::ApplicationErrorReport_AnrInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$AnrInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_AnrInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationErrorReport_AnrInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

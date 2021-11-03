@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::system
 {
-	class StructTimespec : public __JniBaseClass
+	class StructTimespec : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::system
 		jlong tv_sec();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StructTimespec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StructTimespec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StructTimespec(QJniObject obj);
 		
 		// Constructors

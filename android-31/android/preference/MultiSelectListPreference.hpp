@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 #include "./DialogPreference.hpp"
 
@@ -30,20 +30,20 @@ namespace android::preference
 		
 		// Constructors
 		MultiSelectListPreference(android::content::Context arg0);
-		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1);
-		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		MultiSelectListPreference(android::content::Context arg0, JObject arg1);
+		MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2);
+		MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jint findIndexOfValue(jstring arg0);
 		jarray getEntries();
 		jarray getEntryValues();
-		__JniBaseClass getValues();
+		JObject getValues();
 		void setEntries(jarray arg0);
 		void setEntries(jint arg0);
 		void setEntryValues(jarray arg0);
 		void setEntryValues(jint arg0);
-		void setValues(__JniBaseClass arg0);
+		void setValues(JObject arg0);
 	};
 } // namespace android::preference
 

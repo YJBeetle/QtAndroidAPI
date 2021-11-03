@@ -8,11 +8,11 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	Loader::Loader(QJniObject obj) : __JniBaseClass(obj) {}
+	Loader::Loader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Loader::Loader(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Loader",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -123,7 +123,7 @@ namespace android::content
 			"()V"
 		);
 	}
-	void Loader::registerListener(jint arg0, __JniBaseClass arg1)
+	void Loader::registerListener(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"registerListener",
@@ -132,7 +132,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	void Loader::registerOnLoadCanceledListener(__JniBaseClass arg0)
+	void Loader::registerOnLoadCanceledListener(JObject arg0)
 	{
 		callMethod<void>(
 			"registerOnLoadCanceledListener",
@@ -182,7 +182,7 @@ namespace android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void Loader::unregisterListener(__JniBaseClass arg0)
+	void Loader::unregisterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -190,7 +190,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Loader::unregisterOnLoadCanceledListener(__JniBaseClass arg0)
+	void Loader::unregisterOnLoadCanceledListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterOnLoadCanceledListener",

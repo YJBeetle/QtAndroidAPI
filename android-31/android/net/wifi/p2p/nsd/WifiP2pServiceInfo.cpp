@@ -34,7 +34,7 @@ namespace android::net::wifi::p2p::nsd
 	}
 	
 	// QJniObject forward
-	WifiP2pServiceInfo::WifiP2pServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiP2pServiceInfo::WifiP2pServiceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

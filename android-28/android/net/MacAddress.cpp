@@ -12,7 +12,7 @@ namespace android::net
 			"Landroid/net/MacAddress;"
 		);
 	}
-	__JniBaseClass MacAddress::CREATOR()
+	JObject MacAddress::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.MacAddress",
@@ -43,7 +43,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	MacAddress::MacAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	MacAddress::MacAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

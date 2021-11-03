@@ -5,7 +5,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass Insets::CREATOR()
+	JObject Insets::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.Insets",
@@ -47,7 +47,7 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Insets::Insets(QJniObject obj) : __JniBaseClass(obj) {}
+	Insets::Insets(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

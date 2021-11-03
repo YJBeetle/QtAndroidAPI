@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,7 +21,7 @@ namespace android::graphics::pdf
 
 namespace android::graphics::pdf
 {
-	class PdfRenderer_Page : public __JniBaseClass
+	class PdfRenderer_Page : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::graphics::pdf
 		static jint RENDER_MODE_FOR_PRINT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PdfRenderer_Page(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PdfRenderer_Page(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PdfRenderer_Page(QJniObject obj);
 		
 		// Constructors

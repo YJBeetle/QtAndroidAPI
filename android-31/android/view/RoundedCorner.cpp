@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass RoundedCorner::CREATOR()
+	JObject RoundedCorner::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.RoundedCorner",
@@ -43,11 +43,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	RoundedCorner::RoundedCorner(QJniObject obj) : __JniBaseClass(obj) {}
+	RoundedCorner::RoundedCorner(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RoundedCorner::RoundedCorner(jint arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.RoundedCorner",
 			"(IIII)V",
 			arg0,

@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	AppSearchSchema_DocumentPropertyConfig_Builder::AppSearchSchema_DocumentPropertyConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AppSearchSchema_DocumentPropertyConfig_Builder::AppSearchSchema_DocumentPropertyConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppSearchSchema_DocumentPropertyConfig_Builder::AppSearchSchema_DocumentPropertyConfig_Builder(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.AppSearchSchema$DocumentPropertyConfig$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

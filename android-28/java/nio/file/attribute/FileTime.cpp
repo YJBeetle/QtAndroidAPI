@@ -8,7 +8,7 @@ namespace java::nio::file::attribute
 	// Fields
 	
 	// QJniObject forward
-	FileTime::FileTime(QJniObject obj) : __JniBaseClass(obj) {}
+	FileTime::FileTime(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

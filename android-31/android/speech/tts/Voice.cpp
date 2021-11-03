@@ -5,7 +5,7 @@
 namespace android::speech::tts
 {
 	// Fields
-	__JniBaseClass Voice::CREATOR()
+	JObject Voice::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.speech.tts.Voice",
@@ -85,11 +85,11 @@ namespace android::speech::tts
 	}
 	
 	// QJniObject forward
-	Voice::Voice(QJniObject obj) : __JniBaseClass(obj) {}
+	Voice::Voice(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Voice::Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __JniBaseClass arg5)
-		: __JniBaseClass(
+	Voice::Voice(jstring arg0, java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, JObject arg5)
+		: JObject(
 			"android.speech.tts.Voice",
 			"(Ljava/lang/String;Ljava/util/Locale;IIZLjava/util/Set;)V",
 			arg0,
@@ -116,7 +116,7 @@ namespace android::speech::tts
 			arg0
 		);
 	}
-	__JniBaseClass Voice::getFeatures()
+	JObject Voice::getFeatures()
 	{
 		return callObjectMethod(
 			"getFeatures",

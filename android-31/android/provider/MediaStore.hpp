@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,7 +25,7 @@ namespace android::os
 
 namespace android::provider
 {
-	class MediaStore : public __JniBaseClass
+	class MediaStore : public JObject
 	{
 	public:
 		// Fields
@@ -82,7 +82,7 @@ namespace android::provider
 		static jstring VOLUME_INTERNAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore(QJniObject obj);
 		
 		// Constructors
@@ -90,19 +90,19 @@ namespace android::provider
 		
 		// Methods
 		static jboolean canManageMedia(android::content::Context arg0);
-		static android::app::PendingIntent createDeleteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1);
-		static android::app::PendingIntent createFavoriteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1, jboolean arg2);
-		static android::app::PendingIntent createTrashRequest(android::content::ContentResolver arg0, __JniBaseClass arg1, jboolean arg2);
-		static android::app::PendingIntent createWriteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1);
+		static android::app::PendingIntent createDeleteRequest(android::content::ContentResolver arg0, JObject arg1);
+		static android::app::PendingIntent createFavoriteRequest(android::content::ContentResolver arg0, JObject arg1, jboolean arg2);
+		static android::app::PendingIntent createTrashRequest(android::content::ContentResolver arg0, JObject arg1, jboolean arg2);
+		static android::app::PendingIntent createWriteRequest(android::content::ContentResolver arg0, JObject arg1);
 		static android::net::Uri getDocumentUri(android::content::Context arg0, android::net::Uri arg1);
-		static __JniBaseClass getExternalVolumeNames(android::content::Context arg0);
+		static JObject getExternalVolumeNames(android::content::Context arg0);
 		static jlong getGeneration(android::content::Context arg0, jstring arg1);
 		static android::net::Uri getMediaScannerUri();
 		static android::net::Uri getMediaUri(android::content::Context arg0, android::net::Uri arg1);
 		static android::os::ParcelFileDescriptor getOriginalMediaFormatFileDescriptor(android::content::Context arg0, android::os::ParcelFileDescriptor arg1);
-		static __JniBaseClass getRecentExternalVolumeNames(android::content::Context arg0);
+		static JObject getRecentExternalVolumeNames(android::content::Context arg0);
 		static android::net::Uri getRedactedUri(android::content::ContentResolver arg0, android::net::Uri arg1);
-		static __JniBaseClass getRedactedUri(android::content::ContentResolver arg0, __JniBaseClass arg1);
+		static JObject getRedactedUri(android::content::ContentResolver arg0, JObject arg1);
 		static jboolean getRequireOriginal(android::net::Uri arg0);
 		static jstring getVersion(android::content::Context arg0);
 		static jstring getVersion(android::content::Context arg0, jstring arg1);

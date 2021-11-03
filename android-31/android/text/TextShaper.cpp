@@ -6,12 +6,12 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	TextShaper::TextShaper(QJniObject obj) : __JniBaseClass(obj) {}
+	TextShaper::TextShaper(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void TextShaper::shapeText(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, android::text::TextPaint arg4, __JniBaseClass arg5)
+	void TextShaper::shapeText(jstring arg0, jint arg1, jint arg2, JObject arg3, android::text::TextPaint arg4, JObject arg5)
 	{
 		callStaticMethod<void>(
 			"android.text.TextShaper",

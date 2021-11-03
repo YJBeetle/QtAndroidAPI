@@ -27,11 +27,11 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	ListView_FixedViewInfo::ListView_FixedViewInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ListView_FixedViewInfo::ListView_FixedViewInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ListView_FixedViewInfo::ListView_FixedViewInfo(android::widget::ListView arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.ListView$FixedViewInfo",
 			"(Landroid/widget/ListView;)V",
 			arg0.object()

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::webkit
 {
-	class GeolocationPermissions : public __JniBaseClass
+	class GeolocationPermissions : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GeolocationPermissions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GeolocationPermissions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GeolocationPermissions(QJniObject obj);
 		
 		// Constructors
@@ -21,8 +21,8 @@ namespace android::webkit
 		void allow(jstring arg0);
 		void clear(jstring arg0);
 		void clearAll();
-		void getAllowed(jstring arg0, __JniBaseClass arg1);
-		void getOrigins(__JniBaseClass arg0);
+		void getAllowed(jstring arg0, JObject arg1);
+		void getOrigins(JObject arg0);
 	};
 } // namespace android::webkit
 

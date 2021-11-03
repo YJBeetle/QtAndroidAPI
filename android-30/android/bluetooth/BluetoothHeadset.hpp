@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -9,7 +9,7 @@ namespace android::bluetooth
 
 namespace android::bluetooth
 {
-	class BluetoothHeadset : public __JniBaseClass
+	class BluetoothHeadset : public JObject
 	{
 	public:
 		// Fields
@@ -31,15 +31,15 @@ namespace android::bluetooth
 		static jstring VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothHeadset(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothHeadset(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHeadset(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getConnectedDevices();
+		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean isAudioConnected(android::bluetooth::BluetoothDevice arg0);
 		jboolean sendVendorSpecificResultCode(android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2);
 		jboolean startVoiceRecognition(android::bluetooth::BluetoothDevice arg0);

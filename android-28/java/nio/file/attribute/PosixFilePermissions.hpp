@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,21 +9,21 @@ namespace java::lang
 
 namespace java::nio::file::attribute
 {
-	class PosixFilePermissions : public __JniBaseClass
+	class PosixFilePermissions : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PosixFilePermissions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PosixFilePermissions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PosixFilePermissions(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass asFileAttribute(__JniBaseClass arg0);
-		static __JniBaseClass fromString(jstring arg0);
-		static jstring toString(__JniBaseClass arg0);
+		static JObject asFileAttribute(JObject arg0);
+		static JObject fromString(jstring arg0);
+		static jstring toString(JObject arg0);
 	};
 } // namespace java::nio::file::attribute
 

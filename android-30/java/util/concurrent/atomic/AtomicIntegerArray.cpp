@@ -5,24 +5,24 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	AtomicIntegerArray::AtomicIntegerArray(QJniObject obj) : __JniBaseClass(obj) {}
+	AtomicIntegerArray::AtomicIntegerArray(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicIntegerArray::AtomicIntegerArray(jintArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicIntegerArray",
 			"([I)V",
 			arg0
 		) {}
 	AtomicIntegerArray::AtomicIntegerArray(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicIntegerArray",
 			"(I)V",
 			arg0
 		) {}
 	
 	// Methods
-	jint AtomicIntegerArray::accumulateAndGet(jint arg0, jint arg1, __JniBaseClass arg2)
+	jint AtomicIntegerArray::accumulateAndGet(jint arg0, jint arg1, JObject arg2)
 	{
 		return callMethod<jint>(
 			"accumulateAndGet",
@@ -105,7 +105,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicIntegerArray::getAndAccumulate(jint arg0, jint arg1, __JniBaseClass arg2)
+	jint AtomicIntegerArray::getAndAccumulate(jint arg0, jint arg1, JObject arg2)
 	{
 		return callMethod<jint>(
 			"getAndAccumulate",
@@ -149,7 +149,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jint AtomicIntegerArray::getAndUpdate(jint arg0, __JniBaseClass arg1)
+	jint AtomicIntegerArray::getAndUpdate(jint arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"getAndUpdate",
@@ -241,7 +241,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint AtomicIntegerArray::updateAndGet(jint arg0, __JniBaseClass arg1)
+	jint AtomicIntegerArray::updateAndGet(jint arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"updateAndGet",

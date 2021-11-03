@@ -7,22 +7,22 @@ namespace java::util::jar
 	// Fields
 	
 	// QJniObject forward
-	Attributes::Attributes(QJniObject obj) : __JniBaseClass(obj) {}
+	Attributes::Attributes(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Attributes::Attributes()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Attributes",
 			"()V"
 		) {}
 	Attributes::Attributes(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Attributes",
 			"(I)V",
 			arg0
 		) {}
 	Attributes::Attributes(java::util::jar::Attributes &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.jar.Attributes",
 			"(Ljava/util/jar/Attributes;)V",
 			arg0.object()
@@ -59,7 +59,7 @@ namespace java::util::jar
 			arg0
 		);
 	}
-	__JniBaseClass Attributes::entrySet()
+	JObject Attributes::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -112,7 +112,7 @@ namespace java::util::jar
 			"()Z"
 		);
 	}
-	__JniBaseClass Attributes::keySet()
+	JObject Attributes::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -128,7 +128,7 @@ namespace java::util::jar
 			arg1
 		).object<jobject>();
 	}
-	void Attributes::putAll(__JniBaseClass arg0)
+	void Attributes::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -160,7 +160,7 @@ namespace java::util::jar
 			"()I"
 		);
 	}
-	__JniBaseClass Attributes::values()
+	JObject Attributes::values()
 	{
 		return callObjectMethod(
 			"values",

@@ -7,18 +7,18 @@ namespace android::app::job
 	// Fields
 	
 	// QJniObject forward
-	JobServiceEngine::JobServiceEngine(QJniObject obj) : __JniBaseClass(obj) {}
+	JobServiceEngine::JobServiceEngine(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JobServiceEngine::JobServiceEngine(android::app::Service arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.job.JobServiceEngine",
 			"(Landroid/app/Service;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass JobServiceEngine::getBinder()
+	JObject JobServiceEngine::getBinder()
 	{
 		return callObjectMethod(
 			"getBinder",

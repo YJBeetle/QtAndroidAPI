@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./IkeSessionParams_IkeAuthConfig.hpp"
 
 namespace java::security::cert

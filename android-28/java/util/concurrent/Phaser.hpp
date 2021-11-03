@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util::concurrent
 {
@@ -13,13 +13,13 @@ namespace java::util::concurrent::atomic
 
 namespace java::util::concurrent
 {
-	class Phaser : public __JniBaseClass
+	class Phaser : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Phaser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Phaser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Phaser(QJniObject obj);
 		
 		// Constructors

@@ -12,7 +12,7 @@ namespace android::widget
 	SimpleCursorAdapter::SimpleCursorAdapter(QJniObject obj) : android::widget::ResourceCursorAdapter(obj) {}
 	
 	// Constructors
-	SimpleCursorAdapter::SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4)
+	SimpleCursorAdapter::SimpleCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jarray arg3, jintArray arg4)
 		: android::widget::ResourceCursorAdapter(
 			"android.widget.SimpleCursorAdapter",
 			"(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V",
@@ -22,7 +22,7 @@ namespace android::widget
 			arg3,
 			arg4
 		) {}
-	SimpleCursorAdapter::SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4, jint arg5)
+	SimpleCursorAdapter::SimpleCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jarray arg3, jintArray arg4, jint arg5)
 		: android::widget::ResourceCursorAdapter(
 			"android.widget.SimpleCursorAdapter",
 			"(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[II)V",
@@ -35,7 +35,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void SimpleCursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2)
+	void SimpleCursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"bindView",
@@ -45,7 +45,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void SimpleCursorAdapter::changeCursorAndColumns(__JniBaseClass arg0, jarray arg1, jintArray arg2)
+	void SimpleCursorAdapter::changeCursorAndColumns(JObject arg0, jarray arg1, jintArray arg2)
 	{
 		callMethod<void>(
 			"changeCursorAndColumns",
@@ -55,7 +55,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	jstring SimpleCursorAdapter::convertToString(__JniBaseClass arg0)
+	jstring SimpleCursorAdapter::convertToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass SimpleCursorAdapter::getCursorToStringConverter()
+	JObject SimpleCursorAdapter::getCursorToStringConverter()
 	{
 		return callObjectMethod(
 			"getCursorToStringConverter",
@@ -77,14 +77,14 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass SimpleCursorAdapter::getViewBinder()
+	JObject SimpleCursorAdapter::getViewBinder()
 	{
 		return callObjectMethod(
 			"getViewBinder",
 			"()Landroid/widget/SimpleCursorAdapter$ViewBinder;"
 		);
 	}
-	void SimpleCursorAdapter::setCursorToStringConverter(__JniBaseClass arg0)
+	void SimpleCursorAdapter::setCursorToStringConverter(JObject arg0)
 	{
 		callMethod<void>(
 			"setCursorToStringConverter",
@@ -100,7 +100,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SimpleCursorAdapter::setViewBinder(__JniBaseClass arg0)
+	void SimpleCursorAdapter::setViewBinder(JObject arg0)
 	{
 		callMethod<void>(
 			"setViewBinder",
@@ -126,7 +126,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	__JniBaseClass SimpleCursorAdapter::swapCursor(__JniBaseClass arg0)
+	JObject SimpleCursorAdapter::swapCursor(JObject arg0)
 	{
 		return callObjectMethod(
 			"swapCursor",

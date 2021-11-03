@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -33,26 +33,26 @@ namespace java::util
 
 namespace java::security
 {
-	class Policy : public __JniBaseClass
+	class Policy : public JObject
 	{
 	public:
 		// Fields
 		static java::security::PermissionCollection UNSUPPORTED_EMPTY_COLLECTION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Policy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Policy(QJniObject obj);
 		
 		// Constructors
 		Policy();
 		
 		// Methods
-		static java::security::Policy getInstance(jstring arg0, __JniBaseClass arg1);
-		static java::security::Policy getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2);
-		static java::security::Policy getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2);
+		static java::security::Policy getInstance(jstring arg0, JObject arg1);
+		static java::security::Policy getInstance(jstring arg0, JObject arg1, jstring arg2);
+		static java::security::Policy getInstance(jstring arg0, JObject arg1, java::security::Provider arg2);
 		static java::security::Policy getPolicy();
 		static void setPolicy(java::security::Policy arg0);
-		__JniBaseClass getParameters();
+		JObject getParameters();
 		java::security::PermissionCollection getPermissions(java::security::CodeSource arg0);
 		java::security::PermissionCollection getPermissions(java::security::ProtectionDomain arg0);
 		java::security::Provider getProvider();

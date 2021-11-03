@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class CalendarContract_CalendarCache : public __JniBaseClass
+	class CalendarContract_CalendarCache : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::provider
 		static android::net::Uri URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CalendarContract_CalendarCache(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CalendarContract_CalendarCache(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CalendarContract_CalendarCache(QJniObject obj);
 		
 		// Constructors

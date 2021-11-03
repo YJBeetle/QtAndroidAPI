@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace java::io
 
 namespace android::media
 {
-	class ExifInterface : public __JniBaseClass
+	class ExifInterface : public JObject
 	{
 	public:
 		// Fields
@@ -172,7 +172,7 @@ namespace android::media
 		static jint WHITEBALANCE_MANUAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ExifInterface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ExifInterface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ExifInterface(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PKIXCertPathValidatorResult.hpp"
 
 namespace java::security::cert
@@ -24,7 +24,7 @@ namespace java::security::cert
 		PKIXCertPathBuilderResult(QJniObject obj);
 		
 		// Constructors
-		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		PKIXCertPathBuilderResult(java::security::cert::CertPath arg0, java::security::cert::TrustAnchor arg1, JObject arg2, JObject arg3);
 		
 		// Methods
 		java::security::cert::CertPath getCertPath();

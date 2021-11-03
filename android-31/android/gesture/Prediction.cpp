@@ -18,7 +18,7 @@ namespace android::gesture
 	}
 	
 	// QJniObject forward
-	Prediction::Prediction(QJniObject obj) : __JniBaseClass(obj) {}
+	Prediction::Prediction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

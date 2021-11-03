@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_RecentTaskInfo::CREATOR()
+	JObject ActivityManager_RecentTaskInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$RecentTaskInfo",
@@ -83,11 +83,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityManager_RecentTaskInfo::ActivityManager_RecentTaskInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_RecentTaskInfo::ActivityManager_RecentTaskInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_RecentTaskInfo::ActivityManager_RecentTaskInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$RecentTaskInfo",
 			"()V"
 		) {}

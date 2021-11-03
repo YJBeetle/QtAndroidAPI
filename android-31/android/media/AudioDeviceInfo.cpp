@@ -208,7 +208,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioDeviceInfo::AudioDeviceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioDeviceInfo::AudioDeviceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -228,14 +228,14 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass AudioDeviceInfo::getAudioDescriptors()
+	JObject AudioDeviceInfo::getAudioDescriptors()
 	{
 		return callObjectMethod(
 			"getAudioDescriptors",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AudioDeviceInfo::getAudioProfiles()
+	JObject AudioDeviceInfo::getAudioProfiles()
 	{
 		return callObjectMethod(
 			"getAudioProfiles",

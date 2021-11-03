@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::accessibilityservice
 {
-	class AccessibilityServiceInfo : public __JniBaseClass
+	class AccessibilityServiceInfo : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::accessibilityservice
 		static jint CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION();
 		static jint CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT();
 		static jint CAPABILITY_CAN_TAKE_SCREENSHOT();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DEFAULT();
 		static jint FEEDBACK_ALL_MASK();
 		static jint FEEDBACK_AUDIBLE();
@@ -59,7 +59,7 @@ namespace android::accessibilityservice
 		jarray packageNames();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityServiceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityServiceInfo(QJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	Uri_Builder::Uri_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Uri_Builder::Uri_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Uri_Builder::Uri_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.Uri$Builder",
 			"()V"
 		) {}

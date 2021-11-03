@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass FactoryResetProtectionPolicy::CREATOR()
+	JObject FactoryResetProtectionPolicy::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.FactoryResetProtectionPolicy",
@@ -14,7 +14,7 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	FactoryResetProtectionPolicy::FactoryResetProtectionPolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	FactoryResetProtectionPolicy::FactoryResetProtectionPolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,7 +26,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	__JniBaseClass FactoryResetProtectionPolicy::getFactoryResetProtectionAccounts()
+	JObject FactoryResetProtectionPolicy::getFactoryResetProtectionAccounts()
 	{
 		return callObjectMethod(
 			"getFactoryResetProtectionAccounts",

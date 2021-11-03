@@ -6,17 +6,17 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	LocalSocketAddress::LocalSocketAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	LocalSocketAddress::LocalSocketAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocalSocketAddress::LocalSocketAddress(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	LocalSocketAddress::LocalSocketAddress(jstring arg0, android::net::LocalSocketAddress_Namespace arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
 			arg0,

@@ -13,7 +13,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	StrictMode_ThreadPolicy::StrictMode_ThreadPolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	StrictMode_ThreadPolicy::StrictMode_ThreadPolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

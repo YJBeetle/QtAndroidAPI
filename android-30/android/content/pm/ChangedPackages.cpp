@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ChangedPackages::CREATOR()
+	JObject ChangedPackages::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ChangedPackages",
@@ -14,11 +14,11 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	ChangedPackages::ChangedPackages(QJniObject obj) : __JniBaseClass(obj) {}
+	ChangedPackages::ChangedPackages(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ChangedPackages::ChangedPackages(jint arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	ChangedPackages::ChangedPackages(jint arg0, JObject arg1)
+		: JObject(
 			"android.content.pm.ChangedPackages",
 			"(ILjava/util/List;)V",
 			arg0,
@@ -33,7 +33,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	__JniBaseClass ChangedPackages::getPackageNames()
+	JObject ChangedPackages::getPackageNames()
 	{
 		return callObjectMethod(
 			"getPackageNames",

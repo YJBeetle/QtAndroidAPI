@@ -50,7 +50,7 @@ namespace java::time::chrono
 	}
 	
 	// QJniObject forward
-	JapaneseEra::JapaneseEra(QJniObject obj) : __JniBaseClass(obj) {}
+	JapaneseEra::JapaneseEra(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -97,7 +97,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	java::time::temporal::ValueRange JapaneseEra::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange JapaneseEra::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",

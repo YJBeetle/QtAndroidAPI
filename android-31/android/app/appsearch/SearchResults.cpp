@@ -5,7 +5,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	SearchResults::SearchResults(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchResults::SearchResults(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -17,7 +17,7 @@ namespace android::app::appsearch
 			"()V"
 		);
 	}
-	void SearchResults::getNextPage(__JniBaseClass arg0, __JniBaseClass arg1)
+	void SearchResults::getNextPage(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getNextPage",

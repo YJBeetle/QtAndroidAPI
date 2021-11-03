@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::util
 
 namespace android::bluetooth::le
 {
-	class AdvertiseData : public __JniBaseClass
+	class AdvertiseData : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AdvertiseData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AdvertiseData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertiseData(QJniObject obj);
 		
 		// Constructors
@@ -31,9 +31,9 @@ namespace android::bluetooth::le
 		jboolean getIncludeDeviceName();
 		jboolean getIncludeTxPowerLevel();
 		android::util::SparseArray getManufacturerSpecificData();
-		__JniBaseClass getServiceData();
-		__JniBaseClass getServiceSolicitationUuids();
-		__JniBaseClass getServiceUuids();
+		JObject getServiceData();
+		JObject getServiceSolicitationUuids();
+		JObject getServiceUuids();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -80,7 +80,7 @@ namespace android::media::tv
 	}
 	
 	// QJniObject forward
-	TvContract::TvContract(QJniObject obj) : __JniBaseClass(obj) {}
+	TvContract::TvContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

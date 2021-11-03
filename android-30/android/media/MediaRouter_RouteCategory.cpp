@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaRouter_RouteCategory::MediaRouter_RouteCategory(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaRouter_RouteCategory::MediaRouter_RouteCategory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,7 +26,7 @@ namespace android::media
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass MediaRouter_RouteCategory::getRoutes(__JniBaseClass arg0)
+	JObject MediaRouter_RouteCategory::getRoutes(JObject arg0)
 	{
 		return callObjectMethod(
 			"getRoutes",

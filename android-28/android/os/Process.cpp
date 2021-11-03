@@ -132,11 +132,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Process::Process(QJniObject obj) : __JniBaseClass(obj) {}
+	Process::Process(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Process::Process()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Process",
 			"()V"
 		) {}

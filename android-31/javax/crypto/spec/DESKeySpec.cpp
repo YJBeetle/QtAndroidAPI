@@ -12,17 +12,17 @@ namespace javax::crypto::spec
 	}
 	
 	// QJniObject forward
-	DESKeySpec::DESKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
+	DESKeySpec::DESKeySpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DESKeySpec::DESKeySpec(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.DESKeySpec",
 			"([B)V",
 			arg0
 		) {}
 	DESKeySpec::DESKeySpec(jbyteArray arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.DESKeySpec",
 			"([BI)V",
 			arg0,

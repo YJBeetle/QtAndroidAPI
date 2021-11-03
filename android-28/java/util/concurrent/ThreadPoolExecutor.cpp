@@ -14,7 +14,7 @@ namespace java::util::concurrent
 	ThreadPoolExecutor::ThreadPoolExecutor(QJniObject obj) : java::util::concurrent::AbstractExecutorService(obj) {}
 	
 	// Constructors
-	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, JObject arg4)
 		: java::util::concurrent::AbstractExecutorService(
 			"java.util.concurrent.ThreadPoolExecutor",
 			"(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V",
@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			arg3.object(),
 			arg4.object()
 		) {}
-	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, JObject arg4, JObject arg5)
 		: java::util::concurrent::AbstractExecutorService(
 			"java.util.concurrent.ThreadPoolExecutor",
 			"(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/RejectedExecutionHandler;)V",
@@ -35,7 +35,7 @@ namespace java::util::concurrent
 			arg4.object(),
 			arg5.object()
 		) {}
-	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6)
+	ThreadPoolExecutor::ThreadPoolExecutor(jint arg0, jint arg1, jlong arg2, java::util::concurrent::TimeUnit arg3, JObject arg4, JObject arg5, JObject arg6)
 		: java::util::concurrent::AbstractExecutorService(
 			"java.util.concurrent.ThreadPoolExecutor",
 			"(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V",
@@ -73,7 +73,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	void ThreadPoolExecutor::execute(__JniBaseClass arg0)
+	void ThreadPoolExecutor::execute(JObject arg0)
 	{
 		callMethod<void>(
 			"execute",
@@ -131,14 +131,14 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ThreadPoolExecutor::getQueue()
+	JObject ThreadPoolExecutor::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
 			"()Ljava/util/concurrent/BlockingQueue;"
 		);
 	}
-	__JniBaseClass ThreadPoolExecutor::getRejectedExecutionHandler()
+	JObject ThreadPoolExecutor::getRejectedExecutionHandler()
 	{
 		return callObjectMethod(
 			"getRejectedExecutionHandler",
@@ -152,7 +152,7 @@ namespace java::util::concurrent
 			"()J"
 		);
 	}
-	__JniBaseClass ThreadPoolExecutor::getThreadFactory()
+	JObject ThreadPoolExecutor::getThreadFactory()
 	{
 		return callObjectMethod(
 			"getThreadFactory",
@@ -201,7 +201,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	jboolean ThreadPoolExecutor::remove(__JniBaseClass arg0)
+	jboolean ThreadPoolExecutor::remove(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"remove",
@@ -234,7 +234,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ThreadPoolExecutor::setRejectedExecutionHandler(__JniBaseClass arg0)
+	void ThreadPoolExecutor::setRejectedExecutionHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setRejectedExecutionHandler",
@@ -242,7 +242,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void ThreadPoolExecutor::setThreadFactory(__JniBaseClass arg0)
+	void ThreadPoolExecutor::setThreadFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setThreadFactory",
@@ -257,7 +257,7 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	__JniBaseClass ThreadPoolExecutor::shutdownNow()
+	JObject ThreadPoolExecutor::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",

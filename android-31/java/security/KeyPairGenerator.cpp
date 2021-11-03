@@ -78,7 +78,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void KeyPairGenerator::initialize(__JniBaseClass arg0)
+	void KeyPairGenerator::initialize(JObject arg0)
 	{
 		callMethod<void>(
 			"initialize",
@@ -95,7 +95,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyPairGenerator::initialize(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void KeyPairGenerator::initialize(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"initialize",

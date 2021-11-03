@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	CalendarContract_ExtendedProperties::CalendarContract_ExtendedProperties(QJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_ExtendedProperties::CalendarContract_ExtendedProperties(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

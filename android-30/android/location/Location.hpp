@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,17 +13,17 @@ namespace android::os
 
 namespace android::location
 {
-	class Location : public __JniBaseClass
+	class Location : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FORMAT_DEGREES();
 		static jint FORMAT_MINUTES();
 		static jint FORMAT_SECONDS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Location(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Location(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Location(QJniObject obj);
 		
 		// Constructors
@@ -37,7 +37,7 @@ namespace android::location
 		jfloat bearingTo(android::location::Location arg0);
 		jint describeContents();
 		jfloat distanceTo(android::location::Location arg0);
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jfloat getAccuracy();
 		jdouble getAltitude();
 		jfloat getBearing();

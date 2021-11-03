@@ -5,7 +5,7 @@
 namespace android::widget
 {
 	// Fields
-	__JniBaseClass RemoteViews_RemoteCollectionItems::CREATOR()
+	JObject RemoteViews_RemoteCollectionItems::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.widget.RemoteViews$RemoteCollectionItems",
@@ -15,7 +15,7 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	RemoteViews_RemoteCollectionItems::RemoteViews_RemoteCollectionItems(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteViews_RemoteCollectionItems::RemoteViews_RemoteCollectionItems(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

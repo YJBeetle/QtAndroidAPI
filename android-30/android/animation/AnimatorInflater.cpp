@@ -8,11 +8,11 @@ namespace android::animation
 	// Fields
 	
 	// QJniObject forward
-	AnimatorInflater::AnimatorInflater(QJniObject obj) : __JniBaseClass(obj) {}
+	AnimatorInflater::AnimatorInflater(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AnimatorInflater::AnimatorInflater()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.AnimatorInflater",
 			"()V"
 		) {}

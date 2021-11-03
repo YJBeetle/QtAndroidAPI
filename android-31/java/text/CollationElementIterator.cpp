@@ -14,7 +14,7 @@ namespace java::text
 	}
 	
 	// QJniObject forward
-	CollationElementIterator::CollationElementIterator(QJniObject obj) : __JniBaseClass(obj) {}
+	CollationElementIterator::CollationElementIterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -98,7 +98,7 @@ namespace java::text
 			arg0
 		);
 	}
-	void CollationElementIterator::setText(__JniBaseClass arg0)
+	void CollationElementIterator::setText(JObject arg0)
 	{
 		callMethod<void>(
 			"setText",

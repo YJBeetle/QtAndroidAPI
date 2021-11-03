@@ -15,7 +15,7 @@ namespace android::widget
 	SimpleAdapter::SimpleAdapter(QJniObject obj) : android::widget::BaseAdapter(obj) {}
 	
 	// Constructors
-	SimpleAdapter::SimpleAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4)
+	SimpleAdapter::SimpleAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4)
 		: android::widget::BaseAdapter(
 			"android.widget.SimpleAdapter",
 			"(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V",
@@ -84,7 +84,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	__JniBaseClass SimpleAdapter::getViewBinder()
+	JObject SimpleAdapter::getViewBinder()
 	{
 		return callObjectMethod(
 			"getViewBinder",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SimpleAdapter::setViewBinder(__JniBaseClass arg0)
+	void SimpleAdapter::setViewBinder(JObject arg0)
 	{
 		callMethod<void>(
 			"setViewBinder",

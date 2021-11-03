@@ -19,7 +19,7 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	StrictMath::StrictMath(QJniObject obj) : __JniBaseClass(obj) {}
+	StrictMath::StrictMath(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

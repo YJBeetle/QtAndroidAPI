@@ -10,16 +10,16 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QJniObject forward
-	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.TunnelModeChildSessionParams$Builder",
 			"()V"
 		) {}
 	TunnelModeChildSessionParams_Builder::TunnelModeChildSessionParams_Builder(android::net::ipsec::ike::TunnelModeChildSessionParams arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.TunnelModeChildSessionParams$Builder",
 			"(Landroid/net/ipsec/ike/TunnelModeChildSessionParams;)V",
 			arg0.object()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,13 +9,13 @@ namespace android::content
 
 namespace android::app
 {
-	class Instrumentation_ActivityResult : public __JniBaseClass
+	class Instrumentation_ActivityResult : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Instrumentation_ActivityResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Instrumentation_ActivityResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Instrumentation_ActivityResult(QJniObject obj);
 		
 		// Constructors

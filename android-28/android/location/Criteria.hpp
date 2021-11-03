@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::location
 {
-	class Criteria : public __JniBaseClass
+	class Criteria : public JObject
 	{
 	public:
 		// Fields
@@ -18,14 +18,14 @@ namespace android::location
 		static jint ACCURACY_HIGH();
 		static jint ACCURACY_LOW();
 		static jint ACCURACY_MEDIUM();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint NO_REQUIREMENT();
 		static jint POWER_HIGH();
 		static jint POWER_LOW();
 		static jint POWER_MEDIUM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Criteria(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Criteria(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Criteria(QJniObject obj);
 		
 		// Constructors

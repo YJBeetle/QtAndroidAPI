@@ -36,7 +36,7 @@ namespace android::net::ipsec::ike
 	}
 	
 	// QJniObject forward
-	IkeSessionParams::IkeSessionParams(QJniObject obj) : __JniBaseClass(obj) {}
+	IkeSessionParams::IkeSessionParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -63,7 +63,7 @@ namespace android::net::ipsec::ike
 			"()I"
 		);
 	}
-	__JniBaseClass IkeSessionParams::getIkeSaProposals()
+	JObject IkeSessionParams::getIkeSaProposals()
 	{
 		return callObjectMethod(
 			"getIkeSaProposals",

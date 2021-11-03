@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
@@ -34,12 +34,12 @@ namespace android::app
 		ListActivity();
 		
 		// Methods
-		__JniBaseClass getListAdapter();
+		JObject getListAdapter();
 		android::widget::ListView getListView();
 		jlong getSelectedItemId();
 		jint getSelectedItemPosition();
 		void onContentChanged();
-		void setListAdapter(__JniBaseClass arg0);
+		void setListAdapter(JObject arg0);
 		void setSelection(jint arg0);
 	};
 } // namespace android::app

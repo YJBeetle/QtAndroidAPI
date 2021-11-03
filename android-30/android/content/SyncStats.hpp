@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::content
 {
-	class SyncStats : public __JniBaseClass
+	class SyncStats : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jlong numAuthExceptions();
 		jlong numConflictDetectedExceptions();
 		jlong numDeletes();
@@ -25,7 +25,7 @@ namespace android::content
 		jlong numUpdates();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SyncStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SyncStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SyncStats(QJniObject obj);
 		
 		// Constructors

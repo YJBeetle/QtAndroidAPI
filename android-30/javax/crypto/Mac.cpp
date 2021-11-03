@@ -9,7 +9,7 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	Mac::Mac(QJniObject obj) : __JniBaseClass(obj) {}
+	Mac::Mac(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -95,7 +95,7 @@ namespace javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Mac::init(__JniBaseClass arg0)
+	void Mac::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",
@@ -103,7 +103,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void Mac::init(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Mac::init(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"init",

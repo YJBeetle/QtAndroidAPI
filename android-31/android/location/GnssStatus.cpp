@@ -60,7 +60,7 @@ namespace android::location
 			"CONSTELLATION_UNKNOWN"
 		);
 	}
-	__JniBaseClass GnssStatus::CREATOR()
+	JObject GnssStatus::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssStatus",
@@ -70,7 +70,7 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GnssStatus::GnssStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	GnssStatus::GnssStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

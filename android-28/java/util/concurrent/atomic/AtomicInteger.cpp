@@ -21,7 +21,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jint AtomicInteger::accumulateAndGet(jint arg0, __JniBaseClass arg1)
+	jint AtomicInteger::accumulateAndGet(jint arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"accumulateAndGet",
@@ -109,7 +109,7 @@ namespace java::util::concurrent::atomic
 			"()I"
 		);
 	}
-	jint AtomicInteger::getAndAccumulate(jint arg0, __JniBaseClass arg1)
+	jint AtomicInteger::getAndAccumulate(jint arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"getAndAccumulate",
@@ -148,7 +148,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jint AtomicInteger::getAndUpdate(__JniBaseClass arg0)
+	jint AtomicInteger::getAndUpdate(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getAndUpdate",
@@ -238,7 +238,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint AtomicInteger::updateAndGet(__JniBaseClass arg0)
+	jint AtomicInteger::updateAndGet(JObject arg0)
 	{
 		return callMethod<jint>(
 			"updateAndGet",

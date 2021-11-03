@@ -7,11 +7,11 @@ namespace android::net::vcn
 	// Fields
 	
 	// QJniObject forward
-	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VcnGatewayConnectionConfig_Builder::VcnGatewayConnectionConfig_Builder(jstring arg0, android::net::ipsec::ike::IkeTunnelConnectionParams arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.vcn.VcnGatewayConnectionConfig$Builder",
 			"(Ljava/lang/String;Landroid/net/ipsec/ike/IkeTunnelConnectionParams;)V",
 			arg0,

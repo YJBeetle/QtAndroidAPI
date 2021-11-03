@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,14 +25,14 @@ namespace android::os
 
 namespace android::content
 {
-	class IntentSender : public __JniBaseClass
+	class IntentSender : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IntentSender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IntentSender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IntentSender(QJniObject obj);
 		
 		// Constructors
@@ -47,8 +47,8 @@ namespace android::content
 		android::os::UserHandle getCreatorUserHandle();
 		jstring getTargetPackage();
 		jint hashCode();
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5);
+		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4);
+		void sendIntent(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

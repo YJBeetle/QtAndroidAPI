@@ -18,18 +18,18 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.AbstractThreadedSyncAdapter",
 			"(Landroid/content/Context;Z)V",
 			arg0.object(),
 			arg1
 		) {}
 	AbstractThreadedSyncAdapter::AbstractThreadedSyncAdapter(android::content::Context arg0, jboolean arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.AbstractThreadedSyncAdapter",
 			"(Landroid/content/Context;ZZ)V",
 			arg0.object(),
@@ -45,7 +45,7 @@ namespace android::content
 			"()Landroid/content/Context;"
 		);
 	}
-	__JniBaseClass AbstractThreadedSyncAdapter::getSyncAdapterBinder()
+	JObject AbstractThreadedSyncAdapter::getSyncAdapterBinder()
 	{
 		return callObjectMethod(
 			"getSyncAdapterBinder",

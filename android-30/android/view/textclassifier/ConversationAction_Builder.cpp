@@ -8,11 +8,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	ConversationAction_Builder::ConversationAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationAction_Builder::ConversationAction_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConversationAction_Builder::ConversationAction_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.ConversationAction$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

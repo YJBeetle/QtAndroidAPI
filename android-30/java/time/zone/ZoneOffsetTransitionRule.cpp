@@ -12,7 +12,7 @@ namespace java::time::zone
 	// Fields
 	
 	// QJniObject forward
-	ZoneOffsetTransitionRule::ZoneOffsetTransitionRule(QJniObject obj) : __JniBaseClass(obj) {}
+	ZoneOffsetTransitionRule::ZoneOffsetTransitionRule(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

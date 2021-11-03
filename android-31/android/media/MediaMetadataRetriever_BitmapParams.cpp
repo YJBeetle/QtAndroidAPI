@@ -6,11 +6,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaMetadataRetriever_BitmapParams::MediaMetadataRetriever_BitmapParams()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMetadataRetriever$BitmapParams",
 			"()V"
 		) {}

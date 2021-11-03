@@ -48,11 +48,11 @@ namespace java::util::logging
 	}
 	
 	// QJniObject forward
-	ErrorManager::ErrorManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ErrorManager::ErrorManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ErrorManager::ErrorManager()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.logging.ErrorManager",
 			"()V"
 		) {}

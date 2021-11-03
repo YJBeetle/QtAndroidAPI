@@ -9,11 +9,11 @@ namespace android::media::session
 	// Fields
 	
 	// QJniObject forward
-	MediaController_Callback::MediaController_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaController_Callback::MediaController_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaController_Callback::MediaController_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.MediaController$Callback",
 			"()V"
 		) {}
@@ -51,7 +51,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaController_Callback::onQueueChanged(__JniBaseClass arg0)
+	void MediaController_Callback::onQueueChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onQueueChanged",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::view::displayhash
 {
-	class VerifiedDisplayHash : public __JniBaseClass
+	class VerifiedDisplayHash : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VerifiedDisplayHash(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VerifiedDisplayHash(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VerifiedDisplayHash(QJniObject obj);
 		
 		// Constructors

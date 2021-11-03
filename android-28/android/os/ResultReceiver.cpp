@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass ResultReceiver::CREATOR()
+	JObject ResultReceiver::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.ResultReceiver",
@@ -16,11 +16,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	ResultReceiver::ResultReceiver(QJniObject obj) : __JniBaseClass(obj) {}
+	ResultReceiver::ResultReceiver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ResultReceiver::ResultReceiver(android::os::Handler arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ResultReceiver",
 			"(Landroid/os/Handler;)V",
 			arg0.object()

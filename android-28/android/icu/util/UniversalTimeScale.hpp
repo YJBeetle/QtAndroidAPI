@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::math
 {
@@ -9,7 +9,7 @@ namespace android::icu::math
 
 namespace android::icu::util
 {
-	class UniversalTimeScale : public __JniBaseClass
+	class UniversalTimeScale : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::icu::util
 		static jint WINDOWS_FILE_TIME();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UniversalTimeScale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UniversalTimeScale(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UniversalTimeScale(QJniObject obj);
 		
 		// Constructors

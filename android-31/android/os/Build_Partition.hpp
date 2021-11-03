@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class Build_Partition : public __JniBaseClass
+	class Build_Partition : public JObject
 	{
 	public:
 		// Fields
 		static jstring PARTITION_NAME_SYSTEM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Build_Partition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Build_Partition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Build_Partition(QJniObject obj);
 		
 		// Constructors

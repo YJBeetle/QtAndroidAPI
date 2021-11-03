@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	PutDocumentsRequest_Builder::PutDocumentsRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PutDocumentsRequest_Builder::PutDocumentsRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PutDocumentsRequest_Builder::PutDocumentsRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.PutDocumentsRequest$Builder",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(__JniBaseClass arg0)
+	android::app::appsearch::PutDocumentsRequest_Builder PutDocumentsRequest_Builder::addGenericDocuments(JObject arg0)
 	{
 		return callObjectMethod(
 			"addGenericDocuments",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,19 +17,19 @@ namespace android::database::sqlite
 
 namespace android::database::sqlite
 {
-	class SQLiteOpenHelper : public __JniBaseClass
+	class SQLiteOpenHelper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteOpenHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SQLiteOpenHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteOpenHelper(QJniObject obj);
 		
 		// Constructors
-		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, __JniBaseClass arg2, jint arg3);
+		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3);
 		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, jint arg2, android::database::sqlite::SQLiteDatabase_OpenParams arg3);
-		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, __JniBaseClass arg2, jint arg3, __JniBaseClass arg4);
+		SQLiteOpenHelper(android::content::Context arg0, jstring arg1, JObject arg2, jint arg3, JObject arg4);
 		
 		// Methods
 		void close();

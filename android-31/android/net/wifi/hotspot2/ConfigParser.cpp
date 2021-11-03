@@ -6,7 +6,7 @@ namespace android::net::wifi::hotspot2
 	// Fields
 	
 	// QJniObject forward
-	ConfigParser::ConfigParser(QJniObject obj) : __JniBaseClass(obj) {}
+	ConfigParser::ConfigParser(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

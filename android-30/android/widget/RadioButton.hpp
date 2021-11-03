@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./Button.hpp"
@@ -28,9 +28,9 @@ namespace android::widget
 		
 		// Constructors
 		RadioButton(android::content::Context arg0);
-		RadioButton(android::content::Context arg0, __JniBaseClass arg1);
-		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		RadioButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		RadioButton(android::content::Context arg0, JObject arg1);
+		RadioButton(android::content::Context arg0, JObject arg1, jint arg2);
+		RadioButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();

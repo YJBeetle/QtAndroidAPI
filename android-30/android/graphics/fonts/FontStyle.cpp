@@ -96,16 +96,16 @@ namespace android::graphics::fonts
 	}
 	
 	// QJniObject forward
-	FontStyle::FontStyle(QJniObject obj) : __JniBaseClass(obj) {}
+	FontStyle::FontStyle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FontStyle::FontStyle()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.FontStyle",
 			"()V"
 		) {}
 	FontStyle::FontStyle(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.FontStyle",
 			"(II)V",
 			arg0,

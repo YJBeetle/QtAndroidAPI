@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::io
@@ -26,34 +26,34 @@ namespace java::util
 		// Constructors
 		HashMap();
 		HashMap(jint arg0);
-		HashMap(__JniBaseClass arg0);
+		HashMap(JObject arg0);
 		HashMap(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();
 		jobject clone();
-		jobject compute(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfPresent(jobject arg0, __JniBaseClass arg1);
+		jobject compute(jobject arg0, JObject arg1);
+		jobject computeIfAbsent(jobject arg0, JObject arg1);
+		jobject computeIfPresent(jobject arg0, JObject arg1);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
-		void forEach(__JniBaseClass arg0);
+		JObject entrySet();
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jboolean isEmpty();
-		__JniBaseClass keySet();
-		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
+		JObject keySet();
+		jobject merge(jobject arg0, jobject arg1, JObject arg2);
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject putIfAbsent(jobject arg0, jobject arg1);
 		jboolean remove(jobject arg0, jobject arg1);
 		jobject remove(jobject arg0);
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
 		jobject replace(jobject arg0, jobject arg1);
-		void replaceAll(__JniBaseClass arg0);
+		void replaceAll(JObject arg0);
 		jint size();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

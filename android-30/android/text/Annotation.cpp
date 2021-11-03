@@ -6,17 +6,17 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	Annotation::Annotation(QJniObject obj) : __JniBaseClass(obj) {}
+	Annotation::Annotation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Annotation::Annotation(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.Annotation",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	Annotation::Annotation(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.Annotation",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

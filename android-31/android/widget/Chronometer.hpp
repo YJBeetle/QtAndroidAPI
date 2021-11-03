@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -26,22 +26,22 @@ namespace android::widget
 		
 		// Constructors
 		Chronometer(android::content::Context arg0);
-		Chronometer(android::content::Context arg0, __JniBaseClass arg1);
-		Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Chronometer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Chronometer(android::content::Context arg0, JObject arg1);
+		Chronometer(android::content::Context arg0, JObject arg1, jint arg2);
+		Chronometer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();
 		jlong getBase();
 		jstring getContentDescription();
 		jstring getFormat();
-		__JniBaseClass getOnChronometerTickListener();
+		JObject getOnChronometerTickListener();
 		jboolean isCountDown();
 		jboolean isTheFinalCountDown();
 		void setBase(jlong arg0);
 		void setCountDown(jboolean arg0);
 		void setFormat(jstring arg0);
-		void setOnChronometerTickListener(__JniBaseClass arg0);
+		void setOnChronometerTickListener(JObject arg0);
 		void start();
 		void stop();
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::admin
 {
@@ -73,7 +73,7 @@ namespace java::security::cert
 
 namespace android::app::admin
 {
-	class DevicePolicyManager : public __JniBaseClass
+	class DevicePolicyManager : public JObject
 	{
 	public:
 		// Fields
@@ -238,7 +238,7 @@ namespace android::app::admin
 		static jint WIPE_SILENTLY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DevicePolicyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DevicePolicyManager(QJniObject obj);
 		
 		// Constructors
@@ -250,10 +250,10 @@ namespace android::app::admin
 		jint addOverrideApn(android::content::ComponentName arg0, android::telephony::data::ApnSetting arg1);
 		void addPersistentPreferredActivity(android::content::ComponentName arg0, android::content::IntentFilter arg1, android::content::ComponentName arg2);
 		void addUserRestriction(android::content::ComponentName arg0, jstring arg1);
-		jboolean bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, __JniBaseClass arg2, jint arg3, android::os::UserHandle arg4);
+		jboolean bindDeviceAdminServiceAsUser(android::content::ComponentName arg0, android::content::Intent arg1, JObject arg2, jint arg3, android::os::UserHandle arg4);
 		jboolean canAdminGrantSensorsPermissions();
 		jboolean canUsbDataSignalingBeDisabled();
-		void clearApplicationUserData(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		void clearApplicationUserData(android::content::ComponentName arg0, jstring arg1, JObject arg2, JObject arg3);
 		void clearCrossProfileIntentFilters(android::content::ComponentName arg0);
 		void clearDeviceOwnerApp(jstring arg0);
 		void clearPackagePersistentPreferredActivities(android::content::ComponentName arg0, jstring arg1);
@@ -266,36 +266,36 @@ namespace android::app::admin
 		void enableSystemApp(android::content::ComponentName arg0, jstring arg1);
 		android::security::AttestedKeyPair generateKeyPair(android::content::ComponentName arg0, jstring arg1, android::security::keystore::KeyGenParameterSpec arg2, jint arg3);
 		jarray getAccountTypesWithManagementDisabled();
-		__JniBaseClass getActiveAdmins();
-		__JniBaseClass getAffiliationIds(android::content::ComponentName arg0);
-		__JniBaseClass getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0);
+		JObject getActiveAdmins();
+		JObject getAffiliationIds(android::content::ComponentName arg0);
+		JObject getAlwaysOnVpnLockdownWhitelist(android::content::ComponentName arg0);
 		jstring getAlwaysOnVpnPackage(android::content::ComponentName arg0);
 		android::os::Bundle getApplicationRestrictions(android::content::ComponentName arg0, jstring arg1);
 		jstring getApplicationRestrictionsManagingPackage(android::content::ComponentName arg0);
 		jboolean getAutoTimeEnabled(android::content::ComponentName arg0);
 		jboolean getAutoTimeRequired();
 		jboolean getAutoTimeZoneEnabled(android::content::ComponentName arg0);
-		__JniBaseClass getBindDeviceAdminTargetUsers(android::content::ComponentName arg0);
+		JObject getBindDeviceAdminTargetUsers(android::content::ComponentName arg0);
 		jboolean getBluetoothContactSharingDisabled(android::content::ComponentName arg0);
 		jboolean getCameraDisabled(android::content::ComponentName arg0);
 		jstring getCertInstallerPackage(android::content::ComponentName arg0);
-		__JniBaseClass getCrossProfileCalendarPackages(android::content::ComponentName arg0);
+		JObject getCrossProfileCalendarPackages(android::content::ComponentName arg0);
 		jboolean getCrossProfileCallerIdDisabled(android::content::ComponentName arg0);
 		jboolean getCrossProfileContactsSearchDisabled(android::content::ComponentName arg0);
-		__JniBaseClass getCrossProfilePackages(android::content::ComponentName arg0);
-		__JniBaseClass getCrossProfileWidgetProviders(android::content::ComponentName arg0);
+		JObject getCrossProfilePackages(android::content::ComponentName arg0);
+		JObject getCrossProfileWidgetProviders(android::content::ComponentName arg0);
 		jint getCurrentFailedPasswordAttempts();
-		__JniBaseClass getDelegatePackages(android::content::ComponentName arg0, jstring arg1);
-		__JniBaseClass getDelegatedScopes(android::content::ComponentName arg0, jstring arg1);
+		JObject getDelegatePackages(android::content::ComponentName arg0, jstring arg1);
+		JObject getDelegatedScopes(android::content::ComponentName arg0, jstring arg1);
 		jstring getDeviceOwnerLockScreenInfo();
 		jstring getEndUserSessionMessage(android::content::ComponentName arg0);
 		jstring getEnrollmentSpecificId();
 		android::app::admin::FactoryResetProtectionPolicy getFactoryResetProtectionPolicy(android::content::ComponentName arg0);
 		jstring getGlobalPrivateDnsHost(android::content::ComponentName arg0);
 		jint getGlobalPrivateDnsMode(android::content::ComponentName arg0);
-		__JniBaseClass getInstalledCaCerts(android::content::ComponentName arg0);
-		__JniBaseClass getKeepUninstalledPackages(android::content::ComponentName arg0);
-		__JniBaseClass getKeyPairGrants(jstring arg0);
+		JObject getInstalledCaCerts(android::content::ComponentName arg0);
+		JObject getKeepUninstalledPackages(android::content::ComponentName arg0);
+		JObject getKeyPairGrants(jstring arg0);
 		jint getKeyguardDisabledFeatures(android::content::ComponentName arg0);
 		jint getLockTaskFeatures(android::content::ComponentName arg0);
 		jarray getLockTaskPackages(android::content::ComponentName arg0);
@@ -303,12 +303,12 @@ namespace android::app::admin
 		jlong getManagedProfileMaximumTimeOff(android::content::ComponentName arg0);
 		jint getMaximumFailedPasswordsForWipe(android::content::ComponentName arg0);
 		jlong getMaximumTimeToLock(android::content::ComponentName arg0);
-		__JniBaseClass getMeteredDataDisabledPackages(android::content::ComponentName arg0);
+		JObject getMeteredDataDisabledPackages(android::content::ComponentName arg0);
 		jint getNearbyAppStreamingPolicy();
 		jint getNearbyNotificationStreamingPolicy();
 		jint getOrganizationColor(android::content::ComponentName arg0);
 		jstring getOrganizationName(android::content::ComponentName arg0);
-		__JniBaseClass getOverrideApns(android::content::ComponentName arg0);
+		JObject getOverrideApns(android::content::ComponentName arg0);
 		android::app::admin::DevicePolicyManager getParentProfileInstance(android::content::ComponentName arg0);
 		jint getPasswordComplexity();
 		jlong getPasswordExpiration(android::content::ComponentName arg0);
@@ -326,22 +326,22 @@ namespace android::app::admin
 		android::app::admin::SystemUpdateInfo getPendingSystemUpdate(android::content::ComponentName arg0);
 		jint getPermissionGrantState(android::content::ComponentName arg0, jstring arg1, jstring arg2);
 		jint getPermissionPolicy(android::content::ComponentName arg0);
-		__JniBaseClass getPermittedAccessibilityServices(android::content::ComponentName arg0);
-		__JniBaseClass getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0);
-		__JniBaseClass getPermittedInputMethods(android::content::ComponentName arg0);
+		JObject getPermittedAccessibilityServices(android::content::ComponentName arg0);
+		JObject getPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0);
+		JObject getPermittedInputMethods(android::content::ComponentName arg0);
 		jint getPersonalAppsSuspendedReasons(android::content::ComponentName arg0);
 		jint getRequiredPasswordComplexity();
 		jlong getRequiredStrongAuthTimeout(android::content::ComponentName arg0);
 		jboolean getScreenCaptureDisabled(android::content::ComponentName arg0);
-		__JniBaseClass getSecondaryUsers(android::content::ComponentName arg0);
+		JObject getSecondaryUsers(android::content::ComponentName arg0);
 		jstring getShortSupportMessage(android::content::ComponentName arg0);
 		jstring getStartUserSessionMessage(android::content::ComponentName arg0);
 		jboolean getStorageEncryption(android::content::ComponentName arg0);
 		jint getStorageEncryptionStatus();
 		android::app::admin::SystemUpdatePolicy getSystemUpdatePolicy();
 		android::os::PersistableBundle getTransferOwnershipBundle();
-		__JniBaseClass getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1);
-		__JniBaseClass getUserControlDisabledPackages(android::content::ComponentName arg0);
+		JObject getTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1);
+		JObject getUserControlDisabledPackages(android::content::ComponentName arg0);
 		android::os::Bundle getUserRestrictions(android::content::ComponentName arg0);
 		jstring getWifiMacAddress(android::content::ComponentName arg0);
 		jboolean grantKeyPairToApp(android::content::ComponentName arg0, jstring arg1, jstring arg2);
@@ -352,10 +352,10 @@ namespace android::app::admin
 		jboolean hasLockdownAdminConfiguredNetworks(android::content::ComponentName arg0);
 		jboolean installCaCert(android::content::ComponentName arg0, jbyteArray arg1);
 		jboolean installExistingPackage(android::content::ComponentName arg0, jstring arg1);
-		jboolean installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, java::security::cert::Certificate arg2, jstring arg3);
-		jboolean installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jboolean arg4);
-		jboolean installKeyPair(android::content::ComponentName arg0, __JniBaseClass arg1, jarray arg2, jstring arg3, jint arg4);
-		void installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, __JniBaseClass arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3);
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, java::security::cert::Certificate arg2, jstring arg3);
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jboolean arg4);
+		jboolean installKeyPair(android::content::ComponentName arg0, JObject arg1, jarray arg2, jstring arg3, jint arg4);
+		void installSystemUpdate(android::content::ComponentName arg0, android::net::Uri arg1, JObject arg2, android::app::admin::DevicePolicyManager_InstallSystemUpdateCallback arg3);
 		jboolean isActivePasswordSufficient();
 		jboolean isActivePasswordSufficientForDeviceRequirement();
 		jboolean isAdminActive(android::content::ComponentName arg0);
@@ -388,7 +388,7 @@ namespace android::app::admin
 		jboolean isUniqueDeviceAttestationSupported();
 		jboolean isUsbDataSignalingEnabled();
 		jboolean isUsingUnifiedPassword(android::content::ComponentName arg0);
-		__JniBaseClass listForegroundAffiliatedUsers();
+		JObject listForegroundAffiliatedUsers();
 		void lockNow();
 		void lockNow(jint arg0);
 		jint logoutUser(android::content::ComponentName arg0);
@@ -401,15 +401,15 @@ namespace android::app::admin
 		jboolean requestBugreport(android::content::ComponentName arg0);
 		jboolean resetPassword(jstring arg0, jint arg1);
 		jboolean resetPasswordWithToken(android::content::ComponentName arg0, jstring arg1, jbyteArray arg2, jint arg3);
-		__JniBaseClass retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1);
-		__JniBaseClass retrievePreRebootSecurityLogs(android::content::ComponentName arg0);
-		__JniBaseClass retrieveSecurityLogs(android::content::ComponentName arg0);
+		JObject retrieveNetworkLogs(android::content::ComponentName arg0, jlong arg1);
+		JObject retrievePreRebootSecurityLogs(android::content::ComponentName arg0);
+		JObject retrieveSecurityLogs(android::content::ComponentName arg0);
 		jboolean revokeKeyPairFromApp(android::content::ComponentName arg0, jstring arg1, jstring arg2);
 		jboolean revokeKeyPairFromWifiAuth(jstring arg0);
 		void setAccountManagementDisabled(android::content::ComponentName arg0, jstring arg1, jboolean arg2);
-		void setAffiliationIds(android::content::ComponentName arg0, __JniBaseClass arg1);
+		void setAffiliationIds(android::content::ComponentName arg0, JObject arg1);
 		void setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2);
-		void setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, __JniBaseClass arg3);
+		void setAlwaysOnVpnPackage(android::content::ComponentName arg0, jstring arg1, jboolean arg2, JObject arg3);
 		jboolean setApplicationHidden(android::content::ComponentName arg0, jstring arg1, jboolean arg2);
 		void setApplicationRestrictions(android::content::ComponentName arg0, jstring arg1, android::os::Bundle arg2);
 		void setApplicationRestrictionsManagingPackage(android::content::ComponentName arg0, jstring arg1);
@@ -422,20 +422,20 @@ namespace android::app::admin
 		void setCertInstallerPackage(android::content::ComponentName arg0, jstring arg1);
 		void setCommonCriteriaModeEnabled(android::content::ComponentName arg0, jboolean arg1);
 		void setConfiguredNetworksLockdownState(android::content::ComponentName arg0, jboolean arg1);
-		void setCrossProfileCalendarPackages(android::content::ComponentName arg0, __JniBaseClass arg1);
+		void setCrossProfileCalendarPackages(android::content::ComponentName arg0, JObject arg1);
 		void setCrossProfileCallerIdDisabled(android::content::ComponentName arg0, jboolean arg1);
 		void setCrossProfileContactsSearchDisabled(android::content::ComponentName arg0, jboolean arg1);
-		void setCrossProfilePackages(android::content::ComponentName arg0, __JniBaseClass arg1);
+		void setCrossProfilePackages(android::content::ComponentName arg0, JObject arg1);
 		void setDefaultSmsApplication(android::content::ComponentName arg0, jstring arg1);
-		void setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2);
+		void setDelegatedScopes(android::content::ComponentName arg0, jstring arg1, JObject arg2);
 		void setDeviceOwnerLockScreenInfo(android::content::ComponentName arg0, jstring arg1);
 		void setEndUserSessionMessage(android::content::ComponentName arg0, jstring arg1);
 		void setFactoryResetProtectionPolicy(android::content::ComponentName arg0, android::app::admin::FactoryResetProtectionPolicy arg1);
 		jint setGlobalPrivateDnsModeOpportunistic(android::content::ComponentName arg0);
 		jint setGlobalPrivateDnsModeSpecifiedHost(android::content::ComponentName arg0, jstring arg1);
 		void setGlobalSetting(android::content::ComponentName arg0, jstring arg1, jstring arg2);
-		void setKeepUninstalledPackages(android::content::ComponentName arg0, __JniBaseClass arg1);
-		jboolean setKeyPairCertificate(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2, jboolean arg3);
+		void setKeepUninstalledPackages(android::content::ComponentName arg0, JObject arg1);
+		jboolean setKeyPairCertificate(android::content::ComponentName arg0, jstring arg1, JObject arg2, jboolean arg3);
 		jboolean setKeyguardDisabled(android::content::ComponentName arg0, jboolean arg1);
 		void setKeyguardDisabledFeatures(android::content::ComponentName arg0, jint arg1);
 		void setLocationEnabled(android::content::ComponentName arg0, jboolean arg1);
@@ -447,7 +447,7 @@ namespace android::app::admin
 		void setMasterVolumeMuted(android::content::ComponentName arg0, jboolean arg1);
 		void setMaximumFailedPasswordsForWipe(android::content::ComponentName arg0, jint arg1);
 		void setMaximumTimeToLock(android::content::ComponentName arg0, jlong arg1);
-		__JniBaseClass setMeteredDataDisabledPackages(android::content::ComponentName arg0, __JniBaseClass arg1);
+		JObject setMeteredDataDisabledPackages(android::content::ComponentName arg0, JObject arg1);
 		void setNearbyAppStreamingPolicy(jint arg0);
 		void setNearbyNotificationStreamingPolicy(jint arg0);
 		void setNetworkLoggingEnabled(android::content::ComponentName arg0, jboolean arg1);
@@ -468,9 +468,9 @@ namespace android::app::admin
 		void setPasswordQuality(android::content::ComponentName arg0, jint arg1);
 		jboolean setPermissionGrantState(android::content::ComponentName arg0, jstring arg1, jstring arg2, jint arg3);
 		void setPermissionPolicy(android::content::ComponentName arg0, jint arg1);
-		jboolean setPermittedAccessibilityServices(android::content::ComponentName arg0, __JniBaseClass arg1);
-		jboolean setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, __JniBaseClass arg1);
-		jboolean setPermittedInputMethods(android::content::ComponentName arg0, __JniBaseClass arg1);
+		jboolean setPermittedAccessibilityServices(android::content::ComponentName arg0, JObject arg1);
+		jboolean setPermittedCrossProfileNotificationListeners(android::content::ComponentName arg0, JObject arg1);
+		jboolean setPermittedInputMethods(android::content::ComponentName arg0, JObject arg1);
 		void setPersonalAppsSuspended(android::content::ComponentName arg0, jboolean arg1);
 		void setPreferentialNetworkServiceEnabled(jboolean arg0);
 		void setProfileEnabled(android::content::ComponentName arg0);
@@ -494,7 +494,7 @@ namespace android::app::admin
 		void setTrustAgentConfiguration(android::content::ComponentName arg0, android::content::ComponentName arg1, android::os::PersistableBundle arg2);
 		void setUninstallBlocked(android::content::ComponentName arg0, jstring arg1, jboolean arg2);
 		void setUsbDataSignalingEnabled(jboolean arg0);
-		void setUserControlDisabledPackages(android::content::ComponentName arg0, __JniBaseClass arg1);
+		void setUserControlDisabledPackages(android::content::ComponentName arg0, JObject arg1);
 		void setUserIcon(android::content::ComponentName arg0, android::graphics::Bitmap arg1);
 		jint startUserInBackground(android::content::ComponentName arg0, android::os::UserHandle arg1);
 		jint stopUser(android::content::ComponentName arg0, android::os::UserHandle arg1);

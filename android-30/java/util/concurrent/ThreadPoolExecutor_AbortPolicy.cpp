@@ -6,17 +6,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThreadPoolExecutor_AbortPolicy::ThreadPoolExecutor_AbortPolicy()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.ThreadPoolExecutor$AbortPolicy",
 			"()V"
 		) {}
 	
 	// Methods
-	void ThreadPoolExecutor_AbortPolicy::rejectedExecution(__JniBaseClass arg0, java::util::concurrent::ThreadPoolExecutor arg1)
+	void ThreadPoolExecutor_AbortPolicy::rejectedExecution(JObject arg0, java::util::concurrent::ThreadPoolExecutor arg1)
 	{
 		callMethod<void>(
 			"rejectedExecution",

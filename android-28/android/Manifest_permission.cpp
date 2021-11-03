@@ -1213,11 +1213,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	Manifest_permission::Manifest_permission(QJniObject obj) : __JniBaseClass(obj) {}
+	Manifest_permission::Manifest_permission(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Manifest_permission::Manifest_permission()
-		: __JniBaseClass(
+		: JObject(
 			"android.Manifest$permission",
 			"()V"
 		) {}

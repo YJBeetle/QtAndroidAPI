@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::hardware
 {
-	class Camera_CameraInfo : public __JniBaseClass
+	class Camera_CameraInfo : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::hardware
 		jint orientation();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Camera_CameraInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Camera_CameraInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Camera_CameraInfo(QJniObject obj);
 		
 		// Constructors

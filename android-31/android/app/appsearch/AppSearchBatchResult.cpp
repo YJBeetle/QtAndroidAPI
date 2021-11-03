@@ -5,26 +5,26 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	AppSearchBatchResult::AppSearchBatchResult(QJniObject obj) : __JniBaseClass(obj) {}
+	AppSearchBatchResult::AppSearchBatchResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass AppSearchBatchResult::getAll()
+	JObject AppSearchBatchResult::getAll()
 	{
 		return callObjectMethod(
 			"getAll",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass AppSearchBatchResult::getFailures()
+	JObject AppSearchBatchResult::getFailures()
 	{
 		return callObjectMethod(
 			"getFailures",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass AppSearchBatchResult::getSuccesses()
+	JObject AppSearchBatchResult::getSuccesses()
 	{
 		return callObjectMethod(
 			"getSuccesses",

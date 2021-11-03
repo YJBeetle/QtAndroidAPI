@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 #include "./Visibility.hpp"
 
@@ -39,7 +39,7 @@ namespace android::transition
 		// Constructors
 		Slide();
 		Slide(jint arg0);
-		Slide(android::content::Context arg0, __JniBaseClass arg1);
+		Slide(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::nfc
 {
@@ -9,7 +9,7 @@ namespace android::nfc
 
 namespace android::nfc::tech
 {
-	class MifareUltralight : public __JniBaseClass
+	class MifareUltralight : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::nfc::tech
 		static jint TYPE_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MifareUltralight(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MifareUltralight(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MifareUltralight(QJniObject obj);
 		
 		// Constructors

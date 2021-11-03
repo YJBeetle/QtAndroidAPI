@@ -6,11 +6,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QJniObject obj) : __JniBaseClass(obj) {}
+	Instrumentation_ActivityResult::Instrumentation_ActivityResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Instrumentation_ActivityResult::Instrumentation_ActivityResult(jint arg0, android::content::Intent arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Instrumentation$ActivityResult",
 			"(ILandroid/content/Intent;)V",
 			arg0,

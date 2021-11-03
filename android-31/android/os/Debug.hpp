@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,7 +17,7 @@ namespace java::lang
 
 namespace android::os
 {
-	class Debug : public __JniBaseClass
+	class Debug : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::os
 		static jint TRACE_COUNT_ALLOCS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Debug(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Debug(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Debug(QJniObject obj);
 		
 		// Constructors
@@ -61,7 +61,7 @@ namespace android::os
 		static jlong getNativeHeapSize();
 		static jlong getPss();
 		static jstring getRuntimeStat(jstring arg0);
-		static __JniBaseClass getRuntimeStats();
+		static JObject getRuntimeStats();
 		static jint getThreadAllocCount();
 		static jint getThreadAllocSize();
 		static jint getThreadExternalAllocCount();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -13,7 +13,7 @@ namespace android::hardware
 
 namespace android::hardware
 {
-	class Camera_Parameters : public __JniBaseClass
+	class Camera_Parameters : public JObject
 	{
 	public:
 		// Fields
@@ -74,7 +74,7 @@ namespace android::hardware
 		static jstring WHITE_BALANCE_WARM_FLUORESCENT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Camera_Parameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Camera_Parameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Camera_Parameters(QJniObject obj);
 		
 		// Constructors
@@ -90,7 +90,7 @@ namespace android::hardware
 		jfloat getExposureCompensationStep();
 		jstring getFlashMode();
 		jfloat getFocalLength();
-		__JniBaseClass getFocusAreas();
+		JObject getFocusAreas();
 		void getFocusDistances(jfloatArray arg0);
 		jstring getFocusMode();
 		jfloat getHorizontalViewAngle();
@@ -103,7 +103,7 @@ namespace android::hardware
 		jint getMaxNumFocusAreas();
 		jint getMaxNumMeteringAreas();
 		jint getMaxZoom();
-		__JniBaseClass getMeteringAreas();
+		JObject getMeteringAreas();
 		jint getMinExposureCompensation();
 		jint getPictureFormat();
 		android::hardware::Camera_Size getPictureSize();
@@ -113,25 +113,25 @@ namespace android::hardware
 		jint getPreviewFrameRate();
 		android::hardware::Camera_Size getPreviewSize();
 		jstring getSceneMode();
-		__JniBaseClass getSupportedAntibanding();
-		__JniBaseClass getSupportedColorEffects();
-		__JniBaseClass getSupportedFlashModes();
-		__JniBaseClass getSupportedFocusModes();
-		__JniBaseClass getSupportedJpegThumbnailSizes();
-		__JniBaseClass getSupportedPictureFormats();
-		__JniBaseClass getSupportedPictureSizes();
-		__JniBaseClass getSupportedPreviewFormats();
-		__JniBaseClass getSupportedPreviewFpsRange();
-		__JniBaseClass getSupportedPreviewFrameRates();
-		__JniBaseClass getSupportedPreviewSizes();
-		__JniBaseClass getSupportedSceneModes();
-		__JniBaseClass getSupportedVideoSizes();
-		__JniBaseClass getSupportedWhiteBalance();
+		JObject getSupportedAntibanding();
+		JObject getSupportedColorEffects();
+		JObject getSupportedFlashModes();
+		JObject getSupportedFocusModes();
+		JObject getSupportedJpegThumbnailSizes();
+		JObject getSupportedPictureFormats();
+		JObject getSupportedPictureSizes();
+		JObject getSupportedPreviewFormats();
+		JObject getSupportedPreviewFpsRange();
+		JObject getSupportedPreviewFrameRates();
+		JObject getSupportedPreviewSizes();
+		JObject getSupportedSceneModes();
+		JObject getSupportedVideoSizes();
+		JObject getSupportedWhiteBalance();
 		jfloat getVerticalViewAngle();
 		jboolean getVideoStabilization();
 		jstring getWhiteBalance();
 		jint getZoom();
-		__JniBaseClass getZoomRatios();
+		JObject getZoomRatios();
 		jboolean isAutoExposureLockSupported();
 		jboolean isAutoWhiteBalanceLockSupported();
 		jboolean isSmoothZoomSupported();
@@ -148,7 +148,7 @@ namespace android::hardware
 		void setColorEffect(jstring arg0);
 		void setExposureCompensation(jint arg0);
 		void setFlashMode(jstring arg0);
-		void setFocusAreas(__JniBaseClass arg0);
+		void setFocusAreas(JObject arg0);
 		void setFocusMode(jstring arg0);
 		void setGpsAltitude(jdouble arg0);
 		void setGpsLatitude(jdouble arg0);
@@ -158,7 +158,7 @@ namespace android::hardware
 		void setJpegQuality(jint arg0);
 		void setJpegThumbnailQuality(jint arg0);
 		void setJpegThumbnailSize(jint arg0, jint arg1);
-		void setMeteringAreas(__JniBaseClass arg0);
+		void setMeteringAreas(JObject arg0);
 		void setPictureFormat(jint arg0);
 		void setPictureSize(jint arg0, jint arg1);
 		void setPreviewFormat(jint arg0);

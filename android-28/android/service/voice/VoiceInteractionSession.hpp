@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -89,7 +89,7 @@ namespace java::io
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession : public __JniBaseClass
+	class VoiceInteractionSession : public JObject
 	{
 	public:
 		// Fields
@@ -100,7 +100,7 @@ namespace android::service::voice
 		static jint SHOW_WITH_SCREENSHOT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoiceInteractionSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession(QJniObject obj);
 		
 		// Constructors

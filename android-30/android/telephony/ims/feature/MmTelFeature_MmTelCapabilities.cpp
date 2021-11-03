@@ -33,7 +33,7 @@ namespace android::telephony::ims::feature
 	}
 	
 	// QJniObject forward
-	MmTelFeature_MmTelCapabilities::MmTelFeature_MmTelCapabilities(QJniObject obj) : __JniBaseClass(obj) {}
+	MmTelFeature_MmTelCapabilities::MmTelFeature_MmTelCapabilities(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

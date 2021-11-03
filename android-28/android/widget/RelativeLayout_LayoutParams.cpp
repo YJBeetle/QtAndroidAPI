@@ -35,7 +35,7 @@ namespace android::widget
 			"(Landroid/widget/RelativeLayout$LayoutParams;)V",
 			arg0.object()
 		) {}
-	RelativeLayout_LayoutParams::RelativeLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	RelativeLayout_LayoutParams::RelativeLayout_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_MarginLayoutParams(
 			"android.widget.RelativeLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

@@ -5,7 +5,7 @@ namespace android::telephony::ims
 	// Fields
 	
 	// QJniObject forward
-	RcsUceAdapter::RcsUceAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	RcsUceAdapter::RcsUceAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -7,7 +7,7 @@ namespace android::se::omapi
 	// Fields
 	
 	// QJniObject forward
-	Reader::Reader(QJniObject obj) : __JniBaseClass(obj) {}
+	Reader::Reader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

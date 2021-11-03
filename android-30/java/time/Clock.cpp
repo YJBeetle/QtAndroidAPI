@@ -8,7 +8,7 @@ namespace java::time
 	// Fields
 	
 	// QJniObject forward
-	Clock::Clock(QJniObject obj) : __JniBaseClass(obj) {}
+	Clock::Clock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

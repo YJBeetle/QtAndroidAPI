@@ -26,7 +26,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	CollationKey_BoundMode::CollationKey_BoundMode(QJniObject obj) : __JniBaseClass(obj) {}
+	CollationKey_BoundMode::CollationKey_BoundMode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

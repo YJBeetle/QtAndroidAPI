@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -30,12 +30,12 @@ namespace android::widget
 		
 		// Constructors
 		FrameLayout(android::content::Context arg0);
-		FrameLayout(android::content::Context arg0, __JniBaseClass arg1);
-		FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		FrameLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		FrameLayout(android::content::Context arg0, JObject arg1);
+		FrameLayout(android::content::Context arg0, JObject arg1, jint arg2);
+		FrameLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::FrameLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::FrameLayout_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jboolean getConsiderGoneChildrenWhenMeasuring();
 		jboolean getMeasureAllChildren();

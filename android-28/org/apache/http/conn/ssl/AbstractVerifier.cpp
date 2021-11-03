@@ -7,11 +7,11 @@ namespace org::apache::http::conn::ssl
 	// Fields
 	
 	// QJniObject forward
-	AbstractVerifier::AbstractVerifier(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractVerifier::AbstractVerifier(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractVerifier::AbstractVerifier()
-		: __JniBaseClass(
+		: JObject(
 			"org.apache.http.conn.ssl.AbstractVerifier",
 			"()V"
 		) {}
@@ -53,7 +53,7 @@ namespace org::apache::http::conn::ssl
 			arg0.object()
 		).object<jarray>();
 	}
-	jboolean AbstractVerifier::verify(jstring arg0, __JniBaseClass arg1)
+	jboolean AbstractVerifier::verify(jstring arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"verify",

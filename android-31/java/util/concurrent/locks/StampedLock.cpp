@@ -7,11 +7,11 @@ namespace java::util::concurrent::locks
 	// Fields
 	
 	// QJniObject forward
-	StampedLock::StampedLock(QJniObject obj) : __JniBaseClass(obj) {}
+	StampedLock::StampedLock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StampedLock::StampedLock()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.locks.StampedLock",
 			"()V"
 		) {}
@@ -53,21 +53,21 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	__JniBaseClass StampedLock::asReadLock()
+	JObject StampedLock::asReadLock()
 	{
 		return callObjectMethod(
 			"asReadLock",
 			"()Ljava/util/concurrent/locks/Lock;"
 		);
 	}
-	__JniBaseClass StampedLock::asReadWriteLock()
+	JObject StampedLock::asReadWriteLock()
 	{
 		return callObjectMethod(
 			"asReadWriteLock",
 			"()Ljava/util/concurrent/locks/ReadWriteLock;"
 		);
 	}
-	__JniBaseClass StampedLock::asWriteLock()
+	JObject StampedLock::asWriteLock()
 	{
 		return callObjectMethod(
 			"asWriteLock",

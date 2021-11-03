@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -52,13 +52,13 @@ namespace android::service::autofill
 		
 		// Methods
 		android::service::autofill::FillEventHistory getFillEventHistory();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onConnected();
 		void onCreate();
 		void onDisconnected();
 		void onFillRequest(android::service::autofill::FillRequest arg0, android::os::CancellationSignal arg1, android::service::autofill::FillCallback arg2);
 		void onSaveRequest(android::service::autofill::SaveRequest arg0, android::service::autofill::SaveCallback arg1);
-		void onSavedDatasetsInfoRequest(__JniBaseClass arg0);
+		void onSavedDatasetsInfoRequest(JObject arg0);
 	};
 } // namespace android::service::autofill
 

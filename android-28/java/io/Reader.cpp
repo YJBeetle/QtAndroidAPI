@@ -7,7 +7,7 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	Reader::Reader(QJniObject obj) : __JniBaseClass(obj) {}
+	Reader::Reader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

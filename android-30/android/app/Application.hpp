@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
@@ -30,12 +30,12 @@ namespace android::app
 		void onLowMemory();
 		void onTerminate();
 		void onTrimMemory(jint arg0);
-		void registerActivityLifecycleCallbacks(__JniBaseClass arg0);
-		void registerComponentCallbacks(__JniBaseClass arg0);
-		void registerOnProvideAssistDataListener(__JniBaseClass arg0);
-		void unregisterActivityLifecycleCallbacks(__JniBaseClass arg0);
-		void unregisterComponentCallbacks(__JniBaseClass arg0);
-		void unregisterOnProvideAssistDataListener(__JniBaseClass arg0);
+		void registerActivityLifecycleCallbacks(JObject arg0);
+		void registerComponentCallbacks(JObject arg0);
+		void registerOnProvideAssistDataListener(JObject arg0);
+		void unregisterActivityLifecycleCallbacks(JObject arg0);
+		void unregisterComponentCallbacks(JObject arg0);
+		void unregisterOnProvideAssistDataListener(JObject arg0);
 	};
 } // namespace android::app
 

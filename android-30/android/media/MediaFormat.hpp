@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,7 +13,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaFormat : public __JniBaseClass
+	class MediaFormat : public JObject
 	{
 	public:
 		// Fields
@@ -142,7 +142,7 @@ namespace android::media
 		static jint TYPE_STRING();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaFormat(QJniObject obj);
 		
 		// Constructors
@@ -158,12 +158,12 @@ namespace android::media
 		java::nio::ByteBuffer getByteBuffer(jstring arg0);
 		java::nio::ByteBuffer getByteBuffer(jstring arg0, java::nio::ByteBuffer arg1);
 		jboolean getFeatureEnabled(jstring arg0);
-		__JniBaseClass getFeatures();
+		JObject getFeatures();
 		jfloat getFloat(jstring arg0);
 		jfloat getFloat(jstring arg0, jfloat arg1);
 		jint getInteger(jstring arg0);
 		jint getInteger(jstring arg0, jint arg1);
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		jlong getLong(jstring arg0);
 		jlong getLong(jstring arg0, jlong arg1);
 		java::lang::Number getNumber(jstring arg0);

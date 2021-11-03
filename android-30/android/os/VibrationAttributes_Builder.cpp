@@ -6,16 +6,16 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	VibrationAttributes_Builder::VibrationAttributes_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	VibrationAttributes_Builder::VibrationAttributes_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VibrationAttributes_Builder::VibrationAttributes_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.VibrationAttributes$Builder",
 			"()V"
 		) {}
 	VibrationAttributes_Builder::VibrationAttributes_Builder(android::os::VibrationAttributes arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.VibrationAttributes$Builder",
 			"(Landroid/os/VibrationAttributes;)V",
 			arg0.object()

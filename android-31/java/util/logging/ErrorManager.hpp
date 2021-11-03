@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,7 +9,7 @@ namespace java::lang
 
 namespace java::util::logging
 {
-	class ErrorManager : public __JniBaseClass
+	class ErrorManager : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace java::util::logging
 		static jint WRITE_FAILURE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ErrorManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ErrorManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ErrorManager(QJniObject obj);
 		
 		// Constructors

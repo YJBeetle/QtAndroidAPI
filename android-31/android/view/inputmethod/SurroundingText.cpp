@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass SurroundingText::CREATOR()
+	JObject SurroundingText::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.SurroundingText",
@@ -14,11 +14,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QJniObject forward
-	SurroundingText::SurroundingText(QJniObject obj) : __JniBaseClass(obj) {}
+	SurroundingText::SurroundingText(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurroundingText::SurroundingText(jstring arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.SurroundingText",
 			"(Ljava/lang/CharSequence;III)V",
 			arg0,

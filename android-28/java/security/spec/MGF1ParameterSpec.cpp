@@ -93,11 +93,11 @@ namespace java::security::spec
 	}
 	
 	// QJniObject forward
-	MGF1ParameterSpec::MGF1ParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	MGF1ParameterSpec::MGF1ParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MGF1ParameterSpec::MGF1ParameterSpec(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.MGF1ParameterSpec",
 			"(Ljava/lang/String;)V",
 			arg0

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::util
 {
@@ -13,13 +13,13 @@ namespace java::io
 
 namespace android::util
 {
-	class EventLogTags : public __JniBaseClass
+	class EventLogTags : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EventLogTags(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EventLogTags(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EventLogTags(QJniObject obj);
 		
 		// Constructors

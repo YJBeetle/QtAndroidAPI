@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -25,7 +25,7 @@ namespace java::io
 
 namespace android::net
 {
-	class LocalSocket : public __JniBaseClass
+	class LocalSocket : public JObject
 	{
 	public:
 		// Fields
@@ -34,7 +34,7 @@ namespace android::net
 		static jint SOCKET_STREAM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LocalSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocalSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocalSocket(QJniObject obj);
 		
 		// Constructors

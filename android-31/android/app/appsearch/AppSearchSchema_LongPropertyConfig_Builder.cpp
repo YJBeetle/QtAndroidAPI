@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppSearchSchema_LongPropertyConfig_Builder::AppSearchSchema_LongPropertyConfig_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.AppSearchSchema$LongPropertyConfig$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

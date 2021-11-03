@@ -265,7 +265,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	ConnectivityManager::ConnectivityManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityManager::ConnectivityManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -296,7 +296,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::addDefaultNetworkActiveListener(__JniBaseClass arg0)
+	void ConnectivityManager::addDefaultNetworkActiveListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addDefaultNetworkActiveListener",
@@ -312,7 +312,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::SocketKeepalive ConnectivityManager::createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5)
+	android::net::SocketKeepalive ConnectivityManager::createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, JObject arg4, android::net::SocketKeepalive_Callback arg5)
 	{
 		return callObjectMethod(
 			"createSocketKeepalive",
@@ -522,7 +522,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::removeDefaultNetworkActiveListener(__JniBaseClass arg0)
+	void ConnectivityManager::removeDefaultNetworkActiveListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeDefaultNetworkActiveListener",

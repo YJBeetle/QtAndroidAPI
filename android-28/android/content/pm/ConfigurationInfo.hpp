@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class ConfigurationInfo : public __JniBaseClass
+	class ConfigurationInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint GL_ES_VERSION_UNDEFINED();
 		static jint INPUT_FEATURE_FIVE_WAY_NAV();
 		static jint INPUT_FEATURE_HARD_KEYBOARD();
@@ -24,7 +24,7 @@ namespace android::content::pm
 		jint reqTouchScreen();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ConfigurationInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConfigurationInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConfigurationInfo(QJniObject obj);
 		
 		// Constructors

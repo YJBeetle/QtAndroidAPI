@@ -10,7 +10,7 @@ namespace java::nio::charset
 	// Fields
 	
 	// QJniObject forward
-	CharsetDecoder::CharsetDecoder(QJniObject obj) : __JniBaseClass(obj) {}
+	CharsetDecoder::CharsetDecoder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

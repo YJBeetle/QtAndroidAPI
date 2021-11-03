@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::app
 {
-	class Notification_Action : public __JniBaseClass
+	class Notification_Action : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SEMANTIC_ACTION_ARCHIVE();
 		static jint SEMANTIC_ACTION_CALL();
 		static jint SEMANTIC_ACTION_DELETE();
@@ -42,7 +42,7 @@ namespace android::app
 		jstring title();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Notification_Action(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_Action(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_Action(QJniObject obj);
 		
 		// Constructors

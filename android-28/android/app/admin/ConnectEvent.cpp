@@ -5,7 +5,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass ConnectEvent::CREATOR()
+	JObject ConnectEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.ConnectEvent",

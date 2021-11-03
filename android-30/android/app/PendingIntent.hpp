@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,11 +33,11 @@ namespace android::os
 
 namespace android::app
 {
-	class PendingIntent : public __JniBaseClass
+	class PendingIntent : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_CANCEL_CURRENT();
 		static jint FLAG_IMMUTABLE();
 		static jint FLAG_NO_CREATE();
@@ -45,7 +45,7 @@ namespace android::app
 		static jint FLAG_UPDATE_CURRENT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PendingIntent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PendingIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PendingIntent(QJniObject obj);
 		
 		// Constructors
@@ -72,10 +72,10 @@ namespace android::app
 		void send();
 		void send(jint arg0);
 		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2);
-		void send(jint arg0, __JniBaseClass arg1, android::os::Handler arg2);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5);
-		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6);
+		void send(jint arg0, JObject arg1, android::os::Handler arg2);
+		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4);
+		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5);
+		void send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

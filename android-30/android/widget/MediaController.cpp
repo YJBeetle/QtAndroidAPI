@@ -18,7 +18,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	MediaController::MediaController(android::content::Context arg0, __JniBaseClass arg1)
+	MediaController::MediaController(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.widget.MediaController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -102,7 +102,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void MediaController::setMediaPlayer(__JniBaseClass arg0)
+	void MediaController::setMediaPlayer(JObject arg0)
 	{
 		callMethod<void>(
 			"setMediaPlayer",
@@ -110,7 +110,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void MediaController::setPrevNextListeners(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MediaController::setPrevNextListeners(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setPrevNextListeners",

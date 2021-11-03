@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
@@ -42,10 +42,10 @@ namespace android::app
 		void onInputQueueDestroyed(android::view::InputQueue arg0);
 		void onLowMemory();
 		void onWindowFocusChanged(jboolean arg0);
-		void surfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
-		void surfaceCreated(__JniBaseClass arg0);
-		void surfaceDestroyed(__JniBaseClass arg0);
-		void surfaceRedrawNeeded(__JniBaseClass arg0);
+		void surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3);
+		void surfaceCreated(JObject arg0);
+		void surfaceDestroyed(JObject arg0);
+		void surfaceRedrawNeeded(JObject arg0);
 	};
 } // namespace android::app
 

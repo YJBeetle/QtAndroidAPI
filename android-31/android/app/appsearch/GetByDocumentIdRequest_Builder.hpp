@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::appsearch
 {
@@ -9,13 +9,13 @@ namespace android::app::appsearch
 
 namespace android::app::appsearch
 {
-	class GetByDocumentIdRequest_Builder : public __JniBaseClass
+	class GetByDocumentIdRequest_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GetByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GetByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GetByDocumentIdRequest_Builder(QJniObject obj);
 		
 		// Constructors
@@ -23,8 +23,8 @@ namespace android::app::appsearch
 		
 		// Methods
 		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(jarray arg0);
-		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(__JniBaseClass arg0);
-		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(jstring arg0, __JniBaseClass arg1);
+		android::app::appsearch::GetByDocumentIdRequest_Builder addIds(JObject arg0);
+		android::app::appsearch::GetByDocumentIdRequest_Builder addProjection(jstring arg0, JObject arg1);
 		android::app::appsearch::GetByDocumentIdRequest build();
 	};
 } // namespace android::app::appsearch

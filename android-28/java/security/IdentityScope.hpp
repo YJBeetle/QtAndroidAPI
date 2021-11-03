@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Identity.hpp"
 
 namespace java::security
@@ -27,8 +27,8 @@ namespace java::security
 		static java::security::IdentityScope getSystemScope();
 		void addIdentity(java::security::Identity arg0);
 		java::security::Identity getIdentity(jstring arg0);
-		java::security::Identity getIdentity(__JniBaseClass arg0);
-		__JniBaseClass identities();
+		java::security::Identity getIdentity(JObject arg0);
+		JObject identities();
 		void removeIdentity(java::security::Identity arg0);
 		jint size();
 		jstring toString();

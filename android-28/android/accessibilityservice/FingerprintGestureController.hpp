@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accessibilityservice
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::accessibilityservice
 {
-	class FingerprintGestureController : public __JniBaseClass
+	class FingerprintGestureController : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::accessibilityservice
 		static jint FINGERPRINT_GESTURE_SWIPE_UP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FingerprintGestureController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FingerprintGestureController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintGestureController(QJniObject obj);
 		
 		// Constructors

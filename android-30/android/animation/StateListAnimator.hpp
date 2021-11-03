@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::animation
 {
@@ -9,13 +9,13 @@ namespace android::animation
 
 namespace android::animation
 {
-	class StateListAnimator : public __JniBaseClass
+	class StateListAnimator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StateListAnimator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StateListAnimator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StateListAnimator(QJniObject obj);
 		
 		// Constructors

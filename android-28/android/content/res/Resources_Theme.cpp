@@ -9,7 +9,7 @@ namespace android::content::res
 	// Fields
 	
 	// QJniObject forward
-	Resources_Theme::Resources_Theme(QJniObject obj) : __JniBaseClass(obj) {}
+	Resources_Theme::Resources_Theme(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -72,7 +72,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Resources_Theme::obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",

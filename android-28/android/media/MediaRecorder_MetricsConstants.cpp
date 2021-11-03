@@ -133,7 +133,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaRecorder_MetricsConstants::MediaRecorder_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaRecorder_MetricsConstants::MediaRecorder_MetricsConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

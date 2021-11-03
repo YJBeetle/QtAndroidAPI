@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::text
 {
-	class DateIntervalInfo_PatternInfo : public __JniBaseClass
+	class DateIntervalInfo_PatternInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DateIntervalInfo_PatternInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DateIntervalInfo_PatternInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DateIntervalInfo_PatternInfo(QJniObject obj);
 		
 		// Constructors

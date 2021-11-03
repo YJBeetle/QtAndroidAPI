@@ -77,7 +77,7 @@ namespace android::content::pm
 			"CATEGORY_VIDEO"
 		);
 	}
-	__JniBaseClass ApplicationInfo::CREATOR()
+	JObject ApplicationInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ApplicationInfo",
@@ -646,7 +646,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ApplicationInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

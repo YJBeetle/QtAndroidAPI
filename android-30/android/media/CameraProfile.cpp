@@ -26,11 +26,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	CameraProfile::CameraProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraProfile::CameraProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraProfile::CameraProfile()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.CameraProfile",
 			"()V"
 		) {}

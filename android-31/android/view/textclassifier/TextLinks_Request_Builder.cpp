@@ -10,11 +10,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextLinks_Request_Builder::TextLinks_Request_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TextLinks_Request_Builder::TextLinks_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextLinks_Request_Builder::TextLinks_Request_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextLinks$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

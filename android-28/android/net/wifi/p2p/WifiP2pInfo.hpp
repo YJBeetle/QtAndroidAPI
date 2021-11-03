@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,17 +13,17 @@ namespace java::net
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pInfo : public __JniBaseClass
+	class WifiP2pInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jboolean groupFormed();
 		java::net::InetAddress groupOwnerAddress();
 		jboolean isGroupOwner();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pInfo(QJniObject obj);
 		
 		// Constructors

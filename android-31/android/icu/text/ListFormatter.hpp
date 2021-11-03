@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class ListFormatter : public __JniBaseClass
+	class ListFormatter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ListFormatter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ListFormatter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ListFormatter(QJniObject obj);
 		
 		// Constructors
@@ -29,7 +29,7 @@ namespace android::icu::text
 		static android::icu::text::ListFormatter getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::ListFormatter getInstance(java::util::Locale arg0);
 		jstring format(jobjectArray arg0);
-		jstring format(__JniBaseClass arg0);
+		jstring format(JObject arg0);
 		jstring getPatternForNumItems(jint arg0);
 	};
 } // namespace android::icu::text

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::telephony
 {
-	class CarrierConfigManager : public __JniBaseClass
+	class CarrierConfigManager : public JObject
 	{
 	public:
 		// Fields
@@ -262,7 +262,7 @@ namespace android::telephony
 		static jstring KEY_WORLD_PHONE_BOOL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CarrierConfigManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager(QJniObject obj);
 		
 		// Constructors

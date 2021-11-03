@@ -5,7 +5,7 @@
 namespace android::nfc
 {
 	// Fields
-	__JniBaseClass NdefRecord::CREATOR()
+	JObject NdefRecord::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefRecord",
@@ -120,17 +120,17 @@ namespace android::nfc
 	}
 	
 	// QJniObject forward
-	NdefRecord::NdefRecord(QJniObject obj) : __JniBaseClass(obj) {}
+	NdefRecord::NdefRecord(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NdefRecord::NdefRecord(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.nfc.NdefRecord",
 			"([B)V",
 			arg0
 		) {}
 	NdefRecord::NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.nfc.NdefRecord",
 			"(S[B[B[B)V",
 			arg0,

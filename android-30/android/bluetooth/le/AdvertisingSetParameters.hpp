@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::bluetooth::le
 {
-	class AdvertisingSetParameters : public __JniBaseClass
+	class AdvertisingSetParameters : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint INTERVAL_HIGH();
 		static jint INTERVAL_LOW();
 		static jint INTERVAL_MAX();
@@ -27,7 +27,7 @@ namespace android::bluetooth::le
 		static jint TX_POWER_ULTRA_LOW();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AdvertisingSetParameters(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AdvertisingSetParameters(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertisingSetParameters(QJniObject obj);
 		
 		// Constructors

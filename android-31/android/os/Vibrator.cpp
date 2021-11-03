@@ -28,7 +28,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Vibrator::Vibrator(QJniObject obj) : __JniBaseClass(obj) {}
+	Vibrator::Vibrator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

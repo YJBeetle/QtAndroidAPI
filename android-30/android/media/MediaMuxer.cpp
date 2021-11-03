@@ -9,18 +9,18 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaMuxer::MediaMuxer(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaMuxer::MediaMuxer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaMuxer::MediaMuxer(java::io::FileDescriptor arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMuxer",
 			"(Ljava/io/FileDescriptor;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	MediaMuxer::MediaMuxer(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMuxer",
 			"(Ljava/lang/String;I)V",
 			arg0,

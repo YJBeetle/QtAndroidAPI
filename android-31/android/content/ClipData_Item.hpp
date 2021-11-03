@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,13 +21,13 @@ namespace android::view::textclassifier
 
 namespace android::content
 {
-	class ClipData_Item : public __JniBaseClass
+	class ClipData_Item : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ClipData_Item(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ClipData_Item(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ClipData_Item(QJniObject obj);
 		
 		// Constructors

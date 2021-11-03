@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class DateTimePatternGenerator : public __JniBaseClass
+	class DateTimePatternGenerator : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::icu::text
 		static jint ZONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DateTimePatternGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DateTimePatternGenerator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DateTimePatternGenerator(QJniObject obj);
 		
 		// Constructors
@@ -63,14 +63,14 @@ namespace android::icu::text
 		jstring getAppendItemFormat(jint arg0);
 		jstring getAppendItemName(jint arg0);
 		jstring getBaseSkeleton(jstring arg0);
-		__JniBaseClass getBaseSkeletons(__JniBaseClass arg0);
+		JObject getBaseSkeletons(JObject arg0);
 		jstring getBestPattern(jstring arg0);
 		jstring getBestPattern(jstring arg0, jint arg1);
 		jstring getDateTimeFormat();
 		jstring getDecimal();
 		jstring getFieldDisplayName(jint arg0, android::icu::text::DateTimePatternGenerator_DisplayWidth arg1);
 		jstring getSkeleton(jstring arg0);
-		__JniBaseClass getSkeletons(__JniBaseClass arg0);
+		JObject getSkeletons(JObject arg0);
 		jboolean isFrozen();
 		jstring replaceFieldTypes(jstring arg0, jstring arg1);
 		jstring replaceFieldTypes(jstring arg0, jstring arg1, jint arg2);

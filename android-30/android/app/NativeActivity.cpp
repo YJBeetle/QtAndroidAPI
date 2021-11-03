@@ -80,7 +80,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void NativeActivity::surfaceChanged(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	void NativeActivity::surfaceChanged(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		callMethod<void>(
 			"surfaceChanged",
@@ -91,7 +91,7 @@ namespace android::app
 			arg3
 		);
 	}
-	void NativeActivity::surfaceCreated(__JniBaseClass arg0)
+	void NativeActivity::surfaceCreated(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceCreated",
@@ -99,7 +99,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::surfaceDestroyed(__JniBaseClass arg0)
+	void NativeActivity::surfaceDestroyed(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceDestroyed",
@@ -107,7 +107,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NativeActivity::surfaceRedrawNeeded(__JniBaseClass arg0)
+	void NativeActivity::surfaceRedrawNeeded(JObject arg0)
 	{
 		callMethod<void>(
 			"surfaceRedrawNeeded",

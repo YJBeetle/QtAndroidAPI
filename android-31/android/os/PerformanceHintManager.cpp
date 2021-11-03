@@ -6,7 +6,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	PerformanceHintManager::PerformanceHintManager(QJniObject obj) : __JniBaseClass(obj) {}
+	PerformanceHintManager::PerformanceHintManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -65,13 +65,13 @@ namespace java::io
 
 namespace android::graphics::drawable
 {
-	class Drawable : public __JniBaseClass
+	class Drawable : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Drawable(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Drawable(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Drawable(QJniObject obj);
 		
 		// Constructors
@@ -82,10 +82,10 @@ namespace android::graphics::drawable
 		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3);
 		static android::graphics::drawable::Drawable createFromResourceStream(android::content::res::Resources arg0, android::util::TypedValue arg1, java::io::InputStream arg2, jstring arg3, android::graphics::BitmapFactory_Options arg4);
 		static android::graphics::drawable::Drawable createFromStream(java::io::InputStream arg0, jstring arg1);
-		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1);
-		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2);
-		static android::graphics::drawable::Drawable createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static android::graphics::drawable::Drawable createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, JObject arg1);
+		static android::graphics::drawable::Drawable createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2);
+		static android::graphics::drawable::Drawable createFromXmlInner(android::content::res::Resources arg0, JObject arg1, JObject arg2);
+		static android::graphics::drawable::Drawable createFromXmlInner(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		static jint resolveOpacity(jint arg0, jint arg1);
 		void applyTheme(android::content::res::Resources_Theme arg0);
 		jboolean canApplyTheme();
@@ -95,7 +95,7 @@ namespace android::graphics::drawable
 		void draw(android::graphics::Canvas arg0);
 		jint getAlpha();
 		android::graphics::Rect getBounds();
-		__JniBaseClass getCallback();
+		JObject getCallback();
 		jint getChangingConfigurations();
 		android::graphics::ColorFilter getColorFilter();
 		android::graphics::drawable::Drawable_ConstantState getConstantState();
@@ -114,8 +114,8 @@ namespace android::graphics::drawable
 		jboolean getPadding(android::graphics::Rect arg0);
 		jintArray getState();
 		android::graphics::Region getTransparentRegion();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		void invalidateSelf();
 		jboolean isAutoMirrored();
 		jboolean isFilterBitmap();
@@ -125,12 +125,12 @@ namespace android::graphics::drawable
 		void jumpToCurrentState();
 		android::graphics::drawable::Drawable mutate();
 		jboolean onLayoutDirectionChanged(jint arg0);
-		void scheduleSelf(__JniBaseClass arg0, jlong arg1);
+		void scheduleSelf(JObject arg0, jlong arg1);
 		void setAlpha(jint arg0);
 		void setAutoMirrored(jboolean arg0);
 		void setBounds(android::graphics::Rect arg0);
 		void setBounds(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setCallback(__JniBaseClass arg0);
+		void setCallback(JObject arg0);
 		void setChangingConfigurations(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
 		void setColorFilter(jint arg0, android::graphics::PorterDuff_Mode arg1);
@@ -146,7 +146,7 @@ namespace android::graphics::drawable
 		void setTintList(android::content::res::ColorStateList arg0);
 		void setTintMode(android::graphics::PorterDuff_Mode arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void unscheduleSelf(__JniBaseClass arg0);
+		void unscheduleSelf(JObject arg0);
 	};
 } // namespace android::graphics::drawable
 

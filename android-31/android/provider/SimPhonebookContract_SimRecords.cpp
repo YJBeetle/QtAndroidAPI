@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	SimPhonebookContract_SimRecords::SimPhonebookContract_SimRecords(QJniObject obj) : __JniBaseClass(obj) {}
+	SimPhonebookContract_SimRecords::SimPhonebookContract_SimRecords(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

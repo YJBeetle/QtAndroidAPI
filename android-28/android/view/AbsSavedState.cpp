@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass AbsSavedState::CREATOR()
+	JObject AbsSavedState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.AbsSavedState",
@@ -23,7 +23,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	AbsSavedState::AbsSavedState(QJniObject obj) : __JniBaseClass(obj) {}
+	AbsSavedState::AbsSavedState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -35,7 +35,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass AbsSavedState::getSuperState()
+	JObject AbsSavedState::getSuperState()
 	{
 		return callObjectMethod(
 			"getSuperState",

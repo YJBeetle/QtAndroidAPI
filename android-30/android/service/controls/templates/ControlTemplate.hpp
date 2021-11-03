@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::service::controls::templates
 {
-	class ControlTemplate : public __JniBaseClass
+	class ControlTemplate : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::service::controls::templates
 		static jint TYPE_TOGGLE_RANGE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ControlTemplate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ControlTemplate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ControlTemplate(QJniObject obj);
 		
 		// Constructors

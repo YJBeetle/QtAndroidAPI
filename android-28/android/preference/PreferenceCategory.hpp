@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 #include "./PreferenceGroup.hpp"
 
@@ -26,9 +26,9 @@ namespace android::preference
 		
 		// Constructors
 		PreferenceCategory(android::content::Context arg0);
-		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1);
-		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		PreferenceCategory(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		PreferenceCategory(android::content::Context arg0, JObject arg1);
+		PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2);
+		PreferenceCategory(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean isEnabled();

@@ -5,24 +5,24 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QJniObject forward
-	RC2ParameterSpec::RC2ParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	RC2ParameterSpec::RC2ParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I)V",
 			arg0
 		) {}
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I[B)V",
 			arg0,
 			arg1
 		) {}
 	RC2ParameterSpec::RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC2ParameterSpec",
 			"(I[BI)V",
 			arg0,

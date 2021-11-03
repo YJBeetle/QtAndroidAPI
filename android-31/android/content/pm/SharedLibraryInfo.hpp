@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -13,18 +13,18 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class SharedLibraryInfo : public __JniBaseClass
+	class SharedLibraryInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_BUILTIN();
 		static jint TYPE_DYNAMIC();
 		static jint TYPE_STATIC();
 		static jint VERSION_UNDEFINED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SharedLibraryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SharedLibraryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SharedLibraryInfo(QJniObject obj);
 		
 		// Constructors
@@ -32,7 +32,7 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		android::content::pm::VersionedPackage getDeclaringPackage();
-		__JniBaseClass getDependentPackages();
+		JObject getDependentPackages();
 		jlong getLongVersion();
 		jstring getName();
 		jint getType();

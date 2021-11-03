@@ -8,11 +8,11 @@ namespace android::transition
 	// Fields
 	
 	// QJniObject forward
-	TransitionManager::TransitionManager(QJniObject obj) : __JniBaseClass(obj) {}
+	TransitionManager::TransitionManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TransitionManager::TransitionManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.TransitionManager",
 			"()V"
 		) {}

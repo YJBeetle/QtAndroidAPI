@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -39,14 +39,14 @@ namespace android::widget
 		
 		// Constructors
 		TableRow(android::content::Context arg0);
-		TableRow(android::content::Context arg0, __JniBaseClass arg1);
+		TableRow(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		android::widget::TableRow_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::TableRow_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		android::view::View getVirtualChildAt(jint arg0);
 		jint getVirtualChildCount();
-		void setOnHierarchyChangeListener(__JniBaseClass arg0);
+		void setOnHierarchyChangeListener(JObject arg0);
 	};
 } // namespace android::widget
 

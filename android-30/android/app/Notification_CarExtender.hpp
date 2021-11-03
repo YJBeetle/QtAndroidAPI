@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,13 +21,13 @@ namespace android::graphics
 
 namespace android::app
 {
-	class Notification_CarExtender : public __JniBaseClass
+	class Notification_CarExtender : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Notification_CarExtender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_CarExtender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_CarExtender(QJniObject obj);
 		
 		// Constructors

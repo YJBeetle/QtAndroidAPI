@@ -18,12 +18,12 @@ namespace java::time
 	// Fields
 	
 	// QJniObject forward
-	ZonedDateTime::ZonedDateTime(QJniObject obj) : __JniBaseClass(obj) {}
+	ZonedDateTime::ZonedDateTime(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::ZonedDateTime ZonedDateTime::from(__JniBaseClass arg0)
+	java::time::ZonedDateTime ZonedDateTime::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZonedDateTime",
@@ -173,7 +173,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint ZonedDateTime::get(__JniBaseClass arg0)
+	jint ZonedDateTime::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -209,7 +209,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jlong ZonedDateTime::getLong(__JniBaseClass arg0)
+	jlong ZonedDateTime::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -280,7 +280,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jboolean ZonedDateTime::isSupported(__JniBaseClass arg0)
+	jboolean ZonedDateTime::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -288,7 +288,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minus(__JniBaseClass arg0)
+	java::time::ZonedDateTime ZonedDateTime::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -296,7 +296,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::ZonedDateTime ZonedDateTime::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -369,7 +369,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plus(__JniBaseClass arg0)
+	java::time::ZonedDateTime ZonedDateTime::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -377,7 +377,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::ZonedDateTime ZonedDateTime::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -450,7 +450,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject ZonedDateTime::query(__JniBaseClass arg0)
+	jobject ZonedDateTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -458,7 +458,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange ZonedDateTime::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange ZonedDateTime::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -501,7 +501,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::ZonedDateTime ZonedDateTime::truncatedTo(__JniBaseClass arg0)
+	java::time::ZonedDateTime ZonedDateTime::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -509,7 +509,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong ZonedDateTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong ZonedDateTime::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -518,7 +518,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::with(__JniBaseClass arg0)
+	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -526,7 +526,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::ZonedDateTime ZonedDateTime::with(__JniBaseClass arg0, jlong arg1)
+	java::time::ZonedDateTime ZonedDateTime::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

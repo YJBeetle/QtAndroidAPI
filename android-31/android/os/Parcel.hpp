@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -57,14 +57,14 @@ namespace java::util
 
 namespace android::os
 {
-	class Parcel : public __JniBaseClass
+	class Parcel : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass STRING_CREATOR();
+		static JObject STRING_CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Parcel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Parcel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Parcel(QJniObject obj);
 		
 		// Constructors
@@ -83,10 +83,10 @@ namespace android::os
 		jlongArray createLongArray();
 		jarray createStringArray();
 		java::util::ArrayList createStringArrayList();
-		jobjectArray createTypedArray(__JniBaseClass arg0);
-		java::util::ArrayList createTypedArrayList(__JniBaseClass arg0);
-		android::util::ArrayMap createTypedArrayMap(__JniBaseClass arg0);
-		android::util::SparseArray createTypedSparseArray(__JniBaseClass arg0);
+		jobjectArray createTypedArray(JObject arg0);
+		java::util::ArrayList createTypedArrayList(JObject arg0);
+		android::util::ArrayMap createTypedArrayMap(JObject arg0);
+		android::util::SparseArray createTypedSparseArray(JObject arg0);
 		jint dataAvail();
 		jint dataCapacity();
 		jint dataPosition();
@@ -97,7 +97,7 @@ namespace android::os
 		jobjectArray readArray(java::lang::ClassLoader arg0);
 		java::util::ArrayList readArrayList(java::lang::ClassLoader arg0);
 		void readBinderArray(jarray arg0);
-		void readBinderList(__JniBaseClass arg0);
+		void readBinderList(JObject arg0);
 		jboolean readBoolean();
 		void readBooleanArray(jbooleanArray arg0);
 		android::os::Bundle readBundle();
@@ -115,28 +115,28 @@ namespace android::os
 		java::util::HashMap readHashMap(java::lang::ClassLoader arg0);
 		jint readInt();
 		void readIntArray(jintArray arg0);
-		void readList(__JniBaseClass arg0, java::lang::ClassLoader arg1);
+		void readList(JObject arg0, java::lang::ClassLoader arg1);
 		jlong readLong();
 		void readLongArray(jlongArray arg0);
-		void readMap(__JniBaseClass arg0, java::lang::ClassLoader arg1);
-		__JniBaseClass readParcelable(java::lang::ClassLoader arg0);
+		void readMap(JObject arg0, java::lang::ClassLoader arg1);
+		JObject readParcelable(java::lang::ClassLoader arg0);
 		jarray readParcelableArray(java::lang::ClassLoader arg0);
-		__JniBaseClass readParcelableCreator(java::lang::ClassLoader arg0);
-		__JniBaseClass readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1);
+		JObject readParcelableCreator(java::lang::ClassLoader arg0);
+		JObject readParcelableList(JObject arg0, java::lang::ClassLoader arg1);
 		android::os::PersistableBundle readPersistableBundle();
 		android::os::PersistableBundle readPersistableBundle(java::lang::ClassLoader arg0);
-		__JniBaseClass readSerializable();
+		JObject readSerializable();
 		android::util::Size readSize();
 		android::util::SizeF readSizeF();
 		android::util::SparseArray readSparseArray(java::lang::ClassLoader arg0);
 		android::util::SparseBooleanArray readSparseBooleanArray();
 		jstring readString();
 		void readStringArray(jarray arg0);
-		void readStringList(__JniBaseClass arg0);
-		__JniBaseClass readStrongBinder();
-		void readTypedArray(jobjectArray arg0, __JniBaseClass arg1);
-		void readTypedList(__JniBaseClass arg0, __JniBaseClass arg1);
-		jobject readTypedObject(__JniBaseClass arg0);
+		void readStringList(JObject arg0);
+		JObject readStrongBinder();
+		void readTypedArray(jobjectArray arg0, JObject arg1);
+		void readTypedList(JObject arg0, JObject arg1);
+		jobject readTypedObject(JObject arg0);
 		jobject readValue(java::lang::ClassLoader arg0);
 		void recycle();
 		void setDataCapacity(jint arg0);
@@ -145,7 +145,7 @@ namespace android::os
 		void unmarshall(jbyteArray arg0, jint arg1, jint arg2);
 		void writeArray(jobjectArray arg0);
 		void writeBinderArray(jarray arg0);
-		void writeBinderList(__JniBaseClass arg0);
+		void writeBinderList(JObject arg0);
 		void writeBoolean(jboolean arg0);
 		void writeBooleanArray(jbooleanArray arg0);
 		void writeBundle(android::os::Bundle arg0);
@@ -162,30 +162,30 @@ namespace android::os
 		void writeInt(jint arg0);
 		void writeIntArray(jintArray arg0);
 		void writeInterfaceToken(jstring arg0);
-		void writeList(__JniBaseClass arg0);
+		void writeList(JObject arg0);
 		void writeLong(jlong arg0);
 		void writeLongArray(jlongArray arg0);
-		void writeMap(__JniBaseClass arg0);
+		void writeMap(JObject arg0);
 		void writeNoException();
-		void writeParcelable(__JniBaseClass arg0, jint arg1);
+		void writeParcelable(JObject arg0, jint arg1);
 		void writeParcelableArray(jarray arg0, jint arg1);
-		void writeParcelableCreator(__JniBaseClass arg0);
-		void writeParcelableList(__JniBaseClass arg0, jint arg1);
+		void writeParcelableCreator(JObject arg0);
+		void writeParcelableList(JObject arg0, jint arg1);
 		void writePersistableBundle(android::os::PersistableBundle arg0);
-		void writeSerializable(__JniBaseClass arg0);
+		void writeSerializable(JObject arg0);
 		void writeSize(android::util::Size arg0);
 		void writeSizeF(android::util::SizeF arg0);
 		void writeSparseArray(android::util::SparseArray arg0);
 		void writeSparseBooleanArray(android::util::SparseBooleanArray arg0);
 		void writeString(jstring arg0);
 		void writeStringArray(jarray arg0);
-		void writeStringList(__JniBaseClass arg0);
-		void writeStrongBinder(__JniBaseClass arg0);
-		void writeStrongInterface(__JniBaseClass arg0);
+		void writeStringList(JObject arg0);
+		void writeStrongBinder(JObject arg0);
+		void writeStrongInterface(JObject arg0);
 		void writeTypedArray(jarray arg0, jint arg1);
 		void writeTypedArrayMap(android::util::ArrayMap arg0, jint arg1);
-		void writeTypedList(__JniBaseClass arg0);
-		void writeTypedObject(__JniBaseClass arg0, jint arg1);
+		void writeTypedList(JObject arg0);
+		void writeTypedObject(JObject arg0, jint arg1);
 		void writeTypedSparseArray(android::util::SparseArray arg0, jint arg1);
 		void writeValue(jobject arg0);
 	};

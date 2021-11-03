@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	__JniBaseClass ListActivity::getListAdapter()
+	JObject ListActivity::getListAdapter()
 	{
 		return callObjectMethod(
 			"getListAdapter",
@@ -53,7 +53,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void ListActivity::setListAdapter(__JniBaseClass arg0)
+	void ListActivity::setListAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setListAdapter",

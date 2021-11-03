@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -21,7 +21,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaCodecInfo_CodecCapabilities : public __JniBaseClass
+	class MediaCodecInfo_CodecCapabilities : public JObject
 	{
 	public:
 		// Fields
@@ -86,7 +86,7 @@ namespace android::media
 		jarray profileLevels();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodecInfo_CodecCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodecInfo_CodecCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecInfo_CodecCapabilities(QJniObject obj);
 		
 		// Constructors

@@ -86,17 +86,17 @@ namespace android::service::voice
 	}
 	
 	// QJniObject forward
-	VoiceInteractionSession::VoiceInteractionSession(QJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractionSession::VoiceInteractionSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0, android::os::Handler arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;Landroid/os/Handler;)V",
 			arg0.object(),
@@ -434,7 +434,7 @@ namespace android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	void VoiceInteractionSession::performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"performDirectAction",
@@ -446,7 +446,7 @@ namespace android::service::voice
 			arg4.object()
 		);
 	}
-	void VoiceInteractionSession::requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void VoiceInteractionSession::requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestDirectActions",

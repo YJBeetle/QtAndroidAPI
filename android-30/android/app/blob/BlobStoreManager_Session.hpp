@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::app::blob
 {
-	class BlobStoreManager_Session : public __JniBaseClass
+	class BlobStoreManager_Session : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BlobStoreManager_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BlobStoreManager_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BlobStoreManager_Session(QJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::app::blob
 		void allowPublicAccess();
 		void allowSameSignatureAccess();
 		void close();
-		void commit(__JniBaseClass arg0, __JniBaseClass arg1);
+		void commit(JObject arg0, JObject arg1);
 		jlong getSize();
 		jboolean isPackageAccessAllowed(jstring arg0, jbyteArray arg1);
 		jboolean isPublicAccessAllowed();

@@ -12,7 +12,7 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QJniObject forward
-	BlackLevelPattern::BlackLevelPattern(QJniObject obj) : __JniBaseClass(obj) {}
+	BlackLevelPattern::BlackLevelPattern(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

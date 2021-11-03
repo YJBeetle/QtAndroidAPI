@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -125,7 +125,7 @@ namespace java::lang
 
 namespace android::content
 {
-	class Context : public __JniBaseClass
+	class Context : public JObject
 	{
 	public:
 		// Fields
@@ -236,28 +236,28 @@ namespace android::content
 		static jstring WINDOW_SERVICE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Context(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Context(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Context(QJniObject obj);
 		
 		// Constructors
 		Context();
 		
 		// Methods
-		jboolean bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4);
-		jboolean bindService(android::content::Intent arg0, __JniBaseClass arg1, jint arg2);
-		jboolean bindService(android::content::Intent arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		jboolean bindServiceAsUser(android::content::Intent arg0, __JniBaseClass arg1, jint arg2, android::os::UserHandle arg3);
+		jboolean bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, JObject arg3, JObject arg4);
+		jboolean bindService(android::content::Intent arg0, JObject arg1, jint arg2);
+		jboolean bindService(android::content::Intent arg0, jint arg1, JObject arg2, JObject arg3);
+		jboolean bindServiceAsUser(android::content::Intent arg0, JObject arg1, jint arg2, android::os::UserHandle arg3);
 		jint checkCallingOrSelfPermission(jstring arg0);
 		jint checkCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1);
-		jintArray checkCallingOrSelfUriPermissions(__JniBaseClass arg0, jint arg1);
+		jintArray checkCallingOrSelfUriPermissions(JObject arg0, jint arg1);
 		jint checkCallingPermission(jstring arg0);
 		jint checkCallingUriPermission(android::net::Uri arg0, jint arg1);
-		jintArray checkCallingUriPermissions(__JniBaseClass arg0, jint arg1);
+		jintArray checkCallingUriPermissions(JObject arg0, jint arg1);
 		jint checkPermission(jstring arg0, jint arg1, jint arg2);
 		jint checkSelfPermission(jstring arg0);
 		jint checkUriPermission(android::net::Uri arg0, jint arg1, jint arg2, jint arg3);
 		jint checkUriPermission(android::net::Uri arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, jint arg5);
-		jintArray checkUriPermissions(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
+		jintArray checkUriPermissions(JObject arg0, jint arg1, jint arg2, jint arg3);
 		void clearWallpaper();
 		android::content::Context createAttributionContext(jstring arg0);
 		android::content::Context createConfigurationContext(android::content::res::Configuration arg0);
@@ -303,7 +303,7 @@ namespace android::content
 		jarray getExternalMediaDirs();
 		java::io::File getFileStreamPath(jstring arg0);
 		java::io::File getFilesDir();
-		__JniBaseClass getMainExecutor();
+		JObject getMainExecutor();
 		android::os::Looper getMainLooper();
 		java::io::File getNoBackupFilesDir();
 		java::io::File getObbDir();
@@ -315,7 +315,7 @@ namespace android::content
 		jstring getPackageResourcePath();
 		android::content::ContextParams getParams();
 		android::content::res::Resources getResources();
-		__JniBaseClass getSharedPreferences(jstring arg0, jint arg1);
+		JObject getSharedPreferences(jstring arg0, jint arg1);
 		jstring getString(jint arg0);
 		jstring getString(jint arg0, jobjectArray arg1);
 		jobject getSystemService(jclass arg0);
@@ -333,15 +333,15 @@ namespace android::content
 		jboolean moveDatabaseFrom(android::content::Context arg0, jstring arg1);
 		jboolean moveSharedPreferencesFrom(android::content::Context arg0, jstring arg1);
 		android::content::res::TypedArray obtainStyledAttributes(jintArray arg0);
-		android::content::res::TypedArray obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1);
+		android::content::res::TypedArray obtainStyledAttributes(JObject arg0, jintArray arg1);
 		android::content::res::TypedArray obtainStyledAttributes(jint arg0, jintArray arg1);
-		android::content::res::TypedArray obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
+		android::content::res::TypedArray obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3);
 		java::io::FileInputStream openFileInput(jstring arg0);
 		java::io::FileOutputStream openFileOutput(jstring arg0, jint arg1);
-		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2);
-		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2);
+		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2, JObject arg3);
 		android::graphics::drawable::Drawable peekWallpaper();
-		void registerComponentCallbacks(__JniBaseClass arg0);
+		void registerComponentCallbacks(JObject arg0);
 		android::content::Intent registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1);
 		android::content::Intent registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2);
 		android::content::Intent registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jstring arg2, android::os::Handler arg3);
@@ -377,10 +377,10 @@ namespace android::content
 		void startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		android::content::ComponentName startService(android::content::Intent arg0);
 		jboolean stopService(android::content::Intent arg0);
-		void unbindService(__JniBaseClass arg0);
-		void unregisterComponentCallbacks(__JniBaseClass arg0);
+		void unbindService(JObject arg0);
+		void unregisterComponentCallbacks(JObject arg0);
 		void unregisterReceiver(android::content::BroadcastReceiver arg0);
-		void updateServiceGroup(__JniBaseClass arg0, jint arg1, jint arg2);
+		void updateServiceGroup(JObject arg0, jint arg1, jint arg2);
 	};
 } // namespace android::content
 

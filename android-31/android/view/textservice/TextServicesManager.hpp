@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -25,23 +25,23 @@ namespace java::util
 
 namespace android::view::textservice
 {
-	class TextServicesManager : public __JniBaseClass
+	class TextServicesManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextServicesManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextServicesManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		android::view::textservice::SpellCheckerInfo getCurrentSpellCheckerInfo();
-		__JniBaseClass getEnabledSpellCheckerInfos();
+		JObject getEnabledSpellCheckerInfos();
 		jboolean isSpellCheckerEnabled();
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, __JniBaseClass arg2, jboolean arg3);
+		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::view::textservice::SpellCheckerSession_SpellCheckerSessionParams arg0, JObject arg1, JObject arg2);
+		android::view::textservice::SpellCheckerSession newSpellCheckerSession(android::os::Bundle arg0, java::util::Locale arg1, JObject arg2, jboolean arg3);
 	};
 } // namespace android::view::textservice
 

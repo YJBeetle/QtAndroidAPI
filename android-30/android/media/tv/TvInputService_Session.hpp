@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -41,13 +41,13 @@ namespace android::view
 
 namespace android::media::tv
 {
-	class TvInputService_Session : public __JniBaseClass
+	class TvInputService_Session : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvInputService_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvInputService_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputService_Session(QJniObject obj);
 		
 		// Constructors
@@ -60,7 +60,7 @@ namespace android::media::tv
 		void notifyContentBlocked(android::media::tv::TvContentRating arg0);
 		void notifyTimeShiftStatusChanged(jint arg0);
 		void notifyTrackSelected(jint arg0, jstring arg1);
-		void notifyTracksChanged(__JniBaseClass arg0);
+		void notifyTracksChanged(JObject arg0);
 		void notifyVideoAvailable();
 		void notifyVideoUnavailable(jint arg0);
 		void onAppPrivateCommand(jstring arg0, android::os::Bundle arg1);

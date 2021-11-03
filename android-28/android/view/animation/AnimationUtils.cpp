@@ -8,11 +8,11 @@ namespace android::view::animation
 	// Fields
 	
 	// QJniObject forward
-	AnimationUtils::AnimationUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	AnimationUtils::AnimationUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AnimationUtils::AnimationUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.animation.AnimationUtils",
 			"()V"
 		) {}
@@ -36,7 +36,7 @@ namespace android::view::animation
 			arg1
 		);
 	}
-	__JniBaseClass AnimationUtils::loadInterpolator(android::content::Context arg0, jint arg1)
+	JObject AnimationUtils::loadInterpolator(android::content::Context arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",

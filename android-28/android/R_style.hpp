@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_style : public __JniBaseClass
+	class R_style : public JObject
 	{
 	public:
 		// Fields
@@ -745,7 +745,7 @@ namespace android
 		static jint Widget_WebView();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit R_style(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_style(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_style(QJniObject obj);
 		
 		// Constructors

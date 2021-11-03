@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraMetadata.hpp"
 
 namespace android::hardware::camera2
@@ -112,7 +112,7 @@ namespace android::hardware::camera2
 		// Methods
 		jobject get(android::hardware::camera2::CaptureResult_Key arg0);
 		jlong getFrameNumber();
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		android::hardware::camera2::CaptureRequest getRequest();
 		jint getSequenceId();
 	};

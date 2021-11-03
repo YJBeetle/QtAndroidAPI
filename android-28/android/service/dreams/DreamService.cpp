@@ -122,7 +122,7 @@ namespace android::service::dreams
 			"()Landroid/view/Window;"
 		);
 	}
-	__JniBaseClass DreamService::getWindowManager()
+	JObject DreamService::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
@@ -173,7 +173,7 @@ namespace android::service::dreams
 			"()V"
 		);
 	}
-	__JniBaseClass DreamService::onBind(android::content::Intent arg0)
+	JObject DreamService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -195,7 +195,7 @@ namespace android::service::dreams
 			"()V"
 		);
 	}
-	jboolean DreamService::onCreatePanelMenu(jint arg0, __JniBaseClass arg1)
+	jboolean DreamService::onCreatePanelMenu(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -240,7 +240,7 @@ namespace android::service::dreams
 			"()V"
 		);
 	}
-	jboolean DreamService::onMenuItemSelected(jint arg0, __JniBaseClass arg1)
+	jboolean DreamService::onMenuItemSelected(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -249,7 +249,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	jboolean DreamService::onMenuOpened(jint arg0, __JniBaseClass arg1)
+	jboolean DreamService::onMenuOpened(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -258,7 +258,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	void DreamService::onPanelClosed(jint arg0, __JniBaseClass arg1)
+	void DreamService::onPanelClosed(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -267,7 +267,7 @@ namespace android::service::dreams
 			arg1.object()
 		);
 	}
-	jboolean DreamService::onPreparePanel(jint arg0, android::view::View arg1, __JniBaseClass arg2)
+	jboolean DreamService::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -315,7 +315,7 @@ namespace android::service::dreams
 			arg0
 		);
 	}
-	android::view::ActionMode DreamService::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -323,7 +323,7 @@ namespace android::service::dreams
 			arg0.object()
 		);
 	}
-	android::view::ActionMode DreamService::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode DreamService::onWindowStartingActionMode(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",

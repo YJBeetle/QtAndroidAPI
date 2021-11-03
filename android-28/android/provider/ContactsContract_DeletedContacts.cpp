@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_DeletedContacts::ContactsContract_DeletedContacts(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

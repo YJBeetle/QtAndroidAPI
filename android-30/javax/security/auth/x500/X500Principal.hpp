@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,7 +17,7 @@ namespace java::io
 
 namespace javax::security::auth::x500
 {
-	class X500Principal : public __JniBaseClass
+	class X500Principal : public JObject
 	{
 	public:
 		// Fields
@@ -26,21 +26,21 @@ namespace javax::security::auth::x500
 		static jstring RFC2253();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit X500Principal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit X500Principal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		X500Principal(QJniObject obj);
 		
 		// Constructors
 		X500Principal(jbyteArray arg0);
 		X500Principal(java::io::InputStream arg0);
 		X500Principal(jstring arg0);
-		X500Principal(jstring arg0, __JniBaseClass arg1);
+		X500Principal(jstring arg0, JObject arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jbyteArray getEncoded();
 		jstring getName();
 		jstring getName(jstring arg0);
-		jstring getName(jstring arg0, __JniBaseClass arg1);
+		jstring getName(jstring arg0, JObject arg1);
 		jint hashCode();
 		jstring toString();
 	};

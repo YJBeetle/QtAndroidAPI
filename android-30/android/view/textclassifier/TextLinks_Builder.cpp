@@ -7,18 +7,18 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextLinks_Builder::TextLinks_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TextLinks_Builder::TextLinks_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextLinks_Builder::TextLinks_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextLinks$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	
 	// Methods
-	android::view::textclassifier::TextLinks_Builder TextLinks_Builder::addLink(jint arg0, jint arg1, __JniBaseClass arg2)
+	android::view::textclassifier::TextLinks_Builder TextLinks_Builder::addLink(jint arg0, jint arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"addLink",
@@ -28,7 +28,7 @@ namespace android::view::textclassifier
 			arg2.object()
 		);
 	}
-	android::view::textclassifier::TextLinks_Builder TextLinks_Builder::addLink(jint arg0, jint arg1, __JniBaseClass arg2, android::os::Bundle arg3)
+	android::view::textclassifier::TextLinks_Builder TextLinks_Builder::addLink(jint arg0, jint arg1, JObject arg2, android::os::Bundle arg3)
 	{
 		return callObjectMethod(
 			"addLink",

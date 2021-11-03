@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,14 +9,14 @@ namespace android::content
 
 namespace android::view
 {
-	class OrientationEventListener : public __JniBaseClass
+	class OrientationEventListener : public JObject
 	{
 	public:
 		// Fields
 		static jint ORIENTATION_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit OrientationEventListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OrientationEventListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OrientationEventListener(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractList.hpp"
 #include "./AbstractSequentialList.hpp"
@@ -27,26 +27,26 @@ namespace java::util
 		
 		// Constructors
 		LinkedList();
-		LinkedList(__JniBaseClass arg0);
+		LinkedList(JObject arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
 		void add(jint arg0, jobject arg1);
-		jboolean addAll(__JniBaseClass arg0);
-		jboolean addAll(jint arg0, __JniBaseClass arg1);
+		jboolean addAll(JObject arg0);
+		jboolean addAll(jint arg0, JObject arg1);
 		void addFirst(jobject arg0);
 		void addLast(jobject arg0);
 		void clear();
 		jobject clone();
 		jboolean contains(jobject arg0);
-		__JniBaseClass descendingIterator();
+		JObject descendingIterator();
 		jobject element();
 		jobject get(jint arg0);
 		jobject getFirst();
 		jobject getLast();
 		jint indexOf(jobject arg0);
 		jint lastIndexOf(jobject arg0);
-		__JniBaseClass listIterator(jint arg0);
+		JObject listIterator(jint arg0);
 		jboolean offer(jobject arg0);
 		jboolean offerFirst(jobject arg0);
 		jboolean offerLast(jobject arg0);
@@ -67,7 +67,7 @@ namespace java::util
 		jboolean removeLastOccurrence(jobject arg0);
 		jobject set(jint arg0, jobject arg1);
 		jint size();
-		__JniBaseClass spliterator();
+		JObject spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

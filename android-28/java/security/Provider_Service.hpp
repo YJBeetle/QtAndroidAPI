@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -17,17 +17,17 @@ namespace java::security
 
 namespace java::security
 {
-	class Provider_Service : public __JniBaseClass
+	class Provider_Service : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Provider_Service(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Provider_Service(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Provider_Service(QJniObject obj);
 		
 		// Constructors
-		Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, __JniBaseClass arg4, __JniBaseClass arg5);
+		Provider_Service(java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, JObject arg4, JObject arg5);
 		
 		// Methods
 		jstring getAlgorithm();

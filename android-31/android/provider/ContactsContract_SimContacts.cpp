@@ -14,12 +14,12 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_SimContacts::ContactsContract_SimContacts(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_SimContacts::ContactsContract_SimContacts(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ContactsContract_SimContacts::getSimAccounts(android::content::ContentResolver arg0)
+	JObject ContactsContract_SimContacts::getSimAccounts(android::content::ContentResolver arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$SimContacts",

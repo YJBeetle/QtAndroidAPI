@@ -4,7 +4,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	__JniBaseClass SuggestionsInfo::CREATOR()
+	JObject SuggestionsInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textservice.SuggestionsInfo",
@@ -35,24 +35,24 @@ namespace android::view::textservice
 	}
 	
 	// QJniObject forward
-	SuggestionsInfo::SuggestionsInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SuggestionsInfo::SuggestionsInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SuggestionsInfo::SuggestionsInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(I[Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	SuggestionsInfo::SuggestionsInfo(jint arg0, jarray arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(I[Ljava/lang/String;II)V",
 			arg0,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Conferenceable.hpp"
 
 namespace android::bluetooth
@@ -149,7 +149,7 @@ namespace android::telecom
 		jint getCallerDisplayNamePresentation();
 		jint getCallerNumberVerificationStatus();
 		android::telecom::Conference getConference();
-		__JniBaseClass getConferenceables();
+		JObject getConferenceables();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
 		android::telecom::DisconnectCause getDisconnectCause();
@@ -187,7 +187,7 @@ namespace android::telecom
 		void onUnhold();
 		void putExtras(android::os::Bundle arg0);
 		void removeExtras(jarray arg0);
-		void removeExtras(__JniBaseClass arg0);
+		void removeExtras(JObject arg0);
 		void requestBluetoothAudio(android::bluetooth::BluetoothDevice arg0);
 		void sendConnectionEvent(jstring arg0, android::os::Bundle arg1);
 		void sendRemoteRttRequest();
@@ -200,8 +200,8 @@ namespace android::telecom
 		void setAudioRoute(jint arg0);
 		void setCallerDisplayName(jstring arg0, jint arg1);
 		void setCallerNumberVerificationStatus(jint arg0);
-		void setConferenceableConnections(__JniBaseClass arg0);
-		void setConferenceables(__JniBaseClass arg0);
+		void setConferenceableConnections(JObject arg0);
+		void setConferenceables(JObject arg0);
 		void setConnectionCapabilities(jint arg0);
 		void setConnectionProperties(jint arg0);
 		void setDialing();

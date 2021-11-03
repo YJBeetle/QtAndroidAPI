@@ -11,7 +11,7 @@ namespace android::hardware
 			"BLOB"
 		);
 	}
-	__JniBaseClass HardwareBuffer::CREATOR()
+	JObject HardwareBuffer::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.HardwareBuffer",
@@ -189,7 +189,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	HardwareBuffer::HardwareBuffer(QJniObject obj) : __JniBaseClass(obj) {}
+	HardwareBuffer::HardwareBuffer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

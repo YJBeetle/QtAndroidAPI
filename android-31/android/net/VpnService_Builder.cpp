@@ -10,11 +10,11 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	VpnService_Builder::VpnService_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	VpnService_Builder::VpnService_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VpnService_Builder::VpnService_Builder(android::net::VpnService arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.VpnService$Builder",
 			"(Landroid/net/VpnService;)V",
 			arg0.object()

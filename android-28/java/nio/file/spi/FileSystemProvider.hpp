@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -37,46 +37,46 @@ namespace java::nio::file
 
 namespace java::nio::file::spi
 {
-	class FileSystemProvider : public __JniBaseClass
+	class FileSystemProvider : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FileSystemProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileSystemProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileSystemProvider(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass installedProviders();
-		void checkAccess(__JniBaseClass arg0, jarray arg1);
-		void copy(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		void createDirectory(__JniBaseClass arg0, jarray arg1);
-		void createLink(__JniBaseClass arg0, __JniBaseClass arg1);
-		void createSymbolicLink(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		void _delete(__JniBaseClass arg0);
-		jboolean deleteIfExists(__JniBaseClass arg0);
-		__JniBaseClass getFileAttributeView(__JniBaseClass arg0, jclass arg1, jarray arg2);
-		java::nio::file::FileStore getFileStore(__JniBaseClass arg0);
+		static JObject installedProviders();
+		void checkAccess(JObject arg0, jarray arg1);
+		void copy(JObject arg0, JObject arg1, jarray arg2);
+		void createDirectory(JObject arg0, jarray arg1);
+		void createLink(JObject arg0, JObject arg1);
+		void createSymbolicLink(JObject arg0, JObject arg1, jarray arg2);
+		void _delete(JObject arg0);
+		jboolean deleteIfExists(JObject arg0);
+		JObject getFileAttributeView(JObject arg0, jclass arg1, jarray arg2);
+		java::nio::file::FileStore getFileStore(JObject arg0);
 		java::nio::file::FileSystem getFileSystem(java::net::URI arg0);
-		__JniBaseClass getPath(java::net::URI arg0);
+		JObject getPath(java::net::URI arg0);
 		jstring getScheme();
-		jboolean isHidden(__JniBaseClass arg0);
-		jboolean isSameFile(__JniBaseClass arg0, __JniBaseClass arg1);
-		void move(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		java::nio::channels::AsynchronousFileChannel newAsynchronousFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, jarray arg3);
-		__JniBaseClass newByteChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		__JniBaseClass newDirectoryStream(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::nio::channels::FileChannel newFileChannel(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2);
-		java::nio::file::FileSystem newFileSystem(java::net::URI arg0, __JniBaseClass arg1);
-		java::nio::file::FileSystem newFileSystem(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::io::InputStream newInputStream(__JniBaseClass arg0, jarray arg1);
-		java::io::OutputStream newOutputStream(__JniBaseClass arg0, jarray arg1);
-		__JniBaseClass readAttributes(__JniBaseClass arg0, jclass arg1, jarray arg2);
-		__JniBaseClass readAttributes(__JniBaseClass arg0, jstring arg1, jarray arg2);
-		__JniBaseClass readSymbolicLink(__JniBaseClass arg0);
-		void setAttribute(__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3);
+		jboolean isHidden(JObject arg0);
+		jboolean isSameFile(JObject arg0, JObject arg1);
+		void move(JObject arg0, JObject arg1, jarray arg2);
+		java::nio::channels::AsynchronousFileChannel newAsynchronousFileChannel(JObject arg0, JObject arg1, JObject arg2, jarray arg3);
+		JObject newByteChannel(JObject arg0, JObject arg1, jarray arg2);
+		JObject newDirectoryStream(JObject arg0, JObject arg1);
+		java::nio::channels::FileChannel newFileChannel(JObject arg0, JObject arg1, jarray arg2);
+		java::nio::file::FileSystem newFileSystem(java::net::URI arg0, JObject arg1);
+		java::nio::file::FileSystem newFileSystem(JObject arg0, JObject arg1);
+		java::io::InputStream newInputStream(JObject arg0, jarray arg1);
+		java::io::OutputStream newOutputStream(JObject arg0, jarray arg1);
+		JObject readAttributes(JObject arg0, jclass arg1, jarray arg2);
+		JObject readAttributes(JObject arg0, jstring arg1, jarray arg2);
+		JObject readSymbolicLink(JObject arg0);
+		void setAttribute(JObject arg0, jstring arg1, jobject arg2, jarray arg3);
 	};
 } // namespace java::nio::file::spi
 

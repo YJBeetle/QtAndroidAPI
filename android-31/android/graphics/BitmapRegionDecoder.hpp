@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -29,13 +29,13 @@ namespace java::io
 
 namespace android::graphics
 {
-	class BitmapRegionDecoder : public __JniBaseClass
+	class BitmapRegionDecoder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BitmapRegionDecoder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BitmapRegionDecoder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BitmapRegionDecoder(QJniObject obj);
 		
 		// Constructors

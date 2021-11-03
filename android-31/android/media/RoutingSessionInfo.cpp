@@ -5,7 +5,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass RoutingSessionInfo::CREATOR()
+	JObject RoutingSessionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.RoutingSessionInfo",
@@ -15,7 +15,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	RoutingSessionInfo::RoutingSessionInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	RoutingSessionInfo::RoutingSessionInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass RoutingSessionInfo::getDeselectableRoutes()
+	JObject RoutingSessionInfo::getDeselectableRoutes()
 	{
 		return callObjectMethod(
 			"getDeselectableRoutes",
@@ -70,21 +70,21 @@ namespace android::media
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass RoutingSessionInfo::getSelectableRoutes()
+	JObject RoutingSessionInfo::getSelectableRoutes()
 	{
 		return callObjectMethod(
 			"getSelectableRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass RoutingSessionInfo::getSelectedRoutes()
+	JObject RoutingSessionInfo::getSelectedRoutes()
 	{
 		return callObjectMethod(
 			"getSelectedRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass RoutingSessionInfo::getTransferableRoutes()
+	JObject RoutingSessionInfo::getTransferableRoutes()
 	{
 		return callObjectMethod(
 			"getTransferableRoutes",

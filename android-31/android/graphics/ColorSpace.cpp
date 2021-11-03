@@ -97,7 +97,7 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	ColorSpace::ColorSpace(QJniObject obj) : __JniBaseClass(obj) {}
+	ColorSpace::ColorSpace(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

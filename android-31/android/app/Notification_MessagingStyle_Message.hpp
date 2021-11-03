@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::app
 {
-	class Notification_MessagingStyle_Message : public __JniBaseClass
+	class Notification_MessagingStyle_Message : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Notification_MessagingStyle_Message(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_MessagingStyle_Message(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_MessagingStyle_Message(QJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::app
 		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2);
 		
 		// Methods
-		static __JniBaseClass getMessagesFromBundleArray(jarray arg0);
+		static JObject getMessagesFromBundleArray(jarray arg0);
 		jstring getDataMimeType();
 		android::net::Uri getDataUri();
 		android::os::Bundle getExtras();

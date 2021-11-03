@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -44,12 +44,12 @@ namespace android::service::controls
 		
 		// Methods
 		static void requestAddControl(android::content::Context arg0, android::content::ComponentName arg1, android::service::controls::Control arg2);
-		__JniBaseClass createPublisherFor(__JniBaseClass arg0);
-		__JniBaseClass createPublisherForAllAvailable();
-		__JniBaseClass createPublisherForSuggested();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject createPublisherFor(JObject arg0);
+		JObject createPublisherForAllAvailable();
+		JObject createPublisherForSuggested();
+		JObject onBind(android::content::Intent arg0);
 		jboolean onUnbind(android::content::Intent arg0);
-		void performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, __JniBaseClass arg2);
+		void performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, JObject arg2);
 	};
 } // namespace android::service::controls
 

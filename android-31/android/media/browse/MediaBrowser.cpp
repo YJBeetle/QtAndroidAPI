@@ -28,11 +28,11 @@ namespace android::media::browse
 	}
 	
 	// QJniObject forward
-	MediaBrowser::MediaBrowser(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaBrowser::MediaBrowser(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaBrowser::MediaBrowser(android::content::Context arg0, android::content::ComponentName arg1, android::media::browse::MediaBrowser_ConnectionCallback arg2, android::os::Bundle arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.browse.MediaBrowser",
 			"(Landroid/content/Context;Landroid/content/ComponentName;Landroid/media/browse/MediaBrowser$ConnectionCallback;Landroid/os/Bundle;)V",
 			arg0.object(),

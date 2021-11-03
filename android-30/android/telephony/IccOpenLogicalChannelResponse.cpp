@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass IccOpenLogicalChannelResponse::CREATOR()
+	JObject IccOpenLogicalChannelResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.IccOpenLogicalChannelResponse",
@@ -49,7 +49,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	IccOpenLogicalChannelResponse::IccOpenLogicalChannelResponse(QJniObject obj) : __JniBaseClass(obj) {}
+	IccOpenLogicalChannelResponse::IccOpenLogicalChannelResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

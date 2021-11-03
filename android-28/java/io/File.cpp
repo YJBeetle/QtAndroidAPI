@@ -39,30 +39,30 @@ namespace java::io
 	}
 	
 	// QJniObject forward
-	File::File(QJniObject obj) : __JniBaseClass(obj) {}
+	File::File(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	File::File(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.File",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	File::File(java::net::URI arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.File",
 			"(Ljava/net/URI;)V",
 			arg0.object()
 		) {}
 	File::File(java::io::File &arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.File",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	File::File(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.File",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -305,7 +305,7 @@ namespace java::io
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	jarray File::list(__JniBaseClass arg0)
+	jarray File::list(JObject arg0)
 	{
 		return callObjectMethod(
 			"list",
@@ -320,7 +320,7 @@ namespace java::io
 			"()[Ljava/io/File;"
 		).object<jarray>();
 	}
-	jarray File::listFiles(__JniBaseClass arg0)
+	jarray File::listFiles(JObject arg0)
 	{
 		return callObjectMethod(
 			"listFiles",
@@ -416,7 +416,7 @@ namespace java::io
 			arg1
 		);
 	}
-	__JniBaseClass File::toPath()
+	JObject File::toPath()
 	{
 		return callObjectMethod(
 			"toPath",

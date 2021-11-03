@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/net/ResponseCache.hpp"
 
 namespace java::io
@@ -43,7 +43,7 @@ namespace android::net::http
 		void close();
 		void _delete();
 		void flush();
-		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2);
+		java::net::CacheResponse get(java::net::URI arg0, jstring arg1, JObject arg2);
 		jint getHitCount();
 		jint getNetworkCount();
 		jint getRequestCount();

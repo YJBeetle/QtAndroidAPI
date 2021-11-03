@@ -6,7 +6,7 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	PrecomputedText_Params::PrecomputedText_Params(QJniObject obj) : __JniBaseClass(obj) {}
+	PrecomputedText_Params::PrecomputedText_Params(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -33,7 +33,7 @@ namespace android::text
 			"()I"
 		);
 	}
-	__JniBaseClass PrecomputedText_Params::getTextDirection()
+	JObject PrecomputedText_Params::getTextDirection()
 	{
 		return callObjectMethod(
 			"getTextDirection",

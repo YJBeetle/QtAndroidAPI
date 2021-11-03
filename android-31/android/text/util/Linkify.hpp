@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::widget
 {
@@ -13,7 +13,7 @@ namespace java::util::regex
 
 namespace android::text::util
 {
-	class Linkify : public __JniBaseClass
+	class Linkify : public JObject
 	{
 	public:
 		// Fields
@@ -22,28 +22,28 @@ namespace android::text::util
 		static jint MAP_ADDRESSES();
 		static jint PHONE_NUMBERS();
 		static jint WEB_URLS();
-		static __JniBaseClass sPhoneNumberMatchFilter();
-		static __JniBaseClass sPhoneNumberTransformFilter();
-		static __JniBaseClass sUrlMatchFilter();
+		static JObject sPhoneNumberMatchFilter();
+		static JObject sPhoneNumberTransformFilter();
+		static JObject sUrlMatchFilter();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Linkify(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Linkify(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Linkify(QJniObject obj);
 		
 		// Constructors
 		Linkify();
 		
 		// Methods
-		static jboolean addLinks(__JniBaseClass arg0, jint arg1);
+		static jboolean addLinks(JObject arg0, jint arg1);
 		static jboolean addLinks(android::widget::TextView arg0, jint arg1);
-		static jboolean addLinks(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2);
-		static jboolean addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2);
-		static jboolean addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4);
-		static jboolean addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5);
-		static jboolean addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5, __JniBaseClass arg6);
+		static jboolean addLinks(JObject arg0, jint arg1, JObject arg2);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5);
+		static jboolean addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5, JObject arg6);
 		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2);
-		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4);
-		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5);
+		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4);
+		static void addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5);
 	};
 } // namespace android::text::util
 

@@ -11,11 +11,11 @@ namespace android::system
 	}
 	
 	// QJniObject forward
-	Int64Ref::Int64Ref(QJniObject obj) : __JniBaseClass(obj) {}
+	Int64Ref::Int64Ref(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Int64Ref::Int64Ref(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.Int64Ref",
 			"(J)V",
 			arg0

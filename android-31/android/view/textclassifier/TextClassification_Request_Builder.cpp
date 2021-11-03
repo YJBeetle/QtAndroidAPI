@@ -9,11 +9,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	TextClassification_Request_Builder::TextClassification_Request_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassification_Request_Builder::TextClassification_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextClassification_Request_Builder::TextClassification_Request_Builder(jstring arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.TextClassification$Request$Builder",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,

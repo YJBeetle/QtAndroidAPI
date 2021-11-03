@@ -4,7 +4,7 @@
 namespace android::companion
 {
 	// Fields
-	__JniBaseClass WifiDeviceFilter::CREATOR()
+	JObject WifiDeviceFilter::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.companion.WifiDeviceFilter",
@@ -14,7 +14,7 @@ namespace android::companion
 	}
 	
 	// QJniObject forward
-	WifiDeviceFilter::WifiDeviceFilter(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiDeviceFilter::WifiDeviceFilter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	CombinedVibration_ParallelCombination::CombinedVibration_ParallelCombination(QJniObject obj) : __JniBaseClass(obj) {}
+	CombinedVibration_ParallelCombination::CombinedVibration_ParallelCombination(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::security::identity
 {
-	class ResultData : public __JniBaseClass
+	class ResultData : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::security::identity
 		static jint STATUS_USER_AUTHENTICATION_FAILED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ResultData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ResultData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ResultData(QJniObject obj);
 		
 		// Constructors
@@ -26,10 +26,10 @@ namespace android::security::identity
 		// Methods
 		jbyteArray getAuthenticatedData();
 		jbyteArray getEntry(jstring arg0, jstring arg1);
-		__JniBaseClass getEntryNames(jstring arg0);
+		JObject getEntryNames(jstring arg0);
 		jbyteArray getMessageAuthenticationCode();
-		__JniBaseClass getNamespaces();
-		__JniBaseClass getRetrievedEntryNames(jstring arg0);
+		JObject getNamespaces();
+		JObject getRetrievedEntryNames(jstring arg0);
 		jbyteArray getStaticAuthenticationData();
 		jint getStatus(jstring arg0, jstring arg1);
 	};

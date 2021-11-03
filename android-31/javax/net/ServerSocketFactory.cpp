@@ -7,7 +7,7 @@ namespace javax::net
 	// Fields
 	
 	// QJniObject forward
-	ServerSocketFactory::ServerSocketFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	ServerSocketFactory::ServerSocketFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

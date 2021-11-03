@@ -5,7 +5,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	SystemClock::SystemClock(QJniObject obj) : __JniBaseClass(obj) {}
+	SystemClock::SystemClock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

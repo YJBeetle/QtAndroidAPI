@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -9,13 +9,13 @@ namespace java::math
 
 namespace javax::crypto::spec
 {
-	class DHPublicKeySpec : public __JniBaseClass
+	class DHPublicKeySpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DHPublicKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DHPublicKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DHPublicKeySpec(QJniObject obj);
 		
 		// Constructors

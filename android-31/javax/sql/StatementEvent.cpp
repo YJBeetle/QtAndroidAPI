@@ -9,14 +9,14 @@ namespace javax::sql
 	StatementEvent::StatementEvent(QJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1)
+	StatementEvent::StatementEvent(JObject arg0, JObject arg1)
 		: java::util::EventObject(
 			"javax.sql.StatementEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	StatementEvent::StatementEvent(__JniBaseClass arg0, __JniBaseClass arg1, java::sql::SQLException arg2)
+	StatementEvent::StatementEvent(JObject arg0, JObject arg1, java::sql::SQLException arg2)
 		: java::util::EventObject(
 			"javax.sql.StatementEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;Ljava/sql/SQLException;)V",
@@ -33,7 +33,7 @@ namespace javax::sql
 			"()Ljava/sql/SQLException;"
 		);
 	}
-	__JniBaseClass StatementEvent::getStatement()
+	JObject StatementEvent::getStatement()
 	{
 		return callObjectMethod(
 			"getStatement",

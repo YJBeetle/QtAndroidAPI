@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageStats::CREATOR()
+	JObject PackageStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageStats",
@@ -69,23 +69,23 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageStats::PackageStats(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageStats::PackageStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageStats::PackageStats(android::content::pm::PackageStats &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageStats",
 			"(Landroid/content/pm/PackageStats;)V",
 			arg0.object()
 		) {}
 	PackageStats::PackageStats(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageStats",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	PackageStats::PackageStats(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageStats",
 			"(Ljava/lang/String;)V",
 			arg0

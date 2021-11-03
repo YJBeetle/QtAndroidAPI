@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security::spec
 {
@@ -13,13 +13,13 @@ namespace java::security::spec
 
 namespace java::security::spec
 {
-	class ECPublicKeySpec : public __JniBaseClass
+	class ECPublicKeySpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ECPublicKeySpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ECPublicKeySpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ECPublicKeySpec(QJniObject obj);
 		
 		// Constructors

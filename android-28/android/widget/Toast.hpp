@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::widget
 {
-	class Toast : public __JniBaseClass
+	class Toast : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::widget
 		static jint LENGTH_SHORT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Toast(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Toast(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Toast(QJniObject obj);
 		
 		// Constructors

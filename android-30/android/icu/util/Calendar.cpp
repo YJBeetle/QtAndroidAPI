@@ -354,7 +354,7 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	Calendar::Calendar(QJniObject obj) : __JniBaseClass(obj) {}
+	Calendar::Calendar(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

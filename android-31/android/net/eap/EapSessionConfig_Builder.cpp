@@ -7,11 +7,11 @@ namespace android::net::eap
 	// Fields
 	
 	// QJniObject forward
-	EapSessionConfig_Builder::EapSessionConfig_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	EapSessionConfig_Builder::EapSessionConfig_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EapSessionConfig_Builder::EapSessionConfig_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.eap.EapSessionConfig$Builder",
 			"()V"
 		) {}

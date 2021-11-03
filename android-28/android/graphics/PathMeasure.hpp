@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,7 +13,7 @@ namespace android::graphics
 
 namespace android::graphics
 {
-	class PathMeasure : public __JniBaseClass
+	class PathMeasure : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::graphics
 		static jint TANGENT_MATRIX_FLAG();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PathMeasure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PathMeasure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PathMeasure(QJniObject obj);
 		
 		// Constructors

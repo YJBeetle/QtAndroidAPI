@@ -13,7 +13,7 @@ namespace org::xml::sax::ext
 			"org.xml.sax.ext.Attributes2Impl",
 			"()V"
 		) {}
-	Attributes2Impl::Attributes2Impl(__JniBaseClass arg0)
+	Attributes2Impl::Attributes2Impl(JObject arg0)
 		: org::xml::sax::helpers::AttributesImpl(
 			"org.xml.sax.ext.Attributes2Impl",
 			"(Lorg/xml/sax/Attributes;)V",
@@ -91,7 +91,7 @@ namespace org::xml::sax::ext
 			arg0
 		);
 	}
-	void Attributes2Impl::setAttributes(__JniBaseClass arg0)
+	void Attributes2Impl::setAttributes(JObject arg0)
 	{
 		callMethod<void>(
 			"setAttributes",

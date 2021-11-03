@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::media
 {
-	class ImageReader : public __JniBaseClass
+	class ImageReader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImageReader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImageReader(QJniObject obj);
 		
 		// Constructors
@@ -39,7 +39,7 @@ namespace android::media
 		jint getMaxImages();
 		android::view::Surface getSurface();
 		jint getWidth();
-		void setOnImageAvailableListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setOnImageAvailableListener(JObject arg0, android::os::Handler arg1);
 	};
 } // namespace android::media
 

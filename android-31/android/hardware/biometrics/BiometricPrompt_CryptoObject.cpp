@@ -9,29 +9,29 @@ namespace android::hardware::biometrics
 	// Fields
 	
 	// QJniObject forward
-	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QJniObject obj) : __JniBaseClass(obj) {}
+	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(android::security::identity::IdentityCredential arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Landroid/security/identity/IdentityCredential;)V",
 			arg0.object()
 		) {}
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(java::security::Signature arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljava/security/Signature;)V",
 			arg0.object()
 		) {}
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Cipher arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljavax/crypto/Cipher;)V",
 			arg0.object()
 		) {}
 	BiometricPrompt_CryptoObject::BiometricPrompt_CryptoObject(javax::crypto::Mac arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.biometrics.BiometricPrompt$CryptoObject",
 			"(Ljavax/crypto/Mac;)V",
 			arg0.object()

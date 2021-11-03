@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -105,11 +105,11 @@ namespace android::service::notification
 		jint getCurrentInterruptionFilter();
 		jint getCurrentListenerHints();
 		android::service::notification::NotificationListenerService_RankingMap getCurrentRanking();
-		__JniBaseClass getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
-		__JniBaseClass getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
+		JObject getNotificationChannelGroups(jstring arg0, android::os::UserHandle arg1);
+		JObject getNotificationChannels(jstring arg0, android::os::UserHandle arg1);
 		jarray getSnoozedNotifications();
-		void migrateNotificationFilter(jint arg0, __JniBaseClass arg1);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		void migrateNotificationFilter(jint arg0, JObject arg1);
+		JObject onBind(android::content::Intent arg0);
 		void onDestroy();
 		void onInterruptionFilterChanged(jint arg0);
 		void onListenerConnected();

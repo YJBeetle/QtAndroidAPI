@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -41,7 +41,7 @@ namespace java::time::temporal
 
 namespace java::time
 {
-	class Year : public __JniBaseClass
+	class Year : public JObject
 	{
 	public:
 		// Fields
@@ -49,13 +49,13 @@ namespace java::time
 		static jint MIN_VALUE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Year(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Year(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Year(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::Year from(__JniBaseClass arg0);
+		static java::time::Year from(JObject arg0);
 		static jboolean isLeap(jlong arg0);
 		static java::time::Year now();
 		static java::time::Year now(java::time::Clock arg0);
@@ -63,7 +63,7 @@ namespace java::time
 		static java::time::Year of(jint arg0);
 		static java::time::Year parse(jstring arg0);
 		static java::time::Year parse(jstring arg0, java::time::format::DateTimeFormatter arg1);
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		JObject adjustInto(JObject arg0);
 		java::time::LocalDate atDay(jint arg0);
 		java::time::YearMonth atMonth(jint arg0);
 		java::time::YearMonth atMonth(java::time::Month arg0);
@@ -72,28 +72,28 @@ namespace java::time
 		jint compareTo(java::time::Year arg0);
 		jboolean equals(jobject arg0);
 		jstring format(java::time::format::DateTimeFormatter arg0);
-		jint get(__JniBaseClass arg0);
-		jlong getLong(__JniBaseClass arg0);
+		jint get(JObject arg0);
+		jlong getLong(JObject arg0);
 		jint getValue();
 		jint hashCode();
 		jboolean isAfter(java::time::Year arg0);
 		jboolean isBefore(java::time::Year arg0);
 		jboolean isLeap();
-		jboolean isSupported(__JniBaseClass arg0);
+		jboolean isSupported(JObject arg0);
 		jboolean isValidMonthDay(java::time::MonthDay arg0);
 		jint length();
-		java::time::Year minus(__JniBaseClass arg0);
-		java::time::Year minus(jlong arg0, __JniBaseClass arg1);
+		java::time::Year minus(JObject arg0);
+		java::time::Year minus(jlong arg0, JObject arg1);
 		java::time::Year minusYears(jlong arg0);
-		java::time::Year plus(__JniBaseClass arg0);
-		java::time::Year plus(jlong arg0, __JniBaseClass arg1);
+		java::time::Year plus(JObject arg0);
+		java::time::Year plus(jlong arg0, JObject arg1);
 		java::time::Year plusYears(jlong arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jstring toString();
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::Year with(__JniBaseClass arg0);
-		java::time::Year with(__JniBaseClass arg0, jlong arg1);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::Year with(JObject arg0);
+		java::time::Year with(JObject arg0, jlong arg1);
 	};
 } // namespace java::time
 

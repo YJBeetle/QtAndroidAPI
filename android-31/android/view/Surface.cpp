@@ -22,7 +22,7 @@ namespace android::view
 			"CHANGE_FRAME_RATE_ONLY_IF_SEAMLESS"
 		);
 	}
-	__JniBaseClass Surface::CREATOR()
+	JObject Surface::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.Surface",
@@ -74,17 +74,17 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	Surface::Surface(QJniObject obj) : __JniBaseClass(obj) {}
+	Surface::Surface(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Surface::Surface(android::graphics::SurfaceTexture arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.Surface",
 			"(Landroid/graphics/SurfaceTexture;)V",
 			arg0.object()
 		) {}
 	Surface::Surface(android::view::SurfaceControl arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.Surface",
 			"(Landroid/view/SurfaceControl;)V",
 			arg0.object()

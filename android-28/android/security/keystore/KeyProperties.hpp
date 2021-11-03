@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::security::keystore
 {
-	class KeyProperties : public __JniBaseClass
+	class KeyProperties : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::security::keystore
 		static jstring SIGNATURE_PADDING_RSA_PSS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyProperties(QJniObject obj);
 		
 		// Constructors

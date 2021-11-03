@@ -19,11 +19,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	FragmentManager::FragmentManager(QJniObject obj) : __JniBaseClass(obj) {}
+	FragmentManager::FragmentManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FragmentManager::FragmentManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.FragmentManager",
 			"()V"
 		) {}
@@ -38,7 +38,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentManager::addOnBackStackChangedListener(__JniBaseClass arg0)
+	void FragmentManager::addOnBackStackChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnBackStackChangedListener",
@@ -87,7 +87,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass FragmentManager::getBackStackEntryAt(jint arg0)
+	JObject FragmentManager::getBackStackEntryAt(jint arg0)
 	{
 		return callObjectMethod(
 			"getBackStackEntryAt",
@@ -111,7 +111,7 @@ namespace android::app
 			arg1
 		);
 	}
-	__JniBaseClass FragmentManager::getFragments()
+	JObject FragmentManager::getFragments()
 	{
 		return callObjectMethod(
 			"getFragments",
@@ -215,7 +215,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void FragmentManager::removeOnBackStackChangedListener(__JniBaseClass arg0)
+	void FragmentManager::removeOnBackStackChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnBackStackChangedListener",

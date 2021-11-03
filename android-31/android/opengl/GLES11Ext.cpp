@@ -758,11 +758,11 @@ namespace android::opengl
 	}
 	
 	// QJniObject forward
-	GLES11Ext::GLES11Ext(QJniObject obj) : __JniBaseClass(obj) {}
+	GLES11Ext::GLES11Ext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLES11Ext::GLES11Ext()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLES11Ext",
 			"()V"
 		) {}

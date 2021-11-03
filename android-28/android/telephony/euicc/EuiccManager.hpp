@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -29,7 +29,7 @@ namespace android::telephony::euicc
 
 namespace android::telephony::euicc
 {
-	class EuiccManager : public __JniBaseClass
+	class EuiccManager : public JObject
 	{
 	public:
 		// Fields
@@ -43,7 +43,7 @@ namespace android::telephony::euicc
 		static jstring META_DATA_CARRIER_ICON();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EuiccManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EuiccManager(QJniObject obj);
 		
 		// Constructors

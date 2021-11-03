@@ -8,7 +8,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	ImageReader::ImageReader(QJniObject obj) : __JniBaseClass(obj) {}
+	ImageReader::ImageReader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -88,7 +88,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	void ImageReader::setOnImageAvailableListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void ImageReader::setOnImageAvailableListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnImageAvailableListener",

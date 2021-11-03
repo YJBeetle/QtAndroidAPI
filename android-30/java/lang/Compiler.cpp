@@ -5,7 +5,7 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	Compiler::Compiler(QJniObject obj) : __JniBaseClass(obj) {}
+	Compiler::Compiler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

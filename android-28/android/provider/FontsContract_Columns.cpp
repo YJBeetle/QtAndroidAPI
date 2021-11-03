@@ -81,7 +81,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	FontsContract_Columns::FontsContract_Columns(QJniObject obj) : __JniBaseClass(obj) {}
+	FontsContract_Columns::FontsContract_Columns(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

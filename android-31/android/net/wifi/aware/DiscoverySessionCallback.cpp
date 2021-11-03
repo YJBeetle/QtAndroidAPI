@@ -8,11 +8,11 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QJniObject forward
-	DiscoverySessionCallback::DiscoverySessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	DiscoverySessionCallback::DiscoverySessionCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DiscoverySessionCallback::DiscoverySessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.DiscoverySessionCallback",
 			"()V"
 		) {}
@@ -51,7 +51,7 @@ namespace android::net::wifi::aware
 			arg0.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __JniBaseClass arg2)
+	void DiscoverySessionCallback::onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onServiceDiscovered",
@@ -61,7 +61,7 @@ namespace android::net::wifi::aware
 			arg2.object()
 		);
 	}
-	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __JniBaseClass arg2, jint arg3)
+	void DiscoverySessionCallback::onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2, jint arg3)
 	{
 		callMethod<void>(
 			"onServiceDiscoveredWithinRange",

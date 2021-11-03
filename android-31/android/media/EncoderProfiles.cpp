@@ -5,12 +5,12 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	EncoderProfiles::EncoderProfiles(QJniObject obj) : __JniBaseClass(obj) {}
+	EncoderProfiles::EncoderProfiles(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass EncoderProfiles::getAudioProfiles()
+	JObject EncoderProfiles::getAudioProfiles()
 	{
 		return callObjectMethod(
 			"getAudioProfiles",
@@ -31,7 +31,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass EncoderProfiles::getVideoProfiles()
+	JObject EncoderProfiles::getVideoProfiles()
 	{
 		return callObjectMethod(
 			"getVideoProfiles",

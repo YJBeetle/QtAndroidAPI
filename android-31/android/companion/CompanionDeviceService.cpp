@@ -24,7 +24,7 @@ namespace android::companion
 		) {}
 	
 	// Methods
-	__JniBaseClass CompanionDeviceService::onBind(android::content::Intent arg0)
+	JObject CompanionDeviceService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -1,21 +1,21 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::nio::file
 {
-	class StandardWatchEventKinds : public __JniBaseClass
+	class StandardWatchEventKinds : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass ENTRY_CREATE();
-		static __JniBaseClass ENTRY_DELETE();
-		static __JniBaseClass ENTRY_MODIFY();
-		static __JniBaseClass OVERFLOW();
+		static JObject ENTRY_CREATE();
+		static JObject ENTRY_DELETE();
+		static JObject ENTRY_MODIFY();
+		static JObject OVERFLOW();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StandardWatchEventKinds(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StandardWatchEventKinds(QJniObject obj);
 		
 		// Constructors

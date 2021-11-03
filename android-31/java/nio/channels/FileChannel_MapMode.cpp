@@ -29,7 +29,7 @@ namespace java::nio::channels
 	}
 	
 	// QJniObject forward
-	FileChannel_MapMode::FileChannel_MapMode(QJniObject obj) : __JniBaseClass(obj) {}
+	FileChannel_MapMode::FileChannel_MapMode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

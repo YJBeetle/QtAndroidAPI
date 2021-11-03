@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -83,7 +83,7 @@ namespace android::graphics::drawable
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
 		android::graphics::Region getTransparentRegion();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
 		void invalidateSelf();
 		jboolean isAutoMirrored();
@@ -91,7 +91,7 @@ namespace android::graphics::drawable
 		jboolean isStateful();
 		void jumpToCurrentState();
 		android::graphics::drawable::Drawable mutate();
-		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
+		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		void setAlpha(jint arg0);
 		void setAutoMirrored(jboolean arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
@@ -102,7 +102,7 @@ namespace android::graphics::drawable
 		void setTintBlendMode(android::graphics::BlendMode arg0);
 		void setTintList(android::content::res::ColorStateList arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1);
+		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1);
 	};
 } // namespace android::graphics::drawable
 

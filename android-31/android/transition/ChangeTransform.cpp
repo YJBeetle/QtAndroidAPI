@@ -17,7 +17,7 @@ namespace android::transition
 			"android.transition.ChangeTransform",
 			"()V"
 		) {}
-	ChangeTransform::ChangeTransform(android::content::Context arg0, __JniBaseClass arg1)
+	ChangeTransform::ChangeTransform(android::content::Context arg0, JObject arg1)
 		: android::transition::Transition(
 			"android.transition.ChangeTransform",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

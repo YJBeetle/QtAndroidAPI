@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::content::res::loader
 {
@@ -9,13 +9,13 @@ namespace android::content::res::loader
 
 namespace android::content::res::loader
 {
-	class ResourcesLoader : public __JniBaseClass
+	class ResourcesLoader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ResourcesLoader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ResourcesLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ResourcesLoader(QJniObject obj);
 		
 		// Constructors
@@ -24,9 +24,9 @@ namespace android::content::res::loader
 		// Methods
 		void addProvider(android::content::res::loader::ResourcesProvider arg0);
 		void clearProviders();
-		__JniBaseClass getProviders();
+		JObject getProviders();
 		void removeProvider(android::content::res::loader::ResourcesProvider arg0);
-		void setProviders(__JniBaseClass arg0);
+		void setProviders(JObject arg0);
 	};
 } // namespace android::content::res::loader
 

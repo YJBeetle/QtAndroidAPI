@@ -298,12 +298,12 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaParser::MediaParser(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaParser::MediaParser(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::media::MediaParser MediaParser::create(__JniBaseClass arg0, jarray arg1)
+	android::media::MediaParser MediaParser::create(JObject arg0, jarray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaParser",
@@ -313,7 +313,7 @@ namespace android::media
 			arg1
 		);
 	}
-	android::media::MediaParser MediaParser::createByName(jstring arg0, __JniBaseClass arg1)
+	android::media::MediaParser MediaParser::createByName(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaParser",
@@ -323,7 +323,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaParser::getParserNames(android::media::MediaFormat arg0)
+	JObject MediaParser::getParserNames(android::media::MediaFormat arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaParser",
@@ -332,7 +332,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jboolean MediaParser::advance(__JniBaseClass arg0)
+	jboolean MediaParser::advance(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"advance",

@@ -10,7 +10,7 @@ namespace java::nio::channels
 	// Fields
 	
 	// QJniObject forward
-	AsynchronousSocketChannel::AsynchronousSocketChannel(QJniObject obj) : __JniBaseClass(obj) {}
+	AsynchronousSocketChannel::AsynchronousSocketChannel(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	__JniBaseClass AsynchronousSocketChannel::connect(java::net::SocketAddress arg0)
+	JObject AsynchronousSocketChannel::connect(java::net::SocketAddress arg0)
 	{
 		return callObjectMethod(
 			"connect",
@@ -48,7 +48,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::connect(java::net::SocketAddress arg0, jobject arg1, __JniBaseClass arg2)
+	void AsynchronousSocketChannel::connect(java::net::SocketAddress arg0, jobject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"connect",
@@ -79,7 +79,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	__JniBaseClass AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0)
+	JObject AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"read",
@@ -87,7 +87,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jobject arg1, __JniBaseClass arg2)
+	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jobject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"read",
@@ -97,7 +97,7 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, __JniBaseClass arg4)
+	void AsynchronousSocketChannel::read(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"read",
@@ -109,7 +109,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	void AsynchronousSocketChannel::read(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, __JniBaseClass arg6)
+	void AsynchronousSocketChannel::read(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, JObject arg6)
 	{
 		callMethod<void>(
 			"read",
@@ -123,7 +123,7 @@ namespace java::nio::channels
 			arg6.object()
 		);
 	}
-	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::AsynchronousSocketChannel AsynchronousSocketChannel::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -146,7 +146,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/AsynchronousSocketChannel;"
 		);
 	}
-	__JniBaseClass AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0)
+	JObject AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0)
 	{
 		return callObjectMethod(
 			"write",
@@ -154,7 +154,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jobject arg1, __JniBaseClass arg2)
+	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jobject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"write",
@@ -164,7 +164,7 @@ namespace java::nio::channels
 			arg2.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, __JniBaseClass arg4)
+	void AsynchronousSocketChannel::write(java::nio::ByteBuffer arg0, jlong arg1, java::util::concurrent::TimeUnit arg2, jobject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"write",
@@ -176,7 +176,7 @@ namespace java::nio::channels
 			arg4.object()
 		);
 	}
-	void AsynchronousSocketChannel::write(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, __JniBaseClass arg6)
+	void AsynchronousSocketChannel::write(jarray arg0, jint arg1, jint arg2, jlong arg3, java::util::concurrent::TimeUnit arg4, jobject arg5, JObject arg6)
 	{
 		callMethod<void>(
 			"write",

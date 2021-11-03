@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 
 namespace android::content
@@ -39,15 +39,15 @@ namespace android::widget
 		ArrayAdapter(android::content::Context arg0, jint arg1);
 		ArrayAdapter(android::content::Context arg0, jint arg1, jobjectArray arg2);
 		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2);
-		ArrayAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2);
+		ArrayAdapter(android::content::Context arg0, jint arg1, JObject arg2);
 		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3);
-		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, JObject arg3);
 		
 		// Methods
 		static android::widget::ArrayAdapter createFromResource(android::content::Context arg0, jint arg1, jint arg2);
 		void add(jobject arg0);
 		void addAll(jobjectArray arg0);
-		void addAll(__JniBaseClass arg0);
+		void addAll(JObject arg0);
 		void clear();
 		jarray getAutofillOptions();
 		android::content::Context getContext();
@@ -65,7 +65,7 @@ namespace android::widget
 		void setDropDownViewResource(jint arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
 		void setNotifyOnChange(jboolean arg0);
-		void sort(__JniBaseClass arg0);
+		void sort(JObject arg0);
 	};
 } // namespace android::widget
 

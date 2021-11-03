@@ -11,11 +11,11 @@ namespace java::util::logging
 	// Fields
 	
 	// QJniObject forward
-	LogRecord::LogRecord(QJniObject obj) : __JniBaseClass(obj) {}
+	LogRecord::LogRecord(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LogRecord::LogRecord(java::util::logging::Level arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.logging.LogRecord",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
 			arg0.object(),

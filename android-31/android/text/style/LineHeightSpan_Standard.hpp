@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::text::style
 {
-	class LineHeightSpan_Standard : public __JniBaseClass
+	class LineHeightSpan_Standard : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LineHeightSpan_Standard(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LineHeightSpan_Standard(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LineHeightSpan_Standard(QJniObject obj);
 		
 		// Constructors

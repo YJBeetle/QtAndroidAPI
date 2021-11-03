@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_StatusUpdates::ContactsContract_StatusUpdates(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_StatusUpdates::ContactsContract_StatusUpdates(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

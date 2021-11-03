@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace java::security::cert
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig : public __JniBaseClass
+	class WifiEnterpriseConfig : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_WAPI_AS_CERTIFICATE_DATA();
 		static jstring EXTRA_WAPI_AS_CERTIFICATE_NAME();
 		static jstring EXTRA_WAPI_USER_CERTIFICATE_DATA();
@@ -26,7 +26,7 @@ namespace android::net::wifi
 		static jstring WAPI_USER_CERTIFICATE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiEnterpriseConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig(QJniObject obj);
 		
 		// Constructors
@@ -42,7 +42,7 @@ namespace android::net::wifi
 		java::security::cert::X509Certificate getClientCertificate();
 		jarray getClientCertificateChain();
 		jstring getClientKeyPairAlias();
-		__JniBaseClass getClientPrivateKey();
+		JObject getClientPrivateKey();
 		jstring getDecoratedIdentityPrefix();
 		jstring getDomainSuffixMatch();
 		jint getEapMethod();
@@ -59,8 +59,8 @@ namespace android::net::wifi
 		void setAnonymousIdentity(jstring arg0);
 		void setCaCertificate(java::security::cert::X509Certificate arg0);
 		void setCaCertificates(jarray arg0);
-		void setClientKeyEntry(__JniBaseClass arg0, java::security::cert::X509Certificate arg1);
-		void setClientKeyEntryWithCertificateChain(__JniBaseClass arg0, jarray arg1);
+		void setClientKeyEntry(JObject arg0, java::security::cert::X509Certificate arg1);
+		void setClientKeyEntryWithCertificateChain(JObject arg0, jarray arg1);
 		void setClientKeyPairAlias(jstring arg0);
 		void setDecoratedIdentityPrefix(jstring arg0);
 		void setDomainSuffixMatch(jstring arg0);

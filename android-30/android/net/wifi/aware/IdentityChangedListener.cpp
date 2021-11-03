@@ -5,11 +5,11 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QJniObject forward
-	IdentityChangedListener::IdentityChangedListener(QJniObject obj) : __JniBaseClass(obj) {}
+	IdentityChangedListener::IdentityChangedListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IdentityChangedListener::IdentityChangedListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.IdentityChangedListener",
 			"()V"
 		) {}

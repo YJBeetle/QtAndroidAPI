@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -27,7 +27,7 @@ namespace android::widget
 		
 		// Constructors
 		ZoomControls(android::content::Context arg0);
-		ZoomControls(android::content::Context arg0, __JniBaseClass arg1);
+		ZoomControls(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jstring getAccessibilityClassName();
@@ -36,8 +36,8 @@ namespace android::widget
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void setIsZoomInEnabled(jboolean arg0);
 		void setIsZoomOutEnabled(jboolean arg0);
-		void setOnZoomInClickListener(__JniBaseClass arg0);
-		void setOnZoomOutClickListener(__JniBaseClass arg0);
+		void setOnZoomInClickListener(JObject arg0);
+		void setOnZoomOutClickListener(JObject arg0);
 		void setZoomSpeed(jlong arg0);
 		void show();
 	};

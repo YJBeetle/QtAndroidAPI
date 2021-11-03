@@ -6,11 +6,11 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	ContactsContract_Contacts_AggregationSuggestions_Builder::ContactsContract_Contacts_AggregationSuggestions_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_Contacts_AggregationSuggestions_Builder::ContactsContract_Contacts_AggregationSuggestions_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_Contacts_AggregationSuggestions_Builder::ContactsContract_Contacts_AggregationSuggestions_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$Contacts$AggregationSuggestions$Builder",
 			"()V"
 		) {}

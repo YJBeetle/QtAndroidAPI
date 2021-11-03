@@ -3323,7 +3323,7 @@ namespace android::system
 	}
 	
 	// QJniObject forward
-	OsConstants::OsConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	OsConstants::OsConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,11 +5,11 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProxyFileDescriptorCallback::ProxyFileDescriptorCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ProxyFileDescriptorCallback",
 			"()V"
 		) {}

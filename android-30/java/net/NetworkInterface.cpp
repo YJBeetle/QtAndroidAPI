@@ -6,7 +6,7 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	NetworkInterface::NetworkInterface(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkInterface::NetworkInterface(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -38,7 +38,7 @@ namespace java::net
 			arg0
 		);
 	}
-	__JniBaseClass NetworkInterface::getNetworkInterfaces()
+	JObject NetworkInterface::getNetworkInterfaces()
 	{
 		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -46,7 +46,7 @@ namespace java::net
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass NetworkInterface::networkInterfaces()
+	JObject NetworkInterface::networkInterfaces()
 	{
 		return callStaticObjectMethod(
 			"java.net.NetworkInterface",
@@ -83,14 +83,14 @@ namespace java::net
 			"()I"
 		);
 	}
-	__JniBaseClass NetworkInterface::getInetAddresses()
+	JObject NetworkInterface::getInetAddresses()
 	{
 		return callObjectMethod(
 			"getInetAddresses",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass NetworkInterface::getInterfaceAddresses()
+	JObject NetworkInterface::getInterfaceAddresses()
 	{
 		return callObjectMethod(
 			"getInterfaceAddresses",
@@ -118,7 +118,7 @@ namespace java::net
 			"()Ljava/net/NetworkInterface;"
 		);
 	}
-	__JniBaseClass NetworkInterface::getSubInterfaces()
+	JObject NetworkInterface::getSubInterfaces()
 	{
 		return callObjectMethod(
 			"getSubInterfaces",
@@ -132,7 +132,7 @@ namespace java::net
 			"()I"
 		);
 	}
-	__JniBaseClass NetworkInterface::inetAddresses()
+	JObject NetworkInterface::inetAddresses()
 	{
 		return callObjectMethod(
 			"inetAddresses",
@@ -167,7 +167,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	__JniBaseClass NetworkInterface::subInterfaces()
+	JObject NetworkInterface::subInterfaces()
 	{
 		return callObjectMethod(
 			"subInterfaces",

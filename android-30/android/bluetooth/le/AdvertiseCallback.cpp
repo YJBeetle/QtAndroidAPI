@@ -41,11 +41,11 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	AdvertiseCallback::AdvertiseCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AdvertiseCallback::AdvertiseCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AdvertiseCallback::AdvertiseCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.le.AdvertiseCallback",
 			"()V"
 		) {}

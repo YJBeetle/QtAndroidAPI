@@ -7,12 +7,12 @@ namespace android::view::displayhash
 	// Fields
 	
 	// QJniObject forward
-	DisplayHashManager::DisplayHashManager(QJniObject obj) : __JniBaseClass(obj) {}
+	DisplayHashManager::DisplayHashManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass DisplayHashManager::getSupportedHashAlgorithms()
+	JObject DisplayHashManager::getSupportedHashAlgorithms()
 	{
 		return callObjectMethod(
 			"getSupportedHashAlgorithms",

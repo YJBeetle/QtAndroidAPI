@@ -64,7 +64,7 @@ namespace android::graphics::text
 	}
 	
 	// QJniObject forward
-	LineBreaker::LineBreaker(QJniObject obj) : __JniBaseClass(obj) {}
+	LineBreaker::LineBreaker(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

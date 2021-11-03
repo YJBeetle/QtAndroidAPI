@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::security::keystore
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::security::keystore
 {
-	class KeyProtection_Builder : public __JniBaseClass
+	class KeyProtection_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyProtection_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyProtection_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyProtection_Builder(QJniObject obj);
 		
 		// Constructors

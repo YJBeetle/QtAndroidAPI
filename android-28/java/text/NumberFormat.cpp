@@ -49,7 +49,7 @@ namespace java::text
 			"()Ljava/text/NumberFormat;"
 		);
 	}
-	java::text::NumberFormat NumberFormat::getCompactNumberInstance(java::util::Locale arg0, __JniBaseClass arg1)
+	java::text::NumberFormat NumberFormat::getCompactNumberInstance(java::util::Locale arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.text.NumberFormat",

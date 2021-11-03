@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,13 +21,13 @@ namespace android::telephony::mbms
 
 namespace android::telephony::mbms
 {
-	class DownloadRequest_Builder : public __JniBaseClass
+	class DownloadRequest_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DownloadRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DownloadRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DownloadRequest_Builder(QJniObject obj);
 		
 		// Constructors

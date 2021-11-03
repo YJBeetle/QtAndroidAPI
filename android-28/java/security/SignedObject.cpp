@@ -7,11 +7,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	SignedObject::SignedObject(QJniObject obj) : __JniBaseClass(obj) {}
+	SignedObject::SignedObject(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SignedObject::SignedObject(__JniBaseClass arg0, __JniBaseClass arg1, java::security::Signature arg2)
-		: __JniBaseClass(
+	SignedObject::SignedObject(JObject arg0, JObject arg1, java::security::Signature arg2)
+		: JObject(
 			"java.security.SignedObject",
 			"(Ljava/io/Serializable;Ljava/security/PrivateKey;Ljava/security/Signature;)V",
 			arg0.object(),
@@ -41,7 +41,7 @@ namespace java::security
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jboolean SignedObject::verify(__JniBaseClass arg0, java::security::Signature arg1)
+	jboolean SignedObject::verify(JObject arg0, java::security::Signature arg1)
 	{
 		return callMethod<jboolean>(
 			"verify",

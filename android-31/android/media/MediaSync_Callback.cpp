@@ -7,11 +7,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaSync_Callback::MediaSync_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSync_Callback::MediaSync_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSync_Callback::MediaSync_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaSync$Callback",
 			"()V"
 		) {}

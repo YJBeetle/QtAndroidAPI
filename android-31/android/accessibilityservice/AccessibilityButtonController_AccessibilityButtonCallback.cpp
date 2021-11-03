@@ -6,11 +6,11 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QJniObject forward
-	AccessibilityButtonController_AccessibilityButtonCallback::AccessibilityButtonController_AccessibilityButtonCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityButtonController_AccessibilityButtonCallback::AccessibilityButtonController_AccessibilityButtonCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityButtonController_AccessibilityButtonCallback::AccessibilityButtonController_AccessibilityButtonCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.accessibilityservice.AccessibilityButtonController$AccessibilityButtonCallback",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::net
 {
@@ -17,13 +17,13 @@ namespace java::nio::channels::spi
 
 namespace java::nio::channels
 {
-	class AsynchronousServerSocketChannel : public __JniBaseClass
+	class AsynchronousServerSocketChannel : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AsynchronousServerSocketChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AsynchronousServerSocketChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AsynchronousServerSocketChannel(QJniObject obj);
 		
 		// Constructors
@@ -31,13 +31,13 @@ namespace java::nio::channels
 		// Methods
 		static java::nio::channels::AsynchronousServerSocketChannel open();
 		static java::nio::channels::AsynchronousServerSocketChannel open(java::nio::channels::AsynchronousChannelGroup arg0);
-		__JniBaseClass accept();
-		void accept(jobject arg0, __JniBaseClass arg1);
+		JObject accept();
+		void accept(jobject arg0, JObject arg1);
 		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0);
 		java::nio::channels::AsynchronousServerSocketChannel bind(java::net::SocketAddress arg0, jint arg1);
 		java::net::SocketAddress getLocalAddress();
 		java::nio::channels::spi::AsynchronousChannelProvider provider();
-		java::nio::channels::AsynchronousServerSocketChannel setOption(__JniBaseClass arg0, jobject arg1);
+		java::nio::channels::AsynchronousServerSocketChannel setOption(JObject arg0, jobject arg1);
 	};
 } // namespace java::nio::channels
 

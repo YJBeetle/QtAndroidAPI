@@ -19,11 +19,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_animator::R_animator(QJniObject obj) : __JniBaseClass(obj) {}
+	R_animator::R_animator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_animator::R_animator()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$animator",
 			"()V"
 		) {}

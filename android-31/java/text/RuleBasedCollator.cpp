@@ -51,7 +51,7 @@ namespace java::text
 			arg0
 		);
 	}
-	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(__JniBaseClass arg0)
+	java::text::CollationElementIterator RuleBasedCollator::getCollationElementIterator(JObject arg0)
 	{
 		return callObjectMethod(
 			"getCollationElementIterator",

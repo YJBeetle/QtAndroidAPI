@@ -5,16 +5,16 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	LongSummaryStatistics::LongSummaryStatistics(QJniObject obj) : __JniBaseClass(obj) {}
+	LongSummaryStatistics::LongSummaryStatistics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LongSummaryStatistics::LongSummaryStatistics()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.LongSummaryStatistics",
 			"()V"
 		) {}
 	LongSummaryStatistics::LongSummaryStatistics(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.LongSummaryStatistics",
 			"(JJJJ)V",
 			arg0,

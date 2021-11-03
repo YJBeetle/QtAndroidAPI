@@ -7,11 +7,11 @@ namespace org::xml::sax
 	// Fields
 	
 	// QJniObject forward
-	HandlerBase::HandlerBase(QJniObject obj) : __JniBaseClass(obj) {}
+	HandlerBase::HandlerBase(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	HandlerBase::HandlerBase()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.HandlerBase",
 			"()V"
 		) {}
@@ -96,7 +96,7 @@ namespace org::xml::sax
 			arg1
 		);
 	}
-	void HandlerBase::setDocumentLocator(__JniBaseClass arg0)
+	void HandlerBase::setDocumentLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -111,7 +111,7 @@ namespace org::xml::sax
 			"()V"
 		);
 	}
-	void HandlerBase::startElement(jstring arg0, __JniBaseClass arg1)
+	void HandlerBase::startElement(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"startElement",

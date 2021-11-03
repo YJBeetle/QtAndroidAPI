@@ -8,7 +8,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertStore::CertStore(QJniObject obj) : __JniBaseClass(obj) {}
+	CertStore::CertStore(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -31,7 +31,7 @@ namespace java::security::cert
 			arg1.object()
 		);
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1, jstring arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -42,7 +42,7 @@ namespace java::security::cert
 			arg2
 		);
 	}
-	java::security::cert::CertStore CertStore::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
+	java::security::cert::CertStore CertStore::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.cert.CertStore",
@@ -53,7 +53,7 @@ namespace java::security::cert
 			arg2.object()
 		);
 	}
-	__JniBaseClass CertStore::getCRLs(__JniBaseClass arg0)
+	JObject CertStore::getCRLs(JObject arg0)
 	{
 		return callObjectMethod(
 			"getCRLs",
@@ -61,14 +61,14 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertStore::getCertStoreParameters()
+	JObject CertStore::getCertStoreParameters()
 	{
 		return callObjectMethod(
 			"getCertStoreParameters",
 			"()Ljava/security/cert/CertStoreParameters;"
 		);
 	}
-	__JniBaseClass CertStore::getCertificates(__JniBaseClass arg0)
+	JObject CertStore::getCertificates(JObject arg0)
 	{
 		return callObjectMethod(
 			"getCertificates",

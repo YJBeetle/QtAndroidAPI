@@ -54,7 +54,7 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GnssStatus::GnssStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	GnssStatus::GnssStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

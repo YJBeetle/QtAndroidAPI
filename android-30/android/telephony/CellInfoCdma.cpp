@@ -8,7 +8,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellInfoCdma::CREATOR()
+	JObject CellInfoCdma::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellInfoCdma",

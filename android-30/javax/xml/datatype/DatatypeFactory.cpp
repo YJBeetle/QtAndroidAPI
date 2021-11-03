@@ -28,7 +28,7 @@ namespace javax::xml::datatype
 	}
 	
 	// QJniObject forward
-	DatatypeFactory::DatatypeFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	DatatypeFactory::DatatypeFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

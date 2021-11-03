@@ -215,11 +215,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	DisplayMetrics::DisplayMetrics(QJniObject obj) : __JniBaseClass(obj) {}
+	DisplayMetrics::DisplayMetrics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DisplayMetrics::DisplayMetrics()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.DisplayMetrics",
 			"()V"
 		) {}

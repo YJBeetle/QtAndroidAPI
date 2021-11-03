@@ -26,11 +26,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	VolumeProvider::VolumeProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	VolumeProvider::VolumeProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VolumeProvider::VolumeProvider(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.VolumeProvider",
 			"(III)V",
 			arg0,

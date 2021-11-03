@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CRL.hpp"
 
 namespace java::math
@@ -44,12 +44,12 @@ namespace java::security::cert
 		// Methods
 		jboolean equals(jobject arg0);
 		jbyteArray getEncoded();
-		__JniBaseClass getIssuerDN();
+		JObject getIssuerDN();
 		javax::security::auth::x500::X500Principal getIssuerX500Principal();
 		java::util::Date getNextUpdate();
 		java::security::cert::X509CRLEntry getRevokedCertificate(java::math::BigInteger arg0);
 		java::security::cert::X509CRLEntry getRevokedCertificate(java::security::cert::X509Certificate arg0);
-		__JniBaseClass getRevokedCertificates();
+		JObject getRevokedCertificates();
 		jstring getSigAlgName();
 		jstring getSigAlgOID();
 		jbyteArray getSigAlgParams();
@@ -58,9 +58,9 @@ namespace java::security::cert
 		java::util::Date getThisUpdate();
 		jint getVersion();
 		jint hashCode();
-		void verify(__JniBaseClass arg0);
-		void verify(__JniBaseClass arg0, jstring arg1);
-		void verify(__JniBaseClass arg0, java::security::Provider arg1);
+		void verify(JObject arg0);
+		void verify(JObject arg0, jstring arg1);
+		void verify(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace java::security::cert
 

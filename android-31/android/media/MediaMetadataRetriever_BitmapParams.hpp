@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,13 +9,13 @@ namespace android::graphics
 
 namespace android::media
 {
-	class MediaMetadataRetriever_BitmapParams : public __JniBaseClass
+	class MediaMetadataRetriever_BitmapParams : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaMetadataRetriever_BitmapParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaMetadataRetriever_BitmapParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMetadataRetriever_BitmapParams(QJniObject obj);
 		
 		// Constructors

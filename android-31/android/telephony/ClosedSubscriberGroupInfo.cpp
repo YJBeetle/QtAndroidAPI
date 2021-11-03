@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass ClosedSubscriberGroupInfo::CREATOR()
+	JObject ClosedSubscriberGroupInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.ClosedSubscriberGroupInfo",
@@ -14,7 +14,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	ClosedSubscriberGroupInfo::ClosedSubscriberGroupInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ClosedSubscriberGroupInfo::ClosedSubscriberGroupInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

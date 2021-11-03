@@ -7,12 +7,12 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	MbmsGroupCallSession::MbmsGroupCallSession(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsGroupCallSession::MbmsGroupCallSession(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsGroupCallSession",
@@ -23,7 +23,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	android::telephony::MbmsGroupCallSession MbmsGroupCallSession::create(android::content::Context arg0, jint arg1, JObject arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"android.telephony.MbmsGroupCallSession",
@@ -42,7 +42,7 @@ namespace android::telephony
 			"()V"
 		);
 	}
-	android::telephony::mbms::GroupCall MbmsGroupCallSession::startGroupCall(jlong arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	android::telephony::mbms::GroupCall MbmsGroupCallSession::startGroupCall(jlong arg0, JObject arg1, JObject arg2, JObject arg3, JObject arg4)
 	{
 		return callObjectMethod(
 			"startGroupCall",

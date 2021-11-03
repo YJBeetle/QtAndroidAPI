@@ -5,11 +5,11 @@ namespace java::lang
 	// Fields
 	
 	// QJniObject forward
-	StackTraceElement::StackTraceElement(QJniObject obj) : __JniBaseClass(obj) {}
+	StackTraceElement::StackTraceElement(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StackTraceElement::StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StackTraceElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
@@ -18,7 +18,7 @@ namespace java::lang
 			arg3
 		) {}
 	StackTraceElement::StackTraceElement(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.StackTraceElement",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,

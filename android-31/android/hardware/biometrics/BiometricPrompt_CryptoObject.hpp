@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::security::identity
 {
@@ -21,13 +21,13 @@ namespace javax::crypto
 
 namespace android::hardware::biometrics
 {
-	class BiometricPrompt_CryptoObject : public __JniBaseClass
+	class BiometricPrompt_CryptoObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BiometricPrompt_CryptoObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BiometricPrompt_CryptoObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BiometricPrompt_CryptoObject(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -56,9 +56,9 @@ namespace android::widget
 		
 		// Constructors
 		GridLayout(android::content::Context arg0);
-		GridLayout(android::content::Context arg0, __JniBaseClass arg1);
-		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		GridLayout(android::content::Context arg0, JObject arg1);
+		GridLayout(android::content::Context arg0, JObject arg1, jint arg2);
+		GridLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static android::widget::GridLayout_Spec spec(jint arg0);
@@ -69,7 +69,7 @@ namespace android::widget
 		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2);
 		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, jfloat arg2);
 		static android::widget::GridLayout_Spec spec(jint arg0, jint arg1, android::widget::GridLayout_Alignment arg2, jfloat arg3);
-		android::widget::GridLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::GridLayout_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jint getAlignmentMode();
 		jint getColumnCount();

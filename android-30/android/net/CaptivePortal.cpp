@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass CaptivePortal::CREATOR()
+	JObject CaptivePortal::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.CaptivePortal",
@@ -14,7 +14,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	CaptivePortal::CaptivePortal(QJniObject obj) : __JniBaseClass(obj) {}
+	CaptivePortal::CaptivePortal(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

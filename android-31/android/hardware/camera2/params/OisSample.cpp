@@ -5,11 +5,11 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QJniObject forward
-	OisSample::OisSample(QJniObject obj) : __JniBaseClass(obj) {}
+	OisSample::OisSample(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	OisSample::OisSample(jlong arg0, jfloat arg1, jfloat arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.OisSample",
 			"(JFF)V",
 			arg0,

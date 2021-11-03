@@ -23,11 +23,11 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	RangeValueIterator_Element::RangeValueIterator_Element(QJniObject obj) : __JniBaseClass(obj) {}
+	RangeValueIterator_Element::RangeValueIterator_Element(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RangeValueIterator_Element::RangeValueIterator_Element()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.RangeValueIterator$Element",
 			"()V"
 		) {}

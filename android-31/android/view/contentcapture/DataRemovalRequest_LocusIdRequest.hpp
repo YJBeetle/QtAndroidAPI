@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace android::view::contentcapture
 
 namespace android::view::contentcapture
 {
-	class DataRemovalRequest_LocusIdRequest : public __JniBaseClass
+	class DataRemovalRequest_LocusIdRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DataRemovalRequest_LocusIdRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DataRemovalRequest_LocusIdRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DataRemovalRequest_LocusIdRequest(QJniObject obj);
 		
 		// Constructors

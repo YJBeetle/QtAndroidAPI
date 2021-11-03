@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,13 +17,13 @@ namespace android::util
 
 namespace android::app
 {
-	class PictureInPictureParams_Builder : public __JniBaseClass
+	class PictureInPictureParams_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PictureInPictureParams_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PictureInPictureParams_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PictureInPictureParams_Builder(QJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::app
 		
 		// Methods
 		android::app::PictureInPictureParams build();
-		android::app::PictureInPictureParams_Builder setActions(__JniBaseClass arg0);
+		android::app::PictureInPictureParams_Builder setActions(JObject arg0);
 		android::app::PictureInPictureParams_Builder setAspectRatio(android::util::Rational arg0);
 		android::app::PictureInPictureParams_Builder setAutoEnterEnabled(jboolean arg0);
 		android::app::PictureInPictureParams_Builder setSeamlessResizeEnabled(jboolean arg0);

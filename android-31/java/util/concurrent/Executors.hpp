@@ -1,42 +1,42 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::util::concurrent
 {
-	class Executors : public __JniBaseClass
+	class Executors : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Executors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Executors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Executors(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass callable(__JniBaseClass arg0);
-		static __JniBaseClass callable(__JniBaseClass arg0, jobject arg1);
-		static __JniBaseClass defaultThreadFactory();
-		static __JniBaseClass newCachedThreadPool();
-		static __JniBaseClass newCachedThreadPool(__JniBaseClass arg0);
-		static __JniBaseClass newFixedThreadPool(jint arg0);
-		static __JniBaseClass newFixedThreadPool(jint arg0, __JniBaseClass arg1);
-		static __JniBaseClass newScheduledThreadPool(jint arg0);
-		static __JniBaseClass newScheduledThreadPool(jint arg0, __JniBaseClass arg1);
-		static __JniBaseClass newSingleThreadExecutor();
-		static __JniBaseClass newSingleThreadExecutor(__JniBaseClass arg0);
-		static __JniBaseClass newSingleThreadScheduledExecutor();
-		static __JniBaseClass newSingleThreadScheduledExecutor(__JniBaseClass arg0);
-		static __JniBaseClass newWorkStealingPool();
-		static __JniBaseClass newWorkStealingPool(jint arg0);
-		static __JniBaseClass privilegedCallable(__JniBaseClass arg0);
-		static __JniBaseClass privilegedCallableUsingCurrentClassLoader(__JniBaseClass arg0);
-		static __JniBaseClass privilegedThreadFactory();
-		static __JniBaseClass unconfigurableExecutorService(__JniBaseClass arg0);
-		static __JniBaseClass unconfigurableScheduledExecutorService(__JniBaseClass arg0);
+		static JObject callable(JObject arg0);
+		static JObject callable(JObject arg0, jobject arg1);
+		static JObject defaultThreadFactory();
+		static JObject newCachedThreadPool();
+		static JObject newCachedThreadPool(JObject arg0);
+		static JObject newFixedThreadPool(jint arg0);
+		static JObject newFixedThreadPool(jint arg0, JObject arg1);
+		static JObject newScheduledThreadPool(jint arg0);
+		static JObject newScheduledThreadPool(jint arg0, JObject arg1);
+		static JObject newSingleThreadExecutor();
+		static JObject newSingleThreadExecutor(JObject arg0);
+		static JObject newSingleThreadScheduledExecutor();
+		static JObject newSingleThreadScheduledExecutor(JObject arg0);
+		static JObject newWorkStealingPool();
+		static JObject newWorkStealingPool(jint arg0);
+		static JObject privilegedCallable(JObject arg0);
+		static JObject privilegedCallableUsingCurrentClassLoader(JObject arg0);
+		static JObject privilegedThreadFactory();
+		static JObject unconfigurableExecutorService(JObject arg0);
+		static JObject unconfigurableScheduledExecutorService(JObject arg0);
 	};
 } // namespace java::util::concurrent
 

@@ -5,7 +5,7 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	Writer::Writer(QJniObject obj) : __JniBaseClass(obj) {}
+	Writer::Writer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

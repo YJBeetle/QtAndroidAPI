@@ -9,16 +9,16 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	Notification_CarExtender::Notification_CarExtender(QJniObject obj) : __JniBaseClass(obj) {}
+	Notification_CarExtender::Notification_CarExtender(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_CarExtender::Notification_CarExtender()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$CarExtender",
 			"()V"
 		) {}
 	Notification_CarExtender::Notification_CarExtender(android::app::Notification arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$CarExtender",
 			"(Landroid/app/Notification;)V",
 			arg0.object()

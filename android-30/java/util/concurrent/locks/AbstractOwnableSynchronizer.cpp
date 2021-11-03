@@ -6,7 +6,7 @@ namespace java::util::concurrent::locks
 	// Fields
 	
 	// QJniObject forward
-	AbstractOwnableSynchronizer::AbstractOwnableSynchronizer(QJniObject obj) : __JniBaseClass(obj) {}
+	AbstractOwnableSynchronizer::AbstractOwnableSynchronizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

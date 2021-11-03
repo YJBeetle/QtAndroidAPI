@@ -6,17 +6,17 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	Interpolator::Interpolator(QJniObject obj) : __JniBaseClass(obj) {}
+	Interpolator::Interpolator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Interpolator::Interpolator(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Interpolator",
 			"(I)V",
 			arg0
 		) {}
 	Interpolator::Interpolator(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Interpolator",
 			"(II)V",
 			arg0,

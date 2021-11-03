@@ -6,11 +6,11 @@ namespace java::lang::ref
 	// Fields
 	
 	// QJniObject forward
-	ReferenceQueue::ReferenceQueue(QJniObject obj) : __JniBaseClass(obj) {}
+	ReferenceQueue::ReferenceQueue(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ReferenceQueue::ReferenceQueue()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ref.ReferenceQueue",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -37,7 +37,7 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class Call : public __JniBaseClass
+	class Call : public JObject
 	{
 	public:
 		// Fields
@@ -65,20 +65,20 @@ namespace android::telecom
 		static jint STATE_SIMULATED_RINGING();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Call(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Call(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Call(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void addConferenceParticipants(__JniBaseClass arg0);
+		void addConferenceParticipants(JObject arg0);
 		void answer(jint arg0);
 		void conference(android::telecom::Call arg0);
 		void deflect(android::net::Uri arg0);
 		void disconnect();
-		__JniBaseClass getCannedTextResponses();
-		__JniBaseClass getChildren();
-		__JniBaseClass getConferenceableCalls();
+		JObject getCannedTextResponses();
+		JObject getChildren();
+		JObject getConferenceableCalls();
 		android::telecom::Call_Details getDetails();
 		android::telecom::Call getGenericConferenceActiveChildCall();
 		android::telecom::Call getParent();
@@ -100,7 +100,7 @@ namespace android::telecom
 		void reject(jint arg0);
 		void reject(jboolean arg0, jstring arg1);
 		void removeExtras(jarray arg0);
-		void removeExtras(__JniBaseClass arg0);
+		void removeExtras(JObject arg0);
 		void respondToRttRequest(jint arg0, jboolean arg1);
 		void sendCallEvent(jstring arg0, android::os::Bundle arg1);
 		void sendRttRequest();

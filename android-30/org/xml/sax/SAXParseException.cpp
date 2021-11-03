@@ -9,14 +9,14 @@ namespace org::xml::sax
 	SAXParseException::SAXParseException(QJniObject obj) : org::xml::sax::SAXException(obj) {}
 	
 	// Constructors
-	SAXParseException::SAXParseException(jstring arg0, __JniBaseClass arg1)
+	SAXParseException::SAXParseException(jstring arg0, JObject arg1)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;)V",
 			arg0,
 			arg1.object()
 		) {}
-	SAXParseException::SAXParseException(jstring arg0, __JniBaseClass arg1, java::lang::Exception arg2)
+	SAXParseException::SAXParseException(jstring arg0, JObject arg1, java::lang::Exception arg2)
 		: org::xml::sax::SAXException(
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;Ljava/lang/Exception;)V",

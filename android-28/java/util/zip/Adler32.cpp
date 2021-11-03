@@ -6,11 +6,11 @@ namespace java::util::zip
 	// Fields
 	
 	// QJniObject forward
-	Adler32::Adler32(QJniObject obj) : __JniBaseClass(obj) {}
+	Adler32::Adler32(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Adler32::Adler32()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Adler32",
 			"()V"
 		) {}

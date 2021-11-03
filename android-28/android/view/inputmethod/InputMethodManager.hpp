@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -37,7 +37,7 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class InputMethodManager : public __JniBaseClass
+	class InputMethodManager : public JObject
 	{
 	public:
 		// Fields
@@ -51,7 +51,7 @@ namespace android::view::inputmethod
 		static jint SHOW_IMPLICIT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit InputMethodManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputMethodManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodManager(QJniObject obj);
 		
 		// Constructors
@@ -60,15 +60,15 @@ namespace android::view::inputmethod
 		void dispatchKeyEventFromInputMethod(android::view::View arg0, android::view::KeyEvent arg1);
 		void displayCompletions(android::view::View arg0, jarray arg1);
 		android::view::inputmethod::InputMethodSubtype getCurrentInputMethodSubtype();
-		__JniBaseClass getEnabledInputMethodList();
-		__JniBaseClass getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
-		__JniBaseClass getInputMethodList();
+		JObject getEnabledInputMethodList();
+		JObject getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
+		JObject getInputMethodList();
 		android::view::inputmethod::InputMethodSubtype getLastInputMethodSubtype();
-		__JniBaseClass getShortcutInputMethodsAndSubtypes();
-		void hideSoftInputFromInputMethod(__JniBaseClass arg0, jint arg1);
-		jboolean hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1);
-		jboolean hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1, android::os::ResultReceiver arg2);
-		void hideStatusIcon(__JniBaseClass arg0);
+		JObject getShortcutInputMethodsAndSubtypes();
+		void hideSoftInputFromInputMethod(JObject arg0, jint arg1);
+		jboolean hideSoftInputFromWindow(JObject arg0, jint arg1);
+		jboolean hideSoftInputFromWindow(JObject arg0, jint arg1, android::os::ResultReceiver arg2);
+		void hideStatusIcon(JObject arg0);
 		jboolean isAcceptingText();
 		jboolean isActive();
 		jboolean isActive(android::view::View arg0);
@@ -78,19 +78,19 @@ namespace android::view::inputmethod
 		void sendAppPrivateCommand(android::view::View arg0, jstring arg1, android::os::Bundle arg2);
 		void setAdditionalInputMethodSubtypes(jstring arg0, jarray arg1);
 		jboolean setCurrentInputMethodSubtype(android::view::inputmethod::InputMethodSubtype arg0);
-		void setInputMethod(__JniBaseClass arg0, jstring arg1);
-		void setInputMethodAndSubtype(__JniBaseClass arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2);
-		jboolean shouldOfferSwitchingToNextInputMethod(__JniBaseClass arg0);
+		void setInputMethod(JObject arg0, jstring arg1);
+		void setInputMethodAndSubtype(JObject arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2);
+		jboolean shouldOfferSwitchingToNextInputMethod(JObject arg0);
 		void showInputMethodAndSubtypeEnabler(jstring arg0);
 		void showInputMethodPicker();
 		jboolean showSoftInput(android::view::View arg0, jint arg1);
 		jboolean showSoftInput(android::view::View arg0, jint arg1, android::os::ResultReceiver arg2);
-		void showSoftInputFromInputMethod(__JniBaseClass arg0, jint arg1);
-		void showStatusIcon(__JniBaseClass arg0, jstring arg1, jint arg2);
-		jboolean switchToLastInputMethod(__JniBaseClass arg0);
-		jboolean switchToNextInputMethod(__JniBaseClass arg0, jboolean arg1);
+		void showSoftInputFromInputMethod(JObject arg0, jint arg1);
+		void showStatusIcon(JObject arg0, jstring arg1, jint arg2);
+		jboolean switchToLastInputMethod(JObject arg0);
+		jboolean switchToNextInputMethod(JObject arg0, jboolean arg1);
 		void toggleSoftInput(jint arg0, jint arg1);
-		void toggleSoftInputFromWindow(__JniBaseClass arg0, jint arg1, jint arg2);
+		void toggleSoftInputFromWindow(JObject arg0, jint arg1, jint arg2);
 		void updateCursor(android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void updateCursorAnchorInfo(android::view::View arg0, android::view::inputmethod::CursorAnchorInfo arg1);
 		void updateExtractedText(android::view::View arg0, jint arg1, android::view::inputmethod::ExtractedText arg2);

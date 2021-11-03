@@ -9,11 +9,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QJniObject forward
-	TvInputInfo_Builder::TvInputInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TvInputInfo_Builder::TvInputInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvInputInfo_Builder::TvInputInfo_Builder(android::content::Context arg0, android::content::ComponentName arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvInputInfo$Builder",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
 			arg0.object(),

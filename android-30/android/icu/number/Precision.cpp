@@ -9,7 +9,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QJniObject forward
-	Precision::Precision(QJniObject obj) : __JniBaseClass(obj) {}
+	Precision::Precision(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

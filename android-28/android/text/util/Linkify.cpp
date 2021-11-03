@@ -40,7 +40,7 @@ namespace android::text::util
 			"WEB_URLS"
 		);
 	}
-	__JniBaseClass Linkify::sPhoneNumberMatchFilter()
+	JObject Linkify::sPhoneNumberMatchFilter()
 	{
 		return getStaticObjectField(
 			"android.text.util.Linkify",
@@ -48,7 +48,7 @@ namespace android::text::util
 			"Landroid/text/util/Linkify$MatchFilter;"
 		);
 	}
-	__JniBaseClass Linkify::sPhoneNumberTransformFilter()
+	JObject Linkify::sPhoneNumberTransformFilter()
 	{
 		return getStaticObjectField(
 			"android.text.util.Linkify",
@@ -56,7 +56,7 @@ namespace android::text::util
 			"Landroid/text/util/Linkify$TransformFilter;"
 		);
 	}
-	__JniBaseClass Linkify::sUrlMatchFilter()
+	JObject Linkify::sUrlMatchFilter()
 	{
 		return getStaticObjectField(
 			"android.text.util.Linkify",
@@ -66,17 +66,17 @@ namespace android::text::util
 	}
 	
 	// QJniObject forward
-	Linkify::Linkify(QJniObject obj) : __JniBaseClass(obj) {}
+	Linkify::Linkify(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Linkify::Linkify()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.util.Linkify",
 			"()V"
 		) {}
 	
 	// Methods
-	jboolean Linkify::addLinks(__JniBaseClass arg0, jint arg1)
+	jboolean Linkify::addLinks(JObject arg0, jint arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -96,7 +96,7 @@ namespace android::text::util
 			arg1
 		);
 	}
-	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -107,7 +107,7 @@ namespace android::text::util
 			arg2
 		);
 	}
-	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -120,7 +120,7 @@ namespace android::text::util
 			arg4.object()
 		);
 	}
-	jboolean Linkify::addLinks(__JniBaseClass arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
+	jboolean Linkify::addLinks(JObject arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5)
 	{
 		return callStaticMethod<jboolean>(
 			"android.text.util.Linkify",
@@ -145,7 +145,7 @@ namespace android::text::util
 			arg2
 		);
 	}
-	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, JObject arg3, JObject arg4)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Linkify",
@@ -158,7 +158,7 @@ namespace android::text::util
 			arg4.object()
 		);
 	}
-	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __JniBaseClass arg4, __JniBaseClass arg5)
+	void Linkify::addLinks(android::widget::TextView arg0, java::util::regex::Pattern arg1, jstring arg2, jarray arg3, JObject arg4, JObject arg5)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Linkify",

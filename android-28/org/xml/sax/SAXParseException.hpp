@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "./SAXException.hpp"
 
@@ -21,8 +21,8 @@ namespace org::xml::sax
 		SAXParseException(QJniObject obj);
 		
 		// Constructors
-		SAXParseException(jstring arg0, __JniBaseClass arg1);
-		SAXParseException(jstring arg0, __JniBaseClass arg1, java::lang::Exception arg2);
+		SAXParseException(jstring arg0, JObject arg1);
+		SAXParseException(jstring arg0, JObject arg1, java::lang::Exception arg2);
 		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);
 		SAXParseException(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, java::lang::Exception arg5);
 		

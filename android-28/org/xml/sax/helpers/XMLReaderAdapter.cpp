@@ -7,16 +7,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QJniObject forward
-	XMLReaderAdapter::XMLReaderAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	XMLReaderAdapter::XMLReaderAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	XMLReaderAdapter::XMLReaderAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.XMLReaderAdapter",
 			"()V"
 		) {}
-	XMLReaderAdapter::XMLReaderAdapter(__JniBaseClass arg0)
-		: __JniBaseClass(
+	XMLReaderAdapter::XMLReaderAdapter(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.XMLReaderAdapter",
 			"(Lorg/xml/sax/XMLReader;)V",
 			arg0.object()
@@ -93,7 +93,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void XMLReaderAdapter::setDTDHandler(__JniBaseClass arg0)
+	void XMLReaderAdapter::setDTDHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -101,7 +101,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setDocumentHandler(__JniBaseClass arg0)
+	void XMLReaderAdapter::setDocumentHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentHandler",
@@ -109,7 +109,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setDocumentLocator(__JniBaseClass arg0)
+	void XMLReaderAdapter::setDocumentLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -117,7 +117,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setEntityResolver(__JniBaseClass arg0)
+	void XMLReaderAdapter::setEntityResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -125,7 +125,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void XMLReaderAdapter::setErrorHandler(__JniBaseClass arg0)
+	void XMLReaderAdapter::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -156,7 +156,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void XMLReaderAdapter::startElement(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	void XMLReaderAdapter::startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startElement",

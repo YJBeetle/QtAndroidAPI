@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::speech::tts
 {
@@ -9,7 +9,7 @@ namespace android::speech::tts
 
 namespace android::speech::tts
 {
-	class TextToSpeech_Engine : public __JniBaseClass
+	class TextToSpeech_Engine : public JObject
 	{
 	public:
 		// Fields
@@ -45,7 +45,7 @@ namespace android::speech::tts
 		static jstring SERVICE_META_DATA();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextToSpeech_Engine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextToSpeech_Engine(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextToSpeech_Engine(QJniObject obj);
 		
 		// Constructors

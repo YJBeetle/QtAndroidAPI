@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../Intent.hpp"
 
 namespace android::content
@@ -26,7 +26,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit LabeledIntent(const char *className, const char *sig, Ts...agv) : android::content::Intent(className, sig, std::forward<Ts>(agv)...) {}

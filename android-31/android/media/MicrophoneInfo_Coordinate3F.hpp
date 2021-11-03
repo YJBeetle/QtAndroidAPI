@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MicrophoneInfo_Coordinate3F : public __JniBaseClass
+	class MicrophoneInfo_Coordinate3F : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::media
 		jfloat z();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MicrophoneInfo_Coordinate3F(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MicrophoneInfo_Coordinate3F(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MicrophoneInfo_Coordinate3F(QJniObject obj);
 		
 		// Constructors

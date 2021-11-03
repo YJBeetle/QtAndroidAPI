@@ -24,7 +24,7 @@ namespace android::app
 			arg0.object(),
 			arg1
 		) {}
-	DatePickerDialog::DatePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jint arg4)
 		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;Landroid/app/DatePickerDialog$OnDateSetListener;III)V",
@@ -34,7 +34,7 @@ namespace android::app
 			arg3,
 			arg4
 		) {}
-	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jint arg5)
+	DatePickerDialog::DatePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jint arg5)
 		: android::app::AlertDialog(
 			"android.app.DatePickerDialog",
 			"(Landroid/content/Context;ILandroid/app/DatePickerDialog$OnDateSetListener;III)V",
@@ -54,7 +54,7 @@ namespace android::app
 			"()Landroid/widget/DatePicker;"
 		);
 	}
-	void DatePickerDialog::onClick(__JniBaseClass arg0, jint arg1)
+	void DatePickerDialog::onClick(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onClick",
@@ -89,7 +89,7 @@ namespace android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void DatePickerDialog::setOnDateSetListener(__JniBaseClass arg0)
+	void DatePickerDialog::setOnDateSetListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDateSetListener",

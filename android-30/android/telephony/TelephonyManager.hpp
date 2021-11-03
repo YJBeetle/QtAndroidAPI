@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -69,7 +69,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class TelephonyManager : public __JniBaseClass
+	class TelephonyManager : public JObject
 	{
 	public:
 		// Fields
@@ -193,7 +193,7 @@ namespace android::telephony
 		static jstring VVM_TYPE_OMTP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TelephonyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TelephonyManager(QJniObject obj);
 		
 		// Constructors
@@ -204,7 +204,7 @@ namespace android::telephony
 		android::telephony::TelephonyManager createForSubscriptionId(jint arg0);
 		jboolean doesSwitchMultiSimConfigTriggerReboot();
 		jint getActiveModemCount();
-		__JniBaseClass getAllCellInfo();
+		JObject getAllCellInfo();
 		jint getCallState();
 		jint getCardIdForDefaultEuicc();
 		android::os::PersistableBundle getCarrierConfig();
@@ -216,8 +216,8 @@ namespace android::telephony
 		jstring getDeviceId();
 		jstring getDeviceId(jint arg0);
 		jstring getDeviceSoftwareVersion();
-		__JniBaseClass getEmergencyNumberList();
-		__JniBaseClass getEmergencyNumberList(jint arg0);
+		JObject getEmergencyNumberList();
+		JObject getEmergencyNumberList(jint arg0);
 		jarray getForbiddenPlmns();
 		jstring getGroupIdLevel1();
 		jstring getIccAuthentication(jint arg0, jint arg1, jstring arg2);
@@ -260,7 +260,7 @@ namespace android::telephony
 		jint getSupportedModemCount();
 		jstring getTypeAllocationCode();
 		jstring getTypeAllocationCode(jint arg0);
-		__JniBaseClass getUiccCardsInfo();
+		JObject getUiccCardsInfo();
 		jstring getVisualVoicemailPackageName();
 		jstring getVoiceMailAlphaTag();
 		jstring getVoiceMailNumber();
@@ -290,27 +290,27 @@ namespace android::telephony
 		jboolean isVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0);
 		jboolean isWorldPhone();
 		void listen(android::telephony::PhoneStateListener arg0, jint arg1);
-		void requestCellInfoUpdate(__JniBaseClass arg0, android::telephony::TelephonyManager_CellInfoCallback arg1);
-		android::telephony::NetworkScan requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2);
+		void requestCellInfoUpdate(JObject arg0, android::telephony::TelephonyManager_CellInfoCallback arg1);
+		android::telephony::NetworkScan requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2);
 		void sendDialerSpecialCode(jstring arg0);
 		jstring sendEnvelopeWithStatus(jstring arg0);
 		void sendUssdRequest(jstring arg0, android::telephony::TelephonyManager_UssdResponseCallback arg1, android::os::Handler arg2);
 		void sendVisualVoicemailSms(jstring arg0, jint arg1, jstring arg2, android::app::PendingIntent arg3);
 		void setDataEnabled(jboolean arg0);
-		jint setForbiddenPlmns(__JniBaseClass arg0);
+		jint setForbiddenPlmns(JObject arg0);
 		jboolean setLine1NumberForDisplay(jstring arg0, jstring arg1);
 		void setNetworkSelectionModeAutomatic();
 		jboolean setNetworkSelectionModeManual(jstring arg0, jboolean arg1);
 		jboolean setNetworkSelectionModeManual(jstring arg0, jboolean arg1, jint arg2);
 		jboolean setOperatorBrandOverride(jstring arg0);
 		jboolean setPreferredNetworkTypeToGlobal();
-		void setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		void setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, JObject arg2, JObject arg3);
 		void setVisualVoicemailSmsFilterSettings(android::telephony::VisualVoicemailSmsFilterSettings arg0);
 		jboolean setVoiceMailNumber(jstring arg0, jstring arg1);
 		void setVoicemailRingtoneUri(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1);
 		void setVoicemailVibrationEnabled(android::telecom::PhoneAccountHandle arg0, jboolean arg1);
 		void switchMultiSimConfig(jint arg0);
-		void updateAvailableNetworks(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		void updateAvailableNetworks(JObject arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::telephony
 

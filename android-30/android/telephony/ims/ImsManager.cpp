@@ -31,7 +31,7 @@ namespace android::telephony::ims
 	}
 	
 	// QJniObject forward
-	ImsManager::ImsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ImsManager::ImsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

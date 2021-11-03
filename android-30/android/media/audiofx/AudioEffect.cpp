@@ -251,7 +251,7 @@ namespace android::media::audiofx
 	}
 	
 	// QJniObject forward
-	AudioEffect::AudioEffect(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioEffect::AudioEffect(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -299,7 +299,7 @@ namespace android::media::audiofx
 			"()V"
 		);
 	}
-	void AudioEffect::setControlStatusListener(__JniBaseClass arg0)
+	void AudioEffect::setControlStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setControlStatusListener",
@@ -307,7 +307,7 @@ namespace android::media::audiofx
 			arg0.object()
 		);
 	}
-	void AudioEffect::setEnableStatusListener(__JniBaseClass arg0)
+	void AudioEffect::setEnableStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setEnableStatusListener",

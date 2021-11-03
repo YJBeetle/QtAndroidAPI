@@ -5,7 +5,7 @@
 namespace android::view::translation
 {
 	// Fields
-	__JniBaseClass TranslationContext::CREATOR()
+	JObject TranslationContext::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.translation.TranslationContext",
@@ -36,7 +36,7 @@ namespace android::view::translation
 	}
 	
 	// QJniObject forward
-	TranslationContext::TranslationContext(QJniObject obj) : __JniBaseClass(obj) {}
+	TranslationContext::TranslationContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

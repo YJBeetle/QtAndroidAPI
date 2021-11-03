@@ -10,16 +10,16 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	Path::Path(QJniObject obj) : __JniBaseClass(obj) {}
+	Path::Path(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Path::Path()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Path",
 			"()V"
 		) {}
 	Path::Path(android::graphics::Path &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Path",
 			"(Landroid/graphics/Path;)V",
 			arg0.object()

@@ -31,12 +31,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	OffsetTime::OffsetTime(QJniObject obj) : __JniBaseClass(obj) {}
+	OffsetTime::OffsetTime(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::OffsetTime OffsetTime::from(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.OffsetTime",
@@ -123,7 +123,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	__JniBaseClass OffsetTime::adjustInto(__JniBaseClass arg0)
+	JObject OffsetTime::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -171,7 +171,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint OffsetTime::get(__JniBaseClass arg0)
+	jint OffsetTime::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -186,7 +186,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jlong OffsetTime::getLong(__JniBaseClass arg0)
+	jlong OffsetTime::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -253,7 +253,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean OffsetTime::isSupported(__JniBaseClass arg0)
+	jboolean OffsetTime::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -261,7 +261,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::minus(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -269,7 +269,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetTime OffsetTime::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -310,7 +310,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::OffsetTime OffsetTime::plus(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -318,7 +318,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::OffsetTime OffsetTime::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -359,7 +359,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject OffsetTime::query(__JniBaseClass arg0)
+	jobject OffsetTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -367,7 +367,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange OffsetTime::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange OffsetTime::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -397,7 +397,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::OffsetTime OffsetTime::truncatedTo(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -405,7 +405,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong OffsetTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong OffsetTime::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -414,7 +414,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::with(__JniBaseClass arg0)
+	java::time::OffsetTime OffsetTime::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -422,7 +422,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::OffsetTime OffsetTime::with(__JniBaseClass arg0, jlong arg1)
+	java::time::OffsetTime OffsetTime::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

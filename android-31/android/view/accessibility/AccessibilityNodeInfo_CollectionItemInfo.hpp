@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo_CollectionItemInfo : public __JniBaseClass
+	class AccessibilityNodeInfo_CollectionItemInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo_CollectionItemInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityNodeInfo_CollectionItemInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo_CollectionItemInfo(QJniObject obj);
 		
 		// Constructors

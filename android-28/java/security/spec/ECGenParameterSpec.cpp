@@ -5,11 +5,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	ECGenParameterSpec::ECGenParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	ECGenParameterSpec::ECGenParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ECGenParameterSpec::ECGenParameterSpec(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECGenParameterSpec",
 			"(Ljava/lang/String;)V",
 			arg0

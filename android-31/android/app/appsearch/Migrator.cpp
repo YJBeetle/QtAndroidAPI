@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	Migrator::Migrator(QJniObject obj) : __JniBaseClass(obj) {}
+	Migrator::Migrator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Migrator::Migrator()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.Migrator",
 			"()V"
 		) {}

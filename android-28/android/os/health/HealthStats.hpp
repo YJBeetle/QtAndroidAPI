@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os::health
 {
@@ -9,13 +9,13 @@ namespace android::os::health
 
 namespace android::os::health
 {
-	class HealthStats : public __JniBaseClass
+	class HealthStats : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit HealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HealthStats(QJniObject obj);
 		
 		// Constructors
@@ -25,10 +25,10 @@ namespace android::os::health
 		jlong getMeasurement(jint arg0);
 		jint getMeasurementKeyAt(jint arg0);
 		jint getMeasurementKeyCount();
-		__JniBaseClass getMeasurements(jint arg0);
+		JObject getMeasurements(jint arg0);
 		jint getMeasurementsKeyAt(jint arg0);
 		jint getMeasurementsKeyCount();
-		__JniBaseClass getStats(jint arg0);
+		JObject getStats(jint arg0);
 		jint getStatsKeyAt(jint arg0);
 		jint getStatsKeyCount();
 		android::os::health::TimerStat getTimer(jint arg0);
@@ -36,7 +36,7 @@ namespace android::os::health
 		jint getTimerKeyAt(jint arg0);
 		jint getTimerKeyCount();
 		jlong getTimerTime(jint arg0);
-		__JniBaseClass getTimers(jint arg0);
+		JObject getTimers(jint arg0);
 		jint getTimersKeyAt(jint arg0);
 		jint getTimersKeyCount();
 		jboolean hasMeasurement(jint arg0);

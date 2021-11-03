@@ -156,7 +156,7 @@ namespace java::time::temporal
 			"()[Ljava/time/temporal/ChronoUnit;"
 		).object<jarray>();
 	}
-	__JniBaseClass ChronoUnit::addTo(__JniBaseClass arg0, jlong arg1)
+	JObject ChronoUnit::addTo(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"addTo",
@@ -165,7 +165,7 @@ namespace java::time::temporal
 			arg1
 		);
 	}
-	jlong ChronoUnit::between(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong ChronoUnit::between(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"between",
@@ -195,7 +195,7 @@ namespace java::time::temporal
 			"()Z"
 		);
 	}
-	jboolean ChronoUnit::isSupportedBy(__JniBaseClass arg0)
+	jboolean ChronoUnit::isSupportedBy(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupportedBy",

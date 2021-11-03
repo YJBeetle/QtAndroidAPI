@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -67,13 +67,13 @@ namespace android::graphics::drawable
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
 		jboolean isStateful();
 		android::graphics::drawable::Drawable mutate();
-		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
+		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		void setAlpha(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
 		void setColorStateList(android::content::res::ColorStateList arg0);
 		void setTintBlendMode(android::graphics::BlendMode arg0);
 		void setTintList(android::content::res::ColorStateList arg0);
-		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1);
+		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1);
 	};
 } // namespace android::graphics::drawable
 

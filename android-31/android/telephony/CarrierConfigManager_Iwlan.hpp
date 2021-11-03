@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class CarrierConfigManager_Iwlan : public __JniBaseClass
+	class CarrierConfigManager_Iwlan : public JObject
 	{
 	public:
 		// Fields
@@ -48,7 +48,7 @@ namespace android::telephony
 		static jstring KEY_SUPPORTED_PRF_ALGORITHMS_INT_ARRAY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_Iwlan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CarrierConfigManager_Iwlan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager_Iwlan(QJniObject obj);
 		
 		// Constructors

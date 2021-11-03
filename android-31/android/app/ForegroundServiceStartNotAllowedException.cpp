@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ForegroundServiceStartNotAllowedException::CREATOR()
+	JObject ForegroundServiceStartNotAllowedException::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ForegroundServiceStartNotAllowedException",

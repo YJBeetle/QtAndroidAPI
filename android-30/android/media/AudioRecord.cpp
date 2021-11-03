@@ -91,11 +91,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioRecord::AudioRecord(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioRecord::AudioRecord(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioRecord::AudioRecord(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioRecord",
 			"(IIIII)V",
 			arg0,
@@ -117,7 +117,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void AudioRecord::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AudioRecord::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -126,7 +126,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	__JniBaseClass AudioRecord::getActiveMicrophones()
+	JObject AudioRecord::getActiveMicrophones()
 	{
 		return callObjectMethod(
 			"getActiveMicrophones",
@@ -333,7 +333,7 @@ namespace android::media
 			arg3
 		);
 	}
-	void AudioRecord::registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1)
+	void AudioRecord::registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1)
 	{
 		callMethod<void>(
 			"registerAudioRecordingCallback",
@@ -349,7 +349,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void AudioRecord::removeOnRoutingChangedListener(__JniBaseClass arg0)
+	void AudioRecord::removeOnRoutingChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -397,7 +397,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void AudioRecord::setRecordPositionUpdateListener(__JniBaseClass arg0)
+	void AudioRecord::setRecordPositionUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setRecordPositionUpdateListener",
@@ -405,7 +405,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioRecord::setRecordPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AudioRecord::setRecordPositionUpdateListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setRecordPositionUpdateListener",

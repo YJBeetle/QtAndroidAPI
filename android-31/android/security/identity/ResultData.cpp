@@ -54,7 +54,7 @@ namespace android::security::identity
 	}
 	
 	// QJniObject forward
-	ResultData::ResultData(QJniObject obj) : __JniBaseClass(obj) {}
+	ResultData::ResultData(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -75,7 +75,7 @@ namespace android::security::identity
 			arg1
 		).object<jbyteArray>();
 	}
-	__JniBaseClass ResultData::getEntryNames(jstring arg0)
+	JObject ResultData::getEntryNames(jstring arg0)
 	{
 		return callObjectMethod(
 			"getEntryNames",
@@ -90,14 +90,14 @@ namespace android::security::identity
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass ResultData::getNamespaces()
+	JObject ResultData::getNamespaces()
 	{
 		return callObjectMethod(
 			"getNamespaces",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass ResultData::getRetrievedEntryNames(jstring arg0)
+	JObject ResultData::getRetrievedEntryNames(jstring arg0)
 	{
 		return callObjectMethod(
 			"getRetrievedEntryNames",

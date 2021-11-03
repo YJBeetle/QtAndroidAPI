@@ -9,24 +9,24 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"([B)V",
 			arg0
 		) {}
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(jstring arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/lang/String;[B)V",
 			arg0,
 			arg1
 		) {}
 	EncryptedPrivateKeyInfo::EncryptedPrivateKeyInfo(java::security::AlgorithmParameters arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/security/AlgorithmParameters;[B)V",
 			arg0.object(),
@@ -62,7 +62,7 @@ namespace javax::crypto
 			"()[B"
 		).object<jbyteArray>();
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(__JniBaseClass arg0)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0)
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -78,7 +78,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(__JniBaseClass arg0, jstring arg1)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -87,7 +87,7 @@ namespace javax::crypto
 			arg1
 		);
 	}
-	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(__JniBaseClass arg0, java::security::Provider arg1)
+	java::security::spec::PKCS8EncodedKeySpec EncryptedPrivateKeyInfo::getKeySpec(JObject arg0, java::security::Provider arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",

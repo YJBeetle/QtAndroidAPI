@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../text/AttributedCharacterIterator_Attribute.hpp"
 
 namespace java::lang

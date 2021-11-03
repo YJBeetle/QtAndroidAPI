@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace javax::xml::_namespace
 {
@@ -9,7 +9,7 @@ namespace javax::xml::_namespace
 
 namespace javax::xml::xpath
 {
-	class XPathConstants : public __JniBaseClass
+	class XPathConstants : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace javax::xml::xpath
 		static javax::xml::_namespace::QName STRING();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XPathConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XPathConstants(QJniObject obj);
 		
 		// Constructors

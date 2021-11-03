@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::database::sqlite
 {
@@ -9,13 +9,13 @@ namespace android::database::sqlite
 
 namespace android::database
 {
-	class DefaultDatabaseErrorHandler : public __JniBaseClass
+	class DefaultDatabaseErrorHandler : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DefaultDatabaseErrorHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DefaultDatabaseErrorHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DefaultDatabaseErrorHandler(QJniObject obj);
 		
 		// Constructors

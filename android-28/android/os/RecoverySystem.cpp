@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	RecoverySystem::RecoverySystem(QJniObject obj) : __JniBaseClass(obj) {}
+	RecoverySystem::RecoverySystem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void RecoverySystem::verifyPackage(java::io::File arg0, __JniBaseClass arg1, java::io::File arg2)
+	void RecoverySystem::verifyPackage(java::io::File arg0, JObject arg1, java::io::File arg2)
 	{
 		callStaticMethod<void>(
 			"android.os.RecoverySystem",

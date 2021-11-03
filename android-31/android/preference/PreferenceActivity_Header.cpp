@@ -7,7 +7,7 @@
 namespace android::preference
 {
 	// Fields
-	__JniBaseClass PreferenceActivity_Header::CREATOR()
+	JObject PreferenceActivity_Header::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.preference.PreferenceActivity$Header",
@@ -109,11 +109,11 @@ namespace android::preference
 	}
 	
 	// QJniObject forward
-	PreferenceActivity_Header::PreferenceActivity_Header(QJniObject obj) : __JniBaseClass(obj) {}
+	PreferenceActivity_Header::PreferenceActivity_Header(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PreferenceActivity_Header::PreferenceActivity_Header()
-		: __JniBaseClass(
+		: JObject(
 			"android.preference.PreferenceActivity$Header",
 			"()V"
 		) {}

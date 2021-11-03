@@ -6,11 +6,11 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QJniObject forward
-	CameraExtensionSession_StateCallback::CameraExtensionSession_StateCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraExtensionSession_StateCallback::CameraExtensionSession_StateCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraExtensionSession_StateCallback::CameraExtensionSession_StateCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CameraExtensionSession$StateCallback",
 			"()V"
 		) {}

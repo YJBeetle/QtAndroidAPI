@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -61,7 +61,7 @@ namespace java::net
 
 namespace android::net::wifi
 {
-	class WifiManager : public __JniBaseClass
+	class WifiManager : public JObject
 	{
 	public:
 		// Fields
@@ -123,7 +123,7 @@ namespace android::net::wifi
 		static jint WPS_WEP_PROHIBITED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager(QJniObject obj);
 		
 		// Constructors
@@ -133,10 +133,10 @@ namespace android::net::wifi
 		static jint compareSignalLevel(jint arg0, jint arg1);
 		jint addNetwork(android::net::wifi::WifiConfiguration arg0);
 		android::net::wifi::WifiManager_AddNetworkResult addNetworkPrivileged(android::net::wifi::WifiConfiguration arg0);
-		jint addNetworkSuggestions(__JniBaseClass arg0);
+		jint addNetworkSuggestions(JObject arg0);
 		void addOrUpdatePasspointConfiguration(android::net::wifi::hotspot2::PasspointConfiguration arg0);
-		void addSuggestionConnectionStatusListener(__JniBaseClass arg0, __JniBaseClass arg1);
-		void addSuggestionUserApprovalStatusListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		void addSuggestionConnectionStatusListener(JObject arg0, JObject arg1);
+		void addSuggestionUserApprovalStatusListener(JObject arg0, JObject arg1);
 		jint calculateSignalLevel(jint arg0);
 		void cancelWps(android::net::wifi::WifiManager_WpsCallback arg0);
 		android::net::wifi::WifiManager_MulticastLock createMulticastLock(jstring arg0);
@@ -146,15 +146,15 @@ namespace android::net::wifi
 		jboolean disconnect();
 		jboolean enableNetwork(jint arg0, jboolean arg1);
 		void flushPasspointAnqpCache();
-		__JniBaseClass getCallerConfiguredNetworks();
-		__JniBaseClass getConfiguredNetworks();
+		JObject getCallerConfiguredNetworks();
+		JObject getConfiguredNetworks();
 		android::net::wifi::WifiInfo getConnectionInfo();
 		android::net::DhcpInfo getDhcpInfo();
 		jint getMaxNumberOfNetworkSuggestionsPerApp();
 		jint getMaxSignalLevel();
-		__JniBaseClass getNetworkSuggestions();
-		__JniBaseClass getPasspointConfigurations();
-		__JniBaseClass getScanResults();
+		JObject getNetworkSuggestions();
+		JObject getPasspointConfigurations();
+		JObject getScanResults();
 		jint getWifiState();
 		jboolean is24GHzBandSupported();
 		jboolean is5GHzBandSupported();
@@ -190,14 +190,14 @@ namespace android::net::wifi
 		jboolean pingSupplicant();
 		jboolean reassociate();
 		jboolean reconnect();
-		void registerScanResultsCallback(__JniBaseClass arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1);
-		void registerSubsystemRestartTrackingCallback(__JniBaseClass arg0, android::net::wifi::WifiManager_SubsystemRestartTrackingCallback arg1);
+		void registerScanResultsCallback(JObject arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1);
+		void registerSubsystemRestartTrackingCallback(JObject arg0, android::net::wifi::WifiManager_SubsystemRestartTrackingCallback arg1);
 		jboolean removeNetwork(jint arg0);
-		jint removeNetworkSuggestions(__JniBaseClass arg0);
+		jint removeNetworkSuggestions(JObject arg0);
 		jboolean removeNonCallerConfiguredNetworks();
 		void removePasspointConfiguration(jstring arg0);
-		void removeSuggestionConnectionStatusListener(__JniBaseClass arg0);
-		void removeSuggestionUserApprovalStatusListener(__JniBaseClass arg0);
+		void removeSuggestionConnectionStatusListener(JObject arg0);
+		void removeSuggestionUserApprovalStatusListener(JObject arg0);
 		jboolean saveConfiguration();
 		void setTdlsEnabled(java::net::InetAddress arg0, jboolean arg1);
 		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);

@@ -8,11 +8,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	ConversationActions_Request_Builder::ConversationActions_Request_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationActions_Request_Builder::ConversationActions_Request_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ConversationActions_Request_Builder::ConversationActions_Request_Builder(__JniBaseClass arg0)
-		: __JniBaseClass(
+	ConversationActions_Request_Builder::ConversationActions_Request_Builder(JObject arg0)
+		: JObject(
 			"android.view.textclassifier.ConversationActions$Request$Builder",
 			"(Ljava/util/List;)V",
 			arg0.object()
@@ -34,7 +34,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setHints(__JniBaseClass arg0)
+	android::view::textclassifier::ConversationActions_Request_Builder ConversationActions_Request_Builder::setHints(JObject arg0)
 	{
 		return callObjectMethod(
 			"setHints",

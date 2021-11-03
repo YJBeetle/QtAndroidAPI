@@ -16,7 +16,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.LinkedTransferQueue",
 			"()V"
 		) {}
-	LinkedTransferQueue::LinkedTransferQueue(__JniBaseClass arg0)
+	LinkedTransferQueue::LinkedTransferQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.LinkedTransferQueue",
 			"(Ljava/util/Collection;)V",
@@ -47,7 +47,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint LinkedTransferQueue::drainTo(__JniBaseClass arg0)
+	jint LinkedTransferQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint LinkedTransferQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint LinkedTransferQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -64,7 +64,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void LinkedTransferQueue::forEach(__JniBaseClass arg0)
+	void LinkedTransferQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -93,7 +93,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass LinkedTransferQueue::iterator()
+	JObject LinkedTransferQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -164,7 +164,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean LinkedTransferQueue::removeAll(__JniBaseClass arg0)
+	jboolean LinkedTransferQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -172,7 +172,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedTransferQueue::removeIf(__JniBaseClass arg0)
+	jboolean LinkedTransferQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -180,7 +180,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean LinkedTransferQueue::retainAll(__JniBaseClass arg0)
+	jboolean LinkedTransferQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -195,7 +195,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass LinkedTransferQueue::spliterator()
+	JObject LinkedTransferQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,7 +25,7 @@ namespace android::widget
 
 namespace android::widget
 {
-	class ListPopupWindow : public __JniBaseClass
+	class ListPopupWindow : public JObject
 	{
 	public:
 		// Fields
@@ -38,18 +38,18 @@ namespace android::widget
 		static jint WRAP_CONTENT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ListPopupWindow(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ListPopupWindow(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ListPopupWindow(QJniObject obj);
 		
 		// Constructors
 		ListPopupWindow(android::content::Context arg0);
-		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1);
-		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ListPopupWindow(android::content::Context arg0, JObject arg1);
+		ListPopupWindow(android::content::Context arg0, JObject arg1, jint arg2);
+		ListPopupWindow(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void clearListSelection();
-		__JniBaseClass createDragToOpenListener(android::view::View arg0);
+		JObject createDragToOpenListener(android::view::View arg0);
 		void dismiss();
 		android::view::View getAnchorView();
 		jint getAnimationStyle();
@@ -74,7 +74,7 @@ namespace android::widget
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
 		jboolean performItemClick(jint arg0);
 		void postShow();
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setAnchorView(android::view::View arg0);
 		void setAnimationStyle(jint arg0);
 		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
@@ -85,9 +85,9 @@ namespace android::widget
 		void setInputMethodMode(jint arg0);
 		void setListSelector(android::graphics::drawable::Drawable arg0);
 		void setModal(jboolean arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
-		void setOnItemClickListener(__JniBaseClass arg0);
-		void setOnItemSelectedListener(__JniBaseClass arg0);
+		void setOnDismissListener(JObject arg0);
+		void setOnItemClickListener(JObject arg0);
+		void setOnItemSelectedListener(JObject arg0);
 		void setPromptPosition(jint arg0);
 		void setPromptView(android::view::View arg0);
 		void setSelection(jint arg0);

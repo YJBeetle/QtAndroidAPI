@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,13 +17,13 @@ namespace android::nfc
 
 namespace android::nfc::cardemulation
 {
-	class NfcFCardEmulation : public __JniBaseClass
+	class NfcFCardEmulation : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NfcFCardEmulation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NfcFCardEmulation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NfcFCardEmulation(QJniObject obj);
 		
 		// Constructors

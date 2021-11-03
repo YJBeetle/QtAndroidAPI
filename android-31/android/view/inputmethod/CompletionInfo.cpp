@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass CompletionInfo::CREATOR()
+	JObject CompletionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.CompletionInfo",
@@ -14,11 +14,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QJniObject forward
-	CompletionInfo::CompletionInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	CompletionInfo::CompletionInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace android::view::inputmethod
 			arg2
 		) {}
 	CompletionInfo::CompletionInfo(jlong arg0, jint arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.CompletionInfo",
 			"(JILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,

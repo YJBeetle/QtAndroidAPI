@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,20 +13,20 @@ namespace android::net
 
 namespace android::provider
 {
-	class CalendarContract_EventDays : public __JniBaseClass
+	class CalendarContract_EventDays : public JObject
 	{
 	public:
 		// Fields
 		static android::net::Uri CONTENT_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CalendarContract_EventDays(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CalendarContract_EventDays(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CalendarContract_EventDays(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);
+		static JObject query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);
 	};
 } // namespace android::provider
 

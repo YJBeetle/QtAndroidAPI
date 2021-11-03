@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -38,14 +38,14 @@ namespace android::widget
 		
 		// Constructors
 		Toolbar(android::content::Context arg0);
-		Toolbar(android::content::Context arg0, __JniBaseClass arg1);
-		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Toolbar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Toolbar(android::content::Context arg0, JObject arg1);
+		Toolbar(android::content::Context arg0, JObject arg1, jint arg2);
+		Toolbar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void collapseActionView();
 		void dismissPopupMenus();
-		android::widget::Toolbar_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::Toolbar_LayoutParams generateLayoutParams(JObject arg0);
 		jint getContentInsetEnd();
 		jint getContentInsetEndWithActions();
 		jint getContentInsetLeft();
@@ -58,7 +58,7 @@ namespace android::widget
 		jint getCurrentContentInsetStart();
 		android::graphics::drawable::Drawable getLogo();
 		jstring getLogoDescription();
-		__JniBaseClass getMenu();
+		JObject getMenu();
 		jstring getNavigationContentDescription();
 		android::graphics::drawable::Drawable getNavigationIcon();
 		android::graphics::drawable::Drawable getOverflowIcon();
@@ -87,8 +87,8 @@ namespace android::widget
 		void setNavigationContentDescription(jstring arg0);
 		void setNavigationIcon(android::graphics::drawable::Drawable arg0);
 		void setNavigationIcon(jint arg0);
-		void setNavigationOnClickListener(__JniBaseClass arg0);
-		void setOnMenuItemClickListener(__JniBaseClass arg0);
+		void setNavigationOnClickListener(JObject arg0);
+		void setOnMenuItemClickListener(JObject arg0);
 		void setOverflowIcon(android::graphics::drawable::Drawable arg0);
 		void setPopupTheme(jint arg0);
 		void setSubtitle(jint arg0);

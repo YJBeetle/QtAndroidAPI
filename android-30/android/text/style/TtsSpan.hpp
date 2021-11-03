@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::text::style
 {
-	class TtsSpan : public __JniBaseClass
+	class TtsSpan : public JObject
 	{
 	public:
 		// Fields
@@ -99,7 +99,7 @@ namespace android::text::style
 		static jint WEEKDAY_WEDNESDAY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TtsSpan(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TtsSpan(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TtsSpan(QJniObject obj);
 		
 		// Constructors

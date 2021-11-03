@@ -222,12 +222,12 @@ namespace android::net::ipsec::ike
 	}
 	
 	// QJniObject forward
-	SaProposal::SaProposal(QJniObject obj) : __JniBaseClass(obj) {}
+	SaProposal::SaProposal(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SaProposal::getSupportedDhGroups()
+	JObject SaProposal::getSupportedDhGroups()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.SaProposal",
@@ -243,21 +243,21 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	__JniBaseClass SaProposal::getDhGroups()
+	JObject SaProposal::getDhGroups()
 	{
 		return callObjectMethod(
 			"getDhGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SaProposal::getEncryptionAlgorithms()
+	JObject SaProposal::getEncryptionAlgorithms()
 	{
 		return callObjectMethod(
 			"getEncryptionAlgorithms",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SaProposal::getIntegrityAlgorithms()
+	JObject SaProposal::getIntegrityAlgorithms()
 	{
 		return callObjectMethod(
 			"getIntegrityAlgorithms",

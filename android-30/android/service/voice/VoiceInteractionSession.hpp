@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -105,7 +105,7 @@ namespace java::io
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession : public __JniBaseClass
+	class VoiceInteractionSession : public JObject
 	{
 	public:
 		// Fields
@@ -119,7 +119,7 @@ namespace android::service::voice
 		static jint SHOW_WITH_SCREENSHOT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoiceInteractionSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession(QJniObject obj);
 		
 		// Constructors
@@ -168,8 +168,8 @@ namespace android::service::voice
 		void onTaskFinished(android::content::Intent arg0, jint arg1);
 		void onTaskStarted(android::content::Intent arg0, jint arg1);
 		void onTrimMemory(jint arg0);
-		void performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3, __JniBaseClass arg4);
-		void requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		void performDirectAction(android::app::DirectAction arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4);
+		void requestDirectActions(android::service::voice::VoiceInteractionSession_ActivityId arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3);
 		void setContentView(android::view::View arg0);
 		void setDisabledShowContext(jint arg0);
 		void setKeepAwake(jboolean arg0);

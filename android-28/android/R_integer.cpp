@@ -33,11 +33,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_integer::R_integer(QJniObject obj) : __JniBaseClass(obj) {}
+	R_integer::R_integer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_integer::R_integer()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$integer",
 			"()V"
 		) {}

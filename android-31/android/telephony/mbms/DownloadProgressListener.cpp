@@ -7,11 +7,11 @@ namespace android::telephony::mbms
 	// Fields
 	
 	// QJniObject forward
-	DownloadProgressListener::DownloadProgressListener(QJniObject obj) : __JniBaseClass(obj) {}
+	DownloadProgressListener::DownloadProgressListener(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DownloadProgressListener::DownloadProgressListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.mbms.DownloadProgressListener",
 			"()V"
 		) {}

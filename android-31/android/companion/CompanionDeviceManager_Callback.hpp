@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,13 +9,13 @@ namespace android::content
 
 namespace android::companion
 {
-	class CompanionDeviceManager_Callback : public __JniBaseClass
+	class CompanionDeviceManager_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CompanionDeviceManager_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CompanionDeviceManager_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CompanionDeviceManager_Callback(QJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	Edits::Edits(QJniObject obj) : __JniBaseClass(obj) {}
+	Edits::Edits(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Edits::Edits()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Edits",
 			"()V"
 		) {}

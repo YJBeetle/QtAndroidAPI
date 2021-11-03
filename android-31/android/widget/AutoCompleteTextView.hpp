@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./EditText.hpp"
@@ -47,17 +47,17 @@ namespace android::widget
 		
 		// Constructors
 		AutoCompleteTextView(android::content::Context arg0);
-		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1);
-		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
-		AutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4);
+		AutoCompleteTextView(android::content::Context arg0, JObject arg1);
+		AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2);
+		AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
+		AutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, android::content::res::Resources_Theme arg4);
 		
 		// Methods
 		void clearListSelection();
 		void dismissDropDown();
 		jboolean enoughToFilter();
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jstring getCompletionHint();
 		jint getDropDownAnchor();
 		android::graphics::drawable::Drawable getDropDownBackground();
@@ -66,13 +66,13 @@ namespace android::widget
 		jint getDropDownVerticalOffset();
 		jint getDropDownWidth();
 		jint getInputMethodMode();
-		__JniBaseClass getItemClickListener();
-		__JniBaseClass getItemSelectedListener();
+		JObject getItemClickListener();
+		JObject getItemSelectedListener();
 		jint getListSelection();
-		__JniBaseClass getOnItemClickListener();
-		__JniBaseClass getOnItemSelectedListener();
+		JObject getOnItemClickListener();
+		JObject getOnItemSelectedListener();
 		jint getThreshold();
-		__JniBaseClass getValidator();
+		JObject getValidator();
 		jboolean isPerformingCompletion();
 		jboolean isPopupShowing();
 		void onCommitCompletion(android::view::inputmethod::CompletionInfo arg0);
@@ -84,7 +84,7 @@ namespace android::widget
 		void performCompletion();
 		void performValidation();
 		void refreshAutoCompleteResults();
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setCompletionHint(jstring arg0);
 		void setDropDownAnchor(jint arg0);
 		void setDropDownBackgroundDrawable(android::graphics::drawable::Drawable arg0);
@@ -95,13 +95,13 @@ namespace android::widget
 		void setDropDownWidth(jint arg0);
 		void setInputMethodMode(jint arg0);
 		void setListSelection(jint arg0);
-		void setOnClickListener(__JniBaseClass arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
-		void setOnItemClickListener(__JniBaseClass arg0);
-		void setOnItemSelectedListener(__JniBaseClass arg0);
+		void setOnClickListener(JObject arg0);
+		void setOnDismissListener(JObject arg0);
+		void setOnItemClickListener(JObject arg0);
+		void setOnItemSelectedListener(JObject arg0);
 		void setText(jstring arg0, jboolean arg1);
 		void setThreshold(jint arg0);
-		void setValidator(__JniBaseClass arg0);
+		void setValidator(JObject arg0);
 		void showDropDown();
 	};
 } // namespace android::widget

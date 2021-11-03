@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::mtp
 {
-	class MtpConstants : public __JniBaseClass
+	class MtpConstants : public JObject
 	{
 	public:
 		// Fields
@@ -110,7 +110,7 @@ namespace android::mtp
 		static jint PROTECTION_STATUS_READ_ONLY_DATA();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MtpConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MtpConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MtpConstants(QJniObject obj);
 		
 		// Constructors

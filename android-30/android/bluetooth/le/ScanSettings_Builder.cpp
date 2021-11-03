@@ -6,11 +6,11 @@ namespace android::bluetooth::le
 	// Fields
 	
 	// QJniObject forward
-	ScanSettings_Builder::ScanSettings_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ScanSettings_Builder::ScanSettings_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScanSettings_Builder::ScanSettings_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.le.ScanSettings$Builder",
 			"()V"
 		) {}

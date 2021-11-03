@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_transition : public __JniBaseClass
+	class R_transition : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android
 		static jint slide_top();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit R_transition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_transition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_transition(QJniObject obj);
 		
 		// Constructors

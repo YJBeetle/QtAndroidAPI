@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class SimPhonebookContract_ElementaryFiles : public __JniBaseClass
+	class SimPhonebookContract_ElementaryFiles : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::provider
 		static jstring SUBSCRIPTION_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SimPhonebookContract_ElementaryFiles(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SimPhonebookContract_ElementaryFiles(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SimPhonebookContract_ElementaryFiles(QJniObject obj);
 		
 		// Constructors

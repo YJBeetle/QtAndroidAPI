@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellIdentityCdma::CREATOR()
+	JObject CellIdentityCdma::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellIdentityCdma",

@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass AsyncNotedAppOp::CREATOR()
+	JObject AsyncNotedAppOp::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.AsyncNotedAppOp",
@@ -14,7 +14,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	AsyncNotedAppOp::AsyncNotedAppOp(QJniObject obj) : __JniBaseClass(obj) {}
+	AsyncNotedAppOp::AsyncNotedAppOp(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

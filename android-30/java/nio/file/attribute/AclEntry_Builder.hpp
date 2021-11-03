@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::nio::file::attribute
 {
@@ -13,13 +13,13 @@ namespace java::nio::file::attribute
 
 namespace java::nio::file::attribute
 {
-	class AclEntry_Builder : public __JniBaseClass
+	class AclEntry_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AclEntry_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AclEntry_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AclEntry_Builder(QJniObject obj);
 		
 		// Constructors
@@ -27,10 +27,10 @@ namespace java::nio::file::attribute
 		// Methods
 		java::nio::file::attribute::AclEntry build();
 		java::nio::file::attribute::AclEntry_Builder setFlags(jarray arg0);
-		java::nio::file::attribute::AclEntry_Builder setFlags(__JniBaseClass arg0);
+		java::nio::file::attribute::AclEntry_Builder setFlags(JObject arg0);
 		java::nio::file::attribute::AclEntry_Builder setPermissions(jarray arg0);
-		java::nio::file::attribute::AclEntry_Builder setPermissions(__JniBaseClass arg0);
-		java::nio::file::attribute::AclEntry_Builder setPrincipal(__JniBaseClass arg0);
+		java::nio::file::attribute::AclEntry_Builder setPermissions(JObject arg0);
+		java::nio::file::attribute::AclEntry_Builder setPrincipal(JObject arg0);
 		java::nio::file::attribute::AclEntry_Builder setType(java::nio::file::attribute::AclEntryType arg0);
 	};
 } // namespace java::nio::file::attribute

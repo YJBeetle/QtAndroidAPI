@@ -5,17 +5,17 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertPathBuilderSpi::CertPathBuilderSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	CertPathBuilderSpi::CertPathBuilderSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CertPathBuilderSpi::CertPathBuilderSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.CertPathBuilderSpi",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass CertPathBuilderSpi::engineBuild(__JniBaseClass arg0)
+	JObject CertPathBuilderSpi::engineBuild(JObject arg0)
 	{
 		return callObjectMethod(
 			"engineBuild",
@@ -23,7 +23,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass CertPathBuilderSpi::engineGetRevocationChecker()
+	JObject CertPathBuilderSpi::engineGetRevocationChecker()
 	{
 		return callObjectMethod(
 			"engineGetRevocationChecker",

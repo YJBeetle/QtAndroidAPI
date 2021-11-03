@@ -7,7 +7,7 @@ namespace android::nfc
 	// Fields
 	
 	// QJniObject forward
-	NfcManager::NfcManager(QJniObject obj) : __JniBaseClass(obj) {}
+	NfcManager::NfcManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

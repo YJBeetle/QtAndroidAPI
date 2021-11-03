@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics::fonts
 {
@@ -9,13 +9,13 @@ namespace android::graphics::fonts
 
 namespace android::graphics::fonts
 {
-	class FontFamily : public __JniBaseClass
+	class FontFamily : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FontFamily(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FontFamily(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FontFamily(QJniObject obj);
 		
 		// Constructors

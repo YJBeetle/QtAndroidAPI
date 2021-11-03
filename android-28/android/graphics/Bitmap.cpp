@@ -14,7 +14,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass Bitmap::CREATOR()
+	JObject Bitmap::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.Bitmap",
@@ -31,7 +31,7 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Bitmap::Bitmap(QJniObject obj) : __JniBaseClass(obj) {}
+	Bitmap::Bitmap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

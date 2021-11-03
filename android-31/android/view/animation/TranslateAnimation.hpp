@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::content
@@ -24,7 +24,7 @@ namespace android::view::animation
 		TranslateAnimation(QJniObject obj);
 		
 		// Constructors
-		TranslateAnimation(android::content::Context arg0, __JniBaseClass arg1);
+		TranslateAnimation(android::content::Context arg0, JObject arg1);
 		TranslateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		TranslateAnimation(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7);
 		

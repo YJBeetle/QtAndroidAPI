@@ -55,7 +55,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Contacts_Phones::Contacts_Phones(QJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_Phones::Contacts_Phones(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

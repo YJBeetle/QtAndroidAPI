@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,18 +13,18 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent
 {
-	class FutureTask : public __JniBaseClass
+	class FutureTask : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FutureTask(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FutureTask(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FutureTask(QJniObject obj);
 		
 		// Constructors
-		FutureTask(__JniBaseClass arg0);
-		FutureTask(__JniBaseClass arg0, jobject arg1);
+		FutureTask(JObject arg0);
+		FutureTask(JObject arg0, jobject arg1);
 		
 		// Methods
 		jboolean cancel(jboolean arg0);

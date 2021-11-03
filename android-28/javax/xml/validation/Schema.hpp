@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace javax::xml::validation
 {
@@ -13,13 +13,13 @@ namespace javax::xml::validation
 
 namespace javax::xml::validation
 {
-	class Schema : public __JniBaseClass
+	class Schema : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Schema(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Schema(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Schema(QJniObject obj);
 		
 		// Constructors

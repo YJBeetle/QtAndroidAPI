@@ -79,17 +79,17 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	PhoneNumberUtils::PhoneNumberUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	PhoneNumberUtils::PhoneNumberUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneNumberUtils::PhoneNumberUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.PhoneNumberUtils",
 			"()V"
 		) {}
 	
 	// Methods
-	void PhoneNumberUtils::addTtsSpan(__JniBaseClass arg0, jint arg1, jint arg2)
+	void PhoneNumberUtils::addTtsSpan(JObject arg0, jint arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"android.telephony.PhoneNumberUtils",
@@ -223,7 +223,7 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	void PhoneNumberUtils::formatJapaneseNumber(__JniBaseClass arg0)
+	void PhoneNumberUtils::formatJapaneseNumber(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.telephony.PhoneNumberUtils",
@@ -232,7 +232,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneNumberUtils::formatNanpNumber(__JniBaseClass arg0)
+	void PhoneNumberUtils::formatNanpNumber(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.telephony.PhoneNumberUtils",
@@ -271,7 +271,7 @@ namespace android::telephony
 			arg2
 		).object<jstring>();
 	}
-	void PhoneNumberUtils::formatNumber(__JniBaseClass arg0, jint arg1)
+	void PhoneNumberUtils::formatNumber(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.telephony.PhoneNumberUtils",

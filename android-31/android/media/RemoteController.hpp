@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::view
 
 namespace android::media
 {
-	class RemoteController : public __JniBaseClass
+	class RemoteController : public JObject
 	{
 	public:
 		// Fields
@@ -29,12 +29,12 @@ namespace android::media
 		static jint POSITION_SYNCHRONIZATION_NONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RemoteController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteController(QJniObject obj);
 		
 		// Constructors
-		RemoteController(android::content::Context arg0, __JniBaseClass arg1);
-		RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2);
+		RemoteController(android::content::Context arg0, JObject arg1);
+		RemoteController(android::content::Context arg0, JObject arg1, android::os::Looper arg2);
 		
 		// Methods
 		jboolean clearArtworkConfiguration();

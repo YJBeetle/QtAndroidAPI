@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class BlockedNumberContract_BlockedNumbers : public __JniBaseClass
+	class BlockedNumberContract_BlockedNumbers : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::provider
 		static android::net::Uri CONTENT_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BlockedNumberContract_BlockedNumbers(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BlockedNumberContract_BlockedNumbers(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BlockedNumberContract_BlockedNumbers(QJniObject obj);
 		
 		// Constructors

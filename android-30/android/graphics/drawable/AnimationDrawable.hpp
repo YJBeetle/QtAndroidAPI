@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableContainer.hpp"
 
@@ -40,7 +40,7 @@ namespace android::graphics::drawable
 		jint getDuration(jint arg0);
 		android::graphics::drawable::Drawable getFrame(jint arg0);
 		jint getNumberOfFrames();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isOneShot();
 		jboolean isRunning();
 		android::graphics::drawable::Drawable mutate();
@@ -49,7 +49,7 @@ namespace android::graphics::drawable
 		jboolean setVisible(jboolean arg0, jboolean arg1);
 		void start();
 		void stop();
-		void unscheduleSelf(__JniBaseClass arg0);
+		void unscheduleSelf(JObject arg0);
 	};
 } // namespace android::graphics::drawable
 

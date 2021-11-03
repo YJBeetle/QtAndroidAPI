@@ -21,11 +21,11 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	Toast::Toast(QJniObject obj) : __JniBaseClass(obj) {}
+	Toast::Toast(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Toast::Toast(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Toast",
 			"(Landroid/content/Context;)V",
 			arg0.object()

@@ -6,7 +6,7 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QJniObject forward
-	FontFamily::FontFamily(QJniObject obj) : __JniBaseClass(obj) {}
+	FontFamily::FontFamily(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

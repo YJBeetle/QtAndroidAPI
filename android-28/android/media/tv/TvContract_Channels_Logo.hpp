@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::tv
 {
-	class TvContract_Channels_Logo : public __JniBaseClass
+	class TvContract_Channels_Logo : public JObject
 	{
 	public:
 		// Fields
 		static jstring CONTENT_DIRECTORY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvContract_Channels_Logo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract_Channels_Logo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Channels_Logo(QJniObject obj);
 		
 		// Constructors

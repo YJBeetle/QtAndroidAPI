@@ -104,7 +104,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioPresentation::AudioPresentation(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioPresentation::AudioPresentation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -117,7 +117,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass AudioPresentation::getLabels()
+	JObject AudioPresentation::getLabels()
 	{
 		return callObjectMethod(
 			"getLabels",

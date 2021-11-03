@@ -9,11 +9,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	ResponseCache::ResponseCache(QJniObject obj) : __JniBaseClass(obj) {}
+	ResponseCache::ResponseCache(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ResponseCache::ResponseCache()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ResponseCache",
 			"()V"
 		) {}
@@ -36,7 +36,7 @@ namespace java::net
 			arg0.object()
 		);
 	}
-	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
+	java::net::CacheResponse ResponseCache::get(java::net::URI arg0, jstring arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"get",

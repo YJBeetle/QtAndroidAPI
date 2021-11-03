@@ -53,14 +53,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, JObject arg1)
 		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -68,7 +68,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	ExpandableListView::ExpandableListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ExpandableListView::ExpandableListView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::ListView(
 			"android.widget.ExpandableListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -157,14 +157,14 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass ExpandableListView::getAdapter()
+	JObject ExpandableListView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
-	__JniBaseClass ExpandableListView::getExpandableListAdapter()
+	JObject ExpandableListView::getExpandableListAdapter()
 	{
 		return callObjectMethod(
 			"getExpandableListAdapter",
@@ -209,7 +209,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ExpandableListView::onRestoreInstanceState(__JniBaseClass arg0)
+	void ExpandableListView::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -225,7 +225,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	__JniBaseClass ExpandableListView::onSaveInstanceState()
+	JObject ExpandableListView::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -242,7 +242,7 @@ namespace android::widget
 			arg2
 		);
 	}
-	void ExpandableListView::setAdapter(__JniBaseClass arg0)
+	void ExpandableListView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -310,7 +310,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void ExpandableListView::setOnChildClickListener(__JniBaseClass arg0)
+	void ExpandableListView::setOnChildClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnChildClickListener",
@@ -318,7 +318,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupClickListener(__JniBaseClass arg0)
+	void ExpandableListView::setOnGroupClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGroupClickListener",
@@ -326,7 +326,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupCollapseListener(__JniBaseClass arg0)
+	void ExpandableListView::setOnGroupCollapseListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGroupCollapseListener",
@@ -334,7 +334,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnGroupExpandListener(__JniBaseClass arg0)
+	void ExpandableListView::setOnGroupExpandListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGroupExpandListener",
@@ -342,7 +342,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ExpandableListView::setOnItemClickListener(__JniBaseClass arg0)
+	void ExpandableListView::setOnItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemClickListener",

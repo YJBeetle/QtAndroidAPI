@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QJniObject forward
-	Optional::Optional(QJniObject obj) : __JniBaseClass(obj) {}
+	Optional::Optional(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -44,7 +44,7 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::Optional Optional::filter(__JniBaseClass arg0)
+	java::util::Optional Optional::filter(JObject arg0)
 	{
 		return callObjectMethod(
 			"filter",
@@ -52,7 +52,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Optional Optional::flatMap(__JniBaseClass arg0)
+	java::util::Optional Optional::flatMap(JObject arg0)
 	{
 		return callObjectMethod(
 			"flatMap",
@@ -74,7 +74,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void Optional::ifPresent(__JniBaseClass arg0)
+	void Optional::ifPresent(JObject arg0)
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -82,7 +82,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Optional::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Optional::ifPresentOrElse(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -105,7 +105,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	java::util::Optional Optional::map(__JniBaseClass arg0)
+	java::util::Optional Optional::map(JObject arg0)
 	{
 		return callObjectMethod(
 			"map",
@@ -113,7 +113,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::Optional Optional::_or(__JniBaseClass arg0)
+	java::util::Optional Optional::_or(JObject arg0)
 	{
 		return callObjectMethod(
 			"or",
@@ -129,7 +129,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject Optional::orElseGet(__JniBaseClass arg0)
+	jobject Optional::orElseGet(JObject arg0)
 	{
 		return callObjectMethod(
 			"orElseGet",
@@ -144,7 +144,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject Optional::orElseThrow(__JniBaseClass arg0)
+	jobject Optional::orElseThrow(JObject arg0)
 	{
 		return callObjectMethod(
 			"orElseThrow",
@@ -152,7 +152,7 @@ namespace java::util
 			arg0.object()
 		).object<jobject>();
 	}
-	__JniBaseClass Optional::stream()
+	JObject Optional::stream()
 	{
 		return callObjectMethod(
 			"stream",

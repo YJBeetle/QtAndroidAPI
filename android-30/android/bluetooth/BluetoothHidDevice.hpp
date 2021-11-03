@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -21,7 +21,7 @@ namespace android::bluetooth
 
 namespace android::bluetooth
 {
-	class BluetoothHidDevice : public __JniBaseClass
+	class BluetoothHidDevice : public JObject
 	{
 	public:
 		// Fields
@@ -50,7 +50,7 @@ namespace android::bluetooth
 		static jbyte SUBCLASS2_UNCATEGORIZED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothHidDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothHidDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHidDevice(QJniObject obj);
 		
 		// Constructors
@@ -58,10 +58,10 @@ namespace android::bluetooth
 		// Methods
 		jboolean connect(android::bluetooth::BluetoothDevice arg0);
 		jboolean disconnect(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getConnectedDevices();
+		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
-		jboolean registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __JniBaseClass arg3, android::bluetooth::BluetoothHidDevice_Callback arg4);
+		JObject getDevicesMatchingConnectionStates(jintArray arg0);
+		jboolean registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4);
 		jboolean replyReport(android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
 		jboolean reportError(android::bluetooth::BluetoothDevice arg0, jbyte arg1);
 		jboolean sendReport(android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2);

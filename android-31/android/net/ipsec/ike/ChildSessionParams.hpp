@@ -1,27 +1,27 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::net::ipsec::ike
 {
-	class ChildSessionParams : public __JniBaseClass
+	class ChildSessionParams : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ChildSessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ChildSessionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ChildSessionParams(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getChildSaProposals();
+		JObject getChildSaProposals();
 		jint getHardLifetimeSeconds();
-		__JniBaseClass getInboundTrafficSelectors();
-		__JniBaseClass getOutboundTrafficSelectors();
+		JObject getInboundTrafficSelectors();
+		JObject getOutboundTrafficSelectors();
 		jint getSoftLifetimeSeconds();
 		jint hashCode();
 	};

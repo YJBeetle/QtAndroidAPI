@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class NumberingSystem : public __JniBaseClass
+	class NumberingSystem : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NumberingSystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NumberingSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NumberingSystem(QJniObject obj);
 		
 		// Constructors

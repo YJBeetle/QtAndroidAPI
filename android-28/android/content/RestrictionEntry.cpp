@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass RestrictionEntry::CREATOR()
+	JObject RestrictionEntry::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.RestrictionEntry",
@@ -71,45 +71,45 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	RestrictionEntry::RestrictionEntry(QJniObject obj) : __JniBaseClass(obj) {}
+	RestrictionEntry::RestrictionEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RestrictionEntry::RestrictionEntry(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	RestrictionEntry::RestrictionEntry(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	RestrictionEntry::RestrictionEntry(jstring arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	RestrictionEntry::RestrictionEntry(jstring arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;Z)V",
 			arg0,
 			arg1
 		) {}
 	RestrictionEntry::RestrictionEntry(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	RestrictionEntry::RestrictionEntry(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.RestrictionEntry",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

@@ -5,11 +5,11 @@ namespace android::security::keystore
 	// Fields
 	
 	// QJniObject forward
-	WrappedKeyEntry::WrappedKeyEntry(QJniObject obj) : __JniBaseClass(obj) {}
+	WrappedKeyEntry::WrappedKeyEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WrappedKeyEntry::WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
-		: __JniBaseClass(
+	WrappedKeyEntry::WrappedKeyEntry(jbyteArray arg0, jstring arg1, jstring arg2, JObject arg3)
+		: JObject(
 			"android.security.keystore.WrappedKeyEntry",
 			"([BLjava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
@@ -19,7 +19,7 @@ namespace android::security::keystore
 		) {}
 	
 	// Methods
-	__JniBaseClass WrappedKeyEntry::getAlgorithmParameterSpec()
+	JObject WrappedKeyEntry::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",

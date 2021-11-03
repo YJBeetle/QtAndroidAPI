@@ -95,11 +95,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Video_Thumbnails::MediaStore_Video_Thumbnails()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Video$Thumbnails",
 			"()V"
 		) {}

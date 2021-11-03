@@ -6,11 +6,11 @@ namespace android::text::style
 	// Fields
 	
 	// QJniObject forward
-	CharacterStyle::CharacterStyle(QJniObject obj) : __JniBaseClass(obj) {}
+	CharacterStyle::CharacterStyle(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CharacterStyle::CharacterStyle()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.CharacterStyle",
 			"()V"
 		) {}

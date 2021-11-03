@@ -19,7 +19,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	LinkedHashSet::LinkedHashSet(__JniBaseClass arg0)
+	LinkedHashSet::LinkedHashSet(JObject arg0)
 		: java::util::HashSet(
 			"java.util.LinkedHashSet",
 			"(Ljava/util/Collection;)V",
@@ -34,7 +34,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass LinkedHashSet::spliterator()
+	JObject LinkedHashSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

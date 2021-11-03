@@ -9,7 +9,7 @@
 namespace android::app::slice
 {
 	// Fields
-	__JniBaseClass SliceItem::CREATOR()
+	JObject SliceItem::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceItem",
@@ -83,7 +83,7 @@ namespace android::app::slice
 	}
 	
 	// QJniObject forward
-	SliceItem::SliceItem(QJniObject obj) : __JniBaseClass(obj) {}
+	SliceItem::SliceItem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -116,7 +116,7 @@ namespace android::app::slice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SliceItem::getHints()
+	JObject SliceItem::getHints()
 	{
 		return callObjectMethod(
 			"getHints",

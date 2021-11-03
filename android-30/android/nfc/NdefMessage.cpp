@@ -5,7 +5,7 @@
 namespace android::nfc
 {
 	// Fields
-	__JniBaseClass NdefMessage::CREATOR()
+	JObject NdefMessage::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.nfc.NdefMessage",
@@ -15,23 +15,23 @@ namespace android::nfc
 	}
 	
 	// QJniObject forward
-	NdefMessage::NdefMessage(QJniObject obj) : __JniBaseClass(obj) {}
+	NdefMessage::NdefMessage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NdefMessage::NdefMessage(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.nfc.NdefMessage",
 			"([B)V",
 			arg0
 		) {}
 	NdefMessage::NdefMessage(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.nfc.NdefMessage",
 			"([Landroid/nfc/NdefRecord;)V",
 			arg0
 		) {}
 	NdefMessage::NdefMessage(android::nfc::NdefRecord arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.nfc.NdefMessage",
 			"(Landroid/nfc/NdefRecord;[Landroid/nfc/NdefRecord;)V",
 			arg0.object(),

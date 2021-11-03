@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./ProgressBar.hpp"
 
@@ -50,9 +50,9 @@ namespace android::widget
 		
 		// Constructors
 		AbsSeekBar(android::content::Context arg0);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AbsSeekBar(android::content::Context arg0, JObject arg1);
+		AbsSeekBar(android::content::Context arg0, JObject arg1, jint arg2);
+		AbsSeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -76,7 +76,7 @@ namespace android::widget
 		void setMax(jint arg0);
 		void setMin(jint arg0);
 		void setSplitTrack(jboolean arg0);
-		void setSystemGestureExclusionRects(__JniBaseClass arg0);
+		void setSystemGestureExclusionRects(JObject arg0);
 		void setThumb(android::graphics::drawable::Drawable arg0);
 		void setThumbOffset(jint arg0);
 		void setThumbTintBlendMode(android::graphics::BlendMode arg0);

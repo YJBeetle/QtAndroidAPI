@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::animation
 {
@@ -41,7 +41,7 @@ namespace android::view
 
 namespace android::transition
 {
-	class Transition : public __JniBaseClass
+	class Transition : public JObject
 	{
 	public:
 		// Fields
@@ -51,15 +51,15 @@ namespace android::transition
 		static jint MATCH_NAME();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Transition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Transition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Transition(QJniObject obj);
 		
 		// Constructors
 		Transition();
-		Transition(android::content::Context arg0, __JniBaseClass arg1);
+		Transition(android::content::Context arg0, JObject arg1);
 		
 		// Methods
-		android::transition::Transition addListener(__JniBaseClass arg0);
+		android::transition::Transition addListener(JObject arg0);
 		android::transition::Transition addTarget(android::view::View arg0);
 		android::transition::Transition addTarget(jint arg0);
 		android::transition::Transition addTarget(jclass arg0);
@@ -79,26 +79,26 @@ namespace android::transition
 		jlong getDuration();
 		android::graphics::Rect getEpicenter();
 		android::transition::Transition_EpicenterCallback getEpicenterCallback();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jstring getName();
 		android::transition::PathMotion getPathMotion();
 		android::transition::TransitionPropagation getPropagation();
 		jlong getStartDelay();
-		__JniBaseClass getTargetIds();
-		__JniBaseClass getTargetNames();
-		__JniBaseClass getTargetTypes();
-		__JniBaseClass getTargets();
+		JObject getTargetIds();
+		JObject getTargetNames();
+		JObject getTargetTypes();
+		JObject getTargets();
 		jarray getTransitionProperties();
 		android::transition::TransitionValues getTransitionValues(android::view::View arg0, jboolean arg1);
 		jboolean isTransitionRequired(android::transition::TransitionValues arg0, android::transition::TransitionValues arg1);
-		android::transition::Transition removeListener(__JniBaseClass arg0);
+		android::transition::Transition removeListener(JObject arg0);
 		android::transition::Transition removeTarget(android::view::View arg0);
 		android::transition::Transition removeTarget(jint arg0);
 		android::transition::Transition removeTarget(jclass arg0);
 		android::transition::Transition removeTarget(jstring arg0);
 		android::transition::Transition setDuration(jlong arg0);
 		void setEpicenterCallback(android::transition::Transition_EpicenterCallback arg0);
-		android::transition::Transition setInterpolator(__JniBaseClass arg0);
+		android::transition::Transition setInterpolator(JObject arg0);
 		void setMatchOrder(jintArray arg0);
 		void setPathMotion(android::transition::PathMotion arg0);
 		void setPropagation(android::transition::TransitionPropagation arg0);

@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass SecurityLog_SecurityEvent::CREATOR()
+	JObject SecurityLog_SecurityEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.SecurityLog$SecurityEvent",
@@ -14,7 +14,7 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	SecurityLog_SecurityEvent::SecurityLog_SecurityEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	SecurityLog_SecurityEvent::SecurityLog_SecurityEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

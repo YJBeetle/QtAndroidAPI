@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	JsResult::JsResult(QJniObject obj) : __JniBaseClass(obj) {}
+	JsResult::JsResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

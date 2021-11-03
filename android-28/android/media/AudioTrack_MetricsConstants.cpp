@@ -45,7 +45,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioTrack_MetricsConstants::AudioTrack_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioTrack_MetricsConstants::AudioTrack_MetricsConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

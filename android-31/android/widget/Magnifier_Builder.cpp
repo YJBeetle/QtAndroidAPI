@@ -8,11 +8,11 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	Magnifier_Builder::Magnifier_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	Magnifier_Builder::Magnifier_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Magnifier_Builder::Magnifier_Builder(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Magnifier$Builder",
 			"(Landroid/view/View;)V",
 			arg0.object()

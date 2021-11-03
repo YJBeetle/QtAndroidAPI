@@ -7,7 +7,7 @@ namespace javax::xml::transform
 	// Fields
 	
 	// QJniObject forward
-	TransformerFactory::TransformerFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	TransformerFactory::TransformerFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -38,7 +38,7 @@ namespace javax::xml::transform
 			arg1.object()
 		);
 	}
-	__JniBaseClass TransformerFactory::getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3)
+	JObject TransformerFactory::getAssociatedStylesheet(JObject arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		return callObjectMethod(
 			"getAssociatedStylesheet",
@@ -57,7 +57,7 @@ namespace javax::xml::transform
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass TransformerFactory::getErrorListener()
+	JObject TransformerFactory::getErrorListener()
 	{
 		return callObjectMethod(
 			"getErrorListener",
@@ -72,14 +72,14 @@ namespace javax::xml::transform
 			arg0
 		);
 	}
-	__JniBaseClass TransformerFactory::getURIResolver()
+	JObject TransformerFactory::getURIResolver()
 	{
 		return callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
 		);
 	}
-	__JniBaseClass TransformerFactory::newTemplates(__JniBaseClass arg0)
+	JObject TransformerFactory::newTemplates(JObject arg0)
 	{
 		return callObjectMethod(
 			"newTemplates",
@@ -94,7 +94,7 @@ namespace javax::xml::transform
 			"()Ljavax/xml/transform/Transformer;"
 		);
 	}
-	javax::xml::transform::Transformer TransformerFactory::newTransformer(__JniBaseClass arg0)
+	javax::xml::transform::Transformer TransformerFactory::newTransformer(JObject arg0)
 	{
 		return callObjectMethod(
 			"newTransformer",
@@ -111,7 +111,7 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	void TransformerFactory::setErrorListener(__JniBaseClass arg0)
+	void TransformerFactory::setErrorListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorListener",
@@ -128,7 +128,7 @@ namespace javax::xml::transform
 			arg1
 		);
 	}
-	void TransformerFactory::setURIResolver(__JniBaseClass arg0)
+	void TransformerFactory::setURIResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setURIResolver",

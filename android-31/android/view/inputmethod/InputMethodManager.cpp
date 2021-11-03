@@ -69,7 +69,7 @@ namespace android::view::inputmethod
 	}
 	
 	// QJniObject forward
-	InputMethodManager::InputMethodManager(QJniObject obj) : __JniBaseClass(obj) {}
+	InputMethodManager::InputMethodManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -99,14 +99,14 @@ namespace android::view::inputmethod
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	__JniBaseClass InputMethodManager::getEnabledInputMethodList()
+	JObject InputMethodManager::getEnabledInputMethodList()
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1)
+	JObject InputMethodManager::getEnabledInputMethodSubtypeList(android::view::inputmethod::InputMethodInfo arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getEnabledInputMethodSubtypeList",
@@ -115,7 +115,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	__JniBaseClass InputMethodManager::getInputMethodList()
+	JObject InputMethodManager::getInputMethodList()
 	{
 		return callObjectMethod(
 			"getInputMethodList",
@@ -129,14 +129,14 @@ namespace android::view::inputmethod
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
 		);
 	}
-	__JniBaseClass InputMethodManager::getShortcutInputMethodsAndSubtypes()
+	JObject InputMethodManager::getShortcutInputMethodsAndSubtypes()
 	{
 		return callObjectMethod(
 			"getShortcutInputMethodsAndSubtypes",
 			"()Ljava/util/Map;"
 		);
 	}
-	void InputMethodManager::hideSoftInputFromInputMethod(__JniBaseClass arg0, jint arg1)
+	void InputMethodManager::hideSoftInputFromInputMethod(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"hideSoftInputFromInputMethod",
@@ -145,7 +145,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1)
+	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"hideSoftInputFromWindow",
@@ -154,7 +154,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::hideSoftInputFromWindow(__JniBaseClass arg0, jint arg1, android::os::ResultReceiver arg2)
+	jboolean InputMethodManager::hideSoftInputFromWindow(JObject arg0, jint arg1, android::os::ResultReceiver arg2)
 	{
 		return callMethod<jboolean>(
 			"hideSoftInputFromWindow",
@@ -164,7 +164,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::hideStatusIcon(__JniBaseClass arg0)
+	void InputMethodManager::hideStatusIcon(JObject arg0)
 	{
 		callMethod<void>(
 			"hideStatusIcon",
@@ -251,7 +251,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void InputMethodManager::setInputMethod(__JniBaseClass arg0, jstring arg1)
+	void InputMethodManager::setInputMethod(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"setInputMethod",
@@ -260,7 +260,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::setInputMethodAndSubtype(__JniBaseClass arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2)
+	void InputMethodManager::setInputMethodAndSubtype(JObject arg0, jstring arg1, android::view::inputmethod::InputMethodSubtype arg2)
 	{
 		callMethod<void>(
 			"setInputMethodAndSubtype",
@@ -270,7 +270,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	jboolean InputMethodManager::shouldOfferSwitchingToNextInputMethod(__JniBaseClass arg0)
+	jboolean InputMethodManager::shouldOfferSwitchingToNextInputMethod(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"shouldOfferSwitchingToNextInputMethod",
@@ -312,7 +312,7 @@ namespace android::view::inputmethod
 			arg2.object()
 		);
 	}
-	void InputMethodManager::showSoftInputFromInputMethod(__JniBaseClass arg0, jint arg1)
+	void InputMethodManager::showSoftInputFromInputMethod(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"showSoftInputFromInputMethod",
@@ -321,7 +321,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::showStatusIcon(__JniBaseClass arg0, jstring arg1, jint arg2)
+	void InputMethodManager::showStatusIcon(JObject arg0, jstring arg1, jint arg2)
 	{
 		callMethod<void>(
 			"showStatusIcon",
@@ -331,7 +331,7 @@ namespace android::view::inputmethod
 			arg2
 		);
 	}
-	jboolean InputMethodManager::switchToLastInputMethod(__JniBaseClass arg0)
+	jboolean InputMethodManager::switchToLastInputMethod(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"switchToLastInputMethod",
@@ -339,7 +339,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jboolean InputMethodManager::switchToNextInputMethod(__JniBaseClass arg0, jboolean arg1)
+	jboolean InputMethodManager::switchToNextInputMethod(JObject arg0, jboolean arg1)
 	{
 		return callMethod<jboolean>(
 			"switchToNextInputMethod",
@@ -357,7 +357,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputMethodManager::toggleSoftInputFromWindow(__JniBaseClass arg0, jint arg1, jint arg2)
+	void InputMethodManager::toggleSoftInputFromWindow(JObject arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"toggleSoftInputFromWindow",

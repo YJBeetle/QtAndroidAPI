@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::appsearch
 {
@@ -9,13 +9,13 @@ namespace android::app::appsearch
 
 namespace android::app::appsearch
 {
-	class AppSearchManager_SearchContext_Builder : public __JniBaseClass
+	class AppSearchManager_SearchContext_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchManager_SearchContext_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppSearchManager_SearchContext_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppSearchManager_SearchContext_Builder(QJniObject obj);
 		
 		// Constructors

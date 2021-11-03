@@ -6,11 +6,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	CacheRequest::CacheRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	CacheRequest::CacheRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CacheRequest::CacheRequest()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.CacheRequest",
 			"()V"
 		) {}

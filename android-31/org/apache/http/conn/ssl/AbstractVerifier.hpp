@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace java::security::cert
 {
@@ -13,13 +13,13 @@ namespace javax::net::ssl
 
 namespace org::apache::http::conn::ssl
 {
-	class AbstractVerifier : public __JniBaseClass
+	class AbstractVerifier : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractVerifier(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractVerifier(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractVerifier(QJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace org::apache::http::conn::ssl
 		static jint countDots(jstring arg0);
 		static jarray getCNs(java::security::cert::X509Certificate arg0);
 		static jarray getDNSSubjectAlts(java::security::cert::X509Certificate arg0);
-		jboolean verify(jstring arg0, __JniBaseClass arg1);
+		jboolean verify(jstring arg0, JObject arg1);
 		void verify(jstring arg0, java::security::cert::X509Certificate arg1);
 		void verify(jstring arg0, javax::net::ssl::SSLSocket arg1);
 		void verify(jstring arg0, jarray arg1, jarray arg2, jboolean arg3);

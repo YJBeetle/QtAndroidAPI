@@ -8,7 +8,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass ConnectivityDiagnosticsManager_DataStallReport::CREATOR()
+	JObject ConnectivityDiagnosticsManager_DataStallReport::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.ConnectivityDiagnosticsManager$DataStallReport",
@@ -56,11 +56,11 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(QJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConnectivityDiagnosticsManager_DataStallReport::ConnectivityDiagnosticsManager_DataStallReport(android::net::Network arg0, jlong arg1, jint arg2, android::net::LinkProperties arg3, android::net::NetworkCapabilities arg4, android::os::PersistableBundle arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ConnectivityDiagnosticsManager$DataStallReport",
 			"(Landroid/net/Network;JILandroid/net/LinkProperties;Landroid/net/NetworkCapabilities;Landroid/os/PersistableBundle;)V",
 			arg0.object(),

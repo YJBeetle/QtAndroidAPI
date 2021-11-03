@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -13,7 +13,7 @@ namespace android::widget
 
 namespace android::widget
 {
-	class ListView_FixedViewInfo : public __JniBaseClass
+	class ListView_FixedViewInfo : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::widget
 		android::view::View view();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ListView_FixedViewInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ListView_FixedViewInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ListView_FixedViewInfo(QJniObject obj);
 		
 		// Constructors

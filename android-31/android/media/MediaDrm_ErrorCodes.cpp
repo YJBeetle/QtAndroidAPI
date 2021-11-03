@@ -243,7 +243,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaDrm_ErrorCodes::MediaDrm_ErrorCodes(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_ErrorCodes::MediaDrm_ErrorCodes(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

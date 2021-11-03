@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -17,13 +17,13 @@ namespace java::security
 
 namespace java::security
 {
-	class SignatureSpi : public __JniBaseClass
+	class SignatureSpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SignatureSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SignatureSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SignatureSpi(QJniObject obj);
 		
 		// Constructors

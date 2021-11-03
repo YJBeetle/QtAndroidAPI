@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,17 +9,17 @@ namespace java::io
 
 namespace java::security
 {
-	class GuardedObject : public __JniBaseClass
+	class GuardedObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GuardedObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GuardedObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GuardedObject(QJniObject obj);
 		
 		// Constructors
-		GuardedObject(jobject arg0, __JniBaseClass arg1);
+		GuardedObject(jobject arg0, JObject arg1);
 		
 		// Methods
 		jobject getObject();

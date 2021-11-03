@@ -44,12 +44,12 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	LauncherApps::LauncherApps(QJniObject obj) : __JniBaseClass(obj) {}
+	LauncherApps::LauncherApps(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass LauncherApps::getActivityList(jstring arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getActivityList(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getActivityList",
@@ -76,7 +76,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass LauncherApps::getProfiles()
+	JObject LauncherApps::getProfiles()
 	{
 		return callObjectMethod(
 			"getProfiles",
@@ -100,7 +100,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass LauncherApps::getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getShortcutConfigActivityList",
@@ -118,7 +118,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1)
+	JObject LauncherApps::getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1)
 	{
 		return callObjectMethod(
 			"getShortcuts",
@@ -161,7 +161,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	void LauncherApps::pinShortcuts(jstring arg0, __JniBaseClass arg1, android::os::UserHandle arg2)
+	void LauncherApps::pinShortcuts(jstring arg0, JObject arg1, android::os::UserHandle arg2)
 	{
 		callMethod<void>(
 			"pinShortcuts",

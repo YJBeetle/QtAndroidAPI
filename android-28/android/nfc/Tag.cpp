@@ -4,7 +4,7 @@
 namespace android::nfc
 {
 	// Fields
-	__JniBaseClass Tag::CREATOR()
+	JObject Tag::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.nfc.Tag",
@@ -14,7 +14,7 @@ namespace android::nfc
 	}
 	
 	// QJniObject forward
-	Tag::Tag(QJniObject obj) : __JniBaseClass(obj) {}
+	Tag::Tag(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

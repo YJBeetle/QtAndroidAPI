@@ -10,11 +10,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	FragmentManager_FragmentLifecycleCallbacks::FragmentManager_FragmentLifecycleCallbacks(QJniObject obj) : __JniBaseClass(obj) {}
+	FragmentManager_FragmentLifecycleCallbacks::FragmentManager_FragmentLifecycleCallbacks(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FragmentManager_FragmentLifecycleCallbacks::FragmentManager_FragmentLifecycleCallbacks()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.FragmentManager$FragmentLifecycleCallbacks",
 			"()V"
 		) {}

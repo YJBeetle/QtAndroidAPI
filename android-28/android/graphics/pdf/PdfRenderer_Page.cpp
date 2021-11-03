@@ -23,7 +23,7 @@ namespace android::graphics::pdf
 	}
 	
 	// QJniObject forward
-	PdfRenderer_Page::PdfRenderer_Page(QJniObject obj) : __JniBaseClass(obj) {}
+	PdfRenderer_Page::PdfRenderer_Page(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

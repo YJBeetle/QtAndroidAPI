@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -37,7 +37,7 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothDevice : public __JniBaseClass
+	class BluetoothDevice : public JObject
 	{
 	public:
 		// Fields
@@ -53,7 +53,7 @@ namespace android::bluetooth
 		static jint BOND_BONDED();
 		static jint BOND_BONDING();
 		static jint BOND_NONE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DEVICE_TYPE_CLASSIC();
 		static jint DEVICE_TYPE_DUAL();
 		static jint DEVICE_TYPE_LE();
@@ -84,7 +84,7 @@ namespace android::bluetooth
 		static jint TRANSPORT_LE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothDevice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothDevice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothDevice(QJniObject obj);
 		
 		// Constructors

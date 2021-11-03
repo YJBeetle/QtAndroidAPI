@@ -55,7 +55,7 @@ namespace android::os::storage
 	}
 	
 	// QJniObject forward
-	StorageManager::StorageManager(QJniObject obj) : __JniBaseClass(obj) {}
+	StorageManager::StorageManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -117,7 +117,7 @@ namespace android::os::storage
 			"()Landroid/os/storage/StorageVolume;"
 		);
 	}
-	__JniBaseClass StorageManager::getRecentStorageVolumes()
+	JObject StorageManager::getRecentStorageVolumes()
 	{
 		return callObjectMethod(
 			"getRecentStorageVolumes",
@@ -140,7 +140,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	__JniBaseClass StorageManager::getStorageVolumes()
+	JObject StorageManager::getStorageVolumes()
 	{
 		return callObjectMethod(
 			"getStorageVolumes",
@@ -222,7 +222,7 @@ namespace android::os::storage
 			arg2.object()
 		);
 	}
-	void StorageManager::registerStorageVolumeCallback(__JniBaseClass arg0, android::os::storage::StorageManager_StorageVolumeCallback arg1)
+	void StorageManager::registerStorageVolumeCallback(JObject arg0, android::os::storage::StorageManager_StorageVolumeCallback arg1)
 	{
 		callMethod<void>(
 			"registerStorageVolumeCallback",

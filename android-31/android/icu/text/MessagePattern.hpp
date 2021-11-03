@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -17,7 +17,7 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class MessagePattern : public __JniBaseClass
+	class MessagePattern : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::icu::text
 		static jdouble NO_NUMERIC_VALUE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MessagePattern(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MessagePattern(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MessagePattern(QJniObject obj);
 		
 		// Constructors

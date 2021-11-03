@@ -320,7 +320,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	AppOpsManager::AppOpsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AppOpsManager::AppOpsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -501,7 +501,7 @@ namespace android::app
 			arg4
 		);
 	}
-	void AppOpsManager::setOnOpNotedCallback(__JniBaseClass arg0, android::app::AppOpsManager_OnOpNotedCallback arg1)
+	void AppOpsManager::setOnOpNotedCallback(JObject arg0, android::app::AppOpsManager_OnOpNotedCallback arg1)
 	{
 		callMethod<void>(
 			"setOnOpNotedCallback",
@@ -578,7 +578,7 @@ namespace android::app
 			arg4
 		);
 	}
-	void AppOpsManager::startWatchingActive(jarray arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void AppOpsManager::startWatchingActive(jarray arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"startWatchingActive",
@@ -588,7 +588,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -598,7 +598,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, __JniBaseClass arg3)
+	void AppOpsManager::startWatchingMode(jstring arg0, jstring arg1, jint arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"startWatchingMode",
@@ -609,7 +609,7 @@ namespace android::app
 			arg3.object()
 		);
 	}
-	void AppOpsManager::stopWatchingActive(__JniBaseClass arg0)
+	void AppOpsManager::stopWatchingActive(JObject arg0)
 	{
 		callMethod<void>(
 			"stopWatchingActive",
@@ -617,7 +617,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void AppOpsManager::stopWatchingMode(__JniBaseClass arg0)
+	void AppOpsManager::stopWatchingMode(JObject arg0)
 	{
 		callMethod<void>(
 			"stopWatchingMode",

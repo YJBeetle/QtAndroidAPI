@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -49,7 +49,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class AudioTrack : public __JniBaseClass
+	class AudioTrack : public JObject
 	{
 	public:
 		// Fields
@@ -73,7 +73,7 @@ namespace android::media
 		static jint WRITE_NON_BLOCKING();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack(QJniObject obj);
 		
 		// Constructors
@@ -86,7 +86,7 @@ namespace android::media
 		static jint getMinBufferSize(jint arg0, jint arg1, jint arg2);
 		static jfloat getMinVolume();
 		static jint getNativeOutputSampleRate(jint arg0);
-		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
 		jint attachAuxEffect(jint arg0);
 		android::media::VolumeShaper createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
 		void flush();
@@ -116,15 +116,15 @@ namespace android::media
 		void play();
 		void release();
 		jint reloadStaticData();
-		void removeOnRoutingChangedListener(__JniBaseClass arg0);
+		void removeOnRoutingChangedListener(JObject arg0);
 		jint setAuxEffectSendLevel(jfloat arg0);
 		jint setBufferSizeInFrames(jint arg0);
 		jint setLoopPoints(jint arg0, jint arg1, jint arg2);
 		jint setNotificationMarkerPosition(jint arg0);
 		jint setPlaybackHeadPosition(jint arg0);
 		void setPlaybackParams(android::media::PlaybackParams arg0);
-		void setPlaybackPositionUpdateListener(__JniBaseClass arg0);
-		void setPlaybackPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setPlaybackPositionUpdateListener(JObject arg0);
+		void setPlaybackPositionUpdateListener(JObject arg0, android::os::Handler arg1);
 		jint setPlaybackRate(jint arg0);
 		jint setPositionNotificationPeriod(jint arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);

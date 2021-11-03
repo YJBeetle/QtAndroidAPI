@@ -6,11 +6,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QJniObject forward
-	TvInputManager_TvInputCallback::TvInputManager_TvInputCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	TvInputManager_TvInputCallback::TvInputManager_TvInputCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvInputManager_TvInputCallback::TvInputManager_TvInputCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvInputManager$TvInputCallback",
 			"()V"
 		) {}

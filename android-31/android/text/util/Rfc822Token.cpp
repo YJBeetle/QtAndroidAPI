@@ -5,11 +5,11 @@ namespace android::text::util
 	// Fields
 	
 	// QJniObject forward
-	Rfc822Token::Rfc822Token(QJniObject obj) : __JniBaseClass(obj) {}
+	Rfc822Token::Rfc822Token(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Rfc822Token::Rfc822Token(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.util.Rfc822Token",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

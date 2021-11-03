@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -21,13 +21,13 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class UnicodeSetSpanner : public __JniBaseClass
+	class UnicodeSetSpanner : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UnicodeSetSpanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UnicodeSetSpanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSetSpanner(QJniObject obj);
 		
 		// Constructors

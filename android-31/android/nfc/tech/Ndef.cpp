@@ -47,7 +47,7 @@ namespace android::nfc::tech
 	}
 	
 	// QJniObject forward
-	Ndef::Ndef(QJniObject obj) : __JniBaseClass(obj) {}
+	Ndef::Ndef(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

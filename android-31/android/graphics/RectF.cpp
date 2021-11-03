@@ -5,7 +5,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass RectF::CREATOR()
+	JObject RectF::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.RectF",
@@ -39,28 +39,28 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	RectF::RectF(QJniObject obj) : __JniBaseClass(obj) {}
+	RectF::RectF(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RectF::RectF()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RectF",
 			"()V"
 		) {}
 	RectF::RectF(android::graphics::Rect arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RectF",
 			"(Landroid/graphics/Rect;)V",
 			arg0.object()
 		) {}
 	RectF::RectF(android::graphics::RectF &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RectF",
 			"(Landroid/graphics/RectF;)V",
 			arg0.object()
 		) {}
 	RectF::RectF(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RectF",
 			"(FFFF)V",
 			arg0,

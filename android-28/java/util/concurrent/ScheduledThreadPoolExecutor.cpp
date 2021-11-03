@@ -16,14 +16,14 @@ namespace java::util::concurrent
 			"(I)V",
 			arg0
 		) {}
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1)
+	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, JObject arg1)
 		: java::util::concurrent::ThreadPoolExecutor(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",
 			"(ILjava/util/concurrent/RejectedExecutionHandler;)V",
 			arg0,
 			arg1.object()
 		) {}
-	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	ScheduledThreadPoolExecutor::ScheduledThreadPoolExecutor(jint arg0, JObject arg1, JObject arg2)
 		: java::util::concurrent::ThreadPoolExecutor(
 			"java.util.concurrent.ScheduledThreadPoolExecutor",
 			"(ILjava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V",
@@ -33,7 +33,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	void ScheduledThreadPoolExecutor::execute(__JniBaseClass arg0)
+	void ScheduledThreadPoolExecutor::execute(JObject arg0)
 	{
 		callMethod<void>(
 			"execute",
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::getQueue()
+	JObject ScheduledThreadPoolExecutor::getQueue()
 	{
 		return callObjectMethod(
 			"getQueue",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::schedule(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
+	JObject ScheduledThreadPoolExecutor::schedule(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2)
 	{
 		return callObjectMethod(
 			"schedule",
@@ -79,7 +79,7 @@ namespace java::util::concurrent
 			arg2.object()
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::scheduleAtFixedRate(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	JObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
 	{
 		return callObjectMethod(
 			"scheduleAtFixedRate",
@@ -90,7 +90,7 @@ namespace java::util::concurrent
 			arg3.object()
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::scheduleWithFixedDelay(__JniBaseClass arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
+	JObject ScheduledThreadPoolExecutor::scheduleWithFixedDelay(JObject arg0, jlong arg1, jlong arg2, java::util::concurrent::TimeUnit arg3)
 	{
 		return callObjectMethod(
 			"scheduleWithFixedDelay",
@@ -132,14 +132,14 @@ namespace java::util::concurrent
 			"()V"
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::shutdownNow()
+	JObject ScheduledThreadPoolExecutor::shutdownNow()
 	{
 		return callObjectMethod(
 			"shutdownNow",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0)
+	JObject ScheduledThreadPoolExecutor::submit(JObject arg0)
 	{
 		return callObjectMethod(
 			"submit",
@@ -147,7 +147,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass ScheduledThreadPoolExecutor::submit(__JniBaseClass arg0, jobject arg1)
+	JObject ScheduledThreadPoolExecutor::submit(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"submit",

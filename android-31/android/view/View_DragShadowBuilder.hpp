@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::view
 {
-	class View_DragShadowBuilder : public __JniBaseClass
+	class View_DragShadowBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit View_DragShadowBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit View_DragShadowBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		View_DragShadowBuilder(QJniObject obj);
 		
 		// Constructors

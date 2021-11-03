@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseInterpolator.hpp"
 
 namespace android::content
@@ -22,7 +22,7 @@ namespace android::view::animation
 		// Constructors
 		AnticipateOvershootInterpolator();
 		AnticipateOvershootInterpolator(jfloat arg0);
-		AnticipateOvershootInterpolator(android::content::Context arg0, __JniBaseClass arg1);
+		AnticipateOvershootInterpolator(android::content::Context arg0, JObject arg1);
 		AnticipateOvershootInterpolator(jfloat arg0, jfloat arg1);
 		
 		// Methods

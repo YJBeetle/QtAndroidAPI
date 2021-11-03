@@ -29,7 +29,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Contacts_People_Extensions::Contacts_People_Extensions(QJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_People_Extensions::Contacts_People_Extensions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

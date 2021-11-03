@@ -8,7 +8,7 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	FocusFinder::FocusFinder(QJniObject obj) : __JniBaseClass(obj) {}
+	FocusFinder::FocusFinder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -20,17 +20,17 @@ namespace java::security::spec
 	}
 	
 	// QJniObject forward
-	PSSParameterSpec::PSSParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	PSSParameterSpec::PSSParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PSSParameterSpec::PSSParameterSpec(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.PSSParameterSpec",
 			"(I)V",
 			arg0
 		) {}
-	PSSParameterSpec::PSSParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+	PSSParameterSpec::PSSParameterSpec(jstring arg0, jstring arg1, JObject arg2, jint arg3, jint arg4)
+		: JObject(
 			"java.security.spec.PSSParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
 			arg0,
@@ -55,7 +55,7 @@ namespace java::security::spec
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass PSSParameterSpec::getMGFParameters()
+	JObject PSSParameterSpec::getMGFParameters()
 	{
 		return callObjectMethod(
 			"getMGFParameters",

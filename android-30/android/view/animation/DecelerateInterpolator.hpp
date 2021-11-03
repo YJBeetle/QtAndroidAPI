@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseInterpolator.hpp"
 
 namespace android::content
@@ -22,7 +22,7 @@ namespace android::view::animation
 		// Constructors
 		DecelerateInterpolator();
 		DecelerateInterpolator(jfloat arg0);
-		DecelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1);
+		DecelerateInterpolator(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);

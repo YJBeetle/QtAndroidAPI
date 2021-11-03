@@ -70,7 +70,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_ServiceStateTable::Telephony_ServiceStateTable(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_ServiceStateTable::Telephony_ServiceStateTable(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

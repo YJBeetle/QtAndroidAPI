@@ -10,17 +10,17 @@ namespace android::text::style
 	// Fields
 	
 	// QJniObject forward
-	DrawableMarginSpan::DrawableMarginSpan(QJniObject obj) : __JniBaseClass(obj) {}
+	DrawableMarginSpan::DrawableMarginSpan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrawableMarginSpan::DrawableMarginSpan(android::graphics::drawable::Drawable arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.DrawableMarginSpan",
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.object()
 		) {}
 	DrawableMarginSpan::DrawableMarginSpan(android::graphics::drawable::Drawable arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.DrawableMarginSpan",
 			"(Landroid/graphics/drawable/Drawable;I)V",
 			arg0.object(),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -29,7 +29,7 @@ namespace java::util
 
 namespace android::icu::util
 {
-	class Calendar : public __JniBaseClass
+	class Calendar : public JObject
 	{
 	public:
 		// Fields
@@ -84,7 +84,7 @@ namespace android::icu::util
 		static jint ZONE_OFFSET();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Calendar(QJniObject obj);
 		
 		// Constructors

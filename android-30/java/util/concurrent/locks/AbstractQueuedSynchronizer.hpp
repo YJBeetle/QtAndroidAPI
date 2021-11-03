@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./AbstractOwnableSynchronizer.hpp"
 
 namespace java::lang
@@ -30,13 +30,13 @@ namespace java::util::concurrent::locks
 		void acquireInterruptibly(jint arg0);
 		void acquireShared(jint arg0);
 		void acquireSharedInterruptibly(jint arg0);
-		__JniBaseClass getExclusiveQueuedThreads();
+		JObject getExclusiveQueuedThreads();
 		java::lang::Thread getFirstQueuedThread();
 		jint getQueueLength();
-		__JniBaseClass getQueuedThreads();
-		__JniBaseClass getSharedQueuedThreads();
+		JObject getQueuedThreads();
+		JObject getSharedQueuedThreads();
 		jint getWaitQueueLength(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
-		__JniBaseClass getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
+		JObject getWaitingThreads(java::util::concurrent::locks::AbstractQueuedSynchronizer_ConditionObject arg0);
 		jboolean hasContended();
 		jboolean hasQueuedPredecessors();
 		jboolean hasQueuedThreads();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseMovementMethod.hpp"
 #include "./ScrollingMovementMethod.hpp"
 
@@ -32,11 +32,11 @@ namespace android::text::method
 		LinkMovementMethod();
 		
 		// Methods
-		static __JniBaseClass getInstance();
+		static JObject getInstance();
 		jboolean canSelectArbitrarily();
-		void initialize(android::widget::TextView arg0, __JniBaseClass arg1);
-		void onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2);
-		jboolean onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2);
+		void initialize(android::widget::TextView arg0, JObject arg1);
+		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2);
+		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
 	};
 } // namespace android::text::method
 

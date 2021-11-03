@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::util
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::hardware::camera2::params
 {
-	class StreamConfigurationMap : public __JniBaseClass
+	class StreamConfigurationMap : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StreamConfigurationMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StreamConfigurationMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StreamConfigurationMap(QJniObject obj);
 		
 		// Constructors

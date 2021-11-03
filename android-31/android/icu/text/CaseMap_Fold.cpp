@@ -12,7 +12,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CaseMap_Fold::apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2)
+	JObject CaseMap_Fold::apply(jstring arg0, JObject arg1, android::icu::text::Edits arg2)
 	{
 		return callObjectMethod(
 			"apply",

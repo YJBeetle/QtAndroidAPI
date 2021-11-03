@@ -36,7 +36,7 @@ namespace android::view::autofill
 	}
 	
 	// QJniObject forward
-	AutofillManager::AutofillManager(QJniObject obj) : __JniBaseClass(obj) {}
+	AutofillManager::AutofillManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -69,7 +69,7 @@ namespace android::view::autofill
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	__JniBaseClass AutofillManager::getAvailableFieldClassificationAlgorithms()
+	JObject AutofillManager::getAvailableFieldClassificationAlgorithms()
 	{
 		return callObjectMethod(
 			"getAvailableFieldClassificationAlgorithms",

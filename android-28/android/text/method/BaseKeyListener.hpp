@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./MetaKeyKeyListener.hpp"
 
 namespace android::view
@@ -27,10 +27,10 @@ namespace android::text::method
 		BaseKeyListener();
 		
 		// Methods
-		jboolean backspace(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean forwardDelete(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyOther(android::view::View arg0, __JniBaseClass arg1, android::view::KeyEvent arg2);
+		jboolean backspace(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		jboolean forwardDelete(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		jboolean onKeyOther(android::view::View arg0, JObject arg1, android::view::KeyEvent arg2);
 	};
 } // namespace android::text::method
 

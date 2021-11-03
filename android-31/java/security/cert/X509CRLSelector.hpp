@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -29,13 +29,13 @@ namespace javax::security::auth::x500
 
 namespace java::security::cert
 {
-	class X509CRLSelector : public __JniBaseClass
+	class X509CRLSelector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit X509CRLSelector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit X509CRLSelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		X509CRLSelector(QJniObject obj);
 		
 		// Constructors
@@ -48,15 +48,15 @@ namespace java::security::cert
 		jobject clone();
 		java::security::cert::X509Certificate getCertificateChecking();
 		java::util::Date getDateAndTime();
-		__JniBaseClass getIssuerNames();
-		__JniBaseClass getIssuers();
+		JObject getIssuerNames();
+		JObject getIssuers();
 		java::math::BigInteger getMaxCRL();
 		java::math::BigInteger getMinCRL();
 		jboolean match(java::security::cert::CRL arg0);
 		void setCertificateChecking(java::security::cert::X509Certificate arg0);
 		void setDateAndTime(java::util::Date arg0);
-		void setIssuerNames(__JniBaseClass arg0);
-		void setIssuers(__JniBaseClass arg0);
+		void setIssuerNames(JObject arg0);
+		void setIssuers(JObject arg0);
 		void setMaxCRLNumber(java::math::BigInteger arg0);
 		void setMinCRLNumber(java::math::BigInteger arg0);
 		jstring toString();

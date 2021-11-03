@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass FillResponse::CREATOR()
+	JObject FillResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.FillResponse",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	FillResponse::FillResponse(QJniObject obj) : __JniBaseClass(obj) {}
+	FillResponse::FillResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

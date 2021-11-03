@@ -36,7 +36,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Debug::Debug(QJniObject obj) : __JniBaseClass(obj) {}
+	Debug::Debug(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -275,7 +275,7 @@ namespace android::os
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Debug::getRuntimeStats()
+	JObject Debug::getRuntimeStats()
 	{
 		return callStaticObjectMethod(
 			"android.os.Debug",

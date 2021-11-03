@@ -54,17 +54,17 @@ namespace java::io
 	}
 	
 	// QJniObject forward
-	StreamTokenizer::StreamTokenizer(QJniObject obj) : __JniBaseClass(obj) {}
+	StreamTokenizer::StreamTokenizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StreamTokenizer::StreamTokenizer(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.StreamTokenizer",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	StreamTokenizer::StreamTokenizer(java::io::Reader arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.io.StreamTokenizer",
 			"(Ljava/io/Reader;)V",
 			arg0.object()

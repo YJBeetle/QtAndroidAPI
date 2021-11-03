@@ -47,11 +47,11 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityInfo_WindowLayout::ActivityInfo_WindowLayout(jint arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jint arg5, jint arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ActivityInfo$WindowLayout",
 			"(IFIFIII)V",
 			arg0,

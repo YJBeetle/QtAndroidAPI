@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::os
 {
-	class TestLooperManager : public __JniBaseClass
+	class TestLooperManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TestLooperManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TestLooperManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TestLooperManager(QJniObject obj);
 		
 		// Constructors
@@ -32,7 +32,7 @@ namespace android::os
 		void execute(android::os::Message arg0);
 		android::os::MessageQueue getMessageQueue();
 		jboolean hasMessages(android::os::Handler arg0, jobject arg1, jint arg2);
-		jboolean hasMessages(android::os::Handler arg0, jobject arg1, __JniBaseClass arg2);
+		jboolean hasMessages(android::os::Handler arg0, jobject arg1, JObject arg2);
 		android::os::Message next();
 		void recycle(android::os::Message arg0);
 		void release();

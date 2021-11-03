@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,18 +17,18 @@ namespace android::view
 
 namespace android::view
 {
-	class ScaleGestureDetector : public __JniBaseClass
+	class ScaleGestureDetector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ScaleGestureDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScaleGestureDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScaleGestureDetector(QJniObject obj);
 		
 		// Constructors
-		ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1);
-		ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2);
+		ScaleGestureDetector(android::content::Context arg0, JObject arg1);
+		ScaleGestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
 		
 		// Methods
 		jfloat getCurrentSpan();

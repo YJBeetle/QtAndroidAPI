@@ -54,7 +54,7 @@ namespace java::nio::charset
 	}
 	
 	// QJniObject forward
-	StandardCharsets::StandardCharsets(QJniObject obj) : __JniBaseClass(obj) {}
+	StandardCharsets::StandardCharsets(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

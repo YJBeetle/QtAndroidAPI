@@ -60,7 +60,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_RawContacts::ContactsContract_RawContacts(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_RawContacts::ContactsContract_RawContacts(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -93,7 +93,7 @@ namespace android::provider
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass ContactsContract_RawContacts::newEntityIterator(__JniBaseClass arg0)
+	JObject ContactsContract_RawContacts::newEntityIterator(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.ContactsContract$RawContacts",

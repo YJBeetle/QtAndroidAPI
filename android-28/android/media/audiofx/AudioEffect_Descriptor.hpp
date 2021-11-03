@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace android::media::audiofx
 {
-	class AudioEffect_Descriptor : public __JniBaseClass
+	class AudioEffect_Descriptor : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::media::audiofx
 		java::util::UUID uuid();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioEffect_Descriptor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioEffect_Descriptor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioEffect_Descriptor(QJniObject obj);
 		
 		// Constructors

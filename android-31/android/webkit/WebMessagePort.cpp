@@ -8,7 +8,7 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebMessagePort::WebMessagePort(QJniObject obj) : __JniBaseClass(obj) {}
+	WebMessagePort::WebMessagePort(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -115,7 +115,7 @@ namespace android::media::audiofx
 			"()I"
 		);
 	}
-	void Virtualizer::setParameterListener(__JniBaseClass arg0)
+	void Virtualizer::setParameterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameterListener",

@@ -21,7 +21,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	RadioGroup::RadioGroup(android::content::Context arg0, __JniBaseClass arg1)
+	RadioGroup::RadioGroup(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.RadioGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -63,7 +63,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::RadioGroup_LayoutParams RadioGroup::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -107,7 +107,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioGroup::setOnCheckedChangeListener(__JniBaseClass arg0)
+	void RadioGroup::setOnCheckedChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCheckedChangeListener",
@@ -115,7 +115,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void RadioGroup::setOnHierarchyChangeListener(__JniBaseClass arg0)
+	void RadioGroup::setOnHierarchyChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",

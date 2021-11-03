@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -57,7 +57,7 @@ namespace android::view
 
 namespace android::media
 {
-	class AudioManager : public __JniBaseClass
+	class AudioManager : public JObject
 	{
 	public:
 		// Fields
@@ -168,7 +168,7 @@ namespace android::media
 		static jint VIBRATE_TYPE_RINGER();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager(QJniObject obj);
 		
 		// Constructors
@@ -177,25 +177,25 @@ namespace android::media
 		static jint getPlaybackOffloadSupport(android::media::AudioFormat arg0, android::media::AudioAttributes arg1);
 		static jboolean isHapticPlaybackSupported();
 		static jboolean isOffloadedPlaybackSupported(android::media::AudioFormat arg0, android::media::AudioAttributes arg1);
-		jint abandonAudioFocus(__JniBaseClass arg0);
+		jint abandonAudioFocus(JObject arg0);
 		jint abandonAudioFocusRequest(android::media::AudioFocusRequest arg0);
-		void addOnCommunicationDeviceChangedListener(__JniBaseClass arg0, __JniBaseClass arg1);
-		void addOnModeChangedListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		void addOnCommunicationDeviceChangedListener(JObject arg0, JObject arg1);
+		void addOnModeChangedListener(JObject arg0, JObject arg1);
 		void adjustStreamVolume(jint arg0, jint arg1, jint arg2);
 		void adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2);
 		void adjustVolume(jint arg0, jint arg1);
 		void clearCommunicationDevice();
 		void dispatchMediaKeyEvent(android::view::KeyEvent arg0);
 		jint generateAudioSessionId();
-		__JniBaseClass getActivePlaybackConfigurations();
-		__JniBaseClass getActiveRecordingConfigurations();
+		JObject getActivePlaybackConfigurations();
+		JObject getActiveRecordingConfigurations();
 		jint getAllowedCapturePolicy();
 		jint getAudioHwSyncForSession(jint arg0);
-		__JniBaseClass getAvailableCommunicationDevices();
+		JObject getAvailableCommunicationDevices();
 		android::media::AudioDeviceInfo getCommunicationDevice();
 		jarray getDevices(jint arg0);
 		jint getEncodedSurroundMode();
-		__JniBaseClass getMicrophones();
+		JObject getMicrophones();
 		jint getMode();
 		jstring getParameters(jstring arg0);
 		jstring getProperty(jstring arg0);
@@ -227,10 +227,10 @@ namespace android::media
 		void registerMediaButtonEventReceiver(android::content::ComponentName arg0);
 		void registerRemoteControlClient(android::media::RemoteControlClient arg0);
 		jboolean registerRemoteController(android::media::RemoteController arg0);
-		void removeOnCommunicationDeviceChangedListener(__JniBaseClass arg0);
-		void removeOnModeChangedListener(__JniBaseClass arg0);
+		void removeOnCommunicationDeviceChangedListener(JObject arg0);
+		void removeOnModeChangedListener(JObject arg0);
 		jint requestAudioFocus(android::media::AudioFocusRequest arg0);
-		jint requestAudioFocus(__JniBaseClass arg0, jint arg1, jint arg2);
+		jint requestAudioFocus(JObject arg0, jint arg1, jint arg2);
 		void setAllowedCapturePolicy(jint arg0);
 		void setBluetoothA2dpOn(jboolean arg0);
 		void setBluetoothScoOn(jboolean arg0);

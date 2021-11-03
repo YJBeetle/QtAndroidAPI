@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -25,13 +25,13 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaCodec_QueueRequest : public __JniBaseClass
+	class MediaCodec_QueueRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaCodec_QueueRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodec_QueueRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec_QueueRequest(QJniObject obj);
 		
 		// Constructors

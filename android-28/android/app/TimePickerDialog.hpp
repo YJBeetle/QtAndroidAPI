@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dialog.hpp"
 #include "./AlertDialog.hpp"
 
@@ -29,11 +29,11 @@ namespace android::app
 		TimePickerDialog(QJniObject obj);
 		
 		// Constructors
-		TimePickerDialog(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jboolean arg4);
-		TimePickerDialog(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3, jint arg4, jboolean arg5);
+		TimePickerDialog(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jboolean arg4);
+		TimePickerDialog(android::content::Context arg0, jint arg1, JObject arg2, jint arg3, jint arg4, jboolean arg5);
 		
 		// Methods
-		void onClick(__JniBaseClass arg0, jint arg1);
+		void onClick(JObject arg0, jint arg1);
 		void onRestoreInstanceState(android::os::Bundle arg0);
 		android::os::Bundle onSaveInstanceState();
 		void onTimeChanged(android::widget::TimePicker arg0, jint arg1, jint arg2);

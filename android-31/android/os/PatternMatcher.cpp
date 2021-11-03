@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass PatternMatcher::CREATOR()
+	JObject PatternMatcher::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.PatternMatcher",
@@ -49,17 +49,17 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	PatternMatcher::PatternMatcher(QJniObject obj) : __JniBaseClass(obj) {}
+	PatternMatcher::PatternMatcher(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PatternMatcher::PatternMatcher(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.PatternMatcher",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	PatternMatcher::PatternMatcher(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.PatternMatcher",
 			"(Ljava/lang/String;I)V",
 			arg0,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -25,7 +25,7 @@ namespace java::util
 
 namespace android::icu::util
 {
-	class TimeZone : public __JniBaseClass
+	class TimeZone : public JObject
 	{
 	public:
 		// Fields
@@ -44,7 +44,7 @@ namespace android::icu::util
 		static jstring UNKNOWN_ZONE_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZone(QJniObject obj);
 		
 		// Constructors
@@ -55,7 +55,7 @@ namespace android::icu::util
 		static jarray getAvailableIDs();
 		static jarray getAvailableIDs(jint arg0);
 		static jarray getAvailableIDs(jstring arg0);
-		static __JniBaseClass getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
+		static JObject getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2);
 		static jstring getCanonicalID(jstring arg0);
 		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
 		static android::icu::util::TimeZone getDefault();

@@ -8,22 +8,22 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	CopyOnWriteArrayList::CopyOnWriteArrayList(QJniObject obj) : __JniBaseClass(obj) {}
+	CopyOnWriteArrayList::CopyOnWriteArrayList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CopyOnWriteArrayList::CopyOnWriteArrayList()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"()V"
 		) {}
 	CopyOnWriteArrayList::CopyOnWriteArrayList(jobjectArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"([Ljava/lang/Object;)V",
 			arg0
 		) {}
-	CopyOnWriteArrayList::CopyOnWriteArrayList(__JniBaseClass arg0)
-		: __JniBaseClass(
+	CopyOnWriteArrayList::CopyOnWriteArrayList(JObject arg0)
+		: JObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"(Ljava/util/Collection;)V",
 			arg0.object()
@@ -47,7 +47,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	jboolean CopyOnWriteArrayList::addAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArrayList::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -55,7 +55,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::addAll(jint arg0, __JniBaseClass arg1)
+	jboolean CopyOnWriteArrayList::addAll(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -64,7 +64,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	jint CopyOnWriteArrayList::addAllAbsent(__JniBaseClass arg0)
+	jint CopyOnWriteArrayList::addAllAbsent(JObject arg0)
 	{
 		return callMethod<jint>(
 			"addAllAbsent",
@@ -102,7 +102,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArrayList::containsAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArrayList::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -118,7 +118,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void CopyOnWriteArrayList::forEach(__JniBaseClass arg0)
+	void CopyOnWriteArrayList::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -165,7 +165,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass CopyOnWriteArrayList::iterator()
+	JObject CopyOnWriteArrayList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -189,14 +189,14 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass CopyOnWriteArrayList::listIterator()
+	JObject CopyOnWriteArrayList::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	__JniBaseClass CopyOnWriteArrayList::listIterator(jint arg0)
+	JObject CopyOnWriteArrayList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -220,7 +220,7 @@ namespace java::util::concurrent
 			arg0
 		).object<jobject>();
 	}
-	jboolean CopyOnWriteArrayList::removeAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArrayList::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -228,7 +228,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::removeIf(__JniBaseClass arg0)
+	jboolean CopyOnWriteArrayList::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -236,7 +236,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	void CopyOnWriteArrayList::replaceAll(__JniBaseClass arg0)
+	void CopyOnWriteArrayList::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -244,7 +244,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArrayList::retainAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArrayList::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -268,7 +268,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	void CopyOnWriteArrayList::sort(__JniBaseClass arg0)
+	void CopyOnWriteArrayList::sort(JObject arg0)
 	{
 		callMethod<void>(
 			"sort",
@@ -276,14 +276,14 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass CopyOnWriteArrayList::spliterator()
+	JObject CopyOnWriteArrayList::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass CopyOnWriteArrayList::subList(jint arg0, jint arg1)
+	JObject CopyOnWriteArrayList::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

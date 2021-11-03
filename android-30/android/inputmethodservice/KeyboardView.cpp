@@ -14,14 +14,14 @@ namespace android::inputmethodservice
 	KeyboardView::KeyboardView(QJniObject obj) : android::view::View(obj) {}
 	
 	// Constructors
-	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1)
+	KeyboardView::KeyboardView(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	KeyboardView::KeyboardView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -29,7 +29,7 @@ namespace android::inputmethodservice
 			arg1.object(),
 			arg2
 		) {}
-	KeyboardView::KeyboardView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	KeyboardView::KeyboardView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -164,7 +164,7 @@ namespace android::inputmethodservice
 			arg0.object()
 		);
 	}
-	void KeyboardView::setOnKeyboardActionListener(__JniBaseClass arg0)
+	void KeyboardView::setOnKeyboardActionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnKeyboardActionListener",

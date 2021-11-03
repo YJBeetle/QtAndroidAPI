@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::telephony::data
 {
-	class NetworkSlicingConfig : public __JniBaseClass
+	class NetworkSlicingConfig : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NetworkSlicingConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkSlicingConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkSlicingConfig(QJniObject obj);
 		
 		// Constructors
@@ -25,8 +25,8 @@ namespace android::telephony::data
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getSliceInfo();
-		__JniBaseClass getUrspRules();
+		JObject getSliceInfo();
+		JObject getUrspRules();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

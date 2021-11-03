@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass DnsEvent::CREATOR()
+	JObject DnsEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.DnsEvent",
@@ -33,7 +33,7 @@ namespace android::app::admin
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass DnsEvent::getInetAddresses()
+	JObject DnsEvent::getInetAddresses()
 	{
 		return callObjectMethod(
 			"getInetAddresses",

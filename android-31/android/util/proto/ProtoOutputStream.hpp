@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,7 +9,7 @@ namespace java::io
 
 namespace android::util::proto
 {
-	class ProtoOutputStream : public __JniBaseClass
+	class ProtoOutputStream : public JObject
 	{
 	public:
 		// Fields
@@ -48,7 +48,7 @@ namespace android::util::proto
 		static jint WIRE_TYPE_VARINT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ProtoOutputStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProtoOutputStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProtoOutputStream(QJniObject obj);
 		
 		// Constructors

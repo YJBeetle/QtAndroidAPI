@@ -8,7 +8,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass ConnectionRequest::CREATOR()
+	JObject ConnectionRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.ConnectionRequest",
@@ -18,11 +18,11 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	ConnectionRequest::ConnectionRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	ConnectionRequest::ConnectionRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.ConnectionRequest",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0.object(),
@@ -30,7 +30,7 @@ namespace android::telecom
 			arg2.object()
 		) {}
 	ConnectionRequest::ConnectionRequest(android::telecom::PhoneAccountHandle arg0, android::net::Uri arg1, android::os::Bundle arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.ConnectionRequest",
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;Landroid/os/Bundle;I)V",
 			arg0.object(),
@@ -68,7 +68,7 @@ namespace android::telecom
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass ConnectionRequest::getParticipants()
+	JObject ConnectionRequest::getParticipants()
 	{
 		return callObjectMethod(
 			"getParticipants",

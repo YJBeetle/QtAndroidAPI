@@ -8,12 +8,12 @@ namespace android::security::keystore
 	// Fields
 	
 	// QJniObject forward
-	KeyGenParameterSpec::KeyGenParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyGenParameterSpec::KeyGenParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass KeyGenParameterSpec::getAlgorithmParameterSpec()
+	JObject KeyGenParameterSpec::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",

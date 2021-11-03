@@ -6,17 +6,17 @@ namespace android::location
 	// Fields
 	
 	// QJniObject forward
-	LocationRequest_Builder::LocationRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	LocationRequest_Builder::LocationRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocationRequest_Builder::LocationRequest_Builder(android::location::LocationRequest arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.LocationRequest$Builder",
 			"(Landroid/location/LocationRequest;)V",
 			arg0.object()
 		) {}
 	LocationRequest_Builder::LocationRequest_Builder(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.LocationRequest$Builder",
 			"(J)V",
 			arg0

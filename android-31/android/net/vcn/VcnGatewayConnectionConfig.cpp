@@ -5,7 +5,7 @@ namespace android::net::vcn
 	// Fields
 	
 	// QJniObject forward
-	VcnGatewayConnectionConfig::VcnGatewayConnectionConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	VcnGatewayConnectionConfig::VcnGatewayConnectionConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

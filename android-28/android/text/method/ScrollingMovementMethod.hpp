@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseMovementMethod.hpp"
 
 namespace android::view
@@ -27,9 +27,9 @@ namespace android::text::method
 		ScrollingMovementMethod();
 		
 		// Methods
-		static __JniBaseClass getInstance();
-		void onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2);
-		jboolean onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2);
+		static JObject getInstance();
+		void onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2);
+		jboolean onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2);
 	};
 } // namespace android::text::method
 

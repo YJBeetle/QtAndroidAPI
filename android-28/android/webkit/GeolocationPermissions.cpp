@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	GeolocationPermissions::GeolocationPermissions(QJniObject obj) : __JniBaseClass(obj) {}
+	GeolocationPermissions::GeolocationPermissions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -41,7 +41,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void GeolocationPermissions::getAllowed(jstring arg0, __JniBaseClass arg1)
+	void GeolocationPermissions::getAllowed(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getAllowed",
@@ -50,7 +50,7 @@ namespace android::webkit
 			arg1.object()
 		);
 	}
-	void GeolocationPermissions::getOrigins(__JniBaseClass arg0)
+	void GeolocationPermissions::getOrigins(JObject arg0)
 	{
 		callMethod<void>(
 			"getOrigins",

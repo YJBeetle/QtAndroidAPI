@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextClassifier_EntityConfig::CREATOR()
+	JObject TextClassifier_EntityConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -14,12 +14,12 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextClassifier_EntityConfig::TextClassifier_EntityConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassifier_EntityConfig::TextClassifier_EntityConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::create(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::create(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -30,7 +30,7 @@ namespace android::view::textclassifier
 			arg2.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithExplicitEntityList(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithExplicitEntityList(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -39,7 +39,7 @@ namespace android::view::textclassifier
 			arg0.object()
 		);
 	}
-	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithHints(__JniBaseClass arg0)
+	android::view::textclassifier::TextClassifier_EntityConfig TextClassifier_EntityConfig::createWithHints(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.view.textclassifier.TextClassifier$EntityConfig",
@@ -55,14 +55,14 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	__JniBaseClass TextClassifier_EntityConfig::getHints()
+	JObject TextClassifier_EntityConfig::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass TextClassifier_EntityConfig::resolveEntityListModifications(__JniBaseClass arg0)
+	JObject TextClassifier_EntityConfig::resolveEntityListModifications(JObject arg0)
 	{
 		return callObjectMethod(
 			"resolveEntityListModifications",

@@ -6,16 +6,16 @@ namespace android::location::provider
 	// Fields
 	
 	// QJniObject forward
-	ProviderProperties_Builder::ProviderProperties_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ProviderProperties_Builder::ProviderProperties_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProviderProperties_Builder::ProviderProperties_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.provider.ProviderProperties$Builder",
 			"()V"
 		) {}
 	ProviderProperties_Builder::ProviderProperties_Builder(android::location::provider::ProviderProperties arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.provider.ProviderProperties$Builder",
 			"(Landroid/location/provider/ProviderProperties;)V",
 			arg0.object()

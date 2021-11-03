@@ -153,7 +153,7 @@ namespace android::graphics::drawable
 			"()Z"
 		);
 	}
-	void AdaptiveIconDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void AdaptiveIconDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",
@@ -214,7 +214,7 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void AdaptiveIconDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2)
+	void AdaptiveIconDrawable::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -309,7 +309,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void AdaptiveIconDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1)
+	void AdaptiveIconDrawable::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Event.hpp"
 
 namespace android::os
@@ -18,7 +18,7 @@ namespace android::media::metrics
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TRACK_CHANGE_REASON_ADAPTIVE();
 		static jint TRACK_CHANGE_REASON_INITIAL();
 		static jint TRACK_CHANGE_REASON_MANUAL();

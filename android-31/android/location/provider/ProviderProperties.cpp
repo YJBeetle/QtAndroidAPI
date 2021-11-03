@@ -18,7 +18,7 @@ namespace android::location::provider
 			"ACCURACY_FINE"
 		);
 	}
-	__JniBaseClass ProviderProperties::CREATOR()
+	JObject ProviderProperties::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.provider.ProviderProperties",
@@ -49,7 +49,7 @@ namespace android::location::provider
 	}
 	
 	// QJniObject forward
-	ProviderProperties::ProviderProperties(QJniObject obj) : __JniBaseClass(obj) {}
+	ProviderProperties::ProviderProperties(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

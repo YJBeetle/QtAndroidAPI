@@ -6,11 +6,11 @@ namespace android::hardware
 	// Fields
 	
 	// QJniObject forward
-	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(QJniObject obj) : __JniBaseClass(obj) {}
+	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConsumerIrManager_CarrierFrequencyRange::ConsumerIrManager_CarrierFrequencyRange(android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.ConsumerIrManager$CarrierFrequencyRange",
 			"(Landroid/hardware/ConsumerIrManager;II)V",
 			arg0.object(),

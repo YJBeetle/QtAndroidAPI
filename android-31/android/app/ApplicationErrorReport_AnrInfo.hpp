@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::app
 {
-	class ApplicationErrorReport_AnrInfo : public __JniBaseClass
+	class ApplicationErrorReport_AnrInfo : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::app
 		jstring info();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ApplicationErrorReport_AnrInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ApplicationErrorReport_AnrInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationErrorReport_AnrInfo(QJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::app
 		ApplicationErrorReport_AnrInfo(android::os::Parcel arg0);
 		
 		// Methods
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app

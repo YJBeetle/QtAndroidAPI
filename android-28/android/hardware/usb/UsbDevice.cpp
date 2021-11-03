@@ -6,7 +6,7 @@
 namespace android::hardware::usb
 {
 	// Fields
-	__JniBaseClass UsbDevice::CREATOR()
+	JObject UsbDevice::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.usb.UsbDevice",
@@ -16,7 +16,7 @@ namespace android::hardware::usb
 	}
 	
 	// QJniObject forward
-	UsbDevice::UsbDevice(QJniObject obj) : __JniBaseClass(obj) {}
+	UsbDevice::UsbDevice(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

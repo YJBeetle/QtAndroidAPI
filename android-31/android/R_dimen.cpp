@@ -68,11 +68,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_dimen::R_dimen(QJniObject obj) : __JniBaseClass(obj) {}
+	R_dimen::R_dimen(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_dimen::R_dimen()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$dimen",
 			"()V"
 		) {}

@@ -5,7 +5,7 @@
 namespace android::media::metrics
 {
 	// Fields
-	__JniBaseClass PlaybackErrorEvent::CREATOR()
+	JObject PlaybackErrorEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.metrics.PlaybackErrorEvent",

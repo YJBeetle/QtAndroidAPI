@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaSession2_ControllerInfo::MediaSession2_ControllerInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession2_ControllerInfo::MediaSession2_ControllerInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

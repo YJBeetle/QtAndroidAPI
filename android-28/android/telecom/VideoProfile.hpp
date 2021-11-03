@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telecom
 {
-	class VideoProfile : public __JniBaseClass
+	class VideoProfile : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint QUALITY_DEFAULT();
 		static jint QUALITY_HIGH();
 		static jint QUALITY_LOW();
@@ -25,7 +25,7 @@ namespace android::telecom
 		static jint STATE_TX_ENABLED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit VideoProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VideoProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VideoProfile(QJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace android::service::notification
 	// Fields
 	
 	// QJniObject forward
-	ZenPolicy_Builder::ZenPolicy_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ZenPolicy_Builder::ZenPolicy_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ZenPolicy_Builder::ZenPolicy_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.ZenPolicy$Builder",
 			"()V"
 		) {}

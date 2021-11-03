@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	BlockedNumberContract_BlockedNumbers::BlockedNumberContract_BlockedNumbers(QJniObject obj) : __JniBaseClass(obj) {}
+	BlockedNumberContract_BlockedNumbers::BlockedNumberContract_BlockedNumbers(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

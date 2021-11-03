@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,7 +9,7 @@ namespace android::graphics
 
 namespace android::provider
 {
-	class FontsContract_FontRequestCallback : public __JniBaseClass
+	class FontsContract_FontRequestCallback : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::provider
 		static jint FAIL_REASON_WRONG_CERTIFICATES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FontsContract_FontRequestCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FontsContract_FontRequestCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_FontRequestCallback(QJniObject obj);
 		
 		// Constructors

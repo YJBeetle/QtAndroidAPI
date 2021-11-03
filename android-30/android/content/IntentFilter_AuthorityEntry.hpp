@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,13 +9,13 @@ namespace android::net
 
 namespace android::content
 {
-	class IntentFilter_AuthorityEntry : public __JniBaseClass
+	class IntentFilter_AuthorityEntry : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IntentFilter_AuthorityEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IntentFilter_AuthorityEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IntentFilter_AuthorityEntry(QJniObject obj);
 		
 		// Constructors

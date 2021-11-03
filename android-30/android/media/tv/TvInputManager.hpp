@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::tv
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::media::tv
 {
-	class TvInputManager : public __JniBaseClass
+	class TvInputManager : public JObject
 	{
 	public:
 		// Fields
@@ -62,16 +62,16 @@ namespace android::media::tv
 		static jint VIDEO_UNAVAILABLE_REASON_WEAK_SIGNAL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvInputManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvInputManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getBlockedRatings();
+		JObject getBlockedRatings();
 		jint getInputState(jstring arg0);
 		android::media::tv::TvInputInfo getTvInputInfo(jstring arg0);
-		__JniBaseClass getTvInputList();
+		JObject getTvInputList();
 		jboolean isParentalControlsEnabled();
 		jboolean isRatingBlocked(android::media::tv::TvContentRating arg0);
 		void registerCallback(android::media::tv::TvInputManager_TvInputCallback arg0, android::os::Handler arg1);

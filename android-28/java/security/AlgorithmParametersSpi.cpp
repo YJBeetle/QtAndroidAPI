@@ -5,11 +5,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	AlgorithmParametersSpi::AlgorithmParametersSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	AlgorithmParametersSpi::AlgorithmParametersSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlgorithmParametersSpi::AlgorithmParametersSpi()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.AlgorithmParametersSpi",
 			"()V"
 		) {}

@@ -4,7 +4,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	__JniBaseClass StreamingServiceInfo::CREATOR()
+	JObject StreamingServiceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.mbms.StreamingServiceInfo",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FileOutputStream.hpp"
 

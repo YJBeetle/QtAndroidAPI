@@ -34,7 +34,7 @@ namespace android::transition
 			"android.transition.TransitionSet",
 			"()V"
 		) {}
-	TransitionSet::TransitionSet(android::content::Context arg0, __JniBaseClass arg1)
+	TransitionSet::TransitionSet(android::content::Context arg0, JObject arg1)
 		: android::transition::Transition(
 			"android.transition.TransitionSet",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -43,7 +43,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::transition::TransitionSet TransitionSet::addListener(__JniBaseClass arg0)
+	android::transition::TransitionSet TransitionSet::addListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"addListener",
@@ -172,7 +172,7 @@ namespace android::transition
 			"()I"
 		);
 	}
-	android::transition::TransitionSet TransitionSet::removeListener(__JniBaseClass arg0)
+	android::transition::TransitionSet TransitionSet::removeListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"removeListener",
@@ -236,7 +236,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::TransitionSet TransitionSet::setInterpolator(__JniBaseClass arg0)
+	android::transition::TransitionSet TransitionSet::setInterpolator(JObject arg0)
 	{
 		return callObjectMethod(
 			"setInterpolator",

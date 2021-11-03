@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::media::tv
 {
-	class TvContract_Programs_Genres : public __JniBaseClass
+	class TvContract_Programs_Genres : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android::media::tv
 		static jstring TRAVEL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvContract_Programs_Genres(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract_Programs_Genres(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Programs_Genres(QJniObject obj);
 		
 		// Constructors

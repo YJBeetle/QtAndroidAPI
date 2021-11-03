@@ -96,7 +96,7 @@ namespace android::app::people
 			"AVAILABILITY_UNKNOWN"
 		);
 	}
-	__JniBaseClass ConversationStatus::CREATOR()
+	JObject ConversationStatus::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.people.ConversationStatus",
@@ -106,7 +106,7 @@ namespace android::app::people
 	}
 	
 	// QJniObject forward
-	ConversationStatus::ConversationStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationStatus::ConversationStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

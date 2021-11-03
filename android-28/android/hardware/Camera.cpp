@@ -45,7 +45,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	Camera::Camera(QJniObject obj) : __JniBaseClass(obj) {}
+	Camera::Camera(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -93,7 +93,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::autoFocus(__JniBaseClass arg0)
+	void Camera::autoFocus(JObject arg0)
 	{
 		callMethod<void>(
 			"autoFocus",
@@ -144,7 +144,7 @@ namespace android::hardware
 			"()V"
 		);
 	}
-	void Camera::setAutoFocusMoveCallback(__JniBaseClass arg0)
+	void Camera::setAutoFocusMoveCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setAutoFocusMoveCallback",
@@ -160,7 +160,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	void Camera::setErrorCallback(__JniBaseClass arg0)
+	void Camera::setErrorCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorCallback",
@@ -168,7 +168,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setFaceDetectionListener(__JniBaseClass arg0)
+	void Camera::setFaceDetectionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setFaceDetectionListener",
@@ -176,7 +176,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setOneShotPreviewCallback(__JniBaseClass arg0)
+	void Camera::setOneShotPreviewCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setOneShotPreviewCallback",
@@ -192,7 +192,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewCallback(__JniBaseClass arg0)
+	void Camera::setPreviewCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setPreviewCallback",
@@ -200,7 +200,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewCallbackWithBuffer(__JniBaseClass arg0)
+	void Camera::setPreviewCallbackWithBuffer(JObject arg0)
 	{
 		callMethod<void>(
 			"setPreviewCallbackWithBuffer",
@@ -208,7 +208,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setPreviewDisplay(__JniBaseClass arg0)
+	void Camera::setPreviewDisplay(JObject arg0)
 	{
 		callMethod<void>(
 			"setPreviewDisplay",
@@ -224,7 +224,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void Camera::setZoomChangeListener(__JniBaseClass arg0)
+	void Camera::setZoomChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setZoomChangeListener",
@@ -275,7 +275,7 @@ namespace android::hardware
 			"()V"
 		);
 	}
-	void Camera::takePicture(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"takePicture",
@@ -285,7 +285,7 @@ namespace android::hardware
 			arg2.object()
 		);
 	}
-	void Camera::takePicture(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void Camera::takePicture(JObject arg0, JObject arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"takePicture",

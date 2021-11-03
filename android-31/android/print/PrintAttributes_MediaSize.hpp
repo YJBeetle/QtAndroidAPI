@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -9,7 +9,7 @@ namespace android::content::pm
 
 namespace android::print
 {
-	class PrintAttributes_MediaSize : public __JniBaseClass
+	class PrintAttributes_MediaSize : public JObject
 	{
 	public:
 		// Fields
@@ -110,7 +110,7 @@ namespace android::print
 		static android::print::PrintAttributes_MediaSize UNKNOWN_PORTRAIT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PrintAttributes_MediaSize(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrintAttributes_MediaSize(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrintAttributes_MediaSize(QJniObject obj);
 		
 		// Constructors

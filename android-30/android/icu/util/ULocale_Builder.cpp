@@ -6,11 +6,11 @@ namespace android::icu::util
 	// Fields
 	
 	// QJniObject forward
-	ULocale_Builder::ULocale_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ULocale_Builder::ULocale_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ULocale_Builder::ULocale_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.ULocale$Builder",
 			"()V"
 		) {}

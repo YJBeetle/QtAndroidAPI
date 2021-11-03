@@ -13,7 +13,7 @@ namespace android::content
 			"Landroid/content/SyncResult;"
 		);
 	}
-	__JniBaseClass SyncResult::CREATOR()
+	JObject SyncResult::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.SyncResult",
@@ -78,11 +78,11 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	SyncResult::SyncResult(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncResult::SyncResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncResult::SyncResult()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncResult",
 			"()V"
 		) {}

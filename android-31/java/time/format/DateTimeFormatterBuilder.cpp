@@ -12,17 +12,17 @@ namespace java::time::format
 	// Fields
 	
 	// QJniObject forward
-	DateTimeFormatterBuilder::DateTimeFormatterBuilder(QJniObject obj) : __JniBaseClass(obj) {}
+	DateTimeFormatterBuilder::DateTimeFormatterBuilder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateTimeFormatterBuilder::DateTimeFormatterBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"java.time.format.DateTimeFormatterBuilder",
 			"()V"
 		) {}
 	
 	// Methods
-	jstring DateTimeFormatterBuilder::getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, __JniBaseClass arg2, java::util::Locale arg3)
+	jstring DateTimeFormatterBuilder::getLocalizedDateTimePattern(java::time::format::FormatStyle arg0, java::time::format::FormatStyle arg1, JObject arg2, java::util::Locale arg3)
 	{
 		return callStaticObjectMethod(
 			"java.time.format.DateTimeFormatterBuilder",
@@ -65,7 +65,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendFraction(__JniBaseClass arg0, jint arg1, jint arg2, jboolean arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendFraction(JObject arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"appendFraction",
@@ -84,7 +84,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0, __JniBaseClass arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendGenericZoneText(java::time::format::TextStyle arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"appendGenericZoneText",
@@ -173,7 +173,7 @@ namespace java::time::format
 			arg0
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(__JniBaseClass arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0)
 	{
 		return callObjectMethod(
 			"appendText",
@@ -181,7 +181,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(__JniBaseClass arg0, java::time::format::TextStyle arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, java::time::format::TextStyle arg1)
 	{
 		return callObjectMethod(
 			"appendText",
@@ -190,7 +190,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendText(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"appendText",
@@ -199,7 +199,7 @@ namespace java::time::format
 			arg1.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(__JniBaseClass arg0)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0)
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -207,7 +207,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(__JniBaseClass arg0, jint arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -216,7 +216,7 @@ namespace java::time::format
 			arg1
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(__JniBaseClass arg0, jint arg1, jint arg2, java::time::format::SignStyle arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValue(JObject arg0, jint arg1, jint arg2, java::time::format::SignStyle arg3)
 	{
 		return callObjectMethod(
 			"appendValue",
@@ -227,7 +227,7 @@ namespace java::time::format
 			arg3.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"appendValueReduced",
@@ -238,7 +238,7 @@ namespace java::time::format
 			arg3
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(__JniBaseClass arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendValueReduced(JObject arg0, jint arg1, jint arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"appendValueReduced",
@@ -278,7 +278,7 @@ namespace java::time::format
 			arg0.object()
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0, __JniBaseClass arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::appendZoneText(java::time::format::TextStyle arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"appendZoneText",
@@ -332,7 +332,7 @@ namespace java::time::format
 			"()Ljava/time/format/DateTimeFormatterBuilder;"
 		);
 	}
-	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseDefaulting(__JniBaseClass arg0, jlong arg1)
+	java::time::format::DateTimeFormatterBuilder DateTimeFormatterBuilder::parseDefaulting(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"parseDefaulting",

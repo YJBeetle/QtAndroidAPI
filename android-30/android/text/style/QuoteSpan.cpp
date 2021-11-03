@@ -30,28 +30,28 @@ namespace android::text::style
 	}
 	
 	// QJniObject forward
-	QuoteSpan::QuoteSpan(QJniObject obj) : __JniBaseClass(obj) {}
+	QuoteSpan::QuoteSpan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	QuoteSpan::QuoteSpan()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.QuoteSpan",
 			"()V"
 		) {}
 	QuoteSpan::QuoteSpan(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.QuoteSpan",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	QuoteSpan::QuoteSpan(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.QuoteSpan",
 			"(I)V",
 			arg0
 		) {}
 	QuoteSpan::QuoteSpan(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.QuoteSpan",
 			"(III)V",
 			arg0,

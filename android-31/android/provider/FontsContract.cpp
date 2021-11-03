@@ -12,7 +12,7 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	FontsContract::FontsContract(QJniObject obj) : __JniBaseClass(obj) {}
+	FontsContract::FontsContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -7,11 +7,11 @@ namespace android::view::translation
 	// Fields
 	
 	// QJniObject forward
-	TranslationResponseValue_Builder::TranslationResponseValue_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	TranslationResponseValue_Builder::TranslationResponseValue_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TranslationResponseValue_Builder::TranslationResponseValue_Builder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.TranslationResponseValue$Builder",
 			"(I)V",
 			arg0

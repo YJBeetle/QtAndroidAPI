@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class BugreportManager_BugreportCallback : public __JniBaseClass
+	class BugreportManager_BugreportCallback : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::os
 		static jint BUGREPORT_ERROR_USER_DENIED_CONSENT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BugreportManager_BugreportCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BugreportManager_BugreportCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BugreportManager_BugreportCallback(QJniObject obj);
 		
 		// Constructors

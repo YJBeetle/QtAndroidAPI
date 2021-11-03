@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::text
 {
@@ -13,7 +13,7 @@ namespace java::util
 
 namespace java::text
 {
-	class Collator : public __JniBaseClass
+	class Collator : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace java::text
 		static jint TERTIARY();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Collator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Collator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Collator(QJniObject obj);
 		
 		// Constructors

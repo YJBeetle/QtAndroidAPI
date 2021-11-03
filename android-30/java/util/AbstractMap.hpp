@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::util
 {
-	class AbstractMap : public __JniBaseClass
+	class AbstractMap : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractMap(QJniObject obj);
 		
 		// Constructors
@@ -20,18 +20,18 @@ namespace java::util
 		void clear();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject remove(jobject arg0);
 		jint size();
 		jstring toString();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

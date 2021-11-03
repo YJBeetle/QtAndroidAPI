@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,7 +21,7 @@ namespace android::net
 
 namespace android::media
 {
-	class RingtoneManager : public __JniBaseClass
+	class RingtoneManager : public JObject
 	{
 	public:
 		// Fields
@@ -43,7 +43,7 @@ namespace android::media
 		static jint URI_COLUMN_INDEX();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RingtoneManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RingtoneManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RingtoneManager(QJniObject obj);
 		
 		// Constructors
@@ -58,7 +58,7 @@ namespace android::media
 		static android::net::Uri getValidRingtoneUri(android::content::Context arg0);
 		static jboolean isDefault(android::net::Uri arg0);
 		static void setActualDefaultRingtoneUri(android::content::Context arg0, jint arg1, android::net::Uri arg2);
-		__JniBaseClass getCursor();
+		JObject getCursor();
 		jboolean getIncludeDrm();
 		android::media::Ringtone getRingtone(jint arg0);
 		jint getRingtonePosition(android::net::Uri arg0);

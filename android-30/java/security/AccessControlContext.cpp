@@ -7,17 +7,17 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	AccessControlContext::AccessControlContext(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessControlContext::AccessControlContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessControlContext::AccessControlContext(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.AccessControlContext",
 			"([Ljava/security/ProtectionDomain;)V",
 			arg0
 		) {}
-	AccessControlContext::AccessControlContext(java::security::AccessControlContext &arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	AccessControlContext::AccessControlContext(java::security::AccessControlContext &arg0, JObject arg1)
+		: JObject(
 			"java.security.AccessControlContext",
 			"(Ljava/security/AccessControlContext;Ljava/security/DomainCombiner;)V",
 			arg0.object(),
@@ -41,7 +41,7 @@ namespace java::security
 			arg0
 		);
 	}
-	__JniBaseClass AccessControlContext::getDomainCombiner()
+	JObject AccessControlContext::getDomainCombiner()
 	{
 		return callObjectMethod(
 			"getDomainCombiner",

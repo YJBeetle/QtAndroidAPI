@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::app
 {
-	class LauncherActivity_ListItem : public __JniBaseClass
+	class LauncherActivity_ListItem : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::app
 		android::content::pm::ResolveInfo resolveInfo();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LauncherActivity_ListItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LauncherActivity_ListItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherActivity_ListItem(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telephony
 {
-	class SignalThresholdInfo : public __JniBaseClass
+	class SignalThresholdInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SIGNAL_MEASUREMENT_TYPE_RSCP();
 		static jint SIGNAL_MEASUREMENT_TYPE_RSRP();
 		static jint SIGNAL_MEASUREMENT_TYPE_RSRQ();
@@ -25,7 +25,7 @@ namespace android::telephony
 		static jint SIGNAL_MEASUREMENT_TYPE_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SignalThresholdInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SignalThresholdInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SignalThresholdInfo(QJniObject obj);
 		
 		// Constructors

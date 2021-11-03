@@ -7,7 +7,7 @@ namespace java::nio::file
 	// Fields
 	
 	// QJniObject forward
-	FileSystem::FileSystem(QJniObject obj) : __JniBaseClass(obj) {}
+	FileSystem::FileSystem(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,14 +19,14 @@ namespace java::nio::file
 			"()V"
 		);
 	}
-	__JniBaseClass FileSystem::getFileStores()
+	JObject FileSystem::getFileStores()
 	{
 		return callObjectMethod(
 			"getFileStores",
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	__JniBaseClass FileSystem::getPath(jstring arg0, jarray arg1)
+	JObject FileSystem::getPath(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"getPath",
@@ -35,7 +35,7 @@ namespace java::nio::file
 			arg1
 		);
 	}
-	__JniBaseClass FileSystem::getPathMatcher(jstring arg0)
+	JObject FileSystem::getPathMatcher(jstring arg0)
 	{
 		return callObjectMethod(
 			"getPathMatcher",
@@ -43,7 +43,7 @@ namespace java::nio::file
 			arg0
 		);
 	}
-	__JniBaseClass FileSystem::getRootDirectories()
+	JObject FileSystem::getRootDirectories()
 	{
 		return callObjectMethod(
 			"getRootDirectories",
@@ -78,7 +78,7 @@ namespace java::nio::file
 			"()Z"
 		);
 	}
-	__JniBaseClass FileSystem::newWatchService()
+	JObject FileSystem::newWatchService()
 	{
 		return callObjectMethod(
 			"newWatchService",
@@ -92,7 +92,7 @@ namespace java::nio::file
 			"()Ljava/nio/file/spi/FileSystemProvider;"
 		);
 	}
-	__JniBaseClass FileSystem::supportedFileAttributeViews()
+	JObject FileSystem::supportedFileAttributeViews()
 	{
 		return callObjectMethod(
 			"supportedFileAttributeViews",

@@ -156,7 +156,7 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageInstaller::PackageInstaller(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller::PackageInstaller(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -184,21 +184,21 @@ namespace android::content::pm
 			"()Landroid/content/pm/PackageInstaller$SessionInfo;"
 		);
 	}
-	__JniBaseClass PackageInstaller::getActiveStagedSessions()
+	JObject PackageInstaller::getActiveStagedSessions()
 	{
 		return callObjectMethod(
 			"getActiveStagedSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PackageInstaller::getAllSessions()
+	JObject PackageInstaller::getAllSessions()
 	{
 		return callObjectMethod(
 			"getAllSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PackageInstaller::getMySessions()
+	JObject PackageInstaller::getMySessions()
 	{
 		return callObjectMethod(
 			"getMySessions",
@@ -213,7 +213,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	__JniBaseClass PackageInstaller::getStagedSessions()
+	JObject PackageInstaller::getStagedSessions()
 	{
 		return callObjectMethod(
 			"getStagedSessions",

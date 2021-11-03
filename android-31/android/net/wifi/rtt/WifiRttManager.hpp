@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::rtt
 {
@@ -13,21 +13,21 @@ namespace android::net::wifi::rtt
 
 namespace android::net::wifi::rtt
 {
-	class WifiRttManager : public __JniBaseClass
+	class WifiRttManager : public JObject
 	{
 	public:
 		// Fields
 		static jstring ACTION_WIFI_RTT_STATE_CHANGED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiRttManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiRttManager(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean isAvailable();
-		void startRanging(android::net::wifi::rtt::RangingRequest arg0, __JniBaseClass arg1, android::net::wifi::rtt::RangingResultCallback arg2);
+		void startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2);
 	};
 } // namespace android::net::wifi::rtt
 

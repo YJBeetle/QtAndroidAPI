@@ -670,11 +670,11 @@ namespace android::print
 	}
 	
 	// QJniObject forward
-	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintAttributes_MediaSize::PrintAttributes_MediaSize(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintAttributes_MediaSize::PrintAttributes_MediaSize(jstring arg0, jstring arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintAttributes$MediaSize",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,

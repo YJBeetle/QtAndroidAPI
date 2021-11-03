@@ -6,7 +6,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageInstaller_SessionParams::CREATOR()
+	JObject PackageInstaller_SessionParams::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInstaller$SessionParams",
@@ -30,11 +30,11 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_SessionParams::PackageInstaller_SessionParams(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageInstaller_SessionParams::PackageInstaller_SessionParams(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageInstaller$SessionParams",
 			"(I)V",
 			arg0

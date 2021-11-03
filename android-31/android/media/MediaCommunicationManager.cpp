@@ -5,12 +5,12 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaCommunicationManager::MediaCommunicationManager(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCommunicationManager::MediaCommunicationManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass MediaCommunicationManager::getSession2Tokens()
+	JObject MediaCommunicationManager::getSession2Tokens()
 	{
 		return callObjectMethod(
 			"getSession2Tokens",

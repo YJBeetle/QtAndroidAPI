@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::view
 {
-	class LayoutInflater : public __JniBaseClass
+	class LayoutInflater : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LayoutInflater(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LayoutInflater(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LayoutInflater(QJniObject obj);
 		
 		// Constructors
@@ -31,18 +31,18 @@ namespace android::view
 		// Methods
 		static android::view::LayoutInflater from(android::content::Context arg0);
 		android::view::LayoutInflater cloneInContext(android::content::Context arg0);
-		android::view::View createView(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		android::view::View createView(jstring arg0, jstring arg1, JObject arg2);
 		android::content::Context getContext();
-		__JniBaseClass getFactory();
-		__JniBaseClass getFactory2();
-		__JniBaseClass getFilter();
+		JObject getFactory();
+		JObject getFactory2();
+		JObject getFilter();
 		android::view::View inflate(jint arg0, android::view::ViewGroup arg1);
-		android::view::View inflate(__JniBaseClass arg0, android::view::ViewGroup arg1);
+		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1);
 		android::view::View inflate(jint arg0, android::view::ViewGroup arg1, jboolean arg2);
-		android::view::View inflate(__JniBaseClass arg0, android::view::ViewGroup arg1, jboolean arg2);
-		void setFactory(__JniBaseClass arg0);
-		void setFactory2(__JniBaseClass arg0);
-		void setFilter(__JniBaseClass arg0);
+		android::view::View inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2);
+		void setFactory(JObject arg0);
+		void setFactory2(JObject arg0);
+		void setFilter(JObject arg0);
 	};
 } // namespace android::view
 

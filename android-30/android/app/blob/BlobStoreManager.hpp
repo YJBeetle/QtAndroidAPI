@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::blob
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::app::blob
 {
-	class BlobStoreManager : public __JniBaseClass
+	class BlobStoreManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BlobStoreManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BlobStoreManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BlobStoreManager(QJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::app::blob
 		void acquireLease(android::app::blob::BlobHandle arg0, jint arg1, jlong arg2);
 		void acquireLease(android::app::blob::BlobHandle arg0, jstring arg1, jlong arg2);
 		jlong createSession(android::app::blob::BlobHandle arg0);
-		__JniBaseClass getLeasedBlobs();
+		JObject getLeasedBlobs();
 		jlong getRemainingLeaseQuotaBytes();
 		android::os::ParcelFileDescriptor openBlob(android::app::blob::BlobHandle arg0);
 		android::app::blob::BlobStoreManager_Session openSession(jlong arg0);

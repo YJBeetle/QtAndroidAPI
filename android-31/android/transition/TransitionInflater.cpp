@@ -9,7 +9,7 @@ namespace android::transition
 	// Fields
 	
 	// QJniObject forward
-	TransitionInflater::TransitionInflater(QJniObject obj) : __JniBaseClass(obj) {}
+	TransitionInflater::TransitionInflater(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

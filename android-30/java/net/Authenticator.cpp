@@ -9,11 +9,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	Authenticator::Authenticator(QJniObject obj) : __JniBaseClass(obj) {}
+	Authenticator::Authenticator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Authenticator::Authenticator()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Authenticator",
 			"()V"
 		) {}

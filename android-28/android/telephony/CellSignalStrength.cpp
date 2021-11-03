@@ -40,7 +40,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	CellSignalStrength::CellSignalStrength(QJniObject obj) : __JniBaseClass(obj) {}
+	CellSignalStrength::CellSignalStrength(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

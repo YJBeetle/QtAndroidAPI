@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableBoolean::MutableBoolean(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableBoolean::MutableBoolean(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableBoolean::MutableBoolean(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableBoolean",
 			"(Z)V",
 			arg0

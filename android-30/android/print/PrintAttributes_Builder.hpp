@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::print
 {
@@ -21,13 +21,13 @@ namespace android::print
 
 namespace android::print
 {
-	class PrintAttributes_Builder : public __JniBaseClass
+	class PrintAttributes_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PrintAttributes_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrintAttributes_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrintAttributes_Builder(QJniObject obj);
 		
 		// Constructors

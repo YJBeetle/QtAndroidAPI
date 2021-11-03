@@ -37,11 +37,11 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	Camera_CameraInfo::Camera_CameraInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	Camera_CameraInfo::Camera_CameraInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Camera_CameraInfo::Camera_CameraInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.Camera$CameraInfo",
 			"()V"
 		) {}

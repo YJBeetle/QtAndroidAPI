@@ -66,7 +66,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	Collator::Collator(QJniObject obj) : __JniBaseClass(obj) {}
+	Collator::Collator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

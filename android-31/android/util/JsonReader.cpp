@@ -7,11 +7,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	JsonReader::JsonReader(QJniObject obj) : __JniBaseClass(obj) {}
+	JsonReader::JsonReader(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JsonReader::JsonReader(java::io::Reader arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.JsonReader",
 			"(Ljava/io/Reader;)V",
 			arg0.object()

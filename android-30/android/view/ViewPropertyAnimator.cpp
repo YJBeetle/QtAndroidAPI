@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ViewPropertyAnimator::ViewPropertyAnimator(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewPropertyAnimator::ViewPropertyAnimator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace android::view
 			"()J"
 		);
 	}
-	__JniBaseClass ViewPropertyAnimator::getInterpolator()
+	JObject ViewPropertyAnimator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -142,7 +142,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setInterpolator(JObject arg0)
 	{
 		return callObjectMethod(
 			"setInterpolator",
@@ -150,7 +150,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"setListener",
@@ -166,7 +166,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::setUpdateListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"setUpdateListener",
@@ -229,7 +229,7 @@ namespace android::view
 			arg0
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withEndAction(JObject arg0)
 	{
 		return callObjectMethod(
 			"withEndAction",
@@ -244,7 +244,7 @@ namespace android::view
 			"()Landroid/view/ViewPropertyAnimator;"
 		);
 	}
-	android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(__JniBaseClass arg0)
+	android::view::ViewPropertyAnimator ViewPropertyAnimator::withStartAction(JObject arg0)
 	{
 		return callObjectMethod(
 			"withStartAction",

@@ -240,11 +240,11 @@ namespace android::speech::tts
 	}
 	
 	// QJniObject forward
-	TextToSpeech_Engine::TextToSpeech_Engine(QJniObject obj) : __JniBaseClass(obj) {}
+	TextToSpeech_Engine::TextToSpeech_Engine(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextToSpeech_Engine::TextToSpeech_Engine(android::speech::tts::TextToSpeech arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.speech.tts.TextToSpeech$Engine",
 			"(Landroid/speech/tts/TextToSpeech;)V",
 			arg0.object()

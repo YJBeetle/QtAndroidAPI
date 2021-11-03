@@ -25,7 +25,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaParser_SeekPoint::MediaParser_SeekPoint(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaParser_SeekPoint::MediaParser_SeekPoint(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

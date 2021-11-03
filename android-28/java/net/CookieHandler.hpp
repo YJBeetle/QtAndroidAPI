@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::net
 {
@@ -9,13 +9,13 @@ namespace java::net
 
 namespace java::net
 {
-	class CookieHandler : public __JniBaseClass
+	class CookieHandler : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CookieHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CookieHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CookieHandler(QJniObject obj);
 		
 		// Constructors
@@ -24,8 +24,8 @@ namespace java::net
 		// Methods
 		static java::net::CookieHandler getDefault();
 		static void setDefault(java::net::CookieHandler arg0);
-		__JniBaseClass get(java::net::URI arg0, __JniBaseClass arg1);
-		void put(java::net::URI arg0, __JniBaseClass arg1);
+		JObject get(java::net::URI arg0, JObject arg1);
+		void put(java::net::URI arg0, JObject arg1);
 	};
 } // namespace java::net
 

@@ -6,7 +6,7 @@ namespace android::media::effect
 	// Fields
 	
 	// QJniObject forward
-	EffectContext::EffectContext(QJniObject obj) : __JniBaseClass(obj) {}
+	EffectContext::EffectContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageManager_Property::CREATOR()
+	JObject PackageManager_Property::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageManager$Property",
@@ -14,7 +14,7 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageManager_Property::PackageManager_Property(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageManager_Property::PackageManager_Property(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -37,17 +37,17 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class InputConnectionWrapper : public __JniBaseClass
+	class InputConnectionWrapper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit InputConnectionWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputConnectionWrapper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputConnectionWrapper(QJniObject obj);
 		
 		// Constructors
-		InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1);
+		InputConnectionWrapper(JObject arg0, jboolean arg1);
 		
 		// Methods
 		jboolean beginBatchEdit();
@@ -76,7 +76,7 @@ namespace android::view::inputmethod
 		jboolean setComposingRegion(jint arg0, jint arg1);
 		jboolean setComposingText(jstring arg0, jint arg1);
 		jboolean setSelection(jint arg0, jint arg1);
-		void setTarget(__JniBaseClass arg0);
+		void setTarget(JObject arg0);
 	};
 } // namespace android::view::inputmethod
 

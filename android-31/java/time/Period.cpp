@@ -17,7 +17,7 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	Period::Period(QJniObject obj) : __JniBaseClass(obj) {}
+	Period::Period(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -32,7 +32,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Period Period::from(__JniBaseClass arg0)
+	java::time::Period Period::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Period",
@@ -97,7 +97,7 @@ namespace java::time
 			arg0
 		);
 	}
-	__JniBaseClass Period::addTo(__JniBaseClass arg0)
+	JObject Period::addTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"addTo",
@@ -113,7 +113,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jlong Period::get(__JniBaseClass arg0)
+	jlong Period::get(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"get",
@@ -142,7 +142,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	__JniBaseClass Period::getUnits()
+	JObject Period::getUnits()
 	{
 		return callObjectMethod(
 			"getUnits",
@@ -177,7 +177,7 @@ namespace java::time
 			"()Z"
 		);
 	}
-	java::time::Period Period::minus(__JniBaseClass arg0)
+	java::time::Period Period::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -231,7 +231,7 @@ namespace java::time
 			"()Ljava/time/Period;"
 		);
 	}
-	java::time::Period Period::plus(__JniBaseClass arg0)
+	java::time::Period Period::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -263,7 +263,7 @@ namespace java::time
 			arg0
 		);
 	}
-	__JniBaseClass Period::subtractFrom(__JniBaseClass arg0)
+	JObject Period::subtractFrom(JObject arg0)
 	{
 		return callObjectMethod(
 			"subtractFrom",

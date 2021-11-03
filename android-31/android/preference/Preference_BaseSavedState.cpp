@@ -4,7 +4,7 @@
 namespace android::preference
 {
 	// Fields
-	__JniBaseClass Preference_BaseSavedState::CREATOR()
+	JObject Preference_BaseSavedState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.preference.Preference$BaseSavedState",
@@ -23,7 +23,7 @@ namespace android::preference
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	Preference_BaseSavedState::Preference_BaseSavedState(__JniBaseClass arg0)
+	Preference_BaseSavedState::Preference_BaseSavedState(JObject arg0)
 		: android::view::AbsSavedState(
 			"android.preference.Preference$BaseSavedState",
 			"(Landroid/os/Parcelable;)V",

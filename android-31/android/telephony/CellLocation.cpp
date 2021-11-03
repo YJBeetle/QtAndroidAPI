@@ -5,11 +5,11 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	CellLocation::CellLocation(QJniObject obj) : __JniBaseClass(obj) {}
+	CellLocation::CellLocation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CellLocation::CellLocation()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.CellLocation",
 			"()V"
 		) {}

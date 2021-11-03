@@ -319,11 +319,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaMetadataRetriever::MediaMetadataRetriever(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaMetadataRetriever::MediaMetadataRetriever(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaMetadataRetriever::MediaMetadataRetriever()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMetadataRetriever",
 			"()V"
 		) {}
@@ -402,7 +402,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	__JniBaseClass MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
+	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -411,7 +411,7 @@ namespace android::media
 			arg1
 		);
 	}
-	__JniBaseClass MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2)
+	JObject MediaMetadataRetriever::getFramesAtIndex(jint arg0, jint arg1, android::media::MediaMetadataRetriever_BitmapParams arg2)
 	{
 		return callObjectMethod(
 			"getFramesAtIndex",
@@ -516,7 +516,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaMetadataRetriever::setDataSource(jstring arg0, __JniBaseClass arg1)
+	void MediaMetadataRetriever::setDataSource(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setDataSource",

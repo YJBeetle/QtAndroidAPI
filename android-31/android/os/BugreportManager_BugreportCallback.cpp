@@ -40,11 +40,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	BugreportManager_BugreportCallback::BugreportManager_BugreportCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	BugreportManager_BugreportCallback::BugreportManager_BugreportCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BugreportManager_BugreportCallback::BugreportManager_BugreportCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.BugreportManager$BugreportCallback",
 			"()V"
 		) {}

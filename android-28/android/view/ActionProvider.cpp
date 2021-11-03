@@ -7,11 +7,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ActionProvider::ActionProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	ActionProvider::ActionProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActionProvider::ActionProvider(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ActionProvider",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -39,7 +39,7 @@ namespace android::view
 			"()Landroid/view/View;"
 		);
 	}
-	android::view::View ActionProvider::onCreateActionView(__JniBaseClass arg0)
+	android::view::View ActionProvider::onCreateActionView(JObject arg0)
 	{
 		return callObjectMethod(
 			"onCreateActionView",
@@ -54,7 +54,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	void ActionProvider::onPrepareSubMenu(__JniBaseClass arg0)
+	void ActionProvider::onPrepareSubMenu(JObject arg0)
 	{
 		callMethod<void>(
 			"onPrepareSubMenu",
@@ -76,7 +76,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	void ActionProvider::setVisibilityListener(__JniBaseClass arg0)
+	void ActionProvider::setVisibilityListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setVisibilityListener",

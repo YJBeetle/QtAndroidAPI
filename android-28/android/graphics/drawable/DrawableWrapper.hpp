@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -73,12 +73,12 @@ namespace android::graphics::drawable
 		jint getOpacity();
 		void getOutline(android::graphics::Outline arg0);
 		jboolean getPadding(android::graphics::Rect arg0);
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		void invalidateDrawable(android::graphics::drawable::Drawable arg0);
 		jboolean isStateful();
 		android::graphics::drawable::Drawable mutate();
 		jboolean onLayoutDirectionChanged(jint arg0);
-		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
+		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		void setAlpha(jint arg0);
 		void setColorFilter(android::graphics::ColorFilter arg0);
 		void setDrawable(android::graphics::drawable::Drawable arg0);
@@ -87,7 +87,7 @@ namespace android::graphics::drawable
 		void setTintList(android::content::res::ColorStateList arg0);
 		void setTintMode(android::graphics::PorterDuff_Mode arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1);
+		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1);
 	};
 } // namespace android::graphics::drawable
 

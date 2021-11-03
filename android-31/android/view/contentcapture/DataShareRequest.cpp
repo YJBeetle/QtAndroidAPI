@@ -5,7 +5,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	__JniBaseClass DataShareRequest::CREATOR()
+	JObject DataShareRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.contentcapture.DataShareRequest",
@@ -15,11 +15,11 @@ namespace android::view::contentcapture
 	}
 	
 	// QJniObject forward
-	DataShareRequest::DataShareRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	DataShareRequest::DataShareRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DataShareRequest::DataShareRequest(android::content::LocusId arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.contentcapture.DataShareRequest",
 			"(Landroid/content/LocusId;Ljava/lang/String;)V",
 			arg0.object(),

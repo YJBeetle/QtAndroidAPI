@@ -5,11 +5,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	DownloadManager_Query::DownloadManager_Query(QJniObject obj) : __JniBaseClass(obj) {}
+	DownloadManager_Query::DownloadManager_Query(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DownloadManager_Query::DownloadManager_Query()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.DownloadManager$Query",
 			"()V"
 		) {}

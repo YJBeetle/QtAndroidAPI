@@ -14,7 +14,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	SearchIterator::SearchIterator(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchIterator::SearchIterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -76,7 +76,7 @@ namespace android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SearchIterator::getTarget()
+	JObject SearchIterator::getTarget()
 	{
 		return callObjectMethod(
 			"getTarget",
@@ -158,7 +158,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void SearchIterator::setTarget(__JniBaseClass arg0)
+	void SearchIterator::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",

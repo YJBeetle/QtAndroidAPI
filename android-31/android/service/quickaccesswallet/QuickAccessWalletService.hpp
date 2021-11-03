@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -41,9 +41,9 @@ namespace android::service::quickaccesswallet
 		QuickAccessWalletService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onWalletCardSelected(android::service::quickaccesswallet::SelectWalletCardRequest arg0);
-		void onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, __JniBaseClass arg1);
+		void onWalletCardsRequested(android::service::quickaccesswallet::GetWalletCardsRequest arg0, JObject arg1);
 		void onWalletDismissed();
 		void sendWalletServiceEvent(android::service::quickaccesswallet::WalletServiceEvent arg0);
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -49,32 +49,32 @@ namespace java::util::regex
 
 namespace java::util
 {
-	class Scanner : public __JniBaseClass
+	class Scanner : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Scanner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Scanner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Scanner(QJniObject obj);
 		
 		// Constructors
 		Scanner(java::io::File arg0);
 		Scanner(java::io::InputStream arg0);
-		Scanner(__JniBaseClass arg0);
+		Scanner(JObject arg0);
 		Scanner(jstring arg0);
 		Scanner(java::io::File arg0, jstring arg1);
 		Scanner(java::io::File arg0, java::nio::charset::Charset arg1);
 		Scanner(java::io::InputStream arg0, jstring arg1);
 		Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1);
-		Scanner(__JniBaseClass arg0, jstring arg1);
-		Scanner(__JniBaseClass arg0, java::nio::charset::Charset arg1);
+		Scanner(JObject arg0, jstring arg1);
+		Scanner(JObject arg0, java::nio::charset::Charset arg1);
 		
 		// Methods
 		void close();
 		java::util::regex::Pattern delimiter();
-		__JniBaseClass findAll(jstring arg0);
-		__JniBaseClass findAll(java::util::regex::Pattern arg0);
+		JObject findAll(jstring arg0);
+		JObject findAll(java::util::regex::Pattern arg0);
 		jstring findInLine(jstring arg0);
 		jstring findInLine(java::util::regex::Pattern arg0);
 		jstring findWithinHorizon(jstring arg0, jint arg1);
@@ -99,7 +99,7 @@ namespace java::util
 		jboolean hasNextShort(jint arg0);
 		java::io::IOException ioException();
 		java::util::Locale locale();
-		__JniBaseClass match();
+		JObject match();
 		jstring next();
 		jstring next(jstring arg0);
 		jstring next(java::util::regex::Pattern arg0);
@@ -124,7 +124,7 @@ namespace java::util
 		java::util::Scanner skip(jstring arg0);
 		java::util::Scanner skip(java::util::regex::Pattern arg0);
 		jstring toString();
-		__JniBaseClass tokens();
+		JObject tokens();
 		java::util::Scanner useDelimiter(jstring arg0);
 		java::util::Scanner useDelimiter(java::util::regex::Pattern arg0);
 		java::util::Scanner useLocale(java::util::Locale arg0);

@@ -335,11 +335,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	TypedValue::TypedValue(QJniObject obj) : __JniBaseClass(obj) {}
+	TypedValue::TypedValue(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TypedValue::TypedValue()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.TypedValue",
 			"()V"
 		) {}

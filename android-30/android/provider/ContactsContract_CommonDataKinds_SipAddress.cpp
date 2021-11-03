@@ -67,7 +67,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_CommonDataKinds_SipAddress::ContactsContract_CommonDataKinds_SipAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_CommonDataKinds_SipAddress::ContactsContract_CommonDataKinds_SipAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -38,11 +38,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Video_Media::MediaStore_Video_Media(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Video_Media::MediaStore_Video_Media(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Video_Media::MediaStore_Video_Media()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Video$Media",
 			"()V"
 		) {}

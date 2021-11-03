@@ -10,7 +10,7 @@ namespace android::content::res
 	// Fields
 	
 	// QJniObject forward
-	TypedArray::TypedArray(QJniObject obj) : __JniBaseClass(obj) {}
+	TypedArray::TypedArray(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

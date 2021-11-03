@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QJniObject forward
-	Manifest::Manifest(QJniObject obj) : __JniBaseClass(obj) {}
+	Manifest::Manifest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Manifest::Manifest()
-		: __JniBaseClass(
+		: JObject(
 			"android.Manifest",
 			"()V"
 		) {}

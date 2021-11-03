@@ -10,11 +10,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	CodeSource::CodeSource(QJniObject obj) : __JniBaseClass(obj) {}
+	CodeSource::CodeSource(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CodeSource::CodeSource(java::net::URL arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.CodeSource",
 			"(Ljava/net/URL;[Ljava/security/CodeSigner;)V",
 			arg0.object(),

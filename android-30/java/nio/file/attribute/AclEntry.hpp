@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::nio::file::attribute
 {
@@ -13,13 +13,13 @@ namespace java::nio::file::attribute
 
 namespace java::nio::file::attribute
 {
-	class AclEntry : public __JniBaseClass
+	class AclEntry : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AclEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AclEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AclEntry(QJniObject obj);
 		
 		// Constructors
@@ -28,10 +28,10 @@ namespace java::nio::file::attribute
 		static java::nio::file::attribute::AclEntry_Builder newBuilder();
 		static java::nio::file::attribute::AclEntry_Builder newBuilder(java::nio::file::attribute::AclEntry arg0);
 		jboolean equals(jobject arg0);
-		__JniBaseClass flags();
+		JObject flags();
 		jint hashCode();
-		__JniBaseClass permissions();
-		__JniBaseClass principal();
+		JObject permissions();
+		JObject principal();
 		jstring toString();
 		java::nio::file::attribute::AclEntryType type();
 	};

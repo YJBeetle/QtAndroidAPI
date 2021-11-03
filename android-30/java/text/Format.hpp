@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -21,13 +21,13 @@ namespace java::text
 
 namespace java::text
 {
-	class Format : public __JniBaseClass
+	class Format : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Format(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Format(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Format(QJniObject obj);
 		
 		// Constructors
@@ -36,7 +36,7 @@ namespace java::text
 		jobject clone();
 		jstring format(jobject arg0);
 		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(jobject arg0);
 		jobject parseObject(jstring arg0);
 		jobject parseObject(jstring arg0, java::text::ParsePosition arg1);
 	};

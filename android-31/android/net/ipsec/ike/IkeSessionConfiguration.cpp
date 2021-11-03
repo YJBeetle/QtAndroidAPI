@@ -20,7 +20,7 @@ namespace android::net::ipsec::ike
 	}
 	
 	// QJniObject forward
-	IkeSessionConfiguration::IkeSessionConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	IkeSessionConfiguration::IkeSessionConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -39,7 +39,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass IkeSessionConfiguration::getRemoteVendorIds()
+	JObject IkeSessionConfiguration::getRemoteVendorIds()
 	{
 		return callObjectMethod(
 			"getRemoteVendorIds",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -48,7 +48,7 @@ namespace android::graphics::drawable
 		jint getIntrinsicWidth();
 		jint getOpacity();
 		jint getRepeatCount();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isAutoMirrored();
 		jboolean isRunning();
 		jboolean onLayoutDirectionChanged(jint arg0);

@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	EncoderProfiles_AudioProfile::EncoderProfiles_AudioProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	EncoderProfiles_AudioProfile::EncoderProfiles_AudioProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

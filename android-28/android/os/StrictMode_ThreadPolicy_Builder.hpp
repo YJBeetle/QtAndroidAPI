@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::os
 {
-	class StrictMode_ThreadPolicy_Builder : public __JniBaseClass
+	class StrictMode_ThreadPolicy_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StrictMode_ThreadPolicy_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StrictMode_ThreadPolicy_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StrictMode_ThreadPolicy_Builder(QJniObject obj);
 		
 		// Constructors
@@ -36,7 +36,7 @@ namespace android::os
 		android::os::StrictMode_ThreadPolicy_Builder penaltyDialog();
 		android::os::StrictMode_ThreadPolicy_Builder penaltyDropBox();
 		android::os::StrictMode_ThreadPolicy_Builder penaltyFlashScreen();
-		android::os::StrictMode_ThreadPolicy_Builder penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		android::os::StrictMode_ThreadPolicy_Builder penaltyListener(JObject arg0, JObject arg1);
 		android::os::StrictMode_ThreadPolicy_Builder penaltyLog();
 		android::os::StrictMode_ThreadPolicy_Builder permitAll();
 		android::os::StrictMode_ThreadPolicy_Builder permitCustomSlowCalls();

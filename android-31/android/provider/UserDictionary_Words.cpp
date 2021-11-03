@@ -102,11 +102,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	UserDictionary_Words::UserDictionary_Words(QJniObject obj) : __JniBaseClass(obj) {}
+	UserDictionary_Words::UserDictionary_Words(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UserDictionary_Words::UserDictionary_Words()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.UserDictionary$Words",
 			"()V"
 		) {}

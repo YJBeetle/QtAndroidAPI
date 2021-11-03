@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,14 +9,14 @@ namespace android::content
 
 namespace android::webkit
 {
-	class DateSorter : public __JniBaseClass
+	class DateSorter : public JObject
 	{
 	public:
 		// Fields
 		static jint DAY_COUNT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DateSorter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DateSorter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DateSorter(QJniObject obj);
 		
 		// Constructors

@@ -4,7 +4,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	__JniBaseClass FileServiceInfo::CREATOR()
+	JObject FileServiceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.mbms.FileServiceInfo",
@@ -26,7 +26,7 @@ namespace android::telephony::mbms
 			"()I"
 		);
 	}
-	__JniBaseClass FileServiceInfo::getFiles()
+	JObject FileServiceInfo::getFiles()
 	{
 		return callObjectMethod(
 			"getFiles",

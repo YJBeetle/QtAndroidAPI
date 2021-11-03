@@ -180,7 +180,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioDeviceInfo::AudioDeviceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioDeviceInfo::AudioDeviceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

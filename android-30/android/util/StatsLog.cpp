@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	StatsLog::StatsLog(QJniObject obj) : __JniBaseClass(obj) {}
+	StatsLog::StatsLog(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

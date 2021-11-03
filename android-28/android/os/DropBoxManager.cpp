@@ -52,7 +52,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	DropBoxManager::DropBoxManager(QJniObject obj) : __JniBaseClass(obj) {}
+	DropBoxManager::DropBoxManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

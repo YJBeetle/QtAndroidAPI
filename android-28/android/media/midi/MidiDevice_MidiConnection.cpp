@@ -7,7 +7,7 @@ namespace android::media::midi
 	// Fields
 	
 	// QJniObject forward
-	MidiDevice_MidiConnection::MidiDevice_MidiConnection(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiDevice_MidiConnection::MidiDevice_MidiConnection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

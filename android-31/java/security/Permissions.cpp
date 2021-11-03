@@ -28,7 +28,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	__JniBaseClass Permissions::elements()
+	JObject Permissions::elements()
 	{
 		return callObjectMethod(
 			"elements",

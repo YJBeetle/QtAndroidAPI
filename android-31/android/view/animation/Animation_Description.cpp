@@ -17,7 +17,7 @@ namespace android::view::animation
 	}
 	
 	// QJniObject forward
-	Animation_Description::Animation_Description(QJniObject obj) : __JniBaseClass(obj) {}
+	Animation_Description::Animation_Description(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

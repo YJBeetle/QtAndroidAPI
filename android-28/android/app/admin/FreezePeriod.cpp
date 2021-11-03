@@ -6,11 +6,11 @@ namespace android::app::admin
 	// Fields
 	
 	// QJniObject forward
-	FreezePeriod::FreezePeriod(QJniObject obj) : __JniBaseClass(obj) {}
+	FreezePeriod::FreezePeriod(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FreezePeriod::FreezePeriod(java::time::MonthDay arg0, java::time::MonthDay arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.FreezePeriod",
 			"(Ljava/time/MonthDay;Ljava/time/MonthDay;)V",
 			arg0.object(),

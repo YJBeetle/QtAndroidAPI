@@ -14,7 +14,7 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothLeAudio::BluetoothLeAudio(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothLeAudio::BluetoothLeAudio(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,7 +26,7 @@ namespace android::bluetooth
 			"()V"
 		);
 	}
-	__JniBaseClass BluetoothLeAudio::getConnectedDevices()
+	JObject BluetoothLeAudio::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -41,7 +41,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothLeAudio::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothLeAudio::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",

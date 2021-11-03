@@ -16,12 +16,12 @@ namespace java::time
 	}
 	
 	// QJniObject forward
-	Duration::Duration(QJniObject obj) : __JniBaseClass(obj) {}
+	Duration::Duration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::Duration Duration::between(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::between(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.Duration",
@@ -31,7 +31,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::Duration Duration::from(__JniBaseClass arg0)
+	java::time::Duration Duration::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Duration",
@@ -40,7 +40,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::of(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::of(jlong arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.Duration",
@@ -130,7 +130,7 @@ namespace java::time
 			"()Ljava/time/Duration;"
 		);
 	}
-	__JniBaseClass Duration::addTo(__JniBaseClass arg0)
+	JObject Duration::addTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"addTo",
@@ -178,7 +178,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jlong Duration::get(__JniBaseClass arg0)
+	jlong Duration::get(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"get",
@@ -200,7 +200,7 @@ namespace java::time
 			"()J"
 		);
 	}
-	__JniBaseClass Duration::getUnits()
+	JObject Duration::getUnits()
 	{
 		return callObjectMethod(
 			"getUnits",
@@ -236,7 +236,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -316,7 +316,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::Duration Duration::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::Duration Duration::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -373,7 +373,7 @@ namespace java::time
 			arg0
 		);
 	}
-	__JniBaseClass Duration::subtractFrom(__JniBaseClass arg0)
+	JObject Duration::subtractFrom(JObject arg0)
 	{
 		return callObjectMethod(
 			"subtractFrom",
@@ -472,7 +472,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::Duration Duration::truncatedTo(__JniBaseClass arg0)
+	java::time::Duration Duration::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",

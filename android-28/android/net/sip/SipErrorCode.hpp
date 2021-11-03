@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::sip
 {
-	class SipErrorCode : public __JniBaseClass
+	class SipErrorCode : public JObject
 	{
 	public:
 		// Fields
@@ -24,7 +24,7 @@ namespace android::net::sip
 		static jint TRANSACTION_TERMINTED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SipErrorCode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SipErrorCode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SipErrorCode(QJniObject obj);
 		
 		// Constructors

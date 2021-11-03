@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,20 +9,20 @@ namespace java::lang
 
 namespace org::xml::sax::helpers
 {
-	class XMLReaderFactory : public __JniBaseClass
+	class XMLReaderFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit XMLReaderFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XMLReaderFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XMLReaderFactory(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass createXMLReader();
-		static __JniBaseClass createXMLReader(jstring arg0);
+		static JObject createXMLReader();
+		static JObject createXMLReader(jstring arg0);
 	};
 } // namespace org::xml::sax::helpers
 

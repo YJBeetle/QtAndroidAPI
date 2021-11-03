@@ -33,7 +33,7 @@ namespace android::media::metrics
 			"CONTENT_TYPE_UNKNOWN"
 		);
 	}
-	__JniBaseClass PlaybackMetrics::CREATOR()
+	JObject PlaybackMetrics::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.metrics.PlaybackMetrics",
@@ -190,7 +190,7 @@ namespace android::media::metrics
 	}
 	
 	// QJniObject forward
-	PlaybackMetrics::PlaybackMetrics(QJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackMetrics::PlaybackMetrics(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

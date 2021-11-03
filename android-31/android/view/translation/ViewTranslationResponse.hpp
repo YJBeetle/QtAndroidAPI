@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,14 +17,14 @@ namespace android::view::translation
 
 namespace android::view::translation
 {
-	class ViewTranslationResponse : public __JniBaseClass
+	class ViewTranslationResponse : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ViewTranslationResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewTranslationResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewTranslationResponse(QJniObject obj);
 		
 		// Constructors
@@ -33,7 +33,7 @@ namespace android::view::translation
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		android::view::autofill::AutofillId getAutofillId();
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		android::view::translation::TranslationResponseValue getValue(jstring arg0);
 		jint hashCode();
 		jstring toString();

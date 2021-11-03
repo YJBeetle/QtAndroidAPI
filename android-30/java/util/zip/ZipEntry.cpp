@@ -21,17 +21,17 @@ namespace java::util::zip
 	}
 	
 	// QJniObject forward
-	ZipEntry::ZipEntry(QJniObject obj) : __JniBaseClass(obj) {}
+	ZipEntry::ZipEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ZipEntry::ZipEntry(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	ZipEntry::ZipEntry(java::util::zip::ZipEntry &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
 			arg0.object()

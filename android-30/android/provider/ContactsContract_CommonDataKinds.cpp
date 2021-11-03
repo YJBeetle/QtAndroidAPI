@@ -5,7 +5,7 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	ContactsContract_CommonDataKinds::ContactsContract_CommonDataKinds(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_CommonDataKinds::ContactsContract_CommonDataKinds(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

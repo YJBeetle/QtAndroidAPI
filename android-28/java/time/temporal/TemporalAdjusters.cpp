@@ -6,12 +6,12 @@ namespace java::time::temporal
 	// Fields
 	
 	// QJniObject forward
-	TemporalAdjusters::TemporalAdjusters(QJniObject obj) : __JniBaseClass(obj) {}
+	TemporalAdjusters::TemporalAdjusters(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass TemporalAdjusters::dayOfWeekInMonth(jint arg0, java::time::DayOfWeek arg1)
+	JObject TemporalAdjusters::dayOfWeekInMonth(jint arg0, java::time::DayOfWeek arg1)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -21,7 +21,7 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::firstDayOfMonth()
+	JObject TemporalAdjusters::firstDayOfMonth()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -29,7 +29,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::firstDayOfNextMonth()
+	JObject TemporalAdjusters::firstDayOfNextMonth()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -37,7 +37,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::firstDayOfNextYear()
+	JObject TemporalAdjusters::firstDayOfNextYear()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -45,7 +45,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::firstDayOfYear()
+	JObject TemporalAdjusters::firstDayOfYear()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -53,7 +53,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::firstInMonth(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::firstInMonth(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -62,7 +62,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::lastDayOfMonth()
+	JObject TemporalAdjusters::lastDayOfMonth()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -70,7 +70,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::lastDayOfYear()
+	JObject TemporalAdjusters::lastDayOfYear()
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -78,7 +78,7 @@ namespace java::time::temporal
 			"()Ljava/time/temporal/TemporalAdjuster;"
 		);
 	}
-	__JniBaseClass TemporalAdjusters::lastInMonth(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::lastInMonth(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -87,7 +87,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::next(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::next(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -96,7 +96,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::nextOrSame(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::nextOrSame(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -105,7 +105,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::ofDateAdjuster(__JniBaseClass arg0)
+	JObject TemporalAdjusters::ofDateAdjuster(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -114,7 +114,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::previous(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::previous(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",
@@ -123,7 +123,7 @@ namespace java::time::temporal
 			arg0.object()
 		);
 	}
-	__JniBaseClass TemporalAdjusters::previousOrSame(java::time::DayOfWeek arg0)
+	JObject TemporalAdjusters::previousOrSame(java::time::DayOfWeek arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.temporal.TemporalAdjusters",

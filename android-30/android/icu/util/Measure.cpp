@@ -7,11 +7,11 @@ namespace android::icu::util
 	// Fields
 	
 	// QJniObject forward
-	Measure::Measure(QJniObject obj) : __JniBaseClass(obj) {}
+	Measure::Measure(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Measure::Measure(java::lang::Number arg0, android::icu::util::MeasureUnit arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.Measure",
 			"(Ljava/lang/Number;Landroid/icu/util/MeasureUnit;)V",
 			arg0.object(),

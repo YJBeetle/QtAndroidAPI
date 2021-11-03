@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::bluetooth
 {
-	class BluetoothClass_Device : public __JniBaseClass
+	class BluetoothClass_Device : public JObject
 	{
 	public:
 		// Fields
@@ -61,7 +61,7 @@ namespace android::bluetooth
 		static jint WEARABLE_WRIST_WATCH();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BluetoothClass_Device(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothClass_Device(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothClass_Device(QJniObject obj);
 		
 		// Constructors

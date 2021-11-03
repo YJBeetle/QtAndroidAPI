@@ -80,7 +80,7 @@ namespace android::view::animation
 			"(Landroid/view/animation/Animation;)V",
 			arg0.object()
 		) {}
-	GridLayoutAnimationController::GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1)
+	GridLayoutAnimationController::GridLayoutAnimationController(android::content::Context arg0, JObject arg1)
 		: android::view::animation::LayoutAnimationController(
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

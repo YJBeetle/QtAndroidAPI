@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class CancellationSignal : public __JniBaseClass
+	class CancellationSignal : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CancellationSignal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CancellationSignal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CancellationSignal(QJniObject obj);
 		
 		// Constructors
@@ -20,7 +20,7 @@ namespace android::os
 		// Methods
 		void cancel();
 		jboolean isCanceled();
-		void setOnCancelListener(__JniBaseClass arg0);
+		void setOnCancelListener(JObject arg0);
 		void throwIfCanceled();
 	};
 } // namespace android::os

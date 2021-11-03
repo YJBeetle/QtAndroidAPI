@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass AsyncTask::SERIAL_EXECUTOR()
+	JObject AsyncTask::SERIAL_EXECUTOR()
 	{
 		return getStaticObjectField(
 			"android.os.AsyncTask",
@@ -13,7 +13,7 @@ namespace android::os
 			"Ljava/util/concurrent/Executor;"
 		);
 	}
-	__JniBaseClass AsyncTask::THREAD_POOL_EXECUTOR()
+	JObject AsyncTask::THREAD_POOL_EXECUTOR()
 	{
 		return getStaticObjectField(
 			"android.os.AsyncTask",
@@ -23,17 +23,17 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	AsyncTask::AsyncTask(QJniObject obj) : __JniBaseClass(obj) {}
+	AsyncTask::AsyncTask(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AsyncTask::AsyncTask()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.AsyncTask",
 			"()V"
 		) {}
 	
 	// Methods
-	void AsyncTask::execute(__JniBaseClass arg0)
+	void AsyncTask::execute(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.os.AsyncTask",
@@ -58,7 +58,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::AsyncTask AsyncTask::executeOnExecutor(__JniBaseClass arg0, jobjectArray arg1)
+	android::os::AsyncTask AsyncTask::executeOnExecutor(JObject arg0, jobjectArray arg1)
 	{
 		return callObjectMethod(
 			"executeOnExecutor",

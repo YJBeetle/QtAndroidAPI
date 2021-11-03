@@ -20,7 +20,7 @@ namespace android::view::animation
 			"(F)V",
 			arg0
 		) {}
-	AccelerateInterpolator::AccelerateInterpolator(android::content::Context arg0, __JniBaseClass arg1)
+	AccelerateInterpolator::AccelerateInterpolator(android::content::Context arg0, JObject arg1)
 		: android::view::animation::BaseInterpolator(
 			"android.view.animation.AccelerateInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

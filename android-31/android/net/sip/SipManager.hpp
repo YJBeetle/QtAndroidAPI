@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -37,7 +37,7 @@ namespace android::net::sip
 
 namespace android::net::sip
 {
-	class SipManager : public __JniBaseClass
+	class SipManager : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::net::sip
 		static jint INCOMING_CALL_RESULT_CODE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SipManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SipManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SipManager(QJniObject obj);
 		
 		// Constructors
@@ -67,11 +67,11 @@ namespace android::net::sip
 		android::net::sip::SipAudioCall makeAudioCall(android::net::sip::SipProfile arg0, android::net::sip::SipProfile arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3);
 		android::net::sip::SipAudioCall makeAudioCall(jstring arg0, jstring arg1, android::net::sip::SipAudioCall_Listener arg2, jint arg3);
 		void open(android::net::sip::SipProfile arg0);
-		void open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, __JniBaseClass arg2);
-		void _register(android::net::sip::SipProfile arg0, jint arg1, __JniBaseClass arg2);
-		void setRegistrationListener(jstring arg0, __JniBaseClass arg1);
+		void open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2);
+		void _register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2);
+		void setRegistrationListener(jstring arg0, JObject arg1);
 		android::net::sip::SipAudioCall takeAudioCall(android::content::Intent arg0, android::net::sip::SipAudioCall_Listener arg1);
-		void unregister(android::net::sip::SipProfile arg0, __JniBaseClass arg1);
+		void unregister(android::net::sip::SipProfile arg0, JObject arg1);
 	};
 } // namespace android::net::sip
 

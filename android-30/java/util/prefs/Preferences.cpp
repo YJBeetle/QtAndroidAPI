@@ -29,7 +29,7 @@ namespace java::util::prefs
 	}
 	
 	// QJniObject forward
-	Preferences::Preferences(QJniObject obj) : __JniBaseClass(obj) {}
+	Preferences::Preferences(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -84,7 +84,7 @@ namespace java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void Preferences::addNodeChangeListener(__JniBaseClass arg0)
+	void Preferences::addNodeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addNodeChangeListener",
@@ -92,7 +92,7 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	void Preferences::addPreferenceChangeListener(__JniBaseClass arg0)
+	void Preferences::addPreferenceChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addPreferenceChangeListener",
@@ -322,7 +322,7 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	void Preferences::removeNodeChangeListener(__JniBaseClass arg0)
+	void Preferences::removeNodeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeNodeChangeListener",
@@ -330,7 +330,7 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	void Preferences::removePreferenceChangeListener(__JniBaseClass arg0)
+	void Preferences::removePreferenceChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removePreferenceChangeListener",

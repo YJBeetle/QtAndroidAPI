@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Reader.hpp"
 
 namespace java::io
@@ -25,7 +25,7 @@ namespace java::io
 		
 		// Methods
 		void close();
-		__JniBaseClass lines();
+		JObject lines();
 		void mark(jint arg0);
 		jboolean markSupported();
 		jint read();

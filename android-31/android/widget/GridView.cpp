@@ -56,14 +56,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1)
+	GridView::GridView(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	GridView::GridView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -71,7 +71,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	GridView::GridView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	GridView::GridView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsListView(
 			"android.widget.GridView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -89,7 +89,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass GridView::getAdapter()
+	JObject GridView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -190,7 +190,7 @@ namespace android::widget
 			arg1.object()
 		);
 	}
-	void GridView::setAdapter(__JniBaseClass arg0)
+	void GridView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",

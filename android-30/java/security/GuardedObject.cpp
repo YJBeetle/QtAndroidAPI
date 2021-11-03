@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	GuardedObject::GuardedObject(QJniObject obj) : __JniBaseClass(obj) {}
+	GuardedObject::GuardedObject(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GuardedObject::GuardedObject(jobject arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	GuardedObject::GuardedObject(jobject arg0, JObject arg1)
+		: JObject(
 			"java.security.GuardedObject",
 			"(Ljava/lang/Object;Ljava/security/Guard;)V",
 			arg0,

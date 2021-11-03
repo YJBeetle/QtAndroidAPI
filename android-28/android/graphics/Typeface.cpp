@@ -75,7 +75,7 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	Typeface::Typeface(QJniObject obj) : __JniBaseClass(obj) {}
+	Typeface::Typeface(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

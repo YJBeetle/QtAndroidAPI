@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass AlarmManager_AlarmClockInfo::CREATOR()
+	JObject AlarmManager_AlarmClockInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.AlarmManager$AlarmClockInfo",
@@ -15,11 +15,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlarmManager_AlarmClockInfo::AlarmManager_AlarmClockInfo(jlong arg0, android::app::PendingIntent arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AlarmManager$AlarmClockInfo",
 			"(JLandroid/app/PendingIntent;)V",
 			arg0,

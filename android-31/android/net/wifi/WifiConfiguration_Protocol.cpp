@@ -42,7 +42,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	WifiConfiguration_Protocol::WifiConfiguration_Protocol(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration_Protocol::WifiConfiguration_Protocol(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

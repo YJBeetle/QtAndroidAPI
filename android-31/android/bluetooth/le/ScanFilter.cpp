@@ -6,7 +6,7 @@
 namespace android::bluetooth::le
 {
 	// Fields
-	__JniBaseClass ScanFilter::CREATOR()
+	JObject ScanFilter::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.le.ScanFilter",
@@ -16,7 +16,7 @@ namespace android::bluetooth::le
 	}
 	
 	// QJniObject forward
-	ScanFilter::ScanFilter(QJniObject obj) : __JniBaseClass(obj) {}
+	ScanFilter::ScanFilter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

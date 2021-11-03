@@ -9,7 +9,7 @@ namespace android::bluetooth
 	// Fields
 	
 	// QJniObject forward
-	BluetoothGattServer::BluetoothGattServer(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothGattServer::BluetoothGattServer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -53,7 +53,7 @@ namespace android::bluetooth
 			arg1
 		);
 	}
-	__JniBaseClass BluetoothGattServer::getConnectedDevices()
+	JObject BluetoothGattServer::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -68,7 +68,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothGattServer::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -84,7 +84,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothGattServer::getServices()
+	JObject BluetoothGattServer::getServices()
 	{
 		return callObjectMethod(
 			"getServices",

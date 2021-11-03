@@ -5,22 +5,22 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	ArrayMap::ArrayMap(QJniObject obj) : __JniBaseClass(obj) {}
+	ArrayMap::ArrayMap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ArrayMap::ArrayMap()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArrayMap",
 			"()V"
 		) {}
 	ArrayMap::ArrayMap(android::util::ArrayMap &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArrayMap",
 			"(Landroid/util/ArrayMap;)V",
 			arg0.object()
 		) {}
 	ArrayMap::ArrayMap(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.ArrayMap",
 			"(I)V",
 			arg0
@@ -34,7 +34,7 @@ namespace android::util
 			"()V"
 		);
 	}
-	jboolean ArrayMap::containsAll(__JniBaseClass arg0)
+	jboolean ArrayMap::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -66,7 +66,7 @@ namespace android::util
 			arg0
 		);
 	}
-	__JniBaseClass ArrayMap::entrySet()
+	JObject ArrayMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -127,7 +127,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass ArrayMap::keySet()
+	JObject ArrayMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -151,7 +151,7 @@ namespace android::util
 			arg0.object()
 		);
 	}
-	void ArrayMap::putAll(__JniBaseClass arg0)
+	void ArrayMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -167,7 +167,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	jboolean ArrayMap::removeAll(__JniBaseClass arg0)
+	jboolean ArrayMap::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -183,7 +183,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	jboolean ArrayMap::retainAll(__JniBaseClass arg0)
+	jboolean ArrayMap::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -222,7 +222,7 @@ namespace android::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass ArrayMap::values()
+	JObject ArrayMap::values()
 	{
 		return callObjectMethod(
 			"values",

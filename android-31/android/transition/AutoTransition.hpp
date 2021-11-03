@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 #include "./TransitionSet.hpp"
 
@@ -22,7 +22,7 @@ namespace android::transition
 		
 		// Constructors
 		AutoTransition();
-		AutoTransition(android::content::Context arg0, __JniBaseClass arg1);
+		AutoTransition(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 	};

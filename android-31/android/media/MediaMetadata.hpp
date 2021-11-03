@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaMetadata : public __JniBaseClass
+	class MediaMetadata : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring METADATA_KEY_ALBUM();
 		static jstring METADATA_KEY_ALBUM_ART();
 		static jstring METADATA_KEY_ALBUM_ARTIST();
@@ -57,7 +57,7 @@ namespace android::media
 		static jstring METADATA_KEY_YEAR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaMetadata(QJniObject obj);
 		
 		// Constructors
@@ -74,7 +74,7 @@ namespace android::media
 		jstring getString(jstring arg0);
 		jstring getText(jstring arg0);
 		jint hashCode();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jint size();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

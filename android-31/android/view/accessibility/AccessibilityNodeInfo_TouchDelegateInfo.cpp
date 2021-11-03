@@ -6,7 +6,7 @@
 namespace android::view::accessibility
 {
 	// Fields
-	__JniBaseClass AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
+	JObject AccessibilityNodeInfo_TouchDelegateInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
@@ -16,11 +16,11 @@ namespace android::view::accessibility
 	}
 	
 	// QJniObject forward
-	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0)
-		: __JniBaseClass(
+	AccessibilityNodeInfo_TouchDelegateInfo::AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0)
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
 			"(Ljava/util/Map;)V",
 			arg0.object()

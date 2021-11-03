@@ -28,7 +28,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	ActivityOptions::ActivityOptions(QJniObject obj) : __JniBaseClass(obj) {}
+	ActivityOptions::ActivityOptions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

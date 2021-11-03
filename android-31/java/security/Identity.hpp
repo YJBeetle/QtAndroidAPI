@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace java::util
 
 namespace java::security
 {
-	class Identity : public __JniBaseClass
+	class Identity : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Identity(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Identity(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Identity(QJniObject obj);
 		
 		// Constructors
@@ -27,17 +27,17 @@ namespace java::security
 		Identity(jstring arg0, java::security::IdentityScope arg1);
 		
 		// Methods
-		void addCertificate(__JniBaseClass arg0);
+		void addCertificate(JObject arg0);
 		jarray certificates();
 		jboolean equals(jobject arg0);
 		jstring getInfo();
 		jstring getName();
-		__JniBaseClass getPublicKey();
+		JObject getPublicKey();
 		java::security::IdentityScope getScope();
 		jint hashCode();
-		void removeCertificate(__JniBaseClass arg0);
+		void removeCertificate(JObject arg0);
 		void setInfo(jstring arg0);
-		void setPublicKey(__JniBaseClass arg0);
+		void setPublicKey(JObject arg0);
 		jstring toString();
 		jstring toString(jboolean arg0);
 	};

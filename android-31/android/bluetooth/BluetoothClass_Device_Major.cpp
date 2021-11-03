@@ -82,11 +82,11 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothClass_Device_Major::BluetoothClass_Device_Major(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothClass_Device_Major::BluetoothClass_Device_Major(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothClass_Device_Major::BluetoothClass_Device_Major()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothClass$Device$Major",
 			"()V"
 		) {}

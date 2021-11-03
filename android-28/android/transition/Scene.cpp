@@ -8,24 +8,24 @@ namespace android::transition
 	// Fields
 	
 	// QJniObject forward
-	Scene::Scene(QJniObject obj) : __JniBaseClass(obj) {}
+	Scene::Scene(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Scene::Scene(android::view::ViewGroup arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;)V",
 			arg0.object()
 		) {}
 	Scene::Scene(android::view::ViewGroup arg0, android::view::View arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	Scene::Scene(android::view::ViewGroup arg0, android::view::ViewGroup arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V",
 			arg0.object(),
@@ -65,7 +65,7 @@ namespace android::transition
 			"()Landroid/view/ViewGroup;"
 		);
 	}
-	void Scene::setEnterAction(__JniBaseClass arg0)
+	void Scene::setEnterAction(JObject arg0)
 	{
 		callMethod<void>(
 			"setEnterAction",
@@ -73,7 +73,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	void Scene::setExitAction(__JniBaseClass arg0)
+	void Scene::setExitAction(JObject arg0)
 	{
 		callMethod<void>(
 			"setExitAction",

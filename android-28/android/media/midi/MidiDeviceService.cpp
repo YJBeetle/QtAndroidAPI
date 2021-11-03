@@ -40,7 +40,7 @@ namespace android::media::midi
 			"()[Landroid/media/midi/MidiReceiver;"
 		).object<jarray>();
 	}
-	__JniBaseClass MidiDeviceService::onBind(android::content::Intent arg0)
+	JObject MidiDeviceService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

@@ -9,11 +9,11 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	SurfaceControlViewHost::SurfaceControlViewHost(QJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControlViewHost::SurfaceControlViewHost(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SurfaceControlViewHost::SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	SurfaceControlViewHost::SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2)
+		: JObject(
 			"android.view.SurfaceControlViewHost",
 			"(Landroid/content/Context;Landroid/view/Display;Landroid/os/IBinder;)V",
 			arg0.object(),

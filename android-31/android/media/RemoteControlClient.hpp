@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::media
 {
-	class RemoteControlClient : public __JniBaseClass
+	class RemoteControlClient : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::media
 		static jint PLAYSTATE_STOPPED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RemoteControlClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteControlClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteControlClient(QJniObject obj);
 		
 		// Constructors
@@ -56,9 +56,9 @@ namespace android::media
 		// Methods
 		android::media::RemoteControlClient_MetadataEditor editMetadata(jboolean arg0);
 		android::media::session::MediaSession getMediaSession();
-		void setMetadataUpdateListener(__JniBaseClass arg0);
-		void setOnGetPlaybackPositionListener(__JniBaseClass arg0);
-		void setPlaybackPositionUpdateListener(__JniBaseClass arg0);
+		void setMetadataUpdateListener(JObject arg0);
+		void setOnGetPlaybackPositionListener(JObject arg0);
+		void setPlaybackPositionUpdateListener(JObject arg0);
 		void setPlaybackState(jint arg0);
 		void setPlaybackState(jint arg0, jlong arg1, jfloat arg2);
 		void setTransportControlFlags(jint arg0);

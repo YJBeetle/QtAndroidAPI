@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace android::net
 
 namespace android::drm
 {
-	class DrmManagerClient : public __JniBaseClass
+	class DrmManagerClient : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::drm
 		static jint ERROR_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmManagerClient(QJniObject obj);
 		
 		// Constructors
@@ -75,9 +75,9 @@ namespace android::drm
 		jint removeRights(android::net::Uri arg0);
 		jint removeRights(jstring arg0);
 		jint saveRights(android::drm::DrmRights arg0, jstring arg1, jstring arg2);
-		void setOnErrorListener(__JniBaseClass arg0);
-		void setOnEventListener(__JniBaseClass arg0);
-		void setOnInfoListener(__JniBaseClass arg0);
+		void setOnErrorListener(JObject arg0);
+		void setOnEventListener(JObject arg0);
+		void setOnInfoListener(JObject arg0);
 	};
 } // namespace android::drm
 

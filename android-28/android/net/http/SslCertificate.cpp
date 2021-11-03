@@ -9,17 +9,17 @@ namespace android::net::http
 	// Fields
 	
 	// QJniObject forward
-	SslCertificate::SslCertificate(QJniObject obj) : __JniBaseClass(obj) {}
+	SslCertificate::SslCertificate(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SslCertificate::SslCertificate(java::security::cert::X509Certificate arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslCertificate",
 			"(Ljava/security/cert/X509Certificate;)V",
 			arg0.object()
 		) {}
 	SslCertificate::SslCertificate(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslCertificate",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace android::net::http
 			arg3
 		) {}
 	SslCertificate::SslCertificate(jstring arg0, jstring arg1, java::util::Date arg2, java::util::Date arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslCertificate",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/util/Date;)V",
 			arg0,

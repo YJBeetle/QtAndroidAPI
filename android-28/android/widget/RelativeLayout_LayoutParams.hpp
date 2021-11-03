@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
@@ -33,7 +33,7 @@ namespace android::widget
 		RelativeLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		RelativeLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
 		RelativeLayout_LayoutParams(android::widget::RelativeLayout_LayoutParams &arg0);
-		RelativeLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		RelativeLayout_LayoutParams(android::content::Context arg0, JObject arg1);
 		RelativeLayout_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods

@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass DirectAction::CREATOR()
+	JObject DirectAction::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.DirectAction",
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	DirectAction::DirectAction(QJniObject obj) : __JniBaseClass(obj) {}
+	DirectAction::DirectAction(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

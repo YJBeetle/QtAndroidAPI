@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::text
 {
-	class Editable_Factory : public __JniBaseClass
+	class Editable_Factory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Editable_Factory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Editable_Factory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Editable_Factory(QJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace android::text
 		
 		// Methods
 		static android::text::Editable_Factory getInstance();
-		__JniBaseClass newEditable(jstring arg0);
+		JObject newEditable(jstring arg0);
 	};
 } // namespace android::text
 

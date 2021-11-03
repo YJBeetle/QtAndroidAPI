@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dialog.hpp"
 #include "./AlertDialog.hpp"
 
@@ -42,7 +42,7 @@ namespace android::app
 		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2);
 		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
 		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
-		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5);
+		static android::app::ProgressDialog show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, JObject arg5);
 		jint getMax();
 		jint getProgress();
 		jint getSecondaryProgress();

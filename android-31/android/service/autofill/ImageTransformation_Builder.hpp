@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::service::autofill
 {
@@ -17,13 +17,13 @@ namespace java::util::regex
 
 namespace android::service::autofill
 {
-	class ImageTransformation_Builder : public __JniBaseClass
+	class ImageTransformation_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImageTransformation_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImageTransformation_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImageTransformation_Builder(QJniObject obj);
 		
 		// Constructors

@@ -5,11 +5,11 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	ClipboardManager::ClipboardManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ClipboardManager::ClipboardManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ClipboardManager::ClipboardManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.ClipboardManager",
 			"()V"
 		) {}

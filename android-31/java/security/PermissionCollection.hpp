@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -9,13 +9,13 @@ namespace java::security
 
 namespace java::security
 {
-	class PermissionCollection : public __JniBaseClass
+	class PermissionCollection : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PermissionCollection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PermissionCollection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PermissionCollection(QJniObject obj);
 		
 		// Constructors
@@ -23,8 +23,8 @@ namespace java::security
 		
 		// Methods
 		void add(java::security::Permission arg0);
-		__JniBaseClass elements();
-		__JniBaseClass elementsAsStream();
+		JObject elements();
+		JObject elementsAsStream();
 		jboolean implies(java::security::Permission arg0);
 		jboolean isReadOnly();
 		void setReadOnly();

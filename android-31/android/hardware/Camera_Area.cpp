@@ -19,11 +19,11 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	Camera_Area::Camera_Area(QJniObject obj) : __JniBaseClass(obj) {}
+	Camera_Area::Camera_Area(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Camera_Area::Camera_Area(android::graphics::Rect arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.Camera$Area",
 			"(Landroid/graphics/Rect;I)V",
 			arg0.object(),

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dictionary.hpp"
 
 namespace java::io
@@ -30,40 +30,40 @@ namespace java::util
 		// Constructors
 		Hashtable();
 		Hashtable(jint arg0);
-		Hashtable(__JniBaseClass arg0);
+		Hashtable(JObject arg0);
 		Hashtable(jint arg0, jfloat arg1);
 		
 		// Methods
 		void clear();
 		jobject clone();
-		jobject compute(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfPresent(jobject arg0, __JniBaseClass arg1);
+		jobject compute(jobject arg0, JObject arg1);
+		jobject computeIfAbsent(jobject arg0, JObject arg1);
+		jobject computeIfPresent(jobject arg0, JObject arg1);
 		jboolean contains(jobject arg0);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass elements();
-		__JniBaseClass entrySet();
+		JObject elements();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
-		void forEach(__JniBaseClass arg0);
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
-		__JniBaseClass keys();
-		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
+		JObject keySet();
+		JObject keys();
+		jobject merge(jobject arg0, jobject arg1, JObject arg2);
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject putIfAbsent(jobject arg0, jobject arg1);
 		jboolean remove(jobject arg0, jobject arg1);
 		jobject remove(jobject arg0);
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
 		jobject replace(jobject arg0, jobject arg1);
-		void replaceAll(__JniBaseClass arg0);
+		void replaceAll(JObject arg0);
 		jint size();
 		jstring toString();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace javax::net::ssl
 {
@@ -9,13 +9,13 @@ namespace javax::net::ssl
 
 namespace javax::net::ssl
 {
-	class X509ExtendedKeyManager : public __JniBaseClass
+	class X509ExtendedKeyManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit X509ExtendedKeyManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit X509ExtendedKeyManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		X509ExtendedKeyManager(QJniObject obj);
 		
 		// Constructors

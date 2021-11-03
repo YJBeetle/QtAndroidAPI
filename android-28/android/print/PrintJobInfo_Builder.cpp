@@ -7,11 +7,11 @@ namespace android::print
 	// Fields
 	
 	// QJniObject forward
-	PrintJobInfo_Builder::PrintJobInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintJobInfo_Builder::PrintJobInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintJobInfo_Builder::PrintJobInfo_Builder(android::print::PrintJobInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintJobInfo$Builder",
 			"(Landroid/print/PrintJobInfo;)V",
 			arg0.object()

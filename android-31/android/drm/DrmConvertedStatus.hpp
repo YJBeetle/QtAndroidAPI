@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::drm
 {
-	class DrmConvertedStatus : public __JniBaseClass
+	class DrmConvertedStatus : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::drm
 		jint statusCode();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DrmConvertedStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmConvertedStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmConvertedStatus(QJniObject obj);
 		
 		// Constructors

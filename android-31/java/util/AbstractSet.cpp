@@ -25,7 +25,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	jboolean AbstractSet::removeAll(__JniBaseClass arg0)
+	jboolean AbstractSet::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",

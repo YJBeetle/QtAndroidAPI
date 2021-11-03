@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::wifi
 {
-	class WifiConfiguration_PairwiseCipher : public __JniBaseClass
+	class WifiConfiguration_PairwiseCipher : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::net::wifi
 		static jstring varName();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration_PairwiseCipher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiConfiguration_PairwiseCipher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration_PairwiseCipher(QJniObject obj);
 		
 		// Constructors

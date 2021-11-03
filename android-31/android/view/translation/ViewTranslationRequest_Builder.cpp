@@ -8,17 +8,17 @@ namespace android::view::translation
 	// Fields
 	
 	// QJniObject forward
-	ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.ViewTranslationRequest$Builder",
 			"(Landroid/view/autofill/AutofillId;)V",
 			arg0.object()
 		) {}
 	ViewTranslationRequest_Builder::ViewTranslationRequest_Builder(android::view::autofill::AutofillId arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.ViewTranslationRequest$Builder",
 			"(Landroid/view/autofill/AutofillId;J)V",
 			arg0.object(),

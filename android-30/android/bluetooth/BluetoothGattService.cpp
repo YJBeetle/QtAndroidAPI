@@ -6,7 +6,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothGattService::CREATOR()
+	JObject BluetoothGattService::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattService",
@@ -30,11 +30,11 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothGattService::BluetoothGattService(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothGattService::BluetoothGattService(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothGattService::BluetoothGattService(java::util::UUID arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothGattService",
 			"(Ljava/util/UUID;I)V",
 			arg0.object(),
@@ -73,14 +73,14 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothGattService::getCharacteristics()
+	JObject BluetoothGattService::getCharacteristics()
 	{
 		return callObjectMethod(
 			"getCharacteristics",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass BluetoothGattService::getIncludedServices()
+	JObject BluetoothGattService::getIncludedServices()
 	{
 		return callObjectMethod(
 			"getIncludedServices",

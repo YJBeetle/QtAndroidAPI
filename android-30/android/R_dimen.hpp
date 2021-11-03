@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_dimen : public __JniBaseClass
+	class R_dimen : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android
 		static jint thumbnail_width();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit R_dimen(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_dimen(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_dimen(QJniObject obj);
 		
 		// Constructors

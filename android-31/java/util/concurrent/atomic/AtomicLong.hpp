@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../../../lang/Number.hpp"
 
 
@@ -20,7 +20,7 @@ namespace java::util::concurrent::atomic
 		AtomicLong(jlong arg0);
 		
 		// Methods
-		jlong accumulateAndGet(jlong arg0, __JniBaseClass arg1);
+		jlong accumulateAndGet(jlong arg0, JObject arg1);
 		jlong addAndGet(jlong arg0);
 		jlong compareAndExchange(jlong arg0, jlong arg1);
 		jlong compareAndExchangeAcquire(jlong arg0, jlong arg1);
@@ -31,12 +31,12 @@ namespace java::util::concurrent::atomic
 		jfloat floatValue();
 		jlong get();
 		jlong getAcquire();
-		jlong getAndAccumulate(jlong arg0, __JniBaseClass arg1);
+		jlong getAndAccumulate(jlong arg0, JObject arg1);
 		jlong getAndAdd(jlong arg0);
 		jlong getAndDecrement();
 		jlong getAndIncrement();
 		jlong getAndSet(jlong arg0);
-		jlong getAndUpdate(__JniBaseClass arg0);
+		jlong getAndUpdate(JObject arg0);
 		jlong getOpaque();
 		jlong getPlain();
 		jlong incrementAndGet();
@@ -48,7 +48,7 @@ namespace java::util::concurrent::atomic
 		void setPlain(jlong arg0);
 		void setRelease(jlong arg0);
 		jstring toString();
-		jlong updateAndGet(__JniBaseClass arg0);
+		jlong updateAndGet(JObject arg0);
 		jboolean weakCompareAndSet(jlong arg0, jlong arg1);
 		jboolean weakCompareAndSetAcquire(jlong arg0, jlong arg1);
 		jboolean weakCompareAndSetPlain(jlong arg0, jlong arg1);

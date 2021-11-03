@@ -41,11 +41,11 @@ namespace android::hardware::camera2
 	}
 	
 	// QJniObject forward
-	CameraDevice_StateCallback::CameraDevice_StateCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	CameraDevice_StateCallback::CameraDevice_StateCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraDevice_StateCallback::CameraDevice_StateCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CameraDevice$StateCallback",
 			"()V"
 		) {}

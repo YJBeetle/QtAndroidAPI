@@ -6,7 +6,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QJniObject forward
-	Scale::Scale(QJniObject obj) : __JniBaseClass(obj) {}
+	Scale::Scale(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

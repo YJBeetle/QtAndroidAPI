@@ -20,17 +20,17 @@ namespace java::security
 	}
 	
 	// QJniObject forward
-	Policy::Policy(QJniObject obj) : __JniBaseClass(obj) {}
+	Policy::Policy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Policy::Policy()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.Policy",
 			"()V"
 		) {}
 	
 	// Methods
-	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1)
+	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
@@ -40,7 +40,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1, jstring arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
@@ -51,7 +51,7 @@ namespace java::security
 			arg2
 		);
 	}
-	java::security::Policy Policy::getInstance(jstring arg0, __JniBaseClass arg1, java::security::Provider arg2)
+	java::security::Policy Policy::getInstance(jstring arg0, JObject arg1, java::security::Provider arg2)
 	{
 		return callStaticObjectMethod(
 			"java.security.Policy",
@@ -79,7 +79,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	__JniBaseClass Policy::getParameters()
+	JObject Policy::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",

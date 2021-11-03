@@ -6,11 +6,11 @@ namespace android::animation
 	// Fields
 	
 	// QJniObject forward
-	IntEvaluator::IntEvaluator(QJniObject obj) : __JniBaseClass(obj) {}
+	IntEvaluator::IntEvaluator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IntEvaluator::IntEvaluator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.IntEvaluator",
 			"()V"
 		) {}

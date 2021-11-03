@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass SyncStats::CREATOR()
+	JObject SyncStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.SyncStats",
@@ -68,16 +68,16 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	SyncStats::SyncStats(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncStats::SyncStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncStats::SyncStats()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncStats",
 			"()V"
 		) {}
 	SyncStats::SyncStats(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.SyncStats",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

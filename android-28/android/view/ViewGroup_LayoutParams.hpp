@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::view::animation
 
 namespace android::view
 {
-	class ViewGroup_LayoutParams : public __JniBaseClass
+	class ViewGroup_LayoutParams : public JObject
 	{
 	public:
 		// Fields
@@ -29,12 +29,12 @@ namespace android::view
 		jint width();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ViewGroup_LayoutParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewGroup_LayoutParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewGroup_LayoutParams(QJniObject obj);
 		
 		// Constructors
 		ViewGroup_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
-		ViewGroup_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		ViewGroup_LayoutParams(android::content::Context arg0, JObject arg1);
 		ViewGroup_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods

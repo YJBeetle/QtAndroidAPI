@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,13 +17,13 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityManager : public __JniBaseClass
+	class AccessibilityManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityManager(QJniObject obj);
 		
 		// Constructors
@@ -31,19 +31,19 @@ namespace android::view::accessibility
 		// Methods
 		static jboolean isAccessibilityButtonSupported();
 		void addAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0);
-		jboolean addAccessibilityStateChangeListener(__JniBaseClass arg0);
-		void addAccessibilityStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
-		jboolean addTouchExplorationStateChangeListener(__JniBaseClass arg0);
-		void addTouchExplorationStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
-		__JniBaseClass getAccessibilityServiceList();
-		__JniBaseClass getEnabledAccessibilityServiceList(jint arg0);
-		__JniBaseClass getInstalledAccessibilityServiceList();
+		jboolean addAccessibilityStateChangeListener(JObject arg0);
+		void addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1);
+		jboolean addTouchExplorationStateChangeListener(JObject arg0);
+		void addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1);
+		JObject getAccessibilityServiceList();
+		JObject getEnabledAccessibilityServiceList(jint arg0);
+		JObject getInstalledAccessibilityServiceList();
 		void interrupt();
 		jboolean isEnabled();
 		jboolean isTouchExplorationEnabled();
 		void removeAccessibilityRequestPreparer(android::view::accessibility::AccessibilityRequestPreparer arg0);
-		jboolean removeAccessibilityStateChangeListener(__JniBaseClass arg0);
-		jboolean removeTouchExplorationStateChangeListener(__JniBaseClass arg0);
+		jboolean removeAccessibilityStateChangeListener(JObject arg0);
+		jboolean removeTouchExplorationStateChangeListener(JObject arg0);
 		void sendAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 	};
 } // namespace android::view::accessibility

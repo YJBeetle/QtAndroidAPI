@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,13 +17,13 @@ namespace android::webkit
 
 namespace android::webkit
 {
-	class WebMessagePort : public __JniBaseClass
+	class WebMessagePort : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WebMessagePort(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WebMessagePort(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WebMessagePort(QJniObject obj);
 		
 		// Constructors

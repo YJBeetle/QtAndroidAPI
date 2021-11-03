@@ -40,11 +40,11 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	BatteryState::BatteryState(QJniObject obj) : __JniBaseClass(obj) {}
+	BatteryState::BatteryState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BatteryState::BatteryState()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.BatteryState",
 			"()V"
 		) {}

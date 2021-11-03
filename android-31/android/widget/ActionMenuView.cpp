@@ -20,7 +20,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ActionMenuView::ActionMenuView(android::content::Context arg0, __JniBaseClass arg1)
+	ActionMenuView::ActionMenuView(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.ActionMenuView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -36,7 +36,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	android::widget::ActionMenuView_LayoutParams ActionMenuView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::ActionMenuView_LayoutParams ActionMenuView::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -44,7 +44,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass ActionMenuView::getMenu()
+	JObject ActionMenuView::getMenu()
 	{
 		return callObjectMethod(
 			"getMenu",
@@ -94,7 +94,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void ActionMenuView::setOnMenuItemClickListener(__JniBaseClass arg0)
+	void ActionMenuView::setOnMenuItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnMenuItemClickListener",

@@ -5,11 +5,11 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	TelephonyCallback::TelephonyCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyCallback::TelephonyCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TelephonyCallback::TelephonyCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.TelephonyCallback",
 			"()V"
 		) {}

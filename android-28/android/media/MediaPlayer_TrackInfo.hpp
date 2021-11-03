@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaPlayer_TrackInfo : public __JniBaseClass
+	class MediaPlayer_TrackInfo : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::media
 		static jint MEDIA_TRACK_TYPE_VIDEO();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaPlayer_TrackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaPlayer_TrackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaPlayer_TrackInfo(QJniObject obj);
 		
 		// Constructors

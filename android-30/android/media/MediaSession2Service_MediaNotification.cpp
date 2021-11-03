@@ -6,11 +6,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSession2Service_MediaNotification::MediaSession2Service_MediaNotification(jint arg0, android::app::Notification arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaSession2Service$MediaNotification",
 			"(ILandroid/app/Notification;)V",
 			arg0,

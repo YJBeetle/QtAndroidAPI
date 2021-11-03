@@ -6,11 +6,11 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	InputStream::InputStream(QJniObject obj) : __JniBaseClass(obj) {}
+	InputStream::InputStream(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputStream::InputStream()
-		: __JniBaseClass(
+		: JObject(
 			"java.io.InputStream",
 			"()V"
 		) {}

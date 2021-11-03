@@ -5,7 +5,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	ReportSystemUsageRequest::ReportSystemUsageRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	ReportSystemUsageRequest::ReportSystemUsageRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

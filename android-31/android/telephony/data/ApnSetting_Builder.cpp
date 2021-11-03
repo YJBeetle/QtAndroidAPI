@@ -8,11 +8,11 @@ namespace android::telephony::data
 	// Fields
 	
 	// QJniObject forward
-	ApnSetting_Builder::ApnSetting_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ApnSetting_Builder::ApnSetting_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApnSetting_Builder::ApnSetting_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.data.ApnSetting$Builder",
 			"()V"
 		) {}

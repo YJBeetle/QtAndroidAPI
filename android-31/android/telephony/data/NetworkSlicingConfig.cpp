@@ -4,7 +4,7 @@
 namespace android::telephony::data
 {
 	// Fields
-	__JniBaseClass NetworkSlicingConfig::CREATOR()
+	JObject NetworkSlicingConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.NetworkSlicingConfig",
@@ -14,11 +14,11 @@ namespace android::telephony::data
 	}
 	
 	// QJniObject forward
-	NetworkSlicingConfig::NetworkSlicingConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkSlicingConfig::NetworkSlicingConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkSlicingConfig::NetworkSlicingConfig()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.data.NetworkSlicingConfig",
 			"()V"
 		) {}
@@ -39,14 +39,14 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	__JniBaseClass NetworkSlicingConfig::getSliceInfo()
+	JObject NetworkSlicingConfig::getSliceInfo()
 	{
 		return callObjectMethod(
 			"getSliceInfo",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass NetworkSlicingConfig::getUrspRules()
+	JObject NetworkSlicingConfig::getUrspRules()
 	{
 		return callObjectMethod(
 			"getUrspRules",

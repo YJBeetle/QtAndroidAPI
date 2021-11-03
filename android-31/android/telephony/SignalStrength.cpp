@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass SignalStrength::CREATOR()
+	JObject SignalStrength::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.SignalStrength",
@@ -21,11 +21,11 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SignalStrength::SignalStrength(QJniObject obj) : __JniBaseClass(obj) {}
+	SignalStrength::SignalStrength(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SignalStrength::SignalStrength(android::telephony::SignalStrength &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.SignalStrength",
 			"(Landroid/telephony/SignalStrength;)V",
 			arg0.object()
@@ -61,14 +61,14 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	__JniBaseClass SignalStrength::getCellSignalStrengths()
+	JObject SignalStrength::getCellSignalStrengths()
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SignalStrength::getCellSignalStrengths(jclass arg0)
+	JObject SignalStrength::getCellSignalStrengths(jclass arg0)
 	{
 		return callObjectMethod(
 			"getCellSignalStrengths",

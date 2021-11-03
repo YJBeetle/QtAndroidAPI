@@ -8,11 +8,11 @@ namespace android::service::autofill
 	// Fields
 	
 	// QJniObject forward
-	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CharSequenceTransformation_Builder::CharSequenceTransformation_Builder(android::view::autofill::AutofillId arg0, java::util::regex::Pattern arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.CharSequenceTransformation$Builder",
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.object(),

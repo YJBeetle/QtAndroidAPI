@@ -8,7 +8,7 @@ namespace java::nio::channels
 	// Fields
 	
 	// QJniObject forward
-	AsynchronousServerSocketChannel::AsynchronousServerSocketChannel(QJniObject obj) : __JniBaseClass(obj) {}
+	AsynchronousServerSocketChannel::AsynchronousServerSocketChannel(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -30,14 +30,14 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	__JniBaseClass AsynchronousServerSocketChannel::accept()
+	JObject AsynchronousServerSocketChannel::accept()
 	{
 		return callObjectMethod(
 			"accept",
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	void AsynchronousServerSocketChannel::accept(jobject arg0, __JniBaseClass arg1)
+	void AsynchronousServerSocketChannel::accept(jobject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"accept",
@@ -77,7 +77,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
 		);
 	}
-	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::AsynchronousServerSocketChannel AsynchronousServerSocketChannel::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",

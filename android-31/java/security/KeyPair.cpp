@@ -5,11 +5,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyPair::KeyPair(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyPair::KeyPair(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyPair::KeyPair(__JniBaseClass arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	KeyPair::KeyPair(JObject arg0, JObject arg1)
+		: JObject(
 			"java.security.KeyPair",
 			"(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V",
 			arg0.object(),
@@ -17,14 +17,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	__JniBaseClass KeyPair::getPrivate()
+	JObject KeyPair::getPrivate()
 	{
 		return callObjectMethod(
 			"getPrivate",
 			"()Ljava/security/PrivateKey;"
 		);
 	}
-	__JniBaseClass KeyPair::getPublic()
+	JObject KeyPair::getPublic()
 	{
 		return callObjectMethod(
 			"getPublic",

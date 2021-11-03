@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass Uri::CREATOR()
+	JObject Uri::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.Uri",
@@ -24,7 +24,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	Uri::Uri(QJniObject obj) : __JniBaseClass(obj) {}
+	Uri::Uri(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -223,7 +223,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Uri::getPathSegments()
+	JObject Uri::getPathSegments()
 	{
 		return callObjectMethod(
 			"getPathSegments",
@@ -252,14 +252,14 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Uri::getQueryParameterNames()
+	JObject Uri::getQueryParameterNames()
 	{
 		return callObjectMethod(
 			"getQueryParameterNames",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Uri::getQueryParameters(jstring arg0)
+	JObject Uri::getQueryParameters(jstring arg0)
 	{
 		return callObjectMethod(
 			"getQueryParameters",

@@ -5,23 +5,23 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	AtomicReference::AtomicReference(QJniObject obj) : __JniBaseClass(obj) {}
+	AtomicReference::AtomicReference(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicReference::AtomicReference()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicReference",
 			"()V"
 		) {}
 	AtomicReference::AtomicReference(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicReference",
 			"(Ljava/lang/Object;)V",
 			arg0
 		) {}
 	
 	// Methods
-	jobject AtomicReference::accumulateAndGet(jobject arg0, __JniBaseClass arg1)
+	jobject AtomicReference::accumulateAndGet(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"accumulateAndGet",
@@ -80,7 +80,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject AtomicReference::getAndAccumulate(jobject arg0, __JniBaseClass arg1)
+	jobject AtomicReference::getAndAccumulate(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getAndAccumulate",
@@ -97,7 +97,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		).object<jobject>();
 	}
-	jobject AtomicReference::getAndUpdate(__JniBaseClass arg0)
+	jobject AtomicReference::getAndUpdate(JObject arg0)
 	{
 		return callObjectMethod(
 			"getAndUpdate",
@@ -166,7 +166,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jobject AtomicReference::updateAndGet(__JniBaseClass arg0)
+	jobject AtomicReference::updateAndGet(JObject arg0)
 	{
 		return callObjectMethod(
 			"updateAndGet",

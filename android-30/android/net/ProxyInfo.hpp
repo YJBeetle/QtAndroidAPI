@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::net
 {
-	class ProxyInfo : public __JniBaseClass
+	class ProxyInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProxyInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProxyInfo(QJniObject obj);
 		
 		// Constructors
@@ -28,7 +28,7 @@ namespace android::net
 		
 		// Methods
 		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1);
-		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1, __JniBaseClass arg2);
+		static android::net::ProxyInfo buildDirectProxy(jstring arg0, jint arg1, JObject arg2);
 		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0);
 		static android::net::ProxyInfo buildPacProxy(android::net::Uri arg0, jint arg1);
 		jint describeContents();

@@ -5,17 +5,17 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0)
-		: __JniBaseClass(
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(JObject arg0)
+		: JObject(
 			"java.security.KeyStore$SecretKeyEntry",
 			"(Ljavax/crypto/SecretKey;)V",
 			arg0.object()
 		) {}
-	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(__JniBaseClass arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	KeyStore_SecretKeyEntry::KeyStore_SecretKeyEntry(JObject arg0, JObject arg1)
+		: JObject(
 			"java.security.KeyStore$SecretKeyEntry",
 			"(Ljavax/crypto/SecretKey;Ljava/util/Set;)V",
 			arg0.object(),
@@ -23,14 +23,14 @@ namespace java::security
 		) {}
 	
 	// Methods
-	__JniBaseClass KeyStore_SecretKeyEntry::getAttributes()
+	JObject KeyStore_SecretKeyEntry::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass KeyStore_SecretKeyEntry::getSecretKey()
+	JObject KeyStore_SecretKeyEntry::getSecretKey()
 	{
 		return callObjectMethod(
 			"getSecretKey",

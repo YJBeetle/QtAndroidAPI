@@ -6,11 +6,11 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	CountDownLatch::CountDownLatch(QJniObject obj) : __JniBaseClass(obj) {}
+	CountDownLatch::CountDownLatch(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CountDownLatch::CountDownLatch(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.CountDownLatch",
 			"(I)V",
 			arg0

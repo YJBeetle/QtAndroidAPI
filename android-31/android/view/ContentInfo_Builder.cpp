@@ -9,17 +9,17 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ContentInfo_Builder::ContentInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentInfo_Builder::ContentInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentInfo_Builder::ContentInfo_Builder(android::view::ContentInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ContentInfo$Builder",
 			"(Landroid/view/ContentInfo;)V",
 			arg0.object()
 		) {}
 	ContentInfo_Builder::ContentInfo_Builder(android::content::ClipData arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ContentInfo$Builder",
 			"(Landroid/content/ClipData;I)V",
 			arg0.object(),

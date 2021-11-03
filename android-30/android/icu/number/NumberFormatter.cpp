@@ -9,7 +9,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QJniObject forward
-	NumberFormatter::NumberFormatter(QJniObject obj) : __JniBaseClass(obj) {}
+	NumberFormatter::NumberFormatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

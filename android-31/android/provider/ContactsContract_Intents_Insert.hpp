@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class ContactsContract_Intents_Insert : public __JniBaseClass
+	class ContactsContract_Intents_Insert : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::provider
 		static jstring TERTIARY_PHONE_TYPE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Intents_Insert(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_Intents_Insert(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Intents_Insert(QJniObject obj);
 		
 		// Constructors

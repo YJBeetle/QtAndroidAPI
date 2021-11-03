@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 
 namespace android::app
@@ -41,9 +41,9 @@ namespace android::preference
 		
 		// Constructors
 		DialogPreference(android::content::Context arg0);
-		DialogPreference(android::content::Context arg0, __JniBaseClass arg1);
-		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		DialogPreference(android::content::Context arg0, JObject arg1);
+		DialogPreference(android::content::Context arg0, JObject arg1, jint arg2);
+		DialogPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		android::app::Dialog getDialog();
@@ -54,8 +54,8 @@ namespace android::preference
 		jstring getNegativeButtonText();
 		jstring getPositiveButtonText();
 		void onActivityDestroy();
-		void onClick(__JniBaseClass arg0, jint arg1);
-		void onDismiss(__JniBaseClass arg0);
+		void onClick(JObject arg0, jint arg1);
+		void onDismiss(JObject arg0);
 		void setDialogIcon(android::graphics::drawable::Drawable arg0);
 		void setDialogIcon(jint arg0);
 		void setDialogLayoutResource(jint arg0);

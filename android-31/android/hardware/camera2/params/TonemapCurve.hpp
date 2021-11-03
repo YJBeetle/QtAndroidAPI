@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,7 +9,7 @@ namespace android::graphics
 
 namespace android::hardware::camera2::params
 {
-	class TonemapCurve : public __JniBaseClass
+	class TonemapCurve : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::hardware::camera2::params
 		static jint POINT_SIZE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TonemapCurve(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TonemapCurve(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TonemapCurve(QJniObject obj);
 		
 		// Constructors

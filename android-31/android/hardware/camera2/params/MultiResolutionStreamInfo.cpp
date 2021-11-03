@@ -5,11 +5,11 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QJniObject forward
-	MultiResolutionStreamInfo::MultiResolutionStreamInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MultiResolutionStreamInfo::MultiResolutionStreamInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MultiResolutionStreamInfo::MultiResolutionStreamInfo(jint arg0, jint arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.MultiResolutionStreamInfo",
 			"(IILjava/lang/String;)V",
 			arg0,

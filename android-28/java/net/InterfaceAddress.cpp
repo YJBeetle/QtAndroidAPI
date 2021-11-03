@@ -7,7 +7,7 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	InterfaceAddress::InterfaceAddress(QJniObject obj) : __JniBaseClass(obj) {}
+	InterfaceAddress::InterfaceAddress(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

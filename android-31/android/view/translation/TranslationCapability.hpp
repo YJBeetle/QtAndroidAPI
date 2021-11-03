@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,18 +13,18 @@ namespace android::view::translation
 
 namespace android::view::translation
 {
-	class TranslationCapability : public __JniBaseClass
+	class TranslationCapability : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATE_AVAILABLE_TO_DOWNLOAD();
 		static jint STATE_DOWNLOADING();
 		static jint STATE_NOT_AVAILABLE();
 		static jint STATE_ON_DEVICE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TranslationCapability(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TranslationCapability(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TranslationCapability(QJniObject obj);
 		
 		// Constructors

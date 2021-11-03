@@ -37,7 +37,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Threads::Telephony_Threads(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Threads::Telephony_Threads(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -52,7 +52,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, __JniBaseClass arg1)
+	jlong Telephony_Threads::getOrCreateThreadId(android::content::Context arg0, JObject arg1)
 	{
 		return callStaticMethod<jlong>(
 			"android.provider.Telephony$Threads",

@@ -8,11 +8,11 @@ namespace android::hardware::lights
 	// Fields
 	
 	// QJniObject forward
-	LightsRequest_Builder::LightsRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	LightsRequest_Builder::LightsRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LightsRequest_Builder::LightsRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.lights.LightsRequest$Builder",
 			"()V"
 		) {}

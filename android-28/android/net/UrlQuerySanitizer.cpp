@@ -5,23 +5,23 @@ namespace android::net
 	// Fields
 	
 	// QJniObject forward
-	UrlQuerySanitizer::UrlQuerySanitizer(QJniObject obj) : __JniBaseClass(obj) {}
+	UrlQuerySanitizer::UrlQuerySanitizer(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer::UrlQuerySanitizer()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.UrlQuerySanitizer",
 			"()V"
 		) {}
 	UrlQuerySanitizer::UrlQuerySanitizer(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.UrlQuerySanitizer",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	
 	// Methods
-	__JniBaseClass UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
+	JObject UrlQuerySanitizer::getAllButNulAndAngleBracketsLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -29,7 +29,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getAllButNulLegal()
+	JObject UrlQuerySanitizer::getAllButNulLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -37,7 +37,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getAllButWhitespaceLegal()
+	JObject UrlQuerySanitizer::getAllButWhitespaceLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -45,7 +45,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getAllIllegal()
+	JObject UrlQuerySanitizer::getAllIllegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -53,7 +53,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getAmpAndSpaceLegal()
+	JObject UrlQuerySanitizer::getAmpAndSpaceLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -61,7 +61,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getAmpLegal()
+	JObject UrlQuerySanitizer::getAmpLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -69,7 +69,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getSpaceLegal()
+	JObject UrlQuerySanitizer::getSpaceLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -77,7 +77,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getUrlAndSpaceLegal()
+	JObject UrlQuerySanitizer::getUrlAndSpaceLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -85,7 +85,7 @@ namespace android::net
 			"()Landroid/net/UrlQuerySanitizer$ValueSanitizer;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getUrlLegal()
+	JObject UrlQuerySanitizer::getUrlLegal()
 	{
 		return callStaticObjectMethod(
 			"android.net.UrlQuerySanitizer",
@@ -100,7 +100,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
+	JObject UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
 	{
 		return callObjectMethod(
 			"getEffectiveValueSanitizer",
@@ -108,14 +108,14 @@ namespace android::net
 			arg0
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getParameterList()
+	JObject UrlQuerySanitizer::getParameterList()
 	{
 		return callObjectMethod(
 			"getParameterList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getParameterSet()
+	JObject UrlQuerySanitizer::getParameterSet()
 	{
 		return callObjectMethod(
 			"getParameterSet",
@@ -129,7 +129,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	__JniBaseClass UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
+	JObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
 	{
 		return callObjectMethod(
 			"getUnregisteredParameterValueSanitizer",
@@ -144,7 +144,7 @@ namespace android::net
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass UrlQuerySanitizer::getValueSanitizer(jstring arg0)
+	JObject UrlQuerySanitizer::getValueSanitizer(jstring arg0)
 	{
 		return callObjectMethod(
 			"getValueSanitizer",
@@ -176,7 +176,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void UrlQuerySanitizer::registerParameter(jstring arg0, __JniBaseClass arg1)
+	void UrlQuerySanitizer::registerParameter(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"registerParameter",
@@ -185,7 +185,7 @@ namespace android::net
 			arg1.object()
 		);
 	}
-	void UrlQuerySanitizer::registerParameters(jarray arg0, __JniBaseClass arg1)
+	void UrlQuerySanitizer::registerParameters(jarray arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"registerParameters",
@@ -210,7 +210,7 @@ namespace android::net
 			arg0
 		);
 	}
-	void UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(__JniBaseClass arg0)
+	void UrlQuerySanitizer::setUnregisteredParameterValueSanitizer(JObject arg0)
 	{
 		callMethod<void>(
 			"setUnregisteredParameterValueSanitizer",

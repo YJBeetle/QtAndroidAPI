@@ -65,7 +65,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	__JniBaseClass SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject SearchRecentSuggestionsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",

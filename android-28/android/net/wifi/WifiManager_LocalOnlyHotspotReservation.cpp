@@ -7,7 +7,7 @@ namespace android::net::wifi
 	// Fields
 	
 	// QJniObject forward
-	WifiManager_LocalOnlyHotspotReservation::WifiManager_LocalOnlyHotspotReservation(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_LocalOnlyHotspotReservation::WifiManager_LocalOnlyHotspotReservation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

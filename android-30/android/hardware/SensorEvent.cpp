@@ -32,7 +32,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	SensorEvent::SensorEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	SensorEvent::SensorEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

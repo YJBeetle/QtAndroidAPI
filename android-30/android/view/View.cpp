@@ -1047,32 +1047,32 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	View::View(QJniObject obj) : __JniBaseClass(obj) {}
+	View::View(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	View::View(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.View",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	View::View(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	View::View(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.View",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	View::View(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-		: __JniBaseClass(
+	View::View(android::content::Context arg0, JObject arg1, jint arg2)
+		: JObject(
 			"android.view.View",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.object(),
 			arg1.object(),
 			arg2
 		) {}
-	View::View(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+	View::View(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: JObject(
 			"android.view.View",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.object(),
@@ -1179,7 +1179,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void View::addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1)
+	void View::addKeyboardNavigationClusters(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"addKeyboardNavigationClusters",
@@ -1188,7 +1188,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void View::addOnAttachStateChangeListener(__JniBaseClass arg0)
+	void View::addOnAttachStateChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnAttachStateChangeListener",
@@ -1196,7 +1196,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addOnLayoutChangeListener(__JniBaseClass arg0)
+	void View::addOnLayoutChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnLayoutChangeListener",
@@ -1204,7 +1204,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::addOnUnhandledKeyEventListener(__JniBaseClass arg0)
+	void View::addOnUnhandledKeyEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnUnhandledKeyEventListener",
@@ -1390,7 +1390,7 @@ namespace android::view
 			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
-	void View::createContextMenu(__JniBaseClass arg0)
+	void View::createContextMenu(JObject arg0)
 	{
 		callMethod<void>(
 			"createContextMenu",
@@ -1641,7 +1641,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets View::dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, __JniBaseClass arg1)
+	android::view::WindowInsets View::dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"dispatchWindowInsetsAnimationProgress",
@@ -1818,7 +1818,7 @@ namespace android::view
 			"()Landroid/graphics/Matrix;"
 		);
 	}
-	__JniBaseClass View::getApplicationWindowToken()
+	JObject View::getApplicationWindowToken()
 	{
 		return callObjectMethod(
 			"getApplicationWindowToken",
@@ -1833,7 +1833,7 @@ namespace android::view
 			arg0
 		).object<jintArray>();
 	}
-	__JniBaseClass View::getAttributeSourceResourceMap()
+	JObject View::getAttributeSourceResourceMap()
 	{
 		return callObjectMethod(
 			"getAttributeSourceResourceMap",
@@ -2385,7 +2385,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass View::getOnFocusChangeListener()
+	JObject View::getOnFocusChangeListener()
 	{
 		return callObjectMethod(
 			"getOnFocusChangeListener",
@@ -2469,14 +2469,14 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass View::getParent()
+	JObject View::getParent()
 	{
 		return callObjectMethod(
 			"getParent",
 			"()Landroid/view/ViewParent;"
 		);
 	}
-	__JniBaseClass View::getParentForAccessibility()
+	JObject View::getParentForAccessibility()
 	{
 		return callObjectMethod(
 			"getParentForAccessibility",
@@ -2651,7 +2651,7 @@ namespace android::view
 			"()Landroid/animation/StateListAnimator;"
 		);
 	}
-	__JniBaseClass View::getSystemGestureExclusionRects()
+	JObject View::getSystemGestureExclusionRects()
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
@@ -2827,7 +2827,7 @@ namespace android::view
 			"()Landroid/view/WindowId;"
 		);
 	}
-	__JniBaseClass View::getWindowInsetsController()
+	JObject View::getWindowInsetsController()
 	{
 		return callObjectMethod(
 			"getWindowInsetsController",
@@ -2841,7 +2841,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass View::getWindowToken()
+	JObject View::getWindowToken()
 	{
 		return callObjectMethod(
 			"getWindowToken",
@@ -3435,7 +3435,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	__JniBaseClass View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
+	JObject View::onCreateInputConnection(android::view::inputmethod::EditorInfo arg0)
 	{
 		return callObjectMethod(
 			"onCreateInputConnection",
@@ -3773,7 +3773,7 @@ namespace android::view
 			arg0
 		);
 	}
-	jboolean View::post(__JniBaseClass arg0)
+	jboolean View::post(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"post",
@@ -3781,7 +3781,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	jboolean View::postDelayed(__JniBaseClass arg0, jlong arg1)
+	jboolean View::postDelayed(JObject arg0, jlong arg1)
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -3846,7 +3846,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void View::postOnAnimation(__JniBaseClass arg0)
+	void View::postOnAnimation(JObject arg0)
 	{
 		callMethod<void>(
 			"postOnAnimation",
@@ -3854,7 +3854,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::postOnAnimationDelayed(__JniBaseClass arg0, jlong arg1)
+	void View::postOnAnimationDelayed(JObject arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"postOnAnimationDelayed",
@@ -3877,7 +3877,7 @@ namespace android::view
 			"()V"
 		);
 	}
-	jboolean View::removeCallbacks(__JniBaseClass arg0)
+	jboolean View::removeCallbacks(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeCallbacks",
@@ -3885,7 +3885,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnAttachStateChangeListener(__JniBaseClass arg0)
+	void View::removeOnAttachStateChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnAttachStateChangeListener",
@@ -3893,7 +3893,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnLayoutChangeListener(__JniBaseClass arg0)
+	void View::removeOnLayoutChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnLayoutChangeListener",
@@ -3901,7 +3901,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::removeOnUnhandledKeyEventListener(__JniBaseClass arg0)
+	void View::removeOnUnhandledKeyEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnUnhandledKeyEventListener",
@@ -4031,7 +4031,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::saveAttributeDataForStyleable(android::content::Context arg0, jintArray arg1, __JniBaseClass arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5)
+	void View::saveAttributeDataForStyleable(android::content::Context arg0, jintArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5)
 	{
 		callMethod<void>(
 			"saveAttributeDataForStyleable",
@@ -4052,7 +4052,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2)
+	void View::scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2)
 	{
 		callMethod<void>(
 			"scheduleDrawable",
@@ -4716,7 +4716,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void View::setOnApplyWindowInsetsListener(__JniBaseClass arg0)
+	void View::setOnApplyWindowInsetsListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnApplyWindowInsetsListener",
@@ -4724,7 +4724,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnCapturedPointerListener(__JniBaseClass arg0)
+	void View::setOnCapturedPointerListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCapturedPointerListener",
@@ -4732,7 +4732,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnClickListener(__JniBaseClass arg0)
+	void View::setOnClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -4740,7 +4740,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnContextClickListener(__JniBaseClass arg0)
+	void View::setOnContextClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnContextClickListener",
@@ -4748,7 +4748,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnCreateContextMenuListener(__JniBaseClass arg0)
+	void View::setOnCreateContextMenuListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCreateContextMenuListener",
@@ -4756,7 +4756,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnDragListener(__JniBaseClass arg0)
+	void View::setOnDragListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDragListener",
@@ -4764,7 +4764,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnFocusChangeListener(__JniBaseClass arg0)
+	void View::setOnFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnFocusChangeListener",
@@ -4772,7 +4772,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnGenericMotionListener(__JniBaseClass arg0)
+	void View::setOnGenericMotionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGenericMotionListener",
@@ -4780,7 +4780,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnHoverListener(__JniBaseClass arg0)
+	void View::setOnHoverListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnHoverListener",
@@ -4788,7 +4788,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnKeyListener(__JniBaseClass arg0)
+	void View::setOnKeyListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnKeyListener",
@@ -4796,7 +4796,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnLongClickListener(__JniBaseClass arg0)
+	void View::setOnLongClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnLongClickListener",
@@ -4804,7 +4804,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnScrollChangeListener(__JniBaseClass arg0)
+	void View::setOnScrollChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnScrollChangeListener",
@@ -4812,7 +4812,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnSystemUiVisibilityChangeListener(__JniBaseClass arg0)
+	void View::setOnSystemUiVisibilityChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnSystemUiVisibilityChangeListener",
@@ -4820,7 +4820,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setOnTouchListener(__JniBaseClass arg0)
+	void View::setOnTouchListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnTouchListener",
@@ -5107,7 +5107,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::setSystemGestureExclusionRects(__JniBaseClass arg0)
+	void View::setSystemGestureExclusionRects(JObject arg0)
 	{
 		callMethod<void>(
 			"setSystemGestureExclusionRects",
@@ -5340,7 +5340,7 @@ namespace android::view
 			arg1
 		);
 	}
-	android::view::ActionMode View::startActionMode(__JniBaseClass arg0)
+	android::view::ActionMode View::startActionMode(JObject arg0)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -5348,7 +5348,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::ActionMode View::startActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode View::startActionMode(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -5433,7 +5433,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1)
+	void View::unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"unscheduleDrawable",

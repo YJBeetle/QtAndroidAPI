@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,11 +17,11 @@ namespace android::os
 
 namespace android::view::inputmethod
 {
-	class EditorInfo : public __JniBaseClass
+	class EditorInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint IME_ACTION_DONE();
 		static jint IME_ACTION_GO();
 		static jint IME_ACTION_NEXT();
@@ -58,7 +58,7 @@ namespace android::view::inputmethod
 		jstring privateImeOptions();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EditorInfo(QJniObject obj);
 		
 		// Constructors
@@ -66,7 +66,7 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		void makeCompatible(jint arg0);
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

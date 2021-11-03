@@ -6,7 +6,7 @@
 namespace android::service::notification
 {
 	// Fields
-	__JniBaseClass StatusBarNotification::CREATOR()
+	JObject StatusBarNotification::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.notification.StatusBarNotification",
@@ -16,17 +16,17 @@ namespace android::service::notification
 	}
 	
 	// QJniObject forward
-	StatusBarNotification::StatusBarNotification(QJniObject obj) : __JniBaseClass(obj) {}
+	StatusBarNotification::StatusBarNotification(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StatusBarNotification::StatusBarNotification(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.StatusBarNotification",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	StatusBarNotification::StatusBarNotification(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, android::app::Notification arg7, android::os::UserHandle arg8, jlong arg9)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.StatusBarNotification",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIILandroid/app/Notification;Landroid/os/UserHandle;J)V",
 			arg0,

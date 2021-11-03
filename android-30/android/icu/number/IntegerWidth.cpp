@@ -5,7 +5,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QJniObject forward
-	IntegerWidth::IntegerWidth(QJniObject obj) : __JniBaseClass(obj) {}
+	IntegerWidth::IntegerWidth(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

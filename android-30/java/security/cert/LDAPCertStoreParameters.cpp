@@ -5,22 +5,22 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	LDAPCertStoreParameters::LDAPCertStoreParameters(QJniObject obj) : __JniBaseClass(obj) {}
+	LDAPCertStoreParameters::LDAPCertStoreParameters(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LDAPCertStoreParameters::LDAPCertStoreParameters()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"()V"
 		) {}
 	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	LDAPCertStoreParameters::LDAPCertStoreParameters(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.LDAPCertStoreParameters",
 			"(Ljava/lang/String;I)V",
 			arg0,

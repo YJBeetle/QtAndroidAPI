@@ -5,7 +5,7 @@
 namespace android::content::pm::verify::domain
 {
 	// Fields
-	__JniBaseClass DomainVerificationUserState::CREATOR()
+	JObject DomainVerificationUserState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.verify.domain.DomainVerificationUserState",
@@ -36,7 +36,7 @@ namespace android::content::pm::verify::domain
 	}
 	
 	// QJniObject forward
-	DomainVerificationUserState::DomainVerificationUserState(QJniObject obj) : __JniBaseClass(obj) {}
+	DomainVerificationUserState::DomainVerificationUserState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -56,7 +56,7 @@ namespace android::content::pm::verify::domain
 			arg0
 		);
 	}
-	__JniBaseClass DomainVerificationUserState::getHostToStateMap()
+	JObject DomainVerificationUserState::getHostToStateMap()
 	{
 		return callObjectMethod(
 			"getHostToStateMap",

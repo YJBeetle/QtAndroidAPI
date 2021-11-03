@@ -17,7 +17,7 @@ namespace android::companion
 	}
 	
 	// QJniObject forward
-	CompanionDeviceManager::CompanionDeviceManager(QJniObject obj) : __JniBaseClass(obj) {}
+	CompanionDeviceManager::CompanionDeviceManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace android::companion
 			arg0
 		);
 	}
-	__JniBaseClass CompanionDeviceManager::getAssociations()
+	JObject CompanionDeviceManager::getAssociations()
 	{
 		return callObjectMethod(
 			"getAssociations",

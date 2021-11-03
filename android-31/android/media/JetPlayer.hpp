@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::media
 {
-	class JetPlayer : public __JniBaseClass
+	class JetPlayer : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit JetPlayer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JetPlayer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JetPlayer(QJniObject obj);
 		
 		// Constructors
@@ -37,8 +37,8 @@ namespace android::media
 		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);
 		jboolean queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5);
 		void release();
-		void setEventListener(__JniBaseClass arg0);
-		void setEventListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setEventListener(JObject arg0);
+		void setEventListener(JObject arg0, android::os::Handler arg1);
 		jboolean setMuteArray(jbooleanArray arg0, jboolean arg1);
 		jboolean setMuteFlag(jint arg0, jboolean arg1, jboolean arg2);
 		jboolean setMuteFlags(jint arg0, jboolean arg1);

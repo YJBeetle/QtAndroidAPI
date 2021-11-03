@@ -7,32 +7,32 @@ namespace android::drm
 	// Fields
 	
 	// QJniObject forward
-	DrmRights::DrmRights(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmRights::DrmRights(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmRights::DrmRights(android::drm::ProcessedData arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmRights",
 			"(Landroid/drm/ProcessedData;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	DrmRights::DrmRights(java::io::File arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmRights",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	DrmRights::DrmRights(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmRights",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	DrmRights::DrmRights(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmRights",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -40,7 +40,7 @@ namespace android::drm
 			arg2
 		) {}
 	DrmRights::DrmRights(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmRights",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

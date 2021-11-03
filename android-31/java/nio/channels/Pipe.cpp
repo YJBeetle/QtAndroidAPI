@@ -7,7 +7,7 @@ namespace java::nio::channels
 	// Fields
 	
 	// QJniObject forward
-	Pipe::Pipe(QJniObject obj) : __JniBaseClass(obj) {}
+	Pipe::Pipe(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

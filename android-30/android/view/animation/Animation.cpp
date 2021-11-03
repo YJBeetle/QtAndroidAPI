@@ -77,16 +77,16 @@ namespace android::view::animation
 	}
 	
 	// QJniObject forward
-	Animation::Animation(QJniObject obj) : __JniBaseClass(obj) {}
+	Animation::Animation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Animation::Animation()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.animation.Animation",
 			"()V"
 		) {}
-	Animation::Animation(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Animation::Animation(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.animation.Animation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
@@ -143,7 +143,7 @@ namespace android::view::animation
 			"()Z"
 		);
 	}
-	__JniBaseClass Animation::getInterpolator()
+	JObject Animation::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -266,7 +266,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void Animation::setAnimationListener(__JniBaseClass arg0)
+	void Animation::setAnimationListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setAnimationListener",
@@ -322,7 +322,7 @@ namespace android::view::animation
 			arg0
 		);
 	}
-	void Animation::setInterpolator(__JniBaseClass arg0)
+	void Animation::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

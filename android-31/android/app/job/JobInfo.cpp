@@ -23,7 +23,7 @@ namespace android::app::job
 			"BACKOFF_POLICY_LINEAR"
 		);
 	}
-	__JniBaseClass JobInfo::CREATOR()
+	JObject JobInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.job.JobInfo",
@@ -96,7 +96,7 @@ namespace android::app::job
 	}
 	
 	// QJniObject forward
-	JobInfo::JobInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	JobInfo::JobInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

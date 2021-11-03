@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,7 +17,7 @@ namespace android::net::ipsec::ike
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionParams : public __JniBaseClass
+	class IkeSessionParams : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::net::ipsec::ike
 		static jint IKE_OPTION_MOBIKE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit IkeSessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IkeSessionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IkeSessionParams(QJniObject obj);
 		
 		// Constructors
@@ -36,7 +36,7 @@ namespace android::net::ipsec::ike
 		jboolean equals(jobject arg0);
 		jint getDpdDelaySeconds();
 		jint getHardLifetimeSeconds();
-		__JniBaseClass getIkeSaProposals();
+		JObject getIkeSaProposals();
 		android::net::ipsec::ike::IkeSessionParams_IkeAuthConfig getLocalAuthConfig();
 		android::net::ipsec::ike::IkeIdentification getLocalIdentification();
 		jint getNattKeepAliveDelaySeconds();

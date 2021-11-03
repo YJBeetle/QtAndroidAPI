@@ -5,11 +5,11 @@ namespace android::database
 	// Fields
 	
 	// QJniObject forward
-	DataSetObserver::DataSetObserver(QJniObject obj) : __JniBaseClass(obj) {}
+	DataSetObserver::DataSetObserver(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DataSetObserver::DataSetObserver()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.DataSetObserver",
 			"()V"
 		) {}

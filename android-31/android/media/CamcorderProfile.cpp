@@ -337,7 +337,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	CamcorderProfile::CamcorderProfile(QJniObject obj) : __JniBaseClass(obj) {}
+	CamcorderProfile::CamcorderProfile(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

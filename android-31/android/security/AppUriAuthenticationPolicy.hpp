@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::security
 {
-	class AppUriAuthenticationPolicy : public __JniBaseClass
+	class AppUriAuthenticationPolicy : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppUriAuthenticationPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppUriAuthenticationPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppUriAuthenticationPolicy(QJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::security
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAppAndUriMappings();
+		JObject getAppAndUriMappings();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

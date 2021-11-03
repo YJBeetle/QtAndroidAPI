@@ -6,16 +6,16 @@ namespace java::util::zip
 	// Fields
 	
 	// QJniObject forward
-	Inflater::Inflater(QJniObject obj) : __JniBaseClass(obj) {}
+	Inflater::Inflater(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Inflater::Inflater()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Inflater",
 			"()V"
 		) {}
 	Inflater::Inflater(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Inflater",
 			"(Z)V",
 			arg0

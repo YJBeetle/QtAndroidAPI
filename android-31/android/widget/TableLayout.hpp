@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -39,14 +39,14 @@ namespace android::widget
 		
 		// Constructors
 		TableLayout(android::content::Context arg0);
-		TableLayout(android::content::Context arg0, __JniBaseClass arg1);
+		TableLayout(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void addView(android::view::View arg0);
 		void addView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1);
 		void addView(android::view::View arg0, jint arg1);
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
-		android::widget::TableLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::TableLayout_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jboolean isColumnCollapsed(jint arg0);
 		jboolean isColumnShrinkable(jint arg0);
@@ -57,7 +57,7 @@ namespace android::widget
 		void setColumnCollapsed(jint arg0, jboolean arg1);
 		void setColumnShrinkable(jint arg0, jboolean arg1);
 		void setColumnStretchable(jint arg0, jboolean arg1);
-		void setOnHierarchyChangeListener(__JniBaseClass arg0);
+		void setOnHierarchyChangeListener(JObject arg0);
 		void setShrinkAllColumns(jboolean arg0);
 		void setStretchAllColumns(jboolean arg0);
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace javax::xml::validation
 {
@@ -9,29 +9,29 @@ namespace javax::xml::validation
 
 namespace javax::xml::validation
 {
-	class ValidatorHandler : public __JniBaseClass
+	class ValidatorHandler : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ValidatorHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ValidatorHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ValidatorHandler(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getContentHandler();
-		__JniBaseClass getErrorHandler();
+		JObject getContentHandler();
+		JObject getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
-		__JniBaseClass getResourceResolver();
+		JObject getResourceResolver();
 		javax::xml::validation::TypeInfoProvider getTypeInfoProvider();
-		void setContentHandler(__JniBaseClass arg0);
-		void setErrorHandler(__JniBaseClass arg0);
+		void setContentHandler(JObject arg0);
+		void setErrorHandler(JObject arg0);
 		void setFeature(jstring arg0, jboolean arg1);
 		void setProperty(jstring arg0, jobject arg1);
-		void setResourceResolver(__JniBaseClass arg0);
+		void setResourceResolver(JObject arg0);
 	};
 } // namespace javax::xml::validation
 

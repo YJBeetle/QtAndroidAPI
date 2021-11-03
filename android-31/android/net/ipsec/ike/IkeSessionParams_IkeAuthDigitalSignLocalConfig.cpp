@@ -26,14 +26,14 @@ namespace android::net::ipsec::ike
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	__JniBaseClass IkeSessionParams_IkeAuthDigitalSignLocalConfig::getIntermediateCertificates()
+	JObject IkeSessionParams_IkeAuthDigitalSignLocalConfig::getIntermediateCertificates()
 	{
 		return callObjectMethod(
 			"getIntermediateCertificates",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass IkeSessionParams_IkeAuthDigitalSignLocalConfig::getPrivateKey()
+	JObject IkeSessionParams_IkeAuthDigitalSignLocalConfig::getPrivateKey()
 	{
 		return callObjectMethod(
 			"getPrivateKey",

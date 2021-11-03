@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseObj.hpp"
 
 namespace android::content::res
@@ -149,7 +149,7 @@ namespace android::renderscript
 		void setFromFieldPacker(jint arg0, android::renderscript::FieldPacker arg1);
 		void setFromFieldPacker(jint arg0, jint arg1, android::renderscript::FieldPacker arg2);
 		void setFromFieldPacker(jint arg0, jint arg1, jint arg2, jint arg3, android::renderscript::FieldPacker arg4);
-		void setOnBufferAvailableListener(__JniBaseClass arg0);
+		void setOnBufferAvailableListener(JObject arg0);
 		void setSurface(android::view::Surface arg0);
 		void syncAll(jint arg0);
 	};

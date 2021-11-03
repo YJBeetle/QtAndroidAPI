@@ -5,11 +5,11 @@ namespace android::provider
 	// Fields
 	
 	// QJniObject forward
-	MediaStore_Images::MediaStore_Images(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Images::MediaStore_Images(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Images::MediaStore_Images()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Images",
 			"()V"
 		) {}

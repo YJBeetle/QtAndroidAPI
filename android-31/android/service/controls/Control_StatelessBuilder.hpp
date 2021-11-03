@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,13 +21,13 @@ namespace android::service::controls
 
 namespace android::service::controls
 {
-	class Control_StatelessBuilder : public __JniBaseClass
+	class Control_StatelessBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Control_StatelessBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Control_StatelessBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Control_StatelessBuilder(QJniObject obj);
 		
 		// Constructors

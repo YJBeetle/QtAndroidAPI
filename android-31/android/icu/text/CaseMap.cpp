@@ -10,7 +10,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	CaseMap::CaseMap(QJniObject obj) : __JniBaseClass(obj) {}
+	CaseMap::CaseMap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

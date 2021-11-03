@@ -6,7 +6,7 @@
 namespace android::content::res
 {
 	// Fields
-	__JniBaseClass ColorStateList::CREATOR()
+	JObject ColorStateList::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.res.ColorStateList",
@@ -16,11 +16,11 @@ namespace android::content::res
 	}
 	
 	// QJniObject forward
-	ColorStateList::ColorStateList(QJniObject obj) : __JniBaseClass(obj) {}
+	ColorStateList::ColorStateList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ColorStateList::ColorStateList(jarray arg0, jintArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.ColorStateList",
 			"([[I[I)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace android::content::res
 		) {}
 	
 	// Methods
-	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
+	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.ColorStateList",
@@ -38,7 +38,7 @@ namespace android::content::res
 			arg1.object()
 		);
 	}
-	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
+	android::content::res::ColorStateList ColorStateList::createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2)
 	{
 		return callStaticObjectMethod(
 			"android.content.res.ColorStateList",

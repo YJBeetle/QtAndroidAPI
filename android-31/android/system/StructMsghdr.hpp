@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::net
 {
@@ -9,7 +9,7 @@ namespace java::net
 
 namespace android::system
 {
-	class StructMsghdr : public __JniBaseClass
+	class StructMsghdr : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::system
 		java::net::SocketAddress msg_name();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StructMsghdr(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StructMsghdr(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StructMsghdr(QJniObject obj);
 		
 		// Constructors

@@ -9,11 +9,11 @@ namespace android::view::inputmethod
 	// Fields
 	
 	// QJniObject forward
-	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(__JniBaseClass arg0)
-		: __JniBaseClass(
+	InlineSuggestionsRequest_Builder::InlineSuggestionsRequest_Builder(JObject arg0)
+		: JObject(
 			"android.view.inputmethod.InlineSuggestionsRequest$Builder",
 			"(Ljava/util/List;)V",
 			arg0.object()
@@ -43,7 +43,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlinePresentationSpecs(__JniBaseClass arg0)
+	android::view::inputmethod::InlineSuggestionsRequest_Builder InlineSuggestionsRequest_Builder::setInlinePresentationSpecs(JObject arg0)
 	{
 		return callObjectMethod(
 			"setInlinePresentationSpecs",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AccessibleObject.hpp"
 
 namespace java::lang
@@ -24,9 +24,9 @@ namespace java::lang::reflect
 		// Methods
 		jarray getAnnotatedExceptionTypes();
 		jarray getAnnotatedParameterTypes();
-		__JniBaseClass getAnnotatedReceiverType();
-		__JniBaseClass getAnnotatedReturnType();
-		__JniBaseClass getAnnotation(jclass arg0);
+		JObject getAnnotatedReceiverType();
+		JObject getAnnotatedReturnType();
+		JObject getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jclass getDeclaringClass();

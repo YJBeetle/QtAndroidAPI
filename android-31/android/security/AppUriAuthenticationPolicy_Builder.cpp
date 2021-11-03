@@ -7,11 +7,11 @@ namespace android::security
 	// Fields
 	
 	// QJniObject forward
-	AppUriAuthenticationPolicy_Builder::AppUriAuthenticationPolicy_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AppUriAuthenticationPolicy_Builder::AppUriAuthenticationPolicy_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppUriAuthenticationPolicy_Builder::AppUriAuthenticationPolicy_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.security.AppUriAuthenticationPolicy$Builder",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,11 +33,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class ResolveInfo : public __JniBaseClass
+	class ResolveInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		android::content::pm::ActivityInfo activityInfo();
 		android::content::IntentFilter filter();
 		jint icon();
@@ -54,7 +54,7 @@ namespace android::content::pm
 		jint specificIndex();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ResolveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ResolveInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ResolveInfo(QJniObject obj);
 		
 		// Constructors
@@ -63,7 +63,7 @@ namespace android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jint getIconResource();
 		jboolean isCrossProfileIntentForwarderActivity();
 		android::graphics::drawable::Drawable loadIcon(android::content::pm::PackageManager arg0);

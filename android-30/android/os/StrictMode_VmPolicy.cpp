@@ -13,7 +13,7 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	StrictMode_VmPolicy::StrictMode_VmPolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	StrictMode_VmPolicy::StrictMode_VmPolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

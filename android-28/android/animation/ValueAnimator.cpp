@@ -80,7 +80,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	android::animation::ValueAnimator ValueAnimator::ofObject(__JniBaseClass arg0, jobjectArray arg1)
+	android::animation::ValueAnimator ValueAnimator::ofObject(JObject arg0, jobjectArray arg1)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ValueAnimator",
@@ -108,7 +108,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::addUpdateListener(__JniBaseClass arg0)
+	void ValueAnimator::addUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addUpdateListener",
@@ -173,7 +173,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	__JniBaseClass ValueAnimator::getInterpolator()
+	JObject ValueAnimator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -243,7 +243,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	void ValueAnimator::removeUpdateListener(__JniBaseClass arg0)
+	void ValueAnimator::removeUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeUpdateListener",
@@ -289,7 +289,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setEvaluator(__JniBaseClass arg0)
+	void ValueAnimator::setEvaluator(JObject arg0)
 	{
 		callMethod<void>(
 			"setEvaluator",
@@ -313,7 +313,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void ValueAnimator::setInterpolator(__JniBaseClass arg0)
+	void ValueAnimator::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

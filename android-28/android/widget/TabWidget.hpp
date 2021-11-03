@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -43,9 +43,9 @@ namespace android::widget
 		
 		// Constructors
 		TabWidget(android::content::Context arg0);
-		TabWidget(android::content::Context arg0, __JniBaseClass arg1);
-		TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TabWidget(android::content::Context arg0, JObject arg1);
+		TabWidget(android::content::Context arg0, JObject arg1, jint arg2);
+		TabWidget(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addView(android::view::View arg0);

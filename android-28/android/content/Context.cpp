@@ -701,17 +701,17 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	Context::Context(QJniObject obj) : __JniBaseClass(obj) {}
+	Context::Context(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Context::Context()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Context",
 			"()V"
 		) {}
 	
 	// Methods
-	jboolean Context::bindService(android::content::Intent arg0, __JniBaseClass arg1, jint arg2)
+	jboolean Context::bindService(android::content::Intent arg0, JObject arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"bindService",
@@ -1106,7 +1106,7 @@ namespace android::content
 			"()Ljava/io/File;"
 		);
 	}
-	__JniBaseClass Context::getMainExecutor()
+	JObject Context::getMainExecutor()
 	{
 		return callObjectMethod(
 			"getMainExecutor",
@@ -1176,7 +1176,7 @@ namespace android::content
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	__JniBaseClass Context::getSharedPreferences(jstring arg0, jint arg1)
+	JObject Context::getSharedPreferences(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -1312,7 +1312,7 @@ namespace android::content
 			arg0
 		);
 	}
-	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1)
+	android::content::res::TypedArray Context::obtainStyledAttributes(JObject arg0, jintArray arg1)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1330,7 +1330,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::content::res::TypedArray Context::obtainStyledAttributes(__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	android::content::res::TypedArray Context::obtainStyledAttributes(JObject arg0, jintArray arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"obtainStyledAttributes",
@@ -1358,7 +1358,7 @@ namespace android::content
 			arg1
 		);
 	}
-	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1368,7 +1368,7 @@ namespace android::content
 			arg2.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	android::database::sqlite::SQLiteDatabase Context::openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"openOrCreateDatabase",
@@ -1386,7 +1386,7 @@ namespace android::content
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void Context::registerComponentCallbacks(__JniBaseClass arg0)
+	void Context::registerComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"registerComponentCallbacks",
@@ -1707,7 +1707,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Context::unbindService(__JniBaseClass arg0)
+	void Context::unbindService(JObject arg0)
 	{
 		callMethod<void>(
 			"unbindService",
@@ -1715,7 +1715,7 @@ namespace android::content
 			arg0.object()
 		);
 	}
-	void Context::unregisterComponentCallbacks(__JniBaseClass arg0)
+	void Context::unregisterComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterComponentCallbacks",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -13,7 +13,7 @@ namespace java::io
 
 namespace android::graphics
 {
-	class Typeface : public __JniBaseClass
+	class Typeface : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android::graphics
 		static android::graphics::Typeface SERIF();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Typeface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Typeface(QJniObject obj);
 		
 		// Constructors

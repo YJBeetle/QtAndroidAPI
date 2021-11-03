@@ -7,7 +7,7 @@ namespace android::bluetooth::le
 	// Fields
 	
 	// QJniObject forward
-	ScanRecord::ScanRecord(QJniObject obj) : __JniBaseClass(obj) {}
+	ScanRecord::ScanRecord(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -56,14 +56,14 @@ namespace android::bluetooth::le
 			arg0.object()
 		).object<jbyteArray>();
 	}
-	__JniBaseClass ScanRecord::getServiceData()
+	JObject ScanRecord::getServiceData()
 	{
 		return callObjectMethod(
 			"getServiceData",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass ScanRecord::getServiceUuids()
+	JObject ScanRecord::getServiceUuids()
 	{
 		return callObjectMethod(
 			"getServiceUuids",

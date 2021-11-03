@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::telephony::ims
 {
@@ -13,7 +13,7 @@ namespace android::telephony::ims
 
 namespace android::telephony::ims
 {
-	class ImsManager : public __JniBaseClass
+	class ImsManager : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::telephony::ims
 		static jstring EXTRA_WFC_REGISTRATION_FAILURE_TITLE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ImsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImsManager(QJniObject obj);
 		
 		// Constructors

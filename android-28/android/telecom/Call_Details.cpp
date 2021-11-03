@@ -214,7 +214,7 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	Call_Details::Call_Details(QJniObject obj) : __JniBaseClass(obj) {}
+	Call_Details::Call_Details(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

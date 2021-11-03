@@ -11,11 +11,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	RenderNode::RenderNode(QJniObject obj) : __JniBaseClass(obj) {}
+	RenderNode::RenderNode(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RenderNode::RenderNode(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.RenderNode",
 			"(Ljava/lang/String;)V",
 			arg0

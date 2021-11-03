@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::os
 {
-	class PowerManager : public __JniBaseClass
+	class PowerManager : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::os
 		static jint SCREEN_DIM_WAKE_LOCK();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PowerManager(QJniObject obj);
 		
 		// Constructors

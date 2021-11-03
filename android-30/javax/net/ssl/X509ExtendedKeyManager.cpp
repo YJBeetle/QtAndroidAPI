@@ -6,7 +6,7 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	X509ExtendedKeyManager::X509ExtendedKeyManager(QJniObject obj) : __JniBaseClass(obj) {}
+	X509ExtendedKeyManager::X509ExtendedKeyManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

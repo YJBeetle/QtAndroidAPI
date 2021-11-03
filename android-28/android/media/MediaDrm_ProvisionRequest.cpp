@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaDrm_ProvisionRequest::MediaDrm_ProvisionRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_ProvisionRequest::MediaDrm_ProvisionRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

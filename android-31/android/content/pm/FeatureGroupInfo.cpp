@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass FeatureGroupInfo::CREATOR()
+	JObject FeatureGroupInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.FeatureGroupInfo",
@@ -21,16 +21,16 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	FeatureGroupInfo::FeatureGroupInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	FeatureGroupInfo::FeatureGroupInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FeatureGroupInfo::FeatureGroupInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.FeatureGroupInfo",
 			"()V"
 		) {}
 	FeatureGroupInfo::FeatureGroupInfo(android::content::pm::FeatureGroupInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.FeatureGroupInfo",
 			"(Landroid/content/pm/FeatureGroupInfo;)V",
 			arg0.object()

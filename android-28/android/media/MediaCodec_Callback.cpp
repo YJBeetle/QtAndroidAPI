@@ -9,11 +9,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaCodec_Callback::MediaCodec_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_Callback::MediaCodec_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodec_Callback::MediaCodec_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodec$Callback",
 			"()V"
 		) {}

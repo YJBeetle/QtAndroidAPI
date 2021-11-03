@@ -6,7 +6,7 @@ namespace android::content::pm::verify::domain
 	// Fields
 	
 	// QJniObject forward
-	DomainVerificationManager::DomainVerificationManager(QJniObject obj) : __JniBaseClass(obj) {}
+	DomainVerificationManager::DomainVerificationManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

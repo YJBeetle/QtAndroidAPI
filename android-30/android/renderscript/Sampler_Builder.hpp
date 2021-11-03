@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::renderscript
 {
@@ -17,13 +17,13 @@ namespace android::renderscript
 
 namespace android::renderscript
 {
-	class Sampler_Builder : public __JniBaseClass
+	class Sampler_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Sampler_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Sampler_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Sampler_Builder(QJniObject obj);
 		
 		// Constructors

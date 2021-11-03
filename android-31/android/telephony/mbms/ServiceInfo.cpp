@@ -7,7 +7,7 @@ namespace android::telephony::mbms
 	// Fields
 	
 	// QJniObject forward
-	ServiceInfo::ServiceInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ServiceInfo::ServiceInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace android::telephony::mbms
 			arg0
 		);
 	}
-	__JniBaseClass ServiceInfo::getLocales()
+	JObject ServiceInfo::getLocales()
 	{
 		return callObjectMethod(
 			"getLocales",
@@ -35,7 +35,7 @@ namespace android::telephony::mbms
 			arg0.object()
 		).object<jstring>();
 	}
-	__JniBaseClass ServiceInfo::getNamedContentLocales()
+	JObject ServiceInfo::getNamedContentLocales()
 	{
 		return callObjectMethod(
 			"getNamedContentLocales",

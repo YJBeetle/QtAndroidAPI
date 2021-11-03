@@ -61,16 +61,16 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	PackageItemInfo::PackageItemInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	PackageItemInfo::PackageItemInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageItemInfo::PackageItemInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageItemInfo",
 			"()V"
 		) {}
 	PackageItemInfo::PackageItemInfo(android::content::pm::PackageItemInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageItemInfo",
 			"(Landroid/content/pm/PackageItemInfo;)V",
 			arg0.object()
@@ -117,7 +117,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1)
+	JObject PackageItemInfo::loadXmlMetaData(android::content::pm::PackageManager arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"loadXmlMetaData",

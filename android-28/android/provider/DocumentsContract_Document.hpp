@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class DocumentsContract_Document : public __JniBaseClass
+	class DocumentsContract_Document : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::provider
 		static jstring MIME_TYPE_DIR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DocumentsContract_Document(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DocumentsContract_Document(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract_Document(QJniObject obj);
 		
 		// Constructors

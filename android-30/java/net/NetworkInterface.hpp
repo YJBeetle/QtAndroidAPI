@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::net
 {
@@ -9,13 +9,13 @@ namespace java::net
 
 namespace java::net
 {
-	class NetworkInterface : public __JniBaseClass
+	class NetworkInterface : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NetworkInterface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkInterface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkInterface(QJniObject obj);
 		
 		// Constructors
@@ -24,25 +24,25 @@ namespace java::net
 		static java::net::NetworkInterface getByIndex(jint arg0);
 		static java::net::NetworkInterface getByInetAddress(java::net::InetAddress arg0);
 		static java::net::NetworkInterface getByName(jstring arg0);
-		static __JniBaseClass getNetworkInterfaces();
-		static __JniBaseClass networkInterfaces();
+		static JObject getNetworkInterfaces();
+		static JObject networkInterfaces();
 		jboolean equals(jobject arg0);
 		jstring getDisplayName();
 		jbyteArray getHardwareAddress();
 		jint getIndex();
-		__JniBaseClass getInetAddresses();
-		__JniBaseClass getInterfaceAddresses();
+		JObject getInetAddresses();
+		JObject getInterfaceAddresses();
 		jint getMTU();
 		jstring getName();
 		java::net::NetworkInterface getParent();
-		__JniBaseClass getSubInterfaces();
+		JObject getSubInterfaces();
 		jint hashCode();
-		__JniBaseClass inetAddresses();
+		JObject inetAddresses();
 		jboolean isLoopback();
 		jboolean isPointToPoint();
 		jboolean isUp();
 		jboolean isVirtual();
-		__JniBaseClass subInterfaces();
+		JObject subInterfaces();
 		jboolean supportsMulticast();
 		jstring toString();
 	};

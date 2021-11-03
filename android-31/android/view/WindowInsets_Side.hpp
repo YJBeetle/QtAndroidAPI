@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class WindowInsets_Side : public __JniBaseClass
+	class WindowInsets_Side : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::view
 		static jint TOP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WindowInsets_Side(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WindowInsets_Side(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WindowInsets_Side(QJniObject obj);
 		
 		// Constructors

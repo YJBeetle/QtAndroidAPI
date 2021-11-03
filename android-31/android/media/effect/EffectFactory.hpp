@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::effect
 {
@@ -9,7 +9,7 @@ namespace android::media::effect
 
 namespace android::media::effect
 {
-	class EffectFactory : public __JniBaseClass
+	class EffectFactory : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::media::effect
 		static jstring EFFECT_VIGNETTE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EffectFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EffectFactory(QJniObject obj);
 		
 		// Constructors

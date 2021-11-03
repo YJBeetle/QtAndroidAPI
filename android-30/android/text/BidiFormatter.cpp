@@ -6,7 +6,7 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	BidiFormatter::BidiFormatter(QJniObject obj) : __JniBaseClass(obj) {}
+	BidiFormatter::BidiFormatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -67,7 +67,7 @@ namespace android::text
 			arg0
 		).object<jstring>();
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1)
+	jstring BidiFormatter::unicodeWrap(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"unicodeWrap",
@@ -85,7 +85,7 @@ namespace android::text
 			arg1
 		).object<jstring>();
 	}
-	jstring BidiFormatter::unicodeWrap(jstring arg0, __JniBaseClass arg1, jboolean arg2)
+	jstring BidiFormatter::unicodeWrap(jstring arg0, JObject arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"unicodeWrap",

@@ -600,11 +600,11 @@ namespace android
 	}
 	
 	// QJniObject forward
-	R_id::R_id(QJniObject obj) : __JniBaseClass(obj) {}
+	R_id::R_id(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_id::R_id()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$id",
 			"()V"
 		) {}

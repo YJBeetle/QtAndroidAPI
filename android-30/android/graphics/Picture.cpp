@@ -6,16 +6,16 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	Picture::Picture(QJniObject obj) : __JniBaseClass(obj) {}
+	Picture::Picture(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Picture::Picture()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Picture",
 			"()V"
 		) {}
 	Picture::Picture(android::graphics::Picture &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Picture",
 			"(Landroid/graphics/Picture;)V",
 			arg0.object()

@@ -5,23 +5,23 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QJniObject obj) : __JniBaseClass(obj) {}
+	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.PhoneNumberFormattingTextWatcher",
 			"()V"
 		) {}
 	PhoneNumberFormattingTextWatcher::PhoneNumberFormattingTextWatcher(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.PhoneNumberFormattingTextWatcher",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	
 	// Methods
-	void PhoneNumberFormattingTextWatcher::afterTextChanged(__JniBaseClass arg0)
+	void PhoneNumberFormattingTextWatcher::afterTextChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"afterTextChanged",

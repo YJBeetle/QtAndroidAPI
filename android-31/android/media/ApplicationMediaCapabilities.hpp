@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,25 +9,25 @@ namespace android::os
 
 namespace android::media
 {
-	class ApplicationMediaCapabilities : public __JniBaseClass
+	class ApplicationMediaCapabilities : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ApplicationMediaCapabilities(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ApplicationMediaCapabilities(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationMediaCapabilities(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::media::ApplicationMediaCapabilities createFromXml(__JniBaseClass arg0);
+		static android::media::ApplicationMediaCapabilities createFromXml(JObject arg0);
 		jint describeContents();
-		__JniBaseClass getSupportedHdrTypes();
-		__JniBaseClass getSupportedVideoMimeTypes();
-		__JniBaseClass getUnsupportedHdrTypes();
-		__JniBaseClass getUnsupportedVideoMimeTypes();
+		JObject getSupportedHdrTypes();
+		JObject getSupportedVideoMimeTypes();
+		JObject getUnsupportedHdrTypes();
+		JObject getUnsupportedVideoMimeTypes();
 		jboolean isFormatSpecified(jstring arg0);
 		jboolean isHdrTypeSupported(jstring arg0);
 		jboolean isVideoMimeTypeSupported(jstring arg0);

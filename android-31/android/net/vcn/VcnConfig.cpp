@@ -4,7 +4,7 @@
 namespace android::net::vcn
 {
 	// Fields
-	__JniBaseClass VcnConfig::CREATOR()
+	JObject VcnConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.vcn.VcnConfig",
@@ -14,7 +14,7 @@ namespace android::net::vcn
 	}
 	
 	// QJniObject forward
-	VcnConfig::VcnConfig(QJniObject obj) : __JniBaseClass(obj) {}
+	VcnConfig::VcnConfig(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::net::vcn
 			arg0
 		);
 	}
-	__JniBaseClass VcnConfig::getGatewayConnectionConfigs()
+	JObject VcnConfig::getGatewayConnectionConfigs()
 	{
 		return callObjectMethod(
 			"getGatewayConnectionConfigs",

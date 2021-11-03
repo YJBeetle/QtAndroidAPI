@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
 namespace android::media::audiofx
@@ -44,7 +44,7 @@ namespace android::media::audiofx
 		jstring getPresetName(jshort arg0);
 		android::media::audiofx::Equalizer_Settings getProperties();
 		void setBandLevel(jshort arg0, jshort arg1);
-		void setParameterListener(__JniBaseClass arg0);
+		void setParameterListener(JObject arg0);
 		void setProperties(android::media::audiofx::Equalizer_Settings arg0);
 		void usePreset(jshort arg0);
 	};

@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaCodecInfo::MediaCodecInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo::MediaCodecInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

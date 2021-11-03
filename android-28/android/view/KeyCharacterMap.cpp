@@ -33,7 +33,7 @@ namespace android::view
 			"COMBINING_ACCENT_MASK"
 		);
 	}
-	__JniBaseClass KeyCharacterMap::CREATOR()
+	JObject KeyCharacterMap::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.KeyCharacterMap",
@@ -106,7 +106,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	KeyCharacterMap::KeyCharacterMap(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyCharacterMap::KeyCharacterMap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

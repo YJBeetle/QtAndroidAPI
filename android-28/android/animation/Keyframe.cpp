@@ -5,11 +5,11 @@ namespace android::animation
 	// Fields
 	
 	// QJniObject forward
-	Keyframe::Keyframe(QJniObject obj) : __JniBaseClass(obj) {}
+	Keyframe::Keyframe(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Keyframe::Keyframe()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.Keyframe",
 			"()V"
 		) {}
@@ -86,7 +86,7 @@ namespace android::animation
 			"()F"
 		);
 	}
-	__JniBaseClass Keyframe::getInterpolator()
+	JObject Keyframe::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -122,7 +122,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Keyframe::setInterpolator(__JniBaseClass arg0)
+	void Keyframe::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

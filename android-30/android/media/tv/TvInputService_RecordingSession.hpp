@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::media::tv
 {
-	class TvInputService_RecordingSession : public __JniBaseClass
+	class TvInputService_RecordingSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TvInputService_RecordingSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvInputService_RecordingSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvInputService_RecordingSession(QJniObject obj);
 		
 		// Constructors

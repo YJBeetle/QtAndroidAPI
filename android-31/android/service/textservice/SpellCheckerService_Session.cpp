@@ -8,11 +8,11 @@ namespace android::service::textservice
 	// Fields
 	
 	// QJniObject forward
-	SpellCheckerService_Session::SpellCheckerService_Session(QJniObject obj) : __JniBaseClass(obj) {}
+	SpellCheckerService_Session::SpellCheckerService_Session(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SpellCheckerService_Session::SpellCheckerService_Session()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.textservice.SpellCheckerService$Session",
 			"()V"
 		) {}

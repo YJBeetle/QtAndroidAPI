@@ -4,7 +4,7 @@
 namespace android::view::translation
 {
 	// Fields
-	__JniBaseClass TranslationRequest::CREATOR()
+	JObject TranslationRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.translation.TranslationRequest",
@@ -42,7 +42,7 @@ namespace android::view::translation
 	}
 	
 	// QJniObject forward
-	TranslationRequest::TranslationRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	TranslationRequest::TranslationRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -61,14 +61,14 @@ namespace android::view::translation
 			"()I"
 		);
 	}
-	__JniBaseClass TranslationRequest::getTranslationRequestValues()
+	JObject TranslationRequest::getTranslationRequestValues()
 	{
 		return callObjectMethod(
 			"getTranslationRequestValues",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass TranslationRequest::getViewTranslationRequests()
+	JObject TranslationRequest::getViewTranslationRequests()
 	{
 		return callObjectMethod(
 			"getViewTranslationRequests",

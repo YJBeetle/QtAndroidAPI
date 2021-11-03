@@ -5,7 +5,7 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	WindowInsets_Type::WindowInsets_Type(QJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsets_Type::WindowInsets_Type(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

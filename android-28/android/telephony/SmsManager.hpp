@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,7 +25,7 @@ namespace java::util
 
 namespace android::telephony
 {
-	class SmsManager : public __JniBaseClass
+	class SmsManager : public JObject
 	{
 	public:
 		// Fields
@@ -84,7 +84,7 @@ namespace android::telephony
 		static jint STATUS_ON_ICC_UNSENT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SmsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SmsManager(QJniObject obj);
 		
 		// Constructors

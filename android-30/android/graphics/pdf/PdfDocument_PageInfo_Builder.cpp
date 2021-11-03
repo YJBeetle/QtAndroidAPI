@@ -7,11 +7,11 @@ namespace android::graphics::pdf
 	// Fields
 	
 	// QJniObject forward
-	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PdfDocument_PageInfo_Builder::PdfDocument_PageInfo_Builder(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.pdf.PdfDocument$PageInfo$Builder",
 			"(III)V",
 			arg0,

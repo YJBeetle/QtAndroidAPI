@@ -4,7 +4,7 @@
 namespace android::telephony::euicc
 {
 	// Fields
-	__JniBaseClass EuiccInfo::CREATOR()
+	JObject EuiccInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.euicc.EuiccInfo",
@@ -14,11 +14,11 @@ namespace android::telephony::euicc
 	}
 	
 	// QJniObject forward
-	EuiccInfo::EuiccInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	EuiccInfo::EuiccInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EuiccInfo::EuiccInfo(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.euicc.EuiccInfo",
 			"(Ljava/lang/String;)V",
 			arg0

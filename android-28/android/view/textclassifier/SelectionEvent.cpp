@@ -84,7 +84,7 @@ namespace android::view::textclassifier
 			"ACTION_SMART_SHARE"
 		);
 	}
-	__JniBaseClass SelectionEvent::CREATOR()
+	JObject SelectionEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.SelectionEvent",
@@ -150,7 +150,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	SelectionEvent::SelectionEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	SelectionEvent::SelectionEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

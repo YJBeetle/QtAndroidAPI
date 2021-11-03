@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace java::time::format
@@ -36,7 +36,7 @@ namespace java::time::chrono
 		static jarray values();
 		jstring getDisplayName(java::time::format::TextStyle arg0, java::util::Locale arg1);
 		jint getValue();
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 	};
 } // namespace java::time::chrono
 

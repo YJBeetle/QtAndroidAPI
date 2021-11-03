@@ -64,7 +64,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	UiAutomation::UiAutomation(QJniObject obj) : __JniBaseClass(obj) {}
+	UiAutomation::UiAutomation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -106,7 +106,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	android::view::accessibility::AccessibilityEvent UiAutomation::executeAndWaitForEvent(__JniBaseClass arg0, __JniBaseClass arg1, jlong arg2)
+	android::view::accessibility::AccessibilityEvent UiAutomation::executeAndWaitForEvent(JObject arg0, JObject arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"executeAndWaitForEvent",
@@ -161,7 +161,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass UiAutomation::getWindows()
+	JObject UiAutomation::getWindows()
 	{
 		return callObjectMethod(
 			"getWindows",
@@ -230,7 +230,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void UiAutomation::setOnAccessibilityEventListener(__JniBaseClass arg0)
+	void UiAutomation::setOnAccessibilityEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnAccessibilityEventListener",

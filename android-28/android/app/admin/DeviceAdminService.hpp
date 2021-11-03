@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../Service.hpp"
@@ -25,7 +25,7 @@ namespace android::app::admin
 		DeviceAdminService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 	};
 } // namespace android::app::admin
 

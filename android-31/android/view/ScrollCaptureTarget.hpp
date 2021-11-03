@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,20 +17,20 @@ namespace android::view
 
 namespace android::view
 {
-	class ScrollCaptureTarget : public __JniBaseClass
+	class ScrollCaptureTarget : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ScrollCaptureTarget(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScrollCaptureTarget(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScrollCaptureTarget(QJniObject obj);
 		
 		// Constructors
-		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, __JniBaseClass arg3);
+		ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3);
 		
 		// Methods
-		__JniBaseClass getCallback();
+		JObject getCallback();
 		android::view::View getContainingView();
 		jint getHint();
 		android::graphics::Rect getLocalVisibleRect();

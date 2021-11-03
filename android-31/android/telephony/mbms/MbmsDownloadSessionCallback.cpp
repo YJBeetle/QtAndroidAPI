@@ -5,11 +5,11 @@ namespace android::telephony::mbms
 	// Fields
 	
 	// QJniObject forward
-	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MbmsDownloadSessionCallback::MbmsDownloadSessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.mbms.MbmsDownloadSessionCallback",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::telephony::mbms
 			arg1
 		);
 	}
-	void MbmsDownloadSessionCallback::onFileServicesUpdated(__JniBaseClass arg0)
+	void MbmsDownloadSessionCallback::onFileServicesUpdated(JObject arg0)
 	{
 		callMethod<void>(
 			"onFileServicesUpdated",

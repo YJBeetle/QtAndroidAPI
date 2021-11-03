@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::app
 {
-	class ActivityManager_RecentTaskInfo : public __JniBaseClass
+	class ActivityManager_RecentTaskInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jint affiliatedTaskId();
 		android::content::ComponentName baseActivity();
 		android::content::Intent baseIntent();
@@ -38,7 +38,7 @@ namespace android::app
 		android::content::ComponentName topActivity();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ActivityManager_RecentTaskInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActivityManager_RecentTaskInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_RecentTaskInfo(QJniObject obj);
 		
 		// Constructors

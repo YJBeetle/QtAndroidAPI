@@ -6,24 +6,24 @@ namespace android::widget
 	// Fields
 	
 	// QJniObject forward
-	OverScroller::OverScroller(QJniObject obj) : __JniBaseClass(obj) {}
+	OverScroller::OverScroller(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	OverScroller::OverScroller(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.OverScroller",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	OverScroller::OverScroller(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.widget.OverScroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3)
-		: __JniBaseClass(
+	OverScroller::OverScroller(android::content::Context arg0, JObject arg1, jfloat arg2, jfloat arg3)
+		: JObject(
 			"android.widget.OverScroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;FF)V",
 			arg0.object(),
@@ -31,8 +31,8 @@ namespace android::widget
 			arg2,
 			arg3
 		) {}
-	OverScroller::OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3, jboolean arg4)
-		: __JniBaseClass(
+	OverScroller::OverScroller(android::content::Context arg0, JObject arg1, jfloat arg2, jfloat arg3, jboolean arg4)
+		: JObject(
 			"android.widget.OverScroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;FFZ)V",
 			arg0.object(),

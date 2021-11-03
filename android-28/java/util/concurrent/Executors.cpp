@@ -5,12 +5,12 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	Executors::Executors(QJniObject obj) : __JniBaseClass(obj) {}
+	Executors::Executors(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Executors::callable(__JniBaseClass arg0)
+	JObject Executors::callable(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -19,7 +19,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::callable(__JniBaseClass arg0, jobject arg1)
+	JObject Executors::callable(JObject arg0, jobject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -29,7 +29,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass Executors::defaultThreadFactory()
+	JObject Executors::defaultThreadFactory()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -37,7 +37,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadFactory;"
 		);
 	}
-	__JniBaseClass Executors::newCachedThreadPool()
+	JObject Executors::newCachedThreadPool()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -45,7 +45,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	__JniBaseClass Executors::newCachedThreadPool(__JniBaseClass arg0)
+	JObject Executors::newCachedThreadPool(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::newFixedThreadPool(jint arg0)
+	JObject Executors::newFixedThreadPool(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -63,7 +63,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass Executors::newFixedThreadPool(jint arg0, __JniBaseClass arg1)
+	JObject Executors::newFixedThreadPool(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -73,7 +73,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	__JniBaseClass Executors::newScheduledThreadPool(jint arg0)
+	JObject Executors::newScheduledThreadPool(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -82,7 +82,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass Executors::newScheduledThreadPool(jint arg0, __JniBaseClass arg1)
+	JObject Executors::newScheduledThreadPool(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -92,7 +92,7 @@ namespace java::util::concurrent
 			arg1.object()
 		);
 	}
-	__JniBaseClass Executors::newSingleThreadExecutor()
+	JObject Executors::newSingleThreadExecutor()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -100,7 +100,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	__JniBaseClass Executors::newSingleThreadExecutor(__JniBaseClass arg0)
+	JObject Executors::newSingleThreadExecutor(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -109,7 +109,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::newSingleThreadScheduledExecutor()
+	JObject Executors::newSingleThreadScheduledExecutor()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -117,7 +117,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ScheduledExecutorService;"
 		);
 	}
-	__JniBaseClass Executors::newSingleThreadScheduledExecutor(__JniBaseClass arg0)
+	JObject Executors::newSingleThreadScheduledExecutor(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -126,7 +126,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::newWorkStealingPool()
+	JObject Executors::newWorkStealingPool()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -134,7 +134,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ExecutorService;"
 		);
 	}
-	__JniBaseClass Executors::newWorkStealingPool(jint arg0)
+	JObject Executors::newWorkStealingPool(jint arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -143,7 +143,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass Executors::privilegedCallable(__JniBaseClass arg0)
+	JObject Executors::privilegedCallable(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -152,7 +152,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::privilegedCallableUsingCurrentClassLoader(__JniBaseClass arg0)
+	JObject Executors::privilegedCallableUsingCurrentClassLoader(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -161,7 +161,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::privilegedThreadFactory()
+	JObject Executors::privilegedThreadFactory()
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadFactory;"
 		);
 	}
-	__JniBaseClass Executors::unconfigurableExecutorService(__JniBaseClass arg0)
+	JObject Executors::unconfigurableExecutorService(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",
@@ -178,7 +178,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass Executors::unconfigurableScheduledExecutorService(__JniBaseClass arg0)
+	JObject Executors::unconfigurableScheduledExecutorService(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.Executors",

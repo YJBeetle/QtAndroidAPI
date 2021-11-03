@@ -7,17 +7,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QJniObject forward
-	FutureTask::FutureTask(QJniObject obj) : __JniBaseClass(obj) {}
+	FutureTask::FutureTask(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	FutureTask::FutureTask(__JniBaseClass arg0)
-		: __JniBaseClass(
+	FutureTask::FutureTask(JObject arg0)
+		: JObject(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/util/concurrent/Callable;)V",
 			arg0.object()
 		) {}
-	FutureTask::FutureTask(__JniBaseClass arg0, jobject arg1)
-		: __JniBaseClass(
+	FutureTask::FutureTask(JObject arg0, jobject arg1)
+		: JObject(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
 			arg0.object(),

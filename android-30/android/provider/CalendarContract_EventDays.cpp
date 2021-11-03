@@ -15,12 +15,12 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	CalendarContract_EventDays::CalendarContract_EventDays(QJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_EventDays::CalendarContract_EventDays(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
+	JObject CalendarContract_EventDays::query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$EventDays",

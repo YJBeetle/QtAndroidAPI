@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,13 +33,13 @@ namespace java::nio::channels
 
 namespace java::net
 {
-	class DatagramSocket : public __JniBaseClass
+	class DatagramSocket : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DatagramSocket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DatagramSocket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DatagramSocket(QJniObject obj);
 		
 		// Constructors
@@ -49,7 +49,7 @@ namespace java::net
 		DatagramSocket(jint arg0, java::net::InetAddress arg1);
 		
 		// Methods
-		static void setDatagramSocketImplFactory(__JniBaseClass arg0);
+		static void setDatagramSocketImplFactory(JObject arg0);
 		void bind(java::net::SocketAddress arg0);
 		void close();
 		void connect(java::net::SocketAddress arg0);
@@ -61,7 +61,7 @@ namespace java::net
 		java::net::InetAddress getLocalAddress();
 		jint getLocalPort();
 		java::net::SocketAddress getLocalSocketAddress();
-		jobject getOption(__JniBaseClass arg0);
+		jobject getOption(JObject arg0);
 		jint getPort();
 		jint getReceiveBufferSize();
 		java::net::SocketAddress getRemoteSocketAddress();
@@ -75,13 +75,13 @@ namespace java::net
 		void receive(java::net::DatagramPacket arg0);
 		void send(java::net::DatagramPacket arg0);
 		void setBroadcast(jboolean arg0);
-		java::net::DatagramSocket setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::DatagramSocket setOption(JObject arg0, jobject arg1);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
 		void setSendBufferSize(jint arg0);
 		void setSoTimeout(jint arg0);
 		void setTrafficClass(jint arg0);
-		__JniBaseClass supportedOptions();
+		JObject supportedOptions();
 	};
 } // namespace java::net
 

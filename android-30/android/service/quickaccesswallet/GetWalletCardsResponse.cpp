@@ -4,7 +4,7 @@
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	__JniBaseClass GetWalletCardsResponse::CREATOR()
+	JObject GetWalletCardsResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.GetWalletCardsResponse",
@@ -14,11 +14,11 @@ namespace android::service::quickaccesswallet
 	}
 	
 	// QJniObject forward
-	GetWalletCardsResponse::GetWalletCardsResponse(QJniObject obj) : __JniBaseClass(obj) {}
+	GetWalletCardsResponse::GetWalletCardsResponse(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GetWalletCardsResponse::GetWalletCardsResponse(__JniBaseClass arg0, jint arg1)
-		: __JniBaseClass(
+	GetWalletCardsResponse::GetWalletCardsResponse(JObject arg0, jint arg1)
+		: JObject(
 			"android.service.quickaccesswallet.GetWalletCardsResponse",
 			"(Ljava/util/List;I)V",
 			arg0.object(),
@@ -40,7 +40,7 @@ namespace android::service::quickaccesswallet
 			"()I"
 		);
 	}
-	__JniBaseClass GetWalletCardsResponse::getWalletCards()
+	JObject GetWalletCardsResponse::getWalletCards()
 	{
 		return callObjectMethod(
 			"getWalletCards",

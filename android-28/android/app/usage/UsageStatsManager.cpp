@@ -69,7 +69,7 @@ namespace android::app::usage
 	}
 	
 	// QJniObject forward
-	UsageStatsManager::UsageStatsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	UsageStatsManager::UsageStatsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -89,7 +89,7 @@ namespace android::app::usage
 			arg0
 		);
 	}
-	__JniBaseClass UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
+	JObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"queryAndAggregateUsageStats",
@@ -98,7 +98,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	__JniBaseClass UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"queryConfigurations",
@@ -108,7 +108,7 @@ namespace android::app::usage
 			arg2
 		);
 	}
-	__JniBaseClass UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryEventStats(jint arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"queryEventStats",
@@ -136,7 +136,7 @@ namespace android::app::usage
 			arg1
 		);
 	}
-	__JniBaseClass UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
+	JObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"queryUsageStats",

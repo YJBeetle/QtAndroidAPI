@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -9,13 +9,13 @@ namespace android::graphics::drawable
 
 namespace android::graphics::drawable
 {
-	class Animatable2_AnimationCallback : public __JniBaseClass
+	class Animatable2_AnimationCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Animatable2_AnimationCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Animatable2_AnimationCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Animatable2_AnimationCallback(QJniObject obj);
 		
 		// Constructors

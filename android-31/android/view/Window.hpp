@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -77,7 +77,7 @@ namespace android::view
 
 namespace android::view
 {
-	class Window : public __JniBaseClass
+	class Window : public JObject
 	{
 	public:
 		// Fields
@@ -111,7 +111,7 @@ namespace android::view
 		static jstring STATUS_BAR_BACKGROUND_TRANSITION_NAME();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Window(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Window(QJniObject obj);
 		
 		// Constructors
@@ -121,7 +121,7 @@ namespace android::view
 		static jint getDefaultFeatures(android::content::Context arg0);
 		void addContentView(android::view::View arg0, android::view::ViewGroup_LayoutParams arg1);
 		void addFlags(jint arg0);
-		void addOnFrameMetricsAvailableListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void addOnFrameMetricsAvailableListener(JObject arg0, android::os::Handler arg1);
 		void clearFlags(jint arg0);
 		void closeAllPanels();
 		void closePanel(jint arg0);
@@ -129,7 +129,7 @@ namespace android::view
 		jboolean getAllowEnterTransitionOverlap();
 		jboolean getAllowReturnTransitionOverlap();
 		android::view::WindowManager_LayoutParams getAttributes();
-		__JniBaseClass getCallback();
+		JObject getCallback();
 		jint getColorMode();
 		android::view::Window getContainer();
 		android::transition::Scene getContentScene();
@@ -138,25 +138,25 @@ namespace android::view
 		android::view::View getDecorView();
 		android::transition::Transition getEnterTransition();
 		android::transition::Transition getExitTransition();
-		__JniBaseClass getInsetsController();
+		JObject getInsetsController();
 		android::view::LayoutInflater getLayoutInflater();
 		android::media::session::MediaController getMediaController();
 		jint getNavigationBarColor();
 		jint getNavigationBarDividerColor();
 		android::transition::Transition getReenterTransition();
 		android::transition::Transition getReturnTransition();
-		__JniBaseClass getRootSurfaceControl();
+		JObject getRootSurfaceControl();
 		android::transition::Transition getSharedElementEnterTransition();
 		android::transition::Transition getSharedElementExitTransition();
 		android::transition::Transition getSharedElementReenterTransition();
 		android::transition::Transition getSharedElementReturnTransition();
 		jboolean getSharedElementsUseOverlay();
 		jint getStatusBarColor();
-		__JniBaseClass getSystemGestureExclusionRects();
+		JObject getSystemGestureExclusionRects();
 		jlong getTransitionBackgroundFadeDuration();
 		android::transition::TransitionManager getTransitionManager();
 		jint getVolumeControlStream();
-		__JniBaseClass getWindowManager();
+		JObject getWindowManager();
 		android::content::res::TypedArray getWindowStyle();
 		jboolean hasChildren();
 		jboolean hasFeature(jint arg0);
@@ -175,8 +175,8 @@ namespace android::view
 		jboolean performContextMenuIdentifierAction(jint arg0, jint arg1);
 		jboolean performPanelIdentifierAction(jint arg0, jint arg1, jint arg2);
 		jboolean performPanelShortcut(jint arg0, jint arg1, android::view::KeyEvent arg2, jint arg3);
-		void registerScrollCaptureCallback(__JniBaseClass arg0);
-		void removeOnFrameMetricsAvailableListener(__JniBaseClass arg0);
+		void registerScrollCaptureCallback(JObject arg0);
+		void removeOnFrameMetricsAvailableListener(JObject arg0);
 		jboolean requestFeature(jint arg0);
 		android::view::View requireViewById(jint arg0);
 		void restoreHierarchyState(android::os::Bundle arg0);
@@ -187,7 +187,7 @@ namespace android::view
 		void setBackgroundBlurRadius(jint arg0);
 		void setBackgroundDrawable(android::graphics::drawable::Drawable arg0);
 		void setBackgroundDrawableResource(jint arg0);
-		void setCallback(__JniBaseClass arg0);
+		void setCallback(JObject arg0);
 		void setChildDrawable(jint arg0, android::graphics::drawable::Drawable arg1);
 		void setChildInt(jint arg0, jint arg1);
 		void setClipToOutline(jboolean arg0);
@@ -222,7 +222,7 @@ namespace android::view
 		void setPreferMinimalPostProcessing(jboolean arg0);
 		void setReenterTransition(android::transition::Transition arg0);
 		void setResizingCaptionDrawable(android::graphics::drawable::Drawable arg0);
-		void setRestrictedCaptionAreaListener(__JniBaseClass arg0);
+		void setRestrictedCaptionAreaListener(JObject arg0);
 		void setReturnTransition(android::transition::Transition arg0);
 		void setSharedElementEnterTransition(android::transition::Transition arg0);
 		void setSharedElementExitTransition(android::transition::Transition arg0);
@@ -233,7 +233,7 @@ namespace android::view
 		void setStatusBarColor(jint arg0);
 		void setStatusBarContrastEnforced(jboolean arg0);
 		void setSustainedPerformanceMode(jboolean arg0);
-		void setSystemGestureExclusionRects(__JniBaseClass arg0);
+		void setSystemGestureExclusionRects(JObject arg0);
 		void setTitle(jstring arg0);
 		void setTitleColor(jint arg0);
 		void setTransitionBackgroundFadeDuration(jlong arg0);
@@ -243,18 +243,18 @@ namespace android::view
 		void setUiOptions(jint arg0, jint arg1);
 		void setVolumeControlStream(jint arg0);
 		void setWindowAnimations(jint arg0);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
-		void setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2, jboolean arg3);
+		void setWindowManager(JObject arg0, JObject arg1, jstring arg2);
+		void setWindowManager(JObject arg0, JObject arg1, jstring arg2, jboolean arg3);
 		jboolean superDispatchGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean superDispatchKeyEvent(android::view::KeyEvent arg0);
 		jboolean superDispatchKeyShortcutEvent(android::view::KeyEvent arg0);
 		jboolean superDispatchTouchEvent(android::view::MotionEvent arg0);
 		jboolean superDispatchTrackballEvent(android::view::MotionEvent arg0);
-		void takeInputQueue(__JniBaseClass arg0);
+		void takeInputQueue(JObject arg0);
 		void takeKeyEvents(jboolean arg0);
-		void takeSurface(__JniBaseClass arg0);
+		void takeSurface(JObject arg0);
 		void togglePanel(jint arg0, android::view::KeyEvent arg1);
-		void unregisterScrollCaptureCallback(__JniBaseClass arg0);
+		void unregisterScrollCaptureCallback(JObject arg0);
 	};
 } // namespace android::view
 

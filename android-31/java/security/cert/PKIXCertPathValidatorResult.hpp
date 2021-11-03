@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security::cert
 {
@@ -9,22 +9,22 @@ namespace java::security::cert
 
 namespace java::security::cert
 {
-	class PKIXCertPathValidatorResult : public __JniBaseClass
+	class PKIXCertPathValidatorResult : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PKIXCertPathValidatorResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PKIXCertPathValidatorResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXCertPathValidatorResult(QJniObject obj);
 		
 		// Constructors
-		PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		PKIXCertPathValidatorResult(java::security::cert::TrustAnchor arg0, JObject arg1, JObject arg2);
 		
 		// Methods
 		jobject clone();
-		__JniBaseClass getPolicyTree();
-		__JniBaseClass getPublicKey();
+		JObject getPolicyTree();
+		JObject getPublicKey();
 		java::security::cert::TrustAnchor getTrustAnchor();
 		jstring toString();
 	};

@@ -127,14 +127,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1)
+	GridLayout::GridLayout(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.widget.GridLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	GridLayout::GridLayout(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.widget.GridLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -142,7 +142,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	GridLayout::GridLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	GridLayout::GridLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::ViewGroup(
 			"android.widget.GridLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -237,7 +237,7 @@ namespace android::widget
 			arg3
 		);
 	}
-	android::widget::GridLayout_LayoutParams GridLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::GridLayout_LayoutParams GridLayout::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

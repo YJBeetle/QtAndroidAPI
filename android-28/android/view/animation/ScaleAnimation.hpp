@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::content
@@ -24,7 +24,7 @@ namespace android::view::animation
 		ScaleAnimation(QJniObject obj);
 		
 		// Constructors
-		ScaleAnimation(android::content::Context arg0, __JniBaseClass arg1);
+		ScaleAnimation(android::content::Context arg0, JObject arg1);
 		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		ScaleAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jfloat arg5, jint arg6, jfloat arg7);

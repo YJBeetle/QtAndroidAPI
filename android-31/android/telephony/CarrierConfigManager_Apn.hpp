@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class CarrierConfigManager_Apn : public __JniBaseClass
+	class CarrierConfigManager_Apn : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::telephony
 		static jstring PROTOCOL_IPV6();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_Apn(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CarrierConfigManager_Apn(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager_Apn(QJniObject obj);
 		
 		// Constructors

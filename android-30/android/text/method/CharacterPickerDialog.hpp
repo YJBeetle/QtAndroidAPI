@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../app/Dialog.hpp"
 
 namespace android::content
@@ -32,7 +32,7 @@ namespace android::text::method
 		CharacterPickerDialog(QJniObject obj);
 		
 		// Constructors
-		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4);
+		CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, jstring arg3, jboolean arg4);
 		
 		// Methods
 		void onClick(android::view::View arg0);

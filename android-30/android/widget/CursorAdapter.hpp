@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 
 namespace android::content
@@ -38,30 +38,30 @@ namespace android::widget
 		CursorAdapter(QJniObject obj);
 		
 		// Constructors
-		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1);
-		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2);
-		CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		CursorAdapter(android::content::Context arg0, JObject arg1);
+		CursorAdapter(android::content::Context arg0, JObject arg1, jboolean arg2);
+		CursorAdapter(android::content::Context arg0, JObject arg1, jint arg2);
 		
 		// Methods
-		void bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2);
-		void changeCursor(__JniBaseClass arg0);
-		jstring convertToString(__JniBaseClass arg0);
+		void bindView(android::view::View arg0, android::content::Context arg1, JObject arg2);
+		void changeCursor(JObject arg0);
+		jstring convertToString(JObject arg0);
 		jint getCount();
-		__JniBaseClass getCursor();
+		JObject getCursor();
 		android::view::View getDropDownView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		android::content::res::Resources_Theme getDropDownViewTheme();
 		android::widget::Filter getFilter();
-		__JniBaseClass getFilterQueryProvider();
+		JObject getFilterQueryProvider();
 		jobject getItem(jint arg0);
 		jlong getItemId(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jboolean hasStableIds();
-		android::view::View newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
-		android::view::View newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2);
-		__JniBaseClass runQueryOnBackgroundThread(jstring arg0);
+		android::view::View newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
+		android::view::View newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2);
+		JObject runQueryOnBackgroundThread(jstring arg0);
 		void setDropDownViewTheme(android::content::res::Resources_Theme arg0);
-		void setFilterQueryProvider(__JniBaseClass arg0);
-		__JniBaseClass swapCursor(__JniBaseClass arg0);
+		void setFilterQueryProvider(JObject arg0);
+		JObject swapCursor(JObject arg0);
 	};
 } // namespace android::widget
 

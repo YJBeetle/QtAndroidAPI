@@ -84,7 +84,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jstring DigitsKeyListener::filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
+	jstring DigitsKeyListener::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",

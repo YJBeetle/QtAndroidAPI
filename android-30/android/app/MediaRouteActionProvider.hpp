@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ActionProvider.hpp"
 
 namespace android::content
@@ -29,10 +29,10 @@ namespace android::app
 		// Methods
 		jboolean isVisible();
 		android::view::View onCreateActionView();
-		android::view::View onCreateActionView(__JniBaseClass arg0);
+		android::view::View onCreateActionView(JObject arg0);
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
-		void setExtendedSettingsClickListener(__JniBaseClass arg0);
+		void setExtendedSettingsClickListener(JObject arg0);
 		void setRouteTypes(jint arg0);
 	};
 } // namespace android::app

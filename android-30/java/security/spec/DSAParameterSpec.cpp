@@ -6,11 +6,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	DSAParameterSpec::DSAParameterSpec(QJniObject obj) : __JniBaseClass(obj) {}
+	DSAParameterSpec::DSAParameterSpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DSAParameterSpec::DSAParameterSpec(java::math::BigInteger arg0, java::math::BigInteger arg1, java::math::BigInteger arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.DSAParameterSpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),

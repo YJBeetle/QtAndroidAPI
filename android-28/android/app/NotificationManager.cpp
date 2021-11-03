@@ -169,7 +169,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	NotificationManager::NotificationManager(QJniObject obj) : __JniBaseClass(obj) {}
+	NotificationManager::NotificationManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -229,7 +229,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::createNotificationChannelGroups(__JniBaseClass arg0)
+	void NotificationManager::createNotificationChannelGroups(JObject arg0)
 	{
 		callMethod<void>(
 			"createNotificationChannelGroups",
@@ -237,7 +237,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void NotificationManager::createNotificationChannels(__JniBaseClass arg0)
+	void NotificationManager::createNotificationChannels(JObject arg0)
 	{
 		callMethod<void>(
 			"createNotificationChannels",
@@ -276,7 +276,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass NotificationManager::getAutomaticZenRules()
+	JObject NotificationManager::getAutomaticZenRules()
 	{
 		return callObjectMethod(
 			"getAutomaticZenRules",
@@ -313,14 +313,14 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass NotificationManager::getNotificationChannelGroups()
+	JObject NotificationManager::getNotificationChannelGroups()
 	{
 		return callObjectMethod(
 			"getNotificationChannelGroups",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass NotificationManager::getNotificationChannels()
+	JObject NotificationManager::getNotificationChannels()
 	{
 		return callObjectMethod(
 			"getNotificationChannels",

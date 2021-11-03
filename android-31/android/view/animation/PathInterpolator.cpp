@@ -16,7 +16,7 @@ namespace android::view::animation
 			"(Landroid/graphics/Path;)V",
 			arg0.object()
 		) {}
-	PathInterpolator::PathInterpolator(android::content::Context arg0, __JniBaseClass arg1)
+	PathInterpolator::PathInterpolator(android::content::Context arg0, JObject arg1)
 		: android::view::animation::BaseInterpolator(
 			"android.view.animation.PathInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

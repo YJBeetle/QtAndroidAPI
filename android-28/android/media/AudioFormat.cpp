@@ -291,7 +291,7 @@ namespace android::media
 			"CHANNEL_OUT_SURROUND"
 		);
 	}
-	__JniBaseClass AudioFormat::CREATOR()
+	JObject AudioFormat::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.AudioFormat",
@@ -441,7 +441,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioFormat::AudioFormat(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioFormat::AudioFormat(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

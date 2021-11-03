@@ -5,11 +5,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QJniObject forward
-	AtomicStampedReference::AtomicStampedReference(QJniObject obj) : __JniBaseClass(obj) {}
+	AtomicStampedReference::AtomicStampedReference(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicStampedReference::AtomicStampedReference(jobject arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicStampedReference",
 			"(Ljava/lang/Object;I)V",
 			arg0,

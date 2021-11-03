@@ -128,7 +128,7 @@ namespace android::hardware::fingerprint
 	}
 	
 	// QJniObject forward
-	FingerprintManager::FingerprintManager(QJniObject obj) : __JniBaseClass(obj) {}
+	FingerprintManager::FingerprintManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

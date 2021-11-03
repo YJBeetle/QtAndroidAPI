@@ -7,7 +7,7 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	ImageDecoder_ImageInfo::ImageDecoder_ImageInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ImageDecoder_ImageInfo::ImageDecoder_ImageInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

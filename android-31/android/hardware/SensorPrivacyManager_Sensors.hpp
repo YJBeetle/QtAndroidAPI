@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::hardware
 {
-	class SensorPrivacyManager_Sensors : public __JniBaseClass
+	class SensorPrivacyManager_Sensors : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::hardware
 		static jint MICROPHONE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SensorPrivacyManager_Sensors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SensorPrivacyManager_Sensors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SensorPrivacyManager_Sensors(QJniObject obj);
 		
 		// Constructors

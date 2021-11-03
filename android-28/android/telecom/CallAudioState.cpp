@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass CallAudioState::CREATOR()
+	JObject CallAudioState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.CallAudioState",
@@ -50,11 +50,11 @@ namespace android::telecom
 	}
 	
 	// QJniObject forward
-	CallAudioState::CallAudioState(QJniObject obj) : __JniBaseClass(obj) {}
+	CallAudioState::CallAudioState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CallAudioState::CallAudioState(jboolean arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.CallAudioState",
 			"(ZII)V",
 			arg0,
@@ -101,7 +101,7 @@ namespace android::telecom
 			"()I"
 		);
 	}
-	__JniBaseClass CallAudioState::getSupportedBluetoothDevices()
+	JObject CallAudioState::getSupportedBluetoothDevices()
 	{
 		return callObjectMethod(
 			"getSupportedBluetoothDevices",

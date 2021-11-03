@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass SyncNotedAppOp::CREATOR()
+	JObject SyncNotedAppOp::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.SyncNotedAppOp",
@@ -14,11 +14,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	SyncNotedAppOp::SyncNotedAppOp(QJniObject obj) : __JniBaseClass(obj) {}
+	SyncNotedAppOp::SyncNotedAppOp(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncNotedAppOp::SyncNotedAppOp(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.SyncNotedAppOp",
 			"(ILjava/lang/String;)V",
 			arg0,

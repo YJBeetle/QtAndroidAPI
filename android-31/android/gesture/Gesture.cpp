@@ -9,7 +9,7 @@
 namespace android::gesture
 {
 	// Fields
-	__JniBaseClass Gesture::CREATOR()
+	JObject Gesture::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.gesture.Gesture",
@@ -19,11 +19,11 @@ namespace android::gesture
 	}
 	
 	// QJniObject forward
-	Gesture::Gesture(QJniObject obj) : __JniBaseClass(obj) {}
+	Gesture::Gesture(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Gesture::Gesture()
-		: __JniBaseClass(
+		: JObject(
 			"android.gesture.Gesture",
 			"()V"
 		) {}

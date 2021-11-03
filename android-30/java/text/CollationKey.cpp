@@ -5,7 +5,7 @@ namespace java::text
 	// Fields
 	
 	// QJniObject forward
-	CollationKey::CollationKey(QJniObject obj) : __JniBaseClass(obj) {}
+	CollationKey::CollationKey(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

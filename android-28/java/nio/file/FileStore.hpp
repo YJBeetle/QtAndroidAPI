@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::nio::file
 {
-	class FileStore : public __JniBaseClass
+	class FileStore : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FileStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileStore(QJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace java::nio::file
 		// Methods
 		jobject getAttribute(jstring arg0);
 		jlong getBlockSize();
-		__JniBaseClass getFileStoreAttributeView(jclass arg0);
+		JObject getFileStoreAttributeView(jclass arg0);
 		jlong getTotalSpace();
 		jlong getUnallocatedSpace();
 		jlong getUsableSpace();

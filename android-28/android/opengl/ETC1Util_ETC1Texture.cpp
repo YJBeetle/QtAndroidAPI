@@ -6,11 +6,11 @@ namespace android::opengl
 	// Fields
 	
 	// QJniObject forward
-	ETC1Util_ETC1Texture::ETC1Util_ETC1Texture(QJniObject obj) : __JniBaseClass(obj) {}
+	ETC1Util_ETC1Texture::ETC1Util_ETC1Texture(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ETC1Util_ETC1Texture::ETC1Util_ETC1Texture(jint arg0, jint arg1, java::nio::ByteBuffer arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.ETC1Util$ETC1Texture",
 			"(IILjava/nio/ByteBuffer;)V",
 			arg0,

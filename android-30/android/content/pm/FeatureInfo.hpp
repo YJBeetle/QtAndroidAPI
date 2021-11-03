@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class FeatureInfo : public __JniBaseClass
+	class FeatureInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_REQUIRED();
 		static jint GL_ES_VERSION_UNDEFINED();
 		jint flags();
@@ -22,7 +22,7 @@ namespace android::content::pm
 		jint version();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FeatureInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FeatureInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FeatureInfo(QJniObject obj);
 		
 		// Constructors

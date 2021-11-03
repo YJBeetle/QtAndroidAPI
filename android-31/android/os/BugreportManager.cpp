@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	BugreportManager::BugreportManager(QJniObject obj) : __JniBaseClass(obj) {}
+	BugreportManager::BugreportManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,7 +19,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void BugreportManager::startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, __JniBaseClass arg1, android::os::BugreportManager_BugreportCallback arg2)
+	void BugreportManager::startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2)
 	{
 		callMethod<void>(
 			"startConnectivityBugreport",

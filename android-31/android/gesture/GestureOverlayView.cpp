@@ -48,14 +48,14 @@ namespace android::gesture
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.gesture.GestureOverlayView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::FrameLayout(
 			"android.gesture.GestureOverlayView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -63,7 +63,7 @@ namespace android::gesture
 			arg1.object(),
 			arg2
 		) {}
-	GestureOverlayView::GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	GestureOverlayView::GestureOverlayView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::FrameLayout(
 			"android.gesture.GestureOverlayView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -74,7 +74,7 @@ namespace android::gesture
 		) {}
 	
 	// Methods
-	void GestureOverlayView::addOnGestureListener(__JniBaseClass arg0)
+	void GestureOverlayView::addOnGestureListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnGestureListener",
@@ -82,7 +82,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::addOnGesturePerformedListener(__JniBaseClass arg0)
+	void GestureOverlayView::addOnGesturePerformedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnGesturePerformedListener",
@@ -90,7 +90,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::addOnGesturingListener(__JniBaseClass arg0)
+	void GestureOverlayView::addOnGesturingListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnGesturingListener",
@@ -277,7 +277,7 @@ namespace android::gesture
 			"()V"
 		);
 	}
-	void GestureOverlayView::removeOnGestureListener(__JniBaseClass arg0)
+	void GestureOverlayView::removeOnGestureListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnGestureListener",
@@ -285,7 +285,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::removeOnGesturePerformedListener(__JniBaseClass arg0)
+	void GestureOverlayView::removeOnGesturePerformedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnGesturePerformedListener",
@@ -293,7 +293,7 @@ namespace android::gesture
 			arg0.object()
 		);
 	}
-	void GestureOverlayView::removeOnGesturingListener(__JniBaseClass arg0)
+	void GestureOverlayView::removeOnGesturingListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnGesturingListener",

@@ -4,7 +4,20 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 COMPONENTS Core REQUIRED)
 set(SRC_LIST 
-	"__JniBaseClass.cpp" "__JniBaseClass.hpp"
+	"JObject.cpp" "JObject.hpp"
+	"JClass.cpp" "JClass.hpp"
+	"JString.cpp" "JString.hpp"
+	"JThrowable.cpp" "JThrowable.hpp"
+	"JArray.cpp" "JArray.hpp"
+	"JObjectArray.cpp" "JObjectArray.hpp"
+	"JBooleanArray.cpp" "JBooleanArray.hpp"
+	"JByteArray.cpp" "JByteArray.hpp"
+	"JCharArray.cpp" "JCharArray.hpp"
+	"JShortArray.cpp" "JShortArray.hpp"
+	"JIntArray.cpp" "JIntArray.hpp"
+	"JLongArray.cpp" "JLongArray.hpp"
+	"JFloatArray.cpp" "JFloatArray.hpp"
+	"JDoubleArray.cpp" "JDoubleArray.hpp"
 	"android/window/SplashScreenView.cpp" "android/window/SplashScreenView.hpp"
 	"android/Manifest.cpp" "android/Manifest.hpp"
 	"android/nfc/NfcAdapter.cpp" "android/nfc/NfcAdapter.hpp"

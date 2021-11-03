@@ -21,11 +21,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_SearchSnippets::ContactsContract_SearchSnippets()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$SearchSnippets",
 			"()V"
 		) {}

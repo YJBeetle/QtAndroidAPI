@@ -9,7 +9,7 @@ namespace android::media::midi
 	// Fields
 	
 	// QJniObject forward
-	MidiManager::MidiManager(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiManager::MidiManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace android::media::midi
 			"()[Landroid/media/midi/MidiDeviceInfo;"
 		).object<jarray>();
 	}
-	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, __JniBaseClass arg1, android::os::Handler arg2)
+	void MidiManager::openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, JObject arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"openBluetoothDevice",
@@ -31,7 +31,7 @@ namespace android::media::midi
 			arg2.object()
 		);
 	}
-	void MidiManager::openDevice(android::media::midi::MidiDeviceInfo arg0, __JniBaseClass arg1, android::os::Handler arg2)
+	void MidiManager::openDevice(android::media::midi::MidiDeviceInfo arg0, JObject arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"openDevice",

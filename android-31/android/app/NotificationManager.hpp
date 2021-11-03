@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,7 +33,7 @@ namespace android::service::notification
 
 namespace android::app
 {
-	class NotificationManager : public __JniBaseClass
+	class NotificationManager : public JObject
 	{
 	public:
 		// Fields
@@ -74,7 +74,7 @@ namespace android::app
 		static jstring META_DATA_RULE_INSTANCE_LIMIT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationManager(QJniObject obj);
 		
 		// Constructors
@@ -92,13 +92,13 @@ namespace android::app
 		void cancelAsPackage(jstring arg0, jstring arg1, jint arg2);
 		void createNotificationChannel(android::app::NotificationChannel arg0);
 		void createNotificationChannelGroup(android::app::NotificationChannelGroup arg0);
-		void createNotificationChannelGroups(__JniBaseClass arg0);
-		void createNotificationChannels(__JniBaseClass arg0);
+		void createNotificationChannelGroups(JObject arg0);
+		void createNotificationChannels(JObject arg0);
 		void deleteNotificationChannel(jstring arg0);
 		void deleteNotificationChannelGroup(jstring arg0);
 		jarray getActiveNotifications();
 		android::app::AutomaticZenRule getAutomaticZenRule(jstring arg0);
-		__JniBaseClass getAutomaticZenRules();
+		JObject getAutomaticZenRules();
 		jint getBubblePreference();
 		android::app::NotificationManager_Policy getConsolidatedNotificationPolicy();
 		jint getCurrentInterruptionFilter();
@@ -106,8 +106,8 @@ namespace android::app
 		android::app::NotificationChannel getNotificationChannel(jstring arg0);
 		android::app::NotificationChannel getNotificationChannel(jstring arg0, jstring arg1);
 		android::app::NotificationChannelGroup getNotificationChannelGroup(jstring arg0);
-		__JniBaseClass getNotificationChannelGroups();
-		__JniBaseClass getNotificationChannels();
+		JObject getNotificationChannelGroups();
+		JObject getNotificationChannels();
 		jstring getNotificationDelegate();
 		android::app::NotificationManager_Policy getNotificationPolicy();
 		jboolean isNotificationListenerAccessGranted(android::content::ComponentName arg0);

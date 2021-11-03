@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,15 +13,15 @@ namespace android::os
 
 namespace android::media::session
 {
-	class MediaSession_QueueItem : public __JniBaseClass
+	class MediaSession_QueueItem : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint UNKNOWN_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaSession_QueueItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaSession_QueueItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession_QueueItem(QJniObject obj);
 		
 		// Constructors

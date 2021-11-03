@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass KeyboardShortcutGroup::CREATOR()
+	JObject KeyboardShortcutGroup::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.KeyboardShortcutGroup",
@@ -15,17 +15,17 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	KeyboardShortcutGroup::KeyboardShortcutGroup(QJniObject obj) : __JniBaseClass(obj) {}
+	KeyboardShortcutGroup::KeyboardShortcutGroup(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		) {}
-	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	KeyboardShortcutGroup::KeyboardShortcutGroup(jstring arg0, JObject arg1)
+		: JObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
 			arg0,
@@ -48,7 +48,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass KeyboardShortcutGroup::getItems()
+	JObject KeyboardShortcutGroup::getItems()
 	{
 		return callObjectMethod(
 			"getItems",

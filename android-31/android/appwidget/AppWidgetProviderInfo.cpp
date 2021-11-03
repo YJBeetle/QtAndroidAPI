@@ -10,7 +10,7 @@
 namespace android::appwidget
 {
 	// Fields
-	__JniBaseClass AppWidgetProviderInfo::CREATOR()
+	JObject AppWidgetProviderInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.appwidget.AppWidgetProviderInfo",
@@ -225,16 +225,16 @@ namespace android::appwidget
 	}
 	
 	// QJniObject forward
-	AppWidgetProviderInfo::AppWidgetProviderInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	AppWidgetProviderInfo::AppWidgetProviderInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppWidgetProviderInfo::AppWidgetProviderInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.appwidget.AppWidgetProviderInfo",
 			"()V"
 		) {}
 	AppWidgetProviderInfo::AppWidgetProviderInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.appwidget.AppWidgetProviderInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

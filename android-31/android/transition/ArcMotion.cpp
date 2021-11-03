@@ -15,7 +15,7 @@ namespace android::transition
 			"android.transition.ArcMotion",
 			"()V"
 		) {}
-	ArcMotion::ArcMotion(android::content::Context arg0, __JniBaseClass arg1)
+	ArcMotion::ArcMotion(android::content::Context arg0, JObject arg1)
 		: android::transition::PathMotion(
 			"android.transition.ArcMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

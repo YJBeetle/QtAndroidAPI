@@ -112,7 +112,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	Display::Display(QJniObject obj) : __JniBaseClass(obj) {}
+	Display::Display(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

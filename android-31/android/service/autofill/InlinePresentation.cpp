@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass InlinePresentation::CREATOR()
+	JObject InlinePresentation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.InlinePresentation",
@@ -16,11 +16,11 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	InlinePresentation::InlinePresentation(QJniObject obj) : __JniBaseClass(obj) {}
+	InlinePresentation::InlinePresentation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InlinePresentation::InlinePresentation(android::app::slice::Slice arg0, android::widget::inline::InlinePresentationSpec arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.InlinePresentation",
 			"(Landroid/app/slice/Slice;Landroid/widget/inline/InlinePresentationSpec;Z)V",
 			arg0.object(),

@@ -6,11 +6,11 @@ namespace android::speech::tts
 	// Fields
 	
 	// QJniObject forward
-	SynthesisRequest::SynthesisRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	SynthesisRequest::SynthesisRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SynthesisRequest::SynthesisRequest(jstring arg0, android::os::Bundle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.speech.tts.SynthesisRequest",
 			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
 			arg0,

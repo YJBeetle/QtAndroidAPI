@@ -5,16 +5,16 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	SparseLongArray::SparseLongArray(QJniObject obj) : __JniBaseClass(obj) {}
+	SparseLongArray::SparseLongArray(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SparseLongArray::SparseLongArray()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.SparseLongArray",
 			"()V"
 		) {}
 	SparseLongArray::SparseLongArray(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.SparseLongArray",
 			"(I)V",
 			arg0

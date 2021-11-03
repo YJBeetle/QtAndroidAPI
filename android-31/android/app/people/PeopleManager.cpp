@@ -6,7 +6,7 @@ namespace android::app::people
 	// Fields
 	
 	// QJniObject forward
-	PeopleManager::PeopleManager(QJniObject obj) : __JniBaseClass(obj) {}
+	PeopleManager::PeopleManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -37,7 +37,7 @@ namespace android::app::people
 			arg0
 		);
 	}
-	__JniBaseClass PeopleManager::getStatuses(jstring arg0)
+	JObject PeopleManager::getStatuses(jstring arg0)
 	{
 		return callObjectMethod(
 			"getStatuses",

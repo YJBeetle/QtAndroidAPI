@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 #include "./TwoStatePreference.hpp"
 
@@ -26,9 +26,9 @@ namespace android::preference
 		
 		// Constructors
 		SwitchPreference(android::content::Context arg0);
-		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1);
-		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		SwitchPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		SwitchPreference(android::content::Context arg0, JObject arg1);
+		SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2);
+		SwitchPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getSwitchTextOff();

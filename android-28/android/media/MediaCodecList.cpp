@@ -21,11 +21,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCodecList::MediaCodecList(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecList::MediaCodecList(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodecList::MediaCodecList(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodecList",
 			"(I)V",
 			arg0

@@ -69,7 +69,7 @@ namespace android::media::tv
 		) {}
 	
 	// Methods
-	__JniBaseClass TvInputService::onBind(android::content::Intent arg0)
+	JObject TvInputService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

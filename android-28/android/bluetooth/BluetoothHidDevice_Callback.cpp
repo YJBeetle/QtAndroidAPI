@@ -6,11 +6,11 @@ namespace android::bluetooth
 	// Fields
 	
 	// QJniObject forward
-	BluetoothHidDevice_Callback::BluetoothHidDevice_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHidDevice_Callback::BluetoothHidDevice_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothHidDevice_Callback::BluetoothHidDevice_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothHidDevice$Callback",
 			"()V"
 		) {}

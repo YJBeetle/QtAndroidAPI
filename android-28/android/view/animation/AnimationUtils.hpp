@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::view::animation
 
 namespace android::view::animation
 {
-	class AnimationUtils : public __JniBaseClass
+	class AnimationUtils : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AnimationUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AnimationUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AnimationUtils(QJniObject obj);
 		
 		// Constructors
@@ -32,7 +32,7 @@ namespace android::view::animation
 		// Methods
 		static jlong currentAnimationTimeMillis();
 		static android::view::animation::Animation loadAnimation(android::content::Context arg0, jint arg1);
-		static __JniBaseClass loadInterpolator(android::content::Context arg0, jint arg1);
+		static JObject loadInterpolator(android::content::Context arg0, jint arg1);
 		static android::view::animation::LayoutAnimationController loadLayoutAnimation(android::content::Context arg0, jint arg1);
 		static android::view::animation::Animation makeInAnimation(android::content::Context arg0, jboolean arg1);
 		static android::view::animation::Animation makeInChildBottomAnimation(android::content::Context arg0);

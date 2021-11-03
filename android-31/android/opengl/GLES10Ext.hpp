@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -9,13 +9,13 @@ namespace java::nio
 
 namespace android::opengl
 {
-	class GLES10Ext : public __JniBaseClass
+	class GLES10Ext : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit GLES10Ext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GLES10Ext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GLES10Ext(QJniObject obj);
 		
 		// Constructors

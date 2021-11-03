@@ -7,7 +7,7 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	Looper::Looper(QJniObject obj) : __JniBaseClass(obj) {}
+	Looper::Looper(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -60,7 +60,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Looper::dump(__JniBaseClass arg0, jstring arg1)
+	void Looper::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",
@@ -104,7 +104,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Looper::setMessageLogging(__JniBaseClass arg0)
+	void Looper::setMessageLogging(JObject arg0)
 	{
 		callMethod<void>(
 			"setMessageLogging",

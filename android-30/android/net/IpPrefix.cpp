@@ -5,7 +5,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass IpPrefix::CREATOR()
+	JObject IpPrefix::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.IpPrefix",
@@ -15,7 +15,7 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	IpPrefix::IpPrefix(QJniObject obj) : __JniBaseClass(obj) {}
+	IpPrefix::IpPrefix(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

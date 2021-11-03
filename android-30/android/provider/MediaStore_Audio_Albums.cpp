@@ -46,11 +46,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	MediaStore_Audio_Albums::MediaStore_Audio_Albums(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Audio_Albums::MediaStore_Audio_Albums(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Audio_Albums::MediaStore_Audio_Albums()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Audio$Albums",
 			"()V"
 		) {}

@@ -24,7 +24,7 @@ namespace android::icu::text
 	}
 	
 	// QJniObject forward
-	Transliterator::Transliterator(QJniObject obj) : __JniBaseClass(obj) {}
+	Transliterator::Transliterator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -40,7 +40,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	__JniBaseClass Transliterator::getAvailableIDs()
+	JObject Transliterator::getAvailableIDs()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -48,7 +48,7 @@ namespace android::icu::text
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Transliterator::getAvailableSources()
+	JObject Transliterator::getAvailableSources()
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -56,7 +56,7 @@ namespace android::icu::text
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Transliterator::getAvailableTargets(jstring arg0)
+	JObject Transliterator::getAvailableTargets(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -65,7 +65,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
+	JObject Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.Transliterator",
@@ -123,7 +123,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void Transliterator::filteredTransliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2)
+	void Transliterator::filteredTransliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jboolean arg2)
 	{
 		callMethod<void>(
 			"filteredTransliterate",
@@ -133,7 +133,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void Transliterator::finishTransliteration(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1)
+	void Transliterator::finishTransliteration(JObject arg0, android::icu::text::Transliterator_Position arg1)
 	{
 		callMethod<void>(
 			"finishTransliteration",
@@ -207,7 +207,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jint Transliterator::transliterate(__JniBaseClass arg0, jint arg1, jint arg2)
+	jint Transliterator::transliterate(JObject arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"transliterate",
@@ -225,7 +225,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	void Transliterator::transliterate(__JniBaseClass arg0)
+	void Transliterator::transliterate(JObject arg0)
 	{
 		callMethod<void>(
 			"transliterate",
@@ -233,7 +233,7 @@ namespace android::icu::text
 			arg0.object()
 		);
 	}
-	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1)
 	{
 		callMethod<void>(
 			"transliterate",
@@ -242,7 +242,7 @@ namespace android::icu::text
 			arg1.object()
 		);
 	}
-	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jint arg2)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jint arg2)
 	{
 		callMethod<void>(
 			"transliterate",
@@ -252,7 +252,7 @@ namespace android::icu::text
 			arg2
 		);
 	}
-	void Transliterator::transliterate(__JniBaseClass arg0, android::icu::text::Transliterator_Position arg1, jstring arg2)
+	void Transliterator::transliterate(JObject arg0, android::icu::text::Transliterator_Position arg1, jstring arg2)
 	{
 		callMethod<void>(
 			"transliterate",

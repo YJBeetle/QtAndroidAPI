@@ -6,11 +6,11 @@ namespace android::telephony::ims
 	// Fields
 	
 	// QJniObject forward
-	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RegistrationManager_RegistrationCallback::RegistrationManager_RegistrationCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.ims.RegistrationManager$RegistrationCallback",
 			"()V"
 		) {}

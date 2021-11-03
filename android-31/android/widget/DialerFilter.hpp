@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./RelativeLayout.hpp"
@@ -36,7 +36,7 @@ namespace android::widget
 		
 		// Constructors
 		DialerFilter(android::content::Context arg0);
-		DialerFilter(android::content::Context arg0, __JniBaseClass arg1);
+		DialerFilter(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void append(jstring arg0);
@@ -48,10 +48,10 @@ namespace android::widget
 		jboolean isQwertyKeyboard();
 		jboolean onKeyDown(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		void removeFilterWatcher(__JniBaseClass arg0);
-		void setDigitsWatcher(__JniBaseClass arg0);
-		void setFilterWatcher(__JniBaseClass arg0);
-		void setLettersWatcher(__JniBaseClass arg0);
+		void removeFilterWatcher(JObject arg0);
+		void setDigitsWatcher(JObject arg0);
+		void setFilterWatcher(JObject arg0);
+		void setLettersWatcher(JObject arg0);
 		void setMode(jint arg0);
 	};
 } // namespace android::widget

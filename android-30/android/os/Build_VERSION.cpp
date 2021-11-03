@@ -75,11 +75,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Build_VERSION::Build_VERSION(QJniObject obj) : __JniBaseClass(obj) {}
+	Build_VERSION::Build_VERSION(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Build_VERSION::Build_VERSION()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Build$VERSION",
 			"()V"
 		) {}

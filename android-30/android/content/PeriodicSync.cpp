@@ -6,7 +6,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass PeriodicSync::CREATOR()
+	JObject PeriodicSync::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.PeriodicSync",
@@ -43,11 +43,11 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	PeriodicSync::PeriodicSync(QJniObject obj) : __JniBaseClass(obj) {}
+	PeriodicSync::PeriodicSync(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PeriodicSync::PeriodicSync(android::accounts::Account arg0, jstring arg1, android::os::Bundle arg2, jlong arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.PeriodicSync",
 			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
 			arg0.object(),

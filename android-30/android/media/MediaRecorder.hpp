@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -45,7 +45,7 @@ namespace java::io
 
 namespace android::media
 {
-	class MediaRecorder : public __JniBaseClass
+	class MediaRecorder : public JObject
 	{
 	public:
 		// Fields
@@ -58,7 +58,7 @@ namespace android::media
 		static jint MEDIA_RECORDER_INFO_UNKNOWN();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaRecorder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRecorder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder(QJniObject obj);
 		
 		// Constructors
@@ -66,8 +66,8 @@ namespace android::media
 		
 		// Methods
 		static jint getAudioSourceMax();
-		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
-		__JniBaseClass getActiveMicrophones();
+		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
+		JObject getActiveMicrophones();
 		android::media::AudioRecordingConfiguration getActiveRecordingConfiguration();
 		jint getMaxAmplitude();
 		android::os::PersistableBundle getMetrics();
@@ -77,9 +77,9 @@ namespace android::media
 		jboolean isPrivacySensitive();
 		void pause();
 		void prepare();
-		void registerAudioRecordingCallback(__JniBaseClass arg0, android::media::AudioManager_AudioRecordingCallback arg1);
+		void registerAudioRecordingCallback(JObject arg0, android::media::AudioManager_AudioRecordingCallback arg1);
 		void release();
-		void removeOnRoutingChangedListener(__JniBaseClass arg0);
+		void removeOnRoutingChangedListener(JObject arg0);
 		void reset();
 		void resume();
 		void setAudioChannels(jint arg0);
@@ -95,8 +95,8 @@ namespace android::media
 		void setMaxFileSize(jlong arg0);
 		void setNextOutputFile(java::io::File arg0);
 		void setNextOutputFile(java::io::FileDescriptor arg0);
-		void setOnErrorListener(__JniBaseClass arg0);
-		void setOnInfoListener(__JniBaseClass arg0);
+		void setOnErrorListener(JObject arg0);
+		void setOnInfoListener(JObject arg0);
 		void setOrientationHint(jint arg0);
 		void setOutputFile(java::io::File arg0);
 		void setOutputFile(java::io::FileDescriptor arg0);

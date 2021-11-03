@@ -189,11 +189,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	AlarmClock::AlarmClock(QJniObject obj) : __JniBaseClass(obj) {}
+	AlarmClock::AlarmClock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlarmClock::AlarmClock()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.AlarmClock",
 			"()V"
 		) {}

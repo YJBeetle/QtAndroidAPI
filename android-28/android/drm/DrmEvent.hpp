@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace android::drm
 {
-	class DrmEvent : public __JniBaseClass
+	class DrmEvent : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::drm
 		static jint TYPE_DRM_INFO_PROCESSED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DrmEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmEvent(QJniObject obj);
 		
 		// Constructors

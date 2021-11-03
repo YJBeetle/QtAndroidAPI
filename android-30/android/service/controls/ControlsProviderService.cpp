@@ -47,7 +47,7 @@ namespace android::service::controls
 			arg2.object()
 		);
 	}
-	__JniBaseClass ControlsProviderService::createPublisherFor(__JniBaseClass arg0)
+	JObject ControlsProviderService::createPublisherFor(JObject arg0)
 	{
 		return callObjectMethod(
 			"createPublisherFor",
@@ -55,21 +55,21 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	__JniBaseClass ControlsProviderService::createPublisherForAllAvailable()
+	JObject ControlsProviderService::createPublisherForAllAvailable()
 	{
 		return callObjectMethod(
 			"createPublisherForAllAvailable",
 			"()Ljava/util/concurrent/Flow$Publisher;"
 		);
 	}
-	__JniBaseClass ControlsProviderService::createPublisherForSuggested()
+	JObject ControlsProviderService::createPublisherForSuggested()
 	{
 		return callObjectMethod(
 			"createPublisherForSuggested",
 			"()Ljava/util/concurrent/Flow$Publisher;"
 		);
 	}
-	__JniBaseClass ControlsProviderService::onBind(android::content::Intent arg0)
+	JObject ControlsProviderService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -85,7 +85,7 @@ namespace android::service::controls
 			arg0.object()
 		);
 	}
-	void ControlsProviderService::performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, __JniBaseClass arg2)
+	void ControlsProviderService::performControlAction(jstring arg0, android::service::controls::actions::ControlAction arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"performControlAction",

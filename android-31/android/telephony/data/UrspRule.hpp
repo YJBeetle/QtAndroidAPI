@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::telephony::data
 {
-	class UrspRule : public __JniBaseClass
+	class UrspRule : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UrspRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UrspRule(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UrspRule(QJniObject obj);
 		
 		// Constructors
@@ -25,8 +25,8 @@ namespace android::telephony::data
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getPrecedence();
-		__JniBaseClass getRouteSelectionDescriptor();
-		__JniBaseClass getTrafficDescriptors();
+		JObject getRouteSelectionDescriptor();
+		JObject getTrafficDescriptors();
 		jint hashCode();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::net::wifi
 {
-	class WifiInfo : public __JniBaseClass
+	class WifiInfo : public JObject
 	{
 	public:
 		// Fields
@@ -40,7 +40,7 @@ namespace android::net::wifi
 		static jint SECURITY_TYPE_WEP();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiInfo(QJniObject obj);
 		
 		// Constructors
@@ -54,7 +54,7 @@ namespace android::net::wifi
 		jint getCurrentSecurityType();
 		jint getFrequency();
 		jboolean getHiddenSSID();
-		__JniBaseClass getInformationElements();
+		JObject getInformationElements();
 		jint getIpAddress();
 		jint getLinkSpeed();
 		jstring getMacAddress();

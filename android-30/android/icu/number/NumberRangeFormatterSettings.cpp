@@ -8,7 +8,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QJniObject forward
-	NumberRangeFormatterSettings::NumberRangeFormatterSettings(QJniObject obj) : __JniBaseClass(obj) {}
+	NumberRangeFormatterSettings::NumberRangeFormatterSettings(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

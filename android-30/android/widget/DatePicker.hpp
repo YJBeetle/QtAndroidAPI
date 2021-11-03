@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -43,9 +43,9 @@ namespace android::widget
 		
 		// Constructors
 		DatePicker(android::content::Context arg0);
-		DatePicker(android::content::Context arg0, __JniBaseClass arg1);
-		DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		DatePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		DatePicker(android::content::Context arg0, JObject arg1);
+		DatePicker(android::content::Context arg0, JObject arg1, jint arg2);
+		DatePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void autofill(android::view::autofill::AutofillValue arg0);
@@ -62,14 +62,14 @@ namespace android::widget
 		jint getMonth();
 		jboolean getSpinnersShown();
 		jint getYear();
-		void init(jint arg0, jint arg1, jint arg2, __JniBaseClass arg3);
+		void init(jint arg0, jint arg1, jint arg2, JObject arg3);
 		jboolean isEnabled();
 		void setCalendarViewShown(jboolean arg0);
 		void setEnabled(jboolean arg0);
 		void setFirstDayOfWeek(jint arg0);
 		void setMaxDate(jlong arg0);
 		void setMinDate(jlong arg0);
-		void setOnDateChangedListener(__JniBaseClass arg0);
+		void setOnDateChangedListener(JObject arg0);
 		void setSpinnersShown(jboolean arg0);
 		void updateDate(jint arg0, jint arg1, jint arg2);
 	};

@@ -36,7 +36,7 @@ namespace android::widget
 			arg1,
 			arg2
 		) {}
-	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, JObject arg2)
 		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;ILjava/util/List;)V",
@@ -53,7 +53,7 @@ namespace android::widget
 			arg2,
 			arg3
 		) {}
-	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, __JniBaseClass arg3)
+	ArrayAdapter::ArrayAdapter(android::content::Context arg0, jint arg1, jint arg2, JObject arg3)
 		: android::widget::BaseAdapter(
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;IILjava/util/List;)V",
@@ -91,7 +91,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ArrayAdapter::addAll(__JniBaseClass arg0)
+	void ArrayAdapter::addAll(JObject arg0)
 	{
 		callMethod<void>(
 			"addAll",
@@ -233,7 +233,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ArrayAdapter::sort(__JniBaseClass arg0)
+	void ArrayAdapter::sort(JObject arg0)
 	{
 		callMethod<void>(
 			"sort",

@@ -21,7 +21,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	CarrierConfigManager_Ims::CarrierConfigManager_Ims(QJniObject obj) : __JniBaseClass(obj) {}
+	CarrierConfigManager_Ims::CarrierConfigManager_Ims(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

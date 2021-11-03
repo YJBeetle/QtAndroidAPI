@@ -7,17 +7,17 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(android::media::RoutingSessionInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RoutingSessionInfo$Builder",
 			"(Landroid/media/RoutingSessionInfo;)V",
 			arg0.object()
 		) {}
 	RoutingSessionInfo_Builder::RoutingSessionInfo_Builder(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RoutingSessionInfo$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

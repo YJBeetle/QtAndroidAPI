@@ -11,7 +11,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass InputDevice::CREATOR()
+	JObject InputDevice::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.InputDevice",
@@ -273,7 +273,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	InputDevice::InputDevice(QJniObject obj) : __JniBaseClass(obj) {}
+	InputDevice::InputDevice(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -368,7 +368,7 @@ namespace android::view
 			arg1
 		);
 	}
-	__JniBaseClass InputDevice::getMotionRanges()
+	JObject InputDevice::getMotionRanges()
 	{
 		return callObjectMethod(
 			"getMotionRanges",

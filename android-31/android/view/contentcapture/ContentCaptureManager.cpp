@@ -29,12 +29,12 @@ namespace android::view::contentcapture
 	}
 	
 	// QJniObject forward
-	ContentCaptureManager::ContentCaptureManager(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureManager::ContentCaptureManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ContentCaptureManager::getContentCaptureConditions()
+	JObject ContentCaptureManager::getContentCaptureConditions()
 	{
 		return callObjectMethod(
 			"getContentCaptureConditions",
@@ -71,7 +71,7 @@ namespace android::view::contentcapture
 			arg0
 		);
 	}
-	void ContentCaptureManager::shareData(android::view::contentcapture::DataShareRequest arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void ContentCaptureManager::shareData(android::view::contentcapture::DataShareRequest arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"shareData",

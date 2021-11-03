@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -40,7 +40,7 @@ namespace android::speech
 		
 		// Methods
 		android::content::Context createContext(android::content::ContextParams arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onDestroy();
 	};
 } // namespace android::speech

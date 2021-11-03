@@ -5,7 +5,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextSelection_Request::CREATOR()
+	JObject TextSelection_Request::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextSelection$Request",
@@ -15,7 +15,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextSelection_Request::TextSelection_Request(QJniObject obj) : __JniBaseClass(obj) {}
+	TextSelection_Request::TextSelection_Request(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

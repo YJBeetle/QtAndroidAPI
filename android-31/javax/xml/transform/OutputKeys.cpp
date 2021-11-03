@@ -85,7 +85,7 @@ namespace javax::xml::transform
 	}
 	
 	// QJniObject forward
-	OutputKeys::OutputKeys(QJniObject obj) : __JniBaseClass(obj) {}
+	OutputKeys::OutputKeys(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

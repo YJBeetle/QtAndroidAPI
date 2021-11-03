@@ -32,29 +32,29 @@ namespace javax::security::auth::x500
 	}
 	
 	// QJniObject forward
-	X500Principal::X500Principal(QJniObject obj) : __JniBaseClass(obj) {}
+	X500Principal::X500Principal(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	X500Principal::X500Principal(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.x500.X500Principal",
 			"([B)V",
 			arg0
 		) {}
 	X500Principal::X500Principal(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
 	X500Principal::X500Principal(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	X500Principal::X500Principal(jstring arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	X500Principal::X500Principal(jstring arg0, JObject arg1)
+		: JObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
@@ -92,7 +92,7 @@ namespace javax::security::auth::x500
 			arg0
 		).object<jstring>();
 	}
-	jstring X500Principal::getName(jstring arg0, __JniBaseClass arg1)
+	jstring X500Principal::getName(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getName",

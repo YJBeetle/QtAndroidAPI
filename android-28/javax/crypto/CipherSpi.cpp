@@ -8,11 +8,11 @@ namespace javax::crypto
 	// Fields
 	
 	// QJniObject forward
-	CipherSpi::CipherSpi(QJniObject obj) : __JniBaseClass(obj) {}
+	CipherSpi::CipherSpi(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CipherSpi::CipherSpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.CipherSpi",
 			"()V"
 		) {}

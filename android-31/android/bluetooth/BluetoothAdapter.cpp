@@ -223,7 +223,7 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothAdapter::BluetoothAdapter(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothAdapter::BluetoothAdapter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -252,7 +252,7 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	void BluetoothAdapter::closeProfileProxy(jint arg0, __JniBaseClass arg1)
+	void BluetoothAdapter::closeProfileProxy(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"closeProfileProxy",
@@ -296,7 +296,7 @@ namespace android::bluetooth
 			"()Landroid/bluetooth/le/BluetoothLeScanner;"
 		);
 	}
-	__JniBaseClass BluetoothAdapter::getBondedDevices()
+	JObject BluetoothAdapter::getBondedDevices()
 	{
 		return callObjectMethod(
 			"getBondedDevices",
@@ -325,7 +325,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothAdapter::getProfileProxy(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	jboolean BluetoothAdapter::getProfileProxy(android::content::Context arg0, JObject arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"getProfileProxy",
@@ -475,7 +475,7 @@ namespace android::bluetooth
 			"()Z"
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(__JniBaseClass arg0)
+	jboolean BluetoothAdapter::startLeScan(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"startLeScan",
@@ -483,7 +483,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(jarray arg0, __JniBaseClass arg1)
+	jboolean BluetoothAdapter::startLeScan(jarray arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"startLeScan",
@@ -492,7 +492,7 @@ namespace android::bluetooth
 			arg1.object()
 		);
 	}
-	void BluetoothAdapter::stopLeScan(__JniBaseClass arg0)
+	void BluetoothAdapter::stopLeScan(JObject arg0)
 	{
 		callMethod<void>(
 			"stopLeScan",

@@ -10,11 +10,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaSession2_Builder::MediaSession2_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession2_Builder::MediaSession2_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSession2_Builder::MediaSession2_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaSession2$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -52,7 +52,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionCallback(__JniBaseClass arg0, android::media::MediaSession2_SessionCallback arg1)
+	android::media::MediaSession2_Builder MediaSession2_Builder::setSessionCallback(JObject arg0, android::media::MediaSession2_SessionCallback arg1)
 	{
 		return callObjectMethod(
 			"setSessionCallback",

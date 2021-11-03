@@ -46,7 +46,7 @@ namespace android::appwidget
 			arg2.object()
 		);
 	}
-	android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::FrameLayout_LayoutParams AppWidgetHostView::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -92,7 +92,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::setExecutor(__JniBaseClass arg0)
+	void AppWidgetHostView::setExecutor(JObject arg0)
 	{
 		callMethod<void>(
 			"setExecutor",
@@ -124,7 +124,7 @@ namespace android::appwidget
 			arg0.object()
 		);
 	}
-	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, __JniBaseClass arg1)
+	void AppWidgetHostView::updateAppWidgetSize(android::os::Bundle arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"updateAppWidgetSize",

@@ -8,7 +8,7 @@
 namespace android::app::assist
 {
 	// Fields
-	__JniBaseClass AssistContent::CREATOR()
+	JObject AssistContent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.assist.AssistContent",
@@ -18,11 +18,11 @@ namespace android::app::assist
 	}
 	
 	// QJniObject forward
-	AssistContent::AssistContent(QJniObject obj) : __JniBaseClass(obj) {}
+	AssistContent::AssistContent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AssistContent::AssistContent()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.assist.AssistContent",
 			"()V"
 		) {}

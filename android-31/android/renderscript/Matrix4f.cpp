@@ -5,16 +5,16 @@ namespace android::renderscript
 	// Fields
 	
 	// QJniObject forward
-	Matrix4f::Matrix4f(QJniObject obj) : __JniBaseClass(obj) {}
+	Matrix4f::Matrix4f(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Matrix4f::Matrix4f()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Matrix4f",
 			"()V"
 		) {}
 	Matrix4f::Matrix4f(jfloatArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Matrix4f",
 			"([F)V",
 			arg0

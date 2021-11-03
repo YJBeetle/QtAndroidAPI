@@ -7,16 +7,16 @@ namespace android::content
 	// Fields
 	
 	// QJniObject forward
-	ContextParams_Builder::ContextParams_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ContextParams_Builder::ContextParams_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContextParams_Builder::ContextParams_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContextParams$Builder",
 			"()V"
 		) {}
 	ContextParams_Builder::ContextParams_Builder(android::content::ContextParams arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContextParams$Builder",
 			"(Landroid/content/ContextParams;)V",
 			arg0.object()

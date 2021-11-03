@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::telecom
 {
@@ -9,13 +9,13 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class CallScreeningService_CallResponse_Builder : public __JniBaseClass
+	class CallScreeningService_CallResponse_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CallScreeningService_CallResponse_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CallScreeningService_CallResponse_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CallScreeningService_CallResponse_Builder(QJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./MetaKeyKeyListener.hpp"
 #include "./BaseKeyListener.hpp"
 #include "./NumberKeyListener.hpp"
@@ -33,7 +33,7 @@ namespace android::text::method
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0);
 		static android::text::method::DigitsKeyListener getInstance(jboolean arg0, jboolean arg1);
 		static android::text::method::DigitsKeyListener getInstance(java::util::Locale arg0, jboolean arg1, jboolean arg2);
-		jstring filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
 		jint getInputType();
 	};
 } // namespace android::text::method

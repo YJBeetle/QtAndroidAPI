@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,17 +29,17 @@ namespace android::os
 
 namespace android::database
 {
-	class CursorWrapper : public __JniBaseClass
+	class CursorWrapper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CursorWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CursorWrapper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CursorWrapper(QJniObject obj);
 		
 		// Constructors
-		CursorWrapper(__JniBaseClass arg0);
+		CursorWrapper(JObject arg0);
 		
 		// Methods
 		void close();
@@ -58,13 +58,13 @@ namespace android::database
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
 		android::net::Uri getNotificationUri();
-		__JniBaseClass getNotificationUris();
+		JObject getNotificationUris();
 		jint getPosition();
 		jshort getShort(jint arg0);
 		jstring getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean getWantsAllOnMoveCalls();
-		__JniBaseClass getWrappedCursor();
+		JObject getWrappedCursor();
 		jboolean isAfterLast();
 		jboolean isBeforeFirst();
 		jboolean isClosed();
@@ -83,7 +83,7 @@ namespace android::database
 		android::os::Bundle respond(android::os::Bundle arg0);
 		void setExtras(android::os::Bundle arg0);
 		void setNotificationUri(android::content::ContentResolver arg0, android::net::Uri arg1);
-		void setNotificationUris(android::content::ContentResolver arg0, __JniBaseClass arg1);
+		void setNotificationUris(android::content::ContentResolver arg0, JObject arg1);
 		void unregisterContentObserver(android::database::ContentObserver arg0);
 		void unregisterDataSetObserver(android::database::DataSetObserver arg0);
 	};

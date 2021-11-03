@@ -1,23 +1,23 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::graphics::fonts
 {
-	class SystemFonts : public __JniBaseClass
+	class SystemFonts : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SystemFonts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SystemFonts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SystemFonts(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getAvailableFonts();
+		static JObject getAvailableFonts();
 	};
 } // namespace android::graphics::fonts
 

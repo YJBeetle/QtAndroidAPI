@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,7 +33,7 @@ namespace android::widget
 
 namespace android::appwidget
 {
-	class AppWidgetManager : public __JniBaseClass
+	class AppWidgetManager : public JObject
 	{
 	public:
 		// Fields
@@ -68,7 +68,7 @@ namespace android::appwidget
 		static jstring OPTION_APPWIDGET_SIZES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppWidgetManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppWidgetManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppWidgetManager(QJniObject obj);
 		
 		// Constructors
@@ -81,9 +81,9 @@ namespace android::appwidget
 		jintArray getAppWidgetIds(android::content::ComponentName arg0);
 		android::appwidget::AppWidgetProviderInfo getAppWidgetInfo(jint arg0);
 		android::os::Bundle getAppWidgetOptions(jint arg0);
-		__JniBaseClass getInstalledProviders();
-		__JniBaseClass getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1);
-		__JniBaseClass getInstalledProvidersForProfile(android::os::UserHandle arg0);
+		JObject getInstalledProviders();
+		JObject getInstalledProvidersForPackage(jstring arg0, android::os::UserHandle arg1);
+		JObject getInstalledProvidersForProfile(android::os::UserHandle arg0);
 		jboolean isRequestPinAppWidgetSupported();
 		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
 		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);

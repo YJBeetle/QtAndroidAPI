@@ -18,7 +18,7 @@ namespace android::telephony
 			"BYTES_UNLIMITED"
 		);
 	}
-	__JniBaseClass SubscriptionPlan::CREATOR()
+	JObject SubscriptionPlan::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionPlan",
@@ -63,12 +63,12 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SubscriptionPlan::SubscriptionPlan(QJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionPlan::SubscriptionPlan(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SubscriptionPlan::cycleIterator()
+	JObject SubscriptionPlan::cycleIterator()
 	{
 		return callObjectMethod(
 			"cycleIterator",

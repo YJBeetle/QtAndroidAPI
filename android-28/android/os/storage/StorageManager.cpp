@@ -45,7 +45,7 @@ namespace android::os::storage
 	}
 	
 	// QJniObject forward
-	StorageManager::StorageManager(QJniObject obj) : __JniBaseClass(obj) {}
+	StorageManager::StorageManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -115,7 +115,7 @@ namespace android::os::storage
 			arg0.object()
 		);
 	}
-	__JniBaseClass StorageManager::getStorageVolumes()
+	JObject StorageManager::getStorageVolumes()
 	{
 		return callObjectMethod(
 			"getStorageVolumes",

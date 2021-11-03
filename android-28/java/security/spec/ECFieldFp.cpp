@@ -6,11 +6,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	ECFieldFp::ECFieldFp(QJniObject obj) : __JniBaseClass(obj) {}
+	ECFieldFp::ECFieldFp(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ECFieldFp::ECFieldFp(java::math::BigInteger arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECFieldFp",
 			"(Ljava/math/BigInteger;)V",
 			arg0.object()

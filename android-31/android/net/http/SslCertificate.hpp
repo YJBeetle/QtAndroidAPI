@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::http
 {
@@ -21,13 +21,13 @@ namespace java::util
 
 namespace android::net::http
 {
-	class SslCertificate : public __JniBaseClass
+	class SslCertificate : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SslCertificate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SslCertificate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SslCertificate(QJniObject obj);
 		
 		// Constructors

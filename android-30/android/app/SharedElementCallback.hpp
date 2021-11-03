@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,26 +21,26 @@ namespace android::view
 
 namespace android::app
 {
-	class SharedElementCallback : public __JniBaseClass
+	class SharedElementCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SharedElementCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SharedElementCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SharedElementCallback(QJniObject obj);
 		
 		// Constructors
 		SharedElementCallback();
 		
 		// Methods
-		__JniBaseClass onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2);
-		android::view::View onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1);
-		void onMapSharedElements(__JniBaseClass arg0, __JniBaseClass arg1);
-		void onRejectSharedElements(__JniBaseClass arg0);
-		void onSharedElementEnd(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		void onSharedElementStart(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		void onSharedElementsArrived(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		JObject onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2);
+		android::view::View onCreateSnapshotView(android::content::Context arg0, JObject arg1);
+		void onMapSharedElements(JObject arg0, JObject arg1);
+		void onRejectSharedElements(JObject arg0);
+		void onSharedElementEnd(JObject arg0, JObject arg1, JObject arg2);
+		void onSharedElementStart(JObject arg0, JObject arg1, JObject arg2);
+		void onSharedElementsArrived(JObject arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::app
 

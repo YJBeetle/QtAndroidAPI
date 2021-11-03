@@ -23,7 +23,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	BlockedNumberContract::BlockedNumberContract(QJniObject obj) : __JniBaseClass(obj) {}
+	BlockedNumberContract::BlockedNumberContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

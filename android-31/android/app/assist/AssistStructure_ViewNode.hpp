@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -29,7 +29,7 @@ namespace android::view::autofill
 
 namespace android::app::assist
 {
-	class AssistStructure_ViewNode : public __JniBaseClass
+	class AssistStructure_ViewNode : public JObject
 	{
 	public:
 		// Fields
@@ -40,7 +40,7 @@ namespace android::app::assist
 		static jint TEXT_STYLE_UNDERLINE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AssistStructure_ViewNode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AssistStructure_ViewNode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AssistStructure_ViewNode(QJniObject obj);
 		
 		// Constructors

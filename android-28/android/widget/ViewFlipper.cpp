@@ -15,7 +15,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ViewFlipper::ViewFlipper(android::content::Context arg0, __JniBaseClass arg1)
+	ViewFlipper::ViewFlipper(android::content::Context arg0, JObject arg1)
 		: android::widget::ViewAnimator(
 			"android.widget.ViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

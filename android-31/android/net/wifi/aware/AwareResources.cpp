@@ -4,7 +4,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	__JniBaseClass AwareResources::CREATOR()
+	JObject AwareResources::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.AwareResources",
@@ -14,11 +14,11 @@ namespace android::net::wifi::aware
 	}
 	
 	// QJniObject forward
-	AwareResources::AwareResources(QJniObject obj) : __JniBaseClass(obj) {}
+	AwareResources::AwareResources(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AwareResources::AwareResources(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.AwareResources",
 			"(III)V",
 			arg0,

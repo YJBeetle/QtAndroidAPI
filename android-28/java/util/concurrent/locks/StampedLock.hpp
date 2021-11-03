@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,13 +13,13 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent::locks
 {
-	class StampedLock : public __JniBaseClass
+	class StampedLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StampedLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StampedLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StampedLock(QJniObject obj);
 		
 		// Constructors
@@ -30,9 +30,9 @@ namespace java::util::concurrent::locks
 		static jboolean isOptimisticReadStamp(jlong arg0);
 		static jboolean isReadLockStamp(jlong arg0);
 		static jboolean isWriteLockStamp(jlong arg0);
-		__JniBaseClass asReadLock();
-		__JniBaseClass asReadWriteLock();
-		__JniBaseClass asWriteLock();
+		JObject asReadLock();
+		JObject asReadWriteLock();
+		JObject asWriteLock();
 		jint getReadLockCount();
 		jboolean isReadLocked();
 		jboolean isWriteLocked();

@@ -104,11 +104,11 @@ namespace android::icu::util
 	}
 	
 	// QJniObject forward
-	TimeZone::TimeZone(QJniObject obj) : __JniBaseClass(obj) {}
+	TimeZone::TimeZone(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TimeZone::TimeZone()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.TimeZone",
 			"()V"
 		) {}
@@ -149,7 +149,7 @@ namespace android::icu::util
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass TimeZone::getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2)
+	JObject TimeZone::getAvailableIDs(android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, java::lang::Integer arg2)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.TimeZone",

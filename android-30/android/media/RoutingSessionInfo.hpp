@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::media
 {
-	class RoutingSessionInfo : public __JniBaseClass
+	class RoutingSessionInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RoutingSessionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RoutingSessionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RoutingSessionInfo(QJniObject obj);
 		
 		// Constructors
@@ -30,12 +30,12 @@ namespace android::media
 		jboolean equals(jobject arg0);
 		jstring getClientPackageName();
 		android::os::Bundle getControlHints();
-		__JniBaseClass getDeselectableRoutes();
+		JObject getDeselectableRoutes();
 		jstring getId();
 		jstring getName();
-		__JniBaseClass getSelectableRoutes();
-		__JniBaseClass getSelectedRoutes();
-		__JniBaseClass getTransferableRoutes();
+		JObject getSelectableRoutes();
+		JObject getSelectedRoutes();
+		JObject getTransferableRoutes();
 		jint getVolume();
 		jint getVolumeHandling();
 		jint getVolumeMax();

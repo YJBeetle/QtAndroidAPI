@@ -5,11 +5,11 @@ namespace android::graphics
 	// Fields
 	
 	// QJniObject forward
-	PorterDuff::PorterDuff(QJniObject obj) : __JniBaseClass(obj) {}
+	PorterDuff::PorterDuff(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PorterDuff::PorterDuff()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PorterDuff",
 			"()V"
 		) {}

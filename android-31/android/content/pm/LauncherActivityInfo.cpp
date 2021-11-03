@@ -10,7 +10,7 @@ namespace android::content::pm
 	// Fields
 	
 	// QJniObject forward
-	LauncherActivityInfo::LauncherActivityInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	LauncherActivityInfo::LauncherActivityInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

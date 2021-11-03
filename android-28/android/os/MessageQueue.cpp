@@ -6,12 +6,12 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	MessageQueue::MessageQueue(QJniObject obj) : __JniBaseClass(obj) {}
+	MessageQueue::MessageQueue(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void MessageQueue::addIdleHandler(__JniBaseClass arg0)
+	void MessageQueue::addIdleHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"addIdleHandler",
@@ -19,7 +19,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void MessageQueue::addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, __JniBaseClass arg2)
+	void MessageQueue::addOnFileDescriptorEventListener(java::io::FileDescriptor arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"addOnFileDescriptorEventListener",
@@ -36,7 +36,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	void MessageQueue::removeIdleHandler(__JniBaseClass arg0)
+	void MessageQueue::removeIdleHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"removeIdleHandler",

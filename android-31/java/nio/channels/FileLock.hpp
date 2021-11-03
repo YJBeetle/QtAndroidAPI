@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio::channels
 {
@@ -13,19 +13,19 @@ namespace java::nio::channels
 
 namespace java::nio::channels
 {
-	class FileLock : public __JniBaseClass
+	class FileLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit FileLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileLock(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass acquiredBy();
+		JObject acquiredBy();
 		java::nio::channels::FileChannel channel();
 		void close();
 		jboolean isShared();

@@ -5,7 +5,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	CertPath_CertPathRep::CertPath_CertPathRep(QJniObject obj) : __JniBaseClass(obj) {}
+	CertPath_CertPathRep::CertPath_CertPathRep(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

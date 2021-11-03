@@ -6,7 +6,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass DateTransformation::CREATOR()
+	JObject DateTransformation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.DateTransformation",
@@ -16,11 +16,11 @@ namespace android::service::autofill
 	}
 	
 	// QJniObject forward
-	DateTransformation::DateTransformation(QJniObject obj) : __JniBaseClass(obj) {}
+	DateTransformation::DateTransformation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateTransformation::DateTransformation(android::view::autofill::AutofillId arg0, android::icu::text::DateFormat arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.DateTransformation",
 			"(Landroid/view/autofill/AutofillId;Landroid/icu/text/DateFormat;)V",
 			arg0.object(),

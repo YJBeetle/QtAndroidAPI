@@ -8,18 +8,18 @@ namespace android::view
 	// Fields
 	
 	// QJniObject forward
-	ScaleGestureDetector::ScaleGestureDetector(QJniObject obj) : __JniBaseClass(obj) {}
+	ScaleGestureDetector::ScaleGestureDetector(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.ScaleGestureDetector",
 			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
-		: __JniBaseClass(
+	ScaleGestureDetector::ScaleGestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2)
+		: JObject(
 			"android.view.ScaleGestureDetector",
 			"(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;Landroid/os/Handler;)V",
 			arg0.object(),

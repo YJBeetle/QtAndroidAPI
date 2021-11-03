@@ -6,7 +6,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass AudioRecordingConfiguration::CREATOR()
+	JObject AudioRecordingConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.AudioRecordingConfiguration",
@@ -16,7 +16,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	AudioRecordingConfiguration::AudioRecordingConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioRecordingConfiguration::AudioRecordingConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

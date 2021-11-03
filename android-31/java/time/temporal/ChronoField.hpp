@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Enum.hpp"
 
 namespace java::time::temporal
@@ -58,18 +58,18 @@ namespace java::time::temporal
 		// Methods
 		static java::time::temporal::ChronoField valueOf(jstring arg0);
 		static jarray values();
-		__JniBaseClass adjustInto(__JniBaseClass arg0, jlong arg1);
+		JObject adjustInto(JObject arg0, jlong arg1);
 		jint checkValidIntValue(jlong arg0);
 		jlong checkValidValue(jlong arg0);
-		__JniBaseClass getBaseUnit();
+		JObject getBaseUnit();
 		jstring getDisplayName(java::util::Locale arg0);
-		jlong getFrom(__JniBaseClass arg0);
-		__JniBaseClass getRangeUnit();
+		jlong getFrom(JObject arg0);
+		JObject getRangeUnit();
 		jboolean isDateBased();
-		jboolean isSupportedBy(__JniBaseClass arg0);
+		jboolean isSupportedBy(JObject arg0);
 		jboolean isTimeBased();
 		java::time::temporal::ValueRange range();
-		java::time::temporal::ValueRange rangeRefinedBy(__JniBaseClass arg0);
+		java::time::temporal::ValueRange rangeRefinedBy(JObject arg0);
 		jstring toString();
 	};
 } // namespace java::time::temporal

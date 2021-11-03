@@ -14,7 +14,7 @@ namespace android::telecom
 	// Fields
 	
 	// QJniObject forward
-	RemoteConnection::RemoteConnection(QJniObject obj) : __JniBaseClass(obj) {}
+	RemoteConnection::RemoteConnection(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -75,7 +75,7 @@ namespace android::telecom
 			"()Landroid/telecom/RemoteConference;"
 		);
 	}
-	__JniBaseClass RemoteConnection::getConferenceableConnections()
+	JObject RemoteConnection::getConferenceableConnections()
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",

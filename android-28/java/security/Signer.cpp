@@ -25,7 +25,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	__JniBaseClass Signer::getPrivateKey()
+	JObject Signer::getPrivateKey()
 	{
 		return callObjectMethod(
 			"getPrivateKey",

@@ -6,17 +6,17 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(android::media::RouteDiscoveryPreference arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RouteDiscoveryPreference$Builder",
 			"(Landroid/media/RouteDiscoveryPreference;)V",
 			arg0.object()
 		) {}
-	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(__JniBaseClass arg0, jboolean arg1)
-		: __JniBaseClass(
+	RouteDiscoveryPreference_Builder::RouteDiscoveryPreference_Builder(JObject arg0, jboolean arg1)
+		: JObject(
 			"android.media.RouteDiscoveryPreference$Builder",
 			"(Ljava/util/List;Z)V",
 			arg0.object(),
@@ -31,7 +31,7 @@ namespace android::media
 			"()Landroid/media/RouteDiscoveryPreference;"
 		);
 	}
-	android::media::RouteDiscoveryPreference_Builder RouteDiscoveryPreference_Builder::setPreferredFeatures(__JniBaseClass arg0)
+	android::media::RouteDiscoveryPreference_Builder RouteDiscoveryPreference_Builder::setPreferredFeatures(JObject arg0)
 	{
 		return callObjectMethod(
 			"setPreferredFeatures",

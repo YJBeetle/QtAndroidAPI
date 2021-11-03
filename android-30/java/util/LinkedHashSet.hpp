@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 #include "./HashSet.hpp"
@@ -20,11 +20,11 @@ namespace java::util
 		// Constructors
 		LinkedHashSet();
 		LinkedHashSet(jint arg0);
-		LinkedHashSet(__JniBaseClass arg0);
+		LinkedHashSet(JObject arg0);
 		LinkedHashSet(jint arg0, jfloat arg1);
 		
 		// Methods
-		__JniBaseClass spliterator();
+		JObject spliterator();
 	};
 } // namespace java::util
 

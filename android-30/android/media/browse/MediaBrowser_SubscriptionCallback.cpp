@@ -6,17 +6,17 @@ namespace android::media::browse
 	// Fields
 	
 	// QJniObject forward
-	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaBrowser_SubscriptionCallback::MediaBrowser_SubscriptionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.browse.MediaBrowser$SubscriptionCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __JniBaseClass arg1)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onChildrenLoaded",
@@ -25,7 +25,7 @@ namespace android::media::browse
 			arg1.object()
 		);
 	}
-	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2)
+	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onChildrenLoaded",

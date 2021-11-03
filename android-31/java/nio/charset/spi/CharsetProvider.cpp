@@ -7,7 +7,7 @@ namespace java::nio::charset::spi
 	// Fields
 	
 	// QJniObject forward
-	CharsetProvider::CharsetProvider(QJniObject obj) : __JniBaseClass(obj) {}
+	CharsetProvider::CharsetProvider(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace java::nio::charset::spi
 			arg0
 		);
 	}
-	__JniBaseClass CharsetProvider::charsets()
+	JObject CharsetProvider::charsets()
 	{
 		return callObjectMethod(
 			"charsets",

@@ -38,7 +38,7 @@ namespace android::text::method
 			"()Landroid/text/method/QwertyKeyListener;"
 		);
 	}
-	void QwertyKeyListener::markAsReplaced(__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3)
+	void QwertyKeyListener::markAsReplaced(JObject arg0, jint arg1, jint arg2, jstring arg3)
 	{
 		callStaticMethod<void>(
 			"android.text.method.QwertyKeyListener",
@@ -57,7 +57,7 @@ namespace android::text::method
 			"()I"
 		);
 	}
-	jboolean QwertyKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean QwertyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",

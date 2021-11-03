@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::app
 {
-	class UiModeManager : public __JniBaseClass
+	class UiModeManager : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::app
 		static jint MODE_NIGHT_YES();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit UiModeManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UiModeManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UiModeManager(QJniObject obj);
 		
 		// Constructors

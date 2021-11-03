@@ -7,7 +7,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass Surface::CREATOR()
+	JObject Surface::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.Surface",
@@ -45,11 +45,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	Surface::Surface(QJniObject obj) : __JniBaseClass(obj) {}
+	Surface::Surface(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Surface::Surface(android::graphics::SurfaceTexture arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.Surface",
 			"(Landroid/graphics/SurfaceTexture;)V",
 			arg0.object()

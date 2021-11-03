@@ -34,7 +34,7 @@ namespace android::service::carrier
 			arg0
 		);
 	}
-	__JniBaseClass CarrierService::onBind(android::content::Intent arg0)
+	JObject CarrierService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

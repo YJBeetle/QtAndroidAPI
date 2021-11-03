@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -53,7 +53,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaExtractor : public __JniBaseClass
+	class MediaExtractor : public JObject
 	{
 	public:
 		// Fields
@@ -65,7 +65,7 @@ namespace android::media
 		static jint SEEK_TO_PREVIOUS_SYNC();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaExtractor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaExtractor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaExtractor(QJniObject obj);
 		
 		// Constructors
@@ -73,12 +73,12 @@ namespace android::media
 		
 		// Methods
 		jboolean advance();
-		__JniBaseClass getAudioPresentations(jint arg0);
+		JObject getAudioPresentations(jint arg0);
 		jlong getCachedDuration();
 		android::media::MediaExtractor_CasInfo getCasInfo(jint arg0);
 		android::media::DrmInitData getDrmInitData();
 		android::os::PersistableBundle getMetrics();
-		__JniBaseClass getPsshInfo();
+		JObject getPsshInfo();
 		jboolean getSampleCryptoInfo(android::media::MediaCodec_CryptoInfo arg0);
 		jint getSampleFlags();
 		jlong getSampleSize();
@@ -95,8 +95,8 @@ namespace android::media
 		void setDataSource(android::media::MediaDataSource arg0);
 		void setDataSource(java::io::FileDescriptor arg0);
 		void setDataSource(jstring arg0);
-		void setDataSource(jstring arg0, __JniBaseClass arg1);
-		void setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2);
+		void setDataSource(jstring arg0, JObject arg1);
+		void setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2);
 		void setDataSource(java::io::FileDescriptor arg0, jlong arg1, jlong arg2);
 		void setMediaCas(android::media::MediaCas arg0);
 		void unselectTrack(jint arg0);

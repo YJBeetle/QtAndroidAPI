@@ -7,11 +7,11 @@ namespace java::security::spec
 	// Fields
 	
 	// QJniObject forward
-	ECPrivateKeySpec::ECPrivateKeySpec(QJniObject obj) : __JniBaseClass(obj) {}
+	ECPrivateKeySpec::ECPrivateKeySpec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ECPrivateKeySpec::ECPrivateKeySpec(java::math::BigInteger arg0, java::security::spec::ECParameterSpec arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/security/spec/ECParameterSpec;)V",
 			arg0.object(),

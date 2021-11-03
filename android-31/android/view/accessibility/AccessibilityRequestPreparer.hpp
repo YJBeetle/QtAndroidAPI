@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,14 +17,14 @@ namespace android::view
 
 namespace android::view::accessibility
 {
-	class AccessibilityRequestPreparer : public __JniBaseClass
+	class AccessibilityRequestPreparer : public JObject
 	{
 	public:
 		// Fields
 		static jint REQUEST_TYPE_EXTRA_DATA();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityRequestPreparer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityRequestPreparer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityRequestPreparer(QJniObject obj);
 		
 		// Constructors

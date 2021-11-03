@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::util
 {
-	class Locale_LanguageRange : public __JniBaseClass
+	class Locale_LanguageRange : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace java::util
 		static jdouble MIN_WEIGHT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Locale_LanguageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Locale_LanguageRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Locale_LanguageRange(QJniObject obj);
 		
 		// Constructors
@@ -21,9 +21,9 @@ namespace java::util
 		Locale_LanguageRange(jstring arg0, jdouble arg1);
 		
 		// Methods
-		static __JniBaseClass mapEquivalents(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass parse(jstring arg0);
-		static __JniBaseClass parse(jstring arg0, __JniBaseClass arg1);
+		static JObject mapEquivalents(JObject arg0, JObject arg1);
+		static JObject parse(jstring arg0);
+		static JObject parse(jstring arg0, JObject arg1);
 		jboolean equals(jobject arg0);
 		jstring getRange();
 		jdouble getWeight();

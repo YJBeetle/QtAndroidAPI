@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass ServiceState::CREATOR()
+	JObject ServiceState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.ServiceState",
@@ -70,22 +70,22 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	ServiceState::ServiceState(QJniObject obj) : __JniBaseClass(obj) {}
+	ServiceState::ServiceState(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ServiceState::ServiceState()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.ServiceState",
 			"()V"
 		) {}
 	ServiceState::ServiceState(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.ServiceState",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	ServiceState::ServiceState(android::telephony::ServiceState &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.ServiceState",
 			"(Landroid/telephony/ServiceState;)V",
 			arg0.object()

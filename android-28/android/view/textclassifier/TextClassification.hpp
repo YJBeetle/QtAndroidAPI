@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,21 +17,21 @@ namespace android::os
 
 namespace android::view::textclassifier
 {
-	class TextClassification : public __JniBaseClass
+	class TextClassification : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextClassification(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextClassification(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextClassification(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getActions();
+		JObject getActions();
 		jfloat getConfidenceScore(jstring arg0);
 		jstring getEntity(jint arg0);
 		jint getEntityCount();
@@ -39,7 +39,7 @@ namespace android::view::textclassifier
 		jstring getId();
 		android::content::Intent getIntent();
 		jstring getLabel();
-		__JniBaseClass getOnClickListener();
+		JObject getOnClickListener();
 		jstring getText();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

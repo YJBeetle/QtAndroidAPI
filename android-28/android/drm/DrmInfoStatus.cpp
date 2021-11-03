@@ -46,11 +46,11 @@ namespace android::drm
 	}
 	
 	// QJniObject forward
-	DrmInfoStatus::DrmInfoStatus(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmInfoStatus::DrmInfoStatus(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmInfoStatus::DrmInfoStatus(jint arg0, jint arg1, android::drm::ProcessedData arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmInfoStatus",
 			"(IILandroid/drm/ProcessedData;Ljava/lang/String;)V",
 			arg0,

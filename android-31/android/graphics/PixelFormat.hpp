@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::graphics
 {
-	class PixelFormat : public __JniBaseClass
+	class PixelFormat : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::graphics
 		jint bytesPerPixel();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PixelFormat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PixelFormat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PixelFormat(QJniObject obj);
 		
 		// Constructors

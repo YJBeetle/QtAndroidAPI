@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::location::provider
 {
@@ -9,13 +9,13 @@ namespace android::location::provider
 
 namespace android::location::provider
 {
-	class ProviderProperties_Builder : public __JniBaseClass
+	class ProviderProperties_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ProviderProperties_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProviderProperties_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProviderProperties_Builder(QJniObject obj);
 		
 		// Constructors

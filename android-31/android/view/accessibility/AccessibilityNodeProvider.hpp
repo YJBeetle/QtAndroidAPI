@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeProvider : public __JniBaseClass
+	class AccessibilityNodeProvider : public JObject
 	{
 	public:
 		// Fields
 		static jint HOST_VIEW_ID();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityNodeProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeProvider(QJniObject obj);
 		
 		// Constructors
@@ -29,7 +29,7 @@ namespace android::view::accessibility
 		// Methods
 		void addExtraDataToAccessibilityNodeInfo(jint arg0, android::view::accessibility::AccessibilityNodeInfo arg1, jstring arg2, android::os::Bundle arg3);
 		android::view::accessibility::AccessibilityNodeInfo createAccessibilityNodeInfo(jint arg0);
-		__JniBaseClass findAccessibilityNodeInfosByText(jstring arg0, jint arg1);
+		JObject findAccessibilityNodeInfosByText(jstring arg0, jint arg1);
 		android::view::accessibility::AccessibilityNodeInfo findFocus(jint arg0);
 		jboolean performAction(jint arg0, jint arg1, android::os::Bundle arg2);
 	};

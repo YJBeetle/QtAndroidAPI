@@ -89,7 +89,7 @@ namespace android::net::wifi
 	}
 	
 	// QJniObject forward
-	EasyConnectStatusCallback::EasyConnectStatusCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	EasyConnectStatusCallback::EasyConnectStatusCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

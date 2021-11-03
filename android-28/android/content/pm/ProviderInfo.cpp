@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ProviderInfo::CREATOR()
+	JObject ProviderInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ProviderInfo",
@@ -109,7 +109,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ProviderInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ProviderInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

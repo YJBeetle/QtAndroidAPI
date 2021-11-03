@@ -34,11 +34,11 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssMeasurementsEvent_Callback::GnssMeasurementsEvent_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssMeasurementsEvent$Callback",
 			"()V"
 		) {}

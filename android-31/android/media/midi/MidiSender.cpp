@@ -6,11 +6,11 @@ namespace android::media::midi
 	// Fields
 	
 	// QJniObject forward
-	MidiSender::MidiSender(QJniObject obj) : __JniBaseClass(obj) {}
+	MidiSender::MidiSender(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MidiSender::MidiSender()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.midi.MidiSender",
 			"()V"
 		) {}

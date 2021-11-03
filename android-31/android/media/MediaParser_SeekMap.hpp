@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::util
 {
@@ -9,14 +9,14 @@ namespace android::util
 
 namespace android::media
 {
-	class MediaParser_SeekMap : public __JniBaseClass
+	class MediaParser_SeekMap : public JObject
 	{
 	public:
 		// Fields
 		static jint UNKNOWN_DURATION();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaParser_SeekMap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaParser_SeekMap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaParser_SeekMap(QJniObject obj);
 		
 		// Constructors

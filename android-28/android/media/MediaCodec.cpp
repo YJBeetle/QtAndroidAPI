@@ -140,7 +140,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaCodec::MediaCodec(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec::MediaCodec(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -403,7 +403,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setOnFrameRenderedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaCodec::setOnFrameRenderedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnFrameRenderedListener",

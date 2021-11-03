@@ -5,7 +5,7 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	MimeTypeMap::MimeTypeMap(QJniObject obj) : __JniBaseClass(obj) {}
+	MimeTypeMap::MimeTypeMap(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

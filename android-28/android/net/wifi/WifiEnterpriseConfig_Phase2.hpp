@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig_Phase2 : public __JniBaseClass
+	class WifiEnterpriseConfig_Phase2 : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::net::wifi
 		static jint SIM();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig_Phase2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiEnterpriseConfig_Phase2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig_Phase2(QJniObject obj);
 		
 		// Constructors

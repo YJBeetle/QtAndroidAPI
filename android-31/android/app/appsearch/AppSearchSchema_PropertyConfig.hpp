@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class AppSearchSchema_PropertyConfig : public __JniBaseClass
+	class AppSearchSchema_PropertyConfig : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::app::appsearch
 		static jint CARDINALITY_REQUIRED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppSearchSchema_PropertyConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppSearchSchema_PropertyConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppSearchSchema_PropertyConfig(QJniObject obj);
 		
 		// Constructors

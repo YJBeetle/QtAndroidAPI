@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::backup
 {
@@ -21,13 +21,13 @@ namespace android::os
 
 namespace android::app::backup
 {
-	class SharedPreferencesBackupHelper : public __JniBaseClass
+	class SharedPreferencesBackupHelper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SharedPreferencesBackupHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SharedPreferencesBackupHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SharedPreferencesBackupHelper(QJniObject obj);
 		
 		// Constructors

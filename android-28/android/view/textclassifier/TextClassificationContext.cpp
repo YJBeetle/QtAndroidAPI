@@ -4,7 +4,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextClassificationContext::CREATOR()
+	JObject TextClassificationContext::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassificationContext",
@@ -14,7 +14,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QJniObject forward
-	TextClassificationContext::TextClassificationContext(QJniObject obj) : __JniBaseClass(obj) {}
+	TextClassificationContext::TextClassificationContext(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,23 +9,23 @@ namespace android::os
 
 namespace android::provider
 {
-	class DocumentsContract_Path : public __JniBaseClass
+	class DocumentsContract_Path : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit DocumentsContract_Path(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DocumentsContract_Path(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract_Path(QJniObject obj);
 		
 		// Constructors
-		DocumentsContract_Path(jstring arg0, __JniBaseClass arg1);
+		DocumentsContract_Path(jstring arg0, JObject arg1);
 		
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getPath();
+		JObject getPath();
 		jstring getRootId();
 		jint hashCode();
 		jstring toString();

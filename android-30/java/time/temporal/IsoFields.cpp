@@ -3,7 +3,7 @@
 namespace java::time::temporal
 {
 	// Fields
-	__JniBaseClass IsoFields::DAY_OF_QUARTER()
+	JObject IsoFields::DAY_OF_QUARTER()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -11,7 +11,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass IsoFields::QUARTER_OF_YEAR()
+	JObject IsoFields::QUARTER_OF_YEAR()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -19,7 +19,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass IsoFields::QUARTER_YEARS()
+	JObject IsoFields::QUARTER_YEARS()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -27,7 +27,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalUnit;"
 		);
 	}
-	__JniBaseClass IsoFields::WEEK_BASED_YEAR()
+	JObject IsoFields::WEEK_BASED_YEAR()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -35,7 +35,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalField;"
 		);
 	}
-	__JniBaseClass IsoFields::WEEK_BASED_YEARS()
+	JObject IsoFields::WEEK_BASED_YEARS()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -43,7 +43,7 @@ namespace java::time::temporal
 			"Ljava/time/temporal/TemporalUnit;"
 		);
 	}
-	__JniBaseClass IsoFields::WEEK_OF_WEEK_BASED_YEAR()
+	JObject IsoFields::WEEK_OF_WEEK_BASED_YEAR()
 	{
 		return getStaticObjectField(
 			"java.time.temporal.IsoFields",
@@ -53,7 +53,7 @@ namespace java::time::temporal
 	}
 	
 	// QJniObject forward
-	IsoFields::IsoFields(QJniObject obj) : __JniBaseClass(obj) {}
+	IsoFields::IsoFields(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

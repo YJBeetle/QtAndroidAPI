@@ -3,7 +3,7 @@
 namespace java::net
 {
 	// Fields
-	__JniBaseClass StandardSocketOptions::IP_MULTICAST_IF()
+	JObject StandardSocketOptions::IP_MULTICAST_IF()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -11,7 +11,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::IP_MULTICAST_LOOP()
+	JObject StandardSocketOptions::IP_MULTICAST_LOOP()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -19,7 +19,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::IP_MULTICAST_TTL()
+	JObject StandardSocketOptions::IP_MULTICAST_TTL()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -27,7 +27,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::IP_TOS()
+	JObject StandardSocketOptions::IP_TOS()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -35,7 +35,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_BROADCAST()
+	JObject StandardSocketOptions::SO_BROADCAST()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -43,7 +43,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_KEEPALIVE()
+	JObject StandardSocketOptions::SO_KEEPALIVE()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -51,7 +51,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_LINGER()
+	JObject StandardSocketOptions::SO_LINGER()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -59,7 +59,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_RCVBUF()
+	JObject StandardSocketOptions::SO_RCVBUF()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -67,7 +67,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_REUSEADDR()
+	JObject StandardSocketOptions::SO_REUSEADDR()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -75,7 +75,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_REUSEPORT()
+	JObject StandardSocketOptions::SO_REUSEPORT()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -83,7 +83,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::SO_SNDBUF()
+	JObject StandardSocketOptions::SO_SNDBUF()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -91,7 +91,7 @@ namespace java::net
 			"Ljava/net/SocketOption;"
 		);
 	}
-	__JniBaseClass StandardSocketOptions::TCP_NODELAY()
+	JObject StandardSocketOptions::TCP_NODELAY()
 	{
 		return getStaticObjectField(
 			"java.net.StandardSocketOptions",
@@ -101,7 +101,7 @@ namespace java::net
 	}
 	
 	// QJniObject forward
-	StandardSocketOptions::StandardSocketOptions(QJniObject obj) : __JniBaseClass(obj) {}
+	StandardSocketOptions::StandardSocketOptions(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -131,7 +131,7 @@ namespace android::mtp
 	}
 	
 	// QJniObject forward
-	MtpEvent::MtpEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	MtpEvent::MtpEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

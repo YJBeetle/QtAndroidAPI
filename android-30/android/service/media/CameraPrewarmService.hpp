@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -25,7 +25,7 @@ namespace android::service::media
 		CameraPrewarmService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCooldown(jboolean arg0);
 		void onPrewarm();
 		jboolean onUnbind(android::content::Intent arg0);

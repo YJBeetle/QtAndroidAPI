@@ -19,14 +19,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, JObject arg1)
 		: android::preference::Preference(
 			"android.preference.RingtonePreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::Preference(
 			"android.preference.RingtonePreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	RingtonePreference::RingtonePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	RingtonePreference::RingtonePreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::Preference(
 			"android.preference.RingtonePreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

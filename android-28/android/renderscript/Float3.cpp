@@ -23,16 +23,16 @@ namespace android::renderscript
 	}
 	
 	// QJniObject forward
-	Float3::Float3(QJniObject obj) : __JniBaseClass(obj) {}
+	Float3::Float3(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Float3::Float3()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Float3",
 			"()V"
 		) {}
 	Float3::Float3(jfloat arg0, jfloat arg1, jfloat arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Float3",
 			"(FFF)V",
 			arg0,

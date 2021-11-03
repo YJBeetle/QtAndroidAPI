@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os::storage
 {
@@ -9,13 +9,13 @@ namespace android::os::storage
 
 namespace android::os::storage
 {
-	class StorageManager_StorageVolumeCallback : public __JniBaseClass
+	class StorageManager_StorageVolumeCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit StorageManager_StorageVolumeCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StorageManager_StorageVolumeCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StorageManager_StorageVolumeCallback(QJniObject obj);
 		
 		// Constructors

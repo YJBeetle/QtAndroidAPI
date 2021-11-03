@@ -18,11 +18,11 @@ namespace android::graphics::drawable
 	// Fields
 	
 	// QJniObject forward
-	Drawable::Drawable(QJniObject obj) : __JniBaseClass(obj) {}
+	Drawable::Drawable(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Drawable::Drawable()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.drawable.Drawable",
 			"()V"
 		) {}
@@ -72,7 +72,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1)
+	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -82,7 +82,7 @@ namespace android::graphics::drawable
 			arg1.object()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, __JniBaseClass arg1, android::content::res::Resources_Theme arg2)
+	android::graphics::drawable::Drawable Drawable::createFromXml(android::content::res::Resources arg0, JObject arg1, android::content::res::Resources_Theme arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -93,7 +93,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -104,7 +104,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	android::graphics::drawable::Drawable Drawable::createFromXmlInner(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.drawable.Drawable",
@@ -185,7 +185,7 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/Rect;"
 		);
 	}
-	__JniBaseClass Drawable::getCallback()
+	JObject Drawable::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",
@@ -314,7 +314,7 @@ namespace android::graphics::drawable
 			"()Landroid/graphics/Region;"
 		);
 	}
-	void Drawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void Drawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"inflate",
@@ -324,7 +324,7 @@ namespace android::graphics::drawable
 			arg2.object()
 		);
 	}
-	void Drawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void Drawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",
@@ -392,7 +392,7 @@ namespace android::graphics::drawable
 			arg0
 		);
 	}
-	void Drawable::scheduleSelf(__JniBaseClass arg0, jlong arg1)
+	void Drawable::scheduleSelf(JObject arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"scheduleSelf",
@@ -436,7 +436,7 @@ namespace android::graphics::drawable
 			arg3
 		);
 	}
-	void Drawable::setCallback(__JniBaseClass arg0)
+	void Drawable::setCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setCallback",
@@ -562,7 +562,7 @@ namespace android::graphics::drawable
 			arg1
 		);
 	}
-	void Drawable::unscheduleSelf(__JniBaseClass arg0)
+	void Drawable::unscheduleSelf(JObject arg0)
 	{
 		callMethod<void>(
 			"unscheduleSelf",

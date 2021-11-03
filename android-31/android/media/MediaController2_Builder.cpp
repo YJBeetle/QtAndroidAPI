@@ -10,11 +10,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	MediaController2_Builder::MediaController2_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaController2_Builder::MediaController2_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaController2_Builder::MediaController2_Builder(android::content::Context arg0, android::media::Session2Token arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaController2$Builder",
 			"(Landroid/content/Context;Landroid/media/Session2Token;)V",
 			arg0.object(),
@@ -37,7 +37,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::MediaController2_Builder MediaController2_Builder::setControllerCallback(__JniBaseClass arg0, android::media::MediaController2_ControllerCallback arg1)
+	android::media::MediaController2_Builder MediaController2_Builder::setControllerCallback(JObject arg0, android::media::MediaController2_ControllerCallback arg1)
 	{
 		return callObjectMethod(
 			"setControllerCallback",

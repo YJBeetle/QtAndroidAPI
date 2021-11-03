@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::content
 {
-	class BroadcastReceiver_PendingResult : public __JniBaseClass
+	class BroadcastReceiver_PendingResult : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit BroadcastReceiver_PendingResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BroadcastReceiver_PendingResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BroadcastReceiver_PendingResult(QJniObject obj);
 		
 		// Constructors

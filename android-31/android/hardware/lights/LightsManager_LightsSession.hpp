@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::lights
 {
@@ -9,13 +9,13 @@ namespace android::hardware::lights
 
 namespace android::hardware::lights
 {
-	class LightsManager_LightsSession : public __JniBaseClass
+	class LightsManager_LightsSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LightsManager_LightsSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LightsManager_LightsSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LightsManager_LightsSession(QJniObject obj);
 		
 		// Constructors

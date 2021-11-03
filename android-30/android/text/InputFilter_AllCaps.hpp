@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,13 +9,13 @@ namespace java::util
 
 namespace android::text
 {
-	class InputFilter_AllCaps : public __JniBaseClass
+	class InputFilter_AllCaps : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit InputFilter_AllCaps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputFilter_AllCaps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputFilter_AllCaps(QJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::text
 		InputFilter_AllCaps(java::util::Locale arg0);
 		
 		// Methods
-		jstring filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5);
 	};
 } // namespace android::text
 

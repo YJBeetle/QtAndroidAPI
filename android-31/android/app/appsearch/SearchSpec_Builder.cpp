@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QJniObject forward
-	SearchSpec_Builder::SearchSpec_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	SearchSpec_Builder::SearchSpec_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SearchSpec_Builder::SearchSpec_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.SearchSpec$Builder",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(__JniBaseClass arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterNamespaces(JObject arg0)
 	{
 		return callObjectMethod(
 			"addFilterNamespaces",
@@ -40,7 +40,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(__JniBaseClass arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterPackageNames(JObject arg0)
 	{
 		return callObjectMethod(
 			"addFilterPackageNames",
@@ -56,7 +56,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(__JniBaseClass arg0)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addFilterSchemas(JObject arg0)
 	{
 		return callObjectMethod(
 			"addFilterSchemas",
@@ -64,7 +64,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(jstring arg0, __JniBaseClass arg1)
+	android::app::appsearch::SearchSpec_Builder SearchSpec_Builder::addProjection(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"addProjection",

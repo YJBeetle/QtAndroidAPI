@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
 #include "../../java/lang/IllegalStateException.hpp"
@@ -17,7 +17,7 @@ namespace android::app
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QJniObject forward
 		template<typename ...Ts> explicit BackgroundServiceStartNotAllowedException(const char *className, const char *sig, Ts...agv) : android::app::ServiceStartNotAllowedException(className, sig, std::forward<Ts>(agv)...) {}

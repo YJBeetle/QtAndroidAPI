@@ -14,7 +14,7 @@ namespace android::view::animation
 			"android.view.animation.BounceInterpolator",
 			"()V"
 		) {}
-	BounceInterpolator::BounceInterpolator(android::content::Context arg0, __JniBaseClass arg1)
+	BounceInterpolator::BounceInterpolator(android::content::Context arg0, JObject arg1)
 		: android::view::animation::BaseInterpolator(
 			"android.view.animation.BounceInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

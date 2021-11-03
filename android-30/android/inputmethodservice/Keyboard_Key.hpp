@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -17,7 +17,7 @@ namespace android::inputmethodservice
 
 namespace android::inputmethodservice
 {
-	class Keyboard_Key : public __JniBaseClass
+	class Keyboard_Key : public JObject
 	{
 	public:
 		// Fields
@@ -41,12 +41,12 @@ namespace android::inputmethodservice
 		jint y();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Keyboard_Key(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Keyboard_Key(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Keyboard_Key(QJniObject obj);
 		
 		// Constructors
 		Keyboard_Key(android::inputmethodservice::Keyboard_Row arg0);
-		Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, __JniBaseClass arg4);
+		Keyboard_Key(android::content::res::Resources arg0, android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, JObject arg4);
 		
 		// Methods
 		jintArray getCurrentDrawableState();

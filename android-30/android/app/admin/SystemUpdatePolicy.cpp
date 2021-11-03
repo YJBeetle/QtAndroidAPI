@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass SystemUpdatePolicy::CREATOR()
+	JObject SystemUpdatePolicy::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.SystemUpdatePolicy",
@@ -35,7 +35,7 @@ namespace android::app::admin
 	}
 	
 	// QJniObject forward
-	SystemUpdatePolicy::SystemUpdatePolicy(QJniObject obj) : __JniBaseClass(obj) {}
+	SystemUpdatePolicy::SystemUpdatePolicy(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -73,7 +73,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	__JniBaseClass SystemUpdatePolicy::getFreezePeriods()
+	JObject SystemUpdatePolicy::getFreezePeriods()
 	{
 		return callObjectMethod(
 			"getFreezePeriods",
@@ -101,7 +101,7 @@ namespace android::app::admin
 			"()I"
 		);
 	}
-	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::setFreezePeriods(__JniBaseClass arg0)
+	android::app::admin::SystemUpdatePolicy SystemUpdatePolicy::setFreezePeriods(JObject arg0)
 	{
 		return callObjectMethod(
 			"setFreezePeriods",

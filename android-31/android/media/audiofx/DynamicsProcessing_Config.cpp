@@ -11,7 +11,7 @@ namespace android::media::audiofx
 	// Fields
 	
 	// QJniObject forward
-	DynamicsProcessing_Config::DynamicsProcessing_Config(QJniObject obj) : __JniBaseClass(obj) {}
+	DynamicsProcessing_Config::DynamicsProcessing_Config(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

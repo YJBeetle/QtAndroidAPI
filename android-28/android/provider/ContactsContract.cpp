@@ -94,11 +94,11 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract::ContactsContract(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract::ContactsContract(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract::ContactsContract()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract",
 			"()V"
 		) {}

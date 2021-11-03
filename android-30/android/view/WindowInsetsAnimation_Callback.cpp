@@ -22,11 +22,11 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	WindowInsetsAnimation_Callback::WindowInsetsAnimation_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsetsAnimation_Callback::WindowInsetsAnimation_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WindowInsetsAnimation_Callback::WindowInsetsAnimation_Callback(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.WindowInsetsAnimation$Callback",
 			"(I)V",
 			arg0
@@ -56,7 +56,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::WindowInsets WindowInsetsAnimation_Callback::onProgress(android::view::WindowInsets arg0, __JniBaseClass arg1)
+	android::view::WindowInsets WindowInsetsAnimation_Callback::onProgress(android::view::WindowInsets arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"onProgress",

@@ -12,11 +12,11 @@ namespace android::app
 	// Fields
 	
 	// QJniObject forward
-	AppComponentFactory::AppComponentFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	AppComponentFactory::AppComponentFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AppComponentFactory::AppComponentFactory()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.AppComponentFactory",
 			"()V"
 		) {}

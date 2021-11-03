@@ -7,7 +7,7 @@
 namespace android::net::wifi::rtt
 {
 	// Fields
-	__JniBaseClass RangingResult::CREATOR()
+	JObject RangingResult::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.rtt.RangingResult",
@@ -38,7 +38,7 @@ namespace android::net::wifi::rtt
 	}
 	
 	// QJniObject forward
-	RangingResult::RangingResult(QJniObject obj) : __JniBaseClass(obj) {}
+	RangingResult::RangingResult(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

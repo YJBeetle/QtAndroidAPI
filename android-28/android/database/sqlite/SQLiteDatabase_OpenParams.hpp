@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::database::sqlite
 {
-	class SQLiteDatabase_OpenParams : public __JniBaseClass
+	class SQLiteDatabase_OpenParams : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit SQLiteDatabase_OpenParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SQLiteDatabase_OpenParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SQLiteDatabase_OpenParams(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getCursorFactory();
-		__JniBaseClass getErrorHandler();
+		JObject getCursorFactory();
+		JObject getErrorHandler();
 		jlong getIdleConnectionTimeout();
 		jstring getJournalMode();
 		jint getLookasideSlotCount();

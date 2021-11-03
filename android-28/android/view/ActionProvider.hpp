@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace android::view
 
 namespace android::view
 {
-	class ActionProvider : public __JniBaseClass
+	class ActionProvider : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActionProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActionProvider(QJniObject obj);
 		
 		// Constructors
@@ -29,12 +29,12 @@ namespace android::view
 		jboolean hasSubMenu();
 		jboolean isVisible();
 		android::view::View onCreateActionView();
-		android::view::View onCreateActionView(__JniBaseClass arg0);
+		android::view::View onCreateActionView(JObject arg0);
 		jboolean onPerformDefaultAction();
-		void onPrepareSubMenu(__JniBaseClass arg0);
+		void onPrepareSubMenu(JObject arg0);
 		jboolean overridesItemVisibility();
 		void refreshVisibility();
-		void setVisibilityListener(__JniBaseClass arg0);
+		void setVisibilityListener(JObject arg0);
 	};
 } // namespace android::view
 

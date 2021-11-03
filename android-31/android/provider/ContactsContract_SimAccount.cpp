@@ -11,7 +11,7 @@ namespace android::provider
 			"ADN_EF_TYPE"
 		);
 	}
-	__JniBaseClass ContactsContract_SimAccount::CREATOR()
+	JObject ContactsContract_SimAccount::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.provider.ContactsContract$SimAccount",
@@ -42,7 +42,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	ContactsContract_SimAccount::ContactsContract_SimAccount(QJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_SimAccount::ContactsContract_SimAccount(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

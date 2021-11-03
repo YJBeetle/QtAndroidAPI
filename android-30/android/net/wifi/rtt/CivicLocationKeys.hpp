@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::net::wifi::rtt
 {
-	class CivicLocationKeys : public __JniBaseClass
+	class CivicLocationKeys : public JObject
 	{
 	public:
 		// Fields
@@ -43,7 +43,7 @@ namespace android::net::wifi::rtt
 		static jint TYPE_OF_PLACE();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CivicLocationKeys(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CivicLocationKeys(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CivicLocationKeys(QJniObject obj);
 		
 		// Constructors

@@ -172,7 +172,7 @@ namespace android::bluetooth
 	}
 	
 	// QJniObject forward
-	BluetoothHidDevice::BluetoothHidDevice(QJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHidDevice::BluetoothHidDevice(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -193,7 +193,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothHidDevice::getConnectedDevices()
+	JObject BluetoothHidDevice::getConnectedDevices()
 	{
 		return callObjectMethod(
 			"getConnectedDevices",
@@ -208,7 +208,7 @@ namespace android::bluetooth
 			arg0.object()
 		);
 	}
-	__JniBaseClass BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
+	JObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return callObjectMethod(
 			"getDevicesMatchingConnectionStates",
@@ -216,7 +216,7 @@ namespace android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothHidDevice::registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __JniBaseClass arg3, android::bluetooth::BluetoothHidDevice_Callback arg4)
+	jboolean BluetoothHidDevice::registerApp(android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, JObject arg3, android::bluetooth::BluetoothHidDevice_Callback arg4)
 	{
 		return callMethod<jboolean>(
 			"registerApp",

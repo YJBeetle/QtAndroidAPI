@@ -21,11 +21,11 @@ namespace android::hardware::camera2
 	}
 	
 	// QJniObject forward
-	DngCreator::DngCreator(QJniObject obj) : __JniBaseClass(obj) {}
+	DngCreator::DngCreator(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DngCreator::DngCreator(android::hardware::camera2::CameraCharacteristics arg0, android::hardware::camera2::CaptureResult arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.DngCreator",
 			"(Landroid/hardware/camera2/CameraCharacteristics;Landroid/hardware/camera2/CaptureResult;)V",
 			arg0.object(),

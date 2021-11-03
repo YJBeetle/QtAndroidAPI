@@ -20,14 +20,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1)
+	DialogPreference::DialogPreference(android::content::Context arg0, JObject arg1)
 		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	DialogPreference::DialogPreference(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -35,7 +35,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	DialogPreference::DialogPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	DialogPreference::DialogPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::Preference(
 			"android.preference.DialogPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -102,7 +102,7 @@ namespace android::preference
 			"()V"
 		);
 	}
-	void DialogPreference::onClick(__JniBaseClass arg0, jint arg1)
+	void DialogPreference::onClick(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"onClick",
@@ -111,7 +111,7 @@ namespace android::preference
 			arg1
 		);
 	}
-	void DialogPreference::onDismiss(__JniBaseClass arg0)
+	void DialogPreference::onDismiss(JObject arg0)
 	{
 		callMethod<void>(
 			"onDismiss",

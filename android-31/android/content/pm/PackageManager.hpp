@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -101,7 +101,7 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageManager : public __JniBaseClass
+	class PackageManager : public JObject
 	{
 	public:
 		// Fields
@@ -290,14 +290,14 @@ namespace android::content::pm
 		static jint SIGNATURE_SECOND_NOT_SIGNED();
 		static jint SIGNATURE_UNKNOWN_PACKAGE();
 		static jint SYNCHRONOUS();
-		static __JniBaseClass TRUST_ALL();
-		static __JniBaseClass TRUST_NONE();
+		static JObject TRUST_ALL();
+		static JObject TRUST_NONE();
 		static jint VERIFICATION_ALLOW();
 		static jint VERIFICATION_REJECT();
 		static jint VERSION_CODE_HIGHEST();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PackageManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageManager(QJniObject obj);
 		
 		// Constructors
@@ -325,7 +325,7 @@ namespace android::content::pm
 		android::content::pm::ActivityInfo getActivityInfo(android::content::ComponentName arg0, jint arg1);
 		android::graphics::drawable::Drawable getActivityLogo(android::content::ComponentName arg0);
 		android::graphics::drawable::Drawable getActivityLogo(android::content::Intent arg0);
-		__JniBaseClass getAllPermissionGroups(jint arg0);
+		JObject getAllPermissionGroups(jint arg0);
 		android::graphics::drawable::Drawable getApplicationBanner(android::content::pm::ApplicationInfo arg0);
 		android::graphics::drawable::Drawable getApplicationBanner(jstring arg0);
 		jint getApplicationEnabledSetting(jstring arg0);
@@ -340,18 +340,18 @@ namespace android::content::pm
 		jint getComponentEnabledSetting(android::content::ComponentName arg0);
 		android::graphics::drawable::Drawable getDefaultActivityIcon();
 		android::graphics::drawable::Drawable getDrawable(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2);
-		void getGroupOfPlatformPermission(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		void getGroupOfPlatformPermission(jstring arg0, JObject arg1, JObject arg2);
 		android::content::pm::InstallSourceInfo getInstallSourceInfo(jstring arg0);
-		__JniBaseClass getInstalledApplications(jint arg0);
-		__JniBaseClass getInstalledModules(jint arg0);
-		__JniBaseClass getInstalledPackages(jint arg0);
+		JObject getInstalledApplications(jint arg0);
+		JObject getInstalledModules(jint arg0);
+		JObject getInstalledPackages(jint arg0);
 		jstring getInstallerPackageName(jstring arg0);
 		jbyteArray getInstantAppCookie();
 		jint getInstantAppCookieMaxBytes();
 		android::content::pm::InstrumentationInfo getInstrumentationInfo(android::content::ComponentName arg0, jint arg1);
 		android::content::Intent getLaunchIntentForPackage(jstring arg0);
 		android::content::Intent getLeanbackLaunchIntentForPackage(jstring arg0);
-		__JniBaseClass getMimeGroup(jstring arg0);
+		JObject getMimeGroup(jstring arg0);
 		android::content::pm::ModuleInfo getModuleInfo(jstring arg0, jint arg1);
 		jstring getNameForUid(jint arg0);
 		android::content::pm::PackageInfo getPackageArchiveInfo(jstring arg0, jint arg1);
@@ -362,12 +362,12 @@ namespace android::content::pm
 		android::content::pm::PackageInstaller getPackageInstaller();
 		jint getPackageUid(jstring arg0, jint arg1);
 		jarray getPackagesForUid(jint arg0);
-		__JniBaseClass getPackagesHoldingPermissions(jarray arg0, jint arg1);
+		JObject getPackagesHoldingPermissions(jarray arg0, jint arg1);
 		android::content::pm::PermissionGroupInfo getPermissionGroupInfo(jstring arg0, jint arg1);
 		android::content::pm::PermissionInfo getPermissionInfo(jstring arg0, jint arg1);
-		void getPlatformPermissionsForGroup(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		jint getPreferredActivities(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2);
-		__JniBaseClass getPreferredPackages(jint arg0);
+		void getPlatformPermissionsForGroup(jstring arg0, JObject arg1, JObject arg2);
+		jint getPreferredActivities(JObject arg0, JObject arg1, jstring arg2);
+		JObject getPreferredPackages(jint arg0);
 		android::content::pm::PackageManager_Property getProperty(jstring arg0, android::content::ComponentName arg1);
 		android::content::pm::PackageManager_Property getProperty(jstring arg0, jstring arg1);
 		android::content::pm::ProviderInfo getProviderInfo(android::content::ComponentName arg0, jint arg1);
@@ -377,7 +377,7 @@ namespace android::content::pm
 		android::content::res::Resources getResourcesForApplication(jstring arg0);
 		android::content::res::Resources getResourcesForApplication(android::content::pm::ApplicationInfo arg0, android::content::res::Configuration arg1);
 		android::content::pm::ServiceInfo getServiceInfo(android::content::ComponentName arg0, jint arg1);
-		__JniBaseClass getSharedLibraries(jint arg0);
+		JObject getSharedLibraries(jint arg0);
 		android::os::Bundle getSuspendedPackageAppExtras();
 		jboolean getSyntheticAppDetailsActivityEnabled(jstring arg0);
 		jarray getSystemAvailableFeatures();
@@ -387,8 +387,8 @@ namespace android::content::pm
 		android::graphics::drawable::Drawable getUserBadgedDrawableForDensity(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, jint arg3);
 		android::graphics::drawable::Drawable getUserBadgedIcon(android::graphics::drawable::Drawable arg0, android::os::UserHandle arg1);
 		jstring getUserBadgedLabel(jstring arg0, android::os::UserHandle arg1);
-		__JniBaseClass getWhitelistedRestrictedPermissions(jstring arg0, jint arg1);
-		__JniBaseClass getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2);
+		JObject getWhitelistedRestrictedPermissions(jstring arg0, jint arg1);
+		JObject getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2);
 		jboolean hasSigningCertificate(jint arg0, jbyteArray arg1, jint arg2);
 		jboolean hasSigningCertificate(jstring arg0, jbyteArray arg1, jint arg2);
 		jboolean hasSystemFeature(jstring arg0);
@@ -403,23 +403,23 @@ namespace android::content::pm
 		jboolean isPackageSuspended(jstring arg0);
 		jboolean isPermissionRevokedByPolicy(jstring arg0, jstring arg1);
 		jboolean isSafeMode();
-		__JniBaseClass queryActivityProperty(jstring arg0);
-		__JniBaseClass queryApplicationProperty(jstring arg0);
-		__JniBaseClass queryBroadcastReceivers(android::content::Intent arg0, jint arg1);
-		__JniBaseClass queryContentProviders(jstring arg0, jint arg1, jint arg2);
-		__JniBaseClass queryInstrumentation(jstring arg0, jint arg1);
-		__JniBaseClass queryIntentActivities(android::content::Intent arg0, jint arg1);
-		__JniBaseClass queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3);
-		__JniBaseClass queryIntentContentProviders(android::content::Intent arg0, jint arg1);
-		__JniBaseClass queryIntentServices(android::content::Intent arg0, jint arg1);
-		__JniBaseClass queryPermissionsByGroup(jstring arg0, jint arg1);
-		__JniBaseClass queryProviderProperty(jstring arg0);
-		__JniBaseClass queryReceiverProperty(jstring arg0);
-		__JniBaseClass queryServiceProperty(jstring arg0);
+		JObject queryActivityProperty(jstring arg0);
+		JObject queryApplicationProperty(jstring arg0);
+		JObject queryBroadcastReceivers(android::content::Intent arg0, jint arg1);
+		JObject queryContentProviders(jstring arg0, jint arg1, jint arg2);
+		JObject queryInstrumentation(jstring arg0, jint arg1);
+		JObject queryIntentActivities(android::content::Intent arg0, jint arg1);
+		JObject queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3);
+		JObject queryIntentContentProviders(android::content::Intent arg0, jint arg1);
+		JObject queryIntentServices(android::content::Intent arg0, jint arg1);
+		JObject queryPermissionsByGroup(jstring arg0, jint arg1);
+		JObject queryProviderProperty(jstring arg0);
+		JObject queryReceiverProperty(jstring arg0);
+		JObject queryServiceProperty(jstring arg0);
 		void removePackageFromPreferred(jstring arg0);
 		void removePermission(jstring arg0);
 		jboolean removeWhitelistedRestrictedPermission(jstring arg0, jstring arg1, jint arg2);
-		void requestChecksums(jstring arg0, jboolean arg1, jint arg2, __JniBaseClass arg3, __JniBaseClass arg4);
+		void requestChecksums(jstring arg0, jboolean arg1, jint arg2, JObject arg3, JObject arg4);
 		android::content::pm::ResolveInfo resolveActivity(android::content::Intent arg0, jint arg1);
 		android::content::pm::ProviderInfo resolveContentProvider(jstring arg0, jint arg1);
 		android::content::pm::ResolveInfo resolveService(android::content::Intent arg0, jint arg1);
@@ -428,7 +428,7 @@ namespace android::content::pm
 		jboolean setAutoRevokeWhitelisted(jstring arg0, jboolean arg1);
 		void setComponentEnabledSetting(android::content::ComponentName arg0, jint arg1, jint arg2);
 		void setInstallerPackageName(jstring arg0, jstring arg1);
-		void setMimeGroup(jstring arg0, __JniBaseClass arg1);
+		void setMimeGroup(jstring arg0, JObject arg1);
 		void updateInstantAppCookie(jbyteArray arg0);
 		void verifyPendingInstall(jint arg0, jint arg1);
 	};

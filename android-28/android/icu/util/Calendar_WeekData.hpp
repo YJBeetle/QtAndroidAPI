@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::util
 {
-	class Calendar_WeekData : public __JniBaseClass
+	class Calendar_WeekData : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::icu::util
 		jint weekendOnsetMillis();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Calendar_WeekData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Calendar_WeekData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Calendar_WeekData(QJniObject obj);
 		
 		// Constructors

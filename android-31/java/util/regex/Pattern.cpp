@@ -72,7 +72,7 @@ namespace java::util::regex
 	}
 	
 	// QJniObject forward
-	Pattern::Pattern(QJniObject obj) : __JniBaseClass(obj) {}
+	Pattern::Pattern(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -115,14 +115,14 @@ namespace java::util::regex
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Pattern::asMatchPredicate()
+	JObject Pattern::asMatchPredicate()
 	{
 		return callObjectMethod(
 			"asMatchPredicate",
 			"()Ljava/util/function/Predicate;"
 		);
 	}
-	__JniBaseClass Pattern::asPredicate()
+	JObject Pattern::asPredicate()
 	{
 		return callObjectMethod(
 			"asPredicate",
@@ -168,7 +168,7 @@ namespace java::util::regex
 			arg1
 		).object<jarray>();
 	}
-	__JniBaseClass Pattern::splitAsStream(jstring arg0)
+	JObject Pattern::splitAsStream(jstring arg0)
 	{
 		return callObjectMethod(
 			"splitAsStream",

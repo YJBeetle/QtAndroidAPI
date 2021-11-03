@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::content
@@ -24,7 +24,7 @@ namespace android::view::animation
 		AlphaAnimation(QJniObject obj);
 		
 		// Constructors
-		AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1);
+		AlphaAnimation(android::content::Context arg0, JObject arg1);
 		AlphaAnimation(jfloat arg0, jfloat arg1);
 		
 		// Methods

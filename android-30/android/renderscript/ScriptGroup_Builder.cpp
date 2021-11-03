@@ -10,11 +10,11 @@ namespace android::renderscript
 	// Fields
 	
 	// QJniObject forward
-	ScriptGroup_Builder::ScriptGroup_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ScriptGroup_Builder::ScriptGroup_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScriptGroup_Builder::ScriptGroup_Builder(android::renderscript::RenderScript arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.ScriptGroup$Builder",
 			"(Landroid/renderscript/RenderScript;)V",
 			arg0.object()

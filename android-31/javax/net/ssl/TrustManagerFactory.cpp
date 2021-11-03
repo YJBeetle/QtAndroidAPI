@@ -8,7 +8,7 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	TrustManagerFactory::TrustManagerFactory(QJniObject obj) : __JniBaseClass(obj) {}
+	TrustManagerFactory::TrustManagerFactory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -79,7 +79,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void TrustManagerFactory::init(__JniBaseClass arg0)
+	void TrustManagerFactory::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",

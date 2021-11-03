@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass UriPermission::CREATOR()
+	JObject UriPermission::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.UriPermission",
@@ -22,7 +22,7 @@ namespace android::content
 	}
 	
 	// QJniObject forward
-	UriPermission::UriPermission(QJniObject obj) : __JniBaseClass(obj) {}
+	UriPermission::UriPermission(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,11 +6,11 @@ namespace android::drm
 	// Fields
 	
 	// QJniObject forward
-	DrmUtils::DrmUtils(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmUtils::DrmUtils(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmUtils::DrmUtils()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmUtils",
 			"()V"
 		) {}

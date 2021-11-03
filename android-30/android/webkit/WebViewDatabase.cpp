@@ -6,11 +6,11 @@ namespace android::webkit
 	// Fields
 	
 	// QJniObject forward
-	WebViewDatabase::WebViewDatabase(QJniObject obj) : __JniBaseClass(obj) {}
+	WebViewDatabase::WebViewDatabase(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebViewDatabase::WebViewDatabase()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebViewDatabase",
 			"()V"
 		) {}

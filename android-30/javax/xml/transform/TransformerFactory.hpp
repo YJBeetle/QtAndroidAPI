@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,13 +13,13 @@ namespace javax::xml::transform
 
 namespace javax::xml::transform
 {
-	class TransformerFactory : public __JniBaseClass
+	class TransformerFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TransformerFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TransformerFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TransformerFactory(QJniObject obj);
 		
 		// Constructors
@@ -28,18 +28,18 @@ namespace javax::xml::transform
 		static javax::xml::transform::TransformerFactory newDefaultInstance();
 		static javax::xml::transform::TransformerFactory newInstance();
 		static javax::xml::transform::TransformerFactory newInstance(jstring arg0, java::lang::ClassLoader arg1);
-		__JniBaseClass getAssociatedStylesheet(__JniBaseClass arg0, jstring arg1, jstring arg2, jstring arg3);
+		JObject getAssociatedStylesheet(JObject arg0, jstring arg1, jstring arg2, jstring arg3);
 		jobject getAttribute(jstring arg0);
-		__JniBaseClass getErrorListener();
+		JObject getErrorListener();
 		jboolean getFeature(jstring arg0);
-		__JniBaseClass getURIResolver();
-		__JniBaseClass newTemplates(__JniBaseClass arg0);
+		JObject getURIResolver();
+		JObject newTemplates(JObject arg0);
 		javax::xml::transform::Transformer newTransformer();
-		javax::xml::transform::Transformer newTransformer(__JniBaseClass arg0);
+		javax::xml::transform::Transformer newTransformer(JObject arg0);
 		void setAttribute(jstring arg0, jobject arg1);
-		void setErrorListener(__JniBaseClass arg0);
+		void setErrorListener(JObject arg0);
 		void setFeature(jstring arg0, jboolean arg1);
-		void setURIResolver(__JniBaseClass arg0);
+		void setURIResolver(JObject arg0);
 	};
 } // namespace javax::xml::transform
 

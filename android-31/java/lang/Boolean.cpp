@@ -30,17 +30,17 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	Boolean::Boolean(QJniObject obj) : __JniBaseClass(obj) {}
+	Boolean::Boolean(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Boolean::Boolean(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Boolean",
 			"(Z)V",
 			arg0
 		) {}
 	Boolean::Boolean(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Boolean",
 			"(Ljava/lang/String;)V",
 			arg0

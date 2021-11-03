@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pWfdInfo : public __JniBaseClass
+	class WifiP2pWfdInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DEVICE_INFO_AUDIO_ONLY_SUPPORT_AT_SOURCE();
 		static jint DEVICE_INFO_AUDIO_UNSUPPORTED_AT_PRIMARY_SINK();
 		static jint DEVICE_INFO_CONTENT_PROTECTION_SUPPORT();
@@ -34,7 +34,7 @@ namespace android::net::wifi::p2p
 		static jint PREFERRED_CONNECTIVITY_TDLS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit WifiP2pWfdInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pWfdInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pWfdInfo(QJniObject obj);
 		
 		// Constructors

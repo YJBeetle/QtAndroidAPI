@@ -21,7 +21,7 @@ namespace java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void AbstractPreferences::addNodeChangeListener(__JniBaseClass arg0)
+	void AbstractPreferences::addNodeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addNodeChangeListener",
@@ -29,7 +29,7 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	void AbstractPreferences::addPreferenceChangeListener(__JniBaseClass arg0)
+	void AbstractPreferences::addPreferenceChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addPreferenceChangeListener",
@@ -259,7 +259,7 @@ namespace java::util::prefs
 			"()V"
 		);
 	}
-	void AbstractPreferences::removeNodeChangeListener(__JniBaseClass arg0)
+	void AbstractPreferences::removeNodeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeNodeChangeListener",
@@ -267,7 +267,7 @@ namespace java::util::prefs
 			arg0.object()
 		);
 	}
-	void AbstractPreferences::removePreferenceChangeListener(__JniBaseClass arg0)
+	void AbstractPreferences::removePreferenceChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removePreferenceChangeListener",

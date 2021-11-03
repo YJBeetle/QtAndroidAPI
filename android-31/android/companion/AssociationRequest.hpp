@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,15 +9,15 @@ namespace android::os
 
 namespace android::companion
 {
-	class AssociationRequest : public __JniBaseClass
+	class AssociationRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring DEVICE_PROFILE_WATCH();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AssociationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AssociationRequest(QJniObject obj);
 		
 		// Constructors

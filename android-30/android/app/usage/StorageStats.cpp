@@ -4,7 +4,7 @@
 namespace android::app::usage
 {
 	// Fields
-	__JniBaseClass StorageStats::CREATOR()
+	JObject StorageStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.usage.StorageStats",
@@ -14,7 +14,7 @@ namespace android::app::usage
 	}
 	
 	// QJniObject forward
-	StorageStats::StorageStats(QJniObject obj) : __JniBaseClass(obj) {}
+	StorageStats::StorageStats(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

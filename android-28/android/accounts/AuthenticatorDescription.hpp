@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::accounts
 {
-	class AuthenticatorDescription : public __JniBaseClass
+	class AuthenticatorDescription : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jint accountPreferencesId();
 		jboolean customTokens();
 		jint iconId();
@@ -23,7 +23,7 @@ namespace android::accounts
 		jstring type();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AuthenticatorDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AuthenticatorDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AuthenticatorDescription(QJniObject obj);
 		
 		// Constructors

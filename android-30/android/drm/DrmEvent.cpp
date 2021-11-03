@@ -36,7 +36,7 @@ namespace android::drm
 	}
 	
 	// QJniObject forward
-	DrmEvent::DrmEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	DrmEvent::DrmEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -56,11 +56,11 @@ namespace android::telephony::gsm
 	}
 	
 	// QJniObject forward
-	SmsMessage::SmsMessage(QJniObject obj) : __JniBaseClass(obj) {}
+	SmsMessage::SmsMessage(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SmsMessage::SmsMessage()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.gsm.SmsMessage",
 			"()V"
 		) {}

@@ -32,7 +32,7 @@ namespace android::service::textservice
 			"()Landroid/service/textservice/SpellCheckerService$Session;"
 		);
 	}
-	__JniBaseClass SpellCheckerService::onBind(android::content::Intent arg0)
+	JObject SpellCheckerService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

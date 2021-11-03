@@ -61,7 +61,7 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	TaskInfo::TaskInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	TaskInfo::TaskInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

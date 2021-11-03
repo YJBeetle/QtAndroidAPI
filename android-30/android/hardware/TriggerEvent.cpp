@@ -26,7 +26,7 @@ namespace android::hardware
 	}
 	
 	// QJniObject forward
-	TriggerEvent::TriggerEvent(QJniObject obj) : __JniBaseClass(obj) {}
+	TriggerEvent::TriggerEvent(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

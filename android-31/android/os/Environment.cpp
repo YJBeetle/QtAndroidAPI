@@ -198,11 +198,11 @@ namespace android::os
 	}
 	
 	// QJniObject forward
-	Environment::Environment(QJniObject obj) : __JniBaseClass(obj) {}
+	Environment::Environment(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Environment::Environment()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Environment",
 			"()V"
 		) {}

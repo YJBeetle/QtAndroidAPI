@@ -58,7 +58,7 @@ namespace android::graphics
 	}
 	
 	// QJniObject forward
-	ImageDecoder::ImageDecoder(QJniObject obj) : __JniBaseClass(obj) {}
+	ImageDecoder::ImageDecoder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -90,7 +90,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::ImageDecoder_Source ImageDecoder::createSource(__JniBaseClass arg0)
+	android::graphics::ImageDecoder_Source ImageDecoder::createSource(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -149,7 +149,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
+	android::graphics::Bitmap ImageDecoder::decodeBitmap(android::graphics::ImageDecoder_Source arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -168,7 +168,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0, __JniBaseClass arg1)
+	android::graphics::drawable::Drawable ImageDecoder::decodeDrawable(android::graphics::ImageDecoder_Source arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.graphics.ImageDecoder",
@@ -215,14 +215,14 @@ namespace android::graphics
 			"()I"
 		);
 	}
-	__JniBaseClass ImageDecoder::getOnPartialImageListener()
+	JObject ImageDecoder::getOnPartialImageListener()
 	{
 		return callObjectMethod(
 			"getOnPartialImageListener",
 			"()Landroid/graphics/ImageDecoder$OnPartialImageListener;"
 		);
 	}
-	__JniBaseClass ImageDecoder::getPostProcessor()
+	JObject ImageDecoder::getPostProcessor()
 	{
 		return callObjectMethod(
 			"getPostProcessor",
@@ -290,7 +290,7 @@ namespace android::graphics
 			arg0
 		);
 	}
-	void ImageDecoder::setOnPartialImageListener(__JniBaseClass arg0)
+	void ImageDecoder::setOnPartialImageListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnPartialImageListener",
@@ -298,7 +298,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void ImageDecoder::setPostProcessor(__JniBaseClass arg0)
+	void ImageDecoder::setPostProcessor(JObject arg0)
 	{
 		callMethod<void>(
 			"setPostProcessor",

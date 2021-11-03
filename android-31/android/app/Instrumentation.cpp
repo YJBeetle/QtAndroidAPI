@@ -38,11 +38,11 @@ namespace android::app
 	}
 	
 	// QJniObject forward
-	Instrumentation::Instrumentation(QJniObject obj) : __JniBaseClass(obj) {}
+	Instrumentation::Instrumentation(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Instrumentation::Instrumentation()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Instrumentation",
 			"()V"
 		) {}
@@ -378,7 +378,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::app::Activity Instrumentation::newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
+	android::app::Activity Instrumentation::newActivity(jclass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9)
 	{
 		return callObjectMethod(
 			"newActivity",
@@ -444,7 +444,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Instrumentation::runOnMainSync(__JniBaseClass arg0)
+	void Instrumentation::runOnMainSync(JObject arg0)
 	{
 		callMethod<void>(
 			"runOnMainSync",
@@ -583,7 +583,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void Instrumentation::waitForIdle(__JniBaseClass arg0)
+	void Instrumentation::waitForIdle(JObject arg0)
 	{
 		callMethod<void>(
 			"waitForIdle",

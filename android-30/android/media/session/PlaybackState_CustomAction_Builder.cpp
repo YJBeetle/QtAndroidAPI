@@ -7,11 +7,11 @@ namespace android::media::session
 	// Fields
 	
 	// QJniObject forward
-	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PlaybackState_CustomAction_Builder::PlaybackState_CustomAction_Builder(jstring arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.PlaybackState$CustomAction$Builder",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,

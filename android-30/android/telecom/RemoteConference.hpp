@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -29,23 +29,23 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class RemoteConference : public __JniBaseClass
+	class RemoteConference : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RemoteConference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteConference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteConference(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void disconnect();
-		__JniBaseClass getConferenceableConnections();
+		JObject getConferenceableConnections();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
-		__JniBaseClass getConnections();
+		JObject getConnections();
 		android::telecom::DisconnectCause getDisconnectCause();
 		android::os::Bundle getExtras();
 		jint getState();

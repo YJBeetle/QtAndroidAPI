@@ -52,7 +52,7 @@ namespace android::telecom
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	__JniBaseClass Conference::getConferenceableConnections()
+	JObject Conference::getConferenceableConnections()
 	{
 		return callObjectMethod(
 			"getConferenceableConnections",
@@ -87,7 +87,7 @@ namespace android::telecom
 			"()J"
 		);
 	}
-	__JniBaseClass Conference::getConnections()
+	JObject Conference::getConnections()
 	{
 		return callObjectMethod(
 			"getConnections",
@@ -257,7 +257,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Conference::removeExtras(__JniBaseClass arg0)
+	void Conference::removeExtras(JObject arg0)
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -281,7 +281,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	void Conference::setConferenceableConnections(__JniBaseClass arg0)
+	void Conference::setConferenceableConnections(JObject arg0)
 	{
 		callMethod<void>(
 			"setConferenceableConnections",

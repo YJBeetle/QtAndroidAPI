@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,11 +29,11 @@ namespace android::os
 
 namespace android::appwidget
 {
-	class AppWidgetProviderInfo : public __JniBaseClass
+	class AppWidgetProviderInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint RESIZE_BOTH();
 		static jint RESIZE_HORIZONTAL();
 		static jint RESIZE_NONE();
@@ -61,7 +61,7 @@ namespace android::appwidget
 		jint widgetFeatures();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AppWidgetProviderInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppWidgetProviderInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppWidgetProviderInfo(QJniObject obj);
 		
 		// Constructors

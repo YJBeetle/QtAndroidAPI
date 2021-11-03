@@ -18,11 +18,11 @@ namespace android::widget
 	}
 	
 	// QJniObject forward
-	Filter_FilterResults::Filter_FilterResults(QJniObject obj) : __JniBaseClass(obj) {}
+	Filter_FilterResults::Filter_FilterResults(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Filter_FilterResults::Filter_FilterResults()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Filter$FilterResults",
 			"()V"
 		) {}

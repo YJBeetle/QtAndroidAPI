@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -109,7 +109,7 @@ namespace android::graphics::drawable
 		android::graphics::Shader_TileMode getTileModeY();
 		jboolean hasAntiAlias();
 		jboolean hasMipMap();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isAutoMirrored();
 		jboolean isFilterBitmap();
 		jboolean isStateful();

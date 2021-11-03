@@ -47,11 +47,11 @@ namespace android::text
 	}
 	
 	// QJniObject forward
-	AndroidCharacter::AndroidCharacter(QJniObject obj) : __JniBaseClass(obj) {}
+	AndroidCharacter::AndroidCharacter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AndroidCharacter::AndroidCharacter()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.AndroidCharacter",
 			"()V"
 		) {}

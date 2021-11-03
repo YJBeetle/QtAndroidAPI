@@ -67,7 +67,7 @@ namespace android::service::voice
 			"()I"
 		);
 	}
-	__JniBaseClass VoiceInteractionService::onBind(android::content::Intent arg0)
+	JObject VoiceInteractionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -75,7 +75,7 @@ namespace android::service::voice
 			arg0.object()
 		);
 	}
-	__JniBaseClass VoiceInteractionService::onGetSupportedVoiceActions(__JniBaseClass arg0)
+	JObject VoiceInteractionService::onGetSupportedVoiceActions(JObject arg0)
 	{
 		return callObjectMethod(
 			"onGetSupportedVoiceActions",

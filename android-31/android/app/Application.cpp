@@ -61,7 +61,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Application::registerActivityLifecycleCallbacks(__JniBaseClass arg0)
+	void Application::registerActivityLifecycleCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"registerActivityLifecycleCallbacks",
@@ -69,7 +69,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::registerComponentCallbacks(__JniBaseClass arg0)
+	void Application::registerComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"registerComponentCallbacks",
@@ -77,7 +77,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::registerOnProvideAssistDataListener(__JniBaseClass arg0)
+	void Application::registerOnProvideAssistDataListener(JObject arg0)
 	{
 		callMethod<void>(
 			"registerOnProvideAssistDataListener",
@@ -85,7 +85,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterActivityLifecycleCallbacks(__JniBaseClass arg0)
+	void Application::unregisterActivityLifecycleCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterActivityLifecycleCallbacks",
@@ -93,7 +93,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterComponentCallbacks(__JniBaseClass arg0)
+	void Application::unregisterComponentCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterComponentCallbacks",
@@ -101,7 +101,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Application::unregisterOnProvideAssistDataListener(__JniBaseClass arg0)
+	void Application::unregisterOnProvideAssistDataListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterOnProvideAssistDataListener",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../widget/AbsoluteLayout.hpp"
@@ -173,13 +173,13 @@ namespace android::webkit
 		
 		// Constructors
 		WebView(android::content::Context arg0);
-		WebView(android::content::Context arg0, __JniBaseClass arg1);
-		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jboolean arg3);
-		WebView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		WebView(android::content::Context arg0, JObject arg1);
+		WebView(android::content::Context arg0, JObject arg1, jint arg2);
+		WebView(android::content::Context arg0, JObject arg1, jint arg2, jboolean arg3);
+		WebView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		static void clearClientCertPreferences(__JniBaseClass arg0);
+		static void clearClientCertPreferences(JObject arg0);
 		static void disableWebView();
 		static void enableSlowWholeDocumentDraw();
 		static jstring findAddress(jstring arg0);
@@ -187,9 +187,9 @@ namespace android::webkit
 		static android::net::Uri getSafeBrowsingPrivacyPolicyUrl();
 		static java::lang::ClassLoader getWebViewClassLoader();
 		static void setDataDirectorySuffix(jstring arg0);
-		static void setSafeBrowsingWhitelist(__JniBaseClass arg0, __JniBaseClass arg1);
+		static void setSafeBrowsingWhitelist(JObject arg0, JObject arg1);
 		static void setWebContentsDebuggingEnabled(jboolean arg0);
-		static void startSafeBrowsing(android::content::Context arg0, __JniBaseClass arg1);
+		static void startSafeBrowsing(android::content::Context arg0, JObject arg1);
 		void addJavascriptInterface(jobject arg0, jstring arg1);
 		void autofill(android::util::SparseArray arg0);
 		jboolean canGoBack();
@@ -210,10 +210,10 @@ namespace android::webkit
 		android::print::PrintDocumentAdapter createPrintDocumentAdapter(jstring arg0);
 		jarray createWebMessageChannel();
 		void destroy();
-		void dispatchCreateViewTranslationRequest(__JniBaseClass arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, __JniBaseClass arg3);
+		void dispatchCreateViewTranslationRequest(JObject arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		void documentHasImages(android::os::Message arg0);
-		void evaluateJavascript(jstring arg0, __JniBaseClass arg1);
+		void evaluateJavascript(jstring arg0, JObject arg1);
 		jint findAll(jstring arg0);
 		void findAllAsync(jstring arg0);
 		android::view::View findFocus();
@@ -234,7 +234,7 @@ namespace android::webkit
 		jint getRendererRequestedPriority();
 		jfloat getScale();
 		android::webkit::WebSettings getSettings();
-		__JniBaseClass getTextClassifier();
+		JObject getTextClassifier();
 		jstring getTitle();
 		jstring getUrl();
 		android::webkit::WebChromeClient getWebChromeClient();
@@ -251,13 +251,13 @@ namespace android::webkit
 		void loadData(jstring arg0, jstring arg1, jstring arg2);
 		void loadDataWithBaseURL(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
 		void loadUrl(jstring arg0);
-		void loadUrl(jstring arg0, __JniBaseClass arg1);
+		void loadUrl(jstring arg0, JObject arg1);
 		android::view::WindowInsets onApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean onCheckIsTextEditor();
 		void onChildViewAdded(android::view::View arg0, android::view::View arg1);
 		void onChildViewRemoved(android::view::View arg0, android::view::View arg1);
-		__JniBaseClass onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
-		void onCreateVirtualViewTranslationRequests(jlongArray arg0, jintArray arg1, __JniBaseClass arg2);
+		JObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
+		void onCreateVirtualViewTranslationRequests(jlongArray arg0, jintArray arg1, JObject arg2);
 		jboolean onDragEvent(android::view::DragEvent arg0);
 		void onFinishTemporaryDetach();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
@@ -296,11 +296,11 @@ namespace android::webkit
 		void savePassword(jstring arg0, jstring arg1, jstring arg2);
 		android::webkit::WebBackForwardList saveState(android::os::Bundle arg0);
 		void saveWebArchive(jstring arg0);
-		void saveWebArchive(jstring arg0, jboolean arg1, __JniBaseClass arg2);
+		void saveWebArchive(jstring arg0, jboolean arg1, JObject arg2);
 		void setBackgroundColor(jint arg0);
 		void setCertificate(android::net::http::SslCertificate arg0);
-		void setDownloadListener(__JniBaseClass arg0);
-		void setFindListener(__JniBaseClass arg0);
+		void setDownloadListener(JObject arg0);
+		void setFindListener(JObject arg0);
 		void setHorizontalScrollbarOverlay(jboolean arg0);
 		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		void setInitialScale(jint arg0);
@@ -309,15 +309,15 @@ namespace android::webkit
 		void setMapTrackballToArrowKeys(jboolean arg0);
 		void setNetworkAvailable(jboolean arg0);
 		void setOverScrollMode(jint arg0);
-		void setPictureListener(__JniBaseClass arg0);
+		void setPictureListener(JObject arg0);
 		void setRendererPriorityPolicy(jint arg0, jboolean arg1);
 		void setScrollBarStyle(jint arg0);
-		void setTextClassifier(__JniBaseClass arg0);
+		void setTextClassifier(JObject arg0);
 		void setVerticalScrollbarOverlay(jboolean arg0);
 		void setWebChromeClient(android::webkit::WebChromeClient arg0);
 		void setWebViewClient(android::webkit::WebViewClient arg0);
 		void setWebViewRenderProcessClient(android::webkit::WebViewRenderProcessClient arg0);
-		void setWebViewRenderProcessClient(__JniBaseClass arg0, android::webkit::WebViewRenderProcessClient arg1);
+		void setWebViewRenderProcessClient(JObject arg0, android::webkit::WebViewRenderProcessClient arg1);
 		jboolean shouldDelayChildPressedState();
 		jboolean showFindDialog(jstring arg0, jboolean arg1);
 		void stopLoading();

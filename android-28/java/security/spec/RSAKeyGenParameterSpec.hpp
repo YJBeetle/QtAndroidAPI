@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -9,7 +9,7 @@ namespace java::math
 
 namespace java::security::spec
 {
-	class RSAKeyGenParameterSpec : public __JniBaseClass
+	class RSAKeyGenParameterSpec : public JObject
 	{
 	public:
 		// Fields
@@ -17,15 +17,15 @@ namespace java::security::spec
 		static java::math::BigInteger F4();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RSAKeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RSAKeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RSAKeyGenParameterSpec(QJniObject obj);
 		
 		// Constructors
 		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1);
-		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, __JniBaseClass arg2);
+		RSAKeyGenParameterSpec(jint arg0, java::math::BigInteger arg1, JObject arg2);
 		
 		// Methods
-		__JniBaseClass getKeyParams();
+		JObject getKeyParams();
 		jint getKeysize();
 		java::math::BigInteger getPublicExponent();
 	};

@@ -21,11 +21,11 @@ namespace android::app::job
 	}
 	
 	// QJniObject forward
-	JobScheduler::JobScheduler(QJniObject obj) : __JniBaseClass(obj) {}
+	JobScheduler::JobScheduler(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JobScheduler::JobScheduler()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.job.JobScheduler",
 			"()V"
 		) {}
@@ -55,7 +55,7 @@ namespace android::app::job
 			arg1.object()
 		);
 	}
-	__JniBaseClass JobScheduler::getAllPendingJobs()
+	JObject JobScheduler::getAllPendingJobs()
 	{
 		return callObjectMethod(
 			"getAllPendingJobs",

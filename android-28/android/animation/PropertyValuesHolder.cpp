@@ -8,7 +8,7 @@ namespace android::animation
 	// Fields
 	
 	// QJniObject forward
-	PropertyValuesHolder::PropertyValuesHolder(QJniObject obj) : __JniBaseClass(obj) {}
+	PropertyValuesHolder::PropertyValuesHolder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -93,7 +93,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jarray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -105,7 +105,7 @@ namespace android::animation
 			arg3
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiFloat(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -137,7 +137,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jarray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jarray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -149,7 +149,7 @@ namespace android::animation
 			arg3
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofMultiInt(jstring arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -172,7 +172,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, __JniBaseClass arg1, jobjectArray arg2)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, JObject arg1, jobjectArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -194,7 +194,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, __JniBaseClass arg1, jobjectArray arg2)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(jstring arg0, JObject arg1, jobjectArray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -205,7 +205,7 @@ namespace android::animation
 			arg2
 		);
 	}
-	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, __JniBaseClass arg2, jobjectArray arg3)
+	android::animation::PropertyValuesHolder PropertyValuesHolder::ofObject(android::util::Property arg0, android::animation::TypeConverter arg1, JObject arg2, jobjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.PropertyValuesHolder",
@@ -239,7 +239,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void PropertyValuesHolder::setEvaluator(__JniBaseClass arg0)
+	void PropertyValuesHolder::setEvaluator(JObject arg0)
 	{
 		callMethod<void>(
 			"setEvaluator",

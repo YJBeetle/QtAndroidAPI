@@ -1056,7 +1056,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	TelephonyManager::TelephonyManager(QJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyManager::TelephonyManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -1114,7 +1114,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	__JniBaseClass TelephonyManager::getAllCellInfo()
+	JObject TelephonyManager::getAllCellInfo()
 	{
 		return callObjectMethod(
 			"getAllCellInfo",
@@ -1213,14 +1213,14 @@ namespace android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TelephonyManager::getEmergencyNumberList()
+	JObject TelephonyManager::getEmergencyNumberList()
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass TelephonyManager::getEmergencyNumberList(jint arg0)
+	JObject TelephonyManager::getEmergencyNumberList(jint arg0)
 	{
 		return callObjectMethod(
 			"getEmergencyNumberList",
@@ -1228,7 +1228,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass TelephonyManager::getEquivalentHomePlmns()
+	JObject TelephonyManager::getEquivalentHomePlmns()
 	{
 		return callObjectMethod(
 			"getEquivalentHomePlmns",
@@ -1375,7 +1375,7 @@ namespace android::telephony
 			"()I"
 		);
 	}
-	void TelephonyManager::getNetworkSlicingConfiguration(__JniBaseClass arg0, __JniBaseClass arg1)
+	void TelephonyManager::getNetworkSlicingConfiguration(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getNetworkSlicingConfiguration",
@@ -1555,7 +1555,7 @@ namespace android::telephony
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass TelephonyManager::getUiccCardsInfo()
+	JObject TelephonyManager::getUiccCardsInfo()
 	{
 		return callObjectMethod(
 			"getUiccCardsInfo",
@@ -1824,7 +1824,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void TelephonyManager::registerTelephonyCallback(__JniBaseClass arg0, android::telephony::TelephonyCallback arg1)
+	void TelephonyManager::registerTelephonyCallback(JObject arg0, android::telephony::TelephonyCallback arg1)
 	{
 		callMethod<void>(
 			"registerTelephonyCallback",
@@ -1833,7 +1833,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void TelephonyManager::requestCellInfoUpdate(__JniBaseClass arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
+	void TelephonyManager::requestCellInfoUpdate(JObject arg0, android::telephony::TelephonyManager_CellInfoCallback arg1)
 	{
 		callMethod<void>(
 			"requestCellInfoUpdate",
@@ -1842,7 +1842,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
+	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
 	{
 		return callObjectMethod(
 			"requestNetworkScan",
@@ -1914,7 +1914,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	jint TelephonyManager::setForbiddenPlmns(__JniBaseClass arg0)
+	jint TelephonyManager::setForbiddenPlmns(JObject arg0)
 	{
 		return callMethod<jint>(
 			"setForbiddenPlmns",
@@ -1972,7 +1972,7 @@ namespace android::telephony
 			"()Z"
 		);
 	}
-	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void TelephonyManager::setPreferredOpportunisticDataSubscription(jint arg0, jboolean arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"setPreferredOpportunisticDataSubscription",
@@ -2042,7 +2042,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void TelephonyManager::updateAvailableNetworks(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void TelephonyManager::updateAvailableNetworks(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"updateAvailableNetworks",
@@ -2052,7 +2052,7 @@ namespace android::telephony
 			arg2.object()
 		);
 	}
-	void TelephonyManager::uploadCallComposerPicture(java::io::InputStream arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void TelephonyManager::uploadCallComposerPicture(java::io::InputStream arg0, jstring arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"uploadCallComposerPicture",
@@ -2063,7 +2063,7 @@ namespace android::telephony
 			arg3.object()
 		);
 	}
-	void TelephonyManager::uploadCallComposerPicture(__JniBaseClass arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void TelephonyManager::uploadCallComposerPicture(JObject arg0, jstring arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"uploadCallComposerPicture",

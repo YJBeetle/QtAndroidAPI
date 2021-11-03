@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "./LinearLayout_LayoutParams.hpp"
@@ -28,7 +28,7 @@ namespace android::widget
 		// Constructors
 		ActionMenuView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		ActionMenuView_LayoutParams(android::widget::ActionMenuView_LayoutParams &arg0);
-		ActionMenuView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		ActionMenuView_LayoutParams(android::content::Context arg0, JObject arg1);
 		ActionMenuView_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods

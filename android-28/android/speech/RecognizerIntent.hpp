@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::content
 
 namespace android::speech
 {
-	class RecognizerIntent : public __JniBaseClass
+	class RecognizerIntent : public JObject
 	{
 	public:
 		// Fields
@@ -51,7 +51,7 @@ namespace android::speech
 		static jint RESULT_SERVER_ERROR();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RecognizerIntent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RecognizerIntent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RecognizerIntent(QJniObject obj);
 		
 		// Constructors

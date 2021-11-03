@@ -15,14 +15,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1)
+	SeekBar::SeekBar(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	SeekBar::SeekBar(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	SeekBar::SeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	SeekBar::SeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsSeekBar(
 			"android.widget.SeekBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -48,7 +48,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	void SeekBar::setOnSeekBarChangeListener(__JniBaseClass arg0)
+	void SeekBar::setOnSeekBarChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnSeekBarChangeListener",

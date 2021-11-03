@@ -7,7 +7,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass SubscriptionInfo::CREATOR()
+	JObject SubscriptionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.SubscriptionInfo",
@@ -17,7 +17,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SubscriptionInfo::SubscriptionInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionInfo::SubscriptionInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

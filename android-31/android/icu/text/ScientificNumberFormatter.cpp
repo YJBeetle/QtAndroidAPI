@@ -7,7 +7,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	ScientificNumberFormatter::ScientificNumberFormatter(QJniObject obj) : __JniBaseClass(obj) {}
+	ScientificNumberFormatter::ScientificNumberFormatter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

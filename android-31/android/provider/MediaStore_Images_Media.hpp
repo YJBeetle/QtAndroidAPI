@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class MediaStore_Images_Media : public __JniBaseClass
+	class MediaStore_Images_Media : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::provider
 		static android::net::Uri INTERNAL_CONTENT_URI();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MediaStore_Images_Media(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaStore_Images_Media(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaStore_Images_Media(QJniObject obj);
 		
 		// Constructors
@@ -39,9 +39,9 @@ namespace android::provider
 		static android::net::Uri getContentUri(jstring arg0, jlong arg1);
 		static jstring insertImage(android::content::ContentResolver arg0, android::graphics::Bitmap arg1, jstring arg2, jstring arg3);
 		static jstring insertImage(android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
-		static __JniBaseClass query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
-		static __JniBaseClass query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4);
-		static __JniBaseClass query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jstring arg4);
+		static JObject query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
 	};
 } // namespace android::provider
 

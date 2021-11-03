@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -37,7 +37,7 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageInstaller : public __JniBaseClass
+	class PackageInstaller : public JObject
 	{
 	public:
 		// Fields
@@ -62,7 +62,7 @@ namespace android::content::pm
 		static jint STATUS_SUCCESS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit PackageInstaller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageInstaller(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller(QJniObject obj);
 		
 		// Constructors
@@ -71,11 +71,11 @@ namespace android::content::pm
 		void abandonSession(jint arg0);
 		jint createSession(android::content::pm::PackageInstaller_SessionParams arg0);
 		android::content::pm::PackageInstaller_SessionInfo getActiveStagedSession();
-		__JniBaseClass getActiveStagedSessions();
-		__JniBaseClass getAllSessions();
-		__JniBaseClass getMySessions();
+		JObject getActiveStagedSessions();
+		JObject getAllSessions();
+		JObject getMySessions();
 		android::content::pm::PackageInstaller_SessionInfo getSessionInfo(jint arg0);
-		__JniBaseClass getStagedSessions();
+		JObject getStagedSessions();
 		void installExistingPackage(jstring arg0, jint arg1, android::content::IntentSender arg2);
 		android::content::pm::PackageInstaller_Session openSession(jint arg0);
 		void registerSessionCallback(android::content::pm::PackageInstaller_SessionCallback arg0);

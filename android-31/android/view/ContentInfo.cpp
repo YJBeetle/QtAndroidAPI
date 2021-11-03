@@ -7,7 +7,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass ContentInfo::CREATOR()
+	JObject ContentInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.ContentInfo",
@@ -66,7 +66,7 @@ namespace android::view
 	}
 	
 	// QJniObject forward
-	ContentInfo::ContentInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	ContentInfo::ContentInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

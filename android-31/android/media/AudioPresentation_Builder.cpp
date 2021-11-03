@@ -7,11 +7,11 @@ namespace android::media
 	// Fields
 	
 	// QJniObject forward
-	AudioPresentation_Builder::AudioPresentation_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	AudioPresentation_Builder::AudioPresentation_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioPresentation_Builder::AudioPresentation_Builder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioPresentation$Builder",
 			"(I)V",
 			arg0
@@ -49,7 +49,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLabels(__JniBaseClass arg0)
+	android::media::AudioPresentation_Builder AudioPresentation_Builder::setLabels(JObject arg0)
 	{
 		return callObjectMethod(
 			"setLabels",

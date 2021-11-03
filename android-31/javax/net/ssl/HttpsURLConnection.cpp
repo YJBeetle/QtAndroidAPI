@@ -13,7 +13,7 @@ namespace javax::net::ssl
 	// Constructors
 	
 	// Methods
-	__JniBaseClass HttpsURLConnection::getDefaultHostnameVerifier()
+	JObject HttpsURLConnection::getDefaultHostnameVerifier()
 	{
 		return callStaticObjectMethod(
 			"javax.net.ssl.HttpsURLConnection",
@@ -29,7 +29,7 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLSocketFactory;"
 		);
 	}
-	void HttpsURLConnection::setDefaultHostnameVerifier(__JniBaseClass arg0)
+	void HttpsURLConnection::setDefaultHostnameVerifier(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"javax.net.ssl.HttpsURLConnection",
@@ -54,7 +54,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass HttpsURLConnection::getHostnameVerifier()
+	JObject HttpsURLConnection::getHostnameVerifier()
 	{
 		return callObjectMethod(
 			"getHostnameVerifier",
@@ -68,14 +68,14 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	__JniBaseClass HttpsURLConnection::getLocalPrincipal()
+	JObject HttpsURLConnection::getLocalPrincipal()
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	__JniBaseClass HttpsURLConnection::getPeerPrincipal()
+	JObject HttpsURLConnection::getPeerPrincipal()
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
@@ -103,7 +103,7 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	void HttpsURLConnection::setHostnameVerifier(__JniBaseClass arg0)
+	void HttpsURLConnection::setHostnameVerifier(JObject arg0)
 	{
 		callMethod<void>(
 			"setHostnameVerifier",

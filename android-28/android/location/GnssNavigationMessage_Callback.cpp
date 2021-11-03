@@ -27,11 +27,11 @@ namespace android::location
 	}
 	
 	// QJniObject forward
-	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QJniObject obj) : __JniBaseClass(obj) {}
+	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssNavigationMessage_Callback::GnssNavigationMessage_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssNavigationMessage$Callback",
 			"()V"
 		) {}

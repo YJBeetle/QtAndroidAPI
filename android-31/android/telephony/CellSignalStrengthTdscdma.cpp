@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellSignalStrengthTdscdma::CREATOR()
+	JObject CellSignalStrengthTdscdma::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellSignalStrengthTdscdma",

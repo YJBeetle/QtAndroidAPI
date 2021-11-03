@@ -230,7 +230,7 @@ namespace android::provider
 	}
 	
 	// QJniObject forward
-	Telephony_Carriers::Telephony_Carriers(QJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Carriers::Telephony_Carriers(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

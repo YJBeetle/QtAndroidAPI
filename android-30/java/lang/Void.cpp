@@ -13,7 +13,7 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	Void::Void(QJniObject obj) : __JniBaseClass(obj) {}
+	Void::Void(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

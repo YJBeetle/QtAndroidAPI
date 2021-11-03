@@ -10,7 +10,7 @@ namespace java::io
 	// Fields
 	
 	// QJniObject forward
-	Console::Console(QJniObject obj) : __JniBaseClass(obj) {}
+	Console::Console(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

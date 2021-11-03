@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass NetworkScanRequest::CREATOR()
+	JObject NetworkScanRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.NetworkScanRequest",
@@ -29,11 +29,11 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	NetworkScanRequest::NetworkScanRequest(QJniObject obj) : __JniBaseClass(obj) {}
+	NetworkScanRequest::NetworkScanRequest(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkScanRequest::NetworkScanRequest(jint arg0, jarray arg1, jint arg2, jint arg3, jboolean arg4, jint arg5, java::util::ArrayList arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.NetworkScanRequest",
 			"(I[Landroid/telephony/RadioAccessSpecifier;IIZILjava/util/ArrayList;)V",
 			arg0,

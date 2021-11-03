@@ -5,7 +5,7 @@ namespace android::service::voice
 	// Fields
 	
 	// QJniObject forward
-	VoiceInteractionSession_ActivityId::VoiceInteractionSession_ActivityId(QJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractionSession_ActivityId::VoiceInteractionSession_ActivityId(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

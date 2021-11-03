@@ -83,22 +83,22 @@ namespace java::util::zip
 	}
 	
 	// QJniObject forward
-	Deflater::Deflater(QJniObject obj) : __JniBaseClass(obj) {}
+	Deflater::Deflater(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Deflater::Deflater()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Deflater",
 			"()V"
 		) {}
 	Deflater::Deflater(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Deflater",
 			"(I)V",
 			arg0
 		) {}
 	Deflater::Deflater(jint arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Deflater",
 			"(IZ)V",
 			arg0,

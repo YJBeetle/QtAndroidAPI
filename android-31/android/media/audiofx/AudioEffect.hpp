@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::audiofx
 {
@@ -13,7 +13,7 @@ namespace java::util
 
 namespace android::media::audiofx
 {
-	class AudioEffect : public __JniBaseClass
+	class AudioEffect : public JObject
 	{
 	public:
 		// Fields
@@ -52,7 +52,7 @@ namespace android::media::audiofx
 		static jint SUCCESS();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AudioEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioEffect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioEffect(QJniObject obj);
 		
 		// Constructors
@@ -64,8 +64,8 @@ namespace android::media::audiofx
 		jint getId();
 		jboolean hasControl();
 		void release();
-		void setControlStatusListener(__JniBaseClass arg0);
-		void setEnableStatusListener(__JniBaseClass arg0);
+		void setControlStatusListener(JObject arg0);
+		void setEnableStatusListener(JObject arg0);
 		jint setEnabled(jboolean arg0);
 	};
 } // namespace android::media::audiofx

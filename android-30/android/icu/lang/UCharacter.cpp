@@ -149,7 +149,7 @@ namespace android::icu::lang
 	}
 	
 	// QJniObject forward
-	UCharacter::UCharacter(QJniObject obj) : __JniBaseClass(obj) {}
+	UCharacter::UCharacter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -416,7 +416,7 @@ namespace android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass UCharacter::getExtendedNameIterator()
+	JObject UCharacter::getExtendedNameIterator()
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -498,7 +498,7 @@ namespace android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass UCharacter::getNameIterator()
+	JObject UCharacter::getNameIterator()
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",
@@ -564,7 +564,7 @@ namespace android::icu::lang
 			arg0
 		);
 	}
-	__JniBaseClass UCharacter::getTypeIterator()
+	JObject UCharacter::getTypeIterator()
 	{
 		return callStaticObjectMethod(
 			"android.icu.lang.UCharacter",

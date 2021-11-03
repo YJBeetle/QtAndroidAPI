@@ -5,11 +5,11 @@ namespace android::text
 	// Fields
 	
 	// QJniObject forward
-	Editable_Factory::Editable_Factory(QJniObject obj) : __JniBaseClass(obj) {}
+	Editable_Factory::Editable_Factory(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Editable_Factory::Editable_Factory()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.Editable$Factory",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace android::text
 			"()Landroid/text/Editable$Factory;"
 		);
 	}
-	__JniBaseClass Editable_Factory::newEditable(jstring arg0)
+	JObject Editable_Factory::newEditable(jstring arg0)
 	{
 		return callObjectMethod(
 			"newEditable",

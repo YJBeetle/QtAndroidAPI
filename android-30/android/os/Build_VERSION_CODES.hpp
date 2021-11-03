@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::os
 {
-	class Build_VERSION_CODES : public __JniBaseClass
+	class Build_VERSION_CODES : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace android::os
 		static jint R();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Build_VERSION_CODES(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Build_VERSION_CODES(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Build_VERSION_CODES(QJniObject obj);
 		
 		// Constructors

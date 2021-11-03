@@ -1,23 +1,23 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::text
 {
-	class TextDirectionHeuristics : public __JniBaseClass
+	class TextDirectionHeuristics : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass ANYRTL_LTR();
-		static __JniBaseClass FIRSTSTRONG_LTR();
-		static __JniBaseClass FIRSTSTRONG_RTL();
-		static __JniBaseClass LOCALE();
-		static __JniBaseClass LTR();
-		static __JniBaseClass RTL();
+		static JObject ANYRTL_LTR();
+		static JObject FIRSTSTRONG_LTR();
+		static JObject FIRSTSTRONG_RTL();
+		static JObject LOCALE();
+		static JObject LTR();
+		static JObject RTL();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TextDirectionHeuristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextDirectionHeuristics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextDirectionHeuristics(QJniObject obj);
 		
 		// Constructors

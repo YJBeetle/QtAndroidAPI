@@ -5,16 +5,16 @@ namespace android::os
 	// Fields
 	
 	// QJniObject forward
-	ConditionVariable::ConditionVariable(QJniObject obj) : __JniBaseClass(obj) {}
+	ConditionVariable::ConditionVariable(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConditionVariable::ConditionVariable()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ConditionVariable",
 			"()V"
 		) {}
 	ConditionVariable::ConditionVariable(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ConditionVariable",
 			"(Z)V",
 			arg0

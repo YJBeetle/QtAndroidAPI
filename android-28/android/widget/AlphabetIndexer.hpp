@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../database/DataSetObserver.hpp"
 
 
@@ -16,7 +16,7 @@ namespace android::widget
 		AlphabetIndexer(QJniObject obj);
 		
 		// Constructors
-		AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2);
+		AlphabetIndexer(JObject arg0, jint arg1, jstring arg2);
 		
 		// Methods
 		jint getPositionForSection(jint arg0);
@@ -24,7 +24,7 @@ namespace android::widget
 		jobjectArray getSections();
 		void onChanged();
 		void onInvalidated();
-		void setCursor(__JniBaseClass arg0);
+		void setCursor(JObject arg0);
 	};
 } // namespace android::widget
 

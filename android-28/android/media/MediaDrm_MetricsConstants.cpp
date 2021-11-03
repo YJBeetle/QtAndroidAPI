@@ -285,7 +285,7 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaDrm_MetricsConstants::MediaDrm_MetricsConstants(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_MetricsConstants::MediaDrm_MetricsConstants(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

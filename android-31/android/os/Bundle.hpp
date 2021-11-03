@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseBundle.hpp"
 
 namespace android::os
@@ -42,7 +42,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::os::Bundle EMPTY();
 		
 		// QJniObject forward
@@ -61,7 +61,7 @@ namespace android::os
 		jobject clone();
 		android::os::Bundle deepCopy();
 		jint describeContents();
-		__JniBaseClass getBinder(jstring arg0);
+		JObject getBinder(jstring arg0);
 		android::os::Bundle getBundle(jstring arg0);
 		jbyte getByte(jstring arg0);
 		java::lang::Byte getByte(jstring arg0, jbyte arg1);
@@ -78,10 +78,10 @@ namespace android::os
 		jfloat getFloat(jstring arg0, jfloat arg1);
 		jfloatArray getFloatArray(jstring arg0);
 		java::util::ArrayList getIntegerArrayList(jstring arg0);
-		__JniBaseClass getParcelable(jstring arg0);
+		JObject getParcelable(jstring arg0);
 		jarray getParcelableArray(jstring arg0);
 		java::util::ArrayList getParcelableArrayList(jstring arg0);
-		__JniBaseClass getSerializable(jstring arg0);
+		JObject getSerializable(jstring arg0);
 		jshort getShort(jstring arg0);
 		jshort getShort(jstring arg0, jshort arg1);
 		jshortArray getShortArray(jstring arg0);
@@ -91,7 +91,7 @@ namespace android::os
 		java::util::ArrayList getStringArrayList(jstring arg0);
 		jboolean hasFileDescriptors();
 		void putAll(android::os::Bundle arg0);
-		void putBinder(jstring arg0, __JniBaseClass arg1);
+		void putBinder(jstring arg0, JObject arg1);
 		void putBundle(jstring arg0, android::os::Bundle arg1);
 		void putByte(jstring arg0, jbyte arg1);
 		void putByteArray(jstring arg0, jbyteArray arg1);
@@ -103,10 +103,10 @@ namespace android::os
 		void putFloat(jstring arg0, jfloat arg1);
 		void putFloatArray(jstring arg0, jfloatArray arg1);
 		void putIntegerArrayList(jstring arg0, java::util::ArrayList arg1);
-		void putParcelable(jstring arg0, __JniBaseClass arg1);
+		void putParcelable(jstring arg0, JObject arg1);
 		void putParcelableArray(jstring arg0, jarray arg1);
 		void putParcelableArrayList(jstring arg0, java::util::ArrayList arg1);
-		void putSerializable(jstring arg0, __JniBaseClass arg1);
+		void putSerializable(jstring arg0, JObject arg1);
 		void putShort(jstring arg0, jshort arg1);
 		void putShortArray(jstring arg0, jshortArray arg1);
 		void putSize(jstring arg0, android::util::Size arg1);

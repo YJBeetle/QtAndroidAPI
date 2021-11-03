@@ -6,11 +6,11 @@ namespace android::util
 	// Fields
 	
 	// QJniObject forward
-	PrintWriterPrinter::PrintWriterPrinter(QJniObject obj) : __JniBaseClass(obj) {}
+	PrintWriterPrinter::PrintWriterPrinter(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintWriterPrinter::PrintWriterPrinter(java::io::PrintWriter arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.PrintWriterPrinter",
 			"(Ljava/io/PrintWriter;)V",
 			arg0.object()

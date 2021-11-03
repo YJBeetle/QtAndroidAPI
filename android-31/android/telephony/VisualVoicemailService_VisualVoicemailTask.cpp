@@ -5,7 +5,7 @@ namespace android::telephony
 	// Fields
 	
 	// QJniObject forward
-	VisualVoicemailService_VisualVoicemailTask::VisualVoicemailService_VisualVoicemailTask(QJniObject obj) : __JniBaseClass(obj) {}
+	VisualVoicemailService_VisualVoicemailTask::VisualVoicemailService_VisualVoicemailTask(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

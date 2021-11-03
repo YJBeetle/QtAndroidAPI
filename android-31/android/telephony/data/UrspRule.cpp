@@ -4,7 +4,7 @@
 namespace android::telephony::data
 {
 	// Fields
-	__JniBaseClass UrspRule::CREATOR()
+	JObject UrspRule::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.UrspRule",
@@ -14,7 +14,7 @@ namespace android::telephony::data
 	}
 	
 	// QJniObject forward
-	UrspRule::UrspRule(QJniObject obj) : __JniBaseClass(obj) {}
+	UrspRule::UrspRule(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -41,14 +41,14 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	__JniBaseClass UrspRule::getRouteSelectionDescriptor()
+	JObject UrspRule::getRouteSelectionDescriptor()
 	{
 		return callObjectMethod(
 			"getRouteSelectionDescriptor",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass UrspRule::getTrafficDescriptors()
+	JObject UrspRule::getTrafficDescriptors()
 	{
 		return callObjectMethod(
 			"getTrafficDescriptors",

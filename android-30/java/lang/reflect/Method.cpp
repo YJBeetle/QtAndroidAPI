@@ -20,14 +20,14 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	__JniBaseClass Method::getAnnotatedReturnType()
+	JObject Method::getAnnotatedReturnType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Method::getAnnotation(jclass arg0)
+	JObject Method::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -77,7 +77,7 @@ namespace java::lang::reflect
 			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
-	__JniBaseClass Method::getGenericReturnType()
+	JObject Method::getGenericReturnType()
 	{
 		return callObjectMethod(
 			"getGenericReturnType",

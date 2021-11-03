@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass NeighboringCellInfo::CREATOR()
+	JObject NeighboringCellInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.NeighboringCellInfo",
@@ -28,29 +28,29 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	NeighboringCellInfo::NeighboringCellInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	NeighboringCellInfo::NeighboringCellInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NeighboringCellInfo::NeighboringCellInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.NeighboringCellInfo",
 			"()V"
 		) {}
 	NeighboringCellInfo::NeighboringCellInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.NeighboringCellInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	NeighboringCellInfo::NeighboringCellInfo(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.NeighboringCellInfo",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	NeighboringCellInfo::NeighboringCellInfo(jint arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.NeighboringCellInfo",
 			"(ILjava/lang/String;I)V",
 			arg0,

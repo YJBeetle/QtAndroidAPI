@@ -10,11 +10,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	SocketImpl::SocketImpl(QJniObject obj) : __JniBaseClass(obj) {}
+	SocketImpl::SocketImpl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SocketImpl::SocketImpl()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.SocketImpl",
 			"()V"
 		) {}

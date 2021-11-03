@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::sax
 {
-	class Element : public __JniBaseClass
+	class Element : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Element(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Element(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Element(QJniObject obj);
 		
 		// Constructors
@@ -21,11 +21,11 @@ namespace android::sax
 		android::sax::Element getChild(jstring arg0, jstring arg1);
 		android::sax::Element requireChild(jstring arg0);
 		android::sax::Element requireChild(jstring arg0, jstring arg1);
-		void setElementListener(__JniBaseClass arg0);
-		void setEndElementListener(__JniBaseClass arg0);
-		void setEndTextElementListener(__JniBaseClass arg0);
-		void setStartElementListener(__JniBaseClass arg0);
-		void setTextElementListener(__JniBaseClass arg0);
+		void setElementListener(JObject arg0);
+		void setEndElementListener(JObject arg0);
+		void setEndTextElementListener(JObject arg0);
+		void setStartElementListener(JObject arg0);
+		void setTextElementListener(JObject arg0);
 		jstring toString();
 	};
 } // namespace android::sax

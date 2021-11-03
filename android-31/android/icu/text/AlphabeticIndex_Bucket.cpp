@@ -6,7 +6,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QJniObject forward
-	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QJniObject obj) : __JniBaseClass(obj) {}
+	AlphabeticIndex_Bucket::AlphabeticIndex_Bucket(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace android::icu::text
 			"()Landroid/icu/text/AlphabeticIndex$Bucket$LabelType;"
 		);
 	}
-	__JniBaseClass AlphabeticIndex_Bucket::iterator()
+	JObject AlphabeticIndex_Bucket::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

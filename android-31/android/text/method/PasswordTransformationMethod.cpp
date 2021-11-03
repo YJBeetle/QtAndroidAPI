@@ -7,11 +7,11 @@ namespace android::text::method
 	// Fields
 	
 	// QJniObject forward
-	PasswordTransformationMethod::PasswordTransformationMethod(QJniObject obj) : __JniBaseClass(obj) {}
+	PasswordTransformationMethod::PasswordTransformationMethod(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PasswordTransformationMethod::PasswordTransformationMethod()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.method.PasswordTransformationMethod",
 			"()V"
 		) {}
@@ -25,7 +25,7 @@ namespace android::text::method
 			"()Landroid/text/method/PasswordTransformationMethod;"
 		);
 	}
-	void PasswordTransformationMethod::afterTextChanged(__JniBaseClass arg0)
+	void PasswordTransformationMethod::afterTextChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"afterTextChanged",

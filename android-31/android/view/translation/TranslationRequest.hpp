@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,18 +9,18 @@ namespace android::os
 
 namespace android::view::translation
 {
-	class TranslationRequest : public __JniBaseClass
+	class TranslationRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_DICTIONARY_RESULT();
 		static jint FLAG_PARTIAL_RESPONSES();
 		static jint FLAG_TRANSLATION_RESULT();
 		static jint FLAG_TRANSLITERATION_RESULT();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit TranslationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TranslationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TranslationRequest(QJniObject obj);
 		
 		// Constructors
@@ -28,8 +28,8 @@ namespace android::view::translation
 		// Methods
 		jint describeContents();
 		jint getFlags();
-		__JniBaseClass getTranslationRequestValues();
-		__JniBaseClass getViewTranslationRequests();
+		JObject getTranslationRequestValues();
+		JObject getViewTranslationRequests();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

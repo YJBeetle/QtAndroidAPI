@@ -23,7 +23,7 @@ namespace java::util
 			"(Ljava/util/EnumMap;)V",
 			arg0.object()
 		) {}
-	EnumMap::EnumMap(__JniBaseClass arg0)
+	EnumMap::EnumMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.EnumMap",
 			"(Ljava/util/Map;)V",
@@ -61,7 +61,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass EnumMap::entrySet()
+	JObject EnumMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -91,7 +91,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass EnumMap::keySet()
+	JObject EnumMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -116,7 +116,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void EnumMap::putAll(__JniBaseClass arg0)
+	void EnumMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -139,7 +139,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass EnumMap::values()
+	JObject EnumMap::values()
 	{
 		return callObjectMethod(
 			"values",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Notification_Style.hpp"
 
 namespace android::app
@@ -34,8 +34,8 @@ namespace android::app
 		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, android::app::Person arg2);
 		android::app::Notification_MessagingStyle addMessage(jstring arg0, jlong arg1, jstring arg2);
 		jstring getConversationTitle();
-		__JniBaseClass getHistoricMessages();
-		__JniBaseClass getMessages();
+		JObject getHistoricMessages();
+		JObject getMessages();
 		android::app::Person getUser();
 		jstring getUserDisplayName();
 		jboolean isGroupConversation();

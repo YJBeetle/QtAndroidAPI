@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass SignalThresholdInfo::CREATOR()
+	JObject SignalThresholdInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.SignalThresholdInfo",
@@ -77,7 +77,7 @@ namespace android::telephony
 	}
 	
 	// QJniObject forward
-	SignalThresholdInfo::SignalThresholdInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	SignalThresholdInfo::SignalThresholdInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

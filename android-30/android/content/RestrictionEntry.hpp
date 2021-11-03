@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::content
 {
-	class RestrictionEntry : public __JniBaseClass
+	class RestrictionEntry : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_BOOLEAN();
 		static jint TYPE_BUNDLE();
 		static jint TYPE_BUNDLE_ARRAY();
@@ -28,7 +28,7 @@ namespace android::content
 		static jint TYPE_STRING();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit RestrictionEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RestrictionEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RestrictionEntry(QJniObject obj);
 		
 		// Constructors

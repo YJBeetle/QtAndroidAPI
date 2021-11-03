@@ -11,11 +11,11 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	X509CertSelector::X509CertSelector(QJniObject obj) : __JniBaseClass(obj) {}
+	X509CertSelector::X509CertSelector(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	X509CertSelector::X509CertSelector()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.X509CertSelector",
 			"()V"
 		) {}
@@ -92,7 +92,7 @@ namespace java::security::cert
 			"()Ljava/util/Date;"
 		);
 	}
-	__JniBaseClass X509CertSelector::getExtendedKeyUsage()
+	JObject X509CertSelector::getExtendedKeyUsage()
 	{
 		return callObjectMethod(
 			"getExtendedKeyUsage",
@@ -141,14 +141,14 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass X509CertSelector::getPathToNames()
+	JObject X509CertSelector::getPathToNames()
 	{
 		return callObjectMethod(
 			"getPathToNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass X509CertSelector::getPolicy()
+	JObject X509CertSelector::getPolicy()
 	{
 		return callObjectMethod(
 			"getPolicy",
@@ -176,7 +176,7 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	__JniBaseClass X509CertSelector::getSubjectAlternativeNames()
+	JObject X509CertSelector::getSubjectAlternativeNames()
 	{
 		return callObjectMethod(
 			"getSubjectAlternativeNames",
@@ -204,7 +204,7 @@ namespace java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass X509CertSelector::getSubjectPublicKey()
+	JObject X509CertSelector::getSubjectPublicKey()
 	{
 		return callObjectMethod(
 			"getSubjectPublicKey",
@@ -258,7 +258,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setExtendedKeyUsage(__JniBaseClass arg0)
+	void X509CertSelector::setExtendedKeyUsage(JObject arg0)
 	{
 		callMethod<void>(
 			"setExtendedKeyUsage",
@@ -314,7 +314,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setPathToNames(__JniBaseClass arg0)
+	void X509CertSelector::setPathToNames(JObject arg0)
 	{
 		callMethod<void>(
 			"setPathToNames",
@@ -322,7 +322,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setPolicy(__JniBaseClass arg0)
+	void X509CertSelector::setPolicy(JObject arg0)
 	{
 		callMethod<void>(
 			"setPolicy",
@@ -370,7 +370,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CertSelector::setSubjectAlternativeNames(__JniBaseClass arg0)
+	void X509CertSelector::setSubjectAlternativeNames(JObject arg0)
 	{
 		callMethod<void>(
 			"setSubjectAlternativeNames",
@@ -394,7 +394,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setSubjectPublicKey(__JniBaseClass arg0)
+	void X509CertSelector::setSubjectPublicKey(JObject arg0)
 	{
 		callMethod<void>(
 			"setSubjectPublicKey",

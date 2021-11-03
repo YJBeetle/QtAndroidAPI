@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::camera2
 {
@@ -9,7 +9,7 @@ namespace android::hardware::camera2
 
 namespace android::hardware::camera2
 {
-	class CaptureFailure : public __JniBaseClass
+	class CaptureFailure : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::hardware::camera2
 		static jint REASON_FLUSHED();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit CaptureFailure(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CaptureFailure(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CaptureFailure(QJniObject obj);
 		
 		// Constructors

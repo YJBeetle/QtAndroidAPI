@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 #include "./Visibility.hpp"
 
@@ -41,7 +41,7 @@ namespace android::transition
 		// Constructors
 		Fade();
 		Fade(jint arg0);
-		Fade(android::content::Context arg0, __JniBaseClass arg1);
+		Fade(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void captureStartValues(android::transition::TransitionValues arg0);

@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass Attribution::CREATOR()
+	JObject Attribution::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.Attribution",
@@ -14,7 +14,7 @@ namespace android::content::pm
 	}
 	
 	// QJniObject forward
-	Attribution::Attribution(QJniObject obj) : __JniBaseClass(obj) {}
+	Attribution::Attribution(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

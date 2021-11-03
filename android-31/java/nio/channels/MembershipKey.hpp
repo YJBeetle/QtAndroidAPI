@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::net
 {
@@ -13,20 +13,20 @@ namespace java::net
 
 namespace java::nio::channels
 {
-	class MembershipKey : public __JniBaseClass
+	class MembershipKey : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit MembershipKey(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MembershipKey(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MembershipKey(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		java::nio::channels::MembershipKey block(java::net::InetAddress arg0);
-		__JniBaseClass channel();
+		JObject channel();
 		void drop();
 		java::net::InetAddress group();
 		jboolean isValid();

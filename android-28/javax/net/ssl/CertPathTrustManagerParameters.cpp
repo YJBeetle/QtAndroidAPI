@@ -5,18 +5,18 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QJniObject forward
-	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QJniObject obj) : __JniBaseClass(obj) {}
+	CertPathTrustManagerParameters::CertPathTrustManagerParameters(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CertPathTrustManagerParameters::CertPathTrustManagerParameters(__JniBaseClass arg0)
-		: __JniBaseClass(
+	CertPathTrustManagerParameters::CertPathTrustManagerParameters(JObject arg0)
+		: JObject(
 			"javax.net.ssl.CertPathTrustManagerParameters",
 			"(Ljava/security/cert/CertPathParameters;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass CertPathTrustManagerParameters::getParameters()
+	JObject CertPathTrustManagerParameters::getParameters()
 	{
 		return callObjectMethod(
 			"getParameters",

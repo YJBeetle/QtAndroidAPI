@@ -5,11 +5,11 @@ namespace android::net::wifi
 	// Fields
 	
 	// QJniObject forward
-	WifiManager_WpsCallback::WifiManager_WpsCallback(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_WpsCallback::WifiManager_WpsCallback(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiManager_WpsCallback::WifiManager_WpsCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiManager$WpsCallback",
 			"()V"
 		) {}

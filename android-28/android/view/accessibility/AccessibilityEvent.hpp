@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AccessibilityRecord.hpp"
 
 namespace android::os
@@ -25,7 +25,7 @@ namespace android::view::accessibility
 		static jint CONTENT_CHANGE_TYPE_SUBTREE();
 		static jint CONTENT_CHANGE_TYPE_TEXT();
 		static jint CONTENT_CHANGE_TYPE_UNDEFINED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint INVALID_POSITION();
 		static jint MAX_TEXT_LENGTH();
 		static jint TYPES_ALL_MASK();

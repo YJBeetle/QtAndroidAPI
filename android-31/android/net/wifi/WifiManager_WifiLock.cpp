@@ -7,7 +7,7 @@ namespace android::net::wifi
 	// Fields
 	
 	// QJniObject forward
-	WifiManager_WifiLock::WifiManager_WifiLock(QJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_WifiLock::WifiManager_WifiLock(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

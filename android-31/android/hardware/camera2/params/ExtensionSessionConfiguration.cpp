@@ -6,11 +6,11 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QJniObject forward
-	ExtensionSessionConfiguration::ExtensionSessionConfiguration(QJniObject obj) : __JniBaseClass(obj) {}
+	ExtensionSessionConfiguration::ExtensionSessionConfiguration(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ExtensionSessionConfiguration::ExtensionSessionConfiguration(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::hardware::camera2::CameraExtensionSession_StateCallback arg3)
-		: __JniBaseClass(
+	ExtensionSessionConfiguration::ExtensionSessionConfiguration(jint arg0, JObject arg1, JObject arg2, android::hardware::camera2::CameraExtensionSession_StateCallback arg3)
+		: JObject(
 			"android.hardware.camera2.params.ExtensionSessionConfiguration",
 			"(ILjava/util/List;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraExtensionSession$StateCallback;)V",
 			arg0,
@@ -20,7 +20,7 @@ namespace android::hardware::camera2::params
 		) {}
 	
 	// Methods
-	__JniBaseClass ExtensionSessionConfiguration::getExecutor()
+	JObject ExtensionSessionConfiguration::getExecutor()
 	{
 		return callObjectMethod(
 			"getExecutor",
@@ -34,7 +34,7 @@ namespace android::hardware::camera2::params
 			"()I"
 		);
 	}
-	__JniBaseClass ExtensionSessionConfiguration::getOutputConfigurations()
+	JObject ExtensionSessionConfiguration::getOutputConfigurations()
 	{
 		return callObjectMethod(
 			"getOutputConfigurations",

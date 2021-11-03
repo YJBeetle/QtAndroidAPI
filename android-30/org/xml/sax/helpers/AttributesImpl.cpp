@@ -5,16 +5,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QJniObject forward
-	AttributesImpl::AttributesImpl(QJniObject obj) : __JniBaseClass(obj) {}
+	AttributesImpl::AttributesImpl(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AttributesImpl::AttributesImpl()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.AttributesImpl",
 			"()V"
 		) {}
-	AttributesImpl::AttributesImpl(__JniBaseClass arg0)
-		: __JniBaseClass(
+	AttributesImpl::AttributesImpl(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.AttributesImpl",
 			"(Lorg/xml/sax/Attributes;)V",
 			arg0.object()
@@ -159,7 +159,7 @@ namespace org::xml::sax::helpers
 			arg5
 		);
 	}
-	void AttributesImpl::setAttributes(__JniBaseClass arg0)
+	void AttributesImpl::setAttributes(JObject arg0)
 	{
 		callMethod<void>(
 			"setAttributes",

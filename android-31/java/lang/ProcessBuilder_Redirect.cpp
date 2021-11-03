@@ -31,7 +31,7 @@ namespace java::lang
 	}
 	
 	// QJniObject forward
-	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QJniObject obj) : __JniBaseClass(obj) {}
+	ProcessBuilder_Redirect::ProcessBuilder_Redirect(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

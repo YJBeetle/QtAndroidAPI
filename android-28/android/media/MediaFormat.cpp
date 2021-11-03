@@ -772,11 +772,11 @@ namespace android::media
 	}
 	
 	// QJniObject forward
-	MediaFormat::MediaFormat(QJniObject obj) : __JniBaseClass(obj) {}
+	MediaFormat::MediaFormat(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaFormat::MediaFormat()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaFormat",
 			"()V"
 		) {}

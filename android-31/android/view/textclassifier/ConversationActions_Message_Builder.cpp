@@ -9,11 +9,11 @@ namespace android::view::textclassifier
 	// Fields
 	
 	// QJniObject forward
-	ConversationActions_Message_Builder::ConversationActions_Message_Builder(QJniObject obj) : __JniBaseClass(obj) {}
+	ConversationActions_Message_Builder::ConversationActions_Message_Builder(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConversationActions_Message_Builder::ConversationActions_Message_Builder(android::app::Person arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textclassifier.ConversationActions$Message$Builder",
 			"(Landroid/app/Person;)V",
 			arg0.object()

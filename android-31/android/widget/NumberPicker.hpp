@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -39,9 +39,9 @@ namespace android::widget
 		
 		// Constructors
 		NumberPicker(android::content::Context arg0);
-		NumberPicker(android::content::Context arg0, __JniBaseClass arg1);
-		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		NumberPicker(android::content::Context arg0, JObject arg1);
+		NumberPicker(android::content::Context arg0, JObject arg1, jint arg2);
+		NumberPicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void computeScroll();
@@ -66,12 +66,12 @@ namespace android::widget
 		void scrollBy(jint arg0, jint arg1);
 		void setDisplayedValues(jarray arg0);
 		void setEnabled(jboolean arg0);
-		void setFormatter(__JniBaseClass arg0);
+		void setFormatter(JObject arg0);
 		void setMaxValue(jint arg0);
 		void setMinValue(jint arg0);
 		void setOnLongPressUpdateInterval(jlong arg0);
-		void setOnScrollListener(__JniBaseClass arg0);
-		void setOnValueChangedListener(__JniBaseClass arg0);
+		void setOnScrollListener(JObject arg0);
+		void setOnValueChangedListener(JObject arg0);
 		void setSelectionDividerHeight(jint arg0);
 		void setTextColor(jint arg0);
 		void setTextSize(jfloat arg0);

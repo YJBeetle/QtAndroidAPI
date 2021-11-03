@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,18 +9,18 @@ namespace android::os
 
 namespace android::location
 {
-	class LocationRequest : public __JniBaseClass
+	class LocationRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jlong PASSIVE_INTERVAL();
 		static jint QUALITY_BALANCED_POWER_ACCURACY();
 		static jint QUALITY_HIGH_ACCURACY();
 		static jint QUALITY_LOW_POWER();
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit LocationRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocationRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocationRequest(QJniObject obj);
 		
 		// Constructors

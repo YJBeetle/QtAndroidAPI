@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./LayoutAnimationController.hpp"
 
 namespace android::content
@@ -38,7 +38,7 @@ namespace android::view::animation
 		
 		// Constructors
 		GridLayoutAnimationController(android::view::animation::Animation arg0);
-		GridLayoutAnimationController(android::content::Context arg0, __JniBaseClass arg1);
+		GridLayoutAnimationController(android::content::Context arg0, JObject arg1);
 		GridLayoutAnimationController(android::view::animation::Animation arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods

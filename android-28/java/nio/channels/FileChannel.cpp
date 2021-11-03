@@ -14,7 +14,7 @@ namespace java::nio::channels
 	// Constructors
 	
 	// Methods
-	java::nio::channels::FileChannel FileChannel::open(__JniBaseClass arg0, jarray arg1)
+	java::nio::channels::FileChannel FileChannel::open(JObject arg0, jarray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
@@ -24,7 +24,7 @@ namespace java::nio::channels
 			arg1
 		);
 	}
-	java::nio::channels::FileChannel FileChannel::open(__JniBaseClass arg0, __JniBaseClass arg1, jarray arg2)
+	java::nio::channels::FileChannel FileChannel::open(JObject arg0, JObject arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.FileChannel",
@@ -127,7 +127,7 @@ namespace java::nio::channels
 			"()J"
 		);
 	}
-	jlong FileChannel::transferFrom(__JniBaseClass arg0, jlong arg1, jlong arg2)
+	jlong FileChannel::transferFrom(JObject arg0, jlong arg1, jlong arg2)
 	{
 		return callMethod<jlong>(
 			"transferFrom",
@@ -137,7 +137,7 @@ namespace java::nio::channels
 			arg2
 		);
 	}
-	jlong FileChannel::transferTo(jlong arg0, jlong arg1, __JniBaseClass arg2)
+	jlong FileChannel::transferTo(jlong arg0, jlong arg1, JObject arg2)
 	{
 		return callMethod<jlong>(
 			"transferTo",

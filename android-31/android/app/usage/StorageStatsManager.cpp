@@ -9,7 +9,7 @@ namespace android::app::usage
 	// Fields
 	
 	// QJniObject forward
-	StorageStatsManager::StorageStatsManager(QJniObject obj) : __JniBaseClass(obj) {}
+	StorageStatsManager::StorageStatsManager(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

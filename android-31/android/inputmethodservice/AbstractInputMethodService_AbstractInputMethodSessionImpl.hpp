@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::inputmethodservice
 {
@@ -17,22 +17,22 @@ namespace android::view
 
 namespace android::inputmethodservice
 {
-	class AbstractInputMethodService_AbstractInputMethodSessionImpl : public __JniBaseClass
+	class AbstractInputMethodService_AbstractInputMethodSessionImpl : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AbstractInputMethodService_AbstractInputMethodSessionImpl(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AbstractInputMethodService_AbstractInputMethodSessionImpl(QJniObject obj);
 		
 		// Constructors
 		AbstractInputMethodService_AbstractInputMethodSessionImpl(android::inputmethodservice::AbstractInputMethodService arg0);
 		
 		// Methods
-		void dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, __JniBaseClass arg2);
-		void dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, __JniBaseClass arg2);
-		void dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, __JniBaseClass arg2);
+		void dispatchGenericMotionEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2);
+		void dispatchKeyEvent(jint arg0, android::view::KeyEvent arg1, JObject arg2);
+		void dispatchTrackballEvent(jint arg0, android::view::MotionEvent arg1, JObject arg2);
 		jboolean isEnabled();
 		jboolean isRevoked();
 		void revokeSelf();

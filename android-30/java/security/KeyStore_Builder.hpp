@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,24 +17,24 @@ namespace java::security
 
 namespace java::security
 {
-	class KeyStore_Builder : public __JniBaseClass
+	class KeyStore_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit KeyStore_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyStore_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStore_Builder(QJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::security::KeyStore_Builder newInstance(java::io::File arg0, __JniBaseClass arg1);
-		static java::security::KeyStore_Builder newInstance(java::security::KeyStore arg0, __JniBaseClass arg1);
-		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, __JniBaseClass arg2);
-		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, __JniBaseClass arg3);
+		static java::security::KeyStore_Builder newInstance(java::io::File arg0, JObject arg1);
+		static java::security::KeyStore_Builder newInstance(java::security::KeyStore arg0, JObject arg1);
+		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, JObject arg2);
+		static java::security::KeyStore_Builder newInstance(jstring arg0, java::security::Provider arg1, java::io::File arg2, JObject arg3);
 		java::security::KeyStore getKeyStore();
-		__JniBaseClass getProtectionParameter(jstring arg0);
+		JObject getProtectionParameter(jstring arg0);
 	};
 } // namespace java::security
 

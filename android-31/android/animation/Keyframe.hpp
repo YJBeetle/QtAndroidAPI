@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::animation
 {
-	class Keyframe : public __JniBaseClass
+	class Keyframe : public JObject
 	{
 	public:
 		// Fields
 		
 		// QJniObject forward
-		template<typename ...Ts> explicit Keyframe(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Keyframe(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Keyframe(QJniObject obj);
 		
 		// Constructors
@@ -26,12 +26,12 @@ namespace android::animation
 		static android::animation::Keyframe ofObject(jfloat arg0, jobject arg1);
 		android::animation::Keyframe clone();
 		jfloat getFraction();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jclass getType();
 		jobject getValue();
 		jboolean hasValue();
 		void setFraction(jfloat arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setValue(jobject arg0);
 	};
 } // namespace android::animation

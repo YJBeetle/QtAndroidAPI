@@ -7,26 +7,26 @@ namespace java::security::cert
 	// Fields
 	
 	// QJniObject forward
-	TrustAnchor::TrustAnchor(QJniObject obj) : __JniBaseClass(obj) {}
+	TrustAnchor::TrustAnchor(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TrustAnchor::TrustAnchor(java::security::cert::X509Certificate arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.TrustAnchor",
 			"(Ljava/security/cert/X509Certificate;[B)V",
 			arg0.object(),
 			arg1
 		) {}
-	TrustAnchor::TrustAnchor(jstring arg0, __JniBaseClass arg1, jbyteArray arg2)
-		: __JniBaseClass(
+	TrustAnchor::TrustAnchor(jstring arg0, JObject arg1, jbyteArray arg2)
+		: JObject(
 			"java.security.cert.TrustAnchor",
 			"(Ljava/lang/String;Ljava/security/PublicKey;[B)V",
 			arg0,
 			arg1.object(),
 			arg2
 		) {}
-	TrustAnchor::TrustAnchor(javax::security::auth::x500::X500Principal arg0, __JniBaseClass arg1, jbyteArray arg2)
-		: __JniBaseClass(
+	TrustAnchor::TrustAnchor(javax::security::auth::x500::X500Principal arg0, JObject arg1, jbyteArray arg2)
+		: JObject(
 			"java.security.cert.TrustAnchor",
 			"(Ljavax/security/auth/x500/X500Principal;Ljava/security/PublicKey;[B)V",
 			arg0.object(),
@@ -49,7 +49,7 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TrustAnchor::getCAPublicKey()
+	JObject TrustAnchor::getCAPublicKey()
 	{
 		return callObjectMethod(
 			"getCAPublicKey",

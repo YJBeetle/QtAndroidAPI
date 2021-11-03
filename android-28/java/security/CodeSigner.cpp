@@ -8,11 +8,11 @@ namespace java::security
 	// Fields
 	
 	// QJniObject forward
-	CodeSigner::CodeSigner(QJniObject obj) : __JniBaseClass(obj) {}
+	CodeSigner::CodeSigner(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CodeSigner::CodeSigner(java::security::cert::CertPath arg0, java::security::Timestamp arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.CodeSigner",
 			"(Ljava/security/cert/CertPath;Ljava/security/Timestamp;)V",
 			arg0.object(),

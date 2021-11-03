@@ -5,11 +5,11 @@ namespace java::net
 	// Fields
 	
 	// QJniObject forward
-	PasswordAuthentication::PasswordAuthentication(QJniObject obj) : __JniBaseClass(obj) {}
+	PasswordAuthentication::PasswordAuthentication(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PasswordAuthentication::PasswordAuthentication(jstring arg0, jcharArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.PasswordAuthentication",
 			"(Ljava/lang/String;[C)V",
 			arg0,

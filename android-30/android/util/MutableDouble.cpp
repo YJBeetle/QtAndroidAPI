@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QJniObject forward
-	MutableDouble::MutableDouble(QJniObject obj) : __JniBaseClass(obj) {}
+	MutableDouble::MutableDouble(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableDouble::MutableDouble(jdouble arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableDouble",
 			"(D)V",
 			arg0

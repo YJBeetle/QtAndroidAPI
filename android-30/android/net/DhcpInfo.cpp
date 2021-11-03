@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass DhcpInfo::CREATOR()
+	JObject DhcpInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.DhcpInfo",
@@ -56,11 +56,11 @@ namespace android::net
 	}
 	
 	// QJniObject forward
-	DhcpInfo::DhcpInfo(QJniObject obj) : __JniBaseClass(obj) {}
+	DhcpInfo::DhcpInfo(QJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DhcpInfo::DhcpInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.DhcpInfo",
 			"()V"
 		) {}
