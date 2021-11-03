@@ -5,19 +5,19 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QAndroidJniObject forward
-	ChildSessionConfiguration::ChildSessionConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ChildSessionConfiguration::ChildSessionConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ChildSessionConfiguration::getInboundTrafficSelectors()
+	JObject ChildSessionConfiguration::getInboundTrafficSelectors()
 	{
 		return callObjectMethod(
 			"getInboundTrafficSelectors",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ChildSessionConfiguration::getOutboundTrafficSelectors()
+	JObject ChildSessionConfiguration::getOutboundTrafficSelectors()
 	{
 		return callObjectMethod(
 			"getOutboundTrafficSelectors",

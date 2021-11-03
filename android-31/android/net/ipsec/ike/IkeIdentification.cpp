@@ -5,7 +5,7 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QAndroidJniObject forward
-	IkeIdentification::IkeIdentification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IkeIdentification::IkeIdentification(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,7 +13,7 @@ namespace android::media
 
 namespace android::media
 {
-	class FaceDetector_Face : public __JniBaseClass
+	class FaceDetector_Face : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::media
 		static jint EULER_Z();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FaceDetector_Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FaceDetector_Face(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FaceDetector_Face(QAndroidJniObject obj);
 		
 		// Constructors

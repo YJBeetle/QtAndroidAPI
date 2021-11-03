@@ -269,11 +269,11 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo_AccessibilityAction::AccessibilityNodeInfo_AccessibilityAction(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,

@@ -285,7 +285,7 @@ namespace android::icu::util
 	}
 	
 	// QAndroidJniObject forward
-	VersionInfo::VersionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VersionInfo::VersionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

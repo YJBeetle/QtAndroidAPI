@@ -1,29 +1,29 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::net
 {
-	class StandardSocketOptions : public __JniBaseClass
+	class StandardSocketOptions : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass IP_MULTICAST_IF();
-		static __JniBaseClass IP_MULTICAST_LOOP();
-		static __JniBaseClass IP_MULTICAST_TTL();
-		static __JniBaseClass IP_TOS();
-		static __JniBaseClass SO_BROADCAST();
-		static __JniBaseClass SO_KEEPALIVE();
-		static __JniBaseClass SO_LINGER();
-		static __JniBaseClass SO_RCVBUF();
-		static __JniBaseClass SO_REUSEADDR();
-		static __JniBaseClass SO_REUSEPORT();
-		static __JniBaseClass SO_SNDBUF();
-		static __JniBaseClass TCP_NODELAY();
+		static JObject IP_MULTICAST_IF();
+		static JObject IP_MULTICAST_LOOP();
+		static JObject IP_MULTICAST_TTL();
+		static JObject IP_TOS();
+		static JObject SO_BROADCAST();
+		static JObject SO_KEEPALIVE();
+		static JObject SO_LINGER();
+		static JObject SO_RCVBUF();
+		static JObject SO_REUSEADDR();
+		static JObject SO_REUSEPORT();
+		static JObject SO_SNDBUF();
+		static JObject TCP_NODELAY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StandardSocketOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StandardSocketOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StandardSocketOptions(QAndroidJniObject obj);
 		
 		// Constructors

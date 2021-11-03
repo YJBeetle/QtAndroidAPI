@@ -31,7 +31,7 @@ namespace android::renderscript
 	}
 	
 	// QAndroidJniObject forward
-	RenderScript::RenderScript(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RenderScript::RenderScript(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

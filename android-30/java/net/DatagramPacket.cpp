@@ -7,18 +7,18 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	DatagramPacket::DatagramPacket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatagramPacket::DatagramPacket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BI)V",
 			arg0,
 			arg1
 		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BII)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace java::net
 			arg2
 		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::SocketAddress arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BILjava/net/SocketAddress;)V",
 			arg0,
@@ -34,7 +34,7 @@ namespace java::net
 			arg2.object()
 		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::SocketAddress arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/SocketAddress;)V",
 			arg0,
@@ -43,7 +43,7 @@ namespace java::net
 			arg3.object()
 		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BILjava/net/InetAddress;I)V",
 			arg0,
@@ -52,7 +52,7 @@ namespace java::net
 			arg3
 		) {}
 	DatagramPacket::DatagramPacket(jbyteArray arg0, jint arg1, jint arg2, java::net::InetAddress arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.DatagramPacket",
 			"([BIILjava/net/InetAddress;I)V",
 			arg0,

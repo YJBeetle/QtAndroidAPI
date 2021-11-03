@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass CombinedVibration::CREATOR()
+	JObject CombinedVibration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.CombinedVibration",
@@ -15,7 +15,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	CombinedVibration::CombinedVibration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CombinedVibration::CombinedVibration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

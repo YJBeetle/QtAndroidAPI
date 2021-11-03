@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -39,8 +39,8 @@ namespace android::media
 		
 		// Methods
 		void addSession(android::media::MediaSession2 arg0);
-		__JniBaseClass getSessions();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject getSessions();
+		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
 		android::media::MediaSession2 onGetSession(android::media::MediaSession2_ControllerInfo arg0);

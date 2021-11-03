@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Core AndroidExtras REQUIRED)
 set(SRC_LIST 
-	"__JniBaseClass.cpp" "__JniBaseClass.hpp"
+	"JObject.cpp" "JObject.hpp"
 	"android/window/SplashScreenView.cpp" "android/window/SplashScreenView.hpp"
 	"android/Manifest.cpp" "android/Manifest.hpp"
 	"android/nfc/NfcAdapter.cpp" "android/nfc/NfcAdapter.hpp"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,16 +17,16 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageInstaller_SessionParams : public __JniBaseClass
+	class PackageInstaller_SessionParams : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MODE_FULL_INSTALL();
 		static jint MODE_INHERIT_EXISTING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageInstaller_SessionParams(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_SessionParams(QAndroidJniObject obj);
 		
 		// Constructors

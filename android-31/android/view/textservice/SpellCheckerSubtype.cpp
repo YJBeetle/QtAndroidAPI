@@ -6,7 +6,7 @@
 namespace android::view::textservice
 {
 	// Fields
-	__JniBaseClass SpellCheckerSubtype::CREATOR()
+	JObject SpellCheckerSubtype::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textservice.SpellCheckerSubtype",
@@ -16,11 +16,11 @@ namespace android::view::textservice
 	}
 	
 	// QAndroidJniObject forward
-	SpellCheckerSubtype::SpellCheckerSubtype(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SpellCheckerSubtype::SpellCheckerSubtype(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SpellCheckerSubtype::SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.textservice.SpellCheckerSubtype",
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,

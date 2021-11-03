@@ -22,7 +22,7 @@ namespace java::nio::channels
 			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
-	java::nio::channels::DatagramChannel DatagramChannel::open(__JniBaseClass arg0)
+	java::nio::channels::DatagramChannel DatagramChannel::open(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.channels.DatagramChannel",
@@ -118,7 +118,7 @@ namespace java::nio::channels
 			arg1.object()
 		);
 	}
-	java::nio::channels::DatagramChannel DatagramChannel::setOption(__JniBaseClass arg0, jobject arg1)
+	java::nio::channels::DatagramChannel DatagramChannel::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",

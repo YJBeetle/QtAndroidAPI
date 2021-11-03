@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass WallpaperColors::CREATOR()
+	JObject WallpaperColors::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.WallpaperColors",
@@ -31,17 +31,17 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	WallpaperColors::WallpaperColors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WallpaperColors::WallpaperColors(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WallpaperColors::WallpaperColors(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.WallpaperColors",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	WallpaperColors::WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.WallpaperColors",
 			"(Landroid/graphics/Color;Landroid/graphics/Color;Landroid/graphics/Color;)V",
 			arg0.object(),
@@ -49,7 +49,7 @@ namespace android::app
 			arg2.object()
 		) {}
 	WallpaperColors::WallpaperColors(android::graphics::Color arg0, android::graphics::Color arg1, android::graphics::Color arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.WallpaperColors",
 			"(Landroid/graphics/Color;Landroid/graphics/Color;Landroid/graphics/Color;I)V",
 			arg0.object(),

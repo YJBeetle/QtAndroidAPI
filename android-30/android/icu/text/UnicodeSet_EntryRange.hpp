@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::text
 {
-	class UnicodeSet_EntryRange : public __JniBaseClass
+	class UnicodeSet_EntryRange : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::icu::text
 		jint codepointEnd();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UnicodeSet_EntryRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UnicodeSet_EntryRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UnicodeSet_EntryRange(QAndroidJniObject obj);
 		
 		// Constructors

@@ -51,7 +51,7 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	__JniBaseClass X509Certificate::getIssuerDN()
+	JObject X509Certificate::getIssuerDN()
 	{
 		return callObjectMethod(
 			"getIssuerDN",
@@ -100,7 +100,7 @@ namespace javax::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass X509Certificate::getSubjectDN()
+	JObject X509Certificate::getSubjectDN()
 	{
 		return callObjectMethod(
 			"getSubjectDN",

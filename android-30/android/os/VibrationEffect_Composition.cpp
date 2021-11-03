@@ -41,7 +41,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	VibrationEffect_Composition::VibrationEffect_Composition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VibrationEffect_Composition::VibrationEffect_Composition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

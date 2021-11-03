@@ -7,17 +7,17 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::PrecomputedText_Params arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.PrecomputedText$Params$Builder",
 			"(Landroid/text/PrecomputedText$Params;)V",
 			arg0.object()
 		) {}
 	PrecomputedText_Params_Builder::PrecomputedText_Params_Builder(android::text::TextPaint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.PrecomputedText$Params$Builder",
 			"(Landroid/text/TextPaint;)V",
 			arg0.object()
@@ -47,7 +47,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::PrecomputedText_Params_Builder PrecomputedText_Params_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::PrecomputedText_Params_Builder PrecomputedText_Params_Builder::setTextDirection(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",

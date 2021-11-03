@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,7 +17,7 @@ namespace java::security
 
 namespace java::util::prefs
 {
-	class Preferences : public __JniBaseClass
+	class Preferences : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace java::util::prefs
 		static jint MAX_VALUE_LENGTH();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Preferences(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Preferences(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Preferences(QAndroidJniObject obj);
 		
 		// Constructors
@@ -38,8 +38,8 @@ namespace java::util::prefs
 		static java::util::prefs::Preferences userNodeForPackage(jclass arg0);
 		static java::util::prefs::Preferences userRoot();
 		jstring absolutePath();
-		void addNodeChangeListener(__JniBaseClass arg0);
-		void addPreferenceChangeListener(__JniBaseClass arg0);
+		void addNodeChangeListener(JObject arg0);
+		void addPreferenceChangeListener(JObject arg0);
 		jarray childrenNames();
 		void clear();
 		void exportNode(java::io::OutputStream arg0);
@@ -67,8 +67,8 @@ namespace java::util::prefs
 		void putLong(jstring arg0, jlong arg1);
 		void remove(jstring arg0);
 		void removeNode();
-		void removeNodeChangeListener(__JniBaseClass arg0);
-		void removePreferenceChangeListener(__JniBaseClass arg0);
+		void removeNodeChangeListener(JObject arg0);
+		void removePreferenceChangeListener(JObject arg0);
 		void sync();
 		jstring toString();
 	};

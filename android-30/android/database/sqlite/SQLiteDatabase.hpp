@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./SQLiteClosable.hpp"
 
 namespace android::content
@@ -55,21 +55,21 @@ namespace android::database::sqlite
 		// Constructors
 		
 		// Methods
-		static android::database::sqlite::SQLiteDatabase create(__JniBaseClass arg0);
+		static android::database::sqlite::SQLiteDatabase create(JObject arg0);
 		static android::database::sqlite::SQLiteDatabase createInMemory(android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		static jboolean deleteDatabase(java::io::File arg0);
 		static jstring findEditTable(jstring arg0);
 		static android::database::sqlite::SQLiteDatabase openDatabase(java::io::File arg0, android::database::sqlite::SQLiteDatabase_OpenParams arg1);
-		static android::database::sqlite::SQLiteDatabase openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2);
-		static android::database::sqlite::SQLiteDatabase openDatabase(jstring arg0, __JniBaseClass arg1, jint arg2, __JniBaseClass arg3);
-		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(java::io::File arg0, __JniBaseClass arg1);
-		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, __JniBaseClass arg1);
-		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		static android::database::sqlite::SQLiteDatabase openDatabase(jstring arg0, JObject arg1, jint arg2);
+		static android::database::sqlite::SQLiteDatabase openDatabase(jstring arg0, JObject arg1, jint arg2, JObject arg3);
+		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(java::io::File arg0, JObject arg1);
+		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, JObject arg1);
+		static android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, JObject arg1, JObject arg2);
 		static jint releaseMemory();
 		void beginTransaction();
 		void beginTransactionNonExclusive();
-		void beginTransactionWithListener(__JniBaseClass arg0);
-		void beginTransactionWithListenerNonExclusive(__JniBaseClass arg0);
+		void beginTransactionWithListener(JObject arg0);
+		void beginTransactionWithListenerNonExclusive(JObject arg0);
 		android::database::sqlite::SQLiteStatement compileStatement(jstring arg0);
 		jint _delete(jstring arg0, jstring arg1, jarray arg2);
 		void disableWriteAheadLogging();
@@ -78,11 +78,11 @@ namespace android::database::sqlite
 		void execPerConnectionSQL(jstring arg0, jobjectArray arg1);
 		void execSQL(jstring arg0);
 		void execSQL(jstring arg0, jobjectArray arg1);
-		__JniBaseClass getAttachedDbs();
+		JObject getAttachedDbs();
 		jlong getMaximumSize();
 		jlong getPageSize();
 		jstring getPath();
-		__JniBaseClass getSyncedTables();
+		JObject getSyncedTables();
 		jint getVersion();
 		jboolean inTransaction();
 		jlong insert(jstring arg0, jstring arg1, android::content::ContentValues arg2);
@@ -97,20 +97,20 @@ namespace android::database::sqlite
 		void markTableSyncable(jstring arg0, jstring arg1);
 		void markTableSyncable(jstring arg0, jstring arg1, jstring arg2);
 		jboolean needUpgrade(jint arg0);
-		__JniBaseClass query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6);
-		__JniBaseClass query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
-		__JniBaseClass query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8);
-		__JniBaseClass query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, android::os::CancellationSignal arg9);
-		__JniBaseClass queryWithFactory(__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9);
-		__JniBaseClass queryWithFactory(__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, android::os::CancellationSignal arg10);
-		__JniBaseClass rawQuery(jstring arg0, jarray arg1);
-		__JniBaseClass rawQuery(jstring arg0, jarray arg1, android::os::CancellationSignal arg2);
-		__JniBaseClass rawQueryWithFactory(__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3);
-		__JniBaseClass rawQueryWithFactory(__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3, android::os::CancellationSignal arg4);
+		JObject query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6);
+		JObject query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
+		JObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8);
+		JObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, android::os::CancellationSignal arg9);
+		JObject queryWithFactory(JObject arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9);
+		JObject queryWithFactory(JObject arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, android::os::CancellationSignal arg10);
+		JObject rawQuery(jstring arg0, jarray arg1);
+		JObject rawQuery(jstring arg0, jarray arg1, android::os::CancellationSignal arg2);
+		JObject rawQueryWithFactory(JObject arg0, jstring arg1, jarray arg2, jstring arg3);
+		JObject rawQueryWithFactory(JObject arg0, jstring arg1, jarray arg2, jstring arg3, android::os::CancellationSignal arg4);
 		jlong replace(jstring arg0, jstring arg1, android::content::ContentValues arg2);
 		jlong replaceOrThrow(jstring arg0, jstring arg1, android::content::ContentValues arg2);
-		void setCustomAggregateFunction(jstring arg0, __JniBaseClass arg1);
-		void setCustomScalarFunction(jstring arg0, __JniBaseClass arg1);
+		void setCustomAggregateFunction(jstring arg0, JObject arg1);
+		void setCustomScalarFunction(jstring arg0, JObject arg1);
 		void setForeignKeyConstraintsEnabled(jboolean arg0);
 		void setLocale(java::util::Locale arg0);
 		void setLockingEnabled(jboolean arg0);

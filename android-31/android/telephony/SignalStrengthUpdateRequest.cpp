@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass SignalStrengthUpdateRequest::CREATOR()
+	JObject SignalStrengthUpdateRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.SignalStrengthUpdateRequest",
@@ -14,7 +14,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SignalStrengthUpdateRequest::SignalStrengthUpdateRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SignalStrengthUpdateRequest::SignalStrengthUpdateRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass SignalStrengthUpdateRequest::getSignalThresholdInfos()
+	JObject SignalStrengthUpdateRequest::getSignalThresholdInfos()
 	{
 		return callObjectMethod(
 			"getSignalThresholdInfos",

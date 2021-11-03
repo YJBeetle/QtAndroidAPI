@@ -4,7 +4,7 @@
 namespace android::accounts
 {
 	// Fields
-	__JniBaseClass AuthenticatorDescription::CREATOR()
+	JObject AuthenticatorDescription::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.accounts.AuthenticatorDescription",
@@ -58,11 +58,11 @@ namespace android::accounts
 	}
 	
 	// QAndroidJniObject forward
-	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AuthenticatorDescription::AuthenticatorDescription(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIII)V",
 			arg0,
@@ -73,7 +73,7 @@ namespace android::accounts
 			arg5
 		) {}
 	AuthenticatorDescription::AuthenticatorDescription(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.AuthenticatorDescription",
 			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
 			arg0,

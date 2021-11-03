@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,13 +13,13 @@ namespace java::util::jar
 
 namespace java::util::jar
 {
-	class Attributes : public __JniBaseClass
+	class Attributes : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Attributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Attributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Attributes(QAndroidJniObject obj);
 		
 		// Constructors
@@ -32,20 +32,20 @@ namespace java::util::jar
 		jobject clone();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
 		jstring getValue(jstring arg0);
 		jstring getValue(java::util::jar::Attributes_Name arg0);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jstring putValue(jstring arg0, jstring arg1);
 		jobject remove(jobject arg0);
 		jint size();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util::jar
 

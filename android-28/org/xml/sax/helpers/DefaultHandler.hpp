@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace org::xml::sax
 {
@@ -13,13 +13,13 @@ namespace org::xml::sax
 
 namespace org::xml::sax::helpers
 {
-	class DefaultHandler : public __JniBaseClass
+	class DefaultHandler : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DefaultHandler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DefaultHandler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DefaultHandler(QAndroidJniObject obj);
 		
 		// Constructors
@@ -36,10 +36,10 @@ namespace org::xml::sax::helpers
 		void notationDecl(jstring arg0, jstring arg1, jstring arg2);
 		void processingInstruction(jstring arg0, jstring arg1);
 		org::xml::sax::InputSource resolveEntity(jstring arg0, jstring arg1);
-		void setDocumentLocator(__JniBaseClass arg0);
+		void setDocumentLocator(JObject arg0);
 		void skippedEntity(jstring arg0);
 		void startDocument();
-		void startElement(jstring arg0, jstring arg1, jstring arg2, __JniBaseClass arg3);
+		void startElement(jstring arg0, jstring arg1, jstring arg2, JObject arg3);
 		void startPrefixMapping(jstring arg0, jstring arg1);
 		void unparsedEntityDecl(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
 		void warning(org::xml::sax::SAXParseException arg0);

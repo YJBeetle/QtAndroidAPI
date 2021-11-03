@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -29,29 +29,29 @@ namespace java::time::zone
 
 namespace java::time::zone
 {
-	class ZoneRules : public __JniBaseClass
+	class ZoneRules : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ZoneRules(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZoneRules(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneRules(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0);
-		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4);
+		static java::time::zone::ZoneRules of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, JObject arg2, JObject arg3, JObject arg4);
 		jboolean equals(jobject arg0);
 		java::time::Duration getDaylightSavings(java::time::Instant arg0);
 		java::time::ZoneOffset getOffset(java::time::Instant arg0);
 		java::time::ZoneOffset getOffset(java::time::LocalDateTime arg0);
 		java::time::ZoneOffset getStandardOffset(java::time::Instant arg0);
 		java::time::zone::ZoneOffsetTransition getTransition(java::time::LocalDateTime arg0);
-		__JniBaseClass getTransitionRules();
-		__JniBaseClass getTransitions();
-		__JniBaseClass getValidOffsets(java::time::LocalDateTime arg0);
+		JObject getTransitionRules();
+		JObject getTransitions();
+		JObject getValidOffsets(java::time::LocalDateTime arg0);
 		jint hashCode();
 		jboolean isDaylightSavings(java::time::Instant arg0);
 		jboolean isFixedOffset();

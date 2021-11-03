@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::media::tv
 {
-	class TvContract_WatchNextPrograms : public __JniBaseClass
+	class TvContract_WatchNextPrograms : public JObject
 	{
 	public:
 		// Fields
@@ -100,7 +100,7 @@ namespace android::media::tv
 		static jint WATCH_NEXT_TYPE_WATCHLIST();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvContract_WatchNextPrograms(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract_WatchNextPrograms(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_WatchNextPrograms(QAndroidJniObject obj);
 		
 		// Constructors

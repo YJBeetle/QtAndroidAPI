@@ -6,7 +6,7 @@ namespace android::nfc::tech
 	// Fields
 	
 	// QAndroidJniObject forward
-	NfcF::NfcF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NfcF::NfcF(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

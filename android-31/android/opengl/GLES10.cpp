@@ -1667,11 +1667,11 @@ namespace android::opengl
 	}
 	
 	// QAndroidJniObject forward
-	GLES10::GLES10(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLES10::GLES10(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLES10::GLES10()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLES10",
 			"()V"
 		) {}

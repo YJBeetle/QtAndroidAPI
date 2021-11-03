@@ -21,11 +21,11 @@ namespace org::xml::sax::helpers
 	}
 	
 	// QAndroidJniObject forward
-	NamespaceSupport::NamespaceSupport(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NamespaceSupport::NamespaceSupport(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NamespaceSupport::NamespaceSupport()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.NamespaceSupport",
 			"()V"
 		) {}
@@ -40,7 +40,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	__JniBaseClass NamespaceSupport::getDeclaredPrefixes()
+	JObject NamespaceSupport::getDeclaredPrefixes()
 	{
 		return callObjectMethod(
 			"getDeclaredPrefixes",
@@ -55,14 +55,14 @@ namespace org::xml::sax::helpers
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass NamespaceSupport::getPrefixes()
+	JObject NamespaceSupport::getPrefixes()
 	{
 		return callObjectMethod(
 			"getPrefixes",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass NamespaceSupport::getPrefixes(jstring arg0)
+	JObject NamespaceSupport::getPrefixes(jstring arg0)
 	{
 		return callObjectMethod(
 			"getPrefixes",

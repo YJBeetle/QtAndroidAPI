@@ -8,11 +8,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	SoundPool::SoundPool(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SoundPool::SoundPool(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SoundPool::SoundPool(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.SoundPool",
 			"(III)V",
 			arg0,
@@ -119,7 +119,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void SoundPool::setOnLoadCompleteListener(__JniBaseClass arg0)
+	void SoundPool::setOnLoadCompleteListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnLoadCompleteListener",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,7 +33,7 @@ namespace java::util
 
 namespace java::lang
 {
-	class System : public __JniBaseClass
+	class System : public JObject
 	{
 	public:
 		// Fields
@@ -42,7 +42,7 @@ namespace java::lang
 		static java::io::PrintStream out();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit System(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit System(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		System(QAndroidJniObject obj);
 		
 		// Constructors
@@ -54,16 +54,16 @@ namespace java::lang
 		static jlong currentTimeMillis();
 		static void exit(jint arg0);
 		static void gc();
-		static __JniBaseClass getLogger(jstring arg0);
-		static __JniBaseClass getLogger(jstring arg0, java::util::ResourceBundle arg1);
+		static JObject getLogger(jstring arg0);
+		static JObject getLogger(jstring arg0, java::util::ResourceBundle arg1);
 		static java::util::Properties getProperties();
 		static jstring getProperty(jstring arg0);
 		static jstring getProperty(jstring arg0, jstring arg1);
 		static java::lang::SecurityManager getSecurityManager();
 		static jstring getenv(jstring arg0);
-		static __JniBaseClass getenv();
+		static JObject getenv();
 		static jint identityHashCode(jobject arg0);
-		static __JniBaseClass inheritedChannel();
+		static JObject inheritedChannel();
 		static jstring lineSeparator();
 		static void load(jstring arg0);
 		static void loadLibrary(jstring arg0);

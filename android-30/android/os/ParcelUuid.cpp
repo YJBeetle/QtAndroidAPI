@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass ParcelUuid::CREATOR()
+	JObject ParcelUuid::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.ParcelUuid",
@@ -15,11 +15,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	ParcelUuid::ParcelUuid(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ParcelUuid::ParcelUuid(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParcelUuid::ParcelUuid(java::util::UUID arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ParcelUuid",
 			"(Ljava/util/UUID;)V",
 			arg0.object()

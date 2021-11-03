@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./Button.hpp"
@@ -56,9 +56,9 @@ namespace android::widget
 		
 		// Constructors
 		Switch(android::content::Context arg0);
-		Switch(android::content::Context arg0, __JniBaseClass arg1);
-		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Switch(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Switch(android::content::Context arg0, JObject arg1);
+		Switch(android::content::Context arg0, JObject arg1, jint arg2);
+		Switch(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

@@ -7,11 +7,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	RemoteInput_Builder::RemoteInput_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteInput_Builder::RemoteInput_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteInput_Builder::RemoteInput_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.RemoteInput$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

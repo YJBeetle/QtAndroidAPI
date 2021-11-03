@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/AbsSavedState.hpp"
 
 namespace android::os
@@ -14,7 +14,7 @@ namespace android::preference
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit Preference_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
@@ -22,7 +22,7 @@ namespace android::preference
 		
 		// Constructors
 		Preference_BaseSavedState(android::os::Parcel arg0);
-		Preference_BaseSavedState(__JniBaseClass arg0);
+		Preference_BaseSavedState(JObject arg0);
 		
 		// Methods
 	};

@@ -5,11 +5,11 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TelephonyScanManager_NetworkScanCallback::TelephonyScanManager_NetworkScanCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.TelephonyScanManager$NetworkScanCallback",
 			"()V"
 		) {}
@@ -30,7 +30,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void TelephonyScanManager_NetworkScanCallback::onResults(__JniBaseClass arg0)
+	void TelephonyScanManager_NetworkScanCallback::onResults(JObject arg0)
 	{
 		callMethod<void>(
 			"onResults",

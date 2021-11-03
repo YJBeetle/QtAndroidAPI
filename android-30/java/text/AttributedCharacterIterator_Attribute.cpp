@@ -29,7 +29,7 @@ namespace java::text
 	}
 	
 	// QAndroidJniObject forward
-	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AttributedCharacterIterator_Attribute::AttributedCharacterIterator_Attribute(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

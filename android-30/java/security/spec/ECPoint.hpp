@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -9,14 +9,14 @@ namespace java::math
 
 namespace java::security::spec
 {
-	class ECPoint : public __JniBaseClass
+	class ECPoint : public JObject
 	{
 	public:
 		// Fields
 		static java::security::spec::ECPoint POINT_INFINITY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ECPoint(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ECPoint(QAndroidJniObject obj);
 		
 		// Constructors

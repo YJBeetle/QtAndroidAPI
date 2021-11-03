@@ -10,7 +10,7 @@ namespace java::io
 	// Fields
 	
 	// QAndroidJniObject forward
-	Console::Console(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Console::Console(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

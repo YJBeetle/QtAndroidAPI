@@ -1,26 +1,26 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class SetSchemaRequest : public __JniBaseClass
+	class SetSchemaRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SetSchemaRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SetSchemaRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SetSchemaRequest(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getMigrators();
-		__JniBaseClass getSchemas();
-		__JniBaseClass getSchemasNotDisplayedBySystem();
-		__JniBaseClass getSchemasVisibleToPackages();
+		JObject getMigrators();
+		JObject getSchemas();
+		JObject getSchemasNotDisplayedBySystem();
+		JObject getSchemasVisibleToPackages();
 		jint getVersion();
 		jboolean isForceOverride();
 	};

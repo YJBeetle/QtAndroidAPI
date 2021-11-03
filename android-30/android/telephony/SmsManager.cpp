@@ -793,7 +793,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SmsManager::SmsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SmsManager::SmsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -867,7 +867,7 @@ namespace android::telephony
 			"()Landroid/os/Bundle;"
 		);
 	}
-	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, __JniBaseClass arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
+	void SmsManager::getSmsMessagesForFinancialApp(android::os::Bundle arg0, JObject arg1, android::telephony::SmsManager_FinancialSmsCallback arg2)
 	{
 		callMethod<void>(
 			"getSmsMessagesForFinancialApp",
@@ -938,7 +938,7 @@ namespace android::telephony
 			arg4.object()
 		);
 	}
-	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4, jlong arg5)
+	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, JObject arg2, JObject arg3, JObject arg4, jlong arg5)
 	{
 		callMethod<void>(
 			"sendMultipartTextMessage",
@@ -951,7 +951,7 @@ namespace android::telephony
 			arg5
 		);
 	}
-	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4, jstring arg5, jstring arg6)
+	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, JObject arg2, JObject arg3, JObject arg4, jstring arg5, jstring arg6)
 	{
 		callMethod<void>(
 			"sendMultipartTextMessage",

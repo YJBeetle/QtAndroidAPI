@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./MediaRouter_RouteInfo.hpp"
 
 namespace android::graphics::drawable

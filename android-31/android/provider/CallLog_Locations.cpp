@@ -54,7 +54,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CallLog_Locations::CallLog_Locations(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CallLog_Locations::CallLog_Locations(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

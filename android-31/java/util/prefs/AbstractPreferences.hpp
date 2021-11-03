@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Preferences.hpp"
 
 namespace java::io
@@ -35,8 +35,8 @@ namespace java::util::prefs
 		
 		// Methods
 		jstring absolutePath();
-		void addNodeChangeListener(__JniBaseClass arg0);
-		void addPreferenceChangeListener(__JniBaseClass arg0);
+		void addNodeChangeListener(JObject arg0);
+		void addPreferenceChangeListener(JObject arg0);
 		jarray childrenNames();
 		void clear();
 		void exportNode(java::io::OutputStream arg0);
@@ -64,8 +64,8 @@ namespace java::util::prefs
 		void putLong(jstring arg0, jlong arg1);
 		void remove(jstring arg0);
 		void removeNode();
-		void removeNodeChangeListener(__JniBaseClass arg0);
-		void removePreferenceChangeListener(__JniBaseClass arg0);
+		void removeNodeChangeListener(JObject arg0);
+		void removePreferenceChangeListener(JObject arg0);
 		void sync();
 		jstring toString();
 	};

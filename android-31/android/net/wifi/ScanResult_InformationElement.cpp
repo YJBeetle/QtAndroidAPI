@@ -5,7 +5,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	__JniBaseClass ScanResult_InformationElement::CREATOR()
+	JObject ScanResult_InformationElement::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.ScanResult$InformationElement",
@@ -15,11 +15,11 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	ScanResult_InformationElement::ScanResult_InformationElement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ScanResult_InformationElement::ScanResult_InformationElement(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScanResult_InformationElement::ScanResult_InformationElement(android::net::wifi::ScanResult_InformationElement &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.ScanResult$InformationElement",
 			"(Landroid/net/wifi/ScanResult$InformationElement;)V",
 			arg0.object()

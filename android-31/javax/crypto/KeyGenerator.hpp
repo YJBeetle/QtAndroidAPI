@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -17,13 +17,13 @@ namespace javax::crypto
 
 namespace javax::crypto
 {
-	class KeyGenerator : public __JniBaseClass
+	class KeyGenerator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyGenerator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyGenerator(QAndroidJniObject obj);
 		
 		// Constructors
@@ -32,14 +32,14 @@ namespace javax::crypto
 		static javax::crypto::KeyGenerator getInstance(jstring arg0);
 		static javax::crypto::KeyGenerator getInstance(jstring arg0, jstring arg1);
 		static javax::crypto::KeyGenerator getInstance(jstring arg0, java::security::Provider arg1);
-		__JniBaseClass generateKey();
+		JObject generateKey();
 		jstring getAlgorithm();
 		java::security::Provider getProvider();
 		void init(jint arg0);
 		void init(java::security::SecureRandom arg0);
-		void init(__JniBaseClass arg0);
+		void init(JObject arg0);
 		void init(jint arg0, java::security::SecureRandom arg1);
-		void init(__JniBaseClass arg0, java::security::SecureRandom arg1);
+		void init(JObject arg0, java::security::SecureRandom arg1);
 	};
 } // namespace javax::crypto
 

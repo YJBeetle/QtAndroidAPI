@@ -5,7 +5,7 @@
 namespace android::view::contentcapture
 {
 	// Fields
-	__JniBaseClass ContentCaptureCondition::CREATOR()
+	JObject ContentCaptureCondition::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.contentcapture.ContentCaptureCondition",
@@ -22,11 +22,11 @@ namespace android::view::contentcapture
 	}
 	
 	// QAndroidJniObject forward
-	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentCaptureCondition::ContentCaptureCondition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentCaptureCondition::ContentCaptureCondition(android::content::LocusId arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.contentcapture.ContentCaptureCondition",
 			"(Landroid/content/LocusId;I)V",
 			arg0.object(),

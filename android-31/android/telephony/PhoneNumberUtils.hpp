@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::telephony
 {
-	class PhoneNumberUtils : public __JniBaseClass
+	class PhoneNumberUtils : public JObject
 	{
 	public:
 		// Fields
@@ -37,14 +37,14 @@ namespace android::telephony
 		static jchar WILD();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PhoneNumberUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhoneNumberUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneNumberUtils(QAndroidJniObject obj);
 		
 		// Constructors
 		PhoneNumberUtils();
 		
 		// Methods
-		static void addTtsSpan(__JniBaseClass arg0, jint arg1, jint arg2);
+		static void addTtsSpan(JObject arg0, jint arg1, jint arg2);
 		static jboolean areSamePhoneNumber(jstring arg0, jstring arg1, jstring arg2);
 		static jstring calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2);
 		static jstring calledPartyBCDFragmentToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
@@ -57,12 +57,12 @@ namespace android::telephony
 		static jstring createTtsSpannable(jstring arg0);
 		static jstring extractNetworkPortion(jstring arg0);
 		static jstring extractPostDialPortion(jstring arg0);
-		static void formatJapaneseNumber(__JniBaseClass arg0);
-		static void formatNanpNumber(__JniBaseClass arg0);
+		static void formatJapaneseNumber(JObject arg0);
+		static void formatNanpNumber(JObject arg0);
 		static jstring formatNumber(jstring arg0);
 		static jstring formatNumber(jstring arg0, jstring arg1);
 		static jstring formatNumber(jstring arg0, jstring arg1, jstring arg2);
-		static void formatNumber(__JniBaseClass arg0, jint arg1);
+		static void formatNumber(JObject arg0, jint arg1);
 		static jstring formatNumberToE164(jstring arg0, jstring arg1);
 		static jstring formatNumberToRFC3966(jstring arg0, jstring arg1);
 		static jint getFormatTypeForLocale(java::util::Locale arg0);

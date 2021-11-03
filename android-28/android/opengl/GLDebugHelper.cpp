@@ -34,17 +34,17 @@ namespace android::opengl
 	}
 	
 	// QAndroidJniObject forward
-	GLDebugHelper::GLDebugHelper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLDebugHelper::GLDebugHelper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLDebugHelper::GLDebugHelper()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLDebugHelper",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass GLDebugHelper::wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2)
+	JObject GLDebugHelper::wrap(JObject arg0, jint arg1, java::io::Writer arg2)
 	{
 		return callStaticObjectMethod(
 			"android.opengl.GLDebugHelper",

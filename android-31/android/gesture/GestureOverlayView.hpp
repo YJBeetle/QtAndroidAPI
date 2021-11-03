@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "../widget/FrameLayout.hpp"
@@ -47,14 +47,14 @@ namespace android::gesture
 		
 		// Constructors
 		GestureOverlayView(android::content::Context arg0);
-		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1);
-		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		GestureOverlayView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		GestureOverlayView(android::content::Context arg0, JObject arg1);
+		GestureOverlayView(android::content::Context arg0, JObject arg1, jint arg2);
+		GestureOverlayView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void addOnGestureListener(__JniBaseClass arg0);
-		void addOnGesturePerformedListener(__JniBaseClass arg0);
-		void addOnGesturingListener(__JniBaseClass arg0);
+		void addOnGestureListener(JObject arg0);
+		void addOnGesturePerformedListener(JObject arg0);
+		void addOnGesturingListener(JObject arg0);
 		void cancelClearAnimation();
 		void cancelGesture();
 		void clear(jboolean arg0);
@@ -80,9 +80,9 @@ namespace android::gesture
 		void removeAllOnGestureListeners();
 		void removeAllOnGesturePerformedListeners();
 		void removeAllOnGesturingListeners();
-		void removeOnGestureListener(__JniBaseClass arg0);
-		void removeOnGesturePerformedListener(__JniBaseClass arg0);
-		void removeOnGesturingListener(__JniBaseClass arg0);
+		void removeOnGestureListener(JObject arg0);
+		void removeOnGesturePerformedListener(JObject arg0);
+		void removeOnGesturingListener(JObject arg0);
 		void setEventsInterceptionEnabled(jboolean arg0);
 		void setFadeEnabled(jboolean arg0);
 		void setFadeOffset(jlong arg0);

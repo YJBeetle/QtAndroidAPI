@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::widget
 {
-	class PopupMenu : public __JniBaseClass
+	class PopupMenu : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PopupMenu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PopupMenu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PopupMenu(QAndroidJniObject obj);
 		
 		// Constructors
@@ -33,15 +33,15 @@ namespace android::widget
 		
 		// Methods
 		void dismiss();
-		__JniBaseClass getDragToOpenListener();
+		JObject getDragToOpenListener();
 		jint getGravity();
-		__JniBaseClass getMenu();
+		JObject getMenu();
 		android::view::MenuInflater getMenuInflater();
 		void inflate(jint arg0);
 		void setForceShowIcon(jboolean arg0);
 		void setGravity(jint arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
-		void setOnMenuItemClickListener(__JniBaseClass arg0);
+		void setOnDismissListener(JObject arg0);
+		void setOnMenuItemClickListener(JObject arg0);
 		void show();
 	};
 } // namespace android::widget

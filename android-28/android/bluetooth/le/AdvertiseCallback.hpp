@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::bluetooth::le
 {
@@ -9,7 +9,7 @@ namespace android::bluetooth::le
 
 namespace android::bluetooth::le
 {
-	class AdvertiseCallback : public __JniBaseClass
+	class AdvertiseCallback : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::bluetooth::le
 		static jint ADVERTISE_FAILED_TOO_MANY_ADVERTISERS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AdvertiseCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AdvertiseCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AdvertiseCallback(QAndroidJniObject obj);
 		
 		// Constructors

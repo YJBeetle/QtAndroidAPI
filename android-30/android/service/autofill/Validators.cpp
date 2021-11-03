@@ -5,12 +5,12 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	Validators::Validators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Validators::Validators(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Validators::_and(jarray arg0)
+	JObject Validators::_and(jarray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
@@ -19,7 +19,7 @@ namespace android::service::autofill
 			arg0
 		);
 	}
-	__JniBaseClass Validators::_not(__JniBaseClass arg0)
+	JObject Validators::_not(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",
@@ -28,7 +28,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	__JniBaseClass Validators::_or(jarray arg0)
+	JObject Validators::_or(jarray arg0)
 	{
 		return callStaticObjectMethod(
 			"android.service.autofill.Validators",

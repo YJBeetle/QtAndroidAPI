@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 #include "./DateFormat.hpp"
@@ -79,7 +79,7 @@ namespace android::icu::text
 		jobject clone();
 		jboolean equals(jobject arg0);
 		java::lang::StringBuffer format(android::icu::util::Calendar arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(jobject arg0);
 		java::util::Date get2DigitYearStart();
 		android::icu::text::DateFormatSymbols getDateFormatSymbols();
 		android::icu::text::NumberFormat getNumberFormat(jchar arg0);

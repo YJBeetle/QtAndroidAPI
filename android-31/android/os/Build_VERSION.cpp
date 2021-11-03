@@ -82,11 +82,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Build_VERSION::Build_VERSION(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Build_VERSION::Build_VERSION(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Build_VERSION::Build_VERSION()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Build$VERSION",
 			"()V"
 		) {}

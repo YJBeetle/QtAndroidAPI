@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Contacts_ContactMethods : public __JniBaseClass
+	class Contacts_ContactMethods : public JObject
 	{
 	public:
 		// Fields
@@ -39,7 +39,7 @@ namespace android::provider
 		static jint PROTOCOL_YAHOO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Contacts_ContactMethods(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Contacts_ContactMethods(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_ContactMethods(QAndroidJniObject obj);
 		
 		// Constructors

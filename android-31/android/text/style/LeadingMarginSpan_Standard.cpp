@@ -9,23 +9,23 @@ namespace android::text::style
 	// Fields
 	
 	// QAndroidJniObject forward
-	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LeadingMarginSpan$Standard",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LeadingMarginSpan$Standard",
 			"(I)V",
 			arg0
 		) {}
 	LeadingMarginSpan_Standard::LeadingMarginSpan_Standard(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.LeadingMarginSpan$Standard",
 			"(II)V",
 			arg0,

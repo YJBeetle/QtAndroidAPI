@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace android::os
 
 namespace android::media::midi
 {
-	class MidiDeviceInfo : public __JniBaseClass
+	class MidiDeviceInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring PROPERTY_BLUETOOTH_DEVICE();
 		static jstring PROPERTY_MANUFACTURER();
 		static jstring PROPERTY_NAME();
@@ -30,7 +30,7 @@ namespace android::media::midi
 		static jint TYPE_VIRTUAL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiDeviceInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MidiDeviceInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MidiDeviceInfo(QAndroidJniObject obj);
 		
 		// Constructors

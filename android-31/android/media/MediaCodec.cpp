@@ -192,7 +192,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaCodec::MediaCodec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec::MediaCodec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -414,7 +414,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass MediaCodec::getSupportedVendorParameters()
+	JObject MediaCodec::getSupportedVendorParameters()
 	{
 		return callObjectMethod(
 			"getSupportedVendorParameters",
@@ -510,7 +510,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::setOnFirstTunnelFrameReadyListener(android::os::Handler arg0, __JniBaseClass arg1)
+	void MediaCodec::setOnFirstTunnelFrameReadyListener(android::os::Handler arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnFirstTunnelFrameReadyListener",
@@ -519,7 +519,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaCodec::setOnFrameRenderedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaCodec::setOnFrameRenderedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnFrameRenderedListener",
@@ -573,7 +573,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void MediaCodec::subscribeToVendorParameters(__JniBaseClass arg0)
+	void MediaCodec::subscribeToVendorParameters(JObject arg0)
 	{
 		callMethod<void>(
 			"subscribeToVendorParameters",
@@ -581,7 +581,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaCodec::unsubscribeFromVendorParameters(__JniBaseClass arg0)
+	void MediaCodec::unsubscribeFromVendorParameters(JObject arg0)
 	{
 		callMethod<void>(
 			"unsubscribeFromVendorParameters",

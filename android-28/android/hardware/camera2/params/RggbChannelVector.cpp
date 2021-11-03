@@ -40,11 +40,11 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QAndroidJniObject forward
-	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RggbChannelVector::RggbChannelVector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RggbChannelVector::RggbChannelVector(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.RggbChannelVector",
 			"(FFFF)V",
 			arg0,

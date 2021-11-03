@@ -9,16 +9,16 @@ namespace javax::security::auth
 	// Fields
 	
 	// QAndroidJniObject forward
-	Subject::Subject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Subject::Subject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Subject::Subject()
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.Subject",
 			"()V"
 		) {}
-	Subject::Subject(jboolean arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-		: __JniBaseClass(
+	Subject::Subject(jboolean arg0, JObject arg1, JObject arg2, JObject arg3)
+		: JObject(
 			"javax.security.auth.Subject",
 			"(ZLjava/util/Set;Ljava/util/Set;Ljava/util/Set;)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace javax::security::auth
 		) {}
 	
 	// Methods
-	jobject Subject::doAs(javax::security::auth::Subject arg0, __JniBaseClass arg1)
+	jobject Subject::doAs(javax::security::auth::Subject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
@@ -38,7 +38,7 @@ namespace javax::security::auth
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Subject::doAsPrivileged(javax::security::auth::Subject arg0, __JniBaseClass arg1, java::security::AccessControlContext arg2)
+	jobject Subject::doAsPrivileged(javax::security::auth::Subject arg0, JObject arg1, java::security::AccessControlContext arg2)
 	{
 		return callStaticObjectMethod(
 			"javax.security.auth.Subject",
@@ -66,14 +66,14 @@ namespace javax::security::auth
 			arg0
 		);
 	}
-	__JniBaseClass Subject::getPrincipals()
+	JObject Subject::getPrincipals()
 	{
 		return callObjectMethod(
 			"getPrincipals",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Subject::getPrincipals(jclass arg0)
+	JObject Subject::getPrincipals(jclass arg0)
 	{
 		return callObjectMethod(
 			"getPrincipals",
@@ -81,14 +81,14 @@ namespace javax::security::auth
 			arg0
 		);
 	}
-	__JniBaseClass Subject::getPrivateCredentials()
+	JObject Subject::getPrivateCredentials()
 	{
 		return callObjectMethod(
 			"getPrivateCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Subject::getPrivateCredentials(jclass arg0)
+	JObject Subject::getPrivateCredentials(jclass arg0)
 	{
 		return callObjectMethod(
 			"getPrivateCredentials",
@@ -96,14 +96,14 @@ namespace javax::security::auth
 			arg0
 		);
 	}
-	__JniBaseClass Subject::getPublicCredentials()
+	JObject Subject::getPublicCredentials()
 	{
 		return callObjectMethod(
 			"getPublicCredentials",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Subject::getPublicCredentials(jclass arg0)
+	JObject Subject::getPublicCredentials(jclass arg0)
 	{
 		return callObjectMethod(
 			"getPublicCredentials",

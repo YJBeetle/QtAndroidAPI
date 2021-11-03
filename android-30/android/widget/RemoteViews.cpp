@@ -14,7 +14,7 @@
 namespace android::widget
 {
 	// Fields
-	__JniBaseClass RemoteViews::CREATOR()
+	JObject RemoteViews::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.widget.RemoteViews",
@@ -32,30 +32,30 @@ namespace android::widget
 	}
 	
 	// QAndroidJniObject forward
-	RemoteViews::RemoteViews(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteViews::RemoteViews(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteViews::RemoteViews(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.RemoteViews",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	RemoteViews::RemoteViews(android::widget::RemoteViews &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.RemoteViews",
 			"(Landroid/widget/RemoteViews;)V",
 			arg0.object()
 		) {}
 	RemoteViews::RemoteViews(android::widget::RemoteViews &arg0, android::widget::RemoteViews &arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.RemoteViews",
 			"(Landroid/widget/RemoteViews;Landroid/widget/RemoteViews;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	RemoteViews::RemoteViews(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.RemoteViews",
 			"(Ljava/lang/String;I)V",
 			arg0,

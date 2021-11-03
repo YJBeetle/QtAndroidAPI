@@ -31,11 +31,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioTimestamp::AudioTimestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioTimestamp::AudioTimestamp(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioTimestamp::AudioTimestamp()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTimestamp",
 			"()V"
 		) {}

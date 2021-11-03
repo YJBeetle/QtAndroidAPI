@@ -237,22 +237,22 @@ namespace android::util::proto
 	}
 	
 	// QAndroidJniObject forward
-	ProtoOutputStream::ProtoOutputStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ProtoOutputStream::ProtoOutputStream(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ProtoOutputStream::ProtoOutputStream()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.proto.ProtoOutputStream",
 			"()V"
 		) {}
 	ProtoOutputStream::ProtoOutputStream(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.proto.ProtoOutputStream",
 			"(I)V",
 			arg0
 		) {}
 	ProtoOutputStream::ProtoOutputStream(java::io::OutputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.proto.ProtoOutputStream",
 			"(Ljava/io/OutputStream;)V",
 			arg0.object()

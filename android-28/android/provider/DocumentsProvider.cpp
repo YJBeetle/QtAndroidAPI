@@ -268,7 +268,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -279,7 +279,7 @@ namespace android::provider
 			arg3.object()
 		);
 	}
-	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -291,7 +291,7 @@ namespace android::provider
 			arg4
 		);
 	}
-	__JniBaseClass DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject DocumentsProvider::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",
@@ -304,7 +304,7 @@ namespace android::provider
 			arg5.object()
 		);
 	}
-	__JniBaseClass DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
+	JObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, android::os::Bundle arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -314,7 +314,7 @@ namespace android::provider
 			arg2.object()
 		);
 	}
-	__JniBaseClass DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, jstring arg2)
+	JObject DocumentsProvider::queryChildDocuments(jstring arg0, jarray arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"queryChildDocuments",
@@ -324,7 +324,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	__JniBaseClass DocumentsProvider::queryDocument(jstring arg0, jarray arg1)
+	JObject DocumentsProvider::queryDocument(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"queryDocument",
@@ -333,7 +333,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	__JniBaseClass DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1)
+	JObject DocumentsProvider::queryRecentDocuments(jstring arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"queryRecentDocuments",
@@ -342,7 +342,7 @@ namespace android::provider
 			arg1
 		);
 	}
-	__JniBaseClass DocumentsProvider::queryRoots(jarray arg0)
+	JObject DocumentsProvider::queryRoots(jarray arg0)
 	{
 		return callObjectMethod(
 			"queryRoots",
@@ -350,7 +350,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	__JniBaseClass DocumentsProvider::querySearchDocuments(jstring arg0, jstring arg1, jarray arg2)
+	JObject DocumentsProvider::querySearchDocuments(jstring arg0, jstring arg1, jarray arg2)
 	{
 		return callObjectMethod(
 			"querySearchDocuments",

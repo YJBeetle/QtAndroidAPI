@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace java::nio
 {
-	class ByteOrder : public __JniBaseClass
+	class ByteOrder : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace java::nio
 		static java::nio::ByteOrder LITTLE_ENDIAN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ByteOrder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ByteOrder(QAndroidJniObject obj);
 		
 		// Constructors

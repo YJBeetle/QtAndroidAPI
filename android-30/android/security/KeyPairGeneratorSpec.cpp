@@ -9,12 +9,12 @@ namespace android::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyPairGeneratorSpec::KeyPairGeneratorSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass KeyPairGeneratorSpec::getAlgorithmParameterSpec()
+	JObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
 	{
 		return callObjectMethod(
 			"getAlgorithmParameterSpec",

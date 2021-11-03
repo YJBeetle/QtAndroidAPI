@@ -6,7 +6,7 @@ namespace android::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	SSLEngines::SSLEngines(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SSLEngines::SSLEngines(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

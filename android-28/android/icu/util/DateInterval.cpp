@@ -5,11 +5,11 @@ namespace android::icu::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	DateInterval::DateInterval(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateInterval::DateInterval(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateInterval::DateInterval(jlong arg0, jlong arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.util.DateInterval",
 			"(JJ)V",
 			arg0,

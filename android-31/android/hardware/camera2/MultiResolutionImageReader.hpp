@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::camera2::params
 {
@@ -17,24 +17,24 @@ namespace android::view
 
 namespace android::hardware::camera2
 {
-	class MultiResolutionImageReader : public __JniBaseClass
+	class MultiResolutionImageReader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MultiResolutionImageReader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MultiResolutionImageReader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MultiResolutionImageReader(QAndroidJniObject obj);
 		
 		// Constructors
-		MultiResolutionImageReader(__JniBaseClass arg0, jint arg1, jint arg2);
+		MultiResolutionImageReader(JObject arg0, jint arg1, jint arg2);
 		
 		// Methods
 		void close();
 		void flush();
 		android::hardware::camera2::params::MultiResolutionStreamInfo getStreamInfoForImageReader(android::media::ImageReader arg0);
 		android::view::Surface getSurface();
-		void setOnImageAvailableListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		void setOnImageAvailableListener(JObject arg0, JObject arg1);
 	};
 } // namespace android::hardware::camera2
 

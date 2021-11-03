@@ -5,7 +5,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QAndroidJniObject forward
-	MultiResolutionStreamConfigurationMap::MultiResolutionStreamConfigurationMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MultiResolutionStreamConfigurationMap::MultiResolutionStreamConfigurationMap(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace android::hardware::camera2::params
 			"()[I"
 		).object<jintArray>();
 	}
-	__JniBaseClass MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0)
+	JObject MultiResolutionStreamConfigurationMap::getInputInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getInputInfo",
@@ -40,7 +40,7 @@ namespace android::hardware::camera2::params
 			"()[I"
 		).object<jintArray>();
 	}
-	__JniBaseClass MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0)
+	JObject MultiResolutionStreamConfigurationMap::getOutputInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getOutputInfo",

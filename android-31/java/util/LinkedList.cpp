@@ -15,7 +15,7 @@ namespace java::util
 			"java.util.LinkedList",
 			"()V"
 		) {}
-	LinkedList::LinkedList(__JniBaseClass arg0)
+	LinkedList::LinkedList(JObject arg0)
 		: java::util::AbstractSequentialList(
 			"java.util.LinkedList",
 			"(Ljava/util/Collection;)V",
@@ -40,7 +40,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean LinkedList::addAll(__JniBaseClass arg0)
+	jboolean LinkedList::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -48,7 +48,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean LinkedList::addAll(jint arg0, __JniBaseClass arg1)
+	jboolean LinkedList::addAll(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -95,7 +95,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass LinkedList::descendingIterator()
+	JObject LinkedList::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -147,7 +147,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass LinkedList::listIterator(jint arg0)
+	JObject LinkedList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -305,7 +305,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass LinkedList::spliterator()
+	JObject LinkedList::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

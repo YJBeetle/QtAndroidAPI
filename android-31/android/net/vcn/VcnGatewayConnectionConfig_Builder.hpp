@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::ipsec::ike
 {
@@ -13,13 +13,13 @@ namespace android::net::vcn
 
 namespace android::net::vcn
 {
-	class VcnGatewayConnectionConfig_Builder : public __JniBaseClass
+	class VcnGatewayConnectionConfig_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VcnGatewayConnectionConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VcnGatewayConnectionConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VcnGatewayConnectionConfig_Builder(QAndroidJniObject obj);
 		
 		// Constructors

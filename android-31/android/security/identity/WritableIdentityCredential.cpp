@@ -6,12 +6,12 @@ namespace android::security::identity
 	// Fields
 	
 	// QAndroidJniObject forward
-	WritableIdentityCredential::WritableIdentityCredential(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WritableIdentityCredential::WritableIdentityCredential(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass WritableIdentityCredential::getCredentialKeyCertificateChain(jbyteArray arg0)
+	JObject WritableIdentityCredential::getCredentialKeyCertificateChain(jbyteArray arg0)
 	{
 		return callObjectMethod(
 			"getCredentialKeyCertificateChain",

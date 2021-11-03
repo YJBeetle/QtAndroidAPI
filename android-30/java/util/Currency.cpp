@@ -11,12 +11,12 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Currency::Currency(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Currency::Currency(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Currency::getAvailableCurrencies()
+	JObject Currency::getAvailableCurrencies()
 	{
 		return callStaticObjectMethod(
 			"java.util.Currency",

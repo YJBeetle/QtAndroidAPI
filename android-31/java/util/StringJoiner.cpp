@@ -5,17 +5,17 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	StringJoiner::StringJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StringJoiner::StringJoiner(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringJoiner::StringJoiner(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		) {}
 	StringJoiner::StringJoiner(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,

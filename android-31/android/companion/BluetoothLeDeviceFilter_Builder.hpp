@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth::le
 {
@@ -21,13 +21,13 @@ namespace java::util::regex
 
 namespace android::companion
 {
-	class BluetoothLeDeviceFilter_Builder : public __JniBaseClass
+	class BluetoothLeDeviceFilter_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothLeDeviceFilter_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothLeDeviceFilter_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothLeDeviceFilter_Builder(QAndroidJniObject obj);
 		
 		// Constructors

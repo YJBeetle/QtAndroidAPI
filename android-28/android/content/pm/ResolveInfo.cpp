@@ -10,7 +10,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass ResolveInfo::CREATOR()
+	JObject ResolveInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ResolveInfo",
@@ -110,16 +110,16 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	ResolveInfo::ResolveInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ResolveInfo::ResolveInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ResolveInfo::ResolveInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ResolveInfo",
 			"()V"
 		) {}
 	ResolveInfo::ResolveInfo(android::content::pm::ResolveInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.ResolveInfo",
 			"(Landroid/content/pm/ResolveInfo;)V",
 			arg0.object()
@@ -133,7 +133,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ResolveInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ResolveInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

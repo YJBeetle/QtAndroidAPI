@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass VolumeShaper_Operation::CREATOR()
+	JObject VolumeShaper_Operation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.VolumeShaper$Operation",
@@ -30,7 +30,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	VolumeShaper_Operation::VolumeShaper_Operation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VolumeShaper_Operation::VolumeShaper_Operation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

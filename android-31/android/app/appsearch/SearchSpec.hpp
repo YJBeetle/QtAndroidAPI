@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class SearchSpec : public __JniBaseClass
+	class SearchSpec : public JObject
 	{
 	public:
 		// Fields
@@ -26,18 +26,18 @@ namespace android::app::appsearch
 		static jint TERM_MATCH_PREFIX();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SearchSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SearchSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SearchSpec(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getFilterNamespaces();
-		__JniBaseClass getFilterPackageNames();
-		__JniBaseClass getFilterSchemas();
+		JObject getFilterNamespaces();
+		JObject getFilterPackageNames();
+		JObject getFilterSchemas();
 		jint getMaxSnippetSize();
 		jint getOrder();
-		__JniBaseClass getProjections();
+		JObject getProjections();
 		jint getRankingStrategy();
 		jint getResultCountPerPage();
 		jint getResultGroupingLimit();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -45,7 +45,7 @@ namespace android::view
 
 namespace android::media
 {
-	class AudioManager : public __JniBaseClass
+	class AudioManager : public JObject
 	{
 	public:
 		// Fields
@@ -145,23 +145,23 @@ namespace android::media
 		static jint VIBRATE_TYPE_RINGER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		jint abandonAudioFocus(__JniBaseClass arg0);
+		jint abandonAudioFocus(JObject arg0);
 		jint abandonAudioFocusRequest(android::media::AudioFocusRequest arg0);
 		void adjustStreamVolume(jint arg0, jint arg1, jint arg2);
 		void adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2);
 		void adjustVolume(jint arg0, jint arg1);
 		void dispatchMediaKeyEvent(android::view::KeyEvent arg0);
 		jint generateAudioSessionId();
-		__JniBaseClass getActivePlaybackConfigurations();
-		__JniBaseClass getActiveRecordingConfigurations();
+		JObject getActivePlaybackConfigurations();
+		JObject getActiveRecordingConfigurations();
 		jarray getDevices(jint arg0);
-		__JniBaseClass getMicrophones();
+		JObject getMicrophones();
 		jint getMode();
 		jstring getParameters(jstring arg0);
 		jstring getProperty(jstring arg0);
@@ -192,7 +192,7 @@ namespace android::media
 		void registerRemoteControlClient(android::media::RemoteControlClient arg0);
 		jboolean registerRemoteController(android::media::RemoteController arg0);
 		jint requestAudioFocus(android::media::AudioFocusRequest arg0);
-		jint requestAudioFocus(__JniBaseClass arg0, jint arg1, jint arg2);
+		jint requestAudioFocus(JObject arg0, jint arg1, jint arg2);
 		void setBluetoothA2dpOn(jboolean arg0);
 		void setBluetoothScoOn(jboolean arg0);
 		void setMicrophoneMute(jboolean arg0);

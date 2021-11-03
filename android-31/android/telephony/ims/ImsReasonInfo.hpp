@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::telephony::ims
 {
-	class ImsReasonInfo : public __JniBaseClass
+	class ImsReasonInfo : public JObject
 	{
 	public:
 		// Fields
@@ -184,14 +184,14 @@ namespace android::telephony::ims
 		static jint CODE_UT_SS_MODIFIED_TO_SS();
 		static jint CODE_UT_SS_MODIFIED_TO_USSD();
 		static jint CODE_WIFI_LOST();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint EXTRA_CODE_CALL_RETRY_BY_SETTINGS();
 		static jint EXTRA_CODE_CALL_RETRY_EMERGENCY();
 		static jint EXTRA_CODE_CALL_RETRY_NORMAL();
 		static jint EXTRA_CODE_CALL_RETRY_SILENT_REDIAL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ImsReasonInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImsReasonInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImsReasonInfo(QAndroidJniObject obj);
 		
 		// Constructors

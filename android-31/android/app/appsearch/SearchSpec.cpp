@@ -111,26 +111,26 @@ namespace android::app::appsearch
 	}
 	
 	// QAndroidJniObject forward
-	SearchSpec::SearchSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SearchSpec::SearchSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SearchSpec::getFilterNamespaces()
+	JObject SearchSpec::getFilterNamespaces()
 	{
 		return callObjectMethod(
 			"getFilterNamespaces",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SearchSpec::getFilterPackageNames()
+	JObject SearchSpec::getFilterPackageNames()
 	{
 		return callObjectMethod(
 			"getFilterPackageNames",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SearchSpec::getFilterSchemas()
+	JObject SearchSpec::getFilterSchemas()
 	{
 		return callObjectMethod(
 			"getFilterSchemas",
@@ -151,7 +151,7 @@ namespace android::app::appsearch
 			"()I"
 		);
 	}
-	__JniBaseClass SearchSpec::getProjections()
+	JObject SearchSpec::getProjections()
 	{
 		return callObjectMethod(
 			"getProjections",

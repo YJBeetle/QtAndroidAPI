@@ -26,14 +26,14 @@ namespace android::widget
 	SlidingDrawer::SlidingDrawer(QAndroidJniObject obj) : android::view::ViewGroup(obj) {}
 	
 	// Constructors
-	SlidingDrawer::SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1)
+	SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.widget.SlidingDrawer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	SlidingDrawer::SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.widget.SlidingDrawer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -41,7 +41,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	SlidingDrawer::SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	SlidingDrawer::SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::ViewGroup(
 			"android.widget.SlidingDrawer",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -145,7 +145,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void SlidingDrawer::setOnDrawerCloseListener(__JniBaseClass arg0)
+	void SlidingDrawer::setOnDrawerCloseListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDrawerCloseListener",
@@ -153,7 +153,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::setOnDrawerOpenListener(__JniBaseClass arg0)
+	void SlidingDrawer::setOnDrawerOpenListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDrawerOpenListener",
@@ -161,7 +161,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SlidingDrawer::setOnDrawerScrollListener(__JniBaseClass arg0)
+	void SlidingDrawer::setOnDrawerScrollListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDrawerScrollListener",

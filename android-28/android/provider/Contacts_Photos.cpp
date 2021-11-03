@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Contacts_Photos::Contacts_Photos(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Contacts_Photos::Contacts_Photos(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

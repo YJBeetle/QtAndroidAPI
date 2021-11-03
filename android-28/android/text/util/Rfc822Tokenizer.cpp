@@ -5,11 +5,11 @@ namespace android::text::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Rfc822Tokenizer::Rfc822Tokenizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Rfc822Tokenizer::Rfc822Tokenizer()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.util.Rfc822Tokenizer",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::text::util
 			arg0
 		).object<jarray>();
 	}
-	void Rfc822Tokenizer::tokenize(jstring arg0, __JniBaseClass arg1)
+	void Rfc822Tokenizer::tokenize(jstring arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.text.util.Rfc822Tokenizer",

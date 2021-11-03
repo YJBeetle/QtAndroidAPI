@@ -6,18 +6,18 @@ namespace android::net::http
 	// Fields
 	
 	// QAndroidJniObject forward
-	X509TrustManagerExtensions::X509TrustManagerExtensions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	X509TrustManagerExtensions::X509TrustManagerExtensions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	X509TrustManagerExtensions::X509TrustManagerExtensions(__JniBaseClass arg0)
-		: __JniBaseClass(
+	X509TrustManagerExtensions::X509TrustManagerExtensions(JObject arg0)
+		: JObject(
 			"android.net.http.X509TrustManagerExtensions",
 			"(Ljavax/net/ssl/X509TrustManager;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	__JniBaseClass X509TrustManagerExtensions::checkServerTrusted(jarray arg0, jstring arg1, jstring arg2)
+	JObject X509TrustManagerExtensions::checkServerTrusted(jarray arg0, jstring arg1, jstring arg2)
 	{
 		return callObjectMethod(
 			"checkServerTrusted",

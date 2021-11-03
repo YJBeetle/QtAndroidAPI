@@ -9,11 +9,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaDescription_Builder::MediaDescription_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaDescription_Builder::MediaDescription_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaDescription_Builder::MediaDescription_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaDescription$Builder",
 			"()V"
 		) {}

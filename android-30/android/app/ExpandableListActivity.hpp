@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
@@ -34,16 +34,16 @@ namespace android::app
 		ExpandableListActivity();
 		
 		// Methods
-		__JniBaseClass getExpandableListAdapter();
+		JObject getExpandableListAdapter();
 		android::widget::ExpandableListView getExpandableListView();
 		jlong getSelectedId();
 		jlong getSelectedPosition();
 		jboolean onChildClick(android::widget::ExpandableListView arg0, android::view::View arg1, jint arg2, jint arg3, jlong arg4);
 		void onContentChanged();
-		void onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2);
+		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2);
 		void onGroupCollapse(jint arg0);
 		void onGroupExpand(jint arg0);
-		void setListAdapter(__JniBaseClass arg0);
+		void setListAdapter(JObject arg0);
 		jboolean setSelectedChild(jint arg0, jint arg1, jboolean arg2);
 		void setSelectedGroup(jint arg0);
 	};

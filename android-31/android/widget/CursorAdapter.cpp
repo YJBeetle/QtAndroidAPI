@@ -27,14 +27,14 @@ namespace android::widget
 	CursorAdapter::CursorAdapter(QAndroidJniObject obj) : android::widget::BaseAdapter(obj) {}
 	
 	// Constructors
-	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, JObject arg1)
 		: android::widget::BaseAdapter(
 			"android.widget.CursorAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, JObject arg1, jboolean arg2)
 		: android::widget::BaseAdapter(
 			"android.widget.CursorAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;Z)V",
@@ -42,7 +42,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	CursorAdapter::CursorAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	CursorAdapter::CursorAdapter(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::BaseAdapter(
 			"android.widget.CursorAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;I)V",
@@ -52,7 +52,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	void CursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2)
+	void CursorAdapter::bindView(android::view::View arg0, android::content::Context arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"bindView",
@@ -62,7 +62,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	void CursorAdapter::changeCursor(__JniBaseClass arg0)
+	void CursorAdapter::changeCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"changeCursor",
@@ -70,7 +70,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	jstring CursorAdapter::convertToString(__JniBaseClass arg0)
+	jstring CursorAdapter::convertToString(JObject arg0)
 	{
 		return callObjectMethod(
 			"convertToString",
@@ -85,7 +85,7 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass CursorAdapter::getCursor()
+	JObject CursorAdapter::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",
@@ -116,7 +116,7 @@ namespace android::widget
 			"()Landroid/widget/Filter;"
 		);
 	}
-	__JniBaseClass CursorAdapter::getFilterQueryProvider()
+	JObject CursorAdapter::getFilterQueryProvider()
 	{
 		return callObjectMethod(
 			"getFilterQueryProvider",
@@ -156,7 +156,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	android::view::View CursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -166,7 +166,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::view::View CursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View CursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newView",
@@ -176,7 +176,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	__JniBaseClass CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
+	JObject CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
 	{
 		return callObjectMethod(
 			"runQueryOnBackgroundThread",
@@ -192,7 +192,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void CursorAdapter::setFilterQueryProvider(__JniBaseClass arg0)
+	void CursorAdapter::setFilterQueryProvider(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilterQueryProvider",
@@ -200,7 +200,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass CursorAdapter::swapCursor(__JniBaseClass arg0)
+	JObject CursorAdapter::swapCursor(JObject arg0)
 	{
 		return callObjectMethod(
 			"swapCursor",

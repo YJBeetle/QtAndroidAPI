@@ -4,7 +4,7 @@
 namespace android::app::admin
 {
 	// Fields
-	__JniBaseClass UnsafeStateException::CREATOR()
+	JObject UnsafeStateException::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.admin.UnsafeStateException",
@@ -33,7 +33,7 @@ namespace android::app::admin
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass UnsafeStateException::getReasons()
+	JObject UnsafeStateException::getReasons()
 	{
 		return callObjectMethod(
 			"getReasons",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,19 +9,19 @@ namespace java::lang
 
 namespace java::nio::file::spi
 {
-	class FileTypeDetector : public __JniBaseClass
+	class FileTypeDetector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileTypeDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileTypeDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileTypeDetector(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		jstring probeContentType(__JniBaseClass arg0);
+		jstring probeContentType(JObject arg0);
 	};
 } // namespace java::nio::file::spi
 

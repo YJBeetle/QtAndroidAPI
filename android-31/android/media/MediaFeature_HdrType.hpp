@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaFeature_HdrType : public __JniBaseClass
+	class MediaFeature_HdrType : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::media
 		static jstring HLG();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaFeature_HdrType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaFeature_HdrType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaFeature_HdrType(QAndroidJniObject obj);
 		
 		// Constructors

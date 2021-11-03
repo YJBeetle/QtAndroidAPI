@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace javax::net::ssl
 {
@@ -9,13 +9,13 @@ namespace javax::net::ssl
 
 namespace android::net::ssl
 {
-	class SSLEngines : public __JniBaseClass
+	class SSLEngines : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SSLEngines(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SSLEngines(QAndroidJniObject obj);
 		
 		// Constructors

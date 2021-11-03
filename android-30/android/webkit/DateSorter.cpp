@@ -13,11 +13,11 @@ namespace android::webkit
 	}
 	
 	// QAndroidJniObject forward
-	DateSorter::DateSorter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateSorter::DateSorter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateSorter::DateSorter(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.DateSorter",
 			"(Landroid/content/Context;)V",
 			arg0.object()

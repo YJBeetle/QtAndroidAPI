@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InputMethodSubtype::CREATOR()
+	JObject InputMethodSubtype::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InputMethodSubtype",
@@ -16,11 +16,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InputMethodSubtype::InputMethodSubtype(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputMethodSubtype::InputMethodSubtype(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)V",
 			arg0,
@@ -32,7 +32,7 @@ namespace android::view::inputmethod
 			arg6
 		) {}
 	InputMethodSubtype::InputMethodSubtype(jint arg0, jint arg1, jstring arg2, jstring arg3, jstring arg4, jboolean arg5, jboolean arg6, jint arg7)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputMethodSubtype",
 			"(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V",
 			arg0,

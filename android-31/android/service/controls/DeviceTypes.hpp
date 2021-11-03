@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::service::controls
 {
-	class DeviceTypes : public __JniBaseClass
+	class DeviceTypes : public JObject
 	{
 	public:
 		// Fields
@@ -70,7 +70,7 @@ namespace android::service::controls
 		static jint TYPE_WINDOW();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DeviceTypes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DeviceTypes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DeviceTypes(QAndroidJniObject obj);
 		
 		// Constructors

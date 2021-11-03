@@ -5,12 +5,12 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioMetadata::AudioMetadata(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioMetadata::AudioMetadata(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass AudioMetadata::createMap()
+	JObject AudioMetadata::createMap()
 	{
 		return callStaticObjectMethod(
 			"android.media.AudioMetadata",

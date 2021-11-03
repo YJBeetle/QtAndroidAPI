@@ -6,11 +6,11 @@ namespace android::telecom
 	// Fields
 	
 	// QAndroidJniObject forward
-	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CallScreeningService_CallResponse_Builder::CallScreeningService_CallResponse_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.CallScreeningService$CallResponse$Builder",
 			"()V"
 		) {}

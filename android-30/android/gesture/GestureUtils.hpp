@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::gesture
 {
@@ -21,13 +21,13 @@ namespace java::util
 
 namespace android::gesture
 {
-	class GestureUtils : public __JniBaseClass
+	class GestureUtils : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GestureUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GestureUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GestureUtils(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::widget
 {
-	class Filter_FilterResults : public __JniBaseClass
+	class Filter_FilterResults : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::widget
 		jobject values();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Filter_FilterResults(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Filter_FilterResults(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Filter_FilterResults(QAndroidJniObject obj);
 		
 		// Constructors

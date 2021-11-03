@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass PictureInPictureParams::CREATOR()
+	JObject PictureInPictureParams::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.PictureInPictureParams",
@@ -14,7 +14,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	PictureInPictureParams::PictureInPictureParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PictureInPictureParams::PictureInPictureParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

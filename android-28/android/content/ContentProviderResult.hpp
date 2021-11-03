@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,16 +17,16 @@ namespace java::lang
 
 namespace android::content
 {
-	class ContentProviderResult : public __JniBaseClass
+	class ContentProviderResult : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		java::lang::Integer count();
 		android::net::Uri uri();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentProviderResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentProviderResult(QAndroidJniObject obj);
 		
 		// Constructors

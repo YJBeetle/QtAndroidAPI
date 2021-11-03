@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,13 +13,13 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent::locks
 {
-	class ReentrantLock : public __JniBaseClass
+	class ReentrantLock : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ReentrantLock(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ReentrantLock(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ReentrantLock(QAndroidJniObject obj);
 		
 		// Constructors
@@ -29,16 +29,16 @@ namespace java::util::concurrent::locks
 		// Methods
 		jint getHoldCount();
 		jint getQueueLength();
-		jint getWaitQueueLength(__JniBaseClass arg0);
+		jint getWaitQueueLength(JObject arg0);
 		jboolean hasQueuedThread(java::lang::Thread arg0);
 		jboolean hasQueuedThreads();
-		jboolean hasWaiters(__JniBaseClass arg0);
+		jboolean hasWaiters(JObject arg0);
 		jboolean isFair();
 		jboolean isHeldByCurrentThread();
 		jboolean isLocked();
 		void lock();
 		void lockInterruptibly();
-		__JniBaseClass newCondition();
+		JObject newCondition();
 		jstring toString();
 		jboolean tryLock();
 		jboolean tryLock(jlong arg0, java::util::concurrent::TimeUnit arg1);

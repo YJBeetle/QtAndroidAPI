@@ -6,7 +6,7 @@ namespace android::nfc::tech
 	// Fields
 	
 	// QAndroidJniObject forward
-	IsoDep::IsoDep(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IsoDep::IsoDep(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

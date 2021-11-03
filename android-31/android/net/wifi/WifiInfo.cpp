@@ -129,7 +129,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiInfo::WifiInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiInfo::WifiInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -193,7 +193,7 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	__JniBaseClass WifiInfo::getInformationElements()
+	JObject WifiInfo::getInformationElements()
 	{
 		return callObjectMethod(
 			"getInformationElements",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::usage
 {
-	class NetworkStats_Bucket : public __JniBaseClass
+	class NetworkStats_Bucket : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::app::usage
 		static jint UID_TETHERING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkStats_Bucket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkStats_Bucket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkStats_Bucket(QAndroidJniObject obj);
 		
 		// Constructors

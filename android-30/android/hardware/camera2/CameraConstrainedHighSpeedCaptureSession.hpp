@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CameraCaptureSession.hpp"
 
 namespace android::hardware::camera2
@@ -23,7 +23,7 @@ namespace android::hardware::camera2
 		CameraConstrainedHighSpeedCaptureSession();
 		
 		// Methods
-		__JniBaseClass createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0);
+		JObject createHighSpeedRequestList(android::hardware::camera2::CaptureRequest arg0);
 	};
 } // namespace android::hardware::camera2
 

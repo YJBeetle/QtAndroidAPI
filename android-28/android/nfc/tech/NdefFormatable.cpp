@@ -7,7 +7,7 @@ namespace android::nfc::tech
 	// Fields
 	
 	// QAndroidJniObject forward
-	NdefFormatable::NdefFormatable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NdefFormatable::NdefFormatable(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

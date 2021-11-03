@@ -58,7 +58,7 @@ namespace android::net
 			"()Z"
 		);
 	}
-	__JniBaseClass VpnService::onBind(android::content::Intent arg0)
+	JObject VpnService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

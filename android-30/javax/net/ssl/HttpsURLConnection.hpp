@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/net/URLConnection.hpp"
 #include "../../../java/net/HttpURLConnection.hpp"
 
@@ -31,19 +31,19 @@ namespace javax::net::ssl
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getDefaultHostnameVerifier();
+		static JObject getDefaultHostnameVerifier();
 		static javax::net::ssl::SSLSocketFactory getDefaultSSLSocketFactory();
-		static void setDefaultHostnameVerifier(__JniBaseClass arg0);
+		static void setDefaultHostnameVerifier(JObject arg0);
 		static void setDefaultSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
 		jstring getCipherSuite();
-		__JniBaseClass getHostnameVerifier();
+		JObject getHostnameVerifier();
 		jarray getLocalCertificates();
-		__JniBaseClass getLocalPrincipal();
-		__JniBaseClass getPeerPrincipal();
+		JObject getLocalPrincipal();
+		JObject getPeerPrincipal();
 		java::util::Optional getSSLSession();
 		javax::net::ssl::SSLSocketFactory getSSLSocketFactory();
 		jarray getServerCertificates();
-		void setHostnameVerifier(__JniBaseClass arg0);
+		void setHostnameVerifier(JObject arg0);
 		void setSSLSocketFactory(javax::net::ssl::SSLSocketFactory arg0);
 	};
 } // namespace javax::net::ssl

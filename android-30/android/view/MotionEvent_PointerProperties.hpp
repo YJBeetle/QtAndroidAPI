@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class MotionEvent_PointerProperties : public __JniBaseClass
+	class MotionEvent_PointerProperties : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::view
 		jint toolType();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MotionEvent_PointerProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MotionEvent_PointerProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MotionEvent_PointerProperties(QAndroidJniObject obj);
 		
 		// Constructors

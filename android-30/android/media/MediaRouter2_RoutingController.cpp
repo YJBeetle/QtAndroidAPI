@@ -8,7 +8,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaRouter2_RoutingController::MediaRouter2_RoutingController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaRouter2_RoutingController::MediaRouter2_RoutingController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -28,7 +28,7 @@ namespace android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass MediaRouter2_RoutingController::getDeselectableRoutes()
+	JObject MediaRouter2_RoutingController::getDeselectableRoutes()
 	{
 		return callObjectMethod(
 			"getDeselectableRoutes",
@@ -42,14 +42,14 @@ namespace android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass MediaRouter2_RoutingController::getSelectableRoutes()
+	JObject MediaRouter2_RoutingController::getSelectableRoutes()
 	{
 		return callObjectMethod(
 			"getSelectableRoutes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass MediaRouter2_RoutingController::getSelectedRoutes()
+	JObject MediaRouter2_RoutingController::getSelectedRoutes()
 	{
 		return callObjectMethod(
 			"getSelectedRoutes",

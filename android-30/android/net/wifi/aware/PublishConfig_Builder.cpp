@@ -6,11 +6,11 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QAndroidJniObject forward
-	PublishConfig_Builder::PublishConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PublishConfig_Builder::PublishConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PublishConfig_Builder::PublishConfig_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.PublishConfig$Builder",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace android::net::wifi::aware
 			"()Landroid/net/wifi/aware/PublishConfig;"
 		);
 	}
-	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setMatchFilter(__JniBaseClass arg0)
+	android::net::wifi::aware::PublishConfig_Builder PublishConfig_Builder::setMatchFilter(JObject arg0)
 	{
 		return callObjectMethod(
 			"setMatchFilter",

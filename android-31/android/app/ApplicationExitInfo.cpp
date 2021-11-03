@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ApplicationExitInfo::CREATOR()
+	JObject ApplicationExitInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ApplicationExitInfo",
@@ -114,7 +114,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ApplicationExitInfo::ApplicationExitInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationExitInfo::ApplicationExitInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

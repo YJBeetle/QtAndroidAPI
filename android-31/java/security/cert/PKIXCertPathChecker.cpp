@@ -6,7 +6,7 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	PKIXCertPathChecker::PKIXCertPathChecker(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PKIXCertPathChecker::PKIXCertPathChecker(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,7 +19,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0, __JniBaseClass arg1)
+	void PKIXCertPathChecker::check(java::security::cert::Certificate arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"check",
@@ -35,7 +35,7 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass PKIXCertPathChecker::getSupportedExtensions()
+	JObject PKIXCertPathChecker::getSupportedExtensions()
 	{
 		return callObjectMethod(
 			"getSupportedExtensions",

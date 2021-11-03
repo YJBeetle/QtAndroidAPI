@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 
 namespace android::content
@@ -25,9 +25,9 @@ namespace android::preference
 		
 		// Constructors
 		TwoStatePreference(android::content::Context arg0);
-		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1);
-		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TwoStatePreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TwoStatePreference(android::content::Context arg0, JObject arg1);
+		TwoStatePreference(android::content::Context arg0, JObject arg1, jint arg2);
+		TwoStatePreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean getDisableDependentsState();

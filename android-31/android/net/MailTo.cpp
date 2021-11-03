@@ -13,7 +13,7 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	MailTo::MailTo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MailTo::MailTo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -50,7 +50,7 @@ namespace android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass MailTo::getHeaders()
+	JObject MailTo::getHeaders()
 	{
 		return callObjectMethod(
 			"getHeaders",

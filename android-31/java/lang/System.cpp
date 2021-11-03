@@ -36,7 +36,7 @@ namespace java::lang
 	}
 	
 	// QAndroidJniObject forward
-	System::System(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	System::System(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -96,7 +96,7 @@ namespace java::lang
 			"()V"
 		);
 	}
-	__JniBaseClass System::getLogger(jstring arg0)
+	JObject System::getLogger(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
@@ -105,7 +105,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
+	JObject System::getLogger(jstring arg0, java::util::ResourceBundle arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
@@ -159,7 +159,7 @@ namespace java::lang
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass System::getenv()
+	JObject System::getenv()
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",
@@ -176,7 +176,7 @@ namespace java::lang
 			arg0
 		);
 	}
-	__JniBaseClass System::inheritedChannel()
+	JObject System::inheritedChannel()
 	{
 		return callStaticObjectMethod(
 			"java.lang.System",

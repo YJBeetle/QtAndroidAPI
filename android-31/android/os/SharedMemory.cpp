@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass SharedMemory::CREATOR()
+	JObject SharedMemory::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.SharedMemory",
@@ -15,7 +15,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	SharedMemory::SharedMemory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SharedMemory::SharedMemory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

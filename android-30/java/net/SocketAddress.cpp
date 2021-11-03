@@ -5,11 +5,11 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	SocketAddress::SocketAddress(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SocketAddress::SocketAddress(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SocketAddress::SocketAddress()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.SocketAddress",
 			"()V"
 		) {}

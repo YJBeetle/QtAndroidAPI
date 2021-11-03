@@ -2392,7 +2392,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	DataFailCause::DataFailCause(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DataFailCause::DataFailCause(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

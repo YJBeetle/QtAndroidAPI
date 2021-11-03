@@ -1,23 +1,23 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class RemoveByDocumentIdRequest : public __JniBaseClass
+	class RemoveByDocumentIdRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoveByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoveByDocumentIdRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoveByDocumentIdRequest(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getIds();
+		JObject getIds();
 		jstring getNamespace();
 	};
 } // namespace android::app::appsearch

@@ -7,11 +7,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	WebViewRenderProcessClient::WebViewRenderProcessClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebViewRenderProcessClient::WebViewRenderProcessClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebViewRenderProcessClient::WebViewRenderProcessClient()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebViewRenderProcessClient",
 			"()V"
 		) {}

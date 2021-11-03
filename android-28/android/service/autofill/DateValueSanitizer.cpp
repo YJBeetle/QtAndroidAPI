@@ -5,7 +5,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass DateValueSanitizer::CREATOR()
+	JObject DateValueSanitizer::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.DateValueSanitizer",
@@ -15,11 +15,11 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateValueSanitizer::DateValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateValueSanitizer::DateValueSanitizer(android::icu::text::DateFormat arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.DateValueSanitizer",
 			"(Landroid/icu/text/DateFormat;)V",
 			arg0.object()

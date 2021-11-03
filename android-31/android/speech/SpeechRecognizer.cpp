@@ -115,7 +115,7 @@ namespace android::speech
 	}
 	
 	// QAndroidJniObject forward
-	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SpeechRecognizer::SpeechRecognizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -180,7 +180,7 @@ namespace android::speech
 			"()V"
 		);
 	}
-	void SpeechRecognizer::setRecognitionListener(__JniBaseClass arg0)
+	void SpeechRecognizer::setRecognitionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setRecognitionListener",

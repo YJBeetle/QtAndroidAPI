@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	AbstractCollection::AbstractCollection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AbstractCollection::AbstractCollection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean AbstractCollection::addAll(__JniBaseClass arg0)
+	jboolean AbstractCollection::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -41,7 +41,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean AbstractCollection::containsAll(__JniBaseClass arg0)
+	jboolean AbstractCollection::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -56,7 +56,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass AbstractCollection::iterator()
+	JObject AbstractCollection::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean AbstractCollection::removeAll(__JniBaseClass arg0)
+	jboolean AbstractCollection::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -79,7 +79,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean AbstractCollection::retainAll(__JniBaseClass arg0)
+	jboolean AbstractCollection::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",

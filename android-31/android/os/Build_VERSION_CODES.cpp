@@ -229,11 +229,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Build_VERSION_CODES::Build_VERSION_CODES(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Build_VERSION_CODES::Build_VERSION_CODES(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Build_VERSION_CODES::Build_VERSION_CODES()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Build$VERSION_CODES",
 			"()V"
 		) {}

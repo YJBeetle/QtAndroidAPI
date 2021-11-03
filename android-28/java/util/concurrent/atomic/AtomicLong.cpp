@@ -21,7 +21,7 @@ namespace java::util::concurrent::atomic
 		) {}
 	
 	// Methods
-	jlong AtomicLong::accumulateAndGet(jlong arg0, __JniBaseClass arg1)
+	jlong AtomicLong::accumulateAndGet(jlong arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"accumulateAndGet",
@@ -109,7 +109,7 @@ namespace java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	jlong AtomicLong::getAndAccumulate(jlong arg0, __JniBaseClass arg1)
+	jlong AtomicLong::getAndAccumulate(jlong arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"getAndAccumulate",
@@ -148,7 +148,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLong::getAndUpdate(__JniBaseClass arg0)
+	jlong AtomicLong::getAndUpdate(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getAndUpdate",
@@ -238,7 +238,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jlong AtomicLong::updateAndGet(__JniBaseClass arg0)
+	jlong AtomicLong::updateAndGet(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"updateAndGet",

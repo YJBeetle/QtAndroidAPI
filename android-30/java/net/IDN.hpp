@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -9,7 +9,7 @@ namespace java::lang
 
 namespace java::net
 {
-	class IDN : public __JniBaseClass
+	class IDN : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace java::net
 		static jint USE_STD3_ASCII_RULES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IDN(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IDN(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IDN(QAndroidJniObject obj);
 		
 		// Constructors

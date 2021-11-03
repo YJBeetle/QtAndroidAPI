@@ -6,7 +6,7 @@ namespace android::hardware::biometrics
 	// Fields
 	
 	// QAndroidJniObject forward
-	BiometricPrompt_AuthenticationResult::BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BiometricPrompt_AuthenticationResult::BiometricPrompt_AuthenticationResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

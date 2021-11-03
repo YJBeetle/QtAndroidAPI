@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./EapSessionConfig_EapMethodConfig.hpp"
 
 namespace android::net::eap

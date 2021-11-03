@@ -9,7 +9,7 @@ namespace java::util::zip
 	CheckedInputStream::CheckedInputStream(QAndroidJniObject obj) : java::io::FilterInputStream(obj) {}
 	
 	// Constructors
-	CheckedInputStream::CheckedInputStream(java::io::InputStream arg0, __JniBaseClass arg1)
+	CheckedInputStream::CheckedInputStream(java::io::InputStream arg0, JObject arg1)
 		: java::io::FilterInputStream(
 			"java.util.zip.CheckedInputStream",
 			"(Ljava/io/InputStream;Ljava/util/zip/Checksum;)V",
@@ -18,7 +18,7 @@ namespace java::util::zip
 		) {}
 	
 	// Methods
-	__JniBaseClass CheckedInputStream::getChecksum()
+	JObject CheckedInputStream::getChecksum()
 	{
 		return callObjectMethod(
 			"getChecksum",

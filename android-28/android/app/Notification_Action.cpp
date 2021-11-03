@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass Notification_Action::CREATOR()
+	JObject Notification_Action::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification$Action",
@@ -114,11 +114,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	Notification_Action::Notification_Action(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification_Action::Notification_Action(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_Action::Notification_Action(jint arg0, jstring arg1, android::app::PendingIntent arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Action",
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,

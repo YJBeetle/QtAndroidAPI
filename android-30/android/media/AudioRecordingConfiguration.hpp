@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,14 +17,14 @@ namespace android::os
 
 namespace android::media
 {
-	class AudioRecordingConfiguration : public __JniBaseClass
+	class AudioRecordingConfiguration : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioRecordingConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioRecordingConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioRecordingConfiguration(QAndroidJniObject obj);
 		
 		// Constructors
@@ -36,9 +36,9 @@ namespace android::media
 		jint getAudioSource();
 		jint getClientAudioSessionId();
 		jint getClientAudioSource();
-		__JniBaseClass getClientEffects();
+		JObject getClientEffects();
 		android::media::AudioFormat getClientFormat();
-		__JniBaseClass getEffects();
+		JObject getEffects();
 		android::media::AudioFormat getFormat();
 		jint hashCode();
 		jboolean isClientSilenced();

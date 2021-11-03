@@ -7,11 +7,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	ContentObserver::ContentObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentObserver::ContentObserver(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentObserver::ContentObserver(android::os::Handler arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.ContentObserver",
 			"(Landroid/os/Handler;)V",
 			arg0.object()
@@ -52,7 +52,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void ContentObserver::dispatchChange(jboolean arg0, __JniBaseClass arg1, jint arg2)
+	void ContentObserver::dispatchChange(jboolean arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"dispatchChange",
@@ -89,7 +89,7 @@ namespace android::database
 			arg2
 		);
 	}
-	void ContentObserver::onChange(jboolean arg0, __JniBaseClass arg1, jint arg2)
+	void ContentObserver::onChange(jboolean arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onChange",

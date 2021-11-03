@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::graphics
 
 namespace android::graphics
 {
-	class BitmapFactory_Options : public __JniBaseClass
+	class BitmapFactory_Options : public JObject
 	{
 	public:
 		// Fields
@@ -45,7 +45,7 @@ namespace android::graphics
 		jint outWidth();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BitmapFactory_Options(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BitmapFactory_Options(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BitmapFactory_Options(QAndroidJniObject obj);
 		
 		// Constructors

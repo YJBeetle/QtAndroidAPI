@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 #include "../../../java/lang/IllegalStateException.hpp"
@@ -16,7 +16,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit UnsafeStateException(const char *className, const char *sig, Ts...agv) : java::lang::IllegalStateException(className, sig, std::forward<Ts>(agv)...) {}
@@ -27,7 +27,7 @@ namespace android::app::admin
 		// Methods
 		jint describeContents();
 		jstring getMessage();
-		__JniBaseClass getReasons();
+		JObject getReasons();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::admin

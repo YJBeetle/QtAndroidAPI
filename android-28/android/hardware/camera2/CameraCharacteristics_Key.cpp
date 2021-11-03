@@ -5,7 +5,7 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QAndroidJniObject forward
-	CameraCharacteristics_Key::CameraCharacteristics_Key(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CameraCharacteristics_Key::CameraCharacteristics_Key(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

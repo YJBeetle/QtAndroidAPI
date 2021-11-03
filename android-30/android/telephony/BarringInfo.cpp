@@ -75,7 +75,7 @@ namespace android::telephony
 			"BARRING_SERVICE_TYPE_SMS"
 		);
 	}
-	__JniBaseClass BarringInfo::CREATOR()
+	JObject BarringInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.BarringInfo",
@@ -85,7 +85,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	BarringInfo::BarringInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BarringInfo::BarringInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

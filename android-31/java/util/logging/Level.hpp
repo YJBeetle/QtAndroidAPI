@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace java::util::logging
 {
-	class Level : public __JniBaseClass
+	class Level : public JObject
 	{
 	public:
 		// Fields
@@ -24,7 +24,7 @@ namespace java::util::logging
 		static java::util::logging::Level WARNING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Level(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Level(QAndroidJniObject obj);
 		
 		// Constructors

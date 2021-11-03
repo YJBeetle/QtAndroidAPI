@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssCapabilities::CREATOR()
+	JObject GnssCapabilities::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssCapabilities",
@@ -14,7 +14,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssCapabilities::GnssCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssCapabilities::GnssCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

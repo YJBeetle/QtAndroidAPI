@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::service::media
 {
@@ -9,13 +9,13 @@ namespace android::service::media
 
 namespace android::service::media
 {
-	class MediaBrowserService_Result : public __JniBaseClass
+	class MediaBrowserService_Result : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaBrowserService_Result(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaBrowserService_Result(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowserService_Result(QAndroidJniObject obj);
 		
 		// Constructors

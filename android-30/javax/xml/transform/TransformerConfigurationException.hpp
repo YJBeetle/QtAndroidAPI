@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "./TransformerException.hpp"
 
@@ -21,8 +21,8 @@ namespace javax::xml::transform
 		TransformerConfigurationException(jstring arg0);
 		TransformerConfigurationException(jthrowable arg0);
 		TransformerConfigurationException(jstring arg0, jthrowable arg1);
-		TransformerConfigurationException(jstring arg0, __JniBaseClass arg1);
-		TransformerConfigurationException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
+		TransformerConfigurationException(jstring arg0, JObject arg1);
+		TransformerConfigurationException(jstring arg0, JObject arg1, jthrowable arg2);
 		
 		// Methods
 	};

@@ -8,13 +8,13 @@ namespace javax::security::auth::callback
 	UnsupportedCallbackException::UnsupportedCallbackException(QAndroidJniObject obj) : java::lang::Exception(obj) {}
 	
 	// Constructors
-	UnsupportedCallbackException::UnsupportedCallbackException(__JniBaseClass arg0)
+	UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0)
 		: java::lang::Exception(
 			"javax.security.auth.callback.UnsupportedCallbackException",
 			"(Ljavax/security/auth/callback/Callback;)V",
 			arg0.object()
 		) {}
-	UnsupportedCallbackException::UnsupportedCallbackException(__JniBaseClass arg0, jstring arg1)
+	UnsupportedCallbackException::UnsupportedCallbackException(JObject arg0, jstring arg1)
 		: java::lang::Exception(
 			"javax.security.auth.callback.UnsupportedCallbackException",
 			"(Ljavax/security/auth/callback/Callback;Ljava/lang/String;)V",
@@ -23,7 +23,7 @@ namespace javax::security::auth::callback
 		) {}
 	
 	// Methods
-	__JniBaseClass UnsupportedCallbackException::getCallback()
+	JObject UnsupportedCallbackException::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",

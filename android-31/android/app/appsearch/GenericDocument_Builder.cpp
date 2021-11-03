@@ -6,11 +6,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	GenericDocument_Builder::GenericDocument_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GenericDocument_Builder::GenericDocument_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GenericDocument_Builder::GenericDocument_Builder(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.GenericDocument$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

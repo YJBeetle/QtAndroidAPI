@@ -5,7 +5,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	AppSearchSchema::AppSearchSchema(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AppSearchSchema::AppSearchSchema(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	__JniBaseClass AppSearchSchema::getProperties()
+	JObject AppSearchSchema::getProperties()
 	{
 		return callObjectMethod(
 			"getProperties",

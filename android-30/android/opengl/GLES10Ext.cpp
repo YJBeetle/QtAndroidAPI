@@ -6,11 +6,11 @@ namespace android::opengl
 	// Fields
 	
 	// QAndroidJniObject forward
-	GLES10Ext::GLES10Ext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLES10Ext::GLES10Ext(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GLES10Ext::GLES10Ext()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.GLES10Ext",
 			"()V"
 		) {}

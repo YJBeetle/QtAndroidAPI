@@ -10,11 +10,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QAndroidJniObject forward
-	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvRecordingClient::TvRecordingClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvRecordingClient::TvRecordingClient(android::content::Context arg0, jstring arg1, android::media::tv::TvRecordingClient_RecordingCallback arg2, android::os::Handler arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvRecordingClient",
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/media/tv/TvRecordingClient$RecordingCallback;Landroid/os/Handler;)V",
 			arg0.object(),

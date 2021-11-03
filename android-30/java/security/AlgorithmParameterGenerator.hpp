@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -21,13 +21,13 @@ namespace java::security
 
 namespace java::security
 {
-	class AlgorithmParameterGenerator : public __JniBaseClass
+	class AlgorithmParameterGenerator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlgorithmParameterGenerator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlgorithmParameterGenerator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlgorithmParameterGenerator(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,9 +40,9 @@ namespace java::security
 		jstring getAlgorithm();
 		java::security::Provider getProvider();
 		void init(jint arg0);
-		void init(__JniBaseClass arg0);
+		void init(JObject arg0);
 		void init(jint arg0, java::security::SecureRandom arg1);
-		void init(__JniBaseClass arg0, java::security::SecureRandom arg1);
+		void init(JObject arg0, java::security::SecureRandom arg1);
 	};
 } // namespace java::security
 

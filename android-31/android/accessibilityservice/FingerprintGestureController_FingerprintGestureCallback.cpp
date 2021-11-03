@@ -5,11 +5,11 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FingerprintGestureController_FingerprintGestureCallback::FingerprintGestureController_FingerprintGestureCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.accessibilityservice.FingerprintGestureController$FingerprintGestureCallback",
 			"()V"
 		) {}

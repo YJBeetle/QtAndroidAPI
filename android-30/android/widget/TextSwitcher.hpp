@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -33,7 +33,7 @@ namespace android::widget
 		
 		// Constructors
 		TextSwitcher(android::content::Context arg0);
-		TextSwitcher(android::content::Context arg0, __JniBaseClass arg1);
+		TextSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);

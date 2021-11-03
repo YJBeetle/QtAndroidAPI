@@ -6,11 +6,11 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VisualVoicemailSmsFilterSettings_Builder::VisualVoicemailSmsFilterSettings_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.VisualVoicemailSmsFilterSettings$Builder",
 			"()V"
 		) {}
@@ -39,7 +39,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setOriginatingNumbers(__JniBaseClass arg0)
+	android::telephony::VisualVoicemailSmsFilterSettings_Builder VisualVoicemailSmsFilterSettings_Builder::setOriginatingNumbers(JObject arg0)
 	{
 		return callObjectMethod(
 			"setOriginatingNumbers",

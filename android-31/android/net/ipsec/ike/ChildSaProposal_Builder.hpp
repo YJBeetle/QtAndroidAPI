@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::ipsec::ike
 {
@@ -9,13 +9,13 @@ namespace android::net::ipsec::ike
 
 namespace android::net::ipsec::ike
 {
-	class ChildSaProposal_Builder : public __JniBaseClass
+	class ChildSaProposal_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ChildSaProposal_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ChildSaProposal_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ChildSaProposal_Builder(QAndroidJniObject obj);
 		
 		// Constructors

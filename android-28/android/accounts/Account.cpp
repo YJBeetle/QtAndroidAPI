@@ -4,7 +4,7 @@
 namespace android::accounts
 {
 	// Fields
-	__JniBaseClass Account::CREATOR()
+	JObject Account::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.accounts.Account",
@@ -28,17 +28,17 @@ namespace android::accounts
 	}
 	
 	// QAndroidJniObject forward
-	Account::Account(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Account::Account(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Account::Account(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.Account",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	Account::Account(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.Account",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

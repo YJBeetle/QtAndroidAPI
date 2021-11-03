@@ -10,7 +10,7 @@ namespace java::lang::invoke
 	// Fields
 	
 	// QAndroidJniObject forward
-	MethodType::MethodType(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MethodType::MethodType(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -83,7 +83,7 @@ namespace java::lang::invoke
 			arg1.object()
 		);
 	}
-	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, __JniBaseClass arg1)
+	java::lang::invoke::MethodType MethodType::methodType(jclass arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.lang.invoke.MethodType",
@@ -112,7 +112,7 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	java::lang::invoke::MethodType MethodType::appendParameterTypes(__JniBaseClass arg0)
+	java::lang::invoke::MethodType MethodType::appendParameterTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"appendParameterTypes",
@@ -129,7 +129,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	__JniBaseClass MethodType::changeParameterType(jint arg0, __JniBaseClass arg1)
+	JObject MethodType::changeParameterType(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"changeParameterType",
@@ -146,7 +146,7 @@ namespace java::lang::invoke
 			arg0
 		);
 	}
-	__JniBaseClass MethodType::changeReturnType(__JniBaseClass arg0)
+	JObject MethodType::changeReturnType(JObject arg0)
 	{
 		return callObjectMethod(
 			"changeReturnType",
@@ -229,7 +229,7 @@ namespace java::lang::invoke
 			arg1
 		);
 	}
-	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, __JniBaseClass arg1)
+	java::lang::invoke::MethodType MethodType::insertParameterTypes(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"insertParameterTypes",
@@ -259,7 +259,7 @@ namespace java::lang::invoke
 			"()I"
 		);
 	}
-	__JniBaseClass MethodType::parameterList()
+	JObject MethodType::parameterList()
 	{
 		return callObjectMethod(
 			"parameterList",

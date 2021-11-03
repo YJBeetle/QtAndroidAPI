@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::view::textservice
 {
-	class SuggestionsInfo : public __JniBaseClass
+	class SuggestionsInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint RESULT_ATTR_DONT_SHOW_UI_FOR_SUGGESTIONS();
 		static jint RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS();
 		static jint RESULT_ATTR_IN_THE_DICTIONARY();
@@ -21,7 +21,7 @@ namespace android::view::textservice
 		static jint RESULT_ATTR_LOOKS_LIKE_TYPO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SuggestionsInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SuggestionsInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SuggestionsInfo(QAndroidJniObject obj);
 		
 		// Constructors

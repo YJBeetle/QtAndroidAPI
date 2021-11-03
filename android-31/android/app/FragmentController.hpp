@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -53,13 +53,13 @@ namespace java::io
 
 namespace android::app
 {
-	class FragmentController : public __JniBaseClass
+	class FragmentController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FragmentController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FragmentController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FragmentController(QAndroidJniObject obj);
 		
 		// Constructors
@@ -69,20 +69,20 @@ namespace android::app
 		void attachHost(android::app::Fragment arg0);
 		void dispatchActivityCreated();
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
-		jboolean dispatchContextItemSelected(__JniBaseClass arg0);
+		jboolean dispatchContextItemSelected(JObject arg0);
 		void dispatchCreate();
-		jboolean dispatchCreateOptionsMenu(__JniBaseClass arg0, android::view::MenuInflater arg1);
+		jboolean dispatchCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1);
 		void dispatchDestroy();
 		void dispatchDestroyView();
 		void dispatchLowMemory();
 		void dispatchMultiWindowModeChanged(jboolean arg0);
 		void dispatchMultiWindowModeChanged(jboolean arg0, android::content::res::Configuration arg1);
-		jboolean dispatchOptionsItemSelected(__JniBaseClass arg0);
-		void dispatchOptionsMenuClosed(__JniBaseClass arg0);
+		jboolean dispatchOptionsItemSelected(JObject arg0);
+		void dispatchOptionsMenuClosed(JObject arg0);
 		void dispatchPause();
 		void dispatchPictureInPictureModeChanged(jboolean arg0);
 		void dispatchPictureInPictureModeChanged(jboolean arg0, android::content::res::Configuration arg1);
-		jboolean dispatchPrepareOptionsMenu(__JniBaseClass arg0);
+		jboolean dispatchPrepareOptionsMenu(JObject arg0);
 		void dispatchResume();
 		void dispatchStart();
 		void dispatchStop();
@@ -96,15 +96,15 @@ namespace android::app
 		android::app::FragmentManager getFragmentManager();
 		android::app::LoaderManager getLoaderManager();
 		void noteStateNotSaved();
-		android::view::View onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3);
+		android::view::View onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3);
 		void reportLoaderStart();
-		void restoreAllState(__JniBaseClass arg0, android::app::FragmentManagerNonConfig arg1);
-		void restoreAllState(__JniBaseClass arg0, __JniBaseClass arg1);
+		void restoreAllState(JObject arg0, android::app::FragmentManagerNonConfig arg1);
+		void restoreAllState(JObject arg0, JObject arg1);
 		void restoreLoaderNonConfig(android::util::ArrayMap arg0);
 		android::util::ArrayMap retainLoaderNonConfig();
 		android::app::FragmentManagerNonConfig retainNestedNonConfig();
-		__JniBaseClass retainNonConfig();
-		__JniBaseClass saveAllState();
+		JObject retainNonConfig();
+		JObject saveAllState();
 	};
 } // namespace android::app
 

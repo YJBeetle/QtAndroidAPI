@@ -558,7 +558,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	DisconnectCause::DisconnectCause(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DisconnectCause::DisconnectCause(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

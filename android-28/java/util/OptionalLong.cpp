@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	OptionalLong::OptionalLong(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	OptionalLong::OptionalLong(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -49,7 +49,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void OptionalLong::ifPresent(__JniBaseClass arg0)
+	void OptionalLong::ifPresent(JObject arg0)
 	{
 		callMethod<void>(
 			"ifPresent",
@@ -57,7 +57,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void OptionalLong::ifPresentOrElse(__JniBaseClass arg0, __JniBaseClass arg1)
+	void OptionalLong::ifPresentOrElse(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"ifPresentOrElse",
@@ -88,7 +88,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jlong OptionalLong::orElseGet(__JniBaseClass arg0)
+	jlong OptionalLong::orElseGet(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"orElseGet",
@@ -103,7 +103,7 @@ namespace java::util
 			"()J"
 		);
 	}
-	jlong OptionalLong::orElseThrow(__JniBaseClass arg0)
+	jlong OptionalLong::orElseThrow(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"orElseThrow",
@@ -111,7 +111,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass OptionalLong::stream()
+	JObject OptionalLong::stream()
 	{
 		return callObjectMethod(
 			"stream",

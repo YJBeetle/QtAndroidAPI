@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::gesture
 {
-	class Prediction : public __JniBaseClass
+	class Prediction : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::gesture
 		jdouble score();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Prediction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Prediction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Prediction(QAndroidJniObject obj);
 		
 		// Constructors

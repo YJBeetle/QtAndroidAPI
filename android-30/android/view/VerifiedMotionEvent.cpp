@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass VerifiedMotionEvent::CREATOR()
+	JObject VerifiedMotionEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.VerifiedMotionEvent",

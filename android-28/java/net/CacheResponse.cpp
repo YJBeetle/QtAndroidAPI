@@ -6,11 +6,11 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	CacheResponse::CacheResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CacheResponse::CacheResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CacheResponse::CacheResponse()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.CacheResponse",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace java::net
 			"()Ljava/io/InputStream;"
 		);
 	}
-	__JniBaseClass CacheResponse::getHeaders()
+	JObject CacheResponse::getHeaders()
 	{
 		return callObjectMethod(
 			"getHeaders",

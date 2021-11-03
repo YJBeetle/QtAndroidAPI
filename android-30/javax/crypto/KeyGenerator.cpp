@@ -8,7 +8,7 @@ namespace javax::crypto
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyGenerator::KeyGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyGenerator::KeyGenerator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -42,7 +42,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyGenerator::generateKey()
+	JObject KeyGenerator::generateKey()
 	{
 		return callObjectMethod(
 			"generateKey",
@@ -79,7 +79,7 @@ namespace javax::crypto
 			arg0.object()
 		);
 	}
-	void KeyGenerator::init(__JniBaseClass arg0)
+	void KeyGenerator::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",
@@ -96,7 +96,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void KeyGenerator::init(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void KeyGenerator::init(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"init",

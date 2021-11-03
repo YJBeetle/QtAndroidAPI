@@ -141,7 +141,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	DateTimePatternGenerator::DateTimePatternGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateTimePatternGenerator::DateTimePatternGenerator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -235,7 +235,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass DateTimePatternGenerator::getBaseSkeletons(__JniBaseClass arg0)
+	JObject DateTimePatternGenerator::getBaseSkeletons(JObject arg0)
 	{
 		return callObjectMethod(
 			"getBaseSkeletons",
@@ -282,7 +282,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass DateTimePatternGenerator::getSkeletons(__JniBaseClass arg0)
+	JObject DateTimePatternGenerator::getSkeletons(JObject arg0)
 	{
 		return callObjectMethod(
 			"getSkeletons",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -13,7 +13,7 @@ namespace java::util
 
 namespace android::icu::util
 {
-	class ULocale : public __JniBaseClass
+	class ULocale : public JObject
 	{
 	public:
 		// Fields
@@ -43,7 +43,7 @@ namespace android::icu::util
 		static android::icu::util::ULocale US();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ULocale(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ULocale(QAndroidJniObject obj);
 		
 		// Constructors
@@ -91,7 +91,7 @@ namespace android::icu::util
 		static jarray getISOCountries();
 		static jarray getISOLanguages();
 		static jstring getKeywordValue(jstring arg0, jstring arg1);
-		static __JniBaseClass getKeywords(jstring arg0);
+		static JObject getKeywords(jstring arg0);
 		static jstring getLanguage(jstring arg0);
 		static jstring getName(jstring arg0);
 		static jstring getScript(jstring arg0);
@@ -126,18 +126,18 @@ namespace android::icu::util
 		jstring getDisplayVariant();
 		jstring getDisplayVariant(android::icu::util::ULocale arg0);
 		jstring getExtension(jchar arg0);
-		__JniBaseClass getExtensionKeys();
+		JObject getExtensionKeys();
 		android::icu::util::ULocale getFallback();
 		jstring getISO3Country();
 		jstring getISO3Language();
 		jstring getKeywordValue(jstring arg0);
-		__JniBaseClass getKeywords();
+		JObject getKeywords();
 		jstring getLanguage();
 		jstring getLineOrientation();
 		jstring getName();
 		jstring getScript();
-		__JniBaseClass getUnicodeLocaleAttributes();
-		__JniBaseClass getUnicodeLocaleKeys();
+		JObject getUnicodeLocaleAttributes();
+		JObject getUnicodeLocaleKeys();
 		jstring getUnicodeLocaleType(jstring arg0);
 		jstring getVariant();
 		jint hashCode();

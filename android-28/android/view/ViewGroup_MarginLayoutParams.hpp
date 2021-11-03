@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./ViewGroup_LayoutParams.hpp"
 
 namespace android::content
@@ -30,7 +30,7 @@ namespace android::view
 		// Constructors
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		ViewGroup_MarginLayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
-		ViewGroup_MarginLayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		ViewGroup_MarginLayoutParams(android::content::Context arg0, JObject arg1);
 		ViewGroup_MarginLayoutParams(jint arg0, jint arg1);
 		
 		// Methods

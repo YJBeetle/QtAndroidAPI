@@ -7,34 +7,34 @@ namespace org::json
 	// Fields
 	
 	// QAndroidJniObject forward
-	JSONArray::JSONArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JSONArray::JSONArray(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JSONArray::JSONArray()
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONArray",
 			"()V"
 		) {}
 	JSONArray::JSONArray(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONArray",
 			"(Ljava/lang/Object;)V",
 			arg0
 		) {}
 	JSONArray::JSONArray(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONArray",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	JSONArray::JSONArray(__JniBaseClass arg0)
-		: __JniBaseClass(
+	JSONArray::JSONArray(JObject arg0)
+		: JObject(
 			"org.json.JSONArray",
 			"(Ljava/util/Collection;)V",
 			arg0.object()
 		) {}
 	JSONArray::JSONArray(org::json::JSONTokener arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONArray",
 			"(Lorg/json/JSONTokener;)V",
 			arg0.object()

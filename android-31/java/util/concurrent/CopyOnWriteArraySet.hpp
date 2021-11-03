@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../AbstractCollection.hpp"
 #include "../AbstractSet.hpp"
 
@@ -22,24 +22,24 @@ namespace java::util::concurrent
 		
 		// Constructors
 		CopyOnWriteArraySet();
-		CopyOnWriteArraySet(__JniBaseClass arg0);
+		CopyOnWriteArraySet(JObject arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean addAll(__JniBaseClass arg0);
+		jboolean addAll(JObject arg0);
 		void clear();
 		jboolean contains(jobject arg0);
-		jboolean containsAll(__JniBaseClass arg0);
+		jboolean containsAll(JObject arg0);
 		jboolean equals(jobject arg0);
-		void forEach(__JniBaseClass arg0);
+		void forEach(JObject arg0);
 		jboolean isEmpty();
-		__JniBaseClass iterator();
+		JObject iterator();
 		jboolean remove(jobject arg0);
-		jboolean removeAll(__JniBaseClass arg0);
-		jboolean removeIf(__JniBaseClass arg0);
-		jboolean retainAll(__JniBaseClass arg0);
+		jboolean removeAll(JObject arg0);
+		jboolean removeIf(JObject arg0);
+		jboolean retainAll(JObject arg0);
 		jint size();
-		__JniBaseClass spliterator();
+		JObject spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

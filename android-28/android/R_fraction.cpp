@@ -5,11 +5,11 @@ namespace android
 	// Fields
 	
 	// QAndroidJniObject forward
-	R_fraction::R_fraction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_fraction::R_fraction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_fraction::R_fraction()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$fraction",
 			"()V"
 		) {}

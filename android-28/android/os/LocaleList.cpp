@@ -5,7 +5,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass LocaleList::CREATOR()
+	JObject LocaleList::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.LocaleList",
@@ -15,11 +15,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	LocaleList::LocaleList(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocaleList::LocaleList(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocaleList::LocaleList(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.LocaleList",
 			"([Ljava/util/Locale;)V",
 			arg0

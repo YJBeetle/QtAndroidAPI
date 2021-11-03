@@ -25,7 +25,7 @@ namespace android::hardware::input
 	}
 	
 	// QAndroidJniObject forward
-	InputManager::InputManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputManager::InputManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -52,7 +52,7 @@ namespace android::hardware::input
 			"()F"
 		);
 	}
-	void InputManager::registerInputDeviceListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void InputManager::registerInputDeviceListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"registerInputDeviceListener",
@@ -61,7 +61,7 @@ namespace android::hardware::input
 			arg1.object()
 		);
 	}
-	void InputManager::unregisterInputDeviceListener(__JniBaseClass arg0)
+	void InputManager::unregisterInputDeviceListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterInputDeviceListener",

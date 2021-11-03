@@ -13,7 +13,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaParser_SeekMap::MediaParser_SeekMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaParser_SeekMap::MediaParser_SeekMap(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

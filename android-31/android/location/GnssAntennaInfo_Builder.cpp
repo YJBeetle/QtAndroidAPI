@@ -8,22 +8,22 @@ namespace android::location
 	// Fields
 	
 	// QAndroidJniObject forward
-	GnssAntennaInfo_Builder::GnssAntennaInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssAntennaInfo_Builder::GnssAntennaInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssAntennaInfo_Builder::GnssAntennaInfo_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssAntennaInfo$Builder",
 			"()V"
 		) {}
 	GnssAntennaInfo_Builder::GnssAntennaInfo_Builder(android::location::GnssAntennaInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssAntennaInfo$Builder",
 			"(Landroid/location/GnssAntennaInfo;)V",
 			arg0.object()
 		) {}
 	GnssAntennaInfo_Builder::GnssAntennaInfo_Builder(jdouble arg0, android::location::GnssAntennaInfo_PhaseCenterOffset arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssAntennaInfo$Builder",
 			"(DLandroid/location/GnssAntennaInfo$PhaseCenterOffset;)V",
 			arg0,

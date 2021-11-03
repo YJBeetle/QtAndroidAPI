@@ -15,7 +15,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ConcurrentLinkedQueue",
 			"()V"
 		) {}
-	ConcurrentLinkedQueue::ConcurrentLinkedQueue(__JniBaseClass arg0)
+	ConcurrentLinkedQueue::ConcurrentLinkedQueue(JObject arg0)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.ConcurrentLinkedQueue",
 			"(Ljava/util/Collection;)V",
@@ -31,7 +31,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentLinkedQueue::addAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedQueue::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -54,7 +54,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void ConcurrentLinkedQueue::forEach(__JniBaseClass arg0)
+	void ConcurrentLinkedQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ConcurrentLinkedQueue::iterator()
+	JObject ConcurrentLinkedQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -106,7 +106,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentLinkedQueue::removeAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -114,7 +114,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::removeIf(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -122,7 +122,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ConcurrentLinkedQueue::retainAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -137,7 +137,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ConcurrentLinkedQueue::spliterator()
+	JObject ConcurrentLinkedQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

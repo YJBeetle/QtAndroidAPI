@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::hardware::camera2::params
 {
-	class RggbChannelVector : public __JniBaseClass
+	class RggbChannelVector : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::hardware::camera2::params
 		static jint RED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RggbChannelVector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RggbChannelVector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RggbChannelVector(QAndroidJniObject obj);
 		
 		// Constructors

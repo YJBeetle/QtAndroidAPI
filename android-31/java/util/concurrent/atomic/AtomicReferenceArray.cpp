@@ -7,24 +7,24 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QAndroidJniObject forward
-	AtomicReferenceArray::AtomicReferenceArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AtomicReferenceArray::AtomicReferenceArray(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicReferenceArray::AtomicReferenceArray(jobjectArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicReferenceArray",
 			"([Ljava/lang/Object;)V",
 			arg0
 		) {}
 	AtomicReferenceArray::AtomicReferenceArray(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicReferenceArray",
 			"(I)V",
 			arg0
 		) {}
 	
 	// Methods
-	jobject AtomicReferenceArray::accumulateAndGet(jint arg0, jobject arg1, __JniBaseClass arg2)
+	jobject AtomicReferenceArray::accumulateAndGet(jint arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"accumulateAndGet",
@@ -90,7 +90,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		).object<jobject>();
 	}
-	jobject AtomicReferenceArray::getAndAccumulate(jint arg0, jobject arg1, __JniBaseClass arg2)
+	jobject AtomicReferenceArray::getAndAccumulate(jint arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"getAndAccumulate",
@@ -109,7 +109,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		).object<jobject>();
 	}
-	jobject AtomicReferenceArray::getAndUpdate(jint arg0, __JniBaseClass arg1)
+	jobject AtomicReferenceArray::getAndUpdate(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getAndUpdate",
@@ -193,7 +193,7 @@ namespace java::util::concurrent::atomic
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jobject AtomicReferenceArray::updateAndGet(jint arg0, __JniBaseClass arg1)
+	jobject AtomicReferenceArray::updateAndGet(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"updateAndGet",

@@ -8,7 +8,7 @@ namespace android::security::identity
 	// Fields
 	
 	// QAndroidJniObject forward
-	IdentityCredential::IdentityCredential(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IdentityCredential::IdentityCredential(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -36,7 +36,7 @@ namespace android::security::identity
 			arg0
 		).object<jbyteArray>();
 	}
-	__JniBaseClass IdentityCredential::getAuthKeysNeedingCertification()
+	JObject IdentityCredential::getAuthKeysNeedingCertification()
 	{
 		return callObjectMethod(
 			"getAuthKeysNeedingCertification",
@@ -50,14 +50,14 @@ namespace android::security::identity
 			"()[I"
 		).object<jintArray>();
 	}
-	__JniBaseClass IdentityCredential::getCredentialKeyCertificateChain()
+	JObject IdentityCredential::getCredentialKeyCertificateChain()
 	{
 		return callObjectMethod(
 			"getCredentialKeyCertificateChain",
 			"()Ljava/util/Collection;"
 		);
 	}
-	android::security::identity::ResultData IdentityCredential::getEntries(jbyteArray arg0, __JniBaseClass arg1, jbyteArray arg2, jbyteArray arg3)
+	android::security::identity::ResultData IdentityCredential::getEntries(jbyteArray arg0, JObject arg1, jbyteArray arg2, jbyteArray arg3)
 	{
 		return callObjectMethod(
 			"getEntries",
@@ -85,7 +85,7 @@ namespace android::security::identity
 			arg1
 		);
 	}
-	void IdentityCredential::setReaderEphemeralPublicKey(__JniBaseClass arg0)
+	void IdentityCredential::setReaderEphemeralPublicKey(JObject arg0)
 	{
 		callMethod<void>(
 			"setReaderEphemeralPublicKey",

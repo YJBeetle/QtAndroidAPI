@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaCas : public __JniBaseClass
+	class MediaCas : public JObject
 	{
 	public:
 		// Fields
@@ -43,13 +43,13 @@ namespace android::media
 		static jint SESSION_USAGE_TIMESHIFT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCas(QAndroidJniObject obj);
 		
 		// Constructors
 		MediaCas(jint arg0);
 		MediaCas(android::content::Context arg0, jint arg1, jstring arg2, jint arg3);
-		MediaCas(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, android::os::Handler arg4, __JniBaseClass arg5);
+		MediaCas(android::content::Context arg0, jint arg1, jstring arg2, jint arg3, android::os::Handler arg4, JObject arg5);
 		
 		// Methods
 		static jarray enumeratePlugins();
@@ -62,7 +62,7 @@ namespace android::media
 		void provision(jstring arg0);
 		void refreshEntitlements(jint arg0, jbyteArray arg1);
 		void sendEvent(jint arg0, jint arg1, jbyteArray arg2);
-		void setEventListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setEventListener(JObject arg0, android::os::Handler arg1);
 		void setPrivateData(jbyteArray arg0);
 	};
 } // namespace android::media

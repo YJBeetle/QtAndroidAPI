@@ -21,7 +21,7 @@ namespace android::inputmethodservice
 		) {}
 	
 	// Methods
-	void InputMethodService_InputMethodImpl::attachToken(__JniBaseClass arg0)
+	void InputMethodService_InputMethodImpl::attachToken(JObject arg0)
 	{
 		callMethod<void>(
 			"attachToken",
@@ -54,7 +54,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService_InputMethodImpl::restartInput(__JniBaseClass arg0, android::view::inputmethod::EditorInfo arg1)
+	void InputMethodService_InputMethodImpl::restartInput(JObject arg0, android::view::inputmethod::EditorInfo arg1)
 	{
 		callMethod<void>(
 			"restartInput",
@@ -72,7 +72,7 @@ namespace android::inputmethodservice
 			arg1.object()
 		);
 	}
-	void InputMethodService_InputMethodImpl::startInput(__JniBaseClass arg0, android::view::inputmethod::EditorInfo arg1)
+	void InputMethodService_InputMethodImpl::startInput(JObject arg0, android::view::inputmethod::EditorInfo arg1)
 	{
 		callMethod<void>(
 			"startInput",

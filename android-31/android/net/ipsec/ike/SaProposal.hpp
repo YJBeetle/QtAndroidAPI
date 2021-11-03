@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::net::ipsec::ike
 {
-	class SaProposal : public __JniBaseClass
+	class SaProposal : public JObject
 	{
 	public:
 		// Fields
@@ -42,17 +42,17 @@ namespace android::net::ipsec::ike
 		static jint PSEUDORANDOM_FUNCTION_SHA2_512();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SaProposal(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SaProposal(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SaProposal(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getSupportedDhGroups();
+		static JObject getSupportedDhGroups();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getDhGroups();
-		__JniBaseClass getEncryptionAlgorithms();
-		__JniBaseClass getIntegrityAlgorithms();
+		JObject getDhGroups();
+		JObject getEncryptionAlgorithms();
+		JObject getIntegrityAlgorithms();
 		jint hashCode();
 		jstring toString();
 	};

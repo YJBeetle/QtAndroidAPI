@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::content
 {
-	class ClipDescription : public __JniBaseClass
+	class ClipDescription : public JObject
 	{
 	public:
 		// Fields
 		static jint CLASSIFICATION_COMPLETE();
 		static jint CLASSIFICATION_NOT_COMPLETE();
 		static jint CLASSIFICATION_NOT_PERFORMED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring MIMETYPE_TEXT_HTML();
 		static jstring MIMETYPE_TEXT_INTENT();
 		static jstring MIMETYPE_TEXT_PLAIN();
@@ -28,7 +28,7 @@ namespace android::content
 		static jstring MIMETYPE_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClipDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ClipDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ClipDescription(QAndroidJniObject obj);
 		
 		// Constructors

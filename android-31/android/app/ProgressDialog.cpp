@@ -77,7 +77,7 @@ namespace android::app
 			arg4
 		);
 	}
-	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __JniBaseClass arg5)
+	android::app::ProgressDialog ProgressDialog::show(android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, JObject arg5)
 	{
 		return callStaticObjectMethod(
 			"android.app.ProgressDialog",

@@ -9,11 +9,11 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	X509CRLEntry::X509CRLEntry(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	X509CRLEntry::X509CRLEntry(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	X509CRLEntry::X509CRLEntry()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.X509CRLEntry",
 			"()V"
 		) {}

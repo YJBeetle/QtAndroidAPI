@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::view::contentcapture
 
 namespace android::view::contentcapture
 {
-	class ContentCaptureManager : public __JniBaseClass
+	class ContentCaptureManager : public JObject
 	{
 	public:
 		// Fields
@@ -26,18 +26,18 @@ namespace android::view::contentcapture
 		static jint DATA_SHARE_ERROR_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentCaptureManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentCaptureManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentCaptureManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getContentCaptureConditions();
+		JObject getContentCaptureConditions();
 		android::content::ComponentName getServiceComponentName();
 		jboolean isContentCaptureEnabled();
 		void removeData(android::view::contentcapture::DataRemovalRequest arg0);
 		void setContentCaptureEnabled(jboolean arg0);
-		void shareData(android::view::contentcapture::DataShareRequest arg0, __JniBaseClass arg1, __JniBaseClass arg2);
+		void shareData(android::view::contentcapture::DataShareRequest arg0, JObject arg1, JObject arg2);
 	};
 } // namespace android::view::contentcapture
 

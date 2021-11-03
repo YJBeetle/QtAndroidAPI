@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,19 +21,19 @@ namespace javax::security::auth::x500
 
 namespace android::security
 {
-	class KeyPairGeneratorSpec : public __JniBaseClass
+	class KeyPairGeneratorSpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyPairGeneratorSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyPairGeneratorSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyPairGeneratorSpec(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getAlgorithmParameterSpec();
+		JObject getAlgorithmParameterSpec();
 		android::content::Context getContext();
 		java::util::Date getEndDate();
 		jint getKeySize();

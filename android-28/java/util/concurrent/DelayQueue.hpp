@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
@@ -34,28 +34,28 @@ namespace java::util::concurrent
 		
 		// Constructors
 		DelayQueue();
-		DelayQueue(__JniBaseClass arg0);
+		DelayQueue(JObject arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean add(__JniBaseClass arg0);
+		jboolean add(JObject arg0);
 		void clear();
-		jint drainTo(__JniBaseClass arg0);
-		jint drainTo(__JniBaseClass arg0, jint arg1);
-		__JniBaseClass iterator();
+		jint drainTo(JObject arg0);
+		jint drainTo(JObject arg0, jint arg1);
+		JObject iterator();
 		jboolean offer(jobject arg0);
-		jboolean offer(__JniBaseClass arg0);
+		jboolean offer(JObject arg0);
 		jboolean offer(jobject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		jboolean offer(__JniBaseClass arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
-		__JniBaseClass peek();
-		__JniBaseClass poll();
-		__JniBaseClass poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
+		jboolean offer(JObject arg0, jlong arg1, java::util::concurrent::TimeUnit arg2);
+		JObject peek();
+		JObject poll();
+		JObject poll(jlong arg0, java::util::concurrent::TimeUnit arg1);
 		void put(jobject arg0);
-		void put(__JniBaseClass arg0);
+		void put(JObject arg0);
 		jint remainingCapacity();
 		jboolean remove(jobject arg0);
 		jint size();
-		__JniBaseClass take();
+		JObject take();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
 	};

@@ -6,11 +6,11 @@ namespace android::view::translation
 	// Fields
 	
 	// QAndroidJniObject forward
-	TranslationRequest_Builder::TranslationRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TranslationRequest_Builder::TranslationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TranslationRequest_Builder::TranslationRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.TranslationRequest$Builder",
 			"()V"
 		) {}
@@ -31,7 +31,7 @@ namespace android::view::translation
 			arg0
 		);
 	}
-	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setTranslationRequestValues(__JniBaseClass arg0)
+	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setTranslationRequestValues(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTranslationRequestValues",
@@ -39,7 +39,7 @@ namespace android::view::translation
 			arg0.object()
 		);
 	}
-	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setViewTranslationRequests(__JniBaseClass arg0)
+	android::view::translation::TranslationRequest_Builder TranslationRequest_Builder::setViewTranslationRequests(JObject arg0)
 	{
 		return callObjectMethod(
 			"setViewTranslationRequests",

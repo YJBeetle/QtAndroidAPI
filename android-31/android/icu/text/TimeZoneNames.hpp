@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -17,13 +17,13 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class TimeZoneNames : public __JniBaseClass
+	class TimeZoneNames : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZoneNames(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TimeZoneNames(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZoneNames(QAndroidJniObject obj);
 		
 		// Constructors
@@ -32,8 +32,8 @@ namespace android::icu::text
 		static android::icu::text::TimeZoneNames getInstance(android::icu::util::ULocale arg0);
 		static android::icu::text::TimeZoneNames getInstance(java::util::Locale arg0);
 		static android::icu::text::TimeZoneNames getTZDBInstance(android::icu::util::ULocale arg0);
-		__JniBaseClass getAvailableMetaZoneIDs();
-		__JniBaseClass getAvailableMetaZoneIDs(jstring arg0);
+		JObject getAvailableMetaZoneIDs();
+		JObject getAvailableMetaZoneIDs(jstring arg0);
 		jstring getDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
 		jstring getExemplarLocationName(jstring arg0);
 		jstring getMetaZoneDisplayName(jstring arg0, android::icu::text::TimeZoneNames_NameType arg1);

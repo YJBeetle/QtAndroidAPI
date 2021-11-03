@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass RouteDiscoveryPreference::CREATOR()
+	JObject RouteDiscoveryPreference::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.RouteDiscoveryPreference",
@@ -14,7 +14,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	RouteDiscoveryPreference::RouteDiscoveryPreference(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RouteDiscoveryPreference::RouteDiscoveryPreference(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass RouteDiscoveryPreference::getPreferredFeatures()
+	JObject RouteDiscoveryPreference::getPreferredFeatures()
 	{
 		return callObjectMethod(
 			"getPreferredFeatures",

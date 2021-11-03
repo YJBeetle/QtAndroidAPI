@@ -12,7 +12,7 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyStore::KeyStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore::KeyStore(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -44,7 +44,7 @@ namespace java::security
 			arg1
 		);
 	}
-	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, __JniBaseClass arg1)
+	java::security::KeyStore KeyStore::getInstance(java::io::File arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.security.KeyStore",
@@ -74,7 +74,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyStore::aliases()
+	JObject KeyStore::aliases()
 	{
 		return callObjectMethod(
 			"aliases",
@@ -138,7 +138,7 @@ namespace java::security
 			arg0
 		);
 	}
-	__JniBaseClass KeyStore::getEntry(jstring arg0, __JniBaseClass arg1)
+	JObject KeyStore::getEntry(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getEntry",
@@ -147,7 +147,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyStore::getKey(jstring arg0, jcharArray arg1)
+	JObject KeyStore::getKey(jstring arg0, jcharArray arg1)
 	{
 		return callObjectMethod(
 			"getKey",
@@ -186,7 +186,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void KeyStore::load(__JniBaseClass arg0)
+	void KeyStore::load(JObject arg0)
 	{
 		callMethod<void>(
 			"load",
@@ -212,7 +212,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void KeyStore::setEntry(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void KeyStore::setEntry(jstring arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setEntry",
@@ -232,7 +232,7 @@ namespace java::security
 			arg2
 		);
 	}
-	void KeyStore::setKeyEntry(jstring arg0, __JniBaseClass arg1, jcharArray arg2, jarray arg3)
+	void KeyStore::setKeyEntry(jstring arg0, JObject arg1, jcharArray arg2, jarray arg3)
 	{
 		callMethod<void>(
 			"setKeyEntry",
@@ -250,7 +250,7 @@ namespace java::security
 			"()I"
 		);
 	}
-	void KeyStore::store(__JniBaseClass arg0)
+	void KeyStore::store(JObject arg0)
 	{
 		callMethod<void>(
 			"store",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -61,11 +61,11 @@ namespace android::widget
 
 namespace android::widget
 {
-	class RemoteViews : public __JniBaseClass
+	class RemoteViews : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_CHECKED();
 		static jstring EXTRA_SHARED_ELEMENT_BOUNDS();
 		static jint MARGIN_BOTTOM();
@@ -76,13 +76,13 @@ namespace android::widget
 		static jint MARGIN_TOP();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoteViews(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoteViews(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoteViews(QAndroidJniObject obj);
 		
 		// Constructors
 		RemoteViews(android::os::Parcel arg0);
 		RemoteViews(android::widget::RemoteViews &arg0);
-		RemoteViews(__JniBaseClass arg0);
+		RemoteViews(JObject arg0);
 		RemoteViews(android::widget::RemoteViews &arg0, android::widget::RemoteViews &arg1);
 		RemoteViews(jstring arg0, jint arg1);
 		RemoteViews(jstring arg0, jint arg1, jint arg2);

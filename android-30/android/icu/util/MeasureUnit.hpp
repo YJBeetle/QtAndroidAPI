@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -9,7 +9,7 @@ namespace android::icu::util
 
 namespace android::icu::util
 {
-	class MeasureUnit : public __JniBaseClass
+	class MeasureUnit : public JObject
 	{
 	public:
 		// Fields
@@ -154,15 +154,15 @@ namespace android::icu::util
 		static android::icu::util::TimeUnit YEAR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MeasureUnit(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MeasureUnit(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MeasureUnit(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getAvailable();
-		static __JniBaseClass getAvailable(jstring arg0);
-		static __JniBaseClass getAvailableTypes();
+		static JObject getAvailable();
+		static JObject getAvailable(jstring arg0);
+		static JObject getAvailableTypes();
 		jboolean equals(jobject arg0);
 		jstring getSubtype();
 		jstring getType();

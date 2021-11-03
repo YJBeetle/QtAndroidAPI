@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::system
 {
-	class OsConstants : public __JniBaseClass
+	class OsConstants : public JObject
 	{
 	public:
 		// Fields
@@ -504,7 +504,7 @@ namespace android::system
 		static jint _SC_XOPEN_XCU_VERSION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OsConstants(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -49,8 +49,8 @@ namespace android::service::voice
 		// Methods
 		static jboolean isActiveService(android::content::Context arg0, android::content::ComponentName arg1);
 		jint getDisabledShowContext();
-		__JniBaseClass onBind(android::content::Intent arg0);
-		__JniBaseClass onGetSupportedVoiceActions(__JniBaseClass arg0);
+		JObject onBind(android::content::Intent arg0);
+		JObject onGetSupportedVoiceActions(JObject arg0);
 		void onLaunchVoiceAssistFromKeyguard();
 		void onReady();
 		void onShutdown();

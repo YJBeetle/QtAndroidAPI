@@ -9,7 +9,7 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	StaticLayout_Builder::StaticLayout_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StaticLayout_Builder::StaticLayout_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -124,7 +124,7 @@ namespace android::text
 			arg0
 		);
 	}
-	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(__JniBaseClass arg0)
+	android::text::StaticLayout_Builder StaticLayout_Builder::setTextDirection(JObject arg0)
 	{
 		return callObjectMethod(
 			"setTextDirection",

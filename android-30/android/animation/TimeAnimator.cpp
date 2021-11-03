@@ -23,7 +23,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void TimeAnimator::setTimeListener(__JniBaseClass arg0)
+	void TimeAnimator::setTimeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setTimeListener",

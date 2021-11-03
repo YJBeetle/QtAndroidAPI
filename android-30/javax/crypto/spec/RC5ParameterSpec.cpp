@@ -5,11 +5,11 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	RC5ParameterSpec::RC5ParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RC5ParameterSpec::RC5ParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III)V",
 			arg0,
@@ -17,7 +17,7 @@ namespace javax::crypto::spec
 			arg2
 		) {}
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[B)V",
 			arg0,
@@ -26,7 +26,7 @@ namespace javax::crypto::spec
 			arg3
 		) {}
 	RC5ParameterSpec::RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.RC5ParameterSpec",
 			"(III[BI)V",
 			arg0,

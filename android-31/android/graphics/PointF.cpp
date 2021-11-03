@@ -5,7 +5,7 @@
 namespace android::graphics
 {
 	// Fields
-	__JniBaseClass PointF::CREATOR()
+	JObject PointF::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.graphics.PointF",
@@ -27,28 +27,28 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	PointF::PointF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PointF::PointF(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PointF::PointF()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PointF",
 			"()V"
 		) {}
 	PointF::PointF(android::graphics::Point arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PointF",
 			"(Landroid/graphics/Point;)V",
 			arg0.object()
 		) {}
 	PointF::PointF(android::graphics::PointF &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PointF",
 			"(Landroid/graphics/PointF;)V",
 			arg0.object()
 		) {}
 	PointF::PointF(jfloat arg0, jfloat arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PointF",
 			"(FF)V",
 			arg0,

@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssMeasurementRequest::CREATOR()
+	JObject GnssMeasurementRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssMeasurementRequest",
@@ -14,7 +14,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssMeasurementRequest::GnssMeasurementRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssMeasurementRequest::GnssMeasurementRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

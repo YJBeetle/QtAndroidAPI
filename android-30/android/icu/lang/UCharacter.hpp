@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::icu::lang
 {
-	class UCharacter : public __JniBaseClass
+	class UCharacter : public JObject
 	{
 	public:
 		// Fields
@@ -47,7 +47,7 @@ namespace android::icu::lang
 		static jint TITLECASE_NO_LOWERCASE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UCharacter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UCharacter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UCharacter(QAndroidJniObject obj);
 		
 		// Constructors
@@ -80,7 +80,7 @@ namespace android::icu::lang
 		static jint getDirection(jint arg0);
 		static jbyte getDirectionality(jint arg0);
 		static jstring getExtendedName(jint arg0);
-		static __JniBaseClass getExtendedNameIterator();
+		static JObject getExtendedNameIterator();
 		static jint getHanNumericValue(jint arg0);
 		static jint getIntPropertyMaxValue(jint arg0);
 		static jint getIntPropertyMinValue(jint arg0);
@@ -89,14 +89,14 @@ namespace android::icu::lang
 		static jstring getName(jint arg0);
 		static jstring getName(jstring arg0, jstring arg1);
 		static jstring getNameAlias(jint arg0);
-		static __JniBaseClass getNameIterator();
+		static JObject getNameIterator();
 		static jint getNumericValue(jint arg0);
 		static jint getPropertyEnum(jstring arg0);
 		static jstring getPropertyName(jint arg0, jint arg1);
 		static jint getPropertyValueEnum(jint arg0, jstring arg1);
 		static jstring getPropertyValueName(jint arg0, jint arg1, jint arg2);
 		static jint getType(jint arg0);
-		static __JniBaseClass getTypeIterator();
+		static JObject getTypeIterator();
 		static jdouble getUnicodeNumericValue(jint arg0);
 		static android::icu::util::VersionInfo getUnicodeVersion();
 		static jboolean hasBinaryProperty(jint arg0, jint arg1);

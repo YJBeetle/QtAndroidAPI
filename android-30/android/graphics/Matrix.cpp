@@ -70,16 +70,16 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	Matrix::Matrix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Matrix::Matrix(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Matrix::Matrix()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Matrix",
 			"()V"
 		) {}
 	Matrix::Matrix(android::graphics::Matrix &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Matrix",
 			"(Landroid/graphics/Matrix;)V",
 			arg0.object()

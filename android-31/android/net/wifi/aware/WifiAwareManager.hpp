@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::aware
 {
@@ -25,7 +25,7 @@ namespace android::os
 
 namespace android::net::wifi::aware
 {
-	class WifiAwareManager : public __JniBaseClass
+	class WifiAwareManager : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace android::net::wifi::aware
 		static jint WIFI_AWARE_DISCOVERY_LOST_REASON_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiAwareManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiAwareManager(QAndroidJniObject obj);
 		
 		// Constructors

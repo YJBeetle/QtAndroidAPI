@@ -3,7 +3,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass VibrationEffect::CREATOR()
+	JObject VibrationEffect::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.VibrationEffect",
@@ -20,7 +20,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	VibrationEffect::VibrationEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VibrationEffect::VibrationEffect(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

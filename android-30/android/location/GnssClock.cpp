@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssClock::CREATOR()
+	JObject GnssClock::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssClock",
@@ -14,7 +14,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssClock::GnssClock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssClock::GnssClock(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

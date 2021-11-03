@@ -5,11 +5,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	WindowInsetsAnimation::WindowInsetsAnimation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsetsAnimation::WindowInsetsAnimation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	WindowInsetsAnimation::WindowInsetsAnimation(jint arg0, __JniBaseClass arg1, jlong arg2)
-		: __JniBaseClass(
+	WindowInsetsAnimation::WindowInsetsAnimation(jint arg0, JObject arg1, jlong arg2)
+		: JObject(
 			"android.view.WindowInsetsAnimation",
 			"(ILandroid/view/animation/Interpolator;J)V",
 			arg0,
@@ -46,7 +46,7 @@ namespace android::view
 			"()F"
 		);
 	}
-	__JniBaseClass WindowInsetsAnimation::getInterpolator()
+	JObject WindowInsetsAnimation::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",

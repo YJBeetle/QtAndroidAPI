@@ -26,14 +26,14 @@ namespace android::media::tv
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TvView::TvView(android::content::Context arg0, __JniBaseClass arg1)
+	TvView::TvView(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.media.tv.TvView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TvView::TvView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	TvView::TvView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.media.tv.TvView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -115,7 +115,7 @@ namespace android::media::tv
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass TvView::getTracks(jint arg0)
+	JObject TvView::getTracks(jint arg0)
 	{
 		return callObjectMethod(
 			"getTracks",
@@ -172,7 +172,7 @@ namespace android::media::tv
 			arg0
 		);
 	}
-	void TvView::setOnUnhandledInputEventListener(__JniBaseClass arg0)
+	void TvView::setOnUnhandledInputEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnUnhandledInputEventListener",

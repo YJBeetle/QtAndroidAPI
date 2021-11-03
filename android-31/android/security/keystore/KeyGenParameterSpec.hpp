@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -17,19 +17,19 @@ namespace javax::security::auth::x500
 
 namespace android::security::keystore
 {
-	class KeyGenParameterSpec : public __JniBaseClass
+	class KeyGenParameterSpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyGenParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyGenParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getAlgorithmParameterSpec();
+		JObject getAlgorithmParameterSpec();
 		jstring getAttestKeyAlias();
 		jbyteArray getAttestationChallenge();
 		jarray getBlockModes();

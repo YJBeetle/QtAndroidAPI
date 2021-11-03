@@ -5,7 +5,7 @@
 namespace android::media::tv
 {
 	// Fields
-	__JniBaseClass TvTrackInfo::CREATOR()
+	JObject TvTrackInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.tv.TvTrackInfo",
@@ -36,7 +36,7 @@ namespace android::media::tv
 	}
 	
 	// QAndroidJniObject forward
-	TvTrackInfo::TvTrackInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvTrackInfo::TvTrackInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

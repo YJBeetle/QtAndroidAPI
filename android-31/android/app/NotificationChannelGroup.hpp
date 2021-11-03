@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::app
 {
-	class NotificationChannelGroup : public __JniBaseClass
+	class NotificationChannelGroup : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationChannelGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannelGroup(QAndroidJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::app
 		android::app::NotificationChannelGroup clone();
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getChannels();
+		JObject getChannels();
 		jstring getDescription();
 		jstring getId();
 		jstring getName();

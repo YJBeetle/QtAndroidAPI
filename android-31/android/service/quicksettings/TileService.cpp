@@ -83,7 +83,7 @@ namespace android::service::quicksettings
 			"()Z"
 		);
 	}
-	__JniBaseClass TileService::onBind(android::content::Intent arg0)
+	JObject TileService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -149,7 +149,7 @@ namespace android::service::quicksettings
 			arg0.object()
 		);
 	}
-	void TileService::unlockAndRun(__JniBaseClass arg0)
+	void TileService::unlockAndRun(JObject arg0)
 	{
 		callMethod<void>(
 			"unlockAndRun",

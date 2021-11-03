@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,7 +25,7 @@ namespace android::view
 
 namespace android::media
 {
-	class MediaRouter_RouteInfo : public __JniBaseClass
+	class MediaRouter_RouteInfo : public JObject
 	{
 	public:
 		// Fields
@@ -39,7 +39,7 @@ namespace android::media
 		static jint PLAYBACK_VOLUME_VARIABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter_RouteInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRouter_RouteInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter_RouteInfo(QAndroidJniObject obj);
 		
 		// Constructors

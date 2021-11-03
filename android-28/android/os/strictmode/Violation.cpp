@@ -5,7 +5,7 @@ namespace android::os::strictmode
 	// Fields
 	
 	// QAndroidJniObject forward
-	Violation::Violation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Violation::Violation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

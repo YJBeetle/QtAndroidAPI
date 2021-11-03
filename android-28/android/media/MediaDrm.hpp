@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -33,7 +33,7 @@ namespace java::util
 
 namespace android::media
 {
-	class MediaDrm : public __JniBaseClass
+	class MediaDrm : public JObject
 	{
 	public:
 		// Fields
@@ -65,7 +65,7 @@ namespace android::media
 		static jint SECURITY_LEVEL_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDrm(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm(QAndroidJniObject obj);
 		
 		// Constructors
@@ -88,8 +88,8 @@ namespace android::media
 		jstring getPropertyString(jstring arg0);
 		android::media::MediaDrm_ProvisionRequest getProvisionRequest();
 		jbyteArray getSecureStop(jbyteArray arg0);
-		__JniBaseClass getSecureStopIds();
-		__JniBaseClass getSecureStops();
+		JObject getSecureStopIds();
+		JObject getSecureStops();
 		jint getSecurityLevel(jbyteArray arg0);
 		jbyteArray openSession();
 		jbyteArray openSession(jint arg0);
@@ -103,9 +103,9 @@ namespace android::media
 		void removeKeys(jbyteArray arg0);
 		void removeSecureStop(jbyteArray arg0);
 		void restoreKeys(jbyteArray arg0, jbyteArray arg1);
-		void setOnEventListener(__JniBaseClass arg0);
-		void setOnExpirationUpdateListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void setOnKeyStatusChangeListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setOnEventListener(JObject arg0);
+		void setOnExpirationUpdateListener(JObject arg0, android::os::Handler arg1);
+		void setOnKeyStatusChangeListener(JObject arg0, android::os::Handler arg1);
 		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
 		void setPropertyString(jstring arg0, jstring arg1);
 	};

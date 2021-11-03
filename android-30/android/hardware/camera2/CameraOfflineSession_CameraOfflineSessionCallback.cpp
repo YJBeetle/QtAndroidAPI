@@ -13,11 +13,11 @@ namespace android::hardware::camera2
 	}
 	
 	// QAndroidJniObject forward
-	CameraOfflineSession_CameraOfflineSessionCallback::CameraOfflineSession_CameraOfflineSessionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CameraOfflineSession_CameraOfflineSessionCallback::CameraOfflineSession_CameraOfflineSessionCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CameraOfflineSession_CameraOfflineSessionCallback::CameraOfflineSession_CameraOfflineSessionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.CameraOfflineSession$CameraOfflineSessionCallback",
 			"()V"
 		) {}

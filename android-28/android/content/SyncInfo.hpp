@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::accounts
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::content
 {
-	class SyncInfo : public __JniBaseClass
+	class SyncInfo : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::content
 		jlong startTime();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SyncInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SyncInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SyncInfo(QAndroidJniObject obj);
 		
 		// Constructors

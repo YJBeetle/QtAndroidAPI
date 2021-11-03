@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::view::inputmethod
 {
-	class ExtractedText : public __JniBaseClass
+	class ExtractedText : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_SELECTING();
 		static jint FLAG_SINGLE_LINE();
 		jint flags();
@@ -26,7 +26,7 @@ namespace android::view::inputmethod
 		jstring text();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExtractedText(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ExtractedText(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ExtractedText(QAndroidJniObject obj);
 		
 		// Constructors

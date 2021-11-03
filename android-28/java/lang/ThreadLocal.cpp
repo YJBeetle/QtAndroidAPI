@@ -7,17 +7,17 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	ThreadLocal::ThreadLocal(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ThreadLocal::ThreadLocal(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ThreadLocal::ThreadLocal()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.ThreadLocal",
 			"()V"
 		) {}
 	
 	// Methods
-	java::lang::ThreadLocal ThreadLocal::withInitial(__JniBaseClass arg0)
+	java::lang::ThreadLocal ThreadLocal::withInitial(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.lang.ThreadLocal",

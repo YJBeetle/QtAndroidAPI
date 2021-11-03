@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseAdapter.hpp"
 #include "./CursorAdapter.hpp"
 #include "./ResourceCursorAdapter.hpp"
@@ -34,22 +34,22 @@ namespace android::widget
 		SimpleCursorAdapter(QAndroidJniObject obj);
 		
 		// Constructors
-		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4);
-		SimpleCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jarray arg3, jintArray arg4, jint arg5);
+		SimpleCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jarray arg3, jintArray arg4);
+		SimpleCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jarray arg3, jintArray arg4, jint arg5);
 		
 		// Methods
-		void bindView(android::view::View arg0, android::content::Context arg1, __JniBaseClass arg2);
-		void changeCursorAndColumns(__JniBaseClass arg0, jarray arg1, jintArray arg2);
-		jstring convertToString(__JniBaseClass arg0);
-		__JniBaseClass getCursorToStringConverter();
+		void bindView(android::view::View arg0, android::content::Context arg1, JObject arg2);
+		void changeCursorAndColumns(JObject arg0, jarray arg1, jintArray arg2);
+		jstring convertToString(JObject arg0);
+		JObject getCursorToStringConverter();
 		jint getStringConversionColumn();
-		__JniBaseClass getViewBinder();
-		void setCursorToStringConverter(__JniBaseClass arg0);
+		JObject getViewBinder();
+		void setCursorToStringConverter(JObject arg0);
 		void setStringConversionColumn(jint arg0);
-		void setViewBinder(__JniBaseClass arg0);
+		void setViewBinder(JObject arg0);
 		void setViewImage(android::widget::ImageView arg0, jstring arg1);
 		void setViewText(android::widget::TextView arg0, jstring arg1);
-		__JniBaseClass swapCursor(__JniBaseClass arg0);
+		JObject swapCursor(JObject arg0);
 	};
 } // namespace android::widget
 

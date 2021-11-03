@@ -264,7 +264,7 @@ namespace android::view::accessibility
 			"ACTION_SET_TEXT"
 		);
 	}
-	__JniBaseClass AccessibilityNodeInfo::CREATOR()
+	JObject AccessibilityNodeInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityNodeInfo",
@@ -362,28 +362,28 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo::AccessibilityNodeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo::AccessibilityNodeInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo::AccessibilityNodeInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"()V"
 		) {}
 	AccessibilityNodeInfo::AccessibilityNodeInfo(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"(Landroid/view/View;)V",
 			arg0.object()
 		) {}
 	AccessibilityNodeInfo::AccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"(Landroid/view/accessibility/AccessibilityNodeInfo;)V",
 			arg0.object()
 		) {}
 	AccessibilityNodeInfo::AccessibilityNodeInfo(android::view::View arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo",
 			"(Landroid/view/View;I)V",
 			arg0.object(),
@@ -482,7 +482,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	__JniBaseClass AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByText(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
@@ -490,7 +490,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	__JniBaseClass AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
+	JObject AccessibilityNodeInfo::findAccessibilityNodeInfosByViewId(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByViewId",
@@ -514,7 +514,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	__JniBaseClass AccessibilityNodeInfo::getActionList()
+	JObject AccessibilityNodeInfo::getActionList()
 	{
 		return callObjectMethod(
 			"getActionList",
@@ -528,7 +528,7 @@ namespace android::view::accessibility
 			"()I"
 		);
 	}
-	__JniBaseClass AccessibilityNodeInfo::getAvailableExtraData()
+	JObject AccessibilityNodeInfo::getAvailableExtraData()
 	{
 		return callObjectMethod(
 			"getAvailableExtraData",
@@ -1018,7 +1018,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	void AccessibilityNodeInfo::setAvailableExtraData(__JniBaseClass arg0)
+	void AccessibilityNodeInfo::setAvailableExtraData(JObject arg0)
 	{
 		callMethod<void>(
 			"setAvailableExtraData",

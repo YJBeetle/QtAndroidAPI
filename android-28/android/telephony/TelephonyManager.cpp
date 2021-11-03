@@ -617,7 +617,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyManager::TelephonyManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -645,7 +645,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass TelephonyManager::getAllCellInfo()
+	JObject TelephonyManager::getAllCellInfo()
 	{
 		return callObjectMethod(
 			"getAllCellInfo",
@@ -798,7 +798,7 @@ namespace android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TelephonyManager::getNeighboringCellInfo()
+	JObject TelephonyManager::getNeighboringCellInfo()
 	{
 		return callObjectMethod(
 			"getNeighboringCellInfo",
@@ -1120,7 +1120,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, __JniBaseClass arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
+	android::telephony::NetworkScan TelephonyManager::requestNetworkScan(android::telephony::NetworkScanRequest arg0, JObject arg1, android::telephony::TelephonyScanManager_NetworkScanCallback arg2)
 	{
 		return callObjectMethod(
 			"requestNetworkScan",

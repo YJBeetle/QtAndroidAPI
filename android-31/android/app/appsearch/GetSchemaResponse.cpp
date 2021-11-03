@@ -5,12 +5,12 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	GetSchemaResponse::GetSchemaResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GetSchemaResponse::GetSchemaResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass GetSchemaResponse::getSchemas()
+	JObject GetSchemaResponse::getSchemas()
 	{
 		return callObjectMethod(
 			"getSchemas",

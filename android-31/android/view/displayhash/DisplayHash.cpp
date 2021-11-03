@@ -4,7 +4,7 @@
 namespace android::view::displayhash
 {
 	// Fields
-	__JniBaseClass DisplayHash::CREATOR()
+	JObject DisplayHash::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.displayhash.DisplayHash",
@@ -14,7 +14,7 @@ namespace android::view::displayhash
 	}
 	
 	// QAndroidJniObject forward
-	DisplayHash::DisplayHash(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DisplayHash::DisplayHash(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -4,7 +4,7 @@
 namespace android::hardware::lights
 {
 	// Fields
-	__JniBaseClass Light::CREATOR()
+	JObject Light::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.lights.Light",
@@ -49,7 +49,7 @@ namespace android::hardware::lights
 	}
 	
 	// QAndroidJniObject forward
-	Light::Light(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Light::Light(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

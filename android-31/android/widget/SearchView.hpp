@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./LinearLayout.hpp"
@@ -39,9 +39,9 @@ namespace android::widget
 		
 		// Constructors
 		SearchView(android::content::Context arg0);
-		SearchView(android::content::Context arg0, __JniBaseClass arg1);
-		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		SearchView(android::content::Context arg0, JObject arg1);
+		SearchView(android::content::Context arg0, JObject arg1, jint arg2);
+		SearchView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void clearFocus();
@@ -67,11 +67,11 @@ namespace android::widget
 		void setImeOptions(jint arg0);
 		void setInputType(jint arg0);
 		void setMaxWidth(jint arg0);
-		void setOnCloseListener(__JniBaseClass arg0);
-		void setOnQueryTextFocusChangeListener(__JniBaseClass arg0);
-		void setOnQueryTextListener(__JniBaseClass arg0);
-		void setOnSearchClickListener(__JniBaseClass arg0);
-		void setOnSuggestionListener(__JniBaseClass arg0);
+		void setOnCloseListener(JObject arg0);
+		void setOnQueryTextFocusChangeListener(JObject arg0);
+		void setOnQueryTextListener(JObject arg0);
+		void setOnSearchClickListener(JObject arg0);
+		void setOnSuggestionListener(JObject arg0);
 		void setQuery(jstring arg0, jboolean arg1);
 		void setQueryHint(jstring arg0);
 		void setQueryRefinementEnabled(jboolean arg0);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -53,12 +53,12 @@ namespace android::widget
 		
 		// Constructors
 		RelativeLayout(android::content::Context arg0);
-		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1);
-		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		RelativeLayout(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		RelativeLayout(android::content::Context arg0, JObject arg1);
+		RelativeLayout(android::content::Context arg0, JObject arg1, jint arg2);
+		RelativeLayout(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
-		android::widget::RelativeLayout_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::RelativeLayout_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jint getBaseline();
 		jint getGravity();

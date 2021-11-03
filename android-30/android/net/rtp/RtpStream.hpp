@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::net
 {
@@ -9,7 +9,7 @@ namespace java::net
 
 namespace android::net::rtp
 {
-	class RtpStream : public __JniBaseClass
+	class RtpStream : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::net::rtp
 		static jint MODE_SEND_ONLY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RtpStream(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RtpStream(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RtpStream(QAndroidJniObject obj);
 		
 		// Constructors

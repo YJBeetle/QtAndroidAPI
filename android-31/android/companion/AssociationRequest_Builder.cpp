@@ -6,17 +6,17 @@ namespace android::companion
 	// Fields
 	
 	// QAndroidJniObject forward
-	AssociationRequest_Builder::AssociationRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AssociationRequest_Builder::AssociationRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AssociationRequest_Builder::AssociationRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.companion.AssociationRequest$Builder",
 			"()V"
 		) {}
 	
 	// Methods
-	android::companion::AssociationRequest_Builder AssociationRequest_Builder::addDeviceFilter(__JniBaseClass arg0)
+	android::companion::AssociationRequest_Builder AssociationRequest_Builder::addDeviceFilter(JObject arg0)
 	{
 		return callObjectMethod(
 			"addDeviceFilter",

@@ -5,11 +5,11 @@ namespace android::view::inspector
 	// Fields
 	
 	// QAndroidJniObject forward
-	IntFlagMapping::IntFlagMapping(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IntFlagMapping::IntFlagMapping(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IntFlagMapping::IntFlagMapping()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inspector.IntFlagMapping",
 			"()V"
 		) {}
@@ -25,7 +25,7 @@ namespace android::view::inspector
 			arg2
 		);
 	}
-	__JniBaseClass IntFlagMapping::get(jint arg0)
+	JObject IntFlagMapping::get(jint arg0)
 	{
 		return callObjectMethod(
 			"get",

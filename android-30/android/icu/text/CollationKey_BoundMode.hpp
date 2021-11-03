@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::text
 {
-	class CollationKey_BoundMode : public __JniBaseClass
+	class CollationKey_BoundMode : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::icu::text
 		static jint UPPER_LONG();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CollationKey_BoundMode(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CollationKey_BoundMode(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CollationKey_BoundMode(QAndroidJniObject obj);
 		
 		// Constructors

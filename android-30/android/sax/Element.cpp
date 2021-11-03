@@ -5,7 +5,7 @@ namespace android::sax
 	// Fields
 	
 	// QAndroidJniObject forward
-	Element::Element(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Element::Element(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -44,7 +44,7 @@ namespace android::sax
 			arg1
 		);
 	}
-	void Element::setElementListener(__JniBaseClass arg0)
+	void Element::setElementListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setElementListener",
@@ -52,7 +52,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setEndElementListener(__JniBaseClass arg0)
+	void Element::setEndElementListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setEndElementListener",
@@ -60,7 +60,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setEndTextElementListener(__JniBaseClass arg0)
+	void Element::setEndTextElementListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setEndTextElementListener",
@@ -68,7 +68,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setStartElementListener(__JniBaseClass arg0)
+	void Element::setStartElementListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setStartElementListener",
@@ -76,7 +76,7 @@ namespace android::sax
 			arg0.object()
 		);
 	}
-	void Element::setTextElementListener(__JniBaseClass arg0)
+	void Element::setTextElementListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setTextElementListener",

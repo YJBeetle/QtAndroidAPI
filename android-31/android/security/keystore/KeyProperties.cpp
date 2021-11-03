@@ -346,7 +346,7 @@ namespace android::security::keystore
 	}
 	
 	// QAndroidJniObject forward
-	KeyProperties::KeyProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyProperties::KeyProperties(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

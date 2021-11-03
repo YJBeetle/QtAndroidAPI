@@ -5,16 +5,16 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	DoubleSummaryStatistics::DoubleSummaryStatistics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DoubleSummaryStatistics::DoubleSummaryStatistics(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DoubleSummaryStatistics::DoubleSummaryStatistics()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.DoubleSummaryStatistics",
 			"()V"
 		) {}
 	DoubleSummaryStatistics::DoubleSummaryStatistics(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.DoubleSummaryStatistics",
 			"(JDDD)V",
 			arg0,

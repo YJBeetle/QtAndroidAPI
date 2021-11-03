@@ -13,17 +13,17 @@ namespace android::animation
 	}
 	
 	// QAndroidJniObject forward
-	Animator::Animator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Animator::Animator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Animator::Animator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.Animator",
 			"()V"
 		) {}
 	
 	// Methods
-	void Animator::addListener(__JniBaseClass arg0)
+	void Animator::addListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addListener",
@@ -31,7 +31,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::addPauseListener(__JniBaseClass arg0)
+	void Animator::addPauseListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addPauseListener",
@@ -67,7 +67,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	__JniBaseClass Animator::getInterpolator()
+	JObject Animator::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -130,7 +130,7 @@ namespace android::animation
 			"()V"
 		);
 	}
-	void Animator::removeListener(__JniBaseClass arg0)
+	void Animator::removeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeListener",
@@ -138,7 +138,7 @@ namespace android::animation
 			arg0.object()
 		);
 	}
-	void Animator::removePauseListener(__JniBaseClass arg0)
+	void Animator::removePauseListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removePauseListener",
@@ -161,7 +161,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void Animator::setInterpolator(__JniBaseClass arg0)
+	void Animator::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

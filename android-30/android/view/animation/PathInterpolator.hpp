@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./BaseInterpolator.hpp"
 
 namespace android::content
@@ -25,7 +25,7 @@ namespace android::view::animation
 		
 		// Constructors
 		PathInterpolator(android::graphics::Path arg0);
-		PathInterpolator(android::content::Context arg0, __JniBaseClass arg1);
+		PathInterpolator(android::content::Context arg0, JObject arg1);
 		PathInterpolator(jfloat arg0, jfloat arg1);
 		PathInterpolator(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		

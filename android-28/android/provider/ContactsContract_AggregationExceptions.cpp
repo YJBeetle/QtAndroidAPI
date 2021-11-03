@@ -75,7 +75,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_AggregationExceptions::ContactsContract_AggregationExceptions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_AggregationExceptions::ContactsContract_AggregationExceptions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

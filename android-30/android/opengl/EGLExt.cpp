@@ -42,11 +42,11 @@ namespace android::opengl
 	}
 	
 	// QAndroidJniObject forward
-	EGLExt::EGLExt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EGLExt::EGLExt(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EGLExt::EGLExt()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.EGLExt",
 			"()V"
 		) {}

@@ -6,7 +6,7 @@ namespace android::content
 	// Fields
 	
 	// QAndroidJniObject forward
-	ContextParams::ContextParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContextParams::ContextParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

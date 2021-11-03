@@ -12,11 +12,11 @@ namespace android::telecom
 	// Fields
 	
 	// QAndroidJniObject forward
-	RemoteConnection_Callback::RemoteConnection_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteConnection_Callback::RemoteConnection_Callback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteConnection_Callback::RemoteConnection_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.RemoteConnection$Callback",
 			"()V"
 		) {}
@@ -51,7 +51,7 @@ namespace android::telecom
 			arg1.object()
 		);
 	}
-	void RemoteConnection_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, __JniBaseClass arg1)
+	void RemoteConnection_Callback::onConferenceableConnectionsChanged(android::telecom::RemoteConnection arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onConferenceableConnectionsChanged",

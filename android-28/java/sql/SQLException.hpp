@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../lang/Exception.hpp"
 
 namespace java::util::concurrent::atomic
@@ -33,7 +33,7 @@ namespace java::sql
 		jint getErrorCode();
 		java::sql::SQLException getNextException();
 		jstring getSQLState();
-		__JniBaseClass iterator();
+		JObject iterator();
 		void setNextException(java::sql::SQLException arg0);
 	};
 } // namespace java::sql

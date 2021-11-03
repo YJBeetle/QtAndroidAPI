@@ -4,7 +4,7 @@
 namespace android::util
 {
 	// Fields
-	__JniBaseClass SizeF::CREATOR()
+	JObject SizeF::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.util.SizeF",
@@ -14,11 +14,11 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	SizeF::SizeF(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SizeF::SizeF(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SizeF::SizeF(jfloat arg0, jfloat arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.SizeF",
 			"(FF)V",
 			arg0,

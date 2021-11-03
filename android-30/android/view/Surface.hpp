@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -25,11 +25,11 @@ namespace android::view
 
 namespace android::view
 {
-	class Surface : public __JniBaseClass
+	class Surface : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FRAME_RATE_COMPATIBILITY_DEFAULT();
 		static jint FRAME_RATE_COMPATIBILITY_FIXED_SOURCE();
 		static jint ROTATION_0();
@@ -38,7 +38,7 @@ namespace android::view
 		static jint ROTATION_90();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Surface(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Surface(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Surface(QAndroidJniObject obj);
 		
 		// Constructors

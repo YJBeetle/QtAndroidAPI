@@ -7,11 +7,11 @@ namespace android::se::omapi
 	// Fields
 	
 	// QAndroidJniObject forward
-	SEService::SEService(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SEService::SEService(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SEService::SEService(android::content::Context arg0, __JniBaseClass arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	SEService::SEService(android::content::Context arg0, JObject arg1, JObject arg2)
+		: JObject(
 			"android.se.omapi.SEService",
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/se/omapi/SEService$OnConnectedListener;)V",
 			arg0.object(),

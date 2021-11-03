@@ -8,17 +8,17 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioFocusRequest_Builder::AudioFocusRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioFocusRequest_Builder::AudioFocusRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioFocusRequest_Builder::AudioFocusRequest_Builder(android::media::AudioFocusRequest arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioFocusRequest$Builder",
 			"(Landroid/media/AudioFocusRequest;)V",
 			arg0.object()
 		) {}
 	AudioFocusRequest_Builder::AudioFocusRequest_Builder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioFocusRequest$Builder",
 			"(I)V",
 			arg0
@@ -64,7 +64,7 @@ namespace android::media
 			arg0
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(__JniBaseClass arg0)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"setOnAudioFocusChangeListener",
@@ -72,7 +72,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
+	android::media::AudioFocusRequest_Builder AudioFocusRequest_Builder::setOnAudioFocusChangeListener(JObject arg0, android::os::Handler arg1)
 	{
 		return callObjectMethod(
 			"setOnAudioFocusChangeListener",

@@ -5,7 +5,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	__JniBaseClass WifiEnterpriseConfig::CREATOR()
+	JObject WifiEnterpriseConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiEnterpriseConfig",
@@ -63,16 +63,16 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiEnterpriseConfig::WifiEnterpriseConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiEnterpriseConfig::WifiEnterpriseConfig(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiEnterpriseConfig::WifiEnterpriseConfig()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiEnterpriseConfig",
 			"()V"
 		) {}
 	WifiEnterpriseConfig::WifiEnterpriseConfig(android::net::wifi::WifiEnterpriseConfig &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiEnterpriseConfig",
 			"(Landroid/net/wifi/WifiEnterpriseConfig;)V",
 			arg0.object()
@@ -135,7 +135,7 @@ namespace android::net::wifi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass WifiEnterpriseConfig::getClientPrivateKey()
+	JObject WifiEnterpriseConfig::getClientPrivateKey()
 	{
 		return callObjectMethod(
 			"getClientPrivateKey",
@@ -258,7 +258,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiEnterpriseConfig::setClientKeyEntry(__JniBaseClass arg0, java::security::cert::X509Certificate arg1)
+	void WifiEnterpriseConfig::setClientKeyEntry(JObject arg0, java::security::cert::X509Certificate arg1)
 	{
 		callMethod<void>(
 			"setClientKeyEntry",
@@ -267,7 +267,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	void WifiEnterpriseConfig::setClientKeyEntryWithCertificateChain(__JniBaseClass arg0, jarray arg1)
+	void WifiEnterpriseConfig::setClientKeyEntryWithCertificateChain(JObject arg0, jarray arg1)
 	{
 		callMethod<void>(
 			"setClientKeyEntryWithCertificateChain",

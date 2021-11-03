@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaRoute2Info_Builder : public __JniBaseClass
+	class MediaRoute2Info_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRoute2Info_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRoute2Info_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRoute2Info_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -32,7 +32,7 @@ namespace android::media
 		
 		// Methods
 		android::media::MediaRoute2Info_Builder addFeature(jstring arg0);
-		android::media::MediaRoute2Info_Builder addFeatures(__JniBaseClass arg0);
+		android::media::MediaRoute2Info_Builder addFeatures(JObject arg0);
 		android::media::MediaRoute2Info build();
 		android::media::MediaRoute2Info_Builder clearFeatures();
 		android::media::MediaRoute2Info_Builder setClientPackageName(jstring arg0);

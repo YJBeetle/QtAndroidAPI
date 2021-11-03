@@ -11,16 +11,16 @@ namespace android::media::audiofx
 	}
 	
 	// QAndroidJniObject forward
-	Virtualizer_Settings::Virtualizer_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Virtualizer_Settings::Virtualizer_Settings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Virtualizer_Settings::Virtualizer_Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Virtualizer$Settings",
 			"()V"
 		) {}
 	Virtualizer_Settings::Virtualizer_Settings(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.Virtualizer$Settings",
 			"(Ljava/lang/String;)V",
 			arg0

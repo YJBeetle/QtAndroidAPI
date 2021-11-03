@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,19 +17,19 @@ namespace android::graphics
 
 namespace android::widget
 {
-	class EdgeEffect : public __JniBaseClass
+	class EdgeEffect : public JObject
 	{
 	public:
 		// Fields
 		static android::graphics::BlendMode DEFAULT_BLEND_MODE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EdgeEffect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EdgeEffect(QAndroidJniObject obj);
 		
 		// Constructors
 		EdgeEffect(android::content::Context arg0);
-		EdgeEffect(android::content::Context arg0, __JniBaseClass arg1);
+		EdgeEffect(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jboolean draw(android::graphics::Canvas arg0);

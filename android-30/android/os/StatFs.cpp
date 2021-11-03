@@ -5,11 +5,11 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	StatFs::StatFs(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StatFs::StatFs(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StatFs::StatFs(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.StatFs",
 			"(Ljava/lang/String;)V",
 			arg0

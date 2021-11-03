@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass InputEvent::CREATOR()
+	JObject InputEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.InputEvent",
@@ -14,7 +14,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	InputEvent::InputEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputEvent::InputEvent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

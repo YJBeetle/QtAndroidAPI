@@ -7,11 +7,11 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QAndroidJniObject forward
-	FontFamily_Builder::FontFamily_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FontFamily_Builder::FontFamily_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FontFamily_Builder::FontFamily_Builder(android::graphics::fonts::Font arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.FontFamily$Builder",
 			"(Landroid/graphics/fonts/Font;)V",
 			arg0.object()

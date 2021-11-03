@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -13,7 +13,7 @@ namespace android::content::pm
 
 namespace android::service::notification
 {
-	class NotificationListenerService_Ranking : public __JniBaseClass
+	class NotificationListenerService_Ranking : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::service::notification
 		static jint VISIBILITY_NO_OVERRIDE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationListenerService_Ranking(QAndroidJniObject obj);
 		
 		// Constructors
@@ -42,8 +42,8 @@ namespace android::service::notification
 		jint getLockscreenVisibilityOverride();
 		jstring getOverrideGroupKey();
 		jint getRank();
-		__JniBaseClass getSmartActions();
-		__JniBaseClass getSmartReplies();
+		JObject getSmartActions();
+		JObject getSmartReplies();
 		jint getSuppressedVisualEffects();
 		jint getUserSentiment();
 		jboolean isAmbient();

@@ -18,7 +18,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	__JniBaseClass ArrowKeyMovementMethod::getInstance()
+	JObject ArrowKeyMovementMethod::getInstance()
 	{
 		return callStaticObjectMethod(
 			"android.text.method.ArrowKeyMovementMethod",
@@ -33,7 +33,7 @@ namespace android::text::method
 			"()Z"
 		);
 	}
-	void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, __JniBaseClass arg1)
+	void ArrowKeyMovementMethod::initialize(android::widget::TextView arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"initialize",
@@ -42,7 +42,7 @@ namespace android::text::method
 			arg1.object()
 		);
 	}
-	void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, __JniBaseClass arg1, jint arg2)
+	void ArrowKeyMovementMethod::onTakeFocus(android::widget::TextView arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onTakeFocus",
@@ -52,7 +52,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, __JniBaseClass arg1, android::view::MotionEvent arg2)
+	jboolean ArrowKeyMovementMethod::onTouchEvent(android::widget::TextView arg0, JObject arg1, android::view::MotionEvent arg2)
 	{
 		return callMethod<jboolean>(
 			"onTouchEvent",

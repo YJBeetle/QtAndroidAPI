@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/EventObject.hpp"
 
 
@@ -16,7 +16,7 @@ namespace javax::sql
 		RowSetEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		RowSetEvent(__JniBaseClass arg0);
+		RowSetEvent(JObject arg0);
 		
 		// Methods
 	};

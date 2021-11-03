@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -22,7 +22,7 @@ namespace android::widget
 		
 		// Constructors
 		DigitalClock(android::content::Context arg0);
-		DigitalClock(android::content::Context arg0, __JniBaseClass arg1);
+		DigitalClock(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jstring getAccessibilityClassName();

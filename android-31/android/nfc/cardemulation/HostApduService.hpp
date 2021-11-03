@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -34,7 +34,7 @@ namespace android::nfc::cardemulation
 		
 		// Methods
 		void notifyUnhandled();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onDeactivated(jint arg0);
 		jbyteArray processCommandApdu(jbyteArray arg0, android::os::Bundle arg1);
 		void sendResponseApdu(jbyteArray arg0);

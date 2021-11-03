@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::webkit
 {
@@ -9,13 +9,13 @@ namespace android::webkit
 
 namespace android::webkit
 {
-	class TracingConfig_Builder : public __JniBaseClass
+	class TracingConfig_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TracingConfig_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TracingConfig_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TracingConfig_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::webkit
 		// Methods
 		android::webkit::TracingConfig_Builder addCategories(jintArray arg0);
 		android::webkit::TracingConfig_Builder addCategories(jarray arg0);
-		android::webkit::TracingConfig_Builder addCategories(__JniBaseClass arg0);
+		android::webkit::TracingConfig_Builder addCategories(JObject arg0);
 		android::webkit::TracingConfig build();
 		android::webkit::TracingConfig_Builder setTracingMode(jint arg0);
 	};

@@ -85,7 +85,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass SimpleDateFormat::formatToCharacterIterator(jobject arg0)
+	JObject SimpleDateFormat::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	ServiceWorkerWebSettings::ServiceWorkerWebSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ServiceWorkerWebSettings::ServiceWorkerWebSettings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ServiceWorkerWebSettings::ServiceWorkerWebSettings()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.ServiceWorkerWebSettings",
 			"()V"
 		) {}

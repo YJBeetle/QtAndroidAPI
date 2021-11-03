@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass CursorAnchorInfo::CREATOR()
+	JObject CursorAnchorInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.CursorAnchorInfo",
@@ -37,11 +37,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CursorAnchorInfo::CursorAnchorInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CursorAnchorInfo::CursorAnchorInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

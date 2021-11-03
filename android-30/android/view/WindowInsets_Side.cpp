@@ -33,7 +33,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	WindowInsets_Side::WindowInsets_Side(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsets_Side::WindowInsets_Side(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

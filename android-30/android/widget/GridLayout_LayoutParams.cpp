@@ -50,7 +50,7 @@ namespace android::widget
 			"(Landroid/widget/GridLayout$LayoutParams;)V",
 			arg0.object()
 		) {}
-	GridLayout_LayoutParams::GridLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	GridLayout_LayoutParams::GridLayout_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_MarginLayoutParams(
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

@@ -9,29 +9,29 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	Typeface_Builder::Typeface_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Typeface_Builder::Typeface_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Typeface_Builder::Typeface_Builder(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Typeface$Builder",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	Typeface_Builder::Typeface_Builder(java::io::FileDescriptor arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Typeface$Builder",
 			"(Ljava/io/FileDescriptor;)V",
 			arg0.object()
 		) {}
 	Typeface_Builder::Typeface_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Typeface$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Typeface_Builder::Typeface_Builder(android::content::res::AssetManager arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Typeface$Builder",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
 			arg0.object(),

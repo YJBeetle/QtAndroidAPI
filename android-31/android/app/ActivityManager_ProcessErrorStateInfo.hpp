@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,12 +9,12 @@ namespace android::os
 
 namespace android::app
 {
-	class ActivityManager_ProcessErrorStateInfo : public __JniBaseClass
+	class ActivityManager_ProcessErrorStateInfo : public JObject
 	{
 	public:
 		// Fields
 		static jint CRASHED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint NOT_RESPONDING();
 		static jint NO_ERROR();
 		jint condition();
@@ -28,7 +28,7 @@ namespace android::app
 		jint uid();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityManager_ProcessErrorStateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActivityManager_ProcessErrorStateInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityManager_ProcessErrorStateInfo(QAndroidJniObject obj);
 		
 		// Constructors

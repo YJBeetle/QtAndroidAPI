@@ -228,17 +228,17 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Build::Build(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Build::Build(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Build::Build()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Build",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass Build::getFingerprintedPartitions()
+	JObject Build::getFingerprintedPartitions()
 	{
 		return callStaticObjectMethod(
 			"android.os.Build",

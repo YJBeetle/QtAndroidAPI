@@ -5,11 +5,11 @@ namespace android::print
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrintAttributes_Resolution::PrintAttributes_Resolution(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrintAttributes_Resolution::PrintAttributes_Resolution(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintAttributes_Resolution::PrintAttributes_Resolution(jstring arg0, jstring arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintAttributes$Resolution",
 			"(Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,

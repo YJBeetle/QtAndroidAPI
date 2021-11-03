@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -9,22 +9,22 @@ namespace android::bluetooth
 
 namespace android::bluetooth
 {
-	class BluetoothHearingAid : public __JniBaseClass
+	class BluetoothHearingAid : public JObject
 	{
 	public:
 		// Fields
 		static jstring ACTION_CONNECTION_STATE_CHANGED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothHearingAid(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothHearingAid(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHearingAid(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getConnectedDevices();
+		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(jintArray arg0);
 	};
 } // namespace android::bluetooth
 

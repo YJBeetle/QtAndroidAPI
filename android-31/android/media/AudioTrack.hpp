@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -57,7 +57,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class AudioTrack : public __JniBaseClass
+	class AudioTrack : public JObject
 	{
 	public:
 		// Fields
@@ -89,7 +89,7 @@ namespace android::media
 		static jint WRITE_NON_BLOCKING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioTrack(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioTrack(QAndroidJniObject obj);
 		
 		// Constructors
@@ -103,8 +103,8 @@ namespace android::media
 		static jfloat getMinVolume();
 		static jint getNativeOutputSampleRate(jint arg0);
 		static jboolean isDirectPlaybackSupported(android::media::AudioFormat arg0, android::media::AudioAttributes arg1);
-		void addOnCodecFormatChangedListener(__JniBaseClass arg0, __JniBaseClass arg1);
-		void addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void addOnCodecFormatChangedListener(JObject arg0, JObject arg1);
+		void addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1);
 		jint attachAuxEffect(jint arg0);
 		android::media::VolumeShaper createVolumeShaper(android::media::VolumeShaper_Configuration arg0);
 		void flush();
@@ -140,11 +140,11 @@ namespace android::media
 		jboolean isOffloadedPlayback();
 		void pause();
 		void play();
-		void registerStreamEventCallback(__JniBaseClass arg0, android::media::AudioTrack_StreamEventCallback arg1);
+		void registerStreamEventCallback(JObject arg0, android::media::AudioTrack_StreamEventCallback arg1);
 		void release();
 		jint reloadStaticData();
-		void removeOnCodecFormatChangedListener(__JniBaseClass arg0);
-		void removeOnRoutingChangedListener(__JniBaseClass arg0);
+		void removeOnCodecFormatChangedListener(JObject arg0);
+		void removeOnRoutingChangedListener(JObject arg0);
 		jboolean setAudioDescriptionMixLeveldB(jfloat arg0);
 		jint setAuxEffectSendLevel(jfloat arg0);
 		jint setBufferSizeInFrames(jint arg0);
@@ -156,8 +156,8 @@ namespace android::media
 		void setOffloadEndOfStream();
 		jint setPlaybackHeadPosition(jint arg0);
 		void setPlaybackParams(android::media::PlaybackParams arg0);
-		void setPlaybackPositionUpdateListener(__JniBaseClass arg0);
-		void setPlaybackPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setPlaybackPositionUpdateListener(JObject arg0);
+		void setPlaybackPositionUpdateListener(JObject arg0, android::os::Handler arg1);
 		jint setPlaybackRate(jint arg0);
 		jint setPositionNotificationPeriod(jint arg0);
 		jboolean setPreferredDevice(android::media::AudioDeviceInfo arg0);

@@ -33,11 +33,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaActionSound::MediaActionSound(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaActionSound::MediaActionSound(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaActionSound::MediaActionSound()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaActionSound",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::fingerprint
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::hardware::fingerprint
 {
-	class FingerprintManager : public __JniBaseClass
+	class FingerprintManager : public JObject
 	{
 	public:
 		// Fields
@@ -44,7 +44,7 @@ namespace android::hardware::fingerprint
 		static jint FINGERPRINT_ERROR_VENDOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FingerprintManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FingerprintManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintManager(QAndroidJniObject obj);
 		
 		// Constructors

@@ -9,17 +9,17 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	PKIXParameters::PKIXParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PKIXParameters::PKIXParameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PKIXParameters::PKIXParameters(java::security::KeyStore arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.PKIXParameters",
 			"(Ljava/security/KeyStore;)V",
 			arg0.object()
 		) {}
-	PKIXParameters::PKIXParameters(__JniBaseClass arg0)
-		: __JniBaseClass(
+	PKIXParameters::PKIXParameters(JObject arg0)
+		: JObject(
 			"java.security.cert.PKIXParameters",
 			"(Ljava/util/Set;)V",
 			arg0.object()
@@ -49,14 +49,14 @@ namespace java::security::cert
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass PKIXParameters::getCertPathCheckers()
+	JObject PKIXParameters::getCertPathCheckers()
 	{
 		return callObjectMethod(
 			"getCertPathCheckers",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PKIXParameters::getCertStores()
+	JObject PKIXParameters::getCertStores()
 	{
 		return callObjectMethod(
 			"getCertStores",
@@ -70,7 +70,7 @@ namespace java::security::cert
 			"()Ljava/util/Date;"
 		);
 	}
-	__JniBaseClass PKIXParameters::getInitialPolicies()
+	JObject PKIXParameters::getInitialPolicies()
 	{
 		return callObjectMethod(
 			"getInitialPolicies",
@@ -91,14 +91,14 @@ namespace java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass PKIXParameters::getTargetCertConstraints()
+	JObject PKIXParameters::getTargetCertConstraints()
 	{
 		return callObjectMethod(
 			"getTargetCertConstraints",
 			"()Ljava/security/cert/CertSelector;"
 		);
 	}
-	__JniBaseClass PKIXParameters::getTrustAnchors()
+	JObject PKIXParameters::getTrustAnchors()
 	{
 		return callObjectMethod(
 			"getTrustAnchors",
@@ -141,7 +141,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setCertPathCheckers(__JniBaseClass arg0)
+	void PKIXParameters::setCertPathCheckers(JObject arg0)
 	{
 		callMethod<void>(
 			"setCertPathCheckers",
@@ -149,7 +149,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setCertStores(__JniBaseClass arg0)
+	void PKIXParameters::setCertStores(JObject arg0)
 	{
 		callMethod<void>(
 			"setCertStores",
@@ -173,7 +173,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setInitialPolicies(__JniBaseClass arg0)
+	void PKIXParameters::setInitialPolicies(JObject arg0)
 	{
 		callMethod<void>(
 			"setInitialPolicies",
@@ -213,7 +213,7 @@ namespace java::security::cert
 			arg0
 		);
 	}
-	void PKIXParameters::setTargetCertConstraints(__JniBaseClass arg0)
+	void PKIXParameters::setTargetCertConstraints(JObject arg0)
 	{
 		callMethod<void>(
 			"setTargetCertConstraints",
@@ -221,7 +221,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXParameters::setTrustAnchors(__JniBaseClass arg0)
+	void PKIXParameters::setTrustAnchors(JObject arg0)
 	{
 		callMethod<void>(
 			"setTrustAnchors",

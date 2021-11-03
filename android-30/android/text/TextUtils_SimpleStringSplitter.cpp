@@ -5,11 +5,11 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TextUtils_SimpleStringSplitter::TextUtils_SimpleStringSplitter(jchar arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.TextUtils$SimpleStringSplitter",
 			"(C)V",
 			arg0
@@ -23,7 +23,7 @@ namespace android::text
 			"()Z"
 		);
 	}
-	__JniBaseClass TextUtils_SimpleStringSplitter::iterator()
+	JObject TextUtils_SimpleStringSplitter::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

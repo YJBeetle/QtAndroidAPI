@@ -25,21 +25,21 @@ namespace java::lang::reflect
 			"()[Ljava/lang/reflect/AnnotatedType;"
 		).object<jarray>();
 	}
-	__JniBaseClass Executable::getAnnotatedReceiverType()
+	JObject Executable::getAnnotatedReceiverType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReceiverType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Executable::getAnnotatedReturnType()
+	JObject Executable::getAnnotatedReturnType()
 	{
 		return callObjectMethod(
 			"getAnnotatedReturnType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Executable::getAnnotation(jclass arg0)
+	JObject Executable::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",

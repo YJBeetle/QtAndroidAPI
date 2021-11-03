@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -17,20 +17,20 @@ namespace org::json
 
 namespace org::json
 {
-	class JSONObject : public __JniBaseClass
+	class JSONObject : public JObject
 	{
 	public:
 		// Fields
 		static jobject _NULL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JSONObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JSONObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JSONObject(QAndroidJniObject obj);
 		
 		// Constructors
 		JSONObject();
 		JSONObject(jstring arg0);
-		JSONObject(__JniBaseClass arg0);
+		JSONObject(JObject arg0);
 		JSONObject(org::json::JSONTokener arg0);
 		JSONObject(org::json::JSONObject &arg0, jarray arg1);
 		
@@ -49,7 +49,7 @@ namespace org::json
 		jstring getString(jstring arg0);
 		jboolean has(jstring arg0);
 		jboolean isNull(jstring arg0);
-		__JniBaseClass keys();
+		JObject keys();
 		jint length();
 		org::json::JSONArray names();
 		jobject opt(jstring arg0);

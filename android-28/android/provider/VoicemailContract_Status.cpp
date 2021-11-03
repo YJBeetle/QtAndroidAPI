@@ -237,7 +237,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	VoicemailContract_Status::VoicemailContract_Status(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VoicemailContract_Status::VoicemailContract_Status(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

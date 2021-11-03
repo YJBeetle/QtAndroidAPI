@@ -5,7 +5,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	__JniBaseClass FileInfo::CREATOR()
+	JObject FileInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.mbms.FileInfo",
@@ -15,7 +15,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QAndroidJniObject forward
-	FileInfo::FileInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileInfo::FileInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

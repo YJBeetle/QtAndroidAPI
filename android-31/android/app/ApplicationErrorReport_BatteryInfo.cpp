@@ -32,23 +32,23 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$BatteryInfo",
 			"()V"
 		) {}
 	ApplicationErrorReport_BatteryInfo::ApplicationErrorReport_BatteryInfo(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ApplicationErrorReport$BatteryInfo",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	
 	// Methods
-	void ApplicationErrorReport_BatteryInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ApplicationErrorReport_BatteryInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

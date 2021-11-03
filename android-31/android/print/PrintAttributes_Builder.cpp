@@ -9,11 +9,11 @@ namespace android::print
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrintAttributes_Builder::PrintAttributes_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrintAttributes_Builder::PrintAttributes_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrintAttributes_Builder::PrintAttributes_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrintAttributes$Builder",
 			"()V"
 		) {}

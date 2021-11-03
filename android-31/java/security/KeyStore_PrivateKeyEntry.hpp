@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security::cert
 {
@@ -9,24 +9,24 @@ namespace java::security::cert
 
 namespace java::security
 {
-	class KeyStore_PrivateKeyEntry : public __JniBaseClass
+	class KeyStore_PrivateKeyEntry : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyStore_PrivateKeyEntry(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyStore_PrivateKeyEntry(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyStore_PrivateKeyEntry(QAndroidJniObject obj);
 		
 		// Constructors
-		KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1);
-		KeyStore_PrivateKeyEntry(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2);
+		KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1);
+		KeyStore_PrivateKeyEntry(JObject arg0, jarray arg1, JObject arg2);
 		
 		// Methods
-		__JniBaseClass getAttributes();
+		JObject getAttributes();
 		java::security::cert::Certificate getCertificate();
 		jarray getCertificateChain();
-		__JniBaseClass getPrivateKey();
+		JObject getPrivateKey();
 		jstring toString();
 	};
 } // namespace java::security

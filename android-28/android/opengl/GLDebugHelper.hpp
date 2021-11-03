@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,7 +9,7 @@ namespace java::io
 
 namespace android::opengl
 {
-	class GLDebugHelper : public __JniBaseClass
+	class GLDebugHelper : public JObject
 	{
 	public:
 		// Fields
@@ -19,14 +19,14 @@ namespace android::opengl
 		static jint ERROR_WRONG_THREAD();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GLDebugHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GLDebugHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GLDebugHelper(QAndroidJniObject obj);
 		
 		// Constructors
 		GLDebugHelper();
 		
 		// Methods
-		static __JniBaseClass wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2);
+		static JObject wrap(JObject arg0, jint arg1, java::io::Writer arg2);
 	};
 } // namespace android::opengl
 

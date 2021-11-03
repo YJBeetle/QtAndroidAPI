@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,14 +9,14 @@ namespace android::graphics
 
 namespace android::media
 {
-	class ThumbnailUtils : public __JniBaseClass
+	class ThumbnailUtils : public JObject
 	{
 	public:
 		// Fields
 		static jint OPTIONS_RECYCLE_INPUT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ThumbnailUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ThumbnailUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ThumbnailUtils(QAndroidJniObject obj);
 		
 		// Constructors

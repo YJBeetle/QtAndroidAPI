@@ -8,7 +8,7 @@ namespace android::app::blob
 	// Fields
 	
 	// QAndroidJniObject forward
-	BlobStoreManager::BlobStoreManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BlobStoreManager::BlobStoreManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -67,7 +67,7 @@ namespace android::app::blob
 			arg0.object()
 		);
 	}
-	__JniBaseClass BlobStoreManager::getLeasedBlobs()
+	JObject BlobStoreManager::getLeasedBlobs()
 	{
 		return callObjectMethod(
 			"getLeasedBlobs",

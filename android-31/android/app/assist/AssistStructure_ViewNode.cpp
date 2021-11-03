@@ -46,7 +46,7 @@ namespace android::app::assist
 	}
 	
 	// QAndroidJniObject forward
-	AssistStructure_ViewNode::AssistStructure_ViewNode(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AssistStructure_ViewNode::AssistStructure_ViewNode(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

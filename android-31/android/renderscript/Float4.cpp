@@ -29,16 +29,16 @@ namespace android::renderscript
 	}
 	
 	// QAndroidJniObject forward
-	Float4::Float4(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Float4::Float4(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Float4::Float4()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Float4",
 			"()V"
 		) {}
 	Float4::Float4(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Float4",
 			"(FFFF)V",
 			arg0,

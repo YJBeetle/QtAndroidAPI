@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,16 +13,16 @@ namespace java::util
 
 namespace android::telephony
 {
-	class NetworkScanRequest : public __JniBaseClass
+	class NetworkScanRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SCAN_TYPE_ONE_SHOT();
 		static jint SCAN_TYPE_PERIODIC();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkScanRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkScanRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkScanRequest(QAndroidJniObject obj);
 		
 		// Constructors

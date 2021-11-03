@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseBundle.hpp"
 
 namespace android::os
@@ -22,7 +22,7 @@ namespace android::os
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::os::PersistableBundle EMPTY();
 		
 		// QAndroidJniObject forward

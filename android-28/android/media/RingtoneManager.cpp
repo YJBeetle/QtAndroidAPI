@@ -130,17 +130,17 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	RingtoneManager::RingtoneManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RingtoneManager::RingtoneManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RingtoneManager::RingtoneManager(android::app::Activity arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RingtoneManager",
 			"(Landroid/app/Activity;)V",
 			arg0.object()
 		) {}
 	RingtoneManager::RingtoneManager(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.RingtoneManager",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -214,7 +214,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	__JniBaseClass RingtoneManager::getCursor()
+	JObject RingtoneManager::getCursor()
 	{
 		return callObjectMethod(
 			"getCursor",

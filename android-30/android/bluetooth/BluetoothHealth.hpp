@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::bluetooth
 {
-	class BluetoothHealth : public __JniBaseClass
+	class BluetoothHealth : public JObject
 	{
 	public:
 		// Fields
@@ -39,7 +39,7 @@ namespace android::bluetooth
 		static jint STATE_CHANNEL_DISCONNECTING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothHealth(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothHealth(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothHealth(QAndroidJniObject obj);
 		
 		// Constructors
@@ -47,9 +47,9 @@ namespace android::bluetooth
 		// Methods
 		jboolean connectChannelToSource(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
 		jboolean disconnectChannel(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2);
-		__JniBaseClass getConnectedDevices();
+		JObject getConnectedDevices();
 		jint getConnectionState(android::bluetooth::BluetoothDevice arg0);
-		__JniBaseClass getDevicesMatchingConnectionStates(jintArray arg0);
+		JObject getDevicesMatchingConnectionStates(jintArray arg0);
 		android::os::ParcelFileDescriptor getMainChannelFd(android::bluetooth::BluetoothDevice arg0, android::bluetooth::BluetoothHealthAppConfiguration arg1);
 		jboolean registerSinkAppConfiguration(jstring arg0, jint arg1, android::bluetooth::BluetoothHealthCallback arg2);
 		jboolean unregisterAppConfiguration(android::bluetooth::BluetoothHealthAppConfiguration arg0);

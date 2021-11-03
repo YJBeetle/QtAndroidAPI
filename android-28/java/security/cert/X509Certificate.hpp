@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Certificate.hpp"
 
 namespace java::math
@@ -37,9 +37,9 @@ namespace java::security::cert
 		void checkValidity();
 		void checkValidity(java::util::Date arg0);
 		jint getBasicConstraints();
-		__JniBaseClass getExtendedKeyUsage();
-		__JniBaseClass getIssuerAlternativeNames();
-		__JniBaseClass getIssuerDN();
+		JObject getExtendedKeyUsage();
+		JObject getIssuerAlternativeNames();
+		JObject getIssuerDN();
 		jbooleanArray getIssuerUniqueID();
 		javax::security::auth::x500::X500Principal getIssuerX500Principal();
 		jbooleanArray getKeyUsage();
@@ -50,13 +50,13 @@ namespace java::security::cert
 		jstring getSigAlgOID();
 		jbyteArray getSigAlgParams();
 		jbyteArray getSignature();
-		__JniBaseClass getSubjectAlternativeNames();
-		__JniBaseClass getSubjectDN();
+		JObject getSubjectAlternativeNames();
+		JObject getSubjectDN();
 		jbooleanArray getSubjectUniqueID();
 		javax::security::auth::x500::X500Principal getSubjectX500Principal();
 		jbyteArray getTBSCertificate();
 		jint getVersion();
-		void verify(__JniBaseClass arg0, java::security::Provider arg1);
+		void verify(JObject arg0, java::security::Provider arg1);
 	};
 } // namespace java::security::cert
 

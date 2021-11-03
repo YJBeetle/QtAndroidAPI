@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -25,7 +25,7 @@ namespace java::util
 
 namespace java::util
 {
-	class Locale : public __JniBaseClass
+	class Locale : public JObject
 	{
 	public:
 		// Fields
@@ -55,7 +55,7 @@ namespace java::util
 		static java::util::Locale US();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Locale(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Locale(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Locale(QAndroidJniObject obj);
 		
 		// Constructors
@@ -64,19 +64,19 @@ namespace java::util
 		Locale(jstring arg0, jstring arg1, jstring arg2);
 		
 		// Methods
-		static __JniBaseClass filter(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
-		static __JniBaseClass filterTags(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2);
+		static JObject filter(JObject arg0, JObject arg1);
+		static JObject filter(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2);
+		static JObject filterTags(JObject arg0, JObject arg1);
+		static JObject filterTags(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2);
 		static java::util::Locale forLanguageTag(jstring arg0);
 		static jarray getAvailableLocales();
 		static java::util::Locale getDefault();
 		static java::util::Locale getDefault(java::util::Locale_Category arg0);
 		static jarray getISOCountries();
-		static __JniBaseClass getISOCountries(__JniBaseClass arg0);
+		static JObject getISOCountries(JObject arg0);
 		static jarray getISOLanguages();
-		static java::util::Locale lookup(__JniBaseClass arg0, __JniBaseClass arg1);
-		static jstring lookupTag(__JniBaseClass arg0, __JniBaseClass arg1);
+		static java::util::Locale lookup(JObject arg0, JObject arg1);
+		static jstring lookupTag(JObject arg0, JObject arg1);
 		static void setDefault(java::util::Locale arg0);
 		static void setDefault(java::util::Locale_Category arg0, java::util::Locale arg1);
 		jobject clone();
@@ -93,13 +93,13 @@ namespace java::util
 		jstring getDisplayVariant();
 		jstring getDisplayVariant(java::util::Locale arg0);
 		jstring getExtension(jchar arg0);
-		__JniBaseClass getExtensionKeys();
+		JObject getExtensionKeys();
 		jstring getISO3Country();
 		jstring getISO3Language();
 		jstring getLanguage();
 		jstring getScript();
-		__JniBaseClass getUnicodeLocaleAttributes();
-		__JniBaseClass getUnicodeLocaleKeys();
+		JObject getUnicodeLocaleAttributes();
+		JObject getUnicodeLocaleKeys();
 		jstring getUnicodeLocaleType(jstring arg0);
 		jstring getVariant();
 		jboolean hasExtensions();

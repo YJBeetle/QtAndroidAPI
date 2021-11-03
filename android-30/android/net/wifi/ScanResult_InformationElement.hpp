@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio
 {
@@ -9,13 +9,13 @@ namespace java::nio
 
 namespace android::net::wifi
 {
-	class ScanResult_InformationElement : public __JniBaseClass
+	class ScanResult_InformationElement : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScanResult_InformationElement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScanResult_InformationElement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScanResult_InformationElement(QAndroidJniObject obj);
 		
 		// Constructors

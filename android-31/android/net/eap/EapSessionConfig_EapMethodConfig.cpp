@@ -40,7 +40,7 @@ namespace android::net::eap
 	}
 	
 	// QAndroidJniObject forward
-	EapSessionConfig_EapMethodConfig::EapSessionConfig_EapMethodConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EapSessionConfig_EapMethodConfig::EapSessionConfig_EapMethodConfig(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

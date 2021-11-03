@@ -228,11 +228,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaDrm::MediaDrm(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm::MediaDrm(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaDrm::MediaDrm(java::util::UUID arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaDrm",
 			"(Ljava/util/UUID;)V",
 			arg0.object()
@@ -247,7 +247,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass MediaDrm::getSupportedCryptoSchemes()
+	JObject MediaDrm::getSupportedCryptoSchemes()
 	{
 		return callStaticObjectMethod(
 			"android.media.MediaDrm",
@@ -357,7 +357,7 @@ namespace android::media
 			arg4.object()
 		);
 	}
-	__JniBaseClass MediaDrm::getLogMessages()
+	JObject MediaDrm::getLogMessages()
 	{
 		return callObjectMethod(
 			"getLogMessages",
@@ -385,7 +385,7 @@ namespace android::media
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	__JniBaseClass MediaDrm::getOfflineLicenseKeySetIds()
+	JObject MediaDrm::getOfflineLicenseKeySetIds()
 	{
 		return callObjectMethod(
 			"getOfflineLicenseKeySetIds",
@@ -446,14 +446,14 @@ namespace android::media
 			arg0
 		).object<jbyteArray>();
 	}
-	__JniBaseClass MediaDrm::getSecureStopIds()
+	JObject MediaDrm::getSecureStopIds()
 	{
 		return callObjectMethod(
 			"getSecureStopIds",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass MediaDrm::getSecureStops()
+	JObject MediaDrm::getSecureStops()
 	{
 		return callObjectMethod(
 			"getSecureStops",
@@ -587,7 +587,7 @@ namespace android::media
 			arg1
 		);
 	}
-	void MediaDrm::setOnEventListener(__JniBaseClass arg0)
+	void MediaDrm::setOnEventListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnEventListener",
@@ -595,7 +595,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaDrm::setOnEventListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnEventListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnEventListener",
@@ -604,7 +604,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnEventListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MediaDrm::setOnEventListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnEventListener",
@@ -613,7 +613,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnExpirationUpdateListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnExpirationUpdateListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnExpirationUpdateListener",
@@ -622,7 +622,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnExpirationUpdateListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MediaDrm::setOnExpirationUpdateListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnExpirationUpdateListener",
@@ -631,7 +631,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnKeyStatusChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnKeyStatusChangeListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnKeyStatusChangeListener",
@@ -640,7 +640,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnKeyStatusChangeListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MediaDrm::setOnKeyStatusChangeListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnKeyStatusChangeListener",
@@ -649,7 +649,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnSessionLostStateListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaDrm::setOnSessionLostStateListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnSessionLostStateListener",
@@ -658,7 +658,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaDrm::setOnSessionLostStateListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void MediaDrm::setOnSessionLostStateListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setOnSessionLostStateListener",

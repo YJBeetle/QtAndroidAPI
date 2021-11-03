@@ -382,11 +382,11 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	ContentResolver::ContentResolver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentResolver::ContentResolver(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentResolver::ContentResolver(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentResolver",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -405,7 +405,7 @@ namespace android::content
 			arg3
 		);
 	}
-	jobject ContentResolver::addStatusChangeListener(jint arg0, __JniBaseClass arg1)
+	jobject ContentResolver::addStatusChangeListener(jint arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
@@ -442,7 +442,7 @@ namespace android::content
 			"()Landroid/content/SyncInfo;"
 		);
 	}
-	__JniBaseClass ContentResolver::getCurrentSyncs()
+	JObject ContentResolver::getCurrentSyncs()
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
@@ -468,7 +468,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	__JniBaseClass ContentResolver::getPeriodicSyncs(android::accounts::Account arg0, jstring arg1)
+	JObject ContentResolver::getPeriodicSyncs(android::accounts::Account arg0, jstring arg1)
 	{
 		return callStaticObjectMethod(
 			"android.content.ContentResolver",
@@ -721,14 +721,14 @@ namespace android::content
 			arg2
 		);
 	}
-	__JniBaseClass ContentResolver::getOutgoingPersistedUriPermissions()
+	JObject ContentResolver::getOutgoingPersistedUriPermissions()
 	{
 		return callObjectMethod(
 			"getOutgoingPersistedUriPermissions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ContentResolver::getPersistedUriPermissions()
+	JObject ContentResolver::getPersistedUriPermissions()
 	{
 		return callObjectMethod(
 			"getPersistedUriPermissions",
@@ -818,7 +818,7 @@ namespace android::content
 			arg2
 		);
 	}
-	void ContentResolver::notifyChange(__JniBaseClass arg0, android::database::ContentObserver arg1, jint arg2)
+	void ContentResolver::notifyChange(JObject arg0, android::database::ContentObserver arg1, jint arg2)
 	{
 		callMethod<void>(
 			"notifyChange",
@@ -943,7 +943,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentResolver::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -954,7 +954,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -966,7 +966,7 @@ namespace android::content
 			arg4
 		);
 	}
-	__JniBaseClass ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject ContentResolver::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",

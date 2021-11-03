@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::database
 {
@@ -25,17 +25,17 @@ namespace java::util
 
 namespace android::widget
 {
-	class HeaderViewListAdapter : public __JniBaseClass
+	class HeaderViewListAdapter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HeaderViewListAdapter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HeaderViewListAdapter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HeaderViewListAdapter(QAndroidJniObject obj);
 		
 		// Constructors
-		HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, __JniBaseClass arg2);
+		HeaderViewListAdapter(java::util::ArrayList arg0, java::util::ArrayList arg1, JObject arg2);
 		
 		// Methods
 		jboolean areAllItemsEnabled();
@@ -48,7 +48,7 @@ namespace android::widget
 		jint getItemViewType(jint arg0);
 		android::view::View getView(jint arg0, android::view::View arg1, android::view::ViewGroup arg2);
 		jint getViewTypeCount();
-		__JniBaseClass getWrappedAdapter();
+		JObject getWrappedAdapter();
 		jboolean hasStableIds();
 		jboolean isEmpty();
 		jboolean isEnabled(jint arg0);

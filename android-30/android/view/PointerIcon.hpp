@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,11 +21,11 @@ namespace android::os
 
 namespace android::view
 {
-	class PointerIcon : public __JniBaseClass
+	class PointerIcon : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_ALIAS();
 		static jint TYPE_ALL_SCROLL();
 		static jint TYPE_ARROW();
@@ -51,7 +51,7 @@ namespace android::view
 		static jint TYPE_ZOOM_OUT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PointerIcon(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PointerIcon(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PointerIcon(QAndroidJniObject obj);
 		
 		// Constructors

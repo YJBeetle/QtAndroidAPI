@@ -28,7 +28,7 @@ namespace javax::xml::datatype
 	}
 	
 	// QAndroidJniObject forward
-	DatatypeFactory::DatatypeFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatatypeFactory::DatatypeFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

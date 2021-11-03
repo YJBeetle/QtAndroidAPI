@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::backup
 {
@@ -21,13 +21,13 @@ namespace android::os
 
 namespace android::app::backup
 {
-	class FileBackupHelper : public __JniBaseClass
+	class FileBackupHelper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileBackupHelper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileBackupHelper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileBackupHelper(QAndroidJniObject obj);
 		
 		// Constructors

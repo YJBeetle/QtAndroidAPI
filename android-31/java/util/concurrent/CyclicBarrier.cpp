@@ -7,17 +7,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	CyclicBarrier::CyclicBarrier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CyclicBarrier::CyclicBarrier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CyclicBarrier::CyclicBarrier(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.CyclicBarrier",
 			"(I)V",
 			arg0
 		) {}
-	CyclicBarrier::CyclicBarrier(jint arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	CyclicBarrier::CyclicBarrier(jint arg0, JObject arg1)
+		: JObject(
 			"java.util.concurrent.CyclicBarrier",
 			"(ILjava/lang/Runnable;)V",
 			arg0,

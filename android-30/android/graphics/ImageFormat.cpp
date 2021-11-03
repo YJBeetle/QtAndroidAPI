@@ -159,11 +159,11 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	ImageFormat::ImageFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ImageFormat::ImageFormat(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ImageFormat::ImageFormat()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ImageFormat",
 			"()V"
 		) {}

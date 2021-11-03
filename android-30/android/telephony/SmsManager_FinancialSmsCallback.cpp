@@ -6,11 +6,11 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SmsManager_FinancialSmsCallback::SmsManager_FinancialSmsCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.SmsManager$FinancialSmsCallback",
 			"()V"
 		) {}

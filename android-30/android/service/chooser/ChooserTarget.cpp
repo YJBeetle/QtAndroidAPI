@@ -7,7 +7,7 @@
 namespace android::service::chooser
 {
 	// Fields
-	__JniBaseClass ChooserTarget::CREATOR()
+	JObject ChooserTarget::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.chooser.ChooserTarget",
@@ -17,11 +17,11 @@ namespace android::service::chooser
 	}
 	
 	// QAndroidJniObject forward
-	ChooserTarget::ChooserTarget(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ChooserTarget::ChooserTarget(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ChooserTarget::ChooserTarget(jstring arg0, android::graphics::drawable::Icon arg1, jfloat arg2, android::content::ComponentName arg3, android::os::Bundle arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.chooser.ChooserTarget",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
 			arg0,

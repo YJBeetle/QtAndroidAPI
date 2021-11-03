@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,13 +21,13 @@ namespace java::net
 
 namespace java::net
 {
-	class ProxySelector : public __JniBaseClass
+	class ProxySelector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProxySelector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProxySelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProxySelector(QAndroidJniObject obj);
 		
 		// Constructors
@@ -38,7 +38,7 @@ namespace java::net
 		static java::net::ProxySelector of(java::net::InetSocketAddress arg0);
 		static void setDefault(java::net::ProxySelector arg0);
 		void connectFailed(java::net::URI arg0, java::net::SocketAddress arg1, java::io::IOException arg2);
-		__JniBaseClass select(java::net::URI arg0);
+		JObject select(java::net::URI arg0);
 	};
 } // namespace java::net
 

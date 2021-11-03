@@ -6,7 +6,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ContentProviderResult::CREATOR()
+	JObject ContentProviderResult::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ContentProviderResult",
@@ -30,23 +30,23 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentProviderResult::ContentProviderResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContentProviderResult::ContentProviderResult(android::net::Uri arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentProviderResult",
 			"(Landroid/net/Uri;)V",
 			arg0.object()
 		) {}
 	ContentProviderResult::ContentProviderResult(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentProviderResult",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	ContentProviderResult::ContentProviderResult(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ContentProviderResult",
 			"(I)V",
 			arg0

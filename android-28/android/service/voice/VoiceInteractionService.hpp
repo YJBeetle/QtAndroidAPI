@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -62,7 +62,7 @@ namespace android::service::voice
 		static jboolean isActiveService(android::content::Context arg0, android::content::ComponentName arg1);
 		android::service::voice::AlwaysOnHotwordDetector createAlwaysOnHotwordDetector(jstring arg0, java::util::Locale arg1, android::service::voice::AlwaysOnHotwordDetector_Callback arg2);
 		jint getDisabledShowContext();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		void onLaunchVoiceAssistFromKeyguard();
 		void onReady();

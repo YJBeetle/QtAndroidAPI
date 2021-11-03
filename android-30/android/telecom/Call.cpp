@@ -143,7 +143,7 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	Call::Call(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Call::Call(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -179,21 +179,21 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	__JniBaseClass Call::getCannedTextResponses()
+	JObject Call::getCannedTextResponses()
 	{
 		return callObjectMethod(
 			"getCannedTextResponses",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Call::getChildren()
+	JObject Call::getChildren()
 	{
 		return callObjectMethod(
 			"getChildren",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Call::getConferenceableCalls()
+	JObject Call::getConferenceableCalls()
 	{
 		return callObjectMethod(
 			"getConferenceableCalls",
@@ -362,7 +362,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Call::removeExtras(__JniBaseClass arg0)
+	void Call::removeExtras(JObject arg0)
 	{
 		callMethod<void>(
 			"removeExtras",

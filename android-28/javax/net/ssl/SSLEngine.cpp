@@ -9,7 +9,7 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	SSLEngine::SSLEngine(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SSLEngine::SSLEngine(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -42,7 +42,7 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SSLEngine::getDelegatedTask()
+	JObject SSLEngine::getDelegatedTask()
 	{
 		return callObjectMethod(
 			"getDelegatedTask",
@@ -77,14 +77,14 @@ namespace javax::net::ssl
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SSLEngine::getHandshakeApplicationProtocolSelector()
+	JObject SSLEngine::getHandshakeApplicationProtocolSelector()
 	{
 		return callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
 		);
 	}
-	__JniBaseClass SSLEngine::getHandshakeSession()
+	JObject SSLEngine::getHandshakeSession()
 	{
 		return callObjectMethod(
 			"getHandshakeSession",
@@ -126,7 +126,7 @@ namespace javax::net::ssl
 			"()Ljavax/net/ssl/SSLParameters;"
 		);
 	}
-	__JniBaseClass SSLEngine::getSession()
+	JObject SSLEngine::getSession()
 	{
 		return callObjectMethod(
 			"getSession",
@@ -199,7 +199,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLEngine::setHandshakeApplicationProtocolSelector(__JniBaseClass arg0)
+	void SSLEngine::setHandshakeApplicationProtocolSelector(JObject arg0)
 	{
 		callMethod<void>(
 			"setHandshakeApplicationProtocolSelector",

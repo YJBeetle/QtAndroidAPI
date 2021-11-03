@@ -8,7 +8,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass LauncherApps_PinItemRequest::CREATOR()
+	JObject LauncherApps_PinItemRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.LauncherApps$PinItemRequest",
@@ -32,7 +32,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LauncherApps_PinItemRequest::LauncherApps_PinItemRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

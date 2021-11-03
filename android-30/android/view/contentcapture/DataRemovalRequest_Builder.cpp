@@ -7,11 +7,11 @@ namespace android::view::contentcapture
 	// Fields
 	
 	// QAndroidJniObject forward
-	DataRemovalRequest_Builder::DataRemovalRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DataRemovalRequest_Builder::DataRemovalRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DataRemovalRequest_Builder::DataRemovalRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.contentcapture.DataRemovalRequest$Builder",
 			"()V"
 		) {}

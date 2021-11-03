@@ -61,7 +61,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	NetworkScan::NetworkScan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkScan::NetworkScan(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

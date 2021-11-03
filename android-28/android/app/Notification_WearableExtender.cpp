@@ -73,16 +73,16 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	Notification_WearableExtender::Notification_WearableExtender(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification_WearableExtender::Notification_WearableExtender(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_WearableExtender::Notification_WearableExtender()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$WearableExtender",
 			"()V"
 		) {}
 	Notification_WearableExtender::Notification_WearableExtender(android::app::Notification arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$WearableExtender",
 			"(Landroid/app/Notification;)V",
 			arg0.object()
@@ -97,7 +97,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::addActions(__JniBaseClass arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addActions(JObject arg0)
 	{
 		return callObjectMethod(
 			"addActions",
@@ -113,7 +113,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::app::Notification_WearableExtender Notification_WearableExtender::addPages(__JniBaseClass arg0)
+	android::app::Notification_WearableExtender Notification_WearableExtender::addPages(JObject arg0)
 	{
 		return callObjectMethod(
 			"addPages",
@@ -150,7 +150,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	__JniBaseClass Notification_WearableExtender::getActions()
+	JObject Notification_WearableExtender::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
@@ -276,7 +276,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	__JniBaseClass Notification_WearableExtender::getPages()
+	JObject Notification_WearableExtender::getPages()
 	{
 		return callObjectMethod(
 			"getPages",

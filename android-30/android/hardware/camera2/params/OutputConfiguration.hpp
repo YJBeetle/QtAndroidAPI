@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,15 +17,15 @@ namespace android::view
 
 namespace android::hardware::camera2::params
 {
-	class OutputConfiguration : public __JniBaseClass
+	class OutputConfiguration : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SURFACE_GROUP_ID_NONE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OutputConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OutputConfiguration(QAndroidJniObject obj);
 		
 		// Constructors
@@ -41,7 +41,7 @@ namespace android::hardware::camera2::params
 		jint getMaxSharedSurfaceCount();
 		android::view::Surface getSurface();
 		jint getSurfaceGroupId();
-		__JniBaseClass getSurfaces();
+		JObject getSurfaces();
 		jint hashCode();
 		void removeSurface(android::view::Surface arg0);
 		void setPhysicalCameraId(jstring arg0);

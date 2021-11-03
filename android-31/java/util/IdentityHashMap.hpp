@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::io
@@ -26,26 +26,26 @@ namespace java::util
 		// Constructors
 		IdentityHashMap();
 		IdentityHashMap(jint arg0);
-		IdentityHashMap(__JniBaseClass arg0);
+		IdentityHashMap(JObject arg0);
 		
 		// Methods
 		void clear();
 		jobject clone();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
-		void forEach(__JniBaseClass arg0);
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject remove(jobject arg0);
-		void replaceAll(__JniBaseClass arg0);
+		void replaceAll(JObject arg0);
 		jint size();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

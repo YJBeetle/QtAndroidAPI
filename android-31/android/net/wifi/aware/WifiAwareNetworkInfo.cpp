@@ -5,7 +5,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	__JniBaseClass WifiAwareNetworkInfo::CREATOR()
+	JObject WifiAwareNetworkInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.WifiAwareNetworkInfo",
@@ -15,7 +15,7 @@ namespace android::net::wifi::aware
 	}
 	
 	// QAndroidJniObject forward
-	WifiAwareNetworkInfo::WifiAwareNetworkInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiAwareNetworkInfo::WifiAwareNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

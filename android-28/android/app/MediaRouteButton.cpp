@@ -17,14 +17,14 @@ namespace android::app
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.app.MediaRouteButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.app.MediaRouteButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -32,7 +32,7 @@ namespace android::app
 			arg1.object(),
 			arg2
 		) {}
-	MediaRouteButton::MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	MediaRouteButton::MediaRouteButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.app.MediaRouteButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -86,7 +86,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void MediaRouteButton::setExtendedSettingsClickListener(__JniBaseClass arg0)
+	void MediaRouteButton::setExtendedSettingsClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setExtendedSettingsClickListener",

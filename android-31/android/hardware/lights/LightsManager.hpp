@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::lights
 {
@@ -17,20 +17,20 @@ namespace android::hardware::lights
 
 namespace android::hardware::lights
 {
-	class LightsManager : public __JniBaseClass
+	class LightsManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LightsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LightsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LightsManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		android::hardware::lights::LightState getLightState(android::hardware::lights::Light arg0);
-		__JniBaseClass getLights();
+		JObject getLights();
 		android::hardware::lights::LightsManager_LightsSession openSession();
 	};
 } // namespace android::hardware::lights

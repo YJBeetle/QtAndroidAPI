@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,16 +9,16 @@ namespace android::os
 
 namespace android::telephony
 {
-	class NeighboringCellInfo : public __JniBaseClass
+	class NeighboringCellInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint UNKNOWN_CID();
 		static jint UNKNOWN_RSSI();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NeighboringCellInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NeighboringCellInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NeighboringCellInfo(QAndroidJniObject obj);
 		
 		// Constructors

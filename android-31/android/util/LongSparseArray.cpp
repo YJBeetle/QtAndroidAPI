@@ -5,16 +5,16 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	LongSparseArray::LongSparseArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LongSparseArray::LongSparseArray(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LongSparseArray::LongSparseArray()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.LongSparseArray",
 			"()V"
 		) {}
 	LongSparseArray::LongSparseArray(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.LongSparseArray",
 			"(I)V",
 			arg0

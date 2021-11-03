@@ -5,7 +5,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	__JniBaseClass ParcelablePeerHandle::CREATOR()
+	JObject ParcelablePeerHandle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.ParcelablePeerHandle",

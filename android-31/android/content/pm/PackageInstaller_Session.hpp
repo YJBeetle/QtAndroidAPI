@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace java::io
 
 namespace android::content::pm
 {
-	class PackageInstaller_Session : public __JniBaseClass
+	class PackageInstaller_Session : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageInstaller_Session(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageInstaller_Session(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInstaller_Session(QAndroidJniObject obj);
 		
 		// Constructors
@@ -43,7 +43,7 @@ namespace android::content::pm
 		java::io::OutputStream openWrite(jstring arg0, jlong arg1, jlong arg2);
 		void removeChildSessionId(jint arg0);
 		void removeSplit(jstring arg0);
-		void setChecksums(jstring arg0, __JniBaseClass arg1, jbyteArray arg2);
+		void setChecksums(jstring arg0, JObject arg1, jbyteArray arg2);
 		void setStagingProgress(jfloat arg0);
 		void transfer(jstring arg0);
 	};

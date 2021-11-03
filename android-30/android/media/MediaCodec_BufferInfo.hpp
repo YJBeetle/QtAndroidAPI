@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaCodec_BufferInfo : public __JniBaseClass
+	class MediaCodec_BufferInfo : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::media
 		jint size();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodec_BufferInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodec_BufferInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec_BufferInfo(QAndroidJniObject obj);
 		
 		// Constructors

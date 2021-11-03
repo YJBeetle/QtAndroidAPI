@@ -3,7 +3,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextClassifierEvent_ConversationActionsEvent::CREATOR()
+	JObject TextClassifierEvent_ConversationActionsEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassifierEvent$ConversationActionsEvent",

@@ -9,11 +9,11 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	Binder::Binder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Binder::Binder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Binder::Binder()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Binder",
 			"()V"
 		) {}
@@ -76,7 +76,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Binder::attachInterface(__JniBaseClass arg0, jstring arg1)
+	void Binder::attachInterface(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"attachInterface",
@@ -117,7 +117,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	void Binder::linkToDeath(__JniBaseClass arg0, jint arg1)
+	void Binder::linkToDeath(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"linkToDeath",
@@ -133,7 +133,7 @@ namespace android::os
 			"()Z"
 		);
 	}
-	__JniBaseClass Binder::queryLocalInterface(jstring arg0)
+	JObject Binder::queryLocalInterface(jstring arg0)
 	{
 		return callObjectMethod(
 			"queryLocalInterface",
@@ -152,7 +152,7 @@ namespace android::os
 			arg3
 		);
 	}
-	jboolean Binder::unlinkToDeath(__JniBaseClass arg0, jint arg1)
+	jboolean Binder::unlinkToDeath(JObject arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"unlinkToDeath",

@@ -157,12 +157,12 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	LocationManager::LocationManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocationManager::LocationManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jboolean LocationManager::addGpsStatusListener(__JniBaseClass arg0)
+	jboolean LocationManager::addGpsStatusListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addGpsStatusListener",
@@ -170,7 +170,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(__JniBaseClass arg0)
+	jboolean LocationManager::addNmeaListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -178,7 +178,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(__JniBaseClass arg0, android::os::Handler arg1)
+	jboolean LocationManager::addNmeaListener(JObject arg0, android::os::Handler arg1)
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -187,7 +187,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::addNmeaListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	jboolean LocationManager::addNmeaListener(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addNmeaListener",
@@ -217,7 +217,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::addTestProvider(jstring arg0, android::location::provider::ProviderProperties arg1, __JniBaseClass arg2)
+	void LocationManager::addTestProvider(jstring arg0, android::location::provider::ProviderProperties arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"addTestProvider",
@@ -268,7 +268,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getAllProviders()
+	JObject LocationManager::getAllProviders()
 	{
 		return callObjectMethod(
 			"getAllProviders",
@@ -284,7 +284,7 @@ namespace android::location
 			arg1
 		).object<jstring>();
 	}
-	void LocationManager::getCurrentLocation(jstring arg0, android::os::CancellationSignal arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void LocationManager::getCurrentLocation(jstring arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"getCurrentLocation",
@@ -295,7 +295,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::getCurrentLocation(jstring arg0, android::location::LocationRequest arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	void LocationManager::getCurrentLocation(jstring arg0, android::location::LocationRequest arg1, android::os::CancellationSignal arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"getCurrentLocation",
@@ -307,7 +307,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	__JniBaseClass LocationManager::getGnssAntennaInfos()
+	JObject LocationManager::getGnssAntennaInfos()
 	{
 		return callObjectMethod(
 			"getGnssAntennaInfos",
@@ -367,7 +367,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getProviders(jboolean arg0)
+	JObject LocationManager::getProviders(jboolean arg0)
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -375,7 +375,7 @@ namespace android::location
 			arg0
 		);
 	}
-	__JniBaseClass LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
+	JObject LocationManager::getProviders(android::location::Criteria arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -407,7 +407,7 @@ namespace android::location
 			arg0
 		);
 	}
-	jboolean LocationManager::registerAntennaInfoListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	jboolean LocationManager::registerAntennaInfoListener(JObject arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"registerAntennaInfoListener",
@@ -433,7 +433,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssMeasurementsCallback(__JniBaseClass arg0, android::location::GnssMeasurementsEvent_Callback arg1)
+	jboolean LocationManager::registerGnssMeasurementsCallback(JObject arg0, android::location::GnssMeasurementsEvent_Callback arg1)
 	{
 		return callMethod<jboolean>(
 			"registerGnssMeasurementsCallback",
@@ -442,7 +442,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementRequest arg0, __JniBaseClass arg1, android::location::GnssMeasurementsEvent_Callback arg2)
+	jboolean LocationManager::registerGnssMeasurementsCallback(android::location::GnssMeasurementRequest arg0, JObject arg1, android::location::GnssMeasurementsEvent_Callback arg2)
 	{
 		return callMethod<jboolean>(
 			"registerGnssMeasurementsCallback",
@@ -469,7 +469,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssNavigationMessageCallback(__JniBaseClass arg0, android::location::GnssNavigationMessage_Callback arg1)
+	jboolean LocationManager::registerGnssNavigationMessageCallback(JObject arg0, android::location::GnssNavigationMessage_Callback arg1)
 	{
 		return callMethod<jboolean>(
 			"registerGnssNavigationMessageCallback",
@@ -495,7 +495,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	jboolean LocationManager::registerGnssStatusCallback(__JniBaseClass arg0, android::location::GnssStatus_Callback arg1)
+	jboolean LocationManager::registerGnssStatusCallback(JObject arg0, android::location::GnssStatus_Callback arg1)
 	{
 		return callMethod<jboolean>(
 			"registerGnssStatusCallback",
@@ -504,7 +504,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::removeGpsStatusListener(__JniBaseClass arg0)
+	void LocationManager::removeGpsStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeGpsStatusListener",
@@ -512,7 +512,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeNmeaListener(__JniBaseClass arg0)
+	void LocationManager::removeNmeaListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeNmeaListener",
@@ -544,7 +544,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void LocationManager::removeUpdates(__JniBaseClass arg0)
+	void LocationManager::removeUpdates(JObject arg0)
 	{
 		callMethod<void>(
 			"removeUpdates",
@@ -562,7 +562,7 @@ namespace android::location
 			arg2
 		);
 	}
-	void LocationManager::requestFlush(jstring arg0, __JniBaseClass arg1, jint arg2)
+	void LocationManager::requestFlush(jstring arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"requestFlush",
@@ -582,7 +582,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, android::location::LocationRequest arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void LocationManager::requestLocationUpdates(jstring arg0, android::location::LocationRequest arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -604,7 +604,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3)
+	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -626,7 +626,7 @@ namespace android::location
 			arg3.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -638,7 +638,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	void LocationManager::requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -650,7 +650,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, __JniBaseClass arg3, android::os::Looper arg4)
+	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, android::os::Looper arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -662,7 +662,7 @@ namespace android::location
 			arg4.object()
 		);
 	}
-	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	void LocationManager::requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"requestLocationUpdates",
@@ -692,7 +692,7 @@ namespace android::location
 			arg1.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, __JniBaseClass arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(android::location::Criteria arg0, JObject arg1, android::os::Looper arg2)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -702,7 +702,7 @@ namespace android::location
 			arg2.object()
 		);
 	}
-	void LocationManager::requestSingleUpdate(jstring arg0, __JniBaseClass arg1, android::os::Looper arg2)
+	void LocationManager::requestSingleUpdate(jstring arg0, JObject arg1, android::os::Looper arg2)
 	{
 		callMethod<void>(
 			"requestSingleUpdate",
@@ -751,7 +751,7 @@ namespace android::location
 			arg3
 		);
 	}
-	void LocationManager::unregisterAntennaInfoListener(__JniBaseClass arg0)
+	void LocationManager::unregisterAntennaInfoListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterAntennaInfoListener",

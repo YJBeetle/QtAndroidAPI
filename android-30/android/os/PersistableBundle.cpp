@@ -6,7 +6,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass PersistableBundle::CREATOR()
+	JObject PersistableBundle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.PersistableBundle",

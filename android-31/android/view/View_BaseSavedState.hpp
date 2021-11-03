@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbsSavedState.hpp"
 
 namespace android::os
@@ -18,7 +18,7 @@ namespace android::view
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit View_BaseSavedState(const char *className, const char *sig, Ts...agv) : android::view::AbsSavedState(className, sig, std::forward<Ts>(agv)...) {}
@@ -26,7 +26,7 @@ namespace android::view
 		
 		// Constructors
 		View_BaseSavedState(android::os::Parcel arg0);
-		View_BaseSavedState(__JniBaseClass arg0);
+		View_BaseSavedState(JObject arg0);
 		View_BaseSavedState(android::os::Parcel arg0, java::lang::ClassLoader arg1);
 		
 		// Methods

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::companion
 {
@@ -21,14 +21,14 @@ namespace android::os
 
 namespace android::companion
 {
-	class CompanionDeviceManager : public __JniBaseClass
+	class CompanionDeviceManager : public JObject
 	{
 	public:
 		// Fields
 		static jstring EXTRA_DEVICE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CompanionDeviceManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CompanionDeviceManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -36,7 +36,7 @@ namespace android::companion
 		// Methods
 		void associate(android::companion::AssociationRequest arg0, android::companion::CompanionDeviceManager_Callback arg1, android::os::Handler arg2);
 		void disassociate(jstring arg0);
-		__JniBaseClass getAssociations();
+		JObject getAssociations();
 		jboolean hasNotificationAccess(android::content::ComponentName arg0);
 		void requestNotificationAccess(android::content::ComponentName arg0);
 		void startObservingDevicePresence(jstring arg0);

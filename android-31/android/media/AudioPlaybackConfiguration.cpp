@@ -6,7 +6,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass AudioPlaybackConfiguration::CREATOR()
+	JObject AudioPlaybackConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.AudioPlaybackConfiguration",
@@ -16,7 +16,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioPlaybackConfiguration::AudioPlaybackConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioPlaybackConfiguration::AudioPlaybackConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

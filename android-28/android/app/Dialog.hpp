@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -73,13 +73,13 @@ namespace android::view::accessibility
 
 namespace android::app
 {
-	class Dialog : public __JniBaseClass
+	class Dialog : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Dialog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Dialog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Dialog(QAndroidJniObject obj);
 		
 		// Constructors
@@ -115,11 +115,11 @@ namespace android::app
 		void onAttachedToWindow();
 		void onBackPressed();
 		void onContentChanged();
-		jboolean onContextItemSelected(__JniBaseClass arg0);
-		void onContextMenuClosed(__JniBaseClass arg0);
-		void onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2);
-		jboolean onCreateOptionsMenu(__JniBaseClass arg0);
-		jboolean onCreatePanelMenu(jint arg0, __JniBaseClass arg1);
+		jboolean onContextItemSelected(JObject arg0);
+		void onContextMenuClosed(JObject arg0);
+		void onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2);
+		jboolean onCreateOptionsMenu(JObject arg0);
+		jboolean onCreatePanelMenu(jint arg0, JObject arg1);
 		android::view::View onCreatePanelView(jint arg0);
 		void onDetachedFromWindow();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
@@ -128,13 +128,13 @@ namespace android::app
 		jboolean onKeyMultiple(jint arg0, jint arg1, android::view::KeyEvent arg2);
 		jboolean onKeyShortcut(jint arg0, android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, android::view::KeyEvent arg1);
-		jboolean onMenuItemSelected(jint arg0, __JniBaseClass arg1);
-		jboolean onMenuOpened(jint arg0, __JniBaseClass arg1);
-		jboolean onOptionsItemSelected(__JniBaseClass arg0);
-		void onOptionsMenuClosed(__JniBaseClass arg0);
-		void onPanelClosed(jint arg0, __JniBaseClass arg1);
-		jboolean onPrepareOptionsMenu(__JniBaseClass arg0);
-		jboolean onPreparePanel(jint arg0, android::view::View arg1, __JniBaseClass arg2);
+		jboolean onMenuItemSelected(jint arg0, JObject arg1);
+		jboolean onMenuOpened(jint arg0, JObject arg1);
+		jboolean onOptionsItemSelected(JObject arg0);
+		void onOptionsMenuClosed(JObject arg0);
+		void onPanelClosed(jint arg0, JObject arg1);
+		jboolean onPrepareOptionsMenu(JObject arg0);
+		jboolean onPreparePanel(jint arg0, android::view::View arg1, JObject arg2);
 		void onRestoreInstanceState(android::os::Bundle arg0);
 		android::os::Bundle onSaveInstanceState();
 		jboolean onSearchRequested();
@@ -143,8 +143,8 @@ namespace android::app
 		jboolean onTrackballEvent(android::view::MotionEvent arg0);
 		void onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0);
 		void onWindowFocusChanged(jboolean arg0);
-		android::view::ActionMode onWindowStartingActionMode(__JniBaseClass arg0);
-		android::view::ActionMode onWindowStartingActionMode(__JniBaseClass arg0, jint arg1);
+		android::view::ActionMode onWindowStartingActionMode(JObject arg0);
+		android::view::ActionMode onWindowStartingActionMode(JObject arg0, jint arg1);
 		void openContextMenu(android::view::View arg0);
 		void openOptionsMenu();
 		void registerForContextMenu(android::view::View arg0);
@@ -161,10 +161,10 @@ namespace android::app
 		void setFeatureDrawableAlpha(jint arg0, jint arg1);
 		void setFeatureDrawableResource(jint arg0, jint arg1);
 		void setFeatureDrawableUri(jint arg0, android::net::Uri arg1);
-		void setOnCancelListener(__JniBaseClass arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
-		void setOnKeyListener(__JniBaseClass arg0);
-		void setOnShowListener(__JniBaseClass arg0);
+		void setOnCancelListener(JObject arg0);
+		void setOnDismissListener(JObject arg0);
+		void setOnKeyListener(JObject arg0);
+		void setOnShowListener(JObject arg0);
 		void setOwnerActivity(android::app::Activity arg0);
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);

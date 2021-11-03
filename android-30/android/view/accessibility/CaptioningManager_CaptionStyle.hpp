@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,7 +9,7 @@ namespace android::graphics
 
 namespace android::view::accessibility
 {
-	class CaptioningManager_CaptionStyle : public __JniBaseClass
+	class CaptioningManager_CaptionStyle : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::view::accessibility
 		jint windowColor();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CaptioningManager_CaptionStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CaptioningManager_CaptionStyle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CaptioningManager_CaptionStyle(QAndroidJniObject obj);
 		
 		// Constructors

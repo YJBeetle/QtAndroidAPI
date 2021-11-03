@@ -6,7 +6,7 @@ namespace java::nio
 	// Fields
 	
 	// QAndroidJniObject forward
-	Buffer::Buffer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Buffer::Buffer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

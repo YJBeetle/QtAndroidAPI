@@ -72,7 +72,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	PluralRules::PluralRules(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PluralRules::PluralRules(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -149,7 +149,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass PluralRules::getAllKeywordValues(jstring arg0)
+	JObject PluralRules::getAllKeywordValues(jstring arg0)
 	{
 		return callObjectMethod(
 			"getAllKeywordValues",
@@ -157,14 +157,14 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	__JniBaseClass PluralRules::getKeywords()
+	JObject PluralRules::getKeywords()
 	{
 		return callObjectMethod(
 			"getKeywords",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass PluralRules::getSamples(jstring arg0)
+	JObject PluralRules::getSamples(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSamples",

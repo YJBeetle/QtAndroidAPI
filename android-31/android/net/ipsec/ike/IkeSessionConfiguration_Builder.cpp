@@ -7,11 +7,11 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QAndroidJniObject forward
-	IkeSessionConfiguration_Builder::IkeSessionConfiguration_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IkeSessionConfiguration_Builder::IkeSessionConfiguration_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IkeSessionConfiguration_Builder::IkeSessionConfiguration_Builder(android::net::ipsec::ike::IkeSessionConnectionInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.IkeSessionConfiguration$Builder",
 			"(Landroid/net/ipsec/ike/IkeSessionConnectionInfo;)V",
 			arg0.object()

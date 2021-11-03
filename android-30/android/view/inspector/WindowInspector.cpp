@@ -5,12 +5,12 @@ namespace android::view::inspector
 	// Fields
 	
 	// QAndroidJniObject forward
-	WindowInspector::WindowInspector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowInspector::WindowInspector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass WindowInspector::getGlobalWindowViews()
+	JObject WindowInspector::getGlobalWindowViews()
 	{
 		return callStaticObjectMethod(
 			"android.view.inspector.WindowInspector",

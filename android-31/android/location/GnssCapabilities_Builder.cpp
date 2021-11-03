@@ -6,16 +6,16 @@ namespace android::location
 	// Fields
 	
 	// QAndroidJniObject forward
-	GnssCapabilities_Builder::GnssCapabilities_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssCapabilities_Builder::GnssCapabilities_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssCapabilities_Builder::GnssCapabilities_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssCapabilities$Builder",
 			"()V"
 		) {}
 	GnssCapabilities_Builder::GnssCapabilities_Builder(android::location::GnssCapabilities arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssCapabilities$Builder",
 			"(Landroid/location/GnssCapabilities;)V",
 			arg0.object()

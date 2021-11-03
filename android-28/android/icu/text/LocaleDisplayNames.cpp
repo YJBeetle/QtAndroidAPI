@@ -10,7 +10,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	LocaleDisplayNames::LocaleDisplayNames(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocaleDisplayNames::LocaleDisplayNames(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -85,7 +85,7 @@ namespace android::icu::text
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	__JniBaseClass LocaleDisplayNames::getUiList(__JniBaseClass arg0, jboolean arg1, __JniBaseClass arg2)
+	JObject LocaleDisplayNames::getUiList(JObject arg0, jboolean arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"getUiList",
@@ -95,7 +95,7 @@ namespace android::icu::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass LocaleDisplayNames::getUiListCompareWholeItems(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject LocaleDisplayNames::getUiListCompareWholeItems(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"getUiListCompareWholeItems",

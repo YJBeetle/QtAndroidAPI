@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -52,9 +52,9 @@ namespace android::widget
 		
 		// Constructors
 		ListView(android::content::Context arg0);
-		ListView(android::content::Context arg0, __JniBaseClass arg1);
-		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ListView(android::content::Context arg0, JObject arg1);
+		ListView(android::content::Context arg0, JObject arg1, jint arg2);
+		ListView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addFooterView(android::view::View arg0);
@@ -65,7 +65,7 @@ namespace android::widget
 		jboolean areHeaderDividersEnabled();
 		jboolean dispatchKeyEvent(android::view::KeyEvent arg0);
 		jstring getAccessibilityClassName();
-		__JniBaseClass getAdapter();
+		JObject getAdapter();
 		jlongArray getCheckItemIds();
 		android::graphics::drawable::Drawable getDivider();
 		jint getDividerHeight();
@@ -83,7 +83,7 @@ namespace android::widget
 		jboolean removeFooterView(android::view::View arg0);
 		jboolean removeHeaderView(android::view::View arg0);
 		jboolean requestChildRectangleOnScreen(android::view::View arg0, android::graphics::Rect arg1, jboolean arg2);
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setCacheColorHint(jint arg0);
 		void setDivider(android::graphics::drawable::Drawable arg0);
 		void setDividerHeight(jint arg0);

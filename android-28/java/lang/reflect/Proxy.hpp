@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -33,22 +33,22 @@ namespace java::util::concurrent
 
 namespace java::lang::reflect
 {
-	class Proxy : public __JniBaseClass
+	class Proxy : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Proxy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Proxy(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getInvocationHandler(jobject arg0);
+		static JObject getInvocationHandler(jobject arg0);
 		static jclass getProxyClass(java::lang::ClassLoader arg0, jarray arg1);
 		static jboolean isProxyClass(jclass arg0);
-		static jobject newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, __JniBaseClass arg2);
+		static jobject newProxyInstance(java::lang::ClassLoader arg0, jarray arg1, JObject arg2);
 	};
 } // namespace java::lang::reflect
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::nio
 {
@@ -13,7 +13,7 @@ namespace java::nio
 
 namespace android::opengl
 {
-	class GLES31Ext : public __JniBaseClass
+	class GLES31Ext : public JObject
 	{
 	public:
 		// Fields
@@ -219,7 +219,7 @@ namespace android::opengl
 		static jint GL_VERTEX_ARRAY_KHR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GLES31Ext(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GLES31Ext(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GLES31Ext(QAndroidJniObject obj);
 		
 		// Constructors
@@ -232,14 +232,14 @@ namespace android::opengl
 		static void glBlendFunciEXT(jint arg0, jint arg1, jint arg2);
 		static void glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4);
 		static void glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
-		static void glDebugMessageCallbackKHR(__JniBaseClass arg0);
+		static void glDebugMessageCallbackKHR(JObject arg0);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
 		static void glDisableiEXT(jint arg0, jint arg1);
 		static void glEnableiEXT(jint arg0, jint arg1);
 		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
-		static __JniBaseClass glGetDebugMessageCallbackKHR();
+		static JObject glGetDebugMessageCallbackKHR();
 		static jarray glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4);
 		static jarray glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8);
 		static jint glGetDebugMessageLogKHR(jint arg0, java::nio::IntBuffer arg1, java::nio::IntBuffer arg2, java::nio::IntBuffer arg3, java::nio::IntBuffer arg4, java::nio::IntBuffer arg5, java::nio::ByteBuffer arg6);

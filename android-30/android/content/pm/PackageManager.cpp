@@ -1362,11 +1362,11 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	PackageManager::PackageManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageManager::PackageManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageManager::PackageManager()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageManager",
 			"()V"
 		) {}
@@ -1549,7 +1549,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass PackageManager::getAllPermissionGroups(jint arg0)
+	JObject PackageManager::getAllPermissionGroups(jint arg0)
 	{
 		return callObjectMethod(
 			"getAllPermissionGroups",
@@ -1678,7 +1678,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	__JniBaseClass PackageManager::getInstalledApplications(jint arg0)
+	JObject PackageManager::getInstalledApplications(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledApplications",
@@ -1686,7 +1686,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	__JniBaseClass PackageManager::getInstalledModules(jint arg0)
+	JObject PackageManager::getInstalledModules(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledModules",
@@ -1694,7 +1694,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	__JniBaseClass PackageManager::getInstalledPackages(jint arg0)
+	JObject PackageManager::getInstalledPackages(jint arg0)
 	{
 		return callObjectMethod(
 			"getInstalledPackages",
@@ -1749,7 +1749,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	__JniBaseClass PackageManager::getMimeGroup(jstring arg0)
+	JObject PackageManager::getMimeGroup(jstring arg0)
 	{
 		return callObjectMethod(
 			"getMimeGroup",
@@ -1842,7 +1842,7 @@ namespace android::content::pm
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass PackageManager::getPackagesHoldingPermissions(jarray arg0, jint arg1)
+	JObject PackageManager::getPackagesHoldingPermissions(jarray arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getPackagesHoldingPermissions",
@@ -1869,7 +1869,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	jint PackageManager::getPreferredActivities(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
+	jint PackageManager::getPreferredActivities(JObject arg0, JObject arg1, jstring arg2)
 	{
 		return callMethod<jint>(
 			"getPreferredActivities",
@@ -1879,7 +1879,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	__JniBaseClass PackageManager::getPreferredPackages(jint arg0)
+	JObject PackageManager::getPreferredPackages(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreferredPackages",
@@ -1938,7 +1938,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::getSharedLibraries(jint arg0)
+	JObject PackageManager::getSharedLibraries(jint arg0)
 	{
 		return callObjectMethod(
 			"getSharedLibraries",
@@ -2014,7 +2014,7 @@ namespace android::content::pm
 			arg1.object()
 		).object<jstring>();
 	}
-	__JniBaseClass PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
+	JObject PackageManager::getWhitelistedRestrictedPermissions(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"getWhitelistedRestrictedPermissions",
@@ -2023,7 +2023,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
+	JObject PackageManager::getXml(jstring arg0, jint arg1, android::content::pm::ApplicationInfo arg2)
 	{
 		return callObjectMethod(
 			"getXml",
@@ -2146,7 +2146,7 @@ namespace android::content::pm
 			"()Z"
 		);
 	}
-	__JniBaseClass PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryBroadcastReceivers(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryBroadcastReceivers",
@@ -2155,7 +2155,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::queryContentProviders(jstring arg0, jint arg1, jint arg2)
+	JObject PackageManager::queryContentProviders(jstring arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"queryContentProviders",
@@ -2165,7 +2165,7 @@ namespace android::content::pm
 			arg2
 		);
 	}
-	__JniBaseClass PackageManager::queryInstrumentation(jstring arg0, jint arg1)
+	JObject PackageManager::queryInstrumentation(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryInstrumentation",
@@ -2174,7 +2174,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentActivities(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentActivities",
@@ -2183,7 +2183,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3)
+	JObject PackageManager::queryIntentActivityOptions(android::content::ComponentName arg0, jarray arg1, android::content::Intent arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"queryIntentActivityOptions",
@@ -2194,7 +2194,7 @@ namespace android::content::pm
 			arg3
 		);
 	}
-	__JniBaseClass PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentContentProviders(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentContentProviders",
@@ -2203,7 +2203,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1)
+	JObject PackageManager::queryIntentServices(android::content::Intent arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryIntentServices",
@@ -2212,7 +2212,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	__JniBaseClass PackageManager::queryPermissionsByGroup(jstring arg0, jint arg1)
+	JObject PackageManager::queryPermissionsByGroup(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"queryPermissionsByGroup",
@@ -2321,7 +2321,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void PackageManager::setMimeGroup(jstring arg0, __JniBaseClass arg1)
+	void PackageManager::setMimeGroup(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setMimeGroup",

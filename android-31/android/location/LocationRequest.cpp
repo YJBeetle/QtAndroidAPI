@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass LocationRequest::CREATOR()
+	JObject LocationRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.LocationRequest",
@@ -42,7 +42,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	LocationRequest::LocationRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocationRequest::LocationRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
 
@@ -30,12 +30,12 @@ namespace java::security::cert
 		CertPathValidatorException(jthrowable arg0);
 		CertPathValidatorException(jstring arg0, jthrowable arg1);
 		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3);
-		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, __JniBaseClass arg4);
+		CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, JObject arg4);
 		
 		// Methods
 		java::security::cert::CertPath getCertPath();
 		jint getIndex();
-		__JniBaseClass getReason();
+		JObject getReason();
 	};
 } // namespace java::security::cert
 

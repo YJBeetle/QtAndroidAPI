@@ -10,17 +10,17 @@ namespace android::telecom
 	// Fields
 	
 	// QAndroidJniObject forward
-	PhoneAccount_Builder::PhoneAccount_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PhoneAccount_Builder::PhoneAccount_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccount arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccount;)V",
 			arg0.object()
 		) {}
 	PhoneAccount_Builder::PhoneAccount_Builder(android::telecom::PhoneAccountHandle arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
 			arg0.object(),
@@ -99,7 +99,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSupportedUriSchemes(__JniBaseClass arg0)
+	android::telecom::PhoneAccount_Builder PhoneAccount_Builder::setSupportedUriSchemes(JObject arg0)
 	{
 		return callObjectMethod(
 			"setSupportedUriSchemes",

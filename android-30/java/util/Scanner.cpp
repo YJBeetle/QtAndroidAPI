@@ -16,70 +16,70 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Scanner::Scanner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Scanner::Scanner(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Scanner::Scanner(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	Scanner::Scanner(java::io::InputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;)V",
 			arg0.object()
 		) {}
-	Scanner::Scanner(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Scanner::Scanner(JObject arg0)
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/lang/Readable;)V",
 			arg0.object()
 		) {}
 	Scanner::Scanner(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Scanner::Scanner(java::io::File arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	Scanner::Scanner(java::io::File arg0, java::nio::charset::Charset arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	Scanner::Scanner(java::io::InputStream arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	Scanner::Scanner(java::io::InputStream arg0, java::nio::charset::Charset arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Scanner::Scanner(__JniBaseClass arg0, jstring arg1)
-		: __JniBaseClass(
+	Scanner::Scanner(JObject arg0, jstring arg1)
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
-	Scanner::Scanner(__JniBaseClass arg0, java::nio::charset::Charset arg1)
-		: __JniBaseClass(
+	Scanner::Scanner(JObject arg0, java::nio::charset::Charset arg1)
+		: JObject(
 			"java.util.Scanner",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)V",
 			arg0.object(),
@@ -101,7 +101,7 @@ namespace java::util
 			"()Ljava/util/regex/Pattern;"
 		);
 	}
-	__JniBaseClass Scanner::findAll(jstring arg0)
+	JObject Scanner::findAll(jstring arg0)
 	{
 		return callObjectMethod(
 			"findAll",
@@ -109,7 +109,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Scanner::findAll(java::util::regex::Pattern arg0)
+	JObject Scanner::findAll(java::util::regex::Pattern arg0)
 	{
 		return callObjectMethod(
 			"findAll",
@@ -298,7 +298,7 @@ namespace java::util
 			"()Ljava/util/Locale;"
 		);
 	}
-	__JniBaseClass Scanner::match()
+	JObject Scanner::match()
 	{
 		return callObjectMethod(
 			"match",
@@ -482,7 +482,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Scanner::tokens()
+	JObject Scanner::tokens()
 	{
 		return callObjectMethod(
 			"tokens",

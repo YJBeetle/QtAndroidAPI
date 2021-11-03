@@ -8,11 +8,11 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ZoomButtonsController::ZoomButtonsController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ZoomButtonsController::ZoomButtonsController(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.ZoomButtonsController",
 			"(Landroid/view/View;)V",
 			arg0.object()
@@ -72,7 +72,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ZoomButtonsController::setOnZoomListener(__JniBaseClass arg0)
+	void ZoomButtonsController::setOnZoomListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnZoomListener",

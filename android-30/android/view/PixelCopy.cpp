@@ -53,12 +53,12 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	PixelCopy::PixelCopy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PixelCopy::PixelCopy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void PixelCopy::request(android::view::Surface arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3)
+	void PixelCopy::request(android::view::Surface arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",
@@ -70,7 +70,7 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3)
+	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",
@@ -82,7 +82,7 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	void PixelCopy::request(android::view::Window arg0, android::graphics::Bitmap arg1, __JniBaseClass arg2, android::os::Handler arg3)
+	void PixelCopy::request(android::view::Window arg0, android::graphics::Bitmap arg1, JObject arg2, android::os::Handler arg3)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",
@@ -94,7 +94,7 @@ namespace android::view
 			arg3.object()
 		);
 	}
-	void PixelCopy::request(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void PixelCopy::request(android::view::Surface arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",
@@ -107,7 +107,7 @@ namespace android::view
 			arg4.object()
 		);
 	}
-	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void PixelCopy::request(android::view::SurfaceView arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",
@@ -120,7 +120,7 @@ namespace android::view
 			arg4.object()
 		);
 	}
-	void PixelCopy::request(android::view::Window arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void PixelCopy::request(android::view::Window arg0, android::graphics::Rect arg1, android::graphics::Bitmap arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callStaticMethod<void>(
 			"android.view.PixelCopy",

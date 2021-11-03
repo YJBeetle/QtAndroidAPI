@@ -12,11 +12,11 @@ namespace android::telephony::mbms
 	}
 	
 	// QAndroidJniObject forward
-	StreamingServiceCallback::StreamingServiceCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StreamingServiceCallback::StreamingServiceCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StreamingServiceCallback::StreamingServiceCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.mbms.StreamingServiceCallback",
 			"()V"
 		) {}

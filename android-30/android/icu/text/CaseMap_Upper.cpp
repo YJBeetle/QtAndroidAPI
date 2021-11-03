@@ -13,7 +13,7 @@ namespace android::icu::text
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CaseMap_Upper::apply(java::util::Locale arg0, jstring arg1, __JniBaseClass arg2, android::icu::text::Edits arg3)
+	JObject CaseMap_Upper::apply(java::util::Locale arg0, jstring arg1, JObject arg2, android::icu::text::Edits arg3)
 	{
 		return callObjectMethod(
 			"apply",

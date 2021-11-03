@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::slice
 {
@@ -17,11 +17,11 @@ namespace android::os
 
 namespace android::app::slice
 {
-	class Slice : public __JniBaseClass
+	class Slice : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_RANGE_VALUE();
 		static jstring EXTRA_TOGGLE_STATE();
 		static jstring HINT_ACTIONS();
@@ -54,15 +54,15 @@ namespace android::app::slice
 		static jstring SUBTYPE_VALUE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Slice(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Slice(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Slice(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getHints();
-		__JniBaseClass getItems();
+		JObject getHints();
+		JObject getItems();
 		android::app::slice::SliceSpec getSpec();
 		android::net::Uri getUri();
 		jboolean isCallerNeeded();

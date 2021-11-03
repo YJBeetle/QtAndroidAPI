@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PackageItemInfo.hpp"
 
 namespace android::os
@@ -14,7 +14,7 @@ namespace android::content::pm
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jstring dataDir();
 		jboolean functionalTest();
 		jboolean handleProfiling();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,15 +9,15 @@ namespace android::os
 
 namespace android::print
 {
-	class PageRange : public __JniBaseClass
+	class PageRange : public JObject
 	{
 	public:
 		// Fields
 		static android::print::PageRange ALL_PAGES();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PageRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PageRange(QAndroidJniObject obj);
 		
 		// Constructors

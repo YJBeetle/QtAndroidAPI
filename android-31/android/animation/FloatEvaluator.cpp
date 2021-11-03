@@ -7,11 +7,11 @@ namespace android::animation
 	// Fields
 	
 	// QAndroidJniObject forward
-	FloatEvaluator::FloatEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FloatEvaluator::FloatEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FloatEvaluator::FloatEvaluator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.FloatEvaluator",
 			"()V"
 		) {}

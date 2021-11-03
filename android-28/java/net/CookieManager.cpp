@@ -15,7 +15,7 @@ namespace java::net
 			"java.net.CookieManager",
 			"()V"
 		) {}
-	CookieManager::CookieManager(__JniBaseClass arg0, __JniBaseClass arg1)
+	CookieManager::CookieManager(JObject arg0, JObject arg1)
 		: java::net::CookieHandler(
 			"java.net.CookieManager",
 			"(Ljava/net/CookieStore;Ljava/net/CookiePolicy;)V",
@@ -24,7 +24,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	__JniBaseClass CookieManager::get(java::net::URI arg0, __JniBaseClass arg1)
+	JObject CookieManager::get(java::net::URI arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"get",
@@ -33,14 +33,14 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	__JniBaseClass CookieManager::getCookieStore()
+	JObject CookieManager::getCookieStore()
 	{
 		return callObjectMethod(
 			"getCookieStore",
 			"()Ljava/net/CookieStore;"
 		);
 	}
-	void CookieManager::put(java::net::URI arg0, __JniBaseClass arg1)
+	void CookieManager::put(java::net::URI arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"put",
@@ -49,7 +49,7 @@ namespace java::net
 			arg1.object()
 		);
 	}
-	void CookieManager::setCookiePolicy(__JniBaseClass arg0)
+	void CookieManager::setCookiePolicy(JObject arg0)
 	{
 		callMethod<void>(
 			"setCookiePolicy",

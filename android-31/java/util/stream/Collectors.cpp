@@ -18,12 +18,12 @@ namespace java::util::stream
 	// Fields
 	
 	// QAndroidJniObject forward
-	Collectors::Collectors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Collectors::Collectors(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Collectors::averagingDouble(__JniBaseClass arg0)
+	JObject Collectors::averagingDouble(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -32,7 +32,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::averagingInt(__JniBaseClass arg0)
+	JObject Collectors::averagingInt(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -41,7 +41,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::averagingLong(__JniBaseClass arg0)
+	JObject Collectors::averagingLong(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -50,7 +50,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::collectingAndThen(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::collectingAndThen(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -60,7 +60,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::counting()
+	JObject Collectors::counting()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -68,7 +68,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	__JniBaseClass Collectors::filtering(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::filtering(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -78,7 +78,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::flatMapping(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::flatMapping(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -88,7 +88,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0)
+	JObject Collectors::groupingBy(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -97,7 +97,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::groupingBy(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -107,7 +107,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingBy(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::groupingBy(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -118,7 +118,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0)
+	JObject Collectors::groupingByConcurrent(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -127,7 +127,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::groupingByConcurrent(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -137,7 +137,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::groupingByConcurrent(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -148,7 +148,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::joining()
+	JObject Collectors::joining()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -156,7 +156,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	__JniBaseClass Collectors::joining(jstring arg0)
+	JObject Collectors::joining(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -165,7 +165,7 @@ namespace java::util::stream
 			arg0
 		);
 	}
-	__JniBaseClass Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
+	JObject Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -176,7 +176,7 @@ namespace java::util::stream
 			arg2
 		);
 	}
-	__JniBaseClass Collectors::mapping(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::mapping(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -186,7 +186,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::maxBy(__JniBaseClass arg0)
+	JObject Collectors::maxBy(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -195,7 +195,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::minBy(__JniBaseClass arg0)
+	JObject Collectors::minBy(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -204,7 +204,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::partitioningBy(__JniBaseClass arg0)
+	JObject Collectors::partitioningBy(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -213,7 +213,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::partitioningBy(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::partitioningBy(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -223,7 +223,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::reducing(__JniBaseClass arg0)
+	JObject Collectors::reducing(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -232,7 +232,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::reducing(jobject arg0, __JniBaseClass arg1)
+	JObject Collectors::reducing(jobject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -242,7 +242,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::reducing(jobject arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::reducing(jobject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -253,7 +253,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::summarizingDouble(__JniBaseClass arg0)
+	JObject Collectors::summarizingDouble(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -262,7 +262,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::summarizingInt(__JniBaseClass arg0)
+	JObject Collectors::summarizingInt(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -271,7 +271,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::summarizingLong(__JniBaseClass arg0)
+	JObject Collectors::summarizingLong(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -280,7 +280,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::summingDouble(__JniBaseClass arg0)
+	JObject Collectors::summingDouble(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -289,7 +289,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::summingInt(__JniBaseClass arg0)
+	JObject Collectors::summingInt(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -298,7 +298,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::summingLong(__JniBaseClass arg0)
+	JObject Collectors::summingLong(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -307,7 +307,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::teeing(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::teeing(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -318,7 +318,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::toCollection(__JniBaseClass arg0)
+	JObject Collectors::toCollection(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -327,7 +327,7 @@ namespace java::util::stream
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::toConcurrentMap(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -337,7 +337,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::toConcurrentMap(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -348,7 +348,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	JObject Collectors::toConcurrentMap(JObject arg0, JObject arg1, JObject arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -360,7 +360,7 @@ namespace java::util::stream
 			arg3.object()
 		);
 	}
-	__JniBaseClass Collectors::toList()
+	JObject Collectors::toList()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -368,7 +368,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::toMap(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -378,7 +378,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::toMap(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -389,7 +389,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	JObject Collectors::toMap(JObject arg0, JObject arg1, JObject arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -401,7 +401,7 @@ namespace java::util::stream
 			arg3.object()
 		);
 	}
-	__JniBaseClass Collectors::toSet()
+	JObject Collectors::toSet()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -409,7 +409,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	__JniBaseClass Collectors::toUnmodifiableList()
+	JObject Collectors::toUnmodifiableList()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -417,7 +417,7 @@ namespace java::util::stream
 			"()Ljava/util/stream/Collector;"
 		);
 	}
-	__JniBaseClass Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Collectors::toUnmodifiableMap(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -427,7 +427,7 @@ namespace java::util::stream
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collectors::toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Collectors::toUnmodifiableMap(JObject arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",
@@ -438,7 +438,7 @@ namespace java::util::stream
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collectors::toUnmodifiableSet()
+	JObject Collectors::toUnmodifiableSet()
 	{
 		return callStaticObjectMethod(
 			"java.util.stream.Collectors",

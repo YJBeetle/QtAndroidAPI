@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,16 +13,16 @@ namespace android::os
 
 namespace android::content
 {
-	class Intent_ShortcutIconResource : public __JniBaseClass
+	class Intent_ShortcutIconResource : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jstring packageName();
 		jstring resourceName();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Intent_ShortcutIconResource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Intent_ShortcutIconResource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Intent_ShortcutIconResource(QAndroidJniObject obj);
 		
 		// Constructors

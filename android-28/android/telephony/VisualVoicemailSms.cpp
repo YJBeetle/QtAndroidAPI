@@ -6,7 +6,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass VisualVoicemailSms::CREATOR()
+	JObject VisualVoicemailSms::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.VisualVoicemailSms",
@@ -16,7 +16,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	VisualVoicemailSms::VisualVoicemailSms(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VisualVoicemailSms::VisualVoicemailSms(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

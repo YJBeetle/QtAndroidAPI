@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -33,7 +33,7 @@ namespace android::view
 
 namespace android::app
 {
-	class ActivityOptions : public __JniBaseClass
+	class ActivityOptions : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::app
 		static jstring EXTRA_USAGE_TIME_REPORT_PACKAGES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActivityOptions(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActivityOptions(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActivityOptions(QAndroidJniObject obj);
 		
 		// Constructors

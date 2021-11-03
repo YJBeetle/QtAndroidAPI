@@ -8,16 +8,16 @@ namespace java::util::concurrent::locks
 	// Fields
 	
 	// QAndroidJniObject forward
-	ReentrantReadWriteLock::ReentrantReadWriteLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ReentrantReadWriteLock::ReentrantReadWriteLock(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ReentrantReadWriteLock::ReentrantReadWriteLock()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.locks.ReentrantReadWriteLock",
 			"()V"
 		) {}
 	ReentrantReadWriteLock::ReentrantReadWriteLock(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.locks.ReentrantReadWriteLock",
 			"(Z)V",
 			arg0
@@ -45,7 +45,7 @@ namespace java::util::concurrent::locks
 			"()I"
 		);
 	}
-	jint ReentrantReadWriteLock::getWaitQueueLength(__JniBaseClass arg0)
+	jint ReentrantReadWriteLock::getWaitQueueLength(JObject arg0)
 	{
 		return callMethod<jint>(
 			"getWaitQueueLength",
@@ -75,7 +75,7 @@ namespace java::util::concurrent::locks
 			"()Z"
 		);
 	}
-	jboolean ReentrantReadWriteLock::hasWaiters(__JniBaseClass arg0)
+	jboolean ReentrantReadWriteLock::hasWaiters(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"hasWaiters",

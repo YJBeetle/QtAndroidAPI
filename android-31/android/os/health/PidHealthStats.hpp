@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::os::health
 {
-	class PidHealthStats : public __JniBaseClass
+	class PidHealthStats : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::os::health
 		static jint MEASUREMENT_WAKE_SUM_MS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PidHealthStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PidHealthStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PidHealthStats(QAndroidJniObject obj);
 		
 		// Constructors

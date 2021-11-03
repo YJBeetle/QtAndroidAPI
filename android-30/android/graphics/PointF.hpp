@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,16 +13,16 @@ namespace android::os
 
 namespace android::graphics
 {
-	class PointF : public __JniBaseClass
+	class PointF : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jfloat x();
 		jfloat y();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PointF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PointF(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PointF(QAndroidJniObject obj);
 		
 		// Constructors

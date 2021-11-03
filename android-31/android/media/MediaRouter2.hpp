@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,13 +33,13 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaRouter2 : public __JniBaseClass
+	class MediaRouter2 : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRouter2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter2(QAndroidJniObject obj);
 		
 		// Constructors
@@ -47,13 +47,13 @@ namespace android::media
 		// Methods
 		static android::media::MediaRouter2 getInstance(android::content::Context arg0);
 		android::media::MediaRouter2_RoutingController getController(jstring arg0);
-		__JniBaseClass getControllers();
-		__JniBaseClass getRoutes();
+		JObject getControllers();
+		JObject getRoutes();
 		android::media::MediaRouter2_RoutingController getSystemController();
-		void registerControllerCallback(__JniBaseClass arg0, android::media::MediaRouter2_ControllerCallback arg1);
-		void registerRouteCallback(__JniBaseClass arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2);
-		void registerTransferCallback(__JniBaseClass arg0, android::media::MediaRouter2_TransferCallback arg1);
-		void setOnGetControllerHintsListener(__JniBaseClass arg0);
+		void registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1);
+		void registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2);
+		void registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1);
+		void setOnGetControllerHintsListener(JObject arg0);
 		void stop();
 		void transferTo(android::media::MediaRoute2Info arg0);
 		void unregisterControllerCallback(android::media::MediaRouter2_ControllerCallback arg0);

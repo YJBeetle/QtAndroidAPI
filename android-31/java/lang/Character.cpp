@@ -497,11 +497,11 @@ namespace java::lang
 	}
 	
 	// QAndroidJniObject forward
-	Character::Character(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Character::Character(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Character::Character(jchar arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Character",
 			"(C)V",
 			arg0

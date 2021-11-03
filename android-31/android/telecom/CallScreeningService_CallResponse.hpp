@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telecom
 {
-	class CallScreeningService_CallResponse : public __JniBaseClass
+	class CallScreeningService_CallResponse : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::telecom
 		static jint CALL_COMPOSER_ATTACHMENT_SUBJECT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CallScreeningService_CallResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CallScreeningService_CallResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CallScreeningService_CallResponse(QAndroidJniObject obj);
 		
 		// Constructors

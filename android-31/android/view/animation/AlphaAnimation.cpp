@@ -10,7 +10,7 @@ namespace android::view::animation
 	AlphaAnimation::AlphaAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
-	AlphaAnimation::AlphaAnimation(android::content::Context arg0, __JniBaseClass arg1)
+	AlphaAnimation::AlphaAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(
 			"android.view.animation.AlphaAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

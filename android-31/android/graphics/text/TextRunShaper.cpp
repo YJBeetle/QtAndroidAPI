@@ -7,7 +7,7 @@ namespace android::graphics::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	TextRunShaper::TextRunShaper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextRunShaper::TextRunShaper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,7 +13,7 @@ namespace android::graphics
 
 namespace android::service::voice
 {
-	class VoiceInteractionSession_Insets : public __JniBaseClass
+	class VoiceInteractionSession_Insets : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::service::voice
 		android::graphics::Region touchableRegion();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VoiceInteractionSession_Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VoiceInteractionSession_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VoiceInteractionSession_Insets(QAndroidJniObject obj);
 		
 		// Constructors

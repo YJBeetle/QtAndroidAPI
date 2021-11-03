@@ -6,16 +6,16 @@ namespace org::xmlpull::v1::sax2
 	// Fields
 	
 	// QAndroidJniObject forward
-	Driver::Driver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Driver::Driver(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Driver::Driver()
-		: __JniBaseClass(
+		: JObject(
 			"org.xmlpull.v1.sax2.Driver",
 			"()V"
 		) {}
-	Driver::Driver(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Driver::Driver(JObject arg0)
+		: JObject(
 			"org.xmlpull.v1.sax2.Driver",
 			"(Lorg/xmlpull/v1/XmlPullParser;)V",
 			arg0.object()
@@ -29,28 +29,28 @@ namespace org::xmlpull::v1::sax2
 			"()I"
 		);
 	}
-	__JniBaseClass Driver::getContentHandler()
+	JObject Driver::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	__JniBaseClass Driver::getDTDHandler()
+	JObject Driver::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	__JniBaseClass Driver::getEntityResolver()
+	JObject Driver::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	__JniBaseClass Driver::getErrorHandler()
+	JObject Driver::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -208,7 +208,7 @@ namespace org::xmlpull::v1::sax2
 			arg0.object()
 		);
 	}
-	void Driver::parseSubTree(__JniBaseClass arg0)
+	void Driver::parseSubTree(JObject arg0)
 	{
 		callMethod<void>(
 			"parseSubTree",
@@ -216,7 +216,7 @@ namespace org::xmlpull::v1::sax2
 			arg0.object()
 		);
 	}
-	void Driver::setContentHandler(__JniBaseClass arg0)
+	void Driver::setContentHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -224,7 +224,7 @@ namespace org::xmlpull::v1::sax2
 			arg0.object()
 		);
 	}
-	void Driver::setDTDHandler(__JniBaseClass arg0)
+	void Driver::setDTDHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -232,7 +232,7 @@ namespace org::xmlpull::v1::sax2
 			arg0.object()
 		);
 	}
-	void Driver::setEntityResolver(__JniBaseClass arg0)
+	void Driver::setEntityResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -240,7 +240,7 @@ namespace org::xmlpull::v1::sax2
 			arg0.object()
 		);
 	}
-	void Driver::setErrorHandler(__JniBaseClass arg0)
+	void Driver::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",

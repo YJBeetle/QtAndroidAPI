@@ -32,11 +32,11 @@ namespace android::net::ipsec::ike
 	}
 	
 	// QAndroidJniObject forward
-	IkeTrafficSelector::IkeTrafficSelector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IkeTrafficSelector::IkeTrafficSelector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IkeTrafficSelector::IkeTrafficSelector(jint arg0, jint arg1, java::net::InetAddress arg2, java::net::InetAddress arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.IkeTrafficSelector",
 			"(IILjava/net/InetAddress;Ljava/net/InetAddress;)V",
 			arg0,

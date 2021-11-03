@@ -30,7 +30,7 @@ namespace java::net
 			arg0,
 			arg1.object()
 		) {}
-	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, __JniBaseClass arg2)
+	URLClassLoader::URLClassLoader(jarray arg0, java::lang::ClassLoader arg1, JObject arg2)
 		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"([Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
@@ -46,7 +46,7 @@ namespace java::net
 			arg1,
 			arg2.object()
 		) {}
-	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, __JniBaseClass arg3)
+	URLClassLoader::URLClassLoader(jstring arg0, jarray arg1, java::lang::ClassLoader arg2, JObject arg3)
 		: java::security::SecureClassLoader(
 			"java.net.URLClassLoader",
 			"(Ljava/lang/String;[Ljava/net/URL;Ljava/lang/ClassLoader;Ljava/net/URLStreamHandlerFactory;)V",
@@ -91,7 +91,7 @@ namespace java::net
 			arg0
 		);
 	}
-	__JniBaseClass URLClassLoader::findResources(jstring arg0)
+	JObject URLClassLoader::findResources(jstring arg0)
 	{
 		return callObjectMethod(
 			"findResources",

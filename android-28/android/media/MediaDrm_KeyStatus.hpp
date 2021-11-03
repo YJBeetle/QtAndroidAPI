@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaDrm_KeyStatus : public __JniBaseClass
+	class MediaDrm_KeyStatus : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::media
 		static jint STATUS_USABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_KeyStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDrm_KeyStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_KeyStatus(QAndroidJniObject obj);
 		
 		// Constructors

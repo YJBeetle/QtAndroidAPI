@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./PathMotion.hpp"
 
 namespace android::content
@@ -25,7 +25,7 @@ namespace android::transition
 		
 		// Constructors
 		ArcMotion();
-		ArcMotion(android::content::Context arg0, __JniBaseClass arg1);
+		ArcMotion(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		jfloat getMaximumAngle();

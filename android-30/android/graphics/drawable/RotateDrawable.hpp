@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableWrapper.hpp"
 
@@ -38,7 +38,7 @@ namespace android::graphics::drawable
 		jfloat getPivotX();
 		jfloat getPivotY();
 		jfloat getToDegrees();
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isPivotXRelative();
 		jboolean isPivotYRelative();
 		void setFromDegrees(jfloat arg0);

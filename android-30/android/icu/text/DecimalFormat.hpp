@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/text/Format.hpp"
 #include "./UFormat.hpp"
 #include "./NumberFormat.hpp"
@@ -95,7 +95,7 @@ namespace android::icu::text
 		java::lang::StringBuffer format(java::math::BigDecimal arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(java::math::BigInteger arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jlong arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(jobject arg0);
 		android::icu::util::Currency getCurrency();
 		android::icu::text::CurrencyPluralInfo getCurrencyPluralInfo();
 		android::icu::util::Currency_CurrencyUsage getCurrencyUsage();

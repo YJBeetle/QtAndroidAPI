@@ -30,11 +30,11 @@ namespace android::service::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaBrowserService_BrowserRoot::MediaBrowserService_BrowserRoot(jstring arg0, android::os::Bundle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,

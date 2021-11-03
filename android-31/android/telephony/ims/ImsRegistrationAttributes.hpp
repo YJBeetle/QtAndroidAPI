@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,15 +9,15 @@ namespace android::os
 
 namespace android::telephony::ims
 {
-	class ImsRegistrationAttributes : public __JniBaseClass
+	class ImsRegistrationAttributes : public JObject
 	{
 	public:
 		// Fields
 		static jint ATTR_EPDG_OVER_CELL_INTERNET();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ImsRegistrationAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ImsRegistrationAttributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ImsRegistrationAttributes(QAndroidJniObject obj);
 		
 		// Constructors
@@ -26,7 +26,7 @@ namespace android::telephony::ims
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getAttributeFlags();
-		__JniBaseClass getFeatureTags();
+		JObject getFeatureTags();
 		jint getTransportType();
 		jint hashCode();
 		jstring toString();

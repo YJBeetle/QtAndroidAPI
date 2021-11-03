@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./ProgressBar.hpp"
 
@@ -46,9 +46,9 @@ namespace android::widget
 		
 		// Constructors
 		AbsSeekBar(android::content::Context arg0);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AbsSeekBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AbsSeekBar(android::content::Context arg0, JObject arg1);
+		AbsSeekBar(android::content::Context arg0, JObject arg1, jint arg2);
+		AbsSeekBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);

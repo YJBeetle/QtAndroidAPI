@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -58,9 +58,9 @@ namespace android::telecom
 		android::telecom::RemoteConnection createRemoteIncomingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
 		android::telecom::RemoteConference createRemoteOutgoingConference(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
 		android::telecom::RemoteConnection createRemoteOutgoingConnection(android::telecom::PhoneAccountHandle arg0, android::telecom::ConnectionRequest arg1);
-		__JniBaseClass getAllConferences();
-		__JniBaseClass getAllConnections();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject getAllConferences();
+		JObject getAllConnections();
+		JObject onBind(android::content::Intent arg0);
 		void onConference(android::telecom::Connection arg0, android::telecom::Connection arg1);
 		void onConnectionServiceFocusGained();
 		void onConnectionServiceFocusLost();

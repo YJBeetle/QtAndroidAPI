@@ -27,11 +27,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Session2Command_Result::Session2Command_Result(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Session2Command_Result::Session2Command_Result(jint arg0, android::os::Bundle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2Command$Result",
 			"(ILandroid/os/Bundle;)V",
 			arg0,

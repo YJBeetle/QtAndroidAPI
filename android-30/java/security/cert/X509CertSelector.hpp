@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -29,13 +29,13 @@ namespace javax::security::auth::x500
 
 namespace java::security::cert
 {
-	class X509CertSelector : public __JniBaseClass
+	class X509CertSelector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit X509CertSelector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit X509CertSelector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		X509CertSelector(QAndroidJniObject obj);
 		
 		// Constructors
@@ -51,47 +51,47 @@ namespace java::security::cert
 		jint getBasicConstraints();
 		java::security::cert::X509Certificate getCertificate();
 		java::util::Date getCertificateValid();
-		__JniBaseClass getExtendedKeyUsage();
+		JObject getExtendedKeyUsage();
 		javax::security::auth::x500::X500Principal getIssuer();
 		jbyteArray getIssuerAsBytes();
 		jstring getIssuerAsString();
 		jbooleanArray getKeyUsage();
 		jboolean getMatchAllSubjectAltNames();
 		jbyteArray getNameConstraints();
-		__JniBaseClass getPathToNames();
-		__JniBaseClass getPolicy();
+		JObject getPathToNames();
+		JObject getPolicy();
 		java::util::Date getPrivateKeyValid();
 		java::math::BigInteger getSerialNumber();
 		javax::security::auth::x500::X500Principal getSubject();
-		__JniBaseClass getSubjectAlternativeNames();
+		JObject getSubjectAlternativeNames();
 		jbyteArray getSubjectAsBytes();
 		jstring getSubjectAsString();
 		jbyteArray getSubjectKeyIdentifier();
-		__JniBaseClass getSubjectPublicKey();
+		JObject getSubjectPublicKey();
 		jstring getSubjectPublicKeyAlgID();
 		jboolean match(java::security::cert::Certificate arg0);
 		void setAuthorityKeyIdentifier(jbyteArray arg0);
 		void setBasicConstraints(jint arg0);
 		void setCertificate(java::security::cert::X509Certificate arg0);
 		void setCertificateValid(java::util::Date arg0);
-		void setExtendedKeyUsage(__JniBaseClass arg0);
+		void setExtendedKeyUsage(JObject arg0);
 		void setIssuer(jbyteArray arg0);
 		void setIssuer(jstring arg0);
 		void setIssuer(javax::security::auth::x500::X500Principal arg0);
 		void setKeyUsage(jbooleanArray arg0);
 		void setMatchAllSubjectAltNames(jboolean arg0);
 		void setNameConstraints(jbyteArray arg0);
-		void setPathToNames(__JniBaseClass arg0);
-		void setPolicy(__JniBaseClass arg0);
+		void setPathToNames(JObject arg0);
+		void setPolicy(JObject arg0);
 		void setPrivateKeyValid(java::util::Date arg0);
 		void setSerialNumber(java::math::BigInteger arg0);
 		void setSubject(jbyteArray arg0);
 		void setSubject(jstring arg0);
 		void setSubject(javax::security::auth::x500::X500Principal arg0);
-		void setSubjectAlternativeNames(__JniBaseClass arg0);
+		void setSubjectAlternativeNames(JObject arg0);
 		void setSubjectKeyIdentifier(jbyteArray arg0);
 		void setSubjectPublicKey(jbyteArray arg0);
-		void setSubjectPublicKey(__JniBaseClass arg0);
+		void setSubjectPublicKey(JObject arg0);
 		void setSubjectPublicKeyAlgID(jstring arg0);
 		jstring toString();
 	};

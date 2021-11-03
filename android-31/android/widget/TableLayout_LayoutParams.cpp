@@ -29,7 +29,7 @@ namespace android::widget
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
 			arg0.object()
 		) {}
-	TableLayout_LayoutParams::TableLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	TableLayout_LayoutParams::TableLayout_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout_LayoutParams(
 			"android.widget.TableLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

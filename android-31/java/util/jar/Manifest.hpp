@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,13 +21,13 @@ namespace java::util::jar
 
 namespace java::util::jar
 {
-	class Manifest : public __JniBaseClass
+	class Manifest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Manifest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Manifest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace java::util::jar
 		jobject clone();
 		jboolean equals(jobject arg0);
 		java::util::jar::Attributes getAttributes(jstring arg0);
-		__JniBaseClass getEntries();
+		JObject getEntries();
 		java::util::jar::Attributes getMainAttributes();
 		jint hashCode();
 		void read(java::io::InputStream arg0);

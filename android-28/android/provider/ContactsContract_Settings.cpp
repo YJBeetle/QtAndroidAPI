@@ -30,7 +30,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_Settings::ContactsContract_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_Settings::ContactsContract_Settings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -12,7 +12,7 @@ namespace android::bluetooth::le
 	// Fields
 	
 	// QAndroidJniObject forward
-	BluetoothLeAdvertiser::BluetoothLeAdvertiser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothLeAdvertiser::BluetoothLeAdvertiser(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

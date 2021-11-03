@@ -25,7 +25,7 @@ namespace android::media
 			"AUDIO_FALLBACK_MODE_MUTE"
 		);
 	}
-	__JniBaseClass PlaybackParams::CREATOR()
+	JObject PlaybackParams::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.PlaybackParams",
@@ -35,11 +35,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	PlaybackParams::PlaybackParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackParams::PlaybackParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PlaybackParams::PlaybackParams()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.PlaybackParams",
 			"()V"
 		) {}

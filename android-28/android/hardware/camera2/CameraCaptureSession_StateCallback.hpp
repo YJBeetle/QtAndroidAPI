@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::camera2
 {
@@ -13,13 +13,13 @@ namespace android::view
 
 namespace android::hardware::camera2
 {
-	class CameraCaptureSession_StateCallback : public __JniBaseClass
+	class CameraCaptureSession_StateCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraCaptureSession_StateCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CameraCaptureSession_StateCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CameraCaptureSession_StateCallback(QAndroidJniObject obj);
 		
 		// Constructors

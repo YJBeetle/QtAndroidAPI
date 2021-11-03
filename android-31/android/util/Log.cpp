@@ -47,7 +47,7 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	Log::Log(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Log::Log(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

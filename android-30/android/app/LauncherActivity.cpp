@@ -20,7 +20,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	__JniBaseClass LauncherActivity::makeListItems()
+	JObject LauncherActivity::makeListItems()
 	{
 		return callObjectMethod(
 			"makeListItems",

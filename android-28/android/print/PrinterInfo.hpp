@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,17 +17,17 @@ namespace android::print
 
 namespace android::print
 {
-	class PrinterInfo : public __JniBaseClass
+	class PrinterInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATUS_BUSY();
 		static jint STATUS_IDLE();
 		static jint STATUS_UNAVAILABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrinterInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrinterInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterInfo(QAndroidJniObject obj);
 		
 		// Constructors

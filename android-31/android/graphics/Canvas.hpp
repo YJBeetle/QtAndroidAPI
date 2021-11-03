@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -73,14 +73,14 @@ namespace android::graphics::text
 
 namespace android::graphics
 {
-	class Canvas : public __JniBaseClass
+	class Canvas : public JObject
 	{
 	public:
 		// Fields
 		static jint ALL_SAVE_FLAG();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Canvas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Canvas(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Canvas(QAndroidJniObject obj);
 		
 		// Constructors

@@ -22,11 +22,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	UserDictionary::UserDictionary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UserDictionary::UserDictionary(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UserDictionary::UserDictionary()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.UserDictionary",
 			"()V"
 		) {}

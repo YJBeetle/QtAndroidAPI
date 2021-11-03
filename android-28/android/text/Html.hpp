@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::text
 {
-	class Html : public __JniBaseClass
+	class Html : public JObject
 	{
 	public:
 		// Fields
@@ -22,19 +22,19 @@ namespace android::text
 		static jint TO_HTML_PARAGRAPH_LINES_INDIVIDUAL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Html(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Html(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Html(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static jstring escapeHtml(jstring arg0);
-		static __JniBaseClass fromHtml(jstring arg0);
-		static __JniBaseClass fromHtml(jstring arg0, jint arg1);
-		static __JniBaseClass fromHtml(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		static jstring toHtml(__JniBaseClass arg0);
-		static jstring toHtml(__JniBaseClass arg0, jint arg1);
+		static JObject fromHtml(jstring arg0);
+		static JObject fromHtml(jstring arg0, jint arg1);
+		static JObject fromHtml(jstring arg0, JObject arg1, JObject arg2);
+		static JObject fromHtml(jstring arg0, jint arg1, JObject arg2, JObject arg3);
+		static jstring toHtml(JObject arg0);
+		static jstring toHtml(JObject arg0, jint arg1);
 	};
 } // namespace android::text
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableContainer.hpp"
 #include "./StateListDrawable.hpp"
@@ -40,7 +40,7 @@ namespace android::graphics::drawable
 		void addState(jintArray arg0, android::graphics::drawable::Drawable arg1, jint arg2);
 		void addTransition(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2, jboolean arg3);
 		void applyTheme(android::content::res::Resources_Theme arg0);
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
 		void jumpToCurrentState();
 		android::graphics::drawable::Drawable mutate();

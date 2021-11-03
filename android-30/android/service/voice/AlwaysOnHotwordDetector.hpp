@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::service::voice
 
 namespace android::service::voice
 {
-	class AlwaysOnHotwordDetector : public __JniBaseClass
+	class AlwaysOnHotwordDetector : public JObject
 	{
 	public:
 		// Fields
@@ -32,7 +32,7 @@ namespace android::service::voice
 		static jint STATE_KEYPHRASE_UNSUPPORTED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlwaysOnHotwordDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlwaysOnHotwordDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlwaysOnHotwordDetector(QAndroidJniObject obj);
 		
 		// Constructors

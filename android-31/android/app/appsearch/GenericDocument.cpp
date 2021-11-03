@@ -5,7 +5,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	GenericDocument::GenericDocument(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GenericDocument::GenericDocument(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -135,7 +135,7 @@ namespace android::app::appsearch
 			arg0
 		).object<jlongArray>();
 	}
-	__JniBaseClass GenericDocument::getPropertyNames()
+	JObject GenericDocument::getPropertyNames()
 	{
 		return callObjectMethod(
 			"getPropertyNames",

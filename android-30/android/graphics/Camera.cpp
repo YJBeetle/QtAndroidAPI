@@ -7,11 +7,11 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	Camera::Camera(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Camera::Camera(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Camera::Camera()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Camera",
 			"()V"
 		) {}

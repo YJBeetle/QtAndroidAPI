@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,13 +17,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaRouter2_RoutingController : public __JniBaseClass
+	class MediaRouter2_RoutingController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRouter2_RoutingController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRouter2_RoutingController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRouter2_RoutingController(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,10 +31,10 @@ namespace android::media
 		// Methods
 		void deselectRoute(android::media::MediaRoute2Info arg0);
 		android::os::Bundle getControlHints();
-		__JniBaseClass getDeselectableRoutes();
+		JObject getDeselectableRoutes();
 		jstring getId();
-		__JniBaseClass getSelectableRoutes();
-		__JniBaseClass getSelectedRoutes();
+		JObject getSelectableRoutes();
+		JObject getSelectedRoutes();
 		jint getVolume();
 		jint getVolumeHandling();
 		jint getVolumeMax();

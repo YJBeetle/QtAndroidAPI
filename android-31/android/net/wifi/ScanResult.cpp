@@ -46,7 +46,7 @@ namespace android::net::wifi
 			"CHANNEL_WIDTH_80MHZ_PLUS_MHZ"
 		);
 	}
-	__JniBaseClass ScanResult::CREATOR()
+	JObject ScanResult::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.ScanResult",
@@ -197,16 +197,16 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	ScanResult::ScanResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ScanResult::ScanResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ScanResult::ScanResult()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.ScanResult",
 			"()V"
 		) {}
 	ScanResult::ScanResult(android::net::wifi::ScanResult &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.ScanResult",
 			"(Landroid/net/wifi/ScanResult;)V",
 			arg0.object()
@@ -239,7 +239,7 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	__JniBaseClass ScanResult::getInformationElements()
+	JObject ScanResult::getInformationElements()
 	{
 		return callObjectMethod(
 			"getInformationElements",

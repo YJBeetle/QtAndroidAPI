@@ -6,23 +6,23 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	SurfaceTexture::SurfaceTexture(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceTexture::SurfaceTexture(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurfaceTexture::SurfaceTexture(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.SurfaceTexture",
 			"(Z)V",
 			arg0
 		) {}
 	SurfaceTexture::SurfaceTexture(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.SurfaceTexture",
 			"(I)V",
 			arg0
 		) {}
 	SurfaceTexture::SurfaceTexture(jint arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.SurfaceTexture",
 			"(IZ)V",
 			arg0,
@@ -90,7 +90,7 @@ namespace android::graphics
 			arg1
 		);
 	}
-	void SurfaceTexture::setOnFrameAvailableListener(__JniBaseClass arg0)
+	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnFrameAvailableListener",
@@ -98,7 +98,7 @@ namespace android::graphics
 			arg0.object()
 		);
 	}
-	void SurfaceTexture::setOnFrameAvailableListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void SurfaceTexture::setOnFrameAvailableListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setOnFrameAvailableListener",

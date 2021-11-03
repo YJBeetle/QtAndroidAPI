@@ -54,7 +54,7 @@ namespace android::net::http
 			"()V"
 		);
 	}
-	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, jstring arg1, __JniBaseClass arg2)
+	java::net::CacheResponse HttpResponseCache::get(java::net::URI arg0, jstring arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"get",

@@ -5,7 +5,7 @@
 namespace android::telephony::mbms
 {
 	// Fields
-	__JniBaseClass DownloadRequest::CREATOR()
+	JObject DownloadRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.mbms.DownloadRequest",
@@ -15,7 +15,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QAndroidJniObject forward
-	DownloadRequest::DownloadRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DownloadRequest::DownloadRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,12 +5,12 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QAndroidJniObject forward
-	SystemFonts::SystemFonts(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SystemFonts::SystemFonts(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SystemFonts::getAvailableFonts()
+	JObject SystemFonts::getAvailableFonts()
 	{
 		return callStaticObjectMethod(
 			"android.graphics.fonts.SystemFonts",

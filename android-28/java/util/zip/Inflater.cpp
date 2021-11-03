@@ -6,16 +6,16 @@ namespace java::util::zip
 	// Fields
 	
 	// QAndroidJniObject forward
-	Inflater::Inflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Inflater::Inflater(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Inflater::Inflater()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Inflater",
 			"()V"
 		) {}
 	Inflater::Inflater(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.zip.Inflater",
 			"(Z)V",
 			arg0

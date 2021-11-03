@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -37,14 +37,14 @@ namespace android::os
 
 namespace android::app
 {
-	class WallpaperInfo : public __JniBaseClass
+	class WallpaperInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WallpaperInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WallpaperInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WallpaperInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -52,7 +52,7 @@ namespace android::app
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		android::content::ComponentName getComponent();
 		jstring getPackageName();
 		android::content::pm::ServiceInfo getServiceInfo();

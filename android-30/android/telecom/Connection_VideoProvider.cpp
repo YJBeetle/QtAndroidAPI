@@ -93,11 +93,11 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	Connection_VideoProvider::Connection_VideoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Connection_VideoProvider::Connection_VideoProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Connection_VideoProvider::Connection_VideoProvider()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.Connection$VideoProvider",
 			"()V"
 		) {}

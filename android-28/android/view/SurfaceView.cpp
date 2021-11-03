@@ -17,14 +17,14 @@ namespace android::view
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1)
+	SurfaceView::SurfaceView(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.view.SurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	SurfaceView::SurfaceView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.view.SurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -32,7 +32,7 @@ namespace android::view
 			arg1.object(),
 			arg2
 		) {}
-	SurfaceView::SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	SurfaceView::SurfaceView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.view.SurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -59,7 +59,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	__JniBaseClass SurfaceView::getHolder()
+	JObject SurfaceView::getHolder()
 	{
 		return callObjectMethod(
 			"getHolder",

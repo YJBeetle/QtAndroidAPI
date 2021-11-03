@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::animation
 {
@@ -13,13 +13,13 @@ namespace android::view
 
 namespace android::view
 {
-	class ViewAnimationUtils : public __JniBaseClass
+	class ViewAnimationUtils : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewAnimationUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewAnimationUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewAnimationUtils(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/lang/Exception.hpp"
 
 namespace java::io
@@ -31,20 +31,20 @@ namespace javax::xml::transform
 		TransformerException(jstring arg0);
 		TransformerException(jthrowable arg0);
 		TransformerException(jstring arg0, jthrowable arg1);
-		TransformerException(jstring arg0, __JniBaseClass arg1);
-		TransformerException(jstring arg0, __JniBaseClass arg1, jthrowable arg2);
+		TransformerException(jstring arg0, JObject arg1);
+		TransformerException(jstring arg0, JObject arg1, jthrowable arg2);
 		
 		// Methods
 		jthrowable getCause();
 		jthrowable getException();
 		jstring getLocationAsString();
-		__JniBaseClass getLocator();
+		JObject getLocator();
 		jstring getMessageAndLocation();
 		jthrowable initCause(jthrowable arg0);
 		void printStackTrace();
 		void printStackTrace(java::io::PrintStream arg0);
 		void printStackTrace(java::io::PrintWriter arg0);
-		void setLocator(__JniBaseClass arg0);
+		void setLocator(JObject arg0);
 	};
 } // namespace javax::xml::transform
 

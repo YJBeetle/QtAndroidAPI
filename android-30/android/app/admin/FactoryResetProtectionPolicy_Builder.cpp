@@ -6,11 +6,11 @@ namespace android::app::admin
 	// Fields
 	
 	// QAndroidJniObject forward
-	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FactoryResetProtectionPolicy_Builder::FactoryResetProtectionPolicy_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.FactoryResetProtectionPolicy$Builder",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace android::app::admin
 			"()Landroid/app/admin/FactoryResetProtectionPolicy;"
 		);
 	}
-	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionAccounts(__JniBaseClass arg0)
+	android::app::admin::FactoryResetProtectionPolicy_Builder FactoryResetProtectionPolicy_Builder::setFactoryResetProtectionAccounts(JObject arg0)
 	{
 		return callObjectMethod(
 			"setFactoryResetProtectionAccounts",

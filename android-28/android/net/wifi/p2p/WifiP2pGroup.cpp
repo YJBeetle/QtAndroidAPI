@@ -5,7 +5,7 @@
 namespace android::net::wifi::p2p
 {
 	// Fields
-	__JniBaseClass WifiP2pGroup::CREATOR()
+	JObject WifiP2pGroup::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.p2p.WifiP2pGroup",
@@ -15,16 +15,16 @@ namespace android::net::wifi::p2p
 	}
 	
 	// QAndroidJniObject forward
-	WifiP2pGroup::WifiP2pGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiP2pGroup::WifiP2pGroup(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiP2pGroup::WifiP2pGroup()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pGroup",
 			"()V"
 		) {}
 	WifiP2pGroup::WifiP2pGroup(android::net::wifi::p2p::WifiP2pGroup &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.p2p.WifiP2pGroup",
 			"(Landroid/net/wifi/p2p/WifiP2pGroup;)V",
 			arg0.object()
@@ -38,7 +38,7 @@ namespace android::net::wifi::p2p
 			"()I"
 		);
 	}
-	__JniBaseClass WifiP2pGroup::getClientList()
+	JObject WifiP2pGroup::getClientList()
 	{
 		return callObjectMethod(
 			"getClientList",

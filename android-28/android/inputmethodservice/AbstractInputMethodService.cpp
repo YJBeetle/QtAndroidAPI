@@ -29,7 +29,7 @@ namespace android::inputmethodservice
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
-	__JniBaseClass AbstractInputMethodService::onBind(android::content::Intent arg0)
+	JObject AbstractInputMethodService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

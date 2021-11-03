@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./MeasureUnit.hpp"
 
 namespace android::icu::util
@@ -37,7 +37,7 @@ namespace android::icu::util
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getAvailableCurrencies();
+		static JObject getAvailableCurrencies();
 		static jarray getAvailableCurrencyCodes(android::icu::util::ULocale arg0, java::util::Date arg1);
 		static jarray getAvailableCurrencyCodes(java::util::Locale arg0, java::util::Date arg1);
 		static jarray getAvailableLocales();

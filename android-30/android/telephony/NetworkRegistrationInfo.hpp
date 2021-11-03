@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class NetworkRegistrationInfo : public __JniBaseClass
+	class NetworkRegistrationInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DOMAIN_CS();
 		static jint DOMAIN_CS_PS();
 		static jint DOMAIN_PS();
@@ -34,7 +34,7 @@ namespace android::telephony
 		static jint SERVICE_TYPE_VOICE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkRegistrationInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkRegistrationInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkRegistrationInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -43,7 +43,7 @@ namespace android::telephony
 		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint getAccessNetworkTechnology();
-		__JniBaseClass getAvailableServices();
+		JObject getAvailableServices();
 		android::telephony::CellIdentity getCellIdentity();
 		jint getDomain();
 		jstring getRegisteredPlmn();

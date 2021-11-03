@@ -6,11 +6,11 @@ namespace android::net::wifi::aware
 	// Fields
 	
 	// QAndroidJniObject forward
-	SubscribeConfig_Builder::SubscribeConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SubscribeConfig_Builder::SubscribeConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SubscribeConfig_Builder::SubscribeConfig_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.aware.SubscribeConfig$Builder",
 			"()V"
 		) {}
@@ -23,7 +23,7 @@ namespace android::net::wifi::aware
 			"()Landroid/net/wifi/aware/SubscribeConfig;"
 		);
 	}
-	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMatchFilter(__JniBaseClass arg0)
+	android::net::wifi::aware::SubscribeConfig_Builder SubscribeConfig_Builder::setMatchFilter(JObject arg0)
 	{
 		return callObjectMethod(
 			"setMatchFilter",

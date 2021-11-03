@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class KeyCharacterMap_KeyData : public __JniBaseClass
+	class KeyCharacterMap_KeyData : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::view
 		jchar number();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyCharacterMap_KeyData(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyCharacterMap_KeyData(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyCharacterMap_KeyData(QAndroidJniObject obj);
 		
 		// Constructors

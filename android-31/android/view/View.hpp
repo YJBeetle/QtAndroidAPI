@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::animation
 {
@@ -233,7 +233,7 @@ namespace java::util
 
 namespace android::view
 {
-	class View : public __JniBaseClass
+	class View : public JObject
 	{
 	public:
 		// Fields
@@ -381,14 +381,14 @@ namespace android::view
 		static android::util::Property Z();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit View(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit View(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		View(QAndroidJniObject obj);
 		
 		// Constructors
 		View(android::content::Context arg0);
-		View(android::content::Context arg0, __JniBaseClass arg1);
-		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		View(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		View(android::content::Context arg0, JObject arg1);
+		View(android::content::Context arg0, JObject arg1, jint arg2);
+		View(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static jint combineMeasuredStates(jint arg0, jint arg1);
@@ -401,10 +401,10 @@ namespace android::view
 		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
 		void addFocusables(java::util::ArrayList arg0, jint arg1);
 		void addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2);
-		void addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1);
-		void addOnAttachStateChangeListener(__JniBaseClass arg0);
-		void addOnLayoutChangeListener(__JniBaseClass arg0);
-		void addOnUnhandledKeyEventListener(__JniBaseClass arg0);
+		void addKeyboardNavigationClusters(JObject arg0, jint arg1);
+		void addOnAttachStateChangeListener(JObject arg0);
+		void addOnLayoutChangeListener(JObject arg0);
+		void addOnUnhandledKeyEventListener(JObject arg0);
 		void addTouchables(java::util::ArrayList arg0);
 		android::view::ViewPropertyAnimator animate();
 		void announceForAccessibility(jstring arg0);
@@ -430,12 +430,12 @@ namespace android::view
 		void computeScroll();
 		android::view::WindowInsets computeSystemWindowInsets(android::view::WindowInsets arg0, android::graphics::Rect arg1);
 		android::view::accessibility::AccessibilityNodeInfo createAccessibilityNodeInfo();
-		void createContextMenu(__JniBaseClass arg0);
+		void createContextMenu(JObject arg0);
 		void destroyDrawingCache();
 		android::view::WindowInsets dispatchApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean dispatchCapturedPointerEvent(android::view::MotionEvent arg0);
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
-		void dispatchCreateViewTranslationRequest(__JniBaseClass arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, __JniBaseClass arg3);
+		void dispatchCreateViewTranslationRequest(JObject arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
 		void dispatchDisplayHint(jint arg0);
 		jboolean dispatchDragEvent(android::view::DragEvent arg0);
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -453,7 +453,7 @@ namespace android::view
 		jboolean dispatchPopulateAccessibilityEvent(android::view::accessibility::AccessibilityEvent arg0);
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
 		void dispatchProvideStructure(android::view::ViewStructure arg0);
-		void dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, __JniBaseClass arg2);
+		void dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2);
 		void dispatchStartTemporaryDetach();
 		void dispatchSystemUiVisibilityChanged(jint arg0);
 		jboolean dispatchTouchEvent(android::view::MotionEvent arg0);
@@ -462,7 +462,7 @@ namespace android::view
 		void dispatchWindowFocusChanged(jboolean arg0);
 		void dispatchWindowInsetsAnimationEnd(android::view::WindowInsetsAnimation arg0);
 		void dispatchWindowInsetsAnimationPrepare(android::view::WindowInsetsAnimation arg0);
-		android::view::WindowInsets dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, __JniBaseClass arg1);
+		android::view::WindowInsets dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, JObject arg1);
 		android::view::WindowInsetsAnimation_Bounds dispatchWindowInsetsAnimationStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1);
 		void dispatchWindowSystemUiVisiblityChanged(jint arg0);
 		void dispatchWindowVisibilityChanged(jint arg0);
@@ -476,7 +476,7 @@ namespace android::view
 		void forceHasOverlappingRendering(jboolean arg0);
 		void forceLayout();
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		void generateDisplayHash(jstring arg0, android::graphics::Rect arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		void generateDisplayHash(jstring arg0, android::graphics::Rect arg1, JObject arg2, JObject arg3);
 		jstring getAccessibilityClassName();
 		android::view::View_AccessibilityDelegate getAccessibilityDelegate();
 		jint getAccessibilityLiveRegion();
@@ -487,9 +487,9 @@ namespace android::view
 		jfloat getAlpha();
 		android::view::animation::Animation getAnimation();
 		android::graphics::Matrix getAnimationMatrix();
-		__JniBaseClass getApplicationWindowToken();
+		JObject getApplicationWindowToken();
 		jintArray getAttributeResolutionStack(jint arg0);
-		__JniBaseClass getAttributeSourceResourceMap();
+		JObject getAttributeSourceResourceMap();
 		jarray getAutofillHints();
 		android::view::autofill::AutofillId getAutofillId();
 		jint getAutofillType();
@@ -566,7 +566,7 @@ namespace android::view
 		jint getNextFocusLeftId();
 		jint getNextFocusRightId();
 		jint getNextFocusUpId();
-		__JniBaseClass getOnFocusChangeListener();
+		JObject getOnFocusChangeListener();
 		jint getOutlineAmbientShadowColor();
 		android::view::ViewOutlineProvider getOutlineProvider();
 		jint getOutlineSpotShadowColor();
@@ -578,8 +578,8 @@ namespace android::view
 		jint getPaddingRight();
 		jint getPaddingStart();
 		jint getPaddingTop();
-		__JniBaseClass getParent();
-		__JniBaseClass getParentForAccessibility();
+		JObject getParent();
+		JObject getParentForAccessibility();
 		jfloat getPivotX();
 		jfloat getPivotY();
 		android::view::PointerIcon getPointerIcon();
@@ -587,7 +587,7 @@ namespace android::view
 		android::content::res::Resources getResources();
 		jboolean getRevealOnFocusHint();
 		jint getRight();
-		__JniBaseClass getRootSurfaceControl();
+		JObject getRootSurfaceControl();
 		android::view::View getRootView();
 		android::view::WindowInsets getRootWindowInsets();
 		jfloat getRotation();
@@ -607,7 +607,7 @@ namespace android::view
 		jint getSourceLayoutResId();
 		jstring getStateDescription();
 		android::animation::StateListAnimator getStateListAnimator();
-		__JniBaseClass getSystemGestureExclusionRects();
+		JObject getSystemGestureExclusionRects();
 		jint getSystemUiVisibility();
 		jobject getTag();
 		jobject getTag(jint arg0);
@@ -633,9 +633,9 @@ namespace android::view
 		jint getVisibility();
 		jint getWidth();
 		android::view::WindowId getWindowId();
-		__JniBaseClass getWindowInsetsController();
+		JObject getWindowInsetsController();
 		jint getWindowSystemUiVisibility();
-		__JniBaseClass getWindowToken();
+		JObject getWindowToken();
 		jint getWindowVisibility();
 		void getWindowVisibleDisplayFrame(android::graphics::Rect arg0);
 		jfloat getX();
@@ -717,9 +717,9 @@ namespace android::view
 		void onCancelPendingInputEvents();
 		jboolean onCapturedPointerEvent(android::view::MotionEvent arg0);
 		jboolean onCheckIsTextEditor();
-		__JniBaseClass onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
-		void onCreateViewTranslationRequest(jintArray arg0, __JniBaseClass arg1);
-		void onCreateVirtualViewTranslationRequests(jlongArray arg0, jintArray arg1, __JniBaseClass arg2);
+		JObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
+		void onCreateViewTranslationRequest(jintArray arg0, JObject arg1);
+		void onCreateVirtualViewTranslationRequests(jlongArray arg0, jintArray arg1, JObject arg2);
 		jboolean onDragEvent(android::view::DragEvent arg0);
 		void onDrawForeground(android::graphics::Canvas arg0);
 		jboolean onFilterTouchEventForSecurity(android::view::MotionEvent arg0);
@@ -746,7 +746,7 @@ namespace android::view
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
 		void onRtlPropertiesChanged(jint arg0);
 		void onScreenStateChanged(jint arg0);
-		void onScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, __JniBaseClass arg2);
+		void onScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2);
 		void onStartTemporaryDetach();
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		jboolean onTrackballEvent(android::view::MotionEvent arg0);
@@ -765,22 +765,22 @@ namespace android::view
 		jboolean performLongClick(jfloat arg0, jfloat arg1);
 		android::view::ContentInfo performReceiveContent(android::view::ContentInfo arg0);
 		void playSoundEffect(jint arg0);
-		jboolean post(__JniBaseClass arg0);
-		jboolean postDelayed(__JniBaseClass arg0, jlong arg1);
+		jboolean post(JObject arg0);
+		jboolean postDelayed(JObject arg0, jlong arg1);
 		void postInvalidate();
 		void postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3);
 		void postInvalidateDelayed(jlong arg0);
 		void postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void postInvalidateOnAnimation();
 		void postInvalidateOnAnimation(jint arg0, jint arg1, jint arg2, jint arg3);
-		void postOnAnimation(__JniBaseClass arg0);
-		void postOnAnimationDelayed(__JniBaseClass arg0, jlong arg1);
+		void postOnAnimation(JObject arg0);
+		void postOnAnimationDelayed(JObject arg0, jlong arg1);
 		void refreshDrawableState();
 		void releasePointerCapture();
-		jboolean removeCallbacks(__JniBaseClass arg0);
-		void removeOnAttachStateChangeListener(__JniBaseClass arg0);
-		void removeOnLayoutChangeListener(__JniBaseClass arg0);
-		void removeOnUnhandledKeyEventListener(__JniBaseClass arg0);
+		jboolean removeCallbacks(JObject arg0);
+		void removeOnAttachStateChangeListener(JObject arg0);
+		void removeOnLayoutChangeListener(JObject arg0);
+		void removeOnUnhandledKeyEventListener(JObject arg0);
 		void requestApplyInsets();
 		void requestFitSystemWindows();
 		jboolean requestFocus();
@@ -797,9 +797,9 @@ namespace android::view
 		void resetPivot();
 		jboolean restoreDefaultFocus();
 		void restoreHierarchyState(android::util::SparseArray arg0);
-		void saveAttributeDataForStyleable(android::content::Context arg0, jintArray arg1, __JniBaseClass arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5);
+		void saveAttributeDataForStyleable(android::content::Context arg0, jintArray arg1, JObject arg2, android::content::res::TypedArray arg3, jint arg4, jint arg5);
 		void saveHierarchyState(android::util::SparseArray arg0);
-		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
+		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		void scrollBy(jint arg0, jint arg1);
 		void scrollTo(jint arg0, jint arg1);
 		void sendAccessibilityEvent(jint arg0);
@@ -882,21 +882,21 @@ namespace android::view
 		void setNextFocusLeftId(jint arg0);
 		void setNextFocusRightId(jint arg0);
 		void setNextFocusUpId(jint arg0);
-		void setOnApplyWindowInsetsListener(__JniBaseClass arg0);
-		void setOnCapturedPointerListener(__JniBaseClass arg0);
-		void setOnClickListener(__JniBaseClass arg0);
-		void setOnContextClickListener(__JniBaseClass arg0);
-		void setOnCreateContextMenuListener(__JniBaseClass arg0);
-		void setOnDragListener(__JniBaseClass arg0);
-		void setOnFocusChangeListener(__JniBaseClass arg0);
-		void setOnGenericMotionListener(__JniBaseClass arg0);
-		void setOnHoverListener(__JniBaseClass arg0);
-		void setOnKeyListener(__JniBaseClass arg0);
-		void setOnLongClickListener(__JniBaseClass arg0);
-		void setOnReceiveContentListener(jarray arg0, __JniBaseClass arg1);
-		void setOnScrollChangeListener(__JniBaseClass arg0);
-		void setOnSystemUiVisibilityChangeListener(__JniBaseClass arg0);
-		void setOnTouchListener(__JniBaseClass arg0);
+		void setOnApplyWindowInsetsListener(JObject arg0);
+		void setOnCapturedPointerListener(JObject arg0);
+		void setOnClickListener(JObject arg0);
+		void setOnContextClickListener(JObject arg0);
+		void setOnCreateContextMenuListener(JObject arg0);
+		void setOnDragListener(JObject arg0);
+		void setOnFocusChangeListener(JObject arg0);
+		void setOnGenericMotionListener(JObject arg0);
+		void setOnHoverListener(JObject arg0);
+		void setOnKeyListener(JObject arg0);
+		void setOnLongClickListener(JObject arg0);
+		void setOnReceiveContentListener(jarray arg0, JObject arg1);
+		void setOnScrollChangeListener(JObject arg0);
+		void setOnSystemUiVisibilityChangeListener(JObject arg0);
+		void setOnTouchListener(JObject arg0);
 		void setOutlineAmbientShadowColor(jint arg0);
 		void setOutlineProvider(android::view::ViewOutlineProvider arg0);
 		void setOutlineSpotShadowColor(jint arg0);
@@ -922,7 +922,7 @@ namespace android::view
 		void setScrollBarFadeDuration(jint arg0);
 		void setScrollBarSize(jint arg0);
 		void setScrollBarStyle(jint arg0);
-		void setScrollCaptureCallback(__JniBaseClass arg0);
+		void setScrollCaptureCallback(JObject arg0);
 		void setScrollCaptureHint(jint arg0);
 		void setScrollContainer(jboolean arg0);
 		void setScrollIndicators(jint arg0);
@@ -934,7 +934,7 @@ namespace android::view
 		void setSoundEffectsEnabled(jboolean arg0);
 		void setStateDescription(jstring arg0);
 		void setStateListAnimator(android::animation::StateListAnimator arg0);
-		void setSystemGestureExclusionRects(__JniBaseClass arg0);
+		void setSystemGestureExclusionRects(JObject arg0);
 		void setSystemUiVisibility(jint arg0);
 		void setTag(jobject arg0);
 		void setTag(jint arg0, jobject arg1);
@@ -954,7 +954,7 @@ namespace android::view
 		void setVerticalScrollbarPosition(jint arg0);
 		void setVerticalScrollbarThumbDrawable(android::graphics::drawable::Drawable arg0);
 		void setVerticalScrollbarTrackDrawable(android::graphics::drawable::Drawable arg0);
-		void setViewTranslationCallback(__JniBaseClass arg0);
+		void setViewTranslationCallback(JObject arg0);
 		void setVisibility(jint arg0);
 		void setWillNotCacheDrawing(jboolean arg0);
 		void setWillNotDraw(jboolean arg0);
@@ -964,8 +964,8 @@ namespace android::view
 		void setZ(jfloat arg0);
 		jboolean showContextMenu();
 		jboolean showContextMenu(jfloat arg0, jfloat arg1);
-		android::view::ActionMode startActionMode(__JniBaseClass arg0);
-		android::view::ActionMode startActionMode(__JniBaseClass arg0, jint arg1);
+		android::view::ActionMode startActionMode(JObject arg0);
+		android::view::ActionMode startActionMode(JObject arg0, jint arg1);
 		void startAnimation(android::view::animation::Animation arg0);
 		jboolean startDrag(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3);
 		jboolean startDragAndDrop(android::content::ClipData arg0, android::view::View_DragShadowBuilder arg1, jobject arg2, jint arg3);
@@ -975,7 +975,7 @@ namespace android::view
 		void transformMatrixToGlobal(android::graphics::Matrix arg0);
 		void transformMatrixToLocal(android::graphics::Matrix arg0);
 		void unscheduleDrawable(android::graphics::drawable::Drawable arg0);
-		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1);
+		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1);
 		void updateDragShadow(android::view::View_DragShadowBuilder arg0);
 		jboolean willNotCacheDrawing();
 		jboolean willNotDraw();

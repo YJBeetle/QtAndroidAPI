@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::wifi
 {
@@ -9,7 +9,7 @@ namespace android::net::wifi
 
 namespace android::net::wifi
 {
-	class WifiManager_LocalOnlyHotspotCallback : public __JniBaseClass
+	class WifiManager_LocalOnlyHotspotCallback : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::net::wifi
 		static jint ERROR_TETHERING_DISALLOWED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager_LocalOnlyHotspotCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager_LocalOnlyHotspotCallback(QAndroidJniObject obj);
 		
 		// Constructors

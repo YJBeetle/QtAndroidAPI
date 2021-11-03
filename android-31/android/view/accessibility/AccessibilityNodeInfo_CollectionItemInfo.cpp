@@ -5,11 +5,11 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
 			"(IIIIZ)V",
 			arg0,
@@ -19,7 +19,7 @@ namespace android::view::accessibility
 			arg4
 		) {}
 	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
 			"(IIIIZZ)V",
 			arg0,

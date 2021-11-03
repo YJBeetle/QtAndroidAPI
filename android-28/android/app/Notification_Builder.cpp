@@ -17,17 +17,17 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Notification_Builder::Notification_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification_Builder::Notification_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification_Builder::Notification_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	Notification_Builder::Notification_Builder(android::content::Context arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification$Builder",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
@@ -115,7 +115,7 @@ namespace android::app
 			"()Landroid/widget/RemoteViews;"
 		);
 	}
-	android::app::Notification_Builder Notification_Builder::extend(__JniBaseClass arg0)
+	android::app::Notification_Builder Notification_Builder::extend(JObject arg0)
 	{
 		return callObjectMethod(
 			"extend",

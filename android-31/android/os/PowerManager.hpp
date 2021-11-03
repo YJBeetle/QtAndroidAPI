@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace java::time
 
 namespace android::os
 {
-	class PowerManager : public __JniBaseClass
+	class PowerManager : public JObject
 	{
 	public:
 		// Fields
@@ -41,14 +41,14 @@ namespace android::os
 		static jint THERMAL_STATUS_SHUTDOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PowerManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PowerManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void addThermalStatusListener(__JniBaseClass arg0);
-		void addThermalStatusListener(__JniBaseClass arg0, __JniBaseClass arg1);
+		void addThermalStatusListener(JObject arg0);
+		void addThermalStatusListener(JObject arg0, JObject arg1);
 		java::time::Duration getBatteryDischargePrediction();
 		jint getCurrentThermalStatus();
 		jint getLocationPowerSaveMode();
@@ -64,7 +64,7 @@ namespace android::os
 		jboolean isWakeLockLevelSupported(jint arg0);
 		android::os::PowerManager_WakeLock newWakeLock(jint arg0, jstring arg1);
 		void reboot(jstring arg0);
-		void removeThermalStatusListener(__JniBaseClass arg0);
+		void removeThermalStatusListener(JObject arg0);
 	};
 } // namespace android::os
 

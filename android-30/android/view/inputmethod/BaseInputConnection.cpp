@@ -14,11 +14,11 @@ namespace android::view::inputmethod
 	// Fields
 	
 	// QAndroidJniObject forward
-	BaseInputConnection::BaseInputConnection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BaseInputConnection::BaseInputConnection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BaseInputConnection::BaseInputConnection(android::view::View arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.BaseInputConnection",
 			"(Landroid/view/View;Z)V",
 			arg0.object(),
@@ -26,7 +26,7 @@ namespace android::view::inputmethod
 		) {}
 	
 	// Methods
-	jint BaseInputConnection::getComposingSpanEnd(__JniBaseClass arg0)
+	jint BaseInputConnection::getComposingSpanEnd(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.view.inputmethod.BaseInputConnection",
@@ -35,7 +35,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	jint BaseInputConnection::getComposingSpanStart(__JniBaseClass arg0)
+	jint BaseInputConnection::getComposingSpanStart(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"android.view.inputmethod.BaseInputConnection",
@@ -44,7 +44,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void BaseInputConnection::removeComposingSpans(__JniBaseClass arg0)
+	void BaseInputConnection::removeComposingSpans(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.view.inputmethod.BaseInputConnection",
@@ -53,7 +53,7 @@ namespace android::view::inputmethod
 			arg0.object()
 		);
 	}
-	void BaseInputConnection::setComposingSpans(__JniBaseClass arg0)
+	void BaseInputConnection::setComposingSpans(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.view.inputmethod.BaseInputConnection",
@@ -159,7 +159,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	__JniBaseClass BaseInputConnection::getEditable()
+	JObject BaseInputConnection::getEditable()
 	{
 		return callObjectMethod(
 			"getEditable",

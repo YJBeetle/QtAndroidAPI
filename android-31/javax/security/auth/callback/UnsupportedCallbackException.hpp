@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "../../../../java/lang/Exception.hpp"
 
 
@@ -16,11 +16,11 @@ namespace javax::security::auth::callback
 		UnsupportedCallbackException(QAndroidJniObject obj);
 		
 		// Constructors
-		UnsupportedCallbackException(__JniBaseClass arg0);
-		UnsupportedCallbackException(__JniBaseClass arg0, jstring arg1);
+		UnsupportedCallbackException(JObject arg0);
+		UnsupportedCallbackException(JObject arg0, jstring arg1);
 		
 		// Methods
-		__JniBaseClass getCallback();
+		JObject getCallback();
 	};
 } // namespace javax::security::auth::callback
 

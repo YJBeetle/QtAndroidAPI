@@ -6,22 +6,22 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	SpannableStringBuilder::SpannableStringBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SpannableStringBuilder::SpannableStringBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SpannableStringBuilder::SpannableStringBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.SpannableStringBuilder",
 			"()V"
 		) {}
 	SpannableStringBuilder::SpannableStringBuilder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		) {}
 	SpannableStringBuilder::SpannableStringBuilder(jstring arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.SpannableStringBuilder",
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,

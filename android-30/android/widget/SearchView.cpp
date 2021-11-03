@@ -19,14 +19,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1)
+	SearchView::SearchView(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.SearchView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	SearchView::SearchView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::LinearLayout(
 			"android.widget.SearchView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	SearchView::SearchView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	SearchView::SearchView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::LinearLayout(
 			"android.widget.SearchView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -216,7 +216,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void SearchView::setOnCloseListener(__JniBaseClass arg0)
+	void SearchView::setOnCloseListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnCloseListener",
@@ -224,7 +224,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnQueryTextFocusChangeListener(__JniBaseClass arg0)
+	void SearchView::setOnQueryTextFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnQueryTextFocusChangeListener",
@@ -232,7 +232,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnQueryTextListener(__JniBaseClass arg0)
+	void SearchView::setOnQueryTextListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnQueryTextListener",
@@ -240,7 +240,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnSearchClickListener(__JniBaseClass arg0)
+	void SearchView::setOnSearchClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnSearchClickListener",
@@ -248,7 +248,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void SearchView::setOnSuggestionListener(__JniBaseClass arg0)
+	void SearchView::setOnSuggestionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnSuggestionListener",

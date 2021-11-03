@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewStructure_HtmlInfo_Builder::ViewStructure_HtmlInfo_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewStructure$HtmlInfo$Builder",
 			"()V"
 		) {}

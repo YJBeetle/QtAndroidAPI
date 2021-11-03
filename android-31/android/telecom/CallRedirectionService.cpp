@@ -33,7 +33,7 @@ namespace android::telecom
 			"()V"
 		);
 	}
-	__JniBaseClass CallRedirectionService::onBind(android::content::Intent arg0)
+	JObject CallRedirectionService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

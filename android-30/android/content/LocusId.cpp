@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass LocusId::CREATOR()
+	JObject LocusId::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.LocusId",
@@ -14,11 +14,11 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	LocusId::LocusId(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocusId::LocusId(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LocusId::LocusId(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.LocusId",
 			"(Ljava/lang/String;)V",
 			arg0

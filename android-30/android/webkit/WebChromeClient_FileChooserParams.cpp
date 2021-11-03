@@ -27,11 +27,11 @@ namespace android::webkit
 	}
 	
 	// QAndroidJniObject forward
-	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebChromeClient_FileChooserParams::WebChromeClient_FileChooserParams()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebChromeClient$FileChooserParams",
 			"()V"
 		) {}

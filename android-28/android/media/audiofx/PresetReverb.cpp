@@ -88,7 +88,7 @@ namespace android::media::audiofx
 			"()Landroid/media/audiofx/PresetReverb$Settings;"
 		);
 	}
-	void PresetReverb::setParameterListener(__JniBaseClass arg0)
+	void PresetReverb::setParameterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameterListener",

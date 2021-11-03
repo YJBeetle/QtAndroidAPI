@@ -37,7 +37,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	java::time::ZoneOffset ZoneOffset::from(__JniBaseClass arg0)
+	java::time::ZoneOffset ZoneOffset::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.ZoneOffset",
@@ -94,7 +94,7 @@ namespace java::time
 			arg0
 		);
 	}
-	__JniBaseClass ZoneOffset::adjustInto(__JniBaseClass arg0)
+	JObject ZoneOffset::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -126,7 +126,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jint ZoneOffset::get(__JniBaseClass arg0)
+	jint ZoneOffset::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -141,7 +141,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jlong ZoneOffset::getLong(__JniBaseClass arg0)
+	jlong ZoneOffset::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -170,7 +170,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jboolean ZoneOffset::isSupported(__JniBaseClass arg0)
+	jboolean ZoneOffset::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -178,7 +178,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jobject ZoneOffset::query(__JniBaseClass arg0)
+	jobject ZoneOffset::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -186,7 +186,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange ZoneOffset::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange ZoneOffset::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",

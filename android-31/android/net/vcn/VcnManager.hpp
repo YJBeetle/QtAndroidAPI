@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::vcn
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::net::vcn
 {
-	class VcnManager : public __JniBaseClass
+	class VcnManager : public JObject
 	{
 	public:
 		// Fields
@@ -30,15 +30,15 @@ namespace android::net::vcn
 		static jint VCN_STATUS_CODE_SAFE_MODE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VcnManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VcnManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VcnManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void clearVcnConfig(android::os::ParcelUuid arg0);
-		__JniBaseClass getConfiguredSubscriptionGroups();
-		void registerVcnStatusCallback(android::os::ParcelUuid arg0, __JniBaseClass arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2);
+		JObject getConfiguredSubscriptionGroups();
+		void registerVcnStatusCallback(android::os::ParcelUuid arg0, JObject arg1, android::net::vcn::VcnManager_VcnStatusCallback arg2);
 		void setVcnConfig(android::os::ParcelUuid arg0, android::net::vcn::VcnConfig arg1);
 		void unregisterVcnStatusCallback(android::net::vcn::VcnManager_VcnStatusCallback arg0);
 	};

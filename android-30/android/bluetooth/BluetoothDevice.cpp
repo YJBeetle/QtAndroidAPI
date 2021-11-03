@@ -112,7 +112,7 @@ namespace android::bluetooth
 			"BOND_NONE"
 		);
 	}
-	__JniBaseClass BluetoothDevice::CREATOR()
+	JObject BluetoothDevice::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothDevice",
@@ -327,7 +327,7 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothDevice::BluetoothDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothDevice::BluetoothDevice(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./View.hpp"
 
 namespace android::animation
@@ -142,16 +142,16 @@ namespace android::view
 		
 		// Constructors
 		ViewGroup(android::content::Context arg0);
-		ViewGroup(android::content::Context arg0, __JniBaseClass arg1);
-		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ViewGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ViewGroup(android::content::Context arg0, JObject arg1);
+		ViewGroup(android::content::Context arg0, JObject arg1, jint arg2);
+		ViewGroup(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		static jint getChildMeasureSpec(jint arg0, jint arg1, jint arg2);
 		void addChildrenForAccessibility(java::util::ArrayList arg0);
 		void addExtraDataToAccessibilityNodeInfo(android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, android::os::Bundle arg2);
 		void addFocusables(java::util::ArrayList arg0, jint arg1, jint arg2);
-		void addKeyboardNavigationClusters(__JniBaseClass arg0, jint arg1);
+		void addKeyboardNavigationClusters(JObject arg0, jint arg1);
 		jboolean addStatesFromChildren();
 		void addTouchables(java::util::ArrayList arg0);
 		void addView(android::view::View arg0);
@@ -168,7 +168,7 @@ namespace android::view
 		android::view::WindowInsets dispatchApplyWindowInsets(android::view::WindowInsets arg0);
 		jboolean dispatchCapturedPointerEvent(android::view::MotionEvent arg0);
 		void dispatchConfigurationChanged(android::content::res::Configuration arg0);
-		void dispatchCreateViewTranslationRequest(__JniBaseClass arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, __JniBaseClass arg3);
+		void dispatchCreateViewTranslationRequest(JObject arg0, jintArray arg1, android::view::translation::TranslationCapability arg2, JObject arg3);
 		void dispatchDisplayHint(jint arg0);
 		jboolean dispatchDragEvent(android::view::DragEvent arg0);
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -179,7 +179,7 @@ namespace android::view
 		void dispatchPointerCaptureChanged(jboolean arg0);
 		void dispatchProvideAutofillStructure(android::view::ViewStructure arg0, jint arg1);
 		void dispatchProvideStructure(android::view::ViewStructure arg0);
-		void dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, __JniBaseClass arg2);
+		void dispatchScrollCaptureSearch(android::graphics::Rect arg0, android::graphics::Point arg1, JObject arg2);
 		void dispatchSetActivated(jboolean arg0);
 		void dispatchSetSelected(jboolean arg0);
 		void dispatchStartTemporaryDetach();
@@ -190,7 +190,7 @@ namespace android::view
 		void dispatchWindowFocusChanged(jboolean arg0);
 		void dispatchWindowInsetsAnimationEnd(android::view::WindowInsetsAnimation arg0);
 		void dispatchWindowInsetsAnimationPrepare(android::view::WindowInsetsAnimation arg0);
-		android::view::WindowInsets dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, __JniBaseClass arg1);
+		android::view::WindowInsets dispatchWindowInsetsAnimationProgress(android::view::WindowInsets arg0, JObject arg1);
 		android::view::WindowInsetsAnimation_Bounds dispatchWindowInsetsAnimationStart(android::view::WindowInsetsAnimation arg0, android::view::WindowInsetsAnimation_Bounds arg1);
 		void dispatchWindowSystemUiVisiblityChanged(jint arg0);
 		void dispatchWindowVisibilityChanged(jint arg0);
@@ -200,7 +200,7 @@ namespace android::view
 		android::view::View focusSearch(android::view::View arg0, jint arg1);
 		void focusableViewAvailable(android::view::View arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		android::view::ViewGroup_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::view::ViewGroup_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		android::view::View getChildAt(jint arg0);
 		jint getChildCount();
@@ -211,7 +211,7 @@ namespace android::view
 		jint getDescendantFocusability();
 		android::view::View getFocusedChild();
 		android::view::animation::LayoutAnimationController getLayoutAnimation();
-		__JniBaseClass getLayoutAnimationListener();
+		JObject getLayoutAnimationListener();
 		jint getLayoutMode();
 		android::animation::LayoutTransition getLayoutTransition();
 		jint getNestedScrollAxes();
@@ -222,7 +222,7 @@ namespace android::view
 		jboolean hasTransientState();
 		jint indexOfChild(android::view::View arg0);
 		void invalidateChild(android::view::View arg0, android::graphics::Rect arg1);
-		__JniBaseClass invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1);
+		JObject invalidateChildInParent(jintArray arg0, android::graphics::Rect arg1);
 		jboolean isAlwaysDrawnWithCacheEnabled();
 		jboolean isAnimationCacheEnabled();
 		jboolean isLayoutSuppressed();
@@ -271,11 +271,11 @@ namespace android::view
 		void setClipToPadding(jboolean arg0);
 		void setDescendantFocusability(jint arg0);
 		void setLayoutAnimation(android::view::animation::LayoutAnimationController arg0);
-		void setLayoutAnimationListener(__JniBaseClass arg0);
+		void setLayoutAnimationListener(JObject arg0);
 		void setLayoutMode(jint arg0);
 		void setLayoutTransition(android::animation::LayoutTransition arg0);
 		void setMotionEventSplittingEnabled(jboolean arg0);
-		void setOnHierarchyChangeListener(__JniBaseClass arg0);
+		void setOnHierarchyChangeListener(JObject arg0);
 		void setPersistentDrawingCache(jint arg0);
 		void setTouchscreenBlocksFocus(jboolean arg0);
 		void setTransitionGroup(jboolean arg0);
@@ -283,8 +283,8 @@ namespace android::view
 		jboolean shouldDelayChildPressedState();
 		jboolean showContextMenuForChild(android::view::View arg0);
 		jboolean showContextMenuForChild(android::view::View arg0, jfloat arg1, jfloat arg2);
-		android::view::ActionMode startActionModeForChild(android::view::View arg0, __JniBaseClass arg1);
-		android::view::ActionMode startActionModeForChild(android::view::View arg0, __JniBaseClass arg1, jint arg2);
+		android::view::ActionMode startActionModeForChild(android::view::View arg0, JObject arg1);
+		android::view::ActionMode startActionModeForChild(android::view::View arg0, JObject arg1, jint arg2);
 		void startLayoutAnimation();
 		void startViewTransition(android::view::View arg0);
 		void suppressLayout(jboolean arg0);

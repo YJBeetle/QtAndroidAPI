@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -17,13 +17,13 @@ namespace javax::crypto
 
 namespace android::hardware::fingerprint
 {
-	class FingerprintManager_CryptoObject : public __JniBaseClass
+	class FingerprintManager_CryptoObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FingerprintManager_CryptoObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FingerprintManager_CryptoObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FingerprintManager_CryptoObject(QAndroidJniObject obj);
 		
 		// Constructors

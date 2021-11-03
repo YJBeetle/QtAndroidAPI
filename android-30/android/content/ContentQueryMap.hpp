@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../java/util/Observable.hpp"
 
 namespace android::content
@@ -24,11 +24,11 @@ namespace android::content
 		ContentQueryMap(QAndroidJniObject obj);
 		
 		// Constructors
-		ContentQueryMap(__JniBaseClass arg0, jstring arg1, jboolean arg2, android::os::Handler arg3);
+		ContentQueryMap(JObject arg0, jstring arg1, jboolean arg2, android::os::Handler arg3);
 		
 		// Methods
 		void close();
-		__JniBaseClass getRows();
+		JObject getRows();
 		android::content::ContentValues getValues(jstring arg0);
 		void requery();
 		void setKeepUpdated(jboolean arg0);

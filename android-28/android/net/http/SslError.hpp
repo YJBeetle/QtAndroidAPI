@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::http
 {
@@ -13,7 +13,7 @@ namespace java::security::cert
 
 namespace android::net::http
 {
-	class SslError : public __JniBaseClass
+	class SslError : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::net::http
 		static jint SSL_UNTRUSTED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SslError(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SslError(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SslError(QAndroidJniObject obj);
 		
 		// Constructors

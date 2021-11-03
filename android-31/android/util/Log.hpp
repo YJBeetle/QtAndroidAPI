@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class Log : public __JniBaseClass
+	class Log : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::util
 		static jint WARN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Log(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Log(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Log(QAndroidJniObject obj);
 		
 		// Constructors

@@ -30,7 +30,7 @@ namespace android::text
 			"CAP_MODE_WORDS"
 		);
 	}
-	__JniBaseClass TextUtils::CHAR_SEQUENCE_CREATOR()
+	JObject TextUtils::CHAR_SEQUENCE_CREATOR()
 	{
 		return getStaticObjectField(
 			"android.text.TextUtils",
@@ -40,7 +40,7 @@ namespace android::text
 	}
 	
 	// QAndroidJniObject forward
-	TextUtils::TextUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextUtils::TextUtils(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -67,7 +67,7 @@ namespace android::text
 			arg0
 		).object<jstring>();
 	}
-	void TextUtils::copySpansFrom(__JniBaseClass arg0, jint arg1, jint arg2, jclass arg3, __JniBaseClass arg4, jint arg5)
+	void TextUtils::copySpansFrom(JObject arg0, jint arg1, jint arg2, jclass arg3, JObject arg4, jint arg5)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
@@ -81,7 +81,7 @@ namespace android::text
 			arg5
 		);
 	}
-	void TextUtils::dumpSpans(jstring arg0, __JniBaseClass arg1, jstring arg2)
+	void TextUtils::dumpSpans(jstring arg0, JObject arg1, jstring arg2)
 	{
 		callStaticMethod<void>(
 			"android.text.TextUtils",
@@ -104,7 +104,7 @@ namespace android::text
 			arg3.object()
 		).object<jstring>();
 	}
-	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, __JniBaseClass arg5)
+	jstring TextUtils::ellipsize(jstring arg0, android::text::TextPaint arg1, jfloat arg2, android::text::TextUtils_TruncateAt arg3, jboolean arg4, JObject arg5)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -332,7 +332,7 @@ namespace android::text
 			arg1
 		).object<jstring>();
 	}
-	jstring TextUtils::join(jstring arg0, __JniBaseClass arg1)
+	jstring TextUtils::join(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",
@@ -375,7 +375,7 @@ namespace android::text
 			arg3
 		);
 	}
-	jstring TextUtils::listEllipsize(android::content::Context arg0, __JniBaseClass arg1, jstring arg2, android::text::TextPaint arg3, jfloat arg4, jint arg5)
+	jstring TextUtils::listEllipsize(android::content::Context arg0, JObject arg1, jstring arg2, android::text::TextPaint arg3, jfloat arg4, jint arg5)
 	{
 		return callStaticObjectMethod(
 			"android.text.TextUtils",

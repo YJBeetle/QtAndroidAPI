@@ -59,7 +59,7 @@ namespace java::util::jar
 			arg1,
 			arg2
 		) {}
-	JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2, __JniBaseClass arg3)
+	JarFile::JarFile(java::io::File arg0, jboolean arg1, jint arg2, JObject arg3)
 		: java::util::zip::ZipFile(
 			"java.util.jar.JarFile",
 			"(Ljava/io/File;ZILjava/lang/Runtime$Version;)V",
@@ -70,7 +70,7 @@ namespace java::util::jar
 		) {}
 	
 	// Methods
-	__JniBaseClass JarFile::baseVersion()
+	JObject JarFile::baseVersion()
 	{
 		return callStaticObjectMethod(
 			"java.util.jar.JarFile",
@@ -78,7 +78,7 @@ namespace java::util::jar
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	__JniBaseClass JarFile::runtimeVersion()
+	JObject JarFile::runtimeVersion()
 	{
 		return callStaticObjectMethod(
 			"java.util.jar.JarFile",
@@ -86,7 +86,7 @@ namespace java::util::jar
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	__JniBaseClass JarFile::entries()
+	JObject JarFile::entries()
 	{
 		return callObjectMethod(
 			"entries",
@@ -124,7 +124,7 @@ namespace java::util::jar
 			"()Ljava/util/jar/Manifest;"
 		);
 	}
-	__JniBaseClass JarFile::getVersion()
+	JObject JarFile::getVersion()
 	{
 		return callObjectMethod(
 			"getVersion",
@@ -138,14 +138,14 @@ namespace java::util::jar
 			"()Z"
 		);
 	}
-	__JniBaseClass JarFile::stream()
+	JObject JarFile::stream()
 	{
 		return callObjectMethod(
 			"stream",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	__JniBaseClass JarFile::versionedStream()
+	JObject JarFile::versionedStream()
 	{
 		return callObjectMethod(
 			"versionedStream",

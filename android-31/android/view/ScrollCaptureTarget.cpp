@@ -8,11 +8,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	ScrollCaptureTarget::ScrollCaptureTarget(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ScrollCaptureTarget::ScrollCaptureTarget(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	ScrollCaptureTarget::ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, __JniBaseClass arg3)
-		: __JniBaseClass(
+	ScrollCaptureTarget::ScrollCaptureTarget(android::view::View arg0, android::graphics::Rect arg1, android::graphics::Point arg2, JObject arg3)
+		: JObject(
 			"android.view.ScrollCaptureTarget",
 			"(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;Landroid/view/ScrollCaptureCallback;)V",
 			arg0.object(),
@@ -22,7 +22,7 @@ namespace android::view
 		) {}
 	
 	// Methods
-	__JniBaseClass ScrollCaptureTarget::getCallback()
+	JObject ScrollCaptureTarget::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",

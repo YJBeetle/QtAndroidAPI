@@ -4,7 +4,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssNavigationMessage::CREATOR()
+	JObject GnssNavigationMessage::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssNavigationMessage",
@@ -140,7 +140,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssNavigationMessage::GnssNavigationMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssNavigationMessage::GnssNavigationMessage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

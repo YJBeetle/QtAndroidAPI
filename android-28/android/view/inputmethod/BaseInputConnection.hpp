@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -41,23 +41,23 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class BaseInputConnection : public __JniBaseClass
+	class BaseInputConnection : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BaseInputConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BaseInputConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BaseInputConnection(QAndroidJniObject obj);
 		
 		// Constructors
 		BaseInputConnection(android::view::View arg0, jboolean arg1);
 		
 		// Methods
-		static jint getComposingSpanEnd(__JniBaseClass arg0);
-		static jint getComposingSpanStart(__JniBaseClass arg0);
-		static void removeComposingSpans(__JniBaseClass arg0);
-		static void setComposingSpans(__JniBaseClass arg0);
+		static jint getComposingSpanEnd(JObject arg0);
+		static jint getComposingSpanStart(JObject arg0);
+		static void removeComposingSpans(JObject arg0);
+		static void setComposingSpans(JObject arg0);
 		jboolean beginBatchEdit();
 		jboolean clearMetaKeyStates(jint arg0);
 		void closeConnection();
@@ -70,7 +70,7 @@ namespace android::view::inputmethod
 		jboolean endBatchEdit();
 		jboolean finishComposingText();
 		jint getCursorCapsMode(jint arg0);
-		__JniBaseClass getEditable();
+		JObject getEditable();
 		android::view::inputmethod::ExtractedText getExtractedText(android::view::inputmethod::ExtractedTextRequest arg0, jint arg1);
 		android::os::Handler getHandler();
 		jstring getSelectedText(jint arg0);

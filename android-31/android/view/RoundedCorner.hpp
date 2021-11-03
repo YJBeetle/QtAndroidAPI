@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,18 +13,18 @@ namespace android::os
 
 namespace android::view
 {
-	class RoundedCorner : public __JniBaseClass
+	class RoundedCorner : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint POSITION_BOTTOM_LEFT();
 		static jint POSITION_BOTTOM_RIGHT();
 		static jint POSITION_TOP_LEFT();
 		static jint POSITION_TOP_RIGHT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RoundedCorner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RoundedCorner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RoundedCorner(QAndroidJniObject obj);
 		
 		// Constructors

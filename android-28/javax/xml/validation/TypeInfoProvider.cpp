@@ -5,12 +5,12 @@ namespace javax::xml::validation
 	// Fields
 	
 	// QAndroidJniObject forward
-	TypeInfoProvider::TypeInfoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TypeInfoProvider::TypeInfoProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass TypeInfoProvider::getAttributeTypeInfo(jint arg0)
+	JObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
 	{
 		return callObjectMethod(
 			"getAttributeTypeInfo",
@@ -18,7 +18,7 @@ namespace javax::xml::validation
 			arg0
 		);
 	}
-	__JniBaseClass TypeInfoProvider::getElementTypeInfo()
+	JObject TypeInfoProvider::getElementTypeInfo()
 	{
 		return callObjectMethod(
 			"getElementTypeInfo",

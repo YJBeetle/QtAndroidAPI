@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	EncoderProfiles_VideoProfile::EncoderProfiles_VideoProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EncoderProfiles_VideoProfile::EncoderProfiles_VideoProfile(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

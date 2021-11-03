@@ -7,7 +7,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass RemoteAction::CREATOR()
+	JObject RemoteAction::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.RemoteAction",
@@ -17,11 +17,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	RemoteAction::RemoteAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteAction::RemoteAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RemoteAction::RemoteAction(android::graphics::drawable::Icon arg0, jstring arg1, jstring arg2, android::app::PendingIntent arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.RemoteAction",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0.object(),

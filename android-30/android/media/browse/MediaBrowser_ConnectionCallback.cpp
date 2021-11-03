@@ -5,11 +5,11 @@ namespace android::media::browse
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaBrowser_ConnectionCallback::MediaBrowser_ConnectionCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.browse.MediaBrowser$ConnectionCallback",
 			"()V"
 		) {}

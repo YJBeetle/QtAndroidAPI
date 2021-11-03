@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::app
 {
-	class FragmentTransaction : public __JniBaseClass
+	class FragmentTransaction : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::app
 		static jint TRANSIT_UNSET();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FragmentTransaction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FragmentTransaction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FragmentTransaction(QAndroidJniObject obj);
 		
 		// Constructors
@@ -51,7 +51,7 @@ namespace android::app
 		android::app::FragmentTransaction remove(android::app::Fragment arg0);
 		android::app::FragmentTransaction replace(jint arg0, android::app::Fragment arg1);
 		android::app::FragmentTransaction replace(jint arg0, android::app::Fragment arg1, jstring arg2);
-		android::app::FragmentTransaction runOnCommit(__JniBaseClass arg0);
+		android::app::FragmentTransaction runOnCommit(JObject arg0);
 		android::app::FragmentTransaction setBreadCrumbShortTitle(jint arg0);
 		android::app::FragmentTransaction setBreadCrumbShortTitle(jstring arg0);
 		android::app::FragmentTransaction setBreadCrumbTitle(jint arg0);

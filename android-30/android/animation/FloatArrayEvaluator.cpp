@@ -5,16 +5,16 @@ namespace android::animation
 	// Fields
 	
 	// QAndroidJniObject forward
-	FloatArrayEvaluator::FloatArrayEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FloatArrayEvaluator::FloatArrayEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FloatArrayEvaluator::FloatArrayEvaluator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.FloatArrayEvaluator",
 			"()V"
 		) {}
 	FloatArrayEvaluator::FloatArrayEvaluator(jfloatArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.FloatArrayEvaluator",
 			"([F)V",
 			arg0

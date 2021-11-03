@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -17,11 +17,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class PackageInfo : public __JniBaseClass
+	class PackageInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint INSTALL_LOCATION_AUTO();
 		static jint INSTALL_LOCATION_INTERNAL_ONLY();
 		static jint INSTALL_LOCATION_PREFER_EXTERNAL();
@@ -54,7 +54,7 @@ namespace android::content::pm
 		jstring versionName();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageInfo(QAndroidJniObject obj);
 		
 		// Constructors

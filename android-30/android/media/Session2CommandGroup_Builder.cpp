@@ -7,16 +7,16 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	Session2CommandGroup_Builder::Session2CommandGroup_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Session2CommandGroup_Builder::Session2CommandGroup_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Session2CommandGroup_Builder::Session2CommandGroup_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2CommandGroup$Builder",
 			"()V"
 		) {}
 	Session2CommandGroup_Builder::Session2CommandGroup_Builder(android::media::Session2CommandGroup arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2CommandGroup$Builder",
 			"(Landroid/media/Session2CommandGroup;)V",
 			arg0.object()

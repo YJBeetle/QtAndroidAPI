@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -37,9 +37,9 @@ namespace android::widget
 		
 		// Constructors
 		AnalogClock(android::content::Context arg0);
-		AnalogClock(android::content::Context arg0, __JniBaseClass arg1);
-		AnalogClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AnalogClock(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AnalogClock(android::content::Context arg0, JObject arg1);
+		AnalogClock(android::content::Context arg0, JObject arg1, jint arg2);
+		AnalogClock(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		android::graphics::BlendMode getDialTintBlendMode();

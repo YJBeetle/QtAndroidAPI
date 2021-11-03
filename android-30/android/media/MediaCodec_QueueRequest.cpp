@@ -10,7 +10,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaCodec_QueueRequest::MediaCodec_QueueRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_QueueRequest::MediaCodec_QueueRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./CellIdentity.hpp"
 
 namespace android::os
@@ -18,7 +18,7 @@ namespace android::telephony
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit CellIdentityWcdma(const char *className, const char *sig, Ts...agv) : android::telephony::CellIdentity(className, sig, std::forward<Ts>(agv)...) {}
@@ -28,7 +28,7 @@ namespace android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAdditionalPlmns();
+		JObject getAdditionalPlmns();
 		jint getCid();
 		android::telephony::ClosedSubscriberGroupInfo getClosedSubscriberGroupInfo();
 		jint getLac();

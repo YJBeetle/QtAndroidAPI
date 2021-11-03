@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::media::tv
 {
-	class TvContract_Channels : public __JniBaseClass
+	class TvContract_Channels : public JObject
 	{
 	public:
 		// Fields
@@ -92,7 +92,7 @@ namespace android::media::tv
 		static jstring VIDEO_RESOLUTION_UHD();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvContract_Channels(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract_Channels(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract_Channels(QAndroidJniObject obj);
 		
 		// Constructors

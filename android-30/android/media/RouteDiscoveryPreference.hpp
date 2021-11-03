@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::media
 {
-	class RouteDiscoveryPreference : public __JniBaseClass
+	class RouteDiscoveryPreference : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RouteDiscoveryPreference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RouteDiscoveryPreference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RouteDiscoveryPreference(QAndroidJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::media
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getPreferredFeatures();
+		JObject getPreferredFeatures();
 		jint hashCode();
 		jboolean shouldPerformActiveScan();
 		jstring toString();

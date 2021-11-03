@@ -6,11 +6,11 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TelephonyManager_UssdResponseCallback::TelephonyManager_UssdResponseCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.TelephonyManager$UssdResponseCallback",
 			"()V"
 		) {}

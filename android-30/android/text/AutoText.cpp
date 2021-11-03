@@ -6,7 +6,7 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	AutoText::AutoText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AutoText::AutoText(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

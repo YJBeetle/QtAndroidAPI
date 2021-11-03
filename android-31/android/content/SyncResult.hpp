@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,12 +13,12 @@ namespace android::os
 
 namespace android::content
 {
-	class SyncResult : public __JniBaseClass
+	class SyncResult : public JObject
 	{
 	public:
 		// Fields
 		static android::content::SyncResult ALREADY_IN_PROGRESS();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jboolean databaseError();
 		jlong delayUntil();
 		jboolean fullSyncRequested();
@@ -30,7 +30,7 @@ namespace android::content
 		jboolean tooManyRetries();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SyncResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SyncResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SyncResult(QAndroidJniObject obj);
 		
 		// Constructors

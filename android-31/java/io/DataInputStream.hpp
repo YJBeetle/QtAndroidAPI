@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputStream.hpp"
 #include "./FilterInputStream.hpp"
 
@@ -24,7 +24,7 @@ namespace java::io
 		DataInputStream(java::io::InputStream arg0);
 		
 		// Methods
-		static jstring readUTF(__JniBaseClass arg0);
+		static jstring readUTF(JObject arg0);
 		jint read(jbyteArray arg0);
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();

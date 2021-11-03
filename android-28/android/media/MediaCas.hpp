@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaCas : public __JniBaseClass
+	class MediaCas : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCas(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCas(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::media
 		void provision(jstring arg0);
 		void refreshEntitlements(jint arg0, jbyteArray arg1);
 		void sendEvent(jint arg0, jint arg1, jbyteArray arg2);
-		void setEventListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setEventListener(JObject arg0, android::os::Handler arg1);
 		void setPrivateData(jbyteArray arg0);
 	};
 } // namespace android::media

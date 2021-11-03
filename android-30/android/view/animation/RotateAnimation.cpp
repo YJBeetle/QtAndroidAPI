@@ -10,7 +10,7 @@ namespace android::view::animation
 	RotateAnimation::RotateAnimation(QAndroidJniObject obj) : android::view::animation::Animation(obj) {}
 	
 	// Constructors
-	RotateAnimation::RotateAnimation(android::content::Context arg0, __JniBaseClass arg1)
+	RotateAnimation::RotateAnimation(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(
 			"android.view.animation.RotateAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

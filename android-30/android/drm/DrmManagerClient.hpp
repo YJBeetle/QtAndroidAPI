@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace android::net
 
 namespace android::drm
 {
-	class DrmManagerClient : public __JniBaseClass
+	class DrmManagerClient : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::drm
 		static jint ERROR_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmManagerClient(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmManagerClient(QAndroidJniObject obj);
 		
 		// Constructors
@@ -60,7 +60,7 @@ namespace android::drm
 		android::drm::DrmConvertedStatus closeConvertSession(jint arg0);
 		android::drm::DrmConvertedStatus convertData(jint arg0, jbyteArray arg1);
 		jarray getAvailableDrmEngines();
-		__JniBaseClass getAvailableDrmSupportInfo();
+		JObject getAvailableDrmSupportInfo();
 		android::content::ContentValues getConstraints(android::net::Uri arg0, jint arg1);
 		android::content::ContentValues getConstraints(jstring arg0, jint arg1);
 		jint getDrmObjectType(android::net::Uri arg0, jstring arg1);
@@ -76,9 +76,9 @@ namespace android::drm
 		jint removeRights(android::net::Uri arg0);
 		jint removeRights(jstring arg0);
 		jint saveRights(android::drm::DrmRights arg0, jstring arg1, jstring arg2);
-		void setOnErrorListener(__JniBaseClass arg0);
-		void setOnEventListener(__JniBaseClass arg0);
-		void setOnInfoListener(__JniBaseClass arg0);
+		void setOnErrorListener(JObject arg0);
+		void setOnEventListener(JObject arg0);
+		void setOnInfoListener(JObject arg0);
 	};
 } // namespace android::drm
 

@@ -8,11 +8,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	SetSchemaRequest_Builder::SetSchemaRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SetSchemaRequest_Builder::SetSchemaRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SetSchemaRequest_Builder::SetSchemaRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.SetSchemaRequest$Builder",
 			"()V"
 		) {}
@@ -26,7 +26,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::addSchemas(JObject arg0)
 	{
 		return callObjectMethod(
 			"addSchemas",
@@ -58,7 +58,7 @@ namespace android::app::appsearch
 			arg1.object()
 		);
 	}
-	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrators(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaRequest_Builder SetSchemaRequest_Builder::setMigrators(JObject arg0)
 	{
 		return callObjectMethod(
 			"setMigrators",

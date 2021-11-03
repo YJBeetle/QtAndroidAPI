@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -9,7 +9,7 @@ namespace android::app
 
 namespace android::service::notification
 {
-	class NotificationListenerService_Ranking : public __JniBaseClass
+	class NotificationListenerService_Ranking : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::service::notification
 		static jint USER_SENTIMENT_POSITIVE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationListenerService_Ranking(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationListenerService_Ranking(QAndroidJniObject obj);
 		
 		// Constructors

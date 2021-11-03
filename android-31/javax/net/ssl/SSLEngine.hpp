@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio
 {
@@ -21,13 +21,13 @@ namespace javax::net::ssl
 
 namespace javax::net::ssl
 {
-	class SSLEngine : public __JniBaseClass
+	class SSLEngine : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLEngine(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SSLEngine(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SSLEngine(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,19 +37,19 @@ namespace javax::net::ssl
 		void closeInbound();
 		void closeOutbound();
 		jstring getApplicationProtocol();
-		__JniBaseClass getDelegatedTask();
+		JObject getDelegatedTask();
 		jboolean getEnableSessionCreation();
 		jarray getEnabledCipherSuites();
 		jarray getEnabledProtocols();
 		jstring getHandshakeApplicationProtocol();
-		__JniBaseClass getHandshakeApplicationProtocolSelector();
-		__JniBaseClass getHandshakeSession();
+		JObject getHandshakeApplicationProtocolSelector();
+		JObject getHandshakeSession();
 		javax::net::ssl::SSLEngineResult_HandshakeStatus getHandshakeStatus();
 		jboolean getNeedClientAuth();
 		jstring getPeerHost();
 		jint getPeerPort();
 		javax::net::ssl::SSLParameters getSSLParameters();
-		__JniBaseClass getSession();
+		JObject getSession();
 		jarray getSupportedCipherSuites();
 		jarray getSupportedProtocols();
 		jboolean getUseClientMode();
@@ -59,7 +59,7 @@ namespace javax::net::ssl
 		void setEnableSessionCreation(jboolean arg0);
 		void setEnabledCipherSuites(jarray arg0);
 		void setEnabledProtocols(jarray arg0);
-		void setHandshakeApplicationProtocolSelector(__JniBaseClass arg0);
+		void setHandshakeApplicationProtocolSelector(JObject arg0);
 		void setNeedClientAuth(jboolean arg0);
 		void setSSLParameters(javax::net::ssl::SSLParameters arg0);
 		void setUseClientMode(jboolean arg0);

@@ -4,7 +4,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	__JniBaseClass WifiManager_AddNetworkResult::CREATOR()
+	JObject WifiManager_AddNetworkResult::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.WifiManager$AddNetworkResult",
@@ -103,11 +103,11 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiManager_AddNetworkResult::WifiManager_AddNetworkResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager_AddNetworkResult::WifiManager_AddNetworkResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WifiManager_AddNetworkResult::WifiManager_AddNetworkResult(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.WifiManager$AddNetworkResult",
 			"(II)V",
 			arg0,

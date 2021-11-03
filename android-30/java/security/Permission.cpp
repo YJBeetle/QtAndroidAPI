@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	Permission::Permission(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Permission::Permission(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Permission::Permission(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.Permission",
 			"(Ljava/lang/String;)V",
 			arg0

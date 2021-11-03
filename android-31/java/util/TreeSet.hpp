@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
@@ -26,36 +26,36 @@ namespace java::util
 		
 		// Constructors
 		TreeSet();
-		TreeSet(__JniBaseClass arg0);
+		TreeSet(JObject arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean addAll(__JniBaseClass arg0);
+		jboolean addAll(JObject arg0);
 		jobject ceiling(jobject arg0);
 		void clear();
 		jobject clone();
-		__JniBaseClass comparator();
+		JObject comparator();
 		jboolean contains(jobject arg0);
-		__JniBaseClass descendingIterator();
-		__JniBaseClass descendingSet();
+		JObject descendingIterator();
+		JObject descendingSet();
 		jobject first();
 		jobject floor(jobject arg0);
-		__JniBaseClass headSet(jobject arg0, jboolean arg1);
-		__JniBaseClass headSet(jobject arg0);
+		JObject headSet(jobject arg0, jboolean arg1);
+		JObject headSet(jobject arg0);
 		jobject higher(jobject arg0);
 		jboolean isEmpty();
-		__JniBaseClass iterator();
+		JObject iterator();
 		jobject last();
 		jobject lower(jobject arg0);
 		jobject pollFirst();
 		jobject pollLast();
 		jboolean remove(jobject arg0);
 		jint size();
-		__JniBaseClass spliterator();
-		__JniBaseClass subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
-		__JniBaseClass subSet(jobject arg0, jobject arg1);
-		__JniBaseClass tailSet(jobject arg0, jboolean arg1);
-		__JniBaseClass tailSet(jobject arg0);
+		JObject spliterator();
+		JObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
+		JObject subSet(jobject arg0, jobject arg1);
+		JObject tailSet(jobject arg0, jboolean arg1);
+		JObject tailSet(jobject arg0);
 	};
 } // namespace java::util
 

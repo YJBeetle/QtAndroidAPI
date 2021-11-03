@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -33,7 +33,7 @@ namespace java::net
 
 namespace android::net
 {
-	class IpSecManager : public __JniBaseClass
+	class IpSecManager : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::net
 		static jint DIRECTION_OUT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IpSecManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IpSecManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IpSecManager(QAndroidJniObject obj);
 		
 		// Constructors

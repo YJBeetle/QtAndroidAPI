@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,32 +21,32 @@ namespace org::xml::sax
 
 namespace javax::xml::parsers
 {
-	class DocumentBuilder : public __JniBaseClass
+	class DocumentBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DocumentBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DocumentBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentBuilder(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getDOMImplementation();
+		JObject getDOMImplementation();
 		javax::xml::validation::Schema getSchema();
 		jboolean isNamespaceAware();
 		jboolean isValidating();
 		jboolean isXIncludeAware();
-		__JniBaseClass newDocument();
-		__JniBaseClass parse(java::io::File arg0);
-		__JniBaseClass parse(java::io::InputStream arg0);
-		__JniBaseClass parse(jstring arg0);
-		__JniBaseClass parse(org::xml::sax::InputSource arg0);
-		__JniBaseClass parse(java::io::InputStream arg0, jstring arg1);
+		JObject newDocument();
+		JObject parse(java::io::File arg0);
+		JObject parse(java::io::InputStream arg0);
+		JObject parse(jstring arg0);
+		JObject parse(org::xml::sax::InputSource arg0);
+		JObject parse(java::io::InputStream arg0, jstring arg1);
 		void reset();
-		void setEntityResolver(__JniBaseClass arg0);
-		void setErrorHandler(__JniBaseClass arg0);
+		void setEntityResolver(JObject arg0);
+		void setErrorHandler(JObject arg0);
 	};
 } // namespace javax::xml::parsers
 

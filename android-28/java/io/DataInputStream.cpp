@@ -17,7 +17,7 @@ namespace java::io
 		) {}
 	
 	// Methods
-	jstring DataInputStream::readUTF(__JniBaseClass arg0)
+	jstring DataInputStream::readUTF(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.io.DataInputStream",

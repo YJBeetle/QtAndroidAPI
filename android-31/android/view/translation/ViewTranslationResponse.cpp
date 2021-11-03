@@ -6,7 +6,7 @@
 namespace android::view::translation
 {
 	// Fields
-	__JniBaseClass ViewTranslationResponse::CREATOR()
+	JObject ViewTranslationResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.translation.ViewTranslationResponse",
@@ -16,7 +16,7 @@ namespace android::view::translation
 	}
 	
 	// QAndroidJniObject forward
-	ViewTranslationResponse::ViewTranslationResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ViewTranslationResponse::ViewTranslationResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -43,7 +43,7 @@ namespace android::view::translation
 			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
-	__JniBaseClass ViewTranslationResponse::getKeys()
+	JObject ViewTranslationResponse::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

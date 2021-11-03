@@ -607,7 +607,7 @@ namespace android::accessibilityservice
 			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
 		);
 	}
-	__JniBaseClass AccessibilityService::getSystemActions()
+	JObject AccessibilityService::getSystemActions()
 	{
 		return callObjectMethod(
 			"getSystemActions",
@@ -622,7 +622,7 @@ namespace android::accessibilityservice
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass AccessibilityService::getWindows()
+	JObject AccessibilityService::getWindows()
 	{
 		return callObjectMethod(
 			"getWindows",
@@ -644,7 +644,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	__JniBaseClass AccessibilityService::onBind(android::content::Intent arg0)
+	JObject AccessibilityService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -717,7 +717,7 @@ namespace android::accessibilityservice
 			arg1.object()
 		);
 	}
-	void AccessibilityService::takeScreenshot(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void AccessibilityService::takeScreenshot(jint arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"takeScreenshot",

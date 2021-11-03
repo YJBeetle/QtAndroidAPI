@@ -16,7 +16,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	__JniBaseClass RemoteViewsService::onBind(android::content::Intent arg0)
+	JObject RemoteViewsService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",
@@ -24,7 +24,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass RemoteViewsService::onGetViewFactory(android::content::Intent arg0)
+	JObject RemoteViewsService::onGetViewFactory(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onGetViewFactory",

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class FrameMetrics : public __JniBaseClass
+	class FrameMetrics : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::view
 		static jint VSYNC_TIMESTAMP();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FrameMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FrameMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FrameMetrics(QAndroidJniObject obj);
 		
 		// Constructors

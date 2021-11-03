@@ -5,11 +5,11 @@ namespace android::provider
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaStore_Audio::MediaStore_Audio(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Audio::MediaStore_Audio(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Audio::MediaStore_Audio()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Audio",
 			"()V"
 		) {}

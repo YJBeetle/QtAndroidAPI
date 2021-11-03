@@ -14,11 +14,11 @@ namespace javax::crypto::spec
 	}
 	
 	// QAndroidJniObject forward
-	OAEPParameterSpec::OAEPParameterSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	OAEPParameterSpec::OAEPParameterSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	OAEPParameterSpec::OAEPParameterSpec(jstring arg0, jstring arg1, __JniBaseClass arg2, javax::crypto::spec::PSource arg3)
-		: __JniBaseClass(
+	OAEPParameterSpec::OAEPParameterSpec(jstring arg0, jstring arg1, JObject arg2, javax::crypto::spec::PSource arg3)
+		: JObject(
 			"javax.crypto.spec.OAEPParameterSpec",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;Ljavax/crypto/spec/PSource;)V",
 			arg0,
@@ -42,7 +42,7 @@ namespace javax::crypto::spec
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass OAEPParameterSpec::getMGFParameters()
+	JObject OAEPParameterSpec::getMGFParameters()
 	{
 		return callObjectMethod(
 			"getMGFParameters",

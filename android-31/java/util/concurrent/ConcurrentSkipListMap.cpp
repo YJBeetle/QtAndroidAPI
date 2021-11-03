@@ -17,7 +17,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ConcurrentSkipListMap",
 			"()V"
 		) {}
-	ConcurrentSkipListMap::ConcurrentSkipListMap(__JniBaseClass arg0)
+	ConcurrentSkipListMap::ConcurrentSkipListMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.concurrent.ConcurrentSkipListMap",
 			"(Ljava/util/Comparator;)V",
@@ -25,7 +25,7 @@ namespace java::util::concurrent
 		) {}
 	
 	// Methods
-	__JniBaseClass ConcurrentSkipListMap::ceilingEntry(jobject arg0)
+	JObject ConcurrentSkipListMap::ceilingEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"ceilingEntry",
@@ -55,14 +55,14 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ConcurrentSkipListMap;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::comparator()
+	JObject ConcurrentSkipListMap::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jobject ConcurrentSkipListMap::compute(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentSkipListMap::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -71,7 +71,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentSkipListMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentSkipListMap::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject ConcurrentSkipListMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject ConcurrentSkipListMap::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -105,21 +105,21 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::descendingKeySet()
+	JObject ConcurrentSkipListMap::descendingKeySet()
 	{
 		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::descendingMap()
+	JObject ConcurrentSkipListMap::descendingMap()
 	{
 		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/concurrent/ConcurrentNavigableMap;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::entrySet()
+	JObject ConcurrentSkipListMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -134,7 +134,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::firstEntry()
+	JObject ConcurrentSkipListMap::firstEntry()
 	{
 		return callObjectMethod(
 			"firstEntry",
@@ -148,7 +148,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentSkipListMap::floorEntry(jobject arg0)
+	JObject ConcurrentSkipListMap::floorEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"floorEntry",
@@ -164,7 +164,7 @@ namespace java::util::concurrent
 			arg0
 		).object<jobject>();
 	}
-	void ConcurrentSkipListMap::forEach(__JniBaseClass arg0)
+	void ConcurrentSkipListMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -189,7 +189,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentSkipListMap::headMap(jobject arg0)
+	JObject ConcurrentSkipListMap::headMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -197,7 +197,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::headMap(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListMap::headMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -206,7 +206,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::higherEntry(jobject arg0)
+	JObject ConcurrentSkipListMap::higherEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"higherEntry",
@@ -229,14 +229,14 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::keySet()
+	JObject ConcurrentSkipListMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::lastEntry()
+	JObject ConcurrentSkipListMap::lastEntry()
 	{
 		return callObjectMethod(
 			"lastEntry",
@@ -250,7 +250,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentSkipListMap::lowerEntry(jobject arg0)
+	JObject ConcurrentSkipListMap::lowerEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"lowerEntry",
@@ -266,7 +266,7 @@ namespace java::util::concurrent
 			arg0
 		).object<jobject>();
 	}
-	jobject ConcurrentSkipListMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject ConcurrentSkipListMap::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -276,21 +276,21 @@ namespace java::util::concurrent
 			arg2.object()
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentSkipListMap::navigableKeySet()
+	JObject ConcurrentSkipListMap::navigableKeySet()
 	{
 		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::pollFirstEntry()
+	JObject ConcurrentSkipListMap::pollFirstEntry()
 	{
 		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::pollLastEntry()
+	JObject ConcurrentSkipListMap::pollLastEntry()
 	{
 		return callObjectMethod(
 			"pollLastEntry",
@@ -351,7 +351,7 @@ namespace java::util::concurrent
 			arg1
 		).object<jobject>();
 	}
-	void ConcurrentSkipListMap::replaceAll(__JniBaseClass arg0)
+	void ConcurrentSkipListMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -366,7 +366,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::subMap(jobject arg0, jobject arg1)
+	JObject ConcurrentSkipListMap::subMap(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -375,7 +375,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject ConcurrentSkipListMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -386,7 +386,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::tailMap(jobject arg0)
+	JObject ConcurrentSkipListMap::tailMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -394,7 +394,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::tailMap(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListMap::tailMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -403,7 +403,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ConcurrentSkipListMap::values()
+	JObject ConcurrentSkipListMap::values()
 	{
 		return callObjectMethod(
 			"values",

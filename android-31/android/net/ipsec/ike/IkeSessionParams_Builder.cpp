@@ -11,16 +11,16 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QAndroidJniObject forward
-	IkeSessionParams_Builder::IkeSessionParams_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IkeSessionParams_Builder::IkeSessionParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IkeSessionParams_Builder::IkeSessionParams_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.IkeSessionParams$Builder",
 			"()V"
 		) {}
 	IkeSessionParams_Builder::IkeSessionParams_Builder(android::net::ipsec::ike::IkeSessionParams arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ipsec.ike.IkeSessionParams$Builder",
 			"(Landroid/net/ipsec/ike/IkeSessionParams;)V",
 			arg0.object()
@@ -58,7 +58,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, __JniBaseClass arg2)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",
@@ -68,7 +68,7 @@ namespace android::net::ipsec::ike
 			arg2.object()
 		);
 	}
-	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	android::net::ipsec::ike::IkeSessionParams_Builder IkeSessionParams_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, java::security::cert::X509Certificate arg1, JObject arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",

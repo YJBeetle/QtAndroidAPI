@@ -22,7 +22,7 @@ namespace android::widget
 			"(Landroid/widget/ActionMenuView$LayoutParams;)V",
 			arg0.object()
 		) {}
-	ActionMenuView_LayoutParams::ActionMenuView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	ActionMenuView_LayoutParams::ActionMenuView_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout_LayoutParams(
 			"android.widget.ActionMenuView$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

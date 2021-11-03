@@ -5,7 +5,7 @@ namespace android::renderscript
 	// Fields
 	
 	// QAndroidJniObject forward
-	Script_Builder::Script_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Script_Builder::Script_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

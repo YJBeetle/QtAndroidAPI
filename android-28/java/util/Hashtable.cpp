@@ -22,7 +22,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	Hashtable::Hashtable(__JniBaseClass arg0)
+	Hashtable::Hashtable(JObject arg0)
 		: java::util::Dictionary(
 			"java.util.Hashtable",
 			"(Ljava/util/Map;)V",
@@ -51,7 +51,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject Hashtable::compute(jobject arg0, __JniBaseClass arg1)
+	jobject Hashtable::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -60,7 +60,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Hashtable::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject Hashtable::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -69,7 +69,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Hashtable::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject Hashtable::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -102,14 +102,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Hashtable::elements()
+	JObject Hashtable::elements()
 	{
 		return callObjectMethod(
 			"elements",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Hashtable::entrySet()
+	JObject Hashtable::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -124,7 +124,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void Hashtable::forEach(__JniBaseClass arg0)
+	void Hashtable::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -163,21 +163,21 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass Hashtable::keySet()
+	JObject Hashtable::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Hashtable::keys()
+	JObject Hashtable::keys()
 	{
 		return callObjectMethod(
 			"keys",
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	jobject Hashtable::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject Hashtable::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -196,7 +196,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void Hashtable::putAll(__JniBaseClass arg0)
+	void Hashtable::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -249,7 +249,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void Hashtable::replaceAll(__JniBaseClass arg0)
+	void Hashtable::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -271,7 +271,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Hashtable::values()
+	JObject Hashtable::values()
 	{
 		return callObjectMethod(
 			"values",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,20 +9,20 @@ namespace android::content
 
 namespace android::widget
 {
-	class OverScroller : public __JniBaseClass
+	class OverScroller : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit OverScroller(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit OverScroller(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		OverScroller(QAndroidJniObject obj);
 		
 		// Constructors
 		OverScroller(android::content::Context arg0);
-		OverScroller(android::content::Context arg0, __JniBaseClass arg1);
-		OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3);
-		OverScroller(android::content::Context arg0, __JniBaseClass arg1, jfloat arg2, jfloat arg3, jboolean arg4);
+		OverScroller(android::content::Context arg0, JObject arg1);
+		OverScroller(android::content::Context arg0, JObject arg1, jfloat arg2, jfloat arg3);
+		OverScroller(android::content::Context arg0, JObject arg1, jfloat arg2, jfloat arg3, jboolean arg4);
 		
 		// Methods
 		void abortAnimation();

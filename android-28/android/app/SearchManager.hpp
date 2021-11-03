@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::app
 {
-	class SearchManager : public __JniBaseClass
+	class SearchManager : public JObject
 	{
 	public:
 		// Fields
@@ -75,7 +75,7 @@ namespace android::app
 		static jstring USER_QUERY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SearchManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SearchManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SearchManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -83,11 +83,11 @@ namespace android::app
 		// Methods
 		android::content::ComponentName getGlobalSearchActivity();
 		android::app::SearchableInfo getSearchableInfo(android::content::ComponentName arg0);
-		__JniBaseClass getSearchablesInGlobalSearch();
-		void onCancel(__JniBaseClass arg0);
-		void onDismiss(__JniBaseClass arg0);
-		void setOnCancelListener(__JniBaseClass arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
+		JObject getSearchablesInGlobalSearch();
+		void onCancel(JObject arg0);
+		void onDismiss(JObject arg0);
+		void setOnCancelListener(JObject arg0);
+		void setOnDismissListener(JObject arg0);
 		void startSearch(jstring arg0, jboolean arg1, android::content::ComponentName arg2, android::os::Bundle arg3, jboolean arg4);
 		void stopSearch();
 		void triggerSearch(jstring arg0, android::content::ComponentName arg1, android::os::Bundle arg2);

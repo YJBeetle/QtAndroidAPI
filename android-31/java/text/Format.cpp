@@ -9,7 +9,7 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	Format::Format(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Format::Format(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -39,7 +39,7 @@ namespace java::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass Format::formatToCharacterIterator(jobject arg0)
+	JObject Format::formatToCharacterIterator(jobject arg0)
 	{
 		return callObjectMethod(
 			"formatToCharacterIterator",

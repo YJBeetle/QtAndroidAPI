@@ -5,7 +5,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssMeasurementsEvent::CREATOR()
+	JObject GnssMeasurementsEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssMeasurementsEvent",
@@ -15,7 +15,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssMeasurementsEvent::GnssMeasurementsEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssMeasurementsEvent::GnssMeasurementsEvent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::location
 			"()Landroid/location/GnssClock;"
 		);
 	}
-	__JniBaseClass GnssMeasurementsEvent::getMeasurements()
+	JObject GnssMeasurementsEvent::getMeasurements()
 	{
 		return callObjectMethod(
 			"getMeasurements",

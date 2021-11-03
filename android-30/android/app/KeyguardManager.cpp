@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyguardManager::KeyguardManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyguardManager::KeyguardManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -23,7 +23,7 @@ namespace android::app
 			arg1
 		);
 	}
-	void KeyguardManager::exitKeyguardSecurely(__JniBaseClass arg0)
+	void KeyguardManager::exitKeyguardSecurely(JObject arg0)
 	{
 		callMethod<void>(
 			"exitKeyguardSecurely",

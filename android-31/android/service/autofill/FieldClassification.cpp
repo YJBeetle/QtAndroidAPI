@@ -5,12 +5,12 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	FieldClassification::FieldClassification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FieldClassification::FieldClassification(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass FieldClassification::getMatches()
+	JObject FieldClassification::getMatches()
 	{
 		return callObjectMethod(
 			"getMatches",

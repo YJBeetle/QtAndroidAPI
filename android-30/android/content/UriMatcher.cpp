@@ -13,11 +13,11 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	UriMatcher::UriMatcher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UriMatcher::UriMatcher(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UriMatcher::UriMatcher(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.UriMatcher",
 			"(I)V",
 			arg0

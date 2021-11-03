@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::security::identity
 {
@@ -9,19 +9,19 @@ namespace android::security::identity
 
 namespace android::security::identity
 {
-	class WritableIdentityCredential : public __JniBaseClass
+	class WritableIdentityCredential : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WritableIdentityCredential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WritableIdentityCredential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WritableIdentityCredential(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getCredentialKeyCertificateChain(jbyteArray arg0);
+		JObject getCredentialKeyCertificateChain(jbyteArray arg0);
 		jbyteArray personalize(android::security::identity::PersonalizationData arg0);
 	};
 } // namespace android::security::identity

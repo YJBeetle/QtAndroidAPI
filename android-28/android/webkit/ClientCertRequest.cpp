@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ClientCertRequest::ClientCertRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ClientCertRequest::ClientCertRequest()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.ClientCertRequest",
 			"()V"
 		) {}
@@ -57,7 +57,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void ClientCertRequest::proceed(__JniBaseClass arg0, jarray arg1)
+	void ClientCertRequest::proceed(JObject arg0, jarray arg1)
 	{
 		callMethod<void>(
 			"proceed",

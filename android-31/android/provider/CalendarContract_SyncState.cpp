@@ -14,7 +14,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CalendarContract_SyncState::CalendarContract_SyncState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_SyncState::CalendarContract_SyncState(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

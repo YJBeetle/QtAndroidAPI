@@ -31,11 +31,11 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	ViewOutlineProvider::ViewOutlineProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ViewOutlineProvider::ViewOutlineProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ViewOutlineProvider::ViewOutlineProvider()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ViewOutlineProvider",
 			"()V"
 		) {}

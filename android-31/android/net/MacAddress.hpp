@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,18 +13,18 @@ namespace java::net
 
 namespace android::net
 {
-	class MacAddress : public __JniBaseClass
+	class MacAddress : public JObject
 	{
 	public:
 		// Fields
 		static android::net::MacAddress BROADCAST_ADDRESS();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_BROADCAST();
 		static jint TYPE_MULTICAST();
 		static jint TYPE_UNICAST();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MacAddress(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MacAddress(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MacAddress(QAndroidJniObject obj);
 		
 		// Constructors

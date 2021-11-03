@@ -11,11 +11,11 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	MutableInt::MutableInt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MutableInt::MutableInt(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MutableInt::MutableInt(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.MutableInt",
 			"(I)V",
 			arg0

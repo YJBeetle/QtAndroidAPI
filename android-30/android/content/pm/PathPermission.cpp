@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PathPermission::CREATOR()
+	JObject PathPermission::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PathPermission",

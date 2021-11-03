@@ -4,7 +4,7 @@
 namespace android::app::slice
 {
 	// Fields
-	__JniBaseClass SliceSpec::CREATOR()
+	JObject SliceSpec::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.slice.SliceSpec",
@@ -14,11 +14,11 @@ namespace android::app::slice
 	}
 	
 	// QAndroidJniObject forward
-	SliceSpec::SliceSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SliceSpec::SliceSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SliceSpec::SliceSpec(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.slice.SliceSpec",
 			"(Ljava/lang/String;I)V",
 			arg0,

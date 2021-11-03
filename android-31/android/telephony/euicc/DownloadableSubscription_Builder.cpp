@@ -6,17 +6,17 @@ namespace android::telephony::euicc
 	// Fields
 	
 	// QAndroidJniObject forward
-	DownloadableSubscription_Builder::DownloadableSubscription_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DownloadableSubscription_Builder::DownloadableSubscription_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DownloadableSubscription_Builder::DownloadableSubscription_Builder(android::telephony::euicc::DownloadableSubscription arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.euicc.DownloadableSubscription$Builder",
 			"(Landroid/telephony/euicc/DownloadableSubscription;)V",
 			arg0.object()
 		) {}
 	DownloadableSubscription_Builder::DownloadableSubscription_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.euicc.DownloadableSubscription$Builder",
 			"(Ljava/lang/String;)V",
 			arg0

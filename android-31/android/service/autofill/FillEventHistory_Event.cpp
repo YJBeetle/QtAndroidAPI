@@ -97,12 +97,12 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	FillEventHistory_Event::FillEventHistory_Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FillEventHistory_Event::FillEventHistory_Event(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass FillEventHistory_Event::getChangedFields()
+	JObject FillEventHistory_Event::getChangedFields()
 	{
 		return callObjectMethod(
 			"getChangedFields",
@@ -123,21 +123,21 @@ namespace android::service::autofill
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass FillEventHistory_Event::getFieldsClassification()
+	JObject FillEventHistory_Event::getFieldsClassification()
 	{
 		return callObjectMethod(
 			"getFieldsClassification",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass FillEventHistory_Event::getIgnoredDatasetIds()
+	JObject FillEventHistory_Event::getIgnoredDatasetIds()
 	{
 		return callObjectMethod(
 			"getIgnoredDatasetIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass FillEventHistory_Event::getManuallyEnteredField()
+	JObject FillEventHistory_Event::getManuallyEnteredField()
 	{
 		return callObjectMethod(
 			"getManuallyEnteredField",
@@ -151,7 +151,7 @@ namespace android::service::autofill
 			"()I"
 		);
 	}
-	__JniBaseClass FillEventHistory_Event::getSelectedDatasetIds()
+	JObject FillEventHistory_Event::getSelectedDatasetIds()
 	{
 		return callObjectMethod(
 			"getSelectedDatasetIds",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
@@ -29,7 +29,7 @@ namespace android::app
 		ActionBar_LayoutParams(android::app::ActionBar_LayoutParams &arg0);
 		ActionBar_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		ActionBar_LayoutParams(jint arg0);
-		ActionBar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		ActionBar_LayoutParams(android::content::Context arg0, JObject arg1);
 		ActionBar_LayoutParams(jint arg0, jint arg1);
 		ActionBar_LayoutParams(jint arg0, jint arg1, jint arg2);
 		

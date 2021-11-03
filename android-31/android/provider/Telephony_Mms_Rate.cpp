@@ -22,7 +22,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Telephony_Mms_Rate::Telephony_Mms_Rate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Telephony_Mms_Rate::Telephony_Mms_Rate(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1424,11 +1424,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodecInfo_CodecProfileLevel::MediaCodecInfo_CodecProfileLevel()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodecInfo$CodecProfileLevel",
 			"()V"
 		) {}

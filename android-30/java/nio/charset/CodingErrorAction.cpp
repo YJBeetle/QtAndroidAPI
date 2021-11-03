@@ -29,7 +29,7 @@ namespace java::nio::charset
 	}
 	
 	// QAndroidJniObject forward
-	CodingErrorAction::CodingErrorAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CodingErrorAction::CodingErrorAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

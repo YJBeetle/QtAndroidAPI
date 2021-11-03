@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,13 +13,13 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class LauncherApps_Callback : public __JniBaseClass
+	class LauncherApps_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherApps_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LauncherApps_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps_Callback(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::content::pm
 		void onPackagesSuspended(jarray arg0, android::os::UserHandle arg1, android::os::Bundle arg2);
 		void onPackagesUnavailable(jarray arg0, android::os::UserHandle arg1, jboolean arg2);
 		void onPackagesUnsuspended(jarray arg0, android::os::UserHandle arg1);
-		void onShortcutsChanged(jstring arg0, __JniBaseClass arg1, android::os::UserHandle arg2);
+		void onShortcutsChanged(jstring arg0, JObject arg1, android::os::UserHandle arg2);
 	};
 } // namespace android::content::pm
 

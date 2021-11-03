@@ -31,11 +31,11 @@ namespace android::media::session
 	}
 	
 	// QAndroidJniObject forward
-	MediaSession::MediaSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession::MediaSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaSession::MediaSession(android::content::Context arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.session.MediaSession",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
@@ -168,7 +168,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSession::setQueue(__JniBaseClass arg0)
+	void MediaSession::setQueue(JObject arg0)
 	{
 		callMethod<void>(
 			"setQueue",

@@ -82,7 +82,7 @@ namespace android::text
 	}
 	
 	// QAndroidJniObject forward
-	Html::Html(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Html::Html(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -96,7 +96,7 @@ namespace android::text
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Html::fromHtml(jstring arg0)
+	JObject Html::fromHtml(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",
@@ -105,7 +105,7 @@ namespace android::text
 			arg0
 		);
 	}
-	__JniBaseClass Html::fromHtml(jstring arg0, jint arg1)
+	JObject Html::fromHtml(jstring arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",
@@ -115,7 +115,7 @@ namespace android::text
 			arg1
 		);
 	}
-	__JniBaseClass Html::fromHtml(jstring arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	JObject Html::fromHtml(jstring arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",
@@ -126,7 +126,7 @@ namespace android::text
 			arg2.object()
 		);
 	}
-	__JniBaseClass Html::fromHtml(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	JObject Html::fromHtml(jstring arg0, jint arg1, JObject arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",
@@ -138,7 +138,7 @@ namespace android::text
 			arg3.object()
 		);
 	}
-	jstring Html::toHtml(__JniBaseClass arg0)
+	jstring Html::toHtml(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",
@@ -147,7 +147,7 @@ namespace android::text
 			arg0.object()
 		).object<jstring>();
 	}
-	jstring Html::toHtml(__JniBaseClass arg0, jint arg1)
+	jstring Html::toHtml(JObject arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"android.text.Html",

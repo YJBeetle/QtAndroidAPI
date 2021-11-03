@@ -163,12 +163,12 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	PowerManager::PowerManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PowerManager::PowerManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void PowerManager::addThermalStatusListener(__JniBaseClass arg0)
+	void PowerManager::addThermalStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addThermalStatusListener",
@@ -176,7 +176,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void PowerManager::addThermalStatusListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void PowerManager::addThermalStatusListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addThermalStatusListener",
@@ -296,7 +296,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void PowerManager::removeThermalStatusListener(__JniBaseClass arg0)
+	void PowerManager::removeThermalStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeThermalStatusListener",

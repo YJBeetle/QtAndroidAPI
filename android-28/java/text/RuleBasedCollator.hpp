@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Collator.hpp"
 
 namespace java::lang
@@ -35,7 +35,7 @@ namespace java::text
 		jint compare(jstring arg0, jstring arg1);
 		jboolean equals(jobject arg0);
 		java::text::CollationElementIterator getCollationElementIterator(jstring arg0);
-		java::text::CollationElementIterator getCollationElementIterator(__JniBaseClass arg0);
+		java::text::CollationElementIterator getCollationElementIterator(JObject arg0);
 		java::text::CollationKey getCollationKey(jstring arg0);
 		jstring getRules();
 		jint hashCode();

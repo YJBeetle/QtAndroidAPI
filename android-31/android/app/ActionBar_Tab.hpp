@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -13,14 +13,14 @@ namespace android::view
 
 namespace android::app
 {
-	class ActionBar_Tab : public __JniBaseClass
+	class ActionBar_Tab : public JObject
 	{
 	public:
 		// Fields
 		static jint INVALID_POSITION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ActionBar_Tab(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ActionBar_Tab(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ActionBar_Tab(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace android::app
 		android::app::ActionBar_Tab setCustomView(jint arg0);
 		android::app::ActionBar_Tab setIcon(android::graphics::drawable::Drawable arg0);
 		android::app::ActionBar_Tab setIcon(jint arg0);
-		android::app::ActionBar_Tab setTabListener(__JniBaseClass arg0);
+		android::app::ActionBar_Tab setTabListener(JObject arg0);
 		android::app::ActionBar_Tab setTag(jobject arg0);
 		android::app::ActionBar_Tab setText(jint arg0);
 		android::app::ActionBar_Tab setText(jstring arg0);

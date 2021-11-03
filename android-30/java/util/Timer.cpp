@@ -8,28 +8,28 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Timer::Timer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Timer::Timer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Timer::Timer()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Timer",
 			"()V"
 		) {}
 	Timer::Timer(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Timer",
 			"(Z)V",
 			arg0
 		) {}
 	Timer::Timer(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Timer::Timer(jstring arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;Z)V",
 			arg0,

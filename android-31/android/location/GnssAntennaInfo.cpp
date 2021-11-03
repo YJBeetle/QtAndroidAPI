@@ -6,7 +6,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass GnssAntennaInfo::CREATOR()
+	JObject GnssAntennaInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssAntennaInfo",
@@ -16,7 +16,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssAntennaInfo::GnssAntennaInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssAntennaInfo::GnssAntennaInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

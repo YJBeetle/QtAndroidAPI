@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::net::rtp
 {
-	class AudioGroup : public __JniBaseClass
+	class AudioGroup : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::net::rtp
 		static jint MODE_ON_HOLD();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioGroup(QAndroidJniObject obj);
 		
 		// Constructors

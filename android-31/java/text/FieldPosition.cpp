@@ -6,23 +6,23 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	FieldPosition::FieldPosition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FieldPosition::FieldPosition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FieldPosition::FieldPosition(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.FieldPosition",
 			"(I)V",
 			arg0
 		) {}
 	FieldPosition::FieldPosition(java::text::Format_Field arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.FieldPosition",
 			"(Ljava/text/Format$Field;)V",
 			arg0.object()
 		) {}
 	FieldPosition::FieldPosition(java::text::Format_Field arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.FieldPosition",
 			"(Ljava/text/Format$Field;I)V",
 			arg0.object(),

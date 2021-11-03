@@ -4,7 +4,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothHidDeviceAppQosSettings::CREATOR()
+	JObject BluetoothHidDeviceAppQosSettings::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
@@ -42,11 +42,11 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothHidDeviceAppQosSettings::BluetoothHidDeviceAppQosSettings(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothHidDeviceAppQosSettings",
 			"(IIIIII)V",
 			arg0,

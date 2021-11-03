@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net::sip
 {
@@ -13,13 +13,13 @@ namespace android::net::sip
 
 namespace android::net::sip
 {
-	class SipSession_Listener : public __JniBaseClass
+	class SipSession_Listener : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SipSession_Listener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SipSession_Listener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SipSession_Listener(QAndroidJniObject obj);
 		
 		// Constructors

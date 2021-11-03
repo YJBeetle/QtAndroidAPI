@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace java::io
 
 namespace android::telephony
 {
-	class MbmsDownloadSession : public __JniBaseClass
+	class MbmsDownloadSession : public JObject
 	{
 	public:
 		// Fields
@@ -57,25 +57,25 @@ namespace android::telephony
 		static jint STATUS_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsDownloadSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsDownloadSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsDownloadSession(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, __JniBaseClass arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);
-		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, __JniBaseClass arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
-		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadProgressListener arg2);
-		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, __JniBaseClass arg1, android::telephony::mbms::DownloadStatusListener arg2);
+		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, JObject arg1, android::telephony::mbms::MbmsDownloadSessionCallback arg2);
+		static android::telephony::MbmsDownloadSession create(android::content::Context arg0, JObject arg1, jint arg2, android::telephony::mbms::MbmsDownloadSessionCallback arg3);
+		void addProgressListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadProgressListener arg2);
+		void addStatusListener(android::telephony::mbms::DownloadRequest arg0, JObject arg1, android::telephony::mbms::DownloadStatusListener arg2);
 		void cancelDownload(android::telephony::mbms::DownloadRequest arg0);
 		void close();
 		void download(android::telephony::mbms::DownloadRequest arg0);
 		java::io::File getTempFileRootDirectory();
-		__JniBaseClass listPendingDownloads();
+		JObject listPendingDownloads();
 		void removeProgressListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadProgressListener arg1);
 		void removeStatusListener(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::DownloadStatusListener arg1);
 		void requestDownloadState(android::telephony::mbms::DownloadRequest arg0, android::telephony::mbms::FileInfo arg1);
-		void requestUpdateFileServices(__JniBaseClass arg0);
+		void requestUpdateFileServices(JObject arg0);
 		void resetDownloadKnowledge(android::telephony::mbms::DownloadRequest arg0);
 		void setTempFileRootDirectory(java::io::File arg0);
 	};

@@ -59,32 +59,32 @@ namespace android::widget
 	}
 	
 	// QAndroidJniObject forward
-	ListPopupWindow::ListPopupWindow(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ListPopupWindow::ListPopupWindow(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ListPopupWindow::ListPopupWindow(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.ListPopupWindow",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.widget.ListPopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
-		: __JniBaseClass(
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, JObject arg1, jint arg2)
+		: JObject(
 			"android.widget.ListPopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.object(),
 			arg1.object(),
 			arg2
 		) {}
-	ListPopupWindow::ListPopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+	ListPopupWindow::ListPopupWindow(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
+		: JObject(
 			"android.widget.ListPopupWindow",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.object(),
@@ -101,7 +101,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	__JniBaseClass ListPopupWindow::createDragToOpenListener(android::view::View arg0)
+	JObject ListPopupWindow::createDragToOpenListener(android::view::View arg0)
 	{
 		return callObjectMethod(
 			"createDragToOpenListener",
@@ -284,7 +284,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void ListPopupWindow::setAdapter(__JniBaseClass arg0)
+	void ListPopupWindow::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -372,7 +372,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void ListPopupWindow::setOnDismissListener(__JniBaseClass arg0)
+	void ListPopupWindow::setOnDismissListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDismissListener",
@@ -380,7 +380,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setOnItemClickListener(__JniBaseClass arg0)
+	void ListPopupWindow::setOnItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -388,7 +388,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ListPopupWindow::setOnItemSelectedListener(__JniBaseClass arg0)
+	void ListPopupWindow::setOnItemSelectedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",

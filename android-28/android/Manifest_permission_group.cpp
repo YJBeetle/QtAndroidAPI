@@ -85,11 +85,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	Manifest_permission_group::Manifest_permission_group(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Manifest_permission_group::Manifest_permission_group(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Manifest_permission_group::Manifest_permission_group()
-		: __JniBaseClass(
+		: JObject(
 			"android.Manifest$permission_group",
 			"()V"
 		) {}

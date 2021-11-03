@@ -40,7 +40,7 @@ namespace android::util
 	}
 	
 	// QAndroidJniObject forward
-	Config::Config(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Config::Config(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,30 +6,30 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	SplittableRandom::SplittableRandom(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SplittableRandom::SplittableRandom(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SplittableRandom::SplittableRandom()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.SplittableRandom",
 			"()V"
 		) {}
 	SplittableRandom::SplittableRandom(jlong arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.SplittableRandom",
 			"(J)V",
 			arg0
 		) {}
 	
 	// Methods
-	__JniBaseClass SplittableRandom::doubles()
+	JObject SplittableRandom::doubles()
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	__JniBaseClass SplittableRandom::doubles(jlong arg0)
+	JObject SplittableRandom::doubles(jlong arg0)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -37,7 +37,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass SplittableRandom::doubles(jdouble arg0, jdouble arg1)
+	JObject SplittableRandom::doubles(jdouble arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject SplittableRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -56,14 +56,14 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass SplittableRandom::ints()
+	JObject SplittableRandom::ints()
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	__JniBaseClass SplittableRandom::ints(jlong arg0)
+	JObject SplittableRandom::ints(jlong arg0)
 	{
 		return callObjectMethod(
 			"ints",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass SplittableRandom::ints(jint arg0, jint arg1)
+	JObject SplittableRandom::ints(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"ints",
@@ -80,7 +80,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
+	JObject SplittableRandom::ints(jlong arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"ints",
@@ -90,14 +90,14 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass SplittableRandom::longs()
+	JObject SplittableRandom::longs()
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	__JniBaseClass SplittableRandom::longs(jlong arg0)
+	JObject SplittableRandom::longs(jlong arg0)
 	{
 		return callObjectMethod(
 			"longs",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass SplittableRandom::longs(jlong arg0, jlong arg1)
+	JObject SplittableRandom::longs(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"longs",
@@ -114,7 +114,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject SplittableRandom::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"longs",

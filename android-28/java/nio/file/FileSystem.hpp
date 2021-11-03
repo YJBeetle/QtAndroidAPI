@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::nio::file::attribute
 {
@@ -13,30 +13,30 @@ namespace java::nio::file::spi
 
 namespace java::nio::file
 {
-	class FileSystem : public __JniBaseClass
+	class FileSystem : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FileSystem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FileSystem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FileSystem(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void close();
-		__JniBaseClass getFileStores();
-		__JniBaseClass getPath(jstring arg0, jarray arg1);
-		__JniBaseClass getPathMatcher(jstring arg0);
-		__JniBaseClass getRootDirectories();
+		JObject getFileStores();
+		JObject getPath(jstring arg0, jarray arg1);
+		JObject getPathMatcher(jstring arg0);
+		JObject getRootDirectories();
 		jstring getSeparator();
 		java::nio::file::attribute::UserPrincipalLookupService getUserPrincipalLookupService();
 		jboolean isOpen();
 		jboolean isReadOnly();
-		__JniBaseClass newWatchService();
+		JObject newWatchService();
 		java::nio::file::spi::FileSystemProvider provider();
-		__JniBaseClass supportedFileAttributeViews();
+		JObject supportedFileAttributeViews();
 	};
 } // namespace java::nio::file
 

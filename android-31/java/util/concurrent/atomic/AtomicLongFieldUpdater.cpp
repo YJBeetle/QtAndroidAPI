@@ -6,7 +6,7 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QAndroidJniObject forward
-	AtomicLongFieldUpdater::AtomicLongFieldUpdater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AtomicLongFieldUpdater::AtomicLongFieldUpdater(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::accumulateAndGet(jobject arg0, jlong arg1, __JniBaseClass arg2)
+	jlong AtomicLongFieldUpdater::accumulateAndGet(jobject arg0, jlong arg1, JObject arg2)
 	{
 		return callMethod<jlong>(
 			"accumulateAndGet",
@@ -66,7 +66,7 @@ namespace java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndAccumulate(jobject arg0, jlong arg1, __JniBaseClass arg2)
+	jlong AtomicLongFieldUpdater::getAndAccumulate(jobject arg0, jlong arg1, JObject arg2)
 	{
 		return callMethod<jlong>(
 			"getAndAccumulate",
@@ -110,7 +110,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::getAndUpdate(jobject arg0, __JniBaseClass arg1)
+	jlong AtomicLongFieldUpdater::getAndUpdate(jobject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"getAndUpdate",
@@ -145,7 +145,7 @@ namespace java::util::concurrent::atomic
 			arg1
 		);
 	}
-	jlong AtomicLongFieldUpdater::updateAndGet(jobject arg0, __JniBaseClass arg1)
+	jlong AtomicLongFieldUpdater::updateAndGet(jobject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"updateAndGet",

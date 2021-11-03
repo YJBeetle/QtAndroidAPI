@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -41,13 +41,13 @@ namespace java::util::concurrent
 
 namespace java::lang
 {
-	class ClassLoader : public __JniBaseClass
+	class ClassLoader : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ClassLoader(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ClassLoader(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ClassLoader(QAndroidJniObject obj);
 		
 		// Constructors
@@ -57,7 +57,7 @@ namespace java::lang
 		static java::lang::ClassLoader getSystemClassLoader();
 		static java::net::URL getSystemResource(jstring arg0);
 		static java::io::InputStream getSystemResourceAsStream(jstring arg0);
-		static __JniBaseClass getSystemResources(jstring arg0);
+		static JObject getSystemResources(jstring arg0);
 		void clearAssertionStatus();
 		java::lang::Package getDefinedPackage(jstring arg0);
 		jarray getDefinedPackages();
@@ -65,11 +65,11 @@ namespace java::lang
 		java::lang::ClassLoader getParent();
 		java::net::URL getResource(jstring arg0);
 		java::io::InputStream getResourceAsStream(jstring arg0);
-		__JniBaseClass getResources(jstring arg0);
-		__JniBaseClass getUnnamedModule();
+		JObject getResources(jstring arg0);
+		JObject getUnnamedModule();
 		jboolean isRegisteredAsParallelCapable();
 		jclass loadClass(jstring arg0);
-		__JniBaseClass resources(jstring arg0);
+		JObject resources(jstring arg0);
 		void setClassAssertionStatus(jstring arg0, jboolean arg1);
 		void setDefaultAssertionStatus(jboolean arg0);
 		void setPackageAssertionStatus(jstring arg0, jboolean arg1);

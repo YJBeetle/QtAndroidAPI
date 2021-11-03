@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::view
 
 namespace android::graphics
 {
-	class HardwareRenderer : public __JniBaseClass
+	class HardwareRenderer : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android::graphics
 		static jint SYNC_REDRAW_REQUESTED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HardwareRenderer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HardwareRenderer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HardwareRenderer(QAndroidJniObject obj);
 		
 		// Constructors

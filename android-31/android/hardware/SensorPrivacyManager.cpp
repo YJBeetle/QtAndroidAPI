@@ -5,7 +5,7 @@ namespace android::hardware
 	// Fields
 	
 	// QAndroidJniObject forward
-	SensorPrivacyManager::SensorPrivacyManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SensorPrivacyManager::SensorPrivacyManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

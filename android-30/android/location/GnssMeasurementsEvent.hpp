@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::location
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::location
 {
-	class GnssMeasurementsEvent : public __JniBaseClass
+	class GnssMeasurementsEvent : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssMeasurementsEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GnssMeasurementsEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GnssMeasurementsEvent(QAndroidJniObject obj);
 		
 		// Constructors
@@ -28,7 +28,7 @@ namespace android::location
 		// Methods
 		jint describeContents();
 		android::location::GnssClock getClock();
-		__JniBaseClass getMeasurements();
+		JObject getMeasurements();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

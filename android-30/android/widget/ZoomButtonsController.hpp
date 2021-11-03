@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::widget
 {
-	class ZoomButtonsController : public __JniBaseClass
+	class ZoomButtonsController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ZoomButtonsController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZoomButtonsController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZoomButtonsController(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,7 +37,7 @@ namespace android::widget
 		jboolean onTouch(android::view::View arg0, android::view::MotionEvent arg1);
 		void setAutoDismissed(jboolean arg0);
 		void setFocusable(jboolean arg0);
-		void setOnZoomListener(__JniBaseClass arg0);
+		void setOnZoomListener(JObject arg0);
 		void setVisible(jboolean arg0);
 		void setZoomInEnabled(jboolean arg0);
 		void setZoomOutEnabled(jboolean arg0);

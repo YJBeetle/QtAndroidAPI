@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass Checksum::CREATOR()
+	JObject Checksum::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.Checksum",
@@ -63,11 +63,11 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	Checksum::Checksum(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Checksum::Checksum(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Checksum::Checksum(jint arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.Checksum",
 			"(I[B)V",
 			arg0,

@@ -7,11 +7,11 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CaptioningManager_CaptioningChangeListener::CaptioningManager_CaptioningChangeListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.CaptioningManager$CaptioningChangeListener",
 			"()V"
 		) {}

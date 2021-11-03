@@ -9,11 +9,11 @@ namespace android::net::wifi::rtt
 	// Fields
 	
 	// QAndroidJniObject forward
-	RangingRequest_Builder::RangingRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RangingRequest_Builder::RangingRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RangingRequest_Builder::RangingRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.rtt.RangingRequest$Builder",
 			"()V"
 		) {}
@@ -27,7 +27,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addAccessPoints(__JniBaseClass arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addAccessPoints(JObject arg0)
 	{
 		return callObjectMethod(
 			"addAccessPoints",
@@ -43,7 +43,7 @@ namespace android::net::wifi::rtt
 			arg0.object()
 		);
 	}
-	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addNon80211mcCapableAccessPoints(__JniBaseClass arg0)
+	android::net::wifi::rtt::RangingRequest_Builder RangingRequest_Builder::addNon80211mcCapableAccessPoints(JObject arg0)
 	{
 		return callObjectMethod(
 			"addNon80211mcCapableAccessPoints",

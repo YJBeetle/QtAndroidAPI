@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class Checksum : public __JniBaseClass
+	class Checksum : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_PARTIAL_MERKLE_ROOT_1M_SHA256();
 		static jint TYPE_PARTIAL_MERKLE_ROOT_1M_SHA512();
 		static jint TYPE_WHOLE_MD5();
@@ -23,7 +23,7 @@ namespace android::content::pm
 		static jint TYPE_WHOLE_SHA512();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Checksum(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Checksum(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Checksum(QAndroidJniObject obj);
 		
 		// Constructors

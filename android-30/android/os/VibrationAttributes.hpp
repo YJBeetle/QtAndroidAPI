@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::os
 {
-	class VibrationAttributes : public __JniBaseClass
+	class VibrationAttributes : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_BYPASS_INTERRUPTION_POLICY();
 		static jint USAGE_ALARM();
 		static jint USAGE_CLASS_ALARM();
@@ -29,7 +29,7 @@ namespace android::os
 		static jint USAGE_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VibrationAttributes(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VibrationAttributes(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VibrationAttributes(QAndroidJniObject obj);
 		
 		// Constructors

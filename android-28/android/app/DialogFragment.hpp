@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Fragment.hpp"
 
 namespace android::app
@@ -64,12 +64,12 @@ namespace android::app
 		jboolean isCancelable();
 		void onActivityCreated(android::os::Bundle arg0);
 		void onAttach(android::content::Context arg0);
-		void onCancel(__JniBaseClass arg0);
+		void onCancel(JObject arg0);
 		void onCreate(android::os::Bundle arg0);
 		android::app::Dialog onCreateDialog(android::os::Bundle arg0);
 		void onDestroyView();
 		void onDetach();
-		void onDismiss(__JniBaseClass arg0);
+		void onDismiss(JObject arg0);
 		android::view::LayoutInflater onGetLayoutInflater(android::os::Bundle arg0);
 		void onSaveInstanceState(android::os::Bundle arg0);
 		void onStart();

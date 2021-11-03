@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -73,7 +73,7 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class LauncherApps : public __JniBaseClass
+	class LauncherApps : public JObject
 	{
 	public:
 		// Fields
@@ -82,31 +82,31 @@ namespace android::content::pm
 		static jstring EXTRA_PIN_ITEM_REQUEST();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherApps(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LauncherApps(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getActivityList(jstring arg0, android::os::UserHandle arg1);
-		__JniBaseClass getAllPackageInstallerSessions();
+		JObject getActivityList(jstring arg0, android::os::UserHandle arg1);
+		JObject getAllPackageInstallerSessions();
 		android::content::pm::ApplicationInfo getApplicationInfo(jstring arg0, jint arg1, android::os::UserHandle arg2);
 		android::content::pm::LauncherApps_PinItemRequest getPinItemRequest(android::content::Intent arg0);
-		__JniBaseClass getProfiles();
+		JObject getProfiles();
 		android::graphics::drawable::Drawable getShortcutBadgedIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1);
 		android::content::IntentSender getShortcutConfigActivityIntent(android::content::pm::LauncherActivityInfo arg0);
-		__JniBaseClass getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1);
+		JObject getShortcutConfigActivityList(jstring arg0, android::os::UserHandle arg1);
 		android::graphics::drawable::Drawable getShortcutIconDrawable(android::content::pm::ShortcutInfo arg0, jint arg1);
 		android::app::PendingIntent getShortcutIntent(jstring arg0, jstring arg1, android::os::Bundle arg2, android::os::UserHandle arg3);
-		__JniBaseClass getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1);
+		JObject getShortcuts(android::content::pm::LauncherApps_ShortcutQuery arg0, android::os::UserHandle arg1);
 		android::os::Bundle getSuspendedPackageLauncherExtras(jstring arg0, android::os::UserHandle arg1);
 		jboolean hasShortcutHostPermission();
 		jboolean isActivityEnabled(android::content::ComponentName arg0, android::os::UserHandle arg1);
 		jboolean isPackageEnabled(jstring arg0, android::os::UserHandle arg1);
-		void pinShortcuts(jstring arg0, __JniBaseClass arg1, android::os::UserHandle arg2);
+		void pinShortcuts(jstring arg0, JObject arg1, android::os::UserHandle arg2);
 		void registerCallback(android::content::pm::LauncherApps_Callback arg0);
 		void registerCallback(android::content::pm::LauncherApps_Callback arg0, android::os::Handler arg1);
-		void registerPackageInstallerSessionCallback(__JniBaseClass arg0, android::content::pm::PackageInstaller_SessionCallback arg1);
+		void registerPackageInstallerSessionCallback(JObject arg0, android::content::pm::PackageInstaller_SessionCallback arg1);
 		android::content::pm::LauncherActivityInfo resolveActivity(android::content::Intent arg0, android::os::UserHandle arg1);
 		jboolean shouldHideFromSuggestions(jstring arg0, android::os::UserHandle arg1);
 		void startAppDetailsActivity(android::content::ComponentName arg0, android::os::UserHandle arg1, android::graphics::Rect arg2, android::os::Bundle arg3);

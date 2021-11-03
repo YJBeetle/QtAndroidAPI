@@ -200,24 +200,24 @@ namespace java::util
 	}
 	
 	// QAndroidJniObject forward
-	Locale::Locale(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Locale::Locale(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Locale::Locale(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Locale::Locale(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	Locale::Locale(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Locale",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -226,7 +226,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Locale::filter(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -236,7 +236,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Locale::filter(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
+	JObject Locale::filter(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -247,7 +247,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1)
+	JObject Locale::filterTags(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -257,7 +257,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Locale::filterTags(__JniBaseClass arg0, __JniBaseClass arg1, java::util::Locale_FilteringMode arg2)
+	JObject Locale::filterTags(JObject arg0, JObject arg1, java::util::Locale_FilteringMode arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -310,7 +310,7 @@ namespace java::util
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	__JniBaseClass Locale::getISOCountries(__JniBaseClass arg0)
+	JObject Locale::getISOCountries(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -327,7 +327,7 @@ namespace java::util
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	java::util::Locale Locale::lookup(__JniBaseClass arg0, __JniBaseClass arg1)
+	java::util::Locale Locale::lookup(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -337,7 +337,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jstring Locale::lookupTag(__JniBaseClass arg0, __JniBaseClass arg1)
+	jstring Locale::lookupTag(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Locale",
@@ -471,7 +471,7 @@ namespace java::util
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Locale::getExtensionKeys()
+	JObject Locale::getExtensionKeys()
 	{
 		return callObjectMethod(
 			"getExtensionKeys",
@@ -506,14 +506,14 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Locale::getUnicodeLocaleAttributes()
+	JObject Locale::getUnicodeLocaleAttributes()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleAttributes",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Locale::getUnicodeLocaleKeys()
+	JObject Locale::getUnicodeLocaleKeys()
 	{
 		return callObjectMethod(
 			"getUnicodeLocaleKeys",

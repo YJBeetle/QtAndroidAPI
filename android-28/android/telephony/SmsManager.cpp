@@ -414,7 +414,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SmsManager::SmsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SmsManager::SmsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

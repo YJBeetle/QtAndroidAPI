@@ -6,17 +6,17 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Observable::Observable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Observable::Observable(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Observable::Observable()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Observable",
 			"()V"
 		) {}
 	
 	// Methods
-	void Observable::addObserver(__JniBaseClass arg0)
+	void Observable::addObserver(JObject arg0)
 	{
 		callMethod<void>(
 			"addObserver",
@@ -31,7 +31,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void Observable::deleteObserver(__JniBaseClass arg0)
+	void Observable::deleteObserver(JObject arg0)
 	{
 		callMethod<void>(
 			"deleteObserver",

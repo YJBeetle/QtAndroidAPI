@@ -12,7 +12,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaRouter2::MediaRouter2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaRouter2::MediaRouter2(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,14 +26,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	__JniBaseClass MediaRouter2::getControllers()
+	JObject MediaRouter2::getControllers()
 	{
 		return callObjectMethod(
 			"getControllers",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass MediaRouter2::getRoutes()
+	JObject MediaRouter2::getRoutes()
 	{
 		return callObjectMethod(
 			"getRoutes",
@@ -47,7 +47,7 @@ namespace android::media
 			"()Landroid/media/MediaRouter2$RoutingController;"
 		);
 	}
-	void MediaRouter2::registerControllerCallback(__JniBaseClass arg0, android::media::MediaRouter2_ControllerCallback arg1)
+	void MediaRouter2::registerControllerCallback(JObject arg0, android::media::MediaRouter2_ControllerCallback arg1)
 	{
 		callMethod<void>(
 			"registerControllerCallback",
@@ -56,7 +56,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRouter2::registerRouteCallback(__JniBaseClass arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2)
+	void MediaRouter2::registerRouteCallback(JObject arg0, android::media::MediaRouter2_RouteCallback arg1, android::media::RouteDiscoveryPreference arg2)
 	{
 		callMethod<void>(
 			"registerRouteCallback",
@@ -66,7 +66,7 @@ namespace android::media
 			arg2.object()
 		);
 	}
-	void MediaRouter2::registerTransferCallback(__JniBaseClass arg0, android::media::MediaRouter2_TransferCallback arg1)
+	void MediaRouter2::registerTransferCallback(JObject arg0, android::media::MediaRouter2_TransferCallback arg1)
 	{
 		callMethod<void>(
 			"registerTransferCallback",
@@ -75,7 +75,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaRouter2::setOnGetControllerHintsListener(__JniBaseClass arg0)
+	void MediaRouter2::setOnGetControllerHintsListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnGetControllerHintsListener",

@@ -138,7 +138,7 @@ namespace android::media::session
 			"ACTION_STOP"
 		);
 	}
-	__JniBaseClass PlaybackState::CREATOR()
+	JObject PlaybackState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.session.PlaybackState",
@@ -239,7 +239,7 @@ namespace android::media::session
 	}
 	
 	// QAndroidJniObject forward
-	PlaybackState::PlaybackState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PlaybackState::PlaybackState(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -272,7 +272,7 @@ namespace android::media::session
 			"()J"
 		);
 	}
-	__JniBaseClass PlaybackState::getCustomActions()
+	JObject PlaybackState::getCustomActions()
 	{
 		return callObjectMethod(
 			"getCustomActions",

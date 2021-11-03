@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -21,7 +21,7 @@ namespace java::util
 
 namespace android::net::wifi
 {
-	class WifiConfiguration : public __JniBaseClass
+	class WifiConfiguration : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::net::wifi
 		jint wepTxKeyIndex();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiConfiguration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiConfiguration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiConfiguration(QAndroidJniObject obj);
 		
 		// Constructors

@@ -17,16 +17,16 @@ namespace android::renderscript
 	}
 	
 	// QAndroidJniObject forward
-	Int2::Int2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Int2::Int2(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Int2::Int2()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Int2",
 			"()V"
 		) {}
 	Int2::Int2(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Int2",
 			"(II)V",
 			arg0,

@@ -441,7 +441,7 @@ namespace android::app
 			"()Landroid/content/Intent;"
 		);
 	}
-	__JniBaseClass Activity::getPreferences(jint arg0)
+	JObject Activity::getPreferences(jint arg0)
 	{
 		return callObjectMethod(
 			"getPreferences",
@@ -470,7 +470,7 @@ namespace android::app
 			"()Landroid/view/SearchEvent;"
 		);
 	}
-	__JniBaseClass Activity::getSplashScreen()
+	JObject Activity::getSplashScreen()
 	{
 		return callObjectMethod(
 			"getSplashScreen",
@@ -527,7 +527,7 @@ namespace android::app
 			"()Landroid/view/Window;"
 		);
 	}
-	__JniBaseClass Activity::getWindowManager()
+	JObject Activity::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
@@ -639,7 +639,7 @@ namespace android::app
 			"()Z"
 		);
 	}
-	__JniBaseClass Activity::managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject Activity::managedQuery(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"managedQuery",
@@ -738,7 +738,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean Activity::onContextItemSelected(__JniBaseClass arg0)
+	jboolean Activity::onContextItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -746,7 +746,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onContextMenuClosed(__JniBaseClass arg0)
+	void Activity::onContextMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"onContextMenuClosed",
@@ -763,7 +763,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2)
+	void Activity::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -788,7 +788,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onCreateOptionsMenu(__JniBaseClass arg0)
+	jboolean Activity::onCreateOptionsMenu(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onCreateOptionsMenu",
@@ -796,7 +796,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onCreatePanelMenu(jint arg0, __JniBaseClass arg1)
+	jboolean Activity::onCreatePanelMenu(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onCreatePanelMenu",
@@ -822,7 +822,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	android::view::View Activity::onCreateView(jstring arg0, android::content::Context arg1, __JniBaseClass arg2)
+	android::view::View Activity::onCreateView(jstring arg0, android::content::Context arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -832,7 +832,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::view::View Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, __JniBaseClass arg3)
+	android::view::View Activity::onCreateView(android::view::View arg0, jstring arg1, android::content::Context arg2, JObject arg3)
 	{
 		return callObjectMethod(
 			"onCreateView",
@@ -865,7 +865,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onGetDirectActions(android::os::CancellationSignal arg0, __JniBaseClass arg1)
+	void Activity::onGetDirectActions(android::os::CancellationSignal arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onGetDirectActions",
@@ -941,7 +941,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	jboolean Activity::onMenuItemSelected(jint arg0, __JniBaseClass arg1)
+	jboolean Activity::onMenuItemSelected(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuItemSelected",
@@ -950,7 +950,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Activity::onMenuOpened(jint arg0, __JniBaseClass arg1)
+	jboolean Activity::onMenuOpened(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"onMenuOpened",
@@ -991,7 +991,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onOptionsItemSelected(__JniBaseClass arg0)
+	jboolean Activity::onOptionsItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -999,7 +999,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onOptionsMenuClosed(__JniBaseClass arg0)
+	void Activity::onOptionsMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -1007,7 +1007,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onPanelClosed(jint arg0, __JniBaseClass arg1)
+	void Activity::onPanelClosed(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onPanelClosed",
@@ -1016,7 +1016,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::onPerformDirectAction(jstring arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, __JniBaseClass arg3)
+	void Activity::onPerformDirectAction(jstring arg0, android::os::Bundle arg1, android::os::CancellationSignal arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"onPerformDirectAction",
@@ -1076,7 +1076,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onPrepareOptionsMenu(__JniBaseClass arg0)
+	jboolean Activity::onPrepareOptionsMenu(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onPrepareOptionsMenu",
@@ -1084,7 +1084,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Activity::onPreparePanel(jint arg0, android::view::View arg1, __JniBaseClass arg2)
+	jboolean Activity::onPreparePanel(jint arg0, android::view::View arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"onPreparePanel",
@@ -1110,7 +1110,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Activity::onProvideKeyboardShortcuts(__JniBaseClass arg0, __JniBaseClass arg1, jint arg2)
+	void Activity::onProvideKeyboardShortcuts(JObject arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"onProvideKeyboardShortcuts",
@@ -1246,7 +1246,7 @@ namespace android::app
 			arg0
 		);
 	}
-	android::view::ActionMode Activity::onWindowStartingActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1254,7 +1254,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Activity::onWindowStartingActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Activity::onWindowStartingActionMode(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"onWindowStartingActionMode",
@@ -1301,7 +1301,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void Activity::registerActivityLifecycleCallbacks(__JniBaseClass arg0)
+	void Activity::registerActivityLifecycleCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"registerActivityLifecycleCallbacks",
@@ -1387,7 +1387,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Activity::runOnUiThread(__JniBaseClass arg0)
+	void Activity::runOnUiThread(JObject arg0)
 	{
 		callMethod<void>(
 			"runOnUiThread",
@@ -1755,7 +1755,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	android::view::ActionMode Activity::startActionMode(__JniBaseClass arg0)
+	android::view::ActionMode Activity::startActionMode(JObject arg0)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -1763,7 +1763,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	android::view::ActionMode Activity::startActionMode(__JniBaseClass arg0, jint arg1)
+	android::view::ActionMode Activity::startActionMode(JObject arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"startActionMode",
@@ -1982,7 +1982,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void Activity::startManagingCursor(__JniBaseClass arg0)
+	void Activity::startManagingCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"startManagingCursor",
@@ -2039,7 +2039,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void Activity::stopManagingCursor(__JniBaseClass arg0)
+	void Activity::stopManagingCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"stopManagingCursor",
@@ -2064,7 +2064,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Activity::unregisterActivityLifecycleCallbacks(__JniBaseClass arg0)
+	void Activity::unregisterActivityLifecycleCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterActivityLifecycleCallbacks",

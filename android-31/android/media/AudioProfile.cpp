@@ -19,7 +19,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioProfile::AudioProfile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioProfile::AudioProfile(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

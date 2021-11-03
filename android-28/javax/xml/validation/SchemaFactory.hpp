@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,13 +21,13 @@ namespace javax::xml::validation
 
 namespace javax::xml::validation
 {
-	class SchemaFactory : public __JniBaseClass
+	class SchemaFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SchemaFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SchemaFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SchemaFactory(QAndroidJniObject obj);
 		
 		// Constructors
@@ -36,20 +36,20 @@ namespace javax::xml::validation
 		static javax::xml::validation::SchemaFactory newDefaultInstance();
 		static javax::xml::validation::SchemaFactory newInstance(jstring arg0);
 		static javax::xml::validation::SchemaFactory newInstance(jstring arg0, jstring arg1, java::lang::ClassLoader arg2);
-		__JniBaseClass getErrorHandler();
+		JObject getErrorHandler();
 		jboolean getFeature(jstring arg0);
 		jobject getProperty(jstring arg0);
-		__JniBaseClass getResourceResolver();
+		JObject getResourceResolver();
 		jboolean isSchemaLanguageSupported(jstring arg0);
 		javax::xml::validation::Schema newSchema();
 		javax::xml::validation::Schema newSchema(jarray arg0);
 		javax::xml::validation::Schema newSchema(java::io::File arg0);
 		javax::xml::validation::Schema newSchema(java::net::URL arg0);
-		javax::xml::validation::Schema newSchema(__JniBaseClass arg0);
-		void setErrorHandler(__JniBaseClass arg0);
+		javax::xml::validation::Schema newSchema(JObject arg0);
+		void setErrorHandler(JObject arg0);
 		void setFeature(jstring arg0, jboolean arg1);
 		void setProperty(jstring arg0, jobject arg1);
-		void setResourceResolver(__JniBaseClass arg0);
+		void setResourceResolver(JObject arg0);
 	};
 } // namespace javax::xml::validation
 

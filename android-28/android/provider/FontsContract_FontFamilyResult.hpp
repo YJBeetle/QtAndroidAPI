@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class FontsContract_FontFamilyResult : public __JniBaseClass
+	class FontsContract_FontFamilyResult : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::provider
 		static jint STATUS_WRONG_CERTIFICATES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontsContract_FontFamilyResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FontsContract_FontFamilyResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FontsContract_FontFamilyResult(QAndroidJniObject obj);
 		
 		// Constructors

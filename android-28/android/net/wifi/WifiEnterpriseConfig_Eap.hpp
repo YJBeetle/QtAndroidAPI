@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::wifi
 {
-	class WifiEnterpriseConfig_Eap : public __JniBaseClass
+	class WifiEnterpriseConfig_Eap : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::net::wifi
 		static jint UNAUTH_TLS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiEnterpriseConfig_Eap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiEnterpriseConfig_Eap(QAndroidJniObject obj);
 		
 		// Constructors

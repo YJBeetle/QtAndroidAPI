@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Animator.hpp"
 
 namespace android::animation
@@ -31,10 +31,10 @@ namespace android::animation
 		static android::animation::ValueAnimator ofArgb(jintArray arg0);
 		static android::animation::ValueAnimator ofFloat(jfloatArray arg0);
 		static android::animation::ValueAnimator ofInt(jintArray arg0);
-		static android::animation::ValueAnimator ofObject(__JniBaseClass arg0, jobjectArray arg1);
+		static android::animation::ValueAnimator ofObject(JObject arg0, jobjectArray arg1);
 		static android::animation::ValueAnimator ofPropertyValuesHolder(jarray arg0);
 		static void setFrameDelay(jlong arg0);
-		void addUpdateListener(__JniBaseClass arg0);
+		void addUpdateListener(JObject arg0);
 		void cancel();
 		android::animation::ValueAnimator clone();
 		void end();
@@ -43,7 +43,7 @@ namespace android::animation
 		jobject getAnimatedValue(jstring arg0);
 		jlong getCurrentPlayTime();
 		jlong getDuration();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jint getRepeatCount();
 		jint getRepeatMode();
 		jlong getStartDelay();
@@ -53,16 +53,16 @@ namespace android::animation
 		jboolean isStarted();
 		void pause();
 		void removeAllUpdateListeners();
-		void removeUpdateListener(__JniBaseClass arg0);
+		void removeUpdateListener(JObject arg0);
 		void resume();
 		void reverse();
 		void setCurrentFraction(jfloat arg0);
 		void setCurrentPlayTime(jlong arg0);
 		android::animation::ValueAnimator setDuration(jlong arg0);
-		void setEvaluator(__JniBaseClass arg0);
+		void setEvaluator(JObject arg0);
 		void setFloatValues(jfloatArray arg0);
 		void setIntValues(jintArray arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setObjectValues(jobjectArray arg0);
 		void setRepeatCount(jint arg0);
 		void setRepeatMode(jint arg0);

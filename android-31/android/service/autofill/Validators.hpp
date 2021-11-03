@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::service::autofill
 {
-	class Validators : public __JniBaseClass
+	class Validators : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Validators(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Validators(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Validators(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass _and(jarray arg0);
-		static __JniBaseClass _not(__JniBaseClass arg0);
-		static __JniBaseClass _or(jarray arg0);
+		static JObject _and(jarray arg0);
+		static JObject _not(JObject arg0);
+		static JObject _or(jarray arg0);
 	};
 } // namespace android::service::autofill
 

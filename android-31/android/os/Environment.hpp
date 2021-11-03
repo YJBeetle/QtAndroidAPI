@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,7 +9,7 @@ namespace java::io
 
 namespace android::os
 {
-	class Environment : public __JniBaseClass
+	class Environment : public JObject
 	{
 	public:
 		// Fields
@@ -39,7 +39,7 @@ namespace android::os
 		static jstring MEDIA_UNMOUNTED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Environment(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Environment(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Environment(QAndroidJniObject obj);
 		
 		// Constructors

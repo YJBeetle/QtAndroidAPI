@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors_DownloadErrors : public __JniBaseClass
+	class MbmsErrors_DownloadErrors : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace android::telephony::mbms
 		static jint ERROR_UNKNOWN_FILE_INFO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsErrors_DownloadErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsErrors_DownloadErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsErrors_DownloadErrors(QAndroidJniObject obj);
 		
 		// Constructors

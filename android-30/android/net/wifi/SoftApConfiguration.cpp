@@ -5,7 +5,7 @@
 namespace android::net::wifi
 {
 	// Fields
-	__JniBaseClass SoftApConfiguration::CREATOR()
+	JObject SoftApConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.SoftApConfiguration",
@@ -43,7 +43,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	SoftApConfiguration::SoftApConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SoftApConfiguration::SoftApConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

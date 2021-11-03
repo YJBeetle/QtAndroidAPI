@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
 namespace android::media::audiofx
@@ -36,7 +36,7 @@ namespace android::media::audiofx
 		jboolean getSpeakerAngles(jint arg0, jint arg1, jintArray arg2);
 		jboolean getStrengthSupported();
 		jint getVirtualizationMode();
-		void setParameterListener(__JniBaseClass arg0);
+		void setParameterListener(JObject arg0);
 		void setProperties(android::media::audiofx::Virtualizer_Settings arg0);
 		void setStrength(jshort arg0);
 	};

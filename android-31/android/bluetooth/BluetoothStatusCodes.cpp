@@ -47,7 +47,7 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothStatusCodes::BluetoothStatusCodes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothStatusCodes::BluetoothStatusCodes(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

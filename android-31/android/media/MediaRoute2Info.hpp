@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -17,14 +17,14 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaRoute2Info : public __JniBaseClass
+	class MediaRoute2Info : public JObject
 	{
 	public:
 		// Fields
 		static jint CONNECTION_STATE_CONNECTED();
 		static jint CONNECTION_STATE_CONNECTING();
 		static jint CONNECTION_STATE_DISCONNECTED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring FEATURE_LIVE_AUDIO();
 		static jstring FEATURE_LIVE_VIDEO();
 		static jstring FEATURE_REMOTE_AUDIO_PLAYBACK();
@@ -34,7 +34,7 @@ namespace android::media
 		static jint PLAYBACK_VOLUME_VARIABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRoute2Info(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRoute2Info(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRoute2Info(QAndroidJniObject obj);
 		
 		// Constructors
@@ -46,7 +46,7 @@ namespace android::media
 		jint getConnectionState();
 		jstring getDescription();
 		android::os::Bundle getExtras();
-		__JniBaseClass getFeatures();
+		JObject getFeatures();
 		android::net::Uri getIconUri();
 		jstring getId();
 		jstring getName();

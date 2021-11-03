@@ -4,7 +4,7 @@
 namespace android::media::session
 {
 	// Fields
-	__JniBaseClass MediaSession_Token::CREATOR()
+	JObject MediaSession_Token::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.session.MediaSession$Token",
@@ -14,7 +14,7 @@ namespace android::media::session
 	}
 	
 	// QAndroidJniObject forward
-	MediaSession_Token::MediaSession_Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSession_Token::MediaSession_Token(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,7 +6,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InputContentInfo::CREATOR()
+	JObject InputContentInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InputContentInfo",
@@ -16,18 +16,18 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InputContentInfo::InputContentInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputContentInfo::InputContentInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputContentInfo",
 			"(Landroid/net/Uri;Landroid/content/ClipDescription;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	InputContentInfo::InputContentInfo(android::net::Uri arg0, android::content::ClipDescription arg1, android::net::Uri arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputContentInfo",
 			"(Landroid/net/Uri;Landroid/content/ClipDescription;Landroid/net/Uri;)V",
 			arg0.object(),

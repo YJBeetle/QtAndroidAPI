@@ -19,14 +19,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1)
+	TimePicker::TimePicker(android::content::Context arg0, JObject arg1)
 		: android::widget::FrameLayout(
 			"android.widget.TimePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	TimePicker::TimePicker(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::FrameLayout(
 			"android.widget.TimePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	TimePicker::TimePicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	TimePicker::TimePicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::FrameLayout(
 			"android.widget.TimePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -180,7 +180,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void TimePicker::setOnTimeChangedListener(__JniBaseClass arg0)
+	void TimePicker::setOnTimeChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnTimeChangedListener",

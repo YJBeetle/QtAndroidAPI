@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class ContactsContract_Contacts_Photo : public __JniBaseClass
+	class ContactsContract_Contacts_Photo : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::provider
 		static jstring PHOTO_FILE_ID();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_Contacts_Photo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_Contacts_Photo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_Contacts_Photo(QAndroidJniObject obj);
 		
 		// Constructors

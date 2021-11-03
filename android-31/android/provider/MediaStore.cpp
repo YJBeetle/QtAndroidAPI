@@ -414,11 +414,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	MediaStore::MediaStore(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore::MediaStore(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore::MediaStore()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore",
 			"()V"
 		) {}
@@ -433,7 +433,7 @@ namespace android::provider
 			arg0.object()
 		);
 	}
-	android::app::PendingIntent MediaStore::createDeleteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1)
+	android::app::PendingIntent MediaStore::createDeleteRequest(android::content::ContentResolver arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -443,7 +443,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	android::app::PendingIntent MediaStore::createFavoriteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1, jboolean arg2)
+	android::app::PendingIntent MediaStore::createFavoriteRequest(android::content::ContentResolver arg0, JObject arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -454,7 +454,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	android::app::PendingIntent MediaStore::createTrashRequest(android::content::ContentResolver arg0, __JniBaseClass arg1, jboolean arg2)
+	android::app::PendingIntent MediaStore::createTrashRequest(android::content::ContentResolver arg0, JObject arg1, jboolean arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -465,7 +465,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	android::app::PendingIntent MediaStore::createWriteRequest(android::content::ContentResolver arg0, __JniBaseClass arg1)
+	android::app::PendingIntent MediaStore::createWriteRequest(android::content::ContentResolver arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -485,7 +485,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaStore::getExternalVolumeNames(android::content::Context arg0)
+	JObject MediaStore::getExternalVolumeNames(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -532,7 +532,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaStore::getRecentExternalVolumeNames(android::content::Context arg0)
+	JObject MediaStore::getRecentExternalVolumeNames(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",
@@ -551,7 +551,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaStore::getRedactedUri(android::content::ContentResolver arg0, __JniBaseClass arg1)
+	JObject MediaStore::getRedactedUri(android::content::ContentResolver arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore",

@@ -8,11 +8,11 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Ikev2VpnProfile_Builder::Ikev2VpnProfile_Builder(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.Ikev2VpnProfile$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -27,7 +27,7 @@ namespace android::net
 			"()Landroid/net/Ikev2VpnProfile;"
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAllowedAlgorithms(__JniBaseClass arg0)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAllowedAlgorithms(JObject arg0)
 	{
 		return callObjectMethod(
 			"setAllowedAlgorithms",
@@ -35,7 +35,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, __JniBaseClass arg1, java::security::cert::X509Certificate arg2)
+	android::net::Ikev2VpnProfile_Builder Ikev2VpnProfile_Builder::setAuthDigitalSignature(java::security::cert::X509Certificate arg0, JObject arg1, java::security::cert::X509Certificate arg2)
 	{
 		return callObjectMethod(
 			"setAuthDigitalSignature",

@@ -6,11 +6,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QAndroidJniObject forward
-	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DoubleAccumulator::DoubleAccumulator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DoubleAccumulator::DoubleAccumulator(__JniBaseClass arg0, jdouble arg1)
-		: __JniBaseClass(
+	DoubleAccumulator::DoubleAccumulator(JObject arg0, jdouble arg1)
+		: JObject(
 			"java.util.concurrent.atomic.DoubleAccumulator",
 			"(Ljava/util/function/DoubleBinaryOperator;D)V",
 			arg0.object(),

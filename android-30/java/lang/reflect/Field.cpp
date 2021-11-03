@@ -27,14 +27,14 @@ namespace java::lang::reflect
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass Field::getAnnotatedType()
+	JObject Field::getAnnotatedType()
 	{
 		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Field::getAnnotation(jclass arg0)
+	JObject Field::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -104,7 +104,7 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	__JniBaseClass Field::getGenericType()
+	JObject Field::getGenericType()
 	{
 		return callObjectMethod(
 			"getGenericType",

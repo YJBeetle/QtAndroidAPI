@@ -5,7 +5,7 @@ namespace android::app::backup
 	// Fields
 	
 	// QAndroidJniObject forward
-	BackupDataInput::BackupDataInput(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BackupDataInput::BackupDataInput(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

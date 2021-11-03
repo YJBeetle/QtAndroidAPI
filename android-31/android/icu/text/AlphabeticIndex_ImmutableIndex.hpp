@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -9,13 +9,13 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class AlphabeticIndex_ImmutableIndex : public __JniBaseClass
+	class AlphabeticIndex_ImmutableIndex : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex_ImmutableIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlphabeticIndex_ImmutableIndex(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabeticIndex_ImmutableIndex(QAndroidJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::icu::text
 		android::icu::text::AlphabeticIndex_Bucket getBucket(jint arg0);
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
-		__JniBaseClass iterator();
+		JObject iterator();
 	};
 } // namespace android::icu::text
 

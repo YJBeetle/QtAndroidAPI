@@ -44,7 +44,7 @@ namespace java::io
 			"()V"
 		);
 	}
-	__JniBaseClass ObjectInputStream::getObjectInputFilter()
+	JObject ObjectInputStream::getObjectInputFilter()
 	{
 		return callObjectMethod(
 			"getObjectInputFilter",
@@ -191,7 +191,7 @@ namespace java::io
 			"()I"
 		);
 	}
-	void ObjectInputStream::registerValidation(__JniBaseClass arg0, jint arg1)
+	void ObjectInputStream::registerValidation(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"registerValidation",
@@ -200,7 +200,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectInputStream::setObjectInputFilter(__JniBaseClass arg0)
+	void ObjectInputStream::setObjectInputFilter(JObject arg0)
 	{
 		callMethod<void>(
 			"setObjectInputFilter",

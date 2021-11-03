@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass VisibilitySetterAction::CREATOR()
+	JObject VisibilitySetterAction::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.VisibilitySetterAction",
@@ -14,7 +14,7 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	VisibilitySetterAction::VisibilitySetterAction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VisibilitySetterAction::VisibilitySetterAction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

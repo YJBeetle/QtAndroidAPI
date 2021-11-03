@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::eap
 {
-	class EapSessionConfig_EapMethodConfig : public __JniBaseClass
+	class EapSessionConfig_EapMethodConfig : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::net::eap
 		static jint EAP_TYPE_TTLS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EapSessionConfig_EapMethodConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EapSessionConfig_EapMethodConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EapSessionConfig_EapMethodConfig(QAndroidJniObject obj);
 		
 		// Constructors

@@ -5,7 +5,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass Location::CREATOR()
+	JObject Location::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.Location",
@@ -36,17 +36,17 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	Location::Location(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Location::Location(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Location::Location(android::location::Location &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.Location",
 			"(Landroid/location/Location;)V",
 			arg0.object()
 		) {}
 	Location::Location(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.Location",
 			"(Ljava/lang/String;)V",
 			arg0
@@ -108,7 +108,7 @@ namespace android::location
 			arg0.object()
 		);
 	}
-	void Location::dump(__JniBaseClass arg0, jstring arg1)
+	void Location::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

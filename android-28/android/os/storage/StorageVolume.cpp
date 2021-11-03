@@ -6,7 +6,7 @@
 namespace android::os::storage
 {
 	// Fields
-	__JniBaseClass StorageVolume::CREATOR()
+	JObject StorageVolume::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.storage.StorageVolume",
@@ -24,7 +24,7 @@ namespace android::os::storage
 	}
 	
 	// QAndroidJniObject forward
-	StorageVolume::StorageVolume(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StorageVolume::StorageVolume(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

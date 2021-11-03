@@ -14,7 +14,7 @@ namespace android::view::animation
 			"android.view.animation.LinearInterpolator",
 			"()V"
 		) {}
-	LinearInterpolator::LinearInterpolator(android::content::Context arg0, __JniBaseClass arg1)
+	LinearInterpolator::LinearInterpolator(android::content::Context arg0, JObject arg1)
 		: android::view::animation::BaseInterpolator(
 			"android.view.animation.LinearInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

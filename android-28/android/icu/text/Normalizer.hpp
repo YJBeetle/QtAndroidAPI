@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -9,7 +9,7 @@ namespace android::icu::text
 
 namespace android::icu::text
 {
-	class Normalizer : public __JniBaseClass
+	class Normalizer : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::icu::text
 		static android::icu::text::Normalizer_QuickCheckResult YES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Normalizer(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Normalizer(QAndroidJniObject obj);
 		
 		// Constructors

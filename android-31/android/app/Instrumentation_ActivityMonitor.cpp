@@ -9,16 +9,16 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"()V"
 		) {}
 	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(android::content::IntentFilter arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"(Landroid/content/IntentFilter;Landroid/app/Instrumentation$ActivityResult;Z)V",
 			arg0.object(),
@@ -26,7 +26,7 @@ namespace android::app
 			arg2
 		) {}
 	Instrumentation_ActivityMonitor::Instrumentation_ActivityMonitor(jstring arg0, android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"(Ljava/lang/String;Landroid/app/Instrumentation$ActivityResult;Z)V",
 			arg0,

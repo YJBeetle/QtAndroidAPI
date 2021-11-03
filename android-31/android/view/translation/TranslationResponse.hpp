@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,17 +13,17 @@ namespace android::util
 
 namespace android::view::translation
 {
-	class TranslationResponse : public __JniBaseClass
+	class TranslationResponse : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TRANSLATION_STATUS_CONTEXT_UNSUPPORTED();
 		static jint TRANSLATION_STATUS_SUCCESS();
 		static jint TRANSLATION_STATUS_UNKNOWN_ERROR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TranslationResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TranslationResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TranslationResponse(QAndroidJniObject obj);
 		
 		// Constructors

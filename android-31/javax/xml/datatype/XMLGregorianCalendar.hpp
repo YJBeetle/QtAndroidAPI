@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::math
 {
@@ -33,13 +33,13 @@ namespace javax::xml::_namespace
 
 namespace javax::xml::datatype
 {
-	class XMLGregorianCalendar : public __JniBaseClass
+	class XMLGregorianCalendar : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit XMLGregorianCalendar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit XMLGregorianCalendar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		XMLGregorianCalendar(QAndroidJniObject obj);
 		
 		// Constructors

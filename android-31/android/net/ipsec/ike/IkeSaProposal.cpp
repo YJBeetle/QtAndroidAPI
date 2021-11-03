@@ -10,7 +10,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	__JniBaseClass IkeSaProposal::getSupportedEncryptionAlgorithms()
+	JObject IkeSaProposal::getSupportedEncryptionAlgorithms()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.IkeSaProposal",
@@ -18,7 +18,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass IkeSaProposal::getSupportedIntegrityAlgorithms()
+	JObject IkeSaProposal::getSupportedIntegrityAlgorithms()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.IkeSaProposal",
@@ -26,7 +26,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass IkeSaProposal::getSupportedPseudorandomFunctions()
+	JObject IkeSaProposal::getSupportedPseudorandomFunctions()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.IkeSaProposal",
@@ -42,7 +42,7 @@ namespace android::net::ipsec::ike
 			arg0
 		);
 	}
-	__JniBaseClass IkeSaProposal::getPseudorandomFunctions()
+	JObject IkeSaProposal::getPseudorandomFunctions()
 	{
 		return callObjectMethod(
 			"getPseudorandomFunctions",

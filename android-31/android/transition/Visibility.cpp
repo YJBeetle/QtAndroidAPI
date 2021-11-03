@@ -32,7 +32,7 @@ namespace android::transition
 			"android.transition.Visibility",
 			"()V"
 		) {}
-	Visibility::Visibility(android::content::Context arg0, __JniBaseClass arg1)
+	Visibility::Visibility(android::content::Context arg0, JObject arg1)
 		: android::transition::Transition(
 			"android.transition.Visibility",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

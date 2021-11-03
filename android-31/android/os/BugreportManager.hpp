@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,20 +13,20 @@ namespace android::os
 
 namespace android::os
 {
-	class BugreportManager : public __JniBaseClass
+	class BugreportManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BugreportManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BugreportManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BugreportManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void cancelBugreport();
-		void startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, __JniBaseClass arg1, android::os::BugreportManager_BugreportCallback arg2);
+		void startConnectivityBugreport(android::os::ParcelFileDescriptor arg0, JObject arg1, android::os::BugreportManager_BugreportCallback arg2);
 	};
 } // namespace android::os
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -25,11 +25,11 @@ namespace android::os
 
 namespace android::net
 {
-	class ConnectivityDiagnosticsManager_DataStallReport : public __JniBaseClass
+	class ConnectivityDiagnosticsManager_DataStallReport : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DETECTION_METHOD_DNS_EVENTS();
 		static jint DETECTION_METHOD_TCP_METRICS();
 		static jstring KEY_DNS_CONSECUTIVE_TIMEOUTS();
@@ -37,7 +37,7 @@ namespace android::net
 		static jstring KEY_TCP_PACKET_FAIL_RATE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConnectivityDiagnosticsManager_DataStallReport(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConnectivityDiagnosticsManager_DataStallReport(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectivityDiagnosticsManager_DataStallReport(QAndroidJniObject obj);
 		
 		// Constructors

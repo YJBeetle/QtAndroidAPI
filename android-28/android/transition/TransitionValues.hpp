@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -9,15 +9,15 @@ namespace android::view
 
 namespace android::transition
 {
-	class TransitionValues : public __JniBaseClass
+	class TransitionValues : public JObject
 	{
 	public:
 		// Fields
-		__JniBaseClass values();
+		JObject values();
 		android::view::View view();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TransitionValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TransitionValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TransitionValues(QAndroidJniObject obj);
 		
 		// Constructors

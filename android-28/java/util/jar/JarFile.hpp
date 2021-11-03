@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../zip/ZipFile.hpp"
 
 namespace java::io
@@ -58,20 +58,20 @@ namespace java::util::jar
 		JarFile(java::io::File arg0, jboolean arg1);
 		JarFile(jstring arg0, jboolean arg1);
 		JarFile(java::io::File arg0, jboolean arg1, jint arg2);
-		JarFile(java::io::File arg0, jboolean arg1, jint arg2, __JniBaseClass arg3);
+		JarFile(java::io::File arg0, jboolean arg1, jint arg2, JObject arg3);
 		
 		// Methods
-		static __JniBaseClass baseVersion();
-		static __JniBaseClass runtimeVersion();
-		__JniBaseClass entries();
+		static JObject baseVersion();
+		static JObject runtimeVersion();
+		JObject entries();
 		java::util::zip::ZipEntry getEntry(jstring arg0);
 		java::io::InputStream getInputStream(java::util::zip::ZipEntry arg0);
 		java::util::jar::JarEntry getJarEntry(jstring arg0);
 		java::util::jar::Manifest getManifest();
-		__JniBaseClass getVersion();
+		JObject getVersion();
 		jboolean isMultiRelease();
-		__JniBaseClass stream();
-		__JniBaseClass versionedStream();
+		JObject stream();
+		JObject versionedStream();
 	};
 } // namespace java::util::jar
 

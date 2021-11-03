@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class FrameStats : public __JniBaseClass
+	class FrameStats : public JObject
 	{
 	public:
 		// Fields
 		static jlong UNDEFINED_TIME_NANO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FrameStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FrameStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FrameStats(QAndroidJniObject obj);
 		
 		// Constructors

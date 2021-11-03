@@ -6,11 +6,11 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	Shader::Shader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Shader::Shader(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Shader::Shader()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.Shader",
 			"()V"
 		) {}

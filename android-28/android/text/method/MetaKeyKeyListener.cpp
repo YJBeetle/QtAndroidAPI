@@ -49,11 +49,11 @@ namespace android::text::method
 	}
 	
 	// QAndroidJniObject forward
-	MetaKeyKeyListener::MetaKeyKeyListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MetaKeyKeyListener::MetaKeyKeyListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MetaKeyKeyListener::MetaKeyKeyListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.method.MetaKeyKeyListener",
 			"()V"
 		) {}
@@ -68,7 +68,7 @@ namespace android::text::method
 			arg0
 		);
 	}
-	void MetaKeyKeyListener::adjustMetaAfterKeypress(__JniBaseClass arg0)
+	void MetaKeyKeyListener::adjustMetaAfterKeypress(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
@@ -77,7 +77,7 @@ namespace android::text::method
 			arg0.object()
 		);
 	}
-	void MetaKeyKeyListener::clearMetaKeyState(__JniBaseClass arg0, jint arg1)
+	void MetaKeyKeyListener::clearMetaKeyState(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
@@ -197,7 +197,7 @@ namespace android::text::method
 			arg0
 		);
 	}
-	void MetaKeyKeyListener::resetMetaState(__JniBaseClass arg0)
+	void MetaKeyKeyListener::resetMetaState(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
@@ -215,7 +215,7 @@ namespace android::text::method
 			arg1
 		);
 	}
-	void MetaKeyKeyListener::clearMetaKeyState(android::view::View arg0, __JniBaseClass arg1, jint arg2)
+	void MetaKeyKeyListener::clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2)
 	{
 		callMethod<void>(
 			"clearMetaKeyState",
@@ -225,7 +225,7 @@ namespace android::text::method
 			arg2
 		);
 	}
-	jboolean MetaKeyKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean MetaKeyKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",
@@ -236,7 +236,7 @@ namespace android::text::method
 			arg3.object()
 		);
 	}
-	jboolean MetaKeyKeyListener::onKeyUp(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean MetaKeyKeyListener::onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"onKeyUp",

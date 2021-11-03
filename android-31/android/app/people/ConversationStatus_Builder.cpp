@@ -7,11 +7,11 @@ namespace android::app::people
 	// Fields
 	
 	// QAndroidJniObject forward
-	ConversationStatus_Builder::ConversationStatus_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConversationStatus_Builder::ConversationStatus_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConversationStatus_Builder::ConversationStatus_Builder(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.people.ConversationStatus$Builder",
 			"(Ljava/lang/String;I)V",
 			arg0,

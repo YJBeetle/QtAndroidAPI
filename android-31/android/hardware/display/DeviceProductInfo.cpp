@@ -32,7 +32,7 @@ namespace android::hardware::display
 			"CONNECTION_TO_SINK_UNKNOWN"
 		);
 	}
-	__JniBaseClass DeviceProductInfo::CREATOR()
+	JObject DeviceProductInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.hardware.display.DeviceProductInfo",
@@ -42,11 +42,11 @@ namespace android::hardware::display
 	}
 	
 	// QAndroidJniObject forward
-	DeviceProductInfo::DeviceProductInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DeviceProductInfo::DeviceProductInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DeviceProductInfo::DeviceProductInfo(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.display.DeviceProductInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
 			arg0,

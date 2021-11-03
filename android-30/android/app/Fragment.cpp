@@ -24,11 +24,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	Fragment::Fragment(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Fragment::Fragment(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Fragment::Fragment()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Fragment",
 			"()V"
 		) {}
@@ -387,7 +387,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	jboolean Fragment::onContextItemSelected(__JniBaseClass arg0)
+	jboolean Fragment::onContextItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onContextItemSelected",
@@ -413,7 +413,7 @@ namespace android::app
 			arg2
 		);
 	}
-	void Fragment::onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2)
+	void Fragment::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -423,7 +423,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onCreateOptionsMenu(__JniBaseClass arg0, android::view::MenuInflater arg1)
+	void Fragment::onCreateOptionsMenu(JObject arg0, android::view::MenuInflater arg1)
 	{
 		callMethod<void>(
 			"onCreateOptionsMenu",
@@ -486,7 +486,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void Fragment::onInflate(__JniBaseClass arg0, android::os::Bundle arg1)
+	void Fragment::onInflate(JObject arg0, android::os::Bundle arg1)
 	{
 		callMethod<void>(
 			"onInflate",
@@ -495,7 +495,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::onInflate(android::app::Activity arg0, __JniBaseClass arg1, android::os::Bundle arg2)
+	void Fragment::onInflate(android::app::Activity arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onInflate",
@@ -505,7 +505,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void Fragment::onInflate(android::content::Context arg0, __JniBaseClass arg1, android::os::Bundle arg2)
+	void Fragment::onInflate(android::content::Context arg0, JObject arg1, android::os::Bundle arg2)
 	{
 		callMethod<void>(
 			"onInflate",
@@ -539,7 +539,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	jboolean Fragment::onOptionsItemSelected(__JniBaseClass arg0)
+	jboolean Fragment::onOptionsItemSelected(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"onOptionsItemSelected",
@@ -547,7 +547,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void Fragment::onOptionsMenuClosed(__JniBaseClass arg0)
+	void Fragment::onOptionsMenuClosed(JObject arg0)
 	{
 		callMethod<void>(
 			"onOptionsMenuClosed",
@@ -579,7 +579,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void Fragment::onPrepareOptionsMenu(__JniBaseClass arg0)
+	void Fragment::onPrepareOptionsMenu(JObject arg0)
 	{
 		callMethod<void>(
 			"onPrepareOptionsMenu",

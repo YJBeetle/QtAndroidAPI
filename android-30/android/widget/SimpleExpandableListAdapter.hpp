@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./BaseExpandableListAdapter.hpp"
 
 namespace android::content
@@ -28,9 +28,9 @@ namespace android::widget
 		SimpleExpandableListAdapter(QAndroidJniObject obj);
 		
 		// Constructors
-		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8);
-		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jarray arg8, jintArray arg9);
-		SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4, JObject arg5, jint arg6, jarray arg7, jintArray arg8);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jarray arg8, jintArray arg9);
+		SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10);
 		
 		// Methods
 		jobject getChild(jint arg0, jint arg1);

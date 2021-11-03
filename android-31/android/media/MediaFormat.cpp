@@ -1103,16 +1103,16 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaFormat::MediaFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaFormat::MediaFormat(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaFormat::MediaFormat()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaFormat",
 			"()V"
 		) {}
 	MediaFormat::MediaFormat(android::media::MediaFormat &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaFormat",
 			"(Landroid/media/MediaFormat;)V",
 			arg0.object()
@@ -1192,7 +1192,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass MediaFormat::getFeatures()
+	JObject MediaFormat::getFeatures()
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -1233,7 +1233,7 @@ namespace android::media
 			arg1
 		);
 	}
-	__JniBaseClass MediaFormat::getKeys()
+	JObject MediaFormat::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

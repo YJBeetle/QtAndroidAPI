@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::tv
 {
@@ -13,13 +13,13 @@ namespace android::net
 
 namespace android::media::tv
 {
-	class TvView_TvInputCallback : public __JniBaseClass
+	class TvView_TvInputCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvView_TvInputCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvView_TvInputCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvView_TvInputCallback(QAndroidJniObject obj);
 		
 		// Constructors
@@ -33,7 +33,7 @@ namespace android::media::tv
 		void onDisconnected(jstring arg0);
 		void onTimeShiftStatusChanged(jstring arg0, jint arg1);
 		void onTrackSelected(jstring arg0, jint arg1, jstring arg2);
-		void onTracksChanged(jstring arg0, __JniBaseClass arg1);
+		void onTracksChanged(jstring arg0, JObject arg1);
 		void onVideoAvailable(jstring arg0);
 		void onVideoSizeChanged(jstring arg0, jint arg1, jint arg2);
 		void onVideoUnavailable(jstring arg0, jint arg1);

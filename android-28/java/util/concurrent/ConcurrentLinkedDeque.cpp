@@ -15,7 +15,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ConcurrentLinkedDeque",
 			"()V"
 		) {}
-	ConcurrentLinkedDeque::ConcurrentLinkedDeque(__JniBaseClass arg0)
+	ConcurrentLinkedDeque::ConcurrentLinkedDeque(JObject arg0)
 		: java::util::AbstractCollection(
 			"java.util.concurrent.ConcurrentLinkedDeque",
 			"(Ljava/util/Collection;)V",
@@ -31,7 +31,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentLinkedDeque::addAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedDeque::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -70,7 +70,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentLinkedDeque::descendingIterator()
+	JObject ConcurrentLinkedDeque::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
@@ -84,7 +84,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void ConcurrentLinkedDeque::forEach(__JniBaseClass arg0)
+	void ConcurrentLinkedDeque::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -113,7 +113,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ConcurrentLinkedDeque::iterator()
+	JObject ConcurrentLinkedDeque::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -216,7 +216,7 @@ namespace java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jboolean ConcurrentLinkedDeque::removeAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedDeque::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -239,7 +239,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentLinkedDeque::removeIf(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedDeque::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -262,7 +262,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentLinkedDeque::retainAll(__JniBaseClass arg0)
+	jboolean ConcurrentLinkedDeque::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -277,7 +277,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ConcurrentLinkedDeque::spliterator()
+	JObject ConcurrentLinkedDeque::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

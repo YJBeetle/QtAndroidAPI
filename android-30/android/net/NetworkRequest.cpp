@@ -6,7 +6,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass NetworkRequest::CREATOR()
+	JObject NetworkRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.NetworkRequest",
@@ -16,7 +16,7 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	NetworkRequest::NetworkRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkRequest::NetworkRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

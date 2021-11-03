@@ -6,7 +6,7 @@
 namespace android::view::textclassifier
 {
 	// Fields
-	__JniBaseClass TextClassification::CREATOR()
+	JObject TextClassification::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.textclassifier.TextClassification",
@@ -16,7 +16,7 @@ namespace android::view::textclassifier
 	}
 	
 	// QAndroidJniObject forward
-	TextClassification::TextClassification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextClassification::TextClassification(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -28,7 +28,7 @@ namespace android::view::textclassifier
 			"()I"
 		);
 	}
-	__JniBaseClass TextClassification::getActions()
+	JObject TextClassification::getActions()
 	{
 		return callObjectMethod(
 			"getActions",
@@ -86,7 +86,7 @@ namespace android::view::textclassifier
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass TextClassification::getOnClickListener()
+	JObject TextClassification::getOnClickListener()
 	{
 		return callObjectMethod(
 			"getOnClickListener",

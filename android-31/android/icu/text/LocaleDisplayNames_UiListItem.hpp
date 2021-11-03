@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -9,7 +9,7 @@ namespace android::icu::util
 
 namespace android::icu::text
 {
-	class LocaleDisplayNames_UiListItem : public __JniBaseClass
+	class LocaleDisplayNames_UiListItem : public JObject
 	{
 	public:
 		// Fields
@@ -19,14 +19,14 @@ namespace android::icu::text
 		jstring nameInSelf();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocaleDisplayNames_UiListItem(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocaleDisplayNames_UiListItem(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleDisplayNames_UiListItem(QAndroidJniObject obj);
 		
 		// Constructors
 		LocaleDisplayNames_UiListItem(android::icu::util::ULocale arg0, android::icu::util::ULocale arg1, jstring arg2, jstring arg3);
 		
 		// Methods
-		static __JniBaseClass getComparator(__JniBaseClass arg0, jboolean arg1);
+		static JObject getComparator(JObject arg0, jboolean arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring toString();

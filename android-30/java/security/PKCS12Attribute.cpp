@@ -6,17 +6,17 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	PKCS12Attribute::PKCS12Attribute(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PKCS12Attribute::PKCS12Attribute(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PKCS12Attribute::PKCS12Attribute(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.PKCS12Attribute",
 			"([B)V",
 			arg0
 		) {}
 	PKCS12Attribute::PKCS12Attribute(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.PKCS12Attribute",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

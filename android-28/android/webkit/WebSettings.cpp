@@ -95,11 +95,11 @@ namespace android::webkit
 	}
 	
 	// QAndroidJniObject forward
-	WebSettings::WebSettings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebSettings::WebSettings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebSettings::WebSettings()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebSettings",
 			"()V"
 		) {}

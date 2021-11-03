@@ -21,7 +21,7 @@ namespace android::print
 			"COLOR_MODE_MONOCHROME"
 		);
 	}
-	__JniBaseClass PrintAttributes::CREATOR()
+	JObject PrintAttributes::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.print.PrintAttributes",
@@ -52,7 +52,7 @@ namespace android::print
 	}
 	
 	// QAndroidJniObject forward
-	PrintAttributes::PrintAttributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrintAttributes::PrintAttributes(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

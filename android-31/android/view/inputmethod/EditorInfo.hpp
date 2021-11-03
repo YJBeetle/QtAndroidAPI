@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -21,11 +21,11 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class EditorInfo : public __JniBaseClass
+	class EditorInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint IME_ACTION_DONE();
 		static jint IME_ACTION_GO();
 		static jint IME_ACTION_NEXT();
@@ -62,7 +62,7 @@ namespace android::view::inputmethod
 		jstring privateImeOptions();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EditorInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EditorInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -70,7 +70,7 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jstring getInitialSelectedText(jint arg0);
 		android::view::inputmethod::SurroundingText getInitialSurroundingText(jint arg0, jint arg1, jint arg2);
 		jstring getInitialTextAfterCursor(jint arg0, jint arg1);

@@ -16,14 +16,14 @@ namespace android::app
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1)
+	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.app.FragmentBreadCrumbs",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	FragmentBreadCrumbs::FragmentBreadCrumbs(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.app.FragmentBreadCrumbs",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -56,7 +56,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(__JniBaseClass arg0)
+	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnBreadCrumbClickListener",
@@ -64,7 +64,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void FragmentBreadCrumbs::setParentTitle(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	void FragmentBreadCrumbs::setParentTitle(jstring arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setParentTitle",

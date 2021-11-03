@@ -96,17 +96,17 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	FileObserver::FileObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileObserver::FileObserver(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FileObserver::FileObserver(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	FileObserver::FileObserver(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.FileObserver",
 			"(Ljava/lang/String;I)V",
 			arg0,

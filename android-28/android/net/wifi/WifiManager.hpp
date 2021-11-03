@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::net
 {
@@ -49,7 +49,7 @@ namespace java::net
 
 namespace android::net::wifi
 {
-	class WifiManager : public __JniBaseClass
+	class WifiManager : public JObject
 	{
 	public:
 		// Fields
@@ -88,7 +88,7 @@ namespace android::net::wifi
 		static jint WPS_WEP_PROHIBITED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -105,11 +105,11 @@ namespace android::net::wifi
 		jboolean disableNetwork(jint arg0);
 		jboolean disconnect();
 		jboolean enableNetwork(jint arg0, jboolean arg1);
-		__JniBaseClass getConfiguredNetworks();
+		JObject getConfiguredNetworks();
 		android::net::wifi::WifiInfo getConnectionInfo();
 		android::net::DhcpInfo getDhcpInfo();
-		__JniBaseClass getPasspointConfigurations();
-		__JniBaseClass getScanResults();
+		JObject getPasspointConfigurations();
+		JObject getScanResults();
 		jint getWifiState();
 		jboolean is5GHzBandSupported();
 		jboolean isDeviceToApRttSupported();

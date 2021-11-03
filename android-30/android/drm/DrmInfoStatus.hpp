@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::drm
 {
@@ -9,7 +9,7 @@ namespace android::drm
 
 namespace android::drm
 {
-	class DrmInfoStatus : public __JniBaseClass
+	class DrmInfoStatus : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::drm
 		jint statusCode();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmInfoStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmInfoStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInfoStatus(QAndroidJniObject obj);
 		
 		// Constructors

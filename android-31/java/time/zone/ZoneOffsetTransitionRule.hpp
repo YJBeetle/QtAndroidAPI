@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,13 +33,13 @@ namespace java::time::zone
 
 namespace java::time::zone
 {
-	class ZoneOffsetTransitionRule : public __JniBaseClass
+	class ZoneOffsetTransitionRule : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ZoneOffsetTransitionRule(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZoneOffsetTransitionRule(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZoneOffsetTransitionRule(QAndroidJniObject obj);
 		
 		// Constructors

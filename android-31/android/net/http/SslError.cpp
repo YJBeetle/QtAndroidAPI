@@ -56,25 +56,25 @@ namespace android::net::http
 	}
 	
 	// QAndroidJniObject forward
-	SslError::SslError(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SslError::SslError(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;)V",
 			arg0,
 			arg1.object()
 		) {}
 	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;)V",
 			arg0,
 			arg1.object()
 		) {}
 	SslError::SslError(jint arg0, android::net::http::SslCertificate arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
 			arg0,
@@ -82,7 +82,7 @@ namespace android::net::http
 			arg2
 		) {}
 	SslError::SslError(jint arg0, java::security::cert::X509Certificate arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,

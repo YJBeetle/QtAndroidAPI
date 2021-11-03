@@ -4,7 +4,7 @@
 namespace android::telephony::data
 {
 	// Fields
-	__JniBaseClass RouteSelectionDescriptor::CREATOR()
+	JObject RouteSelectionDescriptor::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.data.RouteSelectionDescriptor",
@@ -56,7 +56,7 @@ namespace android::telephony::data
 	}
 	
 	// QAndroidJniObject forward
-	RouteSelectionDescriptor::RouteSelectionDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RouteSelectionDescriptor::RouteSelectionDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -76,7 +76,7 @@ namespace android::telephony::data
 			arg0
 		);
 	}
-	__JniBaseClass RouteSelectionDescriptor::getDataNetworkName()
+	JObject RouteSelectionDescriptor::getDataNetworkName()
 	{
 		return callObjectMethod(
 			"getDataNetworkName",
@@ -97,7 +97,7 @@ namespace android::telephony::data
 			"()I"
 		);
 	}
-	__JniBaseClass RouteSelectionDescriptor::getSliceInfo()
+	JObject RouteSelectionDescriptor::getSliceInfo()
 	{
 		return callObjectMethod(
 			"getSliceInfo",

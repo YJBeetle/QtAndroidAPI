@@ -5,11 +5,11 @@ namespace android::opengl
 	// Fields
 	
 	// QAndroidJniObject forward
-	Matrix::Matrix(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Matrix::Matrix(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Matrix::Matrix()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.Matrix",
 			"()V"
 		) {}

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::content
 {
-	class QuickViewConstants : public __JniBaseClass
+	class QuickViewConstants : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::content
 		static jstring FEATURE_VIEW();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit QuickViewConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		QuickViewConstants(QAndroidJniObject obj);
 		
 		// Constructors

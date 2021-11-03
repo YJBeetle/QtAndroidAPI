@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,13 +25,13 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaSession2_Builder : public __JniBaseClass
+	class MediaSession2_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaSession2_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaSession2_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession2_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -42,7 +42,7 @@ namespace android::media
 		android::media::MediaSession2_Builder setExtras(android::os::Bundle arg0);
 		android::media::MediaSession2_Builder setId(jstring arg0);
 		android::media::MediaSession2_Builder setSessionActivity(android::app::PendingIntent arg0);
-		android::media::MediaSession2_Builder setSessionCallback(__JniBaseClass arg0, android::media::MediaSession2_SessionCallback arg1);
+		android::media::MediaSession2_Builder setSessionCallback(JObject arg0, android::media::MediaSession2_SessionCallback arg1);
 	};
 } // namespace android::media
 

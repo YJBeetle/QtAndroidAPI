@@ -56,7 +56,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	IDNA::IDNA(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IDNA::IDNA(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

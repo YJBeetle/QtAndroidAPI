@@ -9,17 +9,17 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	SharedElementCallback::SharedElementCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SharedElementCallback::SharedElementCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SharedElementCallback::SharedElementCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.SharedElementCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass SharedElementCallback::onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2)
+	JObject SharedElementCallback::onCaptureSharedElementSnapshot(android::view::View arg0, android::graphics::Matrix arg1, android::graphics::RectF arg2)
 	{
 		return callObjectMethod(
 			"onCaptureSharedElementSnapshot",
@@ -29,7 +29,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	android::view::View SharedElementCallback::onCreateSnapshotView(android::content::Context arg0, __JniBaseClass arg1)
+	android::view::View SharedElementCallback::onCreateSnapshotView(android::content::Context arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"onCreateSnapshotView",
@@ -38,7 +38,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void SharedElementCallback::onMapSharedElements(__JniBaseClass arg0, __JniBaseClass arg1)
+	void SharedElementCallback::onMapSharedElements(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"onMapSharedElements",
@@ -47,7 +47,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void SharedElementCallback::onRejectSharedElements(__JniBaseClass arg0)
+	void SharedElementCallback::onRejectSharedElements(JObject arg0)
 	{
 		callMethod<void>(
 			"onRejectSharedElements",
@@ -55,7 +55,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void SharedElementCallback::onSharedElementEnd(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void SharedElementCallback::onSharedElementEnd(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onSharedElementEnd",
@@ -65,7 +65,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void SharedElementCallback::onSharedElementStart(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void SharedElementCallback::onSharedElementStart(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onSharedElementStart",
@@ -75,7 +75,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void SharedElementCallback::onSharedElementsArrived(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void SharedElementCallback::onSharedElementsArrived(JObject arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onSharedElementsArrived",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::display
 {
@@ -25,7 +25,7 @@ namespace android::view
 
 namespace android::hardware::display
 {
-	class DisplayManager : public __JniBaseClass
+	class DisplayManager : public JObject
 	{
 	public:
 		// Fields
@@ -37,7 +37,7 @@ namespace android::hardware::display
 		static jint VIRTUAL_DISPLAY_FLAG_SECURE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DisplayManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DisplayManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DisplayManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -48,8 +48,8 @@ namespace android::hardware::display
 		android::view::Display getDisplay(jint arg0);
 		jarray getDisplays();
 		jarray getDisplays(jstring arg0);
-		void registerDisplayListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void unregisterDisplayListener(__JniBaseClass arg0);
+		void registerDisplayListener(JObject arg0, android::os::Handler arg1);
+		void unregisterDisplayListener(JObject arg0);
 	};
 } // namespace android::hardware::display
 

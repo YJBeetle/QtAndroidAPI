@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -49,7 +49,7 @@ namespace android::os
 
 namespace android::location
 {
-	class LocationManager : public __JniBaseClass
+	class LocationManager : public JObject
 	{
 	public:
 		// Fields
@@ -64,29 +64,29 @@ namespace android::location
 		static jstring PROVIDERS_CHANGED_ACTION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocationManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocationManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocationManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		jboolean addGpsStatusListener(__JniBaseClass arg0);
-		jboolean addNmeaListener(__JniBaseClass arg0);
-		jboolean addNmeaListener(__JniBaseClass arg0, android::os::Handler arg1);
+		jboolean addGpsStatusListener(JObject arg0);
+		jboolean addNmeaListener(JObject arg0);
+		jboolean addNmeaListener(JObject arg0, android::os::Handler arg1);
 		void addProximityAlert(jdouble arg0, jdouble arg1, jfloat arg2, jlong arg3, android::app::PendingIntent arg4);
 		void addTestProvider(jstring arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4, jboolean arg5, jboolean arg6, jboolean arg7, jint arg8, jint arg9);
 		void clearTestProviderEnabled(jstring arg0);
 		void clearTestProviderLocation(jstring arg0);
 		void clearTestProviderStatus(jstring arg0);
-		__JniBaseClass getAllProviders();
+		JObject getAllProviders();
 		jstring getBestProvider(android::location::Criteria arg0, jboolean arg1);
 		jstring getGnssHardwareModelName();
 		jint getGnssYearOfHardware();
 		android::location::GpsStatus getGpsStatus(android::location::GpsStatus arg0);
 		android::location::Location getLastKnownLocation(jstring arg0);
 		android::location::LocationProvider getProvider(jstring arg0);
-		__JniBaseClass getProviders(jboolean arg0);
-		__JniBaseClass getProviders(android::location::Criteria arg0, jboolean arg1);
+		JObject getProviders(jboolean arg0);
+		JObject getProviders(android::location::Criteria arg0, jboolean arg1);
 		jboolean isLocationEnabled();
 		jboolean isProviderEnabled(jstring arg0);
 		jboolean registerGnssMeasurementsCallback(android::location::GnssMeasurementsEvent_Callback arg0);
@@ -95,21 +95,21 @@ namespace android::location
 		jboolean registerGnssNavigationMessageCallback(android::location::GnssNavigationMessage_Callback arg0, android::os::Handler arg1);
 		jboolean registerGnssStatusCallback(android::location::GnssStatus_Callback arg0);
 		jboolean registerGnssStatusCallback(android::location::GnssStatus_Callback arg0, android::os::Handler arg1);
-		void removeGpsStatusListener(__JniBaseClass arg0);
-		void removeNmeaListener(__JniBaseClass arg0);
+		void removeGpsStatusListener(JObject arg0);
+		void removeNmeaListener(JObject arg0);
 		void removeProximityAlert(android::app::PendingIntent arg0);
 		void removeTestProvider(jstring arg0);
 		void removeUpdates(android::app::PendingIntent arg0);
-		void removeUpdates(__JniBaseClass arg0);
+		void removeUpdates(JObject arg0);
 		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, android::app::PendingIntent arg3);
-		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3);
+		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3);
 		void requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, android::app::PendingIntent arg3);
-		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, __JniBaseClass arg3, android::os::Looper arg4);
-		void requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, __JniBaseClass arg3, android::os::Looper arg4);
+		void requestLocationUpdates(jstring arg0, jlong arg1, jfloat arg2, JObject arg3, android::os::Looper arg4);
+		void requestLocationUpdates(jlong arg0, jfloat arg1, android::location::Criteria arg2, JObject arg3, android::os::Looper arg4);
 		void requestSingleUpdate(android::location::Criteria arg0, android::app::PendingIntent arg1);
 		void requestSingleUpdate(jstring arg0, android::app::PendingIntent arg1);
-		void requestSingleUpdate(android::location::Criteria arg0, __JniBaseClass arg1, android::os::Looper arg2);
-		void requestSingleUpdate(jstring arg0, __JniBaseClass arg1, android::os::Looper arg2);
+		void requestSingleUpdate(android::location::Criteria arg0, JObject arg1, android::os::Looper arg2);
+		void requestSingleUpdate(jstring arg0, JObject arg1, android::os::Looper arg2);
 		jboolean sendExtraCommand(jstring arg0, jstring arg1, android::os::Bundle arg2);
 		void setTestProviderEnabled(jstring arg0, jboolean arg1);
 		void setTestProviderLocation(jstring arg0, android::location::Location arg1);

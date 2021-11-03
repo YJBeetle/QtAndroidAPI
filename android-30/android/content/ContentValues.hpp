@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -37,15 +37,15 @@ namespace java::lang
 
 namespace android::content
 {
-	class ContentValues : public __JniBaseClass
+	class ContentValues : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring TAG();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContentValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContentValues(QAndroidJniObject obj);
 		
 		// Constructors
@@ -70,7 +70,7 @@ namespace android::content
 		jstring getAsString(jstring arg0);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		void put(jstring arg0, jbyteArray arg1);
 		void put(jstring arg0, java::lang::Boolean arg1);
 		void put(jstring arg0, java::lang::Byte arg1);
@@ -85,7 +85,7 @@ namespace android::content
 		void remove(jstring arg0);
 		jint size();
 		jstring toString();
-		__JniBaseClass valueSet();
+		JObject valueSet();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content

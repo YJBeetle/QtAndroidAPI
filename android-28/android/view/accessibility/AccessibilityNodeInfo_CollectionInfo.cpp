@@ -26,7 +26,7 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_CollectionInfo::AccessibilityNodeInfo_CollectionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

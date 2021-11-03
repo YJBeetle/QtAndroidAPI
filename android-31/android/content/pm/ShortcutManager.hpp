@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::content::pm
 
 namespace android::content::pm
 {
-	class ShortcutManager : public __JniBaseClass
+	class ShortcutManager : public JObject
 	{
 	public:
 		// Fields
@@ -27,34 +27,34 @@ namespace android::content::pm
 		static jint FLAG_MATCH_PINNED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ShortcutManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ShortcutManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ShortcutManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		jboolean addDynamicShortcuts(__JniBaseClass arg0);
+		jboolean addDynamicShortcuts(JObject arg0);
 		android::content::Intent createShortcutResultIntent(android::content::pm::ShortcutInfo arg0);
-		void disableShortcuts(__JniBaseClass arg0);
-		void disableShortcuts(__JniBaseClass arg0, jstring arg1);
-		void enableShortcuts(__JniBaseClass arg0);
-		__JniBaseClass getDynamicShortcuts();
+		void disableShortcuts(JObject arg0);
+		void disableShortcuts(JObject arg0, jstring arg1);
+		void enableShortcuts(JObject arg0);
+		JObject getDynamicShortcuts();
 		jint getIconMaxHeight();
 		jint getIconMaxWidth();
-		__JniBaseClass getManifestShortcuts();
+		JObject getManifestShortcuts();
 		jint getMaxShortcutCountPerActivity();
-		__JniBaseClass getPinnedShortcuts();
-		__JniBaseClass getShortcuts(jint arg0);
+		JObject getPinnedShortcuts();
+		JObject getShortcuts(jint arg0);
 		jboolean isRateLimitingActive();
 		jboolean isRequestPinShortcutSupported();
 		void pushDynamicShortcut(android::content::pm::ShortcutInfo arg0);
 		void removeAllDynamicShortcuts();
-		void removeDynamicShortcuts(__JniBaseClass arg0);
-		void removeLongLivedShortcuts(__JniBaseClass arg0);
+		void removeDynamicShortcuts(JObject arg0);
+		void removeLongLivedShortcuts(JObject arg0);
 		void reportShortcutUsed(jstring arg0);
 		jboolean requestPinShortcut(android::content::pm::ShortcutInfo arg0, android::content::IntentSender arg1);
-		jboolean setDynamicShortcuts(__JniBaseClass arg0);
-		jboolean updateShortcuts(__JniBaseClass arg0);
+		jboolean setDynamicShortcuts(JObject arg0);
+		jboolean updateShortcuts(JObject arg0);
 	};
 } // namespace android::content::pm
 

@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass NotificationChannel::CREATOR()
+	JObject NotificationChannel::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationChannel",
@@ -24,11 +24,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	NotificationChannel::NotificationChannel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NotificationChannel::NotificationChannel(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NotificationChannel::NotificationChannel(jstring arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.NotificationChannel",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,

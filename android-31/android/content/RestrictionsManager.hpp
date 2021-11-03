@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::content
 {
-	class RestrictionsManager : public __JniBaseClass
+	class RestrictionsManager : public JObject
 	{
 	public:
 		// Fields
@@ -53,16 +53,16 @@ namespace android::content
 		static jint RESULT_UNKNOWN_REQUEST();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RestrictionsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RestrictionsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RestrictionsManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::os::Bundle convertRestrictionsToBundle(__JniBaseClass arg0);
+		static android::os::Bundle convertRestrictionsToBundle(JObject arg0);
 		android::content::Intent createLocalApprovalIntent();
 		android::os::Bundle getApplicationRestrictions();
-		__JniBaseClass getManifestRestrictions(jstring arg0);
+		JObject getManifestRestrictions(jstring arg0);
 		jboolean hasRestrictionsProvider();
 		void notifyPermissionResponse(jstring arg0, android::os::PersistableBundle arg1);
 		void requestPermission(jstring arg0, jstring arg1, android::os::PersistableBundle arg2);

@@ -145,7 +145,7 @@ namespace android::content::pm
 			"CONFIG_UI_MODE"
 		);
 	}
-	__JniBaseClass ActivityInfo::CREATOR()
+	JObject ActivityInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.ActivityInfo",
@@ -601,7 +601,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	void ActivityInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void ActivityInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

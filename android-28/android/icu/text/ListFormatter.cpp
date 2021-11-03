@@ -7,7 +7,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	ListFormatter::ListFormatter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ListFormatter::ListFormatter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -46,7 +46,7 @@ namespace android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring ListFormatter::format(__JniBaseClass arg0)
+	jstring ListFormatter::format(JObject arg0)
 	{
 		return callObjectMethod(
 			"format",

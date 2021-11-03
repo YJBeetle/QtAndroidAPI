@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::text::method
 {
-	class MetaKeyKeyListener : public __JniBaseClass
+	class MetaKeyKeyListener : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::text::method
 		static jint META_SYM_ON();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MetaKeyKeyListener(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MetaKeyKeyListener(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MetaKeyKeyListener(QAndroidJniObject obj);
 		
 		// Constructors
@@ -33,8 +33,8 @@ namespace android::text::method
 		
 		// Methods
 		static jlong adjustMetaAfterKeypress(jlong arg0);
-		static void adjustMetaAfterKeypress(__JniBaseClass arg0);
-		static void clearMetaKeyState(__JniBaseClass arg0, jint arg1);
+		static void adjustMetaAfterKeypress(JObject arg0);
+		static void clearMetaKeyState(JObject arg0, jint arg1);
 		static jint getMetaState(jstring arg0);
 		static jint getMetaState(jlong arg0);
 		static jint getMetaState(jstring arg0, android::view::KeyEvent arg1);
@@ -46,11 +46,11 @@ namespace android::text::method
 		static jboolean isMetaTracker(jstring arg0, jobject arg1);
 		static jboolean isSelectingMetaTracker(jstring arg0, jobject arg1);
 		static jlong resetLockedMeta(jlong arg0);
-		static void resetMetaState(__JniBaseClass arg0);
+		static void resetMetaState(JObject arg0);
 		jlong clearMetaKeyState(jlong arg0, jint arg1);
-		void clearMetaKeyState(android::view::View arg0, __JniBaseClass arg1, jint arg2);
-		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
-		jboolean onKeyUp(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
+		void clearMetaKeyState(android::view::View arg0, JObject arg1, jint arg2);
+		jboolean onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
+		jboolean onKeyUp(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3);
 	};
 } // namespace android::text::method
 

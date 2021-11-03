@@ -29,16 +29,16 @@ namespace android::renderscript
 	}
 	
 	// QAndroidJniObject forward
-	Byte4::Byte4(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Byte4::Byte4(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Byte4::Byte4()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Byte4",
 			"()V"
 		) {}
 	Byte4::Byte4(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Byte4",
 			"(BBBB)V",
 			arg0,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,14 +9,14 @@ namespace java::util
 
 namespace java::text
 {
-	class BreakIterator : public __JniBaseClass
+	class BreakIterator : public JObject
 	{
 	public:
 		// Fields
 		static jint DONE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BreakIterator(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace java::text
 		jint current();
 		jint first();
 		jint following(jint arg0);
-		__JniBaseClass getText();
+		JObject getText();
 		jboolean isBoundary(jint arg0);
 		jint last();
 		jint next();
@@ -43,7 +43,7 @@ namespace java::text
 		jint preceding(jint arg0);
 		jint previous();
 		void setText(jstring arg0);
-		void setText(__JniBaseClass arg0);
+		void setText(JObject arg0);
 	};
 } // namespace java::text
 

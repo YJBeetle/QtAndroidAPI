@@ -435,7 +435,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiManager::WifiManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager::WifiManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -476,7 +476,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	jint WifiManager::addNetworkSuggestions(__JniBaseClass arg0)
+	jint WifiManager::addNetworkSuggestions(JObject arg0)
 	{
 		return callMethod<jint>(
 			"addNetworkSuggestions",
@@ -492,7 +492,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager::addSuggestionConnectionStatusListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void WifiManager::addSuggestionConnectionStatusListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addSuggestionConnectionStatusListener",
@@ -501,7 +501,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	void WifiManager::addSuggestionUserApprovalStatusListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void WifiManager::addSuggestionUserApprovalStatusListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addSuggestionUserApprovalStatusListener",
@@ -582,14 +582,14 @@ namespace android::net::wifi
 			"()V"
 		);
 	}
-	__JniBaseClass WifiManager::getCallerConfiguredNetworks()
+	JObject WifiManager::getCallerConfiguredNetworks()
 	{
 		return callObjectMethod(
 			"getCallerConfiguredNetworks",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass WifiManager::getConfiguredNetworks()
+	JObject WifiManager::getConfiguredNetworks()
 	{
 		return callObjectMethod(
 			"getConfiguredNetworks",
@@ -624,21 +624,21 @@ namespace android::net::wifi
 			"()I"
 		);
 	}
-	__JniBaseClass WifiManager::getNetworkSuggestions()
+	JObject WifiManager::getNetworkSuggestions()
 	{
 		return callObjectMethod(
 			"getNetworkSuggestions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass WifiManager::getPasspointConfigurations()
+	JObject WifiManager::getPasspointConfigurations()
 	{
 		return callObjectMethod(
 			"getPasspointConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass WifiManager::getScanResults()
+	JObject WifiManager::getScanResults()
 	{
 		return callObjectMethod(
 			"getScanResults",
@@ -893,7 +893,7 @@ namespace android::net::wifi
 			"()Z"
 		);
 	}
-	void WifiManager::registerScanResultsCallback(__JniBaseClass arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1)
+	void WifiManager::registerScanResultsCallback(JObject arg0, android::net::wifi::WifiManager_ScanResultsCallback arg1)
 	{
 		callMethod<void>(
 			"registerScanResultsCallback",
@@ -902,7 +902,7 @@ namespace android::net::wifi
 			arg1.object()
 		);
 	}
-	void WifiManager::registerSubsystemRestartTrackingCallback(__JniBaseClass arg0, android::net::wifi::WifiManager_SubsystemRestartTrackingCallback arg1)
+	void WifiManager::registerSubsystemRestartTrackingCallback(JObject arg0, android::net::wifi::WifiManager_SubsystemRestartTrackingCallback arg1)
 	{
 		callMethod<void>(
 			"registerSubsystemRestartTrackingCallback",
@@ -919,7 +919,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	jint WifiManager::removeNetworkSuggestions(__JniBaseClass arg0)
+	jint WifiManager::removeNetworkSuggestions(JObject arg0)
 	{
 		return callMethod<jint>(
 			"removeNetworkSuggestions",
@@ -942,7 +942,7 @@ namespace android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager::removeSuggestionConnectionStatusListener(__JniBaseClass arg0)
+	void WifiManager::removeSuggestionConnectionStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeSuggestionConnectionStatusListener",
@@ -950,7 +950,7 @@ namespace android::net::wifi
 			arg0.object()
 		);
 	}
-	void WifiManager::removeSuggestionUserApprovalStatusListener(__JniBaseClass arg0)
+	void WifiManager::removeSuggestionUserApprovalStatusListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeSuggestionUserApprovalStatusListener",

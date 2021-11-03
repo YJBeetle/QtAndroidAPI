@@ -32,14 +32,14 @@ namespace javax::xml::transform
 			arg0,
 			arg1
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, __JniBaseClass arg1)
+	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, JObject arg1)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;)V",
 			arg0,
 			arg1.object()
 		) {}
-	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, __JniBaseClass arg1, jthrowable arg2)
+	TransformerConfigurationException::TransformerConfigurationException(jstring arg0, JObject arg1, jthrowable arg2)
 		: javax::xml::transform::TransformerException(
 			"javax.xml.transform.TransformerConfigurationException",
 			"(Ljava/lang/String;Ljavax/xml/transform/SourceLocator;Ljava/lang/Throwable;)V",

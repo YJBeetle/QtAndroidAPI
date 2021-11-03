@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./UnicodeFilter.hpp"
 
 namespace android::icu::text
@@ -47,8 +47,8 @@ namespace android::icu::text
 		UnicodeSet(jint arg0, jint arg1);
 		UnicodeSet(jstring arg0, jboolean arg1);
 		UnicodeSet(jstring arg0, jint arg1);
-		UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2);
-		UnicodeSet(jstring arg0, java::text::ParsePosition arg1, __JniBaseClass arg2, jint arg3);
+		UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2);
+		UnicodeSet(jstring arg0, java::text::ParsePosition arg1, JObject arg2, jint arg3);
 		
 		// Methods
 		static android::icu::text::UnicodeSet from(jstring arg0);
@@ -57,21 +57,21 @@ namespace android::icu::text
 		java::lang::StringBuffer _generatePattern(java::lang::StringBuffer arg0, jboolean arg1, jboolean arg2);
 		android::icu::text::UnicodeSet add(jint arg0);
 		android::icu::text::UnicodeSet add(jstring arg0);
-		android::icu::text::UnicodeSet add(__JniBaseClass arg0);
+		android::icu::text::UnicodeSet add(JObject arg0);
 		android::icu::text::UnicodeSet add(jint arg0, jint arg1);
 		android::icu::text::UnicodeSet addAll(jarray arg0);
 		android::icu::text::UnicodeSet addAll(android::icu::text::UnicodeSet arg0);
 		android::icu::text::UnicodeSet addAll(jstring arg0);
-		android::icu::text::UnicodeSet addAll(__JniBaseClass arg0);
+		android::icu::text::UnicodeSet addAll(JObject arg0);
 		android::icu::text::UnicodeSet addAll(jint arg0, jint arg1);
-		__JniBaseClass addAllTo(__JniBaseClass arg0);
+		JObject addAllTo(JObject arg0);
 		void addMatchSetTo(android::icu::text::UnicodeSet arg0);
 		android::icu::text::UnicodeSet applyIntPropertyValue(jint arg0, jint arg1);
 		android::icu::text::UnicodeSet applyPattern(jstring arg0);
 		android::icu::text::UnicodeSet applyPattern(jstring arg0, jboolean arg1);
 		android::icu::text::UnicodeSet applyPattern(jstring arg0, jint arg1);
 		android::icu::text::UnicodeSet applyPropertyAlias(jstring arg0, jstring arg1);
-		android::icu::text::UnicodeSet applyPropertyAlias(jstring arg0, jstring arg1, __JniBaseClass arg2);
+		android::icu::text::UnicodeSet applyPropertyAlias(jstring arg0, jstring arg1, JObject arg2);
 		jint charAt(jint arg0);
 		android::icu::text::UnicodeSet clear();
 		jobject clone();
@@ -79,7 +79,7 @@ namespace android::icu::text
 		android::icu::text::UnicodeSet closeOver(jint arg0);
 		android::icu::text::UnicodeSet compact();
 		jint compareTo(android::icu::text::UnicodeSet arg0);
-		jint compareTo(__JniBaseClass arg0);
+		jint compareTo(JObject arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(android::icu::text::UnicodeSet arg0, android::icu::text::UnicodeSet_ComparisonStyle arg1);
 		android::icu::text::UnicodeSet complement();
@@ -92,15 +92,15 @@ namespace android::icu::text
 		jboolean contains(jstring arg0);
 		jboolean contains(jint arg0, jint arg1);
 		jboolean containsAll(android::icu::text::UnicodeSet arg0);
-		jboolean containsAll(__JniBaseClass arg0);
+		jboolean containsAll(JObject arg0);
 		jboolean containsAll(jstring arg0);
 		jboolean containsNone(android::icu::text::UnicodeSet arg0);
 		jboolean containsNone(jstring arg0);
-		jboolean containsNone(__JniBaseClass arg0);
+		jboolean containsNone(JObject arg0);
 		jboolean containsNone(jint arg0, jint arg1);
 		jboolean containsSome(android::icu::text::UnicodeSet arg0);
 		jboolean containsSome(jstring arg0);
-		jboolean containsSome(__JniBaseClass arg0);
+		jboolean containsSome(JObject arg0);
 		jboolean containsSome(jint arg0, jint arg1);
 		jboolean equals(jobject arg0);
 		android::icu::text::UnicodeSet freeze();
@@ -111,23 +111,23 @@ namespace android::icu::text
 		jint indexOf(jint arg0);
 		jboolean isEmpty();
 		jboolean isFrozen();
-		__JniBaseClass iterator();
-		jint matches(__JniBaseClass arg0, jintArray arg1, jint arg2, jboolean arg3);
+		JObject iterator();
+		jint matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3);
 		jboolean matchesIndexValue(jint arg0);
-		__JniBaseClass ranges();
+		JObject ranges();
 		android::icu::text::UnicodeSet remove(jint arg0);
 		android::icu::text::UnicodeSet remove(jstring arg0);
 		android::icu::text::UnicodeSet remove(jint arg0, jint arg1);
 		android::icu::text::UnicodeSet removeAll(android::icu::text::UnicodeSet arg0);
 		android::icu::text::UnicodeSet removeAll(jstring arg0);
-		android::icu::text::UnicodeSet removeAll(__JniBaseClass arg0);
+		android::icu::text::UnicodeSet removeAll(JObject arg0);
 		android::icu::text::UnicodeSet removeAllStrings();
 		android::icu::text::UnicodeSet retain(jint arg0);
 		android::icu::text::UnicodeSet retain(jstring arg0);
 		android::icu::text::UnicodeSet retain(jint arg0, jint arg1);
 		android::icu::text::UnicodeSet retainAll(android::icu::text::UnicodeSet arg0);
 		android::icu::text::UnicodeSet retainAll(jstring arg0);
-		android::icu::text::UnicodeSet retainAll(__JniBaseClass arg0);
+		android::icu::text::UnicodeSet retainAll(JObject arg0);
 		android::icu::text::UnicodeSet set(android::icu::text::UnicodeSet arg0);
 		android::icu::text::UnicodeSet set(jint arg0, jint arg1);
 		jint size();
@@ -135,7 +135,7 @@ namespace android::icu::text
 		jint span(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
 		jint spanBack(jstring arg0, android::icu::text::UnicodeSet_SpanCondition arg1);
 		jint spanBack(jstring arg0, jint arg1, android::icu::text::UnicodeSet_SpanCondition arg2);
-		__JniBaseClass strings();
+		JObject strings();
 		jstring toPattern(jboolean arg0);
 		jstring toString();
 	};

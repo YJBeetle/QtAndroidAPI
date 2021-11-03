@@ -147,7 +147,7 @@ namespace java::awt::font
 	}
 	
 	// QAndroidJniObject forward
-	NumericShaper::NumericShaper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NumericShaper::NumericShaper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -161,7 +161,7 @@ namespace java::awt::font
 			arg0
 		);
 	}
-	java::awt::font::NumericShaper NumericShaper::getContextualShaper(__JniBaseClass arg0)
+	java::awt::font::NumericShaper NumericShaper::getContextualShaper(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
@@ -180,7 +180,7 @@ namespace java::awt::font
 			arg1
 		);
 	}
-	java::awt::font::NumericShaper NumericShaper::getContextualShaper(__JniBaseClass arg0, java::awt::font::NumericShaper_Range arg1)
+	java::awt::font::NumericShaper NumericShaper::getContextualShaper(JObject arg0, java::awt::font::NumericShaper_Range arg1)
 	{
 		return callStaticObjectMethod(
 			"java.awt.font.NumericShaper",
@@ -216,7 +216,7 @@ namespace java::awt::font
 			arg0
 		);
 	}
-	__JniBaseClass NumericShaper::getRangeSet()
+	JObject NumericShaper::getRangeSet()
 	{
 		return callObjectMethod(
 			"getRangeSet",

@@ -173,11 +173,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	R_layout::R_layout(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_layout::R_layout(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_layout::R_layout()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$layout",
 			"()V"
 		) {}

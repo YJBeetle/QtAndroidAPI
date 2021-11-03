@@ -7,38 +7,38 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	AttributedString::AttributedString(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AttributedString::AttributedString(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AttributedString::AttributedString(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.AttributedString",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	AttributedString::AttributedString(__JniBaseClass arg0)
-		: __JniBaseClass(
+	AttributedString::AttributedString(JObject arg0)
+		: JObject(
 			"java.text.AttributedString",
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.object()
 		) {}
-	AttributedString::AttributedString(jstring arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	AttributedString::AttributedString(jstring arg0, JObject arg1)
+		: JObject(
 			"java.text.AttributedString",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
 			arg1.object()
 		) {}
-	AttributedString::AttributedString(__JniBaseClass arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+	AttributedString::AttributedString(JObject arg0, jint arg1, jint arg2)
+		: JObject(
 			"java.text.AttributedString",
 			"(Ljava/text/AttributedCharacterIterator;II)V",
 			arg0.object(),
 			arg1,
 			arg2
 		) {}
-	AttributedString::AttributedString(__JniBaseClass arg0, jint arg1, jint arg2, jarray arg3)
-		: __JniBaseClass(
+	AttributedString::AttributedString(JObject arg0, jint arg1, jint arg2, jarray arg3)
+		: JObject(
 			"java.text.AttributedString",
 			"(Ljava/text/AttributedCharacterIterator;II[Ljava/text/AttributedCharacterIterator$Attribute;)V",
 			arg0.object(),
@@ -68,7 +68,7 @@ namespace java::text
 			arg3
 		);
 	}
-	void AttributedString::addAttributes(__JniBaseClass arg0, jint arg1, jint arg2)
+	void AttributedString::addAttributes(JObject arg0, jint arg1, jint arg2)
 	{
 		callMethod<void>(
 			"addAttributes",
@@ -78,14 +78,14 @@ namespace java::text
 			arg2
 		);
 	}
-	__JniBaseClass AttributedString::getIterator()
+	JObject AttributedString::getIterator()
 	{
 		return callObjectMethod(
 			"getIterator",
 			"()Ljava/text/AttributedCharacterIterator;"
 		);
 	}
-	__JniBaseClass AttributedString::getIterator(jarray arg0)
+	JObject AttributedString::getIterator(jarray arg0)
 	{
 		return callObjectMethod(
 			"getIterator",
@@ -93,7 +93,7 @@ namespace java::text
 			arg0
 		);
 	}
-	__JniBaseClass AttributedString::getIterator(jarray arg0, jint arg1, jint arg2)
+	JObject AttributedString::getIterator(jarray arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"getIterator",

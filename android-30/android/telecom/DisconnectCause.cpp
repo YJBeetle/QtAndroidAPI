@@ -39,7 +39,7 @@ namespace android::telecom
 			"CONNECTION_MANAGER_NOT_SUPPORTED"
 		);
 	}
-	__JniBaseClass DisconnectCause::CREATOR()
+	JObject DisconnectCause::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.DisconnectCause",
@@ -113,24 +113,24 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	DisconnectCause::DisconnectCause(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DisconnectCause::DisconnectCause(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DisconnectCause::DisconnectCause(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.DisconnectCause",
 			"(I)V",
 			arg0
 		) {}
 	DisconnectCause::DisconnectCause(jint arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)V",
 			arg0,
@@ -139,7 +139,7 @@ namespace android::telecom
 			arg3
 		) {}
 	DisconnectCause::DisconnectCause(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;I)V",
 			arg0,

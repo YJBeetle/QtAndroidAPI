@@ -7,11 +7,11 @@ namespace android::net::sip
 	// Fields
 	
 	// QAndroidJniObject forward
-	SipAudioCall_Listener::SipAudioCall_Listener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SipAudioCall_Listener::SipAudioCall_Listener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SipAudioCall_Listener::SipAudioCall_Listener()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.sip.SipAudioCall$Listener",
 			"()V"
 		) {}

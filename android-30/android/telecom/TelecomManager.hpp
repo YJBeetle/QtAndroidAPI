@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -25,7 +25,7 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class TelecomManager : public __JniBaseClass
+	class TelecomManager : public JObject
 	{
 	public:
 		// Fields
@@ -83,7 +83,7 @@ namespace android::telecom
 		static jint PRESENTATION_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TelecomManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TelecomManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -97,12 +97,12 @@ namespace android::telecom
 		android::content::Intent createManageBlockedNumbersIntent();
 		jboolean endCall();
 		android::net::Uri getAdnUriForPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		__JniBaseClass getCallCapablePhoneAccounts();
+		JObject getCallCapablePhoneAccounts();
 		jstring getDefaultDialerPackage();
 		android::telecom::PhoneAccountHandle getDefaultOutgoingPhoneAccount(jstring arg0);
 		jstring getLine1Number(android::telecom::PhoneAccountHandle arg0);
 		android::telecom::PhoneAccount getPhoneAccount(android::telecom::PhoneAccountHandle arg0);
-		__JniBaseClass getSelfManagedPhoneAccounts();
+		JObject getSelfManagedPhoneAccounts();
 		android::telecom::PhoneAccountHandle getSimCallManager();
 		android::telecom::PhoneAccountHandle getSimCallManagerForSubscription(jint arg0);
 		jstring getSystemDialerPackage();

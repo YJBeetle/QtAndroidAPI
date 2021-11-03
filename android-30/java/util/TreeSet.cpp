@@ -15,7 +15,7 @@ namespace java::util
 			"java.util.TreeSet",
 			"()V"
 		) {}
-	TreeSet::TreeSet(__JniBaseClass arg0)
+	TreeSet::TreeSet(JObject arg0)
 		: java::util::AbstractSet(
 			"java.util.TreeSet",
 			"(Ljava/util/Collection;)V",
@@ -31,7 +31,7 @@ namespace java::util
 			arg0
 		);
 	}
-	jboolean TreeSet::addAll(__JniBaseClass arg0)
+	jboolean TreeSet::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -61,7 +61,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass TreeSet::comparator()
+	JObject TreeSet::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -76,14 +76,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass TreeSet::descendingIterator()
+	JObject TreeSet::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass TreeSet::descendingSet()
+	JObject TreeSet::descendingSet()
 	{
 		return callObjectMethod(
 			"descendingSet",
@@ -105,7 +105,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass TreeSet::headSet(jobject arg0, jboolean arg1)
+	JObject TreeSet::headSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -114,7 +114,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeSet::headSet(jobject arg0)
+	JObject TreeSet::headSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -137,7 +137,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass TreeSet::iterator()
+	JObject TreeSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -188,14 +188,14 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass TreeSet::spliterator()
+	JObject TreeSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject TreeSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -206,7 +206,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass TreeSet::subSet(jobject arg0, jobject arg1)
+	JObject TreeSet::subSet(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -215,7 +215,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeSet::tailSet(jobject arg0, jboolean arg1)
+	JObject TreeSet::tailSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",
@@ -224,7 +224,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeSet::tailSet(jobject arg0)
+	JObject TreeSet::tailSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",

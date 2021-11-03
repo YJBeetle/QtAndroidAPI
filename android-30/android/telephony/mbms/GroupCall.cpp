@@ -68,7 +68,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QAndroidJniObject forward
-	GroupCall::GroupCall(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GroupCall::GroupCall(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -87,7 +87,7 @@ namespace android::telephony::mbms
 			"()J"
 		);
 	}
-	void GroupCall::updateGroupCall(__JniBaseClass arg0, __JniBaseClass arg1)
+	void GroupCall::updateGroupCall(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"updateGroupCall",

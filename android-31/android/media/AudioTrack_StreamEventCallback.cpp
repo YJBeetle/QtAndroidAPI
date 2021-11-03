@@ -6,11 +6,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioTrack_StreamEventCallback::AudioTrack_StreamEventCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTrack$StreamEventCallback",
 			"()V"
 		) {}

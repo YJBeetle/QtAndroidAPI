@@ -20,14 +20,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1)
+	ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.widget.ProgressBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.widget.ProgressBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	ProgressBar::ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	ProgressBar::ProgressBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.widget.ProgressBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -97,7 +97,7 @@ namespace android::widget
 			"()Landroid/graphics/PorterDuff$Mode;"
 		);
 	}
-	__JniBaseClass ProgressBar::getInterpolator()
+	JObject ProgressBar::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -275,7 +275,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void ProgressBar::onRestoreInstanceState(__JniBaseClass arg0)
+	void ProgressBar::onRestoreInstanceState(JObject arg0)
 	{
 		callMethod<void>(
 			"onRestoreInstanceState",
@@ -283,7 +283,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	__JniBaseClass ProgressBar::onSaveInstanceState()
+	JObject ProgressBar::onSaveInstanceState()
 	{
 		return callObjectMethod(
 			"onSaveInstanceState",
@@ -353,7 +353,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ProgressBar::setInterpolator(__JniBaseClass arg0)
+	void ProgressBar::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Context.hpp"
 
 namespace android::content
@@ -127,10 +127,10 @@ namespace android::content
 		ContextWrapper(android::content::Context arg0);
 		
 		// Methods
-		jboolean bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, __JniBaseClass arg3, __JniBaseClass arg4);
-		jboolean bindService(android::content::Intent arg0, __JniBaseClass arg1, jint arg2);
-		jboolean bindService(android::content::Intent arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		jboolean bindServiceAsUser(android::content::Intent arg0, __JniBaseClass arg1, jint arg2, android::os::UserHandle arg3);
+		jboolean bindIsolatedService(android::content::Intent arg0, jint arg1, jstring arg2, JObject arg3, JObject arg4);
+		jboolean bindService(android::content::Intent arg0, JObject arg1, jint arg2);
+		jboolean bindService(android::content::Intent arg0, jint arg1, JObject arg2, JObject arg3);
+		jboolean bindServiceAsUser(android::content::Intent arg0, JObject arg1, jint arg2, android::os::UserHandle arg3);
 		jint checkCallingOrSelfPermission(jstring arg0);
 		jint checkCallingOrSelfUriPermission(android::net::Uri arg0, jint arg1);
 		jint checkCallingPermission(jstring arg0);
@@ -179,7 +179,7 @@ namespace android::content
 		jarray getExternalMediaDirs();
 		java::io::File getFileStreamPath(jstring arg0);
 		java::io::File getFilesDir();
-		__JniBaseClass getMainExecutor();
+		JObject getMainExecutor();
 		android::os::Looper getMainLooper();
 		java::io::File getNoBackupFilesDir();
 		java::io::File getObbDir();
@@ -190,7 +190,7 @@ namespace android::content
 		jstring getPackageName();
 		jstring getPackageResourcePath();
 		android::content::res::Resources getResources();
-		__JniBaseClass getSharedPreferences(jstring arg0, jint arg1);
+		JObject getSharedPreferences(jstring arg0, jint arg1);
 		jobject getSystemService(jstring arg0);
 		jstring getSystemServiceName(jclass arg0);
 		android::content::res::Resources_Theme getTheme();
@@ -204,8 +204,8 @@ namespace android::content
 		jboolean moveSharedPreferencesFrom(android::content::Context arg0, jstring arg1);
 		java::io::FileInputStream openFileInput(jstring arg0);
 		java::io::FileOutputStream openFileOutput(jstring arg0, jint arg1);
-		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2);
-		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2);
+		android::database::sqlite::SQLiteDatabase openOrCreateDatabase(jstring arg0, jint arg1, JObject arg2, JObject arg3);
 		android::graphics::drawable::Drawable peekWallpaper();
 		android::content::Intent registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1);
 		android::content::Intent registerReceiver(android::content::BroadcastReceiver arg0, android::content::IntentFilter arg1, jint arg2);
@@ -241,9 +241,9 @@ namespace android::content
 		void startIntentSender(android::content::IntentSender arg0, android::content::Intent arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		android::content::ComponentName startService(android::content::Intent arg0);
 		jboolean stopService(android::content::Intent arg0);
-		void unbindService(__JniBaseClass arg0);
+		void unbindService(JObject arg0);
 		void unregisterReceiver(android::content::BroadcastReceiver arg0);
-		void updateServiceGroup(__JniBaseClass arg0, jint arg1, jint arg2);
+		void updateServiceGroup(JObject arg0, jint arg1, jint arg2);
 	};
 } // namespace android::content
 

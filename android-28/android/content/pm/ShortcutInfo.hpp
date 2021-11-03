@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,11 +29,11 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class ShortcutInfo : public __JniBaseClass
+	class ShortcutInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DISABLED_REASON_APP_CHANGED();
 		static jint DISABLED_REASON_BACKUP_NOT_SUPPORTED();
 		static jint DISABLED_REASON_BY_APP();
@@ -45,7 +45,7 @@ namespace android::content::pm
 		static jstring SHORTCUT_CATEGORY_CONVERSATION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ShortcutInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ShortcutInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -53,7 +53,7 @@ namespace android::content::pm
 		// Methods
 		jint describeContents();
 		android::content::ComponentName getActivity();
-		__JniBaseClass getCategories();
+		JObject getCategories();
 		jstring getDisabledMessage();
 		jint getDisabledReason();
 		android::os::PersistableBundle getExtras();

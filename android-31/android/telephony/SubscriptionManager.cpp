@@ -152,7 +152,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	SubscriptionManager::SubscriptionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionManager::SubscriptionManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -233,7 +233,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	void SubscriptionManager::addOnOpportunisticSubscriptionsChangedListener(__JniBaseClass arg0, android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg1)
+	void SubscriptionManager::addOnOpportunisticSubscriptionsChangedListener(JObject arg0, android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg1)
 	{
 		callMethod<void>(
 			"addOnOpportunisticSubscriptionsChangedListener",
@@ -250,7 +250,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void SubscriptionManager::addOnSubscriptionsChangedListener(__JniBaseClass arg0, android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg1)
+	void SubscriptionManager::addOnSubscriptionsChangedListener(JObject arg0, android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg1)
 	{
 		callMethod<void>(
 			"addOnSubscriptionsChangedListener",
@@ -259,7 +259,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void SubscriptionManager::addSubscriptionsIntoGroup(__JniBaseClass arg0, android::os::ParcelUuid arg1)
+	void SubscriptionManager::addSubscriptionsIntoGroup(JObject arg0, android::os::ParcelUuid arg1)
 	{
 		callMethod<void>(
 			"addSubscriptionsIntoGroup",
@@ -276,7 +276,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	android::os::ParcelUuid SubscriptionManager::createSubscriptionGroup(__JniBaseClass arg0)
+	android::os::ParcelUuid SubscriptionManager::createSubscriptionGroup(JObject arg0)
 	{
 		return callObjectMethod(
 			"createSubscriptionGroup",
@@ -284,7 +284,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	__JniBaseClass SubscriptionManager::getAccessibleSubscriptionInfoList()
+	JObject SubscriptionManager::getAccessibleSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getAccessibleSubscriptionInfoList",
@@ -321,21 +321,21 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass SubscriptionManager::getActiveSubscriptionInfoList()
+	JObject SubscriptionManager::getActiveSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SubscriptionManager::getCompleteActiveSubscriptionInfoList()
+	JObject SubscriptionManager::getCompleteActiveSubscriptionInfoList()
 	{
 		return callObjectMethod(
 			"getCompleteActiveSubscriptionInfoList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SubscriptionManager::getDeviceToDeviceStatusSharingContacts(jint arg0)
+	JObject SubscriptionManager::getDeviceToDeviceStatusSharingContacts(jint arg0)
 	{
 		return callObjectMethod(
 			"getDeviceToDeviceStatusSharingContacts",
@@ -351,7 +351,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass SubscriptionManager::getOpportunisticSubscriptions()
+	JObject SubscriptionManager::getOpportunisticSubscriptions()
 	{
 		return callObjectMethod(
 			"getOpportunisticSubscriptions",
@@ -366,7 +366,7 @@ namespace android::telephony
 			arg0
 		).object<jintArray>();
 	}
-	__JniBaseClass SubscriptionManager::getSubscriptionPlans(jint arg0)
+	JObject SubscriptionManager::getSubscriptionPlans(jint arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionPlans",
@@ -374,7 +374,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
+	JObject SubscriptionManager::getSubscriptionsInGroup(android::os::ParcelUuid arg0)
 	{
 		return callObjectMethod(
 			"getSubscriptionsInGroup",
@@ -414,7 +414,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void SubscriptionManager::removeSubscriptionsFromGroup(__JniBaseClass arg0, android::os::ParcelUuid arg1)
+	void SubscriptionManager::removeSubscriptionsFromGroup(JObject arg0, android::os::ParcelUuid arg1)
 	{
 		callMethod<void>(
 			"removeSubscriptionsFromGroup",
@@ -423,7 +423,7 @@ namespace android::telephony
 			arg1.object()
 		);
 	}
-	void SubscriptionManager::setDeviceToDeviceStatusSharingContacts(jint arg0, __JniBaseClass arg1)
+	void SubscriptionManager::setDeviceToDeviceStatusSharingContacts(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setDeviceToDeviceStatusSharingContacts",
@@ -492,7 +492,7 @@ namespace android::telephony
 			arg3
 		);
 	}
-	void SubscriptionManager::setSubscriptionPlans(jint arg0, __JniBaseClass arg1)
+	void SubscriptionManager::setSubscriptionPlans(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setSubscriptionPlans",

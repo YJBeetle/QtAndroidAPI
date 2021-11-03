@@ -4,7 +4,7 @@
 namespace android::app::blob
 {
 	// Fields
-	__JniBaseClass BlobHandle::CREATOR()
+	JObject BlobHandle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.blob.BlobHandle",
@@ -14,7 +14,7 @@ namespace android::app::blob
 	}
 	
 	// QAndroidJniObject forward
-	BlobHandle::BlobHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BlobHandle::BlobHandle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::renderscript
 {
-	class Short2 : public __JniBaseClass
+	class Short2 : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::renderscript
 		jshort y();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Short2(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Short2(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Short2(QAndroidJniObject obj);
 		
 		// Constructors

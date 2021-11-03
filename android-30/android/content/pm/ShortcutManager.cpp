@@ -36,12 +36,12 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	ShortcutManager::ShortcutManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ShortcutManager::ShortcutManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jboolean ShortcutManager::addDynamicShortcuts(__JniBaseClass arg0)
+	jboolean ShortcutManager::addDynamicShortcuts(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addDynamicShortcuts",
@@ -57,7 +57,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::disableShortcuts(__JniBaseClass arg0)
+	void ShortcutManager::disableShortcuts(JObject arg0)
 	{
 		callMethod<void>(
 			"disableShortcuts",
@@ -65,7 +65,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::disableShortcuts(__JniBaseClass arg0, jstring arg1)
+	void ShortcutManager::disableShortcuts(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"disableShortcuts",
@@ -74,7 +74,7 @@ namespace android::content::pm
 			arg1
 		);
 	}
-	void ShortcutManager::enableShortcuts(__JniBaseClass arg0)
+	void ShortcutManager::enableShortcuts(JObject arg0)
 	{
 		callMethod<void>(
 			"enableShortcuts",
@@ -82,7 +82,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass ShortcutManager::getDynamicShortcuts()
+	JObject ShortcutManager::getDynamicShortcuts()
 	{
 		return callObjectMethod(
 			"getDynamicShortcuts",
@@ -103,7 +103,7 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	__JniBaseClass ShortcutManager::getManifestShortcuts()
+	JObject ShortcutManager::getManifestShortcuts()
 	{
 		return callObjectMethod(
 			"getManifestShortcuts",
@@ -117,14 +117,14 @@ namespace android::content::pm
 			"()I"
 		);
 	}
-	__JniBaseClass ShortcutManager::getPinnedShortcuts()
+	JObject ShortcutManager::getPinnedShortcuts()
 	{
 		return callObjectMethod(
 			"getPinnedShortcuts",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ShortcutManager::getShortcuts(jint arg0)
+	JObject ShortcutManager::getShortcuts(jint arg0)
 	{
 		return callObjectMethod(
 			"getShortcuts",
@@ -161,7 +161,7 @@ namespace android::content::pm
 			"()V"
 		);
 	}
-	void ShortcutManager::removeDynamicShortcuts(__JniBaseClass arg0)
+	void ShortcutManager::removeDynamicShortcuts(JObject arg0)
 	{
 		callMethod<void>(
 			"removeDynamicShortcuts",
@@ -169,7 +169,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	void ShortcutManager::removeLongLivedShortcuts(__JniBaseClass arg0)
+	void ShortcutManager::removeLongLivedShortcuts(JObject arg0)
 	{
 		callMethod<void>(
 			"removeLongLivedShortcuts",
@@ -194,7 +194,7 @@ namespace android::content::pm
 			arg1.object()
 		);
 	}
-	jboolean ShortcutManager::setDynamicShortcuts(__JniBaseClass arg0)
+	jboolean ShortcutManager::setDynamicShortcuts(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"setDynamicShortcuts",
@@ -202,7 +202,7 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	jboolean ShortcutManager::updateShortcuts(__JniBaseClass arg0)
+	jboolean ShortcutManager::updateShortcuts(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"updateShortcuts",

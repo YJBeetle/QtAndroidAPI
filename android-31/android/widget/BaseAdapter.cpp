@@ -8,11 +8,11 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	BaseAdapter::BaseAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BaseAdapter::BaseAdapter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BaseAdapter::BaseAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.BaseAdapter",
 			"()V"
 		) {}

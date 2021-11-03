@@ -20,11 +20,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_PinnedPositions::ContactsContract_PinnedPositions()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$PinnedPositions",
 			"()V"
 		) {}

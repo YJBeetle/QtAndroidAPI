@@ -527,7 +527,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	UserManager::UserManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UserManager::UserManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -598,7 +598,7 @@ namespace android::os
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass UserManager::getUserProfiles()
+	JObject UserManager::getUserProfiles()
 	{
 		return callObjectMethod(
 			"getUserProfiles",

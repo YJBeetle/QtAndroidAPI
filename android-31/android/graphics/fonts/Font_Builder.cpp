@@ -11,49 +11,49 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QAndroidJniObject forward
-	Font_Builder::Font_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Font_Builder::Font_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Font_Builder::Font_Builder(android::graphics::fonts::Font arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/graphics/fonts/Font;)V",
 			arg0.object()
 		) {}
 	Font_Builder::Font_Builder(android::os::ParcelFileDescriptor arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/os/ParcelFileDescriptor;)V",
 			arg0.object()
 		) {}
 	Font_Builder::Font_Builder(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	Font_Builder::Font_Builder(java::nio::ByteBuffer arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Ljava/nio/ByteBuffer;)V",
 			arg0.object()
 		) {}
 	Font_Builder::Font_Builder(android::content::res::AssetManager arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	Font_Builder::Font_Builder(android::content::res::Resources arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/content/res/Resources;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	Font_Builder::Font_Builder(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/os/ParcelFileDescriptor;JJ)V",
 			arg0.object(),

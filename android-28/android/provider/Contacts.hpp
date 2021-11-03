@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Contacts : public __JniBaseClass
+	class Contacts : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::provider
 		static jint KIND_POSTAL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Contacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Contacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts(QAndroidJniObject obj);
 		
 		// Constructors

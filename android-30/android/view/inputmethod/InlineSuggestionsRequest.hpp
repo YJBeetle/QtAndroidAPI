@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,15 +17,15 @@ namespace android::os
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestionsRequest : public __JniBaseClass
+	class InlineSuggestionsRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SUGGESTION_COUNT_UNLIMITED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InlineSuggestionsRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InlineSuggestionsRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InlineSuggestionsRequest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::view::inputmethod
 		jboolean equals(jobject arg0);
 		android::os::Bundle getExtras();
 		jstring getHostPackageName();
-		__JniBaseClass getInlinePresentationSpecs();
+		JObject getInlinePresentationSpecs();
 		jint getMaxSuggestionCount();
 		android::os::LocaleList getSupportedLocales();
 		jint hashCode();

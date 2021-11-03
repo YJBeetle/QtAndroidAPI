@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,18 +13,18 @@ namespace android::widget::inline
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestionInfo : public __JniBaseClass
+	class InlineSuggestionInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring SOURCE_AUTOFILL();
 		static jstring SOURCE_PLATFORM();
 		static jstring TYPE_ACTION();
 		static jstring TYPE_SUGGESTION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InlineSuggestionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InlineSuggestionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InlineSuggestionInfo(QAndroidJniObject obj);
 		
 		// Constructors

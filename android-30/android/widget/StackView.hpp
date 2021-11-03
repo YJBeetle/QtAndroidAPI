@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -32,9 +32,9 @@ namespace android::widget
 		
 		// Constructors
 		StackView(android::content::Context arg0);
-		StackView(android::content::Context arg0, __JniBaseClass arg1);
-		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		StackView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		StackView(android::content::Context arg0, JObject arg1);
+		StackView(android::content::Context arg0, JObject arg1, jint arg2);
+		StackView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void advance();

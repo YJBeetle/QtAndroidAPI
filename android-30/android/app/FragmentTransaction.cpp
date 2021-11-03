@@ -56,11 +56,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	FragmentTransaction::FragmentTransaction(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FragmentTransaction::FragmentTransaction(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FragmentTransaction::FragmentTransaction()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.FragmentTransaction",
 			"()V"
 		) {}
@@ -211,7 +211,7 @@ namespace android::app
 			arg2
 		);
 	}
-	android::app::FragmentTransaction FragmentTransaction::runOnCommit(__JniBaseClass arg0)
+	android::app::FragmentTransaction FragmentTransaction::runOnCommit(JObject arg0)
 	{
 		return callObjectMethod(
 			"runOnCommit",

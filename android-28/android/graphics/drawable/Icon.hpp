@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -41,11 +41,11 @@ namespace android::os
 
 namespace android::graphics::drawable
 {
-	class Icon : public __JniBaseClass
+	class Icon : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_ADAPTIVE_BITMAP();
 		static jint TYPE_BITMAP();
 		static jint TYPE_DATA();
@@ -53,7 +53,7 @@ namespace android::graphics::drawable
 		static jint TYPE_URI();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Icon(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Icon(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Icon(QAndroidJniObject obj);
 		
 		// Constructors
@@ -74,7 +74,7 @@ namespace android::graphics::drawable
 		android::net::Uri getUri();
 		android::graphics::drawable::Drawable loadDrawable(android::content::Context arg0);
 		void loadDrawableAsync(android::content::Context arg0, android::os::Message arg1);
-		void loadDrawableAsync(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2);
+		void loadDrawableAsync(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
 		android::graphics::drawable::Icon setTint(jint arg0);
 		android::graphics::drawable::Icon setTintList(android::content::res::ColorStateList arg0);
 		android::graphics::drawable::Icon setTintMode(android::graphics::PorterDuff_Mode arg0);

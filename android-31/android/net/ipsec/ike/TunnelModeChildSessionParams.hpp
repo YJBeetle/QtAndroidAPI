@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./ChildSessionParams.hpp"
 
 
@@ -19,7 +19,7 @@ namespace android::net::ipsec::ike
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getConfigurationRequests();
+		JObject getConfigurationRequests();
 		jint hashCode();
 	};
 } // namespace android::net::ipsec::ike

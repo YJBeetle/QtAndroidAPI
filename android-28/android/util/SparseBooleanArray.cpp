@@ -5,16 +5,16 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	SparseBooleanArray::SparseBooleanArray(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SparseBooleanArray::SparseBooleanArray(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SparseBooleanArray::SparseBooleanArray()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.SparseBooleanArray",
 			"()V"
 		) {}
 	SparseBooleanArray::SparseBooleanArray(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.SparseBooleanArray",
 			"(I)V",
 			arg0

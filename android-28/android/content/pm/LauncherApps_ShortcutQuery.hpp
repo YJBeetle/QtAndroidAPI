@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::content::pm
 {
-	class LauncherApps_ShortcutQuery : public __JniBaseClass
+	class LauncherApps_ShortcutQuery : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::content::pm
 		static jint FLAG_MATCH_PINNED_BY_ANY_LAUNCHER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LauncherApps_ShortcutQuery(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LauncherApps_ShortcutQuery(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LauncherApps_ShortcutQuery(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::content::pm
 		android::content::pm::LauncherApps_ShortcutQuery setChangedSince(jlong arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setPackage(jstring arg0);
 		android::content::pm::LauncherApps_ShortcutQuery setQueryFlags(jint arg0);
-		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(__JniBaseClass arg0);
+		android::content::pm::LauncherApps_ShortcutQuery setShortcutIds(JObject arg0);
 	};
 } // namespace android::content::pm
 

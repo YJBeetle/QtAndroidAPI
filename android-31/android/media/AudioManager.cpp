@@ -775,7 +775,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioManager::AudioManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioManager::AudioManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -808,7 +808,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	jint AudioManager::abandonAudioFocus(__JniBaseClass arg0)
+	jint AudioManager::abandonAudioFocus(JObject arg0)
 	{
 		return callMethod<jint>(
 			"abandonAudioFocus",
@@ -824,7 +824,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::addOnCommunicationDeviceChangedListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void AudioManager::addOnCommunicationDeviceChangedListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addOnCommunicationDeviceChangedListener",
@@ -833,7 +833,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioManager::addOnModeChangedListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void AudioManager::addOnModeChangedListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addOnModeChangedListener",
@@ -893,14 +893,14 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass AudioManager::getActivePlaybackConfigurations()
+	JObject AudioManager::getActivePlaybackConfigurations()
 	{
 		return callObjectMethod(
 			"getActivePlaybackConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AudioManager::getActiveRecordingConfigurations()
+	JObject AudioManager::getActiveRecordingConfigurations()
 	{
 		return callObjectMethod(
 			"getActiveRecordingConfigurations",
@@ -922,7 +922,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass AudioManager::getAvailableCommunicationDevices()
+	JObject AudioManager::getAvailableCommunicationDevices()
 	{
 		return callObjectMethod(
 			"getAvailableCommunicationDevices",
@@ -951,7 +951,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass AudioManager::getMicrophones()
+	JObject AudioManager::getMicrophones()
 	{
 		return callObjectMethod(
 			"getMicrophones",
@@ -1200,7 +1200,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::removeOnCommunicationDeviceChangedListener(__JniBaseClass arg0)
+	void AudioManager::removeOnCommunicationDeviceChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnCommunicationDeviceChangedListener",
@@ -1208,7 +1208,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioManager::removeOnModeChangedListener(__JniBaseClass arg0)
+	void AudioManager::removeOnModeChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnModeChangedListener",
@@ -1224,7 +1224,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	jint AudioManager::requestAudioFocus(__JniBaseClass arg0, jint arg1, jint arg2)
+	jint AudioManager::requestAudioFocus(JObject arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jint>(
 			"requestAudioFocus",

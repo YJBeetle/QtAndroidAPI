@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -73,7 +73,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaCodec : public __JniBaseClass
+	class MediaCodec : public JObject
 	{
 	public:
 		// Fields
@@ -101,7 +101,7 @@ namespace android::media
 		static jint VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodec(QAndroidJniObject obj);
 		
 		// Constructors
@@ -143,7 +143,7 @@ namespace android::media
 		void setCallback(android::media::MediaCodec_Callback arg0);
 		void setCallback(android::media::MediaCodec_Callback arg0, android::os::Handler arg1);
 		void setInputSurface(android::view::Surface arg0);
-		void setOnFrameRenderedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setOnFrameRenderedListener(JObject arg0, android::os::Handler arg1);
 		void setOutputSurface(android::view::Surface arg0);
 		void setParameters(android::os::Bundle arg0);
 		void setVideoScalingMode(jint arg0);

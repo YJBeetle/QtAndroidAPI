@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass WorkSource::CREATOR()
+	JObject WorkSource::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.WorkSource",
@@ -14,16 +14,16 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	WorkSource::WorkSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WorkSource::WorkSource(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WorkSource::WorkSource()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.WorkSource",
 			"()V"
 		) {}
 	WorkSource::WorkSource(android::os::WorkSource &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.WorkSource",
 			"(Landroid/os/WorkSource;)V",
 			arg0.object()

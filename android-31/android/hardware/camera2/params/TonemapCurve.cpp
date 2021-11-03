@@ -48,11 +48,11 @@ namespace android::hardware::camera2::params
 	}
 	
 	// QAndroidJniObject forward
-	TonemapCurve::TonemapCurve(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TonemapCurve::TonemapCurve(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TonemapCurve::TonemapCurve(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.camera2.params.TonemapCurve",
 			"([F[F[F)V",
 			arg0,

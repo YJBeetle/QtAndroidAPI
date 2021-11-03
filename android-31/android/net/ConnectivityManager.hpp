@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -61,7 +61,7 @@ namespace java::net
 
 namespace android::net
 {
-	class ConnectivityManager : public __JniBaseClass
+	class ConnectivityManager : public JObject
 	{
 	public:
 		// Fields
@@ -100,7 +100,7 @@ namespace android::net
 		static jint TYPE_WIMAX();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConnectivityManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConnectivityManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectivityManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -109,9 +109,9 @@ namespace android::net
 		static android::net::Network getProcessDefaultNetwork();
 		static jboolean isNetworkTypeValid(jint arg0);
 		static jboolean setProcessDefaultNetwork(android::net::Network arg0);
-		void addDefaultNetworkActiveListener(__JniBaseClass arg0);
+		void addDefaultNetworkActiveListener(JObject arg0);
 		jboolean bindProcessToNetwork(android::net::Network arg0);
-		android::net::SocketKeepalive createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, __JniBaseClass arg4, android::net::SocketKeepalive_Callback arg5);
+		android::net::SocketKeepalive createSocketKeepalive(android::net::Network arg0, android::net::IpSecManager_UdpEncapsulationSocket arg1, java::net::InetAddress arg2, java::net::InetAddress arg3, JObject arg4, android::net::SocketKeepalive_Callback arg5);
 		android::net::Network getActiveNetwork();
 		android::net::NetworkInfo getActiveNetworkInfo();
 		jarray getAllNetworkInfo();
@@ -137,7 +137,7 @@ namespace android::net
 		void registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1);
 		void registerNetworkCallback(android::net::NetworkRequest arg0, android::net::ConnectivityManager_NetworkCallback arg1, android::os::Handler arg2);
 		void releaseNetworkRequest(android::app::PendingIntent arg0);
-		void removeDefaultNetworkActiveListener(__JniBaseClass arg0);
+		void removeDefaultNetworkActiveListener(JObject arg0);
 		void reportBadNetwork(android::net::Network arg0);
 		void reportNetworkConnectivity(android::net::Network arg0, jboolean arg1);
 		jboolean requestBandwidthUpdate(android::net::Network arg0);

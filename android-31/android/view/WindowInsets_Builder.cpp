@@ -10,16 +10,16 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	WindowInsets_Builder::WindowInsets_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsets_Builder::WindowInsets_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WindowInsets_Builder::WindowInsets_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.WindowInsets$Builder",
 			"()V"
 		) {}
 	WindowInsets_Builder::WindowInsets_Builder(android::view::WindowInsets arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.WindowInsets$Builder",
 			"(Landroid/view/WindowInsets;)V",
 			arg0.object()

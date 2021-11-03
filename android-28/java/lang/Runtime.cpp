@@ -8,7 +8,7 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	Runtime::Runtime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Runtime::Runtime(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace java::lang
 			"()Ljava/lang/Runtime;"
 		);
 	}
-	__JniBaseClass Runtime::version()
+	JObject Runtime::version()
 	{
 		return callStaticObjectMethod(
 			"java.lang.Runtime",

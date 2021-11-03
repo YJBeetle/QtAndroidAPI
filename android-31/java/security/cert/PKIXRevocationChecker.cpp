@@ -19,7 +19,7 @@ namespace java::security::cert
 			"()Ljava/security/cert/PKIXRevocationChecker;"
 		);
 	}
-	__JniBaseClass PKIXRevocationChecker::getOcspExtensions()
+	JObject PKIXRevocationChecker::getOcspExtensions()
 	{
 		return callObjectMethod(
 			"getOcspExtensions",
@@ -40,28 +40,28 @@ namespace java::security::cert
 			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	__JniBaseClass PKIXRevocationChecker::getOcspResponses()
+	JObject PKIXRevocationChecker::getOcspResponses()
 	{
 		return callObjectMethod(
 			"getOcspResponses",
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass PKIXRevocationChecker::getOptions()
+	JObject PKIXRevocationChecker::getOptions()
 	{
 		return callObjectMethod(
 			"getOptions",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass PKIXRevocationChecker::getSoftFailExceptions()
+	JObject PKIXRevocationChecker::getSoftFailExceptions()
 	{
 		return callObjectMethod(
 			"getSoftFailExceptions",
 			"()Ljava/util/List;"
 		);
 	}
-	void PKIXRevocationChecker::setOcspExtensions(__JniBaseClass arg0)
+	void PKIXRevocationChecker::setOcspExtensions(JObject arg0)
 	{
 		callMethod<void>(
 			"setOcspExtensions",
@@ -85,7 +85,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOcspResponses(__JniBaseClass arg0)
+	void PKIXRevocationChecker::setOcspResponses(JObject arg0)
 	{
 		callMethod<void>(
 			"setOcspResponses",
@@ -93,7 +93,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void PKIXRevocationChecker::setOptions(__JniBaseClass arg0)
+	void PKIXRevocationChecker::setOptions(JObject arg0)
 	{
 		callMethod<void>(
 			"setOptions",

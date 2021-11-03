@@ -6,11 +6,11 @@ namespace java::io
 	// Fields
 	
 	// QAndroidJniObject forward
-	InputStream::InputStream(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputStream::InputStream(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputStream::InputStream()
-		: __JniBaseClass(
+		: JObject(
 			"java.io.InputStream",
 			"()V"
 		) {}

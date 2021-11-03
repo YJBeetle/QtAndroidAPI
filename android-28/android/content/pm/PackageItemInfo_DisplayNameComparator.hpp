@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::pm
 {
@@ -13,13 +13,13 @@ namespace android::content::pm
 
 namespace android::content::pm
 {
-	class PackageItemInfo_DisplayNameComparator : public __JniBaseClass
+	class PackageItemInfo_DisplayNameComparator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PackageItemInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PackageItemInfo_DisplayNameComparator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PackageItemInfo_DisplayNameComparator(QAndroidJniObject obj);
 		
 		// Constructors

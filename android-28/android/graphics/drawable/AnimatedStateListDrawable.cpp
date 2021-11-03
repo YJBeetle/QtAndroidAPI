@@ -48,7 +48,7 @@ namespace android::graphics::drawable
 			arg0.object()
 		);
 	}
-	void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void AnimatedStateListDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",

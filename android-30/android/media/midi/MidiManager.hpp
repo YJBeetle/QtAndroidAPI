@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -21,21 +21,21 @@ namespace android::os
 
 namespace android::media::midi
 {
-	class MidiManager : public __JniBaseClass
+	class MidiManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MidiManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MidiManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jarray getDevices();
-		void openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, __JniBaseClass arg1, android::os::Handler arg2);
-		void openDevice(android::media::midi::MidiDeviceInfo arg0, __JniBaseClass arg1, android::os::Handler arg2);
+		void openBluetoothDevice(android::bluetooth::BluetoothDevice arg0, JObject arg1, android::os::Handler arg2);
+		void openDevice(android::media::midi::MidiDeviceInfo arg0, JObject arg1, android::os::Handler arg2);
 		void registerDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0, android::os::Handler arg1);
 		void unregisterDeviceCallback(android::media::midi::MidiManager_DeviceCallback arg0);
 	};

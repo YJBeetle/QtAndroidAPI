@@ -20,7 +20,7 @@ namespace android::view::animation
 			"(F)V",
 			arg0
 		) {}
-	AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(android::content::Context arg0, __JniBaseClass arg1)
+	AnticipateOvershootInterpolator::AnticipateOvershootInterpolator(android::content::Context arg0, JObject arg1)
 		: android::view::animation::BaseInterpolator(
 			"android.view.animation.AnticipateOvershootInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

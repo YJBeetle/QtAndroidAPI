@@ -16,34 +16,34 @@ namespace org::json
 	}
 	
 	// QAndroidJniObject forward
-	JSONObject::JSONObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JSONObject::JSONObject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JSONObject::JSONObject()
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONObject",
 			"()V"
 		) {}
 	JSONObject::JSONObject(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONObject",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
-	JSONObject::JSONObject(__JniBaseClass arg0)
-		: __JniBaseClass(
+	JSONObject::JSONObject(JObject arg0)
+		: JObject(
 			"org.json.JSONObject",
 			"(Ljava/util/Map;)V",
 			arg0.object()
 		) {}
 	JSONObject::JSONObject(org::json::JSONTokener arg0)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONObject",
 			"(Lorg/json/JSONTokener;)V",
 			arg0.object()
 		) {}
 	JSONObject::JSONObject(org::json::JSONObject &arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"org.json.JSONObject",
 			"(Lorg/json/JSONObject;[Ljava/lang/String;)V",
 			arg0.object(),
@@ -167,7 +167,7 @@ namespace org::json
 			arg0
 		);
 	}
-	__JniBaseClass JSONObject::keys()
+	JObject JSONObject::keys()
 	{
 		return callObjectMethod(
 			"keys",

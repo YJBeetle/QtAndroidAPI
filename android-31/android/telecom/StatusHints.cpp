@@ -6,7 +6,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass StatusHints::CREATOR()
+	JObject StatusHints::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.StatusHints",
@@ -16,11 +16,11 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	StatusHints::StatusHints(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StatusHints::StatusHints(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StatusHints::StatusHints(jstring arg0, android::graphics::drawable::Icon arg1, android::os::Bundle arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.StatusHints",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
 			arg0,

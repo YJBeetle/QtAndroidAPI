@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,7 +25,7 @@ namespace android::graphics
 
 namespace android::app
 {
-	class Notification_WearableExtender : public __JniBaseClass
+	class Notification_WearableExtender : public JObject
 	{
 	public:
 		// Fields
@@ -40,7 +40,7 @@ namespace android::app
 		static jint UNSET_ACTION_INDEX();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Notification_WearableExtender(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Notification_WearableExtender(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Notification_WearableExtender(QAndroidJniObject obj);
 		
 		// Constructors
@@ -49,14 +49,14 @@ namespace android::app
 		
 		// Methods
 		android::app::Notification_WearableExtender addAction(android::app::Notification_Action arg0);
-		android::app::Notification_WearableExtender addActions(__JniBaseClass arg0);
+		android::app::Notification_WearableExtender addActions(JObject arg0);
 		android::app::Notification_WearableExtender addPage(android::app::Notification arg0);
-		android::app::Notification_WearableExtender addPages(__JniBaseClass arg0);
+		android::app::Notification_WearableExtender addPages(JObject arg0);
 		android::app::Notification_WearableExtender clearActions();
 		android::app::Notification_WearableExtender clearPages();
 		android::app::Notification_WearableExtender clone();
 		android::app::Notification_Builder extend(android::app::Notification_Builder arg0);
-		__JniBaseClass getActions();
+		JObject getActions();
 		android::graphics::Bitmap getBackground();
 		jstring getBridgeTag();
 		jint getContentAction();
@@ -74,7 +74,7 @@ namespace android::app
 		jboolean getHintHideIcon();
 		jint getHintScreenTimeout();
 		jboolean getHintShowBackgroundOnly();
-		__JniBaseClass getPages();
+		JObject getPages();
 		jboolean getStartScrollBottom();
 		android::app::Notification_WearableExtender setBackground(android::graphics::Bitmap arg0);
 		android::app::Notification_WearableExtender setBridgeTag(jstring arg0);

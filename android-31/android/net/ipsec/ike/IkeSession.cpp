@@ -8,11 +8,11 @@ namespace android::net::ipsec::ike
 	// Fields
 	
 	// QAndroidJniObject forward
-	IkeSession::IkeSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IkeSession::IkeSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	IkeSession::IkeSession(android::content::Context arg0, android::net::ipsec::ike::IkeSessionParams arg1, android::net::ipsec::ike::ChildSessionParams arg2, __JniBaseClass arg3, __JniBaseClass arg4, __JniBaseClass arg5)
-		: __JniBaseClass(
+	IkeSession::IkeSession(android::content::Context arg0, android::net::ipsec::ike::IkeSessionParams arg1, android::net::ipsec::ike::ChildSessionParams arg2, JObject arg3, JObject arg4, JObject arg5)
+		: JObject(
 			"android.net.ipsec.ike.IkeSession",
 			"(Landroid/content/Context;Landroid/net/ipsec/ike/IkeSessionParams;Landroid/net/ipsec/ike/ChildSessionParams;Ljava/util/concurrent/Executor;Landroid/net/ipsec/ike/IkeSessionCallback;Landroid/net/ipsec/ike/ChildSessionCallback;)V",
 			arg0.object(),
@@ -31,7 +31,7 @@ namespace android::net::ipsec::ike
 			"()V"
 		);
 	}
-	void IkeSession::closeChildSession(__JniBaseClass arg0)
+	void IkeSession::closeChildSession(JObject arg0)
 	{
 		callMethod<void>(
 			"closeChildSession",
@@ -53,7 +53,7 @@ namespace android::net::ipsec::ike
 			"()V"
 		);
 	}
-	void IkeSession::openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, __JniBaseClass arg1)
+	void IkeSession::openChildSession(android::net::ipsec::ike::ChildSessionParams arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"openChildSession",

@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass ApplicationMediaCapabilities::CREATOR()
+	JObject ApplicationMediaCapabilities::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.ApplicationMediaCapabilities",
@@ -14,12 +14,12 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	ApplicationMediaCapabilities::ApplicationMediaCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ApplicationMediaCapabilities::ApplicationMediaCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities::createFromXml(__JniBaseClass arg0)
+	android::media::ApplicationMediaCapabilities ApplicationMediaCapabilities::createFromXml(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.media.ApplicationMediaCapabilities",
@@ -35,28 +35,28 @@ namespace android::media
 			"()I"
 		);
 	}
-	__JniBaseClass ApplicationMediaCapabilities::getSupportedHdrTypes()
+	JObject ApplicationMediaCapabilities::getSupportedHdrTypes()
 	{
 		return callObjectMethod(
 			"getSupportedHdrTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ApplicationMediaCapabilities::getSupportedVideoMimeTypes()
+	JObject ApplicationMediaCapabilities::getSupportedVideoMimeTypes()
 	{
 		return callObjectMethod(
 			"getSupportedVideoMimeTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ApplicationMediaCapabilities::getUnsupportedHdrTypes()
+	JObject ApplicationMediaCapabilities::getUnsupportedHdrTypes()
 	{
 		return callObjectMethod(
 			"getUnsupportedHdrTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ApplicationMediaCapabilities::getUnsupportedVideoMimeTypes()
+	JObject ApplicationMediaCapabilities::getUnsupportedVideoMimeTypes()
 	{
 		return callObjectMethod(
 			"getUnsupportedVideoMimeTypes",

@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::print
 {
-	class PrintAttributes_Margins : public __JniBaseClass
+	class PrintAttributes_Margins : public JObject
 	{
 	public:
 		// Fields
 		static android::print::PrintAttributes_Margins NO_MARGINS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrintAttributes_Margins(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrintAttributes_Margins(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrintAttributes_Margins(QAndroidJniObject obj);
 		
 		// Constructors

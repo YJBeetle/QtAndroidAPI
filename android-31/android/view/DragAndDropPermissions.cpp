@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass DragAndDropPermissions::CREATOR()
+	JObject DragAndDropPermissions::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.DragAndDropPermissions",
@@ -14,7 +14,7 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	DragAndDropPermissions::DragAndDropPermissions(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DragAndDropPermissions::DragAndDropPermissions(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

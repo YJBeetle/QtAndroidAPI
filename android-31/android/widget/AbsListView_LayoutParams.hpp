@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace android::content
@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// Constructors
 		AbsListView_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
-		AbsListView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		AbsListView_LayoutParams(android::content::Context arg0, JObject arg1);
 		AbsListView_LayoutParams(jint arg0, jint arg1);
 		AbsListView_LayoutParams(jint arg0, jint arg1, jint arg2);
 		

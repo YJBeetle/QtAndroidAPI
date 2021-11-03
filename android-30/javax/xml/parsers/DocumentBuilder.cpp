@@ -9,12 +9,12 @@ namespace javax::xml::parsers
 	// Fields
 	
 	// QAndroidJniObject forward
-	DocumentBuilder::DocumentBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DocumentBuilder::DocumentBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass DocumentBuilder::getDOMImplementation()
+	JObject DocumentBuilder::getDOMImplementation()
 	{
 		return callObjectMethod(
 			"getDOMImplementation",
@@ -49,14 +49,14 @@ namespace javax::xml::parsers
 			"()Z"
 		);
 	}
-	__JniBaseClass DocumentBuilder::newDocument()
+	JObject DocumentBuilder::newDocument()
 	{
 		return callObjectMethod(
 			"newDocument",
 			"()Lorg/w3c/dom/Document;"
 		);
 	}
-	__JniBaseClass DocumentBuilder::parse(java::io::File arg0)
+	JObject DocumentBuilder::parse(java::io::File arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -64,7 +64,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	__JniBaseClass DocumentBuilder::parse(java::io::InputStream arg0)
+	JObject DocumentBuilder::parse(java::io::InputStream arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -72,7 +72,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	__JniBaseClass DocumentBuilder::parse(jstring arg0)
+	JObject DocumentBuilder::parse(jstring arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -80,7 +80,7 @@ namespace javax::xml::parsers
 			arg0
 		);
 	}
-	__JniBaseClass DocumentBuilder::parse(org::xml::sax::InputSource arg0)
+	JObject DocumentBuilder::parse(org::xml::sax::InputSource arg0)
 	{
 		return callObjectMethod(
 			"parse",
@@ -88,7 +88,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	__JniBaseClass DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
+	JObject DocumentBuilder::parse(java::io::InputStream arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"parse",
@@ -104,7 +104,7 @@ namespace javax::xml::parsers
 			"()V"
 		);
 	}
-	void DocumentBuilder::setEntityResolver(__JniBaseClass arg0)
+	void DocumentBuilder::setEntityResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -112,7 +112,7 @@ namespace javax::xml::parsers
 			arg0.object()
 		);
 	}
-	void DocumentBuilder::setErrorHandler(__JniBaseClass arg0)
+	void DocumentBuilder::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",

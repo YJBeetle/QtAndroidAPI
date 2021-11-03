@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -25,14 +25,14 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class ConnectionRequest : public __JniBaseClass
+	class ConnectionRequest : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConnectionRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConnectionRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConnectionRequest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -44,7 +44,7 @@ namespace android::telecom
 		android::telecom::PhoneAccountHandle getAccountHandle();
 		android::net::Uri getAddress();
 		android::os::Bundle getExtras();
-		__JniBaseClass getParticipants();
+		JObject getParticipants();
 		android::telecom::Connection_RttTextStream getRttTextStream();
 		jint getVideoState();
 		jboolean isAdhocConferenceCall();

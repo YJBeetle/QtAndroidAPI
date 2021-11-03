@@ -7,11 +7,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	GetSchemaResponse_Builder::GetSchemaResponse_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GetSchemaResponse_Builder::GetSchemaResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GetSchemaResponse_Builder::GetSchemaResponse_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.GetSchemaResponse$Builder",
 			"()V"
 		) {}

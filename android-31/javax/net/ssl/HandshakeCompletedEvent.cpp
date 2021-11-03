@@ -9,7 +9,7 @@ namespace javax::net::ssl
 	HandshakeCompletedEvent::HandshakeCompletedEvent(QAndroidJniObject obj) : java::util::EventObject(obj) {}
 	
 	// Constructors
-	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1)
+	HandshakeCompletedEvent::HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1)
 		: java::util::EventObject(
 			"javax.net.ssl.HandshakeCompletedEvent",
 			"(Ljavax/net/ssl/SSLSocket;Ljavax/net/ssl/SSLSession;)V",
@@ -32,7 +32,7 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	__JniBaseClass HandshakeCompletedEvent::getLocalPrincipal()
+	JObject HandshakeCompletedEvent::getLocalPrincipal()
 	{
 		return callObjectMethod(
 			"getLocalPrincipal",
@@ -53,14 +53,14 @@ namespace javax::net::ssl
 			"()[Ljava/security/cert/Certificate;"
 		).object<jarray>();
 	}
-	__JniBaseClass HandshakeCompletedEvent::getPeerPrincipal()
+	JObject HandshakeCompletedEvent::getPeerPrincipal()
 	{
 		return callObjectMethod(
 			"getPeerPrincipal",
 			"()Ljava/security/Principal;"
 		);
 	}
-	__JniBaseClass HandshakeCompletedEvent::getSession()
+	JObject HandshakeCompletedEvent::getSession()
 	{
 		return callObjectMethod(
 			"getSession",

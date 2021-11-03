@@ -16,24 +16,24 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	URL::URL(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	URL::URL(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	URL::URL(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	URL::URL(java::net::URL &arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	URL::URL(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
@@ -41,7 +41,7 @@ namespace java::net
 			arg2
 		) {}
 	URL::URL(java::net::URL &arg0, jstring arg1, java::net::URLStreamHandler arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
 			arg0.object(),
@@ -49,7 +49,7 @@ namespace java::net
 			arg2.object()
 		) {}
 	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
@@ -58,7 +58,7 @@ namespace java::net
 			arg3
 		) {}
 	URL::URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, java::net::URLStreamHandler arg4)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.URL",
 			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
 			arg0,
@@ -69,7 +69,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	void URL::setURLStreamHandlerFactory(__JniBaseClass arg0)
+	void URL::setURLStreamHandlerFactory(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.URL",

@@ -7,11 +7,11 @@ namespace android::telecom
 	// Fields
 	
 	// QAndroidJniObject forward
-	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InCallService_VideoCall_Callback::InCallService_VideoCall_Callback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.InCallService$VideoCall$Callback",
 			"()V"
 		) {}

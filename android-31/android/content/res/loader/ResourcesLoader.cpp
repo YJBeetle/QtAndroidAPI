@@ -6,11 +6,11 @@ namespace android::content::res::loader
 	// Fields
 	
 	// QAndroidJniObject forward
-	ResourcesLoader::ResourcesLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ResourcesLoader::ResourcesLoader(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ResourcesLoader::ResourcesLoader()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.loader.ResourcesLoader",
 			"()V"
 		) {}
@@ -31,7 +31,7 @@ namespace android::content::res::loader
 			"()V"
 		);
 	}
-	__JniBaseClass ResourcesLoader::getProviders()
+	JObject ResourcesLoader::getProviders()
 	{
 		return callObjectMethod(
 			"getProviders",
@@ -46,7 +46,7 @@ namespace android::content::res::loader
 			arg0.object()
 		);
 	}
-	void ResourcesLoader::setProviders(__JniBaseClass arg0)
+	void ResourcesLoader::setProviders(JObject arg0)
 	{
 		callMethod<void>(
 			"setProviders",

@@ -6,16 +6,16 @@ namespace android::database::sqlite
 	// Fields
 	
 	// QAndroidJniObject forward
-	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.sqlite.SQLiteDatabase$OpenParams$Builder",
 			"()V"
 		) {}
 	SQLiteDatabase_OpenParams_Builder::SQLiteDatabase_OpenParams_Builder(android::database::sqlite::SQLiteDatabase_OpenParams arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.sqlite.SQLiteDatabase$OpenParams$Builder",
 			"(Landroid/database/sqlite/SQLiteDatabase$OpenParams;)V",
 			arg0.object()
@@ -45,7 +45,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setCursorFactory(__JniBaseClass arg0)
+	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setCursorFactory(JObject arg0)
 	{
 		return callObjectMethod(
 			"setCursorFactory",
@@ -53,7 +53,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setErrorHandler(__JniBaseClass arg0)
+	android::database::sqlite::SQLiteDatabase_OpenParams_Builder SQLiteDatabase_OpenParams_Builder::setErrorHandler(JObject arg0)
 	{
 		return callObjectMethod(
 			"setErrorHandler",

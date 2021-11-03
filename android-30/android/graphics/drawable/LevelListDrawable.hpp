@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 #include "./DrawableContainer.hpp"
 
@@ -37,7 +37,7 @@ namespace android::graphics::drawable
 		
 		// Methods
 		void addLevel(jint arg0, jint arg1, android::graphics::drawable::Drawable arg2);
-		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
+		void inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3);
 		android::graphics::drawable::Drawable mutate();
 	};
 } // namespace android::graphics::drawable

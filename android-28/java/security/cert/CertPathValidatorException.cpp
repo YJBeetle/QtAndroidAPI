@@ -43,7 +43,7 @@ namespace java::security::cert
 			arg2.object(),
 			arg3
 		) {}
-	CertPathValidatorException::CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, __JniBaseClass arg4)
+	CertPathValidatorException::CertPathValidatorException(jstring arg0, jthrowable arg1, java::security::cert::CertPath arg2, jint arg3, JObject arg4)
 		: java::security::GeneralSecurityException(
 			"java.security.cert.CertPathValidatorException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;Ljava/security/cert/CertPath;ILjava/security/cert/CertPathValidatorException$Reason;)V",
@@ -69,7 +69,7 @@ namespace java::security::cert
 			"()I"
 		);
 	}
-	__JniBaseClass CertPathValidatorException::getReason()
+	JObject CertPathValidatorException::getReason()
 	{
 		return callObjectMethod(
 			"getReason",

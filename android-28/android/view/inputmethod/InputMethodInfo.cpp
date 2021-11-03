@@ -11,7 +11,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InputMethodInfo::CREATOR()
+	JObject InputMethodInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InputMethodInfo",
@@ -21,18 +21,18 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InputMethodInfo::InputMethodInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputMethodInfo::InputMethodInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputMethodInfo::InputMethodInfo(android::content::Context arg0, android::content::pm::ResolveInfo arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputMethodInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
 	InputMethodInfo::InputMethodInfo(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputMethodInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;Ljava/lang/String;)V",
 			arg0,
@@ -49,7 +49,7 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	void InputMethodInfo::dump(__JniBaseClass arg0, jstring arg1)
+	void InputMethodInfo::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",

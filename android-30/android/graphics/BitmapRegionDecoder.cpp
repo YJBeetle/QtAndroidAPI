@@ -10,7 +10,7 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	BitmapRegionDecoder::BitmapRegionDecoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BitmapRegionDecoder::BitmapRegionDecoder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

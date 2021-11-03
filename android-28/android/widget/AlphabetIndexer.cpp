@@ -8,7 +8,7 @@ namespace android::widget
 	AlphabetIndexer::AlphabetIndexer(QAndroidJniObject obj) : android::database::DataSetObserver(obj) {}
 	
 	// Constructors
-	AlphabetIndexer::AlphabetIndexer(__JniBaseClass arg0, jint arg1, jstring arg2)
+	AlphabetIndexer::AlphabetIndexer(JObject arg0, jint arg1, jstring arg2)
 		: android::database::DataSetObserver(
 			"android.widget.AlphabetIndexer",
 			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
@@ -55,7 +55,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void AlphabetIndexer::setCursor(__JniBaseClass arg0)
+	void AlphabetIndexer::setCursor(JObject arg0)
 	{
 		callMethod<void>(
 			"setCursor",

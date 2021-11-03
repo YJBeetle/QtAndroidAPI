@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class Telephony_Threads : public __JniBaseClass
+	class Telephony_Threads : public JObject
 	{
 	public:
 		// Fields
@@ -23,14 +23,14 @@ namespace android::provider
 		static android::net::Uri OBSOLETE_THREADS_URI();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Telephony_Threads(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Telephony_Threads(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Telephony_Threads(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static jlong getOrCreateThreadId(android::content::Context arg0, jstring arg1);
-		static jlong getOrCreateThreadId(android::content::Context arg0, __JniBaseClass arg1);
+		static jlong getOrCreateThreadId(android::content::Context arg0, JObject arg1);
 	};
 } // namespace android::provider
 

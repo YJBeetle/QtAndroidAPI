@@ -86,7 +86,7 @@ namespace android::telecom
 			"CAPABILITY_VIDEO_CALLING_RELIES_ON_PRESENCE"
 		);
 	}
-	__JniBaseClass PhoneAccount::CREATOR()
+	JObject PhoneAccount::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccount",
@@ -174,7 +174,7 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	PhoneAccount::PhoneAccount(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PhoneAccount::PhoneAccount(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -267,7 +267,7 @@ namespace android::telecom
 			"()Landroid/net/Uri;"
 		);
 	}
-	__JniBaseClass PhoneAccount::getSupportedUriSchemes()
+	JObject PhoneAccount::getSupportedUriSchemes()
 	{
 		return callObjectMethod(
 			"getSupportedUriSchemes",

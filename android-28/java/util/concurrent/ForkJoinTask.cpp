@@ -11,17 +11,17 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ForkJoinTask::ForkJoinTask(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ForkJoinTask::ForkJoinTask()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.ForkJoinTask",
 			"()V"
 		) {}
 	
 	// Methods
-	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0)
+	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -30,7 +30,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(__JniBaseClass arg0, jobject arg1)
+	java::util::concurrent::ForkJoinTask ForkJoinTask::adapt(JObject arg0, jobject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",
@@ -80,7 +80,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ForkJoinTask::invokeAll(__JniBaseClass arg0)
+	JObject ForkJoinTask::invokeAll(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.concurrent.ForkJoinTask",

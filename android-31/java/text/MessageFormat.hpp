@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Format.hpp"
 
 namespace java::io
@@ -54,7 +54,7 @@ namespace java::text
 		jboolean equals(jobject arg0);
 		java::lang::StringBuffer format(jobjectArray arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
 		java::lang::StringBuffer format(jobject arg0, java::lang::StringBuffer arg1, java::text::FieldPosition arg2);
-		__JniBaseClass formatToCharacterIterator(jobject arg0);
+		JObject formatToCharacterIterator(jobject arg0);
 		jarray getFormats();
 		jarray getFormatsByArgumentIndex();
 		java::util::Locale getLocale();

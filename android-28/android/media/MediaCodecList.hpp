@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,7 +13,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaCodecList : public __JniBaseClass
+	class MediaCodecList : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::media
 		static jint REGULAR_CODECS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaCodecList(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaCodecList(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaCodecList(QAndroidJniObject obj);
 		
 		// Constructors

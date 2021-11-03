@@ -35,7 +35,7 @@ namespace android::service::wallpaper
 		) {}
 	
 	// Methods
-	__JniBaseClass WallpaperService::onBind(android::content::Intent arg0)
+	JObject WallpaperService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

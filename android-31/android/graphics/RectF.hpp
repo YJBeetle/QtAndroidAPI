@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,18 +13,18 @@ namespace android::os
 
 namespace android::graphics
 {
-	class RectF : public __JniBaseClass
+	class RectF : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jfloat bottom();
 		jfloat left();
 		jfloat right();
 		jfloat top();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RectF(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RectF(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RectF(QAndroidJniObject obj);
 		
 		// Constructors

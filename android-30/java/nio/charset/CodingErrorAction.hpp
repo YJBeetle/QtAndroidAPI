@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::nio::charset
 {
-	class CodingErrorAction : public __JniBaseClass
+	class CodingErrorAction : public JObject
 	{
 	public:
 		// Fields
@@ -14,7 +14,7 @@ namespace java::nio::charset
 		static java::nio::charset::CodingErrorAction REPORT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CodingErrorAction(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CodingErrorAction(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CodingErrorAction(QAndroidJniObject obj);
 		
 		// Constructors

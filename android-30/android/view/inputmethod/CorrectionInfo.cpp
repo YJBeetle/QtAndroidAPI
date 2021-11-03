@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass CorrectionInfo::CREATOR()
+	JObject CorrectionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.CorrectionInfo",
@@ -14,11 +14,11 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	CorrectionInfo::CorrectionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CorrectionInfo::CorrectionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CorrectionInfo::CorrectionInfo(jint arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.CorrectionInfo",
 			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,

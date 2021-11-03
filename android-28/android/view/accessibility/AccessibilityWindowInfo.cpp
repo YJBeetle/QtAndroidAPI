@@ -6,7 +6,7 @@
 namespace android::view::accessibility
 {
 	// Fields
-	__JniBaseClass AccessibilityWindowInfo::CREATOR()
+	JObject AccessibilityWindowInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.accessibility.AccessibilityWindowInfo",
@@ -51,7 +51,7 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityWindowInfo::AccessibilityWindowInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityWindowInfo::AccessibilityWindowInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

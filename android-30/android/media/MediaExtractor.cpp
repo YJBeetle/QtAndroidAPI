@@ -59,11 +59,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaExtractor::MediaExtractor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaExtractor::MediaExtractor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaExtractor::MediaExtractor()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaExtractor",
 			"()V"
 		) {}
@@ -76,7 +76,7 @@ namespace android::media
 			"()Z"
 		);
 	}
-	__JniBaseClass MediaExtractor::getAudioPresentations(jint arg0)
+	JObject MediaExtractor::getAudioPresentations(jint arg0)
 	{
 		return callObjectMethod(
 			"getAudioPresentations",
@@ -113,7 +113,7 @@ namespace android::media
 			"()Landroid/os/PersistableBundle;"
 		);
 	}
-	__JniBaseClass MediaExtractor::getPsshInfo()
+	JObject MediaExtractor::getPsshInfo()
 	{
 		return callObjectMethod(
 			"getPsshInfo",
@@ -243,7 +243,7 @@ namespace android::media
 			arg0
 		);
 	}
-	void MediaExtractor::setDataSource(jstring arg0, __JniBaseClass arg1)
+	void MediaExtractor::setDataSource(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setDataSource",
@@ -252,7 +252,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void MediaExtractor::setDataSource(android::content::Context arg0, android::net::Uri arg1, __JniBaseClass arg2)
+	void MediaExtractor::setDataSource(android::content::Context arg0, android::net::Uri arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setDataSource",

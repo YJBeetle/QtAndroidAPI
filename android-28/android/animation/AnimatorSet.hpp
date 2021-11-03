@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Animator.hpp"
 
 namespace android::animation
@@ -37,7 +37,7 @@ namespace android::animation
 		java::util::ArrayList getChildAnimations();
 		jlong getCurrentPlayTime();
 		jlong getDuration();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jlong getStartDelay();
 		jlong getTotalDuration();
 		jboolean isRunning();
@@ -45,14 +45,14 @@ namespace android::animation
 		void pause();
 		android::animation::AnimatorSet_Builder play(android::animation::Animator arg0);
 		void playSequentially(jarray arg0);
-		void playSequentially(__JniBaseClass arg0);
+		void playSequentially(JObject arg0);
 		void playTogether(jarray arg0);
-		void playTogether(__JniBaseClass arg0);
+		void playTogether(JObject arg0);
 		void resume();
 		void reverse();
 		void setCurrentPlayTime(jlong arg0);
 		android::animation::AnimatorSet setDuration(jlong arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setStartDelay(jlong arg0);
 		void setTarget(jobject arg0);
 		void setupEndValues();

@@ -37,7 +37,7 @@ namespace android::icu::util
 	}
 	
 	// QAndroidJniObject forward
-	LocaleData::LocaleData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocaleData::LocaleData(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

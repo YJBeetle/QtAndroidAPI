@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -13,7 +13,7 @@ namespace android::inputmethodservice
 
 namespace android::inputmethodservice
 {
-	class Keyboard_Row : public __JniBaseClass
+	class Keyboard_Row : public JObject
 	{
 	public:
 		// Fields
@@ -25,12 +25,12 @@ namespace android::inputmethodservice
 		jint verticalGap();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Keyboard_Row(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Keyboard_Row(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Keyboard_Row(QAndroidJniObject obj);
 		
 		// Constructors
 		Keyboard_Row(android::inputmethodservice::Keyboard arg0);
-		Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, __JniBaseClass arg2);
+		Keyboard_Row(android::content::res::Resources arg0, android::inputmethodservice::Keyboard arg1, JObject arg2);
 		
 		// Methods
 	};

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -13,13 +13,13 @@ namespace javax::crypto
 
 namespace javax::crypto
 {
-	class SecretKeyFactory : public __JniBaseClass
+	class SecretKeyFactory : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SecretKeyFactory(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SecretKeyFactory(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SecretKeyFactory(QAndroidJniObject obj);
 		
 		// Constructors
@@ -28,11 +28,11 @@ namespace javax::crypto
 		static javax::crypto::SecretKeyFactory getInstance(jstring arg0);
 		static javax::crypto::SecretKeyFactory getInstance(jstring arg0, jstring arg1);
 		static javax::crypto::SecretKeyFactory getInstance(jstring arg0, java::security::Provider arg1);
-		__JniBaseClass generateSecret(__JniBaseClass arg0);
+		JObject generateSecret(JObject arg0);
 		jstring getAlgorithm();
-		__JniBaseClass getKeySpec(__JniBaseClass arg0, jclass arg1);
+		JObject getKeySpec(JObject arg0, jclass arg1);
 		java::security::Provider getProvider();
-		__JniBaseClass translateKey(__JniBaseClass arg0);
+		JObject translateKey(JObject arg0);
 	};
 } // namespace javax::crypto
 

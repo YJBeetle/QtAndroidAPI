@@ -9,7 +9,7 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	TestLooperManager::TestLooperManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TestLooperManager::TestLooperManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -39,7 +39,7 @@ namespace android::os
 			arg2
 		);
 	}
-	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, jobject arg1, __JniBaseClass arg2)
+	jboolean TestLooperManager::hasMessages(android::os::Handler arg0, jobject arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"hasMessages",

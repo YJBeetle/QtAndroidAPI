@@ -10,11 +10,11 @@ namespace android::text::format
 	// Fields
 	
 	// QAndroidJniObject forward
-	DateFormat::DateFormat(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateFormat::DateFormat(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateFormat::DateFormat()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.DateFormat",
 			"()V"
 		) {}

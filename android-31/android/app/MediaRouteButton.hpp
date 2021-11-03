@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -29,9 +29,9 @@ namespace android::app
 		
 		// Constructors
 		MediaRouteButton(android::content::Context arg0);
-		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1);
-		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		MediaRouteButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		MediaRouteButton(android::content::Context arg0, JObject arg1);
+		MediaRouteButton(android::content::Context arg0, JObject arg1, jint arg2);
+		MediaRouteButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jint getRouteTypes();
@@ -40,7 +40,7 @@ namespace android::app
 		void onDetachedFromWindow();
 		jboolean performClick();
 		void setContentDescription(jstring arg0);
-		void setExtendedSettingsClickListener(__JniBaseClass arg0);
+		void setExtendedSettingsClickListener(JObject arg0);
 		void setRouteTypes(jint arg0);
 		void setVisibility(jint arg0);
 		void showDialog();

@@ -4,7 +4,7 @@
 namespace android::transition
 {
 	// Fields
-	__JniBaseClass TransitionValues::values()
+	JObject TransitionValues::values()
 	{
 		return getObjectField(
 			"values",
@@ -20,16 +20,16 @@ namespace android::transition
 	}
 	
 	// QAndroidJniObject forward
-	TransitionValues::TransitionValues(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TransitionValues::TransitionValues(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TransitionValues::TransitionValues()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.TransitionValues",
 			"()V"
 		) {}
 	TransitionValues::TransitionValues(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.TransitionValues",
 			"(Landroid/view/View;)V",
 			arg0.object()

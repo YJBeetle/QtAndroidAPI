@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InlineSuggestionsResponse::CREATOR()
+	JObject InlineSuggestionsResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionsResponse",
@@ -14,7 +14,7 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InlineSuggestionsResponse::InlineSuggestionsResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InlineSuggestionsResponse::InlineSuggestionsResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::view::inputmethod
 			arg0
 		);
 	}
-	__JniBaseClass InlineSuggestionsResponse::getInlineSuggestions()
+	JObject InlineSuggestionsResponse::getInlineSuggestions()
 	{
 		return callObjectMethod(
 			"getInlineSuggestions",

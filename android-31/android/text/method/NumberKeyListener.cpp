@@ -17,7 +17,7 @@ namespace android::text::method
 		) {}
 	
 	// Methods
-	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
+	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",
@@ -30,7 +30,7 @@ namespace android::text::method
 			arg5
 		).object<jstring>();
 	}
-	jboolean NumberKeyListener::onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3)
+	jboolean NumberKeyListener::onKeyDown(android::view::View arg0, JObject arg1, jint arg2, android::view::KeyEvent arg3)
 	{
 		return callMethod<jboolean>(
 			"onKeyDown",

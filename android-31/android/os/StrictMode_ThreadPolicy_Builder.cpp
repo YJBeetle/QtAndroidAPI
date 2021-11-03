@@ -6,16 +6,16 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.StrictMode$ThreadPolicy$Builder",
 			"()V"
 		) {}
 	StrictMode_ThreadPolicy_Builder::StrictMode_ThreadPolicy_Builder(android::os::StrictMode_ThreadPolicy arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.StrictMode$ThreadPolicy$Builder",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
 			arg0.object()
@@ -113,7 +113,7 @@ namespace android::os
 			"()Landroid/os/StrictMode$ThreadPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::os::StrictMode_ThreadPolicy_Builder StrictMode_ThreadPolicy_Builder::penaltyListener(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"penaltyListener",

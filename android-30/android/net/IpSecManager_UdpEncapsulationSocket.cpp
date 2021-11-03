@@ -6,7 +6,7 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	IpSecManager_UdpEncapsulationSocket::IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IpSecManager_UdpEncapsulationSocket::IpSecManager_UdpEncapsulationSocket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

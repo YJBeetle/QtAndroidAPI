@@ -4,7 +4,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass SurfaceControlViewHost_SurfacePackage::CREATOR()
+	JObject SurfaceControlViewHost_SurfacePackage::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.SurfaceControlViewHost$SurfacePackage",
@@ -14,11 +14,11 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	SurfaceControlViewHost_SurfacePackage::SurfaceControlViewHost_SurfacePackage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SurfaceControlViewHost_SurfacePackage::SurfaceControlViewHost_SurfacePackage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SurfaceControlViewHost_SurfacePackage::SurfaceControlViewHost_SurfacePackage(android::view::SurfaceControlViewHost_SurfacePackage &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.SurfaceControlViewHost$SurfacePackage",
 			"(Landroid/view/SurfaceControlViewHost$SurfacePackage;)V",
 			arg0.object()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -73,7 +73,7 @@ namespace java::lang
 
 namespace android::app
 {
-	class Instrumentation : public __JniBaseClass
+	class Instrumentation : public JObject
 	{
 	public:
 		// Fields
@@ -81,7 +81,7 @@ namespace android::app
 		static jstring REPORT_KEY_STREAMRESULT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Instrumentation(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Instrumentation(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Instrumentation(QAndroidJniObject obj);
 		
 		// Constructors
@@ -126,14 +126,14 @@ namespace android::app
 		jboolean invokeMenuActionSync(android::app::Activity arg0, jint arg1, jint arg2);
 		jboolean isProfiling();
 		android::app::Activity newActivity(java::lang::ClassLoader arg0, jstring arg1, android::content::Intent arg2);
-		android::app::Activity newActivity(jclass arg0, android::content::Context arg1, __JniBaseClass arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
+		android::app::Activity newActivity(jclass arg0, android::content::Context arg1, JObject arg2, android::app::Application arg3, android::content::Intent arg4, android::content::pm::ActivityInfo arg5, jstring arg6, android::app::Activity arg7, jstring arg8, jobject arg9);
 		android::app::Application newApplication(java::lang::ClassLoader arg0, jstring arg1, android::content::Context arg2);
 		void onCreate(android::os::Bundle arg0);
 		void onDestroy();
 		jboolean onException(jobject arg0, jthrowable arg1);
 		void onStart();
 		void removeMonitor(android::app::Instrumentation_ActivityMonitor arg0);
-		void runOnMainSync(__JniBaseClass arg0);
+		void runOnMainSync(JObject arg0);
 		void sendCharacterSync(jint arg0);
 		void sendKeyDownUpSync(jint arg0);
 		void sendKeySync(android::view::KeyEvent arg0);
@@ -151,7 +151,7 @@ namespace android::app
 		void startProfiling();
 		void stopAllocCounting();
 		void stopProfiling();
-		void waitForIdle(__JniBaseClass arg0);
+		void waitForIdle(JObject arg0);
 		void waitForIdleSync();
 		android::app::Activity waitForMonitor(android::app::Instrumentation_ActivityMonitor arg0);
 		android::app::Activity waitForMonitorWithTimeout(android::app::Instrumentation_ActivityMonitor arg0, jlong arg1);

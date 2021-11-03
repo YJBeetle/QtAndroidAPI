@@ -6,7 +6,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	SearchResult::SearchResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SearchResult::SearchResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace android::app::appsearch
 			"()Landroid/app/appsearch/GenericDocument;"
 		);
 	}
-	__JniBaseClass SearchResult::getMatchInfos()
+	JObject SearchResult::getMatchInfos()
 	{
 		return callObjectMethod(
 			"getMatchInfos",

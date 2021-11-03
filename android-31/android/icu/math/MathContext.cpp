@@ -90,24 +90,24 @@ namespace android::icu::math
 	}
 	
 	// QAndroidJniObject forward
-	MathContext::MathContext(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MathContext::MathContext(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MathContext::MathContext(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.math.MathContext",
 			"(I)V",
 			arg0
 		) {}
 	MathContext::MathContext(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.math.MathContext",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.math.MathContext",
 			"(IIZ)V",
 			arg0,
@@ -115,7 +115,7 @@ namespace android::icu::math
 			arg2
 		) {}
 	MathContext::MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.math.MathContext",
 			"(IIZI)V",
 			arg0,

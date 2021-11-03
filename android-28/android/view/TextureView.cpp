@@ -23,14 +23,14 @@ namespace android::view
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1)
+	TextureView::TextureView(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.view.TextureView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	TextureView::TextureView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.view.TextureView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -38,7 +38,7 @@ namespace android::view
 			arg1.object(),
 			arg2
 		) {}
-	TextureView::TextureView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	TextureView::TextureView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.view.TextureView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -102,7 +102,7 @@ namespace android::view
 			"()Landroid/graphics/SurfaceTexture;"
 		);
 	}
-	__JniBaseClass TextureView::getSurfaceTextureListener()
+	JObject TextureView::getSurfaceTextureListener()
 	{
 		return callObjectMethod(
 			"getSurfaceTextureListener",
@@ -195,7 +195,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void TextureView::setSurfaceTextureListener(__JniBaseClass arg0)
+	void TextureView::setSurfaceTextureListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setSurfaceTextureListener",

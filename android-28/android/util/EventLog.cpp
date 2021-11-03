@@ -5,7 +5,7 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	EventLog::EventLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EventLog::EventLog(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -28,7 +28,7 @@ namespace android::util
 			arg0
 		).object<jstring>();
 	}
-	void EventLog::readEvents(jintArray arg0, __JniBaseClass arg1)
+	void EventLog::readEvents(jintArray arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"android.util.EventLog",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,7 +29,7 @@ namespace android::os
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pManager : public __JniBaseClass
+	class WifiP2pManager : public JObject
 	{
 	public:
 		// Fields
@@ -55,32 +55,32 @@ namespace android::net::wifi::p2p
 		static jstring WIFI_P2P_THIS_DEVICE_CHANGED_ACTION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiP2pManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		void addLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __JniBaseClass arg2);
-		void addServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, __JniBaseClass arg2);
-		void cancelConnect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void clearLocalServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void clearServiceRequests(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void connect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::WifiP2pConfig arg1, __JniBaseClass arg2);
-		void createGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void discoverPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void discoverServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		android::net::wifi::p2p::WifiP2pManager_Channel initialize(android::content::Context arg0, android::os::Looper arg1, __JniBaseClass arg2);
-		void removeGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void removeLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, __JniBaseClass arg2);
-		void removeServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, __JniBaseClass arg2);
-		void requestConnectionInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void requestGroupInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void requestPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void setDnsSdResponseListeners(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		void setServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void setUpnpServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
-		void stopPeerDiscovery(android::net::wifi::p2p::WifiP2pManager_Channel arg0, __JniBaseClass arg1);
+		void addLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2);
+		void addServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2);
+		void cancelConnect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void clearLocalServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void clearServiceRequests(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void connect(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::WifiP2pConfig arg1, JObject arg2);
+		void createGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void discoverPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void discoverServices(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		android::net::wifi::p2p::WifiP2pManager_Channel initialize(android::content::Context arg0, android::os::Looper arg1, JObject arg2);
+		void removeGroup(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void removeLocalService(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceInfo arg1, JObject arg2);
+		void removeServiceRequest(android::net::wifi::p2p::WifiP2pManager_Channel arg0, android::net::wifi::p2p::nsd::WifiP2pServiceRequest arg1, JObject arg2);
+		void requestConnectionInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void requestGroupInfo(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void requestPeers(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void setDnsSdResponseListeners(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1, JObject arg2);
+		void setServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void setUpnpServiceResponseListener(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
+		void stopPeerDiscovery(android::net::wifi::p2p::WifiP2pManager_Channel arg0, JObject arg1);
 	};
 } // namespace android::net::wifi::p2p
 

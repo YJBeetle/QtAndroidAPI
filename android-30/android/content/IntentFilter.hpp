@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,11 +29,11 @@ namespace android::os
 
 namespace android::content
 {
-	class IntentFilter : public __JniBaseClass
+	class IntentFilter : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint MATCH_ADJUSTMENT_MASK();
 		static jint MATCH_ADJUSTMENT_NORMAL();
 		static jint MATCH_CATEGORY_EMPTY();
@@ -52,7 +52,7 @@ namespace android::content
 		static jint SYSTEM_LOW_PRIORITY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IntentFilter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IntentFilter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IntentFilter(QAndroidJniObject obj);
 		
 		// Constructors
@@ -63,7 +63,7 @@ namespace android::content
 		
 		// Methods
 		static android::content::IntentFilter create(jstring arg0, jstring arg1);
-		__JniBaseClass actionsIterator();
+		JObject actionsIterator();
 		void addAction(jstring arg0);
 		void addCategory(jstring arg0);
 		void addDataAuthority(jstring arg0, jstring arg1);
@@ -71,8 +71,8 @@ namespace android::content
 		void addDataScheme(jstring arg0);
 		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
 		void addDataType(jstring arg0);
-		__JniBaseClass authoritiesIterator();
-		__JniBaseClass categoriesIterator();
+		JObject authoritiesIterator();
+		JObject categoriesIterator();
 		jint countActions();
 		jint countCategories();
 		jint countDataAuthorities();
@@ -81,7 +81,7 @@ namespace android::content
 		jint countDataSchemes();
 		jint countDataTypes();
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jstring getAction(jint arg0);
 		jstring getCategory(jint arg0);
 		android::content::IntentFilter_AuthorityEntry getDataAuthority(jint arg0);
@@ -98,19 +98,19 @@ namespace android::content
 		jboolean hasDataSchemeSpecificPart(jstring arg0);
 		jboolean hasDataType(jstring arg0);
 		jint match(android::content::ContentResolver arg0, android::content::Intent arg1, jboolean arg2, jstring arg3);
-		jint match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, __JniBaseClass arg4, jstring arg5);
+		jint match(jstring arg0, jstring arg1, jstring arg2, android::net::Uri arg3, JObject arg4, jstring arg5);
 		jboolean matchAction(jstring arg0);
-		jstring matchCategories(__JniBaseClass arg0);
+		jstring matchCategories(JObject arg0);
 		jint matchData(jstring arg0, jstring arg1, android::net::Uri arg2);
 		jint matchDataAuthority(android::net::Uri arg0);
-		__JniBaseClass pathsIterator();
-		void readFromXml(__JniBaseClass arg0);
-		__JniBaseClass schemeSpecificPartsIterator();
-		__JniBaseClass schemesIterator();
+		JObject pathsIterator();
+		void readFromXml(JObject arg0);
+		JObject schemeSpecificPartsIterator();
+		JObject schemesIterator();
 		void setPriority(jint arg0);
-		__JniBaseClass typesIterator();
+		JObject typesIterator();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
-		void writeToXml(__JniBaseClass arg0);
+		void writeToXml(JObject arg0);
 	};
 } // namespace android::content
 

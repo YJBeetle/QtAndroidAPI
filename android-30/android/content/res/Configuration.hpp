@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,7 +17,7 @@ namespace java::util
 
 namespace android::content::res
 {
-	class Configuration : public __JniBaseClass
+	class Configuration : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::content::res
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_NO();
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED();
 		static jint COLOR_MODE_WIDE_COLOR_GAMUT_YES();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DENSITY_DPI_UNDEFINED();
 		static jint HARDKEYBOARDHIDDEN_NO();
 		static jint HARDKEYBOARDHIDDEN_UNDEFINED();
@@ -116,7 +116,7 @@ namespace android::content::res
 		jint uiMode();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Configuration(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Configuration(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Configuration(QAndroidJniObject obj);
 		
 		// Constructors

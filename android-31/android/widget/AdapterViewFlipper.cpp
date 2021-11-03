@@ -15,14 +15,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, JObject arg1)
 		: android::widget::AdapterViewAnimator(
 			"android.widget.AdapterViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AdapterViewAnimator(
 			"android.widget.AdapterViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	AdapterViewFlipper::AdapterViewFlipper(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AdapterViewAnimator(
 			"android.widget.AdapterViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -76,7 +76,7 @@ namespace android::widget
 			"()Z"
 		);
 	}
-	void AdapterViewFlipper::setAdapter(__JniBaseClass arg0)
+	void AdapterViewFlipper::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",

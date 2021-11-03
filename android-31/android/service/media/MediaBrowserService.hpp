@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -60,7 +60,7 @@ namespace android::service::media
 		android::media::session::MediaSession_Token getSessionToken();
 		void notifyChildrenChanged(jstring arg0);
 		void notifyChildrenChanged(jstring arg0, android::os::Bundle arg1);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCreate();
 		android::service::media::MediaBrowserService_BrowserRoot onGetRoot(jstring arg0, jint arg1, android::os::Bundle arg2);
 		void onLoadChildren(jstring arg0, android::service::media::MediaBrowserService_Result arg1);

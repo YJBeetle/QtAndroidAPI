@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -25,13 +25,13 @@ namespace java::util
 
 namespace java::lang::invoke
 {
-	class MethodType : public __JniBaseClass
+	class MethodType : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MethodType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MethodType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MethodType(QAndroidJniObject obj);
 		
 		// Constructors
@@ -44,14 +44,14 @@ namespace java::lang::invoke
 		static java::lang::invoke::MethodType methodType(jclass arg0, jarray arg1);
 		static java::lang::invoke::MethodType methodType(jclass arg0, jclass arg1);
 		static java::lang::invoke::MethodType methodType(jclass arg0, java::lang::invoke::MethodType arg1);
-		static java::lang::invoke::MethodType methodType(jclass arg0, __JniBaseClass arg1);
+		static java::lang::invoke::MethodType methodType(jclass arg0, JObject arg1);
 		static java::lang::invoke::MethodType methodType(jclass arg0, jclass arg1, jarray arg2);
 		java::lang::invoke::MethodType appendParameterTypes(jarray arg0);
-		java::lang::invoke::MethodType appendParameterTypes(__JniBaseClass arg0);
+		java::lang::invoke::MethodType appendParameterTypes(JObject arg0);
 		java::lang::invoke::MethodType changeParameterType(jint arg0, jclass arg1);
-		__JniBaseClass changeParameterType(jint arg0, __JniBaseClass arg1);
+		JObject changeParameterType(jint arg0, JObject arg1);
 		java::lang::invoke::MethodType changeReturnType(jclass arg0);
-		__JniBaseClass changeReturnType(__JniBaseClass arg0);
+		JObject changeReturnType(JObject arg0);
 		java::util::Optional describeConstable();
 		jstring descriptorString();
 		java::lang::invoke::MethodType dropParameterTypes(jint arg0, jint arg1);
@@ -62,11 +62,11 @@ namespace java::lang::invoke
 		jboolean hasWrappers();
 		jint hashCode();
 		java::lang::invoke::MethodType insertParameterTypes(jint arg0, jarray arg1);
-		java::lang::invoke::MethodType insertParameterTypes(jint arg0, __JniBaseClass arg1);
+		java::lang::invoke::MethodType insertParameterTypes(jint arg0, JObject arg1);
 		jclass lastParameterType();
 		jarray parameterArray();
 		jint parameterCount();
-		__JniBaseClass parameterList();
+		JObject parameterList();
 		jclass parameterType(jint arg0);
 		jclass returnType();
 		jstring toMethodDescriptorString();

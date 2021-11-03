@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,13 +9,13 @@ namespace android::os
 
 namespace android::os
 {
-	class BaseBundle : public __JniBaseClass
+	class BaseBundle : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BaseBundle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BaseBundle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BaseBundle(QAndroidJniObject obj);
 		
 		// Constructors
@@ -40,7 +40,7 @@ namespace android::os
 		jstring getString(jstring arg0, jstring arg1);
 		jarray getStringArray(jstring arg0);
 		jboolean isEmpty();
-		__JniBaseClass keySet();
+		JObject keySet();
 		void putAll(android::os::PersistableBundle arg0);
 		void putBoolean(jstring arg0, jboolean arg1);
 		void putBooleanArray(jstring arg0, jbooleanArray arg1);

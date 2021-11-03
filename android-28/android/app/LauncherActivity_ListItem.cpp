@@ -50,11 +50,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	LauncherActivity_ListItem::LauncherActivity_ListItem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LauncherActivity_ListItem::LauncherActivity_ListItem(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LauncherActivity_ListItem::LauncherActivity_ListItem()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.LauncherActivity$ListItem",
 			"()V"
 		) {}

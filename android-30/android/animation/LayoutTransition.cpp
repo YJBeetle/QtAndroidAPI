@@ -43,11 +43,11 @@ namespace android::animation
 	}
 	
 	// QAndroidJniObject forward
-	LayoutTransition::LayoutTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LayoutTransition::LayoutTransition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	LayoutTransition::LayoutTransition()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.LayoutTransition",
 			"()V"
 		) {}
@@ -62,7 +62,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::addTransitionListener(__JniBaseClass arg0)
+	void LayoutTransition::addTransitionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addTransitionListener",
@@ -102,7 +102,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	__JniBaseClass LayoutTransition::getInterpolator(jint arg0)
+	JObject LayoutTransition::getInterpolator(jint arg0)
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -126,7 +126,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	__JniBaseClass LayoutTransition::getTransitionListeners()
+	JObject LayoutTransition::getTransitionListeners()
 	{
 		return callObjectMethod(
 			"getTransitionListeners",
@@ -183,7 +183,7 @@ namespace android::animation
 			arg1.object()
 		);
 	}
-	void LayoutTransition::removeTransitionListener(__JniBaseClass arg0)
+	void LayoutTransition::removeTransitionListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeTransitionListener",
@@ -225,7 +225,7 @@ namespace android::animation
 			arg1
 		);
 	}
-	void LayoutTransition::setInterpolator(jint arg0, __JniBaseClass arg1)
+	void LayoutTransition::setInterpolator(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setInterpolator",

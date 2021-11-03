@@ -19,11 +19,11 @@ namespace android::net::wifi::rtt
 	}
 	
 	// QAndroidJniObject forward
-	RangingResultCallback::RangingResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RangingResultCallback::RangingResultCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RangingResultCallback::RangingResultCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.wifi.rtt.RangingResultCallback",
 			"()V"
 		) {}
@@ -37,7 +37,7 @@ namespace android::net::wifi::rtt
 			arg0
 		);
 	}
-	void RangingResultCallback::onRangingResults(__JniBaseClass arg0)
+	void RangingResultCallback::onRangingResults(JObject arg0)
 	{
 		callMethod<void>(
 			"onRangingResults",

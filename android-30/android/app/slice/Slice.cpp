@@ -6,7 +6,7 @@
 namespace android::app::slice
 {
 	// Fields
-	__JniBaseClass Slice::CREATOR()
+	JObject Slice::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.slice.Slice",
@@ -256,7 +256,7 @@ namespace android::app::slice
 	}
 	
 	// QAndroidJniObject forward
-	Slice::Slice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Slice::Slice(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -268,14 +268,14 @@ namespace android::app::slice
 			"()I"
 		);
 	}
-	__JniBaseClass Slice::getHints()
+	JObject Slice::getHints()
 	{
 		return callObjectMethod(
 			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Slice::getItems()
+	JObject Slice::getItems()
 	{
 		return callObjectMethod(
 			"getItems",

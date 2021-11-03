@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::os
 {
-	class PatternMatcher : public __JniBaseClass
+	class PatternMatcher : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint PATTERN_ADVANCED_GLOB();
 		static jint PATTERN_LITERAL();
 		static jint PATTERN_PREFIX();
@@ -21,7 +21,7 @@ namespace android::os
 		static jint PATTERN_SUFFIX();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PatternMatcher(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PatternMatcher(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PatternMatcher(QAndroidJniObject obj);
 		
 		// Constructors

@@ -264,11 +264,11 @@ namespace android::app::admin
 	}
 	
 	// QAndroidJniObject forward
-	SecurityLog::SecurityLog(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SecurityLog::SecurityLog(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SecurityLog::SecurityLog()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.admin.SecurityLog",
 			"()V"
 		) {}

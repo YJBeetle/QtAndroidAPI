@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class AccessNetworkConstants_AccessNetworkType : public __JniBaseClass
+	class AccessNetworkConstants_AccessNetworkType : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::telephony
 		static jint UTRAN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessNetworkConstants_AccessNetworkType(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessNetworkConstants_AccessNetworkType(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessNetworkConstants_AccessNetworkType(QAndroidJniObject obj);
 		
 		// Constructors

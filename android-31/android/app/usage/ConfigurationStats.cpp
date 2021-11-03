@@ -5,7 +5,7 @@
 namespace android::app::usage
 {
 	// Fields
-	__JniBaseClass ConfigurationStats::CREATOR()
+	JObject ConfigurationStats::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.usage.ConfigurationStats",
@@ -15,11 +15,11 @@ namespace android::app::usage
 	}
 	
 	// QAndroidJniObject forward
-	ConfigurationStats::ConfigurationStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConfigurationStats::ConfigurationStats(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConfigurationStats::ConfigurationStats(android::app::usage::ConfigurationStats &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.usage.ConfigurationStats",
 			"(Landroid/app/usage/ConfigurationStats;)V",
 			arg0.object()

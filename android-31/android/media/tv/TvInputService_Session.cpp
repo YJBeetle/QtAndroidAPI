@@ -14,11 +14,11 @@ namespace android::media::tv
 	// Fields
 	
 	// QAndroidJniObject forward
-	TvInputService_Session::TvInputService_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvInputService_Session::TvInputService_Session(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TvInputService_Session::TvInputService_Session(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.tv.TvInputService$Session",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -76,7 +76,7 @@ namespace android::media::tv
 			arg1
 		);
 	}
-	void TvInputService_Session::notifyTracksChanged(__JniBaseClass arg0)
+	void TvInputService_Session::notifyTracksChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"notifyTracksChanged",

@@ -47,11 +47,11 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorSpace$Rgb$TransferParameters",
 			"(DDDDD)V",
 			arg0,
@@ -61,7 +61,7 @@ namespace android::graphics
 			arg4
 		) {}
 	ColorSpace_Rgb_TransferParameters::ColorSpace_Rgb_TransferParameters(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5, jdouble arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.ColorSpace$Rgb$TransferParameters",
 			"(DDDDDDD)V",
 			arg0,

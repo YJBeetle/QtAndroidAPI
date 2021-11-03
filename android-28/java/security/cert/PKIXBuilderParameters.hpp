@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./PKIXParameters.hpp"
 
 namespace java::security
@@ -20,8 +20,8 @@ namespace java::security::cert
 		PKIXBuilderParameters(QAndroidJniObject obj);
 		
 		// Constructors
-		PKIXBuilderParameters(java::security::KeyStore arg0, __JniBaseClass arg1);
-		PKIXBuilderParameters(__JniBaseClass arg0, __JniBaseClass arg1);
+		PKIXBuilderParameters(java::security::KeyStore arg0, JObject arg1);
+		PKIXBuilderParameters(JObject arg0, JObject arg1);
 		
 		// Methods
 		jint getMaxPathLength();

@@ -5,11 +5,11 @@ namespace android::opengl
 	// Fields
 	
 	// QAndroidJniObject forward
-	Visibility::Visibility(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Visibility::Visibility(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Visibility::Visibility()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.Visibility",
 			"()V"
 		) {}

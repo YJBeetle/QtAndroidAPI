@@ -6,7 +6,7 @@ namespace android::os::health
 	// Fields
 	
 	// QAndroidJniObject forward
-	SystemHealthManager::SystemHealthManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SystemHealthManager::SystemHealthManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

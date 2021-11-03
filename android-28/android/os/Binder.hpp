@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -21,13 +21,13 @@ namespace java::io
 
 namespace android::os
 {
-	class Binder : public __JniBaseClass
+	class Binder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Binder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Binder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Binder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -41,16 +41,16 @@ namespace android::os
 		static android::os::UserHandle getCallingUserHandle();
 		static void joinThreadPool();
 		static void restoreCallingIdentity(jlong arg0);
-		void attachInterface(__JniBaseClass arg0, jstring arg1);
+		void attachInterface(JObject arg0, jstring arg1);
 		void dump(java::io::FileDescriptor arg0, jarray arg1);
 		void dumpAsync(java::io::FileDescriptor arg0, jarray arg1);
 		jstring getInterfaceDescriptor();
 		jboolean isBinderAlive();
-		void linkToDeath(__JniBaseClass arg0, jint arg1);
+		void linkToDeath(JObject arg0, jint arg1);
 		jboolean pingBinder();
-		__JniBaseClass queryLocalInterface(jstring arg0);
+		JObject queryLocalInterface(jstring arg0);
 		jboolean transact(jint arg0, android::os::Parcel arg1, android::os::Parcel arg2, jint arg3);
-		jboolean unlinkToDeath(__JniBaseClass arg0, jint arg1);
+		jboolean unlinkToDeath(JObject arg0, jint arg1);
 	};
 } // namespace android::os
 

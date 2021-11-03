@@ -17,7 +17,7 @@ namespace android::view::animation
 			"(Z)V",
 			arg0
 		) {}
-	AnimationSet::AnimationSet(android::content::Context arg0, __JniBaseClass arg1)
+	AnimationSet::AnimationSet(android::content::Context arg0, JObject arg1)
 		: android::view::animation::Animation(
 			"android.view.animation.AnimationSet",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -41,7 +41,7 @@ namespace android::view::animation
 			"()J"
 		);
 	}
-	__JniBaseClass AnimationSet::getAnimations()
+	JObject AnimationSet::getAnimations()
 	{
 		return callObjectMethod(
 			"getAnimations",

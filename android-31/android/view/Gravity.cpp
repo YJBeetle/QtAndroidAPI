@@ -195,11 +195,11 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	Gravity::Gravity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Gravity::Gravity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Gravity::Gravity()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.Gravity",
 			"()V"
 		) {}

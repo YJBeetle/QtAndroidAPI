@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass Rating::CREATOR()
+	JObject Rating::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.Rating",
@@ -63,7 +63,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	Rating::Rating(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Rating::Rating(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

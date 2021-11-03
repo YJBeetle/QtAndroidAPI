@@ -23,18 +23,18 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	RemoteController::RemoteController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteController::RemoteController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	RemoteController::RemoteController(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.media.RemoteController",
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	RemoteController::RemoteController(android::content::Context arg0, __JniBaseClass arg1, android::os::Looper arg2)
-		: __JniBaseClass(
+	RemoteController::RemoteController(android::content::Context arg0, JObject arg1, android::os::Looper arg2)
+		: JObject(
 			"android.media.RemoteController",
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;Landroid/os/Looper;)V",
 			arg0.object(),

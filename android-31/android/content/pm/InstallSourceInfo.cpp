@@ -5,7 +5,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass InstallSourceInfo::CREATOR()
+	JObject InstallSourceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.InstallSourceInfo",
@@ -15,7 +15,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	InstallSourceInfo::InstallSourceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InstallSourceInfo::InstallSourceInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::util
 {
@@ -13,7 +13,7 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class BreakIterator : public __JniBaseClass
+	class BreakIterator : public JObject
 	{
 	public:
 		// Fields
@@ -35,7 +35,7 @@ namespace android::icu::text
 		static jint WORD_NUMBER_LIMIT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BreakIterator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BreakIterator(QAndroidJniObject obj);
 		
 		// Constructors
@@ -63,7 +63,7 @@ namespace android::icu::text
 		jint following(jint arg0);
 		jint getRuleStatus();
 		jint getRuleStatusVec(jintArray arg0);
-		__JniBaseClass getText();
+		JObject getText();
 		jboolean isBoundary(jint arg0);
 		jint last();
 		jint next();
@@ -71,7 +71,7 @@ namespace android::icu::text
 		jint preceding(jint arg0);
 		jint previous();
 		void setText(jstring arg0);
-		void setText(__JniBaseClass arg0);
+		void setText(JObject arg0);
 	};
 } // namespace android::icu::text
 

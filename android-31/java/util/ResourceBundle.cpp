@@ -10,11 +10,11 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	ResourceBundle::ResourceBundle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ResourceBundle::ResourceBundle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ResourceBundle::ResourceBundle()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.ResourceBundle",
 			"()V"
 		) {}
@@ -46,7 +46,7 @@ namespace java::util
 			arg0
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, __JniBaseClass arg1)
+	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
@@ -87,7 +87,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, __JniBaseClass arg2)
+	java::util::ResourceBundle ResourceBundle::getBundle(jstring arg0, java::util::Locale arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle",
@@ -136,7 +136,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass ResourceBundle::getKeys()
+	JObject ResourceBundle::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",
@@ -174,7 +174,7 @@ namespace java::util
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass ResourceBundle::keySet()
+	JObject ResourceBundle::keySet()
 	{
 		return callObjectMethod(
 			"keySet",

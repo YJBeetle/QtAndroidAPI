@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::util::concurrent
 {
@@ -9,13 +9,13 @@ namespace java::util::concurrent
 
 namespace java::util::concurrent
 {
-	class Exchanger : public __JniBaseClass
+	class Exchanger : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Exchanger(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Exchanger(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Exchanger(QAndroidJniObject obj);
 		
 		// Constructors

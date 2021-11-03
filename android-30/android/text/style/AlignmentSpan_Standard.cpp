@@ -7,17 +7,17 @@ namespace android::text::style
 	// Fields
 	
 	// QAndroidJniObject forward
-	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AlignmentSpan_Standard::AlignmentSpan_Standard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AlignmentSpan_Standard::AlignmentSpan_Standard(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.AlignmentSpan$Standard",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	AlignmentSpan_Standard::AlignmentSpan_Standard(android::text::Layout_Alignment arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.style.AlignmentSpan$Standard",
 			"(Landroid/text/Layout$Alignment;)V",
 			arg0.object()

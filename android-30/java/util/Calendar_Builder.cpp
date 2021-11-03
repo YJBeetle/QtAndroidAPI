@@ -9,11 +9,11 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Calendar_Builder::Calendar_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Calendar_Builder::Calendar_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Calendar$Builder",
 			"()V"
 		) {}

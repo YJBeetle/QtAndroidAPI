@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,7 +13,7 @@ namespace java::lang
 
 namespace java::lang
 {
-	class ProcessBuilder_Redirect : public __JniBaseClass
+	class ProcessBuilder_Redirect : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace java::lang
 		static java::lang::ProcessBuilder_Redirect PIPE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ProcessBuilder_Redirect(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ProcessBuilder_Redirect(QAndroidJniObject obj);
 		
 		// Constructors

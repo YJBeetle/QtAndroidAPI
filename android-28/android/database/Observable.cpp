@@ -6,11 +6,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	Observable::Observable(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Observable::Observable(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Observable::Observable()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.Observable",
 			"()V"
 		) {}

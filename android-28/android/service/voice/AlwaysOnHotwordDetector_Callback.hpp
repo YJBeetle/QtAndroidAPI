@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::service::voice
 {
@@ -9,13 +9,13 @@ namespace android::service::voice
 
 namespace android::service::voice
 {
-	class AlwaysOnHotwordDetector_Callback : public __JniBaseClass
+	class AlwaysOnHotwordDetector_Callback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlwaysOnHotwordDetector_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlwaysOnHotwordDetector_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlwaysOnHotwordDetector_Callback(QAndroidJniObject obj);
 		
 		// Constructors

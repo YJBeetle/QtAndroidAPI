@@ -35,14 +35,14 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	__JniBaseClass MediaSession2Service::getSessions()
+	JObject MediaSession2Service::getSessions()
 	{
 		return callObjectMethod(
 			"getSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass MediaSession2Service::onBind(android::content::Intent arg0)
+	JObject MediaSession2Service::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

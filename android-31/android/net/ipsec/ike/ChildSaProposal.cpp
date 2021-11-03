@@ -10,7 +10,7 @@ namespace android::net::ipsec::ike
 	// Constructors
 	
 	// Methods
-	__JniBaseClass ChildSaProposal::getSupportedEncryptionAlgorithms()
+	JObject ChildSaProposal::getSupportedEncryptionAlgorithms()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.ChildSaProposal",
@@ -18,7 +18,7 @@ namespace android::net::ipsec::ike
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass ChildSaProposal::getSupportedIntegrityAlgorithms()
+	JObject ChildSaProposal::getSupportedIntegrityAlgorithms()
 	{
 		return callStaticObjectMethod(
 			"android.net.ipsec.ike.ChildSaProposal",

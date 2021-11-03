@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::telephony
 {
-	class PhysicalChannelConfig : public __JniBaseClass
+	class PhysicalChannelConfig : public JObject
 	{
 	public:
 		// Fields
@@ -19,13 +19,13 @@ namespace android::telephony
 		static jint CONNECTION_PRIMARY_SERVING();
 		static jint CONNECTION_SECONDARY_SERVING();
 		static jint CONNECTION_UNKNOWN();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FREQUENCY_UNKNOWN();
 		static jint PHYSICAL_CELL_ID_MAXIMUM_VALUE();
 		static jint PHYSICAL_CELL_ID_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PhysicalChannelConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhysicalChannelConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhysicalChannelConfig(QAndroidJniObject obj);
 		
 		// Constructors

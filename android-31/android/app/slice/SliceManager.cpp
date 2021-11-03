@@ -24,12 +24,12 @@ namespace android::app::slice
 	}
 	
 	// QAndroidJniObject forward
-	SliceManager::SliceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SliceManager::SliceManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	android::app::slice::Slice SliceManager::bindSlice(android::content::Intent arg0, __JniBaseClass arg1)
+	android::app::slice::Slice SliceManager::bindSlice(android::content::Intent arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"bindSlice",
@@ -38,7 +38,7 @@ namespace android::app::slice
 			arg1.object()
 		);
 	}
-	android::app::slice::Slice SliceManager::bindSlice(android::net::Uri arg0, __JniBaseClass arg1)
+	android::app::slice::Slice SliceManager::bindSlice(android::net::Uri arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"bindSlice",
@@ -57,14 +57,14 @@ namespace android::app::slice
 			arg2
 		);
 	}
-	__JniBaseClass SliceManager::getPinnedSlices()
+	JObject SliceManager::getPinnedSlices()
 	{
 		return callObjectMethod(
 			"getPinnedSlices",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass SliceManager::getPinnedSpecs(android::net::Uri arg0)
+	JObject SliceManager::getPinnedSpecs(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getPinnedSpecs",
@@ -72,7 +72,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	__JniBaseClass SliceManager::getSliceDescendants(android::net::Uri arg0)
+	JObject SliceManager::getSliceDescendants(android::net::Uri arg0)
 	{
 		return callObjectMethod(
 			"getSliceDescendants",
@@ -97,7 +97,7 @@ namespace android::app::slice
 			arg0.object()
 		);
 	}
-	void SliceManager::pinSlice(android::net::Uri arg0, __JniBaseClass arg1)
+	void SliceManager::pinSlice(android::net::Uri arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"pinSlice",

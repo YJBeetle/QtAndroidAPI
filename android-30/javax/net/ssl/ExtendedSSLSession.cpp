@@ -5,11 +5,11 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	ExtendedSSLSession::ExtendedSSLSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ExtendedSSLSession::ExtendedSSLSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ExtendedSSLSession::ExtendedSSLSession()
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.ExtendedSSLSession",
 			"()V"
 		) {}
@@ -29,14 +29,14 @@ namespace javax::net::ssl
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	__JniBaseClass ExtendedSSLSession::getRequestedServerNames()
+	JObject ExtendedSSLSession::getRequestedServerNames()
 	{
 		return callObjectMethod(
 			"getRequestedServerNames",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ExtendedSSLSession::getStatusResponses()
+	JObject ExtendedSSLSession::getStatusResponses()
 	{
 		return callObjectMethod(
 			"getStatusResponses",

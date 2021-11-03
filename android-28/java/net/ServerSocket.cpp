@@ -11,29 +11,29 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	ServerSocket::ServerSocket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ServerSocket::ServerSocket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ServerSocket::ServerSocket()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ServerSocket",
 			"()V"
 		) {}
 	ServerSocket::ServerSocket(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ServerSocket",
 			"(I)V",
 			arg0
 		) {}
 	ServerSocket::ServerSocket(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ServerSocket",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	ServerSocket::ServerSocket(jint arg0, jint arg1, java::net::InetAddress arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.ServerSocket",
 			"(IILjava/net/InetAddress;)V",
 			arg0,
@@ -42,7 +42,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	void ServerSocket::setSocketFactory(__JniBaseClass arg0)
+	void ServerSocket::setSocketFactory(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.ServerSocket",
@@ -110,7 +110,7 @@ namespace java::net
 			"()Ljava/net/SocketAddress;"
 		);
 	}
-	jobject ServerSocket::getOption(__JniBaseClass arg0)
+	jobject ServerSocket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
@@ -153,7 +153,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	java::net::ServerSocket ServerSocket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::ServerSocket ServerSocket::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -196,7 +196,7 @@ namespace java::net
 			arg0
 		);
 	}
-	__JniBaseClass ServerSocket::supportedOptions()
+	JObject ServerSocket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

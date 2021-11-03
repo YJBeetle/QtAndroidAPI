@@ -11,11 +11,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	CursorWrapper::CursorWrapper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CursorWrapper::CursorWrapper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CursorWrapper::CursorWrapper(__JniBaseClass arg0)
-		: __JniBaseClass(
+	CursorWrapper::CursorWrapper(JObject arg0)
+		: JObject(
 			"android.database.CursorWrapper",
 			"(Landroid/database/Cursor;)V",
 			arg0.object()
@@ -182,7 +182,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	__JniBaseClass CursorWrapper::getWrappedCursor()
+	JObject CursorWrapper::getWrappedCursor()
 	{
 		return callObjectMethod(
 			"getWrappedCursor",

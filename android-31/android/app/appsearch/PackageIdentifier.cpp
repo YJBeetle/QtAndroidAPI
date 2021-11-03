@@ -5,11 +5,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	PackageIdentifier::PackageIdentifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageIdentifier::PackageIdentifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageIdentifier::PackageIdentifier(jstring arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.PackageIdentifier",
 			"(Ljava/lang/String;[B)V",
 			arg0,

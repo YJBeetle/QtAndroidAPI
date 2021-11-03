@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class StreamingServiceCallback : public __JniBaseClass
+	class StreamingServiceCallback : public JObject
 	{
 	public:
 		// Fields
 		static jint SIGNAL_STRENGTH_UNAVAILABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StreamingServiceCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StreamingServiceCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StreamingServiceCallback(QAndroidJniObject obj);
 		
 		// Constructors

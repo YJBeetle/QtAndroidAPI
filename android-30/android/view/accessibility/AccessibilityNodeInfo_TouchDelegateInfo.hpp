@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,18 +17,18 @@ namespace android::view::accessibility
 
 namespace android::view::accessibility
 {
-	class AccessibilityNodeInfo_TouchDelegateInfo : public __JniBaseClass
+	class AccessibilityNodeInfo_TouchDelegateInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibilityNodeInfo_TouchDelegateInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibilityNodeInfo_TouchDelegateInfo(QAndroidJniObject obj);
 		
 		// Constructors
-		AccessibilityNodeInfo_TouchDelegateInfo(__JniBaseClass arg0);
+		AccessibilityNodeInfo_TouchDelegateInfo(JObject arg0);
 		
 		// Methods
 		jint describeContents();

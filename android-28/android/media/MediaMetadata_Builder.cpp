@@ -8,16 +8,16 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaMetadata_Builder::MediaMetadata_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaMetadata_Builder::MediaMetadata_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaMetadata_Builder::MediaMetadata_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMetadata$Builder",
 			"()V"
 		) {}
 	MediaMetadata_Builder::MediaMetadata_Builder(android::media::MediaMetadata arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaMetadata$Builder",
 			"(Landroid/media/MediaMetadata;)V",
 			arg0.object()

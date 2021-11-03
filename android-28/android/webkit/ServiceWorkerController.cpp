@@ -7,11 +7,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	ServiceWorkerController::ServiceWorkerController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ServiceWorkerController::ServiceWorkerController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ServiceWorkerController::ServiceWorkerController()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.ServiceWorkerController",
 			"()V"
 		) {}

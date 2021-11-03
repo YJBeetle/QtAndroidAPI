@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::metrics
 {
@@ -17,13 +17,13 @@ namespace java::lang
 
 namespace android::media::metrics
 {
-	class PlaybackErrorEvent_Builder : public __JniBaseClass
+	class PlaybackErrorEvent_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackErrorEvent_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackErrorEvent_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackErrorEvent_Builder(QAndroidJniObject obj);
 		
 		// Constructors

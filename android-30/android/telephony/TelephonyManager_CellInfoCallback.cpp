@@ -19,17 +19,17 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TelephonyManager_CellInfoCallback::TelephonyManager_CellInfoCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.TelephonyManager$CellInfoCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void TelephonyManager_CellInfoCallback::onCellInfo(__JniBaseClass arg0)
+	void TelephonyManager_CellInfoCallback::onCellInfo(JObject arg0)
 	{
 		callMethod<void>(
 			"onCellInfo",

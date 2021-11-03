@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace javax::net::ssl
 {
-	class ExtendedSSLSession : public __JniBaseClass
+	class ExtendedSSLSession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExtendedSSLSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ExtendedSSLSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ExtendedSSLSession(QAndroidJniObject obj);
 		
 		// Constructors
@@ -20,8 +20,8 @@ namespace javax::net::ssl
 		// Methods
 		jarray getLocalSupportedSignatureAlgorithms();
 		jarray getPeerSupportedSignatureAlgorithms();
-		__JniBaseClass getRequestedServerNames();
-		__JniBaseClass getStatusResponses();
+		JObject getRequestedServerNames();
+		JObject getStatusResponses();
 	};
 } // namespace javax::net::ssl
 

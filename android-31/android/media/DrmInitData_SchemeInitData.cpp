@@ -35,11 +35,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmInitData_SchemeInitData::DrmInitData_SchemeInitData(java::util::UUID arg0, jstring arg1, jbyteArray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.DrmInitData$SchemeInitData",
 			"(Ljava/util/UUID;Ljava/lang/String;[B)V",
 			arg0.object(),

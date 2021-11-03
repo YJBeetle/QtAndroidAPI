@@ -25,7 +25,7 @@ namespace java::util::logging
 	}
 	
 	// QAndroidJniObject forward
-	LogManager::LogManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LogManager::LogManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -38,7 +38,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/LogManager;"
 		);
 	}
-	__JniBaseClass LogManager::getLoggingMXBean()
+	JObject LogManager::getLoggingMXBean()
 	{
 		return callStaticObjectMethod(
 			"java.util.logging.LogManager",
@@ -46,7 +46,7 @@ namespace java::util::logging
 			"()Ljava/util/logging/LoggingMXBean;"
 		);
 	}
-	java::util::logging::LogManager LogManager::addConfigurationListener(__JniBaseClass arg0)
+	java::util::logging::LogManager LogManager::addConfigurationListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"addConfigurationListener",
@@ -77,7 +77,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	__JniBaseClass LogManager::getLoggerNames()
+	JObject LogManager::getLoggerNames()
 	{
 		return callObjectMethod(
 			"getLoggerNames",
@@ -107,7 +107,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::removeConfigurationListener(__JniBaseClass arg0)
+	void LogManager::removeConfigurationListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeConfigurationListener",
@@ -122,7 +122,7 @@ namespace java::util::logging
 			"()V"
 		);
 	}
-	void LogManager::updateConfiguration(__JniBaseClass arg0)
+	void LogManager::updateConfiguration(JObject arg0)
 	{
 		callMethod<void>(
 			"updateConfiguration",
@@ -130,7 +130,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void LogManager::updateConfiguration(java::io::InputStream arg0, __JniBaseClass arg1)
+	void LogManager::updateConfiguration(java::io::InputStream arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"updateConfiguration",

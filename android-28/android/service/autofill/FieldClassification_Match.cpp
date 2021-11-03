@@ -5,7 +5,7 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	FieldClassification_Match::FieldClassification_Match(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FieldClassification_Match::FieldClassification_Match(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

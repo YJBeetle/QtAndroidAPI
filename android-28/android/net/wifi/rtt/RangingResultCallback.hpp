@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace android::net::wifi::rtt
 {
-	class RangingResultCallback : public __JniBaseClass
+	class RangingResultCallback : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::net::wifi::rtt
 		static jint STATUS_CODE_FAIL_RTT_NOT_AVAILABLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RangingResultCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RangingResultCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RangingResultCallback(QAndroidJniObject obj);
 		
 		// Constructors
@@ -21,7 +21,7 @@ namespace android::net::wifi::rtt
 		
 		// Methods
 		void onRangingFailure(jint arg0);
-		void onRangingResults(__JniBaseClass arg0);
+		void onRangingResults(JObject arg0);
 	};
 } // namespace android::net::wifi::rtt
 

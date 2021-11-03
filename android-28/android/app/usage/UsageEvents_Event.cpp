@@ -83,11 +83,11 @@ namespace android::app::usage
 	}
 	
 	// QAndroidJniObject forward
-	UsageEvents_Event::UsageEvents_Event(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UsageEvents_Event::UsageEvents_Event(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UsageEvents_Event::UsageEvents_Event()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.usage.UsageEvents$Event",
 			"()V"
 		) {}

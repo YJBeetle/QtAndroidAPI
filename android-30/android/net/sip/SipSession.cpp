@@ -7,7 +7,7 @@ namespace android::net::sip
 	// Fields
 	
 	// QAndroidJniObject forward
-	SipSession::SipSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SipSession::SipSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

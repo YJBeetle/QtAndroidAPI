@@ -124,11 +124,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	R_interpolator::R_interpolator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_interpolator::R_interpolator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_interpolator::R_interpolator()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$interpolator",
 			"()V"
 		) {}

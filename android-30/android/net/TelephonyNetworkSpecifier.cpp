@@ -4,7 +4,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass TelephonyNetworkSpecifier::CREATOR()
+	JObject TelephonyNetworkSpecifier::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.TelephonyNetworkSpecifier",

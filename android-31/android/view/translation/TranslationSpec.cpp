@@ -5,7 +5,7 @@
 namespace android::view::translation
 {
 	// Fields
-	__JniBaseClass TranslationSpec::CREATOR()
+	JObject TranslationSpec::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.translation.TranslationSpec",
@@ -22,11 +22,11 @@ namespace android::view::translation
 	}
 	
 	// QAndroidJniObject forward
-	TranslationSpec::TranslationSpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TranslationSpec::TranslationSpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TranslationSpec::TranslationSpec(android::icu::util::ULocale arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.translation.TranslationSpec",
 			"(Landroid/icu/util/ULocale;I)V",
 			arg0.object(),

@@ -1,18 +1,18 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::util
 {
-	class Output : public __JniBaseClass
+	class Output : public JObject
 	{
 	public:
 		// Fields
 		jobject value();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Output(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Output(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Output(QAndroidJniObject obj);
 		
 		// Constructors

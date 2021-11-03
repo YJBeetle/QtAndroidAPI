@@ -27,7 +27,7 @@ namespace android::media
 			"CONNECTION_STATE_DISCONNECTED"
 		);
 	}
-	__JniBaseClass MediaRoute2Info::CREATOR()
+	JObject MediaRoute2Info::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.MediaRoute2Info",
@@ -91,7 +91,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaRoute2Info::MediaRoute2Info(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaRoute2Info::MediaRoute2Info(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -139,7 +139,7 @@ namespace android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	__JniBaseClass MediaRoute2Info::getFeatures()
+	JObject MediaRoute2Info::getFeatures()
 	{
 		return callObjectMethod(
 			"getFeatures",

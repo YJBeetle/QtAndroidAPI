@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	HashMap::HashMap(__JniBaseClass arg0)
+	HashMap::HashMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.HashMap",
 			"(Ljava/util/Map;)V",
@@ -50,7 +50,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject HashMap::compute(jobject arg0, __JniBaseClass arg1)
+	jobject HashMap::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -59,7 +59,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject HashMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject HashMap::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -68,7 +68,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject HashMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject HashMap::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -93,14 +93,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass HashMap::entrySet()
+	JObject HashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void HashMap::forEach(__JniBaseClass arg0)
+	void HashMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -132,14 +132,14 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass HashMap::keySet()
+	JObject HashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	jobject HashMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject HashMap::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -158,7 +158,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void HashMap::putAll(__JniBaseClass arg0)
+	void HashMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -211,7 +211,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void HashMap::replaceAll(__JniBaseClass arg0)
+	void HashMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -226,7 +226,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass HashMap::values()
+	JObject HashMap::values()
 	{
 		return callObjectMethod(
 			"values",

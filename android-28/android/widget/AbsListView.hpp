@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./AdapterView.hpp"
@@ -90,13 +90,13 @@ namespace android::widget
 		
 		// Constructors
 		AbsListView(android::content::Context arg0);
-		AbsListView(android::content::Context arg0, __JniBaseClass arg1);
-		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		AbsListView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		AbsListView(android::content::Context arg0, JObject arg1);
+		AbsListView(android::content::Context arg0, JObject arg1, jint arg2);
+		AbsListView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addTouchables(java::util::ArrayList arg0);
-		void afterTextChanged(__JniBaseClass arg0);
+		void afterTextChanged(JObject arg0);
 		void beforeTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		jboolean canScrollList(jint arg0);
 		jboolean checkInputConnectionProxy(android::view::View arg0);
@@ -106,7 +106,7 @@ namespace android::widget
 		void dispatchDrawableHotspotChanged(jfloat arg0, jfloat arg1);
 		void draw(android::graphics::Canvas arg0);
 		void fling(jint arg0);
-		android::widget::AbsListView_LayoutParams generateLayoutParams(__JniBaseClass arg0);
+		android::widget::AbsListView_LayoutParams generateLayoutParams(JObject arg0);
 		jstring getAccessibilityClassName();
 		jint getCacheColorHint();
 		jint getCheckedItemCount();
@@ -136,7 +136,7 @@ namespace android::widget
 		jboolean isTextFilterEnabled();
 		void jumpDrawablesToCurrentState();
 		void onCancelPendingInputEvents();
-		__JniBaseClass onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
+		JObject onCreateInputConnection(android::view::inputmethod::EditorInfo arg0);
 		void onFilterComplete(jint arg0);
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		void onGlobalLayout();
@@ -151,9 +151,9 @@ namespace android::widget
 		jboolean onRemoteAdapterConnected();
 		void onRemoteAdapterDisconnected();
 		android::view::PointerIcon onResolvePointerIcon(android::view::MotionEvent arg0, jint arg1);
-		void onRestoreInstanceState(__JniBaseClass arg0);
+		void onRestoreInstanceState(JObject arg0);
 		void onRtlPropertiesChanged(jint arg0);
-		__JniBaseClass onSaveInstanceState();
+		JObject onSaveInstanceState();
 		jboolean onStartNestedScroll(android::view::View arg0, android::view::View arg1, jint arg2);
 		void onTextChanged(jstring arg0, jint arg1, jint arg2, jint arg3);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
@@ -162,12 +162,12 @@ namespace android::widget
 		jboolean performItemClick(android::view::View arg0, jint arg1, jlong arg2);
 		jint pointToPosition(jint arg0, jint arg1);
 		jlong pointToRowId(jint arg0, jint arg1);
-		void reclaimViews(__JniBaseClass arg0);
+		void reclaimViews(JObject arg0);
 		void requestDisallowInterceptTouchEvent(jboolean arg0);
 		void requestLayout();
 		void scrollListBy(jint arg0);
 		void sendAccessibilityEventUnchecked(android::view::accessibility::AccessibilityEvent arg0);
-		void setAdapter(__JniBaseClass arg0);
+		void setAdapter(JObject arg0);
 		void setCacheColorHint(jint arg0);
 		void setChoiceMode(jint arg0);
 		void setDrawSelectorOnTop(jboolean arg0);
@@ -177,10 +177,10 @@ namespace android::widget
 		void setFilterText(jstring arg0);
 		void setFriction(jfloat arg0);
 		void setItemChecked(jint arg0, jboolean arg1);
-		void setMultiChoiceModeListener(__JniBaseClass arg0);
-		void setOnScrollListener(__JniBaseClass arg0);
+		void setMultiChoiceModeListener(JObject arg0);
+		void setOnScrollListener(JObject arg0);
 		void setOverScrollMode(jint arg0);
-		void setRecyclerListener(__JniBaseClass arg0);
+		void setRecyclerListener(JObject arg0);
 		void setRemoteViewsAdapter(android::content::Intent arg0);
 		void setScrollBarStyle(jint arg0);
 		void setScrollIndicators(android::view::View arg0, android::view::View arg1);

@@ -5,16 +5,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QAndroidJniObject forward
-	AttributeListImpl::AttributeListImpl(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AttributeListImpl::AttributeListImpl(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AttributeListImpl::AttributeListImpl()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.AttributeListImpl",
 			"()V"
 		) {}
-	AttributeListImpl::AttributeListImpl(__JniBaseClass arg0)
-		: __JniBaseClass(
+	AttributeListImpl::AttributeListImpl(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.AttributeListImpl",
 			"(Lorg/xml/sax/AttributeList;)V",
 			arg0.object()
@@ -93,7 +93,7 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	void AttributeListImpl::setAttributeList(__JniBaseClass arg0)
+	void AttributeListImpl::setAttributeList(JObject arg0)
 	{
 		callMethod<void>(
 			"setAttributeList",

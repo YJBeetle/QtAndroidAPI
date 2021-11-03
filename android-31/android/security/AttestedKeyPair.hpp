@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -9,20 +9,20 @@ namespace java::security
 
 namespace android::security
 {
-	class AttestedKeyPair : public __JniBaseClass
+	class AttestedKeyPair : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AttestedKeyPair(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AttestedKeyPair(QAndroidJniObject obj);
 		
 		// Constructors
-		AttestedKeyPair(java::security::KeyPair arg0, __JniBaseClass arg1);
+		AttestedKeyPair(java::security::KeyPair arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass getAttestationRecord();
+		JObject getAttestationRecord();
 		java::security::KeyPair getKeyPair();
 	};
 } // namespace android::security

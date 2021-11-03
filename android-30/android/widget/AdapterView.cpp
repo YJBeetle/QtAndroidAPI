@@ -47,14 +47,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1)
+	AdapterView::AdapterView(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup(
 			"android.widget.AdapterView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	AdapterView::AdapterView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::ViewGroup(
 			"android.widget.AdapterView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -62,7 +62,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	AdapterView::AdapterView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	AdapterView::AdapterView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::ViewGroup(
 			"android.widget.AdapterView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -116,7 +116,7 @@ namespace android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass AdapterView::getAdapter()
+	JObject AdapterView::getAdapter()
 	{
 		return callObjectMethod(
 			"getAdapter",
@@ -167,21 +167,21 @@ namespace android::widget
 			"()I"
 		);
 	}
-	__JniBaseClass AdapterView::getOnItemClickListener()
+	JObject AdapterView::getOnItemClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemClickListener",
 			"()Landroid/widget/AdapterView$OnItemClickListener;"
 		);
 	}
-	__JniBaseClass AdapterView::getOnItemLongClickListener()
+	JObject AdapterView::getOnItemLongClickListener()
 	{
 		return callObjectMethod(
 			"getOnItemLongClickListener",
 			"()Landroid/widget/AdapterView$OnItemLongClickListener;"
 		);
 	}
-	__JniBaseClass AdapterView::getOnItemSelectedListener()
+	JObject AdapterView::getOnItemSelectedListener()
 	{
 		return callObjectMethod(
 			"getOnItemSelectedListener",
@@ -266,7 +266,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterView::setAdapter(__JniBaseClass arg0)
+	void AdapterView::setAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setAdapter",
@@ -298,7 +298,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void AdapterView::setOnClickListener(__JniBaseClass arg0)
+	void AdapterView::setOnClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnClickListener",
@@ -306,7 +306,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemClickListener(__JniBaseClass arg0)
+	void AdapterView::setOnItemClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemClickListener",
@@ -314,7 +314,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemLongClickListener(__JniBaseClass arg0)
+	void AdapterView::setOnItemLongClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemLongClickListener",
@@ -322,7 +322,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void AdapterView::setOnItemSelectedListener(__JniBaseClass arg0)
+	void AdapterView::setOnItemSelectedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnItemSelectedListener",

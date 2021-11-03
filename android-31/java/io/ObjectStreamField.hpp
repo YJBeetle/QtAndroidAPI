@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,13 +13,13 @@ namespace java::lang::reflect
 
 namespace java::io
 {
-	class ObjectStreamField : public __JniBaseClass
+	class ObjectStreamField : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ObjectStreamField(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ObjectStreamField(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ObjectStreamField(QAndroidJniObject obj);
 		
 		// Constructors

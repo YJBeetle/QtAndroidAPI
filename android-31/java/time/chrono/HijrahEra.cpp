@@ -63,7 +63,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	java::time::temporal::ValueRange HijrahEra::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange HijrahEra::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",

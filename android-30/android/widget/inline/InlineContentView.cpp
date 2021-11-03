@@ -37,7 +37,7 @@ namespace android::widget::inline
 			arg4
 		);
 	}
-	void InlineContentView::setSurfaceControlCallback(__JniBaseClass arg0)
+	void InlineContentView::setSurfaceControlCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setSurfaceControlCallback",

@@ -60,7 +60,7 @@ namespace android::animation
 			"()J"
 		);
 	}
-	__JniBaseClass AnimatorSet::getInterpolator()
+	JObject AnimatorSet::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -118,7 +118,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::playSequentially(__JniBaseClass arg0)
+	void AnimatorSet::playSequentially(JObject arg0)
 	{
 		callMethod<void>(
 			"playSequentially",
@@ -134,7 +134,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::playTogether(__JniBaseClass arg0)
+	void AnimatorSet::playTogether(JObject arg0)
 	{
 		callMethod<void>(
 			"playTogether",
@@ -172,7 +172,7 @@ namespace android::animation
 			arg0
 		);
 	}
-	void AnimatorSet::setInterpolator(__JniBaseClass arg0)
+	void AnimatorSet::setInterpolator(JObject arg0)
 	{
 		callMethod<void>(
 			"setInterpolator",

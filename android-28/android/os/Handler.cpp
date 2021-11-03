@@ -7,28 +7,28 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	Handler::Handler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Handler::Handler(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Handler::Handler()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Handler",
 			"()V"
 		) {}
-	Handler::Handler(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Handler::Handler(JObject arg0)
+		: JObject(
 			"android.os.Handler",
 			"(Landroid/os/Handler$Callback;)V",
 			arg0.object()
 		) {}
 	Handler::Handler(android::os::Looper arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Handler",
 			"(Landroid/os/Looper;)V",
 			arg0.object()
 		) {}
-	Handler::Handler(android::os::Looper arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Handler::Handler(android::os::Looper arg0, JObject arg1)
+		: JObject(
 			"android.os.Handler",
 			"(Landroid/os/Looper;Landroid/os/Handler$Callback;)V",
 			arg0.object(),
@@ -45,7 +45,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::os::Handler Handler::createAsync(android::os::Looper arg0, __JniBaseClass arg1)
+	android::os::Handler Handler::createAsync(android::os::Looper arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"android.os.Handler",
@@ -63,7 +63,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::dump(__JniBaseClass arg0, jstring arg1)
+	void Handler::dump(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"dump",
@@ -157,7 +157,7 @@ namespace android::os
 			arg3
 		);
 	}
-	jboolean Handler::post(__JniBaseClass arg0)
+	jboolean Handler::post(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"post",
@@ -165,7 +165,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::postAtFrontOfQueue(__JniBaseClass arg0)
+	jboolean Handler::postAtFrontOfQueue(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"postAtFrontOfQueue",
@@ -173,7 +173,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	jboolean Handler::postAtTime(__JniBaseClass arg0, jlong arg1)
+	jboolean Handler::postAtTime(JObject arg0, jlong arg1)
 	{
 		return callMethod<jboolean>(
 			"postAtTime",
@@ -182,7 +182,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postAtTime(__JniBaseClass arg0, jobject arg1, jlong arg2)
+	jboolean Handler::postAtTime(JObject arg0, jobject arg1, jlong arg2)
 	{
 		return callMethod<jboolean>(
 			"postAtTime",
@@ -192,7 +192,7 @@ namespace android::os
 			arg2
 		);
 	}
-	jboolean Handler::postDelayed(__JniBaseClass arg0, jlong arg1)
+	jboolean Handler::postDelayed(JObject arg0, jlong arg1)
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -201,7 +201,7 @@ namespace android::os
 			arg1
 		);
 	}
-	jboolean Handler::postDelayed(__JniBaseClass arg0, jobject arg1, jlong arg2)
+	jboolean Handler::postDelayed(JObject arg0, jobject arg1, jlong arg2)
 	{
 		return callMethod<jboolean>(
 			"postDelayed",
@@ -211,7 +211,7 @@ namespace android::os
 			arg2
 		);
 	}
-	void Handler::removeCallbacks(__JniBaseClass arg0)
+	void Handler::removeCallbacks(JObject arg0)
 	{
 		callMethod<void>(
 			"removeCallbacks",
@@ -219,7 +219,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Handler::removeCallbacks(__JniBaseClass arg0, jobject arg1)
+	void Handler::removeCallbacks(JObject arg0, jobject arg1)
 	{
 		callMethod<void>(
 			"removeCallbacks",

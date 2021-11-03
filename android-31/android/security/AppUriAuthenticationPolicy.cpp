@@ -4,7 +4,7 @@
 namespace android::security
 {
 	// Fields
-	__JniBaseClass AppUriAuthenticationPolicy::CREATOR()
+	JObject AppUriAuthenticationPolicy::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.security.AppUriAuthenticationPolicy",
@@ -14,7 +14,7 @@ namespace android::security
 	}
 	
 	// QAndroidJniObject forward
-	AppUriAuthenticationPolicy::AppUriAuthenticationPolicy(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AppUriAuthenticationPolicy::AppUriAuthenticationPolicy(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -34,7 +34,7 @@ namespace android::security
 			arg0
 		);
 	}
-	__JniBaseClass AppUriAuthenticationPolicy::getAppAndUriMappings()
+	JObject AppUriAuthenticationPolicy::getAppAndUriMappings()
 	{
 		return callObjectMethod(
 			"getAppAndUriMappings",

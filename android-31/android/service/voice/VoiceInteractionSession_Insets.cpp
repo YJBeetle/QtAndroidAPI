@@ -48,11 +48,11 @@ namespace android::service::voice
 	}
 	
 	// QAndroidJniObject forward
-	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VoiceInteractionSession_Insets::VoiceInteractionSession_Insets()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.VoiceInteractionSession$Insets",
 			"()V"
 		) {}

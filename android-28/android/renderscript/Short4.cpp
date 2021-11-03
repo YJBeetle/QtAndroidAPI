@@ -29,16 +29,16 @@ namespace android::renderscript
 	}
 	
 	// QAndroidJniObject forward
-	Short4::Short4(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Short4::Short4(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Short4::Short4()
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Short4",
 			"()V"
 		) {}
 	Short4::Short4(jshort arg0, jshort arg1, jshort arg2, jshort arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.Short4",
 			"(SSSS)V",
 			arg0,

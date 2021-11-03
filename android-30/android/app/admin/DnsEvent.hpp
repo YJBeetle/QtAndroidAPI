@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./NetworkEvent.hpp"
 
 namespace android::os
@@ -14,7 +14,7 @@ namespace android::app::admin
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
 		template<typename ...Ts> explicit DnsEvent(const char *className, const char *sig, Ts...agv) : android::app::admin::NetworkEvent(className, sig, std::forward<Ts>(agv)...) {}
@@ -25,7 +25,7 @@ namespace android::app::admin
 		// Methods
 		jint describeContents();
 		jstring getHostname();
-		__JniBaseClass getInetAddresses();
+		JObject getInetAddresses();
 		jint getTotalResolvedAddressCount();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

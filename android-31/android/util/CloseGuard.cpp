@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	CloseGuard::CloseGuard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CloseGuard::CloseGuard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	CloseGuard::CloseGuard()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.CloseGuard",
 			"()V"
 		) {}

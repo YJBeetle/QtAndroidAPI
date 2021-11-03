@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::time
 {
@@ -17,7 +17,7 @@ namespace java::util
 
 namespace java::util
 {
-	class TimeZone : public __JniBaseClass
+	class TimeZone : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace java::util
 		static jint SHORT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TimeZone(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TimeZone(QAndroidJniObject obj);
 		
 		// Constructors

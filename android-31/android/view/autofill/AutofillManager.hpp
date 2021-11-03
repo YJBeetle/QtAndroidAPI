@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace android::view::autofill
 
 namespace android::view::autofill
 {
-	class AutofillManager : public __JniBaseClass
+	class AutofillManager : public JObject
 	{
 	public:
 		// Fields
@@ -44,7 +44,7 @@ namespace android::view::autofill
 		static jstring EXTRA_INLINE_SUGGESTIONS_REQUEST();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AutofillManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AutofillManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AutofillManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -54,7 +54,7 @@ namespace android::view::autofill
 		void commit();
 		void disableAutofillServices();
 		android::content::ComponentName getAutofillServiceComponentName();
-		__JniBaseClass getAvailableFieldClassificationAlgorithms();
+		JObject getAvailableFieldClassificationAlgorithms();
 		jstring getDefaultFieldClassificationAlgorithm();
 		android::view::autofill::AutofillId getNextAutofillId();
 		android::service::autofill::UserData getUserData();

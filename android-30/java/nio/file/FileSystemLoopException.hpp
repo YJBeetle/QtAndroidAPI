@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
 #include "./FileSystemException.hpp"

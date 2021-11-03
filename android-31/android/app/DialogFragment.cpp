@@ -120,7 +120,7 @@ namespace android::app
 			arg0.object()
 		);
 	}
-	void DialogFragment::onCancel(__JniBaseClass arg0)
+	void DialogFragment::onCancel(JObject arg0)
 	{
 		callMethod<void>(
 			"onCancel",
@@ -158,7 +158,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void DialogFragment::onDismiss(__JniBaseClass arg0)
+	void DialogFragment::onDismiss(JObject arg0)
 	{
 		callMethod<void>(
 			"onDismiss",

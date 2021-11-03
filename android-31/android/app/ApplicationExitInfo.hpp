@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,11 +17,11 @@ namespace java::io
 
 namespace android::app
 {
-	class ApplicationExitInfo : public __JniBaseClass
+	class ApplicationExitInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint REASON_ANR();
 		static jint REASON_CRASH();
 		static jint REASON_CRASH_NATIVE();
@@ -38,7 +38,7 @@ namespace android::app
 		static jint REASON_USER_STOPPED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ApplicationExitInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ApplicationExitInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ApplicationExitInfo(QAndroidJniObject obj);
 		
 		// Constructors

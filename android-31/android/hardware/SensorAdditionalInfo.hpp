@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::hardware
 {
@@ -9,7 +9,7 @@ namespace android::hardware
 
 namespace android::hardware
 {
-	class SensorAdditionalInfo : public __JniBaseClass
+	class SensorAdditionalInfo : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::hardware
 		jint type();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SensorAdditionalInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SensorAdditionalInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SensorAdditionalInfo(QAndroidJniObject obj);
 		
 		// Constructors

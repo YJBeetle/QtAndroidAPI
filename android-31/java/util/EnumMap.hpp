@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractMap.hpp"
 
 namespace java::io
@@ -30,24 +30,24 @@ namespace java::util
 		// Constructors
 		EnumMap(jclass arg0);
 		EnumMap(java::util::EnumMap &arg0);
-		EnumMap(__JniBaseClass arg0);
+		EnumMap(JObject arg0);
 		
 		// Methods
 		void clear();
 		java::util::EnumMap clone();
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass entrySet();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
 		jobject get(jobject arg0);
 		jint hashCode();
-		__JniBaseClass keySet();
+		JObject keySet();
 		jobject put(java::lang::Enum arg0, jobject arg1);
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject remove(jobject arg0);
 		jint size();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

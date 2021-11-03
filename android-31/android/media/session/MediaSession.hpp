@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -57,7 +57,7 @@ namespace android::os
 
 namespace android::media::session
 {
-	class MediaSession : public __JniBaseClass
+	class MediaSession : public JObject
 	{
 	public:
 		// Fields
@@ -65,7 +65,7 @@ namespace android::media::session
 		static jint FLAG_HANDLES_TRANSPORT_CONTROLS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaSession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaSession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSession(QAndroidJniObject obj);
 		
 		// Constructors
@@ -90,7 +90,7 @@ namespace android::media::session
 		void setPlaybackState(android::media::session::PlaybackState arg0);
 		void setPlaybackToLocal(android::media::AudioAttributes arg0);
 		void setPlaybackToRemote(android::media::VolumeProvider arg0);
-		void setQueue(__JniBaseClass arg0);
+		void setQueue(JObject arg0);
 		void setQueueTitle(jstring arg0);
 		void setRatingType(jint arg0);
 		void setSessionActivity(android::app::PendingIntent arg0);

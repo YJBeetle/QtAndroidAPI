@@ -7,7 +7,7 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyFactory::KeyFactory(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyFactory::KeyFactory(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -41,7 +41,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	__JniBaseClass KeyFactory::generatePrivate(__JniBaseClass arg0)
+	JObject KeyFactory::generatePrivate(JObject arg0)
 	{
 		return callObjectMethod(
 			"generatePrivate",
@@ -49,7 +49,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	__JniBaseClass KeyFactory::generatePublic(__JniBaseClass arg0)
+	JObject KeyFactory::generatePublic(JObject arg0)
 	{
 		return callObjectMethod(
 			"generatePublic",
@@ -64,7 +64,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass KeyFactory::getKeySpec(__JniBaseClass arg0, jclass arg1)
+	JObject KeyFactory::getKeySpec(JObject arg0, jclass arg1)
 	{
 		return callObjectMethod(
 			"getKeySpec",
@@ -80,7 +80,7 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	__JniBaseClass KeyFactory::translateKey(__JniBaseClass arg0)
+	JObject KeyFactory::translateKey(JObject arg0)
 	{
 		return callObjectMethod(
 			"translateKey",

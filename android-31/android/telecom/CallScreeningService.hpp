@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -34,7 +34,7 @@ namespace android::telecom
 		CallScreeningService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onScreenCall(android::telecom::Call_Details arg0);
 		jboolean onUnbind(android::content::Intent arg0);
 		void respondToCall(android::telecom::Call_Details arg0, android::telecom::CallScreeningService_CallResponse arg1);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -33,13 +33,13 @@ namespace java::util::concurrent
 
 namespace java::net
 {
-	class URLConnection : public __JniBaseClass
+	class URLConnection : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit URLConnection(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit URLConnection(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		URLConnection(QAndroidJniObject obj);
 		
 		// Constructors
@@ -48,14 +48,14 @@ namespace java::net
 		static jboolean getDefaultAllowUserInteraction();
 		static jstring getDefaultRequestProperty(jstring arg0);
 		static jboolean getDefaultUseCaches(jstring arg0);
-		static __JniBaseClass getFileNameMap();
+		static JObject getFileNameMap();
 		static jstring guessContentTypeFromName(jstring arg0);
 		static jstring guessContentTypeFromStream(java::io::InputStream arg0);
-		static void setContentHandlerFactory(__JniBaseClass arg0);
+		static void setContentHandlerFactory(JObject arg0);
 		static void setDefaultAllowUserInteraction(jboolean arg0);
 		static void setDefaultRequestProperty(jstring arg0, jstring arg1);
 		static void setDefaultUseCaches(jstring arg0, jboolean arg1);
-		static void setFileNameMap(__JniBaseClass arg0);
+		static void setFileNameMap(JObject arg0);
 		void addRequestProperty(jstring arg0, jstring arg1);
 		void connect();
 		jboolean getAllowUserInteraction();
@@ -77,14 +77,14 @@ namespace java::net
 		jint getHeaderFieldInt(jstring arg0, jint arg1);
 		jstring getHeaderFieldKey(jint arg0);
 		jlong getHeaderFieldLong(jstring arg0, jlong arg1);
-		__JniBaseClass getHeaderFields();
+		JObject getHeaderFields();
 		jlong getIfModifiedSince();
 		java::io::InputStream getInputStream();
 		jlong getLastModified();
 		java::io::OutputStream getOutputStream();
 		java::security::Permission getPermission();
 		jint getReadTimeout();
-		__JniBaseClass getRequestProperties();
+		JObject getRequestProperties();
 		jstring getRequestProperty(jstring arg0);
 		java::net::URL getURL();
 		jboolean getUseCaches();

@@ -16,7 +16,7 @@ namespace android::widget
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.object()
 		) {}
-	AbsListView_LayoutParams::AbsListView_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	AbsListView_LayoutParams::AbsListView_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_LayoutParams(
 			"android.widget.AbsListView$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

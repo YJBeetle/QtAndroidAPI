@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace android::view
 
 namespace android::view
 {
-	class TouchDelegate : public __JniBaseClass
+	class TouchDelegate : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::view
 		static jint TO_RIGHT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TouchDelegate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TouchDelegate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TouchDelegate(QAndroidJniObject obj);
 		
 		// Constructors

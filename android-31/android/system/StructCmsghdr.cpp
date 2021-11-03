@@ -24,11 +24,11 @@ namespace android::system
 	}
 	
 	// QAndroidJniObject forward
-	StructCmsghdr::StructCmsghdr(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StructCmsghdr::StructCmsghdr(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, jbyteArray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructCmsghdr",
 			"(II[B)V",
 			arg0,
@@ -36,7 +36,7 @@ namespace android::system
 			arg2
 		) {}
 	StructCmsghdr::StructCmsghdr(jint arg0, jint arg1, jshort arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructCmsghdr",
 			"(IIS)V",
 			arg0,

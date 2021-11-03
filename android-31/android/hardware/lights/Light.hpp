@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::hardware::lights
 {
-	class Light : public __JniBaseClass
+	class Light : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint LIGHT_CAPABILITY_BRIGHTNESS();
 		static jint LIGHT_CAPABILITY_RGB();
 		static jint LIGHT_TYPE_INPUT();
@@ -21,7 +21,7 @@ namespace android::hardware::lights
 		static jint LIGHT_TYPE_PLAYER_ID();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Light(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Light(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Light(QAndroidJniObject obj);
 		
 		// Constructors

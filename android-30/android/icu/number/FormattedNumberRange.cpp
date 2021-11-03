@@ -7,7 +7,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QAndroidJniObject forward
-	FormattedNumberRange::FormattedNumberRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FormattedNumberRange::FormattedNumberRange(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -72,7 +72,7 @@ namespace android::icu::number
 			arg1
 		).object<jstring>();
 	}
-	__JniBaseClass FormattedNumberRange::toCharacterIterator()
+	JObject FormattedNumberRange::toCharacterIterator()
 	{
 		return callObjectMethod(
 			"toCharacterIterator",

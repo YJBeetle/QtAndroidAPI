@@ -156,7 +156,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiFloat(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
@@ -191,7 +191,7 @@ namespace android::animation
 			arg2.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofMultiInt(jobject arg0, jstring arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
@@ -216,7 +216,7 @@ namespace android::animation
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, __JniBaseClass arg2, jobjectArray arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, JObject arg2, jobjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
@@ -240,7 +240,7 @@ namespace android::animation
 			arg3.object()
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, jstring arg1, __JniBaseClass arg2, jobjectArray arg3)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, jstring arg1, JObject arg2, jobjectArray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",
@@ -252,7 +252,7 @@ namespace android::animation
 			arg3
 		);
 	}
-	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, __JniBaseClass arg3, jobjectArray arg4)
+	android::animation::ObjectAnimator ObjectAnimator::ofObject(jobject arg0, android::util::Property arg1, android::animation::TypeConverter arg2, JObject arg3, jobjectArray arg4)
 	{
 		return callStaticObjectMethod(
 			"android.animation.ObjectAnimator",

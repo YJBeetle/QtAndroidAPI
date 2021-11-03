@@ -13,7 +13,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	UCharacterIterator::UCharacterIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UCharacterIterator::UCharacterIterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -27,7 +27,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(__JniBaseClass arg0)
+	android::icu::text::UCharacterIterator UCharacterIterator::getInstance(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.text.UCharacterIterator",
@@ -86,7 +86,7 @@ namespace android::icu::text
 			"()I"
 		);
 	}
-	__JniBaseClass UCharacterIterator::getCharacterIterator()
+	JObject UCharacterIterator::getCharacterIterator()
 	{
 		return callObjectMethod(
 			"getCharacterIterator",

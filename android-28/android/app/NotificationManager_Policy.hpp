@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::app
 {
-	class NotificationManager_Policy : public __JniBaseClass
+	class NotificationManager_Policy : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint PRIORITY_CATEGORY_ALARMS();
 		static jint PRIORITY_CATEGORY_CALLS();
 		static jint PRIORITY_CATEGORY_EVENTS();
@@ -40,7 +40,7 @@ namespace android::app
 		jint suppressedVisualEffects();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationManager_Policy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationManager_Policy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationManager_Policy(QAndroidJniObject obj);
 		
 		// Constructors

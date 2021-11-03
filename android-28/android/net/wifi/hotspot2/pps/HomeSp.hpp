@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::net::wifi::hotspot2::pps
 {
-	class HomeSp : public __JniBaseClass
+	class HomeSp : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HomeSp(QAndroidJniObject obj);
 		
 		// Constructors

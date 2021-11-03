@@ -5,11 +5,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	SearchResult_MatchRange::SearchResult_MatchRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SearchResult_MatchRange::SearchResult_MatchRange(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SearchResult_MatchRange::SearchResult_MatchRange(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.SearchResult$MatchRange",
 			"(II)V",
 			arg0,

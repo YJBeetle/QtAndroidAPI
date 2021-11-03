@@ -7,11 +7,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	NumberingSystem::NumberingSystem(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NumberingSystem::NumberingSystem(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NumberingSystem::NumberingSystem()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.NumberingSystem",
 			"()V"
 		) {}

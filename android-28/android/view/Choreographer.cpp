@@ -6,7 +6,7 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	Choreographer::Choreographer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Choreographer::Choreographer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,7 +19,7 @@ namespace android::view
 			"()Landroid/view/Choreographer;"
 		);
 	}
-	void Choreographer::postFrameCallback(__JniBaseClass arg0)
+	void Choreographer::postFrameCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"postFrameCallback",
@@ -27,7 +27,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Choreographer::postFrameCallbackDelayed(__JniBaseClass arg0, jlong arg1)
+	void Choreographer::postFrameCallbackDelayed(JObject arg0, jlong arg1)
 	{
 		callMethod<void>(
 			"postFrameCallbackDelayed",
@@ -36,7 +36,7 @@ namespace android::view
 			arg1
 		);
 	}
-	void Choreographer::removeFrameCallback(__JniBaseClass arg0)
+	void Choreographer::removeFrameCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"removeFrameCallback",

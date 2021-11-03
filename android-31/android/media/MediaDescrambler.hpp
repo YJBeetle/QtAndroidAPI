@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,7 +17,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaDescrambler : public __JniBaseClass
+	class MediaDescrambler : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android::media
 		static jbyte SCRAMBLE_FLAG_PES_HEADER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDescrambler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDescrambler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDescrambler(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::appsearch
 {
@@ -9,13 +9,13 @@ namespace android::app::appsearch
 
 namespace android::app::appsearch
 {
-	class RemoveByDocumentIdRequest_Builder : public __JniBaseClass
+	class RemoveByDocumentIdRequest_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RemoveByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RemoveByDocumentIdRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RemoveByDocumentIdRequest_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -23,7 +23,7 @@ namespace android::app::appsearch
 		
 		// Methods
 		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(jarray arg0);
-		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(__JniBaseClass arg0);
+		android::app::appsearch::RemoveByDocumentIdRequest_Builder addIds(JObject arg0);
 		android::app::appsearch::RemoveByDocumentIdRequest build();
 	};
 } // namespace android::app::appsearch

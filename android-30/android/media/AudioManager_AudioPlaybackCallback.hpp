@@ -1,24 +1,24 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class AudioManager_AudioPlaybackCallback : public __JniBaseClass
+	class AudioManager_AudioPlaybackCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AudioManager_AudioPlaybackCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AudioManager_AudioPlaybackCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AudioManager_AudioPlaybackCallback(QAndroidJniObject obj);
 		
 		// Constructors
 		AudioManager_AudioPlaybackCallback();
 		
 		// Methods
-		void onPlaybackConfigChanged(__JniBaseClass arg0);
+		void onPlaybackConfigChanged(JObject arg0);
 	};
 } // namespace android::media
 

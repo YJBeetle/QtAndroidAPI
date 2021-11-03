@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::service::notification
 {
-	class ZenPolicy : public __JniBaseClass
+	class ZenPolicy : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::service::notification
 		static jint CONVERSATION_SENDERS_IMPORTANT();
 		static jint CONVERSATION_SENDERS_NONE();
 		static jint CONVERSATION_SENDERS_UNSET();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint PEOPLE_TYPE_ANYONE();
 		static jint PEOPLE_TYPE_CONTACTS();
 		static jint PEOPLE_TYPE_NONE();
@@ -28,7 +28,7 @@ namespace android::service::notification
 		static jint STATE_UNSET();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ZenPolicy(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ZenPolicy(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ZenPolicy(QAndroidJniObject obj);
 		
 		// Constructors

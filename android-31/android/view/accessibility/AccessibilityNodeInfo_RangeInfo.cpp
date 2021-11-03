@@ -26,11 +26,11 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeInfo_RangeInfo::AccessibilityNodeInfo_RangeInfo(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeInfo$RangeInfo",
 			"(IFFF)V",
 			arg0,

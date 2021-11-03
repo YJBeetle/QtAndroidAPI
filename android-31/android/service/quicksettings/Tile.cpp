@@ -5,7 +5,7 @@
 namespace android::service::quicksettings
 {
 	// Fields
-	__JniBaseClass Tile::CREATOR()
+	JObject Tile::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quicksettings.Tile",
@@ -36,7 +36,7 @@ namespace android::service::quicksettings
 	}
 	
 	// QAndroidJniObject forward
-	Tile::Tile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Tile::Tile(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

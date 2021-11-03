@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace java::io
 {
@@ -9,17 +9,17 @@ namespace java::io
 
 namespace java::util::concurrent::atomic
 {
-	class LongAccumulator : public __JniBaseClass
+	class LongAccumulator : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LongAccumulator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LongAccumulator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LongAccumulator(QAndroidJniObject obj);
 		
 		// Constructors
-		LongAccumulator(__JniBaseClass arg0, jlong arg1);
+		LongAccumulator(JObject arg0, jlong arg1);
 		
 		// Methods
 		void accumulate(jlong arg0);

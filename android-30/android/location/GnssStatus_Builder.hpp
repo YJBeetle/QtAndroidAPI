@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::location
 {
@@ -9,13 +9,13 @@ namespace android::location
 
 namespace android::location
 {
-	class GnssStatus_Builder : public __JniBaseClass
+	class GnssStatus_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssStatus_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GnssStatus_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GnssStatus_Builder(QAndroidJniObject obj);
 		
 		// Constructors

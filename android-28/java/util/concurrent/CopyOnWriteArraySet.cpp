@@ -14,7 +14,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.CopyOnWriteArraySet",
 			"()V"
 		) {}
-	CopyOnWriteArraySet::CopyOnWriteArraySet(__JniBaseClass arg0)
+	CopyOnWriteArraySet::CopyOnWriteArraySet(JObject arg0)
 		: java::util::AbstractSet(
 			"java.util.concurrent.CopyOnWriteArraySet",
 			"(Ljava/util/Collection;)V",
@@ -30,7 +30,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArraySet::addAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArraySet::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -53,7 +53,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArraySet::containsAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArraySet::containsAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"containsAll",
@@ -69,7 +69,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	void CopyOnWriteArraySet::forEach(__JniBaseClass arg0)
+	void CopyOnWriteArraySet::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -84,7 +84,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass CopyOnWriteArraySet::iterator()
+	JObject CopyOnWriteArraySet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -99,7 +99,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean CopyOnWriteArraySet::removeAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArraySet::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -107,7 +107,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::removeIf(__JniBaseClass arg0)
+	jboolean CopyOnWriteArraySet::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -115,7 +115,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean CopyOnWriteArraySet::retainAll(__JniBaseClass arg0)
+	jboolean CopyOnWriteArraySet::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -130,7 +130,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass CopyOnWriteArraySet::spliterator()
+	JObject CopyOnWriteArraySet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

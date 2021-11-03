@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -25,13 +25,13 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class LocaleDisplayNames : public __JniBaseClass
+	class LocaleDisplayNames : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LocaleDisplayNames(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LocaleDisplayNames(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LocaleDisplayNames(QAndroidJniObject obj);
 		
 		// Constructors
@@ -45,8 +45,8 @@ namespace android::icu::text
 		android::icu::text::DisplayContext getContext(android::icu::text::DisplayContext_Type arg0);
 		android::icu::text::LocaleDisplayNames_DialectHandling getDialectHandling();
 		android::icu::util::ULocale getLocale();
-		__JniBaseClass getUiList(__JniBaseClass arg0, jboolean arg1, __JniBaseClass arg2);
-		__JniBaseClass getUiListCompareWholeItems(__JniBaseClass arg0, __JniBaseClass arg1);
+		JObject getUiList(JObject arg0, jboolean arg1, JObject arg2);
+		JObject getUiListCompareWholeItems(JObject arg0, JObject arg1);
 		jstring keyDisplayName(jstring arg0);
 		jstring keyValueDisplayName(jstring arg0, jstring arg1);
 		jstring languageDisplayName(jstring arg0);

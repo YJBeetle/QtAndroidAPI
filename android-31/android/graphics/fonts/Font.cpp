@@ -12,7 +12,7 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QAndroidJniObject forward
-	Font::Font(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Font::Font(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

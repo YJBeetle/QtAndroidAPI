@@ -7,11 +7,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DatabaseUtils_InsertHelper::DatabaseUtils_InsertHelper(android::database::sqlite::SQLiteDatabase arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.database.DatabaseUtils$InsertHelper",
 			"(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V",
 			arg0.object(),

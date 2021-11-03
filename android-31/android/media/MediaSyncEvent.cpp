@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass MediaSyncEvent::CREATOR()
+	JObject MediaSyncEvent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.MediaSyncEvent",
@@ -28,7 +28,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

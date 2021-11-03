@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,7 +13,7 @@ namespace android::graphics
 
 namespace android::hardware::camera2::params
 {
-	class Face : public __JniBaseClass
+	class Face : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::hardware::camera2::params
 		static jint SCORE_MIN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Face(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Face(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Face(QAndroidJniObject obj);
 		
 		// Constructors

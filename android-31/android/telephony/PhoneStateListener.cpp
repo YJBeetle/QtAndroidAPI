@@ -153,16 +153,16 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	PhoneStateListener::PhoneStateListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PhoneStateListener::PhoneStateListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneStateListener::PhoneStateListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.PhoneStateListener",
 			"()V"
 		) {}
-	PhoneStateListener::PhoneStateListener(__JniBaseClass arg0)
-		: __JniBaseClass(
+	PhoneStateListener::PhoneStateListener(JObject arg0)
+		: JObject(
 			"android.telephony.PhoneStateListener",
 			"(Ljava/util/concurrent/Executor;)V",
 			arg0.object()
@@ -211,7 +211,7 @@ namespace android::telephony
 			arg1
 		);
 	}
-	void PhoneStateListener::onCellInfoChanged(__JniBaseClass arg0)
+	void PhoneStateListener::onCellInfoChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onCellInfoChanged",
@@ -260,7 +260,7 @@ namespace android::telephony
 			arg0.object()
 		);
 	}
-	void PhoneStateListener::onEmergencyNumberListChanged(__JniBaseClass arg0)
+	void PhoneStateListener::onEmergencyNumberListChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onEmergencyNumberListChanged",

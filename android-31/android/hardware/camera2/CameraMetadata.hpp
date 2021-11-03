@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::hardware::camera2
 {
-	class CameraMetadata : public __JniBaseClass
+	class CameraMetadata : public JObject
 	{
 	public:
 		// Fields
@@ -239,13 +239,13 @@ namespace android::hardware::camera2
 		static jint TONEMAP_PRESET_CURVE_SRGB();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraMetadata(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CameraMetadata(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CameraMetadata(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getKeys();
+		JObject getKeys();
 	};
 } // namespace android::hardware::camera2
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -37,44 +37,44 @@ namespace java::time::temporal
 
 namespace java::time::chrono
 {
-	class JapaneseDate : public __JniBaseClass
+	class JapaneseDate : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JapaneseDate(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JapaneseDate(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JapaneseDate(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static java::time::chrono::JapaneseDate from(__JniBaseClass arg0);
+		static java::time::chrono::JapaneseDate from(JObject arg0);
 		static java::time::chrono::JapaneseDate now();
 		static java::time::chrono::JapaneseDate now(java::time::Clock arg0);
 		static java::time::chrono::JapaneseDate now(java::time::ZoneId arg0);
 		static java::time::chrono::JapaneseDate of(jint arg0, jint arg1, jint arg2);
 		static java::time::chrono::JapaneseDate of(java::time::chrono::JapaneseEra arg0, jint arg1, jint arg2, jint arg3);
-		__JniBaseClass atTime(java::time::LocalTime arg0);
+		JObject atTime(java::time::LocalTime arg0);
 		jboolean equals(jobject arg0);
 		java::time::chrono::JapaneseChronology getChronology();
 		java::time::chrono::JapaneseEra getEra();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		jint hashCode();
-		jboolean isSupported(__JniBaseClass arg0);
+		jboolean isSupported(JObject arg0);
 		jint lengthOfMonth();
 		jint lengthOfYear();
-		java::time::chrono::JapaneseDate minus(__JniBaseClass arg0);
-		java::time::chrono::JapaneseDate minus(jlong arg0, __JniBaseClass arg1);
-		java::time::chrono::JapaneseDate plus(__JniBaseClass arg0);
-		java::time::chrono::JapaneseDate plus(jlong arg0, __JniBaseClass arg1);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		java::time::chrono::JapaneseDate minus(JObject arg0);
+		java::time::chrono::JapaneseDate minus(jlong arg0, JObject arg1);
+		java::time::chrono::JapaneseDate plus(JObject arg0);
+		java::time::chrono::JapaneseDate plus(jlong arg0, JObject arg1);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jlong toEpochDay();
 		jstring toString();
-		__JniBaseClass until(__JniBaseClass arg0);
-		jlong until(__JniBaseClass arg0, __JniBaseClass arg1);
-		java::time::chrono::JapaneseDate with(__JniBaseClass arg0);
-		java::time::chrono::JapaneseDate with(__JniBaseClass arg0, jlong arg1);
+		JObject until(JObject arg0);
+		jlong until(JObject arg0, JObject arg1);
+		java::time::chrono::JapaneseDate with(JObject arg0);
+		java::time::chrono::JapaneseDate with(JObject arg0, jlong arg1);
 	};
 } // namespace java::time::chrono
 

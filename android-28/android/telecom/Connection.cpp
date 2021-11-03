@@ -411,7 +411,7 @@ namespace android::telecom
 			"()Landroid/telecom/Conference;"
 		);
 	}
-	__JniBaseClass Connection::getConferenceables()
+	JObject Connection::getConferenceables()
 	{
 		return callObjectMethod(
 			"getConferenceables",
@@ -663,7 +663,7 @@ namespace android::telecom
 			arg0
 		);
 	}
-	void Connection::removeExtras(__JniBaseClass arg0)
+	void Connection::removeExtras(JObject arg0)
 	{
 		callMethod<void>(
 			"removeExtras",
@@ -758,7 +758,7 @@ namespace android::telecom
 			arg1
 		);
 	}
-	void Connection::setConferenceableConnections(__JniBaseClass arg0)
+	void Connection::setConferenceableConnections(JObject arg0)
 	{
 		callMethod<void>(
 			"setConferenceableConnections",
@@ -766,7 +766,7 @@ namespace android::telecom
 			arg0.object()
 		);
 	}
-	void Connection::setConferenceables(__JniBaseClass arg0)
+	void Connection::setConferenceables(JObject arg0)
 	{
 		callMethod<void>(
 			"setConferenceables",

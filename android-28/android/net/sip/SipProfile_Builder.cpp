@@ -6,23 +6,23 @@ namespace android::net::sip
 	// Fields
 	
 	// QAndroidJniObject forward
-	SipProfile_Builder::SipProfile_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SipProfile_Builder::SipProfile_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SipProfile_Builder::SipProfile_Builder(android::net::sip::SipProfile arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.sip.SipProfile$Builder",
 			"(Landroid/net/sip/SipProfile;)V",
 			arg0.object()
 		) {}
 	SipProfile_Builder::SipProfile_Builder(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.sip.SipProfile$Builder",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	SipProfile_Builder::SipProfile_Builder(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.sip.SipProfile$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

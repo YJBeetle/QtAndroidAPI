@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::util
 {
@@ -9,7 +9,7 @@ namespace java::util
 
 namespace java::lang
 {
-	class Character : public __JniBaseClass
+	class Character : public JObject
 	{
 	public:
 		// Fields
@@ -85,7 +85,7 @@ namespace java::lang
 		static jbyte UPPERCASE_LETTER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Character(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Character(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Character(QAndroidJniObject obj);
 		
 		// Constructors

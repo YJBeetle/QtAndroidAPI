@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -44,14 +44,14 @@ namespace android::media
 		MediaRoute2ProviderService();
 		
 		// Methods
-		__JniBaseClass getAllSessionInfo();
+		JObject getAllSessionInfo();
 		android::media::RoutingSessionInfo getSessionInfo(jstring arg0);
 		void notifyRequestFailed(jlong arg0, jint arg1);
-		void notifyRoutes(__JniBaseClass arg0);
+		void notifyRoutes(JObject arg0);
 		void notifySessionCreated(jlong arg0, android::media::RoutingSessionInfo arg1);
 		void notifySessionReleased(jstring arg0);
 		void notifySessionUpdated(android::media::RoutingSessionInfo arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onCreateSession(jlong arg0, jstring arg1, jstring arg2, android::os::Bundle arg3);
 		void onDeselectRoute(jlong arg0, jstring arg1, jstring arg2);
 		void onDiscoveryPreferenceChanged(android::media::RouteDiscoveryPreference arg0);

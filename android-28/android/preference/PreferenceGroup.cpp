@@ -11,14 +11,14 @@ namespace android::preference
 	PreferenceGroup::PreferenceGroup(QAndroidJniObject obj) : android::preference::Preference(obj) {}
 	
 	// Constructors
-	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, JObject arg1)
 		: android::preference::Preference(
 			"android.preference.PreferenceGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::Preference(
 			"android.preference.PreferenceGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -26,7 +26,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	PreferenceGroup::PreferenceGroup(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	PreferenceGroup::PreferenceGroup(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::Preference(
 			"android.preference.PreferenceGroup",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

@@ -5,24 +5,24 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StringCharacterIterator::StringCharacterIterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StringCharacterIterator::StringCharacterIterator(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	StringCharacterIterator::StringCharacterIterator(jstring arg0, jint arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;III)V",
 			arg0,

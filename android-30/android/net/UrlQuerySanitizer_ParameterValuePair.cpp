@@ -20,11 +20,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer_ParameterValuePair::UrlQuerySanitizer_ParameterValuePair(android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.UrlQuerySanitizer$ParameterValuePair",
 			"(Landroid/net/UrlQuerySanitizer;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.object(),

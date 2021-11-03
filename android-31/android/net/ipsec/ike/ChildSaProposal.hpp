@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 #include "./SaProposal.hpp"
 
 
@@ -18,8 +18,8 @@ namespace android::net::ipsec::ike
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getSupportedEncryptionAlgorithms();
-		static __JniBaseClass getSupportedIntegrityAlgorithms();
+		static JObject getSupportedEncryptionAlgorithms();
+		static JObject getSupportedIntegrityAlgorithms();
 		jboolean equals(jobject arg0);
 		jint hashCode();
 	};

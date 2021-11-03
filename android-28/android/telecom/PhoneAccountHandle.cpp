@@ -6,7 +6,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass PhoneAccountHandle::CREATOR()
+	JObject PhoneAccountHandle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.PhoneAccountHandle",
@@ -16,18 +16,18 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PhoneAccountHandle::PhoneAccountHandle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	PhoneAccountHandle::PhoneAccountHandle(android::content::ComponentName arg0, jstring arg1, android::os::UserHandle arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0.object(),

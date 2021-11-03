@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./ZoneId.hpp"
 
 namespace java::io
@@ -33,25 +33,25 @@ namespace java::time
 		// Constructors
 		
 		// Methods
-		static java::time::ZoneOffset from(__JniBaseClass arg0);
+		static java::time::ZoneOffset from(JObject arg0);
 		static java::time::ZoneOffset of(jstring arg0);
 		static java::time::ZoneOffset ofHours(jint arg0);
 		static java::time::ZoneOffset ofHoursMinutes(jint arg0, jint arg1);
 		static java::time::ZoneOffset ofHoursMinutesSeconds(jint arg0, jint arg1, jint arg2);
 		static java::time::ZoneOffset ofTotalSeconds(jint arg0);
-		__JniBaseClass adjustInto(__JniBaseClass arg0);
+		JObject adjustInto(JObject arg0);
 		jint compareTo(jobject arg0);
 		jint compareTo(java::time::ZoneOffset arg0);
 		jboolean equals(jobject arg0);
-		jint get(__JniBaseClass arg0);
+		jint get(JObject arg0);
 		jstring getId();
-		jlong getLong(__JniBaseClass arg0);
+		jlong getLong(JObject arg0);
 		java::time::zone::ZoneRules getRules();
 		jint getTotalSeconds();
 		jint hashCode();
-		jboolean isSupported(__JniBaseClass arg0);
-		jobject query(__JniBaseClass arg0);
-		java::time::temporal::ValueRange range(__JniBaseClass arg0);
+		jboolean isSupported(JObject arg0);
+		jobject query(JObject arg0);
+		java::time::temporal::ValueRange range(JObject arg0);
 		jstring toString();
 	};
 } // namespace java::time

@@ -6,11 +6,11 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	FragmentContainer::FragmentContainer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FragmentContainer::FragmentContainer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FragmentContainer::FragmentContainer()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.FragmentContainer",
 			"()V"
 		) {}

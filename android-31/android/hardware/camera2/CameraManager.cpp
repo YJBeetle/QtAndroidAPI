@@ -11,7 +11,7 @@ namespace android::hardware::camera2
 	// Fields
 	
 	// QAndroidJniObject forward
-	CameraManager::CameraManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CameraManager::CameraManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -39,14 +39,14 @@ namespace android::hardware::camera2
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	__JniBaseClass CameraManager::getConcurrentCameraIds()
+	JObject CameraManager::getConcurrentCameraIds()
 	{
 		return callObjectMethod(
 			"getConcurrentCameraIds",
 			"()Ljava/util/Set;"
 		);
 	}
-	jboolean CameraManager::isConcurrentSessionConfigurationSupported(__JniBaseClass arg0)
+	jboolean CameraManager::isConcurrentSessionConfigurationSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isConcurrentSessionConfigurationSupported",
@@ -64,7 +64,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraManager::openCamera(jstring arg0, __JniBaseClass arg1, android::hardware::camera2::CameraDevice_StateCallback arg2)
+	void CameraManager::openCamera(jstring arg0, JObject arg1, android::hardware::camera2::CameraDevice_StateCallback arg2)
 	{
 		callMethod<void>(
 			"openCamera",
@@ -83,7 +83,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::registerAvailabilityCallback(__JniBaseClass arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1)
+	void CameraManager::registerAvailabilityCallback(JObject arg0, android::hardware::camera2::CameraManager_AvailabilityCallback arg1)
 	{
 		callMethod<void>(
 			"registerAvailabilityCallback",
@@ -101,7 +101,7 @@ namespace android::hardware::camera2
 			arg1.object()
 		);
 	}
-	void CameraManager::registerTorchCallback(__JniBaseClass arg0, android::hardware::camera2::CameraManager_TorchCallback arg1)
+	void CameraManager::registerTorchCallback(JObject arg0, android::hardware::camera2::CameraManager_TorchCallback arg1)
 	{
 		callMethod<void>(
 			"registerTorchCallback",

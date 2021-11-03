@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::view
 {
@@ -17,7 +17,7 @@ namespace android::view
 
 namespace android::view
 {
-	class ViewDebug : public __JniBaseClass
+	class ViewDebug : public JObject
 	{
 	public:
 		// Fields
@@ -25,7 +25,7 @@ namespace android::view
 		static jboolean TRACE_RECYCLER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewDebug(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewDebug(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewDebug(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::view
 {
-	class MotionEvent_PointerCoords : public __JniBaseClass
+	class MotionEvent_PointerCoords : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::view
 		jfloat y();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MotionEvent_PointerCoords(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MotionEvent_PointerCoords(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MotionEvent_PointerCoords(QAndroidJniObject obj);
 		
 		// Constructors

@@ -6,11 +6,11 @@ namespace android::view::inputmethod
 	// Fields
 	
 	// QAndroidJniObject forward
-	InputMethodSubtype_InputMethodSubtypeBuilder::InputMethodSubtype_InputMethodSubtypeBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputMethodSubtype_InputMethodSubtypeBuilder::InputMethodSubtype_InputMethodSubtypeBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	InputMethodSubtype_InputMethodSubtypeBuilder::InputMethodSubtype_InputMethodSubtypeBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inputmethod.InputMethodSubtype$InputMethodSubtypeBuilder",
 			"()V"
 		) {}

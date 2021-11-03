@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -17,16 +17,16 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothGattService : public __JniBaseClass
+	class BluetoothGattService : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint SERVICE_TYPE_PRIMARY();
 		static jint SERVICE_TYPE_SECONDARY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothGattService(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothGattService(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattService(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,8 +37,8 @@ namespace android::bluetooth
 		jboolean addService(android::bluetooth::BluetoothGattService arg0);
 		jint describeContents();
 		android::bluetooth::BluetoothGattCharacteristic getCharacteristic(java::util::UUID arg0);
-		__JniBaseClass getCharacteristics();
-		__JniBaseClass getIncludedServices();
+		JObject getCharacteristics();
+		JObject getIncludedServices();
 		jint getInstanceId();
 		jint getType();
 		java::util::UUID getUuid();

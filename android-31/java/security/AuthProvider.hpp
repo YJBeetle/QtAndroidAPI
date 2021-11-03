@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../util/Dictionary.hpp"
 #include "../util/Hashtable.hpp"
 #include "../util/Properties.hpp"
@@ -25,9 +25,9 @@ namespace java::security
 		// Constructors
 		
 		// Methods
-		void login(javax::security::auth::Subject arg0, __JniBaseClass arg1);
+		void login(javax::security::auth::Subject arg0, JObject arg1);
 		void logout();
-		void setCallbackHandler(__JniBaseClass arg0);
+		void setCallbackHandler(JObject arg0);
 	};
 } // namespace java::security
 

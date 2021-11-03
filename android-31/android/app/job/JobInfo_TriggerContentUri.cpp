@@ -5,7 +5,7 @@
 namespace android::app::job
 {
 	// Fields
-	__JniBaseClass JobInfo_TriggerContentUri::CREATOR()
+	JObject JobInfo_TriggerContentUri::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.job.JobInfo$TriggerContentUri",
@@ -22,11 +22,11 @@ namespace android::app::job
 	}
 	
 	// QAndroidJniObject forward
-	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	JobInfo_TriggerContentUri::JobInfo_TriggerContentUri(android::net::Uri arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.job.JobInfo$TriggerContentUri",
 			"(Landroid/net/Uri;I)V",
 			arg0.object(),

@@ -8,7 +8,7 @@ namespace android::hardware::lights
 	// Fields
 	
 	// QAndroidJniObject forward
-	LightsManager::LightsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LightsManager::LightsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -21,7 +21,7 @@ namespace android::hardware::lights
 			arg0.object()
 		);
 	}
-	__JniBaseClass LightsManager::getLights()
+	JObject LightsManager::getLights()
 	{
 		return callObjectMethod(
 			"getLights",

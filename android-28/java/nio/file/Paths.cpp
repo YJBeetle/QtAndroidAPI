@@ -6,12 +6,12 @@ namespace java::nio::file
 	// Fields
 	
 	// QAndroidJniObject forward
-	Paths::Paths(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Paths::Paths(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Paths::get(java::net::URI arg0)
+	JObject Paths::get(java::net::URI arg0)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Paths",
@@ -20,7 +20,7 @@ namespace java::nio::file
 			arg0.object()
 		);
 	}
-	__JniBaseClass Paths::get(jstring arg0, jarray arg1)
+	JObject Paths::get(jstring arg0, jarray arg1)
 	{
 		return callStaticObjectMethod(
 			"java.nio.file.Paths",

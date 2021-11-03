@@ -712,11 +712,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	ToneGenerator::ToneGenerator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ToneGenerator::ToneGenerator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ToneGenerator::ToneGenerator(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.ToneGenerator",
 			"(II)V",
 			arg0,

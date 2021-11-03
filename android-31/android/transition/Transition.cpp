@@ -42,16 +42,16 @@ namespace android::transition
 	}
 	
 	// QAndroidJniObject forward
-	Transition::Transition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Transition::Transition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Transition::Transition()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.Transition",
 			"()V"
 		) {}
-	Transition::Transition(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Transition::Transition(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.transition.Transition",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
@@ -59,7 +59,7 @@ namespace android::transition
 		) {}
 	
 	// Methods
-	android::transition::Transition Transition::addListener(__JniBaseClass arg0)
+	android::transition::Transition Transition::addListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"addListener",
@@ -223,7 +223,7 @@ namespace android::transition
 			"()Landroid/transition/Transition$EpicenterCallback;"
 		);
 	}
-	__JniBaseClass Transition::getInterpolator()
+	JObject Transition::getInterpolator()
 	{
 		return callObjectMethod(
 			"getInterpolator",
@@ -258,28 +258,28 @@ namespace android::transition
 			"()J"
 		);
 	}
-	__JniBaseClass Transition::getTargetIds()
+	JObject Transition::getTargetIds()
 	{
 		return callObjectMethod(
 			"getTargetIds",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Transition::getTargetNames()
+	JObject Transition::getTargetNames()
 	{
 		return callObjectMethod(
 			"getTargetNames",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Transition::getTargetTypes()
+	JObject Transition::getTargetTypes()
 	{
 		return callObjectMethod(
 			"getTargetTypes",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Transition::getTargets()
+	JObject Transition::getTargets()
 	{
 		return callObjectMethod(
 			"getTargets",
@@ -311,7 +311,7 @@ namespace android::transition
 			arg1.object()
 		);
 	}
-	android::transition::Transition Transition::removeListener(__JniBaseClass arg0)
+	android::transition::Transition Transition::removeListener(JObject arg0)
 	{
 		return callObjectMethod(
 			"removeListener",
@@ -367,7 +367,7 @@ namespace android::transition
 			arg0.object()
 		);
 	}
-	android::transition::Transition Transition::setInterpolator(__JniBaseClass arg0)
+	android::transition::Transition Transition::setInterpolator(JObject arg0)
 	{
 		return callObjectMethod(
 			"setInterpolator",

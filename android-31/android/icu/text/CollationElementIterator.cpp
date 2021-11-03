@@ -20,7 +20,7 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	CollationElementIterator::CollationElementIterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CollationElementIterator::CollationElementIterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -127,7 +127,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	void CollationElementIterator::setText(__JniBaseClass arg0)
+	void CollationElementIterator::setText(JObject arg0)
 	{
 		callMethod<void>(
 			"setText",

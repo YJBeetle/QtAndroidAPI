@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./MetaKeyKeyListener.hpp"
 #include "./BaseKeyListener.hpp"
 #include "./NumberKeyListener.hpp"

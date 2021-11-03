@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 #include "./Button.hpp"
@@ -24,9 +24,9 @@ namespace android::widget
 		
 		// Constructors
 		CheckBox(android::content::Context arg0);
-		CheckBox(android::content::Context arg0, __JniBaseClass arg1);
-		CheckBox(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CheckBox(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		CheckBox(android::content::Context arg0, JObject arg1);
+		CheckBox(android::content::Context arg0, JObject arg1, jint arg2);
+		CheckBox(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();

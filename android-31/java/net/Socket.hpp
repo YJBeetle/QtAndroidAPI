@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -37,13 +37,13 @@ namespace java::nio::channels
 
 namespace java::net
 {
-	class Socket : public __JniBaseClass
+	class Socket : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Socket(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Socket(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Socket(QAndroidJniObject obj);
 		
 		// Constructors
@@ -57,7 +57,7 @@ namespace java::net
 		Socket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3);
 		
 		// Methods
-		static void setSocketImplFactory(__JniBaseClass arg0);
+		static void setSocketImplFactory(JObject arg0);
 		void bind(java::net::SocketAddress arg0);
 		void close();
 		void connect(java::net::SocketAddress arg0);
@@ -70,7 +70,7 @@ namespace java::net
 		jint getLocalPort();
 		java::net::SocketAddress getLocalSocketAddress();
 		jboolean getOOBInline();
-		jobject getOption(__JniBaseClass arg0);
+		jobject getOption(JObject arg0);
 		java::io::OutputStream getOutputStream();
 		jint getPort();
 		jint getReceiveBufferSize();
@@ -89,7 +89,7 @@ namespace java::net
 		void sendUrgentData(jint arg0);
 		void setKeepAlive(jboolean arg0);
 		void setOOBInline(jboolean arg0);
-		java::net::Socket setOption(__JniBaseClass arg0, jobject arg1);
+		java::net::Socket setOption(JObject arg0, jobject arg1);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		void setReceiveBufferSize(jint arg0);
 		void setReuseAddress(jboolean arg0);
@@ -100,7 +100,7 @@ namespace java::net
 		void setTrafficClass(jint arg0);
 		void shutdownInput();
 		void shutdownOutput();
-		__JniBaseClass supportedOptions();
+		JObject supportedOptions();
 		jstring toString();
 	};
 } // namespace java::net

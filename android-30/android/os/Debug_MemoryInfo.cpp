@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass Debug_MemoryInfo::CREATOR()
+	JObject Debug_MemoryInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.Debug$MemoryInfo",
@@ -68,11 +68,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Debug_MemoryInfo::Debug_MemoryInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Debug_MemoryInfo::Debug_MemoryInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Debug_MemoryInfo::Debug_MemoryInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.Debug$MemoryInfo",
 			"()V"
 		) {}
@@ -93,7 +93,7 @@ namespace android::os
 			arg0
 		).object<jstring>();
 	}
-	__JniBaseClass Debug_MemoryInfo::getMemoryStats()
+	JObject Debug_MemoryInfo::getMemoryStats()
 	{
 		return callObjectMethod(
 			"getMemoryStats",

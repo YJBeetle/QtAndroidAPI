@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	Edits_Iterator::Edits_Iterator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Edits_Iterator::Edits_Iterator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

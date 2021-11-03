@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass Fragment_SavedState::CREATOR()
+	JObject Fragment_SavedState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.Fragment$SavedState",
@@ -14,7 +14,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	Fragment_SavedState::Fragment_SavedState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Fragment_SavedState::Fragment_SavedState(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,24 +6,24 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	Scroller::Scroller(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Scroller::Scroller(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Scroller::Scroller(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.Scroller",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Scroller::Scroller(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	Scroller::Scroller(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.widget.Scroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Scroller::Scroller(android::content::Context arg0, __JniBaseClass arg1, jboolean arg2)
-		: __JniBaseClass(
+	Scroller::Scroller(android::content::Context arg0, JObject arg1, jboolean arg2)
+		: JObject(
 			"android.widget.Scroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;Z)V",
 			arg0.object(),

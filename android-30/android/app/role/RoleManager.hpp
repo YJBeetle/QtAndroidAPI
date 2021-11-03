@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,7 +9,7 @@ namespace android::content
 
 namespace android::app::role
 {
-	class RoleManager : public __JniBaseClass
+	class RoleManager : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::app::role
 		static jstring ROLE_SMS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RoleManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RoleManager(QAndroidJniObject obj);
 		
 		// Constructors

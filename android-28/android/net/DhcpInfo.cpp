@@ -48,11 +48,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	DhcpInfo::DhcpInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DhcpInfo::DhcpInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DhcpInfo::DhcpInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.DhcpInfo",
 			"()V"
 		) {}

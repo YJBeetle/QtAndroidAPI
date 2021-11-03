@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellIdentity::CREATOR()
+	JObject CellIdentity::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellIdentity",
@@ -14,7 +14,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	CellIdentity::CellIdentity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CellIdentity::CellIdentity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

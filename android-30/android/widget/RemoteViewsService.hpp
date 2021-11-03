@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
@@ -25,8 +25,8 @@ namespace android::widget
 		RemoteViewsService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
-		__JniBaseClass onGetViewFactory(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
+		JObject onGetViewFactory(android::content::Intent arg0);
 	};
 } // namespace android::widget
 

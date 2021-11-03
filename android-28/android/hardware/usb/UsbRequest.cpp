@@ -8,11 +8,11 @@ namespace android::hardware::usb
 	// Fields
 	
 	// QAndroidJniObject forward
-	UsbRequest::UsbRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UsbRequest::UsbRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UsbRequest::UsbRequest()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.usb.UsbRequest",
 			"()V"
 		) {}

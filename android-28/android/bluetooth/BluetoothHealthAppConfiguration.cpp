@@ -4,7 +4,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothHealthAppConfiguration::CREATOR()
+	JObject BluetoothHealthAppConfiguration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothHealthAppConfiguration",
@@ -14,7 +14,7 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothHealthAppConfiguration::BluetoothHealthAppConfiguration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

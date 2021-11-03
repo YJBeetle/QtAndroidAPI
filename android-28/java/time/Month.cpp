@@ -109,7 +109,7 @@ namespace java::time
 	// Constructors
 	
 	// Methods
-	java::time::Month Month::from(__JniBaseClass arg0)
+	java::time::Month Month::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.Month",
@@ -144,7 +144,7 @@ namespace java::time
 			"()[Ljava/time/Month;"
 		).object<jarray>();
 	}
-	__JniBaseClass Month::adjustInto(__JniBaseClass arg0)
+	JObject Month::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -167,7 +167,7 @@ namespace java::time
 			"()Ljava/time/Month;"
 		);
 	}
-	jint Month::get(__JniBaseClass arg0)
+	jint Month::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -184,7 +184,7 @@ namespace java::time
 			arg1.object()
 		).object<jstring>();
 	}
-	jlong Month::getLong(__JniBaseClass arg0)
+	jlong Month::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -199,7 +199,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jboolean Month::isSupported(__JniBaseClass arg0)
+	jboolean Month::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -245,7 +245,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject Month::query(__JniBaseClass arg0)
+	jobject Month::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -253,7 +253,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange Month::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange Month::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",

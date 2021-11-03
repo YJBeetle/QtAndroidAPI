@@ -9,12 +9,12 @@ namespace android::media::session
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaSessionManager::MediaSessionManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSessionManager::MediaSessionManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void MediaSessionManager::addOnActiveSessionsChangedListener(__JniBaseClass arg0, android::content::ComponentName arg1)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1)
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -23,7 +23,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	void MediaSessionManager::addOnActiveSessionsChangedListener(__JniBaseClass arg0, android::content::ComponentName arg1, android::os::Handler arg2)
+	void MediaSessionManager::addOnActiveSessionsChangedListener(JObject arg0, android::content::ComponentName arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"addOnActiveSessionsChangedListener",
@@ -33,7 +33,7 @@ namespace android::media::session
 			arg2.object()
 		);
 	}
-	void MediaSessionManager::addOnSession2TokensChangedListener(__JniBaseClass arg0)
+	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnSession2TokensChangedListener",
@@ -41,7 +41,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::addOnSession2TokensChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaSessionManager::addOnSession2TokensChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnSession2TokensChangedListener",
@@ -50,7 +50,7 @@ namespace android::media::session
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
+	JObject MediaSessionManager::getActiveSessions(android::content::ComponentName arg0)
 	{
 		return callObjectMethod(
 			"getActiveSessions",
@@ -58,7 +58,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	__JniBaseClass MediaSessionManager::getSession2Tokens()
+	JObject MediaSessionManager::getSession2Tokens()
 	{
 		return callObjectMethod(
 			"getSession2Tokens",
@@ -81,7 +81,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::removeOnActiveSessionsChangedListener(__JniBaseClass arg0)
+	void MediaSessionManager::removeOnActiveSessionsChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnActiveSessionsChangedListener",
@@ -89,7 +89,7 @@ namespace android::media::session
 			arg0.object()
 		);
 	}
-	void MediaSessionManager::removeOnSession2TokensChangedListener(__JniBaseClass arg0)
+	void MediaSessionManager::removeOnSession2TokensChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnSession2TokensChangedListener",

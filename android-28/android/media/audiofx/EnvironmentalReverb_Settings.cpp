@@ -65,16 +65,16 @@ namespace android::media::audiofx
 	}
 	
 	// QAndroidJniObject forward
-	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.EnvironmentalReverb$Settings",
 			"()V"
 		) {}
 	EnvironmentalReverb_Settings::EnvironmentalReverb_Settings(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.audiofx.EnvironmentalReverb$Settings",
 			"(Ljava/lang/String;)V",
 			arg0

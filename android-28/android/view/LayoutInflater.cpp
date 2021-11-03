@@ -8,7 +8,7 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	LayoutInflater::LayoutInflater(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LayoutInflater::LayoutInflater(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -30,7 +30,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	android::view::View LayoutInflater::createView(jstring arg0, jstring arg1, __JniBaseClass arg2)
+	android::view::View LayoutInflater::createView(jstring arg0, jstring arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"createView",
@@ -47,21 +47,21 @@ namespace android::view
 			"()Landroid/content/Context;"
 		);
 	}
-	__JniBaseClass LayoutInflater::getFactory()
+	JObject LayoutInflater::getFactory()
 	{
 		return callObjectMethod(
 			"getFactory",
 			"()Landroid/view/LayoutInflater$Factory;"
 		);
 	}
-	__JniBaseClass LayoutInflater::getFactory2()
+	JObject LayoutInflater::getFactory2()
 	{
 		return callObjectMethod(
 			"getFactory2",
 			"()Landroid/view/LayoutInflater$Factory2;"
 		);
 	}
-	__JniBaseClass LayoutInflater::getFilter()
+	JObject LayoutInflater::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -77,7 +77,7 @@ namespace android::view
 			arg1.object()
 		);
 	}
-	android::view::View LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1)
+	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -96,7 +96,7 @@ namespace android::view
 			arg2
 		);
 	}
-	android::view::View LayoutInflater::inflate(__JniBaseClass arg0, android::view::ViewGroup arg1, jboolean arg2)
+	android::view::View LayoutInflater::inflate(JObject arg0, android::view::ViewGroup arg1, jboolean arg2)
 	{
 		return callObjectMethod(
 			"inflate",
@@ -106,7 +106,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void LayoutInflater::setFactory(__JniBaseClass arg0)
+	void LayoutInflater::setFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setFactory",
@@ -114,7 +114,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void LayoutInflater::setFactory2(__JniBaseClass arg0)
+	void LayoutInflater::setFactory2(JObject arg0)
 	{
 		callMethod<void>(
 			"setFactory2",
@@ -122,7 +122,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void LayoutInflater::setFilter(__JniBaseClass arg0)
+	void LayoutInflater::setFilter(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilter",

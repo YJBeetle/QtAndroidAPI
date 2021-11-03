@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -25,24 +25,24 @@ namespace java::security
 
 namespace java::security
 {
-	class AccessController : public __JniBaseClass
+	class AccessController : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessController(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessController(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessController(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static void checkPermission(java::security::Permission arg0);
-		static jobject doPrivileged(__JniBaseClass arg0);
-		static jobject doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1);
-		static jobject doPrivileged(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2);
-		static jobject doPrivilegedWithCombiner(__JniBaseClass arg0);
-		static jobject doPrivilegedWithCombiner(__JniBaseClass arg0, java::security::AccessControlContext arg1, jarray arg2);
+		static jobject doPrivileged(JObject arg0);
+		static jobject doPrivileged(JObject arg0, java::security::AccessControlContext arg1);
+		static jobject doPrivileged(JObject arg0, java::security::AccessControlContext arg1, jarray arg2);
+		static jobject doPrivilegedWithCombiner(JObject arg0);
+		static jobject doPrivilegedWithCombiner(JObject arg0, java::security::AccessControlContext arg1, jarray arg2);
 		static java::security::AccessControlContext getContext();
 	};
 } // namespace java::security

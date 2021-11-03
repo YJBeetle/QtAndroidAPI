@@ -1,30 +1,30 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 
 namespace javax::xml::transform::dom
 {
-	class DOMSource : public __JniBaseClass
+	class DOMSource : public JObject
 	{
 	public:
 		// Fields
 		static jstring FEATURE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DOMSource(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DOMSource(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DOMSource(QAndroidJniObject obj);
 		
 		// Constructors
 		DOMSource();
-		DOMSource(__JniBaseClass arg0);
-		DOMSource(__JniBaseClass arg0, jstring arg1);
+		DOMSource(JObject arg0);
+		DOMSource(JObject arg0, jstring arg1);
 		
 		// Methods
-		__JniBaseClass getNode();
+		JObject getNode();
 		jstring getSystemId();
 		jboolean isEmpty();
-		void setNode(__JniBaseClass arg0);
+		void setNode(JObject arg0);
 		void setSystemId(jstring arg0);
 	};
 } // namespace javax::xml::transform::dom

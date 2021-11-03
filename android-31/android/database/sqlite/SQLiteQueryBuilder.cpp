@@ -9,11 +9,11 @@ namespace android::database::sqlite
 	// Fields
 	
 	// QAndroidJniObject forward
-	SQLiteQueryBuilder::SQLiteQueryBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SQLiteQueryBuilder::SQLiteQueryBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SQLiteQueryBuilder::SQLiteQueryBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.sqlite.SQLiteQueryBuilder",
 			"()V"
 		) {}
@@ -106,7 +106,7 @@ namespace android::database::sqlite
 			arg2
 		).object<jstring>();
 	}
-	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, JObject arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return callObjectMethod(
 			"buildUnionSubQuery",
@@ -121,7 +121,7 @@ namespace android::database::sqlite
 			arg7
 		).object<jstring>();
 	}
-	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, __JniBaseClass arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8)
+	jstring SQLiteQueryBuilder::buildUnionSubQuery(jstring arg0, jarray arg1, JObject arg2, jint arg3, jstring arg4, jstring arg5, jarray arg6, jstring arg7, jstring arg8)
 	{
 		return callObjectMethod(
 			"buildUnionSubQuery",
@@ -147,21 +147,21 @@ namespace android::database::sqlite
 			arg2
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::getCursorFactory()
+	JObject SQLiteQueryBuilder::getCursorFactory()
 	{
 		return callObjectMethod(
 			"getCursorFactory",
 			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::getProjectionGreylist()
+	JObject SQLiteQueryBuilder::getProjectionGreylist()
 	{
 		return callObjectMethod(
 			"getProjectionGreylist",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::getProjectionMap()
+	JObject SQLiteQueryBuilder::getProjectionMap()
 	{
 		return callObjectMethod(
 			"getProjectionMap",
@@ -212,7 +212,7 @@ namespace android::database::sqlite
 			"()Z"
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
 		return callObjectMethod(
 			"query",
@@ -226,7 +226,7 @@ namespace android::database::sqlite
 			arg6
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
 	{
 		return callObjectMethod(
 			"query",
@@ -241,7 +241,7 @@ namespace android::database::sqlite
 			arg7
 		);
 	}
-	__JniBaseClass SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, android::os::CancellationSignal arg8)
+	JObject SQLiteQueryBuilder::query(android::database::sqlite::SQLiteDatabase arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7, android::os::CancellationSignal arg8)
 	{
 		return callObjectMethod(
 			"query",
@@ -257,7 +257,7 @@ namespace android::database::sqlite
 			arg8.object()
 		);
 	}
-	void SQLiteQueryBuilder::setCursorFactory(__JniBaseClass arg0)
+	void SQLiteQueryBuilder::setCursorFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setCursorFactory",
@@ -273,7 +273,7 @@ namespace android::database::sqlite
 			arg0
 		);
 	}
-	void SQLiteQueryBuilder::setProjectionGreylist(__JniBaseClass arg0)
+	void SQLiteQueryBuilder::setProjectionGreylist(JObject arg0)
 	{
 		callMethod<void>(
 			"setProjectionGreylist",
@@ -281,7 +281,7 @@ namespace android::database::sqlite
 			arg0.object()
 		);
 	}
-	void SQLiteQueryBuilder::setProjectionMap(__JniBaseClass arg0)
+	void SQLiteQueryBuilder::setProjectionMap(JObject arg0)
 	{
 		callMethod<void>(
 			"setProjectionMap",

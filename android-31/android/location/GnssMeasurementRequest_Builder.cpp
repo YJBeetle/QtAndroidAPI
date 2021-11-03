@@ -6,16 +6,16 @@ namespace android::location
 	// Fields
 	
 	// QAndroidJniObject forward
-	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssMeasurementRequest$Builder",
 			"()V"
 		) {}
 	GnssMeasurementRequest_Builder::GnssMeasurementRequest_Builder(android::location::GnssMeasurementRequest arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.GnssMeasurementRequest$Builder",
 			"(Landroid/location/GnssMeasurementRequest;)V",
 			arg0.object()

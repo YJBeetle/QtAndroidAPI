@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaCasException_1::MediaCasException_1(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCasException_1::MediaCasException_1(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

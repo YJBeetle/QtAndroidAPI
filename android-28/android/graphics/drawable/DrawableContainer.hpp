@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Drawable.hpp"
 
 namespace android::content::res
@@ -80,7 +80,7 @@ namespace android::graphics::drawable
 		void jumpToCurrentState();
 		android::graphics::drawable::Drawable mutate();
 		jboolean onLayoutDirectionChanged(jint arg0);
-		void scheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1, jlong arg2);
+		void scheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1, jlong arg2);
 		jboolean selectDrawable(jint arg0);
 		void setAlpha(jint arg0);
 		void setAutoMirrored(jboolean arg0);
@@ -93,7 +93,7 @@ namespace android::graphics::drawable
 		void setTintList(android::content::res::ColorStateList arg0);
 		void setTintMode(android::graphics::PorterDuff_Mode arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);
-		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, __JniBaseClass arg1);
+		void unscheduleDrawable(android::graphics::drawable::Drawable arg0, JObject arg1);
 	};
 } // namespace android::graphics::drawable
 

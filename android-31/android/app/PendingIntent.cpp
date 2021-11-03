@@ -10,7 +10,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass PendingIntent::CREATOR()
+	JObject PendingIntent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.PendingIntent",
@@ -62,7 +62,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	PendingIntent::PendingIntent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PendingIntent::PendingIntent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -296,7 +296,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void PendingIntent::send(jint arg0, __JniBaseClass arg1, android::os::Handler arg2)
+	void PendingIntent::send(jint arg0, JObject arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"send",
@@ -306,7 +306,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4)
 	{
 		callMethod<void>(
 			"send",
@@ -318,7 +318,7 @@ namespace android::app
 			arg4.object()
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5)
 	{
 		callMethod<void>(
 			"send",
@@ -331,7 +331,7 @@ namespace android::app
 			arg5
 		);
 	}
-	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, __JniBaseClass arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6)
+	void PendingIntent::send(android::content::Context arg0, jint arg1, android::content::Intent arg2, JObject arg3, android::os::Handler arg4, jstring arg5, android::os::Bundle arg6)
 	{
 		callMethod<void>(
 			"send",

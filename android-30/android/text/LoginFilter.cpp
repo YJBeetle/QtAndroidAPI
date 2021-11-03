@@ -5,12 +5,12 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	LoginFilter::LoginFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LoginFilter::LoginFilter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jstring LoginFilter::filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5)
+	jstring LoginFilter::filter(jstring arg0, jint arg1, jint arg2, JObject arg3, jint arg4, jint arg5)
 	{
 		return callObjectMethod(
 			"filter",

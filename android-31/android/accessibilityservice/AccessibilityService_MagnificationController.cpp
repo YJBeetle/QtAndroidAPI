@@ -7,12 +7,12 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityService_MagnificationController::AccessibilityService_MagnificationController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityService_MagnificationController::AccessibilityService_MagnificationController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void AccessibilityService_MagnificationController::addListener(__JniBaseClass arg0)
+	void AccessibilityService_MagnificationController::addListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addListener",
@@ -20,7 +20,7 @@ namespace android::accessibilityservice
 			arg0.object()
 		);
 	}
-	void AccessibilityService_MagnificationController::addListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AccessibilityService_MagnificationController::addListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addListener",
@@ -57,7 +57,7 @@ namespace android::accessibilityservice
 			"()F"
 		);
 	}
-	jboolean AccessibilityService_MagnificationController::removeListener(__JniBaseClass arg0)
+	jboolean AccessibilityService_MagnificationController::removeListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeListener",

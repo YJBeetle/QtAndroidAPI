@@ -3,7 +3,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass AudioMetadata_Format::KEY_ATMOS_PRESENT()
+	JObject AudioMetadata_Format::KEY_ATMOS_PRESENT()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -11,7 +11,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_AUDIO_ENCODING()
+	JObject AudioMetadata_Format::KEY_AUDIO_ENCODING()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -19,7 +19,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_BIT_RATE()
+	JObject AudioMetadata_Format::KEY_BIT_RATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -27,7 +27,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_BIT_WIDTH()
+	JObject AudioMetadata_Format::KEY_BIT_WIDTH()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -35,7 +35,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_CHANNEL_MASK()
+	JObject AudioMetadata_Format::KEY_CHANNEL_MASK()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -43,7 +43,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_MIME()
+	JObject AudioMetadata_Format::KEY_MIME()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -51,7 +51,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_PRESENTATION_CONTENT_CLASSIFIER()
+	JObject AudioMetadata_Format::KEY_PRESENTATION_CONTENT_CLASSIFIER()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -59,7 +59,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_PRESENTATION_ID()
+	JObject AudioMetadata_Format::KEY_PRESENTATION_ID()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -67,7 +67,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_PRESENTATION_LANGUAGE()
+	JObject AudioMetadata_Format::KEY_PRESENTATION_LANGUAGE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -75,7 +75,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_PROGRAM_ID()
+	JObject AudioMetadata_Format::KEY_PROGRAM_ID()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -83,7 +83,7 @@ namespace android::media
 			"Landroid/media/AudioMetadata$Key;"
 		);
 	}
-	__JniBaseClass AudioMetadata_Format::KEY_SAMPLE_RATE()
+	JObject AudioMetadata_Format::KEY_SAMPLE_RATE()
 	{
 		return getStaticObjectField(
 			"android.media.AudioMetadata$Format",
@@ -93,7 +93,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioMetadata_Format::AudioMetadata_Format(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioMetadata_Format::AudioMetadata_Format(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

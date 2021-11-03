@@ -14,12 +14,12 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CalendarContract_CalendarEntity::CalendarContract_CalendarEntity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_CalendarEntity::CalendarContract_CalendarEntity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_CalendarEntity::newEntityIterator(__JniBaseClass arg0)
+	JObject CalendarContract_CalendarEntity::newEntityIterator(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$CalendarEntity",

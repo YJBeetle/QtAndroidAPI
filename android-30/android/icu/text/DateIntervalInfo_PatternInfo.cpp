@@ -5,11 +5,11 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateIntervalInfo_PatternInfo::DateIntervalInfo_PatternInfo(jstring arg0, jstring arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.DateIntervalInfo$PatternInfo",
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,

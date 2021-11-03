@@ -13,7 +13,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaTimestamp::MediaTimestamp(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

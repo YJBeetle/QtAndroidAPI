@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -17,32 +17,32 @@ namespace android::printservice
 
 namespace android::printservice
 {
-	class PrinterDiscoverySession : public __JniBaseClass
+	class PrinterDiscoverySession : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrinterDiscoverySession(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrinterDiscoverySession(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrinterDiscoverySession(QAndroidJniObject obj);
 		
 		// Constructors
 		PrinterDiscoverySession();
 		
 		// Methods
-		void addPrinters(__JniBaseClass arg0);
-		__JniBaseClass getPrinters();
-		__JniBaseClass getTrackedPrinters();
+		void addPrinters(JObject arg0);
+		JObject getPrinters();
+		JObject getTrackedPrinters();
 		jboolean isDestroyed();
 		jboolean isPrinterDiscoveryStarted();
 		void onDestroy();
 		void onRequestCustomPrinterIcon(android::print::PrinterId arg0, android::os::CancellationSignal arg1, android::printservice::CustomPrinterIconCallback arg2);
-		void onStartPrinterDiscovery(__JniBaseClass arg0);
+		void onStartPrinterDiscovery(JObject arg0);
 		void onStartPrinterStateTracking(android::print::PrinterId arg0);
 		void onStopPrinterDiscovery();
 		void onStopPrinterStateTracking(android::print::PrinterId arg0);
-		void onValidatePrinters(__JniBaseClass arg0);
-		void removePrinters(__JniBaseClass arg0);
+		void onValidatePrinters(JObject arg0);
+		void removePrinters(JObject arg0);
 	};
 } // namespace android::printservice
 

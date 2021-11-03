@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,17 +13,17 @@ namespace android::os
 
 namespace android::content::pm::verify::domain
 {
-	class DomainVerificationUserState : public __JniBaseClass
+	class DomainVerificationUserState : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DOMAIN_STATE_NONE();
 		static jint DOMAIN_STATE_SELECTED();
 		static jint DOMAIN_STATE_VERIFIED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DomainVerificationUserState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DomainVerificationUserState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DomainVerificationUserState(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::content::pm::verify::domain
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getHostToStateMap();
+		JObject getHostToStateMap();
 		jstring getPackageName();
 		android::os::UserHandle getUser();
 		jint hashCode();

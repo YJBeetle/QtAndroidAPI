@@ -5,26 +5,26 @@ namespace android::hardware::lights
 	// Fields
 	
 	// QAndroidJniObject forward
-	LightsRequest::LightsRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LightsRequest::LightsRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass LightsRequest::getLightStates()
+	JObject LightsRequest::getLightStates()
 	{
 		return callObjectMethod(
 			"getLightStates",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass LightsRequest::getLights()
+	JObject LightsRequest::getLights()
 	{
 		return callObjectMethod(
 			"getLights",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass LightsRequest::getLightsAndStates()
+	JObject LightsRequest::getLightsAndStates()
 	{
 		return callObjectMethod(
 			"getLightsAndStates",

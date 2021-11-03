@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::icu::text
 {
-	class Transliterator_Position : public __JniBaseClass
+	class Transliterator_Position : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::icu::text
 		jint start();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Transliterator_Position(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Transliterator_Position(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Transliterator_Position(QAndroidJniObject obj);
 		
 		// Constructors

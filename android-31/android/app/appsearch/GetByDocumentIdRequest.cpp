@@ -13,12 +13,12 @@ namespace android::app::appsearch
 	}
 	
 	// QAndroidJniObject forward
-	GetByDocumentIdRequest::GetByDocumentIdRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GetByDocumentIdRequest::GetByDocumentIdRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass GetByDocumentIdRequest::getIds()
+	JObject GetByDocumentIdRequest::getIds()
 	{
 		return callObjectMethod(
 			"getIds",
@@ -32,7 +32,7 @@ namespace android::app::appsearch
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass GetByDocumentIdRequest::getProjections()
+	JObject GetByDocumentIdRequest::getProjections()
 	{
 		return callObjectMethod(
 			"getProjections",

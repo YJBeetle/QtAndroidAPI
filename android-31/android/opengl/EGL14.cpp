@@ -810,11 +810,11 @@ namespace android::opengl
 	}
 	
 	// QAndroidJniObject forward
-	EGL14::EGL14(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EGL14::EGL14(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EGL14::EGL14()
-		: __JniBaseClass(
+		: JObject(
 			"android.opengl.EGL14",
 			"()V"
 		) {}

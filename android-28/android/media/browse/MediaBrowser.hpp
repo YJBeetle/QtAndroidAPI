@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -33,7 +33,7 @@ namespace android::os
 
 namespace android::media::browse
 {
-	class MediaBrowser : public __JniBaseClass
+	class MediaBrowser : public JObject
 	{
 	public:
 		// Fields
@@ -41,7 +41,7 @@ namespace android::media::browse
 		static jstring EXTRA_PAGE_SIZE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaBrowser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaBrowser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaBrowser(QAndroidJniObject obj);
 		
 		// Constructors

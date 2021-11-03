@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass SearchableInfo::CREATOR()
+	JObject SearchableInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.SearchableInfo",
@@ -15,7 +15,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	SearchableInfo::SearchableInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SearchableInfo::SearchableInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

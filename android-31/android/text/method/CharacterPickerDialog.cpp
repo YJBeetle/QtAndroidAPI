@@ -12,7 +12,7 @@ namespace android::text::method
 	CharacterPickerDialog::CharacterPickerDialog(QAndroidJniObject obj) : android::app::Dialog(obj) {}
 	
 	// Constructors
-	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, __JniBaseClass arg2, jstring arg3, jboolean arg4)
+	CharacterPickerDialog::CharacterPickerDialog(android::content::Context arg0, android::view::View arg1, JObject arg2, jstring arg3, jboolean arg4)
 		: android::app::Dialog(
 			"android.text.method.CharacterPickerDialog",
 			"(Landroid/content/Context;Landroid/view/View;Landroid/text/Editable;Ljava/lang/String;Z)V",

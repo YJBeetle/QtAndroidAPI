@@ -5,16 +5,16 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QAndroidJniObject forward
-	AtomicBoolean::AtomicBoolean(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AtomicBoolean::AtomicBoolean(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicBoolean::AtomicBoolean()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicBoolean",
 			"()V"
 		) {}
 	AtomicBoolean::AtomicBoolean(jboolean arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.AtomicBoolean",
 			"(Z)V",
 			arg0

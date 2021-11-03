@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../text/ClipboardManager.hpp"
 
 namespace android::content
@@ -26,14 +26,14 @@ namespace android::content
 		// Constructors
 		
 		// Methods
-		void addPrimaryClipChangedListener(__JniBaseClass arg0);
+		void addPrimaryClipChangedListener(JObject arg0);
 		void clearPrimaryClip();
 		android::content::ClipData getPrimaryClip();
 		android::content::ClipDescription getPrimaryClipDescription();
 		jstring getText();
 		jboolean hasPrimaryClip();
 		jboolean hasText();
-		void removePrimaryClipChangedListener(__JniBaseClass arg0);
+		void removePrimaryClipChangedListener(JObject arg0);
 		void setPrimaryClip(android::content::ClipData arg0);
 		void setText(jstring arg0);
 	};

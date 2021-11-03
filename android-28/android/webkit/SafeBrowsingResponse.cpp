@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	SafeBrowsingResponse::SafeBrowsingResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SafeBrowsingResponse::SafeBrowsingResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SafeBrowsingResponse::SafeBrowsingResponse()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.SafeBrowsingResponse",
 			"()V"
 		) {}

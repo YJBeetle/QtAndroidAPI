@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::awt::font
 {
@@ -13,7 +13,7 @@ namespace java::io
 
 namespace java::awt::font
 {
-	class NumericShaper : public __JniBaseClass
+	class NumericShaper : public JObject
 	{
 	public:
 		// Fields
@@ -39,20 +39,20 @@ namespace java::awt::font
 		static jint TIBETAN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NumericShaper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NumericShaper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NumericShaper(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static java::awt::font::NumericShaper getContextualShaper(jint arg0);
-		static java::awt::font::NumericShaper getContextualShaper(__JniBaseClass arg0);
+		static java::awt::font::NumericShaper getContextualShaper(JObject arg0);
 		static java::awt::font::NumericShaper getContextualShaper(jint arg0, jint arg1);
-		static java::awt::font::NumericShaper getContextualShaper(__JniBaseClass arg0, java::awt::font::NumericShaper_Range arg1);
+		static java::awt::font::NumericShaper getContextualShaper(JObject arg0, java::awt::font::NumericShaper_Range arg1);
 		static java::awt::font::NumericShaper getShaper(jint arg0);
 		static java::awt::font::NumericShaper getShaper(java::awt::font::NumericShaper_Range arg0);
 		jboolean equals(jobject arg0);
-		__JniBaseClass getRangeSet();
+		JObject getRangeSet();
 		jint getRanges();
 		jint hashCode();
 		jboolean isContextual();

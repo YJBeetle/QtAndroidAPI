@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace java::lang::reflect
 {
-	class AccessibleObject : public __JniBaseClass
+	class AccessibleObject : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AccessibleObject(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AccessibleObject(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AccessibleObject(QAndroidJniObject obj);
 		
 		// Constructors
@@ -19,10 +19,10 @@ namespace java::lang::reflect
 		// Methods
 		static void setAccessible(jarray arg0, jboolean arg1);
 		jboolean canAccess(jobject arg0);
-		__JniBaseClass getAnnotation(jclass arg0);
+		JObject getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		__JniBaseClass getDeclaredAnnotation(jclass arg0);
+		JObject getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
 		jboolean isAccessible();

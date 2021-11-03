@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,13 +17,13 @@ namespace android::view
 
 namespace android::transition
 {
-	class Scene : public __JniBaseClass
+	class Scene : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Scene(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Scene(QAndroidJniObject obj);
 		
 		// Constructors
@@ -37,8 +37,8 @@ namespace android::transition
 		void enter();
 		void exit();
 		android::view::ViewGroup getSceneRoot();
-		void setEnterAction(__JniBaseClass arg0);
-		void setExitAction(__JniBaseClass arg0);
+		void setEnterAction(JObject arg0);
+		void setExitAction(JObject arg0);
 	};
 } // namespace android::transition
 

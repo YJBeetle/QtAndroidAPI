@@ -8,7 +8,7 @@
 namespace android::service::controls
 {
 	// Fields
-	__JniBaseClass Control::CREATOR()
+	JObject Control::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.controls.Control",
@@ -53,7 +53,7 @@ namespace android::service::controls
 	}
 	
 	// QAndroidJniObject forward
-	Control::Control(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Control::Control(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

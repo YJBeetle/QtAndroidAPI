@@ -52,7 +52,7 @@ namespace android::net
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass IpSecAlgorithm::CREATOR()
+	JObject IpSecAlgorithm::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.IpSecAlgorithm",
@@ -70,18 +70,18 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IpSecAlgorithm::IpSecAlgorithm(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.IpSecAlgorithm",
 			"(Ljava/lang/String;[B)V",
 			arg0,
 			arg1
 		) {}
 	IpSecAlgorithm::IpSecAlgorithm(jstring arg0, jbyteArray arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.IpSecAlgorithm",
 			"(Ljava/lang/String;[BI)V",
 			arg0,

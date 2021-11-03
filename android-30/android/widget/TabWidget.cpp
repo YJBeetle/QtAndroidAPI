@@ -20,14 +20,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1)
+	TabWidget::TabWidget(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.TabWidget",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	TabWidget::TabWidget(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::LinearLayout(
 			"android.widget.TabWidget",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -35,7 +35,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	TabWidget::TabWidget(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	TabWidget::TabWidget(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::LinearLayout(
 			"android.widget.TabWidget",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./PathMotion.hpp"
 
 namespace android::content
@@ -26,7 +26,7 @@ namespace android::transition
 		// Constructors
 		PatternPathMotion();
 		PatternPathMotion(android::graphics::Path arg0);
-		PatternPathMotion(android::content::Context arg0, __JniBaseClass arg1);
+		PatternPathMotion(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		android::graphics::Path getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);

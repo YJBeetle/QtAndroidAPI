@@ -6,7 +6,7 @@ namespace android::icu::number
 	// Fields
 	
 	// QAndroidJniObject forward
-	FormattedNumber::FormattedNumber(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FormattedNumber::FormattedNumber(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -57,7 +57,7 @@ namespace android::icu::number
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	__JniBaseClass FormattedNumber::toCharacterIterator()
+	JObject FormattedNumber::toCharacterIterator()
 	{
 		return callObjectMethod(
 			"toCharacterIterator",

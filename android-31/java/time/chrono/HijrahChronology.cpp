@@ -30,7 +30,7 @@ namespace java::time::chrono
 	// Constructors
 	
 	// Methods
-	java::time::chrono::HijrahDate HijrahChronology::date(__JniBaseClass arg0)
+	java::time::chrono::HijrahDate HijrahChronology::date(JObject arg0)
 	{
 		return callObjectMethod(
 			"date",
@@ -48,7 +48,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	java::time::chrono::HijrahDate HijrahChronology::date(__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
+	java::time::chrono::HijrahDate HijrahChronology::date(JObject arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callObjectMethod(
 			"date",
@@ -99,7 +99,7 @@ namespace java::time::chrono
 			arg1
 		);
 	}
-	java::time::chrono::HijrahDate HijrahChronology::dateYearDay(__JniBaseClass arg0, jint arg1, jint arg2)
+	java::time::chrono::HijrahDate HijrahChronology::dateYearDay(JObject arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"dateYearDay",
@@ -117,7 +117,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	__JniBaseClass HijrahChronology::eras()
+	JObject HijrahChronology::eras()
 	{
 		return callObjectMethod(
 			"eras",
@@ -146,7 +146,7 @@ namespace java::time::chrono
 			arg0
 		);
 	}
-	__JniBaseClass HijrahChronology::localDateTime(__JniBaseClass arg0)
+	JObject HijrahChronology::localDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"localDateTime",
@@ -154,7 +154,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jint HijrahChronology::prolepticYear(__JniBaseClass arg0, jint arg1)
+	jint HijrahChronology::prolepticYear(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"prolepticYear",
@@ -171,7 +171,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::HijrahDate HijrahChronology::resolveDate(__JniBaseClass arg0, java::time::format::ResolverStyle arg1)
+	java::time::chrono::HijrahDate HijrahChronology::resolveDate(JObject arg0, java::time::format::ResolverStyle arg1)
 	{
 		return callObjectMethod(
 			"resolveDate",
@@ -180,7 +180,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	__JniBaseClass HijrahChronology::zonedDateTime(__JniBaseClass arg0)
+	JObject HijrahChronology::zonedDateTime(JObject arg0)
 	{
 		return callObjectMethod(
 			"zonedDateTime",
@@ -188,7 +188,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	__JniBaseClass HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
+	JObject HijrahChronology::zonedDateTime(java::time::Instant arg0, java::time::ZoneId arg1)
 	{
 		return callObjectMethod(
 			"zonedDateTime",

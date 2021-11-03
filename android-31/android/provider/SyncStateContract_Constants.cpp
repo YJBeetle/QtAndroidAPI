@@ -13,11 +13,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SyncStateContract_Constants::SyncStateContract_Constants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SyncStateContract_Constants::SyncStateContract_Constants()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.SyncStateContract$Constants",
 			"()V"
 		) {}

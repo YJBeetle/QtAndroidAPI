@@ -62,7 +62,7 @@ namespace javax::crypto
 	}
 	
 	// QAndroidJniObject forward
-	Cipher::Cipher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Cipher::Cipher(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -105,7 +105,7 @@ namespace javax::crypto
 			arg0
 		);
 	}
-	__JniBaseClass Cipher::getMaxAllowedParameterSpec(jstring arg0)
+	JObject Cipher::getMaxAllowedParameterSpec(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"javax.crypto.Cipher",
@@ -230,7 +230,7 @@ namespace javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1)
+	void Cipher::init(jint arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"init",
@@ -248,7 +248,7 @@ namespace javax::crypto
 			arg1.object()
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::AlgorithmParameters arg2)
+	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2)
 	{
 		callMethod<void>(
 			"init",
@@ -258,7 +258,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::SecureRandom arg2)
+	void Cipher::init(jint arg0, JObject arg1, java::security::SecureRandom arg2)
 	{
 		callMethod<void>(
 			"init",
@@ -268,7 +268,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void Cipher::init(jint arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"init",
@@ -288,7 +288,7 @@ namespace javax::crypto
 			arg2.object()
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1, java::security::AlgorithmParameters arg2, java::security::SecureRandom arg3)
+	void Cipher::init(jint arg0, JObject arg1, java::security::AlgorithmParameters arg2, java::security::SecureRandom arg3)
 	{
 		callMethod<void>(
 			"init",
@@ -299,7 +299,7 @@ namespace javax::crypto
 			arg3.object()
 		);
 	}
-	void Cipher::init(jint arg0, __JniBaseClass arg1, __JniBaseClass arg2, java::security::SecureRandom arg3)
+	void Cipher::init(jint arg0, JObject arg1, JObject arg2, java::security::SecureRandom arg3)
 	{
 		callMethod<void>(
 			"init",
@@ -317,7 +317,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
+	JObject Cipher::unwrap(jbyteArray arg0, jstring arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"unwrap",
@@ -403,7 +403,7 @@ namespace javax::crypto
 			arg2
 		);
 	}
-	jbyteArray Cipher::wrap(__JniBaseClass arg0)
+	jbyteArray Cipher::wrap(JObject arg0)
 	{
 		return callObjectMethod(
 			"wrap",

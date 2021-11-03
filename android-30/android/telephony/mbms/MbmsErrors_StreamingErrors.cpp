@@ -26,7 +26,7 @@ namespace android::telephony::mbms
 	}
 	
 	// QAndroidJniObject forward
-	MbmsErrors_StreamingErrors::MbmsErrors_StreamingErrors(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MbmsErrors_StreamingErrors::MbmsErrors_StreamingErrors(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

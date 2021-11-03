@@ -8,12 +8,12 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaCodec_OutputFrame::MediaCodec_OutputFrame(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_OutputFrame::MediaCodec_OutputFrame(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass MediaCodec_OutputFrame::getChangedKeys()
+	JObject MediaCodec_OutputFrame::getChangedKeys()
 	{
 		return callObjectMethod(
 			"getChangedKeys",

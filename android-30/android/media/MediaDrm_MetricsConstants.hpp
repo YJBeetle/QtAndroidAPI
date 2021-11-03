@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaDrm_MetricsConstants : public __JniBaseClass
+	class MediaDrm_MetricsConstants : public JObject
 	{
 	public:
 		// Fields
@@ -46,7 +46,7 @@ namespace android::media
 		static jstring SESSION_START_TIMES_MS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDrm_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDrm_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDrm_MetricsConstants(QAndroidJniObject obj);
 		
 		// Constructors

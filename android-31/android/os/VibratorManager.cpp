@@ -8,7 +8,7 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	VibratorManager::VibratorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VibratorManager::VibratorManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

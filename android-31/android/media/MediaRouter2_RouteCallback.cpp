@@ -5,17 +5,17 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaRouter2_RouteCallback::MediaRouter2_RouteCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaRouter2_RouteCallback::MediaRouter2_RouteCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaRouter2_RouteCallback::MediaRouter2_RouteCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaRouter2$RouteCallback",
 			"()V"
 		) {}
 	
 	// Methods
-	void MediaRouter2_RouteCallback::onRoutesAdded(__JniBaseClass arg0)
+	void MediaRouter2_RouteCallback::onRoutesAdded(JObject arg0)
 	{
 		callMethod<void>(
 			"onRoutesAdded",
@@ -23,7 +23,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_RouteCallback::onRoutesChanged(__JniBaseClass arg0)
+	void MediaRouter2_RouteCallback::onRoutesChanged(JObject arg0)
 	{
 		callMethod<void>(
 			"onRoutesChanged",
@@ -31,7 +31,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void MediaRouter2_RouteCallback::onRoutesRemoved(__JniBaseClass arg0)
+	void MediaRouter2_RouteCallback::onRoutesRemoved(JObject arg0)
 	{
 		callMethod<void>(
 			"onRoutesRemoved",

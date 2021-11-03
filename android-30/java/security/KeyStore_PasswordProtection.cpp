@@ -5,17 +5,17 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyStore$PasswordProtection",
 			"([C)V",
 			arg0
 		) {}
-	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0, jstring arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	KeyStore_PasswordProtection::KeyStore_PasswordProtection(jcharArray arg0, jstring arg1, JObject arg2)
+		: JObject(
 			"java.security.KeyStore$PasswordProtection",
 			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
@@ -45,7 +45,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass KeyStore_PasswordProtection::getProtectionParameters()
+	JObject KeyStore_PasswordProtection::getProtectionParameters()
 	{
 		return callObjectMethod(
 			"getProtectionParameters",

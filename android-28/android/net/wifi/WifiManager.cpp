@@ -266,7 +266,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiManager::WifiManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiManager::WifiManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -364,7 +364,7 @@ namespace android::net::wifi
 			arg1
 		);
 	}
-	__JniBaseClass WifiManager::getConfiguredNetworks()
+	JObject WifiManager::getConfiguredNetworks()
 	{
 		return callObjectMethod(
 			"getConfiguredNetworks",
@@ -385,14 +385,14 @@ namespace android::net::wifi
 			"()Landroid/net/DhcpInfo;"
 		);
 	}
-	__JniBaseClass WifiManager::getPasspointConfigurations()
+	JObject WifiManager::getPasspointConfigurations()
 	{
 		return callObjectMethod(
 			"getPasspointConfigurations",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass WifiManager::getScanResults()
+	JObject WifiManager::getScanResults()
 	{
 		return callObjectMethod(
 			"getScanResults",

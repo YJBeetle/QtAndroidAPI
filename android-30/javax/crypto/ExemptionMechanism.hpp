@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::security
 {
@@ -17,13 +17,13 @@ namespace javax::crypto
 
 namespace javax::crypto
 {
-	class ExemptionMechanism : public __JniBaseClass
+	class ExemptionMechanism : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ExemptionMechanism(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ExemptionMechanism(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ExemptionMechanism(QAndroidJniObject obj);
 		
 		// Constructors
@@ -38,10 +38,10 @@ namespace javax::crypto
 		jstring getName();
 		jint getOutputSize(jint arg0);
 		java::security::Provider getProvider();
-		void init(__JniBaseClass arg0);
-		void init(__JniBaseClass arg0, java::security::AlgorithmParameters arg1);
-		void init(__JniBaseClass arg0, __JniBaseClass arg1);
-		jboolean isCryptoAllowed(__JniBaseClass arg0);
+		void init(JObject arg0);
+		void init(JObject arg0, java::security::AlgorithmParameters arg1);
+		void init(JObject arg0, JObject arg1);
+		jboolean isCryptoAllowed(JObject arg0);
 	};
 } // namespace javax::crypto
 

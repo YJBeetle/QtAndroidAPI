@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,7 +17,7 @@ namespace java::io
 
 namespace android::graphics
 {
-	class Matrix : public __JniBaseClass
+	class Matrix : public JObject
 	{
 	public:
 		// Fields
@@ -33,7 +33,7 @@ namespace android::graphics
 		static jint MTRANS_Y();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Matrix(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Matrix(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Matrix(QAndroidJniObject obj);
 		
 		// Constructors

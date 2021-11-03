@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
 namespace android::animation
@@ -33,7 +33,7 @@ namespace android::transition
 		
 		// Constructors
 		ChangeTransform();
-		ChangeTransform(android::content::Context arg0, __JniBaseClass arg1);
+		ChangeTransform(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

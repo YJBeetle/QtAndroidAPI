@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass AvailableNetworkInfo::CREATOR()
+	JObject AvailableNetworkInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.AvailableNetworkInfo",
@@ -35,11 +35,11 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	AvailableNetworkInfo::AvailableNetworkInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AvailableNetworkInfo::AvailableNetworkInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	AvailableNetworkInfo::AvailableNetworkInfo(jint arg0, jint arg1, __JniBaseClass arg2, __JniBaseClass arg3)
-		: __JniBaseClass(
+	AvailableNetworkInfo::AvailableNetworkInfo(jint arg0, jint arg1, JObject arg2, JObject arg3)
+		: JObject(
 			"android.telephony.AvailableNetworkInfo",
 			"(IILjava/util/List;Ljava/util/List;)V",
 			arg0,
@@ -64,14 +64,14 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass AvailableNetworkInfo::getBands()
+	JObject AvailableNetworkInfo::getBands()
 	{
 		return callObjectMethod(
 			"getBands",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AvailableNetworkInfo::getMccMncs()
+	JObject AvailableNetworkInfo::getMccMncs()
 	{
 		return callObjectMethod(
 			"getMccMncs",

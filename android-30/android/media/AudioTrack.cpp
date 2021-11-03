@@ -199,11 +199,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	AudioTrack::AudioTrack(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioTrack::AudioTrack(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioTrack::AudioTrack(android::media::AudioAttributes arg0, android::media::AudioFormat arg1, jint arg2, jint arg3, jint arg4)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTrack",
 			"(Landroid/media/AudioAttributes;Landroid/media/AudioFormat;III)V",
 			arg0.object(),
@@ -213,7 +213,7 @@ namespace android::media
 			arg4
 		) {}
 	AudioTrack::AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTrack",
 			"(IIIIII)V",
 			arg0,
@@ -224,7 +224,7 @@ namespace android::media
 			arg5
 		) {}
 	AudioTrack::AudioTrack(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTrack",
 			"(IIIIIII)V",
 			arg0,
@@ -283,7 +283,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioTrack::addOnCodecFormatChangedListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	void AudioTrack::addOnCodecFormatChangedListener(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"addOnCodecFormatChangedListener",
@@ -292,7 +292,7 @@ namespace android::media
 			arg1.object()
 		);
 	}
-	void AudioTrack::addOnRoutingChangedListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AudioTrack::addOnRoutingChangedListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnRoutingChangedListener",
@@ -535,7 +535,7 @@ namespace android::media
 			"()V"
 		);
 	}
-	void AudioTrack::registerStreamEventCallback(__JniBaseClass arg0, android::media::AudioTrack_StreamEventCallback arg1)
+	void AudioTrack::registerStreamEventCallback(JObject arg0, android::media::AudioTrack_StreamEventCallback arg1)
 	{
 		callMethod<void>(
 			"registerStreamEventCallback",
@@ -558,7 +558,7 @@ namespace android::media
 			"()I"
 		);
 	}
-	void AudioTrack::removeOnCodecFormatChangedListener(__JniBaseClass arg0)
+	void AudioTrack::removeOnCodecFormatChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnCodecFormatChangedListener",
@@ -566,7 +566,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::removeOnRoutingChangedListener(__JniBaseClass arg0)
+	void AudioTrack::removeOnRoutingChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnRoutingChangedListener",
@@ -656,7 +656,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::setPlaybackPositionUpdateListener(__JniBaseClass arg0)
+	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",
@@ -664,7 +664,7 @@ namespace android::media
 			arg0.object()
 		);
 	}
-	void AudioTrack::setPlaybackPositionUpdateListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AudioTrack::setPlaybackPositionUpdateListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setPlaybackPositionUpdateListener",

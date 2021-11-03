@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace android::net::wifi::hotspot2::pps
 {
@@ -25,14 +25,14 @@ namespace java::security::cert
 
 namespace android::net::wifi::hotspot2::pps
 {
-	class Credential : public __JniBaseClass
+	class Credential : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Credential(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Credential(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Credential(QAndroidJniObject obj);
 		
 		// Constructors
@@ -45,7 +45,7 @@ namespace android::net::wifi::hotspot2::pps
 		java::security::cert::X509Certificate getCaCertificate();
 		android::net::wifi::hotspot2::pps::Credential_CertificateCredential getCertCredential();
 		jarray getClientCertificateChain();
-		__JniBaseClass getClientPrivateKey();
+		JObject getClientPrivateKey();
 		jstring getRealm();
 		android::net::wifi::hotspot2::pps::Credential_SimCredential getSimCredential();
 		android::net::wifi::hotspot2::pps::Credential_UserCredential getUserCredential();
@@ -53,7 +53,7 @@ namespace android::net::wifi::hotspot2::pps
 		void setCaCertificate(java::security::cert::X509Certificate arg0);
 		void setCertCredential(android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0);
 		void setClientCertificateChain(jarray arg0);
-		void setClientPrivateKey(__JniBaseClass arg0);
+		void setClientPrivateKey(JObject arg0);
 		void setRealm(jstring arg0);
 		void setSimCredential(android::net::wifi::hotspot2::pps::Credential_SimCredential arg0);
 		void setUserCredential(android::net::wifi::hotspot2::pps::Credential_UserCredential arg0);

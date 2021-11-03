@@ -5,11 +5,11 @@ namespace javax::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	Certificate::Certificate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Certificate::Certificate(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Certificate::Certificate()
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.cert.Certificate",
 			"()V"
 		) {}
@@ -30,7 +30,7 @@ namespace javax::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	__JniBaseClass Certificate::getPublicKey()
+	JObject Certificate::getPublicKey()
 	{
 		return callObjectMethod(
 			"getPublicKey",
@@ -51,7 +51,7 @@ namespace javax::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void Certificate::verify(__JniBaseClass arg0)
+	void Certificate::verify(JObject arg0)
 	{
 		callMethod<void>(
 			"verify",
@@ -59,7 +59,7 @@ namespace javax::security::cert
 			arg0.object()
 		);
 	}
-	void Certificate::verify(__JniBaseClass arg0, jstring arg1)
+	void Certificate::verify(JObject arg0, jstring arg1)
 	{
 		callMethod<void>(
 			"verify",

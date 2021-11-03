@@ -5,11 +5,11 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SubscriptionManager_OnOpportunisticSubscriptionsChangedListener::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.SubscriptionManager$OnOpportunisticSubscriptionsChangedListener",
 			"()V"
 		) {}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,13 +21,13 @@ namespace android::os
 
 namespace android::content
 {
-	class BroadcastReceiver : public __JniBaseClass
+	class BroadcastReceiver : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BroadcastReceiver(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BroadcastReceiver(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BroadcastReceiver(QAndroidJniObject obj);
 		
 		// Constructors
@@ -45,7 +45,7 @@ namespace android::content
 		jboolean isInitialStickyBroadcast();
 		jboolean isOrderedBroadcast();
 		void onReceive(android::content::Context arg0, android::content::Intent arg1);
-		__JniBaseClass peekService(android::content::Context arg0, android::content::Intent arg1);
+		JObject peekService(android::content::Context arg0, android::content::Intent arg1);
 		void setDebugUnregister(jboolean arg0);
 		void setOrderedHint(jboolean arg0);
 		void setResult(jint arg0, jstring arg1, android::os::Bundle arg2);

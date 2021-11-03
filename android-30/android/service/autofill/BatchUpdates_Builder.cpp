@@ -7,11 +7,11 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	BatchUpdates_Builder::BatchUpdates_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BatchUpdates_Builder::BatchUpdates_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BatchUpdates_Builder::BatchUpdates_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.BatchUpdates$Builder",
 			"()V"
 		) {}
@@ -24,7 +24,7 @@ namespace android::service::autofill
 			"()Landroid/service/autofill/BatchUpdates;"
 		);
 	}
-	android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::transformChild(jint arg0, __JniBaseClass arg1)
+	android::service::autofill::BatchUpdates_Builder BatchUpdates_Builder::transformChild(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"transformChild",

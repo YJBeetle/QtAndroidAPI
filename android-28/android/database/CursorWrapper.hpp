@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,17 +29,17 @@ namespace android::os
 
 namespace android::database
 {
-	class CursorWrapper : public __JniBaseClass
+	class CursorWrapper : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CursorWrapper(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CursorWrapper(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CursorWrapper(QAndroidJniObject obj);
 		
 		// Constructors
-		CursorWrapper(__JniBaseClass arg0);
+		CursorWrapper(JObject arg0);
 		
 		// Methods
 		void close();
@@ -63,7 +63,7 @@ namespace android::database
 		jstring getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean getWantsAllOnMoveCalls();
-		__JniBaseClass getWrappedCursor();
+		JObject getWrappedCursor();
 		jboolean isAfterLast();
 		jboolean isBeforeFirst();
 		jboolean isClosed();

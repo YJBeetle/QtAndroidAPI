@@ -210,36 +210,36 @@ namespace android::icu::text
 	}
 	
 	// QAndroidJniObject forward
-	Bidi::Bidi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Bidi::Bidi(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Bidi::Bidi()
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Bidi",
 			"()V"
 		) {}
-	Bidi::Bidi(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Bidi::Bidi(JObject arg0)
+		: JObject(
 			"android.icu.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.object()
 		) {}
 	Bidi::Bidi(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Bidi",
 			"(II)V",
 			arg0,
 			arg1
 		) {}
 	Bidi::Bidi(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"android.icu.text.Bidi",
 			"([CI[BIII)V",
 			arg0,
@@ -629,7 +629,7 @@ namespace android::icu::text
 			arg1
 		);
 	}
-	void Bidi::setPara(__JniBaseClass arg0)
+	void Bidi::setPara(JObject arg0)
 	{
 		callMethod<void>(
 			"setPara",

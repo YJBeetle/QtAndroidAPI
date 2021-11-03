@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -37,14 +37,14 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class InputMethodInfo : public __JniBaseClass
+	class InputMethodInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputMethodInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -53,7 +53,7 @@ namespace android::view::inputmethod
 		
 		// Methods
 		jint describeContents();
-		void dump(__JniBaseClass arg0, jstring arg1);
+		void dump(JObject arg0, jstring arg1);
 		jboolean equals(jobject arg0);
 		android::content::ComponentName getComponent();
 		jstring getId();

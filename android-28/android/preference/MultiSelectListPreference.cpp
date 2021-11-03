@@ -17,14 +17,14 @@ namespace android::preference
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, JObject arg1)
 		: android::preference::DialogPreference(
 			"android.preference.MultiSelectListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::preference::DialogPreference(
 			"android.preference.MultiSelectListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -32,7 +32,7 @@ namespace android::preference
 			arg1.object(),
 			arg2
 		) {}
-	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	MultiSelectListPreference::MultiSelectListPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::preference::DialogPreference(
 			"android.preference.MultiSelectListPreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -65,7 +65,7 @@ namespace android::preference
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
-	__JniBaseClass MultiSelectListPreference::getValues()
+	JObject MultiSelectListPreference::getValues()
 	{
 		return callObjectMethod(
 			"getValues",
@@ -104,7 +104,7 @@ namespace android::preference
 			arg0
 		);
 	}
-	void MultiSelectListPreference::setValues(__JniBaseClass arg0)
+	void MultiSelectListPreference::setValues(JObject arg0)
 	{
 		callMethod<void>(
 			"setValues",

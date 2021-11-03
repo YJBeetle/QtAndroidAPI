@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app
 {
@@ -21,16 +21,16 @@ namespace java::time
 
 namespace android::view::textclassifier
 {
-	class ConversationActions_Message : public __JniBaseClass
+	class ConversationActions_Message : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static android::app::Person PERSON_USER_OTHERS();
 		static android::app::Person PERSON_USER_SELF();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConversationActions_Message(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConversationActions_Message(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConversationActions_Message(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./ImageView.hpp"
 
@@ -30,9 +30,9 @@ namespace android::widget
 		
 		// Constructors
 		ImageButton(android::content::Context arg0);
-		ImageButton(android::content::Context arg0, __JniBaseClass arg1);
-		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ImageButton(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ImageButton(android::content::Context arg0, JObject arg1);
+		ImageButton(android::content::Context arg0, JObject arg1, jint arg2);
+		ImageButton(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();

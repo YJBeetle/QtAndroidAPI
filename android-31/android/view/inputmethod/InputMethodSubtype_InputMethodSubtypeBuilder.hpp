@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view::inputmethod
 {
@@ -9,13 +9,13 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class InputMethodSubtype_InputMethodSubtypeBuilder : public __JniBaseClass
+	class InputMethodSubtype_InputMethodSubtypeBuilder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputMethodSubtype_InputMethodSubtypeBuilder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputMethodSubtype_InputMethodSubtypeBuilder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodSubtype_InputMethodSubtypeBuilder(QAndroidJniObject obj);
 		
 		// Constructors

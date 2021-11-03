@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -9,7 +9,7 @@ namespace android::media
 
 namespace android::media
 {
-	class CamcorderProfile : public __JniBaseClass
+	class CamcorderProfile : public JObject
 	{
 	public:
 		// Fields
@@ -64,7 +64,7 @@ namespace android::media
 		jint videoFrameWidth();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CamcorderProfile(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CamcorderProfile(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CamcorderProfile(QAndroidJniObject obj);
 		
 		// Constructors

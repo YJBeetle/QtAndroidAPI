@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -29,13 +29,13 @@ namespace android::os
 
 namespace android::app::job
 {
-	class JobInfo : public __JniBaseClass
+	class JobInfo : public JObject
 	{
 	public:
 		// Fields
 		static jint BACKOFF_POLICY_EXPONENTIAL();
 		static jint BACKOFF_POLICY_LINEAR();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jlong DEFAULT_INITIAL_BACKOFF_MILLIS();
 		static jlong MAX_BACKOFF_DELAY_MILLIS();
 		static jint NETWORK_BYTES_UNKNOWN();
@@ -47,7 +47,7 @@ namespace android::app::job
 		static jint NETWORK_TYPE_UNMETERED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit JobInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		JobInfo(QAndroidJniObject obj);
 		
 		// Constructors

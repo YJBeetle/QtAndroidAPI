@@ -6,11 +6,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	WindowInsetsAnimation_Bounds::WindowInsetsAnimation_Bounds(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowInsetsAnimation_Bounds::WindowInsetsAnimation_Bounds(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WindowInsetsAnimation_Bounds::WindowInsetsAnimation_Bounds(android::graphics::Insets arg0, android::graphics::Insets arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.WindowInsetsAnimation$Bounds",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)V",
 			arg0.object(),

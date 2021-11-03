@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
@@ -43,7 +43,7 @@ namespace android::widget
 		GridLayout_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
 		GridLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams arg0);
 		GridLayout_LayoutParams(android::widget::GridLayout_LayoutParams &arg0);
-		GridLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		GridLayout_LayoutParams(android::content::Context arg0, JObject arg1);
 		GridLayout_LayoutParams(android::widget::GridLayout_Spec arg0, android::widget::GridLayout_Spec arg1);
 		
 		// Methods

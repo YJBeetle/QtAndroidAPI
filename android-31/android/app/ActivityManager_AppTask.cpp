@@ -9,7 +9,7 @@ namespace android::app
 	// Fields
 	
 	// QAndroidJniObject forward
-	ActivityManager_AppTask::ActivityManager_AppTask(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_AppTask::ActivityManager_AppTask(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

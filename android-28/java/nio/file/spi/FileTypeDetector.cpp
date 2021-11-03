@@ -6,12 +6,12 @@ namespace java::nio::file::spi
 	// Fields
 	
 	// QAndroidJniObject forward
-	FileTypeDetector::FileTypeDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileTypeDetector::FileTypeDetector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jstring FileTypeDetector::probeContentType(__JniBaseClass arg0)
+	jstring FileTypeDetector::probeContentType(JObject arg0)
 	{
 		return callObjectMethod(
 			"probeContentType",

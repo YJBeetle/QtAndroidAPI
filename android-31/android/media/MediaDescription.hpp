@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::media
 {
-	class MediaDescription : public __JniBaseClass
+	class MediaDescription : public JObject
 	{
 	public:
 		// Fields
@@ -32,11 +32,11 @@ namespace android::media
 		static jlong BT_FOLDER_TYPE_PLAYLISTS();
 		static jlong BT_FOLDER_TYPE_TITLES();
 		static jlong BT_FOLDER_TYPE_YEARS();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring EXTRA_BT_FOLDER_TYPE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaDescription(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaDescription(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaDescription(QAndroidJniObject obj);
 		
 		// Constructors

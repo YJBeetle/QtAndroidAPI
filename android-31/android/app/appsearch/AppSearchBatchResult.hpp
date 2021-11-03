@@ -1,25 +1,25 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::app::appsearch
 {
-	class AppSearchBatchResult : public __JniBaseClass
+	class AppSearchBatchResult : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppSearchBatchResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppSearchBatchResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppSearchBatchResult(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getAll();
-		__JniBaseClass getFailures();
-		__JniBaseClass getSuccesses();
+		JObject getAll();
+		JObject getFailures();
+		JObject getSuccesses();
 		jboolean isSuccess();
 		jstring toString();
 	};

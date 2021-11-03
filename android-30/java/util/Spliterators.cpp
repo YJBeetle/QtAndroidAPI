@@ -5,12 +5,12 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Spliterators::Spliterators(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Spliterators::Spliterators(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Spliterators::emptyDoubleSpliterator()
+	JObject Spliterators::emptyDoubleSpliterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -18,7 +18,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfDouble;"
 		);
 	}
-	__JniBaseClass Spliterators::emptyIntSpliterator()
+	JObject Spliterators::emptyIntSpliterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -26,7 +26,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfInt;"
 		);
 	}
-	__JniBaseClass Spliterators::emptyLongSpliterator()
+	JObject Spliterators::emptyLongSpliterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -34,7 +34,7 @@ namespace java::util
 			"()Ljava/util/Spliterator$OfLong;"
 		);
 	}
-	__JniBaseClass Spliterators::emptySpliterator()
+	JObject Spliterators::emptySpliterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -42,7 +42,7 @@ namespace java::util
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass Spliterators::iterator(__JniBaseClass arg0)
+	JObject Spliterators::iterator(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -51,7 +51,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jobjectArray arg0, jint arg1)
+	JObject Spliterators::spliterator(jobjectArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -61,7 +61,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(__JniBaseClass arg0, jint arg1)
+	JObject Spliterators::spliterator(JObject arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -71,7 +71,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(__JniBaseClass arg0, jlong arg1, jint arg2)
+	JObject Spliterators::spliterator(JObject arg0, jlong arg1, jint arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -82,7 +82,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(jobjectArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -94,7 +94,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jdoubleArray arg0, jint arg1)
+	JObject Spliterators::spliterator(jdoubleArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -104,7 +104,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(jdoubleArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -116,7 +116,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jintArray arg0, jint arg1)
+	JObject Spliterators::spliterator(jintArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -126,7 +126,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(jintArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -138,7 +138,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jlongArray arg0, jint arg1)
+	JObject Spliterators::spliterator(jlongArray arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -148,7 +148,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Spliterators::spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3)
+	JObject Spliterators::spliterator(jlongArray arg0, jint arg1, jint arg2, jint arg3)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",
@@ -160,7 +160,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass Spliterators::spliteratorUnknownSize(__JniBaseClass arg0, jint arg1)
+	JObject Spliterators::spliteratorUnknownSize(JObject arg0, jint arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Spliterators",

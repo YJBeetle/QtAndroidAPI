@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,7 +13,7 @@ namespace android::net
 
 namespace android::content
 {
-	class Entity_NamedContentValues : public __JniBaseClass
+	class Entity_NamedContentValues : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::content
 		android::content::ContentValues values();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Entity_NamedContentValues(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Entity_NamedContentValues(QAndroidJniObject obj);
 		
 		// Constructors

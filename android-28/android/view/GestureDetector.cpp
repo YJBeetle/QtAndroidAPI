@@ -8,39 +8,39 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	GestureDetector::GestureDetector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GestureDetector::GestureDetector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	GestureDetector::GestureDetector(__JniBaseClass arg0)
-		: __JniBaseClass(
+	GestureDetector::GestureDetector(JObject arg0)
+		: JObject(
 			"android.view.GestureDetector",
 			"(Landroid/view/GestureDetector$OnGestureListener;)V",
 			arg0.object()
 		) {}
-	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	GestureDetector::GestureDetector(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	GestureDetector::GestureDetector(__JniBaseClass arg0, android::os::Handler arg1)
-		: __JniBaseClass(
+	GestureDetector::GestureDetector(JObject arg0, android::os::Handler arg1)
+		: JObject(
 			"android.view.GestureDetector",
 			"(Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2)
-		: __JniBaseClass(
+	GestureDetector::GestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2)
+		: JObject(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;)V",
 			arg0.object(),
 			arg1.object(),
 			arg2.object()
 		) {}
-	GestureDetector::GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2, jboolean arg3)
-		: __JniBaseClass(
+	GestureDetector::GestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2, jboolean arg3)
+		: JObject(
 			"android.view.GestureDetector",
 			"(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;Landroid/os/Handler;Z)V",
 			arg0.object(),
@@ -73,7 +73,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void GestureDetector::setContextClickListener(__JniBaseClass arg0)
+	void GestureDetector::setContextClickListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setContextClickListener",
@@ -89,7 +89,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void GestureDetector::setOnDoubleTapListener(__JniBaseClass arg0)
+	void GestureDetector::setOnDoubleTapListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnDoubleTapListener",

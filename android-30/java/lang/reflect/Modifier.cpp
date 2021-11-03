@@ -89,7 +89,7 @@ namespace java::lang::reflect
 	}
 	
 	// QAndroidJniObject forward
-	Modifier::Modifier(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Modifier::Modifier(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

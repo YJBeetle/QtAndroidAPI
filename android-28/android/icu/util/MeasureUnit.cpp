@@ -1078,12 +1078,12 @@ namespace android::icu::util
 	}
 	
 	// QAndroidJniObject forward
-	MeasureUnit::MeasureUnit(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MeasureUnit::MeasureUnit(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass MeasureUnit::getAvailable()
+	JObject MeasureUnit::getAvailable()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",
@@ -1091,7 +1091,7 @@ namespace android::icu::util
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass MeasureUnit::getAvailable(jstring arg0)
+	JObject MeasureUnit::getAvailable(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",
@@ -1100,7 +1100,7 @@ namespace android::icu::util
 			arg0
 		);
 	}
-	__JniBaseClass MeasureUnit::getAvailableTypes()
+	JObject MeasureUnit::getAvailableTypes()
 	{
 		return callStaticObjectMethod(
 			"android.icu.util.MeasureUnit",

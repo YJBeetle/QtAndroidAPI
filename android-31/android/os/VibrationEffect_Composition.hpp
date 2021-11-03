@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::os
 {
-	class VibrationEffect_Composition : public __JniBaseClass
+	class VibrationEffect_Composition : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::os
 		static jint PRIMITIVE_TICK();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit VibrationEffect_Composition(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit VibrationEffect_Composition(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		VibrationEffect_Composition(QAndroidJniObject obj);
 		
 		// Constructors

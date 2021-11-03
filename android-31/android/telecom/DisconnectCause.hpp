@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::telecom
 {
-	class DisconnectCause : public __JniBaseClass
+	class DisconnectCause : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::telecom
 		static jint CALL_PULLED();
 		static jint CANCELED();
 		static jint CONNECTION_MANAGER_NOT_SUPPORTED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint ERROR();
 		static jint LOCAL();
 		static jint MISSED();
@@ -33,7 +33,7 @@ namespace android::telecom
 		static jint UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DisconnectCause(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DisconnectCause(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DisconnectCause(QAndroidJniObject obj);
 		
 		// Constructors

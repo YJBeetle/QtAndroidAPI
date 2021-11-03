@@ -19,14 +19,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1)
+	NumberPicker::NumberPicker(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	NumberPicker::NumberPicker(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -34,7 +34,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	NumberPicker::NumberPicker(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	NumberPicker::NumberPicker(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::LinearLayout(
 			"android.widget.NumberPicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -187,7 +187,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setFormatter(__JniBaseClass arg0)
+	void NumberPicker::setFormatter(JObject arg0)
 	{
 		callMethod<void>(
 			"setFormatter",
@@ -219,7 +219,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	void NumberPicker::setOnScrollListener(__JniBaseClass arg0)
+	void NumberPicker::setOnScrollListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnScrollListener",
@@ -227,7 +227,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void NumberPicker::setOnValueChangedListener(__JniBaseClass arg0)
+	void NumberPicker::setOnValueChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnValueChangedListener",

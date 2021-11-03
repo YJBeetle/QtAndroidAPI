@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::media::metrics
 {
-	class PlaybackMetrics : public __JniBaseClass
+	class PlaybackMetrics : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::media::metrics
 		static jint CONTENT_TYPE_MAIN();
 		static jint CONTENT_TYPE_OTHER();
 		static jint CONTENT_TYPE_UNKNOWN();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DRM_TYPE_CLEARKEY();
 		static jint DRM_TYPE_NONE();
 		static jint DRM_TYPE_OTHER();
@@ -45,7 +45,7 @@ namespace android::media::metrics
 		static jint STREAM_TYPE_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackMetrics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackMetrics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackMetrics(QAndroidJniObject obj);
 		
 		// Constructors

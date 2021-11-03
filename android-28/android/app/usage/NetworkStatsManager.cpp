@@ -9,7 +9,7 @@ namespace android::app::usage
 	// Fields
 	
 	// QAndroidJniObject forward
-	NetworkStatsManager::NetworkStatsManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkStatsManager::NetworkStatsManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

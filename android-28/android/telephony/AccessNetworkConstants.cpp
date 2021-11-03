@@ -5,7 +5,7 @@ namespace android::telephony
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessNetworkConstants::AccessNetworkConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessNetworkConstants::AccessNetworkConstants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

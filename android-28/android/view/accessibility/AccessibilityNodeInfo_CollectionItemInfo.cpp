@@ -5,7 +5,7 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeInfo_CollectionItemInfo::AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

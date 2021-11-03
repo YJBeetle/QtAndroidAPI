@@ -5,7 +5,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaDrm_LogMessage::MediaDrm_LogMessage(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_LogMessage::MediaDrm_LogMessage(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

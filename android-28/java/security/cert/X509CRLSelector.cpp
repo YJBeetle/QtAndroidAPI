@@ -11,11 +11,11 @@ namespace java::security::cert
 	// Fields
 	
 	// QAndroidJniObject forward
-	X509CRLSelector::X509CRLSelector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	X509CRLSelector::X509CRLSelector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	X509CRLSelector::X509CRLSelector()
-		: __JniBaseClass(
+		: JObject(
 			"java.security.cert.X509CRLSelector",
 			"()V"
 		) {}
@@ -66,14 +66,14 @@ namespace java::security::cert
 			"()Ljava/util/Date;"
 		);
 	}
-	__JniBaseClass X509CRLSelector::getIssuerNames()
+	JObject X509CRLSelector::getIssuerNames()
 	{
 		return callObjectMethod(
 			"getIssuerNames",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass X509CRLSelector::getIssuers()
+	JObject X509CRLSelector::getIssuers()
 	{
 		return callObjectMethod(
 			"getIssuers",
@@ -118,7 +118,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRLSelector::setIssuerNames(__JniBaseClass arg0)
+	void X509CRLSelector::setIssuerNames(JObject arg0)
 	{
 		callMethod<void>(
 			"setIssuerNames",
@@ -126,7 +126,7 @@ namespace java::security::cert
 			arg0.object()
 		);
 	}
-	void X509CRLSelector::setIssuers(__JniBaseClass arg0)
+	void X509CRLSelector::setIssuers(JObject arg0)
 	{
 		callMethod<void>(
 			"setIssuers",

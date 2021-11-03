@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
 
@@ -66,8 +66,8 @@ namespace android::media::tv
 		
 		// Constructors
 		TvView(android::content::Context arg0);
-		TvView(android::content::Context arg0, __JniBaseClass arg1);
-		TvView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		TvView(android::content::Context arg0, JObject arg1);
+		TvView(android::content::Context arg0, JObject arg1, jint arg2);
 		
 		// Methods
 		jboolean dispatchGenericMotionEvent(android::view::MotionEvent arg0);
@@ -79,14 +79,14 @@ namespace android::media::tv
 		void draw(android::graphics::Canvas arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
 		jstring getSelectedTrack(jint arg0);
-		__JniBaseClass getTracks(jint arg0);
+		JObject getTracks(jint arg0);
 		jboolean onUnhandledInputEvent(android::view::InputEvent arg0);
 		void reset();
 		void selectTrack(jint arg0, jstring arg1);
 		void sendAppPrivateCommand(jstring arg0, android::os::Bundle arg1);
 		void setCallback(android::media::tv::TvView_TvInputCallback arg0);
 		void setCaptionEnabled(jboolean arg0);
-		void setOnUnhandledInputEventListener(__JniBaseClass arg0);
+		void setOnUnhandledInputEventListener(JObject arg0);
 		void setStreamVolume(jfloat arg0);
 		void setTimeShiftPositionCallback(android::media::tv::TvView_TimeShiftPositionCallback arg0);
 		void setZOrderMediaOverlay(jboolean arg0);

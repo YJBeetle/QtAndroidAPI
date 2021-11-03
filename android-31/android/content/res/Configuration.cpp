@@ -76,7 +76,7 @@ namespace android::content::res
 			"COLOR_MODE_WIDE_COLOR_GAMUT_YES"
 		);
 	}
-	__JniBaseClass Configuration::CREATOR()
+	JObject Configuration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.res.Configuration",
@@ -656,16 +656,16 @@ namespace android::content::res
 	}
 	
 	// QAndroidJniObject forward
-	Configuration::Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Configuration::Configuration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Configuration::Configuration()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.Configuration",
 			"()V"
 		) {}
 	Configuration::Configuration(android::content::res::Configuration &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.Configuration",
 			"(Landroid/content/res/Configuration;)V",
 			arg0.object()

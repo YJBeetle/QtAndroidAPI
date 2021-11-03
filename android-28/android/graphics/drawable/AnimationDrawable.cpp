@@ -51,7 +51,7 @@ namespace android::graphics::drawable
 			"()I"
 		);
 	}
-	void AnimationDrawable::inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3)
+	void AnimationDrawable::inflate(android::content::res::Resources arg0, JObject arg1, JObject arg2, android::content::res::Resources_Theme arg3)
 	{
 		callMethod<void>(
 			"inflate",
@@ -121,7 +121,7 @@ namespace android::graphics::drawable
 			"()V"
 		);
 	}
-	void AnimationDrawable::unscheduleSelf(__JniBaseClass arg0)
+	void AnimationDrawable::unscheduleSelf(JObject arg0)
 	{
 		callMethod<void>(
 			"unscheduleSelf",

@@ -292,7 +292,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	CarrierConfigManager_Iwlan::CarrierConfigManager_Iwlan(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CarrierConfigManager_Iwlan::CarrierConfigManager_Iwlan(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

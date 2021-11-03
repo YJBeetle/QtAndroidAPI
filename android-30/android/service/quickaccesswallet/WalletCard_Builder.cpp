@@ -8,11 +8,11 @@ namespace android::service::quickaccesswallet
 	// Fields
 	
 	// QAndroidJniObject forward
-	WalletCard_Builder::WalletCard_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WalletCard_Builder::WalletCard_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WalletCard_Builder::WalletCard_Builder(jstring arg0, android::graphics::drawable::Icon arg1, jstring arg2, android::app::PendingIntent arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.quickaccesswallet.WalletCard$Builder",
 			"(Ljava/lang/String;Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,

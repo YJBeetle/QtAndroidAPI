@@ -13,11 +13,11 @@ namespace android::view::inputmethod
 	// Fields
 	
 	// QAndroidJniObject forward
-	InputConnectionWrapper::InputConnectionWrapper(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputConnectionWrapper::InputConnectionWrapper(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	InputConnectionWrapper::InputConnectionWrapper(__JniBaseClass arg0, jboolean arg1)
-		: __JniBaseClass(
+	InputConnectionWrapper::InputConnectionWrapper(JObject arg0, jboolean arg1)
+		: JObject(
 			"android.view.inputmethod.InputConnectionWrapper",
 			"(Landroid/view/inputmethod/InputConnection;Z)V",
 			arg0.object(),
@@ -240,7 +240,7 @@ namespace android::view::inputmethod
 			arg1
 		);
 	}
-	void InputConnectionWrapper::setTarget(__JniBaseClass arg0)
+	void InputConnectionWrapper::setTarget(JObject arg0)
 	{
 		callMethod<void>(
 			"setTarget",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../../javax/net/SocketFactory.hpp"
 #include "../../javax/net/ssl/SSLSocketFactory.hpp"
 

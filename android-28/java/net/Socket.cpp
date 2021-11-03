@@ -13,36 +13,36 @@ namespace java::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	Socket::Socket(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Socket::Socket(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Socket::Socket()
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"()V"
 		) {}
 	Socket::Socket(java::net::Proxy arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/net/Proxy;)V",
 			arg0.object()
 		) {}
 	Socket::Socket(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	Socket::Socket(java::net::InetAddress arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/net/InetAddress;I)V",
 			arg0.object(),
 			arg1
 		) {}
 	Socket::Socket(jstring arg0, jint arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;IZ)V",
 			arg0,
@@ -50,7 +50,7 @@ namespace java::net
 			arg2
 		) {}
 	Socket::Socket(java::net::InetAddress arg0, jint arg1, jboolean arg2)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/net/InetAddress;IZ)V",
 			arg0.object(),
@@ -58,7 +58,7 @@ namespace java::net
 			arg2
 		) {}
 	Socket::Socket(jstring arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/lang/String;ILjava/net/InetAddress;I)V",
 			arg0,
@@ -67,7 +67,7 @@ namespace java::net
 			arg3
 		) {}
 	Socket::Socket(java::net::InetAddress arg0, jint arg1, java::net::InetAddress arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.net.Socket",
 			"(Ljava/net/InetAddress;ILjava/net/InetAddress;I)V",
 			arg0.object(),
@@ -77,7 +77,7 @@ namespace java::net
 		) {}
 	
 	// Methods
-	void Socket::setSocketImplFactory(__JniBaseClass arg0)
+	void Socket::setSocketImplFactory(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.net.Socket",
@@ -174,7 +174,7 @@ namespace java::net
 			"()Z"
 		);
 	}
-	jobject Socket::getOption(__JniBaseClass arg0)
+	jobject Socket::getOption(JObject arg0)
 	{
 		return callObjectMethod(
 			"getOption",
@@ -311,7 +311,7 @@ namespace java::net
 			arg0
 		);
 	}
-	java::net::Socket Socket::setOption(__JniBaseClass arg0, jobject arg1)
+	java::net::Socket Socket::setOption(JObject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"setOption",
@@ -401,7 +401,7 @@ namespace java::net
 			"()V"
 		);
 	}
-	__JniBaseClass Socket::supportedOptions()
+	JObject Socket::supportedOptions()
 	{
 		return callObjectMethod(
 			"supportedOptions",

@@ -27,17 +27,17 @@ namespace android::renderscript
 	// Fields
 	
 	// QAndroidJniObject forward
-	FieldPacker::FieldPacker(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FieldPacker::FieldPacker(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FieldPacker::FieldPacker(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.FieldPacker",
 			"([B)V",
 			arg0
 		) {}
 	FieldPacker::FieldPacker(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.renderscript.FieldPacker",
 			"(I)V",
 			arg0

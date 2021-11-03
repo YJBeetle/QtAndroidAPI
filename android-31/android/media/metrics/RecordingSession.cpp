@@ -6,7 +6,7 @@ namespace android::media::metrics
 	// Fields
 	
 	// QAndroidJniObject forward
-	RecordingSession::RecordingSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RecordingSession::RecordingSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -5,11 +5,11 @@ namespace javax::microedition::khronos::egl
 	// Fields
 	
 	// QAndroidJniObject forward
-	EGLSurface::EGLSurface(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EGLSurface::EGLSurface(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EGLSurface::EGLSurface()
-		: __JniBaseClass(
+		: JObject(
 			"javax.microedition.khronos.egl.EGLSurface",
 			"()V"
 		) {}

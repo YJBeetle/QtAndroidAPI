@@ -24,12 +24,12 @@ namespace android::preference
 	}
 	
 	// QAndroidJniObject forward
-	PreferenceManager::PreferenceManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PreferenceManager::PreferenceManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass PreferenceManager::getDefaultSharedPreferences(android::content::Context arg0)
+	JObject PreferenceManager::getDefaultSharedPreferences(android::content::Context arg0)
 	{
 		return callStaticObjectMethod(
 			"android.preference.PreferenceManager",
@@ -87,14 +87,14 @@ namespace android::preference
 			arg0
 		);
 	}
-	__JniBaseClass PreferenceManager::getPreferenceDataStore()
+	JObject PreferenceManager::getPreferenceDataStore()
 	{
 		return callObjectMethod(
 			"getPreferenceDataStore",
 			"()Landroid/preference/PreferenceDataStore;"
 		);
 	}
-	__JniBaseClass PreferenceManager::getSharedPreferences()
+	JObject PreferenceManager::getSharedPreferences()
 	{
 		return callObjectMethod(
 			"getSharedPreferences",
@@ -129,7 +129,7 @@ namespace android::preference
 			"()Z"
 		);
 	}
-	void PreferenceManager::setPreferenceDataStore(__JniBaseClass arg0)
+	void PreferenceManager::setPreferenceDataStore(JObject arg0)
 	{
 		callMethod<void>(
 			"setPreferenceDataStore",

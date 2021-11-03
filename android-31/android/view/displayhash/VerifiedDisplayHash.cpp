@@ -5,7 +5,7 @@
 namespace android::view::displayhash
 {
 	// Fields
-	__JniBaseClass VerifiedDisplayHash::CREATOR()
+	JObject VerifiedDisplayHash::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.displayhash.VerifiedDisplayHash",
@@ -15,11 +15,11 @@ namespace android::view::displayhash
 	}
 	
 	// QAndroidJniObject forward
-	VerifiedDisplayHash::VerifiedDisplayHash(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VerifiedDisplayHash::VerifiedDisplayHash(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VerifiedDisplayHash::VerifiedDisplayHash(jlong arg0, android::graphics::Rect arg1, jstring arg2, jbyteArray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.displayhash.VerifiedDisplayHash",
 			"(JLandroid/graphics/Rect;Ljava/lang/String;[B)V",
 			arg0,

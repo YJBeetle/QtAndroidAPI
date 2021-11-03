@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/util/EventObject.hpp"
 
 
@@ -16,11 +16,11 @@ namespace javax::net::ssl
 		SSLSessionBindingEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		SSLSessionBindingEvent(__JniBaseClass arg0, jstring arg1);
+		SSLSessionBindingEvent(JObject arg0, jstring arg1);
 		
 		// Methods
 		jstring getName();
-		__JniBaseClass getSession();
+		JObject getSession();
 	};
 } // namespace javax::net::ssl
 

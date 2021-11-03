@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -17,11 +17,11 @@ namespace android::os
 
 namespace android::app
 {
-	class NotificationChannel : public __JniBaseClass
+	class NotificationChannel : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jstring DEFAULT_CHANNEL_ID();
 		static jstring EDIT_CONVERSATION();
 		static jstring EDIT_IMPORTANCE();
@@ -32,7 +32,7 @@ namespace android::app
 		static jstring EDIT_ZEN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NotificationChannel(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NotificationChannel(QAndroidJniObject obj);
 		
 		// Constructors

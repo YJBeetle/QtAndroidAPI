@@ -38,7 +38,7 @@ namespace android::transition
 			"(I)V",
 			arg0
 		) {}
-	Fade::Fade(android::content::Context arg0, __JniBaseClass arg1)
+	Fade::Fade(android::content::Context arg0, JObject arg1)
 		: android::transition::Visibility(
 			"android.transition.Fade",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

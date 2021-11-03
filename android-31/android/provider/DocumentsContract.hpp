@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -41,7 +41,7 @@ namespace android::provider
 
 namespace android::provider
 {
-	class DocumentsContract : public __JniBaseClass
+	class DocumentsContract : public JObject
 	{
 	public:
 		// Fields
@@ -65,7 +65,7 @@ namespace android::provider
 		static jstring QUERY_ARG_MIME_TYPES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DocumentsContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DocumentsContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DocumentsContract(QAndroidJniObject obj);
 		
 		// Constructors

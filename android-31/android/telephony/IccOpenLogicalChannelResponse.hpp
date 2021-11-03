@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telephony
 {
-	class IccOpenLogicalChannelResponse : public __JniBaseClass
+	class IccOpenLogicalChannelResponse : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint INVALID_CHANNEL();
 		static jint STATUS_MISSING_RESOURCE();
 		static jint STATUS_NO_ERROR();
@@ -21,7 +21,7 @@ namespace android::telephony
 		static jint STATUS_UNKNOWN_ERROR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IccOpenLogicalChannelResponse(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IccOpenLogicalChannelResponse(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IccOpenLogicalChannelResponse(QAndroidJniObject obj);
 		
 		// Constructors

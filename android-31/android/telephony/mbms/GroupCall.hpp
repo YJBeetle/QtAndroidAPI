@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class GroupCall : public __JniBaseClass
+	class GroupCall : public JObject
 	{
 	public:
 		// Fields
@@ -20,7 +20,7 @@ namespace android::telephony::mbms
 		static jint STATE_STOPPED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GroupCall(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GroupCall(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GroupCall(QAndroidJniObject obj);
 		
 		// Constructors
@@ -28,7 +28,7 @@ namespace android::telephony::mbms
 		// Methods
 		void close();
 		jlong getTmgi();
-		void updateGroupCall(__JniBaseClass arg0, __JniBaseClass arg1);
+		void updateGroupCall(JObject arg0, JObject arg1);
 	};
 } // namespace android::telephony::mbms
 

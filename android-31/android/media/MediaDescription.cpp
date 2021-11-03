@@ -56,7 +56,7 @@ namespace android::media
 			"BT_FOLDER_TYPE_YEARS"
 		);
 	}
-	__JniBaseClass MediaDescription::CREATOR()
+	JObject MediaDescription::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.MediaDescription",
@@ -74,7 +74,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaDescription::MediaDescription(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaDescription::MediaDescription(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

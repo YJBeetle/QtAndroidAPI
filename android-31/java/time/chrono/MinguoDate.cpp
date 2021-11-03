@@ -13,12 +13,12 @@ namespace java::time::chrono
 	// Fields
 	
 	// QAndroidJniObject forward
-	MinguoDate::MinguoDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MinguoDate::MinguoDate(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::chrono::MinguoDate MinguoDate::from(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.MinguoDate",
@@ -64,7 +64,7 @@ namespace java::time::chrono
 			arg2
 		);
 	}
-	__JniBaseClass MinguoDate::atTime(java::time::LocalTime arg0)
+	JObject MinguoDate::atTime(java::time::LocalTime arg0)
 	{
 		return callObjectMethod(
 			"atTime",
@@ -94,7 +94,7 @@ namespace java::time::chrono
 			"()Ljava/time/chrono/MinguoEra;"
 		);
 	}
-	jlong MinguoDate::getLong(__JniBaseClass arg0)
+	jlong MinguoDate::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -116,7 +116,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::minus(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -124,7 +124,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::MinguoDate MinguoDate::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -133,7 +133,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::plus(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -141,7 +141,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::MinguoDate MinguoDate::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -150,7 +150,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange MinguoDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange MinguoDate::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -172,7 +172,7 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass MinguoDate::until(__JniBaseClass arg0)
+	JObject MinguoDate::until(JObject arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -180,7 +180,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong MinguoDate::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong MinguoDate::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -189,7 +189,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::with(__JniBaseClass arg0)
+	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -197,7 +197,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::MinguoDate MinguoDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::chrono::MinguoDate MinguoDate::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

@@ -1,17 +1,17 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::util
 {
-	class EventLog : public __JniBaseClass
+	class EventLog : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit EventLog(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit EventLog(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		EventLog(QAndroidJniObject obj);
 		
 		// Constructors
@@ -19,7 +19,7 @@ namespace android::util
 		// Methods
 		static jint getTagCode(jstring arg0);
 		static jstring getTagName(jint arg0);
-		static void readEvents(jintArray arg0, __JniBaseClass arg1);
+		static void readEvents(jintArray arg0, JObject arg1);
 		static jint writeEvent(jint arg0, jobjectArray arg1);
 		static jint writeEvent(jint arg0, jfloat arg1);
 		static jint writeEvent(jint arg0, jint arg1);

@@ -11,7 +11,7 @@ namespace java::time::zone
 	// Fields
 	
 	// QAndroidJniObject forward
-	ZoneRules::ZoneRules(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ZoneRules::ZoneRules(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -25,7 +25,7 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	java::time::zone::ZoneRules ZoneRules::of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, __JniBaseClass arg2, __JniBaseClass arg3, __JniBaseClass arg4)
+	java::time::zone::ZoneRules ZoneRules::of(java::time::ZoneOffset arg0, java::time::ZoneOffset arg1, JObject arg2, JObject arg3, JObject arg4)
 	{
 		return callStaticObjectMethod(
 			"java.time.zone.ZoneRules",
@@ -86,21 +86,21 @@ namespace java::time::zone
 			arg0.object()
 		);
 	}
-	__JniBaseClass ZoneRules::getTransitionRules()
+	JObject ZoneRules::getTransitionRules()
 	{
 		return callObjectMethod(
 			"getTransitionRules",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ZoneRules::getTransitions()
+	JObject ZoneRules::getTransitions()
 	{
 		return callObjectMethod(
 			"getTransitions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ZoneRules::getValidOffsets(java::time::LocalDateTime arg0)
+	JObject ZoneRules::getValidOffsets(java::time::LocalDateTime arg0)
 	{
 		return callObjectMethod(
 			"getValidOffsets",

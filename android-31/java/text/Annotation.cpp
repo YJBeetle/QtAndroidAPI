@@ -5,11 +5,11 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	Annotation::Annotation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Annotation::Annotation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Annotation::Annotation(jobject arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.Annotation",
 			"(Ljava/lang/Object;)V",
 			arg0

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::app::people
 {
@@ -9,13 +9,13 @@ namespace android::app::people
 
 namespace android::app::people
 {
-	class PeopleManager : public __JniBaseClass
+	class PeopleManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PeopleManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PeopleManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PeopleManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -24,7 +24,7 @@ namespace android::app::people
 		void addOrUpdateStatus(jstring arg0, android::app::people::ConversationStatus arg1);
 		void clearStatus(jstring arg0, jstring arg1);
 		void clearStatuses(jstring arg0);
-		__JniBaseClass getStatuses(jstring arg0);
+		JObject getStatuses(jstring arg0);
 	};
 } // namespace android::app::people
 

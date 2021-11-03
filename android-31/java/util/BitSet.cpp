@@ -9,16 +9,16 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	BitSet::BitSet(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BitSet::BitSet(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BitSet::BitSet()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.BitSet",
 			"()V"
 		) {}
 	BitSet::BitSet(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.BitSet",
 			"(I)V",
 			arg0
@@ -269,7 +269,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass BitSet::stream()
+	JObject BitSet::stream()
 	{
 		return callObjectMethod(
 			"stream",

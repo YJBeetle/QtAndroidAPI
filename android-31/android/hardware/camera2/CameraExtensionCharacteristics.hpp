@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::util
 {
@@ -13,7 +13,7 @@ namespace android::util
 
 namespace android::hardware::camera2
 {
-	class CameraExtensionCharacteristics : public __JniBaseClass
+	class CameraExtensionCharacteristics : public JObject
 	{
 	public:
 		// Fields
@@ -24,16 +24,16 @@ namespace android::hardware::camera2
 		static jint EXTENSION_NIGHT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CameraExtensionCharacteristics(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CameraExtensionCharacteristics(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CameraExtensionCharacteristics(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		android::util::Range getEstimatedCaptureLatencyRangeMillis(jint arg0, android::util::Size arg1, jint arg2);
-		__JniBaseClass getExtensionSupportedSizes(jint arg0, jint arg1);
-		__JniBaseClass getExtensionSupportedSizes(jint arg0, jclass arg1);
-		__JniBaseClass getSupportedExtensions();
+		JObject getExtensionSupportedSizes(jint arg0, jint arg1);
+		JObject getExtensionSupportedSizes(jint arg0, jclass arg1);
+		JObject getSupportedExtensions();
 	};
 } // namespace android::hardware::camera2
 

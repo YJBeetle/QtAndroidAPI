@@ -7,7 +7,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass Session2Token::CREATOR()
+	JObject Session2Token::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.Session2Token",
@@ -31,11 +31,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	Session2Token::Session2Token(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Session2Token::Session2Token(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Session2Token::Session2Token(android::content::Context arg0, android::content::ComponentName arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2Token",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
 			arg0.object(),

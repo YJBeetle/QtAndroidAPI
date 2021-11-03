@@ -47,12 +47,12 @@ namespace java::time
 	}
 	
 	// QAndroidJniObject forward
-	LocalTime::LocalTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	LocalTime::LocalTime(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::LocalTime LocalTime::from(__JniBaseClass arg0)
+	java::time::LocalTime LocalTime::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.LocalTime",
@@ -167,7 +167,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	__JniBaseClass LocalTime::adjustInto(__JniBaseClass arg0)
+	JObject LocalTime::adjustInto(JObject arg0)
 	{
 		return callObjectMethod(
 			"adjustInto",
@@ -223,7 +223,7 @@ namespace java::time
 			arg0.object()
 		).object<jstring>();
 	}
-	jint LocalTime::get(__JniBaseClass arg0)
+	jint LocalTime::get(JObject arg0)
 	{
 		return callMethod<jint>(
 			"get",
@@ -238,7 +238,7 @@ namespace java::time
 			"()I"
 		);
 	}
-	jlong LocalTime::getLong(__JniBaseClass arg0)
+	jlong LocalTime::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -290,7 +290,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jboolean LocalTime::isSupported(__JniBaseClass arg0)
+	jboolean LocalTime::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -298,7 +298,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::minus(__JniBaseClass arg0)
+	java::time::LocalTime LocalTime::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -306,7 +306,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::LocalTime LocalTime::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -347,7 +347,7 @@ namespace java::time
 			arg0
 		);
 	}
-	java::time::LocalTime LocalTime::plus(__JniBaseClass arg0)
+	java::time::LocalTime LocalTime::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -355,7 +355,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::LocalTime LocalTime::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -396,7 +396,7 @@ namespace java::time
 			arg0
 		);
 	}
-	jobject LocalTime::query(__JniBaseClass arg0)
+	jobject LocalTime::query(JObject arg0)
 	{
 		return callObjectMethod(
 			"query",
@@ -404,7 +404,7 @@ namespace java::time
 			arg0.object()
 		).object<jobject>();
 	}
-	java::time::temporal::ValueRange LocalTime::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange LocalTime::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -442,7 +442,7 @@ namespace java::time
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	java::time::LocalTime LocalTime::truncatedTo(__JniBaseClass arg0)
+	java::time::LocalTime LocalTime::truncatedTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"truncatedTo",
@@ -450,7 +450,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	jlong LocalTime::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong LocalTime::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -459,7 +459,7 @@ namespace java::time
 			arg1.object()
 		);
 	}
-	java::time::LocalTime LocalTime::with(__JniBaseClass arg0)
+	java::time::LocalTime LocalTime::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -467,7 +467,7 @@ namespace java::time
 			arg0.object()
 		);
 	}
-	java::time::LocalTime LocalTime::with(__JniBaseClass arg0, jlong arg1)
+	java::time::LocalTime LocalTime::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

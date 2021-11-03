@@ -7,7 +7,7 @@ namespace android::graphics
 	// Fields
 	
 	// QAndroidJniObject forward
-	ColorSpace_Connector::ColorSpace_Connector(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ColorSpace_Connector::ColorSpace_Connector(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -37,9 +37,9 @@ namespace android::widget
 		
 		// Constructors
 		ProgressBar(android::content::Context arg0);
-		ProgressBar(android::content::Context arg0, __JniBaseClass arg1);
-		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ProgressBar(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ProgressBar(android::content::Context arg0, JObject arg1);
+		ProgressBar(android::content::Context arg0, JObject arg1, jint arg2);
+		ProgressBar(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
@@ -47,7 +47,7 @@ namespace android::widget
 		android::graphics::drawable::Drawable getIndeterminateDrawable();
 		android::content::res::ColorStateList getIndeterminateTintList();
 		android::graphics::PorterDuff_Mode getIndeterminateTintMode();
-		__JniBaseClass getInterpolator();
+		JObject getInterpolator();
 		jint getMax();
 		jint getMin();
 		jint getProgress();
@@ -65,8 +65,8 @@ namespace android::widget
 		jboolean isAnimating();
 		jboolean isIndeterminate();
 		void jumpDrawablesToCurrentState();
-		void onRestoreInstanceState(__JniBaseClass arg0);
-		__JniBaseClass onSaveInstanceState();
+		void onRestoreInstanceState(JObject arg0);
+		JObject onSaveInstanceState();
 		void onVisibilityAggregated(jboolean arg0);
 		void postInvalidate();
 		void setIndeterminate(jboolean arg0);
@@ -74,7 +74,7 @@ namespace android::widget
 		void setIndeterminateDrawableTiled(android::graphics::drawable::Drawable arg0);
 		void setIndeterminateTintList(android::content::res::ColorStateList arg0);
 		void setIndeterminateTintMode(android::graphics::PorterDuff_Mode arg0);
-		void setInterpolator(__JniBaseClass arg0);
+		void setInterpolator(JObject arg0);
 		void setInterpolator(android::content::Context arg0, jint arg1);
 		void setMax(jint arg0);
 		void setMin(jint arg0);

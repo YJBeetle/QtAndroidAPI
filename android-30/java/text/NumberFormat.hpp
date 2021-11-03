@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Format.hpp"
 
 namespace java::io
@@ -58,7 +58,7 @@ namespace java::text
 		// Methods
 		static jarray getAvailableLocales();
 		static java::text::NumberFormat getCompactNumberInstance();
-		static java::text::NumberFormat getCompactNumberInstance(java::util::Locale arg0, __JniBaseClass arg1);
+		static java::text::NumberFormat getCompactNumberInstance(java::util::Locale arg0, JObject arg1);
 		static java::text::NumberFormat getCurrencyInstance();
 		static java::text::NumberFormat getCurrencyInstance(java::util::Locale arg0);
 		static java::text::NumberFormat getInstance();

@@ -7,7 +7,7 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityButtonController::AccessibilityButtonController(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityButtonController::AccessibilityButtonController(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

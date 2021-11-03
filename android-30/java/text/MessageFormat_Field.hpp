@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AttributedCharacterIterator_Attribute.hpp"
 #include "./Format_Field.hpp"
 

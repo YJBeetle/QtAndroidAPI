@@ -5,17 +5,17 @@ namespace android::view::inspector
 	// Fields
 	
 	// QAndroidJniObject forward
-	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StaticInspectionCompanionProvider::StaticInspectionCompanionProvider()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.inspector.StaticInspectionCompanionProvider",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass StaticInspectionCompanionProvider::provide(jclass arg0)
+	JObject StaticInspectionCompanionProvider::provide(jclass arg0)
 	{
 		return callObjectMethod(
 			"provide",

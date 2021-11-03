@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -13,13 +13,13 @@ namespace android::security
 
 namespace android::security
 {
-	class ConfirmationPrompt : public __JniBaseClass
+	class ConfirmationPrompt : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConfirmationPrompt(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConfirmationPrompt(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConfirmationPrompt(QAndroidJniObject obj);
 		
 		// Constructors
@@ -27,7 +27,7 @@ namespace android::security
 		// Methods
 		static jboolean isSupported(android::content::Context arg0);
 		void cancelPrompt();
-		void presentPrompt(__JniBaseClass arg0, android::security::ConfirmationCallback arg1);
+		void presentPrompt(JObject arg0, android::security::ConfirmationCallback arg1);
 	};
 } // namespace android::security
 

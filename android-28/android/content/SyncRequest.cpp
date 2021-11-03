@@ -4,7 +4,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass SyncRequest::CREATOR()
+	JObject SyncRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.SyncRequest",
@@ -14,7 +14,7 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	SyncRequest::SyncRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SyncRequest::SyncRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

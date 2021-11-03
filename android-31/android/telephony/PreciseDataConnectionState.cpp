@@ -6,7 +6,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass PreciseDataConnectionState::CREATOR()
+	JObject PreciseDataConnectionState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.PreciseDataConnectionState",
@@ -16,7 +16,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	PreciseDataConnectionState::PreciseDataConnectionState(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PreciseDataConnectionState::PreciseDataConnectionState(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

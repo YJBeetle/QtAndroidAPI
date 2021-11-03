@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "./TextView.hpp"
 
@@ -30,15 +30,15 @@ namespace android::widget
 		
 		// Constructors
 		EditText(android::content::Context arg0);
-		EditText(android::content::Context arg0, __JniBaseClass arg1);
-		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		EditText(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		EditText(android::content::Context arg0, JObject arg1);
+		EditText(android::content::Context arg0, JObject arg1, jint arg2);
+		EditText(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void extendSelection(jint arg0);
 		jstring getAccessibilityClassName();
 		jboolean getFreezesText();
-		__JniBaseClass getText();
+		JObject getText();
 		void selectAll();
 		void setEllipsize(android::text::TextUtils_TruncateAt arg0);
 		void setSelection(jint arg0);

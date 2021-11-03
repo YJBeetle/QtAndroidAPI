@@ -418,7 +418,7 @@ namespace android::hardware
 	}
 	
 	// QAndroidJniObject forward
-	SensorManager::SensorManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SensorManager::SensorManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -532,7 +532,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	jboolean SensorManager::flush(__JniBaseClass arg0)
+	jboolean SensorManager::flush(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"flush",
@@ -557,7 +557,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	__JniBaseClass SensorManager::getDynamicSensorList(jint arg0)
+	JObject SensorManager::getDynamicSensorList(jint arg0)
 	{
 		return callObjectMethod(
 			"getDynamicSensorList",
@@ -565,7 +565,7 @@ namespace android::hardware
 			arg0
 		);
 	}
-	__JniBaseClass SensorManager::getSensorList(jint arg0)
+	JObject SensorManager::getSensorList(jint arg0)
 	{
 		return callObjectMethod(
 			"getSensorList",
@@ -604,7 +604,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, jint arg1)
+	jboolean SensorManager::registerListener(JObject arg0, jint arg1)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -613,7 +613,7 @@ namespace android::hardware
 			arg1
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -623,7 +623,7 @@ namespace android::hardware
 			arg2
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, jint arg1, jint arg2)
+	jboolean SensorManager::registerListener(JObject arg0, jint arg1, jint arg2)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -633,7 +633,7 @@ namespace android::hardware
 			arg2
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, android::os::Handler arg3)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -644,7 +644,7 @@ namespace android::hardware
 			arg3.object()
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -655,7 +655,7 @@ namespace android::hardware
 			arg3
 		);
 	}
-	jboolean SensorManager::registerListener(__JniBaseClass arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4)
+	jboolean SensorManager::registerListener(JObject arg0, android::hardware::Sensor arg1, jint arg2, jint arg3, android::os::Handler arg4)
 	{
 		return callMethod<jboolean>(
 			"registerListener",
@@ -684,7 +684,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager::unregisterListener(__JniBaseClass arg0)
+	void SensorManager::unregisterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -692,7 +692,7 @@ namespace android::hardware
 			arg0.object()
 		);
 	}
-	void SensorManager::unregisterListener(__JniBaseClass arg0, android::hardware::Sensor arg1)
+	void SensorManager::unregisterListener(JObject arg0, android::hardware::Sensor arg1)
 	{
 		callMethod<void>(
 			"unregisterListener",
@@ -701,7 +701,7 @@ namespace android::hardware
 			arg1.object()
 		);
 	}
-	void SensorManager::unregisterListener(__JniBaseClass arg0, jint arg1)
+	void SensorManager::unregisterListener(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"unregisterListener",

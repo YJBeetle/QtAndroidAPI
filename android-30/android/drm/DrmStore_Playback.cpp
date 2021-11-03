@@ -33,11 +33,11 @@ namespace android::drm
 	}
 	
 	// QAndroidJniObject forward
-	DrmStore_Playback::DrmStore_Playback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmStore_Playback::DrmStore_Playback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmStore_Playback::DrmStore_Playback()
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmStore$Playback",
 			"()V"
 		) {}

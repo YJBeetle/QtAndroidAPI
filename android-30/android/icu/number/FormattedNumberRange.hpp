@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::number
 {
@@ -13,13 +13,13 @@ namespace java::math
 
 namespace android::icu::number
 {
-	class FormattedNumberRange : public __JniBaseClass
+	class FormattedNumberRange : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FormattedNumberRange(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FormattedNumberRange(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FormattedNumberRange(QAndroidJniObject obj);
 		
 		// Constructors
@@ -33,7 +33,7 @@ namespace android::icu::number
 		jint hashCode();
 		jint length();
 		jstring subSequence(jint arg0, jint arg1);
-		__JniBaseClass toCharacterIterator();
+		JObject toCharacterIterator();
 		jstring toString();
 	};
 } // namespace android::icu::number

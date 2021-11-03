@@ -12,11 +12,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	AbstractCursor::AbstractCursor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AbstractCursor::AbstractCursor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AbstractCursor::AbstractCursor()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.AbstractCursor",
 			"()V"
 		) {}

@@ -6,7 +6,7 @@ namespace java::lang::reflect
 	// Fields
 	
 	// QAndroidJniObject forward
-	Parameter::Parameter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Parameter::Parameter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -19,14 +19,14 @@ namespace java::lang::reflect
 			arg0
 		);
 	}
-	__JniBaseClass Parameter::getAnnotatedType()
+	JObject Parameter::getAnnotatedType()
 	{
 		return callObjectMethod(
 			"getAnnotatedType",
 			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	__JniBaseClass Parameter::getAnnotation(jclass arg0)
+	JObject Parameter::getAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getAnnotation",
@@ -49,7 +49,7 @@ namespace java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	__JniBaseClass Parameter::getDeclaredAnnotation(jclass arg0)
+	JObject Parameter::getDeclaredAnnotation(jclass arg0)
 	{
 		return callObjectMethod(
 			"getDeclaredAnnotation",
@@ -93,7 +93,7 @@ namespace java::lang::reflect
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Parameter::getParameterizedType()
+	JObject Parameter::getParameterizedType()
 	{
 		return callObjectMethod(
 			"getParameterizedType",

@@ -11,11 +11,11 @@ namespace javax::xml::datatype
 	// Fields
 	
 	// QAndroidJniObject forward
-	Duration::Duration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Duration::Duration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Duration::Duration()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.datatype.Duration",
 			"()V"
 		) {}

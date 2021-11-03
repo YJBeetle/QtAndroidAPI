@@ -16,14 +16,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Space::Space(android::content::Context arg0, __JniBaseClass arg1)
+	Space::Space(android::content::Context arg0, JObject arg1)
 		: android::view::View(
 			"android.widget.Space",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Space::Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Space::Space(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::view::View(
 			"android.widget.Space",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -31,7 +31,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Space::Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Space::Space(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::view::View(
 			"android.widget.Space",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",

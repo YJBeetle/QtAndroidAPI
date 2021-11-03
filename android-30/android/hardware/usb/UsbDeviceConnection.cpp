@@ -9,7 +9,7 @@ namespace android::hardware::usb
 	// Fields
 	
 	// QAndroidJniObject forward
-	UsbDeviceConnection::UsbDeviceConnection(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UsbDeviceConnection::UsbDeviceConnection(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

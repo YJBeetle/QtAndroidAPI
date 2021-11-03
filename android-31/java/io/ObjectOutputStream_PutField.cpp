@@ -5,11 +5,11 @@ namespace java::io
 	// Fields
 	
 	// QAndroidJniObject forward
-	ObjectOutputStream_PutField::ObjectOutputStream_PutField(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ObjectOutputStream_PutField::ObjectOutputStream_PutField(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ObjectOutputStream_PutField::ObjectOutputStream_PutField()
-		: __JniBaseClass(
+		: JObject(
 			"java.io.ObjectOutputStream$PutField",
 			"()V"
 		) {}
@@ -96,7 +96,7 @@ namespace java::io
 			arg1
 		);
 	}
-	void ObjectOutputStream_PutField::write(__JniBaseClass arg0)
+	void ObjectOutputStream_PutField::write(JObject arg0)
 	{
 		callMethod<void>(
 			"write",

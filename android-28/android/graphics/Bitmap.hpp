@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -49,15 +49,15 @@ namespace java::nio
 
 namespace android::graphics
 {
-	class Bitmap : public __JniBaseClass
+	class Bitmap : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DENSITY_NONE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Bitmap(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Bitmap(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Bitmap(QAndroidJniObject obj);
 		
 		// Constructors

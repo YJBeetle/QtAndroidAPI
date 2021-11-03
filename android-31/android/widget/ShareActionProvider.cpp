@@ -41,7 +41,7 @@ namespace android::widget
 			"()Landroid/view/View;"
 		);
 	}
-	void ShareActionProvider::onPrepareSubMenu(__JniBaseClass arg0)
+	void ShareActionProvider::onPrepareSubMenu(JObject arg0)
 	{
 		callMethod<void>(
 			"onPrepareSubMenu",
@@ -49,7 +49,7 @@ namespace android::widget
 			arg0.object()
 		);
 	}
-	void ShareActionProvider::setOnShareTargetSelectedListener(__JniBaseClass arg0)
+	void ShareActionProvider::setOnShareTargetSelectedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnShareTargetSelectedListener",

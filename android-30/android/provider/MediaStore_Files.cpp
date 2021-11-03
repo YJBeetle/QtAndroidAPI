@@ -6,11 +6,11 @@ namespace android::provider
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaStore_Files::MediaStore_Files(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Files::MediaStore_Files(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Files::MediaStore_Files()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Files",
 			"()V"
 		) {}

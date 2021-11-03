@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Animator.hpp"
 #include "./ValueAnimator.hpp"
 
@@ -21,7 +21,7 @@ namespace android::animation
 		
 		// Methods
 		void setCurrentPlayTime(jlong arg0);
-		void setTimeListener(__JniBaseClass arg0);
+		void setTimeListener(JObject arg0);
 		void start();
 	};
 } // namespace android::animation

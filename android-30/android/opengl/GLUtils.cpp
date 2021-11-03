@@ -6,7 +6,7 @@ namespace android::opengl
 	// Fields
 	
 	// QAndroidJniObject forward
-	GLUtils::GLUtils(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GLUtils::GLUtils(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

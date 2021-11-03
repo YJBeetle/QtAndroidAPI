@@ -8,36 +8,36 @@ namespace android::content
 	// Fields
 	
 	// QAndroidJniObject forward
-	ClipData_Item::ClipData_Item(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ClipData_Item::ClipData_Item(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ClipData_Item::ClipData_Item(android::content::Intent arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Landroid/content/Intent;)V",
 			arg0.object()
 		) {}
 	ClipData_Item::ClipData_Item(android::net::Uri arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Landroid/net/Uri;)V",
 			arg0.object()
 		) {}
 	ClipData_Item::ClipData_Item(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		) {}
 	ClipData_Item::ClipData_Item(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Ljava/lang/CharSequence;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	ClipData_Item::ClipData_Item(jstring arg0, android::content::Intent arg1, android::net::Uri arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Ljava/lang/CharSequence;Landroid/content/Intent;Landroid/net/Uri;)V",
 			arg0,
@@ -45,7 +45,7 @@ namespace android::content
 			arg2.object()
 		) {}
 	ClipData_Item::ClipData_Item(jstring arg0, jstring arg1, android::content::Intent arg2, android::net::Uri arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ClipData$Item",
 			"(Ljava/lang/CharSequence;Ljava/lang/String;Landroid/content/Intent;Landroid/net/Uri;)V",
 			arg0,

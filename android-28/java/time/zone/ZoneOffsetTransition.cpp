@@ -10,7 +10,7 @@ namespace java::time::zone
 	// Fields
 	
 	// QAndroidJniObject forward
-	ZoneOffsetTransition::ZoneOffsetTransition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ZoneOffsetTransition::ZoneOffsetTransition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

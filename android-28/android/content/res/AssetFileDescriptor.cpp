@@ -9,7 +9,7 @@
 namespace android::content::res
 {
 	// Fields
-	__JniBaseClass AssetFileDescriptor::CREATOR()
+	JObject AssetFileDescriptor::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.res.AssetFileDescriptor",
@@ -26,11 +26,11 @@ namespace android::content::res
 	}
 	
 	// QAndroidJniObject forward
-	AssetFileDescriptor::AssetFileDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AssetFileDescriptor::AssetFileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.AssetFileDescriptor",
 			"(Landroid/os/ParcelFileDescriptor;JJ)V",
 			arg0.object(),
@@ -38,7 +38,7 @@ namespace android::content::res
 			arg2
 		) {}
 	AssetFileDescriptor::AssetFileDescriptor(android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, android::os::Bundle arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.res.AssetFileDescriptor",
 			"(Landroid/os/ParcelFileDescriptor;JJLandroid/os/Bundle;)V",
 			arg0.object(),

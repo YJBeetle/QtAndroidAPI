@@ -33,24 +33,24 @@ namespace java::text
 	}
 	
 	// QAndroidJniObject forward
-	Bidi::Bidi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Bidi::Bidi(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	Bidi::Bidi(__JniBaseClass arg0)
-		: __JniBaseClass(
+	Bidi::Bidi(JObject arg0)
+		: JObject(
 			"java.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.object()
 		) {}
 	Bidi::Bidi(jstring arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
 			arg1
 		) {}
 	Bidi::Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.Bidi",
 			"([CI[BIII)V",
 			arg0,

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./ColorSpace.hpp"
 
 namespace android::graphics
@@ -24,20 +24,20 @@ namespace android::graphics
 		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jdouble arg2);
 		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, android::graphics::ColorSpace_Rgb_TransferParameters arg3);
 		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, jdouble arg3);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, __JniBaseClass arg3, __JniBaseClass arg4, jfloat arg5, jfloat arg6);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, JObject arg2, JObject arg3);
+		ColorSpace_Rgb(jstring arg0, jfloatArray arg1, jfloatArray arg2, JObject arg3, JObject arg4, jfloat arg5, jfloat arg6);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jfloatArray fromLinear(jfloatArray arg0);
 		jfloatArray fromLinear(jfloat arg0, jfloat arg1, jfloat arg2);
 		jfloatArray fromXyz(jfloatArray arg0);
-		__JniBaseClass getEotf();
+		JObject getEotf();
 		jfloatArray getInverseTransform();
 		jfloatArray getInverseTransform(jfloatArray arg0);
 		jfloat getMaxValue(jint arg0);
 		jfloat getMinValue(jint arg0);
-		__JniBaseClass getOetf();
+		JObject getOetf();
 		jfloatArray getPrimaries();
 		jfloatArray getPrimaries(jfloatArray arg0);
 		android::graphics::ColorSpace_Rgb_TransferParameters getTransferParameters();

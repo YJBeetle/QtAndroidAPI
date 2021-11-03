@@ -61,17 +61,17 @@ namespace android::service::voice
 	}
 	
 	// QAndroidJniObject forward
-	VoiceInteractionSession::VoiceInteractionSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractionSession::VoiceInteractionSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
 	VoiceInteractionSession::VoiceInteractionSession(android::content::Context arg0, android::os::Handler arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;Landroid/os/Handler;)V",
 			arg0.object(),

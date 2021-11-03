@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Preference.hpp"
 #include "./TwoStatePreference.hpp"
 
@@ -26,9 +26,9 @@ namespace android::preference
 		
 		// Constructors
 		CheckBoxPreference(android::content::Context arg0);
-		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1);
-		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		CheckBoxPreference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		CheckBoxPreference(android::content::Context arg0, JObject arg1);
+		CheckBoxPreference(android::content::Context arg0, JObject arg1, jint arg2);
+		CheckBoxPreference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 	};

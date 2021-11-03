@@ -7,11 +7,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaCas::MediaCas(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCas::MediaCas(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCas::MediaCas(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCas",
 			"(I)V",
 			arg0
@@ -94,7 +94,7 @@ namespace android::media
 			arg2
 		);
 	}
-	void MediaCas::setEventListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void MediaCas::setEventListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"setEventListener",

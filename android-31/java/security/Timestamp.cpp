@@ -8,11 +8,11 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	Timestamp::Timestamp(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Timestamp::Timestamp(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Timestamp::Timestamp(java::util::Date arg0, java::security::cert::CertPath arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.Timestamp",
 			"(Ljava/util/Date;Ljava/security/cert/CertPath;)V",
 			arg0.object(),

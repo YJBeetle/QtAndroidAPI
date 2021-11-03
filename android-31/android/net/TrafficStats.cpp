@@ -15,11 +15,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	TrafficStats::TrafficStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TrafficStats::TrafficStats(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TrafficStats::TrafficStats()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.TrafficStats",
 			"()V"
 		) {}

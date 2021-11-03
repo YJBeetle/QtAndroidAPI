@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::system
 {
@@ -9,7 +9,7 @@ namespace android::system
 
 namespace android::system
 {
-	class StructStat : public __JniBaseClass
+	class StructStat : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace android::system
 		jint st_uid();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit StructStat(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit StructStat(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		StructStat(QAndroidJniObject obj);
 		
 		// Constructors

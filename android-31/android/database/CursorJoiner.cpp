@@ -6,11 +6,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	CursorJoiner::CursorJoiner(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CursorJoiner::CursorJoiner(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	CursorJoiner::CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3)
-		: __JniBaseClass(
+	CursorJoiner::CursorJoiner(JObject arg0, jarray arg1, JObject arg2, jarray arg3)
+		: JObject(
 			"android.database.CursorJoiner",
 			"(Landroid/database/Cursor;[Ljava/lang/String;Landroid/database/Cursor;[Ljava/lang/String;)V",
 			arg0.object(),
@@ -27,7 +27,7 @@ namespace android::database
 			"()Z"
 		);
 	}
-	__JniBaseClass CursorJoiner::iterator()
+	JObject CursorJoiner::iterator()
 	{
 		return callObjectMethod(
 			"iterator",

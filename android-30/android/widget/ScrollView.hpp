@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -47,9 +47,9 @@ namespace android::widget
 		
 		// Constructors
 		ScrollView(android::content::Context arg0);
-		ScrollView(android::content::Context arg0, __JniBaseClass arg1);
-		ScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		ScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		ScrollView(android::content::Context arg0, JObject arg1);
+		ScrollView(android::content::Context arg0, JObject arg1, jint arg2);
+		ScrollView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addView(android::view::View arg0);

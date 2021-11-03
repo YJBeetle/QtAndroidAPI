@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -21,7 +21,7 @@ namespace java::net
 
 namespace java::io
 {
-	class File : public __JniBaseClass
+	class File : public JObject
 	{
 	public:
 		// Fields
@@ -31,7 +31,7 @@ namespace java::io
 		static jchar separatorChar();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit File(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit File(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		File(QAndroidJniObject obj);
 		
 		// Constructors
@@ -73,9 +73,9 @@ namespace java::io
 		jlong lastModified();
 		jlong length();
 		jarray list();
-		jarray list(__JniBaseClass arg0);
+		jarray list(JObject arg0);
 		jarray listFiles();
-		jarray listFiles(__JniBaseClass arg0);
+		jarray listFiles(JObject arg0);
 		jboolean mkdir();
 		jboolean mkdirs();
 		jboolean renameTo(java::io::File arg0);
@@ -87,7 +87,7 @@ namespace java::io
 		jboolean setReadable(jboolean arg0, jboolean arg1);
 		jboolean setWritable(jboolean arg0);
 		jboolean setWritable(jboolean arg0, jboolean arg1);
-		__JniBaseClass toPath();
+		JObject toPath();
 		jstring toString();
 		java::net::URI toURI();
 		java::net::URL toURL();

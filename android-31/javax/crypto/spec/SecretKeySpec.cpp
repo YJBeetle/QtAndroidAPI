@@ -5,18 +5,18 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SecretKeySpec::SecretKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BLjava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	SecretKeySpec::SecretKeySpec(jbyteArray arg0, jint arg1, jint arg2, jstring arg3)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.SecretKeySpec",
 			"([BIILjava/lang/String;)V",
 			arg0,

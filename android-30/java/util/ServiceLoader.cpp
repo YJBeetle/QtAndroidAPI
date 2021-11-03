@@ -12,7 +12,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	ServiceLoader::ServiceLoader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ServiceLoader::ServiceLoader(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -36,7 +36,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	java::util::ServiceLoader ServiceLoader::load(__JniBaseClass arg0, jclass arg1)
+	java::util::ServiceLoader ServiceLoader::load(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.ServiceLoader",
@@ -62,7 +62,7 @@ namespace java::util
 			"()Ljava/util/Optional;"
 		);
 	}
-	__JniBaseClass ServiceLoader::iterator()
+	JObject ServiceLoader::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -76,7 +76,7 @@ namespace java::util
 			"()V"
 		);
 	}
-	__JniBaseClass ServiceLoader::stream()
+	JObject ServiceLoader::stream()
 	{
 		return callObjectMethod(
 			"stream",

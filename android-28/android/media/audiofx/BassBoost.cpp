@@ -53,7 +53,7 @@ namespace android::media::audiofx
 			"()Z"
 		);
 	}
-	void BassBoost::setParameterListener(__JniBaseClass arg0)
+	void BassBoost::setParameterListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameterListener",

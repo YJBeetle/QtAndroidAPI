@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,14 +13,14 @@ namespace android::os
 
 namespace android::net
 {
-	class LinkProperties : public __JniBaseClass
+	class LinkProperties : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LinkProperties(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LinkProperties(QAndroidJniObject obj);
 		
 		// Constructors
@@ -28,13 +28,13 @@ namespace android::net
 		// Methods
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		__JniBaseClass getDnsServers();
+		JObject getDnsServers();
 		jstring getDomains();
 		android::net::ProxyInfo getHttpProxy();
 		jstring getInterfaceName();
-		__JniBaseClass getLinkAddresses();
+		JObject getLinkAddresses();
 		jstring getPrivateDnsServerName();
-		__JniBaseClass getRoutes();
+		JObject getRoutes();
 		jint hashCode();
 		jboolean isPrivateDnsActive();
 		jstring toString();

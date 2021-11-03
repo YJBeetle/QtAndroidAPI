@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -13,7 +13,7 @@ namespace java::lang
 
 namespace android::icu::text
 {
-	class IDNA : public __JniBaseClass
+	class IDNA : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::icu::text
 		static jint USE_STD3_RULES();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IDNA(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IDNA(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IDNA(QAndroidJniObject obj);
 		
 		// Constructors

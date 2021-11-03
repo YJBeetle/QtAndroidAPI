@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::telephony
 {
@@ -17,13 +17,13 @@ namespace java::time
 
 namespace android::telephony
 {
-	class SubscriptionPlan_Builder : public __JniBaseClass
+	class SubscriptionPlan_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SubscriptionPlan_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SubscriptionPlan_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SubscriptionPlan_Builder(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./KeyPairGeneratorSpi.hpp"
 
 namespace java::security
@@ -38,9 +38,9 @@ namespace java::security
 		jstring getAlgorithm();
 		java::security::Provider getProvider();
 		void initialize(jint arg0);
-		void initialize(__JniBaseClass arg0);
+		void initialize(JObject arg0);
 		void initialize(jint arg0, java::security::SecureRandom arg1);
-		void initialize(__JniBaseClass arg0, java::security::SecureRandom arg1);
+		void initialize(JObject arg0, java::security::SecureRandom arg1);
 	};
 } // namespace java::security
 

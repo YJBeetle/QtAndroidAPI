@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::graphics::fonts
 {
-	class FontStyle : public __JniBaseClass
+	class FontStyle : public JObject
 	{
 	public:
 		// Fields
@@ -24,7 +24,7 @@ namespace android::graphics::fonts
 		static jint FONT_WEIGHT_THIN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FontStyle(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FontStyle(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FontStyle(QAndroidJniObject obj);
 		
 		// Constructors

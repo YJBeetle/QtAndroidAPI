@@ -6,11 +6,11 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	TrustManagerFactorySpi::TrustManagerFactorySpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TrustManagerFactorySpi::TrustManagerFactorySpi(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TrustManagerFactorySpi::TrustManagerFactorySpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.TrustManagerFactorySpi",
 			"()V"
 		) {}

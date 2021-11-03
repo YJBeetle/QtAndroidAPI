@@ -7,11 +7,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	WindowMetrics::WindowMetrics(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WindowMetrics::WindowMetrics(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WindowMetrics::WindowMetrics(android::graphics::Rect arg0, android::view::WindowInsets arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.WindowMetrics",
 			"(Landroid/graphics/Rect;Landroid/view/WindowInsets;)V",
 			arg0.object(),

@@ -79,7 +79,7 @@ namespace android::service::media
 			arg1.object()
 		);
 	}
-	__JniBaseClass MediaBrowserService::onBind(android::content::Intent arg0)
+	JObject MediaBrowserService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

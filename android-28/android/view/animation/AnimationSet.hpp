@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Animation.hpp"
 
 namespace android::content
@@ -29,12 +29,12 @@ namespace android::view::animation
 		
 		// Constructors
 		AnimationSet(jboolean arg0);
-		AnimationSet(android::content::Context arg0, __JniBaseClass arg1);
+		AnimationSet(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void addAnimation(android::view::animation::Animation arg0);
 		jlong computeDurationHint();
-		__JniBaseClass getAnimations();
+		JObject getAnimations();
 		jlong getDuration();
 		jlong getStartTime();
 		jboolean getTransformation(jlong arg0, android::view::animation::Transformation arg1);

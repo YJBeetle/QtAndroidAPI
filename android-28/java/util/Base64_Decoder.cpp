@@ -7,7 +7,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Base64_Decoder::Base64_Decoder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Base64_Decoder::Base64_Decoder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

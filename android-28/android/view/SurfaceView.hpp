@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./View.hpp"
 
 namespace android::content
@@ -29,14 +29,14 @@ namespace android::view
 		
 		// Constructors
 		SurfaceView(android::content::Context arg0);
-		SurfaceView(android::content::Context arg0, __JniBaseClass arg1);
-		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		SurfaceView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		SurfaceView(android::content::Context arg0, JObject arg1);
+		SurfaceView(android::content::Context arg0, JObject arg1, jint arg2);
+		SurfaceView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);
 		jboolean gatherTransparentRegion(android::graphics::Region arg0);
-		__JniBaseClass getHolder();
+		JObject getHolder();
 		void setSecure(jboolean arg0);
 		void setVisibility(jint arg0);
 		void setZOrderMediaOverlay(jboolean arg0);

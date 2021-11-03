@@ -70,7 +70,7 @@ namespace android::app::role
 	}
 	
 	// QAndroidJniObject forward
-	RoleManager::RoleManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RoleManager::RoleManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

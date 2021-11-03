@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../../java/util/EventObject.hpp"
 
 namespace javax::net::ssl
@@ -20,16 +20,16 @@ namespace javax::net::ssl
 		HandshakeCompletedEvent(QAndroidJniObject obj);
 		
 		// Constructors
-		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, __JniBaseClass arg1);
+		HandshakeCompletedEvent(javax::net::ssl::SSLSocket arg0, JObject arg1);
 		
 		// Methods
 		jstring getCipherSuite();
 		jarray getLocalCertificates();
-		__JniBaseClass getLocalPrincipal();
+		JObject getLocalPrincipal();
 		jarray getPeerCertificateChain();
 		jarray getPeerCertificates();
-		__JniBaseClass getPeerPrincipal();
-		__JniBaseClass getSession();
+		JObject getPeerPrincipal();
+		JObject getSession();
 		javax::net::ssl::SSLSocket getSocket();
 	};
 } // namespace javax::net::ssl

@@ -34,11 +34,11 @@ namespace android::view::animation
 	}
 	
 	// QAndroidJniObject forward
-	Transformation::Transformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Transformation::Transformation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Transformation::Transformation()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.animation.Transformation",
 			"()V"
 		) {}

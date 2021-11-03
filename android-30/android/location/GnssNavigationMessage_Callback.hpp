@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::location
 {
@@ -9,7 +9,7 @@ namespace android::location
 
 namespace android::location
 {
-	class GnssNavigationMessage_Callback : public __JniBaseClass
+	class GnssNavigationMessage_Callback : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::location
 		static jint STATUS_READY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GnssNavigationMessage_Callback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GnssNavigationMessage_Callback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GnssNavigationMessage_Callback(QAndroidJniObject obj);
 		
 		// Constructors

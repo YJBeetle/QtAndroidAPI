@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -13,21 +13,21 @@ namespace java::nio::file
 
 namespace java::nio::file
 {
-	class SimpleFileVisitor : public __JniBaseClass
+	class SimpleFileVisitor : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SimpleFileVisitor(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SimpleFileVisitor(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SimpleFileVisitor(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		java::nio::file::FileVisitResult postVisitDirectory(jobject arg0, java::io::IOException arg1);
-		java::nio::file::FileVisitResult preVisitDirectory(jobject arg0, __JniBaseClass arg1);
-		java::nio::file::FileVisitResult visitFile(jobject arg0, __JniBaseClass arg1);
+		java::nio::file::FileVisitResult preVisitDirectory(jobject arg0, JObject arg1);
+		java::nio::file::FileVisitResult visitFile(jobject arg0, JObject arg1);
 		java::nio::file::FileVisitResult visitFileFailed(jobject arg0, java::io::IOException arg1);
 	};
 } // namespace java::nio::file

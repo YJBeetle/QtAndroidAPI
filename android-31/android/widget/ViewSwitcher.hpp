@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -32,14 +32,14 @@ namespace android::widget
 		
 		// Constructors
 		ViewSwitcher(android::content::Context arg0);
-		ViewSwitcher(android::content::Context arg0, __JniBaseClass arg1);
+		ViewSwitcher(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void addView(android::view::View arg0, jint arg1, android::view::ViewGroup_LayoutParams arg2);
 		jstring getAccessibilityClassName();
 		android::view::View getNextView();
 		void reset();
-		void setFactory(__JniBaseClass arg0);
+		void setFactory(JObject arg0);
 	};
 } // namespace android::widget
 

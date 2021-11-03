@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,15 +13,15 @@ namespace android::os
 
 namespace android::media
 {
-	class Session2Command : public __JniBaseClass
+	class Session2Command : public JObject
 	{
 	public:
 		// Fields
 		static jint COMMAND_CODE_CUSTOM();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Session2Command(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Session2Command(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Session2Command(QAndroidJniObject obj);
 		
 		// Constructors

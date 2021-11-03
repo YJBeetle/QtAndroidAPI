@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../../__JniBaseClass.hpp"
+#include "../../../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,14 +9,14 @@ namespace android::os
 
 namespace android::net::wifi::hotspot2::pps
 {
-	class HomeSp : public __JniBaseClass
+	class HomeSp : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit HomeSp(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		HomeSp(QAndroidJniObject obj);
 		
 		// Constructors
@@ -30,14 +30,14 @@ namespace android::net::wifi::hotspot2::pps
 		jstring getFriendlyName();
 		jlongArray getMatchAllOis();
 		jlongArray getMatchAnyOis();
-		__JniBaseClass getOtherHomePartnersList();
+		JObject getOtherHomePartnersList();
 		jlongArray getRoamingConsortiumOis();
 		jint hashCode();
 		void setFqdn(jstring arg0);
 		void setFriendlyName(jstring arg0);
 		void setMatchAllOis(jlongArray arg0);
 		void setMatchAnyOis(jlongArray arg0);
-		void setOtherHomePartnersList(__JniBaseClass arg0);
+		void setOtherHomePartnersList(JObject arg0);
 		void setRoamingConsortiumOis(jlongArray arg0);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);

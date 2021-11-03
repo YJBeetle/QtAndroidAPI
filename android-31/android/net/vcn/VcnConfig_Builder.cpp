@@ -8,11 +8,11 @@ namespace android::net::vcn
 	// Fields
 	
 	// QAndroidJniObject forward
-	VcnConfig_Builder::VcnConfig_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VcnConfig_Builder::VcnConfig_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VcnConfig_Builder::VcnConfig_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.vcn.VcnConfig$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()

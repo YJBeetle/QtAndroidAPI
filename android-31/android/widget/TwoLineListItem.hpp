@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./RelativeLayout.hpp"
@@ -27,9 +27,9 @@ namespace android::widget
 		
 		// Constructors
 		TwoLineListItem(android::content::Context arg0);
-		TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1);
-		TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		TwoLineListItem(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		TwoLineListItem(android::content::Context arg0, JObject arg1);
+		TwoLineListItem(android::content::Context arg0, JObject arg1, jint arg2);
+		TwoLineListItem(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();

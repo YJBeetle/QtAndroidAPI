@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::net
 
 namespace android::media::tv
 {
-	class TvContract : public __JniBaseClass
+	class TvContract : public JObject
 	{
 	public:
 		// Fields
@@ -32,7 +32,7 @@ namespace android::media::tv
 		static jstring EXTRA_WATCH_NEXT_PROGRAM_ID();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvContract(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvContract(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvContract(QAndroidJniObject obj);
 		
 		// Constructors

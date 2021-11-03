@@ -19,7 +19,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaSyncEvent::MediaSyncEvent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

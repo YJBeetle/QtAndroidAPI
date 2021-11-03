@@ -69,7 +69,7 @@ namespace android::nfc::cardemulation
 	}
 	
 	// QAndroidJniObject forward
-	CardEmulation::CardEmulation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CardEmulation::CardEmulation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -91,14 +91,14 @@ namespace android::nfc::cardemulation
 			arg0
 		);
 	}
-	__JniBaseClass CardEmulation::getAidsForPreferredPaymentService()
+	JObject CardEmulation::getAidsForPreferredPaymentService()
 	{
 		return callObjectMethod(
 			"getAidsForPreferredPaymentService",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass CardEmulation::getAidsForService(android::content::ComponentName arg0, jstring arg1)
+	JObject CardEmulation::getAidsForService(android::content::ComponentName arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getAidsForService",
@@ -147,7 +147,7 @@ namespace android::nfc::cardemulation
 			arg1
 		);
 	}
-	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, jstring arg1, __JniBaseClass arg2)
+	jboolean CardEmulation::registerAidsForService(android::content::ComponentName arg0, jstring arg1, JObject arg2)
 	{
 		return callMethod<jboolean>(
 			"registerAidsForService",

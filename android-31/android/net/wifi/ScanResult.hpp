@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,7 +9,7 @@ namespace android::os
 
 namespace android::net::wifi
 {
-	class ScanResult : public __JniBaseClass
+	class ScanResult : public JObject
 	{
 	public:
 		// Fields
@@ -19,7 +19,7 @@ namespace android::net::wifi
 		static jint CHANNEL_WIDTH_40MHZ();
 		static jint CHANNEL_WIDTH_80MHZ();
 		static jint CHANNEL_WIDTH_80MHZ_PLUS_MHZ();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jstring SSID();
 		static jint UNSPECIFIED();
 		static jint WIFI_BAND_24_GHZ();
@@ -43,7 +43,7 @@ namespace android::net::wifi
 		jstring venueName();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ScanResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ScanResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ScanResult(QAndroidJniObject obj);
 		
 		// Constructors
@@ -54,7 +54,7 @@ namespace android::net::wifi
 		static jint convertChannelToFrequencyMhzIfSupported(jint arg0, jint arg1);
 		static jint convertFrequencyMhzToChannelIfSupported(jint arg0);
 		jint describeContents();
-		__JniBaseClass getInformationElements();
+		JObject getInformationElements();
 		jint getWifiStandard();
 		jboolean is80211mcResponder();
 		jboolean isPasspointNetwork();

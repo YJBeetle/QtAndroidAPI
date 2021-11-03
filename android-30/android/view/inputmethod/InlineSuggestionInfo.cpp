@@ -5,7 +5,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InlineSuggestionInfo::CREATOR()
+	JObject InlineSuggestionInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InlineSuggestionInfo",
@@ -47,7 +47,7 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InlineSuggestionInfo::InlineSuggestionInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InlineSuggestionInfo::InlineSuggestionInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

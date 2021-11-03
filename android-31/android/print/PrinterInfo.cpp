@@ -6,7 +6,7 @@
 namespace android::print
 {
 	// Fields
-	__JniBaseClass PrinterInfo::CREATOR()
+	JObject PrinterInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.print.PrinterInfo",
@@ -37,7 +37,7 @@ namespace android::print
 	}
 	
 	// QAndroidJniObject forward
-	PrinterInfo::PrinterInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrinterInfo::PrinterInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AudioEffect.hpp"
 
 namespace android::media::audiofx
@@ -48,7 +48,7 @@ namespace android::media::audiofx
 		void setDecayTime(jint arg0);
 		void setDensity(jshort arg0);
 		void setDiffusion(jshort arg0);
-		void setParameterListener(__JniBaseClass arg0);
+		void setParameterListener(JObject arg0);
 		void setProperties(android::media::audiofx::EnvironmentalReverb_Settings arg0);
 		void setReflectionsDelay(jint arg0);
 		void setReflectionsLevel(jshort arg0);

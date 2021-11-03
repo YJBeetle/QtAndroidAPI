@@ -24,7 +24,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass PropertyResourceBundle::getKeys()
+	JObject PropertyResourceBundle::getKeys()
 	{
 		return callObjectMethod(
 			"getKeys",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -17,17 +17,17 @@ namespace android::os
 
 namespace android::view::inputmethod
 {
-	class CursorAnchorInfo : public __JniBaseClass
+	class CursorAnchorInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_HAS_INVISIBLE_REGION();
 		static jint FLAG_HAS_VISIBLE_REGION();
 		static jint FLAG_IS_RTL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CursorAnchorInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CursorAnchorInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CursorAnchorInfo(QAndroidJniObject obj);
 		
 		// Constructors

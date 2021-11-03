@@ -21,7 +21,7 @@ namespace android::transition
 			"(Landroid/graphics/Path;)V",
 			arg0.object()
 		) {}
-	PatternPathMotion::PatternPathMotion(android::content::Context arg0, __JniBaseClass arg1)
+	PatternPathMotion::PatternPathMotion(android::content::Context arg0, JObject arg1)
 		: android::transition::PathMotion(
 			"android.transition.PatternPathMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

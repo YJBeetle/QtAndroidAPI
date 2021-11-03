@@ -7,7 +7,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QAndroidJniObject forward
-	Capability::Capability(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Capability::Capability(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

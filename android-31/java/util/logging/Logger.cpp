@@ -30,7 +30,7 @@ namespace java::util::logging
 	}
 	
 	// QAndroidJniObject forward
-	Logger::Logger(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Logger::Logger(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -95,7 +95,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::config(__JniBaseClass arg0)
+	void Logger::config(JObject arg0)
 	{
 		callMethod<void>(
 			"config",
@@ -159,7 +159,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::fine(__JniBaseClass arg0)
+	void Logger::fine(JObject arg0)
 	{
 		callMethod<void>(
 			"fine",
@@ -175,7 +175,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::finer(__JniBaseClass arg0)
+	void Logger::finer(JObject arg0)
 	{
 		callMethod<void>(
 			"finer",
@@ -191,7 +191,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::finest(__JniBaseClass arg0)
+	void Logger::finest(JObject arg0)
 	{
 		callMethod<void>(
 			"finest",
@@ -199,7 +199,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	__JniBaseClass Logger::getFilter()
+	JObject Logger::getFilter()
 	{
 		return callObjectMethod(
 			"getFilter",
@@ -263,7 +263,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::info(__JniBaseClass arg0)
+	void Logger::info(JObject arg0)
 	{
 		callMethod<void>(
 			"info",
@@ -296,7 +296,7 @@ namespace java::util::logging
 			arg1
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, __JniBaseClass arg1)
+	void Logger::log(java::util::logging::Level arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"log",
@@ -335,7 +335,7 @@ namespace java::util::logging
 			arg2
 		);
 	}
-	void Logger::log(java::util::logging::Level arg0, jthrowable arg1, __JniBaseClass arg2)
+	void Logger::log(java::util::logging::Level arg0, jthrowable arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"log",
@@ -356,7 +356,7 @@ namespace java::util::logging
 			arg3
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, __JniBaseClass arg3)
+	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"logp",
@@ -403,7 +403,7 @@ namespace java::util::logging
 			arg4
 		);
 	}
-	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jthrowable arg3, __JniBaseClass arg4)
+	void Logger::logp(java::util::logging::Level arg0, jstring arg1, jstring arg2, jthrowable arg3, JObject arg4)
 	{
 		callMethod<void>(
 			"logp",
@@ -522,7 +522,7 @@ namespace java::util::logging
 			arg0.object()
 		);
 	}
-	void Logger::setFilter(__JniBaseClass arg0)
+	void Logger::setFilter(JObject arg0)
 	{
 		callMethod<void>(
 			"setFilter",
@@ -570,7 +570,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::severe(__JniBaseClass arg0)
+	void Logger::severe(JObject arg0)
 	{
 		callMethod<void>(
 			"severe",
@@ -596,7 +596,7 @@ namespace java::util::logging
 			arg0
 		);
 	}
-	void Logger::warning(__JniBaseClass arg0)
+	void Logger::warning(JObject arg0)
 	{
 		callMethod<void>(
 			"warning",

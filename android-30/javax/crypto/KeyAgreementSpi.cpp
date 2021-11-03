@@ -6,11 +6,11 @@ namespace javax::crypto
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyAgreementSpi::KeyAgreementSpi(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyAgreementSpi::KeyAgreementSpi(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyAgreementSpi::KeyAgreementSpi()
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.KeyAgreementSpi",
 			"()V"
 		) {}

@@ -260,7 +260,7 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	ConnectivityManager::ConnectivityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityManager::ConnectivityManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -291,7 +291,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::addDefaultNetworkActiveListener(__JniBaseClass arg0)
+	void ConnectivityManager::addDefaultNetworkActiveListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addDefaultNetworkActiveListener",
@@ -484,7 +484,7 @@ namespace android::net
 			arg0.object()
 		);
 	}
-	void ConnectivityManager::removeDefaultNetworkActiveListener(__JniBaseClass arg0)
+	void ConnectivityManager::removeDefaultNetworkActiveListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeDefaultNetworkActiveListener",

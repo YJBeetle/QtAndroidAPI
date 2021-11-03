@@ -5,17 +5,17 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Dictionary::Dictionary(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Dictionary::Dictionary(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Dictionary::Dictionary()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.Dictionary",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass Dictionary::elements()
+	JObject Dictionary::elements()
 	{
 		return callObjectMethod(
 			"elements",
@@ -37,7 +37,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass Dictionary::keys()
+	JObject Dictionary::keys()
 	{
 		return callObjectMethod(
 			"keys",

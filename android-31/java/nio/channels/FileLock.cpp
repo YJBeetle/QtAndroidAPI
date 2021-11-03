@@ -7,12 +7,12 @@ namespace java::nio::channels
 	// Fields
 	
 	// QAndroidJniObject forward
-	FileLock::FileLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FileLock::FileLock(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass FileLock::acquiredBy()
+	JObject FileLock::acquiredBy()
 	{
 		return callObjectMethod(
 			"acquiredBy",

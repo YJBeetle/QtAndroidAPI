@@ -17,7 +17,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	ViewSwitcher::ViewSwitcher(android::content::Context arg0, __JniBaseClass arg1)
+	ViewSwitcher::ViewSwitcher(android::content::Context arg0, JObject arg1)
 		: android::widget::ViewAnimator(
 			"android.widget.ViewSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -57,7 +57,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void ViewSwitcher::setFactory(__JniBaseClass arg0)
+	void ViewSwitcher::setFactory(JObject arg0)
 	{
 		callMethod<void>(
 			"setFactory",

@@ -5,11 +5,11 @@ namespace android::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	SpannableString::SpannableString(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SpannableString::SpannableString(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SpannableString::SpannableString(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.SpannableString",
 			"(Ljava/lang/CharSequence;)V",
 			arg0

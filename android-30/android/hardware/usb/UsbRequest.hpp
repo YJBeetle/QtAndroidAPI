@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::hardware::usb
 {
@@ -17,13 +17,13 @@ namespace java::nio
 
 namespace android::hardware::usb
 {
-	class UsbRequest : public __JniBaseClass
+	class UsbRequest : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UsbRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UsbRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UsbRequest(QAndroidJniObject obj);
 		
 		// Constructors

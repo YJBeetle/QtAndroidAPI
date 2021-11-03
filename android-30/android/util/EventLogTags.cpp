@@ -7,16 +7,16 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	EventLogTags::EventLogTags(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EventLogTags::EventLogTags(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EventLogTags::EventLogTags()
-		: __JniBaseClass(
+		: JObject(
 			"android.util.EventLogTags",
 			"()V"
 		) {}
 	EventLogTags::EventLogTags(java::io::BufferedReader arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.EventLogTags",
 			"(Ljava/io/BufferedReader;)V",
 			arg0.object()

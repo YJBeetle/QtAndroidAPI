@@ -6,7 +6,7 @@
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	__JniBaseClass WalletCard::CREATOR()
+	JObject WalletCard::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.WalletCard",
@@ -16,7 +16,7 @@ namespace android::service::quickaccesswallet
 	}
 	
 	// QAndroidJniObject forward
-	WalletCard::WalletCard(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WalletCard::WalletCard(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

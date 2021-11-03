@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -25,13 +25,13 @@ namespace android::view
 
 namespace android::app
 {
-	class FragmentManager_FragmentLifecycleCallbacks : public __JniBaseClass
+	class FragmentManager_FragmentLifecycleCallbacks : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FragmentManager_FragmentLifecycleCallbacks(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FragmentManager_FragmentLifecycleCallbacks(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FragmentManager_FragmentLifecycleCallbacks(QAndroidJniObject obj);
 		
 		// Constructors

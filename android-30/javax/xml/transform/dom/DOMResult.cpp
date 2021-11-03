@@ -13,36 +13,36 @@ namespace javax::xml::transform::dom
 	}
 	
 	// QAndroidJniObject forward
-	DOMResult::DOMResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DOMResult::DOMResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DOMResult::DOMResult()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"()V"
 		) {}
-	DOMResult::DOMResult(__JniBaseClass arg0)
-		: __JniBaseClass(
+	DOMResult::DOMResult(JObject arg0)
+		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;)V",
 			arg0.object()
 		) {}
-	DOMResult::DOMResult(__JniBaseClass arg0, jstring arg1)
-		: __JniBaseClass(
+	DOMResult::DOMResult(JObject arg0, jstring arg1)
+		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
-	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	DOMResult::DOMResult(JObject arg0, JObject arg1)
+		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	DOMResult::DOMResult(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
-		: __JniBaseClass(
+	DOMResult::DOMResult(JObject arg0, JObject arg1, jstring arg2)
+		: JObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.object(),
@@ -51,14 +51,14 @@ namespace javax::xml::transform::dom
 		) {}
 	
 	// Methods
-	__JniBaseClass DOMResult::getNextSibling()
+	JObject DOMResult::getNextSibling()
 	{
 		return callObjectMethod(
 			"getNextSibling",
 			"()Lorg/w3c/dom/Node;"
 		);
 	}
-	__JniBaseClass DOMResult::getNode()
+	JObject DOMResult::getNode()
 	{
 		return callObjectMethod(
 			"getNode",
@@ -72,7 +72,7 @@ namespace javax::xml::transform::dom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void DOMResult::setNextSibling(__JniBaseClass arg0)
+	void DOMResult::setNextSibling(JObject arg0)
 	{
 		callMethod<void>(
 			"setNextSibling",
@@ -80,7 +80,7 @@ namespace javax::xml::transform::dom
 			arg0.object()
 		);
 	}
-	void DOMResult::setNode(__JniBaseClass arg0)
+	void DOMResult::setNode(JObject arg0)
 	{
 		callMethod<void>(
 			"setNode",

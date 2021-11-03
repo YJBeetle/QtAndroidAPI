@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::graphics::drawable
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::app::people
 {
-	class ConversationStatus : public __JniBaseClass
+	class ConversationStatus : public JObject
 	{
 	public:
 		// Fields
@@ -30,10 +30,10 @@ namespace android::app::people
 		static jint AVAILABILITY_BUSY();
 		static jint AVAILABILITY_OFFLINE();
 		static jint AVAILABILITY_UNKNOWN();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ConversationStatus(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ConversationStatus(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ConversationStatus(QAndroidJniObject obj);
 		
 		// Constructors

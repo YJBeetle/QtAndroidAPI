@@ -6,11 +6,11 @@ namespace android::os::storage
 	// Fields
 	
 	// QAndroidJniObject forward
-	StorageManager_StorageVolumeCallback::StorageManager_StorageVolumeCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StorageManager_StorageVolumeCallback::StorageManager_StorageVolumeCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StorageManager_StorageVolumeCallback::StorageManager_StorageVolumeCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.storage.StorageManager$StorageVolumeCallback",
 			"()V"
 		) {}

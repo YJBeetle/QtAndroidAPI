@@ -4,7 +4,7 @@
 namespace android::view::inputmethod
 {
 	// Fields
-	__JniBaseClass InputBinding::CREATOR()
+	JObject InputBinding::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.inputmethod.InputBinding",
@@ -14,18 +14,18 @@ namespace android::view::inputmethod
 	}
 	
 	// QAndroidJniObject forward
-	InputBinding::InputBinding(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	InputBinding::InputBinding(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	InputBinding::InputBinding(__JniBaseClass arg0, android::view::inputmethod::InputBinding &arg1)
-		: __JniBaseClass(
+	InputBinding::InputBinding(JObject arg0, android::view::inputmethod::InputBinding &arg1)
+		: JObject(
 			"android.view.inputmethod.InputBinding",
 			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/InputBinding;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	InputBinding::InputBinding(__JniBaseClass arg0, __JniBaseClass arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+	InputBinding::InputBinding(JObject arg0, JObject arg1, jint arg2, jint arg3)
+		: JObject(
 			"android.view.inputmethod.InputBinding",
 			"(Landroid/view/inputmethod/InputConnection;Landroid/os/IBinder;II)V",
 			arg0.object(),
@@ -42,14 +42,14 @@ namespace android::view::inputmethod
 			"()I"
 		);
 	}
-	__JniBaseClass InputBinding::getConnection()
+	JObject InputBinding::getConnection()
 	{
 		return callObjectMethod(
 			"getConnection",
 			"()Landroid/view/inputmethod/InputConnection;"
 		);
 	}
-	__JniBaseClass InputBinding::getConnectionToken()
+	JObject InputBinding::getConnectionToken()
 	{
 		return callObjectMethod(
 			"getConnectionToken",

@@ -178,7 +178,7 @@ namespace android::app
 			"COLOR_DEFAULT"
 		);
 	}
-	__JniBaseClass Notification::CREATOR()
+	JObject Notification::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.Notification",
@@ -879,22 +879,22 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	Notification::Notification(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Notification::Notification(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Notification::Notification()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification",
 			"()V"
 		) {}
 	Notification::Notification(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	Notification::Notification(jint arg0, jstring arg1, jlong arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.Notification",
 			"(ILjava/lang/CharSequence;J)V",
 			arg0,
@@ -953,7 +953,7 @@ namespace android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Notification::getContextualActions()
+	JObject Notification::getContextualActions()
 	{
 		return callObjectMethod(
 			"getContextualActions",

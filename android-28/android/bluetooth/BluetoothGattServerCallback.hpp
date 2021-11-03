@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -21,13 +21,13 @@ namespace android::bluetooth
 
 namespace android::bluetooth
 {
-	class BluetoothGattServerCallback : public __JniBaseClass
+	class BluetoothGattServerCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothGattServerCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothGattServerCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattServerCallback(QAndroidJniObject obj);
 		
 		// Constructors

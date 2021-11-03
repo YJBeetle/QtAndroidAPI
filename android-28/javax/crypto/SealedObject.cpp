@@ -7,11 +7,11 @@ namespace javax::crypto
 	// Fields
 	
 	// QAndroidJniObject forward
-	SealedObject::SealedObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SealedObject::SealedObject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	SealedObject::SealedObject(__JniBaseClass arg0, javax::crypto::Cipher arg1)
-		: __JniBaseClass(
+	SealedObject::SealedObject(JObject arg0, javax::crypto::Cipher arg1)
+		: JObject(
 			"javax.crypto.SealedObject",
 			"(Ljava/io/Serializable;Ljavax/crypto/Cipher;)V",
 			arg0.object(),
@@ -26,7 +26,7 @@ namespace javax::crypto
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jobject SealedObject::getObject(__JniBaseClass arg0)
+	jobject SealedObject::getObject(JObject arg0)
 	{
 		return callObjectMethod(
 			"getObject",
@@ -42,7 +42,7 @@ namespace javax::crypto
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject SealedObject::getObject(__JniBaseClass arg0, jstring arg1)
+	jobject SealedObject::getObject(JObject arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"getObject",

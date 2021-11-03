@@ -5,11 +5,11 @@ namespace android::animation
 	// Fields
 	
 	// QAndroidJniObject forward
-	TypeConverter::TypeConverter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TypeConverter::TypeConverter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TypeConverter::TypeConverter(jclass arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.TypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
 			arg0,

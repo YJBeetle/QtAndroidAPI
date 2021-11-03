@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net
 {
@@ -21,13 +21,13 @@ namespace android::net::wifi::rtt
 
 namespace android::net::wifi::rtt
 {
-	class RangingRequest_Builder : public __JniBaseClass
+	class RangingRequest_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit RangingRequest_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit RangingRequest_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		RangingRequest_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::net::wifi::rtt
 		
 		// Methods
 		android::net::wifi::rtt::RangingRequest_Builder addAccessPoint(android::net::wifi::ScanResult arg0);
-		android::net::wifi::rtt::RangingRequest_Builder addAccessPoints(__JniBaseClass arg0);
+		android::net::wifi::rtt::RangingRequest_Builder addAccessPoints(JObject arg0);
 		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::MacAddress arg0);
 		android::net::wifi::rtt::RangingRequest_Builder addWifiAwarePeer(android::net::wifi::aware::PeerHandle arg0);
 		android::net::wifi::rtt::RangingRequest build();

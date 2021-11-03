@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	ArrayList::ArrayList(__JniBaseClass arg0)
+	ArrayList::ArrayList(JObject arg0)
 		: java::util::AbstractList(
 			"java.util.ArrayList",
 			"(Ljava/util/Collection;)V",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jboolean ArrayList::addAll(__JniBaseClass arg0)
+	jboolean ArrayList::addAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -54,7 +54,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::addAll(jint arg0, __JniBaseClass arg1)
+	jboolean ArrayList::addAll(jint arg0, JObject arg1)
 	{
 		return callMethod<jboolean>(
 			"addAll",
@@ -101,7 +101,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void ArrayList::forEach(__JniBaseClass arg0)
+	void ArrayList::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -139,7 +139,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass ArrayList::iterator()
+	JObject ArrayList::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -154,14 +154,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass ArrayList::listIterator()
+	JObject ArrayList::listIterator()
 	{
 		return callObjectMethod(
 			"listIterator",
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	__JniBaseClass ArrayList::listIterator(jint arg0)
+	JObject ArrayList::listIterator(jint arg0)
 	{
 		return callObjectMethod(
 			"listIterator",
@@ -185,7 +185,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	jboolean ArrayList::removeAll(__JniBaseClass arg0)
+	jboolean ArrayList::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -193,7 +193,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::removeIf(__JniBaseClass arg0)
+	jboolean ArrayList::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -201,7 +201,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void ArrayList::replaceAll(__JniBaseClass arg0)
+	void ArrayList::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -209,7 +209,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean ArrayList::retainAll(__JniBaseClass arg0)
+	jboolean ArrayList::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -233,7 +233,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	void ArrayList::sort(__JniBaseClass arg0)
+	void ArrayList::sort(JObject arg0)
 	{
 		callMethod<void>(
 			"sort",
@@ -241,14 +241,14 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass ArrayList::spliterator()
+	JObject ArrayList::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass ArrayList::subList(jint arg0, jint arg1)
+	JObject ArrayList::subList(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"subList",

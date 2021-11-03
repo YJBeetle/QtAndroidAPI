@@ -5,11 +5,11 @@ namespace android::app::usage
 	// Fields
 	
 	// QAndroidJniObject forward
-	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkStatsManager_UsageCallback::NetworkStatsManager_UsageCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.usage.NetworkStatsManager$UsageCallback",
 			"()V"
 		) {}

@@ -46,11 +46,11 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaCodec_CryptoInfo::MediaCodec_CryptoInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.MediaCodec$CryptoInfo",
 			"()V"
 		) {}

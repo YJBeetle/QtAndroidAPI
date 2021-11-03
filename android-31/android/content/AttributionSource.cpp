@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass AttributionSource::CREATOR()
+	JObject AttributionSource::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.AttributionSource",
@@ -15,7 +15,7 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	AttributionSource::AttributionSource(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AttributionSource::AttributionSource(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

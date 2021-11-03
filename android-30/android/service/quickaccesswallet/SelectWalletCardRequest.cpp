@@ -4,7 +4,7 @@
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	__JniBaseClass SelectWalletCardRequest::CREATOR()
+	JObject SelectWalletCardRequest::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.SelectWalletCardRequest",
@@ -14,11 +14,11 @@ namespace android::service::quickaccesswallet
 	}
 	
 	// QAndroidJniObject forward
-	SelectWalletCardRequest::SelectWalletCardRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SelectWalletCardRequest::SelectWalletCardRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SelectWalletCardRequest::SelectWalletCardRequest(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.quickaccesswallet.SelectWalletCardRequest",
 			"(Ljava/lang/String;)V",
 			arg0

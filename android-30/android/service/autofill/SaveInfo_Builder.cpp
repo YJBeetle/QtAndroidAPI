@@ -9,17 +9,17 @@ namespace android::service::autofill
 	// Fields
 	
 	// QAndroidJniObject forward
-	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SaveInfo_Builder::SaveInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.SaveInfo$Builder",
 			"(I)V",
 			arg0
 		) {}
 	SaveInfo_Builder::SaveInfo_Builder(jint arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.autofill.SaveInfo$Builder",
 			"(I[Landroid/view/autofill/AutofillId;)V",
 			arg0,
@@ -27,7 +27,7 @@ namespace android::service::autofill
 		) {}
 	
 	// Methods
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(__JniBaseClass arg0, jarray arg1)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::addSanitizer(JObject arg0, jarray arg1)
 	{
 		return callObjectMethod(
 			"addSanitizer",
@@ -100,7 +100,7 @@ namespace android::service::autofill
 			arg0.object()
 		);
 	}
-	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setValidator(__JniBaseClass arg0)
+	android::service::autofill::SaveInfo_Builder SaveInfo_Builder::setValidator(JObject arg0)
 	{
 		return callObjectMethod(
 			"setValidator",

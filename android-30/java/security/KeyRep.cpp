@@ -6,11 +6,11 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	KeyRep::KeyRep(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	KeyRep::KeyRep(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	KeyRep::KeyRep(java::security::KeyRep_Type arg0, jstring arg1, jstring arg2, jbyteArray arg3)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.KeyRep",
 			"(Ljava/security/KeyRep$Type;Ljava/lang/String;Ljava/lang/String;[B)V",
 			arg0.object(),

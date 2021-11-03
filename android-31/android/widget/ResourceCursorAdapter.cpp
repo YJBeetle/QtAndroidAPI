@@ -12,7 +12,7 @@ namespace android::widget
 	ResourceCursorAdapter::ResourceCursorAdapter(QAndroidJniObject obj) : android::widget::CursorAdapter(obj) {}
 	
 	// Constructors
-	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2)
+	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2)
 		: android::widget::CursorAdapter(
 			"android.widget.ResourceCursorAdapter",
 			"(Landroid/content/Context;ILandroid/database/Cursor;)V",
@@ -20,7 +20,7 @@ namespace android::widget
 			arg1,
 			arg2.object()
 		) {}
-	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jboolean arg3)
+	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jboolean arg3)
 		: android::widget::CursorAdapter(
 			"android.widget.ResourceCursorAdapter",
 			"(Landroid/content/Context;ILandroid/database/Cursor;Z)V",
@@ -29,7 +29,7 @@ namespace android::widget
 			arg2.object(),
 			arg3
 		) {}
-	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, __JniBaseClass arg2, jint arg3)
+	ResourceCursorAdapter::ResourceCursorAdapter(android::content::Context arg0, jint arg1, JObject arg2, jint arg3)
 		: android::widget::CursorAdapter(
 			"android.widget.ResourceCursorAdapter",
 			"(Landroid/content/Context;ILandroid/database/Cursor;I)V",
@@ -40,7 +40,7 @@ namespace android::widget
 		) {}
 	
 	// Methods
-	android::view::View ResourceCursorAdapter::newDropDownView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newDropDownView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newDropDownView",
@@ -50,7 +50,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::view::View ResourceCursorAdapter::newView(android::content::Context arg0, __JniBaseClass arg1, android::view::ViewGroup arg2)
+	android::view::View ResourceCursorAdapter::newView(android::content::Context arg0, JObject arg1, android::view::ViewGroup arg2)
 	{
 		return callObjectMethod(
 			"newView",

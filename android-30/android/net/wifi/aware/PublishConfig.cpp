@@ -4,7 +4,7 @@
 namespace android::net::wifi::aware
 {
 	// Fields
-	__JniBaseClass PublishConfig::CREATOR()
+	JObject PublishConfig::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.aware.PublishConfig",
@@ -28,7 +28,7 @@ namespace android::net::wifi::aware
 	}
 	
 	// QAndroidJniObject forward
-	PublishConfig::PublishConfig(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PublishConfig::PublishConfig(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

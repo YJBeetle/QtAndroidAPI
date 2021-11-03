@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class BarringInfo : public __JniBaseClass
+	class BarringInfo : public JObject
 	{
 	public:
 		// Fields
@@ -27,10 +27,10 @@ namespace android::telephony
 		static jint BARRING_SERVICE_TYPE_MO_SIGNALLING();
 		static jint BARRING_SERVICE_TYPE_PS_SERVICE();
 		static jint BARRING_SERVICE_TYPE_SMS();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BarringInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BarringInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BarringInfo(QAndroidJniObject obj);
 		
 		// Constructors

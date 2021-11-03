@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class Manifest_permission_group : public __JniBaseClass
+	class Manifest_permission_group : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android
 		static jstring STORAGE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Manifest_permission_group(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Manifest_permission_group(QAndroidJniObject obj);
 		
 		// Constructors

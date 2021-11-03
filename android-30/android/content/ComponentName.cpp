@@ -5,7 +5,7 @@
 namespace android::content
 {
 	// Fields
-	__JniBaseClass ComponentName::CREATOR()
+	JObject ComponentName::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.ComponentName",
@@ -15,31 +15,31 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	ComponentName::ComponentName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ComponentName::ComponentName(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ComponentName::ComponentName(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ComponentName",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
 	ComponentName::ComponentName(android::content::Context arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0.object(),
 			arg1
 		) {}
 	ComponentName::ComponentName(android::content::Context arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.object(),
 			arg1
 		) {}
 	ComponentName::ComponentName(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.ComponentName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

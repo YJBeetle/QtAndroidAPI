@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::text
 {
@@ -13,13 +13,13 @@ namespace android::text
 
 namespace android::text
 {
-	class PrecomputedText_Params_Builder : public __JniBaseClass
+	class PrecomputedText_Params_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PrecomputedText_Params_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PrecomputedText_Params_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PrecomputedText_Params_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -30,7 +30,7 @@ namespace android::text
 		android::text::PrecomputedText_Params build();
 		android::text::PrecomputedText_Params_Builder setBreakStrategy(jint arg0);
 		android::text::PrecomputedText_Params_Builder setHyphenationFrequency(jint arg0);
-		android::text::PrecomputedText_Params_Builder setTextDirection(__JniBaseClass arg0);
+		android::text::PrecomputedText_Params_Builder setTextDirection(JObject arg0);
 	};
 } // namespace android::text
 

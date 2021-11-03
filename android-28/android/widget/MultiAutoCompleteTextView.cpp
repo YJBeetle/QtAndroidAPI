@@ -15,14 +15,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1)
+	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1)
 		: android::widget::AutoCompleteTextView(
 			"android.widget.MultiAutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AutoCompleteTextView(
 			"android.widget.MultiAutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -30,7 +30,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	MultiAutoCompleteTextView::MultiAutoCompleteTextView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AutoCompleteTextView(
 			"android.widget.MultiAutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -62,7 +62,7 @@ namespace android::widget
 			"()V"
 		);
 	}
-	void MultiAutoCompleteTextView::setTokenizer(__JniBaseClass arg0)
+	void MultiAutoCompleteTextView::setTokenizer(JObject arg0)
 	{
 		callMethod<void>(
 			"setTokenizer",

@@ -13,7 +13,7 @@ namespace android::media::tv
 	}
 	
 	// QAndroidJniObject forward
-	TvContract_Channels_Logo::TvContract_Channels_Logo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvContract_Channels_Logo::TvContract_Channels_Logo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -9,7 +9,7 @@ namespace android::graphics
 
 namespace android::inputmethodservice
 {
-	class InputMethodService_Insets : public __JniBaseClass
+	class InputMethodService_Insets : public JObject
 	{
 	public:
 		// Fields
@@ -23,7 +23,7 @@ namespace android::inputmethodservice
 		jint visibleTopInsets();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputMethodService_Insets(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputMethodService_Insets(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputMethodService_Insets(QAndroidJniObject obj);
 		
 		// Constructors

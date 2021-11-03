@@ -5,7 +5,7 @@
 namespace android::service::quickaccesswallet
 {
 	// Fields
-	__JniBaseClass GetWalletCardsError::CREATOR()
+	JObject GetWalletCardsError::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.quickaccesswallet.GetWalletCardsError",
@@ -15,11 +15,11 @@ namespace android::service::quickaccesswallet
 	}
 	
 	// QAndroidJniObject forward
-	GetWalletCardsError::GetWalletCardsError(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GetWalletCardsError::GetWalletCardsError(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GetWalletCardsError::GetWalletCardsError(android::graphics::drawable::Icon arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.quickaccesswallet.GetWalletCardsError",
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;)V",
 			arg0.object(),

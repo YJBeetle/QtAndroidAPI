@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::provider
 {
-	class Contacts_Intents : public __JniBaseClass
+	class Contacts_Intents : public JObject
 	{
 	public:
 		// Fields
@@ -18,7 +18,7 @@ namespace android::provider
 		static jstring SHOW_OR_CREATE_CONTACT();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Contacts_Intents(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Contacts_Intents(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Contacts_Intents(QAndroidJniObject obj);
 		
 		// Constructors

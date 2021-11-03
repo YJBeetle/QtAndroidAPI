@@ -7,16 +7,16 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DateFormatSymbols::DateFormatSymbols(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DateFormatSymbols::DateFormatSymbols()
-		: __JniBaseClass(
+		: JObject(
 			"java.text.DateFormatSymbols",
 			"()V"
 		) {}
 	DateFormatSymbols::DateFormatSymbols(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.DateFormatSymbols",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

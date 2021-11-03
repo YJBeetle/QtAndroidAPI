@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
 
@@ -21,10 +21,10 @@ namespace java::util::zip
 		CheckedOutputStream(QAndroidJniObject obj);
 		
 		// Constructors
-		CheckedOutputStream(java::io::OutputStream arg0, __JniBaseClass arg1);
+		CheckedOutputStream(java::io::OutputStream arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass getChecksum();
+		JObject getChecksum();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};

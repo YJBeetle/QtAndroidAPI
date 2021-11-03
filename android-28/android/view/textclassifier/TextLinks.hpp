@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,28 +9,28 @@ namespace android::os
 
 namespace android::view::textclassifier
 {
-	class TextLinks : public __JniBaseClass
+	class TextLinks : public JObject
 	{
 	public:
 		// Fields
 		static jint APPLY_STRATEGY_IGNORE();
 		static jint APPLY_STRATEGY_REPLACE();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATUS_DIFFERENT_TEXT();
 		static jint STATUS_LINKS_APPLIED();
 		static jint STATUS_NO_LINKS_APPLIED();
 		static jint STATUS_NO_LINKS_FOUND();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TextLinks(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TextLinks(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TextLinks(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		jint apply(__JniBaseClass arg0, jint arg1, __JniBaseClass arg2);
+		jint apply(JObject arg0, jint arg1, JObject arg2);
 		jint describeContents();
-		__JniBaseClass getLinks();
+		JObject getLinks();
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

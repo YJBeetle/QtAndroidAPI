@@ -9,17 +9,17 @@ namespace android::print
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrinterInfo_Builder::PrinterInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrinterInfo_Builder::PrinterInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterInfo arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrinterInfo$Builder",
 			"(Landroid/print/PrinterInfo;)V",
 			arg0.object()
 		) {}
 	PrinterInfo_Builder::PrinterInfo_Builder(android::print::PrinterId arg0, jstring arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PrinterInfo$Builder",
 			"(Landroid/print/PrinterId;Ljava/lang/String;I)V",
 			arg0.object(),

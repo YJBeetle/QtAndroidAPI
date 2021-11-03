@@ -5,7 +5,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PermissionGroupInfo::CREATOR()
+	JObject PermissionGroupInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PermissionGroupInfo",

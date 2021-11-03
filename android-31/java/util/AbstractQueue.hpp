@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 
 
@@ -19,7 +19,7 @@ namespace java::util
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean addAll(__JniBaseClass arg0);
+		jboolean addAll(JObject arg0);
 		void clear();
 		jobject element();
 		jobject remove();

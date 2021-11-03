@@ -90,7 +90,7 @@ namespace android::inputmethodservice
 			"()Landroid/view/inputmethod/InputBinding;"
 		);
 	}
-	__JniBaseClass InputMethodService::getCurrentInputConnection()
+	JObject InputMethodService::getCurrentInputConnection()
 	{
 		return callObjectMethod(
 			"getCurrentInputConnection",

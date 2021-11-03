@@ -6,11 +6,11 @@ namespace android::hardware
 	// Fields
 	
 	// QAndroidJniObject forward
-	TriggerEventListener::TriggerEventListener(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TriggerEventListener::TriggerEventListener(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	TriggerEventListener::TriggerEventListener()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.TriggerEventListener",
 			"()V"
 		) {}

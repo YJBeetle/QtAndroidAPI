@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./ResourceBundle.hpp"
 
 
@@ -19,7 +19,7 @@ namespace java::util
 		ListResourceBundle();
 		
 		// Methods
-		__JniBaseClass getKeys();
+		JObject getKeys();
 		jobject handleGetObject(jstring arg0);
 	};
 } // namespace java::util

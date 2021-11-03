@@ -5,12 +5,12 @@ namespace android::view::translation
 	// Fields
 	
 	// QAndroidJniObject forward
-	UiTranslationManager::UiTranslationManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UiTranslationManager::UiTranslationManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void UiTranslationManager::registerUiTranslationStateCallback(__JniBaseClass arg0, __JniBaseClass arg1)
+	void UiTranslationManager::registerUiTranslationStateCallback(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"registerUiTranslationStateCallback",
@@ -19,7 +19,7 @@ namespace android::view::translation
 			arg1.object()
 		);
 	}
-	void UiTranslationManager::unregisterUiTranslationStateCallback(__JniBaseClass arg0)
+	void UiTranslationManager::unregisterUiTranslationStateCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterUiTranslationStateCallback",

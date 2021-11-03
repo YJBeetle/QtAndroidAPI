@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace android::service::autofill
 
 namespace android::service::autofill
 {
-	class SaveInfo : public __JniBaseClass
+	class SaveInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_DONT_SAVE_ON_FINISH();
 		static jint FLAG_SAVE_ON_ALL_VIEWS_INVISIBLE();
 		static jint NEGATIVE_BUTTON_STYLE_CANCEL();
@@ -30,7 +30,7 @@ namespace android::service::autofill
 		static jint SAVE_DATA_TYPE_USERNAME();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SaveInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SaveInfo(QAndroidJniObject obj);
 		
 		// Constructors

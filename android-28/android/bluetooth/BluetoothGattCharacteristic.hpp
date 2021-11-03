@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::bluetooth
 {
@@ -29,11 +29,11 @@ namespace java::util
 
 namespace android::bluetooth
 {
-	class BluetoothGattCharacteristic : public __JniBaseClass
+	class BluetoothGattCharacteristic : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FORMAT_FLOAT();
 		static jint FORMAT_SFLOAT();
 		static jint FORMAT_SINT16();
@@ -63,7 +63,7 @@ namespace android::bluetooth
 		static jint WRITE_TYPE_SIGNED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BluetoothGattCharacteristic(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BluetoothGattCharacteristic(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BluetoothGattCharacteristic(QAndroidJniObject obj);
 		
 		// Constructors
@@ -73,7 +73,7 @@ namespace android::bluetooth
 		jboolean addDescriptor(android::bluetooth::BluetoothGattDescriptor arg0);
 		jint describeContents();
 		android::bluetooth::BluetoothGattDescriptor getDescriptor(java::util::UUID arg0);
-		__JniBaseClass getDescriptors();
+		JObject getDescriptors();
 		java::lang::Float getFloatValue(jint arg0, jint arg1);
 		jint getInstanceId();
 		java::lang::Integer getIntValue(jint arg0, jint arg1);

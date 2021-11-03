@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	TimedText::TimedText(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TimedText::TimedText(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

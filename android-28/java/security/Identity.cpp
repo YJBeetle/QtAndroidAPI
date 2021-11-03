@@ -7,17 +7,17 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	Identity::Identity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Identity::Identity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Identity::Identity(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.Identity",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Identity::Identity(jstring arg0, java::security::IdentityScope arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.Identity",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
@@ -25,7 +25,7 @@ namespace java::security
 		) {}
 	
 	// Methods
-	void Identity::addCertificate(__JniBaseClass arg0)
+	void Identity::addCertificate(JObject arg0)
 	{
 		callMethod<void>(
 			"addCertificate",
@@ -62,7 +62,7 @@ namespace java::security
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Identity::getPublicKey()
+	JObject Identity::getPublicKey()
 	{
 		return callObjectMethod(
 			"getPublicKey",
@@ -83,7 +83,7 @@ namespace java::security
 			"()I"
 		);
 	}
-	void Identity::removeCertificate(__JniBaseClass arg0)
+	void Identity::removeCertificate(JObject arg0)
 	{
 		callMethod<void>(
 			"removeCertificate",
@@ -99,7 +99,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void Identity::setPublicKey(__JniBaseClass arg0)
+	void Identity::setPublicKey(JObject arg0)
 	{
 		callMethod<void>(
 			"setPublicKey",

@@ -5,11 +5,11 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	Size::Size(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Size::Size(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Size::Size(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.Size",
 			"(II)V",
 			arg0,

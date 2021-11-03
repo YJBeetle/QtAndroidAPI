@@ -5,11 +5,11 @@ namespace android::webkit
 	// Fields
 	
 	// QAndroidJniObject forward
-	WebIconDatabase::WebIconDatabase(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WebIconDatabase::WebIconDatabase(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	WebIconDatabase::WebIconDatabase()
-		: __JniBaseClass(
+		: JObject(
 			"android.webkit.WebIconDatabase",
 			"()V"
 		) {}
@@ -53,7 +53,7 @@ namespace android::webkit
 			"()V"
 		);
 	}
-	void WebIconDatabase::requestIconForPageUrl(jstring arg0, __JniBaseClass arg1)
+	void WebIconDatabase::requestIconForPageUrl(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"requestIconForPageUrl",

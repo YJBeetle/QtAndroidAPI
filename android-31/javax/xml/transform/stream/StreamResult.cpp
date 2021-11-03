@@ -16,34 +16,34 @@ namespace javax::xml::transform::stream
 	}
 	
 	// QAndroidJniObject forward
-	StreamResult::StreamResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StreamResult::StreamResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StreamResult::StreamResult()
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"()V"
 		) {}
 	StreamResult::StreamResult(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"(Ljava/io/File;)V",
 			arg0.object()
 		) {}
 	StreamResult::StreamResult(java::io::OutputStream arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"(Ljava/io/OutputStream;)V",
 			arg0.object()
 		) {}
 	StreamResult::StreamResult(java::io::Writer arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"(Ljava/io/Writer;)V",
 			arg0.object()
 		) {}
 	StreamResult::StreamResult(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.transform.stream.StreamResult",
 			"(Ljava/lang/String;)V",
 			arg0

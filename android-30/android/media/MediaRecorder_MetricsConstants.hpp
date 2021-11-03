@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::media
 {
-	class MediaRecorder_MetricsConstants : public __JniBaseClass
+	class MediaRecorder_MetricsConstants : public JObject
 	{
 	public:
 		// Fields
@@ -27,7 +27,7 @@ namespace android::media
 		static jstring WIDTH();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaRecorder_MetricsConstants(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaRecorder_MetricsConstants(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaRecorder_MetricsConstants(QAndroidJniObject obj);
 		
 		// Constructors

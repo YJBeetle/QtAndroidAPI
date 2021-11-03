@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 #include "./FrameLayout.hpp"
@@ -47,9 +47,9 @@ namespace android::widget
 		
 		// Constructors
 		HorizontalScrollView(android::content::Context arg0);
-		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1);
-		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		HorizontalScrollView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		HorizontalScrollView(android::content::Context arg0, JObject arg1);
+		HorizontalScrollView(android::content::Context arg0, JObject arg1, jint arg2);
+		HorizontalScrollView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addView(android::view::View arg0);

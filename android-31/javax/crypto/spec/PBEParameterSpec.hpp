@@ -1,26 +1,26 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace javax::crypto::spec
 {
-	class PBEParameterSpec : public __JniBaseClass
+	class PBEParameterSpec : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PBEParameterSpec(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PBEParameterSpec(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PBEParameterSpec(QAndroidJniObject obj);
 		
 		// Constructors
 		PBEParameterSpec(jbyteArray arg0, jint arg1);
-		PBEParameterSpec(jbyteArray arg0, jint arg1, __JniBaseClass arg2);
+		PBEParameterSpec(jbyteArray arg0, jint arg1, JObject arg2);
 		
 		// Methods
 		jint getIterationCount();
-		__JniBaseClass getParameterSpec();
+		JObject getParameterSpec();
 		jbyteArray getSalt();
 	};
 } // namespace javax::crypto::spec

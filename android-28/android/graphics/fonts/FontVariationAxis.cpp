@@ -5,11 +5,11 @@ namespace android::graphics::fonts
 	// Fields
 	
 	// QAndroidJniObject forward
-	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FontVariationAxis::FontVariationAxis(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FontVariationAxis::FontVariationAxis(jstring arg0, jfloat arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.fonts.FontVariationAxis",
 			"(Ljava/lang/String;F)V",
 			arg0,

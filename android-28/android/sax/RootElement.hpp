@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Element.hpp"
 
 
@@ -20,7 +20,7 @@ namespace android::sax
 		RootElement(jstring arg0, jstring arg1);
 		
 		// Methods
-		__JniBaseClass getContentHandler();
+		JObject getContentHandler();
 	};
 } // namespace android::sax
 

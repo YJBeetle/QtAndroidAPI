@@ -15,7 +15,7 @@ namespace android::text::style
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass SuggestionSpan::CREATOR()
+	JObject SuggestionSpan::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.text.style.SuggestionSpan",

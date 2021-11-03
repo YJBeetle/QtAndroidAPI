@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,13 +21,13 @@ namespace java::io
 
 namespace android::app
 {
-	class LoaderManager : public __JniBaseClass
+	class LoaderManager : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit LoaderManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit LoaderManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		LoaderManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -38,8 +38,8 @@ namespace android::app
 		void destroyLoader(jint arg0);
 		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		android::content::Loader getLoader(jint arg0);
-		android::content::Loader initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);
-		android::content::Loader restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);
+		android::content::Loader initLoader(jint arg0, android::os::Bundle arg1, JObject arg2);
+		android::content::Loader restartLoader(jint arg0, android::os::Bundle arg1, JObject arg2);
 	};
 } // namespace android::app
 

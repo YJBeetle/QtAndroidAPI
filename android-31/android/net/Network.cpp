@@ -12,7 +12,7 @@
 namespace android::net
 {
 	// Fields
-	__JniBaseClass Network::CREATOR()
+	JObject Network::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.Network",
@@ -22,7 +22,7 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	Network::Network(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Network::Network(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

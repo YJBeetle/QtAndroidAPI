@@ -27,11 +27,11 @@ namespace android::service::notification
 	}
 	
 	// QAndroidJniObject forward
-	NotificationListenerService_Ranking::NotificationListenerService_Ranking(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NotificationListenerService_Ranking::NotificationListenerService_Ranking(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NotificationListenerService_Ranking::NotificationListenerService_Ranking()
-		: __JniBaseClass(
+		: JObject(
 			"android.service.notification.NotificationListenerService$Ranking",
 			"()V"
 		) {}
@@ -108,14 +108,14 @@ namespace android::service::notification
 			"()I"
 		);
 	}
-	__JniBaseClass NotificationListenerService_Ranking::getSmartActions()
+	JObject NotificationListenerService_Ranking::getSmartActions()
 	{
 		return callObjectMethod(
 			"getSmartActions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass NotificationListenerService_Ranking::getSmartReplies()
+	JObject NotificationListenerService_Ranking::getSmartReplies()
 	{
 		return callObjectMethod(
 			"getSmartReplies",

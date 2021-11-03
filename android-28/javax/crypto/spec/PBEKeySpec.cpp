@@ -5,17 +5,17 @@ namespace javax::crypto::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	PBEKeySpec::PBEKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PBEKeySpec::PBEKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PBEKeySpec::PBEKeySpec(jcharArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C)V",
 			arg0
 		) {}
 	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C[BI)V",
 			arg0,
@@ -23,7 +23,7 @@ namespace javax::crypto::spec
 			arg2
 		) {}
 	PBEKeySpec::PBEKeySpec(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C[BII)V",
 			arg0,

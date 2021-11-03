@@ -159,11 +159,11 @@ namespace android::net
 	}
 	
 	// QAndroidJniObject forward
-	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UrlQuerySanitizer_IllegalCharacterValueSanitizer::UrlQuerySanitizer_IllegalCharacterValueSanitizer(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"(I)V",
 			arg0

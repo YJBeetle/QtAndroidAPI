@@ -7,7 +7,7 @@ namespace java::nio::file::attribute
 	// Fields
 	
 	// QAndroidJniObject forward
-	AclEntry_Builder::AclEntry_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AclEntry_Builder::AclEntry_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -27,7 +27,7 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(__JniBaseClass arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setFlags(JObject arg0)
 	{
 		return callObjectMethod(
 			"setFlags",
@@ -43,7 +43,7 @@ namespace java::nio::file::attribute
 			arg0
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(__JniBaseClass arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPermissions(JObject arg0)
 	{
 		return callObjectMethod(
 			"setPermissions",
@@ -51,7 +51,7 @@ namespace java::nio::file::attribute
 			arg0.object()
 		);
 	}
-	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPrincipal(__JniBaseClass arg0)
+	java::nio::file::attribute::AclEntry_Builder AclEntry_Builder::setPrincipal(JObject arg0)
 	{
 		return callObjectMethod(
 			"setPrincipal",

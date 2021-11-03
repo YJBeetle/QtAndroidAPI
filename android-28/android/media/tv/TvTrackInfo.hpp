@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,17 +13,17 @@ namespace android::os
 
 namespace android::media::tv
 {
-	class TvTrackInfo : public __JniBaseClass
+	class TvTrackInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_AUDIO();
 		static jint TYPE_SUBTITLE();
 		static jint TYPE_VIDEO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TvTrackInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TvTrackInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TvTrackInfo(QAndroidJniObject obj);
 		
 		// Constructors

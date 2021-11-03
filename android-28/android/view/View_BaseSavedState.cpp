@@ -5,7 +5,7 @@
 namespace android::view
 {
 	// Fields
-	__JniBaseClass View_BaseSavedState::CREATOR()
+	JObject View_BaseSavedState::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.view.View$BaseSavedState",
@@ -24,7 +24,7 @@ namespace android::view
 			"(Landroid/os/Parcel;)V",
 			arg0.object()
 		) {}
-	View_BaseSavedState::View_BaseSavedState(__JniBaseClass arg0)
+	View_BaseSavedState::View_BaseSavedState(JObject arg0)
 		: android::view::AbsSavedState(
 			"android.view.View$BaseSavedState",
 			"(Landroid/os/Parcelable;)V",

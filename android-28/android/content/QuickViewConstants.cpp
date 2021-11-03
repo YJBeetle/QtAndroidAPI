@@ -53,7 +53,7 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	QuickViewConstants::QuickViewConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	QuickViewConstants::QuickViewConstants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

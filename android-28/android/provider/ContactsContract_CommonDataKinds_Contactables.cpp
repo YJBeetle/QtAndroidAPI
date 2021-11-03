@@ -54,11 +54,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_CommonDataKinds_Contactables::ContactsContract_CommonDataKinds_Contactables(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_CommonDataKinds_Contactables::ContactsContract_CommonDataKinds_Contactables(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ContactsContract_CommonDataKinds_Contactables::ContactsContract_CommonDataKinds_Contactables()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
 			"()V"
 		) {}

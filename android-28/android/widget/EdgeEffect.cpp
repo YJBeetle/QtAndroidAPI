@@ -7,11 +7,11 @@ namespace android::widget
 	// Fields
 	
 	// QAndroidJniObject forward
-	EdgeEffect::EdgeEffect(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	EdgeEffect::EdgeEffect(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	EdgeEffect::EdgeEffect(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.widget.EdgeEffect",
 			"(Landroid/content/Context;)V",
 			arg0.object()

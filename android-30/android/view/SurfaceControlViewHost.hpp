@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,17 +21,17 @@ namespace android::view
 
 namespace android::view
 {
-	class SurfaceControlViewHost : public __JniBaseClass
+	class SurfaceControlViewHost : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SurfaceControlViewHost(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SurfaceControlViewHost(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SurfaceControlViewHost(QAndroidJniObject obj);
 		
 		// Constructors
-		SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, __JniBaseClass arg2);
+		SurfaceControlViewHost(android::content::Context arg0, android::view::Display arg1, JObject arg2);
 		
 		// Methods
 		android::view::SurfaceControlViewHost_SurfacePackage getSurfacePackage();

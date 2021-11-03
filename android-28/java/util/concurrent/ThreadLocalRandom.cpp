@@ -24,14 +24,14 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ThreadLocalRandom;"
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::doubles()
+	JObject ThreadLocalRandom::doubles()
 	{
 		return callObjectMethod(
 			"doubles",
 			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::doubles(jlong arg0)
+	JObject ThreadLocalRandom::doubles(jlong arg0)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -39,7 +39,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::doubles(jdouble arg0, jdouble arg1)
+	JObject ThreadLocalRandom::doubles(jdouble arg0, jdouble arg1)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -48,7 +48,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
+	JObject ThreadLocalRandom::doubles(jlong arg0, jdouble arg1, jdouble arg2)
 	{
 		return callObjectMethod(
 			"doubles",
@@ -58,14 +58,14 @@ namespace java::util::concurrent
 			arg2
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::ints()
+	JObject ThreadLocalRandom::ints()
 	{
 		return callObjectMethod(
 			"ints",
 			"()Ljava/util/stream/IntStream;"
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::ints(jlong arg0)
+	JObject ThreadLocalRandom::ints(jlong arg0)
 	{
 		return callObjectMethod(
 			"ints",
@@ -73,7 +73,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::ints(jint arg0, jint arg1)
+	JObject ThreadLocalRandom::ints(jint arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"ints",
@@ -82,7 +82,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::ints(jlong arg0, jint arg1, jint arg2)
+	JObject ThreadLocalRandom::ints(jlong arg0, jint arg1, jint arg2)
 	{
 		return callObjectMethod(
 			"ints",
@@ -92,14 +92,14 @@ namespace java::util::concurrent
 			arg2
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::longs()
+	JObject ThreadLocalRandom::longs()
 	{
 		return callObjectMethod(
 			"longs",
 			"()Ljava/util/stream/LongStream;"
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::longs(jlong arg0)
+	JObject ThreadLocalRandom::longs(jlong arg0)
 	{
 		return callObjectMethod(
 			"longs",
@@ -107,7 +107,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::longs(jlong arg0, jlong arg1)
+	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"longs",
@@ -116,7 +116,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ThreadLocalRandom::longs(jlong arg0, jlong arg1, jlong arg2)
+	JObject ThreadLocalRandom::longs(jlong arg0, jlong arg1, jlong arg2)
 	{
 		return callObjectMethod(
 			"longs",

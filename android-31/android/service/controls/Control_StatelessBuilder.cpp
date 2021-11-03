@@ -9,17 +9,17 @@ namespace android::service::controls
 	// Fields
 	
 	// QAndroidJniObject forward
-	Control_StatelessBuilder::Control_StatelessBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Control_StatelessBuilder::Control_StatelessBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Control_StatelessBuilder::Control_StatelessBuilder(android::service::controls::Control arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.controls.Control$StatelessBuilder",
 			"(Landroid/service/controls/Control;)V",
 			arg0.object()
 		) {}
 	Control_StatelessBuilder::Control_StatelessBuilder(jstring arg0, android::app::PendingIntent arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.service.controls.Control$StatelessBuilder",
 			"(Ljava/lang/String;Landroid/app/PendingIntent;)V",
 			arg0,

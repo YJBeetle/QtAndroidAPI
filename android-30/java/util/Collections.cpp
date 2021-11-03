@@ -5,7 +5,7 @@
 namespace java::util
 {
 	// Fields
-	__JniBaseClass Collections::EMPTY_LIST()
+	JObject Collections::EMPTY_LIST()
 	{
 		return getStaticObjectField(
 			"java.util.Collections",
@@ -13,7 +13,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Collections::EMPTY_MAP()
+	JObject Collections::EMPTY_MAP()
 	{
 		return getStaticObjectField(
 			"java.util.Collections",
@@ -21,7 +21,7 @@ namespace java::util
 			"Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass Collections::EMPTY_SET()
+	JObject Collections::EMPTY_SET()
 	{
 		return getStaticObjectField(
 			"java.util.Collections",
@@ -31,12 +31,12 @@ namespace java::util
 	}
 	
 	// QAndroidJniObject forward
-	Collections::Collections(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Collections::Collections(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jboolean Collections::addAll(__JniBaseClass arg0, jobjectArray arg1)
+	jboolean Collections::addAll(JObject arg0, jobjectArray arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Collections",
@@ -46,7 +46,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::asLifoQueue(__JniBaseClass arg0)
+	JObject Collections::asLifoQueue(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -55,7 +55,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jint Collections::binarySearch(__JniBaseClass arg0, jobject arg1)
+	jint Collections::binarySearch(JObject arg0, jobject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
@@ -65,7 +65,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Collections::binarySearch(__JniBaseClass arg0, jobject arg1, __JniBaseClass arg2)
+	jint Collections::binarySearch(JObject arg0, jobject arg1, JObject arg2)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
@@ -76,7 +76,7 @@ namespace java::util
 			arg2.object()
 		);
 	}
-	__JniBaseClass Collections::checkedCollection(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedCollection(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -86,7 +86,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::checkedList(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedList(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -96,7 +96,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::checkedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedMap(JObject arg0, jclass arg1, jclass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -107,7 +107,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Collections::checkedNavigableMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedNavigableMap(JObject arg0, jclass arg1, jclass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -118,7 +118,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Collections::checkedNavigableSet(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedNavigableSet(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -128,7 +128,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::checkedQueue(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedQueue(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -138,7 +138,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::checkedSet(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedSet(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -148,7 +148,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::checkedSortedMap(__JniBaseClass arg0, jclass arg1, jclass arg2)
+	JObject Collections::checkedSortedMap(JObject arg0, jclass arg1, jclass arg2)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -159,7 +159,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Collections::checkedSortedSet(__JniBaseClass arg0, jclass arg1)
+	JObject Collections::checkedSortedSet(JObject arg0, jclass arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -169,7 +169,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Collections::copy(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Collections::copy(JObject arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -179,7 +179,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jboolean Collections::disjoint(__JniBaseClass arg0, __JniBaseClass arg1)
+	jboolean Collections::disjoint(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Collections",
@@ -189,7 +189,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collections::emptyEnumeration()
+	JObject Collections::emptyEnumeration()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -197,7 +197,7 @@ namespace java::util
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	__JniBaseClass Collections::emptyIterator()
+	JObject Collections::emptyIterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -205,7 +205,7 @@ namespace java::util
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass Collections::emptyList()
+	JObject Collections::emptyList()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -213,7 +213,7 @@ namespace java::util
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Collections::emptyListIterator()
+	JObject Collections::emptyListIterator()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -221,7 +221,7 @@ namespace java::util
 			"()Ljava/util/ListIterator;"
 		);
 	}
-	__JniBaseClass Collections::emptyMap()
+	JObject Collections::emptyMap()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -229,7 +229,7 @@ namespace java::util
 			"()Ljava/util/Map;"
 		);
 	}
-	__JniBaseClass Collections::emptyNavigableMap()
+	JObject Collections::emptyNavigableMap()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -237,7 +237,7 @@ namespace java::util
 			"()Ljava/util/NavigableMap;"
 		);
 	}
-	__JniBaseClass Collections::emptyNavigableSet()
+	JObject Collections::emptyNavigableSet()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -245,7 +245,7 @@ namespace java::util
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass Collections::emptySet()
+	JObject Collections::emptySet()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -253,7 +253,7 @@ namespace java::util
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass Collections::emptySortedMap()
+	JObject Collections::emptySortedMap()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -261,7 +261,7 @@ namespace java::util
 			"()Ljava/util/SortedMap;"
 		);
 	}
-	__JniBaseClass Collections::emptySortedSet()
+	JObject Collections::emptySortedSet()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -269,7 +269,7 @@ namespace java::util
 			"()Ljava/util/SortedSet;"
 		);
 	}
-	__JniBaseClass Collections::enumeration(__JniBaseClass arg0)
+	JObject Collections::enumeration(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -278,7 +278,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Collections::fill(__JniBaseClass arg0, jobject arg1)
+	void Collections::fill(JObject arg0, jobject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -288,7 +288,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Collections::frequency(__JniBaseClass arg0, jobject arg1)
+	jint Collections::frequency(JObject arg0, jobject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
@@ -298,7 +298,7 @@ namespace java::util
 			arg1
 		);
 	}
-	jint Collections::indexOfSubList(__JniBaseClass arg0, __JniBaseClass arg1)
+	jint Collections::indexOfSubList(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
@@ -308,7 +308,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	jint Collections::lastIndexOfSubList(__JniBaseClass arg0, __JniBaseClass arg1)
+	jint Collections::lastIndexOfSubList(JObject arg0, JObject arg1)
 	{
 		return callStaticMethod<jint>(
 			"java.util.Collections",
@@ -318,7 +318,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	java::util::ArrayList Collections::list(__JniBaseClass arg0)
+	java::util::ArrayList Collections::list(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -327,7 +327,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jobject Collections::max(__JniBaseClass arg0)
+	jobject Collections::max(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -336,7 +336,7 @@ namespace java::util
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject Collections::max(__JniBaseClass arg0, __JniBaseClass arg1)
+	jobject Collections::max(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -346,7 +346,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject Collections::min(__JniBaseClass arg0)
+	jobject Collections::min(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -355,7 +355,7 @@ namespace java::util
 			arg0.object()
 		).object<jobject>();
 	}
-	jobject Collections::min(__JniBaseClass arg0, __JniBaseClass arg1)
+	jobject Collections::min(JObject arg0, JObject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -365,7 +365,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	__JniBaseClass Collections::nCopies(jint arg0, jobject arg1)
+	JObject Collections::nCopies(jint arg0, jobject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -375,7 +375,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass Collections::newSetFromMap(__JniBaseClass arg0)
+	JObject Collections::newSetFromMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -384,7 +384,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	jboolean Collections::replaceAll(__JniBaseClass arg0, jobject arg1, jobject arg2)
+	jboolean Collections::replaceAll(JObject arg0, jobject arg1, jobject arg2)
 	{
 		return callStaticMethod<jboolean>(
 			"java.util.Collections",
@@ -395,7 +395,7 @@ namespace java::util
 			arg2
 		);
 	}
-	void Collections::reverse(__JniBaseClass arg0)
+	void Collections::reverse(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -404,7 +404,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::reverseOrder()
+	JObject Collections::reverseOrder()
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -412,7 +412,7 @@ namespace java::util
 			"()Ljava/util/Comparator;"
 		);
 	}
-	__JniBaseClass Collections::reverseOrder(__JniBaseClass arg0)
+	JObject Collections::reverseOrder(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -421,7 +421,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Collections::rotate(__JniBaseClass arg0, jint arg1)
+	void Collections::rotate(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -431,7 +431,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Collections::shuffle(__JniBaseClass arg0)
+	void Collections::shuffle(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -440,7 +440,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Collections::shuffle(__JniBaseClass arg0, java::util::Random arg1)
+	void Collections::shuffle(JObject arg0, java::util::Random arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -450,7 +450,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass Collections::singleton(jobject arg0)
+	JObject Collections::singleton(jobject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -459,7 +459,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Collections::singletonList(jobject arg0)
+	JObject Collections::singletonList(jobject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -468,7 +468,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass Collections::singletonMap(jobject arg0, jobject arg1)
+	JObject Collections::singletonMap(jobject arg0, jobject arg1)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -478,7 +478,7 @@ namespace java::util
 			arg1
 		);
 	}
-	void Collections::sort(__JniBaseClass arg0)
+	void Collections::sort(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -487,7 +487,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	void Collections::sort(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Collections::sort(JObject arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -497,7 +497,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	void Collections::swap(__JniBaseClass arg0, jint arg1, jint arg2)
+	void Collections::swap(JObject arg0, jint arg1, jint arg2)
 	{
 		callStaticMethod<void>(
 			"java.util.Collections",
@@ -508,7 +508,7 @@ namespace java::util
 			arg2
 		);
 	}
-	__JniBaseClass Collections::synchronizedCollection(__JniBaseClass arg0)
+	JObject Collections::synchronizedCollection(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -517,7 +517,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedList(__JniBaseClass arg0)
+	JObject Collections::synchronizedList(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -526,7 +526,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedMap(__JniBaseClass arg0)
+	JObject Collections::synchronizedMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -535,7 +535,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedNavigableMap(__JniBaseClass arg0)
+	JObject Collections::synchronizedNavigableMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -544,7 +544,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedNavigableSet(__JniBaseClass arg0)
+	JObject Collections::synchronizedNavigableSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -553,7 +553,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedSet(__JniBaseClass arg0)
+	JObject Collections::synchronizedSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -562,7 +562,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedSortedMap(__JniBaseClass arg0)
+	JObject Collections::synchronizedSortedMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -571,7 +571,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::synchronizedSortedSet(__JniBaseClass arg0)
+	JObject Collections::synchronizedSortedSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -580,7 +580,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableCollection(__JniBaseClass arg0)
+	JObject Collections::unmodifiableCollection(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -589,7 +589,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableList(__JniBaseClass arg0)
+	JObject Collections::unmodifiableList(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -598,7 +598,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableMap(__JniBaseClass arg0)
+	JObject Collections::unmodifiableMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -607,7 +607,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableNavigableMap(__JniBaseClass arg0)
+	JObject Collections::unmodifiableNavigableMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -616,7 +616,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableNavigableSet(__JniBaseClass arg0)
+	JObject Collections::unmodifiableNavigableSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -625,7 +625,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableSet(__JniBaseClass arg0)
+	JObject Collections::unmodifiableSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -634,7 +634,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableSortedMap(__JniBaseClass arg0)
+	JObject Collections::unmodifiableSortedMap(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",
@@ -643,7 +643,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass Collections::unmodifiableSortedSet(__JniBaseClass arg0)
+	JObject Collections::unmodifiableSortedSet(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.Collections",

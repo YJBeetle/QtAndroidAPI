@@ -35,7 +35,7 @@ namespace android::content::res
 	}
 	
 	// QAndroidJniObject forward
-	AssetManager::AssetManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AssetManager::AssetManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -104,7 +104,7 @@ namespace android::content::res
 			arg1
 		);
 	}
-	__JniBaseClass AssetManager::openXmlResourceParser(jstring arg0)
+	JObject AssetManager::openXmlResourceParser(jstring arg0)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",
@@ -112,7 +112,7 @@ namespace android::content::res
 			arg0
 		);
 	}
-	__JniBaseClass AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
+	JObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
 	{
 		return callObjectMethod(
 			"openXmlResourceParser",

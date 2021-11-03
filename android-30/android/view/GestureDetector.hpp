@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,29 +17,29 @@ namespace android::view
 
 namespace android::view
 {
-	class GestureDetector : public __JniBaseClass
+	class GestureDetector : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit GestureDetector(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit GestureDetector(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		GestureDetector(QAndroidJniObject obj);
 		
 		// Constructors
-		GestureDetector(__JniBaseClass arg0);
-		GestureDetector(android::content::Context arg0, __JniBaseClass arg1);
-		GestureDetector(__JniBaseClass arg0, android::os::Handler arg1);
-		GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2);
-		GestureDetector(android::content::Context arg0, __JniBaseClass arg1, android::os::Handler arg2, jboolean arg3);
+		GestureDetector(JObject arg0);
+		GestureDetector(android::content::Context arg0, JObject arg1);
+		GestureDetector(JObject arg0, android::os::Handler arg1);
+		GestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2);
+		GestureDetector(android::content::Context arg0, JObject arg1, android::os::Handler arg2, jboolean arg3);
 		
 		// Methods
 		jboolean isLongpressEnabled();
 		jboolean onGenericMotionEvent(android::view::MotionEvent arg0);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
-		void setContextClickListener(__JniBaseClass arg0);
+		void setContextClickListener(JObject arg0);
 		void setIsLongpressEnabled(jboolean arg0);
-		void setOnDoubleTapListener(__JniBaseClass arg0);
+		void setOnDoubleTapListener(JObject arg0);
 	};
 } // namespace android::view
 

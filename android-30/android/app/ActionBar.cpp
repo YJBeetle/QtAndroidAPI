@@ -66,17 +66,17 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ActionBar::ActionBar(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActionBar::ActionBar(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActionBar::ActionBar()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActionBar",
 			"()V"
 		) {}
 	
 	// Methods
-	void ActionBar::addOnMenuVisibilityListener(__JniBaseClass arg0)
+	void ActionBar::addOnMenuVisibilityListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnMenuVisibilityListener",
@@ -254,7 +254,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void ActionBar::removeOnMenuVisibilityListener(__JniBaseClass arg0)
+	void ActionBar::removeOnMenuVisibilityListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnMenuVisibilityListener",
@@ -456,7 +456,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ActionBar::setListNavigationCallbacks(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ActionBar::setListNavigationCallbacks(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setListNavigationCallbacks",

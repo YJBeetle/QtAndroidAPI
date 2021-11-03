@@ -6,7 +6,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass Person::CREATOR()
+	JObject Person::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.Person",
@@ -16,7 +16,7 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	Person::Person(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Person::Person(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

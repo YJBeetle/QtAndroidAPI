@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -9,20 +9,20 @@ namespace android::content
 
 namespace android::provider
 {
-	class ContactsContract_SimContacts : public __JniBaseClass
+	class ContactsContract_SimContacts : public JObject
 	{
 	public:
 		// Fields
 		static jstring ACTION_SIM_ACCOUNTS_CHANGED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_SimContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_SimContacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_SimContacts(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getSimAccounts(android::content::ContentResolver arg0);
+		static JObject getSimAccounts(android::content::ContentResolver arg0);
 	};
 } // namespace android::provider
 

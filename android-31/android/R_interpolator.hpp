@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_interpolator : public __JniBaseClass
+	class R_interpolator : public JObject
 	{
 	public:
 		// Fields
@@ -28,7 +28,7 @@ namespace android
 		static jint overshoot();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_interpolator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_interpolator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_interpolator(QAndroidJniObject obj);
 		
 		// Constructors

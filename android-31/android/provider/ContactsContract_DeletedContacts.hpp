@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::net
 {
@@ -9,7 +9,7 @@ namespace android::net
 
 namespace android::provider
 {
-	class ContactsContract_DeletedContacts : public __JniBaseClass
+	class ContactsContract_DeletedContacts : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::provider
 		static jlong DAYS_KEPT_MILLISECONDS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ContactsContract_DeletedContacts(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ContactsContract_DeletedContacts(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ContactsContract_DeletedContacts(QAndroidJniObject obj);
 		
 		// Constructors

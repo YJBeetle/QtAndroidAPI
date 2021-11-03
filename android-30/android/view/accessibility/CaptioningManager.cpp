@@ -8,7 +8,7 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	CaptioningManager::CaptioningManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CaptioningManager::CaptioningManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

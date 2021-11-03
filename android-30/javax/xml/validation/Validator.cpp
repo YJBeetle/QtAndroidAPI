@@ -5,12 +5,12 @@ namespace javax::xml::validation
 	// Fields
 	
 	// QAndroidJniObject forward
-	Validator::Validator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Validator::Validator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass Validator::getErrorHandler()
+	JObject Validator::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -33,7 +33,7 @@ namespace javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass Validator::getResourceResolver()
+	JObject Validator::getResourceResolver()
 	{
 		return callObjectMethod(
 			"getResourceResolver",
@@ -47,7 +47,7 @@ namespace javax::xml::validation
 			"()V"
 		);
 	}
-	void Validator::setErrorHandler(__JniBaseClass arg0)
+	void Validator::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -73,7 +73,7 @@ namespace javax::xml::validation
 			arg1
 		);
 	}
-	void Validator::setResourceResolver(__JniBaseClass arg0)
+	void Validator::setResourceResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setResourceResolver",
@@ -81,7 +81,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::validate(__JniBaseClass arg0)
+	void Validator::validate(JObject arg0)
 	{
 		callMethod<void>(
 			"validate",
@@ -89,7 +89,7 @@ namespace javax::xml::validation
 			arg0.object()
 		);
 	}
-	void Validator::validate(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Validator::validate(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"validate",

@@ -7,7 +7,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass LabeledIntent::CREATOR()
+	JObject LabeledIntent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.LabeledIntent",

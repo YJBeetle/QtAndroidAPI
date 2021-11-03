@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -41,42 +41,42 @@ namespace android::view
 
 namespace android::preference
 {
-	class Preference : public __JniBaseClass
+	class Preference : public JObject
 	{
 	public:
 		// Fields
 		static jint DEFAULT_ORDER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Preference(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Preference(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Preference(QAndroidJniObject obj);
 		
 		// Constructors
 		Preference(android::content::Context arg0);
-		Preference(android::content::Context arg0, __JniBaseClass arg1);
-		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Preference(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Preference(android::content::Context arg0, JObject arg1);
+		Preference(android::content::Context arg0, JObject arg1, jint arg2);
+		Preference(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jint compareTo(android::preference::Preference arg0);
 		jint compareTo(jobject arg0);
 		android::content::Context getContext();
 		jstring getDependency();
-		__JniBaseClass getEditor();
+		JObject getEditor();
 		android::os::Bundle getExtras();
 		jstring getFragment();
 		android::graphics::drawable::Drawable getIcon();
 		android::content::Intent getIntent();
 		jstring getKey();
 		jint getLayoutResource();
-		__JniBaseClass getOnPreferenceChangeListener();
-		__JniBaseClass getOnPreferenceClickListener();
+		JObject getOnPreferenceChangeListener();
+		JObject getOnPreferenceClickListener();
 		jint getOrder();
 		android::preference::PreferenceGroup getParent();
-		__JniBaseClass getPersistedStringSet(__JniBaseClass arg0);
-		__JniBaseClass getPreferenceDataStore();
+		JObject getPersistedStringSet(JObject arg0);
+		JObject getPreferenceDataStore();
 		android::preference::PreferenceManager getPreferenceManager();
-		__JniBaseClass getSharedPreferences();
+		JObject getSharedPreferences();
 		jboolean getShouldDisableView();
 		jstring getSummary();
 		jstring getTitle();
@@ -94,7 +94,7 @@ namespace android::preference
 		void onDependencyChanged(android::preference::Preference arg0, jboolean arg1);
 		void onParentChanged(android::preference::Preference arg0, jboolean arg1);
 		android::os::Bundle peekExtras();
-		jboolean persistStringSet(__JniBaseClass arg0);
+		jboolean persistStringSet(JObject arg0);
 		void restoreHierarchyState(android::os::Bundle arg0);
 		void saveHierarchyState(android::os::Bundle arg0);
 		void setDefaultValue(jobject arg0);
@@ -107,11 +107,11 @@ namespace android::preference
 		void setIntent(android::content::Intent arg0);
 		void setKey(jstring arg0);
 		void setLayoutResource(jint arg0);
-		void setOnPreferenceChangeListener(__JniBaseClass arg0);
-		void setOnPreferenceClickListener(__JniBaseClass arg0);
+		void setOnPreferenceChangeListener(JObject arg0);
+		void setOnPreferenceClickListener(JObject arg0);
 		void setOrder(jint arg0);
 		void setPersistent(jboolean arg0);
-		void setPreferenceDataStore(__JniBaseClass arg0);
+		void setPreferenceDataStore(JObject arg0);
 		void setRecycleEnabled(jboolean arg0);
 		void setSelectable(jboolean arg0);
 		void setShouldDisableView(jboolean arg0);

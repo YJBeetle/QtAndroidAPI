@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::drm
 {
-	class DrmInfoRequest : public __JniBaseClass
+	class DrmInfoRequest : public JObject
 	{
 	public:
 		// Fields
@@ -17,7 +17,7 @@ namespace android::drm
 		static jint TYPE_UNREGISTRATION_INFO();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DrmInfoRequest(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DrmInfoRequest(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DrmInfoRequest(QAndroidJniObject obj);
 		
 		// Constructors
@@ -27,8 +27,8 @@ namespace android::drm
 		jobject get(jstring arg0);
 		jint getInfoType();
 		jstring getMimeType();
-		__JniBaseClass iterator();
-		__JniBaseClass keyIterator();
+		JObject iterator();
+		JObject keyIterator();
 		void put(jstring arg0, jobject arg1);
 	};
 } // namespace android::drm

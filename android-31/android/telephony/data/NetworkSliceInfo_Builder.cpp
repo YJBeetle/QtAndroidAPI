@@ -6,11 +6,11 @@ namespace android::telephony::data
 	// Fields
 	
 	// QAndroidJniObject forward
-	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NetworkSliceInfo_Builder::NetworkSliceInfo_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.telephony.data.NetworkSliceInfo$Builder",
 			"()V"
 		) {}

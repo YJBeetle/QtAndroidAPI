@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::app
 {
-	class AppOpsManager : public __JniBaseClass
+	class AppOpsManager : public JObject
 	{
 	public:
 		// Fields
@@ -49,7 +49,7 @@ namespace android::app
 		static jstring OPSTR_WRITE_SETTINGS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AppOpsManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AppOpsManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -66,8 +66,8 @@ namespace android::app
 		jint noteProxyOpNoThrow(jstring arg0, jstring arg1);
 		jint startOp(jstring arg0, jint arg1, jstring arg2);
 		jint startOpNoThrow(jstring arg0, jint arg1, jstring arg2);
-		void startWatchingMode(jstring arg0, jstring arg1, __JniBaseClass arg2);
-		void stopWatchingMode(__JniBaseClass arg0);
+		void startWatchingMode(jstring arg0, jstring arg1, JObject arg2);
+		void stopWatchingMode(JObject arg0);
 	};
 } // namespace android::app
 

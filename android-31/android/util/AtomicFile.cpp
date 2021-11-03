@@ -8,11 +8,11 @@ namespace android::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	AtomicFile::AtomicFile(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AtomicFile::AtomicFile(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AtomicFile::AtomicFile(java::io::File arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.util.AtomicFile",
 			"(Ljava/io/File;)V",
 			arg0.object()

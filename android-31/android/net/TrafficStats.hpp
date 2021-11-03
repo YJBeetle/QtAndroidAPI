@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -17,14 +17,14 @@ namespace java::net
 
 namespace android::net
 {
-	class TrafficStats : public __JniBaseClass
+	class TrafficStats : public JObject
 	{
 	public:
 		// Fields
 		static jint UNSUPPORTED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TrafficStats(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TrafficStats(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TrafficStats(QAndroidJniObject obj);
 		
 		// Constructors

@@ -6,7 +6,7 @@
 namespace android::location
 {
 	// Fields
-	__JniBaseClass Address::CREATOR()
+	JObject Address::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.Address",
@@ -16,11 +16,11 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	Address::Address(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Address::Address(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Address::Address(java::util::Locale arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.location.Address",
 			"(Ljava/util/Locale;)V",
 			arg0.object()

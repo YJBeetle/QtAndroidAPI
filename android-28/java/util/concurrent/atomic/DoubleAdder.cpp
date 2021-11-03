@@ -6,11 +6,11 @@ namespace java::util::concurrent::atomic
 	// Fields
 	
 	// QAndroidJniObject forward
-	DoubleAdder::DoubleAdder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DoubleAdder::DoubleAdder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DoubleAdder::DoubleAdder()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.atomic.DoubleAdder",
 			"()V"
 		) {}

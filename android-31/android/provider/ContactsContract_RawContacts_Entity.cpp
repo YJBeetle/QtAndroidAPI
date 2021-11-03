@@ -21,7 +21,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_RawContacts_Entity::ContactsContract_RawContacts_Entity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_RawContacts_Entity::ContactsContract_RawContacts_Entity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

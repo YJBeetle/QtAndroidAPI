@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -81,33 +81,33 @@ namespace android::service::dreams
 		android::view::View findViewById(jint arg0);
 		void finish();
 		android::view::Window getWindow();
-		__JniBaseClass getWindowManager();
+		JObject getWindowManager();
 		jboolean isFullscreen();
 		jboolean isInteractive();
 		jboolean isScreenBright();
 		void onActionModeFinished(android::view::ActionMode arg0);
 		void onActionModeStarted(android::view::ActionMode arg0);
 		void onAttachedToWindow();
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onContentChanged();
 		void onCreate();
-		jboolean onCreatePanelMenu(jint arg0, __JniBaseClass arg1);
+		jboolean onCreatePanelMenu(jint arg0, JObject arg1);
 		android::view::View onCreatePanelView(jint arg0);
 		void onDestroy();
 		void onDetachedFromWindow();
 		void onDreamingStarted();
 		void onDreamingStopped();
-		jboolean onMenuItemSelected(jint arg0, __JniBaseClass arg1);
-		jboolean onMenuOpened(jint arg0, __JniBaseClass arg1);
-		void onPanelClosed(jint arg0, __JniBaseClass arg1);
-		jboolean onPreparePanel(jint arg0, android::view::View arg1, __JniBaseClass arg2);
+		jboolean onMenuItemSelected(jint arg0, JObject arg1);
+		jboolean onMenuOpened(jint arg0, JObject arg1);
+		void onPanelClosed(jint arg0, JObject arg1);
+		jboolean onPreparePanel(jint arg0, android::view::View arg1, JObject arg2);
 		jboolean onSearchRequested();
 		jboolean onSearchRequested(android::view::SearchEvent arg0);
 		void onWakeUp();
 		void onWindowAttributesChanged(android::view::WindowManager_LayoutParams arg0);
 		void onWindowFocusChanged(jboolean arg0);
-		android::view::ActionMode onWindowStartingActionMode(__JniBaseClass arg0);
-		android::view::ActionMode onWindowStartingActionMode(__JniBaseClass arg0, jint arg1);
+		android::view::ActionMode onWindowStartingActionMode(JObject arg0);
+		android::view::ActionMode onWindowStartingActionMode(JObject arg0, jint arg1);
 		android::view::View requireViewById(jint arg0);
 		void setContentView(android::view::View arg0);
 		void setContentView(jint arg0);

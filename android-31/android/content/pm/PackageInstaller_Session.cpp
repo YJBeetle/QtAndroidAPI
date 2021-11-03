@@ -8,7 +8,7 @@ namespace android::content::pm
 	// Fields
 	
 	// QAndroidJniObject forward
-	PackageInstaller_Session::PackageInstaller_Session(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller_Session::PackageInstaller_Session(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -120,7 +120,7 @@ namespace android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_Session::setChecksums(jstring arg0, __JniBaseClass arg1, jbyteArray arg2)
+	void PackageInstaller_Session::setChecksums(jstring arg0, JObject arg1, jbyteArray arg2)
 	{
 		callMethod<void>(
 			"setChecksums",

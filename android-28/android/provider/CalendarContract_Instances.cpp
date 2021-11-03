@@ -95,12 +95,12 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CalendarContract_Instances::CalendarContract_Instances(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_Instances::CalendarContract_Instances(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_Instances::query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3)
+	JObject CalendarContract_Instances::query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$Instances",
@@ -112,7 +112,7 @@ namespace android::provider
 			arg3
 		);
 	}
-	__JniBaseClass CalendarContract_Instances::query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, jstring arg4)
+	JObject CalendarContract_Instances::query(android::content::ContentResolver arg0, jarray arg1, jlong arg2, jlong arg3, jstring arg4)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$Instances",

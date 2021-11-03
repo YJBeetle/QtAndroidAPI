@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security
 {
@@ -29,13 +29,13 @@ namespace javax::net::ssl
 
 namespace javax::net::ssl
 {
-	class SSLContextSpi : public __JniBaseClass
+	class SSLContextSpi : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SSLContextSpi(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SSLContextSpi(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SSLContextSpi(QAndroidJniObject obj);
 		
 		// Constructors

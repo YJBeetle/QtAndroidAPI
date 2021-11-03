@@ -11,7 +11,7 @@ namespace android::widget
 	SimpleExpandableListAdapter::SimpleExpandableListAdapter(QAndroidJniObject obj) : android::widget::BaseExpandableListAdapter(obj) {}
 	
 	// Constructors
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jarray arg3, jintArray arg4, __JniBaseClass arg5, jint arg6, jarray arg7, jintArray arg8)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jarray arg3, jintArray arg4, JObject arg5, jint arg6, jarray arg7, jintArray arg8)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V",
@@ -25,7 +25,7 @@ namespace android::widget
 			arg7,
 			arg8
 		) {}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jarray arg8, jintArray arg9)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jarray arg8, jintArray arg9)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;II[Ljava/lang/String;[ILjava/util/List;I[Ljava/lang/String;[I)V",
@@ -40,7 +40,7 @@ namespace android::widget
 			arg8,
 			arg9
 		) {}
-	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, __JniBaseClass arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10)
+	SimpleExpandableListAdapter::SimpleExpandableListAdapter(android::content::Context arg0, JObject arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, JObject arg6, jint arg7, jint arg8, jarray arg9, jintArray arg10)
 		: android::widget::BaseExpandableListAdapter(
 			"android.widget.SimpleExpandableListAdapter",
 			"(Landroid/content/Context;Ljava/util/List;II[Ljava/lang/String;[ILjava/util/List;II[Ljava/lang/String;[I)V",

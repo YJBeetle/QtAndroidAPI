@@ -5,7 +5,7 @@ namespace java::util
 	// Fields
 	
 	// QAndroidJniObject forward
-	AbstractMap::AbstractMap(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AbstractMap::AbstractMap(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -33,7 +33,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass AbstractMap::entrySet()
+	JObject AbstractMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -70,7 +70,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass AbstractMap::keySet()
+	JObject AbstractMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -86,7 +86,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void AbstractMap::putAll(__JniBaseClass arg0)
+	void AbstractMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -116,7 +116,7 @@ namespace java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass AbstractMap::values()
+	JObject AbstractMap::values()
 	{
 		return callObjectMethod(
 			"values",

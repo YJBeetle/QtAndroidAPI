@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::webkit
 {
-	class TracingConfig : public __JniBaseClass
+	class TracingConfig : public JObject
 	{
 	public:
 		// Fields
@@ -21,13 +21,13 @@ namespace android::webkit
 		static jint RECORD_UNTIL_FULL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit TracingConfig(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit TracingConfig(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		TracingConfig(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		__JniBaseClass getCustomIncludedCategories();
+		JObject getCustomIncludedCategories();
 		jint getPredefinedCategories();
 		jint getTracingMode();
 	};

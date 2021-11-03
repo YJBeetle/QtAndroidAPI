@@ -7,11 +7,11 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	SetSchemaResponse_Builder::SetSchemaResponse_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SetSchemaResponse_Builder::SetSchemaResponse_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SetSchemaResponse_Builder::SetSchemaResponse_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.appsearch.SetSchemaResponse$Builder",
 			"()V"
 		) {}
@@ -25,7 +25,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedTypes(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addDeletedTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"addDeletedTypes",
@@ -41,7 +41,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleTypes(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addIncompatibleTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"addIncompatibleTypes",
@@ -57,7 +57,7 @@ namespace android::app::appsearch
 			arg0
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedTypes(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigratedTypes(JObject arg0)
 	{
 		return callObjectMethod(
 			"addMigratedTypes",
@@ -73,7 +73,7 @@ namespace android::app::appsearch
 			arg0.object()
 		);
 	}
-	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailures(__JniBaseClass arg0)
+	android::app::appsearch::SetSchemaResponse_Builder SetSchemaResponse_Builder::addMigrationFailures(JObject arg0)
 	{
 		return callObjectMethod(
 			"addMigrationFailures",

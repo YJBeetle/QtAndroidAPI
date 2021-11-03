@@ -9,16 +9,16 @@ namespace org::xml::sax::helpers
 	// Fields
 	
 	// QAndroidJniObject forward
-	ParserAdapter::ParserAdapter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ParserAdapter::ParserAdapter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParserAdapter::ParserAdapter()
-		: __JniBaseClass(
+		: JObject(
 			"org.xml.sax.helpers.ParserAdapter",
 			"()V"
 		) {}
-	ParserAdapter::ParserAdapter(__JniBaseClass arg0)
-		: __JniBaseClass(
+	ParserAdapter::ParserAdapter(JObject arg0)
+		: JObject(
 			"org.xml.sax.helpers.ParserAdapter",
 			"(Lorg/xml/sax/Parser;)V",
 			arg0.object()
@@ -50,28 +50,28 @@ namespace org::xml::sax::helpers
 			arg0
 		);
 	}
-	__JniBaseClass ParserAdapter::getContentHandler()
+	JObject ParserAdapter::getContentHandler()
 	{
 		return callObjectMethod(
 			"getContentHandler",
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	__JniBaseClass ParserAdapter::getDTDHandler()
+	JObject ParserAdapter::getDTDHandler()
 	{
 		return callObjectMethod(
 			"getDTDHandler",
 			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	__JniBaseClass ParserAdapter::getEntityResolver()
+	JObject ParserAdapter::getEntityResolver()
 	{
 		return callObjectMethod(
 			"getEntityResolver",
 			"()Lorg/xml/sax/EntityResolver;"
 		);
 	}
-	__JniBaseClass ParserAdapter::getErrorHandler()
+	JObject ParserAdapter::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",
@@ -129,7 +129,7 @@ namespace org::xml::sax::helpers
 			arg1
 		);
 	}
-	void ParserAdapter::setContentHandler(__JniBaseClass arg0)
+	void ParserAdapter::setContentHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setContentHandler",
@@ -137,7 +137,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setDTDHandler(__JniBaseClass arg0)
+	void ParserAdapter::setDTDHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setDTDHandler",
@@ -145,7 +145,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setDocumentLocator(__JniBaseClass arg0)
+	void ParserAdapter::setDocumentLocator(JObject arg0)
 	{
 		callMethod<void>(
 			"setDocumentLocator",
@@ -153,7 +153,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setEntityResolver(__JniBaseClass arg0)
+	void ParserAdapter::setEntityResolver(JObject arg0)
 	{
 		callMethod<void>(
 			"setEntityResolver",
@@ -161,7 +161,7 @@ namespace org::xml::sax::helpers
 			arg0.object()
 		);
 	}
-	void ParserAdapter::setErrorHandler(__JniBaseClass arg0)
+	void ParserAdapter::setErrorHandler(JObject arg0)
 	{
 		callMethod<void>(
 			"setErrorHandler",
@@ -194,7 +194,7 @@ namespace org::xml::sax::helpers
 			"()V"
 		);
 	}
-	void ParserAdapter::startElement(jstring arg0, __JniBaseClass arg1)
+	void ParserAdapter::startElement(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"startElement",

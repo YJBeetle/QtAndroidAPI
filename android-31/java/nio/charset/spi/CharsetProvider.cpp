@@ -7,7 +7,7 @@ namespace java::nio::charset::spi
 	// Fields
 	
 	// QAndroidJniObject forward
-	CharsetProvider::CharsetProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CharsetProvider::CharsetProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace java::nio::charset::spi
 			arg0
 		);
 	}
-	__JniBaseClass CharsetProvider::charsets()
+	JObject CharsetProvider::charsets()
 	{
 		return callObjectMethod(
 			"charsets",

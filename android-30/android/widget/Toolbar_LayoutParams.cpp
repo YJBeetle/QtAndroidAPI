@@ -42,7 +42,7 @@ namespace android::widget
 			"(I)V",
 			arg0
 		) {}
-	Toolbar_LayoutParams::Toolbar_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	Toolbar_LayoutParams::Toolbar_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::app::ActionBar_LayoutParams(
 			"android.widget.Toolbar$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

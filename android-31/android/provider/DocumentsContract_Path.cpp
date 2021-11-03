@@ -4,7 +4,7 @@
 namespace android::provider
 {
 	// Fields
-	__JniBaseClass DocumentsContract_Path::CREATOR()
+	JObject DocumentsContract_Path::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.provider.DocumentsContract$Path",
@@ -14,11 +14,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DocumentsContract_Path::DocumentsContract_Path(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	DocumentsContract_Path::DocumentsContract_Path(jstring arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	DocumentsContract_Path::DocumentsContract_Path(jstring arg0, JObject arg1)
+		: JObject(
 			"android.provider.DocumentsContract$Path",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
@@ -41,7 +41,7 @@ namespace android::provider
 			arg0
 		);
 	}
-	__JniBaseClass DocumentsContract_Path::getPath()
+	JObject DocumentsContract_Path::getPath()
 	{
 		return callObjectMethod(
 			"getPath",

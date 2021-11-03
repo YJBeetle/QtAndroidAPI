@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -29,13 +29,13 @@ namespace java::util::logging
 
 namespace java::util::logging
 {
-	class Handler : public __JniBaseClass
+	class Handler : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Handler(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Handler(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Handler(QAndroidJniObject obj);
 		
 		// Constructors
@@ -45,14 +45,14 @@ namespace java::util::logging
 		void flush();
 		jstring getEncoding();
 		java::util::logging::ErrorManager getErrorManager();
-		__JniBaseClass getFilter();
+		JObject getFilter();
 		java::util::logging::Formatter getFormatter();
 		java::util::logging::Level getLevel();
 		jboolean isLoggable(java::util::logging::LogRecord arg0);
 		void publish(java::util::logging::LogRecord arg0);
 		void setEncoding(jstring arg0);
 		void setErrorManager(java::util::logging::ErrorManager arg0);
-		void setFilter(__JniBaseClass arg0);
+		void setFilter(JObject arg0);
 		void setFormatter(java::util::logging::Formatter arg0);
 		void setLevel(java::util::logging::Level arg0);
 	};

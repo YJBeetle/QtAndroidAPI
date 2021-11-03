@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,14 +21,14 @@ namespace android::view::inputmethod
 
 namespace android::view::inputmethod
 {
-	class InlineSuggestion : public __JniBaseClass
+	class InlineSuggestion : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InlineSuggestion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InlineSuggestion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InlineSuggestion(QAndroidJniObject obj);
 		
 		// Constructors
@@ -38,7 +38,7 @@ namespace android::view::inputmethod
 		jboolean equals(jobject arg0);
 		android::view::inputmethod::InlineSuggestionInfo getInfo();
 		jint hashCode();
-		void inflate(android::content::Context arg0, android::util::Size arg1, __JniBaseClass arg2, __JniBaseClass arg3);
+		void inflate(android::content::Context arg0, android::util::Size arg1, JObject arg2, JObject arg3);
 		jstring toString();
 		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};

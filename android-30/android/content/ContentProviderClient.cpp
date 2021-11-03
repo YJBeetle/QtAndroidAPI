@@ -13,7 +13,7 @@ namespace android::content
 	// Fields
 	
 	// QAndroidJniObject forward
-	ContentProviderClient::ContentProviderClient(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContentProviderClient::ContentProviderClient(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -212,7 +212,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
+	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, android::os::Bundle arg2, android::os::CancellationSignal arg3)
 	{
 		return callObjectMethod(
 			"query",
@@ -223,7 +223,7 @@ namespace android::content
 			arg3.object()
 		);
 	}
-	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return callObjectMethod(
 			"query",
@@ -235,7 +235,7 @@ namespace android::content
 			arg4
 		);
 	}
-	__JniBaseClass ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
+	JObject ContentProviderClient::query(android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, android::os::CancellationSignal arg5)
 	{
 		return callObjectMethod(
 			"query",

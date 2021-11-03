@@ -5,7 +5,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass ActivityManager_RunningAppProcessInfo::CREATOR()
+	JObject ActivityManager_RunningAppProcessInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.ActivityManager$RunningAppProcessInfo",
@@ -190,16 +190,16 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"()V"
 		) {}
 	ActivityManager_RunningAppProcessInfo::ActivityManager_RunningAppProcessInfo(jstring arg0, jint arg1, jarray arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.ActivityManager$RunningAppProcessInfo",
 			"(Ljava/lang/String;I[Ljava/lang/String;)V",
 			arg0,

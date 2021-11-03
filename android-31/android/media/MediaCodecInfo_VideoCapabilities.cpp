@@ -6,7 +6,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaCodecInfo_VideoCapabilities::MediaCodecInfo_VideoCapabilities(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaCodecInfo_VideoCapabilities::MediaCodecInfo_VideoCapabilities(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -75,7 +75,7 @@ namespace android::media
 			arg0
 		);
 	}
-	__JniBaseClass MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
+	JObject MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
 	{
 		return callObjectMethod(
 			"getSupportedPerformancePoints",

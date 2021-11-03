@@ -49,7 +49,7 @@ namespace java::util::concurrent::locks
 			arg0
 		);
 	}
-	__JniBaseClass AbstractQueuedLongSynchronizer::getExclusiveQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getExclusiveQueuedThreads()
 	{
 		return callObjectMethod(
 			"getExclusiveQueuedThreads",
@@ -70,14 +70,14 @@ namespace java::util::concurrent::locks
 			"()I"
 		);
 	}
-	__JniBaseClass AbstractQueuedLongSynchronizer::getQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getQueuedThreads()
 	{
 		return callObjectMethod(
 			"getQueuedThreads",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass AbstractQueuedLongSynchronizer::getSharedQueuedThreads()
+	JObject AbstractQueuedLongSynchronizer::getSharedQueuedThreads()
 	{
 		return callObjectMethod(
 			"getSharedQueuedThreads",
@@ -92,7 +92,7 @@ namespace java::util::concurrent::locks
 			arg0.object()
 		);
 	}
-	__JniBaseClass AbstractQueuedLongSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
+	JObject AbstractQueuedLongSynchronizer::getWaitingThreads(java::util::concurrent::locks::AbstractQueuedLongSynchronizer_ConditionObject arg0)
 	{
 		return callObjectMethod(
 			"getWaitingThreads",

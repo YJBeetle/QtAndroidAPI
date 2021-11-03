@@ -64,12 +64,12 @@ namespace android::net::nsd
 	}
 	
 	// QAndroidJniObject forward
-	NsdManager::NsdManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NsdManager::NsdManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void NsdManager::discoverServices(jstring arg0, jint arg1, __JniBaseClass arg2)
+	void NsdManager::discoverServices(jstring arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"discoverServices",
@@ -79,7 +79,7 @@ namespace android::net::nsd
 			arg2.object()
 		);
 	}
-	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, __JniBaseClass arg2)
+	void NsdManager::registerService(android::net::nsd::NsdServiceInfo arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"registerService",
@@ -89,7 +89,7 @@ namespace android::net::nsd
 			arg2.object()
 		);
 	}
-	void NsdManager::resolveService(android::net::nsd::NsdServiceInfo arg0, __JniBaseClass arg1)
+	void NsdManager::resolveService(android::net::nsd::NsdServiceInfo arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"resolveService",
@@ -98,7 +98,7 @@ namespace android::net::nsd
 			arg1.object()
 		);
 	}
-	void NsdManager::stopServiceDiscovery(__JniBaseClass arg0)
+	void NsdManager::stopServiceDiscovery(JObject arg0)
 	{
 		callMethod<void>(
 			"stopServiceDiscovery",
@@ -106,7 +106,7 @@ namespace android::net::nsd
 			arg0.object()
 		);
 	}
-	void NsdManager::unregisterService(__JniBaseClass arg0)
+	void NsdManager::unregisterService(JObject arg0)
 	{
 		callMethod<void>(
 			"unregisterService",

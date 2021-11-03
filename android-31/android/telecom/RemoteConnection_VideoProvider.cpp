@@ -9,7 +9,7 @@ namespace android::telecom
 	// Fields
 	
 	// QAndroidJniObject forward
-	RemoteConnection_VideoProvider::RemoteConnection_VideoProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RemoteConnection_VideoProvider::RemoteConnection_VideoProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

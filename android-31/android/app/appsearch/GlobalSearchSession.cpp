@@ -8,7 +8,7 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	GlobalSearchSession::GlobalSearchSession(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GlobalSearchSession::GlobalSearchSession(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace android::app::appsearch
 			"()V"
 		);
 	}
-	void GlobalSearchSession::reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	void GlobalSearchSession::reportSystemUsage(android::app::appsearch::ReportSystemUsageRequest arg0, JObject arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"reportSystemUsage",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::telephony::data
 {
@@ -9,13 +9,13 @@ namespace android::telephony::data
 
 namespace android::telephony::data
 {
-	class NetworkSliceInfo_Builder : public __JniBaseClass
+	class NetworkSliceInfo_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit NetworkSliceInfo_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit NetworkSliceInfo_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		NetworkSliceInfo_Builder(QAndroidJniObject obj);
 		
 		// Constructors

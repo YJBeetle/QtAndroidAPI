@@ -21,7 +21,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	IdentityHashMap::IdentityHashMap(__JniBaseClass arg0)
+	IdentityHashMap::IdentityHashMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.IdentityHashMap",
 			"(Ljava/util/Map;)V",
@@ -59,7 +59,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass IdentityHashMap::entrySet()
+	JObject IdentityHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
@@ -74,7 +74,7 @@ namespace java::util
 			arg0
 		);
 	}
-	void IdentityHashMap::forEach(__JniBaseClass arg0)
+	void IdentityHashMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -104,7 +104,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass IdentityHashMap::keySet()
+	JObject IdentityHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -120,7 +120,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void IdentityHashMap::putAll(__JniBaseClass arg0)
+	void IdentityHashMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -136,7 +136,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	void IdentityHashMap::replaceAll(__JniBaseClass arg0)
+	void IdentityHashMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -151,7 +151,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass IdentityHashMap::values()
+	JObject IdentityHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

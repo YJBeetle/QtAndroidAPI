@@ -39,11 +39,11 @@ namespace java::sql
 	}
 	
 	// QAndroidJniObject forward
-	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DriverPropertyInfo::DriverPropertyInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DriverPropertyInfo::DriverPropertyInfo(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.sql.DriverPropertyInfo",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

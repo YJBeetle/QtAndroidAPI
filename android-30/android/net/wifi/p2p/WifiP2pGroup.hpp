@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::p2p
 {
@@ -13,16 +13,16 @@ namespace android::os
 
 namespace android::net::wifi::p2p
 {
-	class WifiP2pGroup : public __JniBaseClass
+	class WifiP2pGroup : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint NETWORK_ID_PERSISTENT();
 		static jint NETWORK_ID_TEMPORARY();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiP2pGroup(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiP2pGroup(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiP2pGroup(QAndroidJniObject obj);
 		
 		// Constructors
@@ -31,7 +31,7 @@ namespace android::net::wifi::p2p
 		
 		// Methods
 		jint describeContents();
-		__JniBaseClass getClientList();
+		JObject getClientList();
 		jint getFrequency();
 		jstring getInterface();
 		jint getNetworkId();

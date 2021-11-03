@@ -5,12 +5,12 @@ namespace org::apache::http::params
 	// Fields
 	
 	// QAndroidJniObject forward
-	HttpConnectionParams::HttpConnectionParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	HttpConnectionParams::HttpConnectionParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	jint HttpConnectionParams::getConnectionTimeout(__JniBaseClass arg0)
+	jint HttpConnectionParams::getConnectionTimeout(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -19,7 +19,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	jint HttpConnectionParams::getLinger(__JniBaseClass arg0)
+	jint HttpConnectionParams::getLinger(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -28,7 +28,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	jint HttpConnectionParams::getSoTimeout(__JniBaseClass arg0)
+	jint HttpConnectionParams::getSoTimeout(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -37,7 +37,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	jint HttpConnectionParams::getSocketBufferSize(__JniBaseClass arg0)
+	jint HttpConnectionParams::getSocketBufferSize(JObject arg0)
 	{
 		return callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -46,7 +46,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	jboolean HttpConnectionParams::getTcpNoDelay(__JniBaseClass arg0)
+	jboolean HttpConnectionParams::getTcpNoDelay(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -55,7 +55,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	jboolean HttpConnectionParams::isStaleCheckingEnabled(__JniBaseClass arg0)
+	jboolean HttpConnectionParams::isStaleCheckingEnabled(JObject arg0)
 	{
 		return callStaticMethod<jboolean>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -64,7 +64,7 @@ namespace org::apache::http::params
 			arg0.object()
 		);
 	}
-	void HttpConnectionParams::setConnectionTimeout(__JniBaseClass arg0, jint arg1)
+	void HttpConnectionParams::setConnectionTimeout(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -74,7 +74,7 @@ namespace org::apache::http::params
 			arg1
 		);
 	}
-	void HttpConnectionParams::setLinger(__JniBaseClass arg0, jint arg1)
+	void HttpConnectionParams::setLinger(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -84,7 +84,7 @@ namespace org::apache::http::params
 			arg1
 		);
 	}
-	void HttpConnectionParams::setSoTimeout(__JniBaseClass arg0, jint arg1)
+	void HttpConnectionParams::setSoTimeout(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -94,7 +94,7 @@ namespace org::apache::http::params
 			arg1
 		);
 	}
-	void HttpConnectionParams::setSocketBufferSize(__JniBaseClass arg0, jint arg1)
+	void HttpConnectionParams::setSocketBufferSize(JObject arg0, jint arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -104,7 +104,7 @@ namespace org::apache::http::params
 			arg1
 		);
 	}
-	void HttpConnectionParams::setStaleCheckingEnabled(__JniBaseClass arg0, jboolean arg1)
+	void HttpConnectionParams::setStaleCheckingEnabled(JObject arg0, jboolean arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
@@ -114,7 +114,7 @@ namespace org::apache::http::params
 			arg1
 		);
 	}
-	void HttpConnectionParams::setTcpNoDelay(__JniBaseClass arg0, jboolean arg1)
+	void HttpConnectionParams::setTcpNoDelay(JObject arg0, jboolean arg1)
 	{
 		callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",

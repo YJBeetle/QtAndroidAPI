@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -9,7 +9,7 @@ namespace android::content::res
 
 namespace android::app::usage
 {
-	class UsageEvents_Event : public __JniBaseClass
+	class UsageEvents_Event : public JObject
 	{
 	public:
 		// Fields
@@ -26,7 +26,7 @@ namespace android::app::usage
 		static jint USER_INTERACTION();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UsageEvents_Event(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UsageEvents_Event(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UsageEvents_Event(QAndroidJniObject obj);
 		
 		// Constructors

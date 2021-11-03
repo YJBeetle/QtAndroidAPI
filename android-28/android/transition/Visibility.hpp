@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Transition.hpp"
 
 namespace android::animation
@@ -39,7 +39,7 @@ namespace android::transition
 		
 		// Constructors
 		Visibility();
-		Visibility(android::content::Context arg0, __JniBaseClass arg1);
+		Visibility(android::content::Context arg0, JObject arg1);
 		
 		// Methods
 		void captureEndValues(android::transition::TransitionValues arg0);

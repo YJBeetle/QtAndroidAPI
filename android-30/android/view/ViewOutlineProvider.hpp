@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::graphics
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::view
 {
-	class ViewOutlineProvider : public __JniBaseClass
+	class ViewOutlineProvider : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::view
 		static android::view::ViewOutlineProvider PADDED_BOUNDS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewOutlineProvider(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewOutlineProvider(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewOutlineProvider(QAndroidJniObject obj);
 		
 		// Constructors

@@ -8,11 +8,11 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConnectivityManager_NetworkCallback::ConnectivityManager_NetworkCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ConnectivityManager$NetworkCallback",
 			"()V"
 		) {}

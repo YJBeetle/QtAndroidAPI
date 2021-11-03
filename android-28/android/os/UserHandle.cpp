@@ -4,7 +4,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass UserHandle::CREATOR()
+	JObject UserHandle::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.UserHandle",
@@ -14,11 +14,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	UserHandle::UserHandle(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UserHandle::UserHandle(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UserHandle::UserHandle(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.UserHandle",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

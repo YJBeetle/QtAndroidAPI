@@ -5,7 +5,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass CellIdentityLte::CREATOR()
+	JObject CellIdentityLte::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.CellIdentityLte",
@@ -28,7 +28,7 @@ namespace android::telephony
 			arg0
 		);
 	}
-	__JniBaseClass CellIdentityLte::getAdditionalPlmns()
+	JObject CellIdentityLte::getAdditionalPlmns()
 	{
 		return callObjectMethod(
 			"getAdditionalPlmns",

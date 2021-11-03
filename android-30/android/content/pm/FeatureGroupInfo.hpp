@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,15 +9,15 @@ namespace android::os
 
 namespace android::content::pm
 {
-	class FeatureGroupInfo : public __JniBaseClass
+	class FeatureGroupInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jarray features();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit FeatureGroupInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit FeatureGroupInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		FeatureGroupInfo(QAndroidJniObject obj);
 		
 		// Constructors

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content::res
 {
@@ -57,13 +57,13 @@ namespace java::io
 
 namespace android::content::res
 {
-	class Resources : public __JniBaseClass
+	class Resources : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Resources(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Resources(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Resources(QAndroidJniObject obj);
 		
 		// Constructors
@@ -73,7 +73,7 @@ namespace android::content::res
 		static android::content::res::Resources getSystem();
 		void finishPreloading();
 		void flushLayoutCache();
-		__JniBaseClass getAnimation(jint arg0);
+		JObject getAnimation(jint arg0);
 		android::content::res::AssetManager getAssets();
 		jboolean getBoolean(jint arg0);
 		jint getColor(jint arg0);
@@ -94,7 +94,7 @@ namespace android::content::res
 		jint getIdentifier(jstring arg0, jstring arg1, jstring arg2);
 		jintArray getIntArray(jint arg0);
 		jint getInteger(jint arg0);
-		__JniBaseClass getLayout(jint arg0);
+		JObject getLayout(jint arg0);
 		android::graphics::Movie getMovie(jint arg0);
 		jstring getQuantityString(jint arg0, jint arg1);
 		jstring getQuantityString(jint arg0, jint arg1, jobjectArray arg2);
@@ -112,15 +112,15 @@ namespace android::content::res
 		void getValue(jint arg0, android::util::TypedValue arg1, jboolean arg2);
 		void getValue(jstring arg0, android::util::TypedValue arg1, jboolean arg2);
 		void getValueForDensity(jint arg0, jint arg1, android::util::TypedValue arg2, jboolean arg3);
-		__JniBaseClass getXml(jint arg0);
+		JObject getXml(jint arg0);
 		android::content::res::Resources_Theme newTheme();
-		android::content::res::TypedArray obtainAttributes(__JniBaseClass arg0, jintArray arg1);
+		android::content::res::TypedArray obtainAttributes(JObject arg0, jintArray arg1);
 		android::content::res::TypedArray obtainTypedArray(jint arg0);
 		java::io::InputStream openRawResource(jint arg0);
 		java::io::InputStream openRawResource(jint arg0, android::util::TypedValue arg1);
 		android::content::res::AssetFileDescriptor openRawResourceFd(jint arg0);
-		void parseBundleExtra(jstring arg0, __JniBaseClass arg1, android::os::Bundle arg2);
-		void parseBundleExtras(__JniBaseClass arg0, android::os::Bundle arg1);
+		void parseBundleExtra(jstring arg0, JObject arg1, android::os::Bundle arg2);
+		void parseBundleExtras(JObject arg0, android::os::Bundle arg1);
 		void updateConfiguration(android::content::res::Configuration arg0, android::util::DisplayMetrics arg1);
 	};
 } // namespace android::content::res

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CharacterStyle.hpp"
 
 namespace android::content
@@ -27,7 +27,7 @@ namespace android::text::style
 	public:
 		// Fields
 		static jstring ACTION_SUGGESTION_PICKED();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_AUTO_CORRECTION();
 		static jint FLAG_EASY_CORRECT();
 		static jint FLAG_MISSPELLED();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./AbstractCollection.hpp"
 #include "./AbstractSet.hpp"
 
@@ -29,7 +29,7 @@ namespace java::util
 		// Methods
 		static java::util::EnumSet allOf(jclass arg0);
 		static java::util::EnumSet complementOf(java::util::EnumSet arg0);
-		static java::util::EnumSet copyOf(__JniBaseClass arg0);
+		static java::util::EnumSet copyOf(JObject arg0);
 		static java::util::EnumSet copyOf(java::util::EnumSet arg0);
 		static java::util::EnumSet noneOf(jclass arg0);
 		static java::util::EnumSet of(java::lang::Enum arg0);

@@ -12,7 +12,7 @@ namespace android::media
 			"COMMAND_CODE_CUSTOM"
 		);
 	}
-	__JniBaseClass Session2Command::CREATOR()
+	JObject Session2Command::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.Session2Command",
@@ -22,17 +22,17 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	Session2Command::Session2Command(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Session2Command::Session2Command(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Session2Command::Session2Command(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2Command",
 			"(I)V",
 			arg0
 		) {}
 	Session2Command::Session2Command(jstring arg0, android::os::Bundle arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.media.Session2Command",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,

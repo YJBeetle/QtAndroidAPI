@@ -9,7 +9,7 @@
 namespace android::app::job
 {
 	// Fields
-	__JniBaseClass JobParameters::CREATOR()
+	JObject JobParameters::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.job.JobParameters",
@@ -19,7 +19,7 @@ namespace android::app::job
 	}
 	
 	// QAndroidJniObject forward
-	JobParameters::JobParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JobParameters::JobParameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

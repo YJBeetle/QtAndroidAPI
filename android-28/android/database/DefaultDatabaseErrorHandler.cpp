@@ -6,11 +6,11 @@ namespace android::database
 	// Fields
 	
 	// QAndroidJniObject forward
-	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DefaultDatabaseErrorHandler::DefaultDatabaseErrorHandler()
-		: __JniBaseClass(
+		: JObject(
 			"android.database.DefaultDatabaseErrorHandler",
 			"()V"
 		) {}

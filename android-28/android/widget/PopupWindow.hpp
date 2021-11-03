@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::view
 
 namespace android::widget
 {
-	class PopupWindow : public __JniBaseClass
+	class PopupWindow : public JObject
 	{
 	public:
 		// Fields
@@ -30,18 +30,18 @@ namespace android::widget
 		static jint INPUT_METHOD_NOT_NEEDED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PopupWindow(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PopupWindow(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PopupWindow(QAndroidJniObject obj);
 		
 		// Constructors
 		PopupWindow();
 		PopupWindow(android::content::Context arg0);
 		PopupWindow(android::view::View arg0);
-		PopupWindow(android::content::Context arg0, __JniBaseClass arg1);
+		PopupWindow(android::content::Context arg0, JObject arg1);
 		PopupWindow(jint arg0, jint arg1);
-		PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
+		PopupWindow(android::content::Context arg0, JObject arg1, jint arg2);
 		PopupWindow(android::view::View arg0, jint arg1, jint arg2);
-		PopupWindow(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		PopupWindow(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		PopupWindow(android::view::View arg0, jint arg1, jint arg2, jboolean arg3);
 		
 		// Methods
@@ -81,12 +81,12 @@ namespace android::widget
 		void setHeight(jint arg0);
 		void setIgnoreCheekPress();
 		void setInputMethodMode(jint arg0);
-		void setOnDismissListener(__JniBaseClass arg0);
+		void setOnDismissListener(JObject arg0);
 		void setOutsideTouchable(jboolean arg0);
 		void setOverlapAnchor(jboolean arg0);
 		void setSoftInputMode(jint arg0);
 		void setSplitTouchEnabled(jboolean arg0);
-		void setTouchInterceptor(__JniBaseClass arg0);
+		void setTouchInterceptor(JObject arg0);
 		void setTouchable(jboolean arg0);
 		void setWidth(jint arg0);
 		void setWindowLayoutMode(jint arg0, jint arg1);

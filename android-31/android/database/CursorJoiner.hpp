@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::database
 {
@@ -9,21 +9,21 @@ namespace android::database
 
 namespace android::database
 {
-	class CursorJoiner : public __JniBaseClass
+	class CursorJoiner : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CursorJoiner(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CursorJoiner(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CursorJoiner(QAndroidJniObject obj);
 		
 		// Constructors
-		CursorJoiner(__JniBaseClass arg0, jarray arg1, __JniBaseClass arg2, jarray arg3);
+		CursorJoiner(JObject arg0, jarray arg1, JObject arg2, jarray arg3);
 		
 		// Methods
 		jboolean hasNext();
-		__JniBaseClass iterator();
+		JObject iterator();
 		android::database::CursorJoiner_Result next();
 		void remove();
 	};

@@ -103,7 +103,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CalendarContract::CalendarContract(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract::CalendarContract(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -6,7 +6,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass PackageInfo::CREATOR()
+	JObject PackageInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.PackageInfo",
@@ -240,11 +240,11 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	PackageInfo::PackageInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageInfo::PackageInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PackageInfo::PackageInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.PackageInfo",
 			"()V"
 		) {}

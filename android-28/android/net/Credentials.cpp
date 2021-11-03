@@ -5,11 +5,11 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	Credentials::Credentials(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Credentials::Credentials(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Credentials::Credentials(jint arg0, jint arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.net.Credentials",
 			"(III)V",
 			arg0,

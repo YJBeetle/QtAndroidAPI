@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./Certificate.hpp"
 
 namespace java::io
@@ -35,14 +35,14 @@ namespace javax::security::cert
 		static javax::security::cert::X509Certificate getInstance(java::io::InputStream arg0);
 		void checkValidity();
 		void checkValidity(java::util::Date arg0);
-		__JniBaseClass getIssuerDN();
+		JObject getIssuerDN();
 		java::util::Date getNotAfter();
 		java::util::Date getNotBefore();
 		java::math::BigInteger getSerialNumber();
 		jstring getSigAlgName();
 		jstring getSigAlgOID();
 		jbyteArray getSigAlgParams();
-		__JniBaseClass getSubjectDN();
+		JObject getSubjectDN();
 		jint getVersion();
 	};
 } // namespace javax::security::cert

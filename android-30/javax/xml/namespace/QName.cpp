@@ -5,24 +5,24 @@ namespace javax::xml::_namespace
 	// Fields
 	
 	// QAndroidJniObject forward
-	QName::QName(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	QName::QName(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	QName::QName(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	QName::QName(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
 		) {}
 	QName::QName(jstring arg0, jstring arg1, jstring arg2)
-		: __JniBaseClass(
+		: JObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,

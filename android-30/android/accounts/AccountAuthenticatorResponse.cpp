@@ -5,7 +5,7 @@
 namespace android::accounts
 {
 	// Fields
-	__JniBaseClass AccountAuthenticatorResponse::CREATOR()
+	JObject AccountAuthenticatorResponse::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.accounts.AccountAuthenticatorResponse",
@@ -15,11 +15,11 @@ namespace android::accounts
 	}
 	
 	// QAndroidJniObject forward
-	AccountAuthenticatorResponse::AccountAuthenticatorResponse(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccountAuthenticatorResponse::AccountAuthenticatorResponse(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccountAuthenticatorResponse::AccountAuthenticatorResponse(android::os::Parcel arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.accounts.AccountAuthenticatorResponse",
 			"(Landroid/os/Parcel;)V",
 			arg0.object()

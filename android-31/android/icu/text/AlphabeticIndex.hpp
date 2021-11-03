@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::icu::text
 {
@@ -25,13 +25,13 @@ namespace java::util
 
 namespace android::icu::text
 {
-	class AlphabeticIndex : public __JniBaseClass
+	class AlphabeticIndex : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit AlphabeticIndex(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit AlphabeticIndex(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		AlphabeticIndex(QAndroidJniObject obj);
 		
 		// Constructors
@@ -47,14 +47,14 @@ namespace android::icu::text
 		android::icu::text::AlphabeticIndex clearRecords();
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
-		__JniBaseClass getBucketLabels();
+		JObject getBucketLabels();
 		android::icu::text::RuleBasedCollator getCollator();
 		jstring getInflowLabel();
 		jint getMaxLabelCount();
 		jstring getOverflowLabel();
 		jint getRecordCount();
 		jstring getUnderflowLabel();
-		__JniBaseClass iterator();
+		JObject iterator();
 		android::icu::text::AlphabeticIndex setInflowLabel(jstring arg0);
 		android::icu::text::AlphabeticIndex setMaxLabelCount(jint arg0);
 		android::icu::text::AlphabeticIndex setOverflowLabel(jstring arg0);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::view::autofill
 {
@@ -17,13 +17,13 @@ namespace android::view::translation
 
 namespace android::view::translation
 {
-	class ViewTranslationResponse_Builder : public __JniBaseClass
+	class ViewTranslationResponse_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ViewTranslationResponse_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ViewTranslationResponse_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ViewTranslationResponse_Builder(QAndroidJniObject obj);
 		
 		// Constructors

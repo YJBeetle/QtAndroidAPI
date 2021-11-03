@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang
 {
@@ -57,62 +57,62 @@ namespace java::util
 
 namespace java::util::stream
 {
-	class Collectors : public __JniBaseClass
+	class Collectors : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Collectors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Collectors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Collectors(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass averagingDouble(__JniBaseClass arg0);
-		static __JniBaseClass averagingInt(__JniBaseClass arg0);
-		static __JniBaseClass averagingLong(__JniBaseClass arg0);
-		static __JniBaseClass collectingAndThen(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass counting();
-		static __JniBaseClass filtering(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass flatMapping(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass groupingBy(__JniBaseClass arg0);
-		static __JniBaseClass groupingBy(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass groupingBy(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass groupingByConcurrent(__JniBaseClass arg0);
-		static __JniBaseClass groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass groupingByConcurrent(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass joining();
-		static __JniBaseClass joining(jstring arg0);
-		static __JniBaseClass joining(jstring arg0, jstring arg1, jstring arg2);
-		static __JniBaseClass mapping(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass maxBy(__JniBaseClass arg0);
-		static __JniBaseClass minBy(__JniBaseClass arg0);
-		static __JniBaseClass partitioningBy(__JniBaseClass arg0);
-		static __JniBaseClass partitioningBy(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass reducing(__JniBaseClass arg0);
-		static __JniBaseClass reducing(jobject arg0, __JniBaseClass arg1);
-		static __JniBaseClass reducing(jobject arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass summarizingDouble(__JniBaseClass arg0);
-		static __JniBaseClass summarizingInt(__JniBaseClass arg0);
-		static __JniBaseClass summarizingLong(__JniBaseClass arg0);
-		static __JniBaseClass summingDouble(__JniBaseClass arg0);
-		static __JniBaseClass summingInt(__JniBaseClass arg0);
-		static __JniBaseClass summingLong(__JniBaseClass arg0);
-		static __JniBaseClass teeing(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass toCollection(__JniBaseClass arg0);
-		static __JniBaseClass toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass toConcurrentMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		static __JniBaseClass toList();
-		static __JniBaseClass toMap(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass toMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2, __JniBaseClass arg3);
-		static __JniBaseClass toSet();
-		static __JniBaseClass toUnmodifiableList();
-		static __JniBaseClass toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1);
-		static __JniBaseClass toUnmodifiableMap(__JniBaseClass arg0, __JniBaseClass arg1, __JniBaseClass arg2);
-		static __JniBaseClass toUnmodifiableSet();
+		static JObject averagingDouble(JObject arg0);
+		static JObject averagingInt(JObject arg0);
+		static JObject averagingLong(JObject arg0);
+		static JObject collectingAndThen(JObject arg0, JObject arg1);
+		static JObject counting();
+		static JObject filtering(JObject arg0, JObject arg1);
+		static JObject flatMapping(JObject arg0, JObject arg1);
+		static JObject groupingBy(JObject arg0);
+		static JObject groupingBy(JObject arg0, JObject arg1);
+		static JObject groupingBy(JObject arg0, JObject arg1, JObject arg2);
+		static JObject groupingByConcurrent(JObject arg0);
+		static JObject groupingByConcurrent(JObject arg0, JObject arg1);
+		static JObject groupingByConcurrent(JObject arg0, JObject arg1, JObject arg2);
+		static JObject joining();
+		static JObject joining(jstring arg0);
+		static JObject joining(jstring arg0, jstring arg1, jstring arg2);
+		static JObject mapping(JObject arg0, JObject arg1);
+		static JObject maxBy(JObject arg0);
+		static JObject minBy(JObject arg0);
+		static JObject partitioningBy(JObject arg0);
+		static JObject partitioningBy(JObject arg0, JObject arg1);
+		static JObject reducing(JObject arg0);
+		static JObject reducing(jobject arg0, JObject arg1);
+		static JObject reducing(jobject arg0, JObject arg1, JObject arg2);
+		static JObject summarizingDouble(JObject arg0);
+		static JObject summarizingInt(JObject arg0);
+		static JObject summarizingLong(JObject arg0);
+		static JObject summingDouble(JObject arg0);
+		static JObject summingInt(JObject arg0);
+		static JObject summingLong(JObject arg0);
+		static JObject teeing(JObject arg0, JObject arg1, JObject arg2);
+		static JObject toCollection(JObject arg0);
+		static JObject toConcurrentMap(JObject arg0, JObject arg1);
+		static JObject toConcurrentMap(JObject arg0, JObject arg1, JObject arg2);
+		static JObject toConcurrentMap(JObject arg0, JObject arg1, JObject arg2, JObject arg3);
+		static JObject toList();
+		static JObject toMap(JObject arg0, JObject arg1);
+		static JObject toMap(JObject arg0, JObject arg1, JObject arg2);
+		static JObject toMap(JObject arg0, JObject arg1, JObject arg2, JObject arg3);
+		static JObject toSet();
+		static JObject toUnmodifiableList();
+		static JObject toUnmodifiableMap(JObject arg0, JObject arg1);
+		static JObject toUnmodifiableMap(JObject arg0, JObject arg1, JObject arg2);
+		static JObject toUnmodifiableSet();
 	};
 } // namespace java::util::stream
 

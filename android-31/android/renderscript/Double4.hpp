@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::renderscript
 {
-	class Double4 : public __JniBaseClass
+	class Double4 : public JObject
 	{
 	public:
 		// Fields
@@ -15,7 +15,7 @@ namespace android::renderscript
 		jdouble z();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Double4(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Double4(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Double4(QAndroidJniObject obj);
 		
 		// Constructors

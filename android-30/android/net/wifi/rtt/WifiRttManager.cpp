@@ -15,7 +15,7 @@ namespace android::net::wifi::rtt
 	}
 	
 	// QAndroidJniObject forward
-	WifiRttManager::WifiRttManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiRttManager::WifiRttManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -27,7 +27,7 @@ namespace android::net::wifi::rtt
 			"()Z"
 		);
 	}
-	void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, __JniBaseClass arg1, android::net::wifi::rtt::RangingResultCallback arg2)
+	void WifiRttManager::startRanging(android::net::wifi::rtt::RangingRequest arg0, JObject arg1, android::net::wifi::rtt::RangingResultCallback arg2)
 	{
 		callMethod<void>(
 			"startRanging",

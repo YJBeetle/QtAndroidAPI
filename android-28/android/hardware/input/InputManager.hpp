@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace android::view
 
 namespace android::hardware::input
 {
-	class InputManager : public __JniBaseClass
+	class InputManager : public JObject
 	{
 	public:
 		// Fields
@@ -21,7 +21,7 @@ namespace android::hardware::input
 		static jstring META_DATA_KEYBOARD_LAYOUTS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit InputManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit InputManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		InputManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -29,8 +29,8 @@ namespace android::hardware::input
 		// Methods
 		android::view::InputDevice getInputDevice(jint arg0);
 		jintArray getInputDeviceIds();
-		void registerInputDeviceListener(__JniBaseClass arg0, android::os::Handler arg1);
-		void unregisterInputDeviceListener(__JniBaseClass arg0);
+		void registerInputDeviceListener(JObject arg0, android::os::Handler arg1);
+		void unregisterInputDeviceListener(JObject arg0);
 	};
 } // namespace android::hardware::input
 

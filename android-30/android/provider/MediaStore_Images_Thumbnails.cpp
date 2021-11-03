@@ -103,11 +103,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MediaStore_Images_Thumbnails::MediaStore_Images_Thumbnails()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.MediaStore$Images$Thumbnails",
 			"()V"
 		) {}
@@ -177,7 +177,7 @@ namespace android::provider
 			arg4.object()
 		);
 	}
-	__JniBaseClass MediaStore_Images_Thumbnails::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
+	JObject MediaStore_Images_Thumbnails::query(android::content::ContentResolver arg0, android::net::Uri arg1, jarray arg2)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
@@ -188,7 +188,7 @@ namespace android::provider
 			arg2
 		);
 	}
-	__JniBaseClass MediaStore_Images_Thumbnails::queryMiniThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3)
+	JObject MediaStore_Images_Thumbnails::queryMiniThumbnail(android::content::ContentResolver arg0, jlong arg1, jint arg2, jarray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",
@@ -200,7 +200,7 @@ namespace android::provider
 			arg3
 		);
 	}
-	__JniBaseClass MediaStore_Images_Thumbnails::queryMiniThumbnails(android::content::ContentResolver arg0, android::net::Uri arg1, jint arg2, jarray arg3)
+	JObject MediaStore_Images_Thumbnails::queryMiniThumbnails(android::content::ContentResolver arg0, android::net::Uri arg1, jint arg2, jarray arg3)
 	{
 		return callStaticObjectMethod(
 			"android.provider.MediaStore$Images$Thumbnails",

@@ -5,19 +5,19 @@ namespace android::database::sqlite
 	// Fields
 	
 	// QAndroidJniObject forward
-	SQLiteDatabase_OpenParams::SQLiteDatabase_OpenParams(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SQLiteDatabase_OpenParams::SQLiteDatabase_OpenParams(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass SQLiteDatabase_OpenParams::getCursorFactory()
+	JObject SQLiteDatabase_OpenParams::getCursorFactory()
 	{
 		return callObjectMethod(
 			"getCursorFactory",
 			"()Landroid/database/sqlite/SQLiteDatabase$CursorFactory;"
 		);
 	}
-	__JniBaseClass SQLiteDatabase_OpenParams::getErrorHandler()
+	JObject SQLiteDatabase_OpenParams::getErrorHandler()
 	{
 		return callObjectMethod(
 			"getErrorHandler",

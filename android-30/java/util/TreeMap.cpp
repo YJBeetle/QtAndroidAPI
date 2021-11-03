@@ -15,7 +15,7 @@ namespace java::util
 			"java.util.TreeMap",
 			"()V"
 		) {}
-	TreeMap::TreeMap(__JniBaseClass arg0)
+	TreeMap::TreeMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.TreeMap",
 			"(Ljava/util/Comparator;)V",
@@ -23,7 +23,7 @@ namespace java::util
 		) {}
 	
 	// Methods
-	__JniBaseClass TreeMap::ceilingEntry(jobject arg0)
+	JObject TreeMap::ceilingEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"ceilingEntry",
@@ -53,14 +53,14 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::comparator()
+	JObject TreeMap::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
 			"()Ljava/util/Comparator;"
 		);
 	}
-	jobject TreeMap::compute(jobject arg0, __JniBaseClass arg1)
+	jobject TreeMap::compute(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"compute",
@@ -69,7 +69,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject TreeMap::computeIfAbsent(jobject arg0, __JniBaseClass arg1)
+	jobject TreeMap::computeIfAbsent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfAbsent",
@@ -78,7 +78,7 @@ namespace java::util
 			arg1.object()
 		).object<jobject>();
 	}
-	jobject TreeMap::computeIfPresent(jobject arg0, __JniBaseClass arg1)
+	jobject TreeMap::computeIfPresent(jobject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"computeIfPresent",
@@ -103,28 +103,28 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass TreeMap::descendingKeySet()
+	JObject TreeMap::descendingKeySet()
 	{
 		return callObjectMethod(
 			"descendingKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass TreeMap::descendingMap()
+	JObject TreeMap::descendingMap()
 	{
 		return callObjectMethod(
 			"descendingMap",
 			"()Ljava/util/NavigableMap;"
 		);
 	}
-	__JniBaseClass TreeMap::entrySet()
+	JObject TreeMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass TreeMap::firstEntry()
+	JObject TreeMap::firstEntry()
 	{
 		return callObjectMethod(
 			"firstEntry",
@@ -138,7 +138,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::floorEntry(jobject arg0)
+	JObject TreeMap::floorEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"floorEntry",
@@ -154,7 +154,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	void TreeMap::forEach(__JniBaseClass arg0)
+	void TreeMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -170,7 +170,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::headMap(jobject arg0, jboolean arg1)
+	JObject TreeMap::headMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -179,7 +179,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeMap::headMap(jobject arg0)
+	JObject TreeMap::headMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"headMap",
@@ -187,7 +187,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass TreeMap::higherEntry(jobject arg0)
+	JObject TreeMap::higherEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"higherEntry",
@@ -203,14 +203,14 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::keySet()
+	JObject TreeMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	__JniBaseClass TreeMap::lastEntry()
+	JObject TreeMap::lastEntry()
 	{
 		return callObjectMethod(
 			"lastEntry",
@@ -224,7 +224,7 @@ namespace java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::lowerEntry(jobject arg0)
+	JObject TreeMap::lowerEntry(jobject arg0)
 	{
 		return callObjectMethod(
 			"lowerEntry",
@@ -240,7 +240,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject TreeMap::merge(jobject arg0, jobject arg1, __JniBaseClass arg2)
+	jobject TreeMap::merge(jobject arg0, jobject arg1, JObject arg2)
 	{
 		return callObjectMethod(
 			"merge",
@@ -250,21 +250,21 @@ namespace java::util
 			arg2.object()
 		).object<jobject>();
 	}
-	__JniBaseClass TreeMap::navigableKeySet()
+	JObject TreeMap::navigableKeySet()
 	{
 		return callObjectMethod(
 			"navigableKeySet",
 			"()Ljava/util/NavigableSet;"
 		);
 	}
-	__JniBaseClass TreeMap::pollFirstEntry()
+	JObject TreeMap::pollFirstEntry()
 	{
 		return callObjectMethod(
 			"pollFirstEntry",
 			"()Ljava/util/Map$Entry;"
 		);
 	}
-	__JniBaseClass TreeMap::pollLastEntry()
+	JObject TreeMap::pollLastEntry()
 	{
 		return callObjectMethod(
 			"pollLastEntry",
@@ -280,7 +280,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void TreeMap::putAll(__JniBaseClass arg0)
+	void TreeMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -324,7 +324,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void TreeMap::replaceAll(__JniBaseClass arg0)
+	void TreeMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -339,7 +339,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject TreeMap::subMap(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -350,7 +350,7 @@ namespace java::util
 			arg3
 		);
 	}
-	__JniBaseClass TreeMap::subMap(jobject arg0, jobject arg1)
+	JObject TreeMap::subMap(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subMap",
@@ -359,7 +359,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeMap::tailMap(jobject arg0, jboolean arg1)
+	JObject TreeMap::tailMap(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -368,7 +368,7 @@ namespace java::util
 			arg1
 		);
 	}
-	__JniBaseClass TreeMap::tailMap(jobject arg0)
+	JObject TreeMap::tailMap(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailMap",
@@ -376,7 +376,7 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass TreeMap::values()
+	JObject TreeMap::values()
 	{
 		return callObjectMethod(
 			"values",

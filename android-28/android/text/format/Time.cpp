@@ -212,22 +212,22 @@ namespace android::text::format
 	}
 	
 	// QAndroidJniObject forward
-	Time::Time(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Time::Time(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Time::Time()
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.Time",
 			"()V"
 		) {}
 	Time::Time(android::text::format::Time &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.Time",
 			"(Landroid/text/format/Time;)V",
 			arg0.object()
 		) {}
 	Time::Time(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.text.format.Time",
 			"(Ljava/lang/String;)V",
 			arg0

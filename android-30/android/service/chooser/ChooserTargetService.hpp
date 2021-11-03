@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -36,8 +36,8 @@ namespace android::service::chooser
 		ChooserTargetService();
 		
 		// Methods
-		__JniBaseClass onBind(android::content::Intent arg0);
-		__JniBaseClass onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
+		JObject onBind(android::content::Intent arg0);
+		JObject onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
 	};
 } // namespace android::service::chooser
 

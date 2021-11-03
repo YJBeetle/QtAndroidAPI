@@ -7,7 +7,7 @@ namespace java::io
 	// Fields
 	
 	// QAndroidJniObject forward
-	Reader::Reader(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Reader::Reader(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

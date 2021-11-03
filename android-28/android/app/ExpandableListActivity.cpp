@@ -18,7 +18,7 @@ namespace android::app
 		) {}
 	
 	// Methods
-	__JniBaseClass ExpandableListActivity::getExpandableListAdapter()
+	JObject ExpandableListActivity::getExpandableListAdapter()
 	{
 		return callObjectMethod(
 			"getExpandableListAdapter",
@@ -65,7 +65,7 @@ namespace android::app
 			"()V"
 		);
 	}
-	void ExpandableListActivity::onCreateContextMenu(__JniBaseClass arg0, android::view::View arg1, __JniBaseClass arg2)
+	void ExpandableListActivity::onCreateContextMenu(JObject arg0, android::view::View arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"onCreateContextMenu",
@@ -91,7 +91,7 @@ namespace android::app
 			arg0
 		);
 	}
-	void ExpandableListActivity::setListAdapter(__JniBaseClass arg0)
+	void ExpandableListActivity::setListAdapter(JObject arg0)
 	{
 		callMethod<void>(
 			"setListAdapter",

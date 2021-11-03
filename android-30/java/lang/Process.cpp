@@ -9,24 +9,24 @@ namespace java::lang
 	// Fields
 	
 	// QAndroidJniObject forward
-	Process::Process(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Process::Process(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Process::Process()
-		: __JniBaseClass(
+		: JObject(
 			"java.lang.Process",
 			"()V"
 		) {}
 	
 	// Methods
-	__JniBaseClass Process::children()
+	JObject Process::children()
 	{
 		return callObjectMethod(
 			"children",
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	__JniBaseClass Process::descendants()
+	JObject Process::descendants()
 	{
 		return callObjectMethod(
 			"descendants",
@@ -75,7 +75,7 @@ namespace java::lang
 			"()Ljava/io/OutputStream;"
 		);
 	}
-	__JniBaseClass Process::info()
+	JObject Process::info()
 	{
 		return callObjectMethod(
 			"info",
@@ -110,7 +110,7 @@ namespace java::lang
 			"()Z"
 		);
 	}
-	__JniBaseClass Process::toHandle()
+	JObject Process::toHandle()
 	{
 		return callObjectMethod(
 			"toHandle",

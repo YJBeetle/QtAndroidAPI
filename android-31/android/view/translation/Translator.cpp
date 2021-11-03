@@ -7,7 +7,7 @@ namespace android::view::translation
 	// Fields
 	
 	// QAndroidJniObject forward
-	Translator::Translator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Translator::Translator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,7 +26,7 @@ namespace android::view::translation
 			"()Z"
 		);
 	}
-	void Translator::translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, __JniBaseClass arg2, __JniBaseClass arg3)
+	void Translator::translate(android::view::translation::TranslationRequest arg0, android::os::CancellationSignal arg1, JObject arg2, JObject arg3)
 	{
 		callMethod<void>(
 			"translate",

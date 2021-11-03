@@ -7,7 +7,7 @@ namespace android::printservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	PrintDocument::PrintDocument(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PrintDocument::PrintDocument(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

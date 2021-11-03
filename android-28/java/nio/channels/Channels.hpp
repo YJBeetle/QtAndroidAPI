@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::io
 {
@@ -37,28 +37,28 @@ namespace java::nio::charset
 
 namespace java::nio::channels
 {
-	class Channels : public __JniBaseClass
+	class Channels : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Channels(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Channels(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Channels(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass newChannel(java::io::InputStream arg0);
-		static __JniBaseClass newChannel(java::io::OutputStream arg0);
-		static java::io::InputStream newInputStream(__JniBaseClass arg0);
-		static java::io::OutputStream newOutputStream(__JniBaseClass arg0);
-		static java::io::Reader newReader(__JniBaseClass arg0, jstring arg1);
-		static java::io::Reader newReader(__JniBaseClass arg0, java::nio::charset::Charset arg1);
-		static java::io::Reader newReader(__JniBaseClass arg0, java::nio::charset::CharsetDecoder arg1, jint arg2);
-		static java::io::Writer newWriter(__JniBaseClass arg0, jstring arg1);
-		static java::io::Writer newWriter(__JniBaseClass arg0, java::nio::charset::Charset arg1);
-		static java::io::Writer newWriter(__JniBaseClass arg0, java::nio::charset::CharsetEncoder arg1, jint arg2);
+		static JObject newChannel(java::io::InputStream arg0);
+		static JObject newChannel(java::io::OutputStream arg0);
+		static java::io::InputStream newInputStream(JObject arg0);
+		static java::io::OutputStream newOutputStream(JObject arg0);
+		static java::io::Reader newReader(JObject arg0, jstring arg1);
+		static java::io::Reader newReader(JObject arg0, java::nio::charset::Charset arg1);
+		static java::io::Reader newReader(JObject arg0, java::nio::charset::CharsetDecoder arg1, jint arg2);
+		static java::io::Writer newWriter(JObject arg0, jstring arg1);
+		static java::io::Writer newWriter(JObject arg0, java::nio::charset::Charset arg1);
+		static java::io::Writer newWriter(JObject arg0, java::nio::charset::CharsetEncoder arg1, jint arg2);
 	};
 } // namespace java::nio::channels
 

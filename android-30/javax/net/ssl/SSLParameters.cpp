@@ -5,22 +5,22 @@ namespace javax::net::ssl
 	// Fields
 	
 	// QAndroidJniObject forward
-	SSLParameters::SSLParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SSLParameters::SSLParameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	SSLParameters::SSLParameters()
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.SSLParameters",
 			"()V"
 		) {}
 	SSLParameters::SSLParameters(jarray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.SSLParameters",
 			"([Ljava/lang/String;)V",
 			arg0
 		) {}
 	SSLParameters::SSLParameters(jarray arg0, jarray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.net.ssl.SSLParameters",
 			"([Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
@@ -28,7 +28,7 @@ namespace javax::net::ssl
 		) {}
 	
 	// Methods
-	__JniBaseClass SSLParameters::getAlgorithmConstraints()
+	JObject SSLParameters::getAlgorithmConstraints()
 	{
 		return callObjectMethod(
 			"getAlgorithmConstraints",
@@ -84,14 +84,14 @@ namespace javax::net::ssl
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	__JniBaseClass SSLParameters::getSNIMatchers()
+	JObject SSLParameters::getSNIMatchers()
 	{
 		return callObjectMethod(
 			"getSNIMatchers",
 			"()Ljava/util/Collection;"
 		);
 	}
-	__JniBaseClass SSLParameters::getServerNames()
+	JObject SSLParameters::getServerNames()
 	{
 		return callObjectMethod(
 			"getServerNames",
@@ -112,7 +112,7 @@ namespace javax::net::ssl
 			"()Z"
 		);
 	}
-	void SSLParameters::setAlgorithmConstraints(__JniBaseClass arg0)
+	void SSLParameters::setAlgorithmConstraints(JObject arg0)
 	{
 		callMethod<void>(
 			"setAlgorithmConstraints",
@@ -176,7 +176,7 @@ namespace javax::net::ssl
 			arg0
 		);
 	}
-	void SSLParameters::setSNIMatchers(__JniBaseClass arg0)
+	void SSLParameters::setSNIMatchers(JObject arg0)
 	{
 		callMethod<void>(
 			"setSNIMatchers",
@@ -184,7 +184,7 @@ namespace javax::net::ssl
 			arg0.object()
 		);
 	}
-	void SSLParameters::setServerNames(__JniBaseClass arg0)
+	void SSLParameters::setServerNames(JObject arg0)
 	{
 		callMethod<void>(
 			"setServerNames",

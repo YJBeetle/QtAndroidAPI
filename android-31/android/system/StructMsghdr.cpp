@@ -33,11 +33,11 @@ namespace android::system
 	}
 	
 	// QAndroidJniObject forward
-	StructMsghdr::StructMsghdr(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StructMsghdr::StructMsghdr(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StructMsghdr::StructMsghdr(java::net::SocketAddress arg0, jarray arg1, jarray arg2, jint arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.system.StructMsghdr",
 			"(Ljava/net/SocketAddress;[Ljava/nio/ByteBuffer;[Landroid/system/StructCmsghdr;I)V",
 			arg0.object(),

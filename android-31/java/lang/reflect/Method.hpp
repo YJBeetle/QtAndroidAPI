@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./AccessibleObject.hpp"
 #include "./Executable.hpp"
 
@@ -28,15 +28,15 @@ namespace java::lang::reflect
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAnnotatedReturnType();
-		__JniBaseClass getAnnotation(jclass arg0);
+		JObject getAnnotatedReturnType();
+		JObject getAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jclass getDeclaringClass();
 		jobject getDefaultValue();
 		jarray getExceptionTypes();
 		jarray getGenericExceptionTypes();
 		jarray getGenericParameterTypes();
-		__JniBaseClass getGenericReturnType();
+		JObject getGenericReturnType();
 		jint getModifiers();
 		jstring getName();
 		jarray getParameterAnnotations();

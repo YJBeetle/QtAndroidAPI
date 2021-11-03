@@ -16,12 +16,12 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	CalendarContract_EventsEntity::CalendarContract_EventsEntity(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CalendarContract_EventsEntity::CalendarContract_EventsEntity(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass CalendarContract_EventsEntity::newEntityIterator(__JniBaseClass arg0, android::content::ContentProviderClient arg1)
+	JObject CalendarContract_EventsEntity::newEntityIterator(JObject arg0, android::content::ContentProviderClient arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$EventsEntity",
@@ -31,7 +31,7 @@ namespace android::provider
 			arg1.object()
 		);
 	}
-	__JniBaseClass CalendarContract_EventsEntity::newEntityIterator(__JniBaseClass arg0, android::content::ContentResolver arg1)
+	JObject CalendarContract_EventsEntity::newEntityIterator(JObject arg0, android::content::ContentResolver arg1)
 	{
 		return callStaticObjectMethod(
 			"android.provider.CalendarContract$EventsEntity",

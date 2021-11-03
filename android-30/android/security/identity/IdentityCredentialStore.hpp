@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,14 +17,14 @@ namespace android::security::identity
 
 namespace android::security::identity
 {
-	class IdentityCredentialStore : public __JniBaseClass
+	class IdentityCredentialStore : public JObject
 	{
 	public:
 		// Fields
 		static jint CIPHERSUITE_ECDHE_HKDF_ECDSA_WITH_AES_256_GCM_SHA256();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IdentityCredentialStore(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IdentityCredentialStore(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IdentityCredentialStore(QAndroidJniObject obj);
 		
 		// Constructors

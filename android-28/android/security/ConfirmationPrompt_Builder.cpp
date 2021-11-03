@@ -7,11 +7,11 @@ namespace android::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConfirmationPrompt_Builder::ConfirmationPrompt_Builder(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.security.ConfirmationPrompt$Builder",
 			"(Landroid/content/Context;)V",
 			arg0.object()

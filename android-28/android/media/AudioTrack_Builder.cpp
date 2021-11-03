@@ -8,11 +8,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioTrack_Builder::AudioTrack_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioTrack_Builder::AudioTrack_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioTrack_Builder::AudioTrack_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioTrack$Builder",
 			"()V"
 		) {}

@@ -17,16 +17,16 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	MotionEvent_PointerProperties::MotionEvent_PointerProperties(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MotionEvent_PointerProperties::MotionEvent_PointerProperties(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	MotionEvent_PointerProperties::MotionEvent_PointerProperties()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.MotionEvent$PointerProperties",
 			"()V"
 		) {}
 	MotionEvent_PointerProperties::MotionEvent_PointerProperties(android::view::MotionEvent_PointerProperties &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.MotionEvent$PointerProperties",
 			"(Landroid/view/MotionEvent$PointerProperties;)V",
 			arg0.object()

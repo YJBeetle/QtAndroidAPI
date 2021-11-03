@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::os
 {
-	class Debug_MemoryInfo : public __JniBaseClass
+	class Debug_MemoryInfo : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		jint dalvikPrivateDirty();
 		jint dalvikPss();
 		jint dalvikSharedDirty();
@@ -25,7 +25,7 @@ namespace android::os
 		jint otherSharedDirty();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Debug_MemoryInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Debug_MemoryInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Debug_MemoryInfo(QAndroidJniObject obj);
 		
 		// Constructors
@@ -34,7 +34,7 @@ namespace android::os
 		// Methods
 		jint describeContents();
 		jstring getMemoryStat(jstring arg0);
-		__JniBaseClass getMemoryStats();
+		JObject getMemoryStats();
 		jint getTotalPrivateClean();
 		jint getTotalPrivateDirty();
 		jint getTotalPss();

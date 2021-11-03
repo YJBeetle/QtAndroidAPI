@@ -26,7 +26,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiConfiguration_GroupMgmtCipher::WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration_GroupMgmtCipher::WifiConfiguration_GroupMgmtCipher(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

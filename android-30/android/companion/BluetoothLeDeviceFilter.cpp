@@ -4,7 +4,7 @@
 namespace android::companion
 {
 	// Fields
-	__JniBaseClass BluetoothLeDeviceFilter::CREATOR()
+	JObject BluetoothLeDeviceFilter::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.companion.BluetoothLeDeviceFilter",
@@ -14,7 +14,7 @@ namespace android::companion
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothLeDeviceFilter::BluetoothLeDeviceFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothLeDeviceFilter::BluetoothLeDeviceFilter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

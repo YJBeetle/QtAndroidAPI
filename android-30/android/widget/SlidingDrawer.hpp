@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
@@ -35,9 +35,9 @@ namespace android::widget
 		SlidingDrawer(QAndroidJniObject obj);
 		
 		// Constructors
-		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1);
-		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		SlidingDrawer(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		SlidingDrawer(android::content::Context arg0, JObject arg1);
+		SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2);
+		SlidingDrawer(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void animateClose();
@@ -53,9 +53,9 @@ namespace android::widget
 		jboolean onInterceptTouchEvent(android::view::MotionEvent arg0);
 		jboolean onTouchEvent(android::view::MotionEvent arg0);
 		void open();
-		void setOnDrawerCloseListener(__JniBaseClass arg0);
-		void setOnDrawerOpenListener(__JniBaseClass arg0);
-		void setOnDrawerScrollListener(__JniBaseClass arg0);
+		void setOnDrawerCloseListener(JObject arg0);
+		void setOnDrawerOpenListener(JObject arg0);
+		void setOnDrawerScrollListener(JObject arg0);
 		void toggle();
 		void unlock();
 	};

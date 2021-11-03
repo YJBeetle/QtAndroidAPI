@@ -16,7 +16,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass Parcel::STRING_CREATOR()
+	JObject Parcel::STRING_CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.Parcel",
@@ -26,7 +26,7 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	Parcel::Parcel(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Parcel::Parcel(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -126,7 +126,7 @@ namespace android::os
 			"()Ljava/util/ArrayList;"
 		);
 	}
-	jobjectArray Parcel::createTypedArray(__JniBaseClass arg0)
+	jobjectArray Parcel::createTypedArray(JObject arg0)
 	{
 		return callObjectMethod(
 			"createTypedArray",
@@ -134,7 +134,7 @@ namespace android::os
 			arg0.object()
 		).object<jobjectArray>();
 	}
-	java::util::ArrayList Parcel::createTypedArrayList(__JniBaseClass arg0)
+	java::util::ArrayList Parcel::createTypedArrayList(JObject arg0)
 	{
 		return callObjectMethod(
 			"createTypedArrayList",
@@ -142,7 +142,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::util::ArrayMap Parcel::createTypedArrayMap(__JniBaseClass arg0)
+	android::util::ArrayMap Parcel::createTypedArrayMap(JObject arg0)
 	{
 		return callObjectMethod(
 			"createTypedArrayMap",
@@ -150,7 +150,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	android::util::SparseArray Parcel::createTypedSparseArray(__JniBaseClass arg0)
+	android::util::SparseArray Parcel::createTypedSparseArray(JObject arg0)
 	{
 		return callObjectMethod(
 			"createTypedSparseArray",
@@ -232,7 +232,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::readBinderList(__JniBaseClass arg0)
+	void Parcel::readBinderList(JObject arg0)
 	{
 		callMethod<void>(
 			"readBinderList",
@@ -369,7 +369,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::readList(__JniBaseClass arg0, java::lang::ClassLoader arg1)
+	void Parcel::readList(JObject arg0, java::lang::ClassLoader arg1)
 	{
 		callMethod<void>(
 			"readList",
@@ -393,7 +393,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::readMap(__JniBaseClass arg0, java::lang::ClassLoader arg1)
+	void Parcel::readMap(JObject arg0, java::lang::ClassLoader arg1)
 	{
 		callMethod<void>(
 			"readMap",
@@ -402,7 +402,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	__JniBaseClass Parcel::readParcelable(java::lang::ClassLoader arg0)
+	JObject Parcel::readParcelable(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readParcelable",
@@ -418,7 +418,7 @@ namespace android::os
 			arg0.object()
 		).object<jarray>();
 	}
-	__JniBaseClass Parcel::readParcelableCreator(java::lang::ClassLoader arg0)
+	JObject Parcel::readParcelableCreator(java::lang::ClassLoader arg0)
 	{
 		return callObjectMethod(
 			"readParcelableCreator",
@@ -426,7 +426,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	__JniBaseClass Parcel::readParcelableList(__JniBaseClass arg0, java::lang::ClassLoader arg1)
+	JObject Parcel::readParcelableList(JObject arg0, java::lang::ClassLoader arg1)
 	{
 		return callObjectMethod(
 			"readParcelableList",
@@ -450,7 +450,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	__JniBaseClass Parcel::readSerializable()
+	JObject Parcel::readSerializable()
 	{
 		return callObjectMethod(
 			"readSerializable",
@@ -501,7 +501,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::readStringList(__JniBaseClass arg0)
+	void Parcel::readStringList(JObject arg0)
 	{
 		callMethod<void>(
 			"readStringList",
@@ -509,14 +509,14 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	__JniBaseClass Parcel::readStrongBinder()
+	JObject Parcel::readStrongBinder()
 	{
 		return callObjectMethod(
 			"readStrongBinder",
 			"()Landroid/os/IBinder;"
 		);
 	}
-	void Parcel::readTypedArray(jobjectArray arg0, __JniBaseClass arg1)
+	void Parcel::readTypedArray(jobjectArray arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"readTypedArray",
@@ -525,7 +525,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	void Parcel::readTypedList(__JniBaseClass arg0, __JniBaseClass arg1)
+	void Parcel::readTypedList(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"readTypedList",
@@ -534,7 +534,7 @@ namespace android::os
 			arg1.object()
 		);
 	}
-	jobject Parcel::readTypedObject(__JniBaseClass arg0)
+	jobject Parcel::readTypedObject(JObject arg0)
 	{
 		return callObjectMethod(
 			"readTypedObject",
@@ -607,7 +607,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeBinderList(__JniBaseClass arg0)
+	void Parcel::writeBinderList(JObject arg0)
 	{
 		callMethod<void>(
 			"writeBinderList",
@@ -745,7 +745,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeList(__JniBaseClass arg0)
+	void Parcel::writeList(JObject arg0)
 	{
 		callMethod<void>(
 			"writeList",
@@ -769,7 +769,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeMap(__JniBaseClass arg0)
+	void Parcel::writeMap(JObject arg0)
 	{
 		callMethod<void>(
 			"writeMap",
@@ -784,7 +784,7 @@ namespace android::os
 			"()V"
 		);
 	}
-	void Parcel::writeParcelable(__JniBaseClass arg0, jint arg1)
+	void Parcel::writeParcelable(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"writeParcelable",
@@ -802,7 +802,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeParcelableCreator(__JniBaseClass arg0)
+	void Parcel::writeParcelableCreator(JObject arg0)
 	{
 		callMethod<void>(
 			"writeParcelableCreator",
@@ -810,7 +810,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeParcelableList(__JniBaseClass arg0, jint arg1)
+	void Parcel::writeParcelableList(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"writeParcelableList",
@@ -827,7 +827,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeSerializable(__JniBaseClass arg0)
+	void Parcel::writeSerializable(JObject arg0)
 	{
 		callMethod<void>(
 			"writeSerializable",
@@ -883,7 +883,7 @@ namespace android::os
 			arg0
 		);
 	}
-	void Parcel::writeStringList(__JniBaseClass arg0)
+	void Parcel::writeStringList(JObject arg0)
 	{
 		callMethod<void>(
 			"writeStringList",
@@ -891,7 +891,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeStrongBinder(__JniBaseClass arg0)
+	void Parcel::writeStrongBinder(JObject arg0)
 	{
 		callMethod<void>(
 			"writeStrongBinder",
@@ -899,7 +899,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeStrongInterface(__JniBaseClass arg0)
+	void Parcel::writeStrongInterface(JObject arg0)
 	{
 		callMethod<void>(
 			"writeStrongInterface",
@@ -925,7 +925,7 @@ namespace android::os
 			arg1
 		);
 	}
-	void Parcel::writeTypedList(__JniBaseClass arg0)
+	void Parcel::writeTypedList(JObject arg0)
 	{
 		callMethod<void>(
 			"writeTypedList",
@@ -933,7 +933,7 @@ namespace android::os
 			arg0.object()
 		);
 	}
-	void Parcel::writeTypedObject(__JniBaseClass arg0, jint arg1)
+	void Parcel::writeTypedObject(JObject arg0, jint arg1)
 	{
 		callMethod<void>(
 			"writeTypedObject",

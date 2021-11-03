@@ -86,7 +86,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jstring arg0, __JniBaseClass arg1)
+	void AlertDialog::setButton(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton",
@@ -104,7 +104,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton(jint arg0, jstring arg1, __JniBaseClass arg2)
+	void AlertDialog::setButton(jint arg0, jstring arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"setButton",
@@ -124,7 +124,7 @@ namespace android::app
 			arg2.object()
 		);
 	}
-	void AlertDialog::setButton2(jstring arg0, __JniBaseClass arg1)
+	void AlertDialog::setButton2(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton2",
@@ -142,7 +142,7 @@ namespace android::app
 			arg1.object()
 		);
 	}
-	void AlertDialog::setButton3(jstring arg0, __JniBaseClass arg1)
+	void AlertDialog::setButton3(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setButton3",

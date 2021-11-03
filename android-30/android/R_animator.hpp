@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../__JniBaseClass.hpp"
+#include "../JObject.hpp"
 
 
 namespace android
 {
-	class R_animator : public __JniBaseClass
+	class R_animator : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android
 		static jint fade_out();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit R_animator(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit R_animator(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		R_animator(QAndroidJniObject obj);
 		
 		// Constructors

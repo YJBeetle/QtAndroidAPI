@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net
 {
@@ -13,13 +13,13 @@ namespace java::net
 
 namespace android::net::ipsec::ike
 {
-	class IkeSessionConnectionInfo : public __JniBaseClass
+	class IkeSessionConnectionInfo : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit IkeSessionConnectionInfo(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit IkeSessionConnectionInfo(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		IkeSessionConnectionInfo(QAndroidJniObject obj);
 		
 		// Constructors

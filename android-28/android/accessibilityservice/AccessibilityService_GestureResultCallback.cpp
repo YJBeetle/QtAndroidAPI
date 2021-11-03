@@ -6,11 +6,11 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityService_GestureResultCallback::AccessibilityService_GestureResultCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.accessibilityservice.AccessibilityService$GestureResultCallback",
 			"()V"
 		) {}

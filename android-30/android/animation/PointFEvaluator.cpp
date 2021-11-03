@@ -6,16 +6,16 @@ namespace android::animation
 	// Fields
 	
 	// QAndroidJniObject forward
-	PointFEvaluator::PointFEvaluator(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PointFEvaluator::PointFEvaluator(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PointFEvaluator::PointFEvaluator()
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.PointFEvaluator",
 			"()V"
 		) {}
 	PointFEvaluator::PointFEvaluator(android::graphics::PointF arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.animation.PointFEvaluator",
 			"(Landroid/graphics/PointF;)V",
 			arg0.object()

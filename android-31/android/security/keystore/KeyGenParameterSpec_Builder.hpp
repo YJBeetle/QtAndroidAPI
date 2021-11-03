@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::security::keystore
 {
@@ -21,13 +21,13 @@ namespace javax::security::auth::x500
 
 namespace android::security::keystore
 {
-	class KeyGenParameterSpec_Builder : public __JniBaseClass
+	class KeyGenParameterSpec_Builder : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit KeyGenParameterSpec_Builder(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit KeyGenParameterSpec_Builder(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		KeyGenParameterSpec_Builder(QAndroidJniObject obj);
 		
 		// Constructors
@@ -35,7 +35,7 @@ namespace android::security::keystore
 		
 		// Methods
 		android::security::keystore::KeyGenParameterSpec build();
-		android::security::keystore::KeyGenParameterSpec_Builder setAlgorithmParameterSpec(__JniBaseClass arg0);
+		android::security::keystore::KeyGenParameterSpec_Builder setAlgorithmParameterSpec(JObject arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setAttestKeyAlias(jstring arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setAttestationChallenge(jbyteArray arg0);
 		android::security::keystore::KeyGenParameterSpec_Builder setBlockModes(jarray arg0);

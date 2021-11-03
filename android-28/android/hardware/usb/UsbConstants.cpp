@@ -236,11 +236,11 @@ namespace android::hardware::usb
 	}
 	
 	// QAndroidJniObject forward
-	UsbConstants::UsbConstants(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UsbConstants::UsbConstants(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	UsbConstants::UsbConstants()
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.usb.UsbConstants",
 			"()V"
 		) {}

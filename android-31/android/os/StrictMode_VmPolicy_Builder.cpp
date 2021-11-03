@@ -6,16 +6,16 @@ namespace android::os
 	// Fields
 	
 	// QAndroidJniObject forward
-	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.os.StrictMode$VmPolicy$Builder",
 			"()V"
 		) {}
 	StrictMode_VmPolicy_Builder::StrictMode_VmPolicy_Builder(android::os::StrictMode_VmPolicy arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.StrictMode$VmPolicy$Builder",
 			"(Landroid/os/StrictMode$VmPolicy;)V",
 			arg0.object()
@@ -155,7 +155,7 @@ namespace android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyListener(__JniBaseClass arg0, __JniBaseClass arg1)
+	android::os::StrictMode_VmPolicy_Builder StrictMode_VmPolicy_Builder::penaltyListener(JObject arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"penaltyListener",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../AbstractCursor.hpp"
 #include "../AbstractWindowedCursor.hpp"
 
@@ -29,8 +29,8 @@ namespace android::database::sqlite
 		SQLiteCursor(QAndroidJniObject obj);
 		
 		// Constructors
-		SQLiteCursor(__JniBaseClass arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2);
-		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, __JniBaseClass arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3);
+		SQLiteCursor(JObject arg0, jstring arg1, android::database::sqlite::SQLiteQuery arg2);
+		SQLiteCursor(android::database::sqlite::SQLiteDatabase arg0, JObject arg1, jstring arg2, android::database::sqlite::SQLiteQuery arg3);
 		
 		// Methods
 		void close();

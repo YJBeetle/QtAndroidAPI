@@ -6,12 +6,12 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	RelativeDateTimeFormatter_FormattedRelativeDateTime::RelativeDateTimeFormatter_FormattedRelativeDateTime(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RelativeDateTimeFormatter_FormattedRelativeDateTime::RelativeDateTimeFormatter_FormattedRelativeDateTime(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass RelativeDateTimeFormatter_FormattedRelativeDateTime::appendTo(__JniBaseClass arg0)
+	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::appendTo(JObject arg0)
 	{
 		return callObjectMethod(
 			"appendTo",
@@ -51,7 +51,7 @@ namespace android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	__JniBaseClass RelativeDateTimeFormatter_FormattedRelativeDateTime::toCharacterIterator()
+	JObject RelativeDateTimeFormatter_FormattedRelativeDateTime::toCharacterIterator()
 	{
 		return callObjectMethod(
 			"toCharacterIterator",

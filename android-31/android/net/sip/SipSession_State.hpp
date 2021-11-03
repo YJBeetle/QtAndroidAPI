@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::net::sip
 {
-	class SipSession_State : public __JniBaseClass
+	class SipSession_State : public JObject
 	{
 	public:
 		// Fields
@@ -22,7 +22,7 @@ namespace android::net::sip
 		static jint REGISTERING();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SipSession_State(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SipSession_State(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SipSession_State(QAndroidJniObject obj);
 		
 		// Constructors

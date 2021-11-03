@@ -8,23 +8,23 @@ namespace android::hardware::fingerprint
 	// Fields
 	
 	// QAndroidJniObject forward
-	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(java::security::Signature arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljava/security/Signature;)V",
 			arg0.object()
 		) {}
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Cipher arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Cipher;)V",
 			arg0.object()
 		) {}
 	FingerprintManager_CryptoObject::FingerprintManager_CryptoObject(javax::crypto::Mac arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Mac;)V",
 			arg0.object()

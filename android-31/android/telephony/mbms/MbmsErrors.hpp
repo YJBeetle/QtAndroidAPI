@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::mbms
 {
-	class MbmsErrors : public __JniBaseClass
+	class MbmsErrors : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::telephony::mbms
 		static jint UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MbmsErrors(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MbmsErrors(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MbmsErrors(QAndroidJniObject obj);
 		
 		// Constructors

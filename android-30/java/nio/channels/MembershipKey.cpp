@@ -7,7 +7,7 @@ namespace java::nio::channels
 	// Fields
 	
 	// QAndroidJniObject forward
-	MembershipKey::MembershipKey(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MembershipKey::MembershipKey(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -20,7 +20,7 @@ namespace java::nio::channels
 			arg0.object()
 		);
 	}
-	__JniBaseClass MembershipKey::channel()
+	JObject MembershipKey::channel()
 	{
 		return callObjectMethod(
 			"channel",

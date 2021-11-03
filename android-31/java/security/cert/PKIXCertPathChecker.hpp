@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::security::cert
 {
@@ -9,22 +9,22 @@ namespace java::security::cert
 
 namespace java::security::cert
 {
-	class PKIXCertPathChecker : public __JniBaseClass
+	class PKIXCertPathChecker : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PKIXCertPathChecker(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PKIXCertPathChecker(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PKIXCertPathChecker(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		void check(java::security::cert::Certificate arg0);
-		void check(java::security::cert::Certificate arg0, __JniBaseClass arg1);
+		void check(java::security::cert::Certificate arg0, JObject arg1);
 		jobject clone();
-		__JniBaseClass getSupportedExtensions();
+		JObject getSupportedExtensions();
 		void init(jboolean arg0);
 		jboolean isForwardCheckingSupported();
 	};

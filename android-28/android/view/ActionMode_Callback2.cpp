@@ -8,11 +8,11 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	ActionMode_Callback2::ActionMode_Callback2(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ActionMode_Callback2::ActionMode_Callback2(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ActionMode_Callback2::ActionMode_Callback2()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.ActionMode$Callback2",
 			"()V"
 		) {}

@@ -194,11 +194,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	R_string::R_string(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_string::R_string(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_string::R_string()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$string",
 			"()V"
 		) {}

@@ -20,7 +20,7 @@ namespace java::net
 	}
 	
 	// QAndroidJniObject forward
-	IDN::IDN(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	IDN::IDN(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

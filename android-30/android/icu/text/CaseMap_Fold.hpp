@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "./CaseMap.hpp"
 
 namespace android::icu::text
@@ -26,7 +26,7 @@ namespace android::icu::text
 		// Constructors
 		
 		// Methods
-		__JniBaseClass apply(jstring arg0, __JniBaseClass arg1, android::icu::text::Edits arg2);
+		JObject apply(jstring arg0, JObject arg1, android::icu::text::Edits arg2);
 		jstring apply(jstring arg0);
 		android::icu::text::CaseMap_Fold omitUnchangedText();
 		android::icu::text::CaseMap_Fold turkic();

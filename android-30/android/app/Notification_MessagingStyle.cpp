@@ -74,14 +74,14 @@ namespace android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	__JniBaseClass Notification_MessagingStyle::getHistoricMessages()
+	JObject Notification_MessagingStyle::getHistoricMessages()
 	{
 		return callObjectMethod(
 			"getHistoricMessages",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass Notification_MessagingStyle::getMessages()
+	JObject Notification_MessagingStyle::getMessages()
 	{
 		return callObjectMethod(
 			"getMessages",

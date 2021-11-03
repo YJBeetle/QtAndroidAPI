@@ -7,7 +7,7 @@ namespace android::accessibilityservice
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityService_ScreenshotResult::AccessibilityService_ScreenshotResult(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityService_ScreenshotResult::AccessibilityService_ScreenshotResult(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

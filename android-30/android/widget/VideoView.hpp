@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 #include "../view/SurfaceView.hpp"
 
@@ -54,9 +54,9 @@ namespace android::widget
 		
 		// Constructors
 		VideoView(android::content::Context arg0);
-		VideoView(android::content::Context arg0, __JniBaseClass arg1);
-		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		VideoView(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		VideoView(android::content::Context arg0, JObject arg1);
+		VideoView(android::content::Context arg0, JObject arg1, jint arg2);
+		VideoView(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void addSubtitleSource(java::io::InputStream arg0, android::media::MediaFormat arg1);
@@ -80,13 +80,13 @@ namespace android::widget
 		void setAudioAttributes(android::media::AudioAttributes arg0);
 		void setAudioFocusRequest(jint arg0);
 		void setMediaController(android::widget::MediaController arg0);
-		void setOnCompletionListener(__JniBaseClass arg0);
-		void setOnErrorListener(__JniBaseClass arg0);
-		void setOnInfoListener(__JniBaseClass arg0);
-		void setOnPreparedListener(__JniBaseClass arg0);
+		void setOnCompletionListener(JObject arg0);
+		void setOnErrorListener(JObject arg0);
+		void setOnInfoListener(JObject arg0);
+		void setOnPreparedListener(JObject arg0);
 		void setVideoPath(jstring arg0);
 		void setVideoURI(android::net::Uri arg0);
-		void setVideoURI(android::net::Uri arg0, __JniBaseClass arg1);
+		void setVideoURI(android::net::Uri arg0, JObject arg1);
 		void start();
 		void stopPlayback();
 		void suspend();

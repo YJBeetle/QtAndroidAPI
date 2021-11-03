@@ -8,16 +8,16 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	View_DragShadowBuilder::View_DragShadowBuilder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	View_DragShadowBuilder::View_DragShadowBuilder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	View_DragShadowBuilder::View_DragShadowBuilder()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.View$DragShadowBuilder",
 			"()V"
 		) {}
 	View_DragShadowBuilder::View_DragShadowBuilder(android::view::View arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.View$DragShadowBuilder",
 			"(Landroid/view/View;)V",
 			arg0.object()

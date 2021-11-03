@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::telephony
 {
@@ -13,7 +13,7 @@ namespace android::telephony
 
 namespace android::telephony
 {
-	class SmsMessage : public __JniBaseClass
+	class SmsMessage : public JObject
 	{
 	public:
 		// Fields
@@ -29,7 +29,7 @@ namespace android::telephony
 		static jint MAX_USER_DATA_SEPTETS_WITH_HEADER();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SmsMessage(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SmsMessage(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SmsMessage(QAndroidJniObject obj);
 		
 		// Constructors

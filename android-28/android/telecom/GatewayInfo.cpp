@@ -5,7 +5,7 @@
 namespace android::telecom
 {
 	// Fields
-	__JniBaseClass GatewayInfo::CREATOR()
+	JObject GatewayInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telecom.GatewayInfo",
@@ -15,11 +15,11 @@ namespace android::telecom
 	}
 	
 	// QAndroidJniObject forward
-	GatewayInfo::GatewayInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GatewayInfo::GatewayInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	GatewayInfo::GatewayInfo(jstring arg0, android::net::Uri arg1, android::net::Uri arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.telecom.GatewayInfo",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
 			arg0,

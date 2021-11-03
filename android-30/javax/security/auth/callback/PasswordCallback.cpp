@@ -5,11 +5,11 @@ namespace javax::security::auth::callback
 	// Fields
 	
 	// QAndroidJniObject forward
-	PasswordCallback::PasswordCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PasswordCallback::PasswordCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PasswordCallback::PasswordCallback(jstring arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"javax.security.auth.callback.PasswordCallback",
 			"(Ljava/lang/String;Z)V",
 			arg0,

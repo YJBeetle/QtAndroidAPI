@@ -75,7 +75,7 @@ namespace android::hardware::camera2
 	}
 	
 	// QAndroidJniObject forward
-	CameraDevice::CameraDevice(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	CameraDevice::CameraDevice(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -95,7 +95,7 @@ namespace android::hardware::camera2
 			arg0
 		);
 	}
-	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, __JniBaseClass arg1)
+	android::hardware::camera2::CaptureRequest_Builder CameraDevice::createCaptureRequest(jint arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"createCaptureRequest",
@@ -112,7 +112,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice::createCaptureSession(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"createCaptureSession",
@@ -122,7 +122,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraDevice::createCaptureSessionByOutputConfigurations(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createCaptureSessionByOutputConfigurations(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"createCaptureSessionByOutputConfigurations",
@@ -132,7 +132,7 @@ namespace android::hardware::camera2
 			arg2.object()
 		);
 	}
-	void CameraDevice::createConstrainedHighSpeedCaptureSession(__JniBaseClass arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
+	void CameraDevice::createConstrainedHighSpeedCaptureSession(JObject arg0, android::hardware::camera2::CameraCaptureSession_StateCallback arg1, android::os::Handler arg2)
 	{
 		callMethod<void>(
 			"createConstrainedHighSpeedCaptureSession",
@@ -158,7 +158,7 @@ namespace android::hardware::camera2
 			arg0.object()
 		);
 	}
-	void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
+	void CameraDevice::createReprocessableCaptureSession(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
 	{
 		callMethod<void>(
 			"createReprocessableCaptureSession",
@@ -169,7 +169,7 @@ namespace android::hardware::camera2
 			arg3.object()
 		);
 	}
-	void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, __JniBaseClass arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
+	void CameraDevice::createReprocessableCaptureSessionByConfigurations(android::hardware::camera2::params::InputConfiguration arg0, JObject arg1, android::hardware::camera2::CameraCaptureSession_StateCallback arg2, android::os::Handler arg3)
 	{
 		callMethod<void>(
 			"createReprocessableCaptureSessionByConfigurations",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::media::midi
 {
@@ -13,13 +13,13 @@ namespace android::media::midi
 
 namespace android::media::midi
 {
-	class MidiManager_DeviceCallback : public __JniBaseClass
+	class MidiManager_DeviceCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MidiManager_DeviceCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MidiManager_DeviceCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MidiManager_DeviceCallback(QAndroidJniObject obj);
 		
 		// Constructors

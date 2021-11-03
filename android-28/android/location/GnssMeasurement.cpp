@@ -46,7 +46,7 @@ namespace android::location
 			"ADR_STATE_VALID"
 		);
 	}
-	__JniBaseClass GnssMeasurement::CREATOR()
+	JObject GnssMeasurement::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.location.GnssMeasurement",
@@ -196,7 +196,7 @@ namespace android::location
 	}
 	
 	// QAndroidJniObject forward
-	GnssMeasurement::GnssMeasurement(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	GnssMeasurement::GnssMeasurement(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

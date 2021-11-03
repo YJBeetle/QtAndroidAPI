@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../../__JniBaseClass.hpp"
+#include "../../../../JObject.hpp"
 
 namespace android::net::wifi::aware
 {
@@ -17,13 +17,13 @@ namespace android::net::wifi::aware
 
 namespace android::net::wifi::aware
 {
-	class DiscoverySessionCallback : public __JniBaseClass
+	class DiscoverySessionCallback : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DiscoverySessionCallback(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DiscoverySessionCallback(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DiscoverySessionCallback(QAndroidJniObject obj);
 		
 		// Constructors
@@ -34,8 +34,8 @@ namespace android::net::wifi::aware
 		void onMessageSendFailed(jint arg0);
 		void onMessageSendSucceeded(jint arg0);
 		void onPublishStarted(android::net::wifi::aware::PublishDiscoverySession arg0);
-		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __JniBaseClass arg2);
-		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, __JniBaseClass arg2, jint arg3);
+		void onServiceDiscovered(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2);
+		void onServiceDiscoveredWithinRange(android::net::wifi::aware::PeerHandle arg0, jbyteArray arg1, JObject arg2, jint arg3);
 		void onServiceLost(android::net::wifi::aware::PeerHandle arg0, jint arg1);
 		void onSessionConfigFailed();
 		void onSessionConfigUpdated();

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./InputEvent.hpp"
 
 namespace android::os
@@ -29,7 +29,7 @@ namespace android::view
 		static jint ACTION_DOWN();
 		static jint ACTION_MULTIPLE();
 		static jint ACTION_UP();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint FLAG_CANCELED();
 		static jint FLAG_CANCELED_LONG_PRESS();
 		static jint FLAG_EDITOR_ACTION();
@@ -384,8 +384,8 @@ namespace android::view
 		static jboolean metaStateHasModifiers(jint arg0, jint arg1);
 		static jboolean metaStateHasNoModifiers(jint arg0);
 		static jint normalizeMetaState(jint arg0);
-		jboolean dispatch(__JniBaseClass arg0);
-		jboolean dispatch(__JniBaseClass arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2);
+		jboolean dispatch(JObject arg0);
+		jboolean dispatch(JObject arg0, android::view::KeyEvent_DispatcherState arg1, jobject arg2);
 		jint getAction();
 		jstring getCharacters();
 		jint getDeviceId();

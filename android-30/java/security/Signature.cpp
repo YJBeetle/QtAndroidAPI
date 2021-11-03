@@ -81,7 +81,7 @@ namespace java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	void Signature::initSign(__JniBaseClass arg0)
+	void Signature::initSign(JObject arg0)
 	{
 		callMethod<void>(
 			"initSign",
@@ -89,7 +89,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::initSign(__JniBaseClass arg0, java::security::SecureRandom arg1)
+	void Signature::initSign(JObject arg0, java::security::SecureRandom arg1)
 	{
 		callMethod<void>(
 			"initSign",
@@ -98,7 +98,7 @@ namespace java::security
 			arg1.object()
 		);
 	}
-	void Signature::initVerify(__JniBaseClass arg0)
+	void Signature::initVerify(JObject arg0)
 	{
 		callMethod<void>(
 			"initVerify",
@@ -114,7 +114,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	void Signature::setParameter(__JniBaseClass arg0)
+	void Signature::setParameter(JObject arg0)
 	{
 		callMethod<void>(
 			"setParameter",

@@ -12,7 +12,7 @@ namespace android::print
 			"Landroid/print/PageRange;"
 		);
 	}
-	__JniBaseClass PageRange::CREATOR()
+	JObject PageRange::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.print.PageRange",
@@ -22,11 +22,11 @@ namespace android::print
 	}
 	
 	// QAndroidJniObject forward
-	PageRange::PageRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PageRange::PageRange(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PageRange::PageRange(jint arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.print.PageRange",
 			"(II)V",
 			arg0,

@@ -141,18 +141,18 @@ namespace android::speech::tts
 	}
 	
 	// QAndroidJniObject forward
-	TextToSpeech::TextToSpeech(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TextToSpeech::TextToSpeech(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	TextToSpeech::TextToSpeech(android::content::Context arg0, __JniBaseClass arg1)
-		: __JniBaseClass(
+	TextToSpeech::TextToSpeech(android::content::Context arg0, JObject arg1)
+		: JObject(
 			"android.speech.tts.TextToSpeech",
 			"(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	TextToSpeech::TextToSpeech(android::content::Context arg0, __JniBaseClass arg1, jstring arg2)
-		: __JniBaseClass(
+	TextToSpeech::TextToSpeech(android::content::Context arg0, JObject arg1, jstring arg2)
+		: JObject(
 			"android.speech.tts.TextToSpeech",
 			"(Landroid/content/Context;Landroid/speech/tts/TextToSpeech$OnInitListener;Ljava/lang/String;)V",
 			arg0.object(),
@@ -232,7 +232,7 @@ namespace android::speech::tts
 			"()Z"
 		);
 	}
-	__JniBaseClass TextToSpeech::getAvailableLanguages()
+	JObject TextToSpeech::getAvailableLanguages()
 	{
 		return callObjectMethod(
 			"getAvailableLanguages",
@@ -260,14 +260,14 @@ namespace android::speech::tts
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	__JniBaseClass TextToSpeech::getEngines()
+	JObject TextToSpeech::getEngines()
 	{
 		return callObjectMethod(
 			"getEngines",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass TextToSpeech::getFeatures(java::util::Locale arg0)
+	JObject TextToSpeech::getFeatures(java::util::Locale arg0)
 	{
 		return callObjectMethod(
 			"getFeatures",
@@ -289,7 +289,7 @@ namespace android::speech::tts
 			"()Landroid/speech/tts/Voice;"
 		);
 	}
-	__JniBaseClass TextToSpeech::getVoices()
+	JObject TextToSpeech::getVoices()
 	{
 		return callObjectMethod(
 			"getVoices",
@@ -376,7 +376,7 @@ namespace android::speech::tts
 			arg0.object()
 		);
 	}
-	jint TextToSpeech::setOnUtteranceCompletedListener(__JniBaseClass arg0)
+	jint TextToSpeech::setOnUtteranceCompletedListener(JObject arg0)
 	{
 		return callMethod<jint>(
 			"setOnUtteranceCompletedListener",

@@ -7,7 +7,7 @@ namespace java::security
 	// Fields
 	
 	// QAndroidJniObject forward
-	AlgorithmParameters::AlgorithmParameters(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AlgorithmParameters::AlgorithmParameters(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -63,7 +63,7 @@ namespace java::security
 			arg0
 		).object<jbyteArray>();
 	}
-	__JniBaseClass AlgorithmParameters::getParameterSpec(jclass arg0)
+	JObject AlgorithmParameters::getParameterSpec(jclass arg0)
 	{
 		return callObjectMethod(
 			"getParameterSpec",
@@ -86,7 +86,7 @@ namespace java::security
 			arg0
 		);
 	}
-	void AlgorithmParameters::init(__JniBaseClass arg0)
+	void AlgorithmParameters::init(JObject arg0)
 	{
 		callMethod<void>(
 			"init",

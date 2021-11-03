@@ -20,7 +20,7 @@ namespace java::util
 			"(I)V",
 			arg0
 		) {}
-	WeakHashMap::WeakHashMap(__JniBaseClass arg0)
+	WeakHashMap::WeakHashMap(JObject arg0)
 		: java::util::AbstractMap(
 			"java.util.WeakHashMap",
 			"(Ljava/util/Map;)V",
@@ -58,14 +58,14 @@ namespace java::util
 			arg0
 		);
 	}
-	__JniBaseClass WeakHashMap::entrySet()
+	JObject WeakHashMap::entrySet()
 	{
 		return callObjectMethod(
 			"entrySet",
 			"()Ljava/util/Set;"
 		);
 	}
-	void WeakHashMap::forEach(__JniBaseClass arg0)
+	void WeakHashMap::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -88,7 +88,7 @@ namespace java::util
 			"()Z"
 		);
 	}
-	__JniBaseClass WeakHashMap::keySet()
+	JObject WeakHashMap::keySet()
 	{
 		return callObjectMethod(
 			"keySet",
@@ -104,7 +104,7 @@ namespace java::util
 			arg1
 		).object<jobject>();
 	}
-	void WeakHashMap::putAll(__JniBaseClass arg0)
+	void WeakHashMap::putAll(JObject arg0)
 	{
 		callMethod<void>(
 			"putAll",
@@ -120,7 +120,7 @@ namespace java::util
 			arg0
 		).object<jobject>();
 	}
-	void WeakHashMap::replaceAll(__JniBaseClass arg0)
+	void WeakHashMap::replaceAll(JObject arg0)
 	{
 		callMethod<void>(
 			"replaceAll",
@@ -135,7 +135,7 @@ namespace java::util
 			"()I"
 		);
 	}
-	__JniBaseClass WeakHashMap::values()
+	JObject WeakHashMap::values()
 	{
 		return callObjectMethod(
 			"values",

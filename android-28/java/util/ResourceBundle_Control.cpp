@@ -8,7 +8,7 @@
 namespace java::util
 {
 	// Fields
-	__JniBaseClass ResourceBundle_Control::FORMAT_CLASS()
+	JObject ResourceBundle_Control::FORMAT_CLASS()
 	{
 		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -16,7 +16,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ResourceBundle_Control::FORMAT_DEFAULT()
+	JObject ResourceBundle_Control::FORMAT_DEFAULT()
 	{
 		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -24,7 +24,7 @@ namespace java::util
 			"Ljava/util/List;"
 		);
 	}
-	__JniBaseClass ResourceBundle_Control::FORMAT_PROPERTIES()
+	JObject ResourceBundle_Control::FORMAT_PROPERTIES()
 	{
 		return getStaticObjectField(
 			"java.util.ResourceBundle$Control",
@@ -48,12 +48,12 @@ namespace java::util
 	}
 	
 	// QAndroidJniObject forward
-	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ResourceBundle_Control::ResourceBundle_Control(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::util::ResourceBundle_Control ResourceBundle_Control::getControl(__JniBaseClass arg0)
+	java::util::ResourceBundle_Control ResourceBundle_Control::getControl(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
@@ -62,7 +62,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	java::util::ResourceBundle_Control ResourceBundle_Control::getNoFallbackControl(__JniBaseClass arg0)
+	java::util::ResourceBundle_Control ResourceBundle_Control::getNoFallbackControl(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.util.ResourceBundle$Control",
@@ -71,7 +71,7 @@ namespace java::util
 			arg0.object()
 		);
 	}
-	__JniBaseClass ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
+	JObject ResourceBundle_Control::getCandidateLocales(jstring arg0, java::util::Locale arg1)
 	{
 		return callObjectMethod(
 			"getCandidateLocales",
@@ -89,7 +89,7 @@ namespace java::util
 			arg1.object()
 		);
 	}
-	__JniBaseClass ResourceBundle_Control::getFormats(jstring arg0)
+	JObject ResourceBundle_Control::getFormats(jstring arg0)
 	{
 		return callObjectMethod(
 			"getFormats",

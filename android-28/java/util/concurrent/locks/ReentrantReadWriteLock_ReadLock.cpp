@@ -7,7 +7,7 @@ namespace java::util::concurrent::locks
 	// Fields
 	
 	// QAndroidJniObject forward
-	ReentrantReadWriteLock_ReadLock::ReentrantReadWriteLock_ReadLock(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ReentrantReadWriteLock_ReadLock::ReentrantReadWriteLock_ReadLock(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -26,7 +26,7 @@ namespace java::util::concurrent::locks
 			"()V"
 		);
 	}
-	__JniBaseClass ReentrantReadWriteLock_ReadLock::newCondition()
+	JObject ReentrantReadWriteLock_ReadLock::newCondition()
 	{
 		return callObjectMethod(
 			"newCondition",

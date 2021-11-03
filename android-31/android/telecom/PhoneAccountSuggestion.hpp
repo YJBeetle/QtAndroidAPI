@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,11 +13,11 @@ namespace android::telecom
 
 namespace android::telecom
 {
-	class PhoneAccountSuggestion : public __JniBaseClass
+	class PhoneAccountSuggestion : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint REASON_FREQUENT();
 		static jint REASON_INTRA_CARRIER();
 		static jint REASON_NONE();
@@ -25,7 +25,7 @@ namespace android::telecom
 		static jint REASON_USER_SET();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PhoneAccountSuggestion(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PhoneAccountSuggestion(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PhoneAccountSuggestion(QAndroidJniObject obj);
 		
 		// Constructors

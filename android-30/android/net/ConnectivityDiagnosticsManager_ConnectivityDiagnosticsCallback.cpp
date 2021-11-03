@@ -8,11 +8,11 @@ namespace android::net
 	// Fields
 	
 	// QAndroidJniObject forward
-	ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback::ConnectivityDiagnosticsManager_ConnectivityDiagnosticsCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.ConnectivityDiagnosticsManager$ConnectivityDiagnosticsCallback",
 			"()V"
 		) {}

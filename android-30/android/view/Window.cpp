@@ -221,11 +221,11 @@ namespace android::view
 	}
 	
 	// QAndroidJniObject forward
-	Window::Window(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Window::Window(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Window::Window(android::content::Context arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.view.Window",
 			"(Landroid/content/Context;)V",
 			arg0.object()
@@ -258,7 +258,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::addOnFrameMetricsAvailableListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void Window::addOnFrameMetricsAvailableListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addOnFrameMetricsAvailableListener",
@@ -319,7 +319,7 @@ namespace android::view
 			"()Landroid/view/WindowManager$LayoutParams;"
 		);
 	}
-	__JniBaseClass Window::getCallback()
+	JObject Window::getCallback()
 	{
 		return callObjectMethod(
 			"getCallback",
@@ -382,7 +382,7 @@ namespace android::view
 			"()Landroid/transition/Transition;"
 		);
 	}
-	__JniBaseClass Window::getInsetsController()
+	JObject Window::getInsetsController()
 	{
 		return callObjectMethod(
 			"getInsetsController",
@@ -473,7 +473,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass Window::getSystemGestureExclusionRects()
+	JObject Window::getSystemGestureExclusionRects()
 	{
 		return callObjectMethod(
 			"getSystemGestureExclusionRects",
@@ -501,7 +501,7 @@ namespace android::view
 			"()I"
 		);
 	}
-	__JniBaseClass Window::getWindowManager()
+	JObject Window::getWindowManager()
 	{
 		return callObjectMethod(
 			"getWindowManager",
@@ -651,7 +651,7 @@ namespace android::view
 			arg3
 		);
 	}
-	void Window::removeOnFrameMetricsAvailableListener(__JniBaseClass arg0)
+	void Window::removeOnFrameMetricsAvailableListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnFrameMetricsAvailableListener",
@@ -730,7 +730,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setCallback(__JniBaseClass arg0)
+	void Window::setCallback(JObject arg0)
 	{
 		callMethod<void>(
 			"setCallback",
@@ -1013,7 +1013,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::setRestrictedCaptionAreaListener(__JniBaseClass arg0)
+	void Window::setRestrictedCaptionAreaListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setRestrictedCaptionAreaListener",
@@ -1101,7 +1101,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setSystemGestureExclusionRects(__JniBaseClass arg0)
+	void Window::setSystemGestureExclusionRects(JObject arg0)
 	{
 		callMethod<void>(
 			"setSystemGestureExclusionRects",
@@ -1182,7 +1182,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2)
+	void Window::setWindowManager(JObject arg0, JObject arg1, jstring arg2)
 	{
 		callMethod<void>(
 			"setWindowManager",
@@ -1192,7 +1192,7 @@ namespace android::view
 			arg2
 		);
 	}
-	void Window::setWindowManager(__JniBaseClass arg0, __JniBaseClass arg1, jstring arg2, jboolean arg3)
+	void Window::setWindowManager(JObject arg0, JObject arg1, jstring arg2, jboolean arg3)
 	{
 		callMethod<void>(
 			"setWindowManager",
@@ -1243,7 +1243,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void Window::takeInputQueue(__JniBaseClass arg0)
+	void Window::takeInputQueue(JObject arg0)
 	{
 		callMethod<void>(
 			"takeInputQueue",
@@ -1259,7 +1259,7 @@ namespace android::view
 			arg0
 		);
 	}
-	void Window::takeSurface(__JniBaseClass arg0)
+	void Window::takeSurface(JObject arg0)
 	{
 		callMethod<void>(
 			"takeSurface",

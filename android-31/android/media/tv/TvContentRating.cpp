@@ -13,7 +13,7 @@ namespace android::media::tv
 	}
 	
 	// QAndroidJniObject forward
-	TvContentRating::TvContentRating(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TvContentRating::TvContentRating(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -83,7 +83,7 @@ namespace android::media::tv
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass TvContentRating::getSubRatings()
+	JObject TvContentRating::getSubRatings()
 	{
 		return callObjectMethod(
 			"getSubRatings",

@@ -8,7 +8,7 @@ namespace android::view::accessibility
 	// Fields
 	
 	// QAndroidJniObject forward
-	AccessibilityManager::AccessibilityManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityManager::AccessibilityManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -29,7 +29,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::addAccessibilityStateChangeListener(__JniBaseClass arg0)
+	jboolean AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addAccessibilityStateChangeListener",
@@ -37,7 +37,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityManager::addAccessibilityStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AccessibilityManager::addAccessibilityStateChangeListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addAccessibilityStateChangeListener",
@@ -46,7 +46,7 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	jboolean AccessibilityManager::addTouchExplorationStateChangeListener(__JniBaseClass arg0)
+	jboolean AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"addTouchExplorationStateChangeListener",
@@ -54,7 +54,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	void AccessibilityManager::addTouchExplorationStateChangeListener(__JniBaseClass arg0, android::os::Handler arg1)
+	void AccessibilityManager::addTouchExplorationStateChangeListener(JObject arg0, android::os::Handler arg1)
 	{
 		callMethod<void>(
 			"addTouchExplorationStateChangeListener",
@@ -63,14 +63,14 @@ namespace android::view::accessibility
 			arg1.object()
 		);
 	}
-	__JniBaseClass AccessibilityManager::getAccessibilityServiceList()
+	JObject AccessibilityManager::getAccessibilityServiceList()
 	{
 		return callObjectMethod(
 			"getAccessibilityServiceList",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
+	JObject AccessibilityManager::getEnabledAccessibilityServiceList(jint arg0)
 	{
 		return callObjectMethod(
 			"getEnabledAccessibilityServiceList",
@@ -78,7 +78,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	__JniBaseClass AccessibilityManager::getInstalledAccessibilityServiceList()
+	JObject AccessibilityManager::getInstalledAccessibilityServiceList()
 	{
 		return callObjectMethod(
 			"getInstalledAccessibilityServiceList",
@@ -114,7 +114,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::removeAccessibilityStateChangeListener(__JniBaseClass arg0)
+	jboolean AccessibilityManager::removeAccessibilityStateChangeListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAccessibilityStateChangeListener",
@@ -122,7 +122,7 @@ namespace android::view::accessibility
 			arg0.object()
 		);
 	}
-	jboolean AccessibilityManager::removeTouchExplorationStateChangeListener(__JniBaseClass arg0)
+	jboolean AccessibilityManager::removeTouchExplorationStateChangeListener(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeTouchExplorationStateChangeListener",

@@ -28,12 +28,12 @@ namespace android::telephony::ims
 	}
 	
 	// QAndroidJniObject forward
-	ImsMmTelManager::ImsMmTelManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ImsMmTelManager::ImsMmTelManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void ImsMmTelManager::getRegistrationState(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ImsMmTelManager::getRegistrationState(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getRegistrationState",
@@ -42,7 +42,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsMmTelManager::getRegistrationTransportType(__JniBaseClass arg0, __JniBaseClass arg1)
+	void ImsMmTelManager::getRegistrationTransportType(JObject arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"getRegistrationTransportType",
@@ -93,7 +93,7 @@ namespace android::telephony::ims
 			"()Z"
 		);
 	}
-	void ImsMmTelManager::registerImsRegistrationCallback(__JniBaseClass arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
+	void ImsMmTelManager::registerImsRegistrationCallback(JObject arg0, android::telephony::ims::RegistrationManager_RegistrationCallback arg1)
 	{
 		callMethod<void>(
 			"registerImsRegistrationCallback",
@@ -102,7 +102,7 @@ namespace android::telephony::ims
 			arg1.object()
 		);
 	}
-	void ImsMmTelManager::registerMmTelCapabilityCallback(__JniBaseClass arg0, android::telephony::ims::ImsMmTelManager_CapabilityCallback arg1)
+	void ImsMmTelManager::registerMmTelCapabilityCallback(JObject arg0, android::telephony::ims::ImsMmTelManager_CapabilityCallback arg1)
 	{
 		callMethod<void>(
 			"registerMmTelCapabilityCallback",

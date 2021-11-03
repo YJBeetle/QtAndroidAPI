@@ -38,7 +38,7 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	ContactsContract_DisplayPhoto::ContactsContract_DisplayPhoto(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ContactsContract_DisplayPhoto::ContactsContract_DisplayPhoto(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

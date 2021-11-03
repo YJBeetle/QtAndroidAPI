@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace android::content
@@ -25,7 +25,7 @@ namespace android::widget
 		
 		// Constructors
 		Gallery_LayoutParams(android::view::ViewGroup_LayoutParams arg0);
-		Gallery_LayoutParams(android::content::Context arg0, __JniBaseClass arg1);
+		Gallery_LayoutParams(android::content::Context arg0, JObject arg1);
 		Gallery_LayoutParams(jint arg0, jint arg1);
 		
 		// Methods

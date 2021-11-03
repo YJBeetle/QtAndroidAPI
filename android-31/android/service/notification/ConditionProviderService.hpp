@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
@@ -45,7 +45,7 @@ namespace android::service::notification
 		static void requestRebind(android::content::ComponentName arg0);
 		void notifyCondition(android::service::notification::Condition arg0);
 		void notifyConditions(jarray arg0);
-		__JniBaseClass onBind(android::content::Intent arg0);
+		JObject onBind(android::content::Intent arg0);
 		void onConnected();
 		void onRequestConditions(jint arg0);
 		void onSubscribe(android::net::Uri arg0);

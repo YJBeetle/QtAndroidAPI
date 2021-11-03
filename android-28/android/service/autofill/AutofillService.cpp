@@ -45,7 +45,7 @@ namespace android::service::autofill
 			"()Landroid/service/autofill/FillEventHistory;"
 		);
 	}
-	__JniBaseClass AutofillService::onBind(android::content::Intent arg0)
+	JObject AutofillService::onBind(android::content::Intent arg0)
 	{
 		return callObjectMethod(
 			"onBind",

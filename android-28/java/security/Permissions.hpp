@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./PermissionCollection.hpp"
 
 namespace java::io
@@ -40,7 +40,7 @@ namespace java::security
 		
 		// Methods
 		void add(java::security::Permission arg0);
-		__JniBaseClass elements();
+		JObject elements();
 		jboolean implies(java::security::Permission arg0);
 	};
 } // namespace java::security

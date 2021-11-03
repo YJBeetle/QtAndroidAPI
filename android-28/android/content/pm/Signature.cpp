@@ -4,7 +4,7 @@
 namespace android::content::pm
 {
 	// Fields
-	__JniBaseClass Signature::CREATOR()
+	JObject Signature::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.pm.Signature",
@@ -14,17 +14,17 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	Signature::Signature(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Signature::Signature(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Signature::Signature(jbyteArray arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.Signature",
 			"([B)V",
 			arg0
 		) {}
 	Signature::Signature(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.pm.Signature",
 			"(Ljava/lang/String;)V",
 			arg0

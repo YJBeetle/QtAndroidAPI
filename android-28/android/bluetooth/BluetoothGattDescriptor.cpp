@@ -6,7 +6,7 @@
 namespace android::bluetooth
 {
 	// Fields
-	__JniBaseClass BluetoothGattDescriptor::CREATOR()
+	JObject BluetoothGattDescriptor::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.bluetooth.BluetoothGattDescriptor",
@@ -96,11 +96,11 @@ namespace android::bluetooth
 	}
 	
 	// QAndroidJniObject forward
-	BluetoothGattDescriptor::BluetoothGattDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	BluetoothGattDescriptor::BluetoothGattDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	BluetoothGattDescriptor::BluetoothGattDescriptor(java::util::UUID arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.bluetooth.BluetoothGattDescriptor",
 			"(Ljava/util/UUID;I)V",
 			arg0.object(),

@@ -19,7 +19,7 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	TableLayout::TableLayout(android::content::Context arg0, __JniBaseClass arg1)
+	TableLayout::TableLayout(android::content::Context arg0, JObject arg1)
 		: android::widget::LinearLayout(
 			"android.widget.TableLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
@@ -64,7 +64,7 @@ namespace android::widget
 			arg2.object()
 		);
 	}
-	android::widget::TableLayout_LayoutParams TableLayout::generateLayoutParams(__JniBaseClass arg0)
+	android::widget::TableLayout_LayoutParams TableLayout::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",
@@ -151,7 +151,7 @@ namespace android::widget
 			arg1
 		);
 	}
-	void TableLayout::setOnHierarchyChangeListener(__JniBaseClass arg0)
+	void TableLayout::setOnHierarchyChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"setOnHierarchyChangeListener",

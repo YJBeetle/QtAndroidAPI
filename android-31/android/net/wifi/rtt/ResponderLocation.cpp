@@ -29,7 +29,7 @@ namespace android::net::wifi::rtt
 			"ALTITUDE_UNDEFINED"
 		);
 	}
-	__JniBaseClass ResponderLocation::CREATOR()
+	JObject ResponderLocation::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.wifi.rtt.ResponderLocation",
@@ -102,7 +102,7 @@ namespace android::net::wifi::rtt
 	}
 	
 	// QAndroidJniObject forward
-	ResponderLocation::ResponderLocation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ResponderLocation::ResponderLocation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -143,7 +143,7 @@ namespace android::net::wifi::rtt
 			"()D"
 		);
 	}
-	__JniBaseClass ResponderLocation::getColocatedBssids()
+	JObject ResponderLocation::getColocatedBssids()
 	{
 		return callObjectMethod(
 			"getColocatedBssids",

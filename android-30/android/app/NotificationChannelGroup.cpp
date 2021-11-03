@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass NotificationChannelGroup::CREATOR()
+	JObject NotificationChannelGroup::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.NotificationChannelGroup",
@@ -14,11 +14,11 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NotificationChannelGroup::NotificationChannelGroup(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NotificationChannelGroup::NotificationChannelGroup(jstring arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.NotificationChannelGroup",
 			"(Ljava/lang/String;Ljava/lang/CharSequence;)V",
 			arg0,
@@ -48,7 +48,7 @@ namespace android::app
 			arg0
 		);
 	}
-	__JniBaseClass NotificationChannelGroup::getChannels()
+	JObject NotificationChannelGroup::getChannels()
 	{
 		return callObjectMethod(
 			"getChannels",

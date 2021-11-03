@@ -48,7 +48,7 @@ namespace java::security
 			arg0
 		);
 	}
-	java::security::Identity IdentityScope::getIdentity(__JniBaseClass arg0)
+	java::security::Identity IdentityScope::getIdentity(JObject arg0)
 	{
 		return callObjectMethod(
 			"getIdentity",
@@ -56,7 +56,7 @@ namespace java::security
 			arg0.object()
 		);
 	}
-	__JniBaseClass IdentityScope::identities()
+	JObject IdentityScope::identities()
 	{
 		return callObjectMethod(
 			"identities",

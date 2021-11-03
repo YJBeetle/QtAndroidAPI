@@ -1321,7 +1321,7 @@ namespace android::content
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass Intent::CREATOR()
+	JObject Intent::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.content.Intent",
@@ -2233,42 +2233,42 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	Intent::Intent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Intent::Intent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Intent::Intent()
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"()V"
 		) {}
 	Intent::Intent(android::content::Intent &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"(Landroid/content/Intent;)V",
 			arg0.object()
 		) {}
 	Intent::Intent(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"(Ljava/lang/String;)V",
 			arg0
 		) {}
 	Intent::Intent(android::content::Context arg0, jclass arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"(Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0.object(),
 			arg1
 		) {}
 	Intent::Intent(jstring arg0, android::net::Uri arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
 			arg0,
 			arg1.object()
 		) {}
 	Intent::Intent(jstring arg0, android::net::Uri arg1, android::content::Context arg2, jclass arg3)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Intent",
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0,
@@ -2354,7 +2354,7 @@ namespace android::content
 			arg0
 		).object<jstring>();
 	}
-	android::content::Intent Intent::parseIntent(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2)
+	android::content::Intent Intent::parseIntent(android::content::res::Resources arg0, JObject arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.content.Intent",
@@ -2485,7 +2485,7 @@ namespace android::content
 			arg1
 		);
 	}
-	__JniBaseClass Intent::getCategories()
+	JObject Intent::getCategories()
 	{
 		return callObjectMethod(
 			"getCategories",
@@ -2674,7 +2674,7 @@ namespace android::content
 			arg0
 		);
 	}
-	__JniBaseClass Intent::getParcelableExtra(jstring arg0)
+	JObject Intent::getParcelableExtra(jstring arg0)
 	{
 		return callObjectMethod(
 			"getParcelableExtra",
@@ -2696,7 +2696,7 @@ namespace android::content
 			"()Landroid/content/Intent;"
 		);
 	}
-	__JniBaseClass Intent::getSerializableExtra(jstring arg0)
+	JObject Intent::getSerializableExtra(jstring arg0)
 	{
 		return callObjectMethod(
 			"getSerializableExtra",
@@ -2881,7 +2881,7 @@ namespace android::content
 			arg1.object()
 		);
 	}
-	android::content::Intent Intent::putExtra(jstring arg0, __JniBaseClass arg1)
+	android::content::Intent Intent::putExtra(jstring arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"putExtra",

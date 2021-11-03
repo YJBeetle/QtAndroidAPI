@@ -42,7 +42,7 @@ namespace android::widget
 			"(Landroid/widget/FrameLayout$LayoutParams;)V",
 			arg0.object()
 		) {}
-	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::content::Context arg0, __JniBaseClass arg1)
+	FrameLayout_LayoutParams::FrameLayout_LayoutParams(android::content::Context arg0, JObject arg1)
 		: android::view::ViewGroup_MarginLayoutParams(
 			"android.widget.FrameLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",

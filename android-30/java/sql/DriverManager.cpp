@@ -11,12 +11,12 @@ namespace java::sql
 	// Fields
 	
 	// QAndroidJniObject forward
-	DriverManager::DriverManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DriverManager::DriverManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void DriverManager::deregisterDriver(__JniBaseClass arg0)
+	void DriverManager::deregisterDriver(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.sql.DriverManager",
@@ -25,7 +25,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	__JniBaseClass DriverManager::drivers()
+	JObject DriverManager::drivers()
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -33,7 +33,7 @@ namespace java::sql
 			"()Ljava/util/stream/Stream;"
 		);
 	}
-	__JniBaseClass DriverManager::getConnection(jstring arg0)
+	JObject DriverManager::getConnection(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -42,7 +42,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	__JniBaseClass DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
+	JObject DriverManager::getConnection(jstring arg0, java::util::Properties arg1)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -52,7 +52,7 @@ namespace java::sql
 			arg1.object()
 		);
 	}
-	__JniBaseClass DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
+	JObject DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -63,7 +63,7 @@ namespace java::sql
 			arg2
 		);
 	}
-	__JniBaseClass DriverManager::getDriver(jstring arg0)
+	JObject DriverManager::getDriver(jstring arg0)
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -72,7 +72,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	__JniBaseClass DriverManager::getDrivers()
+	JObject DriverManager::getDrivers()
 	{
 		return callStaticObjectMethod(
 			"java.sql.DriverManager",
@@ -113,7 +113,7 @@ namespace java::sql
 			arg0
 		);
 	}
-	void DriverManager::registerDriver(__JniBaseClass arg0)
+	void DriverManager::registerDriver(JObject arg0)
 	{
 		callStaticMethod<void>(
 			"java.sql.DriverManager",
@@ -122,7 +122,7 @@ namespace java::sql
 			arg0.object()
 		);
 	}
-	void DriverManager::registerDriver(__JniBaseClass arg0, __JniBaseClass arg1)
+	void DriverManager::registerDriver(JObject arg0, JObject arg1)
 	{
 		callStaticMethod<void>(
 			"java.sql.DriverManager",

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::telephony
 {
-	class ServiceState : public __JniBaseClass
+	class ServiceState : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint DUPLEX_MODE_FDD();
 		static jint DUPLEX_MODE_TDD();
 		static jint DUPLEX_MODE_UNKNOWN();
@@ -24,7 +24,7 @@ namespace android::telephony
 		static jint UNKNOWN_ID();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit ServiceState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit ServiceState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		ServiceState(QAndroidJniObject obj);
 		
 		// Constructors
@@ -41,7 +41,7 @@ namespace android::telephony
 		jint getChannelNumber();
 		jint getDuplexMode();
 		jboolean getIsManualSelection();
-		__JniBaseClass getNetworkRegistrationInfoList();
+		JObject getNetworkRegistrationInfoList();
 		jstring getOperatorAlphaLong();
 		jstring getOperatorAlphaShort();
 		jstring getOperatorNumeric();

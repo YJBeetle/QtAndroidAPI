@@ -6,12 +6,12 @@ namespace android::view
 	// Fields
 	
 	// QAndroidJniObject forward
-	ViewTreeObserver::ViewTreeObserver(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ViewTreeObserver::ViewTreeObserver(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	void ViewTreeObserver::addOnDrawListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnDrawListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnDrawListener",
@@ -19,7 +19,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnGlobalFocusChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnGlobalFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnGlobalFocusChangeListener",
@@ -27,7 +27,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnGlobalLayoutListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnGlobalLayoutListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnGlobalLayoutListener",
@@ -35,7 +35,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnPreDrawListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnPreDrawListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnPreDrawListener",
@@ -43,7 +43,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnScrollChangedListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnScrollChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnScrollChangedListener",
@@ -51,7 +51,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnTouchModeChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnTouchModeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnTouchModeChangeListener",
@@ -59,7 +59,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnWindowAttachListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnWindowAttachListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnWindowAttachListener",
@@ -67,7 +67,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::addOnWindowFocusChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::addOnWindowFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addOnWindowFocusChangeListener",
@@ -103,7 +103,7 @@ namespace android::view
 			"()Z"
 		);
 	}
-	void ViewTreeObserver::removeGlobalOnLayoutListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeGlobalOnLayoutListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeGlobalOnLayoutListener",
@@ -111,7 +111,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnDrawListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnDrawListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnDrawListener",
@@ -119,7 +119,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnGlobalFocusChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnGlobalFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnGlobalFocusChangeListener",
@@ -127,7 +127,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnGlobalLayoutListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnGlobalLayoutListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnGlobalLayoutListener",
@@ -135,7 +135,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnPreDrawListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnPreDrawListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnPreDrawListener",
@@ -143,7 +143,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnScrollChangedListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnScrollChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnScrollChangedListener",
@@ -151,7 +151,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnTouchModeChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnTouchModeChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnTouchModeChangeListener",
@@ -159,7 +159,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnWindowAttachListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnWindowAttachListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnWindowAttachListener",
@@ -167,7 +167,7 @@ namespace android::view
 			arg0.object()
 		);
 	}
-	void ViewTreeObserver::removeOnWindowFocusChangeListener(__JniBaseClass arg0)
+	void ViewTreeObserver::removeOnWindowFocusChangeListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removeOnWindowFocusChangeListener",

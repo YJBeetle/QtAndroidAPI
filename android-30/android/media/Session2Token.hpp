@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,16 +21,16 @@ namespace android::os
 
 namespace android::media
 {
-	class Session2Token : public __JniBaseClass
+	class Session2Token : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint TYPE_SESSION();
 		static jint TYPE_SESSION_SERVICE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Session2Token(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Session2Token(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Session2Token(QAndroidJniObject obj);
 		
 		// Constructors

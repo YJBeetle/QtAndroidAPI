@@ -4,7 +4,7 @@
 namespace android::telephony
 {
 	// Fields
-	__JniBaseClass TelephonyDisplayInfo::CREATOR()
+	JObject TelephonyDisplayInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.TelephonyDisplayInfo",
@@ -49,7 +49,7 @@ namespace android::telephony
 	}
 	
 	// QAndroidJniObject forward
-	TelephonyDisplayInfo::TelephonyDisplayInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	TelephonyDisplayInfo::TelephonyDisplayInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

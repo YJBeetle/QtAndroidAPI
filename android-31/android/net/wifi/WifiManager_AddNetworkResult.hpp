@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -9,11 +9,11 @@ namespace android::os
 
 namespace android::net::wifi
 {
-	class WifiManager_AddNetworkResult : public __JniBaseClass
+	class WifiManager_AddNetworkResult : public JObject
 	{
 	public:
 		// Fields
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jint STATUS_ADD_PASSPOINT_FAILURE();
 		static jint STATUS_ADD_WIFI_CONFIG_FAILURE();
 		static jint STATUS_FAILURE_UNKNOWN();
@@ -29,7 +29,7 @@ namespace android::net::wifi
 		jint statusCode();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WifiManager_AddNetworkResult(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WifiManager_AddNetworkResult(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WifiManager_AddNetworkResult(QAndroidJniObject obj);
 		
 		// Constructors

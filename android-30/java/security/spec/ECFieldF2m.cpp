@@ -6,24 +6,24 @@ namespace java::security::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	ECFieldF2m::ECFieldF2m(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ECFieldF2m::ECFieldF2m(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ECFieldF2m::ECFieldF2m(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECFieldF2m",
 			"(I)V",
 			arg0
 		) {}
 	ECFieldF2m::ECFieldF2m(jint arg0, jintArray arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECFieldF2m",
 			"(I[I)V",
 			arg0,
 			arg1
 		) {}
 	ECFieldF2m::ECFieldF2m(jint arg0, java::math::BigInteger arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.ECFieldF2m",
 			"(ILjava/math/BigInteger;)V",
 			arg0,

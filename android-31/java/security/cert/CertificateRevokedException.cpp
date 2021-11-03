@@ -13,7 +13,7 @@ namespace java::security::cert
 	CertificateRevokedException::CertificateRevokedException(QAndroidJniObject obj) : java::security::cert::CertificateException(obj) {}
 	
 	// Constructors
-	CertificateRevokedException::CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, __JniBaseClass arg3)
+	CertificateRevokedException::CertificateRevokedException(java::util::Date arg0, java::security::cert::CRLReason arg1, javax::security::auth::x500::X500Principal arg2, JObject arg3)
 		: java::security::cert::CertificateException(
 			"java.security.cert.CertificateRevokedException",
 			"(Ljava/util/Date;Ljava/security/cert/CRLReason;Ljavax/security/auth/x500/X500Principal;Ljava/util/Map;)V",
@@ -31,7 +31,7 @@ namespace java::security::cert
 			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
-	__JniBaseClass CertificateRevokedException::getExtensions()
+	JObject CertificateRevokedException::getExtensions()
 	{
 		return callObjectMethod(
 			"getExtensions",

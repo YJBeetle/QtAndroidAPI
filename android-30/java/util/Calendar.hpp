@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::io
 {
@@ -37,7 +37,7 @@ namespace java::util
 
 namespace java::util
 {
-	class Calendar : public __JniBaseClass
+	class Calendar : public JObject
 	{
 	public:
 		// Fields
@@ -93,13 +93,13 @@ namespace java::util
 		static jint ZONE_OFFSET();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Calendar(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Calendar(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static __JniBaseClass getAvailableCalendarTypes();
+		static JObject getAvailableCalendarTypes();
 		static jarray getAvailableLocales();
 		static java::util::Calendar getInstance();
 		static java::util::Calendar getInstance(java::util::Locale arg0);
@@ -119,7 +119,7 @@ namespace java::util
 		jint getActualMinimum(jint arg0);
 		jstring getCalendarType();
 		jstring getDisplayName(jint arg0, jint arg1, java::util::Locale arg2);
-		__JniBaseClass getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2);
+		JObject getDisplayNames(jint arg0, jint arg1, java::util::Locale arg2);
 		jint getFirstDayOfWeek();
 		jint getGreatestMinimum(jint arg0);
 		jint getLeastMaximum(jint arg0);

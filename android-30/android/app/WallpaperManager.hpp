@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::app
 {
@@ -53,7 +53,7 @@ namespace java::io
 
 namespace android::app
 {
-	class WallpaperManager : public __JniBaseClass
+	class WallpaperManager : public JObject
 	{
 	public:
 		// Fields
@@ -69,18 +69,18 @@ namespace android::app
 		static jstring WALLPAPER_PREVIEW_META_DATA();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit WallpaperManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit WallpaperManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		WallpaperManager(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		static android::app::WallpaperManager getInstance(android::content::Context arg0);
-		void addOnColorsChangedListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void addOnColorsChangedListener(JObject arg0, android::os::Handler arg1);
 		void clear();
 		void clear(jint arg0);
 		void clearWallpaper();
-		void clearWallpaperOffsets(__JniBaseClass arg0);
+		void clearWallpaperOffsets(JObject arg0);
 		void forgetLoadedWallpaper();
 		android::graphics::drawable::Drawable getBuiltInDrawable();
 		android::graphics::drawable::Drawable getBuiltInDrawable(jint arg0);
@@ -100,8 +100,8 @@ namespace android::app
 		jboolean isWallpaperSupported();
 		android::graphics::drawable::Drawable peekDrawable();
 		android::graphics::drawable::Drawable peekFastDrawable();
-		void removeOnColorsChangedListener(__JniBaseClass arg0);
-		void sendWallpaperCommand(__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
+		void removeOnColorsChangedListener(JObject arg0);
+		void sendWallpaperCommand(JObject arg0, jstring arg1, jint arg2, jint arg3, jint arg4, android::os::Bundle arg5);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2);
 		jint setBitmap(android::graphics::Bitmap arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		void setBitmap(android::graphics::Bitmap arg0);
@@ -112,7 +112,7 @@ namespace android::app
 		jint setStream(java::io::InputStream arg0, android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		void setStream(java::io::InputStream arg0);
 		void setWallpaperOffsetSteps(jfloat arg0, jfloat arg1);
-		void setWallpaperOffsets(__JniBaseClass arg0, jfloat arg1, jfloat arg2);
+		void setWallpaperOffsets(JObject arg0, jfloat arg1, jfloat arg2);
 		void suggestDesiredDimensions(jint arg0, jint arg1);
 	};
 } // namespace android::app

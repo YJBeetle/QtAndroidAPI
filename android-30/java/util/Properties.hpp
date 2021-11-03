@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./Dictionary.hpp"
 #include "./Hashtable.hpp"
 
@@ -72,39 +72,39 @@ namespace java::util
 		// Methods
 		void clear();
 		jobject clone();
-		jobject compute(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfAbsent(jobject arg0, __JniBaseClass arg1);
-		jobject computeIfPresent(jobject arg0, __JniBaseClass arg1);
+		jobject compute(jobject arg0, JObject arg1);
+		jobject computeIfAbsent(jobject arg0, JObject arg1);
+		jobject computeIfPresent(jobject arg0, JObject arg1);
 		jboolean contains(jobject arg0);
 		jboolean containsKey(jobject arg0);
 		jboolean containsValue(jobject arg0);
-		__JniBaseClass elements();
-		__JniBaseClass entrySet();
+		JObject elements();
+		JObject entrySet();
 		jboolean equals(jobject arg0);
-		void forEach(__JniBaseClass arg0);
+		void forEach(JObject arg0);
 		jobject get(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
 		jstring getProperty(jstring arg0, jstring arg1);
 		jint hashCode();
 		jboolean isEmpty();
-		__JniBaseClass keySet();
-		__JniBaseClass keys();
+		JObject keySet();
+		JObject keys();
 		void list(java::io::PrintStream arg0);
 		void list(java::io::PrintWriter arg0);
 		void load(java::io::InputStream arg0);
 		void load(java::io::Reader arg0);
 		void loadFromXML(java::io::InputStream arg0);
-		jobject merge(jobject arg0, jobject arg1, __JniBaseClass arg2);
-		__JniBaseClass propertyNames();
+		jobject merge(jobject arg0, jobject arg1, JObject arg2);
+		JObject propertyNames();
 		jobject put(jobject arg0, jobject arg1);
-		void putAll(__JniBaseClass arg0);
+		void putAll(JObject arg0);
 		jobject putIfAbsent(jobject arg0, jobject arg1);
 		jboolean remove(jobject arg0, jobject arg1);
 		jobject remove(jobject arg0);
 		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
 		jobject replace(jobject arg0, jobject arg1);
-		void replaceAll(__JniBaseClass arg0);
+		void replaceAll(JObject arg0);
 		void save(java::io::OutputStream arg0, jstring arg1);
 		jobject setProperty(jstring arg0, jstring arg1);
 		jint size();
@@ -113,9 +113,9 @@ namespace java::util
 		void storeToXML(java::io::OutputStream arg0, jstring arg1);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, jstring arg2);
 		void storeToXML(java::io::OutputStream arg0, jstring arg1, java::nio::charset::Charset arg2);
-		__JniBaseClass stringPropertyNames();
+		JObject stringPropertyNames();
 		jstring toString();
-		__JniBaseClass values();
+		JObject values();
 	};
 } // namespace java::util
 

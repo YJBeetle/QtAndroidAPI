@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -37,7 +37,7 @@ namespace java::nio
 
 namespace android::media
 {
-	class MediaSync : public __JniBaseClass
+	class MediaSync : public JObject
 	{
 	public:
 		// Fields
@@ -45,7 +45,7 @@ namespace android::media
 		static jint MEDIASYNC_ERROR_SURFACE_FAIL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaSync(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaSync(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaSync(QAndroidJniObject obj);
 		
 		// Constructors
@@ -61,7 +61,7 @@ namespace android::media
 		void release();
 		void setAudioTrack(android::media::AudioTrack arg0);
 		void setCallback(android::media::MediaSync_Callback arg0, android::os::Handler arg1);
-		void setOnErrorListener(__JniBaseClass arg0, android::os::Handler arg1);
+		void setOnErrorListener(JObject arg0, android::os::Handler arg1);
 		void setPlaybackParams(android::media::PlaybackParams arg0);
 		void setSurface(android::view::Surface arg0);
 		void setSyncParams(android::media::SyncParams arg0);

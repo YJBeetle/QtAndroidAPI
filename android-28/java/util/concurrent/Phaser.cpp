@@ -7,28 +7,28 @@ namespace java::util::concurrent
 	// Fields
 	
 	// QAndroidJniObject forward
-	Phaser::Phaser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Phaser::Phaser(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Phaser::Phaser()
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Phaser",
 			"()V"
 		) {}
 	Phaser::Phaser(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Phaser",
 			"(I)V",
 			arg0
 		) {}
 	Phaser::Phaser(java::util::concurrent::Phaser &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Phaser",
 			"(Ljava/util/concurrent/Phaser;)V",
 			arg0.object()
 		) {}
 	Phaser::Phaser(java::util::concurrent::Phaser &arg0, jint arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.util.concurrent.Phaser",
 			"(Ljava/util/concurrent/Phaser;I)V",
 			arg0.object(),

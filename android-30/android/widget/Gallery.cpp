@@ -21,14 +21,14 @@ namespace android::widget
 			"(Landroid/content/Context;)V",
 			arg0.object()
 		) {}
-	Gallery::Gallery(android::content::Context arg0, __JniBaseClass arg1)
+	Gallery::Gallery(android::content::Context arg0, JObject arg1)
 		: android::widget::AbsSpinner(
 			"android.widget.Gallery",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	Gallery::Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2)
+	Gallery::Gallery(android::content::Context arg0, JObject arg1, jint arg2)
 		: android::widget::AbsSpinner(
 			"android.widget.Gallery",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
@@ -36,7 +36,7 @@ namespace android::widget
 			arg1.object(),
 			arg2
 		) {}
-	Gallery::Gallery(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3)
+	Gallery::Gallery(android::content::Context arg0, JObject arg1, jint arg2, jint arg3)
 		: android::widget::AbsSpinner(
 			"android.widget.Gallery",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
@@ -63,7 +63,7 @@ namespace android::widget
 			arg0
 		);
 	}
-	android::view::ViewGroup_LayoutParams Gallery::generateLayoutParams(__JniBaseClass arg0)
+	android::view::ViewGroup_LayoutParams Gallery::generateLayoutParams(JObject arg0)
 	{
 		return callObjectMethod(
 			"generateLayoutParams",

@@ -14,7 +14,7 @@ namespace java::util::concurrent
 			"java.util.concurrent.ConcurrentSkipListSet",
 			"()V"
 		) {}
-	ConcurrentSkipListSet::ConcurrentSkipListSet(__JniBaseClass arg0)
+	ConcurrentSkipListSet::ConcurrentSkipListSet(JObject arg0)
 		: java::util::AbstractSet(
 			"java.util.concurrent.ConcurrentSkipListSet",
 			"(Ljava/util/Collection;)V",
@@ -52,7 +52,7 @@ namespace java::util::concurrent
 			"()Ljava/util/concurrent/ConcurrentSkipListSet;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::comparator()
+	JObject ConcurrentSkipListSet::comparator()
 	{
 		return callObjectMethod(
 			"comparator",
@@ -67,14 +67,14 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::descendingIterator()
+	JObject ConcurrentSkipListSet::descendingIterator()
 	{
 		return callObjectMethod(
 			"descendingIterator",
 			"()Ljava/util/Iterator;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::descendingSet()
+	JObject ConcurrentSkipListSet::descendingSet()
 	{
 		return callObjectMethod(
 			"descendingSet",
@@ -104,7 +104,7 @@ namespace java::util::concurrent
 			arg0
 		).object<jobject>();
 	}
-	__JniBaseClass ConcurrentSkipListSet::headSet(jobject arg0)
+	JObject ConcurrentSkipListSet::headSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -112,7 +112,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"headSet",
@@ -136,7 +136,7 @@ namespace java::util::concurrent
 			"()Z"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::iterator()
+	JObject ConcurrentSkipListSet::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -180,7 +180,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentSkipListSet::removeAll(__JniBaseClass arg0)
+	jboolean ConcurrentSkipListSet::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -195,14 +195,14 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::spliterator()
+	JObject ConcurrentSkipListSet::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",
 			"()Ljava/util/Spliterator;"
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
+	JObject ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -211,7 +211,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
+	JObject ConcurrentSkipListSet::subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3)
 	{
 		return callObjectMethod(
 			"subSet",
@@ -222,7 +222,7 @@ namespace java::util::concurrent
 			arg3
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::tailSet(jobject arg0)
+	JObject ConcurrentSkipListSet::tailSet(jobject arg0)
 	{
 		return callObjectMethod(
 			"tailSet",
@@ -230,7 +230,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	__JniBaseClass ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
+	JObject ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
 	{
 		return callObjectMethod(
 			"tailSet",

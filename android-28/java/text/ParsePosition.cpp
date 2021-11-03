@@ -5,11 +5,11 @@ namespace java::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	ParsePosition::ParsePosition(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ParsePosition::ParsePosition(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParsePosition::ParsePosition(jint arg0)
-		: __JniBaseClass(
+		: JObject(
 			"java.text.ParsePosition",
 			"(I)V",
 			arg0

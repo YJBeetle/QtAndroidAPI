@@ -13,12 +13,12 @@ namespace java::time::chrono
 	// Fields
 	
 	// QAndroidJniObject forward
-	JapaneseDate::JapaneseDate(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	JapaneseDate::JapaneseDate(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	java::time::chrono::JapaneseDate JapaneseDate::from(__JniBaseClass arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::from(JObject arg0)
 	{
 		return callStaticObjectMethod(
 			"java.time.chrono.JapaneseDate",
@@ -76,7 +76,7 @@ namespace java::time::chrono
 			arg3
 		);
 	}
-	__JniBaseClass JapaneseDate::atTime(java::time::LocalTime arg0)
+	JObject JapaneseDate::atTime(java::time::LocalTime arg0)
 	{
 		return callObjectMethod(
 			"atTime",
@@ -106,7 +106,7 @@ namespace java::time::chrono
 			"()Ljava/time/chrono/JapaneseEra;"
 		);
 	}
-	jlong JapaneseDate::getLong(__JniBaseClass arg0)
+	jlong JapaneseDate::getLong(JObject arg0)
 	{
 		return callMethod<jlong>(
 			"getLong",
@@ -121,7 +121,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	jboolean JapaneseDate::isSupported(__JniBaseClass arg0)
+	jboolean JapaneseDate::isSupported(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"isSupported",
@@ -143,7 +143,7 @@ namespace java::time::chrono
 			"()I"
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::minus(__JniBaseClass arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::minus(JObject arg0)
 	{
 		return callObjectMethod(
 			"minus",
@@ -151,7 +151,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::minus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::minus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"minus",
@@ -160,7 +160,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::plus(__JniBaseClass arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::plus(JObject arg0)
 	{
 		return callObjectMethod(
 			"plus",
@@ -168,7 +168,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::plus(jlong arg0, __JniBaseClass arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::plus(jlong arg0, JObject arg1)
 	{
 		return callObjectMethod(
 			"plus",
@@ -177,7 +177,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::temporal::ValueRange JapaneseDate::range(__JniBaseClass arg0)
+	java::time::temporal::ValueRange JapaneseDate::range(JObject arg0)
 	{
 		return callObjectMethod(
 			"range",
@@ -199,7 +199,7 @@ namespace java::time::chrono
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	__JniBaseClass JapaneseDate::until(__JniBaseClass arg0)
+	JObject JapaneseDate::until(JObject arg0)
 	{
 		return callObjectMethod(
 			"until",
@@ -207,7 +207,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	jlong JapaneseDate::until(__JniBaseClass arg0, __JniBaseClass arg1)
+	jlong JapaneseDate::until(JObject arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"until",
@@ -216,7 +216,7 @@ namespace java::time::chrono
 			arg1.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::with(__JniBaseClass arg0)
+	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0)
 	{
 		return callObjectMethod(
 			"with",
@@ -224,7 +224,7 @@ namespace java::time::chrono
 			arg0.object()
 		);
 	}
-	java::time::chrono::JapaneseDate JapaneseDate::with(__JniBaseClass arg0, jlong arg1)
+	java::time::chrono::JapaneseDate JapaneseDate::with(JObject arg0, jlong arg1)
 	{
 		return callObjectMethod(
 			"with",

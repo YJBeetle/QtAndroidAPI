@@ -21,16 +21,16 @@ namespace android::graphics
 	}
 	
 	// QAndroidJniObject forward
-	PathMeasure::PathMeasure(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PathMeasure::PathMeasure(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	PathMeasure::PathMeasure()
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PathMeasure",
 			"()V"
 		) {}
 	PathMeasure::PathMeasure(android::graphics::Path arg0, jboolean arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.graphics.PathMeasure",
 			"(Landroid/graphics/Path;Z)V",
 			arg0.object(),

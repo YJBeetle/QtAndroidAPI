@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::telephony
 {
-	class CarrierConfigManager_ImsServiceEntitlement : public __JniBaseClass
+	class CarrierConfigManager_ImsServiceEntitlement : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::telephony
 		static jstring KEY_SHOW_VOWIFI_WEBVIEW_BOOL();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit CarrierConfigManager_ImsServiceEntitlement(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		CarrierConfigManager_ImsServiceEntitlement(QAndroidJniObject obj);
 		
 		// Constructors

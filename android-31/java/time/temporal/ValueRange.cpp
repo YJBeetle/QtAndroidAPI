@@ -6,7 +6,7 @@ namespace java::time::temporal
 	// Fields
 	
 	// QAndroidJniObject forward
-	ValueRange::ValueRange(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ValueRange::ValueRange(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -44,7 +44,7 @@ namespace java::time::temporal
 			arg3
 		);
 	}
-	jint ValueRange::checkValidIntValue(jlong arg0, __JniBaseClass arg1)
+	jint ValueRange::checkValidIntValue(jlong arg0, JObject arg1)
 	{
 		return callMethod<jint>(
 			"checkValidIntValue",
@@ -53,7 +53,7 @@ namespace java::time::temporal
 			arg1.object()
 		);
 	}
-	jlong ValueRange::checkValidValue(jlong arg0, __JniBaseClass arg1)
+	jlong ValueRange::checkValidValue(jlong arg0, JObject arg1)
 	{
 		return callMethod<jlong>(
 			"checkValidValue",

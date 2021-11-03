@@ -12,7 +12,7 @@ namespace android::content
 	// Constructors
 	
 	// Methods
-	void ClipboardManager::addPrimaryClipChangedListener(__JniBaseClass arg0)
+	void ClipboardManager::addPrimaryClipChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"addPrimaryClipChangedListener",
@@ -62,7 +62,7 @@ namespace android::content
 			"()Z"
 		);
 	}
-	void ClipboardManager::removePrimaryClipChangedListener(__JniBaseClass arg0)
+	void ClipboardManager::removePrimaryClipChangedListener(JObject arg0)
 	{
 		callMethod<void>(
 			"removePrimaryClipChangedListener",

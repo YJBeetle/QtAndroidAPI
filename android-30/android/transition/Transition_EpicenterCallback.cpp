@@ -7,11 +7,11 @@ namespace android::transition
 	// Fields
 	
 	// QAndroidJniObject forward
-	Transition_EpicenterCallback::Transition_EpicenterCallback(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Transition_EpicenterCallback::Transition_EpicenterCallback(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Transition_EpicenterCallback::Transition_EpicenterCallback()
-		: __JniBaseClass(
+		: JObject(
 			"android.transition.Transition$EpicenterCallback",
 			"()V"
 		) {}

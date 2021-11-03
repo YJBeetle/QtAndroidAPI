@@ -5,7 +5,7 @@ namespace android::hardware::camera2::params
 	// Fields
 	
 	// QAndroidJniObject forward
-	MandatoryStreamCombination_MandatoryStreamInformation::MandatoryStreamCombination_MandatoryStreamInformation(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MandatoryStreamCombination_MandatoryStreamInformation::MandatoryStreamCombination_MandatoryStreamInformation(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace android::hardware::camera2::params
 			arg0
 		);
 	}
-	__JniBaseClass MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
+	JObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
 	{
 		return callObjectMethod(
 			"getAvailableSizes",

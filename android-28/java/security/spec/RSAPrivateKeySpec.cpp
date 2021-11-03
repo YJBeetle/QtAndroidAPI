@@ -6,18 +6,18 @@ namespace java::security::spec
 	// Fields
 	
 	// QAndroidJniObject forward
-	RSAPrivateKeySpec::RSAPrivateKeySpec(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	RSAPrivateKeySpec::RSAPrivateKeySpec(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1)
-		: __JniBaseClass(
+		: JObject(
 			"java.security.spec.RSAPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.object(),
 			arg1.object()
 		) {}
-	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, __JniBaseClass arg2)
-		: __JniBaseClass(
+	RSAPrivateKeySpec::RSAPrivateKeySpec(java::math::BigInteger arg0, java::math::BigInteger arg1, JObject arg2)
+		: JObject(
 			"java.security.spec.RSAPrivateKeySpec",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0.object(),
@@ -33,7 +33,7 @@ namespace java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	__JniBaseClass RSAPrivateKeySpec::getParams()
+	JObject RSAPrivateKeySpec::getParams()
 	{
 		return callObjectMethod(
 			"getParams",

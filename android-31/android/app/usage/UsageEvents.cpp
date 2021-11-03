@@ -5,7 +5,7 @@
 namespace android::app::usage
 {
 	// Fields
-	__JniBaseClass UsageEvents::CREATOR()
+	JObject UsageEvents::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.usage.UsageEvents",
@@ -15,7 +15,7 @@ namespace android::app::usage
 	}
 	
 	// QAndroidJniObject forward
-	UsageEvents::UsageEvents(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UsageEvents::UsageEvents(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

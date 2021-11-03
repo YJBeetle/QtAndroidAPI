@@ -9,11 +9,11 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	AudioRecord_Builder::AudioRecord_Builder(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AudioRecord_Builder::AudioRecord_Builder(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AudioRecord_Builder::AudioRecord_Builder()
-		: __JniBaseClass(
+		: JObject(
 			"android.media.AudioRecord$Builder",
 			"()V"
 		) {}

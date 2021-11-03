@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 
 namespace android::hardware
 {
-	class BatteryState : public __JniBaseClass
+	class BatteryState : public JObject
 	{
 	public:
 		// Fields
@@ -16,7 +16,7 @@ namespace android::hardware
 		static jint STATUS_UNKNOWN();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit BatteryState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit BatteryState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		BatteryState(QAndroidJniObject obj);
 		
 		// Constructors

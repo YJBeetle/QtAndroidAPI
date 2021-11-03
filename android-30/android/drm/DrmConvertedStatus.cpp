@@ -45,11 +45,11 @@ namespace android::drm
 	}
 	
 	// QAndroidJniObject forward
-	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	DrmConvertedStatus::DrmConvertedStatus(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	DrmConvertedStatus::DrmConvertedStatus(jint arg0, jbyteArray arg1, jint arg2)
-		: __JniBaseClass(
+		: JObject(
 			"android.drm.DrmConvertedStatus",
 			"(I[BI)V",
 			arg0,

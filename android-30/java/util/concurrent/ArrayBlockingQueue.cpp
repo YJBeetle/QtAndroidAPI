@@ -24,7 +24,7 @@ namespace java::util::concurrent
 			arg0,
 			arg1
 		) {}
-	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0, jboolean arg1, __JniBaseClass arg2)
+	ArrayBlockingQueue::ArrayBlockingQueue(jint arg0, jboolean arg1, JObject arg2)
 		: java::util::AbstractQueue(
 			"java.util.concurrent.ArrayBlockingQueue",
 			"(IZLjava/util/Collection;)V",
@@ -57,7 +57,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jint ArrayBlockingQueue::drainTo(__JniBaseClass arg0)
+	jint ArrayBlockingQueue::drainTo(JObject arg0)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -65,7 +65,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jint ArrayBlockingQueue::drainTo(__JniBaseClass arg0, jint arg1)
+	jint ArrayBlockingQueue::drainTo(JObject arg0, jint arg1)
 	{
 		return callMethod<jint>(
 			"drainTo",
@@ -74,7 +74,7 @@ namespace java::util::concurrent
 			arg1
 		);
 	}
-	void ArrayBlockingQueue::forEach(__JniBaseClass arg0)
+	void ArrayBlockingQueue::forEach(JObject arg0)
 	{
 		callMethod<void>(
 			"forEach",
@@ -82,7 +82,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	__JniBaseClass ArrayBlockingQueue::iterator()
+	JObject ArrayBlockingQueue::iterator()
 	{
 		return callObjectMethod(
 			"iterator",
@@ -153,7 +153,7 @@ namespace java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ArrayBlockingQueue::removeAll(__JniBaseClass arg0)
+	jboolean ArrayBlockingQueue::removeAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeAll",
@@ -161,7 +161,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ArrayBlockingQueue::removeIf(__JniBaseClass arg0)
+	jboolean ArrayBlockingQueue::removeIf(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"removeIf",
@@ -169,7 +169,7 @@ namespace java::util::concurrent
 			arg0.object()
 		);
 	}
-	jboolean ArrayBlockingQueue::retainAll(__JniBaseClass arg0)
+	jboolean ArrayBlockingQueue::retainAll(JObject arg0)
 	{
 		return callMethod<jboolean>(
 			"retainAll",
@@ -184,7 +184,7 @@ namespace java::util::concurrent
 			"()I"
 		);
 	}
-	__JniBaseClass ArrayBlockingQueue::spliterator()
+	JObject ArrayBlockingQueue::spliterator()
 	{
 		return callObjectMethod(
 			"spliterator",

@@ -11,7 +11,7 @@ namespace android::telephony::ims
 			"ATTR_EPDG_OVER_CELL_INTERNET"
 		);
 	}
-	__JniBaseClass ImsRegistrationAttributes::CREATOR()
+	JObject ImsRegistrationAttributes::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.telephony.ims.ImsRegistrationAttributes",
@@ -21,7 +21,7 @@ namespace android::telephony::ims
 	}
 	
 	// QAndroidJniObject forward
-	ImsRegistrationAttributes::ImsRegistrationAttributes(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ImsRegistrationAttributes::ImsRegistrationAttributes(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -48,7 +48,7 @@ namespace android::telephony::ims
 			"()I"
 		);
 	}
-	__JniBaseClass ImsRegistrationAttributes::getFeatureTags()
+	JObject ImsRegistrationAttributes::getFeatureTags()
 	{
 		return callObjectMethod(
 			"getFeatureTags",

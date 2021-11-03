@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace java::lang
 {
@@ -13,13 +13,13 @@ namespace java::net
 
 namespace java::lang
 {
-	class Package : public __JniBaseClass
+	class Package : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Package(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Package(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Package(QAndroidJniObject obj);
 		
 		// Constructors
@@ -27,10 +27,10 @@ namespace java::lang
 		// Methods
 		static java::lang::Package getPackage(jstring arg0);
 		static jarray getPackages();
-		__JniBaseClass getAnnotation(jclass arg0);
+		JObject getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		__JniBaseClass getDeclaredAnnotation(jclass arg0);
+		JObject getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
 		jstring getImplementationTitle();

@@ -4,7 +4,7 @@
 namespace android::media
 {
 	// Fields
-	__JniBaseClass VolumeShaper_Configuration::CREATOR()
+	JObject VolumeShaper_Configuration::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.media.VolumeShaper$Configuration",
@@ -74,7 +74,7 @@ namespace android::media
 	}
 	
 	// QAndroidJniObject forward
-	VolumeShaper_Configuration::VolumeShaper_Configuration(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VolumeShaper_Configuration::VolumeShaper_Configuration(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

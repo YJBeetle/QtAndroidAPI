@@ -4,7 +4,7 @@
 namespace android::service::autofill
 {
 	// Fields
-	__JniBaseClass SaveInfo::CREATOR()
+	JObject SaveInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.autofill.SaveInfo",
@@ -133,7 +133,7 @@ namespace android::service::autofill
 	}
 	
 	// QAndroidJniObject forward
-	SaveInfo::SaveInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SaveInfo::SaveInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

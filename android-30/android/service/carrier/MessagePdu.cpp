@@ -4,7 +4,7 @@
 namespace android::service::carrier
 {
 	// Fields
-	__JniBaseClass MessagePdu::CREATOR()
+	JObject MessagePdu::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.service.carrier.MessagePdu",
@@ -14,11 +14,11 @@ namespace android::service::carrier
 	}
 	
 	// QAndroidJniObject forward
-	MessagePdu::MessagePdu(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MessagePdu::MessagePdu(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
-	MessagePdu::MessagePdu(__JniBaseClass arg0)
-		: __JniBaseClass(
+	MessagePdu::MessagePdu(JObject arg0)
+		: JObject(
 			"android.service.carrier.MessagePdu",
 			"(Ljava/util/List;)V",
 			arg0.object()
@@ -32,7 +32,7 @@ namespace android::service::carrier
 			"()I"
 		);
 	}
-	__JniBaseClass MessagePdu::getPdus()
+	JObject MessagePdu::getPdus()
 	{
 		return callObjectMethod(
 			"getPdus",

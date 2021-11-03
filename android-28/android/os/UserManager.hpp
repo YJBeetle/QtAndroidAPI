@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -21,7 +21,7 @@ namespace android::os
 
 namespace android::os
 {
-	class UserManager : public __JniBaseClass
+	class UserManager : public JObject
 	{
 	public:
 		// Fields
@@ -88,7 +88,7 @@ namespace android::os
 		static jint USER_OPERATION_SUCCESS();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit UserManager(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit UserManager(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		UserManager(QAndroidJniObject obj);
 		
 		// Constructors
@@ -102,7 +102,7 @@ namespace android::os
 		jlong getUserCreationTime(android::os::UserHandle arg0);
 		android::os::UserHandle getUserForSerialNumber(jlong arg0);
 		jstring getUserName();
-		__JniBaseClass getUserProfiles();
+		JObject getUserProfiles();
 		android::os::Bundle getUserRestrictions();
 		android::os::Bundle getUserRestrictions(android::os::UserHandle arg0);
 		jboolean hasUserRestriction(jstring arg0);

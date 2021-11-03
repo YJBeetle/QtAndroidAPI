@@ -4,7 +4,7 @@
 namespace android::app
 {
 	// Fields
-	__JniBaseClass VoiceInteractor_Prompt::CREATOR()
+	JObject VoiceInteractor_Prompt::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.app.VoiceInteractor$Prompt",
@@ -14,17 +14,17 @@ namespace android::app
 	}
 	
 	// QAndroidJniObject forward
-	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	VoiceInteractor_Prompt::VoiceInteractor_Prompt(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jstring arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.VoiceInteractor$Prompt",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		) {}
 	VoiceInteractor_Prompt::VoiceInteractor_Prompt(jarray arg0, jstring arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.app.VoiceInteractor$Prompt",
 			"([Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,

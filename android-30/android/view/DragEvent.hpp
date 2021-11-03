@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -17,7 +17,7 @@ namespace android::os
 
 namespace android::view
 {
-	class DragEvent : public __JniBaseClass
+	class DragEvent : public JObject
 	{
 	public:
 		// Fields
@@ -27,10 +27,10 @@ namespace android::view
 		static jint ACTION_DRAG_LOCATION();
 		static jint ACTION_DRAG_STARTED();
 		static jint ACTION_DROP();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DragEvent(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DragEvent(QAndroidJniObject obj);
 		
 		// Constructors

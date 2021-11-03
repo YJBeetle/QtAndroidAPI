@@ -1,11 +1,11 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 
 namespace android::telephony::gsm
 {
-	class SmsMessage_SubmitPdu : public __JniBaseClass
+	class SmsMessage_SubmitPdu : public JObject
 	{
 	public:
 		// Fields
@@ -13,7 +13,7 @@ namespace android::telephony::gsm
 		jbyteArray encodedScAddress();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit SmsMessage_SubmitPdu(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit SmsMessage_SubmitPdu(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		SmsMessage_SubmitPdu(QAndroidJniObject obj);
 		
 		// Constructors

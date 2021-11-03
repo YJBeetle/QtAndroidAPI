@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::media
 {
@@ -13,7 +13,7 @@ namespace android::media
 
 namespace android::media
 {
-	class MediaParser : public __JniBaseClass
+	class MediaParser : public JObject
 	{
 	public:
 		// Fields
@@ -56,16 +56,16 @@ namespace android::media
 		static jint SAMPLE_FLAG_LAST_SAMPLE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit MediaParser(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit MediaParser(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		MediaParser(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
-		static android::media::MediaParser create(__JniBaseClass arg0, jarray arg1);
-		static android::media::MediaParser createByName(jstring arg0, __JniBaseClass arg1);
-		static __JniBaseClass getParserNames(android::media::MediaFormat arg0);
-		jboolean advance(__JniBaseClass arg0);
+		static android::media::MediaParser create(JObject arg0, jarray arg1);
+		static android::media::MediaParser createByName(jstring arg0, JObject arg1);
+		static JObject getParserNames(android::media::MediaFormat arg0);
+		jboolean advance(JObject arg0);
 		jstring getParserName();
 		void release();
 		void seek(android::media::MediaParser_SeekPoint arg0);

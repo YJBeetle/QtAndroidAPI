@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./CookieHandler.hpp"
 
 namespace java::net
@@ -25,13 +25,13 @@ namespace java::net
 		
 		// Constructors
 		CookieManager();
-		CookieManager(__JniBaseClass arg0, __JniBaseClass arg1);
+		CookieManager(JObject arg0, JObject arg1);
 		
 		// Methods
-		__JniBaseClass get(java::net::URI arg0, __JniBaseClass arg1);
-		__JniBaseClass getCookieStore();
-		void put(java::net::URI arg0, __JniBaseClass arg1);
-		void setCookiePolicy(__JniBaseClass arg0);
+		JObject get(java::net::URI arg0, JObject arg1);
+		JObject getCookieStore();
+		void put(java::net::URI arg0, JObject arg1);
+		void setCookiePolicy(JObject arg0);
 	};
 } // namespace java::net
 

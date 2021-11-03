@@ -21,11 +21,11 @@ namespace android::content
 	}
 	
 	// QAndroidJniObject forward
-	Entity_NamedContentValues::Entity_NamedContentValues(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Entity_NamedContentValues::Entity_NamedContentValues(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Entity_NamedContentValues::Entity_NamedContentValues(android::net::Uri arg0, android::content::ContentValues arg1)
-		: __JniBaseClass(
+		: JObject(
 			"android.content.Entity$NamedContentValues",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)V",
 			arg0.object(),

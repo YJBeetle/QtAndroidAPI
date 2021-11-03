@@ -5,7 +5,7 @@ namespace android::icu::text
 	// Fields
 	
 	// QAndroidJniObject forward
-	UnicodeFilter::UnicodeFilter(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	UnicodeFilter::UnicodeFilter(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ namespace android::icu::text
 			arg0
 		);
 	}
-	jint UnicodeFilter::matches(__JniBaseClass arg0, jintArray arg1, jint arg2, jboolean arg3)
+	jint UnicodeFilter::matches(JObject arg0, jintArray arg1, jint arg2, jboolean arg3)
 	{
 		return callMethod<jint>(
 			"matches",

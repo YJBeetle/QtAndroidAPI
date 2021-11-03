@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace java::lang::reflect
 {
@@ -9,30 +9,30 @@ namespace java::lang::reflect
 
 namespace java::lang::reflect
 {
-	class Parameter : public __JniBaseClass
+	class Parameter : public JObject
 	{
 	public:
 		// Fields
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit Parameter(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit Parameter(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		Parameter(QAndroidJniObject obj);
 		
 		// Constructors
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAnnotatedType();
-		__JniBaseClass getAnnotation(jclass arg0);
+		JObject getAnnotatedType();
+		JObject getAnnotation(jclass arg0);
 		jarray getAnnotations();
 		jarray getAnnotationsByType(jclass arg0);
-		__JniBaseClass getDeclaredAnnotation(jclass arg0);
+		JObject getDeclaredAnnotation(jclass arg0);
 		jarray getDeclaredAnnotations();
 		jarray getDeclaredAnnotationsByType(jclass arg0);
 		java::lang::reflect::Executable getDeclaringExecutable();
 		jint getModifiers();
 		jstring getName();
-		__JniBaseClass getParameterizedType();
+		JObject getParameterizedType();
 		jclass getType();
 		jint hashCode();
 		jboolean isImplicit();

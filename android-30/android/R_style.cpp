@@ -5157,11 +5157,11 @@ namespace android
 	}
 	
 	// QAndroidJniObject forward
-	R_style::R_style(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	R_style::R_style(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	R_style::R_style()
-		: __JniBaseClass(
+		: JObject(
 			"android.R$style",
 			"()V"
 		) {}

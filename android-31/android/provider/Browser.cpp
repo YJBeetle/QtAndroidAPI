@@ -38,11 +38,11 @@ namespace android::provider
 	}
 	
 	// QAndroidJniObject forward
-	Browser::Browser(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	Browser::Browser(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	Browser::Browser()
-		: __JniBaseClass(
+		: JObject(
 			"android.provider.Browser",
 			"()V"
 		) {}

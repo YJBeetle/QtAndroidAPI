@@ -9,7 +9,7 @@
 namespace android::os
 {
 	// Fields
-	__JniBaseClass ParcelFileDescriptor::CREATOR()
+	JObject ParcelFileDescriptor::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.os.ParcelFileDescriptor",
@@ -75,11 +75,11 @@ namespace android::os
 	}
 	
 	// QAndroidJniObject forward
-	ParcelFileDescriptor::ParcelFileDescriptor(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ParcelFileDescriptor::ParcelFileDescriptor(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	ParcelFileDescriptor::ParcelFileDescriptor(android::os::ParcelFileDescriptor &arg0)
-		: __JniBaseClass(
+		: JObject(
 			"android.os.ParcelFileDescriptor",
 			"(Landroid/os/ParcelFileDescriptor;)V",
 			arg0.object()
@@ -173,7 +173,7 @@ namespace android::os
 			arg1
 		);
 	}
-	android::os::ParcelFileDescriptor ParcelFileDescriptor::open(java::io::File arg0, jint arg1, android::os::Handler arg2, __JniBaseClass arg3)
+	android::os::ParcelFileDescriptor ParcelFileDescriptor::open(java::io::File arg0, jint arg1, android::os::Handler arg2, JObject arg3)
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",
@@ -194,7 +194,7 @@ namespace android::os
 			arg0
 		);
 	}
-	android::os::ParcelFileDescriptor ParcelFileDescriptor::wrap(android::os::ParcelFileDescriptor arg0, android::os::Handler arg1, __JniBaseClass arg2)
+	android::os::ParcelFileDescriptor ParcelFileDescriptor::wrap(android::os::ParcelFileDescriptor arg0, android::os::Handler arg1, JObject arg2)
 	{
 		return callStaticObjectMethod(
 			"android.os.ParcelFileDescriptor",

@@ -36,7 +36,7 @@ namespace android::net::sip
 	}
 	
 	// QAndroidJniObject forward
-	SipManager::SipManager(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	SipManager::SipManager(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -175,7 +175,7 @@ namespace android::net::sip
 			arg0.object()
 		);
 	}
-	void SipManager::open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, __JniBaseClass arg2)
+	void SipManager::open(android::net::sip::SipProfile arg0, android::app::PendingIntent arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"open",
@@ -185,7 +185,7 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::_register(android::net::sip::SipProfile arg0, jint arg1, __JniBaseClass arg2)
+	void SipManager::_register(android::net::sip::SipProfile arg0, jint arg1, JObject arg2)
 	{
 		callMethod<void>(
 			"register",
@@ -195,7 +195,7 @@ namespace android::net::sip
 			arg2.object()
 		);
 	}
-	void SipManager::setRegistrationListener(jstring arg0, __JniBaseClass arg1)
+	void SipManager::setRegistrationListener(jstring arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"setRegistrationListener",
@@ -213,7 +213,7 @@ namespace android::net::sip
 			arg1.object()
 		);
 	}
-	void SipManager::unregister(android::net::sip::SipProfile arg0, __JniBaseClass arg1)
+	void SipManager::unregister(android::net::sip::SipProfile arg0, JObject arg1)
 	{
 		callMethod<void>(
 			"unregister",

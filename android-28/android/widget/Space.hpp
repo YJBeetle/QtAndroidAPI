@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "../view/View.hpp"
 
 namespace android::content
@@ -25,9 +25,9 @@ namespace android::widget
 		
 		// Constructors
 		Space(android::content::Context arg0);
-		Space(android::content::Context arg0, __JniBaseClass arg1);
-		Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2);
-		Space(android::content::Context arg0, __JniBaseClass arg1, jint arg2, jint arg3);
+		Space(android::content::Context arg0, JObject arg1);
+		Space(android::content::Context arg0, JObject arg1, jint arg2);
+		Space(android::content::Context arg0, JObject arg1, jint arg2, jint arg3);
 		
 		// Methods
 		void draw(android::graphics::Canvas arg0);

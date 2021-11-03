@@ -7,7 +7,7 @@ namespace android::media
 	// Fields
 	
 	// QAndroidJniObject forward
-	MediaDrm_PlaybackComponent::MediaDrm_PlaybackComponent(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	MediaDrm_PlaybackComponent::MediaDrm_PlaybackComponent(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

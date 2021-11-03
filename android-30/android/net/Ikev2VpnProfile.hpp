@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 #include "./PlatformVpnProfile.hpp"
 
 namespace android::net
@@ -27,12 +27,12 @@ namespace android::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		__JniBaseClass getAllowedAlgorithms();
+		JObject getAllowedAlgorithms();
 		jint getMaxMtu();
 		jstring getPassword();
 		jbyteArray getPresharedKey();
 		android::net::ProxyInfo getProxyInfo();
-		__JniBaseClass getRsaPrivateKey();
+		JObject getRsaPrivateKey();
 		jstring getServerAddr();
 		java::security::cert::X509Certificate getServerRootCaCert();
 		java::security::cert::X509Certificate getUserCert();

@@ -5,12 +5,12 @@ namespace android::app::appsearch
 	// Fields
 	
 	// QAndroidJniObject forward
-	PutDocumentsRequest::PutDocumentsRequest(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PutDocumentsRequest::PutDocumentsRequest(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
 	// Methods
-	__JniBaseClass PutDocumentsRequest::getGenericDocuments()
+	JObject PutDocumentsRequest::getGenericDocuments()
 	{
 		return callObjectMethod(
 			"getGenericDocuments",

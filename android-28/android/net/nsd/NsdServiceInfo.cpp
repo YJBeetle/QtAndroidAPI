@@ -5,7 +5,7 @@
 namespace android::net::nsd
 {
 	// Fields
-	__JniBaseClass NsdServiceInfo::CREATOR()
+	JObject NsdServiceInfo::CREATOR()
 	{
 		return getStaticObjectField(
 			"android.net.nsd.NsdServiceInfo",
@@ -15,11 +15,11 @@ namespace android::net::nsd
 	}
 	
 	// QAndroidJniObject forward
-	NsdServiceInfo::NsdServiceInfo(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	NsdServiceInfo::NsdServiceInfo(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	NsdServiceInfo::NsdServiceInfo()
-		: __JniBaseClass(
+		: JObject(
 			"android.net.nsd.NsdServiceInfo",
 			"()V"
 		) {}
@@ -32,7 +32,7 @@ namespace android::net::nsd
 			"()I"
 		);
 	}
-	__JniBaseClass NsdServiceInfo::getAttributes()
+	JObject NsdServiceInfo::getAttributes()
 	{
 		return callObjectMethod(
 			"getAttributes",

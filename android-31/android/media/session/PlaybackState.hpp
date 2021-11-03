@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../__JniBaseClass.hpp"
+#include "../../../JObject.hpp"
 
 namespace android::os
 {
@@ -13,7 +13,7 @@ namespace android::os
 
 namespace android::media::session
 {
-	class PlaybackState : public __JniBaseClass
+	class PlaybackState : public JObject
 	{
 	public:
 		// Fields
@@ -36,7 +36,7 @@ namespace android::media::session
 		static jlong ACTION_SKIP_TO_PREVIOUS();
 		static jlong ACTION_SKIP_TO_QUEUE_ITEM();
 		static jlong ACTION_STOP();
-		static __JniBaseClass CREATOR();
+		static JObject CREATOR();
 		static jlong PLAYBACK_POSITION_UNKNOWN();
 		static jint STATE_BUFFERING();
 		static jint STATE_CONNECTING();
@@ -52,7 +52,7 @@ namespace android::media::session
 		static jint STATE_STOPPED();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit PlaybackState(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit PlaybackState(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		PlaybackState(QAndroidJniObject obj);
 		
 		// Constructors
@@ -62,7 +62,7 @@ namespace android::media::session
 		jlong getActions();
 		jlong getActiveQueueItemId();
 		jlong getBufferedPosition();
-		__JniBaseClass getCustomActions();
+		JObject getCustomActions();
 		jstring getErrorMessage();
 		android::os::Bundle getExtras();
 		jlong getLastPositionUpdateTime();

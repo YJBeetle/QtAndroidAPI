@@ -19,7 +19,7 @@ namespace android::os::health
 	}
 	
 	// QAndroidJniObject forward
-	ServiceHealthStats::ServiceHealthStats(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	ServiceHealthStats::ServiceHealthStats(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

@@ -148,7 +148,7 @@ namespace android::content::pm
 	}
 	
 	// QAndroidJniObject forward
-	PackageInstaller::PackageInstaller(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	PackageInstaller::PackageInstaller(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	
@@ -169,14 +169,14 @@ namespace android::content::pm
 			arg0.object()
 		);
 	}
-	__JniBaseClass PackageInstaller::getAllSessions()
+	JObject PackageInstaller::getAllSessions()
 	{
 		return callObjectMethod(
 			"getAllSessions",
 			"()Ljava/util/List;"
 		);
 	}
-	__JniBaseClass PackageInstaller::getMySessions()
+	JObject PackageInstaller::getMySessions()
 	{
 		return callObjectMethod(
 			"getMySessions",

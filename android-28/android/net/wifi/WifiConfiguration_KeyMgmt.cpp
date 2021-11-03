@@ -49,7 +49,7 @@ namespace android::net::wifi
 	}
 	
 	// QAndroidJniObject forward
-	WifiConfiguration_KeyMgmt::WifiConfiguration_KeyMgmt(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	WifiConfiguration_KeyMgmt::WifiConfiguration_KeyMgmt(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	

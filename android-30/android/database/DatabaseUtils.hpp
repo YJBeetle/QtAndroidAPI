@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../__JniBaseClass.hpp"
+#include "../../JObject.hpp"
 
 namespace android::content
 {
@@ -49,7 +49,7 @@ namespace java::lang
 
 namespace android::database
 {
-	class DatabaseUtils : public __JniBaseClass
+	class DatabaseUtils : public JObject
 	{
 	public:
 		// Fields
@@ -65,7 +65,7 @@ namespace android::database
 		static jint STATEMENT_UPDATE();
 		
 		// QAndroidJniObject forward
-		template<typename ...Ts> explicit DatabaseUtils(const char *className, const char *sig, Ts...agv) : __JniBaseClass(className, sig, std::forward<Ts>(agv)...) {}
+		template<typename ...Ts> explicit DatabaseUtils(const char *className, const char *sig, Ts...agv) : JObject(className, sig, std::forward<Ts>(agv)...) {}
 		DatabaseUtils(QAndroidJniObject obj);
 		
 		// Constructors
@@ -80,30 +80,30 @@ namespace android::database
 		static android::os::ParcelFileDescriptor blobFileDescriptorForQuery(android::database::sqlite::SQLiteDatabase arg0, jstring arg1, jarray arg2);
 		static jstring concatenateWhere(jstring arg0, jstring arg1);
 		static void createDbFromSqlStatements(android::content::Context arg0, jstring arg1, jint arg2, jstring arg3);
-		static void cursorDoubleToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
-		static void cursorDoubleToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorDoubleToCursorValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2);
-		static void cursorFloatToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorIntToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2);
-		static void cursorIntToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
-		static void cursorIntToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorLongToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2);
-		static void cursorLongToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
-		static void cursorLongToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorRowToContentValues(__JniBaseClass arg0, android::content::ContentValues arg1);
-		static void cursorShortToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorStringToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2);
-		static void cursorStringToContentValues(__JniBaseClass arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
-		static void cursorStringToContentValuesIfPresent(__JniBaseClass arg0, android::content::ContentValues arg1, jstring arg2);
-		static void cursorStringToInsertHelper(__JniBaseClass arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3);
-		static void dumpCurrentRow(__JniBaseClass arg0);
-		static void dumpCurrentRow(__JniBaseClass arg0, java::io::PrintStream arg1);
-		static void dumpCurrentRow(__JniBaseClass arg0, java::lang::StringBuilder arg1);
-		static jstring dumpCurrentRowToString(__JniBaseClass arg0);
-		static void dumpCursor(__JniBaseClass arg0);
-		static void dumpCursor(__JniBaseClass arg0, java::io::PrintStream arg1);
-		static void dumpCursor(__JniBaseClass arg0, java::lang::StringBuilder arg1);
-		static jstring dumpCursorToString(__JniBaseClass arg0);
+		static void cursorDoubleToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
+		static void cursorDoubleToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorDoubleToCursorValues(JObject arg0, jstring arg1, android::content::ContentValues arg2);
+		static void cursorFloatToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2);
+		static void cursorIntToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
+		static void cursorIntToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2);
+		static void cursorLongToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
+		static void cursorLongToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorRowToContentValues(JObject arg0, android::content::ContentValues arg1);
+		static void cursorShortToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2);
+		static void cursorStringToContentValues(JObject arg0, jstring arg1, android::content::ContentValues arg2, jstring arg3);
+		static void cursorStringToContentValuesIfPresent(JObject arg0, android::content::ContentValues arg1, jstring arg2);
+		static void cursorStringToInsertHelper(JObject arg0, jstring arg1, android::database::DatabaseUtils_InsertHelper arg2, jint arg3);
+		static void dumpCurrentRow(JObject arg0);
+		static void dumpCurrentRow(JObject arg0, java::io::PrintStream arg1);
+		static void dumpCurrentRow(JObject arg0, java::lang::StringBuilder arg1);
+		static jstring dumpCurrentRowToString(JObject arg0);
+		static void dumpCursor(JObject arg0);
+		static void dumpCursor(JObject arg0, java::io::PrintStream arg1);
+		static void dumpCursor(JObject arg0, java::lang::StringBuilder arg1);
+		static jstring dumpCursorToString(JObject arg0);
 		static jstring getCollationKey(jstring arg0);
 		static jstring getHexCollationKey(jstring arg0);
 		static jint getSqlStatementType(jstring arg0);

@@ -14,11 +14,11 @@ namespace android::view::accessibility
 	}
 	
 	// QAndroidJniObject forward
-	AccessibilityNodeProvider::AccessibilityNodeProvider(QAndroidJniObject obj) : __JniBaseClass(obj) {}
+	AccessibilityNodeProvider::AccessibilityNodeProvider(QAndroidJniObject obj) : JObject(obj) {}
 	
 	// Constructors
 	AccessibilityNodeProvider::AccessibilityNodeProvider()
-		: __JniBaseClass(
+		: JObject(
 			"android.view.accessibility.AccessibilityNodeProvider",
 			"()V"
 		) {}
@@ -43,7 +43,7 @@ namespace android::view::accessibility
 			arg0
 		);
 	}
-	__JniBaseClass AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
+	JObject AccessibilityNodeProvider::findAccessibilityNodeInfosByText(jstring arg0, jint arg1)
 	{
 		return callObjectMethod(
 			"findAccessibilityNodeInfosByText",
